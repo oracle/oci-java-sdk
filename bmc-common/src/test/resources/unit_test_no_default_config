@@ -1,0 +1,5 @@
+[USER]
+tenancy=default_tenancy
+user=default_user
+fingerprint=default_fingerprint
+key_file=default_key_file
