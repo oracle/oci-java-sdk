@@ -8,7 +8,7 @@ The project is open source and maintained by Oracle Corp. The home page for the 
 
 ## Installation
 
-See [the documentation](https://docs.us-phoenix-1.oraclecloud.com/tools/java/latest/) for details.
+See [the documentation](https://docs.us-phoenix-1.oraclecloud.com/Content/API/SDKDocs/javasdk.htm) for details.
 
 ## Examples
 
@@ -16,11 +16,13 @@ Examples can be found [here](/bmc-examples/src/main/java/).
 
 ## Documentation
 
-Full documentation, including prerequisites, installation and configuration instructions, and API reference can be found [here](https://docs.us-phoenix-1.oraclecloud.com/tools/java/latest/).
+Full documentation, including prerequisites and installation and configuration instructions, can be found [here](https://docs.us-phoenix-1.oraclecloud.com/Content/API/SDKDocs/javasdk.htm).
+
+API reference can be found [here](https://docs.us-phoenix-1.oraclecloud.com/tools/java/latest/).
 
 ## Help
 
-See the “Questions or Feedback?” section [here](https://docs.us-phoenix-1.oraclecloud.com/tools/java/latest/).
+See the “Questions or Feedback?” section [here](https://docs.us-phoenix-1.oraclecloud.com/Content/API/SDKDocs/javasdk.htm).
 
 ## Changes
 
