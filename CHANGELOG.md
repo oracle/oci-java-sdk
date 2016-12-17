@@ -6,12 +6,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ## Unreleased
 
 ## 1.2.0 - 2016-12-16
-## Fixed
+### Fixed
 - Minor bug fixes from Fortify results
 - 'Accept' content header based on expected response
 - Bug in exponential backoff overflow
 
-## Changed
+### Changed
 - Build configuration (pom.xml files) greatly simplified
 - Updated APIs for Object Storage
 - Updated documentation
@@ -23,7 +23,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Waiter for DrgAttachment handles 404s for Detached state now
 - Encoding all path and query parameters
 
-## Changed
+### Changed
 - Improved exception messaging when parsing private keys
 - Annotations for internal classes exposed for documentation only
 - Minor update to core/virtual network APIs and docs
