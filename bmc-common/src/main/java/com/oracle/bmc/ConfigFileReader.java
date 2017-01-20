@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc;
 
@@ -30,6 +30,7 @@ public final class ConfigFileReader {
      * Default location of the config file.
      */
     public static final String DEFAULT_FILE_PATH = "~/.oraclebmc/config";
+    private static final String DEFAULT_PROFILE_NAME = "DEFAULT";
 
     /**
      * Creates a new ConfigFile instance using the configuration at the default location,
@@ -146,7 +147,7 @@ public final class ConfigFileReader {
                     && (accumulator.configurationsByProfile.get(profile).containsKey(key))) {
                 return accumulator.configurationsByProfile.get(profile).get(key);
             }
-            return accumulator.configurationsByProfile.get("DEFAULT").get(key);
+            return accumulator.configurationsByProfile.get(DEFAULT_PROFILE_NAME).get(key);
         }
     }
 
@@ -159,7 +160,6 @@ public final class ConfigFileReader {
         private void accept(String line) {
             final String trimmedLine = line.trim();
 
-            // no blank lines
             if (trimmedLine.isEmpty()) {
                 return;
             }
@@ -169,30 +169,39 @@ public final class ConfigFileReader {
                 return;
             }
 
-            if (trimmedLine.charAt(0) == '[') {
+            if (trimmedLine.charAt(0) == '['
+                    && trimmedLine.charAt(trimmedLine.length() - 1) == ']') {
                 currentProfile = trimmedLine.substring(1, trimmedLine.length() - 1).trim();
-                if (currentProfile.equals("DEFAULT")) {
+                if (currentProfile.isEmpty()) {
+                    throw new IllegalStateException("Cannot have empty profile name: " + line);
+                }
+                if (currentProfile.equals(DEFAULT_PROFILE_NAME)) {
                     foundDefaultProfile = true;
                 }
+                if (!configurationsByProfile.containsKey(currentProfile)) {
+                    configurationsByProfile.put(currentProfile, new HashMap<String, String>());
+                }
+
+                return;
+            }
+
+            final int splitIndex = trimmedLine.indexOf('=');
+            if (splitIndex == -1) {
+                throw new IllegalStateException("Found line with no key-value pair: " + line);
+            }
+
+            final String key = trimmedLine.substring(0, splitIndex).trim();
+            final String value = trimmedLine.substring(splitIndex + 1).trim();
+            if (key.isEmpty()) {
+                throw new IllegalStateException("Found line with no key: " + line);
             }
 
             if (currentProfile == null) {
                 throw new IllegalStateException(
                         "Config parse error, attempted to read configuration without specifying a profile: "
-                                + trimmedLine);
+                                + line);
             }
 
-            final String[] keyValue = trimmedLine.split("=");
-            if (keyValue.length != 2) {
-                return;
-            }
-
-            final String key = keyValue[0];
-            final String value = keyValue[1];
-
-            if (!configurationsByProfile.containsKey(currentProfile)) {
-                configurationsByProfile.put(currentProfile, new HashMap<String, String>());
-            }
             configurationsByProfile.get(currentProfile).put(key, value);
         }
     }

@@ -1,9 +1,17 @@
 [DEFAULT]
-tenancy=default_tenancy
-user=default_user
-fingerprint=default_fingerprint
-key_file=default_key_file
-
-[OVERRIDE]
-key_file=override_key_file
-pass_phrase=override_pass_phrase
+key=value
+ 
+key2= value2
+   # ignore line
+ key3 =value3
+# ignore line
+ key4 = value4     
+key5 ==val=ue=
+ 
+[ PROFILE1 ]
+key=new value
+ 
+[PROFILE2 ]
+key = value=foobar
+key2=nota#comment
+  

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.waiter;
 
@@ -30,12 +30,12 @@ public class ExponentialBackoffDelayStrategyTest {
         context.incrementAttempts();
         assertEquals(30000L, strategy.nextDelay(context));
     }
-    
+
     @Test
     public void getDelays_overflow() {
         ExponentialBackoffDelayStrategy strategy = new ExponentialBackoffDelayStrategy(30000L);
         WaitContext context = new WaitContext(System.currentTimeMillis());
-        for (int attempt=0; attempt < 100; attempt++) {
+        for (int attempt = 0; attempt < 100; attempt++) {
             context.incrementAttempts();
             assertTrue(strategy.nextDelay(context) > 0);
             assertTrue(strategy.nextDelay(context) <= 30000L);
