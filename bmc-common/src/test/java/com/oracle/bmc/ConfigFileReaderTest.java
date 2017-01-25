@@ -57,6 +57,7 @@ public class ConfigFileReaderTest {
         assertEquals("value3", configFile.get("key3"));
         assertEquals("value4", configFile.get("key4"));
         assertEquals("=val=ue=", configFile.get("key5"));
+        assertEquals("value6", configFile.get("[key6"));
     }
 
     @Test

@@ -7,6 +7,7 @@ key2= value2
 # ignore line
  key4 = value4     
 key5 ==val=ue=
+[key6=value6
  
 [ PROFILE1 ]
 key=new value
