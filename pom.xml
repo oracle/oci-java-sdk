@@ -387,6 +387,7 @@
   </dependencyManagement>
 
   <modules>
+    <module>bmc-bom</module>
     <module>bmc-common</module>
     <module>bmc-core</module>
     <module>bmc-examples</module>
