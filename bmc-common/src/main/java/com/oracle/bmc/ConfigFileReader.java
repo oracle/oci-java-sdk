@@ -160,6 +160,7 @@ public final class ConfigFileReader {
         private void accept(String line) {
             final String trimmedLine = line.trim();
 
+            // no blank lines
             if (trimmedLine.isEmpty()) {
                 return;
             }

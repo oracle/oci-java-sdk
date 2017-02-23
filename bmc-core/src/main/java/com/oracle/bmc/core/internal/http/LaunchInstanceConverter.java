@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.internal.http;
 
@@ -40,24 +40,6 @@ public class LaunchInstanceConverter {
         }
 
         WebTarget target = client.getBaseTarget().path("/20160918").path("instances");
-
-        if (request.getOpcHostSerial() != null) {
-            target =
-                    target.queryParam(
-                            "opc-host-serial", attemptEncodeQueryParam(request.getOpcHostSerial()));
-        }
-
-        if (request.getOpcPoolName() != null) {
-            target =
-                    target.queryParam(
-                            "opc-pool-name", attemptEncodeQueryParam(request.getOpcPoolName()));
-        }
-
-        if (request.getOpcVnicId() != null) {
-            target =
-                    target.queryParam(
-                            "opc-vnic-id", attemptEncodeQueryParam(request.getOpcVnicId()));
-        }
 
         Invocation.Builder ib = target.request();
 

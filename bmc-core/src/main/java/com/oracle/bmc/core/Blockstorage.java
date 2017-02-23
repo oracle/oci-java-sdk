@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core;
 
@@ -41,7 +41,7 @@ public interface Blockstorage extends AutoCloseable {
     /**
      * Creates a new volume in the specified compartment. The size of a volume can be either 256 GB or 2 TB.
      * For general information about block volumes, see
-     * [Overview of Block Volume Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/overview.htm)
+     * [Overview of Block Volume Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/overview.htm).
      * <p>
      * A volume and instance can be in separate compartments but must be in the same Availability Domain.
      * For information about access control and compartments, see
@@ -52,14 +52,6 @@ public interface Blockstorage extends AutoCloseable {
      * <p>
      * You may optionally specify a *display name* for the volume, which is simply a friendly name or
      * description. It does not have to be unique, and you can change it.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
-     * <p>
-     * For information about endpoints and signing API requests, see
-     * [About the API](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools, see
-     * [SDKS and Other Tools](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdks.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -75,10 +67,6 @@ public interface Blockstorage extends AutoCloseable {
      * When the request is received, the backup object is in a REQUEST_RECEIVED state.
      * When the data is imaged, it goes into a CREATING state.
      * After the backup is fully uploaded to the cloud, it goes into an AVAILABLE state.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -128,11 +116,7 @@ public interface Blockstorage extends AutoCloseable {
     GetVolumeBackupResponse getVolumeBackup(GetVolumeBackupRequest request);
 
     /**
-     * Gets a list of volume backups in the specified compartment. You can filter the results by volume.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
+     * Lists the volume backups in the specified compartment. You can filter the results by volume.
      *
      *
      * @param request The request object containing the details to send
@@ -142,11 +126,7 @@ public interface Blockstorage extends AutoCloseable {
     ListVolumeBackupsResponse listVolumeBackups(ListVolumeBackupsRequest request);
 
     /**
-     * Gets a list of volumes in the specified compartment and Availability Domain.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
+     * Lists the volumes in the specified compartment and Availability Domain.
      *
      *
      * @param request The request object containing the details to send

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.model;
 
@@ -94,7 +94,8 @@ public class CreateIPSecConnectionDetails {
     String drgId;
 
     /**
-     * Static routes to the CPE.
+     * Static routes to the CPE. At least one route must be included. The CIDR must not be a
+     * multicast address or class E address.
      * <p>
      * Example: `10.0.1.0/24`
      *

@@ -4,6 +4,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## Unreleased
+### Fixed
+- N/A
+
+### Changed
+- N/A
+
+### Added
+- N/A
+
+## 1.2.2 - 2016-02-23
+### Fixed
+- Bugs in config file parsing
+
+### Changed
+- Updated APIs for VCN for stateless security lists
+- Updated APIs for Compute for ipxe script support
+
+### Added
+- Support for Audit service
+- BOM module for SDK
+- More examples
 
 ## 1.2.0 - 2016-12-16
 ### Fixed

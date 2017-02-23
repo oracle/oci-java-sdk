@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.model;
 
@@ -31,6 +31,9 @@ public class EgressSecurityRule {
         @JsonProperty("icmpOptions")
         private IcmpOptions icmpOptions;
 
+        @JsonProperty("isStateless")
+        private Boolean isStateless;
+
         @JsonProperty("protocol")
         private String protocol;
 
@@ -42,13 +45,14 @@ public class EgressSecurityRule {
 
         public EgressSecurityRule build() {
             return new EgressSecurityRule(
-                    destination, icmpOptions, protocol, tcpOptions, udpOptions);
+                    destination, icmpOptions, isStateless, protocol, tcpOptions, udpOptions);
         }
 
         @JsonIgnore
         public Builder copy(EgressSecurityRule o) {
             return destination(o.getDestination())
                     .icmpOptions(o.getIcmpOptions())
+                    .isStateless(o.getIsStateless())
                     .protocol(o.getProtocol())
                     .tcpOptions(o.getTcpOptions())
                     .udpOptions(o.getUdpOptions());
@@ -85,6 +89,17 @@ public class EgressSecurityRule {
      **/
     @JsonProperty("icmpOptions")
     IcmpOptions icmpOptions;
+
+    /**
+     * A stateless rule allows traffic in one direction. Remember to add a corresponding
+     * stateless rule in the other direction if you need to support bidirectional traffic. For
+     * example, if egress traffic allows TCP destination port 80, there should be an ingress
+     * rule to allow TCP source port 80. Defaults to false, which means the rule is stateful
+     * and a corresponding rule is not necessary for bidirectional traffic.
+     *
+     **/
+    @JsonProperty("isStateless")
+    Boolean isStateless;
 
     /**
      * The transport protocol. Specify either `all` or an IPv4 protocol number as

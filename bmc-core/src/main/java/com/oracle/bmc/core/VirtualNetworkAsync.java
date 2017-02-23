@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core;
 
@@ -43,12 +43,8 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Creates a new virtual Customer-Premise Equipment (CPE) object in the specified compartment. You can
-     * think of a CPE object as a virtual representation of the actual router that is on-premise at your site,
-     * at your end of the VPN connection to your VCN. You need to create this object as part of the process of
-     * setting up the VPN. For more information, see
-     * [Typical Networking Service Scenarios](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm#three)
-     * and [Managing Customer-Premise Equipment (CPE)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingCPEs.htm).
+     * Creates a new virtual Customer-Premise Equipment (CPE) object in the specified compartment. For
+     * more information, see [Managing Customer-Premise Equipment (CPE)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingCPEs.htm).
      * <p>
      * For the purposes of access control, you must provide the OCID of the compartment where you want
      * the CPE to reside. Notice that the CPE doesn't have to be in the same compartment as the IPSec
@@ -62,14 +58,6 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * <p>
      * You may optionally specify a *display name* for the CPE, otherwise a default is provided. It does not have to
      * be unique, and you can change it.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
-     * <p>
-     * For information about endpoints and signing API requests, see
-     * [About the API](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools, see
-     * [SDKS and Other Tools](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdks.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -97,10 +85,6 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * <p>
      * You may optionally specify a *display name* for the set of DHCP options, otherwise a default is provided.
      * It does not have to be unique, and you can change it.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -115,12 +99,8 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             AsyncHandler<CreateDhcpOptionsRequest, CreateDhcpOptionsResponse> handler);
 
     /**
-     * Creates a new Dynamic Routing Gateway (DRG) in the specified compartment. You can think of a DRG
-     * as a virtual router that provides a path for private traffic between your VCN and your on-premise
-     * network. You use it with other Networking Service components and an on-premise router to create
-     * a site-to-site VPN. For more information, see
-     * [Typical Networking Service Scenarios](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm#three)
-     * and [Managing Dynamic Routing Gateways (DRGs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingDRGs.htm).
+     * Creates a new Dynamic Routing Gateway (DRG) in the specified compartment. For more information,
+     * see [Managing Dynamic Routing Gateways (DRGs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingDRGs.htm).
      * <p>
      * For the purposes of access control, you must provide the OCID of the compartment where you want
      * the DRG to reside. Notice that the DRG doesn't have to be in the same compartment as the VCN,
@@ -131,14 +111,6 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * <p>
      * You may optionally specify a *display name* for the DRG, otherwise a default is provided.
      * It does not have to be unique, and you can change it.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
-     * <p>
-     * For information about endpoints and signing API requests, see
-     * [About the API](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools, see
-     * [SDKS and Other Tools](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdks.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -162,10 +134,6 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * For the purposes of access control, the DRG attachment is automatically placed into the same compartment
      * as the VCN. For more information about compartments and access control, see
      * [Overview of the IAM Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm).
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -180,11 +148,8 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             AsyncHandler<CreateDrgAttachmentRequest, CreateDrgAttachmentResponse> handler);
 
     /**
-     * Creates a new IPSec connection between the specified DRG and CPE. This connection consists of multiple IPSec
-     * tunnels. Creating this connection is one of the steps required when setting up a VPN. For more
-     * information, see
-     * [Typical Networking Service Scenarios](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm#three)
-     * and [Managing IPSec Connections](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPsec.htm).
+     * Creates a new IPSec connection between the specified DRG and CPE. For more information, see
+     * [Managing IPSec Connections](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPsec.htm).
      * <p>
      * In the request, you must include at least one static route to the CPE object (you're allowed a maximum
      * of 10). For example: 10.0.8.0/16.
@@ -209,14 +174,6 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * <p>
      * To get the status of the tunnels (whether they're up or down), use
      * {@link #getIPSecConnectionDeviceStatus(GetIPSecConnectionDeviceStatusRequest, Consumer, Consumer) getIPSecConnectionDeviceStatus}.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
-     * <p>
-     * For information about endpoints and signing API requests, see
-     * [About the API](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools, see
-     * [SDKS and Other Tools](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdks.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -231,10 +188,8 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             AsyncHandler<CreateIPSecConnectionRequest, CreateIPSecConnectionResponse> handler);
 
     /**
-     * Creates a new Internet Gateway for the specified VCN. You can think of an Internet Gateway as a router
-     * that connects the edge of the VCN with the Internet. For an example scenario that uses an Internet Gateway,
-     * see [Typical Networking Service Scenarios](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm#three)
-     * and [Managing Internet Gateways](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIGs.htm).
+     * Creates a new Internet Gateway for the specified VCN. For more information, see
+     * [Managing Internet Gateways](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIGs.htm).
      * <p>
      * For the purposes of access control, you must provide the OCID of the compartment where you want the Internet
      * Gateway to reside. Notice that the Internet Gateway doesn't have to be in the same compartment as the VCN or
@@ -254,14 +209,6 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * traffic will flow to/from the internet even if there's a route rule that enables that traffic. You can later
      * use {@link #updateInternetGateway(UpdateInternetGatewayRequest, Consumer, Consumer) updateInternetGateway} to easily disable/enable
      * the gateway without changing the route rule.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
-     * <p>
-     * For information about endpoints and signing API requests, see
-     * [About the API](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools, see
-     * [SDKS and Other Tools](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdks.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -290,10 +237,6 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * <p>
      * You may optionally specify a *display name* for the route table, otherwise a default is provided.
      * It does not have to be unique, and you can change it.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -308,17 +251,10 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             AsyncHandler<CreateRouteTableRequest, CreateRouteTableResponse> handler);
 
     /**
-     * Creates a new security list for the specified VCN. A security list provides a stateful firewall
-     * for the instance. Security lists are configured at the subnet level, but the rules are applied
-     * to the ingress and egress traffic for the individual instances in the subnet. For more information
-     * about security lists, see [Security Lists](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/permissions.htm#Security_Lists).
+     * Creates a new security list for the specified VCN. For more information
+     * about security lists, see [Security Lists](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/securitylists.htm).
      * For information on the number of rules you can have in a security list, see
      * [Service Limits](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/servicelimits.htm).
-     * <p>
-     **Important:** Oracle Bare Metal Cloud Services images that run Oracle Linux automatically include iptables rules.
-     * If there are issues with some type of access to an instance, make sure both the security lists associated
-     * with the instance's subnet and the instance's iptables rules are set correctly. For more information,
-     * see [Ways to Secure Your Network](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/permissions.htm#one).
      * <p>
      * For the purposes of access control, you must provide the OCID of the compartment where you want the security
      * list to reside. Notice that the security list doesn't have to be in the same compartment as the VCN, subnets,
@@ -329,10 +265,6 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * <p>
      * You may optionally specify a *display name* for the security list, otherwise a default is provided.
      * It does not have to be unique, and you can change it.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -347,14 +279,11 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             AsyncHandler<CreateSecurityListRequest, CreateSecurityListResponse> handler);
 
     /**
-     * Creates a new subnet in the specified VCN. A subnet is a logical subdivision of a VCN. Each subnet exists
-     * in a single Availability Domain and consists of a contiguous range of IP addresses that do not overlap with
-     * other subnets in the VCN. Example: 172.16.1.0/24. You can't change the size of the subnet after creation,
+     * Creates a new subnet in the specified VCN. You can't change the size of the subnet after creation,
      * so it's important to think about the size of subnets you need before creating them.
-     * For conceptual information about VCNs, subnets, and other Networking Service components, see
-     * [Overview of the Networking Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm)
-     * and [Managing Subnets](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingsubnets.htm). For information on
-     * the number of subnets you can have in a VCN, see [Service Limits](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/servicelimits.htm).
+     * For more information, see [Managing Subnets](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingsubnets.htm).
+     * For information on the number of subnets you can have in a VCN, see
+     * [Service Limits](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/servicelimits.htm).
      * <p>
      * For the purposes of access control, you must provide the OCID of the compartment where you want the subnet
      * to reside. Notice that the subnet doesn't have to be in the same compartment as the VCN, route tables, or
@@ -369,7 +298,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * <p>
      * You may optionally associate a security list with the subnet. If you don't, the subnet will use the
      * VCN's default security list. For more information about security lists, see
-     * [Security Lists](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/permissions.htm#Security_Lists).
+     * [Security Lists](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/securitylists.htm).
      * <p>
      * You may optionally associate a set of DHCP options with the subnet. If you don't, the subnet will use the
      * VCN's default set. For more information about DHCP options, see
@@ -377,14 +306,6 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * <p>
      * You may optionally specify a *display name* for the subnet, otherwise a default is provided.
      * It does not have to be unique, and you can change it.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
-     * <p>
-     * For information about endpoints and signing API requests, see
-     * [About the API](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools, see
-     * [SDKS and Other Tools](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdks.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -399,8 +320,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             AsyncHandler<CreateSubnetRequest, CreateSubnetResponse> handler);
 
     /**
-     * Creates a new Virtual Cloud Network (VCN). For conceptual information about VCNs and other Virtual Network
-     * Service components, see [Overview of the Networking Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm) and
+     * Creates a new Virtual Cloud Network (VCN). For more information, see
      * [Managing Virtual Cloud Networks (VCNs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVCNs.htm).
      * <p>
      * For the VCN you must specify a single, contiguous IPv4 CIDR block in the private IP address ranges specified in
@@ -425,14 +345,6 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * The VCN and subnets you create are not accessible until you attach an Internet Gateway or set up a VPN.
      * For more information, see
      * [Typical Networking Service Scenarios](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm#three).
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
-     * <p>
-     * For information about endpoints and signing API requests, see
-     * [About the API](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools, see
-     * [SDKS and Other Tools](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdks.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -700,10 +612,6 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     /**
      * Gets the configuration information for the specified IPSec connection. For each tunnel, the
      * response includes the IP address of Oracle's VPN headend and the shared secret.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -808,8 +716,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
 
     /**
      * Gets the information for the specified Virtual Network Interface Card (VNIC), including the attached
-     * instance's public and private IP addresses. Each instance automatically has a VNIC attached to it,
-     * and the VNIC connects the instance to the subnet. You can get the instance's VNIC OCID from the
+     * instance's public and private IP addresses. You can get the instance's VNIC OCID from the
      * Cloud Compute Service's {@link #listVnicAttachments(ListVnicAttachmentsRequest, Consumer, Consumer) listVnicAttachments} operation.
      *
      *
@@ -824,11 +731,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             GetVnicRequest request, AsyncHandler<GetVnicRequest, GetVnicResponse> handler);
 
     /**
-     * Gets a list of the Customer-Premise Equipment objects (CPEs) in the specified compartment.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
+     * Lists the Customer-Premise Equipment objects (CPEs) in the specified compartment.
      *
      *
      * @param request The request object containing the details to send
@@ -842,13 +745,9 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             ListCpesRequest request, AsyncHandler<ListCpesRequest, ListCpesResponse> handler);
 
     /**
-     * Gets a list of the sets of DHCP options in the specified VCN and specified compartment.
+     * Lists the sets of DHCP options in the specified VCN and specified compartment.
      * The response includes the default set of options that automatically comes with each VCN,
      * plus any other sets you've created.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -863,12 +762,8 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             AsyncHandler<ListDhcpOptionsRequest, ListDhcpOptionsResponse> handler);
 
     /**
-     * Gets a list of the `DrgAttachment` objects for the specified compartment. You can filter the
+     * Lists the `DrgAttachment` objects for the specified compartment. You can filter the
      * results by VCN or DRG.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -883,11 +778,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             AsyncHandler<ListDrgAttachmentsRequest, ListDrgAttachmentsResponse> handler);
 
     /**
-     * Gets a list of the DRGs in the specified compartment.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
+     * Lists the DRGs in the specified compartment.
      *
      *
      * @param request The request object containing the details to send
@@ -901,12 +792,8 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             ListDrgsRequest request, AsyncHandler<ListDrgsRequest, ListDrgsResponse> handler);
 
     /**
-     * Gets a list of the IPSec connections for the specified compartment. You can filter the
+     * Lists the IPSec connections for the specified compartment. You can filter the
      * results by DRG or CPE.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -921,11 +808,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             AsyncHandler<ListIPSecConnectionsRequest, ListIPSecConnectionsResponse> handler);
 
     /**
-     * Gets a list of the Internet Gateways in the specified VCN and the specified compartment.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
+     * Lists the Internet Gateways in the specified VCN and the specified compartment.
      *
      *
      * @param request The request object containing the details to send
@@ -940,13 +823,9 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             AsyncHandler<ListInternetGatewaysRequest, ListInternetGatewaysResponse> handler);
 
     /**
-     * Gets a list of the route tables in the specified VCN and specified compartment. The response
+     * Lists the route tables in the specified VCN and specified compartment. The response
      * includes the default route table that automatically comes with each VCN, plus any route tables
      * you've created.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -961,11 +840,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             AsyncHandler<ListRouteTablesRequest, ListRouteTablesResponse> handler);
 
     /**
-     * Gets a list of the security lists in the specified VCN and compartment.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
+     * Lists the security lists in the specified VCN and compartment.
      *
      *
      * @param request The request object containing the details to send
@@ -980,11 +855,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             AsyncHandler<ListSecurityListsRequest, ListSecurityListsResponse> handler);
 
     /**
-     * Gets a list of the subnets in the specified VCN and the specified compartment.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
+     * Lists the subnets in the specified VCN and the specified compartment.
      *
      *
      * @param request The request object containing the details to send
@@ -999,11 +870,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             AsyncHandler<ListSubnetsRequest, ListSubnetsResponse> handler);
 
     /**
-     * Gets a list of the Virtual Cloud Networks (VCNs) in the specified compartment.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
+     * Lists the Virtual Cloud Networks (VCNs) in the specified compartment.
      *
      *
      * @param request The request object containing the details to send

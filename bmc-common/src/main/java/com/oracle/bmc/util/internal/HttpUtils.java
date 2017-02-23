@@ -1,11 +1,15 @@
 /**
- * Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.util.internal;
 
 import static com.google.common.net.UrlEscapers.urlPathSegmentEscaper;
 
+import java.util.Date;
+
 import javax.annotation.Nonnull;
+
+import com.oracle.bmc.http.internal.HttpDateUtils;
 
 /**
  * Utility functions related to HTTP calls.
@@ -68,6 +72,10 @@ public class HttpUtils {
      * @return The encoded param, or the same value if it was not a String.
      */
     public static Object attemptEncodeQueryParam(Object queryParam) {
+        if (queryParam instanceof Date) {
+            return HttpDateUtils.format((Date) queryParam);
+        }
+
         if (queryParam instanceof String) {
             // NOTE: DO NOT use UrlEscapers.urlFormParameterEscaper() here (which will
             // encode spaces to '+', as it does not play nicely with Jersey's "contextual"

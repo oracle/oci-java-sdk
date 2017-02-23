@@ -4,7 +4,7 @@
 
 bmcs-java-sdk provides a Java SDK for managing your Oracle Bare Metal Cloud Services resources.
 
-The project is open source and maintained by Oracle Corp. The home page for the project is [here](https://docs.us-phoenix-1.oraclecloud.com/tools/java/latest/).
+The project is open source and maintained by Oracle Corp. The home page for the project is [here](https://docs.us-phoenix-1.oraclecloud.com/Content/API/SDKDocs/javasdk.htm).
 
 ## Installation
 

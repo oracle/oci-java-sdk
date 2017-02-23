@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.model;
 
@@ -19,7 +19,7 @@ import lombok.experimental.*;
  * For specific details about iSCSI attachments, see
  * {@link IScsiVolumeAttachment}.
  * <p>
- * For general information about Volume Attachments, see
+ * For general information about volume attachments, see
  * [Overview of Block Volume Storage](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/overview.htm).
  *
  **/

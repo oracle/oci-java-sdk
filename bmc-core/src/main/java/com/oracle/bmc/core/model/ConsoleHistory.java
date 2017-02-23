@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.model;
 
@@ -14,6 +14,12 @@ import lombok.Value;
 import lombok.*;
 import lombok.experimental.*;
 
+/**
+ * An instance's serial console data. It includes configuration messages that occur when the
+ * instance boots, such as kernel and BIOS messages, and is useful for checking the status of
+ * the instance or diagnosing problems. The console data is minimally formatted ASCII text.
+ *
+ **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @Value
 @JsonDeserialize(builder = ConsoleHistory.Builder.class)

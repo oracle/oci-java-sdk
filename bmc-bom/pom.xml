@@ -2,10 +2,12 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+  <!-- http://howtodoinjava.com/maven/maven-bom-bill-of-materials-dependency/ -->
+
   <parent>
     <groupId>com.oracle.bmc.sdk</groupId>
     <artifactId>oracle-bmc-java-sdk</artifactId>
-    <version>1.2.1-SNAPSHOT</version>
+    <version>1.2.2</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -22,7 +24,7 @@
       <dependency>
         <groupId>com.oracle.bmc.sdk</groupId>
         <artifactId>oracle-bmc-java-sdk-common</artifactId>
-        <version>1.2.1-SNAPSHOT</version>
+        <version>1.2.2</version>
         <optional>false</optional>
       </dependency>
 
@@ -30,20 +32,26 @@
 
       <dependency>
         <groupId>com.oracle.bmc.sdk</groupId>
+        <artifactId>oracle-bmc-java-sdk-audit</artifactId>
+        <version>1.2.2</version>
+        <optional>false</optional>
+      </dependency>
+      <dependency>
+        <groupId>com.oracle.bmc.sdk</groupId>
         <artifactId>oracle-bmc-java-sdk-core</artifactId>
-        <version>1.2.1-SNAPSHOT</version>
+        <version>1.2.2</version>
         <optional>false</optional>
       </dependency>
       <dependency>
         <groupId>com.oracle.bmc.sdk</groupId>
         <artifactId>oracle-bmc-java-sdk-identity</artifactId>
-        <version>1.2.1-SNAPSHOT</version>
+        <version>1.2.2</version>
         <optional>false</optional>
       </dependency>
       <dependency>
         <groupId>com.oracle.bmc.sdk</groupId>
         <artifactId>oracle-bmc-java-sdk-objectstorage</artifactId>
-        <version>1.2.1-SNAPSHOT</version>
+        <version>1.2.2</version>
         <optional>false</optional>
       </dependency>
     </dependencies>

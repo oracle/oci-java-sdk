@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.model;
 
@@ -14,6 +14,17 @@ import lombok.Value;
 import lombok.*;
 import lombok.experimental.*;
 
+/**
+ * A compute host. The image used to launch the instance determines its operating system and other
+ * software. The shape specified during the launch process determines the number of CPUs and memory
+ * allocated to the instance. For more information, see
+ * [Overview of the Compute Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Concepts/computeoverview.htm).
+ * <p>
+ * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+ * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+ * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
+ *
+ **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @Value
 @JsonDeserialize(builder = Instance.Builder.class)
@@ -37,6 +48,9 @@ public class Instance {
         @JsonProperty("imageId")
         private String imageId;
 
+        @JsonProperty("ipxeScript")
+        private String ipxeScript;
+
         @JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -59,6 +73,7 @@ public class Instance {
                     displayName,
                     id,
                     imageId,
+                    ipxeScript,
                     lifecycleState,
                     metadata,
                     region,
@@ -73,6 +88,7 @@ public class Instance {
                     .displayName(o.getDisplayName())
                     .id(o.getId())
                     .imageId(o.getImageId())
+                    .ipxeScript(o.getIpxeScript())
                     .lifecycleState(o.getLifecycleState())
                     .metadata(o.getMetadata())
                     .region(o.getRegion())
@@ -136,6 +152,31 @@ public class Instance {
     @JsonProperty("imageId")
     @Size(min = 1, max = 255)
     String imageId;
+
+    /**
+     * When an Oracle Bare Metal Cloud Services or virtual machine
+     * instance boots, the iPXE firmware that runs on the instance is
+     * configured to run an iPXE script to continue the boot process.
+     * <p>
+     * If you want more control over the boot process, you can provide
+     * your own custom iPXE script that will run when the instance boots;
+     * however, you should be aware that the same iPXE script will run
+     * every time an instance boots; not only after the initial
+     * LaunchInstance call.
+     * <p>
+     * The default iPXE script connects to the instance\u2019s local boot
+     * volume over iSCSI and performs a network boot. If you use a custom iPXE
+     * script and want to network-boot from the instance\u2019s local boot volume
+     * over iSCSI the same way as the default iPXE script, you should use the
+     * following iSCSI IP address: 169.254.0.2, and boot volume IQN:
+     * iqn.2015-02.oracle.boot.
+     * <p>
+     * For more information about iPXE, see http://ipxe.org.
+     *
+     **/
+    @JsonProperty("ipxeScript")
+    @Size(min = 1, max = 10240)
+    String ipxeScript;
     /**
      * The current state of the instance.
      **/

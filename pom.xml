@@ -4,7 +4,7 @@
 
   <groupId>com.oracle.bmc.sdk</groupId>
   <artifactId>oracle-bmc-java-sdk</artifactId>
-  <version>1.2.1-SNAPSHOT</version>
+  <version>1.2.2</version>
   <packaging>pom</packaging>
 
   <name>Oracle Bare Metal Cloud Services SDK</name>
@@ -31,6 +31,9 @@
     <jackson.version>2.7.4</jackson.version>
     <jersey.version>2.24.1</jersey.version>
     <guava.version>19.0</guava.version>
+    <junit.version>4.11</junit.version>
+    <lombok.version>1.16.8</lombok.version>
+    <lombok.maven.version>1.16.8.0</lombok.maven.version>
   </properties>
 
   <profiles>
@@ -120,7 +123,7 @@
         <plugin>
           <groupId>org.projectlombok</groupId>
           <artifactId>lombok-maven-plugin</artifactId>
-          <version>1.16.8.0</version>
+          <version>${lombok.maven.version}</version>
           <executions>
             <execution>
               <id>delombok</id>
@@ -232,7 +235,7 @@
         <plugin>
           <groupId>junit</groupId>
           <artifactId>junit</artifactId>
-          <version>4.11</version>
+          <version>${junit.version}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -261,6 +264,7 @@
       <plugin>
         <artifactId>maven-source-plugin</artifactId>
       </plugin>
+      <!-- lombok needed as it delombok's for javadocs -->
       <plugin>
         <groupId>org.projectlombok</groupId>
         <artifactId>lombok-maven-plugin</artifactId>
@@ -276,7 +280,6 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.11</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -290,7 +293,6 @@
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>1.16.8</version>
       <scope>provided</scope>
     </dependency>
 
@@ -330,6 +332,13 @@
         <groupId>com.google.guava</groupId>
         <artifactId>guava</artifactId>
         <version>${guava.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>${lombok.version}</version>
+        <scope>provided</scope>
       </dependency>
 
       <dependency>
@@ -383,10 +392,16 @@
         <artifactId>jackson-datatype-jdk8</artifactId>
         <version>${jackson.version}</version>
       </dependency>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>${junit.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
   <modules>
+    <module>bmc-audit</module>
     <module>bmc-bom</module>
     <module>bmc-common</module>
     <module>bmc-core</module>

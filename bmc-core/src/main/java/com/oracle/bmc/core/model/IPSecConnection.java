@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.model;
 
@@ -15,8 +15,14 @@ import lombok.*;
 import lombok.experimental.*;
 
 /**
- * A connection between a DRG and CPE. For more information, see
- * [Overview of the Networking Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm).
+ * A connection between a DRG and CPE. This connection consists of multiple IPSec
+ * tunnels. Creating this connection is one of the steps required when setting up
+ * a VPN. For more information, see
+ * [Typical Networking Service Scenarios](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm#three).
+ * <p>
+ * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+ * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+ * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
@@ -171,7 +177,8 @@ public class IPSecConnection {
     LifecycleState lifecycleState;
 
     /**
-     * Static routes to the CPE.
+     * Static routes to the CPE. At least one route must be included. The CIDR must not be a
+     * multicast address or class E address.
      * <p>
      * Example: `10.0.1.0/24`
      *

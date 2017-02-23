@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.oracle.bmc.sdk</groupId>
     <artifactId>oracle-bmc-java-sdk</artifactId>
-    <version>1.2.1-SNAPSHOT</version>
+    <version>1.2.2</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -14,23 +14,34 @@
   <description>This project contains the examples on how to use the SDK used for Oracle Bare Metal Cloud Services</description>
   <url>https://docs.us-phoenix-1.oraclecloud.com/Content/API/SDKDocs/javasdk.htm</url>
 
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.oracle.bmc.sdk</groupId>
+        <artifactId>oracle-bmc-java-sdk-bom</artifactId>
+        <version>1.2.2</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
   <dependencies>
     <dependency>
       <groupId>com.oracle.bmc.sdk</groupId>
-      <artifactId>oracle-bmc-java-sdk-identity</artifactId>
-      <version>1.2.1-SNAPSHOT</version>
+      <artifactId>oracle-bmc-java-sdk-audit</artifactId>
     </dependency>
-
     <dependency>
       <groupId>com.oracle.bmc.sdk</groupId>
       <artifactId>oracle-bmc-java-sdk-core</artifactId>
-      <version>1.2.1-SNAPSHOT</version>
     </dependency>
-
+    <dependency>
+      <groupId>com.oracle.bmc.sdk</groupId>
+      <artifactId>oracle-bmc-java-sdk-identity</artifactId>
+    </dependency>
     <dependency>
       <groupId>com.oracle.bmc.sdk</groupId>
       <artifactId>oracle-bmc-java-sdk-objectstorage</artifactId>
-      <version>1.2.1-SNAPSHOT</version>
     </dependency>
   </dependencies>
 

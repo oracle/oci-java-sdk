@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core;
 
@@ -44,10 +44,6 @@ public interface ComputeAsync extends AutoCloseable {
 
     /**
      * Attaches the specified storage volume to the specified instance.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -63,10 +59,7 @@ public interface ComputeAsync extends AutoCloseable {
 
     /**
      * Captures the most recent serial console data (up to a megabyte) for the
-     * specified instance. The data includes configuration messages that occur when the
-     * instance boots, such as kernel and BIOS messages, and is useful for checking the
-     * status of the instance or diagnosing problems.  The console data is minimally
-     * formatted ASCII text.
+     * specified instance.
      * <p>
      * The `CaptureConsoleHistory` operation works with the other console history operations
      * as described below.
@@ -82,10 +75,6 @@ public interface ComputeAsync extends AutoCloseable {
      * metadata).
      * 4. Optionally, use `DeleteConsoleHistory` to delete the console history metadata
      * and the console history data.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -108,10 +97,6 @@ public interface ComputeAsync extends AutoCloseable {
      * <p>
      * You may optionally specify a *display name* for the image, which is simply a friendly name or description.
      * It does not have to be unique, and you can change it. See {@link #updateImage(UpdateImageRequest, Consumer, Consumer) updateImage}.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -264,10 +249,6 @@ public interface ComputeAsync extends AutoCloseable {
      * to apply against any relevant quotas. You must terminate an instance
      * ({@link #terminateInstance(TerminateInstanceRequest, Consumer, Consumer) terminateInstance})
      * to remove its resources from billing and quotas.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -284,7 +265,7 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Creates a new instance in the specified compartment and the specified Availability Domain.
      * For general information about instances, see
-     * [Overview of the Compute Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Concepts/computeoverview.htm)
+     * [Overview of the Compute Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Concepts/computeoverview.htm).
      * <p>
      * For information about access control and compartments, see
      * [Overview of the IAM Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm).
@@ -305,14 +286,6 @@ public interface ComputeAsync extends AutoCloseable {
      * To get both addresses, use the {@link #listVnicAttachments(ListVnicAttachmentsRequest, Consumer, Consumer) listVnicAttachments}
      * operation to get the VNIC ID for the instance, and then call
      * {@link #getVnic(GetVnicRequest, Consumer, Consumer) getVnic} with the VNIC ID.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
-     * <p>
-     * For information about endpoints and signing API requests, see
-     * [About the API](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/usingapi.htm). For information about available SDKs and tools, see
-     * [SDKS and Other Tools](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdks.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -327,11 +300,7 @@ public interface ComputeAsync extends AutoCloseable {
             AsyncHandler<LaunchInstanceRequest, LaunchInstanceResponse> handler);
 
     /**
-     * Lists all the console history metadata for the specified compartment or instance.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
+     * Lists the console history metadata for the specified compartment or instance.
      *
      *
      * @param request The request object containing the details to send
@@ -346,7 +315,7 @@ public interface ComputeAsync extends AutoCloseable {
             AsyncHandler<ListConsoleHistoriesRequest, ListConsoleHistoriesResponse> handler);
 
     /**
-     * Gets a list of the available images in the specified compartment. For more
+     * Lists the available images in the specified compartment. For more
      * information about images, see
      * [Managing Custom Images](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/managingcustomimages.htm).
      *
@@ -362,13 +331,9 @@ public interface ComputeAsync extends AutoCloseable {
             ListImagesRequest request, AsyncHandler<ListImagesRequest, ListImagesResponse> handler);
 
     /**
-     * Gets a list of all the instances in the specified compartment and the specified Availability Domain.
+     * Lists the instances in the specified compartment and the specified Availability Domain.
      * You can filter the results by specifying an instance name (the list will include all the identically-named
      * instances in the compartment).
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -383,7 +348,7 @@ public interface ComputeAsync extends AutoCloseable {
             AsyncHandler<ListInstancesRequest, ListInstancesResponse> handler);
 
     /**
-     * Lists all shapes that can be used to launch an instance within the specified compartment. You can
+     * Lists the shapes that can be used to launch an instance within the specified compartment. You can
      * filter the list by compatibility with a specific image.
      *
      *
@@ -398,12 +363,8 @@ public interface ComputeAsync extends AutoCloseable {
             ListShapesRequest request, AsyncHandler<ListShapesRequest, ListShapesResponse> handler);
 
     /**
-     * Gets a list of the VNIC attachments for the specified compartment. The list can be filtered by
+     * Lists the VNIC attachments for the specified compartment. The list can be filtered by
      * instance and by VNIC.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -418,14 +379,10 @@ public interface ComputeAsync extends AutoCloseable {
             AsyncHandler<ListVnicAttachmentsRequest, ListVnicAttachmentsResponse> handler);
 
     /**
-     * Gets a list of the volume attachments in the specified compartment. You can filter the
+     * Lists the volume attachments in the specified compartment. You can filter the
      * list by specifying an instance OCID, volume OCID, or both.
      * <p>
      * Currently, the only supported volume attachment type is {@link IScsiVolumeAttachment}.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      *
      * @param request The request object containing the details to send

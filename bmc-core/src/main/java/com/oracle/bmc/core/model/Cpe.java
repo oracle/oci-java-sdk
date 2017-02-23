@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.model;
 
@@ -15,8 +15,14 @@ import lombok.*;
 import lombok.experimental.*;
 
 /**
- * A virtual representation of your Customer-Premise Equipment (the on-premise router). For more
- * information, see [Overview of the Networking Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm).
+ * A virtual representation of your Customer-Premise Equipment, which is the actual router
+ * on-premise at your site at your end of the VPN connection to your VCN. You need to
+ * create this object as part of the process of setting up the VPN. For more information,
+ * see [Typical Networking Service Scenarios](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm#three).
+ * <p>
+ * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+ * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+ * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")

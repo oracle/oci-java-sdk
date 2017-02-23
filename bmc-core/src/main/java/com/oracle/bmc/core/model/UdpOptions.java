@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.model;
 
@@ -15,8 +15,8 @@ import lombok.*;
 import lombok.experimental.*;
 
 /**
- * Optional object to specify destination ports for a UDP rule. If you specify UDP as the
- * protocol but omit this object, then all destination ports are allowed.
+ * Optional object to specify ports for a UDP rule. If you specify UDP as the
+ * protocol but omit this object, then all ports are allowed.
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
@@ -30,13 +30,17 @@ public class UdpOptions {
         @JsonProperty("destinationPortRange")
         private PortRange destinationPortRange;
 
+        @JsonProperty("sourcePortRange")
+        private PortRange sourcePortRange;
+
         public UdpOptions build() {
-            return new UdpOptions(destinationPortRange);
+            return new UdpOptions(destinationPortRange, sourcePortRange);
         }
 
         @JsonIgnore
         public Builder copy(UdpOptions o) {
-            return destinationPortRange(o.getDestinationPortRange());
+            return destinationPortRange(o.getDestinationPortRange())
+                    .sourcePortRange(o.getSourcePortRange());
         }
     }
 
@@ -48,10 +52,18 @@ public class UdpOptions {
     }
 
     /**
-     * A single destination port or a range.
+     * An inclusive range of allowed destination ports. Use the same number for the min and max
+     * to indicate a single port. Defaults to all ports if not specified.
+     *
      **/
     @JsonProperty("destinationPortRange")
-    @Valid
-    @NotNull
     PortRange destinationPortRange;
+
+    /**
+     * An inclusive range of allowed source ports. Use the same number for the min and max to
+     * indicate a single port. Defaults to all ports if not specified.
+     *
+     **/
+    @JsonProperty("sourcePortRange")
+    PortRange sourcePortRange;
 }

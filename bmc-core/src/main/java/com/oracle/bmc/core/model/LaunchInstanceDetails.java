@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.model;
 
@@ -34,11 +34,11 @@ public class LaunchInstanceDetails {
         @JsonProperty("imageId")
         private String imageId;
 
+        @JsonProperty("ipxeScript")
+        private String ipxeScript;
+
         @JsonProperty("metadata")
         private Map<String, String> metadata;
-
-        @JsonProperty("opcIpxeScript")
-        private String opcIpxeScript;
 
         @JsonProperty("shape")
         private String shape;
@@ -52,8 +52,8 @@ public class LaunchInstanceDetails {
                     compartmentId,
                     displayName,
                     imageId,
+                    ipxeScript,
                     metadata,
-                    opcIpxeScript,
                     shape,
                     subnetId);
         }
@@ -64,8 +64,8 @@ public class LaunchInstanceDetails {
                     .compartmentId(o.getCompartmentId())
                     .displayName(o.getDisplayName())
                     .imageId(o.getImageId())
+                    .ipxeScript(o.getIpxeScript())
                     .metadata(o.getMetadata())
-                    .opcIpxeScript(o.getOpcIpxeScript())
                     .shape(o.getShape())
                     .subnetId(o.getSubnetId());
         }
@@ -117,6 +117,33 @@ public class LaunchInstanceDetails {
     @NotNull
     @Size(min = 1, max = 255)
     String imageId;
+
+    /**
+     * This is an advanced option.
+     * <p>
+     * When an Oracle Bare Metal Cloud Services or virtual machine
+     * instance boots, the iPXE firmware that runs on the instance is
+     * configured to run an iPXE script to continue the boot process.
+     * <p>
+     * If you want more control over the boot process, you can provide
+     * your own custom iPXE script that will run when the instance boots;
+     * however, you should be aware that the same iPXE script will run
+     * every time an instance boots; not only after the initial
+     * LaunchInstance call.
+     * <p>
+     * The default iPXE script connects to the instance\u2019s local boot
+     * volume over iSCSI and performs a network boot. If you use a custom iPXE
+     * script and want to network-boot from the instance\u2019s local boot volume
+     * over iSCSI the same way as the default iPXE script, you should use the
+     * following iSCSI IP address: 169.254.0.2, and boot volume IQN:
+     * iqn.2015-02.oracle.boot.
+     * <p>
+     * For more information about iPXE, see http://ipxe.org.
+     *
+     **/
+    @JsonProperty("ipxeScript")
+    @Size(min = 1, max = 10240)
+    String ipxeScript;
 
     /**
      * Custom metadata key/value pairs that you provide, such as the SSH public key
@@ -181,13 +208,6 @@ public class LaunchInstanceDetails {
      **/
     @JsonProperty("metadata")
     Map<String, String> metadata;
-
-    /**
-     * For Oracle internal use only.
-     **/
-    @JsonProperty("opcIpxeScript")
-    @Size(min = 1, max = 10240)
-    String opcIpxeScript;
 
     /**
      * The shape of an instance. The shape determines the number of CPUs, amount of memory,

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.model;
 
@@ -15,8 +15,18 @@ import lombok.*;
 import lombok.experimental.*;
 
 /**
- * A set of virtual, stateful firewall rules for your VCN. For more information, see
- * [Overview of the Networking Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm).
+ * A set of virtual firewall rules for your VCN. Security lists are configured at the subnet
+ * level, but the rules are applied to the ingress and egress traffic for the individual instances
+ * in the subnet. The rules can be stateful or stateless. For more information, see
+ * [Security Lists](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/securitylists.htm).
+ * <p>
+ **Important:** Oracle Bare Metal Cloud Services images that run Oracle Linux automatically include iptables rules.
+ * If there are issues with some type of access to an instance, make sure both the security lists associated
+ * with the instance's subnet and the instance's iptables rules are set correctly.
+ * <p>
+ * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+ * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+ * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
