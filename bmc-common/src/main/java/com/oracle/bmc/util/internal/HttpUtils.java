@@ -6,6 +6,7 @@ package com.oracle.bmc.util.internal;
 import static com.google.common.net.UrlEscapers.urlPathSegmentEscaper;
 
 import java.util.Date;
+import java.util.UUID;
 
 import javax.annotation.Nonnull;
 
@@ -57,6 +58,16 @@ public class HttpUtils {
      * @return The encoded path segment.
      */
     public static String encodePathSegment(@Nonnull Character pathSegment) {
+        return urlPathSegmentEscaper().escape(pathSegment.toString());
+    }
+
+    /**
+     * Encodes a path segment.
+     *
+     * @param pathSegment The path segment to encode.
+     * @return The encoded path segment.
+     */
+    public static String encodePathSegment(@Nonnull UUID pathSegment) {
         return urlPathSegmentEscaper().escape(pathSegment.toString());
     }
 
