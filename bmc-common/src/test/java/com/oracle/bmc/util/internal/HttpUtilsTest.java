@@ -8,6 +8,8 @@ import static org.junit.Assert.assertSame;
 
 import org.junit.Test;
 
+import java.util.UUID;
+
 public class HttpUtilsTest {
 
     @Test
@@ -29,6 +31,12 @@ public class HttpUtilsTest {
         assertEquals("50.5", HttpUtils.encodePathSegment(50.5D));
         assertEquals("100.5", HttpUtils.encodePathSegment(100.5F));
         assertEquals("20", HttpUtils.encodePathSegment((short) 20));
+    }
+
+    @Test
+    public void encodePathSegment_uuid() {
+        UUID uuid = UUID.randomUUID();
+        assertEquals(uuid.toString(), HttpUtils.encodePathSegment(uuid));
     }
 
     @Test
