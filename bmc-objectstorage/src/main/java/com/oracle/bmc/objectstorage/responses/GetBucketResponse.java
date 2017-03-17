@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.objectstorage.responses;
 
@@ -49,4 +49,19 @@ public class GetBucketResponse {
      * response (like 'if-match'/'if-none-match').
      */
     private boolean isNotModified;
+
+    public static class Builder {
+        /**
+         * Copy method to populate the builder with values from the given instance.
+         * @return this builder instance
+         */
+        public Builder copy(GetBucketResponse o) {
+            opcClientRequestId(o.getOpcClientRequestId());
+            opcRequestId(o.getOpcRequestId());
+            eTag(o.getETag());
+            bucket(o.getBucket());
+            isNotModified(o.isNotModified());
+            return this;
+        }
+    }
 }

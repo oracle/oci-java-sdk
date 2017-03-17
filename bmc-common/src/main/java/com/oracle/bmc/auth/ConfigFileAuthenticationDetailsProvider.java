@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.auth;
 
@@ -105,5 +105,10 @@ public class ConfigFileAuthenticationDetailsProvider implements AuthenticationDe
     @Override
     public InputStream getPrivateKey() {
         return this.delegate.getPrivateKey();
+    }
+
+    @Override
+    public String getKeyId() {
+        return this.delegate.getKeyId();
     }
 }

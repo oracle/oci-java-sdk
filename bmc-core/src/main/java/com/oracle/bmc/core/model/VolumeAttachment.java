@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.model;
 
@@ -30,10 +30,11 @@ import lombok.experimental.*;
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
     include = JsonTypeInfo.As.PROPERTY,
-    property = "attachmentType"
+    property = "attachmentType",
+    defaultImpl = VolumeAttachment.class
 )
 @JsonSubTypes({@JsonSubTypes.Type(value = IScsiVolumeAttachment.class, name = "iscsi")})
-public abstract class VolumeAttachment {
+public class VolumeAttachment {
 
     /**
      * The Availability Domain of an instance.

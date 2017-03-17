@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.http.internal;
 
@@ -14,11 +14,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider;
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 import com.oracle.bmc.ClientConfiguration;
-import com.oracle.bmc.Service;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.http.signing.RequestSigner;
-import com.oracle.bmc.http.signing.RequestSignerFactory;
 
 /**
  * RestClientFactory is responsible for creating a new REST client whenever a
@@ -40,7 +38,6 @@ public class RestClientFactory {
         DEFAULT_MAPPER.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     }
 
-    private final RequestSignerFactory requestSignerFactory;
     private final ClientConfigurator clientConfigurator;
 
     /**
@@ -52,11 +49,8 @@ public class RestClientFactory {
      * @param requestSignerFactory
      *            The factory used to generate request signers.
      */
-    public RestClientFactory(
-            @Nonnull ClientConfigurator clientConfigurator,
-            @Nonnull RequestSignerFactory requestSignerFactory) {
+    public RestClientFactory(@Nonnull ClientConfigurator clientConfigurator) {
         this.clientConfigurator = clientConfigurator;
-        this.requestSignerFactory = requestSignerFactory;
     }
 
     /**
@@ -68,8 +62,8 @@ public class RestClientFactory {
      *            The auth provider to use.
      * @return A new RestClient instance.
      */
-    public RestClient create(Service service, AuthenticationDetailsProvider authProvider) {
-        return this.create(service, authProvider, ClientConfiguration.builder().build());
+    public RestClient create(RequestSigner requestSigner) {
+        return this.create(requestSigner, null);
     }
 
     /**
@@ -84,13 +78,9 @@ public class RestClientFactory {
      *            configuration.
      * @return A new RestClient instance.
      */
-    public RestClient create(
-            Service service,
-            AuthenticationDetailsProvider authProvider,
-            ClientConfiguration configuration) {
+    public RestClient create(RequestSigner requestSigner, ClientConfiguration configuration) {
         ClientConfiguration clientConfigurationToUse =
                 configuration != null ? configuration : ClientConfiguration.builder().build();
-        RequestSigner requestSigner = this.createRequestSigner(service, authProvider);
         Client client =
                 createClient(requestSigner, clientConfigurationToUse, this.clientConfigurator);
         return new RestClient(client, new EntityFactory());
@@ -124,8 +114,13 @@ public class RestClientFactory {
         return client;
     }
 
-    private RequestSigner createRequestSigner(
-            Service service, AuthenticationDetailsProvider authProvider) {
-        return this.requestSignerFactory.createRequestSigner(service, authProvider);
+    /**
+     * Returns the ObjectMapper used to handle JSON requests.
+     * <p>
+     * Exposed only for internal use.
+     * @return The ObjectMapper used.
+     */
+    public static ObjectMapper getObjectMapper() {
+        return DEFAULT_MAPPER;
     }
 }

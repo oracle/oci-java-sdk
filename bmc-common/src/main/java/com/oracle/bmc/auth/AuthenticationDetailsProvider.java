@@ -1,14 +1,17 @@
 /**
- * Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.auth;
 
-import java.io.InputStream;
-
 /**
- * Interface defining a provider for BMC credentials.
+ * Interface defining a BasicAuthenticationDetailsProvider that also provides
+ * the individual components used to create the keyId.
+ * <p>
+ * The {@link #getKeyId()} method should be implemented as "tentantId/userId/fingerprint".  See
+ * <a href="https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/signingrequests.htm">docs
+ * </a> for more information.
  */
-public interface AuthenticationDetailsProvider {
+public interface AuthenticationDetailsProvider extends BasicAuthenticationDetailsProvider {
     /**
      * Returns the fingerprint of the key being used.
      *
@@ -29,20 +32,4 @@ public interface AuthenticationDetailsProvider {
      * @return The user OCID.
      */
     String getUserId();
-
-    /**
-     * Returns the optional pass phrase for the (encrypted) private key.
-     *
-     * @return The pass phrase, or null if not applicable
-     */
-    String getPassPhrase();
-
-    /**
-     * Returns a new InputStream to the private key. This stream should be
-     * closed by the caller, implementations should return new streams each
-     * time.
-     *
-     * @return A new InputStream.
-     */
-    InputStream getPrivateKey();
 }

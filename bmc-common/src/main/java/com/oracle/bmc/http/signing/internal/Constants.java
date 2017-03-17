@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.http.signing.internal;
 
@@ -8,7 +8,7 @@ import java.util.List;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 
-class Constants {
+public class Constants {
 
     // Headers
     static final String AUTHORIZATION_HEADER = "authorization";
@@ -38,7 +38,7 @@ class Constants {
     static final ImmutableList<String> ALL_HEADERS =
             ImmutableList.<String>builder().addAll(GENERIC_HEADERS).addAll(BODY_HEADERS).build();
 
-    static final ImmutableMap<String, List<String>> REQUIRED_SIGNING_HEADERS =
+    public static final ImmutableMap<String, List<String>> REQUIRED_SIGNING_HEADERS =
             ImmutableMap.<String, List<String>>builder()
                     .put("get", GENERIC_HEADERS)
                     .put("head", GENERIC_HEADERS)
@@ -48,7 +48,7 @@ class Constants {
                     .put("options", ImmutableList.<String>of())
                     .build();
 
-    static final ImmutableMap<String, List<String>> REQUIRED_OBJECTSTORAGE_SIGNING_HEADERS =
+    public static final ImmutableMap<String, List<String>> REQUIRED_OBJECTSTORAGE_SIGNING_HEADERS =
             ImmutableMap.<String, List<String>>builder()
                     .put("get", GENERIC_HEADERS)
                     .put("head", GENERIC_HEADERS)

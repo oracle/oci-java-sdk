@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.requests;
 
@@ -60,4 +60,20 @@ public class ListImagesRequest {
      *
      */
     private String page;
+
+    public static class Builder {
+        /**
+         * Copy method to populate the builder with values from the given instance.
+         * @return this builder instance
+         */
+        public Builder copy(ListImagesRequest o) {
+            compartmentId(o.getCompartmentId());
+            displayName(o.getDisplayName());
+            operatingSystem(o.getOperatingSystem());
+            operatingSystemVersion(o.getOperatingSystemVersion());
+            limit(o.getLimit());
+            page(o.getPage());
+            return this;
+        }
+    }
 }

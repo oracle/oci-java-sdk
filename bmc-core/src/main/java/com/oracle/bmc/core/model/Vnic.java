@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.model;
 
@@ -41,6 +41,9 @@ public class Vnic {
         @JsonProperty("displayName")
         private String displayName;
 
+        @JsonProperty("hostnameLabel")
+        private String hostnameLabel;
+
         @JsonProperty("id")
         private String id;
 
@@ -64,6 +67,7 @@ public class Vnic {
                     availabilityDomain,
                     compartmentId,
                     displayName,
+                    hostnameLabel,
                     id,
                     lifecycleState,
                     privateIp,
@@ -77,6 +81,7 @@ public class Vnic {
             return availabilityDomain(o.getAvailabilityDomain())
                     .compartmentId(o.getCompartmentId())
                     .displayName(o.getDisplayName())
+                    .hostnameLabel(o.getHostnameLabel())
                     .id(o.getId())
                     .lifecycleState(o.getLifecycleState())
                     .privateIp(o.getPrivateIp())
@@ -118,7 +123,27 @@ public class Vnic {
     String displayName;
 
     /**
-     * The VNIC's Oracle ID (OCID).
+     * The hostname for the VNIC that is created during instance launch.
+     * Used for DNS. The value is the hostname portion of the instance's
+     * fully qualified domain name (FQDN) (e.g., `bminstance-1` in FQDN
+     * `bminstance-1.subnet-123.vcn-1.oraclevcn.com`).
+     * Must be unique across all VNICs in the subnet and comply with
+     * [RFC 952](https://tools.ietf.org/html/rfc952) and
+     * [RFC 1123](https://tools.ietf.org/html/rfc1123).
+     * The value cannot be changed.
+     * <p>
+     * For more information, see
+     * [DNS in Your Virtual Cloud Network](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm).
+     * <p>
+     * Example: `bminstance-1`
+     *
+     **/
+    @JsonProperty("hostnameLabel")
+    @Size(min = 1, max = 63)
+    String hostnameLabel;
+
+    /**
+     * The OCID of the VNIC.
      **/
     @JsonProperty("id")
     @Size(min = 1, max = 255)
@@ -167,7 +192,7 @@ public class Vnic {
     LifecycleState lifecycleState;
 
     /**
-     * The private IP addresses of the VNIC, which is within the VNIC subnet
+     * The private IP address of the VNIC. The address is within the subnet's CIDR
      * and is accessible within the VCN.
      *
      **/
@@ -175,7 +200,7 @@ public class Vnic {
     String privateIp;
 
     /**
-     * The public IP address of the VNIC, which Oracle performs NAT for at the gateway.
+     * The public IP address of the VNIC.
      *
      **/
     @JsonProperty("publicIp")

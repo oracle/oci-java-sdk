@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.responses;
 
@@ -26,4 +26,16 @@ public class DeleteSubnetResponse {
      *
      */
     private String opcRequestId;
+
+    public static class Builder {
+        /**
+         * Copy method to populate the builder with values from the given instance.
+         * @return this builder instance
+         */
+        public Builder copy(DeleteSubnetResponse o) {
+            opcRequestId(o.getOpcRequestId());
+
+            return this;
+        }
+    }
 }

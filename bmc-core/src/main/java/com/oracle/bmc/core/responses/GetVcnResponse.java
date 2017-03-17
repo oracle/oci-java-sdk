@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.responses;
 
@@ -36,4 +36,18 @@ public class GetVcnResponse {
      * The returned Vcn instance.
      */
     private Vcn vcn;
+
+    public static class Builder {
+        /**
+         * Copy method to populate the builder with values from the given instance.
+         * @return this builder instance
+         */
+        public Builder copy(GetVcnResponse o) {
+            etag(o.getEtag());
+            opcRequestId(o.getOpcRequestId());
+            vcn(o.getVcn());
+
+            return this;
+        }
+    }
 }

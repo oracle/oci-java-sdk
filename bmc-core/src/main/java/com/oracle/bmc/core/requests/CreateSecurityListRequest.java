@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.requests;
 
@@ -32,4 +32,16 @@ public class CreateSecurityListRequest {
      *
      */
     private String opcRetryToken;
+
+    public static class Builder {
+        /**
+         * Copy method to populate the builder with values from the given instance.
+         * @return this builder instance
+         */
+        public Builder copy(CreateSecurityListRequest o) {
+            createSecurityListDetails(o.getCreateSecurityListDetails());
+            opcRetryToken(o.getOpcRetryToken());
+            return this;
+        }
+    }
 }

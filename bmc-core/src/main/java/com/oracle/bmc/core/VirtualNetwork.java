@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core;
 
@@ -63,10 +63,8 @@ public interface VirtualNetwork extends AutoCloseable {
     CreateCpeResponse createCpe(CreateCpeRequest request);
 
     /**
-     * Creates a new set of DHCP options for the specified VCN. The only option available to use is
-     * {@link DhcpDnsOption}, which lets you specify how DNS (host name resolution) is
-     * handled in the subnets in your VCN. For more information, see
-     * [Managing DHCP Options](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingDHCP.htm).
+     * Creates a new set of DHCP options for the specified VCN. For more information, see
+     * {@link DhcpOptions}.
      * <p>
      * For the purposes of access control, you must provide the OCID of the compartment where you want the set of
      * DHCP options to reside. Notice that the set of options doesn't have to be in the same compartment as the VCN,
@@ -264,6 +262,10 @@ public interface VirtualNetwork extends AutoCloseable {
      * <p>
      * You may optionally specify a *display name* for the subnet, otherwise a default is provided.
      * It does not have to be unique, and you can change it.
+     * <p>
+     * You can also add a DNS label for the subnet, which is required if you want the VCN Resolver to resolve
+     * hostnames for instances in the subnet. For more information, see
+     * [DNS in Your Virtual Cloud Network](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -290,6 +292,10 @@ public interface VirtualNetwork extends AutoCloseable {
      * <p>
      * You may optionally specify a *display name* for the VCN, otherwise a default is provided. It does not have to
      * be unique, and you can change it.
+     * <p>
+     * You can also add a DNS label for the VCN, which is required if you want the instances to use the VCN Resolver
+     * option for DNS in the VCN. For more information, see
+     * [DNS in Your Virtual Cloud Network](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm).
      * <p>
      * The VCN automatically comes with a default route table, default security list, and default set of DHCP options.
      * The OCID for each is returned in the response. You can't delete these default objects, but you can change their

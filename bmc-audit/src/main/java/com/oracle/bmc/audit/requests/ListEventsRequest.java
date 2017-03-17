@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.audit.requests;
 
@@ -50,4 +50,19 @@ public class ListEventsRequest {
      *
      */
     private String opcRequestId;
+
+    public static class Builder {
+        /**
+         * Copy method to populate the builder with values from the given instance.
+         * @return this builder instance
+         */
+        public Builder copy(ListEventsRequest o) {
+            compartmentId(o.getCompartmentId());
+            startTime(o.getStartTime());
+            endTime(o.getEndTime());
+            page(o.getPage());
+            opcRequestId(o.getOpcRequestId());
+            return this;
+        }
+    }
 }

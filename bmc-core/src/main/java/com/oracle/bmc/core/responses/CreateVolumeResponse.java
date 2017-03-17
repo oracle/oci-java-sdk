@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.responses;
 
@@ -36,4 +36,18 @@ public class CreateVolumeResponse {
      * The returned Volume instance.
      */
     private Volume volume;
+
+    public static class Builder {
+        /**
+         * Copy method to populate the builder with values from the given instance.
+         * @return this builder instance
+         */
+        public Builder copy(CreateVolumeResponse o) {
+            etag(o.getEtag());
+            opcRequestId(o.getOpcRequestId());
+            volume(o.getVolume());
+
+            return this;
+        }
+    }
 }

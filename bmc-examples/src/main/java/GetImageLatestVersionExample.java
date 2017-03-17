@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
 import java.util.List;
 
@@ -19,7 +19,7 @@ public class GetImageLatestVersionExample {
         Region region = Region.US_PHOENIX_1;
         String operatingSystem = "Oracle Linux";
         String operatingSystemVersion = "6.7";
-        
+
         String configurationFilePath = "~/.oraclebmc/config";
         String profile = "DEFAULT";
 
@@ -29,22 +29,22 @@ public class GetImageLatestVersionExample {
         // Find matching images
         ComputeClient computeClient = new ComputeClient(provider);
         computeClient.setRegion(region);
-        
-        ListImagesResponse listImagesResponse = computeClient.listImages(
-                ListImagesRequest.builder()
-                    .compartmentId(provider.getTenantId())
-                    .operatingSystem(operatingSystem)
-                    .operatingSystemVersion(operatingSystemVersion)
-                    .build());
-        
+
+        ListImagesResponse listImagesResponse =
+                computeClient.listImages(
+                        ListImagesRequest.builder()
+                                .compartmentId(provider.getTenantId())
+                                .operatingSystem(operatingSystem)
+                                .operatingSystemVersion(operatingSystemVersion)
+                                .build());
+
         computeClient.close();
-        
+
         List<Image> matchingImages = listImagesResponse.getItems();
-        
-        if(matchingImages.size() == 0) {
+
+        if (matchingImages.size() == 0) {
             System.out.println("No matching images found.");
-        }
-        else {
+        } else {
             /*
              * Images are sorted by system images first, then custom images, secondarily sorted by image display name.
              * Since image display names take the format of "<OS>-<OSVersion>-<Year>.<Month>.<Day>-<Iteration>",
@@ -52,7 +52,7 @@ public class GetImageLatestVersionExample {
              * image for that OS / OS version.
              */
             Image latestImageVersion = matchingImages.get(0);
-            
+
             System.out.println(latestImageVersion);
         }
     }

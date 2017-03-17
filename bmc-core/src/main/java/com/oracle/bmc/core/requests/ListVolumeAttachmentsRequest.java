@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.requests;
 
@@ -54,4 +54,20 @@ public class ListVolumeAttachmentsRequest {
      * The OCID of the volume.
      */
     private String volumeId;
+
+    public static class Builder {
+        /**
+         * Copy method to populate the builder with values from the given instance.
+         * @return this builder instance
+         */
+        public Builder copy(ListVolumeAttachmentsRequest o) {
+            compartmentId(o.getCompartmentId());
+            availabilityDomain(o.getAvailabilityDomain());
+            limit(o.getLimit());
+            page(o.getPage());
+            instanceId(o.getInstanceId());
+            volumeId(o.getVolumeId());
+            return this;
+        }
+    }
 }

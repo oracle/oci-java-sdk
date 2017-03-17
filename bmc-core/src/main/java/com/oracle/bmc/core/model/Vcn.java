@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.model;
 
@@ -49,6 +49,9 @@ public class Vcn {
         @JsonProperty("displayName")
         private String displayName;
 
+        @JsonProperty("dnsLabel")
+        private String dnsLabel;
+
         @JsonProperty("id")
         private String id;
 
@@ -58,6 +61,9 @@ public class Vcn {
         @JsonProperty("timeCreated")
         private Date timeCreated;
 
+        @JsonProperty("vcnDomainName")
+        private String vcnDomainName;
+
         public Vcn build() {
             return new Vcn(
                     cidrBlock,
@@ -66,9 +72,11 @@ public class Vcn {
                     defaultRouteTableId,
                     defaultSecurityListId,
                     displayName,
+                    dnsLabel,
                     id,
                     lifecycleState,
-                    timeCreated);
+                    timeCreated,
+                    vcnDomainName);
         }
 
         @JsonIgnore
@@ -79,9 +87,11 @@ public class Vcn {
                     .defaultRouteTableId(o.getDefaultRouteTableId())
                     .defaultSecurityListId(o.getDefaultSecurityListId())
                     .displayName(o.getDisplayName())
+                    .dnsLabel(o.getDnsLabel())
                     .id(o.getId())
                     .lifecycleState(o.getLifecycleState())
-                    .timeCreated(o.getTimeCreated());
+                    .timeCreated(o.getTimeCreated())
+                    .vcnDomainName(o.getVcnDomainName());
         }
     }
 
@@ -141,6 +151,23 @@ public class Vcn {
     @JsonProperty("displayName")
     @Size(min = 1, max = 255)
     String displayName;
+
+    /**
+     * A DNS label for the VCN, used in conjunction with the VNIC's hostname and
+     * subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC
+     * within this subnet (e.g., `bminstance-1.subnet-123.vcn-1.oraclevcn.com`).
+     * <p>
+     * The absence of this parameter means the VCN Resolver will not work for this VCN.
+     * <p>
+     * For more information, see
+     * [DNS in Your Virtual Cloud Network](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm).
+     * <p>
+     * Example: `vcn-1`
+     *
+     **/
+    @JsonProperty("dnsLabel")
+    @Size(min = 1, max = 63)
+    String dnsLabel;
 
     /**
      * The VCN's Oracle ID (OCID).
@@ -203,4 +230,18 @@ public class Vcn {
      **/
     @JsonProperty("timeCreated")
     Date timeCreated;
+
+    /**
+     * The VCN's domain name, which consists of the VCN's DNS label, and the
+     * `oraclevcn.com` domain.
+     * <p>
+     * For more information, see
+     * [DNS in Your Virtual Cloud Network](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm).
+     * <p>
+     * Example: `vcn-1.oraclevcn.com`
+     *
+     **/
+    @JsonProperty("vcnDomainName")
+    @Size(min = 1, max = 253)
+    String vcnDomainName;
 }

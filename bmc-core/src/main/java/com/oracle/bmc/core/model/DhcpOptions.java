@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.model;
 
@@ -16,7 +16,13 @@ import lombok.experimental.*;
 
 /**
  * A set of DHCP options. Used by the VCN to automatically provide configuration
- * information to the instances when they boot up.
+ * information to the instances when they boot up. There is one option you can set:
+ *
+ * - {@link DhcpDnsOption}: Lets you specify how DNS (hostname resolution) is
+ * handled in the subnets in your VCN.
+ *
+ * For more information, see  [DNS in Your Virtual Cloud Network](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm)
+ * and [Managing DHCP Options](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingDHCP.htm).
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see

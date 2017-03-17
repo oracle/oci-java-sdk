@@ -1,1 +1,1 @@
-Copyright (c) ${license.git.copyrightYears} Oracle and/or its affiliates. All rights reserved.
+Copyright (c) ${project.inceptionYear}, ${current.year}, Oracle and/or its affiliates. All rights reserved.

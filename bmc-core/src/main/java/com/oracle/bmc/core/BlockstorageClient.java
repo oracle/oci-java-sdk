@@ -1,12 +1,14 @@
 /**
- * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core;
 
 import com.oracle.bmc.ClientConfiguration;
-import com.oracle.bmc.auth.AuthenticationDetailsProvider;
+import com.oracle.bmc.auth.*;
 import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.http.internal.*;
+import com.oracle.bmc.http.signing.*;
+import com.oracle.bmc.http.signing.internal.*;
 
 import com.google.common.base.Function;
 import com.google.common.base.Optional;
@@ -43,52 +45,63 @@ public class BlockstorageClient implements Blockstorage {
 
     /**
      * Creates a new service instance using the given authentication provider.
-     * @param authenticationProvider The authentication details provider, required.
+     * @param authenticationDetailsProvider The authentication details provider, required.
      */
-    public BlockstorageClient(AuthenticationDetailsProvider authenticationProvider) {
-        this.client = newClientBuilder().build().create(SERVICE, authenticationProvider);
-
-        this.waiters = new BlockstorageWaiters(executorService, this);
+    public BlockstorageClient(BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(authenticationDetailsProvider, null);
     }
 
     /**
      * Creates a new service instance using the given authentication provider and client configuration.
-     * @param authenticationProvider The authentication details provider, required.
+     * @param authenticationDetailsProvider The authentication details provider, required.
      * @param configuration The client configuration, optional.
      */
     public BlockstorageClient(
-            AuthenticationDetailsProvider authenticationProvider,
+            BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             ClientConfiguration configuration) {
-        this.client =
-                newClientBuilder().build().create(SERVICE, authenticationProvider, configuration);
-
-        this.waiters = new BlockstorageWaiters(executorService, this);
+        this(authenticationDetailsProvider, configuration, null);
     }
 
     /**
      * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
      * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
-     * @param authenticationProvider The authentication details provider, required.
+     * @param authenticationDetailsProvider The authentication details provider, required.
      * @param configuration The client configuration, optional.
      * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      */
     public BlockstorageClient(
-            AuthenticationDetailsProvider authenticationProvider,
+            BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             ClientConfiguration configuration,
             ClientConfigurator clientConfigurator) {
-        this.client =
-                newClientBuilder()
-                        .clientConfigurator(clientConfigurator)
-                        .build()
-                        .create(SERVICE, authenticationProvider, configuration);
-
-        this.waiters = new BlockstorageWaiters(executorService, this);
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                new DefaultRequestSignerFactory(SigningStrategy.STANDARD));
     }
 
-    private static RestClientFactoryBuilder newClientBuilder() {
-        RestClientFactoryBuilder builder = RestClientFactoryBuilder.builder();
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param requestSignerFactory The request signer factory used to create the request signer for this service.
+     */
+    public BlockstorageClient(
+            AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            ClientConfiguration configuration,
+            ClientConfigurator clientConfigurator,
+            RequestSignerFactory requestSignerFactory) {
+        RestClientFactory restClientFactory =
+                RestClientFactoryBuilder.builder().clientConfigurator(clientConfigurator).build();
+        RequestSigner requestSigner =
+                requestSignerFactory.createRequestSigner(SERVICE, authenticationDetailsProvider);
+        this.client = restClientFactory.create(requestSigner, configuration);
 
-        return builder;
+        this.waiters = new BlockstorageWaiters(executorService, this);
     }
 
     @Override

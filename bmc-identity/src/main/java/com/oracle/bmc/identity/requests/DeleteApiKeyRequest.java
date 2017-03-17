@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.identity.requests;
 
@@ -35,4 +35,17 @@ public class DeleteApiKeyRequest {
      *
      */
     private String ifMatch;
+
+    public static class Builder {
+        /**
+         * Copy method to populate the builder with values from the given instance.
+         * @return this builder instance
+         */
+        public Builder copy(DeleteApiKeyRequest o) {
+            userId(o.getUserId());
+            fingerprint(o.getFingerprint());
+            ifMatch(o.getIfMatch());
+            return this;
+        }
+    }
 }

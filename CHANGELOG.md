@@ -13,6 +13,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.2.3 - 2017-03-16
+### Fixed
+- Allow service responses to deserialize to base classes when unknown discriminators returned (vs. throwing exceptions)
+
+### Changed
+- Added a new layer for authentication details to provide for other forms of keyId based auth
+
+### Added
+- New DNS label feature
+- New request signer classes to use directly with other HTTP clients
+- New client contructors to allow more control over how requests are signed
+
 ## 1.2.2 - 2016-02-23
 ### Fixed
 - Bugs in config file parsing

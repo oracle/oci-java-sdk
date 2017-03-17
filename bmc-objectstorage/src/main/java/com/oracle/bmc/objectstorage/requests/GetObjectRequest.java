@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.objectstorage.requests;
 
@@ -61,4 +61,21 @@ public class GetObjectRequest {
      *
      */
     private Range range;
+
+    public static class Builder {
+        /**
+         * Copy method to populate the builder with values from the given instance.
+         * @return this builder instance
+         */
+        public Builder copy(GetObjectRequest o) {
+            namespaceName(o.getNamespaceName());
+            bucketName(o.getBucketName());
+            objectName(o.getObjectName());
+            ifMatch(o.getIfMatch());
+            ifNoneMatch(o.getIfNoneMatch());
+            opcClientRequestId(o.getOpcClientRequestId());
+            range(o.getRange());
+            return this;
+        }
+    }
 }

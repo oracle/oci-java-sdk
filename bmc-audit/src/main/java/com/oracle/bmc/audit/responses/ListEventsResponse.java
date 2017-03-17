@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.audit.responses;
 
@@ -39,4 +39,18 @@ public class ListEventsResponse {
      * A list of AuditEvent instances.
      */
     private List<AuditEvent> items;
+
+    public static class Builder {
+        /**
+         * Copy method to populate the builder with values from the given instance.
+         * @return this builder instance
+         */
+        public Builder copy(ListEventsResponse o) {
+            opcNextPage(o.getOpcNextPage());
+            opcRequestId(o.getOpcRequestId());
+            items(o.getItems());
+
+            return this;
+        }
+    }
 }

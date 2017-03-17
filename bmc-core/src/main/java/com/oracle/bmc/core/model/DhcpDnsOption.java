@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.model;
 
@@ -15,7 +15,9 @@ import lombok.*;
 import lombok.experimental.*;
 
 /**
- * DHCP option for specifying how DNS (host name resolution) is handled in the VCN.
+ * DHCP option for specifying how DNS (hostname resolution) is handled in the subnets in the VCN.
+ * For more information, see
+ * [DNS in Your Virtual Cloud Network](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm).
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
@@ -66,12 +68,17 @@ public class DhcpDnsOption extends DhcpOption {
     @JsonProperty("customDnsServers")
     List<String> customDnsServers;
     /**
-     * - *VcnLocal:* Reserved for future use.
-     * - *VcnLocalPlusInternet:* Instances can resolve only internet host
-     * names (no Internet Gateway is required). The instances still need to use
-     * their IP addresses to communicate with each other. This is the default
-     * value in the default set of DHCP options in the VCN.
-     * - *CustomDnsServer:* Instances use a DNS server of your choice (three maximum).
+     * - **VcnLocal:** Reserved for future use.
+     * <p>
+     * - **VcnLocalPlusInternet:** Also referred to as \"Internet and VCN Resolver\".
+     * Instances can resolve internet hostnames (no Internet Gateway is required),
+     * and can resolve hostnames of instances in the VCN. This is the default
+     * value in the default set of DHCP options in the VCN. For the VCN Resolver to
+     * work across the VCN, there must also be a DNS label set for the VCN, a DNS
+     * label set for each subnet, and a hostname for each instance. For more information,
+     * see [DNS in Your Virtual Cloud Network](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm).
+     * <p>
+     * - **CustomDnsServer:** Instances use a DNS server of your choice (three maximum).
      *
      **/
     public enum ServerType {
@@ -108,12 +115,17 @@ public class DhcpDnsOption extends DhcpOption {
         }
     };
     /**
-     * - *VcnLocal:* Reserved for future use.
-     * - *VcnLocalPlusInternet:* Instances can resolve only internet host
-     * names (no Internet Gateway is required). The instances still need to use
-     * their IP addresses to communicate with each other. This is the default
-     * value in the default set of DHCP options in the VCN.
-     * - *CustomDnsServer:* Instances use a DNS server of your choice (three maximum).
+     * - **VcnLocal:** Reserved for future use.
+     * <p>
+     * - **VcnLocalPlusInternet:** Also referred to as \"Internet and VCN Resolver\".
+     * Instances can resolve internet hostnames (no Internet Gateway is required),
+     * and can resolve hostnames of instances in the VCN. This is the default
+     * value in the default set of DHCP options in the VCN. For the VCN Resolver to
+     * work across the VCN, there must also be a DNS label set for the VCN, a DNS
+     * label set for each subnet, and a hostname for each instance. For more information,
+     * see [DNS in Your Virtual Cloud Network](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm).
+     * <p>
+     * - **CustomDnsServer:** Instances use a DNS server of your choice (three maximum).
      *
      **/
     @JsonProperty("serverType")

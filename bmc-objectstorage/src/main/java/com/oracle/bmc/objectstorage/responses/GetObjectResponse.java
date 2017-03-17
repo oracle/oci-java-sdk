@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.objectstorage.responses;
 
@@ -89,4 +89,27 @@ public class GetObjectResponse {
      * response (like 'if-match'/'if-none-match').
      */
     private boolean isNotModified;
+
+    public static class Builder {
+        /**
+         * Copy method to populate the builder with values from the given instance.
+         * @return this builder instance
+         */
+        public Builder copy(GetObjectResponse o) {
+            opcClientRequestId(o.getOpcClientRequestId());
+            opcRequestId(o.getOpcRequestId());
+            eTag(o.getETag());
+            opcMeta(o.getOpcMeta());
+            contentLength(o.getContentLength());
+            contentRange(o.getContentRange());
+            contentMd5(o.getContentMd5());
+            contentType(o.getContentType());
+            contentLanguage(o.getContentLanguage());
+            contentEncoding(o.getContentEncoding());
+            lastModified(o.getLastModified());
+            inputStream(o.getInputStream());
+            isNotModified(o.isNotModified());
+            return this;
+        }
+    }
 }

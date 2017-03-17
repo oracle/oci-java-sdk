@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.http.signing.internal;
 
@@ -27,11 +27,13 @@ import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang3.StringUtils;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
+import com.google.common.base.Supplier;
 import com.google.common.hash.Hashing;
+import com.oracle.bmc.http.internal.RestClientFactory;
 import com.oracle.bmc.http.signing.RequestSigner;
+import com.oracle.bmc.http.signing.SigningStrategy;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -43,12 +45,11 @@ import lombok.extern.slf4j.Slf4j;
 @Immutable
 @Slf4j
 public class RequestSignerImpl implements RequestSigner {
-    private static final ObjectMapper MAPPER = new ObjectMapper();
     private static final SignatureSigner SIGNER = new SignatureSigner();
 
     private final KeySupplier<RSAPrivateKey> keySupplier;
     private final SigningStrategy signingStrategy;
-    private final String keyId;
+    private final Supplier<String> keyIdSupplier;
 
     /**
      * Construct the RequestSigner with the specified KeySupplier. This will be
@@ -60,10 +61,10 @@ public class RequestSignerImpl implements RequestSigner {
     public RequestSignerImpl(
             @Nonnull final KeySupplier<RSAPrivateKey> keySupplier,
             @Nonnull final SigningStrategy signingStrategy,
-            @Nonnull final String keyId) {
+            @Nonnull final Supplier<String> keyIdSupplier) {
         this.keySupplier = Preconditions.checkNotNull(keySupplier);
         this.signingStrategy = Preconditions.checkNotNull(signingStrategy);
-        this.keyId = Preconditions.checkNotNull(keyId);
+        this.keyIdSupplier = Preconditions.checkNotNull(keyIdSupplier);
     }
 
     @Override
@@ -98,8 +99,9 @@ public class RequestSignerImpl implements RequestSigner {
                 !StringUtils.isBlank(versionName), "versionName must not be null or empty");
 
         try {
+            String keyId = keyIdSupplier.get();
             Version version = validateVersion(versionName, algorithm);
-            final RSAPrivateKey key = getPrivateKey();
+            final RSAPrivateKey key = getPrivateKey(keyId);
             // copy of headers as case-insensitive, do not modify input map
             final Map<String, String> caseInsensitiveHeaders = ignoreCaseHeaders(headers);
             final String lowerHttpMethod = httpMethod.toLowerCase();
@@ -113,7 +115,12 @@ public class RequestSignerImpl implements RequestSigner {
             final String signature = sign(key, algorithm, stringToSign);
 
             injectAuthorizationHeader(
-                    lowerHttpMethod, signedHeaders, signature, algorithm, version.getVersionName());
+                    keyId,
+                    lowerHttpMethod,
+                    signedHeaders,
+                    signature,
+                    algorithm,
+                    version.getVersionName());
             return signedHeaders;
 
         } catch (final Exception ex) {
@@ -143,12 +150,8 @@ public class RequestSignerImpl implements RequestSigner {
         return srVersion;
     }
 
-    private RSAPrivateKey getPrivateKey() {
-        Optional<RSAPrivateKey> keyOptional = Optional.absent();
-
-        if (keySupplier != null) {
-            keyOptional = keySupplier.getKey(keyId);
-        }
+    private RSAPrivateKey getPrivateKey(String keyId) {
+        Optional<RSAPrivateKey> keyOptional = keySupplier.getKey(keyId);
 
         // TODO: throw exception for now so it's re-thrown as
         // SignedRequestException
@@ -195,14 +198,11 @@ public class RequestSignerImpl implements RequestSigner {
             caseInsensitiveHeaders.put(Constants.HOST, uri.getHost());
         }
 
+        // supply content-type, content-length and x-content-sha256 if missing (PUT and POST only)
         if (httpMethod.equals("put") || httpMethod.equals("post")) {
-            // In normal cases, supply content-type, content-length and
-            // x-content-sha256 if missing (PUT and POST only).
-            // This is not needed if the body is streaming and the strategy
-            // says they can be skipped
-
+            // only exception is for streaming bodies for PUT if the signing strategy allows it to be skipped
             if (body instanceof InputStream) {
-                if (signingStrategy.isSkipContentHeadersForStreamingRequests()) {
+                if (httpMethod.equals("put") && signingStrategy.isSkipContentHeadersForStreamingRequests()) {
                     return;
                 } else {
                     throw new IllegalArgumentException(
@@ -368,10 +368,11 @@ public class RequestSignerImpl implements RequestSigner {
     }
 
     private void injectAuthorizationHeader(
+            final String keyId,
             final String httpMethod,
             final Map<String, String> signedHeaders,
             final String signature,
-            Algorithm algorithm,
+            final Algorithm algorithm,
             final String version) {
         // Don't need a null check since the lookup would have failed when we
         // first signed the headers
@@ -420,7 +421,9 @@ public class RequestSignerImpl implements RequestSigner {
         if (body == null) {
             return "".getBytes();
         }
-        String bodyAsString = MAPPER.writeValueAsString(body);
+        // use the same object mapper as the rest client to ensure the configurations match
+        // what is sent
+        String bodyAsString = RestClientFactory.getObjectMapper().writeValueAsString(body);
 
         // Annoying ObjectMapper edge case: If given a set of empty braces, it
         // adds a set of quotes that causes auth to fail on the server-side as

@@ -1,65 +1,96 @@
 /**
- * Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.http.signing.internal;
 
 import java.security.interfaces.RSAPrivateKey;
 
-import com.oracle.bmc.OCID;
+import com.google.common.base.Optional;
+import com.google.common.base.Supplier;
 import com.oracle.bmc.Service;
-import com.oracle.bmc.auth.AuthenticationDetailsProvider;
+import com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider;
+import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
 import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.http.signing.RequestSignerFactory;
+import com.oracle.bmc.http.signing.SigningStrategy;
 
-import lombok.extern.slf4j.Slf4j;
+import lombok.RequiredArgsConstructor;
 
 /**
- * Factory class to create RequestSigner instances. Takes care to determining
+ * Factory class to create RequestSigner instances. Takes care of determining
  * what signing strategy to use.
+ * <p>
+ * This factory supports authentication providers that inherit from
+ * {@link BasicAuthenticationDetailsProvider}.
  */
-@Slf4j
+@RequiredArgsConstructor
 public class DefaultRequestSignerFactory implements RequestSignerFactory {
+    private final SigningStrategy signingStrategy;
 
     /**
-     * Creates a new RequestSigner instance from the given provider and type of
-     * service.
-     *
-     * @param service
-     *            The service type.
-     * @param authProvider
-     *            The auth provider.
-     * @return A new RequestSigner instance.
+     * {@inheritDoc}
+     * <p>
+     * Note, service parameter is not used by this factory.
      */
     @Override
     public RequestSigner createRequestSigner(
-            Service service, AuthenticationDetailsProvider authProvider) {
-        KeySupplier<RSAPrivateKey> keySupplier =
-                new PEMFileRSAPrivateKeySupplier(
-                        authProvider.getPrivateKey(), authProvider.getPassPhrase());
-        String keyId = createKeyId(authProvider);
-        // object storage uses a different strategy
-        if (service.getServiceName().equals("OBJECTSTORAGE")) {
-            return new RequestSignerImpl(keySupplier, SigningStrategy.OBJECT_STORAGE, keyId);
+            Service service, AbstractAuthenticationDetailsProvider abstractAuthProvider) {
+        if (!(abstractAuthProvider instanceof BasicAuthenticationDetailsProvider)) {
+            throw new IllegalArgumentException(
+                    "Unsupported auth provider type: " + abstractAuthProvider.getClass().getName());
         }
-        return new RequestSignerImpl(keySupplier, SigningStrategy.STANDARD, keyId);
+
+        final BasicAuthenticationDetailsProvider authProvider =
+                (BasicAuthenticationDetailsProvider) abstractAuthProvider;
+
+        Supplier<String> keyIdSupplier = createKeyIdSupplier(authProvider);
+        KeySupplier<RSAPrivateKey> keySupplier = createKeySupplier(authProvider);
+
+        return new RequestSignerImpl(keySupplier, signingStrategy, keyIdSupplier);
     }
 
-    private static String createKeyId(AuthenticationDetailsProvider authProvider) {
-        // currently just log a warning as the format is not published
-        if (!OCID.isValid(authProvider.getTenantId())) {
-            LOG.warn("tenantId '{}' does not match expected pattern", authProvider.getTenantId());
-        }
-        if (!OCID.isValid(authProvider.getUserId())) {
-            LOG.warn("userId '{}' does not match expected pattern", authProvider.getUserId());
+    private static Supplier<String> createKeyIdSupplier(
+            final BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        // if auth caching is disabled, fetch the ID on every request
+        if (authenticationDetailsProvider
+                instanceof AbstractAuthenticationDetailsProvider.DisableAuthCaching) {
+            return new Supplier<String>() {
+                @Override
+                public String get() {
+                    return authenticationDetailsProvider.getKeyId();
+                }
+            };
         }
 
-        String keyId =
-                String.format(
-                        "%s/%s/%s",
-                        authProvider.getTenantId(),
-                        authProvider.getUserId(),
-                        authProvider.getFingerprint());
-        LOG.debug("Using keyId: {}", keyId);
-        return keyId;
+        // else fetch it now and return a fixed supplier
+        final String keyId = authenticationDetailsProvider.getKeyId();
+        return new Supplier<String>() {
+            @Override
+            public String get() {
+                return keyId;
+            }
+        };
+    }
+
+    private static KeySupplier<RSAPrivateKey> createKeySupplier(
+            final BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        // if auth caching is disabled, parse the stream on every request
+        if (authenticationDetailsProvider
+                instanceof AbstractAuthenticationDetailsProvider.DisableAuthCaching) {
+            return new KeySupplier<RSAPrivateKey>() {
+                @Override
+                public Optional<RSAPrivateKey> getKey(String keyId) {
+                    return new PEMFileRSAPrivateKeySupplier(
+                                    authenticationDetailsProvider.getPrivateKey(),
+                                    authenticationDetailsProvider.getPassPhrase())
+                            .getKey(keyId);
+                }
+            };
+        }
+
+        // else parse once now and return a fixed supplier
+        return new PEMFileRSAPrivateKeySupplier(
+                authenticationDetailsProvider.getPrivateKey(),
+                authenticationDetailsProvider.getPassPhrase());
     }
 }

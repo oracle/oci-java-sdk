@@ -1,11 +1,13 @@
 /**
- * Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
-package com.oracle.bmc.http.signing.internal;
+package com.oracle.bmc.http.signing;
 
 import java.util.List;
 
 import com.google.common.collect.ImmutableMap;
+import com.oracle.bmc.InternalSdk;
+import com.oracle.bmc.http.signing.internal.Constants;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -13,6 +15,7 @@ import lombok.RequiredArgsConstructor;
 /**
  * Enum for the various signing strategies used by BMC.
  */
+@InternalSdk
 @RequiredArgsConstructor
 @Getter
 public enum SigningStrategy {

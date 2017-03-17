@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.requests;
 
@@ -22,4 +22,15 @@ public class GetVcnRequest {
      * The OCID of the VCN.
      */
     private String vcnId;
+
+    public static class Builder {
+        /**
+         * Copy method to populate the builder with values from the given instance.
+         * @return this builder instance
+         */
+        public Builder copy(GetVcnRequest o) {
+            vcnId(o.getVcnId());
+            return this;
+        }
+    }
 }

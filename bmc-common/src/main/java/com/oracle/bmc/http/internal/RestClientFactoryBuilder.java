@@ -1,13 +1,11 @@
 /**
- * Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.http.internal;
 
 import com.google.common.base.MoreObjects;
 import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.http.DefaultConfigurator;
-import com.oracle.bmc.http.signing.RequestSignerFactory;
-import com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
@@ -19,7 +17,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class RestClientFactoryBuilder {
     private ClientConfigurator clientConfigurator;
-    private RequestSignerFactory requestSignerFactory;
 
     /**
      * Create a new builder instance.
@@ -41,17 +38,6 @@ public class RestClientFactoryBuilder {
     }
 
     /**
-     * Sets the RequestSignerFactory to use, or null to use the {@link DefaultRequestSignerFactory}.
-     * @param requestSignerFactory The request signer factory to use.
-     * @return The builder.
-     */
-    public RestClientFactoryBuilder requestSignerFactory(
-            RequestSignerFactory requestSignerFactory) {
-        this.requestSignerFactory = requestSignerFactory;
-        return this;
-    }
-
-    /**
      * Builds a new RestClientFactory using the options provided.  Options that were not set will
      * use default values.
      *
@@ -60,9 +46,7 @@ public class RestClientFactoryBuilder {
     public RestClientFactory build() {
         ClientConfigurator clientConfigurator =
                 MoreObjects.firstNonNull(this.clientConfigurator, new DefaultConfigurator());
-        RequestSignerFactory requestSignerFactory =
-                MoreObjects.firstNonNull(
-                        this.requestSignerFactory, new DefaultRequestSignerFactory());
-        return new RestClientFactory(clientConfigurator, requestSignerFactory);
+
+        return new RestClientFactory(clientConfigurator);
     }
 }

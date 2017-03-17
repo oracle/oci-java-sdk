@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.model;
 
@@ -31,6 +31,9 @@ public class LaunchInstanceDetails {
         @JsonProperty("displayName")
         private String displayName;
 
+        @JsonProperty("hostnameLabel")
+        private String hostnameLabel;
+
         @JsonProperty("imageId")
         private String imageId;
 
@@ -51,6 +54,7 @@ public class LaunchInstanceDetails {
                     availabilityDomain,
                     compartmentId,
                     displayName,
+                    hostnameLabel,
                     imageId,
                     ipxeScript,
                     metadata,
@@ -63,6 +67,7 @@ public class LaunchInstanceDetails {
             return availabilityDomain(o.getAvailabilityDomain())
                     .compartmentId(o.getCompartmentId())
                     .displayName(o.getDisplayName())
+                    .hostnameLabel(o.getHostnameLabel())
                     .imageId(o.getImageId())
                     .ipxeScript(o.getIpxeScript())
                     .metadata(o.getMetadata())
@@ -108,6 +113,27 @@ public class LaunchInstanceDetails {
     @JsonProperty("displayName")
     @Size(min = 1, max = 255)
     String displayName;
+
+    /**
+     * The hostname for the VNIC that is created during instance launch.
+     * Used for DNS. The value is the hostname portion of the instance's
+     * fully qualified domain name (FQDN) (e.g., `bminstance-1` in FQDN
+     * `bminstance-1.subnet-123.vcn-1.oraclevcn.com`).
+     * Must be unique across all VNICs in the subnet and comply with
+     * [RFC 952](https://tools.ietf.org/html/rfc952) and
+     * [RFC 1123](https://tools.ietf.org/html/rfc1123).
+     * The value cannot be changed, and it can be retrieved from the
+     * {@link Vnic}.
+     * <p>
+     * For more information, see
+     * [DNS in Your Virtual Cloud Network](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm).
+     * <p>
+     * Example: `bminstance-1`
+     *
+     **/
+    @JsonProperty("hostnameLabel")
+    @Size(min = 1, max = 63)
+    String hostnameLabel;
 
     /**
      * The OCID of the image used to boot the instance.

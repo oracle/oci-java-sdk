@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.model;
 
@@ -18,9 +18,14 @@ import lombok.experimental.*;
 @Value
 @NonFinal
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+@JsonTypeInfo(
+    use = JsonTypeInfo.Id.NAME,
+    include = JsonTypeInfo.As.PROPERTY,
+    property = "type",
+    defaultImpl = AttachVolumeDetails.class
+)
 @JsonSubTypes({@JsonSubTypes.Type(value = AttachIScsiVolumeDetails.class, name = "iscsi")})
-public abstract class AttachVolumeDetails {
+public class AttachVolumeDetails {
 
     /**
      * A user-friendly name. Does not have to be unique, and it cannot be changed.

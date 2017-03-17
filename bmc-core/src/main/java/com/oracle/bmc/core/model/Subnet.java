@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016-2017 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.model;
 
@@ -48,6 +48,9 @@ public class Subnet {
         @JsonProperty("displayName")
         private String displayName;
 
+        @JsonProperty("dnsLabel")
+        private String dnsLabel;
+
         @JsonProperty("id")
         private String id;
 
@@ -59,6 +62,9 @@ public class Subnet {
 
         @JsonProperty("securityListIds")
         private List<String> securityListIds;
+
+        @JsonProperty("subnetDomainName")
+        private String subnetDomainName;
 
         @JsonProperty("timeCreated")
         private Date timeCreated;
@@ -79,10 +85,12 @@ public class Subnet {
                     compartmentId,
                     dhcpOptionsId,
                     displayName,
+                    dnsLabel,
                     id,
                     lifecycleState,
                     routeTableId,
                     securityListIds,
+                    subnetDomainName,
                     timeCreated,
                     vcnId,
                     virtualRouterIp,
@@ -96,10 +104,12 @@ public class Subnet {
                     .compartmentId(o.getCompartmentId())
                     .dhcpOptionsId(o.getDhcpOptionsId())
                     .displayName(o.getDisplayName())
+                    .dnsLabel(o.getDnsLabel())
                     .id(o.getId())
                     .lifecycleState(o.getLifecycleState())
                     .routeTableId(o.getRouteTableId())
                     .securityListIds(o.getSecurityListIds())
+                    .subnetDomainName(o.getSubnetDomainName())
                     .timeCreated(o.getTimeCreated())
                     .vcnId(o.getVcnId())
                     .virtualRouterIp(o.getVirtualRouterIp())
@@ -161,6 +171,24 @@ public class Subnet {
     @JsonProperty("displayName")
     @Size(min = 1, max = 255)
     String displayName;
+
+    /**
+     * A DNS label for the subnet, used in conjunction with the VNIC's hostname and
+     * VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC
+     * within this subnet (e.g., `bminstance-1.subnet-123.vcn-1.oraclevcn.com`).
+     * <p>
+     * The absence of this parameter means the VCN Resolver will not resolve hostnames
+     * of instances in this subnet.
+     * <p>
+     * For more information, see
+     * [DNS in Your Virtual Cloud Network](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm).
+     * <p>
+     * Example: `subnet-123`
+     *
+     **/
+    @JsonProperty("dnsLabel")
+    @Size(min = 1, max = 63)
+    String dnsLabel;
 
     /**
      * The subnet's Oracle ID (OCID).
@@ -229,6 +257,20 @@ public class Subnet {
      **/
     @JsonProperty("securityListIds")
     List<String> securityListIds;
+
+    /**
+     * The subnet's domain name, which consists of the subnet's DNS label,
+     * the VCN's DNS label, and the `oraclevcn.com` domain.
+     * <p>
+     * For more information, see
+     * [DNS in Your Virtual Cloud Network](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm).
+     * <p>
+     * Example: `subnet-123.vcn-1.oraclevcn.com`
+     *
+     **/
+    @JsonProperty("subnetDomainName")
+    @Size(min = 1, max = 253)
+    String subnetDomainName;
 
     /**
      * The date and time the subnet was created, in the format defined by RFC3339.

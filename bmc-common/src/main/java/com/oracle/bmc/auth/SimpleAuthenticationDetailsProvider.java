@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.auth;
 
@@ -15,7 +15,8 @@ import lombok.Getter;
  * returns configured values.
  */
 @Builder
-public class SimpleAuthenticationDetailsProvider implements AuthenticationDetailsProvider {
+public class SimpleAuthenticationDetailsProvider extends CustomerAuthenticationDetailsProvider
+        implements AuthenticationDetailsProvider {
     @Getter(onMethod = @__({@Override}))
     private final String tenantId;
 

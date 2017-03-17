@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.objectstorage.requests;
 
@@ -94,4 +94,28 @@ public class PutObjectRequest {
      * Optional user-defined metadata key and value.
      */
     private Map<String, String> opcMeta;
+
+    public static class Builder {
+        /**
+         * Copy method to populate the builder with values from the given instance.
+         * @return this builder instance
+         */
+        public Builder copy(PutObjectRequest o) {
+            namespaceName(o.getNamespaceName());
+            bucketName(o.getBucketName());
+            objectName(o.getObjectName());
+            contentLength(o.getContentLength());
+            putObjectBody(o.getPutObjectBody());
+            ifMatch(o.getIfMatch());
+            ifNoneMatch(o.getIfNoneMatch());
+            opcClientRequestId(o.getOpcClientRequestId());
+            expect(o.getExpect());
+            contentMD5(o.getContentMD5());
+            contentType(o.getContentType());
+            contentLanguage(o.getContentLanguage());
+            contentEncoding(o.getContentEncoding());
+            opcMeta(o.getOpcMeta());
+            return this;
+        }
+    }
 }
