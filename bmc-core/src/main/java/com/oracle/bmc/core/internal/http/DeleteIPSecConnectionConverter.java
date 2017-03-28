@@ -30,6 +30,12 @@ public class DeleteIPSecConnectionConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static DeleteIPSecConnectionRequest interceptRequest(
+            DeleteIPSecConnectionRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(
             RestClient client, DeleteIPSecConnectionRequest request) {
         if (request == null) {
@@ -83,6 +89,7 @@ public class DeleteIPSecConnectionConverter {
                         }
 
                         DeleteIPSecConnectionResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

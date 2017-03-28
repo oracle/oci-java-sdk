@@ -30,6 +30,11 @@ public class DeleteSubnetConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static DeleteSubnetRequest interceptRequest(DeleteSubnetRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, DeleteSubnetRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -81,6 +86,7 @@ public class DeleteSubnetConverter {
                         }
 
                         DeleteSubnetResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

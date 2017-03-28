@@ -30,6 +30,12 @@ public class ListUserGroupMembershipsConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static ListUserGroupMembershipsRequest interceptRequest(
+            ListUserGroupMembershipsRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(
             RestClient client, ListUserGroupMembershipsRequest request) {
         if (request == null) {
@@ -110,6 +116,7 @@ public class ListUserGroupMembershipsConverter {
                         }
 
                         ListUserGroupMembershipsResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

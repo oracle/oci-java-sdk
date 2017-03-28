@@ -21,7 +21,7 @@ import com.oracle.bmc.objectstorage.model.*;
 public class ListBucketsResponse {
 
     /**
-     * Echoes back the value passed in in the opc-client-request-id header, for use by clients when debugging.
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
      */
     private String opcClientRequestId;
 
@@ -33,9 +33,9 @@ public class ListBucketsResponse {
     private String opcRequestId;
 
     /**
-     * For pagination of a list of `Bucket`s. If this header appears in the response there
-     * are additional Buckets still to get. Include this value as the `page` parameter in a subsequent
-     * GET request. For information about pagination, see
+     * For pagination of a list of `Bucket`s. If this header appears in the response, then this
+     * is a partial list of buckets. Include this value as the `page` parameter in a subsequent
+     * GET request to get the next batch of buckets. For information about pagination, see
      * [List Pagination](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/usingapi.htm#nine).
      *
      */

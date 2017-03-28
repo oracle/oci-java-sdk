@@ -30,6 +30,11 @@ public class CreateGroupConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static CreateGroupRequest interceptRequest(CreateGroupRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, CreateGroupRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -86,6 +91,7 @@ public class CreateGroupConverter {
                         }
 
                         CreateGroupResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

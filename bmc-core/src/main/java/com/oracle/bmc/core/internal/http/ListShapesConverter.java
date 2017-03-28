@@ -30,6 +30,11 @@ public class ListShapesConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static ListShapesRequest interceptRequest(ListShapesRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, ListShapesRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -109,6 +114,7 @@ public class ListShapesConverter {
                         }
 
                         ListShapesResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

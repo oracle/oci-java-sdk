@@ -140,6 +140,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     public Future<CreateCpeResponse> createCpe(
             CreateCpeRequest request, AsyncHandler<CreateCpeRequest, CreateCpeResponse> handler) {
         LOG.trace("Called async createCpe");
+        request = CreateCpeConverter.interceptRequest(request);
         Invocation.Builder ib = CreateCpeConverter.fromRequest(client, request);
         Function<Response, CreateCpeResponse> transformer = CreateCpeConverter.fromResponse();
 
@@ -156,6 +157,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             CreateDhcpOptionsRequest request,
             AsyncHandler<CreateDhcpOptionsRequest, CreateDhcpOptionsResponse> handler) {
         LOG.trace("Called async createDhcpOptions");
+        request = CreateDhcpOptionsConverter.interceptRequest(request);
         Invocation.Builder ib = CreateDhcpOptionsConverter.fromRequest(client, request);
         Function<Response, CreateDhcpOptionsResponse> transformer =
                 CreateDhcpOptionsConverter.fromResponse();
@@ -172,6 +174,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     public Future<CreateDrgResponse> createDrg(
             CreateDrgRequest request, AsyncHandler<CreateDrgRequest, CreateDrgResponse> handler) {
         LOG.trace("Called async createDrg");
+        request = CreateDrgConverter.interceptRequest(request);
         Invocation.Builder ib = CreateDrgConverter.fromRequest(client, request);
         Function<Response, CreateDrgResponse> transformer = CreateDrgConverter.fromResponse();
 
@@ -188,6 +191,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             CreateDrgAttachmentRequest request,
             AsyncHandler<CreateDrgAttachmentRequest, CreateDrgAttachmentResponse> handler) {
         LOG.trace("Called async createDrgAttachment");
+        request = CreateDrgAttachmentConverter.interceptRequest(request);
         Invocation.Builder ib = CreateDrgAttachmentConverter.fromRequest(client, request);
         Function<Response, CreateDrgAttachmentResponse> transformer =
                 CreateDrgAttachmentConverter.fromResponse();
@@ -206,6 +210,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             CreateIPSecConnectionRequest request,
             AsyncHandler<CreateIPSecConnectionRequest, CreateIPSecConnectionResponse> handler) {
         LOG.trace("Called async createIPSecConnection");
+        request = CreateIPSecConnectionConverter.interceptRequest(request);
         Invocation.Builder ib = CreateIPSecConnectionConverter.fromRequest(client, request);
         Function<Response, CreateIPSecConnectionResponse> transformer =
                 CreateIPSecConnectionConverter.fromResponse();
@@ -224,6 +229,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             CreateInternetGatewayRequest request,
             AsyncHandler<CreateInternetGatewayRequest, CreateInternetGatewayResponse> handler) {
         LOG.trace("Called async createInternetGateway");
+        request = CreateInternetGatewayConverter.interceptRequest(request);
         Invocation.Builder ib = CreateInternetGatewayConverter.fromRequest(client, request);
         Function<Response, CreateInternetGatewayResponse> transformer =
                 CreateInternetGatewayConverter.fromResponse();
@@ -242,6 +248,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             CreateRouteTableRequest request,
             AsyncHandler<CreateRouteTableRequest, CreateRouteTableResponse> handler) {
         LOG.trace("Called async createRouteTable");
+        request = CreateRouteTableConverter.interceptRequest(request);
         Invocation.Builder ib = CreateRouteTableConverter.fromRequest(client, request);
         Function<Response, CreateRouteTableResponse> transformer =
                 CreateRouteTableConverter.fromResponse();
@@ -259,6 +266,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             CreateSecurityListRequest request,
             AsyncHandler<CreateSecurityListRequest, CreateSecurityListResponse> handler) {
         LOG.trace("Called async createSecurityList");
+        request = CreateSecurityListConverter.interceptRequest(request);
         Invocation.Builder ib = CreateSecurityListConverter.fromRequest(client, request);
         Function<Response, CreateSecurityListResponse> transformer =
                 CreateSecurityListConverter.fromResponse();
@@ -277,6 +285,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             CreateSubnetRequest request,
             AsyncHandler<CreateSubnetRequest, CreateSubnetResponse> handler) {
         LOG.trace("Called async createSubnet");
+        request = CreateSubnetConverter.interceptRequest(request);
         Invocation.Builder ib = CreateSubnetConverter.fromRequest(client, request);
         Function<Response, CreateSubnetResponse> transformer = CreateSubnetConverter.fromResponse();
 
@@ -292,6 +301,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     public Future<CreateVcnResponse> createVcn(
             CreateVcnRequest request, AsyncHandler<CreateVcnRequest, CreateVcnResponse> handler) {
         LOG.trace("Called async createVcn");
+        request = CreateVcnConverter.interceptRequest(request);
         Invocation.Builder ib = CreateVcnConverter.fromRequest(client, request);
         Function<Response, CreateVcnResponse> transformer = CreateVcnConverter.fromResponse();
 
@@ -307,6 +317,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     public Future<DeleteCpeResponse> deleteCpe(
             DeleteCpeRequest request, AsyncHandler<DeleteCpeRequest, DeleteCpeResponse> handler) {
         LOG.trace("Called async deleteCpe");
+        request = DeleteCpeConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteCpeConverter.fromRequest(client, request);
         Function<Response, DeleteCpeResponse> transformer = DeleteCpeConverter.fromResponse();
 
@@ -322,6 +333,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             DeleteDhcpOptionsRequest request,
             AsyncHandler<DeleteDhcpOptionsRequest, DeleteDhcpOptionsResponse> handler) {
         LOG.trace("Called async deleteDhcpOptions");
+        request = DeleteDhcpOptionsConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteDhcpOptionsConverter.fromRequest(client, request);
         Function<Response, DeleteDhcpOptionsResponse> transformer =
                 DeleteDhcpOptionsConverter.fromResponse();
@@ -337,6 +349,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     public Future<DeleteDrgResponse> deleteDrg(
             DeleteDrgRequest request, AsyncHandler<DeleteDrgRequest, DeleteDrgResponse> handler) {
         LOG.trace("Called async deleteDrg");
+        request = DeleteDrgConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteDrgConverter.fromRequest(client, request);
         Function<Response, DeleteDrgResponse> transformer = DeleteDrgConverter.fromResponse();
 
@@ -352,6 +365,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             DeleteDrgAttachmentRequest request,
             AsyncHandler<DeleteDrgAttachmentRequest, DeleteDrgAttachmentResponse> handler) {
         LOG.trace("Called async deleteDrgAttachment");
+        request = DeleteDrgAttachmentConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteDrgAttachmentConverter.fromRequest(client, request);
         Function<Response, DeleteDrgAttachmentResponse> transformer =
                 DeleteDrgAttachmentConverter.fromResponse();
@@ -368,6 +382,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             DeleteIPSecConnectionRequest request,
             AsyncHandler<DeleteIPSecConnectionRequest, DeleteIPSecConnectionResponse> handler) {
         LOG.trace("Called async deleteIPSecConnection");
+        request = DeleteIPSecConnectionConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteIPSecConnectionConverter.fromRequest(client, request);
         Function<Response, DeleteIPSecConnectionResponse> transformer =
                 DeleteIPSecConnectionConverter.fromResponse();
@@ -384,6 +399,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             DeleteInternetGatewayRequest request,
             AsyncHandler<DeleteInternetGatewayRequest, DeleteInternetGatewayResponse> handler) {
         LOG.trace("Called async deleteInternetGateway");
+        request = DeleteInternetGatewayConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteInternetGatewayConverter.fromRequest(client, request);
         Function<Response, DeleteInternetGatewayResponse> transformer =
                 DeleteInternetGatewayConverter.fromResponse();
@@ -400,6 +416,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             DeleteRouteTableRequest request,
             AsyncHandler<DeleteRouteTableRequest, DeleteRouteTableResponse> handler) {
         LOG.trace("Called async deleteRouteTable");
+        request = DeleteRouteTableConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteRouteTableConverter.fromRequest(client, request);
         Function<Response, DeleteRouteTableResponse> transformer =
                 DeleteRouteTableConverter.fromResponse();
@@ -416,6 +433,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             DeleteSecurityListRequest request,
             AsyncHandler<DeleteSecurityListRequest, DeleteSecurityListResponse> handler) {
         LOG.trace("Called async deleteSecurityList");
+        request = DeleteSecurityListConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteSecurityListConverter.fromRequest(client, request);
         Function<Response, DeleteSecurityListResponse> transformer =
                 DeleteSecurityListConverter.fromResponse();
@@ -432,6 +450,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             DeleteSubnetRequest request,
             AsyncHandler<DeleteSubnetRequest, DeleteSubnetResponse> handler) {
         LOG.trace("Called async deleteSubnet");
+        request = DeleteSubnetConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteSubnetConverter.fromRequest(client, request);
         Function<Response, DeleteSubnetResponse> transformer = DeleteSubnetConverter.fromResponse();
 
@@ -446,6 +465,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     public Future<DeleteVcnResponse> deleteVcn(
             DeleteVcnRequest request, AsyncHandler<DeleteVcnRequest, DeleteVcnResponse> handler) {
         LOG.trace("Called async deleteVcn");
+        request = DeleteVcnConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteVcnConverter.fromRequest(client, request);
         Function<Response, DeleteVcnResponse> transformer = DeleteVcnConverter.fromResponse();
 
@@ -460,6 +480,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     public Future<GetCpeResponse> getCpe(
             GetCpeRequest request, AsyncHandler<GetCpeRequest, GetCpeResponse> handler) {
         LOG.trace("Called async getCpe");
+        request = GetCpeConverter.interceptRequest(request);
         Invocation.Builder ib = GetCpeConverter.fromRequest(client, request);
         Function<Response, GetCpeResponse> transformer = GetCpeConverter.fromResponse();
 
@@ -475,6 +496,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             GetDhcpOptionsRequest request,
             AsyncHandler<GetDhcpOptionsRequest, GetDhcpOptionsResponse> handler) {
         LOG.trace("Called async getDhcpOptions");
+        request = GetDhcpOptionsConverter.interceptRequest(request);
         Invocation.Builder ib = GetDhcpOptionsConverter.fromRequest(client, request);
         Function<Response, GetDhcpOptionsResponse> transformer =
                 GetDhcpOptionsConverter.fromResponse();
@@ -490,6 +512,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     public Future<GetDrgResponse> getDrg(
             GetDrgRequest request, AsyncHandler<GetDrgRequest, GetDrgResponse> handler) {
         LOG.trace("Called async getDrg");
+        request = GetDrgConverter.interceptRequest(request);
         Invocation.Builder ib = GetDrgConverter.fromRequest(client, request);
         Function<Response, GetDrgResponse> transformer = GetDrgConverter.fromResponse();
 
@@ -505,6 +528,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             GetDrgAttachmentRequest request,
             AsyncHandler<GetDrgAttachmentRequest, GetDrgAttachmentResponse> handler) {
         LOG.trace("Called async getDrgAttachment");
+        request = GetDrgAttachmentConverter.interceptRequest(request);
         Invocation.Builder ib = GetDrgAttachmentConverter.fromRequest(client, request);
         Function<Response, GetDrgAttachmentResponse> transformer =
                 GetDrgAttachmentConverter.fromResponse();
@@ -521,6 +545,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             GetIPSecConnectionRequest request,
             AsyncHandler<GetIPSecConnectionRequest, GetIPSecConnectionResponse> handler) {
         LOG.trace("Called async getIPSecConnection");
+        request = GetIPSecConnectionConverter.interceptRequest(request);
         Invocation.Builder ib = GetIPSecConnectionConverter.fromRequest(client, request);
         Function<Response, GetIPSecConnectionResponse> transformer =
                 GetIPSecConnectionConverter.fromResponse();
@@ -540,6 +565,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                             GetIPSecConnectionDeviceConfigResponse>
                     handler) {
         LOG.trace("Called async getIPSecConnectionDeviceConfig");
+        request = GetIPSecConnectionDeviceConfigConverter.interceptRequest(request);
         Invocation.Builder ib =
                 GetIPSecConnectionDeviceConfigConverter.fromRequest(client, request);
         Function<Response, GetIPSecConnectionDeviceConfigResponse> transformer =
@@ -560,6 +586,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                             GetIPSecConnectionDeviceStatusResponse>
                     handler) {
         LOG.trace("Called async getIPSecConnectionDeviceStatus");
+        request = GetIPSecConnectionDeviceStatusConverter.interceptRequest(request);
         Invocation.Builder ib =
                 GetIPSecConnectionDeviceStatusConverter.fromRequest(client, request);
         Function<Response, GetIPSecConnectionDeviceStatusResponse> transformer =
@@ -577,6 +604,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             GetInternetGatewayRequest request,
             AsyncHandler<GetInternetGatewayRequest, GetInternetGatewayResponse> handler) {
         LOG.trace("Called async getInternetGateway");
+        request = GetInternetGatewayConverter.interceptRequest(request);
         Invocation.Builder ib = GetInternetGatewayConverter.fromRequest(client, request);
         Function<Response, GetInternetGatewayResponse> transformer =
                 GetInternetGatewayConverter.fromResponse();
@@ -593,6 +621,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             GetRouteTableRequest request,
             AsyncHandler<GetRouteTableRequest, GetRouteTableResponse> handler) {
         LOG.trace("Called async getRouteTable");
+        request = GetRouteTableConverter.interceptRequest(request);
         Invocation.Builder ib = GetRouteTableConverter.fromRequest(client, request);
         Function<Response, GetRouteTableResponse> transformer =
                 GetRouteTableConverter.fromResponse();
@@ -609,6 +638,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             GetSecurityListRequest request,
             AsyncHandler<GetSecurityListRequest, GetSecurityListResponse> handler) {
         LOG.trace("Called async getSecurityList");
+        request = GetSecurityListConverter.interceptRequest(request);
         Invocation.Builder ib = GetSecurityListConverter.fromRequest(client, request);
         Function<Response, GetSecurityListResponse> transformer =
                 GetSecurityListConverter.fromResponse();
@@ -624,6 +654,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     public Future<GetSubnetResponse> getSubnet(
             GetSubnetRequest request, AsyncHandler<GetSubnetRequest, GetSubnetResponse> handler) {
         LOG.trace("Called async getSubnet");
+        request = GetSubnetConverter.interceptRequest(request);
         Invocation.Builder ib = GetSubnetConverter.fromRequest(client, request);
         Function<Response, GetSubnetResponse> transformer = GetSubnetConverter.fromResponse();
 
@@ -638,6 +669,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     public Future<GetVcnResponse> getVcn(
             GetVcnRequest request, AsyncHandler<GetVcnRequest, GetVcnResponse> handler) {
         LOG.trace("Called async getVcn");
+        request = GetVcnConverter.interceptRequest(request);
         Invocation.Builder ib = GetVcnConverter.fromRequest(client, request);
         Function<Response, GetVcnResponse> transformer = GetVcnConverter.fromResponse();
 
@@ -652,6 +684,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     public Future<GetVnicResponse> getVnic(
             GetVnicRequest request, AsyncHandler<GetVnicRequest, GetVnicResponse> handler) {
         LOG.trace("Called async getVnic");
+        request = GetVnicConverter.interceptRequest(request);
         Invocation.Builder ib = GetVnicConverter.fromRequest(client, request);
         Function<Response, GetVnicResponse> transformer = GetVnicConverter.fromResponse();
 
@@ -666,6 +699,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     public Future<ListCpesResponse> listCpes(
             ListCpesRequest request, AsyncHandler<ListCpesRequest, ListCpesResponse> handler) {
         LOG.trace("Called async listCpes");
+        request = ListCpesConverter.interceptRequest(request);
         Invocation.Builder ib = ListCpesConverter.fromRequest(client, request);
         Function<Response, ListCpesResponse> transformer = ListCpesConverter.fromResponse();
 
@@ -681,6 +715,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             ListDhcpOptionsRequest request,
             AsyncHandler<ListDhcpOptionsRequest, ListDhcpOptionsResponse> handler) {
         LOG.trace("Called async listDhcpOptions");
+        request = ListDhcpOptionsConverter.interceptRequest(request);
         Invocation.Builder ib = ListDhcpOptionsConverter.fromRequest(client, request);
         Function<Response, ListDhcpOptionsResponse> transformer =
                 ListDhcpOptionsConverter.fromResponse();
@@ -697,6 +732,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             ListDrgAttachmentsRequest request,
             AsyncHandler<ListDrgAttachmentsRequest, ListDrgAttachmentsResponse> handler) {
         LOG.trace("Called async listDrgAttachments");
+        request = ListDrgAttachmentsConverter.interceptRequest(request);
         Invocation.Builder ib = ListDrgAttachmentsConverter.fromRequest(client, request);
         Function<Response, ListDrgAttachmentsResponse> transformer =
                 ListDrgAttachmentsConverter.fromResponse();
@@ -712,6 +748,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     public Future<ListDrgsResponse> listDrgs(
             ListDrgsRequest request, AsyncHandler<ListDrgsRequest, ListDrgsResponse> handler) {
         LOG.trace("Called async listDrgs");
+        request = ListDrgsConverter.interceptRequest(request);
         Invocation.Builder ib = ListDrgsConverter.fromRequest(client, request);
         Function<Response, ListDrgsResponse> transformer = ListDrgsConverter.fromResponse();
 
@@ -727,6 +764,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             ListIPSecConnectionsRequest request,
             AsyncHandler<ListIPSecConnectionsRequest, ListIPSecConnectionsResponse> handler) {
         LOG.trace("Called async listIPSecConnections");
+        request = ListIPSecConnectionsConverter.interceptRequest(request);
         Invocation.Builder ib = ListIPSecConnectionsConverter.fromRequest(client, request);
         Function<Response, ListIPSecConnectionsResponse> transformer =
                 ListIPSecConnectionsConverter.fromResponse();
@@ -743,6 +781,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             ListInternetGatewaysRequest request,
             AsyncHandler<ListInternetGatewaysRequest, ListInternetGatewaysResponse> handler) {
         LOG.trace("Called async listInternetGateways");
+        request = ListInternetGatewaysConverter.interceptRequest(request);
         Invocation.Builder ib = ListInternetGatewaysConverter.fromRequest(client, request);
         Function<Response, ListInternetGatewaysResponse> transformer =
                 ListInternetGatewaysConverter.fromResponse();
@@ -759,6 +798,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             ListRouteTablesRequest request,
             AsyncHandler<ListRouteTablesRequest, ListRouteTablesResponse> handler) {
         LOG.trace("Called async listRouteTables");
+        request = ListRouteTablesConverter.interceptRequest(request);
         Invocation.Builder ib = ListRouteTablesConverter.fromRequest(client, request);
         Function<Response, ListRouteTablesResponse> transformer =
                 ListRouteTablesConverter.fromResponse();
@@ -775,6 +815,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             ListSecurityListsRequest request,
             AsyncHandler<ListSecurityListsRequest, ListSecurityListsResponse> handler) {
         LOG.trace("Called async listSecurityLists");
+        request = ListSecurityListsConverter.interceptRequest(request);
         Invocation.Builder ib = ListSecurityListsConverter.fromRequest(client, request);
         Function<Response, ListSecurityListsResponse> transformer =
                 ListSecurityListsConverter.fromResponse();
@@ -791,6 +832,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             ListSubnetsRequest request,
             AsyncHandler<ListSubnetsRequest, ListSubnetsResponse> handler) {
         LOG.trace("Called async listSubnets");
+        request = ListSubnetsConverter.interceptRequest(request);
         Invocation.Builder ib = ListSubnetsConverter.fromRequest(client, request);
         Function<Response, ListSubnetsResponse> transformer = ListSubnetsConverter.fromResponse();
 
@@ -805,6 +847,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     public Future<ListVcnsResponse> listVcns(
             ListVcnsRequest request, AsyncHandler<ListVcnsRequest, ListVcnsResponse> handler) {
         LOG.trace("Called async listVcns");
+        request = ListVcnsConverter.interceptRequest(request);
         Invocation.Builder ib = ListVcnsConverter.fromRequest(client, request);
         Function<Response, ListVcnsResponse> transformer = ListVcnsConverter.fromResponse();
 
@@ -819,6 +862,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     public Future<UpdateCpeResponse> updateCpe(
             UpdateCpeRequest request, AsyncHandler<UpdateCpeRequest, UpdateCpeResponse> handler) {
         LOG.trace("Called async updateCpe");
+        request = UpdateCpeConverter.interceptRequest(request);
         Invocation.Builder ib = UpdateCpeConverter.fromRequest(client, request);
         Function<Response, UpdateCpeResponse> transformer = UpdateCpeConverter.fromResponse();
 
@@ -835,6 +879,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             UpdateDhcpOptionsRequest request,
             AsyncHandler<UpdateDhcpOptionsRequest, UpdateDhcpOptionsResponse> handler) {
         LOG.trace("Called async updateDhcpOptions");
+        request = UpdateDhcpOptionsConverter.interceptRequest(request);
         Invocation.Builder ib = UpdateDhcpOptionsConverter.fromRequest(client, request);
         Function<Response, UpdateDhcpOptionsResponse> transformer =
                 UpdateDhcpOptionsConverter.fromResponse();
@@ -851,6 +896,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     public Future<UpdateDrgResponse> updateDrg(
             UpdateDrgRequest request, AsyncHandler<UpdateDrgRequest, UpdateDrgResponse> handler) {
         LOG.trace("Called async updateDrg");
+        request = UpdateDrgConverter.interceptRequest(request);
         Invocation.Builder ib = UpdateDrgConverter.fromRequest(client, request);
         Function<Response, UpdateDrgResponse> transformer = UpdateDrgConverter.fromResponse();
 
@@ -867,6 +913,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             UpdateDrgAttachmentRequest request,
             AsyncHandler<UpdateDrgAttachmentRequest, UpdateDrgAttachmentResponse> handler) {
         LOG.trace("Called async updateDrgAttachment");
+        request = UpdateDrgAttachmentConverter.interceptRequest(request);
         Invocation.Builder ib = UpdateDrgAttachmentConverter.fromRequest(client, request);
         Function<Response, UpdateDrgAttachmentResponse> transformer =
                 UpdateDrgAttachmentConverter.fromResponse();
@@ -885,6 +932,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             UpdateIPSecConnectionRequest request,
             AsyncHandler<UpdateIPSecConnectionRequest, UpdateIPSecConnectionResponse> handler) {
         LOG.trace("Called async updateIPSecConnection");
+        request = UpdateIPSecConnectionConverter.interceptRequest(request);
         Invocation.Builder ib = UpdateIPSecConnectionConverter.fromRequest(client, request);
         Function<Response, UpdateIPSecConnectionResponse> transformer =
                 UpdateIPSecConnectionConverter.fromResponse();
@@ -903,6 +951,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             UpdateInternetGatewayRequest request,
             AsyncHandler<UpdateInternetGatewayRequest, UpdateInternetGatewayResponse> handler) {
         LOG.trace("Called async updateInternetGateway");
+        request = UpdateInternetGatewayConverter.interceptRequest(request);
         Invocation.Builder ib = UpdateInternetGatewayConverter.fromRequest(client, request);
         Function<Response, UpdateInternetGatewayResponse> transformer =
                 UpdateInternetGatewayConverter.fromResponse();
@@ -921,6 +970,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             UpdateRouteTableRequest request,
             AsyncHandler<UpdateRouteTableRequest, UpdateRouteTableResponse> handler) {
         LOG.trace("Called async updateRouteTable");
+        request = UpdateRouteTableConverter.interceptRequest(request);
         Invocation.Builder ib = UpdateRouteTableConverter.fromRequest(client, request);
         Function<Response, UpdateRouteTableResponse> transformer =
                 UpdateRouteTableConverter.fromResponse();
@@ -938,6 +988,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             UpdateSecurityListRequest request,
             AsyncHandler<UpdateSecurityListRequest, UpdateSecurityListResponse> handler) {
         LOG.trace("Called async updateSecurityList");
+        request = UpdateSecurityListConverter.interceptRequest(request);
         Invocation.Builder ib = UpdateSecurityListConverter.fromRequest(client, request);
         Function<Response, UpdateSecurityListResponse> transformer =
                 UpdateSecurityListConverter.fromResponse();
@@ -955,6 +1006,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             UpdateSubnetRequest request,
             AsyncHandler<UpdateSubnetRequest, UpdateSubnetResponse> handler) {
         LOG.trace("Called async updateSubnet");
+        request = UpdateSubnetConverter.interceptRequest(request);
         Invocation.Builder ib = UpdateSubnetConverter.fromRequest(client, request);
         Function<Response, UpdateSubnetResponse> transformer = UpdateSubnetConverter.fromResponse();
 
@@ -970,6 +1022,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     public Future<UpdateVcnResponse> updateVcn(
             UpdateVcnRequest request, AsyncHandler<UpdateVcnRequest, UpdateVcnResponse> handler) {
         LOG.trace("Called async updateVcn");
+        request = UpdateVcnConverter.interceptRequest(request);
         Invocation.Builder ib = UpdateVcnConverter.fromRequest(client, request);
         Function<Response, UpdateVcnResponse> transformer = UpdateVcnConverter.fromResponse();
 

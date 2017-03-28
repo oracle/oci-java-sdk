@@ -30,6 +30,11 @@ public class UpdateDrgAttachmentConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static UpdateDrgAttachmentRequest interceptRequest(UpdateDrgAttachmentRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(
             RestClient client, UpdateDrgAttachmentRequest request) {
         if (request == null) {
@@ -96,6 +101,7 @@ public class UpdateDrgAttachmentConverter {
                         }
 
                         UpdateDrgAttachmentResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

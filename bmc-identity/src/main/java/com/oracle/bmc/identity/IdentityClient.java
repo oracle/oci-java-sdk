@@ -142,6 +142,7 @@ public class IdentityClient implements Identity {
     @Override
     public AddUserToGroupResponse addUserToGroup(AddUserToGroupRequest request) {
         LOG.trace("Called addUserToGroup");
+        request = AddUserToGroupConverter.interceptRequest(request);
         Invocation.Builder ib = AddUserToGroupConverter.fromRequest(client, request);
         Function<Response, AddUserToGroupResponse> transformer =
                 AddUserToGroupConverter.fromResponse();
@@ -153,6 +154,7 @@ public class IdentityClient implements Identity {
     @Override
     public CreateCompartmentResponse createCompartment(CreateCompartmentRequest request) {
         LOG.trace("Called createCompartment");
+        request = CreateCompartmentConverter.interceptRequest(request);
         Invocation.Builder ib = CreateCompartmentConverter.fromRequest(client, request);
         Function<Response, CreateCompartmentResponse> transformer =
                 CreateCompartmentConverter.fromResponse();
@@ -164,6 +166,7 @@ public class IdentityClient implements Identity {
     @Override
     public CreateGroupResponse createGroup(CreateGroupRequest request) {
         LOG.trace("Called createGroup");
+        request = CreateGroupConverter.interceptRequest(request);
         Invocation.Builder ib = CreateGroupConverter.fromRequest(client, request);
         Function<Response, CreateGroupResponse> transformer = CreateGroupConverter.fromResponse();
 
@@ -175,6 +178,7 @@ public class IdentityClient implements Identity {
     public CreateOrResetUIPasswordResponse createOrResetUIPassword(
             CreateOrResetUIPasswordRequest request) {
         LOG.trace("Called createOrResetUIPassword");
+        request = CreateOrResetUIPasswordConverter.interceptRequest(request);
         Invocation.Builder ib = CreateOrResetUIPasswordConverter.fromRequest(client, request);
         Function<Response, CreateOrResetUIPasswordResponse> transformer =
                 CreateOrResetUIPasswordConverter.fromResponse();
@@ -186,6 +190,7 @@ public class IdentityClient implements Identity {
     @Override
     public CreatePolicyResponse createPolicy(CreatePolicyRequest request) {
         LOG.trace("Called createPolicy");
+        request = CreatePolicyConverter.interceptRequest(request);
         Invocation.Builder ib = CreatePolicyConverter.fromRequest(client, request);
         Function<Response, CreatePolicyResponse> transformer = CreatePolicyConverter.fromResponse();
 
@@ -196,6 +201,7 @@ public class IdentityClient implements Identity {
     @Override
     public CreateSwiftPasswordResponse createSwiftPassword(CreateSwiftPasswordRequest request) {
         LOG.trace("Called createSwiftPassword");
+        request = CreateSwiftPasswordConverter.interceptRequest(request);
         Invocation.Builder ib = CreateSwiftPasswordConverter.fromRequest(client, request);
         Function<Response, CreateSwiftPasswordResponse> transformer =
                 CreateSwiftPasswordConverter.fromResponse();
@@ -207,6 +213,7 @@ public class IdentityClient implements Identity {
     @Override
     public CreateUserResponse createUser(CreateUserRequest request) {
         LOG.trace("Called createUser");
+        request = CreateUserConverter.interceptRequest(request);
         Invocation.Builder ib = CreateUserConverter.fromRequest(client, request);
         Function<Response, CreateUserResponse> transformer = CreateUserConverter.fromResponse();
 
@@ -217,6 +224,7 @@ public class IdentityClient implements Identity {
     @Override
     public DeleteApiKeyResponse deleteApiKey(DeleteApiKeyRequest request) {
         LOG.trace("Called deleteApiKey");
+        request = DeleteApiKeyConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteApiKeyConverter.fromRequest(client, request);
         Function<Response, DeleteApiKeyResponse> transformer = DeleteApiKeyConverter.fromResponse();
 
@@ -227,6 +235,7 @@ public class IdentityClient implements Identity {
     @Override
     public DeleteGroupResponse deleteGroup(DeleteGroupRequest request) {
         LOG.trace("Called deleteGroup");
+        request = DeleteGroupConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteGroupConverter.fromRequest(client, request);
         Function<Response, DeleteGroupResponse> transformer = DeleteGroupConverter.fromResponse();
 
@@ -237,6 +246,7 @@ public class IdentityClient implements Identity {
     @Override
     public DeletePolicyResponse deletePolicy(DeletePolicyRequest request) {
         LOG.trace("Called deletePolicy");
+        request = DeletePolicyConverter.interceptRequest(request);
         Invocation.Builder ib = DeletePolicyConverter.fromRequest(client, request);
         Function<Response, DeletePolicyResponse> transformer = DeletePolicyConverter.fromResponse();
 
@@ -247,6 +257,7 @@ public class IdentityClient implements Identity {
     @Override
     public DeleteSwiftPasswordResponse deleteSwiftPassword(DeleteSwiftPasswordRequest request) {
         LOG.trace("Called deleteSwiftPassword");
+        request = DeleteSwiftPasswordConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteSwiftPasswordConverter.fromRequest(client, request);
         Function<Response, DeleteSwiftPasswordResponse> transformer =
                 DeleteSwiftPasswordConverter.fromResponse();
@@ -258,6 +269,7 @@ public class IdentityClient implements Identity {
     @Override
     public DeleteUserResponse deleteUser(DeleteUserRequest request) {
         LOG.trace("Called deleteUser");
+        request = DeleteUserConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteUserConverter.fromRequest(client, request);
         Function<Response, DeleteUserResponse> transformer = DeleteUserConverter.fromResponse();
 
@@ -268,6 +280,7 @@ public class IdentityClient implements Identity {
     @Override
     public GetCompartmentResponse getCompartment(GetCompartmentRequest request) {
         LOG.trace("Called getCompartment");
+        request = GetCompartmentConverter.interceptRequest(request);
         Invocation.Builder ib = GetCompartmentConverter.fromRequest(client, request);
         Function<Response, GetCompartmentResponse> transformer =
                 GetCompartmentConverter.fromResponse();
@@ -279,6 +292,7 @@ public class IdentityClient implements Identity {
     @Override
     public GetGroupResponse getGroup(GetGroupRequest request) {
         LOG.trace("Called getGroup");
+        request = GetGroupConverter.interceptRequest(request);
         Invocation.Builder ib = GetGroupConverter.fromRequest(client, request);
         Function<Response, GetGroupResponse> transformer = GetGroupConverter.fromResponse();
 
@@ -289,6 +303,7 @@ public class IdentityClient implements Identity {
     @Override
     public GetPolicyResponse getPolicy(GetPolicyRequest request) {
         LOG.trace("Called getPolicy");
+        request = GetPolicyConverter.interceptRequest(request);
         Invocation.Builder ib = GetPolicyConverter.fromRequest(client, request);
         Function<Response, GetPolicyResponse> transformer = GetPolicyConverter.fromResponse();
 
@@ -299,6 +314,7 @@ public class IdentityClient implements Identity {
     @Override
     public GetUserResponse getUser(GetUserRequest request) {
         LOG.trace("Called getUser");
+        request = GetUserConverter.interceptRequest(request);
         Invocation.Builder ib = GetUserConverter.fromRequest(client, request);
         Function<Response, GetUserResponse> transformer = GetUserConverter.fromResponse();
 
@@ -310,6 +326,7 @@ public class IdentityClient implements Identity {
     public GetUserGroupMembershipResponse getUserGroupMembership(
             GetUserGroupMembershipRequest request) {
         LOG.trace("Called getUserGroupMembership");
+        request = GetUserGroupMembershipConverter.interceptRequest(request);
         Invocation.Builder ib = GetUserGroupMembershipConverter.fromRequest(client, request);
         Function<Response, GetUserGroupMembershipResponse> transformer =
                 GetUserGroupMembershipConverter.fromResponse();
@@ -321,6 +338,7 @@ public class IdentityClient implements Identity {
     @Override
     public ListApiKeysResponse listApiKeys(ListApiKeysRequest request) {
         LOG.trace("Called listApiKeys");
+        request = ListApiKeysConverter.interceptRequest(request);
         Invocation.Builder ib = ListApiKeysConverter.fromRequest(client, request);
         Function<Response, ListApiKeysResponse> transformer = ListApiKeysConverter.fromResponse();
 
@@ -332,6 +350,7 @@ public class IdentityClient implements Identity {
     public ListAvailabilityDomainsResponse listAvailabilityDomains(
             ListAvailabilityDomainsRequest request) {
         LOG.trace("Called listAvailabilityDomains");
+        request = ListAvailabilityDomainsConverter.interceptRequest(request);
         Invocation.Builder ib = ListAvailabilityDomainsConverter.fromRequest(client, request);
         Function<Response, ListAvailabilityDomainsResponse> transformer =
                 ListAvailabilityDomainsConverter.fromResponse();
@@ -343,6 +362,7 @@ public class IdentityClient implements Identity {
     @Override
     public ListCompartmentsResponse listCompartments(ListCompartmentsRequest request) {
         LOG.trace("Called listCompartments");
+        request = ListCompartmentsConverter.interceptRequest(request);
         Invocation.Builder ib = ListCompartmentsConverter.fromRequest(client, request);
         Function<Response, ListCompartmentsResponse> transformer =
                 ListCompartmentsConverter.fromResponse();
@@ -354,6 +374,7 @@ public class IdentityClient implements Identity {
     @Override
     public ListGroupsResponse listGroups(ListGroupsRequest request) {
         LOG.trace("Called listGroups");
+        request = ListGroupsConverter.interceptRequest(request);
         Invocation.Builder ib = ListGroupsConverter.fromRequest(client, request);
         Function<Response, ListGroupsResponse> transformer = ListGroupsConverter.fromResponse();
 
@@ -364,6 +385,7 @@ public class IdentityClient implements Identity {
     @Override
     public ListPoliciesResponse listPolicies(ListPoliciesRequest request) {
         LOG.trace("Called listPolicies");
+        request = ListPoliciesConverter.interceptRequest(request);
         Invocation.Builder ib = ListPoliciesConverter.fromRequest(client, request);
         Function<Response, ListPoliciesResponse> transformer = ListPoliciesConverter.fromResponse();
 
@@ -374,6 +396,7 @@ public class IdentityClient implements Identity {
     @Override
     public ListSwiftPasswordsResponse listSwiftPasswords(ListSwiftPasswordsRequest request) {
         LOG.trace("Called listSwiftPasswords");
+        request = ListSwiftPasswordsConverter.interceptRequest(request);
         Invocation.Builder ib = ListSwiftPasswordsConverter.fromRequest(client, request);
         Function<Response, ListSwiftPasswordsResponse> transformer =
                 ListSwiftPasswordsConverter.fromResponse();
@@ -386,6 +409,7 @@ public class IdentityClient implements Identity {
     public ListUserGroupMembershipsResponse listUserGroupMemberships(
             ListUserGroupMembershipsRequest request) {
         LOG.trace("Called listUserGroupMemberships");
+        request = ListUserGroupMembershipsConverter.interceptRequest(request);
         Invocation.Builder ib = ListUserGroupMembershipsConverter.fromRequest(client, request);
         Function<Response, ListUserGroupMembershipsResponse> transformer =
                 ListUserGroupMembershipsConverter.fromResponse();
@@ -397,6 +421,7 @@ public class IdentityClient implements Identity {
     @Override
     public ListUsersResponse listUsers(ListUsersRequest request) {
         LOG.trace("Called listUsers");
+        request = ListUsersConverter.interceptRequest(request);
         Invocation.Builder ib = ListUsersConverter.fromRequest(client, request);
         Function<Response, ListUsersResponse> transformer = ListUsersConverter.fromResponse();
 
@@ -407,6 +432,7 @@ public class IdentityClient implements Identity {
     @Override
     public RemoveUserFromGroupResponse removeUserFromGroup(RemoveUserFromGroupRequest request) {
         LOG.trace("Called removeUserFromGroup");
+        request = RemoveUserFromGroupConverter.interceptRequest(request);
         Invocation.Builder ib = RemoveUserFromGroupConverter.fromRequest(client, request);
         Function<Response, RemoveUserFromGroupResponse> transformer =
                 RemoveUserFromGroupConverter.fromResponse();
@@ -418,6 +444,7 @@ public class IdentityClient implements Identity {
     @Override
     public UpdateCompartmentResponse updateCompartment(UpdateCompartmentRequest request) {
         LOG.trace("Called updateCompartment");
+        request = UpdateCompartmentConverter.interceptRequest(request);
         Invocation.Builder ib = UpdateCompartmentConverter.fromRequest(client, request);
         Function<Response, UpdateCompartmentResponse> transformer =
                 UpdateCompartmentConverter.fromResponse();
@@ -429,6 +456,7 @@ public class IdentityClient implements Identity {
     @Override
     public UpdateGroupResponse updateGroup(UpdateGroupRequest request) {
         LOG.trace("Called updateGroup");
+        request = UpdateGroupConverter.interceptRequest(request);
         Invocation.Builder ib = UpdateGroupConverter.fromRequest(client, request);
         Function<Response, UpdateGroupResponse> transformer = UpdateGroupConverter.fromResponse();
 
@@ -439,6 +467,7 @@ public class IdentityClient implements Identity {
     @Override
     public UpdatePolicyResponse updatePolicy(UpdatePolicyRequest request) {
         LOG.trace("Called updatePolicy");
+        request = UpdatePolicyConverter.interceptRequest(request);
         Invocation.Builder ib = UpdatePolicyConverter.fromRequest(client, request);
         Function<Response, UpdatePolicyResponse> transformer = UpdatePolicyConverter.fromResponse();
 
@@ -449,6 +478,7 @@ public class IdentityClient implements Identity {
     @Override
     public UpdateSwiftPasswordResponse updateSwiftPassword(UpdateSwiftPasswordRequest request) {
         LOG.trace("Called updateSwiftPassword");
+        request = UpdateSwiftPasswordConverter.interceptRequest(request);
         Invocation.Builder ib = UpdateSwiftPasswordConverter.fromRequest(client, request);
         Function<Response, UpdateSwiftPasswordResponse> transformer =
                 UpdateSwiftPasswordConverter.fromResponse();
@@ -460,6 +490,7 @@ public class IdentityClient implements Identity {
     @Override
     public UpdateUserResponse updateUser(UpdateUserRequest request) {
         LOG.trace("Called updateUser");
+        request = UpdateUserConverter.interceptRequest(request);
         Invocation.Builder ib = UpdateUserConverter.fromRequest(client, request);
         Function<Response, UpdateUserResponse> transformer = UpdateUserConverter.fromResponse();
 
@@ -470,6 +501,7 @@ public class IdentityClient implements Identity {
     @Override
     public UpdateUserStateResponse updateUserState(UpdateUserStateRequest request) {
         LOG.trace("Called updateUserState");
+        request = UpdateUserStateConverter.interceptRequest(request);
         Invocation.Builder ib = UpdateUserStateConverter.fromRequest(client, request);
         Function<Response, UpdateUserStateResponse> transformer =
                 UpdateUserStateConverter.fromResponse();
@@ -481,6 +513,7 @@ public class IdentityClient implements Identity {
     @Override
     public UploadApiKeyResponse uploadApiKey(UploadApiKeyRequest request) {
         LOG.trace("Called uploadApiKey");
+        request = UploadApiKeyConverter.interceptRequest(request);
         Invocation.Builder ib = UploadApiKeyConverter.fromRequest(client, request);
         Function<Response, UploadApiKeyResponse> transformer = UploadApiKeyConverter.fromResponse();
 

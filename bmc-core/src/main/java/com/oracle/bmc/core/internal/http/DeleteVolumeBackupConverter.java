@@ -30,6 +30,11 @@ public class DeleteVolumeBackupConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static DeleteVolumeBackupRequest interceptRequest(DeleteVolumeBackupRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(
             RestClient client, DeleteVolumeBackupRequest request) {
         if (request == null) {
@@ -83,6 +88,7 @@ public class DeleteVolumeBackupConverter {
                         }
 
                         DeleteVolumeBackupResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

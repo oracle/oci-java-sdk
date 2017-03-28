@@ -30,6 +30,11 @@ public class CreateSubnetConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static CreateSubnetRequest interceptRequest(CreateSubnetRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, CreateSubnetRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -86,6 +91,7 @@ public class CreateSubnetConverter {
                         }
 
                         CreateSubnetResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

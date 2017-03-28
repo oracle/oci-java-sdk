@@ -30,6 +30,12 @@ public class DeleteInternetGatewayConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static DeleteInternetGatewayRequest interceptRequest(
+            DeleteInternetGatewayRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(
             RestClient client, DeleteInternetGatewayRequest request) {
         if (request == null) {
@@ -83,6 +89,7 @@ public class DeleteInternetGatewayConverter {
                         }
 
                         DeleteInternetGatewayResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

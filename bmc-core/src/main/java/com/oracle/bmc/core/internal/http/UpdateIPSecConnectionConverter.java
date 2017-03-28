@@ -30,6 +30,12 @@ public class UpdateIPSecConnectionConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static UpdateIPSecConnectionRequest interceptRequest(
+            UpdateIPSecConnectionRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(
             RestClient client, UpdateIPSecConnectionRequest request) {
         if (request == null) {
@@ -96,6 +102,7 @@ public class UpdateIPSecConnectionConverter {
                         }
 
                         UpdateIPSecConnectionResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

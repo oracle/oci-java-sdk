@@ -38,7 +38,7 @@ public class Services {
             }
             throw new IllegalArgumentException(
                     String.format(
-                            "Cannot redefine service '%s' with with new endpoint prefix '%s', alread set to '%s'",
+                            "Cannot redefine service '%s' with with new endpoint prefix '%s', already set to '%s'",
                             serviceName,
                             serviceEndpointPrefix,
                             existing.getServiceEndpointPrefix()));

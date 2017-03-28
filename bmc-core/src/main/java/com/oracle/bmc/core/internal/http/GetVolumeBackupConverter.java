@@ -30,6 +30,11 @@ public class GetVolumeBackupConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static GetVolumeBackupRequest interceptRequest(GetVolumeBackupRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(
             RestClient client, GetVolumeBackupRequest request) {
         if (request == null) {
@@ -87,6 +92,7 @@ public class GetVolumeBackupConverter {
                         }
 
                         GetVolumeBackupResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

@@ -34,18 +34,20 @@ public class DeleteObjectRequest {
     /**
      * The name of the object.
      * <p>
-     * Example: `test/test1`
+     * Example: `test/object1.log`
      *
      */
     private String objectName;
 
     /**
-     * The entity tag to match.
+     * The entity tag to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
+     * For uploading a part, this is the entity tag of the target part.
+     *
      */
     private String ifMatch;
 
     /**
-     * The client request ID for tracing
+     * The client request ID for tracing.
      */
     private String opcClientRequestId;
 

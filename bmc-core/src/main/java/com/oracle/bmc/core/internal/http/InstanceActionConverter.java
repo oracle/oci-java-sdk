@@ -30,6 +30,11 @@ public class InstanceActionConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static InstanceActionRequest interceptRequest(InstanceActionRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, InstanceActionRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -100,6 +105,7 @@ public class InstanceActionConverter {
                         }
 
                         InstanceActionResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

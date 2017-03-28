@@ -30,6 +30,11 @@ public class DeleteDrgAttachmentConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static DeleteDrgAttachmentRequest interceptRequest(DeleteDrgAttachmentRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(
             RestClient client, DeleteDrgAttachmentRequest request) {
         if (request == null) {
@@ -83,6 +88,7 @@ public class DeleteDrgAttachmentConverter {
                         }
 
                         DeleteDrgAttachmentResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

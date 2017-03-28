@@ -30,6 +30,11 @@ public class DeleteVcnConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static DeleteVcnRequest interceptRequest(DeleteVcnRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, DeleteVcnRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -81,6 +86,7 @@ public class DeleteVcnConverter {
                         }
 
                         DeleteVcnResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

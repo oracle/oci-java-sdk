@@ -9,7 +9,6 @@ import java.nio.charset.StandardCharsets;
 import java.security.interfaces.RSAPrivateKey;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -17,7 +16,6 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.TimeZone;
-import java.util.TreeMap;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -35,6 +33,7 @@ import com.oracle.bmc.http.internal.RestClientFactory;
 import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.http.signing.SigningStrategy;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -48,7 +47,7 @@ public class RequestSignerImpl implements RequestSigner {
     private static final SignatureSigner SIGNER = new SignatureSigner();
 
     private final KeySupplier<RSAPrivateKey> keySupplier;
-    private final SigningStrategy signingStrategy;
+    private final SigningConfiguration signingConfiguration;
     private final Supplier<String> keyIdSupplier;
 
     /**
@@ -56,15 +55,43 @@ public class RequestSignerImpl implements RequestSigner {
      * used to get keys for doing the signing.
      *
      * @param keySupplier
-     *            a key supplier that will be used for signing the request
+     *            A key supplier that will be used for signing the request
+     * @param signingStrategy
+     *            The signing strategy to determine what headers to use
+     * @param keyIdSupplier
+     *            A keyId supplier that will be used for signing the request
      */
     public RequestSignerImpl(
             @Nonnull final KeySupplier<RSAPrivateKey> keySupplier,
             @Nonnull final SigningStrategy signingStrategy,
             @Nonnull final Supplier<String> keyIdSupplier) {
+        this(keySupplier, toSigningConfiguration(signingStrategy), keyIdSupplier);
+    }
+
+    /**
+     * Construct the RequestSigner with the specified KeySupplier. This will be
+     * used to get keys for doing the signing.
+     *
+     * @param keySupplier
+     *            A key supplier that will be used for signing the request
+     * @param signingConfiguration
+     *            The signing configuration to determine what headers to use
+     * @param keyIdSupplier
+     *            A keyId supplier that will be used for signing the request
+     */
+    public RequestSignerImpl(
+            @Nonnull final KeySupplier<RSAPrivateKey> keySupplier,
+            @Nonnull final SigningConfiguration signingConfiguration,
+            @Nonnull final Supplier<String> keyIdSupplier) {
         this.keySupplier = Preconditions.checkNotNull(keySupplier);
-        this.signingStrategy = Preconditions.checkNotNull(signingStrategy);
+        this.signingConfiguration = Preconditions.checkNotNull(signingConfiguration);
         this.keyIdSupplier = Preconditions.checkNotNull(keyIdSupplier);
+    }
+
+    private static SigningConfiguration toSigningConfiguration(SigningStrategy signingStrategy) {
+        return new SigningConfiguration(
+                signingStrategy.getHeadersToSign(),
+                signingStrategy.isSkipContentHeadersForStreamingPutRequests());
     }
 
     @Override
@@ -102,27 +129,42 @@ public class RequestSignerImpl implements RequestSigner {
             String keyId = keyIdSupplier.get();
             Version version = validateVersion(versionName, algorithm);
             final RSAPrivateKey key = getPrivateKey(keyId);
-            // copy of headers as case-insensitive, do not modify input map
-            final Map<String, String> caseInsensitiveHeaders = ignoreCaseHeaders(headers);
             final String lowerHttpMethod = httpMethod.toLowerCase();
             final String path = extractPath(uri);
 
-            injectMissingHeaders(lowerHttpMethod, uri, caseInsensitiveHeaders, body);
+            // 1) get the required headers that must be signed
+            final List<String> requiredHeaders = getRequiredSigningHeaders(lowerHttpMethod);
 
-            final Map<String, String> signedHeaders =
-                    extractHeadersToSign(lowerHttpMethod, caseInsensitiveHeaders);
-            final String stringToSign = calculateStringToSign(lowerHttpMethod, path, signedHeaders);
+            // 2) copy of original headers as case-insensitive, do not modify input map
+            final Map<String, String> existingHeaders = ignoreCaseHeaders(headers);
+
+            // 3) calculate any required headers that are missing
+            final Map<String, String> missingHeaders =
+                    calculateMissingHeaders(
+                            lowerHttpMethod, uri, existingHeaders, body, requiredHeaders);
+
+            // 4) create a map containing both existing + missing headers
+            final Map<String, String> allHeaders = new HashMap<>();
+            allHeaders.putAll(existingHeaders);
+            allHeaders.putAll(missingHeaders);
+
+            // 5) calculate the signature
+            final String stringToSign =
+                    calculateStringToSign(lowerHttpMethod, path, allHeaders, requiredHeaders);
             final String signature = sign(key, algorithm, stringToSign);
 
-            injectAuthorizationHeader(
-                    keyId,
-                    lowerHttpMethod,
-                    signedHeaders,
-                    signature,
-                    algorithm,
-                    version.getVersionName());
-            return signedHeaders;
+            // 6) calculate the auth header and add to all the missing headers that should be added
+            final String authorizationHeader =
+                    calculateAuthorizationHeader(
+                            keyId,
+                            lowerHttpMethod,
+                            signature,
+                            algorithm,
+                            version.getVersionName(),
+                            requiredHeaders);
+            missingHeaders.put(Constants.AUTHORIZATION_HEADER, authorizationHeader);
 
+            return missingHeaders;
         } catch (final Exception ex) {
             LOG.debug("Could not sign request", ex);
             throw new SignedRequestException(ex);
@@ -185,124 +227,87 @@ public class RequestSignerImpl implements RequestSigner {
         return path;
     }
 
-    private void injectMissingHeaders(
+    private Map<String, String> calculateMissingHeaders(
             final String httpMethod,
             final URI uri,
-            final Map<String, String> caseInsensitiveHeaders,
-            final Object body) {
-        if (!caseInsensitiveHeaders.containsKey(Constants.DATE)
-                && !caseInsensitiveHeaders.containsKey(Constants.CUSTOM_DATE_HEADER)) {
-            caseInsensitiveHeaders.put(Constants.DATE, createFormatter().format(new Date()));
-        }
-        if (!caseInsensitiveHeaders.containsKey(Constants.HOST)) {
-            caseInsensitiveHeaders.put(Constants.HOST, uri.getHost());
+            final Map<String, String> existingHeaders,
+            final Object body,
+            final List<String> requiredHeaders) {
+        // all of the required headers that are currently missing
+        Map<String, String> missingHeaders = new HashMap<>();
+
+        if (isRequiredHeaderMissing(Constants.DATE, requiredHeaders, existingHeaders)) {
+            missingHeaders.put(Constants.DATE, createFormatter().format(new Date()));
         }
 
-        // supply content-type, content-length and x-content-sha256 if missing (PUT and POST only)
-        if (httpMethod.equals("put") || httpMethod.equals("post")) {
-            // only exception is for streaming bodies for PUT if the signing strategy allows it to be skipped
+        if (isRequiredHeaderMissing(Constants.HOST, requiredHeaders, existingHeaders)) {
+            missingHeaders.put(Constants.HOST, uri.getHost());
+        }
+
+        boolean isPost = httpMethod.equals("post");
+        boolean isPut = httpMethod.equals("put");
+        // for post and put, also verify the presence of content headers
+        if (!(isPut || isPost)) {
+            // Asking to sign a body on GET/DELETE/HEAD is not allowed
+            if (body != null) {
+                throw new RuntimeException("MUST NOT send body on non-POST/PUT request");
+            } else {
+                // nothing left to do
+                return missingHeaders;
+            }
+        }
+
+        // the one exception for the below is when doing a PUT if the body is an InputStream
+        // and the configuration allows it to be skipped
+        if (isPut) {
             if (body instanceof InputStream) {
-                if (httpMethod.equals("put") && signingStrategy.isSkipContentHeadersForStreamingRequests()) {
-                    return;
+                if (signingConfiguration.skipContentHeadersForStreamingPutRequests) {
+                    return missingHeaders;
                 } else {
+                    // TODO: support DuplicatableInputStream to be able to calculate length/sha-256
                     throw new IllegalArgumentException(
                             "Streaming body not supported for signing strategy");
                 }
-            } else {
-                // While we don't always sign content-type, services always
-                // expect application/json (except if we're sending an input stream)
-                // NOTE: this should never happen as EntityFactory ensures all
-                // requests have this header, so log a warning
-                if (!caseInsensitiveHeaders.containsKey(Constants.CONTENT_TYPE)) {
-                    LOG.warn("Missing 'content-type' header, defaulting to 'application/json'");
-                    caseInsensitiveHeaders.put(Constants.CONTENT_TYPE, Constants.JSON_CONTENT_TYPE);
-                } else if (!caseInsensitiveHeaders
-                        .get(Constants.CONTENT_TYPE)
-                        .toLowerCase()
-                        .equals(Constants.JSON_CONTENT_TYPE)) {
-                    throw new IllegalArgumentException(
-                            "Only 'application/json' supported for content type");
-                }
-
-                byte[] bodyBytes;
-                try {
-                    bodyBytes = getJsonBody(body);
-                } catch (JsonProcessingException e) {
-                    throw new IllegalArgumentException("Unable to process JSON body", e);
-                }
-
-                if (!caseInsensitiveHeaders.containsKey(Constants.CONTENT_LENGTH)) {
-                    caseInsensitiveHeaders.put(
-                            Constants.CONTENT_LENGTH, Integer.toString(bodyBytes.length));
-                }
-
-                if (!caseInsensitiveHeaders.containsKey(Constants.X_CONTENT_SHA256)) {
-                    caseInsensitiveHeaders.put(
-                            Constants.X_CONTENT_SHA256, calculateBodySHA256(bodyBytes));
-                }
-            }
-        } else {
-            // Conversely, asking to sign a body on GET/DELETE/HEAD/OPTIONS is
-            // not allowed
-            if (body != null) {
-                throw new RuntimeException("MUST NOT send body on non-POST/PUT request");
             }
         }
+
+        // supply content-type, content-length and x-content-sha256 if missing (PUT and POST only)
+        if (requiredHeaders.contains(Constants.CONTENT_TYPE)) {
+            // While we don't always sign content-type, services always
+            // expect application/json (except if we're sending an input stream)
+            // NOTE: this should never happen as EntityFactory ensures all
+            // requests have this header, so log a warning
+            if (!existingHeaders.containsKey(Constants.CONTENT_TYPE)) {
+                LOG.warn("Missing 'content-type' header, defaulting to 'application/json'");
+                missingHeaders.put(Constants.CONTENT_TYPE, Constants.JSON_CONTENT_TYPE);
+            } else if (!existingHeaders
+                    .get(Constants.CONTENT_TYPE)
+                    .toLowerCase()
+                    .equals(Constants.JSON_CONTENT_TYPE)) {
+                throw new IllegalArgumentException(
+                        "Only 'application/json' supported for content type");
+            }
+        }
+        byte[] bodyBytes;
+        try {
+            bodyBytes = getJsonBody(body);
+        } catch (JsonProcessingException e) {
+            throw new IllegalArgumentException("Unable to process JSON body", e);
+        }
+
+        if (isRequiredHeaderMissing(Constants.CONTENT_LENGTH, requiredHeaders, existingHeaders)) {
+            missingHeaders.put(Constants.CONTENT_LENGTH, Integer.toString(bodyBytes.length));
+        }
+        if (isRequiredHeaderMissing(Constants.X_CONTENT_SHA256, requiredHeaders, existingHeaders)) {
+            missingHeaders.put(Constants.X_CONTENT_SHA256, calculateBodySHA256(bodyBytes));
+        }
+
+        return missingHeaders;
     }
 
-    private Map<String, String> extractHeadersToSign(
-            final String httpMethod, final Map<String, String> caseInsensitiveHeaders) {
-        final List<String> requiredHeaders = getRequiredSigningHeaders(httpMethod);
-
-        if (requiredHeaders == null)
-            throw new RuntimeException("Don't know how to sign method " + httpMethod);
-
-        // headersToSign will be sorted
-        final Map<String, String> headersToSign = new TreeMap<>(new HeaderNameComparator());
-
-        for (String header : requiredHeaders) {
-            if (header.equals(Constants.REQUEST_TARGET)) {
-                // (request-target) is a pseudo-header
-                continue;
-            } else if (header.equals(Constants.DATE)) {
-                // Special-case "date" since "x-date" takes priority if provided
-                if (caseInsensitiveHeaders.containsKey(Constants.CUSTOM_DATE_HEADER)) {
-                    headersToSign.put(
-                            Constants.CUSTOM_DATE_HEADER,
-                            caseInsensitiveHeaders.get(Constants.CUSTOM_DATE_HEADER));
-                } else {
-                    headersToSign.put(header, caseInsensitiveHeaders.get(Constants.DATE));
-                }
-            } else if (!caseInsensitiveHeaders.containsKey(header)) {
-                // As of 9/12/2016 this will never throw, since injectHeaders
-                // above has all the information needed to supply all required
-                // headers for supported http methods.
-                throw new RuntimeException("Missing required header " + header);
-            } else {
-                // Header exists in source headers
-                headersToSign.put(header, caseInsensitiveHeaders.get(header));
-            }
-        }
-
-        // Check if the caller has asked for headers to be signed that are not
-        // required.
-        // However, we want to exclude the date/x-date logic since that has been
-        // already taken care of above.
-        for (Map.Entry<String, String> missingHeader : caseInsensitiveHeaders.entrySet()) {
-            if (missingHeader.getKey().equalsIgnoreCase(Constants.DATE)
-                    || missingHeader.getKey().equalsIgnoreCase(Constants.CUSTOM_DATE_HEADER)) {
-                // If both date and x-date header were supplied, x-date takes
-                // priority, so we do not add date here again
-                continue;
-            }
-
-            if (!headersToSign.containsKey(missingHeader.getKey())) {
-                headersToSign.put(
-                        missingHeader.getKey().toString(), missingHeader.getValue().toString());
-            }
-        }
-
-        return headersToSign;
+    private static boolean isRequiredHeaderMissing(
+            String headerName, List<String> requiredHeaders, Map<String, String> existingHeaders) {
+        return requiredHeaders.contains(headerName) && !existingHeaders.containsKey(headerName);
     }
 
     private static String calculateBodySHA256(final byte[] body) {
@@ -311,53 +316,29 @@ public class RequestSignerImpl implements RequestSigner {
     }
 
     private String calculateStringToSign(
-            String httpMethod, String path, Map<String, String> headers) {
-        final List<String> signedHeadersList = getRequiredSigningHeaders(httpMethod);
+            String httpMethod,
+            String path,
+            Map<String, String> allHeaders,
+            List<String> requiredHeaders) {
 
         // Header name and value are separated with ": " and each (name, value)
         // pair is separated with "\n"
-        // (request-target) is a pseudo-header, and it's computed without
-        // inserting into the headers map.
-        List<String> signatureBuilder = new ArrayList<>();
+        List<String> signatureParts = new ArrayList<>();
 
-        // We could just dump the map, but then we'd have to pass the order they
-        // were dumped to other methods.
-        // Just use the ordering in REQUIRED_HEADERS everywhere to be
-        // consistent.
-        for (String headerName : signedHeadersList) {
-            // Assuming success on lookup because extractHeadersToSign would
-            // have thrown before this
-            String headerValue = headers.get(headerName);
+        // Use the order from requiredHeaders, which must match the order
+        // when creating the authorization header
+        for (String headerName : requiredHeaders) {
+            String headerValue = allHeaders.get(headerName);
 
             if (headerName.equals(Constants.REQUEST_TARGET)) {
                 // Manually compute pseudo-header (request-target), since it
                 // won't be in headers
                 headerValue = httpMethod + " " + path;
-            } else if (headerName.equals(Constants.DATE)) {
-                // x-date has priority if it's provided
-                if (headers.containsKey(Constants.CUSTOM_DATE_HEADER)) {
-                    headerName = Constants.CUSTOM_DATE_HEADER;
-                    headerValue = headers.get(Constants.CUSTOM_DATE_HEADER);
-                }
             }
-            signatureBuilder.add(String.format("%s: %s", headerName, headerValue));
+            signatureParts.add(String.format("%s: %s", headerName, headerValue));
         }
 
-        for (Map.Entry<String, String> missingHeader : headers.entrySet()) {
-            if (missingHeader.getKey().equalsIgnoreCase(Constants.DATE)
-                    || missingHeader.getKey().equalsIgnoreCase(Constants.CUSTOM_DATE_HEADER)) {
-                // If both date and x-date header were supplied, x-date takes
-                // priority, so we do not add date here again
-                continue;
-            }
-
-            if (!signedHeadersList.contains(missingHeader.getKey())) {
-                signatureBuilder.add(
-                        String.format("%s: %s", missingHeader.getKey(), missingHeader.getValue()));
-            }
-        }
-
-        return StringUtils.join(signatureBuilder, "\n");
+        return StringUtils.join(signatureParts, "\n");
     }
 
     private String sign(RSAPrivateKey key, Algorithm algorithm, String stringToSign) {
@@ -367,51 +348,31 @@ public class RequestSignerImpl implements RequestSigner {
         return base64Encode(signature);
     }
 
-    private void injectAuthorizationHeader(
+    private String calculateAuthorizationHeader(
             final String keyId,
             final String httpMethod,
-            final Map<String, String> signedHeaders,
             final String signature,
             final Algorithm algorithm,
-            final String version) {
-        // Don't need a null check since the lookup would have failed when we
-        // first signed the headers
-        final List<String> signedHeadersList = getRequiredSigningHeaders(httpMethod);
+            final String version,
+            final List<String> requiredHeaders) {
         final String authorizationHeader =
                 "Signature headers=\"%s\",keyId=\"%s\","
                         + "algorithm=\"%s\",signature=\"%s\",version=\"%s\"";
-        // Space delimited: "date (request-target)" "x-date (request-target)
-        // content-length" etc
-        List<String> headersToJoin = new ArrayList<>();
-        for (String signedHeader : signedHeadersList) {
-            // use x-date instead of date if it was provided
-            if (signedHeader.equals(Constants.DATE)
-                    && signedHeaders.containsKey(Constants.CUSTOM_DATE_HEADER)) {
-                headersToJoin.add(Constants.CUSTOM_DATE_HEADER);
-            } else {
-                headersToJoin.add(signedHeader);
-            }
-        }
-        String headers = StringUtils.join(headersToJoin, " ");
-
-        // add optional headers; x-date has already been added if it was
-        // provided
-        for (String missingHeader : signedHeaders.keySet()) {
-            if (!missingHeader.equalsIgnoreCase(Constants.CUSTOM_DATE_HEADER)
-                    && !signedHeadersList.contains(missingHeader)) {
-                headers += " " + missingHeader;
-            }
-        }
+        // Space delimited: "date (request-target) content-length" etc
+        String headers = StringUtils.join(requiredHeaders, " ");
 
         final String algorithmName = algorithm.getSpecName();
-        signedHeaders.put(
-                Constants.AUTHORIZATION_HEADER,
-                String.format(
-                        authorizationHeader, headers, keyId, algorithmName, signature, version));
+        return String.format(
+                authorizationHeader, headers, keyId, algorithmName, signature, version);
     }
 
     private List<String> getRequiredSigningHeaders(final String httpMethod) {
-        return this.signingStrategy.getHeadersToSign().get(httpMethod);
+        List<String> requiredHeadersToSign =
+                this.signingConfiguration.headersToSign.get(httpMethod);
+        if (requiredHeadersToSign == null) {
+            return new ArrayList<String>(0);
+        }
+        return requiredHeadersToSign;
     }
 
     // JSON is the only accepted format for message bodies that need to be
@@ -444,16 +405,23 @@ public class RequestSignerImpl implements RequestSigner {
     }
 
     private static SimpleDateFormat createFormatter() {
-        // While "date" is used below, "x-date" is also allowed in its place.
         SimpleDateFormat dateFormat = new SimpleDateFormat(Constants.DATE_FORMAT, Locale.US);
         dateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
         return dateFormat;
     }
 
-    private static final class HeaderNameComparator implements Comparator<String> {
-        @Override
-        public int compare(String o1, String o2) {
-            return o1.compareToIgnoreCase(o2);
-        }
+    /**
+     * Basic configuration of what headers to sign.
+     */
+    @RequiredArgsConstructor
+    public static class SigningConfiguration {
+        /**
+         * Map of HTTP method to list of headers to sign.
+         */
+        private final Map<String, List<String>> headersToSign;
+        /**
+         * Flag indicating whether InputStreams in PUT requests are allowed to skip content headers.
+         */
+        private final boolean skipContentHeadersForStreamingPutRequests;
     }
 }

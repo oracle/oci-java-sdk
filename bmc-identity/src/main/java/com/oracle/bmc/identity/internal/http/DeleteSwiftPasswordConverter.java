@@ -30,6 +30,11 @@ public class DeleteSwiftPasswordConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static DeleteSwiftPasswordRequest interceptRequest(DeleteSwiftPasswordRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(
             RestClient client, DeleteSwiftPasswordRequest request) {
         if (request == null) {
@@ -89,6 +94,7 @@ public class DeleteSwiftPasswordConverter {
                         }
 
                         DeleteSwiftPasswordResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

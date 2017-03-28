@@ -30,6 +30,11 @@ public class GetVnicConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static GetVnicRequest interceptRequest(GetVnicRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, GetVnicRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -86,6 +91,7 @@ public class GetVnicConverter {
                         }
 
                         GetVnicResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

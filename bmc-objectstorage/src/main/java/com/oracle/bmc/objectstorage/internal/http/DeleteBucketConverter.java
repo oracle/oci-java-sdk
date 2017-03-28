@@ -30,6 +30,11 @@ public class DeleteBucketConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static DeleteBucketRequest interceptRequest(DeleteBucketRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, DeleteBucketRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -101,6 +106,7 @@ public class DeleteBucketConverter {
                         }
 
                         DeleteBucketResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

@@ -30,6 +30,11 @@ public class ListCpesConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static ListCpesRequest interceptRequest(ListCpesRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, ListCpesRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -97,6 +102,7 @@ public class ListCpesConverter {
                         }
 
                         ListCpesResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

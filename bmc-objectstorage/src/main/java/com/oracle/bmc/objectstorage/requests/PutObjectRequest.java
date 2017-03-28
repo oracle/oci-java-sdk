@@ -34,7 +34,7 @@ public class PutObjectRequest {
     /**
      * The name of the object.
      * <p>
-     * Example: `test/test1`
+     * Example: `test/object1.log`
      *
      */
     private String objectName;
@@ -45,23 +45,27 @@ public class PutObjectRequest {
     private Long contentLength;
 
     /**
-     * The object being put to the object store.
+     * The object to upload to the object store.
      */
     private InputStream putObjectBody;
 
     /**
-     * The entity tag to match.
+     * The entity tag to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
+     * For uploading a part, this is the entity tag of the target part.
+     *
      */
     private String ifMatch;
 
     /**
      * The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
+     * For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag
+     * of the target part.
      *
      */
     private String ifNoneMatch;
 
     /**
-     * The client request ID for tracing
+     * The client request ID for tracing.
      */
     private String opcClientRequestId;
 

@@ -30,6 +30,11 @@ public class DeletePolicyConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static DeletePolicyRequest interceptRequest(DeletePolicyRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, DeletePolicyRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -81,6 +86,7 @@ public class DeletePolicyConverter {
                         }
 
                         DeletePolicyResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

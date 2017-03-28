@@ -30,6 +30,11 @@ public class ListVolumesConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static ListVolumesRequest interceptRequest(ListVolumesRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, ListVolumesRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -105,6 +110,7 @@ public class ListVolumesConverter {
                         }
 
                         ListVolumesResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

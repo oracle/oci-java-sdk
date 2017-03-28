@@ -30,6 +30,11 @@ public class ListInstancesConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static ListInstancesRequest interceptRequest(ListInstancesRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, ListInstancesRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -111,6 +116,7 @@ public class ListInstancesConverter {
                         }
 
                         ListInstancesResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

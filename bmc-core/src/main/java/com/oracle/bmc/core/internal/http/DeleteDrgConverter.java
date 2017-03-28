@@ -30,6 +30,11 @@ public class DeleteDrgConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static DeleteDrgRequest interceptRequest(DeleteDrgRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, DeleteDrgRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -81,6 +86,7 @@ public class DeleteDrgConverter {
                         }
 
                         DeleteDrgResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

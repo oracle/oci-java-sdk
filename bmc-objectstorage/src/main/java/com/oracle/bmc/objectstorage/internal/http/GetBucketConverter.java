@@ -30,6 +30,11 @@ public class GetBucketConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static GetBucketRequest interceptRequest(GetBucketRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, GetBucketRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -119,6 +124,7 @@ public class GetBucketConverter {
                         }
 
                         GetBucketResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

@@ -30,6 +30,11 @@ public class UpdateImageConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static UpdateImageRequest interceptRequest(UpdateImageRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, UpdateImageRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -98,6 +103,7 @@ public class UpdateImageConverter {
                         }
 
                         UpdateImageResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

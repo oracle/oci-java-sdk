@@ -142,6 +142,7 @@ public class BlockstorageClient implements Blockstorage {
     @Override
     public CreateVolumeResponse createVolume(CreateVolumeRequest request) {
         LOG.trace("Called createVolume");
+        request = CreateVolumeConverter.interceptRequest(request);
         Invocation.Builder ib = CreateVolumeConverter.fromRequest(client, request);
         Function<Response, CreateVolumeResponse> transformer = CreateVolumeConverter.fromResponse();
 
@@ -152,6 +153,7 @@ public class BlockstorageClient implements Blockstorage {
     @Override
     public CreateVolumeBackupResponse createVolumeBackup(CreateVolumeBackupRequest request) {
         LOG.trace("Called createVolumeBackup");
+        request = CreateVolumeBackupConverter.interceptRequest(request);
         Invocation.Builder ib = CreateVolumeBackupConverter.fromRequest(client, request);
         Function<Response, CreateVolumeBackupResponse> transformer =
                 CreateVolumeBackupConverter.fromResponse();
@@ -163,6 +165,7 @@ public class BlockstorageClient implements Blockstorage {
     @Override
     public DeleteVolumeResponse deleteVolume(DeleteVolumeRequest request) {
         LOG.trace("Called deleteVolume");
+        request = DeleteVolumeConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteVolumeConverter.fromRequest(client, request);
         Function<Response, DeleteVolumeResponse> transformer = DeleteVolumeConverter.fromResponse();
 
@@ -173,6 +176,7 @@ public class BlockstorageClient implements Blockstorage {
     @Override
     public DeleteVolumeBackupResponse deleteVolumeBackup(DeleteVolumeBackupRequest request) {
         LOG.trace("Called deleteVolumeBackup");
+        request = DeleteVolumeBackupConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteVolumeBackupConverter.fromRequest(client, request);
         Function<Response, DeleteVolumeBackupResponse> transformer =
                 DeleteVolumeBackupConverter.fromResponse();
@@ -184,6 +188,7 @@ public class BlockstorageClient implements Blockstorage {
     @Override
     public GetVolumeResponse getVolume(GetVolumeRequest request) {
         LOG.trace("Called getVolume");
+        request = GetVolumeConverter.interceptRequest(request);
         Invocation.Builder ib = GetVolumeConverter.fromRequest(client, request);
         Function<Response, GetVolumeResponse> transformer = GetVolumeConverter.fromResponse();
 
@@ -194,6 +199,7 @@ public class BlockstorageClient implements Blockstorage {
     @Override
     public GetVolumeBackupResponse getVolumeBackup(GetVolumeBackupRequest request) {
         LOG.trace("Called getVolumeBackup");
+        request = GetVolumeBackupConverter.interceptRequest(request);
         Invocation.Builder ib = GetVolumeBackupConverter.fromRequest(client, request);
         Function<Response, GetVolumeBackupResponse> transformer =
                 GetVolumeBackupConverter.fromResponse();
@@ -205,6 +211,7 @@ public class BlockstorageClient implements Blockstorage {
     @Override
     public ListVolumeBackupsResponse listVolumeBackups(ListVolumeBackupsRequest request) {
         LOG.trace("Called listVolumeBackups");
+        request = ListVolumeBackupsConverter.interceptRequest(request);
         Invocation.Builder ib = ListVolumeBackupsConverter.fromRequest(client, request);
         Function<Response, ListVolumeBackupsResponse> transformer =
                 ListVolumeBackupsConverter.fromResponse();
@@ -216,6 +223,7 @@ public class BlockstorageClient implements Blockstorage {
     @Override
     public ListVolumesResponse listVolumes(ListVolumesRequest request) {
         LOG.trace("Called listVolumes");
+        request = ListVolumesConverter.interceptRequest(request);
         Invocation.Builder ib = ListVolumesConverter.fromRequest(client, request);
         Function<Response, ListVolumesResponse> transformer = ListVolumesConverter.fromResponse();
 
@@ -226,6 +234,7 @@ public class BlockstorageClient implements Blockstorage {
     @Override
     public UpdateVolumeResponse updateVolume(UpdateVolumeRequest request) {
         LOG.trace("Called updateVolume");
+        request = UpdateVolumeConverter.interceptRequest(request);
         Invocation.Builder ib = UpdateVolumeConverter.fromRequest(client, request);
         Function<Response, UpdateVolumeResponse> transformer = UpdateVolumeConverter.fromResponse();
 
@@ -236,6 +245,7 @@ public class BlockstorageClient implements Blockstorage {
     @Override
     public UpdateVolumeBackupResponse updateVolumeBackup(UpdateVolumeBackupRequest request) {
         LOG.trace("Called updateVolumeBackup");
+        request = UpdateVolumeBackupConverter.interceptRequest(request);
         Invocation.Builder ib = UpdateVolumeBackupConverter.fromRequest(client, request);
         Function<Response, UpdateVolumeBackupResponse> transformer =
                 UpdateVolumeBackupConverter.fromResponse();

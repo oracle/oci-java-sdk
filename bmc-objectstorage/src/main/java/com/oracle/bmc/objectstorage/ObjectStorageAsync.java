@@ -43,11 +43,37 @@ public interface ObjectStorageAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Aborts an in-progress multipart upload and deletes all parts that have been uploaded.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    Future<AbortMultipartUploadResponse> abortMultipartUpload(
+            AbortMultipartUploadRequest request,
+            AsyncHandler<AbortMultipartUploadRequest, AbortMultipartUploadResponse> handler);
+
+    /**
+     * Commits a multipart upload, which involves checking part numbers and ETags of the parts, to create an aggregate object.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    Future<CommitMultipartUploadResponse> commitMultipartUpload(
+            CommitMultipartUploadRequest request,
+            AsyncHandler<CommitMultipartUploadRequest, CommitMultipartUploadResponse> handler);
+
+    /**
      * Creates a bucket in the given namespace with a bucket name and optional user-defined metadata.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an admin who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -62,7 +88,22 @@ public interface ObjectStorageAsync extends AutoCloseable {
             AsyncHandler<CreateBucketRequest, CreateBucketResponse> handler);
 
     /**
-     * Deletes a bucket if it is already empty. If the bucket is not empty, use DeleteObject first.
+     * Starts a new multipart upload to a specific object in the given bucket in the given namespace.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    Future<CreateMultipartUploadResponse> createMultipartUpload(
+            CreateMultipartUploadRequest request,
+            AsyncHandler<CreateMultipartUploadRequest, CreateMultipartUploadResponse> handler);
+
+    /**
+     * Deletes a bucket if it is already empty. If the bucket is not empty, use {@link #deleteObject(DeleteObjectRequest, Consumer, Consumer) deleteObject} first.
      *
      *
      * @param request The request object containing the details to send
@@ -77,7 +118,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
             AsyncHandler<DeleteBucketRequest, DeleteBucketResponse> handler);
 
     /**
-     * Delete an object.
+     * Deletes an object.
      *
      *
      * @param request The request object containing the details to send
@@ -106,8 +147,8 @@ public interface ObjectStorageAsync extends AutoCloseable {
             GetBucketRequest request, AsyncHandler<GetBucketRequest, GetBucketResponse> handler);
 
     /**
-     * Get the name of the namespace for the user making the request. An account name must be unique, must start with a
-     * letter, and can have up to 15 lower case letters and numbers. You cannot use spaces and special characters.
+     * Gets the name of the namespace for the user making the request. An account name must be unique, must start with a
+     * letter, and can have up to 15 lowercase letters and numbers. You cannot use spaces or special characters.
      *
      *
      * @param request The request object containing the details to send
@@ -136,7 +177,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
             GetObjectRequest request, AsyncHandler<GetObjectRequest, GetObjectResponse> handler);
 
     /**
-     * An efficient method to check if a bucket exists, and to get the current ETag for the bucket.
+     * Efficiently checks if a bucket exists and gets the current ETag for the bucket.
      *
      *
      * @param request The request object containing the details to send
@@ -164,12 +205,8 @@ public interface ObjectStorageAsync extends AutoCloseable {
             HeadObjectRequest request, AsyncHandler<HeadObjectRequest, HeadObjectResponse> handler);
 
     /**
-     * Get a list of all `BucketSummary`s in a namespace. A `BucketSummary` contains only summary fields for the bucket
+     * Gets a list of all `BucketSummary`s in a compartment. A `BucketSummary` contains only summary fields for the bucket
      * and does not contain fields like the user-defined metadata.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an admin who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -184,11 +221,38 @@ public interface ObjectStorageAsync extends AutoCloseable {
             AsyncHandler<ListBucketsRequest, ListBucketsResponse> handler);
 
     /**
+     * Lists the parts of an in-progress multipart upload.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    Future<ListMultipartUploadPartsResponse> listMultipartUploadParts(
+            ListMultipartUploadPartsRequest request,
+            AsyncHandler<ListMultipartUploadPartsRequest, ListMultipartUploadPartsResponse>
+                    handler);
+
+    /**
+     * Lists all in-progress multipart uploads for the given bucket in the given namespace.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    Future<ListMultipartUploadsResponse> listMultipartUploads(
+            ListMultipartUploadsRequest request,
+            AsyncHandler<ListMultipartUploadsRequest, ListMultipartUploadsResponse> handler);
+
+    /**
      * Lists the objects in a bucket.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an admin who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -203,11 +267,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
             AsyncHandler<ListObjectsRequest, ListObjectsResponse> handler);
 
     /**
-     * Create a new object or overwrite an existing one.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an admin who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
+     * Creates a new object or overwrites an existing one.
      *
      *
      * @param request The request object containing the details to send
@@ -221,7 +281,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
             PutObjectRequest request, AsyncHandler<PutObjectRequest, PutObjectResponse> handler);
 
     /**
-     * Performs a partial (or full) update of a bucket, currently including just the user-defined metadata.
+     * Performs a partial or full update of a bucket's user-defined metadata.
      *
      *
      * @param request The request object containing the details to send
@@ -234,4 +294,18 @@ public interface ObjectStorageAsync extends AutoCloseable {
     Future<UpdateBucketResponse> updateBucket(
             UpdateBucketRequest request,
             AsyncHandler<UpdateBucketRequest, UpdateBucketResponse> handler);
+
+    /**
+     * Uploads a single part of a multipart upload.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    Future<UploadPartResponse> uploadPart(
+            UploadPartRequest request, AsyncHandler<UploadPartRequest, UploadPartResponse> handler);
 }

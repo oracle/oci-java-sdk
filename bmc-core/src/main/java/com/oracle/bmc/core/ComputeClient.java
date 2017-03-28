@@ -142,6 +142,7 @@ public class ComputeClient implements Compute {
     @Override
     public AttachVolumeResponse attachVolume(AttachVolumeRequest request) {
         LOG.trace("Called attachVolume");
+        request = AttachVolumeConverter.interceptRequest(request);
         Invocation.Builder ib = AttachVolumeConverter.fromRequest(client, request);
         Function<Response, AttachVolumeResponse> transformer = AttachVolumeConverter.fromResponse();
 
@@ -153,6 +154,7 @@ public class ComputeClient implements Compute {
     public CaptureConsoleHistoryResponse captureConsoleHistory(
             CaptureConsoleHistoryRequest request) {
         LOG.trace("Called captureConsoleHistory");
+        request = CaptureConsoleHistoryConverter.interceptRequest(request);
         Invocation.Builder ib = CaptureConsoleHistoryConverter.fromRequest(client, request);
         Function<Response, CaptureConsoleHistoryResponse> transformer =
                 CaptureConsoleHistoryConverter.fromResponse();
@@ -164,6 +166,7 @@ public class ComputeClient implements Compute {
     @Override
     public CreateImageResponse createImage(CreateImageRequest request) {
         LOG.trace("Called createImage");
+        request = CreateImageConverter.interceptRequest(request);
         Invocation.Builder ib = CreateImageConverter.fromRequest(client, request);
         Function<Response, CreateImageResponse> transformer = CreateImageConverter.fromResponse();
 
@@ -174,6 +177,7 @@ public class ComputeClient implements Compute {
     @Override
     public DeleteConsoleHistoryResponse deleteConsoleHistory(DeleteConsoleHistoryRequest request) {
         LOG.trace("Called deleteConsoleHistory");
+        request = DeleteConsoleHistoryConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteConsoleHistoryConverter.fromRequest(client, request);
         Function<Response, DeleteConsoleHistoryResponse> transformer =
                 DeleteConsoleHistoryConverter.fromResponse();
@@ -185,6 +189,7 @@ public class ComputeClient implements Compute {
     @Override
     public DeleteImageResponse deleteImage(DeleteImageRequest request) {
         LOG.trace("Called deleteImage");
+        request = DeleteImageConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteImageConverter.fromRequest(client, request);
         Function<Response, DeleteImageResponse> transformer = DeleteImageConverter.fromResponse();
 
@@ -195,6 +200,7 @@ public class ComputeClient implements Compute {
     @Override
     public DetachVolumeResponse detachVolume(DetachVolumeRequest request) {
         LOG.trace("Called detachVolume");
+        request = DetachVolumeConverter.interceptRequest(request);
         Invocation.Builder ib = DetachVolumeConverter.fromRequest(client, request);
         Function<Response, DetachVolumeResponse> transformer = DetachVolumeConverter.fromResponse();
 
@@ -205,6 +211,7 @@ public class ComputeClient implements Compute {
     @Override
     public GetConsoleHistoryResponse getConsoleHistory(GetConsoleHistoryRequest request) {
         LOG.trace("Called getConsoleHistory");
+        request = GetConsoleHistoryConverter.interceptRequest(request);
         Invocation.Builder ib = GetConsoleHistoryConverter.fromRequest(client, request);
         Function<Response, GetConsoleHistoryResponse> transformer =
                 GetConsoleHistoryConverter.fromResponse();
@@ -217,6 +224,7 @@ public class ComputeClient implements Compute {
     public GetConsoleHistoryContentResponse getConsoleHistoryContent(
             GetConsoleHistoryContentRequest request) {
         LOG.trace("Called getConsoleHistoryContent");
+        request = GetConsoleHistoryContentConverter.interceptRequest(request);
         Invocation.Builder ib = GetConsoleHistoryContentConverter.fromRequest(client, request);
         Function<Response, GetConsoleHistoryContentResponse> transformer =
                 GetConsoleHistoryContentConverter.fromResponse();
@@ -228,6 +236,7 @@ public class ComputeClient implements Compute {
     @Override
     public GetImageResponse getImage(GetImageRequest request) {
         LOG.trace("Called getImage");
+        request = GetImageConverter.interceptRequest(request);
         Invocation.Builder ib = GetImageConverter.fromRequest(client, request);
         Function<Response, GetImageResponse> transformer = GetImageConverter.fromResponse();
 
@@ -238,6 +247,7 @@ public class ComputeClient implements Compute {
     @Override
     public GetInstanceResponse getInstance(GetInstanceRequest request) {
         LOG.trace("Called getInstance");
+        request = GetInstanceConverter.interceptRequest(request);
         Invocation.Builder ib = GetInstanceConverter.fromRequest(client, request);
         Function<Response, GetInstanceResponse> transformer = GetInstanceConverter.fromResponse();
 
@@ -248,6 +258,7 @@ public class ComputeClient implements Compute {
     @Override
     public GetVolumeAttachmentResponse getVolumeAttachment(GetVolumeAttachmentRequest request) {
         LOG.trace("Called getVolumeAttachment");
+        request = GetVolumeAttachmentConverter.interceptRequest(request);
         Invocation.Builder ib = GetVolumeAttachmentConverter.fromRequest(client, request);
         Function<Response, GetVolumeAttachmentResponse> transformer =
                 GetVolumeAttachmentConverter.fromResponse();
@@ -259,6 +270,7 @@ public class ComputeClient implements Compute {
     @Override
     public InstanceActionResponse instanceAction(InstanceActionRequest request) {
         LOG.trace("Called instanceAction");
+        request = InstanceActionConverter.interceptRequest(request);
         Invocation.Builder ib = InstanceActionConverter.fromRequest(client, request);
         Function<Response, InstanceActionResponse> transformer =
                 InstanceActionConverter.fromResponse();
@@ -270,6 +282,7 @@ public class ComputeClient implements Compute {
     @Override
     public LaunchInstanceResponse launchInstance(LaunchInstanceRequest request) {
         LOG.trace("Called launchInstance");
+        request = LaunchInstanceConverter.interceptRequest(request);
         Invocation.Builder ib = LaunchInstanceConverter.fromRequest(client, request);
         Function<Response, LaunchInstanceResponse> transformer =
                 LaunchInstanceConverter.fromResponse();
@@ -281,6 +294,7 @@ public class ComputeClient implements Compute {
     @Override
     public ListConsoleHistoriesResponse listConsoleHistories(ListConsoleHistoriesRequest request) {
         LOG.trace("Called listConsoleHistories");
+        request = ListConsoleHistoriesConverter.interceptRequest(request);
         Invocation.Builder ib = ListConsoleHistoriesConverter.fromRequest(client, request);
         Function<Response, ListConsoleHistoriesResponse> transformer =
                 ListConsoleHistoriesConverter.fromResponse();
@@ -292,6 +306,7 @@ public class ComputeClient implements Compute {
     @Override
     public ListImagesResponse listImages(ListImagesRequest request) {
         LOG.trace("Called listImages");
+        request = ListImagesConverter.interceptRequest(request);
         Invocation.Builder ib = ListImagesConverter.fromRequest(client, request);
         Function<Response, ListImagesResponse> transformer = ListImagesConverter.fromResponse();
 
@@ -302,6 +317,7 @@ public class ComputeClient implements Compute {
     @Override
     public ListInstancesResponse listInstances(ListInstancesRequest request) {
         LOG.trace("Called listInstances");
+        request = ListInstancesConverter.interceptRequest(request);
         Invocation.Builder ib = ListInstancesConverter.fromRequest(client, request);
         Function<Response, ListInstancesResponse> transformer =
                 ListInstancesConverter.fromResponse();
@@ -313,6 +329,7 @@ public class ComputeClient implements Compute {
     @Override
     public ListShapesResponse listShapes(ListShapesRequest request) {
         LOG.trace("Called listShapes");
+        request = ListShapesConverter.interceptRequest(request);
         Invocation.Builder ib = ListShapesConverter.fromRequest(client, request);
         Function<Response, ListShapesResponse> transformer = ListShapesConverter.fromResponse();
 
@@ -323,6 +340,7 @@ public class ComputeClient implements Compute {
     @Override
     public ListVnicAttachmentsResponse listVnicAttachments(ListVnicAttachmentsRequest request) {
         LOG.trace("Called listVnicAttachments");
+        request = ListVnicAttachmentsConverter.interceptRequest(request);
         Invocation.Builder ib = ListVnicAttachmentsConverter.fromRequest(client, request);
         Function<Response, ListVnicAttachmentsResponse> transformer =
                 ListVnicAttachmentsConverter.fromResponse();
@@ -335,6 +353,7 @@ public class ComputeClient implements Compute {
     public ListVolumeAttachmentsResponse listVolumeAttachments(
             ListVolumeAttachmentsRequest request) {
         LOG.trace("Called listVolumeAttachments");
+        request = ListVolumeAttachmentsConverter.interceptRequest(request);
         Invocation.Builder ib = ListVolumeAttachmentsConverter.fromRequest(client, request);
         Function<Response, ListVolumeAttachmentsResponse> transformer =
                 ListVolumeAttachmentsConverter.fromResponse();
@@ -346,6 +365,7 @@ public class ComputeClient implements Compute {
     @Override
     public TerminateInstanceResponse terminateInstance(TerminateInstanceRequest request) {
         LOG.trace("Called terminateInstance");
+        request = TerminateInstanceConverter.interceptRequest(request);
         Invocation.Builder ib = TerminateInstanceConverter.fromRequest(client, request);
         Function<Response, TerminateInstanceResponse> transformer =
                 TerminateInstanceConverter.fromResponse();
@@ -357,6 +377,7 @@ public class ComputeClient implements Compute {
     @Override
     public UpdateImageResponse updateImage(UpdateImageRequest request) {
         LOG.trace("Called updateImage");
+        request = UpdateImageConverter.interceptRequest(request);
         Invocation.Builder ib = UpdateImageConverter.fromRequest(client, request);
         Function<Response, UpdateImageResponse> transformer = UpdateImageConverter.fromResponse();
 
@@ -367,6 +388,7 @@ public class ComputeClient implements Compute {
     @Override
     public UpdateInstanceResponse updateInstance(UpdateInstanceRequest request) {
         LOG.trace("Called updateInstance");
+        request = UpdateInstanceConverter.interceptRequest(request);
         Invocation.Builder ib = UpdateInstanceConverter.fromRequest(client, request);
         Function<Response, UpdateInstanceResponse> transformer =
                 UpdateInstanceConverter.fromResponse();

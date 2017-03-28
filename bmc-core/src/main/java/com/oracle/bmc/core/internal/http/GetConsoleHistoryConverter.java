@@ -30,6 +30,11 @@ public class GetConsoleHistoryConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static GetConsoleHistoryRequest interceptRequest(GetConsoleHistoryRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(
             RestClient client, GetConsoleHistoryRequest request) {
         if (request == null) {
@@ -88,6 +93,7 @@ public class GetConsoleHistoryConverter {
                         }
 
                         GetConsoleHistoryResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

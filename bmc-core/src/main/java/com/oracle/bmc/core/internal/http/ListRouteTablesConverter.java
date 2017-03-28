@@ -30,6 +30,11 @@ public class ListRouteTablesConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static ListRouteTablesRequest interceptRequest(ListRouteTablesRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(
             RestClient client, ListRouteTablesRequest request) {
         if (request == null) {
@@ -105,6 +110,7 @@ public class ListRouteTablesConverter {
                         }
 
                         ListRouteTablesResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

@@ -30,6 +30,11 @@ public class CreateSwiftPasswordConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static CreateSwiftPasswordRequest interceptRequest(CreateSwiftPasswordRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(
             RestClient client, CreateSwiftPasswordRequest request) {
         if (request == null) {
@@ -97,6 +102,7 @@ public class CreateSwiftPasswordConverter {
                         }
 
                         CreateSwiftPasswordResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

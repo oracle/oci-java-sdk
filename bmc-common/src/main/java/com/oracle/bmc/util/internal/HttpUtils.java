@@ -28,6 +28,15 @@ public class HttpUtils {
      * @return The encoded path segment.
      */
     public static String encodePathSegment(@Nonnull String pathSegment) {
+        // empty path segments can change the request and are not allowed.
+        // (whitespace-only path segments are OK as they'll get encoded)
+        // ex: "GET /foo/{someFooId}" becomes "GET /foo/" if you have an empty
+        // {someFooId} path segment, which makes it look like a "list foo"
+        // request instead, which is not right.  swagger also requires all path
+        // params be non-null/empty
+        if (pathSegment.isEmpty()) {
+            throw new IllegalArgumentException("Cannot provide empty path segment");
+        }
         return urlPathSegmentEscaper().escape(pathSegment);
     }
 
@@ -38,7 +47,7 @@ public class HttpUtils {
      * @return The encoded path segment.
      */
     public static String encodePathSegment(@Nonnull Number pathSegment) {
-        return urlPathSegmentEscaper().escape(pathSegment.toString());
+        return encodePathSegment(pathSegment.toString());
     }
 
     /**
@@ -48,7 +57,7 @@ public class HttpUtils {
      * @return The encoded path segment.
      */
     public static String encodePathSegment(@Nonnull Boolean pathSegment) {
-        return urlPathSegmentEscaper().escape(pathSegment.toString());
+        return encodePathSegment(pathSegment.toString());
     }
 
     /**
@@ -58,7 +67,7 @@ public class HttpUtils {
      * @return The encoded path segment.
      */
     public static String encodePathSegment(@Nonnull Character pathSegment) {
-        return urlPathSegmentEscaper().escape(pathSegment.toString());
+        return encodePathSegment(pathSegment.toString());
     }
 
     /**
@@ -68,7 +77,7 @@ public class HttpUtils {
      * @return The encoded path segment.
      */
     public static String encodePathSegment(@Nonnull UUID pathSegment) {
-        return urlPathSegmentEscaper().escape(pathSegment.toString());
+        return encodePathSegment(pathSegment.toString());
     }
 
     /**

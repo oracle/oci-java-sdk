@@ -30,6 +30,12 @@ public class CreateIPSecConnectionConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static CreateIPSecConnectionRequest interceptRequest(
+            CreateIPSecConnectionRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(
             RestClient client, CreateIPSecConnectionRequest request) {
         if (request == null) {
@@ -88,6 +94,7 @@ public class CreateIPSecConnectionConverter {
                         }
 
                         CreateIPSecConnectionResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

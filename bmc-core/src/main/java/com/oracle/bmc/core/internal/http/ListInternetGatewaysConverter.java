@@ -30,6 +30,12 @@ public class ListInternetGatewaysConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static ListInternetGatewaysRequest interceptRequest(
+            ListInternetGatewaysRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(
             RestClient client, ListInternetGatewaysRequest request) {
         if (request == null) {
@@ -106,6 +112,7 @@ public class ListInternetGatewaysConverter {
                         }
 
                         ListInternetGatewaysResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

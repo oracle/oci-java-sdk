@@ -21,7 +21,7 @@ import com.oracle.bmc.objectstorage.model.*;
 public class UpdateBucketResponse {
 
     /**
-     * Echoes back the value passed in in the opc-client-request-id header, for use by clients when debugging.
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
      */
     private String opcClientRequestId;
 

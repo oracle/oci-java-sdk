@@ -30,6 +30,11 @@ public class DeleteApiKeyConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static DeleteApiKeyRequest interceptRequest(DeleteApiKeyRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, DeleteApiKeyRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -87,6 +92,7 @@ public class DeleteApiKeyConverter {
                         }
 
                         DeleteApiKeyResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

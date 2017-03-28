@@ -30,6 +30,11 @@ public class CreateUserConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static CreateUserRequest interceptRequest(CreateUserRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, CreateUserRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -86,6 +91,7 @@ public class CreateUserConverter {
                         }
 
                         CreateUserResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

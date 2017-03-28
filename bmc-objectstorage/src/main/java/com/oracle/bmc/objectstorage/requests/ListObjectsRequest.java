@@ -32,17 +32,17 @@ public class ListObjectsRequest {
     private String bucketName;
 
     /**
-     * Object names returned by a list query must start with prefix
+     * The string to use for matching against the start of object names in a list query.
      */
     private String prefix;
 
     /**
-     * Object names returned by a list query must be greater or equal to this parameter
+     * Object names returned by a list query must be greater or equal to this parameter.
      */
     private String start;
 
     /**
-     * Object names returned by a list query must be strictly less than this parameter
+     * Object names returned by a list query must be strictly less than this parameter.
      */
     private String end;
 
@@ -62,16 +62,16 @@ public class ListObjectsRequest {
     private String delimiter;
 
     /**
-     * Object summary in list of objects includes the 'name' field.   This parameter may also include 'size'
+     * Object summary in list of objects includes the 'name' field. This parameter can also include 'size'
      * (object size in bytes), 'md5', and 'timeCreated' (object creation date and time) fields.
-     * Value of this parameter should be a comma separated, case-insensitive list of those field names.
-     * For example 'name,timeCreated,md5'
+     * Value of this parameter should be a comma-separated, case-insensitive list of those field names.
+     * For example 'name,timeCreated,md5'.
      *
      */
     private String fields;
 
     /**
-     * The client request ID for tracing
+     * The client request ID for tracing.
      */
     private String opcClientRequestId;
 

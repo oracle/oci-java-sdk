@@ -137,6 +137,7 @@ public class AuditClient implements Audit {
     @Override
     public ListEventsResponse listEvents(ListEventsRequest request) {
         LOG.trace("Called listEvents");
+        request = ListEventsConverter.interceptRequest(request);
         Invocation.Builder ib = ListEventsConverter.fromRequest(client, request);
         Function<Response, ListEventsResponse> transformer = ListEventsConverter.fromResponse();
 

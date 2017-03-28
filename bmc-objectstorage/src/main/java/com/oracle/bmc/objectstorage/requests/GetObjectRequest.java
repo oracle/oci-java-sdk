@@ -34,30 +34,34 @@ public class GetObjectRequest {
     /**
      * The name of the object.
      * <p>
-     * Example: `test/test1`
+     * Example: `test/object1.log`
      *
      */
     private String objectName;
 
     /**
-     * The entity tag to match.
+     * The entity tag to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
+     * For uploading a part, this is the entity tag of the target part.
+     *
      */
     private String ifMatch;
 
     /**
      * The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
+     * For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag
+     * of the target part.
      *
      */
     private String ifNoneMatch;
 
     /**
-     * The client request ID for tracing
+     * The client request ID for tracing.
      */
     private String opcClientRequestId;
 
     /**
-     * Optional byte range to fetch. Follows https://tools.ietf.org/html/rfc7233#section-2.1.
-     * Note, only one byte range is supported.
+     * Optional byte range to fetch, as described in [RFC 7233](https://tools.ietf.org/rfc/rfc7233), section 2.1.
+     * Note, only a single range of bytes is supported.
      *
      */
     private Range range;

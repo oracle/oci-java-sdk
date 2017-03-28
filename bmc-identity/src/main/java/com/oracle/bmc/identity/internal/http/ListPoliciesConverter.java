@@ -30,6 +30,11 @@ public class ListPoliciesConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static ListPoliciesRequest interceptRequest(ListPoliciesRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, ListPoliciesRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -98,6 +103,7 @@ public class ListPoliciesConverter {
                         }
 
                         ListPoliciesResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

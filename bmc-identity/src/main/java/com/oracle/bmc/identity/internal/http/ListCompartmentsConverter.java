@@ -30,6 +30,11 @@ public class ListCompartmentsConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static ListCompartmentsRequest interceptRequest(ListCompartmentsRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(
             RestClient client, ListCompartmentsRequest request) {
         if (request == null) {
@@ -100,6 +105,7 @@ public class ListCompartmentsConverter {
                         }
 
                         ListCompartmentsResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

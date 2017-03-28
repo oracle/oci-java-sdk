@@ -140,6 +140,7 @@ public class ComputeAsyncClient implements ComputeAsync {
             AttachVolumeRequest request,
             AsyncHandler<AttachVolumeRequest, AttachVolumeResponse> handler) {
         LOG.trace("Called async attachVolume");
+        request = AttachVolumeConverter.interceptRequest(request);
         Invocation.Builder ib = AttachVolumeConverter.fromRequest(client, request);
         Function<Response, AttachVolumeResponse> transformer = AttachVolumeConverter.fromResponse();
 
@@ -156,6 +157,7 @@ public class ComputeAsyncClient implements ComputeAsync {
             CaptureConsoleHistoryRequest request,
             AsyncHandler<CaptureConsoleHistoryRequest, CaptureConsoleHistoryResponse> handler) {
         LOG.trace("Called async captureConsoleHistory");
+        request = CaptureConsoleHistoryConverter.interceptRequest(request);
         Invocation.Builder ib = CaptureConsoleHistoryConverter.fromRequest(client, request);
         Function<Response, CaptureConsoleHistoryResponse> transformer =
                 CaptureConsoleHistoryConverter.fromResponse();
@@ -174,6 +176,7 @@ public class ComputeAsyncClient implements ComputeAsync {
             CreateImageRequest request,
             AsyncHandler<CreateImageRequest, CreateImageResponse> handler) {
         LOG.trace("Called async createImage");
+        request = CreateImageConverter.interceptRequest(request);
         Invocation.Builder ib = CreateImageConverter.fromRequest(client, request);
         Function<Response, CreateImageResponse> transformer = CreateImageConverter.fromResponse();
 
@@ -190,6 +193,7 @@ public class ComputeAsyncClient implements ComputeAsync {
             DeleteConsoleHistoryRequest request,
             AsyncHandler<DeleteConsoleHistoryRequest, DeleteConsoleHistoryResponse> handler) {
         LOG.trace("Called async deleteConsoleHistory");
+        request = DeleteConsoleHistoryConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteConsoleHistoryConverter.fromRequest(client, request);
         Function<Response, DeleteConsoleHistoryResponse> transformer =
                 DeleteConsoleHistoryConverter.fromResponse();
@@ -206,6 +210,7 @@ public class ComputeAsyncClient implements ComputeAsync {
             DeleteImageRequest request,
             AsyncHandler<DeleteImageRequest, DeleteImageResponse> handler) {
         LOG.trace("Called async deleteImage");
+        request = DeleteImageConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteImageConverter.fromRequest(client, request);
         Function<Response, DeleteImageResponse> transformer = DeleteImageConverter.fromResponse();
 
@@ -221,6 +226,7 @@ public class ComputeAsyncClient implements ComputeAsync {
             DetachVolumeRequest request,
             AsyncHandler<DetachVolumeRequest, DetachVolumeResponse> handler) {
         LOG.trace("Called async detachVolume");
+        request = DetachVolumeConverter.interceptRequest(request);
         Invocation.Builder ib = DetachVolumeConverter.fromRequest(client, request);
         Function<Response, DetachVolumeResponse> transformer = DetachVolumeConverter.fromResponse();
 
@@ -236,6 +242,7 @@ public class ComputeAsyncClient implements ComputeAsync {
             GetConsoleHistoryRequest request,
             AsyncHandler<GetConsoleHistoryRequest, GetConsoleHistoryResponse> handler) {
         LOG.trace("Called async getConsoleHistory");
+        request = GetConsoleHistoryConverter.interceptRequest(request);
         Invocation.Builder ib = GetConsoleHistoryConverter.fromRequest(client, request);
         Function<Response, GetConsoleHistoryResponse> transformer =
                 GetConsoleHistoryConverter.fromResponse();
@@ -253,6 +260,7 @@ public class ComputeAsyncClient implements ComputeAsync {
             AsyncHandler<GetConsoleHistoryContentRequest, GetConsoleHistoryContentResponse>
                     handler) {
         LOG.trace("Called async getConsoleHistoryContent");
+        request = GetConsoleHistoryContentConverter.interceptRequest(request);
         Invocation.Builder ib = GetConsoleHistoryContentConverter.fromRequest(client, request);
         Function<Response, GetConsoleHistoryContentResponse> transformer =
                 GetConsoleHistoryContentConverter.fromResponse();
@@ -268,6 +276,7 @@ public class ComputeAsyncClient implements ComputeAsync {
     public Future<GetImageResponse> getImage(
             GetImageRequest request, AsyncHandler<GetImageRequest, GetImageResponse> handler) {
         LOG.trace("Called async getImage");
+        request = GetImageConverter.interceptRequest(request);
         Invocation.Builder ib = GetImageConverter.fromRequest(client, request);
         Function<Response, GetImageResponse> transformer = GetImageConverter.fromResponse();
 
@@ -283,6 +292,7 @@ public class ComputeAsyncClient implements ComputeAsync {
             GetInstanceRequest request,
             AsyncHandler<GetInstanceRequest, GetInstanceResponse> handler) {
         LOG.trace("Called async getInstance");
+        request = GetInstanceConverter.interceptRequest(request);
         Invocation.Builder ib = GetInstanceConverter.fromRequest(client, request);
         Function<Response, GetInstanceResponse> transformer = GetInstanceConverter.fromResponse();
 
@@ -298,6 +308,7 @@ public class ComputeAsyncClient implements ComputeAsync {
             GetVolumeAttachmentRequest request,
             AsyncHandler<GetVolumeAttachmentRequest, GetVolumeAttachmentResponse> handler) {
         LOG.trace("Called async getVolumeAttachment");
+        request = GetVolumeAttachmentConverter.interceptRequest(request);
         Invocation.Builder ib = GetVolumeAttachmentConverter.fromRequest(client, request);
         Function<Response, GetVolumeAttachmentResponse> transformer =
                 GetVolumeAttachmentConverter.fromResponse();
@@ -314,6 +325,7 @@ public class ComputeAsyncClient implements ComputeAsync {
             InstanceActionRequest request,
             AsyncHandler<InstanceActionRequest, InstanceActionResponse> handler) {
         LOG.trace("Called async instanceAction");
+        request = InstanceActionConverter.interceptRequest(request);
         Invocation.Builder ib = InstanceActionConverter.fromRequest(client, request);
         Function<Response, InstanceActionResponse> transformer =
                 InstanceActionConverter.fromResponse();
@@ -330,6 +342,7 @@ public class ComputeAsyncClient implements ComputeAsync {
             LaunchInstanceRequest request,
             AsyncHandler<LaunchInstanceRequest, LaunchInstanceResponse> handler) {
         LOG.trace("Called async launchInstance");
+        request = LaunchInstanceConverter.interceptRequest(request);
         Invocation.Builder ib = LaunchInstanceConverter.fromRequest(client, request);
         Function<Response, LaunchInstanceResponse> transformer =
                 LaunchInstanceConverter.fromResponse();
@@ -347,6 +360,7 @@ public class ComputeAsyncClient implements ComputeAsync {
             ListConsoleHistoriesRequest request,
             AsyncHandler<ListConsoleHistoriesRequest, ListConsoleHistoriesResponse> handler) {
         LOG.trace("Called async listConsoleHistories");
+        request = ListConsoleHistoriesConverter.interceptRequest(request);
         Invocation.Builder ib = ListConsoleHistoriesConverter.fromRequest(client, request);
         Function<Response, ListConsoleHistoriesResponse> transformer =
                 ListConsoleHistoriesConverter.fromResponse();
@@ -363,6 +377,7 @@ public class ComputeAsyncClient implements ComputeAsync {
             ListImagesRequest request,
             AsyncHandler<ListImagesRequest, ListImagesResponse> handler) {
         LOG.trace("Called async listImages");
+        request = ListImagesConverter.interceptRequest(request);
         Invocation.Builder ib = ListImagesConverter.fromRequest(client, request);
         Function<Response, ListImagesResponse> transformer = ListImagesConverter.fromResponse();
 
@@ -378,6 +393,7 @@ public class ComputeAsyncClient implements ComputeAsync {
             ListInstancesRequest request,
             AsyncHandler<ListInstancesRequest, ListInstancesResponse> handler) {
         LOG.trace("Called async listInstances");
+        request = ListInstancesConverter.interceptRequest(request);
         Invocation.Builder ib = ListInstancesConverter.fromRequest(client, request);
         Function<Response, ListInstancesResponse> transformer =
                 ListInstancesConverter.fromResponse();
@@ -394,6 +410,7 @@ public class ComputeAsyncClient implements ComputeAsync {
             ListShapesRequest request,
             AsyncHandler<ListShapesRequest, ListShapesResponse> handler) {
         LOG.trace("Called async listShapes");
+        request = ListShapesConverter.interceptRequest(request);
         Invocation.Builder ib = ListShapesConverter.fromRequest(client, request);
         Function<Response, ListShapesResponse> transformer = ListShapesConverter.fromResponse();
 
@@ -409,6 +426,7 @@ public class ComputeAsyncClient implements ComputeAsync {
             ListVnicAttachmentsRequest request,
             AsyncHandler<ListVnicAttachmentsRequest, ListVnicAttachmentsResponse> handler) {
         LOG.trace("Called async listVnicAttachments");
+        request = ListVnicAttachmentsConverter.interceptRequest(request);
         Invocation.Builder ib = ListVnicAttachmentsConverter.fromRequest(client, request);
         Function<Response, ListVnicAttachmentsResponse> transformer =
                 ListVnicAttachmentsConverter.fromResponse();
@@ -425,6 +443,7 @@ public class ComputeAsyncClient implements ComputeAsync {
             ListVolumeAttachmentsRequest request,
             AsyncHandler<ListVolumeAttachmentsRequest, ListVolumeAttachmentsResponse> handler) {
         LOG.trace("Called async listVolumeAttachments");
+        request = ListVolumeAttachmentsConverter.interceptRequest(request);
         Invocation.Builder ib = ListVolumeAttachmentsConverter.fromRequest(client, request);
         Function<Response, ListVolumeAttachmentsResponse> transformer =
                 ListVolumeAttachmentsConverter.fromResponse();
@@ -441,6 +460,7 @@ public class ComputeAsyncClient implements ComputeAsync {
             TerminateInstanceRequest request,
             AsyncHandler<TerminateInstanceRequest, TerminateInstanceResponse> handler) {
         LOG.trace("Called async terminateInstance");
+        request = TerminateInstanceConverter.interceptRequest(request);
         Invocation.Builder ib = TerminateInstanceConverter.fromRequest(client, request);
         Function<Response, TerminateInstanceResponse> transformer =
                 TerminateInstanceConverter.fromResponse();
@@ -457,6 +477,7 @@ public class ComputeAsyncClient implements ComputeAsync {
             UpdateImageRequest request,
             AsyncHandler<UpdateImageRequest, UpdateImageResponse> handler) {
         LOG.trace("Called async updateImage");
+        request = UpdateImageConverter.interceptRequest(request);
         Invocation.Builder ib = UpdateImageConverter.fromRequest(client, request);
         Function<Response, UpdateImageResponse> transformer = UpdateImageConverter.fromResponse();
 
@@ -473,6 +494,7 @@ public class ComputeAsyncClient implements ComputeAsync {
             UpdateInstanceRequest request,
             AsyncHandler<UpdateInstanceRequest, UpdateInstanceResponse> handler) {
         LOG.trace("Called async updateInstance");
+        request = UpdateInstanceConverter.interceptRequest(request);
         Invocation.Builder ib = UpdateInstanceConverter.fromRequest(client, request);
         Function<Response, UpdateInstanceResponse> transformer =
                 UpdateInstanceConverter.fromResponse();

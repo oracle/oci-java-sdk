@@ -30,6 +30,12 @@ public class CreateOrResetUIPasswordConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static CreateOrResetUIPasswordRequest interceptRequest(
+            CreateOrResetUIPasswordRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(
             RestClient client, CreateOrResetUIPasswordRequest request) {
         if (request == null) {
@@ -93,6 +99,7 @@ public class CreateOrResetUIPasswordConverter {
                         }
 
                         CreateOrResetUIPasswordResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

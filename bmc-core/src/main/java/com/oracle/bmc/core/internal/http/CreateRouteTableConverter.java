@@ -30,6 +30,11 @@ public class CreateRouteTableConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static CreateRouteTableRequest interceptRequest(CreateRouteTableRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(
             RestClient client, CreateRouteTableRequest request) {
         if (request == null) {
@@ -88,6 +93,7 @@ public class CreateRouteTableConverter {
                         }
 
                         CreateRouteTableResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

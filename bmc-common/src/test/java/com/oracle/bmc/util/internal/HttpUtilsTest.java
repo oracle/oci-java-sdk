@@ -12,6 +12,11 @@ import java.util.UUID;
 
 public class HttpUtilsTest {
 
+    @Test(expected = IllegalArgumentException.class)
+    public void encodePathSegment_emptyPathSegment() {
+        HttpUtils.encodePathSegment("");
+    }
+
     @Test
     public void encodePathSegment_string_nothingToChange() {
         assertEquals("foobar", HttpUtils.encodePathSegment("foobar"));

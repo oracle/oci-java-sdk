@@ -30,6 +30,11 @@ public class GetDrgConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static GetDrgRequest interceptRequest(GetDrgRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, GetDrgRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -86,6 +91,7 @@ public class GetDrgConverter {
                         }
 
                         GetDrgResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

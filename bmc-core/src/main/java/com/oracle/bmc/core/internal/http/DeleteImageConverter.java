@@ -30,6 +30,11 @@ public class DeleteImageConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static DeleteImageRequest interceptRequest(DeleteImageRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, DeleteImageRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -81,6 +86,7 @@ public class DeleteImageConverter {
                         }
 
                         DeleteImageResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

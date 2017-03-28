@@ -30,6 +30,11 @@ public class ListVnicAttachmentsConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static ListVnicAttachmentsRequest interceptRequest(ListVnicAttachmentsRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(
             RestClient client, ListVnicAttachmentsRequest request) {
         if (request == null) {
@@ -117,6 +122,7 @@ public class ListVnicAttachmentsConverter {
                         }
 
                         ListVnicAttachmentsResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

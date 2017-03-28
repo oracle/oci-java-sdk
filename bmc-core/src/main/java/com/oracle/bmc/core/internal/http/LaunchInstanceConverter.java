@@ -30,6 +30,11 @@ public class LaunchInstanceConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static LaunchInstanceRequest interceptRequest(LaunchInstanceRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, LaunchInstanceRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -86,6 +91,7 @@ public class LaunchInstanceConverter {
                         }
 
                         LaunchInstanceResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

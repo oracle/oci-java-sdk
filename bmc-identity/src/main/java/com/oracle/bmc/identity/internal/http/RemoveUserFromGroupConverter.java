@@ -30,6 +30,11 @@ public class RemoveUserFromGroupConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static RemoveUserFromGroupRequest interceptRequest(RemoveUserFromGroupRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(
             RestClient client, RemoveUserFromGroupRequest request) {
         if (request == null) {
@@ -83,6 +88,7 @@ public class RemoveUserFromGroupConverter {
                         }
 
                         RemoveUserFromGroupResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

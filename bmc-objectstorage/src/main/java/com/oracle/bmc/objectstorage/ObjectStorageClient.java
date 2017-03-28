@@ -135,8 +135,34 @@ public class ObjectStorageClient implements ObjectStorage {
     }
 
     @Override
+    public AbortMultipartUploadResponse abortMultipartUpload(AbortMultipartUploadRequest request) {
+        LOG.trace("Called abortMultipartUpload");
+        request = AbortMultipartUploadConverter.interceptRequest(request);
+        Invocation.Builder ib = AbortMultipartUploadConverter.fromRequest(client, request);
+        Function<Response, AbortMultipartUploadResponse> transformer =
+                AbortMultipartUploadConverter.fromResponse();
+
+        Response response = client.delete(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public CommitMultipartUploadResponse commitMultipartUpload(
+            CommitMultipartUploadRequest request) {
+        LOG.trace("Called commitMultipartUpload");
+        request = CommitMultipartUploadConverter.interceptRequest(request);
+        Invocation.Builder ib = CommitMultipartUploadConverter.fromRequest(client, request);
+        Function<Response, CommitMultipartUploadResponse> transformer =
+                CommitMultipartUploadConverter.fromResponse();
+
+        Response response = client.post(ib, request.getCommitMultipartUploadDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
     public CreateBucketResponse createBucket(CreateBucketRequest request) {
         LOG.trace("Called createBucket");
+        request = CreateBucketConverter.interceptRequest(request);
         Invocation.Builder ib = CreateBucketConverter.fromRequest(client, request);
         Function<Response, CreateBucketResponse> transformer = CreateBucketConverter.fromResponse();
 
@@ -145,8 +171,22 @@ public class ObjectStorageClient implements ObjectStorage {
     }
 
     @Override
+    public CreateMultipartUploadResponse createMultipartUpload(
+            CreateMultipartUploadRequest request) {
+        LOG.trace("Called createMultipartUpload");
+        request = CreateMultipartUploadConverter.interceptRequest(request);
+        Invocation.Builder ib = CreateMultipartUploadConverter.fromRequest(client, request);
+        Function<Response, CreateMultipartUploadResponse> transformer =
+                CreateMultipartUploadConverter.fromResponse();
+
+        Response response = client.post(ib, request.getCreateMultipartUploadDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
     public DeleteBucketResponse deleteBucket(DeleteBucketRequest request) {
         LOG.trace("Called deleteBucket");
+        request = DeleteBucketConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteBucketConverter.fromRequest(client, request);
         Function<Response, DeleteBucketResponse> transformer = DeleteBucketConverter.fromResponse();
 
@@ -157,6 +197,7 @@ public class ObjectStorageClient implements ObjectStorage {
     @Override
     public DeleteObjectResponse deleteObject(DeleteObjectRequest request) {
         LOG.trace("Called deleteObject");
+        request = DeleteObjectConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteObjectConverter.fromRequest(client, request);
         Function<Response, DeleteObjectResponse> transformer = DeleteObjectConverter.fromResponse();
 
@@ -167,6 +208,7 @@ public class ObjectStorageClient implements ObjectStorage {
     @Override
     public GetBucketResponse getBucket(GetBucketRequest request) {
         LOG.trace("Called getBucket");
+        request = GetBucketConverter.interceptRequest(request);
         Invocation.Builder ib = GetBucketConverter.fromRequest(client, request);
         Function<Response, GetBucketResponse> transformer = GetBucketConverter.fromResponse();
 
@@ -177,6 +219,7 @@ public class ObjectStorageClient implements ObjectStorage {
     @Override
     public GetNamespaceResponse getNamespace(GetNamespaceRequest request) {
         LOG.trace("Called getNamespace");
+        request = GetNamespaceConverter.interceptRequest(request);
         Invocation.Builder ib = GetNamespaceConverter.fromRequest(client, request);
         Function<Response, GetNamespaceResponse> transformer = GetNamespaceConverter.fromResponse();
 
@@ -187,6 +230,7 @@ public class ObjectStorageClient implements ObjectStorage {
     @Override
     public GetObjectResponse getObject(GetObjectRequest request) {
         LOG.trace("Called getObject");
+        request = GetObjectConverter.interceptRequest(request);
         Invocation.Builder ib = GetObjectConverter.fromRequest(client, request);
         Function<Response, GetObjectResponse> transformer = GetObjectConverter.fromResponse();
 
@@ -197,6 +241,7 @@ public class ObjectStorageClient implements ObjectStorage {
     @Override
     public HeadBucketResponse headBucket(HeadBucketRequest request) {
         LOG.trace("Called headBucket");
+        request = HeadBucketConverter.interceptRequest(request);
         Invocation.Builder ib = HeadBucketConverter.fromRequest(client, request);
         Function<Response, HeadBucketResponse> transformer = HeadBucketConverter.fromResponse();
 
@@ -207,6 +252,7 @@ public class ObjectStorageClient implements ObjectStorage {
     @Override
     public HeadObjectResponse headObject(HeadObjectRequest request) {
         LOG.trace("Called headObject");
+        request = HeadObjectConverter.interceptRequest(request);
         Invocation.Builder ib = HeadObjectConverter.fromRequest(client, request);
         Function<Response, HeadObjectResponse> transformer = HeadObjectConverter.fromResponse();
 
@@ -217,6 +263,7 @@ public class ObjectStorageClient implements ObjectStorage {
     @Override
     public ListBucketsResponse listBuckets(ListBucketsRequest request) {
         LOG.trace("Called listBuckets");
+        request = ListBucketsConverter.interceptRequest(request);
         Invocation.Builder ib = ListBucketsConverter.fromRequest(client, request);
         Function<Response, ListBucketsResponse> transformer = ListBucketsConverter.fromResponse();
 
@@ -225,8 +272,34 @@ public class ObjectStorageClient implements ObjectStorage {
     }
 
     @Override
+    public ListMultipartUploadPartsResponse listMultipartUploadParts(
+            ListMultipartUploadPartsRequest request) {
+        LOG.trace("Called listMultipartUploadParts");
+        request = ListMultipartUploadPartsConverter.interceptRequest(request);
+        Invocation.Builder ib = ListMultipartUploadPartsConverter.fromRequest(client, request);
+        Function<Response, ListMultipartUploadPartsResponse> transformer =
+                ListMultipartUploadPartsConverter.fromResponse();
+
+        Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public ListMultipartUploadsResponse listMultipartUploads(ListMultipartUploadsRequest request) {
+        LOG.trace("Called listMultipartUploads");
+        request = ListMultipartUploadsConverter.interceptRequest(request);
+        Invocation.Builder ib = ListMultipartUploadsConverter.fromRequest(client, request);
+        Function<Response, ListMultipartUploadsResponse> transformer =
+                ListMultipartUploadsConverter.fromResponse();
+
+        Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
     public ListObjectsResponse listObjects(ListObjectsRequest request) {
         LOG.trace("Called listObjects");
+        request = ListObjectsConverter.interceptRequest(request);
         Invocation.Builder ib = ListObjectsConverter.fromRequest(client, request);
         Function<Response, ListObjectsResponse> transformer = ListObjectsConverter.fromResponse();
 
@@ -237,6 +310,7 @@ public class ObjectStorageClient implements ObjectStorage {
     @Override
     public PutObjectResponse putObject(PutObjectRequest request) {
         LOG.trace("Called putObject");
+        request = PutObjectConverter.interceptRequest(request);
         Invocation.Builder ib = PutObjectConverter.fromRequest(client, request);
         Function<Response, PutObjectResponse> transformer = PutObjectConverter.fromResponse();
 
@@ -247,10 +321,22 @@ public class ObjectStorageClient implements ObjectStorage {
     @Override
     public UpdateBucketResponse updateBucket(UpdateBucketRequest request) {
         LOG.trace("Called updateBucket");
+        request = UpdateBucketConverter.interceptRequest(request);
         Invocation.Builder ib = UpdateBucketConverter.fromRequest(client, request);
         Function<Response, UpdateBucketResponse> transformer = UpdateBucketConverter.fromResponse();
 
         Response response = client.post(ib, request.getUpdateBucketDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public UploadPartResponse uploadPart(UploadPartRequest request) {
+        LOG.trace("Called uploadPart");
+        request = UploadPartConverter.interceptRequest(request);
+        Invocation.Builder ib = UploadPartConverter.fromRequest(client, request);
+        Function<Response, UploadPartResponse> transformer = UploadPartConverter.fromResponse();
+
+        Response response = client.put(ib, request.getUploadPartBody(), request);
         return transformer.apply(response);
     }
 }

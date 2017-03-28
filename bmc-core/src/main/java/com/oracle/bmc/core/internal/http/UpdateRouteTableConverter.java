@@ -30,6 +30,11 @@ public class UpdateRouteTableConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static UpdateRouteTableRequest interceptRequest(UpdateRouteTableRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(
             RestClient client, UpdateRouteTableRequest request) {
         if (request == null) {
@@ -96,6 +101,7 @@ public class UpdateRouteTableConverter {
                         }
 
                         UpdateRouteTableResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

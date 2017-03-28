@@ -30,6 +30,11 @@ public class ListDrgsConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static ListDrgsRequest interceptRequest(ListDrgsRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, ListDrgsRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -97,6 +102,7 @@ public class ListDrgsConverter {
                         }
 
                         ListDrgsResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

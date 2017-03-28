@@ -30,6 +30,11 @@ public class DeleteDhcpOptionsConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static DeleteDhcpOptionsRequest interceptRequest(DeleteDhcpOptionsRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(
             RestClient client, DeleteDhcpOptionsRequest request) {
         if (request == null) {
@@ -83,6 +88,7 @@ public class DeleteDhcpOptionsConverter {
                         }
 
                         DeleteDhcpOptionsResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

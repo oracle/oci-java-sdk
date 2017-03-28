@@ -30,6 +30,12 @@ public class CreateInternetGatewayConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static CreateInternetGatewayRequest interceptRequest(
+            CreateInternetGatewayRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(
             RestClient client, CreateInternetGatewayRequest request) {
         if (request == null) {
@@ -88,6 +94,7 @@ public class CreateInternetGatewayConverter {
                         }
 
                         CreateInternetGatewayResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

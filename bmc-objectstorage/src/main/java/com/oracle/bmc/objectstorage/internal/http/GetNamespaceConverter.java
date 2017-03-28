@@ -30,6 +30,11 @@ public class GetNamespaceConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static GetNamespaceRequest interceptRequest(GetNamespaceRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, GetNamespaceRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -65,6 +70,7 @@ public class GetNamespaceConverter {
                         builder.value(response.getItem());
 
                         GetNamespaceResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

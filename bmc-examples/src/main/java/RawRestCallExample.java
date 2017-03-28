@@ -31,7 +31,7 @@ import lombok.RequiredArgsConstructor;
 public class RawRestCallExample {
 
     public static void main(String[] args) throws Exception {
-        // fill this out
+        // TODO: fill this out
         String instanceId = null;
 
         String configurationFilePath = "~/.oraclebmc/config";

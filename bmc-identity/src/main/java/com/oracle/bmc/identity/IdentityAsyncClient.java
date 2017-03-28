@@ -140,6 +140,7 @@ public class IdentityAsyncClient implements IdentityAsync {
             AddUserToGroupRequest request,
             AsyncHandler<AddUserToGroupRequest, AddUserToGroupResponse> handler) {
         LOG.trace("Called async addUserToGroup");
+        request = AddUserToGroupConverter.interceptRequest(request);
         Invocation.Builder ib = AddUserToGroupConverter.fromRequest(client, request);
         Function<Response, AddUserToGroupResponse> transformer =
                 AddUserToGroupConverter.fromResponse();
@@ -157,6 +158,7 @@ public class IdentityAsyncClient implements IdentityAsync {
             CreateCompartmentRequest request,
             AsyncHandler<CreateCompartmentRequest, CreateCompartmentResponse> handler) {
         LOG.trace("Called async createCompartment");
+        request = CreateCompartmentConverter.interceptRequest(request);
         Invocation.Builder ib = CreateCompartmentConverter.fromRequest(client, request);
         Function<Response, CreateCompartmentResponse> transformer =
                 CreateCompartmentConverter.fromResponse();
@@ -174,6 +176,7 @@ public class IdentityAsyncClient implements IdentityAsync {
             CreateGroupRequest request,
             AsyncHandler<CreateGroupRequest, CreateGroupResponse> handler) {
         LOG.trace("Called async createGroup");
+        request = CreateGroupConverter.interceptRequest(request);
         Invocation.Builder ib = CreateGroupConverter.fromRequest(client, request);
         Function<Response, CreateGroupResponse> transformer = CreateGroupConverter.fromResponse();
 
@@ -190,6 +193,7 @@ public class IdentityAsyncClient implements IdentityAsync {
             CreateOrResetUIPasswordRequest request,
             AsyncHandler<CreateOrResetUIPasswordRequest, CreateOrResetUIPasswordResponse> handler) {
         LOG.trace("Called async createOrResetUIPassword");
+        request = CreateOrResetUIPasswordConverter.interceptRequest(request);
         Invocation.Builder ib = CreateOrResetUIPasswordConverter.fromRequest(client, request);
         Function<Response, CreateOrResetUIPasswordResponse> transformer =
                 CreateOrResetUIPasswordConverter.fromResponse();
@@ -206,6 +210,7 @@ public class IdentityAsyncClient implements IdentityAsync {
             CreatePolicyRequest request,
             AsyncHandler<CreatePolicyRequest, CreatePolicyResponse> handler) {
         LOG.trace("Called async createPolicy");
+        request = CreatePolicyConverter.interceptRequest(request);
         Invocation.Builder ib = CreatePolicyConverter.fromRequest(client, request);
         Function<Response, CreatePolicyResponse> transformer = CreatePolicyConverter.fromResponse();
 
@@ -222,6 +227,7 @@ public class IdentityAsyncClient implements IdentityAsync {
             CreateSwiftPasswordRequest request,
             AsyncHandler<CreateSwiftPasswordRequest, CreateSwiftPasswordResponse> handler) {
         LOG.trace("Called async createSwiftPassword");
+        request = CreateSwiftPasswordConverter.interceptRequest(request);
         Invocation.Builder ib = CreateSwiftPasswordConverter.fromRequest(client, request);
         Function<Response, CreateSwiftPasswordResponse> transformer =
                 CreateSwiftPasswordConverter.fromResponse();
@@ -240,6 +246,7 @@ public class IdentityAsyncClient implements IdentityAsync {
             CreateUserRequest request,
             AsyncHandler<CreateUserRequest, CreateUserResponse> handler) {
         LOG.trace("Called async createUser");
+        request = CreateUserConverter.interceptRequest(request);
         Invocation.Builder ib = CreateUserConverter.fromRequest(client, request);
         Function<Response, CreateUserResponse> transformer = CreateUserConverter.fromResponse();
 
@@ -256,6 +263,7 @@ public class IdentityAsyncClient implements IdentityAsync {
             DeleteApiKeyRequest request,
             AsyncHandler<DeleteApiKeyRequest, DeleteApiKeyResponse> handler) {
         LOG.trace("Called async deleteApiKey");
+        request = DeleteApiKeyConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteApiKeyConverter.fromRequest(client, request);
         Function<Response, DeleteApiKeyResponse> transformer = DeleteApiKeyConverter.fromResponse();
 
@@ -271,6 +279,7 @@ public class IdentityAsyncClient implements IdentityAsync {
             DeleteGroupRequest request,
             AsyncHandler<DeleteGroupRequest, DeleteGroupResponse> handler) {
         LOG.trace("Called async deleteGroup");
+        request = DeleteGroupConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteGroupConverter.fromRequest(client, request);
         Function<Response, DeleteGroupResponse> transformer = DeleteGroupConverter.fromResponse();
 
@@ -286,6 +295,7 @@ public class IdentityAsyncClient implements IdentityAsync {
             DeletePolicyRequest request,
             AsyncHandler<DeletePolicyRequest, DeletePolicyResponse> handler) {
         LOG.trace("Called async deletePolicy");
+        request = DeletePolicyConverter.interceptRequest(request);
         Invocation.Builder ib = DeletePolicyConverter.fromRequest(client, request);
         Function<Response, DeletePolicyResponse> transformer = DeletePolicyConverter.fromResponse();
 
@@ -301,6 +311,7 @@ public class IdentityAsyncClient implements IdentityAsync {
             DeleteSwiftPasswordRequest request,
             AsyncHandler<DeleteSwiftPasswordRequest, DeleteSwiftPasswordResponse> handler) {
         LOG.trace("Called async deleteSwiftPassword");
+        request = DeleteSwiftPasswordConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteSwiftPasswordConverter.fromRequest(client, request);
         Function<Response, DeleteSwiftPasswordResponse> transformer =
                 DeleteSwiftPasswordConverter.fromResponse();
@@ -317,6 +328,7 @@ public class IdentityAsyncClient implements IdentityAsync {
             DeleteUserRequest request,
             AsyncHandler<DeleteUserRequest, DeleteUserResponse> handler) {
         LOG.trace("Called async deleteUser");
+        request = DeleteUserConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteUserConverter.fromRequest(client, request);
         Function<Response, DeleteUserResponse> transformer = DeleteUserConverter.fromResponse();
 
@@ -332,6 +344,7 @@ public class IdentityAsyncClient implements IdentityAsync {
             GetCompartmentRequest request,
             AsyncHandler<GetCompartmentRequest, GetCompartmentResponse> handler) {
         LOG.trace("Called async getCompartment");
+        request = GetCompartmentConverter.interceptRequest(request);
         Invocation.Builder ib = GetCompartmentConverter.fromRequest(client, request);
         Function<Response, GetCompartmentResponse> transformer =
                 GetCompartmentConverter.fromResponse();
@@ -347,6 +360,7 @@ public class IdentityAsyncClient implements IdentityAsync {
     public Future<GetGroupResponse> getGroup(
             GetGroupRequest request, AsyncHandler<GetGroupRequest, GetGroupResponse> handler) {
         LOG.trace("Called async getGroup");
+        request = GetGroupConverter.interceptRequest(request);
         Invocation.Builder ib = GetGroupConverter.fromRequest(client, request);
         Function<Response, GetGroupResponse> transformer = GetGroupConverter.fromResponse();
 
@@ -361,6 +375,7 @@ public class IdentityAsyncClient implements IdentityAsync {
     public Future<GetPolicyResponse> getPolicy(
             GetPolicyRequest request, AsyncHandler<GetPolicyRequest, GetPolicyResponse> handler) {
         LOG.trace("Called async getPolicy");
+        request = GetPolicyConverter.interceptRequest(request);
         Invocation.Builder ib = GetPolicyConverter.fromRequest(client, request);
         Function<Response, GetPolicyResponse> transformer = GetPolicyConverter.fromResponse();
 
@@ -375,6 +390,7 @@ public class IdentityAsyncClient implements IdentityAsync {
     public Future<GetUserResponse> getUser(
             GetUserRequest request, AsyncHandler<GetUserRequest, GetUserResponse> handler) {
         LOG.trace("Called async getUser");
+        request = GetUserConverter.interceptRequest(request);
         Invocation.Builder ib = GetUserConverter.fromRequest(client, request);
         Function<Response, GetUserResponse> transformer = GetUserConverter.fromResponse();
 
@@ -390,6 +406,7 @@ public class IdentityAsyncClient implements IdentityAsync {
             GetUserGroupMembershipRequest request,
             AsyncHandler<GetUserGroupMembershipRequest, GetUserGroupMembershipResponse> handler) {
         LOG.trace("Called async getUserGroupMembership");
+        request = GetUserGroupMembershipConverter.interceptRequest(request);
         Invocation.Builder ib = GetUserGroupMembershipConverter.fromRequest(client, request);
         Function<Response, GetUserGroupMembershipResponse> transformer =
                 GetUserGroupMembershipConverter.fromResponse();
@@ -406,6 +423,7 @@ public class IdentityAsyncClient implements IdentityAsync {
             ListApiKeysRequest request,
             AsyncHandler<ListApiKeysRequest, ListApiKeysResponse> handler) {
         LOG.trace("Called async listApiKeys");
+        request = ListApiKeysConverter.interceptRequest(request);
         Invocation.Builder ib = ListApiKeysConverter.fromRequest(client, request);
         Function<Response, ListApiKeysResponse> transformer = ListApiKeysConverter.fromResponse();
 
@@ -421,6 +439,7 @@ public class IdentityAsyncClient implements IdentityAsync {
             ListAvailabilityDomainsRequest request,
             AsyncHandler<ListAvailabilityDomainsRequest, ListAvailabilityDomainsResponse> handler) {
         LOG.trace("Called async listAvailabilityDomains");
+        request = ListAvailabilityDomainsConverter.interceptRequest(request);
         Invocation.Builder ib = ListAvailabilityDomainsConverter.fromRequest(client, request);
         Function<Response, ListAvailabilityDomainsResponse> transformer =
                 ListAvailabilityDomainsConverter.fromResponse();
@@ -437,6 +456,7 @@ public class IdentityAsyncClient implements IdentityAsync {
             ListCompartmentsRequest request,
             AsyncHandler<ListCompartmentsRequest, ListCompartmentsResponse> handler) {
         LOG.trace("Called async listCompartments");
+        request = ListCompartmentsConverter.interceptRequest(request);
         Invocation.Builder ib = ListCompartmentsConverter.fromRequest(client, request);
         Function<Response, ListCompartmentsResponse> transformer =
                 ListCompartmentsConverter.fromResponse();
@@ -453,6 +473,7 @@ public class IdentityAsyncClient implements IdentityAsync {
             ListGroupsRequest request,
             AsyncHandler<ListGroupsRequest, ListGroupsResponse> handler) {
         LOG.trace("Called async listGroups");
+        request = ListGroupsConverter.interceptRequest(request);
         Invocation.Builder ib = ListGroupsConverter.fromRequest(client, request);
         Function<Response, ListGroupsResponse> transformer = ListGroupsConverter.fromResponse();
 
@@ -468,6 +489,7 @@ public class IdentityAsyncClient implements IdentityAsync {
             ListPoliciesRequest request,
             AsyncHandler<ListPoliciesRequest, ListPoliciesResponse> handler) {
         LOG.trace("Called async listPolicies");
+        request = ListPoliciesConverter.interceptRequest(request);
         Invocation.Builder ib = ListPoliciesConverter.fromRequest(client, request);
         Function<Response, ListPoliciesResponse> transformer = ListPoliciesConverter.fromResponse();
 
@@ -483,6 +505,7 @@ public class IdentityAsyncClient implements IdentityAsync {
             ListSwiftPasswordsRequest request,
             AsyncHandler<ListSwiftPasswordsRequest, ListSwiftPasswordsResponse> handler) {
         LOG.trace("Called async listSwiftPasswords");
+        request = ListSwiftPasswordsConverter.interceptRequest(request);
         Invocation.Builder ib = ListSwiftPasswordsConverter.fromRequest(client, request);
         Function<Response, ListSwiftPasswordsResponse> transformer =
                 ListSwiftPasswordsConverter.fromResponse();
@@ -500,6 +523,7 @@ public class IdentityAsyncClient implements IdentityAsync {
             AsyncHandler<ListUserGroupMembershipsRequest, ListUserGroupMembershipsResponse>
                     handler) {
         LOG.trace("Called async listUserGroupMemberships");
+        request = ListUserGroupMembershipsConverter.interceptRequest(request);
         Invocation.Builder ib = ListUserGroupMembershipsConverter.fromRequest(client, request);
         Function<Response, ListUserGroupMembershipsResponse> transformer =
                 ListUserGroupMembershipsConverter.fromResponse();
@@ -515,6 +539,7 @@ public class IdentityAsyncClient implements IdentityAsync {
     public Future<ListUsersResponse> listUsers(
             ListUsersRequest request, AsyncHandler<ListUsersRequest, ListUsersResponse> handler) {
         LOG.trace("Called async listUsers");
+        request = ListUsersConverter.interceptRequest(request);
         Invocation.Builder ib = ListUsersConverter.fromRequest(client, request);
         Function<Response, ListUsersResponse> transformer = ListUsersConverter.fromResponse();
 
@@ -530,6 +555,7 @@ public class IdentityAsyncClient implements IdentityAsync {
             RemoveUserFromGroupRequest request,
             AsyncHandler<RemoveUserFromGroupRequest, RemoveUserFromGroupResponse> handler) {
         LOG.trace("Called async removeUserFromGroup");
+        request = RemoveUserFromGroupConverter.interceptRequest(request);
         Invocation.Builder ib = RemoveUserFromGroupConverter.fromRequest(client, request);
         Function<Response, RemoveUserFromGroupResponse> transformer =
                 RemoveUserFromGroupConverter.fromResponse();
@@ -546,6 +572,7 @@ public class IdentityAsyncClient implements IdentityAsync {
             UpdateCompartmentRequest request,
             AsyncHandler<UpdateCompartmentRequest, UpdateCompartmentResponse> handler) {
         LOG.trace("Called async updateCompartment");
+        request = UpdateCompartmentConverter.interceptRequest(request);
         Invocation.Builder ib = UpdateCompartmentConverter.fromRequest(client, request);
         Function<Response, UpdateCompartmentResponse> transformer =
                 UpdateCompartmentConverter.fromResponse();
@@ -563,6 +590,7 @@ public class IdentityAsyncClient implements IdentityAsync {
             UpdateGroupRequest request,
             AsyncHandler<UpdateGroupRequest, UpdateGroupResponse> handler) {
         LOG.trace("Called async updateGroup");
+        request = UpdateGroupConverter.interceptRequest(request);
         Invocation.Builder ib = UpdateGroupConverter.fromRequest(client, request);
         Function<Response, UpdateGroupResponse> transformer = UpdateGroupConverter.fromResponse();
 
@@ -579,6 +607,7 @@ public class IdentityAsyncClient implements IdentityAsync {
             UpdatePolicyRequest request,
             AsyncHandler<UpdatePolicyRequest, UpdatePolicyResponse> handler) {
         LOG.trace("Called async updatePolicy");
+        request = UpdatePolicyConverter.interceptRequest(request);
         Invocation.Builder ib = UpdatePolicyConverter.fromRequest(client, request);
         Function<Response, UpdatePolicyResponse> transformer = UpdatePolicyConverter.fromResponse();
 
@@ -595,6 +624,7 @@ public class IdentityAsyncClient implements IdentityAsync {
             UpdateSwiftPasswordRequest request,
             AsyncHandler<UpdateSwiftPasswordRequest, UpdateSwiftPasswordResponse> handler) {
         LOG.trace("Called async updateSwiftPassword");
+        request = UpdateSwiftPasswordConverter.interceptRequest(request);
         Invocation.Builder ib = UpdateSwiftPasswordConverter.fromRequest(client, request);
         Function<Response, UpdateSwiftPasswordResponse> transformer =
                 UpdateSwiftPasswordConverter.fromResponse();
@@ -613,6 +643,7 @@ public class IdentityAsyncClient implements IdentityAsync {
             UpdateUserRequest request,
             AsyncHandler<UpdateUserRequest, UpdateUserResponse> handler) {
         LOG.trace("Called async updateUser");
+        request = UpdateUserConverter.interceptRequest(request);
         Invocation.Builder ib = UpdateUserConverter.fromRequest(client, request);
         Function<Response, UpdateUserResponse> transformer = UpdateUserConverter.fromResponse();
 
@@ -629,6 +660,7 @@ public class IdentityAsyncClient implements IdentityAsync {
             UpdateUserStateRequest request,
             AsyncHandler<UpdateUserStateRequest, UpdateUserStateResponse> handler) {
         LOG.trace("Called async updateUserState");
+        request = UpdateUserStateConverter.interceptRequest(request);
         Invocation.Builder ib = UpdateUserStateConverter.fromRequest(client, request);
         Function<Response, UpdateUserStateResponse> transformer =
                 UpdateUserStateConverter.fromResponse();
@@ -646,6 +678,7 @@ public class IdentityAsyncClient implements IdentityAsync {
             UploadApiKeyRequest request,
             AsyncHandler<UploadApiKeyRequest, UploadApiKeyResponse> handler) {
         LOG.trace("Called async uploadApiKey");
+        request = UploadApiKeyConverter.interceptRequest(request);
         Invocation.Builder ib = UploadApiKeyConverter.fromRequest(client, request);
         Function<Response, UploadApiKeyResponse> transformer = UploadApiKeyConverter.fromResponse();
 

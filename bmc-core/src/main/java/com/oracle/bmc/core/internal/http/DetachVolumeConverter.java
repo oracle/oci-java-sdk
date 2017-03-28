@@ -30,6 +30,11 @@ public class DetachVolumeConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static DetachVolumeRequest interceptRequest(DetachVolumeRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, DetachVolumeRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -81,6 +86,7 @@ public class DetachVolumeConverter {
                         }
 
                         DetachVolumeResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

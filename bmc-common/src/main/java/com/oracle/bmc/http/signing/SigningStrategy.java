@@ -33,8 +33,8 @@ public enum SigningStrategy {
      */
     private final ImmutableMap<String, List<String>> headersToSign;
     /**
-     * Flag to indicate whether a POST/PUT requests require content-* headers
+     * Flag to indicate whether a PUT requests require content-* headers
      * to be signed.
      */
-    private final boolean skipContentHeadersForStreamingRequests;
+    private final boolean skipContentHeadersForStreamingPutRequests;
 }

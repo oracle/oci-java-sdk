@@ -30,6 +30,11 @@ public class TerminateInstanceConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static TerminateInstanceRequest interceptRequest(TerminateInstanceRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(
             RestClient client, TerminateInstanceRequest request) {
         if (request == null) {
@@ -83,6 +88,7 @@ public class TerminateInstanceConverter {
                         }
 
                         TerminateInstanceResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

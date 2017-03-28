@@ -30,6 +30,11 @@ public class UploadApiKeyConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static UploadApiKeyRequest interceptRequest(UploadApiKeyRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, UploadApiKeyRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -95,6 +100,7 @@ public class UploadApiKeyConverter {
                         }
 
                         UploadApiKeyResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

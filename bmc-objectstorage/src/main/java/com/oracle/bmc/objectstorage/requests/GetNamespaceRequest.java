@@ -19,7 +19,7 @@ import com.oracle.bmc.objectstorage.model.*;
 public class GetNamespaceRequest {
 
     /**
-     * The client request ID for tracing
+     * The client request ID for tracing.
      */
     private String opcClientRequestId;
 

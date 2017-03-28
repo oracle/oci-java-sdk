@@ -30,6 +30,11 @@ public class UpdateInstanceConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static UpdateInstanceRequest interceptRequest(UpdateInstanceRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, UpdateInstanceRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -98,6 +103,7 @@ public class UpdateInstanceConverter {
                         }
 
                         UpdateInstanceResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

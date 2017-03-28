@@ -30,6 +30,11 @@ public class HeadBucketConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static HeadBucketRequest interceptRequest(HeadBucketRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, HeadBucketRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -118,6 +123,7 @@ public class HeadBucketConverter {
                         }
 
                         HeadBucketResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

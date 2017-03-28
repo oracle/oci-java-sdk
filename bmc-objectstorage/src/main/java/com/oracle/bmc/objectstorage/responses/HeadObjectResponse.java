@@ -21,7 +21,7 @@ import com.oracle.bmc.objectstorage.model.*;
 public class HeadObjectResponse {
 
     /**
-     * Echoes back the value passed in in the opc-client-request-id header, for use by clients when debugging.
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
      */
     private String opcClientRequestId;
 
@@ -48,27 +48,39 @@ public class HeadObjectResponse {
     private Long contentLength;
 
     /**
-     * Content-MD5 header, per RFC 2616, section 14.15
+     * Content-MD5 header, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.15.
+     * Unavailable for objects uploaded using multipart upload.
+     *
      */
     private String contentMd5;
 
     /**
-     * Content-Type header, per RFC 2616, section 14.17
+     * Only applicable to objects uploaded using multipart upload.
+     * Base-64 representation of the multipart object hash.
+     * The multipart object hash is calculated by taking the MD5 hashes of the parts,
+     * concatenating the binary representation of those hashes in order of their part numbers,
+     * and then calculating the MD5 hash of the concatenated values.
+     *
+     */
+    private String opcMultipartMd5;
+
+    /**
+     * Content-Type header, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.17.
      */
     private String contentType;
 
     /**
-     * Content-Language header, per RFC 2616, section 14.12
+     * Content-Language header, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.12.
      */
     private String contentLanguage;
 
     /**
-     * Content-Encoding header, per RFC 2616, section 14.11
+     * Content-Encoding header, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.11.
      */
     private String contentEncoding;
 
     /**
-     * The object modification time, per RFC 2616, section 14.29
+     * The object modification time, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
      */
     private Date lastModified;
 
@@ -92,6 +104,7 @@ public class HeadObjectResponse {
             opcMeta(o.getOpcMeta());
             contentLength(o.getContentLength());
             contentMd5(o.getContentMd5());
+            opcMultipartMd5(o.getOpcMultipartMd5());
             contentType(o.getContentType());
             contentLanguage(o.getContentLanguage());
             contentEncoding(o.getContentEncoding());

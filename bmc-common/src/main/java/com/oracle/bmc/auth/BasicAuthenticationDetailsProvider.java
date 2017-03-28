@@ -7,6 +7,9 @@ import java.io.InputStream;
 
 /**
  * Base interface used provide required information to sign requests to Oracle Bare Metal Services.
+ * <p>
+ * Implementations may choose to provide hints about the cacheability of the keyId and privateKey using
+ * {@link AuthCachingPolicy} (optional).
  */
 public interface BasicAuthenticationDetailsProvider extends AbstractAuthenticationDetailsProvider {
     /**

@@ -129,16 +129,17 @@ public class RestClient implements AutoCloseable {
      *
      * @param ib
      *            An invocation builder to execute requests with.
+     * @param body
+     *            The content body to post to the web target.
      * @param request
      *            The original client request object given to the service
      *            client.
-     * @param body
-     *            The content body to post to the web target.
      * @return The {@link Response} object.
      * @throws BmcException
      *             If an error was encountered while invoking the request.
      */
-    public Response post(@NonNull Invocation.Builder ib, Object body, @NonNull Object request)
+    public Response post(
+            @NonNull Invocation.Builder ib, @Nullable Object body, @NonNull Object request)
             throws BmcException {
         try {
             Entity<?> requestBody = this.entityFactory.forPost(request, body);
@@ -171,7 +172,7 @@ public class RestClient implements AutoCloseable {
      */
     public Future<Response> post(
             @NonNull Invocation.Builder ib,
-            Object body,
+            @Nullable Object body,
             @NonNull Object request,
             @Nullable Consumer<Response> onSuccess,
             @Nullable Consumer<Throwable> onError) {
@@ -237,7 +238,8 @@ public class RestClient implements AutoCloseable {
      * @throws BmcException
      *             If an error was encountered while invoking the request.
      */
-    public Response patch(@NonNull Invocation.Builder ib, Object body, @NonNull Object request)
+    public Response patch(
+            @NonNull Invocation.Builder ib, @Nullable Object body, @NonNull Object request)
             throws BmcException {
         try {
             Entity<?> requestBody = this.entityFactory.forPatch(request, body);
@@ -270,7 +272,7 @@ public class RestClient implements AutoCloseable {
      */
     public Future<Response> patch(
             @NonNull Invocation.Builder ib,
-            Object body,
+            @Nullable Object body,
             @NonNull Object request,
             @Nullable Consumer<Response> onSuccess,
             @Nullable Consumer<Throwable> onError) {
@@ -295,7 +297,8 @@ public class RestClient implements AutoCloseable {
      * @throws BmcException
      *             If an error was encountered while invoking the request.
      */
-    public Response put(@NonNull Invocation.Builder ib, Object body, @NonNull Object request)
+    public Response put(
+            @NonNull Invocation.Builder ib, @Nullable Object body, @NonNull Object request)
             throws BmcException {
         try {
             Entity<?> requestBody = this.entityFactory.forPut(request, body);
@@ -328,7 +331,7 @@ public class RestClient implements AutoCloseable {
      */
     public Future<Response> put(
             @NonNull Invocation.Builder ib,
-            Object body,
+            @Nullable Object body,
             @NonNull Object request,
             @Nullable Consumer<Response> onSuccess,
             @Nullable Consumer<Throwable> onError) {

@@ -30,6 +30,11 @@ public class GetSecurityListConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static GetSecurityListRequest interceptRequest(GetSecurityListRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(
             RestClient client, GetSecurityListRequest request) {
         if (request == null) {
@@ -87,6 +92,7 @@ public class GetSecurityListConverter {
                         }
 
                         GetSecurityListResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

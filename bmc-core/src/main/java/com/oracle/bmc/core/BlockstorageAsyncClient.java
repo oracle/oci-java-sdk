@@ -141,6 +141,7 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
             CreateVolumeRequest request,
             AsyncHandler<CreateVolumeRequest, CreateVolumeResponse> handler) {
         LOG.trace("Called async createVolume");
+        request = CreateVolumeConverter.interceptRequest(request);
         Invocation.Builder ib = CreateVolumeConverter.fromRequest(client, request);
         Function<Response, CreateVolumeResponse> transformer = CreateVolumeConverter.fromResponse();
 
@@ -157,6 +158,7 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
             CreateVolumeBackupRequest request,
             AsyncHandler<CreateVolumeBackupRequest, CreateVolumeBackupResponse> handler) {
         LOG.trace("Called async createVolumeBackup");
+        request = CreateVolumeBackupConverter.interceptRequest(request);
         Invocation.Builder ib = CreateVolumeBackupConverter.fromRequest(client, request);
         Function<Response, CreateVolumeBackupResponse> transformer =
                 CreateVolumeBackupConverter.fromResponse();
@@ -175,6 +177,7 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
             DeleteVolumeRequest request,
             AsyncHandler<DeleteVolumeRequest, DeleteVolumeResponse> handler) {
         LOG.trace("Called async deleteVolume");
+        request = DeleteVolumeConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteVolumeConverter.fromRequest(client, request);
         Function<Response, DeleteVolumeResponse> transformer = DeleteVolumeConverter.fromResponse();
 
@@ -190,6 +193,7 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
             DeleteVolumeBackupRequest request,
             AsyncHandler<DeleteVolumeBackupRequest, DeleteVolumeBackupResponse> handler) {
         LOG.trace("Called async deleteVolumeBackup");
+        request = DeleteVolumeBackupConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteVolumeBackupConverter.fromRequest(client, request);
         Function<Response, DeleteVolumeBackupResponse> transformer =
                 DeleteVolumeBackupConverter.fromResponse();
@@ -205,6 +209,7 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
     public Future<GetVolumeResponse> getVolume(
             GetVolumeRequest request, AsyncHandler<GetVolumeRequest, GetVolumeResponse> handler) {
         LOG.trace("Called async getVolume");
+        request = GetVolumeConverter.interceptRequest(request);
         Invocation.Builder ib = GetVolumeConverter.fromRequest(client, request);
         Function<Response, GetVolumeResponse> transformer = GetVolumeConverter.fromResponse();
 
@@ -220,6 +225,7 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
             GetVolumeBackupRequest request,
             AsyncHandler<GetVolumeBackupRequest, GetVolumeBackupResponse> handler) {
         LOG.trace("Called async getVolumeBackup");
+        request = GetVolumeBackupConverter.interceptRequest(request);
         Invocation.Builder ib = GetVolumeBackupConverter.fromRequest(client, request);
         Function<Response, GetVolumeBackupResponse> transformer =
                 GetVolumeBackupConverter.fromResponse();
@@ -236,6 +242,7 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
             ListVolumeBackupsRequest request,
             AsyncHandler<ListVolumeBackupsRequest, ListVolumeBackupsResponse> handler) {
         LOG.trace("Called async listVolumeBackups");
+        request = ListVolumeBackupsConverter.interceptRequest(request);
         Invocation.Builder ib = ListVolumeBackupsConverter.fromRequest(client, request);
         Function<Response, ListVolumeBackupsResponse> transformer =
                 ListVolumeBackupsConverter.fromResponse();
@@ -252,6 +259,7 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
             ListVolumesRequest request,
             AsyncHandler<ListVolumesRequest, ListVolumesResponse> handler) {
         LOG.trace("Called async listVolumes");
+        request = ListVolumesConverter.interceptRequest(request);
         Invocation.Builder ib = ListVolumesConverter.fromRequest(client, request);
         Function<Response, ListVolumesResponse> transformer = ListVolumesConverter.fromResponse();
 
@@ -267,6 +275,7 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
             UpdateVolumeRequest request,
             AsyncHandler<UpdateVolumeRequest, UpdateVolumeResponse> handler) {
         LOG.trace("Called async updateVolume");
+        request = UpdateVolumeConverter.interceptRequest(request);
         Invocation.Builder ib = UpdateVolumeConverter.fromRequest(client, request);
         Function<Response, UpdateVolumeResponse> transformer = UpdateVolumeConverter.fromResponse();
 
@@ -283,6 +292,7 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
             UpdateVolumeBackupRequest request,
             AsyncHandler<UpdateVolumeBackupRequest, UpdateVolumeBackupResponse> handler) {
         LOG.trace("Called async updateVolumeBackup");
+        request = UpdateVolumeBackupConverter.interceptRequest(request);
         Invocation.Builder ib = UpdateVolumeBackupConverter.fromRequest(client, request);
         Function<Response, UpdateVolumeBackupResponse> transformer =
                 UpdateVolumeBackupConverter.fromResponse();

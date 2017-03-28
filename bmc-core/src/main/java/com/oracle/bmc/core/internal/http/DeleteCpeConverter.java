@@ -30,6 +30,11 @@ public class DeleteCpeConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static DeleteCpeRequest interceptRequest(DeleteCpeRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, DeleteCpeRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -81,6 +86,7 @@ public class DeleteCpeConverter {
                         }
 
                         DeleteCpeResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

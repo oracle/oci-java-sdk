@@ -13,6 +13,19 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.2.4 - 2017-03-28
+### Fixed
+- Allow UUID in path elements
+- Better validate path parameters before making requests (https://github.com/oracle/bmcs-java-sdk/issues/5)
+
+### Changed
+- Simplified classes that perform signing a little
+- Move auth caching to an annotation
+
+### Added
+- New low level APIs for multi-part upload in Object Storage
+- New high level abstractions for uploading (UploadManager, MultipartObjectAssembler) in Object Storage
+
 ## 1.2.3 - 2017-03-16
 ### Fixed
 - Allow service responses to deserialize to base classes when unknown discriminators returned (vs. throwing exceptions)
@@ -23,9 +36,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - New DNS label feature
 - New request signer classes to use directly with other HTTP clients
-- New client contructors to allow more control over how requests are signed
+- New client constructors to allow more control over how requests are signed
 
-## 1.2.2 - 2016-02-23
+## 1.2.2 - 2017-02-23
 ### Fixed
 - Bugs in config file parsing
 

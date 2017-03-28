@@ -1,3 +1,19 @@
+# git
+**/.gitignore
+**/*.orig
+
+# intellij
 .idea/
 *.iml
-*/target
+
+# maven
+**/target/*
+**/*.versionsBackup
+
+# eclipse
+**/.settings/*
+**/.classpath
+**/.project
+
+# mac
+**/.DS_Store

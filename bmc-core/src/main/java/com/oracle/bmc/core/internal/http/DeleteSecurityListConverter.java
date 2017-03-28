@@ -30,6 +30,11 @@ public class DeleteSecurityListConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static DeleteSecurityListRequest interceptRequest(DeleteSecurityListRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(
             RestClient client, DeleteSecurityListRequest request) {
         if (request == null) {
@@ -83,6 +88,7 @@ public class DeleteSecurityListConverter {
                         }
 
                         DeleteSecurityListResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

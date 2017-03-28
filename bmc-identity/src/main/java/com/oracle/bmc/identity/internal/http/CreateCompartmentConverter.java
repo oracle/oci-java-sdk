@@ -30,6 +30,11 @@ public class CreateCompartmentConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static CreateCompartmentRequest interceptRequest(CreateCompartmentRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(
             RestClient client, CreateCompartmentRequest request) {
         if (request == null) {
@@ -88,6 +93,7 @@ public class CreateCompartmentConverter {
                         }
 
                         CreateCompartmentResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

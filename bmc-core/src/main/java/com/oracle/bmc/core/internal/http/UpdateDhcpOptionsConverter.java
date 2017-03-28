@@ -30,6 +30,11 @@ public class UpdateDhcpOptionsConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static UpdateDhcpOptionsRequest interceptRequest(UpdateDhcpOptionsRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(
             RestClient client, UpdateDhcpOptionsRequest request) {
         if (request == null) {
@@ -96,6 +101,7 @@ public class UpdateDhcpOptionsConverter {
                         }
 
                         UpdateDhcpOptionsResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

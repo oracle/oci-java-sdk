@@ -30,6 +30,11 @@ public class ListEventsConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static ListEventsRequest interceptRequest(ListEventsRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, ListEventsRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -107,6 +112,7 @@ public class ListEventsConverter {
                         }
 
                         ListEventsResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

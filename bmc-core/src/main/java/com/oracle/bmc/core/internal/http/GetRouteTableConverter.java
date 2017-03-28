@@ -30,6 +30,11 @@ public class GetRouteTableConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static GetRouteTableRequest interceptRequest(GetRouteTableRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, GetRouteTableRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -86,6 +91,7 @@ public class GetRouteTableConverter {
                         }
 
                         GetRouteTableResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

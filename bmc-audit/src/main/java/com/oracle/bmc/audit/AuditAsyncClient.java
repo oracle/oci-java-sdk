@@ -140,6 +140,7 @@ public class AuditAsyncClient implements AuditAsync {
             ListEventsRequest request,
             AsyncHandler<ListEventsRequest, ListEventsResponse> handler) {
         LOG.trace("Called async listEvents");
+        request = ListEventsConverter.interceptRequest(request);
         Invocation.Builder ib = ListEventsConverter.fromRequest(client, request);
         Function<Response, ListEventsResponse> transformer = ListEventsConverter.fromResponse();
 

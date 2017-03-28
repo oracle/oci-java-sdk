@@ -30,6 +30,11 @@ public class UpdateUserStateConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static UpdateUserStateRequest interceptRequest(UpdateUserStateRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(
             RestClient client, UpdateUserStateRequest request) {
         if (request == null) {
@@ -96,6 +101,7 @@ public class UpdateUserStateConverter {
                         }
 
                         UpdateUserStateResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

@@ -24,7 +24,7 @@ public class ListBucketsRequest {
     private String namespaceName;
 
     /**
-     * The compartment ID in which to create the bucket.
+     * The ID of the compartment in which to create the bucket.
      */
     private String compartmentId;
 
@@ -39,7 +39,7 @@ public class ListBucketsRequest {
     private String page;
 
     /**
-     * The client request ID for tracing
+     * The client request ID for tracing.
      */
     private String opcClientRequestId;
 

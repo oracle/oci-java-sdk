@@ -30,6 +30,11 @@ public class DeleteGroupConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static DeleteGroupRequest interceptRequest(DeleteGroupRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, DeleteGroupRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -81,6 +86,7 @@ public class DeleteGroupConverter {
                         }
 
                         DeleteGroupResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

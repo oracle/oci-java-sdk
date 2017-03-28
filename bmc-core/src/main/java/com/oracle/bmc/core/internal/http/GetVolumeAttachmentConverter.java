@@ -30,6 +30,11 @@ public class GetVolumeAttachmentConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static GetVolumeAttachmentRequest interceptRequest(GetVolumeAttachmentRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(
             RestClient client, GetVolumeAttachmentRequest request) {
         if (request == null) {
@@ -88,6 +93,7 @@ public class GetVolumeAttachmentConverter {
                         }
 
                         GetVolumeAttachmentResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

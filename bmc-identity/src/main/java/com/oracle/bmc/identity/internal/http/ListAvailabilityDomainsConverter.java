@@ -30,6 +30,12 @@ public class ListAvailabilityDomainsConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static ListAvailabilityDomainsRequest interceptRequest(
+            ListAvailabilityDomainsRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(
             RestClient client, ListAvailabilityDomainsRequest request) {
         if (request == null) {
@@ -93,6 +99,7 @@ public class ListAvailabilityDomainsConverter {
                         }
 
                         ListAvailabilityDomainsResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

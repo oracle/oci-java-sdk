@@ -21,7 +21,7 @@ import com.oracle.bmc.objectstorage.model.*;
 public class DeleteObjectResponse {
 
     /**
-     * Echoes back the value passed in in the opc-client-request-id header, for use by clients when debugging.
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
      */
     private String opcClientRequestId;
 
@@ -33,7 +33,7 @@ public class DeleteObjectResponse {
     private String opcRequestId;
 
     /**
-     * The object modification time, per RFC 2616
+     * The time the object was deleted, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
      */
     private Date lastModified;
 

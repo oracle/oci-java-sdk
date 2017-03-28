@@ -14,6 +14,12 @@ import lombok.Value;
 import lombok.*;
 import lombok.experimental.*;
 
+/**
+ * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+ * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+ * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
+ *
+ **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @Value
 @JsonDeserialize(builder = CreateBucketDetails.Builder.class)
@@ -49,8 +55,8 @@ public class CreateBucketDetails {
     }
 
     /**
-     * The name of the bucket. Valid characters are letters (upper or lower case),
-     * numbers and dashes. Bucket names must be unique within the namespace.
+     * The name of the bucket. Valid characters are uppercase or lowercase letters,
+     * numbers, and dashes. Bucket names must be unique within the namespace.
      *
      **/
     @JsonProperty("name")
@@ -68,7 +74,7 @@ public class CreateBucketDetails {
     String compartmentId;
 
     /**
-     * Arbitrary string keys and values for user-defined metadata.
+     * Arbitrary string, up to 4KB, of keys and values for user-defined metadata.
      **/
     @JsonProperty("metadata")
     Map<String, String> metadata;

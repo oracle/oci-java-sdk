@@ -30,6 +30,12 @@ public class DeleteConsoleHistoryConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static DeleteConsoleHistoryRequest interceptRequest(
+            DeleteConsoleHistoryRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(
             RestClient client, DeleteConsoleHistoryRequest request) {
         if (request == null) {
@@ -83,6 +89,7 @@ public class DeleteConsoleHistoryConverter {
                         }
 
                         DeleteConsoleHistoryResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

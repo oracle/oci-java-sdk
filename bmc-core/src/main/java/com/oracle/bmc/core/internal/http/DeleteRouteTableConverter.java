@@ -30,6 +30,11 @@ public class DeleteRouteTableConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static DeleteRouteTableRequest interceptRequest(DeleteRouteTableRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(
             RestClient client, DeleteRouteTableRequest request) {
         if (request == null) {
@@ -83,6 +88,7 @@ public class DeleteRouteTableConverter {
                         }
 
                         DeleteRouteTableResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

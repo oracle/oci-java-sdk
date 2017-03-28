@@ -30,6 +30,11 @@ public class ListApiKeysConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static ListApiKeysRequest interceptRequest(ListApiKeysRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, ListApiKeysRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -91,6 +96,7 @@ public class ListApiKeysConverter {
                         }
 
                         ListApiKeysResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

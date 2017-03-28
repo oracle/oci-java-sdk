@@ -30,6 +30,11 @@ public class HeadObjectConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static HeadObjectRequest interceptRequest(HeadObjectRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, HeadObjectRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -125,12 +130,9 @@ public class HeadObjectConverter {
 
                         Map<String, String> opcMeta = new HashMap<>();
                         String opcMetaPattern = "opc-meta-".toLowerCase();
-                        int patternLength = opcMetaPattern.length();
                         for (Map.Entry<String, List<String>> header : headers.entrySet()) {
                             if (header.getKey().toLowerCase().startsWith(opcMetaPattern)) {
-                                opcMeta.put(
-                                        header.getKey().substring(patternLength),
-                                        header.getValue().get(0));
+                                opcMeta.put(header.getKey(), header.getValue().get(0));
                             }
                         }
                         builder.opcMeta(opcMeta);
@@ -152,6 +154,16 @@ public class HeadObjectConverter {
                                     HeaderUtils.toValue(
                                             "content-md5",
                                             contentMd5Header.get().get(0),
+                                            String.class));
+                        }
+
+                        Optional<List<String>> opcMultipartMd5Header =
+                                HeaderUtils.get(headers, "opc-multipart-md5");
+                        if (opcMultipartMd5Header.isPresent()) {
+                            builder.opcMultipartMd5(
+                                    HeaderUtils.toValue(
+                                            "opc-multipart-md5",
+                                            opcMultipartMd5Header.get().get(0),
                                             String.class));
                         }
 
@@ -196,6 +208,7 @@ public class HeadObjectConverter {
                         }
 
                         HeadObjectResponse responseWrapper = builder.build();
+                        responseWrapper = ObjectMetadataInterceptor.intercept(responseWrapper);
                         return responseWrapper;
                     }
                 };

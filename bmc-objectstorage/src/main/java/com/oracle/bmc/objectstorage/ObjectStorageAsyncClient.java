@@ -137,10 +137,47 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
     }
 
     @Override
+    public Future<AbortMultipartUploadResponse> abortMultipartUpload(
+            AbortMultipartUploadRequest request,
+            AsyncHandler<AbortMultipartUploadRequest, AbortMultipartUploadResponse> handler) {
+        LOG.trace("Called async abortMultipartUpload");
+        request = AbortMultipartUploadConverter.interceptRequest(request);
+        Invocation.Builder ib = AbortMultipartUploadConverter.fromRequest(client, request);
+        Function<Response, AbortMultipartUploadResponse> transformer =
+                AbortMultipartUploadConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture = client.delete(ib, request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<CommitMultipartUploadResponse> commitMultipartUpload(
+            CommitMultipartUploadRequest request,
+            AsyncHandler<CommitMultipartUploadRequest, CommitMultipartUploadResponse> handler) {
+        LOG.trace("Called async commitMultipartUpload");
+        request = CommitMultipartUploadConverter.interceptRequest(request);
+        Invocation.Builder ib = CommitMultipartUploadConverter.fromRequest(client, request);
+        Function<Response, CommitMultipartUploadResponse> transformer =
+                CommitMultipartUploadConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture =
+                client.post(
+                        ib, request.getCommitMultipartUploadDetails(), request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
     public Future<CreateBucketResponse> createBucket(
             CreateBucketRequest request,
             AsyncHandler<CreateBucketRequest, CreateBucketResponse> handler) {
         LOG.trace("Called async createBucket");
+        request = CreateBucketConverter.interceptRequest(request);
         Invocation.Builder ib = CreateBucketConverter.fromRequest(client, request);
         Function<Response, CreateBucketResponse> transformer = CreateBucketConverter.fromResponse();
 
@@ -153,10 +190,30 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
     }
 
     @Override
+    public Future<CreateMultipartUploadResponse> createMultipartUpload(
+            CreateMultipartUploadRequest request,
+            AsyncHandler<CreateMultipartUploadRequest, CreateMultipartUploadResponse> handler) {
+        LOG.trace("Called async createMultipartUpload");
+        request = CreateMultipartUploadConverter.interceptRequest(request);
+        Invocation.Builder ib = CreateMultipartUploadConverter.fromRequest(client, request);
+        Function<Response, CreateMultipartUploadResponse> transformer =
+                CreateMultipartUploadConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture =
+                client.post(
+                        ib, request.getCreateMultipartUploadDetails(), request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
     public Future<DeleteBucketResponse> deleteBucket(
             DeleteBucketRequest request,
             AsyncHandler<DeleteBucketRequest, DeleteBucketResponse> handler) {
         LOG.trace("Called async deleteBucket");
+        request = DeleteBucketConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteBucketConverter.fromRequest(client, request);
         Function<Response, DeleteBucketResponse> transformer = DeleteBucketConverter.fromResponse();
 
@@ -172,6 +229,7 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
             DeleteObjectRequest request,
             AsyncHandler<DeleteObjectRequest, DeleteObjectResponse> handler) {
         LOG.trace("Called async deleteObject");
+        request = DeleteObjectConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteObjectConverter.fromRequest(client, request);
         Function<Response, DeleteObjectResponse> transformer = DeleteObjectConverter.fromResponse();
 
@@ -186,6 +244,7 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
     public Future<GetBucketResponse> getBucket(
             GetBucketRequest request, AsyncHandler<GetBucketRequest, GetBucketResponse> handler) {
         LOG.trace("Called async getBucket");
+        request = GetBucketConverter.interceptRequest(request);
         Invocation.Builder ib = GetBucketConverter.fromRequest(client, request);
         Function<Response, GetBucketResponse> transformer = GetBucketConverter.fromResponse();
 
@@ -201,6 +260,7 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
             GetNamespaceRequest request,
             AsyncHandler<GetNamespaceRequest, GetNamespaceResponse> handler) {
         LOG.trace("Called async getNamespace");
+        request = GetNamespaceConverter.interceptRequest(request);
         Invocation.Builder ib = GetNamespaceConverter.fromRequest(client, request);
         Function<Response, GetNamespaceResponse> transformer = GetNamespaceConverter.fromResponse();
 
@@ -215,6 +275,7 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
     public Future<GetObjectResponse> getObject(
             GetObjectRequest request, AsyncHandler<GetObjectRequest, GetObjectResponse> handler) {
         LOG.trace("Called async getObject");
+        request = GetObjectConverter.interceptRequest(request);
         Invocation.Builder ib = GetObjectConverter.fromRequest(client, request);
         Function<Response, GetObjectResponse> transformer = GetObjectConverter.fromResponse();
 
@@ -230,6 +291,7 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
             HeadBucketRequest request,
             AsyncHandler<HeadBucketRequest, HeadBucketResponse> handler) {
         LOG.trace("Called async headBucket");
+        request = HeadBucketConverter.interceptRequest(request);
         Invocation.Builder ib = HeadBucketConverter.fromRequest(client, request);
         Function<Response, HeadBucketResponse> transformer = HeadBucketConverter.fromResponse();
 
@@ -245,6 +307,7 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
             HeadObjectRequest request,
             AsyncHandler<HeadObjectRequest, HeadObjectResponse> handler) {
         LOG.trace("Called async headObject");
+        request = HeadObjectConverter.interceptRequest(request);
         Invocation.Builder ib = HeadObjectConverter.fromRequest(client, request);
         Function<Response, HeadObjectResponse> transformer = HeadObjectConverter.fromResponse();
 
@@ -260,8 +323,44 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
             ListBucketsRequest request,
             AsyncHandler<ListBucketsRequest, ListBucketsResponse> handler) {
         LOG.trace("Called async listBuckets");
+        request = ListBucketsConverter.interceptRequest(request);
         Invocation.Builder ib = ListBucketsConverter.fromRequest(client, request);
         Function<Response, ListBucketsResponse> transformer = ListBucketsConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<ListMultipartUploadPartsResponse> listMultipartUploadParts(
+            ListMultipartUploadPartsRequest request,
+            AsyncHandler<ListMultipartUploadPartsRequest, ListMultipartUploadPartsResponse>
+                    handler) {
+        LOG.trace("Called async listMultipartUploadParts");
+        request = ListMultipartUploadPartsConverter.interceptRequest(request);
+        Invocation.Builder ib = ListMultipartUploadPartsConverter.fromRequest(client, request);
+        Function<Response, ListMultipartUploadPartsResponse> transformer =
+                ListMultipartUploadPartsConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<ListMultipartUploadsResponse> listMultipartUploads(
+            ListMultipartUploadsRequest request,
+            AsyncHandler<ListMultipartUploadsRequest, ListMultipartUploadsResponse> handler) {
+        LOG.trace("Called async listMultipartUploads");
+        request = ListMultipartUploadsConverter.interceptRequest(request);
+        Invocation.Builder ib = ListMultipartUploadsConverter.fromRequest(client, request);
+        Function<Response, ListMultipartUploadsResponse> transformer =
+                ListMultipartUploadsConverter.fromResponse();
 
         Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
         Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
@@ -275,6 +374,7 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
             ListObjectsRequest request,
             AsyncHandler<ListObjectsRequest, ListObjectsResponse> handler) {
         LOG.trace("Called async listObjects");
+        request = ListObjectsConverter.interceptRequest(request);
         Invocation.Builder ib = ListObjectsConverter.fromRequest(client, request);
         Function<Response, ListObjectsResponse> transformer = ListObjectsConverter.fromResponse();
 
@@ -289,6 +389,7 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
     public Future<PutObjectResponse> putObject(
             PutObjectRequest request, AsyncHandler<PutObjectRequest, PutObjectResponse> handler) {
         LOG.trace("Called async putObject");
+        request = PutObjectConverter.interceptRequest(request);
         Invocation.Builder ib = PutObjectConverter.fromRequest(client, request);
         Function<Response, PutObjectResponse> transformer = PutObjectConverter.fromResponse();
 
@@ -305,6 +406,7 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
             UpdateBucketRequest request,
             AsyncHandler<UpdateBucketRequest, UpdateBucketResponse> handler) {
         LOG.trace("Called async updateBucket");
+        request = UpdateBucketConverter.interceptRequest(request);
         Invocation.Builder ib = UpdateBucketConverter.fromRequest(client, request);
         Function<Response, UpdateBucketResponse> transformer = UpdateBucketConverter.fromResponse();
 
@@ -313,6 +415,23 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
 
         Future<Response> responseFuture =
                 client.post(ib, request.getUpdateBucketDetails(), request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<UploadPartResponse> uploadPart(
+            UploadPartRequest request,
+            AsyncHandler<UploadPartRequest, UploadPartResponse> handler) {
+        LOG.trace("Called async uploadPart");
+        request = UploadPartConverter.interceptRequest(request);
+        Invocation.Builder ib = UploadPartConverter.fromRequest(client, request);
+        Function<Response, UploadPartResponse> transformer = UploadPartConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture =
+                client.put(ib, request.getUploadPartBody(), request, onSuccess, onError);
         return new TransformingFuture<>(responseFuture, transformer);
     }
 }

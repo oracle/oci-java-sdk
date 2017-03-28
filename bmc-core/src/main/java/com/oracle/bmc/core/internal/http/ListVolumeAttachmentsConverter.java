@@ -30,6 +30,12 @@ public class ListVolumeAttachmentsConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static ListVolumeAttachmentsRequest interceptRequest(
+            ListVolumeAttachmentsRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(
             RestClient client, ListVolumeAttachmentsRequest request) {
         if (request == null) {
@@ -118,6 +124,7 @@ public class ListVolumeAttachmentsConverter {
                         }
 
                         ListVolumeAttachmentsResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

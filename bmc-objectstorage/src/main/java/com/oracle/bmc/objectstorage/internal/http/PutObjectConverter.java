@@ -30,6 +30,11 @@ public class PutObjectConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static PutObjectRequest interceptRequest(PutObjectRequest request) {
+        request = ObjectMetadataInterceptor.intercept(request);
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, PutObjectRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -102,9 +107,8 @@ public class PutObjectConverter {
         }
 
         if (request.getOpcMeta() != null) {
-            final String opcMetaPattern = "opc-meta-";
             for (Map.Entry<String, String> header : request.getOpcMeta().entrySet()) {
-                ib.header(opcMetaPattern + header.getKey(), header.getValue());
+                ib.header(header.getKey(), header.getValue());
             }
         }
 
@@ -173,6 +177,7 @@ public class PutObjectConverter {
                         }
 
                         PutObjectResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

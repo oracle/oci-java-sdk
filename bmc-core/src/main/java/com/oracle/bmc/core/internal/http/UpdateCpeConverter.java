@@ -30,6 +30,11 @@ public class UpdateCpeConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static UpdateCpeRequest interceptRequest(UpdateCpeRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, UpdateCpeRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -94,6 +99,7 @@ public class UpdateCpeConverter {
                         }
 
                         UpdateCpeResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

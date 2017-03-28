@@ -30,6 +30,11 @@ public class DeleteVolumeConverter {
     private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
             new ResponseConversionFunctionFactory();
 
+    public static DeleteVolumeRequest interceptRequest(DeleteVolumeRequest request) {
+
+        return request;
+    }
+
     public static Invocation.Builder fromRequest(RestClient client, DeleteVolumeRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -81,6 +86,7 @@ public class DeleteVolumeConverter {
                         }
 
                         DeleteVolumeResponse responseWrapper = builder.build();
+
                         return responseWrapper;
                     }
                 };

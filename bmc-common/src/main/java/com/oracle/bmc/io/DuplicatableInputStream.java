@@ -9,7 +9,7 @@ import java.io.InputStream;
  * Interface describing an InputStream that can safely be duplicated from its start and used
  * in a thread-safe manner.
  * <p>
- * Add this to any class that implements {@link InputStream} and can safely duplicate that stream.
+ * Add this to any class that extends {@link InputStream} and can safely duplicate that stream.
  * Duplicate streams can be used, for example, when uploading objects to object storage to allow
  * for parallel uploads.
  */
