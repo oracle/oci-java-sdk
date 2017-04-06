@@ -233,6 +233,25 @@ public interface ComputeAsync extends AutoCloseable {
             AsyncHandler<GetVolumeAttachmentRequest, GetVolumeAttachmentResponse> handler);
 
     /**
+     * Gets the generated credentials for the instance. Only works for Windows instances. The returned credentials
+     * are only valid for the initial login.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    Future<GetWindowsInstanceInitialCredentialsResponse> getWindowsInstanceInitialCredentials(
+            GetWindowsInstanceInitialCredentialsRequest request,
+            AsyncHandler<
+                            GetWindowsInstanceInitialCredentialsRequest,
+                            GetWindowsInstanceInitialCredentialsResponse>
+                    handler);
+
+    /**
      * Performs one of the power actions (start, stop, softreset, or reset)
      * on the specified instance.
      * <p>

@@ -13,6 +13,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.2.5 - 2017-04-06
+### Changed
+- Added opc-client-request-id truncation logic in MultipartObjectAssembler to prevent failures
+
+### Added
+- Support for DHCP Search Domain Option
+- Support for Compute API 'getWindowsInstanceInitialCredentials'
+
 ## 1.2.4 - 2017-03-28
 ### Fixed
 - Allow UUID in path elements

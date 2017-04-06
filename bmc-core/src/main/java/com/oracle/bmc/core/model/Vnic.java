@@ -126,7 +126,7 @@ public class Vnic {
      * The hostname for the VNIC that is created during instance launch.
      * Used for DNS. The value is the hostname portion of the instance's
      * fully qualified domain name (FQDN) (e.g., `bminstance-1` in FQDN
-     * `bminstance-1.subnet-123.vcn-1.oraclevcn.com`).
+     * `bminstance-1.subnet123.vcn1.oraclevcn.com`).
      * Must be unique across all VNICs in the subnet and comply with
      * [RFC 952](https://tools.ietf.org/html/rfc952) and
      * [RFC 1123](https://tools.ietf.org/html/rfc1123).

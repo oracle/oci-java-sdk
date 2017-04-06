@@ -321,6 +321,28 @@ public class ComputeAsyncClient implements ComputeAsync {
     }
 
     @Override
+    public Future<GetWindowsInstanceInitialCredentialsResponse>
+            getWindowsInstanceInitialCredentials(
+                    GetWindowsInstanceInitialCredentialsRequest request,
+                    AsyncHandler<
+                                    GetWindowsInstanceInitialCredentialsRequest,
+                                    GetWindowsInstanceInitialCredentialsResponse>
+                            handler) {
+        LOG.trace("Called async getWindowsInstanceInitialCredentials");
+        request = GetWindowsInstanceInitialCredentialsConverter.interceptRequest(request);
+        Invocation.Builder ib =
+                GetWindowsInstanceInitialCredentialsConverter.fromRequest(client, request);
+        Function<Response, GetWindowsInstanceInitialCredentialsResponse> transformer =
+                GetWindowsInstanceInitialCredentialsConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
     public Future<InstanceActionResponse> instanceAction(
             InstanceActionRequest request,
             AsyncHandler<InstanceActionRequest, InstanceActionResponse> handler) {

@@ -268,6 +268,20 @@ public class ComputeClient implements Compute {
     }
 
     @Override
+    public GetWindowsInstanceInitialCredentialsResponse getWindowsInstanceInitialCredentials(
+            GetWindowsInstanceInitialCredentialsRequest request) {
+        LOG.trace("Called getWindowsInstanceInitialCredentials");
+        request = GetWindowsInstanceInitialCredentialsConverter.interceptRequest(request);
+        Invocation.Builder ib =
+                GetWindowsInstanceInitialCredentialsConverter.fromRequest(client, request);
+        Function<Response, GetWindowsInstanceInitialCredentialsResponse> transformer =
+                GetWindowsInstanceInitialCredentialsConverter.fromResponse();
+
+        Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
     public InstanceActionResponse instanceAction(InstanceActionRequest request) {
         LOG.trace("Called instanceAction");
         request = InstanceActionConverter.interceptRequest(request);

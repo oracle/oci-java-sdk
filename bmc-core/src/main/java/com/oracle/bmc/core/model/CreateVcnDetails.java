@@ -85,22 +85,23 @@ public class CreateVcnDetails {
     /**
      * A DNS label for the VCN, used in conjunction with the VNIC's hostname and
      * subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC
-     * within this subnet (e.g., `bminstance-1.subnet-123.vcn-1.oraclevcn.com`).
+     * within this subnet (e.g., `bminstance-1.subnet123.vcn1.oraclevcn.com`).
      * Not required to be unique, but it's a best practice to set unique DNS labels
-     * for VCNs in your tenancy. Must comply with
-     * [RFC 952](https://tools.ietf.org/html/rfc952) and
-     * [RFC 1123](https://tools.ietf.org/html/rfc1123). The value cannot be changed.
+     * for VCNs in your tenancy.
+     * Must be an alphanumeric string that begins with a letter.
+     * The value cannot be changed.
      * <p>
      * You must set this value if you want instances to be able to use hostnames to
-     * resolve other instances in the VCN. Otherwise the VCN Resolver will not work.
+     * resolve other instances in the VCN. Otherwise the Internet and VCN Resolver
+     * will not work.
      * <p>
      * For more information, see
      * [DNS in Your Virtual Cloud Network](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm).
      * <p>
-     * Example: `vcn-1`
+     * Example: `vcn1`
      *
      **/
     @JsonProperty("dnsLabel")
-    @Size(min = 1, max = 63)
+    @Size(min = 1, max = 15)
     String dnsLabel;
 }

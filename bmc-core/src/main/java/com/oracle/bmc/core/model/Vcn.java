@@ -155,18 +155,21 @@ public class Vcn {
     /**
      * A DNS label for the VCN, used in conjunction with the VNIC's hostname and
      * subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC
-     * within this subnet (e.g., `bminstance-1.subnet-123.vcn-1.oraclevcn.com`).
+     * within this subnet (e.g., `bminstance-1.subnet123.vcn1.oraclevcn.com`).
+     * Must be an alphanumeric string that begins with a letter.
+     * The value cannot be changed.
      * <p>
-     * The absence of this parameter means the VCN Resolver will not work for this VCN.
+     * The absence of this parameter means the Internet and VCN Resolver will
+     * not work for this VCN.
      * <p>
      * For more information, see
      * [DNS in Your Virtual Cloud Network](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm).
      * <p>
-     * Example: `vcn-1`
+     * Example: `vcn1`
      *
      **/
     @JsonProperty("dnsLabel")
-    @Size(min = 1, max = 63)
+    @Size(min = 1, max = 15)
     String dnsLabel;
 
     /**
@@ -238,7 +241,7 @@ public class Vcn {
      * For more information, see
      * [DNS in Your Virtual Cloud Network](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm).
      * <p>
-     * Example: `vcn-1.oraclevcn.com`
+     * Example: `vcn1.oraclevcn.com`
      *
      **/
     @JsonProperty("vcnDomainName")

@@ -20,9 +20,10 @@ import lombok.experimental.*;
  * in the subnet. The rules can be stateful or stateless. For more information, see
  * [Security Lists](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/securitylists.htm).
  * <p>
- **Important:** Oracle Bare Metal Cloud Services images that run Oracle Linux automatically include iptables rules.
- * If there are issues with some type of access to an instance, make sure both the security lists associated
- * with the instance's subnet and the instance's iptables rules are set correctly.
+ **Important:** Oracle Bare Metal Cloud Services images automatically include firewall rules (e.g.,
+ * Linux iptables, Windows firewall). If there are issues with some type of access to an instance,
+ * make sure both the security lists associated with the instance's subnet and the instance's
+ * firewall rules are set correctly.
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see

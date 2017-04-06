@@ -118,7 +118,7 @@ public class LaunchInstanceDetails {
      * The hostname for the VNIC that is created during instance launch.
      * Used for DNS. The value is the hostname portion of the instance's
      * fully qualified domain name (FQDN) (e.g., `bminstance-1` in FQDN
-     * `bminstance-1.subnet-123.vcn-1.oraclevcn.com`).
+     * `bminstance-1.subnet123.vcn1.oraclevcn.com`).
      * Must be unique across all VNICs in the subnet and comply with
      * [RFC 952](https://tools.ietf.org/html/rfc952) and
      * [RFC 1123](https://tools.ietf.org/html/rfc1123).
@@ -163,6 +163,10 @@ public class LaunchInstanceDetails {
      * over iSCSI the same way as the default iPXE script, you should use the
      * following iSCSI IP address: 169.254.0.2, and boot volume IQN:
      * iqn.2015-02.oracle.boot.
+     * <p>
+     * For more information about the Bring Your Own Image feature of
+     * Oracle Bare Metal Cloud Services, see
+     * [Bring Your Own Image](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/bringyourownimage.htm).
      * <p>
      * For more information about iPXE, see http://ipxe.org.
      *
