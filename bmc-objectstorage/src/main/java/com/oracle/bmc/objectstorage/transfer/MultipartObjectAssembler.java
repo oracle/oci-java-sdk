@@ -32,6 +32,7 @@ import com.oracle.bmc.objectstorage.transfer.internal.SimpleRetry;
 import com.oracle.bmc.util.StreamUtils;
 
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * MultiPartObjectAssembler provides a simplified interaction with uploading large
@@ -45,7 +46,9 @@ import lombok.Setter;
  * Note, a new assembler instance should be used for every multi-part upload.  Once
  * initialized (or resumed), an assembler cannot be reused.
  */
+@Slf4j
 public class MultipartObjectAssembler {
+    private static final int MAX_CLIENT_REQUEST_ID_LENGTH = 40;
 
     private final ObjectStorage service;
     private final String namespaceName;
@@ -118,8 +121,9 @@ public class MultipartObjectAssembler {
                                                 .contentType(contentType)
                                                 .metadata(opcMeta)
                                                 .build())
-                                .opcClientRequestId(opcClientRequestId + "-create")
+                                .opcClientRequestId(createClientRequestId("-create"))
                                 .build());
+        
         this.manifest =
                 new MultipartManifestImpl(createUploadResponse.getMultipartUpload().getUploadId());
         this.transferManager =
@@ -160,7 +164,7 @@ public class MultipartObjectAssembler {
                                     .bucketName(bucketName)
                                     .objectName(objectName)
                                     .uploadId(uploadId)
-                                    .opcClientRequestId(opcClientRequestId + "-list")
+                                    .opcClientRequestId(createClientRequestId("-list"))
                                     .limit(100)
                                     .page(nextPageToken)
                                     .build());
@@ -270,7 +274,7 @@ public class MultipartObjectAssembler {
                         .ifNoneMatch(ifNoneMatch)
                         .uploadPartNum(partNumber)
                         .uploadPartBody(stream)
-                        .opcClientRequestId(opcClientRequestId + "-" + partNumber)
+                        .opcClientRequestId(createClientRequestId("-" + partNumber))
                         .build();
         transferManager.startTransfer(request);
         return partNumber;
@@ -295,7 +299,7 @@ public class MultipartObjectAssembler {
                         .bucketName(bucketName)
                         .objectName(objectName)
                         .uploadId(manifest.getUploadId())
-                        .opcClientRequestId(opcClientRequestId + "-abort")
+                        .opcClientRequestId(createClientRequestId("-abort"))
                         .build());
     }
 
@@ -328,7 +332,7 @@ public class MultipartObjectAssembler {
                                         .partsToExclude(
                                                 new ArrayList<Integer>(0)) // nothing to exclude
                                         .build())
-                        .opcClientRequestId(opcClientRequestId + "-commit")
+                        .opcClientRequestId(createClientRequestId("-commit"))
                         .build());
     }
 
@@ -342,7 +346,7 @@ public class MultipartObjectAssembler {
                                     .bucketName(bucketName)
                                     .limit(100)
                                     .page(nextPageToken)
-                                    .opcClientRequestId(opcClientRequestId + "-find")
+                                    .opcClientRequestId(createClientRequestId("-find"))
                                     .build());
             for (MultipartUpload upload : uploads.getItems()) {
                 if (uploadId.equals(upload.getUploadId())) {
@@ -367,5 +371,23 @@ public class MultipartObjectAssembler {
 
     private synchronized void validateState() {
         validateState(false);
+    }
+    
+    // client request ID is limited to 40 chars
+    private String createClientRequestId(String suffix) {
+        if (opcClientRequestId == null) {
+            return suffix;
+        }
+        if (opcClientRequestId.length() > MAX_CLIENT_REQUEST_ID_LENGTH) {
+            String truncatedUserId = opcClientRequestId.substring(0, MAX_CLIENT_REQUEST_ID_LENGTH);
+            LOG.debug("Client request ID too long, truncating to '{}' to avoid errors", truncatedUserId);
+            return truncatedUserId;
+        }
+        String newClientRequestId = opcClientRequestId + suffix;
+        if (newClientRequestId.length() > MAX_CLIENT_REQUEST_ID_LENGTH) {
+            newClientRequestId = newClientRequestId.substring(0, MAX_CLIENT_REQUEST_ID_LENGTH);
+        }
+        LOG.debug("Converted client request ID to '{}'", newClientRequestId);
+        return newClientRequestId;
     }
 }

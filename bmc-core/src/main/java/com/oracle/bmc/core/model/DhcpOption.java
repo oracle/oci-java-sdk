@@ -16,7 +16,8 @@ import lombok.experimental.*;
 
 /**
  * A single DHCP option according to [RFC 1533](https://tools.ietf.org/html/rfc1533).
- * The one option you can set is {@link DhcpDnsOption}. For more
+ * The two options available to use are {@link DhcpDnsOption}
+ * and {@link DhcpSearchDomainOption}. For more
  * information, see [DNS in Your Virtual Cloud Network](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm)
  * and [Managing DHCP Options](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingDHCP.htm).
  *
@@ -31,5 +32,8 @@ import lombok.experimental.*;
     property = "type",
     defaultImpl = DhcpOption.class
 )
-@JsonSubTypes({@JsonSubTypes.Type(value = DhcpDnsOption.class, name = "DomainNameServer")})
+@JsonSubTypes({
+    @JsonSubTypes.Type(value = DhcpDnsOption.class, name = "DomainNameServer"),
+    @JsonSubTypes.Type(value = DhcpSearchDomainOption.class, name = "SearchDomain")
+})
 public class DhcpOption {}

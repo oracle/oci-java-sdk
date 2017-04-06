@@ -16,10 +16,13 @@ import lombok.experimental.*;
 
 /**
  * A set of DHCP options. Used by the VCN to automatically provide configuration
- * information to the instances when they boot up. There is one option you can set:
+ * information to the instances when they boot up. There are two options you can set:
  *
  * - {@link DhcpDnsOption}: Lets you specify how DNS (hostname resolution) is
  * handled in the subnets in your VCN.
+ * <p>
+ * - {@link DhcpSearchDomainOption}: Lets you specify
+ * a search domain name to use for DNS queries.
  *
  * For more information, see  [DNS in Your Virtual Cloud Network](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm)
  * and [Managing DHCP Options](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingDHCP.htm).

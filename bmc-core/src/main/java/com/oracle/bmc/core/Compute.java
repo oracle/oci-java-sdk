@@ -175,6 +175,18 @@ public interface Compute extends AutoCloseable {
     GetVolumeAttachmentResponse getVolumeAttachment(GetVolumeAttachmentRequest request);
 
     /**
+     * Gets the generated credentials for the instance. Only works for Windows instances. The returned credentials
+     * are only valid for the initial login.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetWindowsInstanceInitialCredentialsResponse getWindowsInstanceInitialCredentials(
+            GetWindowsInstanceInitialCredentialsRequest request);
+
+    /**
      * Performs one of the power actions (start, stop, softreset, or reset)
      * on the specified instance.
      * <p>

@@ -305,8 +305,8 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * You may optionally specify a *display name* for the subnet, otherwise a default is provided.
      * It does not have to be unique, and you can change it.
      * <p>
-     * You can also add a DNS label for the subnet, which is required if you want the VCN Resolver to resolve
-     * hostnames for instances in the subnet. For more information, see
+     * You can also add a DNS label for the subnet, which is required if you want the Internet and
+     * VCN Resolver to resolve hostnames for instances in the subnet. For more information, see
      * [DNS in Your Virtual Cloud Network](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm).
      *
      *
@@ -340,8 +340,8 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * You may optionally specify a *display name* for the VCN, otherwise a default is provided. It does not have to
      * be unique, and you can change it.
      * <p>
-     * You can also add a DNS label for the VCN, which is required if you want the instances to use the VCN Resolver
-     * option for DNS in the VCN. For more information, see
+     * You can also add a DNS label for the VCN, which is required if you want the instances to use the
+     * Interent and VCN Resolver option for DNS in the VCN. For more information, see
      * [DNS in Your Virtual Cloud Network](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm).
      * <p>
      * The VCN automatically comes with a default route table, default security list, and default set of DHCP options.
