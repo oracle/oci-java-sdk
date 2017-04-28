@@ -25,6 +25,7 @@ import com.google.common.base.Charsets;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Throwables;
+import com.oracle.bmc.util.StreamUtils;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -49,7 +50,7 @@ public class PEMFileRSAPrivateKeySupplier implements KeySupplier<RSAPrivateKey> 
 
     /**
      * Constructs a new file key supplier which reads the private key from the
-     * specified file.
+     * specified file.  The provided stream will be closed by this supplier automatically.
      *
      * @param inputStream
      *            the path to the RSA private key
@@ -95,6 +96,8 @@ public class PEMFileRSAPrivateKeySupplier implements KeySupplier<RSAPrivateKey> 
                 }
 
                 this.key = (RSAPrivateKey) converter.getPrivateKey(keyInfo);
+            } finally {
+                StreamUtils.closeQuietly(inputStream);
             }
         } catch (IOException ex) {
             LOG.debug("Failed to read RSA private key from file", ex);

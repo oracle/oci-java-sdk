@@ -16,9 +16,10 @@ import lombok.experimental.*;
 
 /**
  * A Dynamic Routing Gateway (DRG), which is a virtual router that provides a path for private
- * network traffic between your VCN and your on-premise network. You use it with other Networking
- * Service components and an on-premise router to create a site-to-site VPN. For more information, see
- * [Typical Networking Service Scenarios](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm#three).
+ * network traffic between your VCN and your existing network. You use it with other Networking
+ * Service components to create an IPSec VPN or a connection that uses
+ * Oracle Bare Metal Cloud Services FastConnect. For more information, see
+ * [Overview of the Networking Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm).
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
@@ -96,12 +97,18 @@ public class Drg {
     /**
      * The DRG's current state.
      **/
+    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
         Terminating("TERMINATING"),
         Terminated("TERMINATED"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
 
         private final String value;
         private static Map<String, LifecycleState> map;
@@ -109,7 +116,9 @@ public class Drg {
         static {
             map = new HashMap<>();
             for (LifecycleState v : LifecycleState.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -127,7 +136,10 @@ public class Drg {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid LifecycleState: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**

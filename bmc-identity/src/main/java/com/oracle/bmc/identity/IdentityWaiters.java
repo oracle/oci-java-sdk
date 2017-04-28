@@ -3,7 +3,6 @@
  */
 package com.oracle.bmc.identity;
 
-import com.oracle.bmc.identity.model.*;
 import com.oracle.bmc.identity.requests.*;
 import com.oracle.bmc.identity.responses.*;
 
@@ -38,7 +37,8 @@ public class IdentityWaiters {
      * @return A new Waiter instance.
      */
     public Waiter<GetCompartmentRequest, GetCompartmentResponse> forCompartment(
-            GetCompartmentRequest request, Compartment.LifecycleState targetState) {
+            GetCompartmentRequest request,
+            com.oracle.bmc.identity.model.Compartment.LifecycleState targetState) {
         return forCompartment(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
@@ -53,7 +53,7 @@ public class IdentityWaiters {
      */
     public Waiter<GetCompartmentRequest, GetCompartmentResponse> forCompartment(
             GetCompartmentRequest request,
-            Compartment.LifecycleState targetState,
+            com.oracle.bmc.identity.model.Compartment.LifecycleState targetState,
             TerminationStrategy terminationStrategy,
             DelayStrategy delayStrategy) {
         return forCompartment(
@@ -64,7 +64,7 @@ public class IdentityWaiters {
     private Waiter<GetCompartmentRequest, GetCompartmentResponse> forCompartment(
             BmcGenericWaiter waiter,
             final GetCompartmentRequest request,
-            final Compartment.LifecycleState targetState) {
+            final com.oracle.bmc.identity.model.Compartment.LifecycleState targetState) {
         return new SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
@@ -81,7 +81,9 @@ public class IdentityWaiters {
                                 return response.getCompartment().getLifecycleState() == targetState;
                             }
                         },
-                        targetState == Compartment.LifecycleState.Deleted),
+                        targetState
+                                == com.oracle.bmc.identity.model.Compartment.LifecycleState
+                                        .Deleted),
                 request);
     }
 
@@ -93,7 +95,8 @@ public class IdentityWaiters {
      * @return A new Waiter instance.
      */
     public Waiter<GetGroupRequest, GetGroupResponse> forGroup(
-            GetGroupRequest request, Group.LifecycleState targetState) {
+            GetGroupRequest request,
+            com.oracle.bmc.identity.model.Group.LifecycleState targetState) {
         return forGroup(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
@@ -108,7 +111,7 @@ public class IdentityWaiters {
      */
     public Waiter<GetGroupRequest, GetGroupResponse> forGroup(
             GetGroupRequest request,
-            Group.LifecycleState targetState,
+            com.oracle.bmc.identity.model.Group.LifecycleState targetState,
             TerminationStrategy terminationStrategy,
             DelayStrategy delayStrategy) {
         return forGroup(
@@ -119,7 +122,7 @@ public class IdentityWaiters {
     private Waiter<GetGroupRequest, GetGroupResponse> forGroup(
             BmcGenericWaiter waiter,
             final GetGroupRequest request,
-            final Group.LifecycleState targetState) {
+            final com.oracle.bmc.identity.model.Group.LifecycleState targetState) {
         return new SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
@@ -136,7 +139,7 @@ public class IdentityWaiters {
                                 return response.getGroup().getLifecycleState() == targetState;
                             }
                         },
-                        targetState == Group.LifecycleState.Deleted),
+                        targetState == com.oracle.bmc.identity.model.Group.LifecycleState.Deleted),
                 request);
     }
 
@@ -148,7 +151,8 @@ public class IdentityWaiters {
      * @return A new Waiter instance.
      */
     public Waiter<GetPolicyRequest, GetPolicyResponse> forPolicy(
-            GetPolicyRequest request, Policy.LifecycleState targetState) {
+            GetPolicyRequest request,
+            com.oracle.bmc.identity.model.Policy.LifecycleState targetState) {
         return forPolicy(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
@@ -163,7 +167,7 @@ public class IdentityWaiters {
      */
     public Waiter<GetPolicyRequest, GetPolicyResponse> forPolicy(
             GetPolicyRequest request,
-            Policy.LifecycleState targetState,
+            com.oracle.bmc.identity.model.Policy.LifecycleState targetState,
             TerminationStrategy terminationStrategy,
             DelayStrategy delayStrategy) {
         return forPolicy(
@@ -174,7 +178,7 @@ public class IdentityWaiters {
     private Waiter<GetPolicyRequest, GetPolicyResponse> forPolicy(
             BmcGenericWaiter waiter,
             final GetPolicyRequest request,
-            final Policy.LifecycleState targetState) {
+            final com.oracle.bmc.identity.model.Policy.LifecycleState targetState) {
         return new SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
@@ -191,7 +195,7 @@ public class IdentityWaiters {
                                 return response.getPolicy().getLifecycleState() == targetState;
                             }
                         },
-                        targetState == Policy.LifecycleState.Deleted),
+                        targetState == com.oracle.bmc.identity.model.Policy.LifecycleState.Deleted),
                 request);
     }
 
@@ -203,7 +207,7 @@ public class IdentityWaiters {
      * @return A new Waiter instance.
      */
     public Waiter<GetUserRequest, GetUserResponse> forUser(
-            GetUserRequest request, User.LifecycleState targetState) {
+            GetUserRequest request, com.oracle.bmc.identity.model.User.LifecycleState targetState) {
         return forUser(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
@@ -218,7 +222,7 @@ public class IdentityWaiters {
      */
     public Waiter<GetUserRequest, GetUserResponse> forUser(
             GetUserRequest request,
-            User.LifecycleState targetState,
+            com.oracle.bmc.identity.model.User.LifecycleState targetState,
             TerminationStrategy terminationStrategy,
             DelayStrategy delayStrategy) {
         return forUser(Waiters.newWaiter(terminationStrategy, delayStrategy), request, targetState);
@@ -228,7 +232,7 @@ public class IdentityWaiters {
     private Waiter<GetUserRequest, GetUserResponse> forUser(
             BmcGenericWaiter waiter,
             final GetUserRequest request,
-            final User.LifecycleState targetState) {
+            final com.oracle.bmc.identity.model.User.LifecycleState targetState) {
         return new SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
@@ -245,7 +249,7 @@ public class IdentityWaiters {
                                 return response.getUser().getLifecycleState() == targetState;
                             }
                         },
-                        targetState == User.LifecycleState.Deleted),
+                        targetState == com.oracle.bmc.identity.model.User.LifecycleState.Deleted),
                 request);
     }
 
@@ -259,7 +263,7 @@ public class IdentityWaiters {
     public Waiter<GetUserGroupMembershipRequest, GetUserGroupMembershipResponse>
             forUserGroupMembership(
                     GetUserGroupMembershipRequest request,
-                    UserGroupMembership.LifecycleState targetState) {
+                    com.oracle.bmc.identity.model.UserGroupMembership.LifecycleState targetState) {
         return forUserGroupMembership(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
@@ -275,7 +279,7 @@ public class IdentityWaiters {
     public Waiter<GetUserGroupMembershipRequest, GetUserGroupMembershipResponse>
             forUserGroupMembership(
                     GetUserGroupMembershipRequest request,
-                    UserGroupMembership.LifecycleState targetState,
+                    com.oracle.bmc.identity.model.UserGroupMembership.LifecycleState targetState,
                     TerminationStrategy terminationStrategy,
                     DelayStrategy delayStrategy) {
         return forUserGroupMembership(
@@ -287,7 +291,8 @@ public class IdentityWaiters {
             forUserGroupMembership(
                     BmcGenericWaiter waiter,
                     final GetUserGroupMembershipRequest request,
-                    final UserGroupMembership.LifecycleState targetState) {
+                    final com.oracle.bmc.identity.model.UserGroupMembership.LifecycleState
+                            targetState) {
         return new SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
@@ -307,7 +312,9 @@ public class IdentityWaiters {
                                         == targetState;
                             }
                         },
-                        targetState == UserGroupMembership.LifecycleState.Deleted),
+                        targetState
+                                == com.oracle.bmc.identity.model.UserGroupMembership.LifecycleState
+                                        .Deleted),
                 request);
     }
 }

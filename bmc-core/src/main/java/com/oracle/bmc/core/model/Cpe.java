@@ -15,10 +15,11 @@ import lombok.*;
 import lombok.experimental.*;
 
 /**
- * A virtual representation of your Customer-Premise Equipment, which is the actual router
- * on-premise at your site at your end of the VPN connection to your VCN. You need to
- * create this object as part of the process of setting up the VPN. For more information,
- * see [Typical Networking Service Scenarios](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm#three).
+ * An object you create when setting up an IPSec VPN between your on-premise network
+ * and VCN. The `Cpe` is a virtual representation of your Customer-Premises Equipment,
+ * which is the actual router on-premise at your site at your end of the IPSec VPN connection.
+ * For more information,
+ * see [Overview of the Networking Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm).
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see

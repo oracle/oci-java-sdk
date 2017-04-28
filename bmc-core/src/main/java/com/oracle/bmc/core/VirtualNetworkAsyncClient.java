@@ -314,6 +314,25 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public Future<CreateVirtualCircuitResponse> createVirtualCircuit(
+            CreateVirtualCircuitRequest request,
+            AsyncHandler<CreateVirtualCircuitRequest, CreateVirtualCircuitResponse> handler) {
+        LOG.trace("Called async createVirtualCircuit");
+        request = CreateVirtualCircuitConverter.interceptRequest(request);
+        Invocation.Builder ib = CreateVirtualCircuitConverter.fromRequest(client, request);
+        Function<Response, CreateVirtualCircuitResponse> transformer =
+                CreateVirtualCircuitConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture =
+                client.post(
+                        ib, request.getCreateVirtualCircuitDetails(), request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
     public Future<DeleteCpeResponse> deleteCpe(
             DeleteCpeRequest request, AsyncHandler<DeleteCpeRequest, DeleteCpeResponse> handler) {
         LOG.trace("Called async deleteCpe");
@@ -468,6 +487,23 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         request = DeleteVcnConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteVcnConverter.fromRequest(client, request);
         Function<Response, DeleteVcnResponse> transformer = DeleteVcnConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture = client.delete(ib, request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<DeleteVirtualCircuitResponse> deleteVirtualCircuit(
+            DeleteVirtualCircuitRequest request,
+            AsyncHandler<DeleteVirtualCircuitRequest, DeleteVirtualCircuitResponse> handler) {
+        LOG.trace("Called async deleteVirtualCircuit");
+        request = DeleteVirtualCircuitConverter.interceptRequest(request);
+        Invocation.Builder ib = DeleteVirtualCircuitConverter.fromRequest(client, request);
+        Function<Response, DeleteVirtualCircuitResponse> transformer =
+                DeleteVirtualCircuitConverter.fromResponse();
 
         Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
         Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
@@ -681,6 +717,23 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public Future<GetVirtualCircuitResponse> getVirtualCircuit(
+            GetVirtualCircuitRequest request,
+            AsyncHandler<GetVirtualCircuitRequest, GetVirtualCircuitResponse> handler) {
+        LOG.trace("Called async getVirtualCircuit");
+        request = GetVirtualCircuitConverter.interceptRequest(request);
+        Invocation.Builder ib = GetVirtualCircuitConverter.fromRequest(client, request);
+        Function<Response, GetVirtualCircuitResponse> transformer =
+                GetVirtualCircuitConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
     public Future<GetVnicResponse> getVnic(
             GetVnicRequest request, AsyncHandler<GetVnicRequest, GetVnicResponse> handler) {
         LOG.trace("Called async getVnic");
@@ -751,6 +804,27 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         request = ListDrgsConverter.interceptRequest(request);
         Invocation.Builder ib = ListDrgsConverter.fromRequest(client, request);
         Function<Response, ListDrgsResponse> transformer = ListDrgsConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<ListFastConnectProviderServicesResponse> listFastConnectProviderServices(
+            ListFastConnectProviderServicesRequest request,
+            AsyncHandler<
+                            ListFastConnectProviderServicesRequest,
+                            ListFastConnectProviderServicesResponse>
+                    handler) {
+        LOG.trace("Called async listFastConnectProviderServices");
+        request = ListFastConnectProviderServicesConverter.interceptRequest(request);
+        Invocation.Builder ib =
+                ListFastConnectProviderServicesConverter.fromRequest(client, request);
+        Function<Response, ListFastConnectProviderServicesResponse> transformer =
+                ListFastConnectProviderServicesConverter.fromResponse();
 
         Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
         Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
@@ -850,6 +924,44 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         request = ListVcnsConverter.interceptRequest(request);
         Invocation.Builder ib = ListVcnsConverter.fromRequest(client, request);
         Function<Response, ListVcnsResponse> transformer = ListVcnsConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<ListVirtualCircuitBandwidthShapesResponse> listVirtualCircuitBandwidthShapes(
+            ListVirtualCircuitBandwidthShapesRequest request,
+            AsyncHandler<
+                            ListVirtualCircuitBandwidthShapesRequest,
+                            ListVirtualCircuitBandwidthShapesResponse>
+                    handler) {
+        LOG.trace("Called async listVirtualCircuitBandwidthShapes");
+        request = ListVirtualCircuitBandwidthShapesConverter.interceptRequest(request);
+        Invocation.Builder ib =
+                ListVirtualCircuitBandwidthShapesConverter.fromRequest(client, request);
+        Function<Response, ListVirtualCircuitBandwidthShapesResponse> transformer =
+                ListVirtualCircuitBandwidthShapesConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<ListVirtualCircuitsResponse> listVirtualCircuits(
+            ListVirtualCircuitsRequest request,
+            AsyncHandler<ListVirtualCircuitsRequest, ListVirtualCircuitsResponse> handler) {
+        LOG.trace("Called async listVirtualCircuits");
+        request = ListVirtualCircuitsConverter.interceptRequest(request);
+        Invocation.Builder ib = ListVirtualCircuitsConverter.fromRequest(client, request);
+        Function<Response, ListVirtualCircuitsResponse> transformer =
+                ListVirtualCircuitsConverter.fromResponse();
 
         Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
         Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
@@ -1031,6 +1143,25 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
 
         Future<Response> responseFuture =
                 client.put(ib, request.getUpdateVcnDetails(), request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<UpdateVirtualCircuitResponse> updateVirtualCircuit(
+            UpdateVirtualCircuitRequest request,
+            AsyncHandler<UpdateVirtualCircuitRequest, UpdateVirtualCircuitResponse> handler) {
+        LOG.trace("Called async updateVirtualCircuit");
+        request = UpdateVirtualCircuitConverter.interceptRequest(request);
+        Invocation.Builder ib = UpdateVirtualCircuitConverter.fromRequest(client, request);
+        Function<Response, UpdateVirtualCircuitResponse> transformer =
+                UpdateVirtualCircuitConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture =
+                client.put(
+                        ib, request.getUpdateVirtualCircuitDetails(), request, onSuccess, onError);
         return new TransformingFuture<>(responseFuture, transformer);
     }
 }

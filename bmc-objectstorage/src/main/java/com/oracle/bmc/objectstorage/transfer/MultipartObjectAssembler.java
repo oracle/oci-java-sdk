@@ -123,7 +123,7 @@ public class MultipartObjectAssembler {
                                                 .build())
                                 .opcClientRequestId(createClientRequestId("-create"))
                                 .build());
-        
+
         this.manifest =
                 new MultipartManifestImpl(createUploadResponse.getMultipartUpload().getUploadId());
         this.transferManager =
@@ -372,7 +372,7 @@ public class MultipartObjectAssembler {
     private synchronized void validateState() {
         validateState(false);
     }
-    
+
     // client request ID is limited to 40 chars
     private String createClientRequestId(String suffix) {
         if (opcClientRequestId == null) {
@@ -380,7 +380,9 @@ public class MultipartObjectAssembler {
         }
         if (opcClientRequestId.length() > MAX_CLIENT_REQUEST_ID_LENGTH) {
             String truncatedUserId = opcClientRequestId.substring(0, MAX_CLIENT_REQUEST_ID_LENGTH);
-            LOG.debug("Client request ID too long, truncating to '{}' to avoid errors", truncatedUserId);
+            LOG.debug(
+                    "Client request ID too long, truncating to '{}' to avoid errors",
+                    truncatedUserId);
             return truncatedUserId;
         }
         String newClientRequestId = opcClientRequestId + suffix;

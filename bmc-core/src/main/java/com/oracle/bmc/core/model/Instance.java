@@ -164,18 +164,17 @@ public class Instance {
      * every time an instance boots; not only after the initial
      * LaunchInstance call.
      * <p>
-     * The default iPXE script connects to the instance\u2019s local boot
+     * The default iPXE script connects to the instance's local boot
      * volume over iSCSI and performs a network boot. If you use a custom iPXE
-     * script and want to network-boot from the instance\u2019s local boot volume
+     * script and want to network-boot from the instance's local boot volume
      * over iSCSI the same way as the default iPXE script, you should use the
      * following iSCSI IP address: 169.254.0.2, and boot volume IQN:
      * iqn.2015-02.oracle.boot.
      * <p>
      * For more information about the Bring Your Own Image feature of
-     * Oracle Bare Metal Cloud Services, see [Bring Your Own Custom
-     * Image: RHEL 7.x & Derivatives (CentOS, Oracle Linux)]
-     * (/Content/General/Reference/aqswhitepapers.htm).
-     *
+     * Oracle Bare Metal Cloud Services, see
+     * [Bring Your Own Image](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/bringyourownimage.htm).
+     * <p>
      * For more information about iPXE, see http://ipxe.org.
      *
      **/
@@ -185,6 +184,7 @@ public class Instance {
     /**
      * The current state of the instance.
      **/
+    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Provisioning("PROVISIONING"),
         Running("RUNNING"),
@@ -194,7 +194,12 @@ public class Instance {
         CreatingImage("CREATING_IMAGE"),
         Terminating("TERMINATING"),
         Terminated("TERMINATED"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
 
         private final String value;
         private static Map<String, LifecycleState> map;
@@ -202,7 +207,9 @@ public class Instance {
         static {
             map = new HashMap<>();
             for (LifecycleState v : LifecycleState.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -220,7 +227,10 @@ public class Instance {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid LifecycleState: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**

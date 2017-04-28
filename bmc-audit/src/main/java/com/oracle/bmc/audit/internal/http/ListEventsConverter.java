@@ -44,20 +44,23 @@ public class ListEventsConverter {
             throw new NullPointerException("compartmentId is required");
         }
 
+        if (request.getStartTime() == null) {
+            throw new NullPointerException("startTime is required");
+        }
+
+        if (request.getEndTime() == null) {
+            throw new NullPointerException("endTime is required");
+        }
+
         WebTarget target = client.getBaseTarget().path("/20160918").path("auditEvents");
 
         target =
                 target.queryParam(
                         "compartmentId", attemptEncodeQueryParam(request.getCompartmentId()));
 
-        if (request.getStartTime() != null) {
-            target =
-                    target.queryParam("startTime", attemptEncodeQueryParam(request.getStartTime()));
-        }
+        target = target.queryParam("startTime", attemptEncodeQueryParam(request.getStartTime()));
 
-        if (request.getEndTime() != null) {
-            target = target.queryParam("endTime", attemptEncodeQueryParam(request.getEndTime()));
-        }
+        target = target.queryParam("endTime", attemptEncodeQueryParam(request.getEndTime()));
 
         if (request.getPage() != null) {
             target = target.queryParam("page", attemptEncodeQueryParam(request.getPage()));

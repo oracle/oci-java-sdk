@@ -39,13 +39,13 @@ public interface VirtualNetwork extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Creates a new virtual Customer-Premise Equipment (CPE) object in the specified compartment. For
-     * more information, see [Managing Customer-Premise Equipment (CPE)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingCPEs.htm).
+     * Creates a new virtual Customer-Premises Equipment (CPE) object in the specified compartment. For
+     * more information, see [Managing IPSec VPNs](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPsec.htm).
      * <p>
      * For the purposes of access control, you must provide the OCID of the compartment where you want
      * the CPE to reside. Notice that the CPE doesn't have to be in the same compartment as the IPSec
      * connection or other Networking Service components. If you're not sure which compartment to
-     * use, put the CPE in the same compartment as the IPSec connection. For more information about
+     * use, put the CPE in the same compartment as the DRG. For more information about
      * compartments and access control, see [Overview of the IAM Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm).
      * For information about OCIDs, see [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      * <p>
@@ -105,8 +105,9 @@ public interface VirtualNetwork extends AutoCloseable {
     CreateDrgResponse createDrg(CreateDrgRequest request);
 
     /**
-     * Attaches the specified DRG to the specified VCN. A VCN can be attached to only one DRG at a time.
-     * The response includes a `DrgAttachment` object with its own OCID. For more information about DRGs, see
+     * Attaches the specified DRG to the specified VCN. A VCN can be attached to only one DRG at a time,
+     * and vice versa. The response includes a `DrgAttachment` object with its own OCID. For more
+     * information about DRGs, see
      * [Managing Dynamic Routing Gateways (DRGs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingDRGs.htm).
      * <p>
      * You may optionally specify a *display name* for the attachment, otherwise a default is provided.
@@ -133,7 +134,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * For the purposes of access control, you must provide the OCID of the compartment where you want the
      * IPSec connection to reside. Notice that the IPSec connection doesn't have to be in the same compartment
      * as the DRG, CPE, or other Networking Service components. If you're not sure which compartment to
-     * use, put the IPSec connection in the same compartment as the CPE. For more information about
+     * use, put the IPSec connection in the same compartment as the DRG. For more information about
      * compartments and access control, see
      * [Overview of the IAM Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm).
      * For information about OCIDs, see [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
@@ -301,9 +302,9 @@ public interface VirtualNetwork extends AutoCloseable {
      * The OCID for each is returned in the response. You can't delete these default objects, but you can change their
      * contents (i.e., route rules, etc.)
      * <p>
-     * The VCN and subnets you create are not accessible until you attach an Internet Gateway or set up a VPN.
-     * For more information, see
-     * [Typical Networking Service Scenarios](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm#three).
+     * The VCN and subnets you create are not accessible until you attach an Internet Gateway or set up an IPSec VPN
+     * or FastConnect. For more information, see
+     * [Overview of the Networking Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -311,6 +312,36 @@ public interface VirtualNetwork extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     CreateVcnResponse createVcn(CreateVcnRequest request);
+
+    /**
+     * Creates a new virtual circuit to use with Oracle Bare Metal Cloud
+     * Services FastConnect. For more information, see
+     * [FastConnect](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
+     * <p>
+     * For the purposes of access control, you must provide the OCID of the
+     * compartment where you want the virtual circuit to reside. If you're
+     * not sure which compartment to use, put the virtual circuit in the
+     * same compartment with the DRG it's using. For more information about
+     * compartments and access control, see
+     * [Overview of the IAM Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm).
+     * For information about OCIDs, see
+     * [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
+     * <p>
+     * You may optionally specify a *display name* for the virtual circuit.
+     * It does not have to be unique, and you can change it.
+     * <p>
+     **Important:** When creating a virtual circuit, you specify a DRG for
+     * the traffic to flow through. Make sure you attach the DRG to your
+     * VCN and confirm the VCN's routing sends traffic to the DRG. Otherwise
+     * traffic will not flow. For more information, see
+     * [Managing Route Tables](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateVirtualCircuitResponse createVirtualCircuit(CreateVirtualCircuitRequest request);
 
     /**
      * Deletes the specified CPE object. The CPE must not be connected to a DRG. This is an asynchronous
@@ -364,9 +395,9 @@ public interface VirtualNetwork extends AutoCloseable {
     DeleteDrgAttachmentResponse deleteDrgAttachment(DeleteDrgAttachmentRequest request);
 
     /**
-     * Deletes the specified IPSec connection. If your goal is to disable the VPN between your VCN and
-     * on-premise network, it's easiest to simply detach the DRG but keep all the VPN components intact.
-     * If you were to delete all the components and then later need to create a VPN again, you would
+     * Deletes the specified IPSec connection. If your goal is to disable the IPSec VPN between your VCN and
+     * on-premise network, it's easiest to simply detach the DRG but keep all the IPSec VPN components intact.
+     * If you were to delete all the components and then later need to create an IPSec VPN again, you would
      * need to configure your on-premise router again with the new information returned from
      * {@link #createIPSecConnection(CreateIPSecConnectionRequest) createIPSecConnection}.
      * <p>
@@ -445,6 +476,19 @@ public interface VirtualNetwork extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     DeleteVcnResponse deleteVcn(DeleteVcnRequest request);
+
+    /**
+     * Deletes the specified virtual circuit.
+     * <p>
+     **Important:** Make sure to also terminate the connection with
+     * the provider, or else the provider may continue to bill you.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteVirtualCircuitResponse deleteVirtualCircuit(DeleteVirtualCircuitRequest request);
 
     /**
      * Gets the specified CPE's information.
@@ -563,6 +607,15 @@ public interface VirtualNetwork extends AutoCloseable {
     GetVcnResponse getVcn(GetVcnRequest request);
 
     /**
+     * Gets the specified virtual circuit's information.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetVirtualCircuitResponse getVirtualCircuit(GetVirtualCircuitRequest request);
+
+    /**
      * Gets the information for the specified Virtual Network Interface Card (VNIC), including the attached
      * instance's public and private IP addresses. You can get the instance's VNIC OCID from the
      * Cloud Compute Service's {@link #listVnicAttachments(ListVnicAttachmentsRequest) listVnicAttachments} operation.
@@ -575,7 +628,7 @@ public interface VirtualNetwork extends AutoCloseable {
     GetVnicResponse getVnic(GetVnicRequest request);
 
     /**
-     * Lists the Customer-Premise Equipment objects (CPEs) in the specified compartment.
+     * Lists the Customer-Premises Equipment objects (CPEs) in the specified compartment.
      *
      *
      * @param request The request object containing the details to send
@@ -616,6 +669,23 @@ public interface VirtualNetwork extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListDrgsResponse listDrgs(ListDrgsRequest request);
+
+    /**
+     * Lists the service offerings from supported providers. You need this
+     * information so you can specify your desired provider and service
+     * offering when you create a virtual circuit.
+     * <p>
+     * For the compartment ID, provide the OCID of your tenancy (the root compartment).
+     * <p>
+     * For more information, see [FastConnect](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListFastConnectProviderServicesResponse listFastConnectProviderServices(
+            ListFastConnectProviderServicesRequest request);
 
     /**
      * Lists the IPSec connections for the specified compartment. You can filter the
@@ -679,6 +749,34 @@ public interface VirtualNetwork extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListVcnsResponse listVcns(ListVcnsRequest request);
+
+    /**
+     * Lists the available bandwidth levels for virtual circuits. You need this
+     * information so you can specify your desired bandwidth level (i.e., shape)
+     * when you create a virtual circuit.
+     * <p>
+     * For the compartment ID, provide the OCID of your tenancy (the root compartment).
+     * <p>
+     * For more information about virtual circuits, see
+     * [FastConnect](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListVirtualCircuitBandwidthShapesResponse listVirtualCircuitBandwidthShapes(
+            ListVirtualCircuitBandwidthShapesRequest request);
+
+    /**
+     * Lists the virtual circuits in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListVirtualCircuitsResponse listVirtualCircuits(ListVirtualCircuitsRequest request);
 
     /**
      * Updates the specified CPE's display name.
@@ -786,6 +884,31 @@ public interface VirtualNetwork extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateVcnResponse updateVcn(UpdateVcnRequest request);
+
+    /**
+     * Updates the specified virtual circuit. This can be called by
+     * either the customer who owns the virtual circuit, or the
+     * provider (when provisioning or de-provisioning the virtual
+     * circuit from their end). The documentation for
+     * {@link #updateVirtualCircuitDetails(UpdateVirtualCircuitDetailsRequest) updateVirtualCircuitDetails}
+     * indicates who can update each property of the virtual circuit.
+     * <p>
+     **Important:** If the virtual circuit is working and in the
+     * PROVISIONED state, updating any of the network-related properties
+     * (such as the DRG being used, the BGP ASN, etc.) will cause the virtual
+     * circuit's state to switch to PROVISIONING and the related BGP
+     * session to go down. After Oracle re-provisions the virtual circuit,
+     * its state will return to PROVISIONED. Make sure you confirm that
+     * the associated BGP session is back up. For more information
+     * about the various states and how to test connectivity, see
+     * [FastConnect](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateVirtualCircuitResponse updateVirtualCircuit(UpdateVirtualCircuitRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

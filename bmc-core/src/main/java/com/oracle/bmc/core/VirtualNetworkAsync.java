@@ -43,13 +43,13 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Creates a new virtual Customer-Premise Equipment (CPE) object in the specified compartment. For
-     * more information, see [Managing Customer-Premise Equipment (CPE)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingCPEs.htm).
+     * Creates a new virtual Customer-Premises Equipment (CPE) object in the specified compartment. For
+     * more information, see [Managing IPSec VPNs](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPsec.htm).
      * <p>
      * For the purposes of access control, you must provide the OCID of the compartment where you want
      * the CPE to reside. Notice that the CPE doesn't have to be in the same compartment as the IPSec
      * connection or other Networking Service components. If you're not sure which compartment to
-     * use, put the CPE in the same compartment as the IPSec connection. For more information about
+     * use, put the CPE in the same compartment as the DRG. For more information about
      * compartments and access control, see [Overview of the IAM Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm).
      * For information about OCIDs, see [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      * <p>
@@ -122,8 +122,9 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             CreateDrgRequest request, AsyncHandler<CreateDrgRequest, CreateDrgResponse> handler);
 
     /**
-     * Attaches the specified DRG to the specified VCN. A VCN can be attached to only one DRG at a time.
-     * The response includes a `DrgAttachment` object with its own OCID. For more information about DRGs, see
+     * Attaches the specified DRG to the specified VCN. A VCN can be attached to only one DRG at a time,
+     * and vice versa. The response includes a `DrgAttachment` object with its own OCID. For more
+     * information about DRGs, see
      * [Managing Dynamic Routing Gateways (DRGs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingDRGs.htm).
      * <p>
      * You may optionally specify a *display name* for the attachment, otherwise a default is provided.
@@ -155,7 +156,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * For the purposes of access control, you must provide the OCID of the compartment where you want the
      * IPSec connection to reside. Notice that the IPSec connection doesn't have to be in the same compartment
      * as the DRG, CPE, or other Networking Service components. If you're not sure which compartment to
-     * use, put the IPSec connection in the same compartment as the CPE. For more information about
+     * use, put the IPSec connection in the same compartment as the DRG. For more information about
      * compartments and access control, see
      * [Overview of the IAM Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm).
      * For information about OCIDs, see [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
@@ -348,9 +349,9 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * The OCID for each is returned in the response. You can't delete these default objects, but you can change their
      * contents (i.e., route rules, etc.)
      * <p>
-     * The VCN and subnets you create are not accessible until you attach an Internet Gateway or set up a VPN.
-     * For more information, see
-     * [Typical Networking Service Scenarios](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm#three).
+     * The VCN and subnets you create are not accessible until you attach an Internet Gateway or set up an IPSec VPN
+     * or FastConnect. For more information, see
+     * [Overview of the Networking Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -362,6 +363,41 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      */
     Future<CreateVcnResponse> createVcn(
             CreateVcnRequest request, AsyncHandler<CreateVcnRequest, CreateVcnResponse> handler);
+
+    /**
+     * Creates a new virtual circuit to use with Oracle Bare Metal Cloud
+     * Services FastConnect. For more information, see
+     * [FastConnect](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
+     * <p>
+     * For the purposes of access control, you must provide the OCID of the
+     * compartment where you want the virtual circuit to reside. If you're
+     * not sure which compartment to use, put the virtual circuit in the
+     * same compartment with the DRG it's using. For more information about
+     * compartments and access control, see
+     * [Overview of the IAM Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm).
+     * For information about OCIDs, see
+     * [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
+     * <p>
+     * You may optionally specify a *display name* for the virtual circuit.
+     * It does not have to be unique, and you can change it.
+     * <p>
+     **Important:** When creating a virtual circuit, you specify a DRG for
+     * the traffic to flow through. Make sure you attach the DRG to your
+     * VCN and confirm the VCN's routing sends traffic to the DRG. Otherwise
+     * traffic will not flow. For more information, see
+     * [Managing Route Tables](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    Future<CreateVirtualCircuitResponse> createVirtualCircuit(
+            CreateVirtualCircuitRequest request,
+            AsyncHandler<CreateVirtualCircuitRequest, CreateVirtualCircuitResponse> handler);
 
     /**
      * Deletes the specified CPE object. The CPE must not be connected to a DRG. This is an asynchronous
@@ -433,9 +469,9 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             AsyncHandler<DeleteDrgAttachmentRequest, DeleteDrgAttachmentResponse> handler);
 
     /**
-     * Deletes the specified IPSec connection. If your goal is to disable the VPN between your VCN and
-     * on-premise network, it's easiest to simply detach the DRG but keep all the VPN components intact.
-     * If you were to delete all the components and then later need to create a VPN again, you would
+     * Deletes the specified IPSec connection. If your goal is to disable the IPSec VPN between your VCN and
+     * on-premise network, it's easiest to simply detach the DRG but keep all the IPSec VPN components intact.
+     * If you were to delete all the components and then later need to create an IPSec VPN again, you would
      * need to configure your on-premise router again with the new information returned from
      * {@link #createIPSecConnection(CreateIPSecConnectionRequest, Consumer, Consumer) createIPSecConnection}.
      * <p>
@@ -543,6 +579,24 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      */
     Future<DeleteVcnResponse> deleteVcn(
             DeleteVcnRequest request, AsyncHandler<DeleteVcnRequest, DeleteVcnResponse> handler);
+
+    /**
+     * Deletes the specified virtual circuit.
+     * <p>
+     **Important:** Make sure to also terminate the connection with
+     * the provider, or else the provider may continue to bill you.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    Future<DeleteVirtualCircuitResponse> deleteVirtualCircuit(
+            DeleteVirtualCircuitRequest request,
+            AsyncHandler<DeleteVirtualCircuitRequest, DeleteVirtualCircuitResponse> handler);
 
     /**
      * Gets the specified CPE's information.
@@ -721,6 +775,20 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             GetVcnRequest request, AsyncHandler<GetVcnRequest, GetVcnResponse> handler);
 
     /**
+     * Gets the specified virtual circuit's information.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    Future<GetVirtualCircuitResponse> getVirtualCircuit(
+            GetVirtualCircuitRequest request,
+            AsyncHandler<GetVirtualCircuitRequest, GetVirtualCircuitResponse> handler);
+
+    /**
      * Gets the information for the specified Virtual Network Interface Card (VNIC), including the attached
      * instance's public and private IP addresses. You can get the instance's VNIC OCID from the
      * Cloud Compute Service's {@link #listVnicAttachments(ListVnicAttachmentsRequest, Consumer, Consumer) listVnicAttachments} operation.
@@ -737,7 +805,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             GetVnicRequest request, AsyncHandler<GetVnicRequest, GetVnicResponse> handler);
 
     /**
-     * Lists the Customer-Premise Equipment objects (CPEs) in the specified compartment.
+     * Lists the Customer-Premises Equipment objects (CPEs) in the specified compartment.
      *
      *
      * @param request The request object containing the details to send
@@ -796,6 +864,30 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      */
     Future<ListDrgsResponse> listDrgs(
             ListDrgsRequest request, AsyncHandler<ListDrgsRequest, ListDrgsResponse> handler);
+
+    /**
+     * Lists the service offerings from supported providers. You need this
+     * information so you can specify your desired provider and service
+     * offering when you create a virtual circuit.
+     * <p>
+     * For the compartment ID, provide the OCID of your tenancy (the root compartment).
+     * <p>
+     * For more information, see [FastConnect](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    Future<ListFastConnectProviderServicesResponse> listFastConnectProviderServices(
+            ListFastConnectProviderServicesRequest request,
+            AsyncHandler<
+                            ListFastConnectProviderServicesRequest,
+                            ListFastConnectProviderServicesResponse>
+                    handler);
 
     /**
      * Lists the IPSec connections for the specified compartment. You can filter the
@@ -888,6 +980,46 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      */
     Future<ListVcnsResponse> listVcns(
             ListVcnsRequest request, AsyncHandler<ListVcnsRequest, ListVcnsResponse> handler);
+
+    /**
+     * Lists the available bandwidth levels for virtual circuits. You need this
+     * information so you can specify your desired bandwidth level (i.e., shape)
+     * when you create a virtual circuit.
+     * <p>
+     * For the compartment ID, provide the OCID of your tenancy (the root compartment).
+     * <p>
+     * For more information about virtual circuits, see
+     * [FastConnect](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    Future<ListVirtualCircuitBandwidthShapesResponse> listVirtualCircuitBandwidthShapes(
+            ListVirtualCircuitBandwidthShapesRequest request,
+            AsyncHandler<
+                            ListVirtualCircuitBandwidthShapesRequest,
+                            ListVirtualCircuitBandwidthShapesResponse>
+                    handler);
+
+    /**
+     * Lists the virtual circuits in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    Future<ListVirtualCircuitsResponse> listVirtualCircuits(
+            ListVirtualCircuitsRequest request,
+            AsyncHandler<ListVirtualCircuitsRequest, ListVirtualCircuitsResponse> handler);
 
     /**
      * Updates the specified CPE's display name.
@@ -1042,4 +1174,34 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      */
     Future<UpdateVcnResponse> updateVcn(
             UpdateVcnRequest request, AsyncHandler<UpdateVcnRequest, UpdateVcnResponse> handler);
+
+    /**
+     * Updates the specified virtual circuit. This can be called by
+     * either the customer who owns the virtual circuit, or the
+     * provider (when provisioning or de-provisioning the virtual
+     * circuit from their end). The documentation for
+     * {@link #updateVirtualCircuitDetails(UpdateVirtualCircuitDetailsRequest, Consumer, Consumer) updateVirtualCircuitDetails}
+     * indicates who can update each property of the virtual circuit.
+     * <p>
+     **Important:** If the virtual circuit is working and in the
+     * PROVISIONED state, updating any of the network-related properties
+     * (such as the DRG being used, the BGP ASN, etc.) will cause the virtual
+     * circuit's state to switch to PROVISIONING and the related BGP
+     * session to go down. After Oracle re-provisions the virtual circuit,
+     * its state will return to PROVISIONED. Make sure you confirm that
+     * the associated BGP session is back up. For more information
+     * about the various states and how to test connectivity, see
+     * [FastConnect](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    Future<UpdateVirtualCircuitResponse> updateVirtualCircuit(
+            UpdateVirtualCircuitRequest request,
+            AsyncHandler<UpdateVirtualCircuitRequest, UpdateVirtualCircuitResponse> handler);
 }

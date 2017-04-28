@@ -3,7 +3,6 @@
  */
 package com.oracle.bmc.core;
 
-import com.oracle.bmc.core.model.*;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
 
@@ -38,7 +37,7 @@ public class BlockstorageWaiters {
      * @return A new Waiter instance.
      */
     public Waiter<GetVolumeRequest, GetVolumeResponse> forVolume(
-            GetVolumeRequest request, Volume.LifecycleState targetState) {
+            GetVolumeRequest request, com.oracle.bmc.core.model.Volume.LifecycleState targetState) {
         return forVolume(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
@@ -53,7 +52,7 @@ public class BlockstorageWaiters {
      */
     public Waiter<GetVolumeRequest, GetVolumeResponse> forVolume(
             GetVolumeRequest request,
-            Volume.LifecycleState targetState,
+            com.oracle.bmc.core.model.Volume.LifecycleState targetState,
             TerminationStrategy terminationStrategy,
             DelayStrategy delayStrategy) {
         return forVolume(
@@ -64,7 +63,7 @@ public class BlockstorageWaiters {
     private Waiter<GetVolumeRequest, GetVolumeResponse> forVolume(
             BmcGenericWaiter waiter,
             final GetVolumeRequest request,
-            final Volume.LifecycleState targetState) {
+            final com.oracle.bmc.core.model.Volume.LifecycleState targetState) {
         return new SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
@@ -81,7 +80,7 @@ public class BlockstorageWaiters {
                                 return response.getVolume().getLifecycleState() == targetState;
                             }
                         },
-                        targetState == Volume.LifecycleState.Terminated),
+                        targetState == com.oracle.bmc.core.model.Volume.LifecycleState.Terminated),
                 request);
     }
 
@@ -93,7 +92,8 @@ public class BlockstorageWaiters {
      * @return A new Waiter instance.
      */
     public Waiter<GetVolumeBackupRequest, GetVolumeBackupResponse> forVolumeBackup(
-            GetVolumeBackupRequest request, VolumeBackup.LifecycleState targetState) {
+            GetVolumeBackupRequest request,
+            com.oracle.bmc.core.model.VolumeBackup.LifecycleState targetState) {
         return forVolumeBackup(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
@@ -108,7 +108,7 @@ public class BlockstorageWaiters {
      */
     public Waiter<GetVolumeBackupRequest, GetVolumeBackupResponse> forVolumeBackup(
             GetVolumeBackupRequest request,
-            VolumeBackup.LifecycleState targetState,
+            com.oracle.bmc.core.model.VolumeBackup.LifecycleState targetState,
             TerminationStrategy terminationStrategy,
             DelayStrategy delayStrategy) {
         return forVolumeBackup(
@@ -119,7 +119,7 @@ public class BlockstorageWaiters {
     private Waiter<GetVolumeBackupRequest, GetVolumeBackupResponse> forVolumeBackup(
             BmcGenericWaiter waiter,
             final GetVolumeBackupRequest request,
-            final VolumeBackup.LifecycleState targetState) {
+            final com.oracle.bmc.core.model.VolumeBackup.LifecycleState targetState) {
         return new SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
@@ -137,7 +137,9 @@ public class BlockstorageWaiters {
                                         == targetState;
                             }
                         },
-                        targetState == VolumeBackup.LifecycleState.Terminated),
+                        targetState
+                                == com.oracle.bmc.core.model.VolumeBackup.LifecycleState
+                                        .Terminated),
                 request);
     }
 }

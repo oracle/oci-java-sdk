@@ -3,7 +3,6 @@
  */
 package com.oracle.bmc.core;
 
-import com.oracle.bmc.core.model.*;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
 
@@ -38,7 +37,8 @@ public class VirtualNetworkWaiters {
      * @return A new Waiter instance.
      */
     public Waiter<GetDhcpOptionsRequest, GetDhcpOptionsResponse> forDhcpOptions(
-            GetDhcpOptionsRequest request, DhcpOptions.LifecycleState targetState) {
+            GetDhcpOptionsRequest request,
+            com.oracle.bmc.core.model.DhcpOptions.LifecycleState targetState) {
         return forDhcpOptions(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
@@ -53,7 +53,7 @@ public class VirtualNetworkWaiters {
      */
     public Waiter<GetDhcpOptionsRequest, GetDhcpOptionsResponse> forDhcpOptions(
             GetDhcpOptionsRequest request,
-            DhcpOptions.LifecycleState targetState,
+            com.oracle.bmc.core.model.DhcpOptions.LifecycleState targetState,
             TerminationStrategy terminationStrategy,
             DelayStrategy delayStrategy) {
         return forDhcpOptions(
@@ -64,7 +64,7 @@ public class VirtualNetworkWaiters {
     private Waiter<GetDhcpOptionsRequest, GetDhcpOptionsResponse> forDhcpOptions(
             BmcGenericWaiter waiter,
             final GetDhcpOptionsRequest request,
-            final DhcpOptions.LifecycleState targetState) {
+            final com.oracle.bmc.core.model.DhcpOptions.LifecycleState targetState) {
         return new SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
@@ -81,7 +81,8 @@ public class VirtualNetworkWaiters {
                                 return response.getDhcpOptions().getLifecycleState() == targetState;
                             }
                         },
-                        targetState == DhcpOptions.LifecycleState.Terminated),
+                        targetState
+                                == com.oracle.bmc.core.model.DhcpOptions.LifecycleState.Terminated),
                 request);
     }
 
@@ -93,7 +94,7 @@ public class VirtualNetworkWaiters {
      * @return A new Waiter instance.
      */
     public Waiter<GetDrgRequest, GetDrgResponse> forDrg(
-            GetDrgRequest request, Drg.LifecycleState targetState) {
+            GetDrgRequest request, com.oracle.bmc.core.model.Drg.LifecycleState targetState) {
         return forDrg(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
@@ -108,7 +109,7 @@ public class VirtualNetworkWaiters {
      */
     public Waiter<GetDrgRequest, GetDrgResponse> forDrg(
             GetDrgRequest request,
-            Drg.LifecycleState targetState,
+            com.oracle.bmc.core.model.Drg.LifecycleState targetState,
             TerminationStrategy terminationStrategy,
             DelayStrategy delayStrategy) {
         return forDrg(Waiters.newWaiter(terminationStrategy, delayStrategy), request, targetState);
@@ -118,7 +119,7 @@ public class VirtualNetworkWaiters {
     private Waiter<GetDrgRequest, GetDrgResponse> forDrg(
             BmcGenericWaiter waiter,
             final GetDrgRequest request,
-            final Drg.LifecycleState targetState) {
+            final com.oracle.bmc.core.model.Drg.LifecycleState targetState) {
         return new SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
@@ -135,7 +136,7 @@ public class VirtualNetworkWaiters {
                                 return response.getDrg().getLifecycleState() == targetState;
                             }
                         },
-                        targetState == Drg.LifecycleState.Terminated),
+                        targetState == com.oracle.bmc.core.model.Drg.LifecycleState.Terminated),
                 request);
     }
 
@@ -147,7 +148,8 @@ public class VirtualNetworkWaiters {
      * @return A new Waiter instance.
      */
     public Waiter<GetDrgAttachmentRequest, GetDrgAttachmentResponse> forDrgAttachment(
-            GetDrgAttachmentRequest request, DrgAttachment.LifecycleState targetState) {
+            GetDrgAttachmentRequest request,
+            com.oracle.bmc.core.model.DrgAttachment.LifecycleState targetState) {
         return forDrgAttachment(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
@@ -162,7 +164,7 @@ public class VirtualNetworkWaiters {
      */
     public Waiter<GetDrgAttachmentRequest, GetDrgAttachmentResponse> forDrgAttachment(
             GetDrgAttachmentRequest request,
-            DrgAttachment.LifecycleState targetState,
+            com.oracle.bmc.core.model.DrgAttachment.LifecycleState targetState,
             TerminationStrategy terminationStrategy,
             DelayStrategy delayStrategy) {
         return forDrgAttachment(
@@ -173,7 +175,7 @@ public class VirtualNetworkWaiters {
     private Waiter<GetDrgAttachmentRequest, GetDrgAttachmentResponse> forDrgAttachment(
             BmcGenericWaiter waiter,
             final GetDrgAttachmentRequest request,
-            final DrgAttachment.LifecycleState targetState) {
+            final com.oracle.bmc.core.model.DrgAttachment.LifecycleState targetState) {
         return new SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
@@ -191,7 +193,8 @@ public class VirtualNetworkWaiters {
                                         == targetState;
                             }
                         },
-                        targetState == DrgAttachment.LifecycleState.Detached),
+                        targetState
+                                == com.oracle.bmc.core.model.DrgAttachment.LifecycleState.Detached),
                 request);
     }
 
@@ -203,7 +206,8 @@ public class VirtualNetworkWaiters {
      * @return A new Waiter instance.
      */
     public Waiter<GetIPSecConnectionRequest, GetIPSecConnectionResponse> forIPSecConnection(
-            GetIPSecConnectionRequest request, IPSecConnection.LifecycleState targetState) {
+            GetIPSecConnectionRequest request,
+            com.oracle.bmc.core.model.IPSecConnection.LifecycleState targetState) {
         return forIPSecConnection(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
@@ -218,7 +222,7 @@ public class VirtualNetworkWaiters {
      */
     public Waiter<GetIPSecConnectionRequest, GetIPSecConnectionResponse> forIPSecConnection(
             GetIPSecConnectionRequest request,
-            IPSecConnection.LifecycleState targetState,
+            com.oracle.bmc.core.model.IPSecConnection.LifecycleState targetState,
             TerminationStrategy terminationStrategy,
             DelayStrategy delayStrategy) {
         return forIPSecConnection(
@@ -229,7 +233,7 @@ public class VirtualNetworkWaiters {
     private Waiter<GetIPSecConnectionRequest, GetIPSecConnectionResponse> forIPSecConnection(
             BmcGenericWaiter waiter,
             final GetIPSecConnectionRequest request,
-            final IPSecConnection.LifecycleState targetState) {
+            final com.oracle.bmc.core.model.IPSecConnection.LifecycleState targetState) {
         return new SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
@@ -248,7 +252,9 @@ public class VirtualNetworkWaiters {
                                         == targetState;
                             }
                         },
-                        targetState == IPSecConnection.LifecycleState.Terminated),
+                        targetState
+                                == com.oracle.bmc.core.model.IPSecConnection.LifecycleState
+                                        .Terminated),
                 request);
     }
 
@@ -260,7 +266,8 @@ public class VirtualNetworkWaiters {
      * @return A new Waiter instance.
      */
     public Waiter<GetInternetGatewayRequest, GetInternetGatewayResponse> forInternetGateway(
-            GetInternetGatewayRequest request, InternetGateway.LifecycleState targetState) {
+            GetInternetGatewayRequest request,
+            com.oracle.bmc.core.model.InternetGateway.LifecycleState targetState) {
         return forInternetGateway(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
@@ -275,7 +282,7 @@ public class VirtualNetworkWaiters {
      */
     public Waiter<GetInternetGatewayRequest, GetInternetGatewayResponse> forInternetGateway(
             GetInternetGatewayRequest request,
-            InternetGateway.LifecycleState targetState,
+            com.oracle.bmc.core.model.InternetGateway.LifecycleState targetState,
             TerminationStrategy terminationStrategy,
             DelayStrategy delayStrategy) {
         return forInternetGateway(
@@ -286,7 +293,7 @@ public class VirtualNetworkWaiters {
     private Waiter<GetInternetGatewayRequest, GetInternetGatewayResponse> forInternetGateway(
             BmcGenericWaiter waiter,
             final GetInternetGatewayRequest request,
-            final InternetGateway.LifecycleState targetState) {
+            final com.oracle.bmc.core.model.InternetGateway.LifecycleState targetState) {
         return new SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
@@ -305,7 +312,9 @@ public class VirtualNetworkWaiters {
                                         == targetState;
                             }
                         },
-                        targetState == InternetGateway.LifecycleState.Terminated),
+                        targetState
+                                == com.oracle.bmc.core.model.InternetGateway.LifecycleState
+                                        .Terminated),
                 request);
     }
 
@@ -317,7 +326,8 @@ public class VirtualNetworkWaiters {
      * @return A new Waiter instance.
      */
     public Waiter<GetRouteTableRequest, GetRouteTableResponse> forRouteTable(
-            GetRouteTableRequest request, RouteTable.LifecycleState targetState) {
+            GetRouteTableRequest request,
+            com.oracle.bmc.core.model.RouteTable.LifecycleState targetState) {
         return forRouteTable(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
@@ -332,7 +342,7 @@ public class VirtualNetworkWaiters {
      */
     public Waiter<GetRouteTableRequest, GetRouteTableResponse> forRouteTable(
             GetRouteTableRequest request,
-            RouteTable.LifecycleState targetState,
+            com.oracle.bmc.core.model.RouteTable.LifecycleState targetState,
             TerminationStrategy terminationStrategy,
             DelayStrategy delayStrategy) {
         return forRouteTable(
@@ -343,7 +353,7 @@ public class VirtualNetworkWaiters {
     private Waiter<GetRouteTableRequest, GetRouteTableResponse> forRouteTable(
             BmcGenericWaiter waiter,
             final GetRouteTableRequest request,
-            final RouteTable.LifecycleState targetState) {
+            final com.oracle.bmc.core.model.RouteTable.LifecycleState targetState) {
         return new SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
@@ -360,7 +370,8 @@ public class VirtualNetworkWaiters {
                                 return response.getRouteTable().getLifecycleState() == targetState;
                             }
                         },
-                        targetState == RouteTable.LifecycleState.Terminated),
+                        targetState
+                                == com.oracle.bmc.core.model.RouteTable.LifecycleState.Terminated),
                 request);
     }
 
@@ -372,7 +383,8 @@ public class VirtualNetworkWaiters {
      * @return A new Waiter instance.
      */
     public Waiter<GetSecurityListRequest, GetSecurityListResponse> forSecurityList(
-            GetSecurityListRequest request, SecurityList.LifecycleState targetState) {
+            GetSecurityListRequest request,
+            com.oracle.bmc.core.model.SecurityList.LifecycleState targetState) {
         return forSecurityList(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
@@ -387,7 +399,7 @@ public class VirtualNetworkWaiters {
      */
     public Waiter<GetSecurityListRequest, GetSecurityListResponse> forSecurityList(
             GetSecurityListRequest request,
-            SecurityList.LifecycleState targetState,
+            com.oracle.bmc.core.model.SecurityList.LifecycleState targetState,
             TerminationStrategy terminationStrategy,
             DelayStrategy delayStrategy) {
         return forSecurityList(
@@ -398,7 +410,7 @@ public class VirtualNetworkWaiters {
     private Waiter<GetSecurityListRequest, GetSecurityListResponse> forSecurityList(
             BmcGenericWaiter waiter,
             final GetSecurityListRequest request,
-            final SecurityList.LifecycleState targetState) {
+            final com.oracle.bmc.core.model.SecurityList.LifecycleState targetState) {
         return new SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
@@ -416,7 +428,9 @@ public class VirtualNetworkWaiters {
                                         == targetState;
                             }
                         },
-                        targetState == SecurityList.LifecycleState.Terminated),
+                        targetState
+                                == com.oracle.bmc.core.model.SecurityList.LifecycleState
+                                        .Terminated),
                 request);
     }
 
@@ -428,7 +442,7 @@ public class VirtualNetworkWaiters {
      * @return A new Waiter instance.
      */
     public Waiter<GetSubnetRequest, GetSubnetResponse> forSubnet(
-            GetSubnetRequest request, Subnet.LifecycleState targetState) {
+            GetSubnetRequest request, com.oracle.bmc.core.model.Subnet.LifecycleState targetState) {
         return forSubnet(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
@@ -443,7 +457,7 @@ public class VirtualNetworkWaiters {
      */
     public Waiter<GetSubnetRequest, GetSubnetResponse> forSubnet(
             GetSubnetRequest request,
-            Subnet.LifecycleState targetState,
+            com.oracle.bmc.core.model.Subnet.LifecycleState targetState,
             TerminationStrategy terminationStrategy,
             DelayStrategy delayStrategy) {
         return forSubnet(
@@ -454,7 +468,7 @@ public class VirtualNetworkWaiters {
     private Waiter<GetSubnetRequest, GetSubnetResponse> forSubnet(
             BmcGenericWaiter waiter,
             final GetSubnetRequest request,
-            final Subnet.LifecycleState targetState) {
+            final com.oracle.bmc.core.model.Subnet.LifecycleState targetState) {
         return new SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
@@ -471,7 +485,7 @@ public class VirtualNetworkWaiters {
                                 return response.getSubnet().getLifecycleState() == targetState;
                             }
                         },
-                        targetState == Subnet.LifecycleState.Terminated),
+                        targetState == com.oracle.bmc.core.model.Subnet.LifecycleState.Terminated),
                 request);
     }
 
@@ -483,7 +497,7 @@ public class VirtualNetworkWaiters {
      * @return A new Waiter instance.
      */
     public Waiter<GetVcnRequest, GetVcnResponse> forVcn(
-            GetVcnRequest request, Vcn.LifecycleState targetState) {
+            GetVcnRequest request, com.oracle.bmc.core.model.Vcn.LifecycleState targetState) {
         return forVcn(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
@@ -498,7 +512,7 @@ public class VirtualNetworkWaiters {
      */
     public Waiter<GetVcnRequest, GetVcnResponse> forVcn(
             GetVcnRequest request,
-            Vcn.LifecycleState targetState,
+            com.oracle.bmc.core.model.Vcn.LifecycleState targetState,
             TerminationStrategy terminationStrategy,
             DelayStrategy delayStrategy) {
         return forVcn(Waiters.newWaiter(terminationStrategy, delayStrategy), request, targetState);
@@ -508,7 +522,7 @@ public class VirtualNetworkWaiters {
     private Waiter<GetVcnRequest, GetVcnResponse> forVcn(
             BmcGenericWaiter waiter,
             final GetVcnRequest request,
-            final Vcn.LifecycleState targetState) {
+            final com.oracle.bmc.core.model.Vcn.LifecycleState targetState) {
         return new SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
@@ -525,7 +539,67 @@ public class VirtualNetworkWaiters {
                                 return response.getVcn().getLifecycleState() == targetState;
                             }
                         },
-                        targetState == Vcn.LifecycleState.Terminated),
+                        targetState == com.oracle.bmc.core.model.Vcn.LifecycleState.Terminated),
+                request);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using default configuration.
+     *
+     * @param request The request to send.
+     * @param targetState The desired state to wait for.
+     * @return A new Waiter instance.
+     */
+    public Waiter<GetVirtualCircuitRequest, GetVirtualCircuitResponse> forVirtualCircuit(
+            GetVirtualCircuitRequest request,
+            com.oracle.bmc.core.model.VirtualCircuit.LifecycleState targetState) {
+        return forVirtualCircuit(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using the provided configuration.
+     *
+     * @param request The request to send.
+     * @param targetState The desired state to wait for.
+     * @param terminationStrategy The {@link TerminationStrategy} to use.
+     * @param delayStrategy The {@link DelayStrategy} to use.
+     * @return A new Waiter instance.
+     */
+    public Waiter<GetVirtualCircuitRequest, GetVirtualCircuitResponse> forVirtualCircuit(
+            GetVirtualCircuitRequest request,
+            com.oracle.bmc.core.model.VirtualCircuit.LifecycleState targetState,
+            TerminationStrategy terminationStrategy,
+            DelayStrategy delayStrategy) {
+        return forVirtualCircuit(
+                Waiters.newWaiter(terminationStrategy, delayStrategy), request, targetState);
+    }
+
+    // Helper method to create a new Waiter for VirtualCircuit.
+    private Waiter<GetVirtualCircuitRequest, GetVirtualCircuitResponse> forVirtualCircuit(
+            BmcGenericWaiter waiter,
+            final GetVirtualCircuitRequest request,
+            final com.oracle.bmc.core.model.VirtualCircuit.LifecycleState targetState) {
+        return new SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        Suppliers.ofInstance(request),
+                        new Function<GetVirtualCircuitRequest, GetVirtualCircuitResponse>() {
+                            @Override
+                            public GetVirtualCircuitResponse apply(
+                                    GetVirtualCircuitRequest request) {
+                                return client.getVirtualCircuit(request);
+                            }
+                        },
+                        new Predicate<GetVirtualCircuitResponse>() {
+                            @Override
+                            public boolean apply(GetVirtualCircuitResponse response) {
+                                return response.getVirtualCircuit().getLifecycleState()
+                                        == targetState;
+                            }
+                        },
+                        targetState
+                                == com.oracle.bmc.core.model.VirtualCircuit.LifecycleState
+                                        .Terminated),
                 request);
     }
 
@@ -537,7 +611,7 @@ public class VirtualNetworkWaiters {
      * @return A new Waiter instance.
      */
     public Waiter<GetVnicRequest, GetVnicResponse> forVnic(
-            GetVnicRequest request, Vnic.LifecycleState targetState) {
+            GetVnicRequest request, com.oracle.bmc.core.model.Vnic.LifecycleState targetState) {
         return forVnic(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
@@ -552,7 +626,7 @@ public class VirtualNetworkWaiters {
      */
     public Waiter<GetVnicRequest, GetVnicResponse> forVnic(
             GetVnicRequest request,
-            Vnic.LifecycleState targetState,
+            com.oracle.bmc.core.model.Vnic.LifecycleState targetState,
             TerminationStrategy terminationStrategy,
             DelayStrategy delayStrategy) {
         return forVnic(Waiters.newWaiter(terminationStrategy, delayStrategy), request, targetState);
@@ -562,7 +636,7 @@ public class VirtualNetworkWaiters {
     private Waiter<GetVnicRequest, GetVnicResponse> forVnic(
             BmcGenericWaiter waiter,
             final GetVnicRequest request,
-            final Vnic.LifecycleState targetState) {
+            final com.oracle.bmc.core.model.Vnic.LifecycleState targetState) {
         return new SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
@@ -579,7 +653,7 @@ public class VirtualNetworkWaiters {
                                 return response.getVnic().getLifecycleState() == targetState;
                             }
                         },
-                        targetState == Vnic.LifecycleState.Terminated),
+                        targetState == com.oracle.bmc.core.model.Vnic.LifecycleState.Terminated),
                 request);
     }
 }

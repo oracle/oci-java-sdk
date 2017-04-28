@@ -3,7 +3,6 @@
  */
 package com.oracle.bmc.core;
 
-import com.oracle.bmc.core.model.*;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
 
@@ -38,7 +37,8 @@ public class ComputeWaiters {
      * @return A new Waiter instance.
      */
     public Waiter<GetConsoleHistoryRequest, GetConsoleHistoryResponse> forConsoleHistory(
-            GetConsoleHistoryRequest request, ConsoleHistory.LifecycleState targetState) {
+            GetConsoleHistoryRequest request,
+            com.oracle.bmc.core.model.ConsoleHistory.LifecycleState targetState) {
         return forConsoleHistory(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
@@ -53,7 +53,7 @@ public class ComputeWaiters {
      */
     public Waiter<GetConsoleHistoryRequest, GetConsoleHistoryResponse> forConsoleHistory(
             GetConsoleHistoryRequest request,
-            ConsoleHistory.LifecycleState targetState,
+            com.oracle.bmc.core.model.ConsoleHistory.LifecycleState targetState,
             TerminationStrategy terminationStrategy,
             DelayStrategy delayStrategy) {
         return forConsoleHistory(
@@ -64,7 +64,7 @@ public class ComputeWaiters {
     private Waiter<GetConsoleHistoryRequest, GetConsoleHistoryResponse> forConsoleHistory(
             BmcGenericWaiter waiter,
             final GetConsoleHistoryRequest request,
-            final ConsoleHistory.LifecycleState targetState) {
+            final com.oracle.bmc.core.model.ConsoleHistory.LifecycleState targetState) {
         return new SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
@@ -95,7 +95,7 @@ public class ComputeWaiters {
      * @return A new Waiter instance.
      */
     public Waiter<GetImageRequest, GetImageResponse> forImage(
-            GetImageRequest request, Image.LifecycleState targetState) {
+            GetImageRequest request, com.oracle.bmc.core.model.Image.LifecycleState targetState) {
         return forImage(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
@@ -110,7 +110,7 @@ public class ComputeWaiters {
      */
     public Waiter<GetImageRequest, GetImageResponse> forImage(
             GetImageRequest request,
-            Image.LifecycleState targetState,
+            com.oracle.bmc.core.model.Image.LifecycleState targetState,
             TerminationStrategy terminationStrategy,
             DelayStrategy delayStrategy) {
         return forImage(
@@ -121,7 +121,7 @@ public class ComputeWaiters {
     private Waiter<GetImageRequest, GetImageResponse> forImage(
             BmcGenericWaiter waiter,
             final GetImageRequest request,
-            final Image.LifecycleState targetState) {
+            final com.oracle.bmc.core.model.Image.LifecycleState targetState) {
         return new SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
@@ -138,7 +138,7 @@ public class ComputeWaiters {
                                 return response.getImage().getLifecycleState() == targetState;
                             }
                         },
-                        targetState == Image.LifecycleState.Deleted),
+                        targetState == com.oracle.bmc.core.model.Image.LifecycleState.Deleted),
                 request);
     }
 
@@ -150,7 +150,8 @@ public class ComputeWaiters {
      * @return A new Waiter instance.
      */
     public Waiter<GetInstanceRequest, GetInstanceResponse> forInstance(
-            GetInstanceRequest request, Instance.LifecycleState targetState) {
+            GetInstanceRequest request,
+            com.oracle.bmc.core.model.Instance.LifecycleState targetState) {
         return forInstance(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
@@ -165,7 +166,7 @@ public class ComputeWaiters {
      */
     public Waiter<GetInstanceRequest, GetInstanceResponse> forInstance(
             GetInstanceRequest request,
-            Instance.LifecycleState targetState,
+            com.oracle.bmc.core.model.Instance.LifecycleState targetState,
             TerminationStrategy terminationStrategy,
             DelayStrategy delayStrategy) {
         return forInstance(
@@ -176,7 +177,7 @@ public class ComputeWaiters {
     private Waiter<GetInstanceRequest, GetInstanceResponse> forInstance(
             BmcGenericWaiter waiter,
             final GetInstanceRequest request,
-            final Instance.LifecycleState targetState) {
+            final com.oracle.bmc.core.model.Instance.LifecycleState targetState) {
         return new SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
@@ -193,7 +194,8 @@ public class ComputeWaiters {
                                 return response.getInstance().getLifecycleState() == targetState;
                             }
                         },
-                        targetState == Instance.LifecycleState.Terminated),
+                        targetState
+                                == com.oracle.bmc.core.model.Instance.LifecycleState.Terminated),
                 request);
     }
 
@@ -205,7 +207,8 @@ public class ComputeWaiters {
      * @return A new Waiter instance.
      */
     public Waiter<GetVolumeAttachmentRequest, GetVolumeAttachmentResponse> forVolumeAttachment(
-            GetVolumeAttachmentRequest request, VolumeAttachment.LifecycleState targetState) {
+            GetVolumeAttachmentRequest request,
+            com.oracle.bmc.core.model.VolumeAttachment.LifecycleState targetState) {
         return forVolumeAttachment(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
@@ -220,7 +223,7 @@ public class ComputeWaiters {
      */
     public Waiter<GetVolumeAttachmentRequest, GetVolumeAttachmentResponse> forVolumeAttachment(
             GetVolumeAttachmentRequest request,
-            VolumeAttachment.LifecycleState targetState,
+            com.oracle.bmc.core.model.VolumeAttachment.LifecycleState targetState,
             TerminationStrategy terminationStrategy,
             DelayStrategy delayStrategy) {
         return forVolumeAttachment(
@@ -231,7 +234,7 @@ public class ComputeWaiters {
     private Waiter<GetVolumeAttachmentRequest, GetVolumeAttachmentResponse> forVolumeAttachment(
             BmcGenericWaiter waiter,
             final GetVolumeAttachmentRequest request,
-            final VolumeAttachment.LifecycleState targetState) {
+            final com.oracle.bmc.core.model.VolumeAttachment.LifecycleState targetState) {
         return new SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(

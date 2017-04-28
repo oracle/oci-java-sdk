@@ -13,6 +13,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.2.7 - 2017-04-27
+### Changed
+- A new value called UnknownEnumValue has been added to all enums that are used in responses returned from services. If a service returns a value that cannot be recognized by the version of the SDK, then the enum will be set to this value. Previously this would throw an exception.
+
+### Added
+- Support for FastConnect
+- Support for Load Balancer Service
+
 ## 1.2.5 - 2017-04-06
 ### Changed
 - Added opc-client-request-id truncation logic in MultipartObjectAssembler to prevent failures

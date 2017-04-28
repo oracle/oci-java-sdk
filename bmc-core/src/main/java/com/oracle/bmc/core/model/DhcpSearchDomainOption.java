@@ -58,8 +58,7 @@ public class DhcpSearchDomainOption extends DhcpOption {
     /**
      * A single search domain name according to [RFC 952](https://tools.ietf.org/html/rfc952)
      * and [RFC 1123](https://tools.ietf.org/html/rfc1123). During a DNS query,
-     * the OS will append this search domain name to the value being queried, but only if
-     * that value is not a fully qualified domain name (FQDN).
+     * the OS will append this search domain name to the value being queried.
      * <p>
      * If you set {@link DhcpDnsOption} to `VcnLocalPlusInternet`,
      * and you assign a DNS label to the VCN during creation, the search domain name in the
