@@ -84,11 +84,17 @@ public class DhcpDnsOption extends DhcpOption {
      * - **CustomDnsServer:** Instances use a DNS server of your choice (three maximum).
      *
      **/
+    @lombok.extern.slf4j.Slf4j
     public enum ServerType {
         VcnLocal("VcnLocal"),
         VcnLocalPlusInternet("VcnLocalPlusInternet"),
         CustomDnsServer("CustomDnsServer"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
 
         private final String value;
         private static Map<String, ServerType> map;
@@ -96,7 +102,9 @@ public class DhcpDnsOption extends DhcpOption {
         static {
             map = new HashMap<>();
             for (ServerType v : ServerType.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -114,7 +122,10 @@ public class DhcpDnsOption extends DhcpOption {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid ServerType: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ServerType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**

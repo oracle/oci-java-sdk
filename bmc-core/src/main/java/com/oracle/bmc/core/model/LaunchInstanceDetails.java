@@ -157,9 +157,9 @@ public class LaunchInstanceDetails {
      * every time an instance boots; not only after the initial
      * LaunchInstance call.
      * <p>
-     * The default iPXE script connects to the instance\u2019s local boot
+     * The default iPXE script connects to the instance's local boot
      * volume over iSCSI and performs a network boot. If you use a custom iPXE
-     * script and want to network-boot from the instance\u2019s local boot volume
+     * script and want to network-boot from the instance's local boot volume
      * over iSCSI the same way as the default iPXE script, you should use the
      * following iSCSI IP address: 169.254.0.2, and boot volume IQN:
      * iqn.2015-02.oracle.boot.

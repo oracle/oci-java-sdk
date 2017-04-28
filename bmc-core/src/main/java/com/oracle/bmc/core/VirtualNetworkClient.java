@@ -258,6 +258,18 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public CreateVirtualCircuitResponse createVirtualCircuit(CreateVirtualCircuitRequest request) {
+        LOG.trace("Called createVirtualCircuit");
+        request = CreateVirtualCircuitConverter.interceptRequest(request);
+        Invocation.Builder ib = CreateVirtualCircuitConverter.fromRequest(client, request);
+        Function<Response, CreateVirtualCircuitResponse> transformer =
+                CreateVirtualCircuitConverter.fromResponse();
+
+        Response response = client.post(ib, request.getCreateVirtualCircuitDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
     public DeleteCpeResponse deleteCpe(DeleteCpeRequest request) {
         LOG.trace("Called deleteCpe");
         request = DeleteCpeConverter.interceptRequest(request);
@@ -370,6 +382,18 @@ public class VirtualNetworkClient implements VirtualNetwork {
         request = DeleteVcnConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteVcnConverter.fromRequest(client, request);
         Function<Response, DeleteVcnResponse> transformer = DeleteVcnConverter.fromResponse();
+
+        Response response = client.delete(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public DeleteVirtualCircuitResponse deleteVirtualCircuit(DeleteVirtualCircuitRequest request) {
+        LOG.trace("Called deleteVirtualCircuit");
+        request = DeleteVirtualCircuitConverter.interceptRequest(request);
+        Invocation.Builder ib = DeleteVirtualCircuitConverter.fromRequest(client, request);
+        Function<Response, DeleteVirtualCircuitResponse> transformer =
+                DeleteVirtualCircuitConverter.fromResponse();
 
         Response response = client.delete(ib, request);
         return transformer.apply(response);
@@ -520,6 +544,18 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public GetVirtualCircuitResponse getVirtualCircuit(GetVirtualCircuitRequest request) {
+        LOG.trace("Called getVirtualCircuit");
+        request = GetVirtualCircuitConverter.interceptRequest(request);
+        Invocation.Builder ib = GetVirtualCircuitConverter.fromRequest(client, request);
+        Function<Response, GetVirtualCircuitResponse> transformer =
+                GetVirtualCircuitConverter.fromResponse();
+
+        Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
     public GetVnicResponse getVnic(GetVnicRequest request) {
         LOG.trace("Called getVnic");
         request = GetVnicConverter.interceptRequest(request);
@@ -571,6 +607,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
         request = ListDrgsConverter.interceptRequest(request);
         Invocation.Builder ib = ListDrgsConverter.fromRequest(client, request);
         Function<Response, ListDrgsResponse> transformer = ListDrgsConverter.fromResponse();
+
+        Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public ListFastConnectProviderServicesResponse listFastConnectProviderServices(
+            ListFastConnectProviderServicesRequest request) {
+        LOG.trace("Called listFastConnectProviderServices");
+        request = ListFastConnectProviderServicesConverter.interceptRequest(request);
+        Invocation.Builder ib =
+                ListFastConnectProviderServicesConverter.fromRequest(client, request);
+        Function<Response, ListFastConnectProviderServicesResponse> transformer =
+                ListFastConnectProviderServicesConverter.fromResponse();
 
         Response response = client.get(ib, request);
         return transformer.apply(response);
@@ -641,6 +691,32 @@ public class VirtualNetworkClient implements VirtualNetwork {
         request = ListVcnsConverter.interceptRequest(request);
         Invocation.Builder ib = ListVcnsConverter.fromRequest(client, request);
         Function<Response, ListVcnsResponse> transformer = ListVcnsConverter.fromResponse();
+
+        Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public ListVirtualCircuitBandwidthShapesResponse listVirtualCircuitBandwidthShapes(
+            ListVirtualCircuitBandwidthShapesRequest request) {
+        LOG.trace("Called listVirtualCircuitBandwidthShapes");
+        request = ListVirtualCircuitBandwidthShapesConverter.interceptRequest(request);
+        Invocation.Builder ib =
+                ListVirtualCircuitBandwidthShapesConverter.fromRequest(client, request);
+        Function<Response, ListVirtualCircuitBandwidthShapesResponse> transformer =
+                ListVirtualCircuitBandwidthShapesConverter.fromResponse();
+
+        Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public ListVirtualCircuitsResponse listVirtualCircuits(ListVirtualCircuitsRequest request) {
+        LOG.trace("Called listVirtualCircuits");
+        request = ListVirtualCircuitsConverter.interceptRequest(request);
+        Invocation.Builder ib = ListVirtualCircuitsConverter.fromRequest(client, request);
+        Function<Response, ListVirtualCircuitsResponse> transformer =
+                ListVirtualCircuitsConverter.fromResponse();
 
         Response response = client.get(ib, request);
         return transformer.apply(response);
@@ -761,6 +837,18 @@ public class VirtualNetworkClient implements VirtualNetwork {
         Function<Response, UpdateVcnResponse> transformer = UpdateVcnConverter.fromResponse();
 
         Response response = client.put(ib, request.getUpdateVcnDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public UpdateVirtualCircuitResponse updateVirtualCircuit(UpdateVirtualCircuitRequest request) {
+        LOG.trace("Called updateVirtualCircuit");
+        request = UpdateVirtualCircuitConverter.interceptRequest(request);
+        Invocation.Builder ib = UpdateVirtualCircuitConverter.fromRequest(client, request);
+        Function<Response, UpdateVirtualCircuitResponse> transformer =
+                UpdateVirtualCircuitConverter.fromResponse();
+
+        Response response = client.put(ib, request.getUpdateVirtualCircuitDetails(), request);
         return transformer.apply(response);
     }
 

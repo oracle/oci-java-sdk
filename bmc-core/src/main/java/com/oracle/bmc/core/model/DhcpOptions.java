@@ -17,13 +17,13 @@ import lombok.experimental.*;
 /**
  * A set of DHCP options. Used by the VCN to automatically provide configuration
  * information to the instances when they boot up. There are two options you can set:
- *
+ * <p>
  * - {@link DhcpDnsOption}: Lets you specify how DNS (hostname resolution) is
  * handled in the subnets in your VCN.
  * <p>
  * - {@link DhcpSearchDomainOption}: Lets you specify
  * a search domain name to use for DNS queries.
- *
+ * <p>
  * For more information, see  [DNS in Your Virtual Cloud Network](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm)
  * and [Managing DHCP Options](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingDHCP.htm).
  * <p>
@@ -112,12 +112,18 @@ public class DhcpOptions {
     /**
      * The current state of the set of DHCP options.
      **/
+    @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
         Terminating("TERMINATING"),
         Terminated("TERMINATED"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
 
         private final String value;
         private static Map<String, LifecycleState> map;
@@ -125,7 +131,9 @@ public class DhcpOptions {
         static {
             map = new HashMap<>();
             for (LifecycleState v : LifecycleState.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -143,7 +151,10 @@ public class DhcpOptions {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new RuntimeException("Invalid LifecycleState: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**
