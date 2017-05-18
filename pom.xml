@@ -4,7 +4,7 @@
 
   <groupId>com.oracle.bmc.sdk</groupId>
   <artifactId>oracle-bmc-java-sdk</artifactId>
-  <version>1.2.7</version>
+  <version>1.2.8</version>
   <packaging>pom</packaging>
 
   <name>Oracle Bare Metal Cloud Services SDK</name>
@@ -292,6 +292,16 @@
       </plugin>
     </plugins>
   </build>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>findbugs-maven-plugin</artifactId>
+        <version>3.0.1</version>
+      </plugin>
+    </plugins>
+  </reporting>
 
   <dependencies>
     <!-- Test dependencies -->

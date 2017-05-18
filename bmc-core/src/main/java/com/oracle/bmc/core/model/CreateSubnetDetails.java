@@ -40,6 +40,9 @@ public class CreateSubnetDetails {
         @JsonProperty("dnsLabel")
         private String dnsLabel;
 
+        @JsonProperty("prohibitPublicIpOnVnic")
+        private Boolean prohibitPublicIpOnVnic;
+
         @JsonProperty("routeTableId")
         private String routeTableId;
 
@@ -57,6 +60,7 @@ public class CreateSubnetDetails {
                     dhcpOptionsId,
                     displayName,
                     dnsLabel,
+                    prohibitPublicIpOnVnic,
                     routeTableId,
                     securityListIds,
                     vcnId);
@@ -70,6 +74,7 @@ public class CreateSubnetDetails {
                     .dhcpOptionsId(o.getDhcpOptionsId())
                     .displayName(o.getDisplayName())
                     .dnsLabel(o.getDnsLabel())
+                    .prohibitPublicIpOnVnic(o.getProhibitPublicIpOnVnic())
                     .routeTableId(o.getRouteTableId())
                     .securityListIds(o.getSecurityListIds())
                     .vcnId(o.getVcnId());
@@ -152,6 +157,22 @@ public class CreateSubnetDetails {
     @JsonProperty("dnsLabel")
     @Size(min = 1, max = 15)
     String dnsLabel;
+
+    /**
+     * Whether VNICs within this subnet can have public IP addresses.
+     * Defaults to false, which means VNICs created in this subnet will
+     * automatically be assigned public IP addresses unless specified
+     * otherwise during instance launch (with the `assignPublicIp` flag in
+     * {@link CreateVnicDetails}).
+     * If `prohibitPublicIpOnVnic` is set to true, VNICs created in this
+     * subnet cannot have public IP addresses (i.e., it's a private
+     * subnet).
+     * <p>
+     * Example: `true`
+     *
+     **/
+    @JsonProperty("prohibitPublicIpOnVnic")
+    Boolean prohibitPublicIpOnVnic;
 
     /**
      * The OCID of the route table the subnet will use. If you don't provide a value,

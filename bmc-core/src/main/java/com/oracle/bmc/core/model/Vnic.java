@@ -211,7 +211,7 @@ public class Vnic {
     String privateIp;
 
     /**
-     * The public IP address of the VNIC.
+     * The public IP address of the VNIC, if one is assigned.
      *
      **/
     @JsonProperty("publicIp")

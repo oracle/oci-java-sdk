@@ -16,7 +16,7 @@ import lombok.experimental.*;
 
 /**
  * A service offering from a supported provider. For more information,
- * see [FastConnect](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
+ * see [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")

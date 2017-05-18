@@ -15,21 +15,23 @@ import lombok.*;
 import lombok.experimental.*;
 
 /**
- * An isolated network path that runs over one or more physical network connections
- * to provide a single, logical connection between the Customer-Premises Equipment
- * (CPE) on the edge of the customer's existing network and a DRG.
- * A customer could have multiple virtual circuits, for example, to isolate traffic from
- * different parts of their organization (one virtual circuit for 10.0.1.0/24;
- * another for 172.16.0.0/16), or to provide redundancy.
+ * For use with Oracle Bare Metal Cloud Services FastConnect.
+ * <p>
+ * A virtual circuit is an isolated network path that runs over one or more physical
+ * network connections to provide a single, logical connection between the edge router
+ * on the customer's existing network and a DRG. A customer could have multiple virtual
+ * circuits, for example, to isolate traffic from different parts of their organization
+ * (one virtual circuit for 10.0.1.0/24; another for 172.16.0.0/16), or to provide redundancy.
  * <p>
  * Each virtual circuit is made up of information shared between a customer, Oracle,
- * and a provider. Who fills in a given property of a virtual circuit depends on whether
- * the BGP session related to that virtual circuit goes from the customer's CPE to Oracle,
- * or from the provider's router to Oracle. Also, values for some of the properties may not
- * be present immediately, but may get filled in as the provider and Oracle each do their
- * part to provision the virtual circuit.
+ * and a provider (if the customer is using FastConnect via a provider). Who fills in
+ * a given property of a virtual circuit depends on whether the BGP session related to
+ * that virtual circuit goes from the customer's edge router to Oracle, or from the provider's
+ * edge router to Oracle. Also, in the case where the customer is using a provider, values
+ * for some of the properties may not be present immediately, but may get filled in as the
+ * provider and Oracle each do their part to provision the virtual circuit.
  * <p>
- * For more information, see [FastConnect](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
+ * For more information, see [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
@@ -210,7 +212,7 @@ public class VirtualCircuit {
     String compartmentId;
 
     /**
-     * An array of mappings, each containing properties for a provider's
+     * An array of mappings, each containing properties for a
      * cross-connect or cross-connect group that is associated with this
      * virtual circuit.
      *
@@ -221,7 +223,7 @@ public class VirtualCircuit {
     /**
      * The BGP ASN of the network at the other end of the BGP
      * session from Oracle. If the session is between the customer's
-     * CPE and Oracle, the value is the customer's ASN. If the BGP
+     * edge router and Oracle, the value is the customer's ASN. If the BGP
      * session is between the provider's edge router and Oracle, the value
      * is the provider's ASN.
      *
@@ -255,7 +257,7 @@ public class VirtualCircuit {
     /**
      * The virtual circuit's current state. For information about
      * the different states, see
-     * [FastConnect](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
+     * [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -310,7 +312,7 @@ public class VirtualCircuit {
     /**
      * The virtual circuit's current state. For information about
      * the different states, see
-     * [FastConnect](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
+     * [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
      *
      **/
     @JsonProperty("lifecycleState")
@@ -323,20 +325,23 @@ public class VirtualCircuit {
     Integer oracleBgpAsn;
 
     /**
-     * The name of the provider.
+     * The name of the provider (if the customer is connecting via a provider).
+     *
      **/
     @JsonProperty("providerName")
     @Size(min = 1, max = 255)
     String providerName;
 
     /**
-     * The name of the service offered by the provider.
+     * The name of the service offered by the provider (if the customer is connecting via a provider).
+     *
      **/
     @JsonProperty("providerServiceName")
     @Size(min = 1, max = 255)
     String providerServiceName;
     /**
-     * The provider's state in relation to this virtual circuit. ACTIVE means
+     * The provider's state in relation to this virtual circuit (if the
+     * customer is connecting via a provider). ACTIVE means
      * the provider has provisioned the virtual circuit from their end.
      * INACTIVE means the provider has not yet provisioned the virtual
      * circuit, or has de-provisioned it.
@@ -386,7 +391,8 @@ public class VirtualCircuit {
         }
     };
     /**
-     * The provider's state in relation to this virtual circuit. ACTIVE means
+     * The provider's state in relation to this virtual circuit (if the
+     * customer is connecting via a provider). ACTIVE means
      * the provider has provisioned the virtual circuit from their end.
      * INACTIVE means the provider has not yet provisioned the virtual
      * circuit, or has de-provisioned it.
@@ -396,7 +402,8 @@ public class VirtualCircuit {
     ProviderState providerState;
 
     /**
-     * Provider-supplied reference information about this virtual circuit.
+     * Provider-supplied reference information about this virtual circuit
+     * (if the customer is connecting via a provider).
      *
      **/
     @JsonProperty("referenceComment")

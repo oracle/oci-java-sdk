@@ -88,7 +88,9 @@ public class UpdateVirtualCircuitDetails {
      * An array of mappings, each containing properties for a cross-connect or
      * cross-connect group associated with this virtual circuit.
      * <p>
-     * To be updated only by the provider.
+     * The customer and provider can update different properties in the mapping
+     * depending on the situation. See the description of the
+     * {@link CrossConnectMapping}.
      *
      **/
     @JsonProperty("crossConnectMappings")
@@ -98,7 +100,7 @@ public class UpdateVirtualCircuitDetails {
      * The BGP ASN of the network at the other end of the BGP
      * session from Oracle.
      * <p>
-     * If the BGP session is from the customer's CPE to Oracle, the
+     * If the BGP session is from the customer's edge router to Oracle, the
      * required value is the customer's ASN, and it can be updated only
      * by the customer.
      * <p>
@@ -121,7 +123,7 @@ public class UpdateVirtualCircuitDetails {
     String displayName;
 
     /**
-     * The OCID of the customer's {@link Drg}
+     * The OCID of the {@link Drg}
      * that this virtual circuit uses.
      * <p>
      * To be updated only by the customer who owns the virtual circuit.
@@ -131,7 +133,8 @@ public class UpdateVirtualCircuitDetails {
     @Size(min = 1, max = 255)
     String gatewayId;
     /**
-     * The provider's state in relation to this virtual circuit. ACTIVE
+     * The provider's state in relation to this virtual circuit. Relevant only
+     * if the customer is using FastConnect via a provider.  ACTIVE
      * means the provider has provisioned the virtual circuit from their
      * end. INACTIVE means the provider has not yet provisioned the virtual
      * circuit, or has de-provisioned it.
@@ -172,7 +175,8 @@ public class UpdateVirtualCircuitDetails {
         }
     };
     /**
-     * The provider's state in relation to this virtual circuit. ACTIVE
+     * The provider's state in relation to this virtual circuit. Relevant only
+     * if the customer is using FastConnect via a provider.  ACTIVE
      * means the provider has provisioned the virtual circuit from their
      * end. INACTIVE means the provider has not yet provisioned the virtual
      * circuit, or has de-provisioned it.
@@ -185,6 +189,7 @@ public class UpdateVirtualCircuitDetails {
 
     /**
      * Provider-supplied reference information about this virtual circuit.
+     * Relevant only if the customer is using FastConnect via a provider.
      * <p>
      * To be updated only by the provider.
      *

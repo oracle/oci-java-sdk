@@ -175,6 +175,32 @@ public class IdentityClient implements Identity {
     }
 
     @Override
+    public CreateIdentityProviderResponse createIdentityProvider(
+            CreateIdentityProviderRequest request) {
+        LOG.trace("Called createIdentityProvider");
+        request = CreateIdentityProviderConverter.interceptRequest(request);
+        Invocation.Builder ib = CreateIdentityProviderConverter.fromRequest(client, request);
+        Function<Response, CreateIdentityProviderResponse> transformer =
+                CreateIdentityProviderConverter.fromResponse();
+
+        Response response = client.post(ib, request.getCreateIdentityProviderDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public CreateIdpGroupMappingResponse createIdpGroupMapping(
+            CreateIdpGroupMappingRequest request) {
+        LOG.trace("Called createIdpGroupMapping");
+        request = CreateIdpGroupMappingConverter.interceptRequest(request);
+        Invocation.Builder ib = CreateIdpGroupMappingConverter.fromRequest(client, request);
+        Function<Response, CreateIdpGroupMappingResponse> transformer =
+                CreateIdpGroupMappingConverter.fromResponse();
+
+        Response response = client.post(ib, request.getCreateIdpGroupMappingDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
     public CreateOrResetUIPasswordResponse createOrResetUIPassword(
             CreateOrResetUIPasswordRequest request) {
         LOG.trace("Called createOrResetUIPassword");
@@ -195,6 +221,19 @@ public class IdentityClient implements Identity {
         Function<Response, CreatePolicyResponse> transformer = CreatePolicyConverter.fromResponse();
 
         Response response = client.post(ib, request.getCreatePolicyDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public CreateRegionSubscriptionResponse createRegionSubscription(
+            CreateRegionSubscriptionRequest request) {
+        LOG.trace("Called createRegionSubscription");
+        request = CreateRegionSubscriptionConverter.interceptRequest(request);
+        Invocation.Builder ib = CreateRegionSubscriptionConverter.fromRequest(client, request);
+        Function<Response, CreateRegionSubscriptionResponse> transformer =
+                CreateRegionSubscriptionConverter.fromResponse();
+
+        Response response = client.post(ib, request.getCreateRegionSubscriptionDetails(), request);
         return transformer.apply(response);
     }
 
@@ -238,6 +277,32 @@ public class IdentityClient implements Identity {
         request = DeleteGroupConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteGroupConverter.fromRequest(client, request);
         Function<Response, DeleteGroupResponse> transformer = DeleteGroupConverter.fromResponse();
+
+        Response response = client.delete(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public DeleteIdentityProviderResponse deleteIdentityProvider(
+            DeleteIdentityProviderRequest request) {
+        LOG.trace("Called deleteIdentityProvider");
+        request = DeleteIdentityProviderConverter.interceptRequest(request);
+        Invocation.Builder ib = DeleteIdentityProviderConverter.fromRequest(client, request);
+        Function<Response, DeleteIdentityProviderResponse> transformer =
+                DeleteIdentityProviderConverter.fromResponse();
+
+        Response response = client.delete(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public DeleteIdpGroupMappingResponse deleteIdpGroupMapping(
+            DeleteIdpGroupMappingRequest request) {
+        LOG.trace("Called deleteIdpGroupMapping");
+        request = DeleteIdpGroupMappingConverter.interceptRequest(request);
+        Invocation.Builder ib = DeleteIdpGroupMappingConverter.fromRequest(client, request);
+        Function<Response, DeleteIdpGroupMappingResponse> transformer =
+                DeleteIdpGroupMappingConverter.fromResponse();
 
         Response response = client.delete(ib, request);
         return transformer.apply(response);
@@ -301,11 +366,46 @@ public class IdentityClient implements Identity {
     }
 
     @Override
+    public GetIdentityProviderResponse getIdentityProvider(GetIdentityProviderRequest request) {
+        LOG.trace("Called getIdentityProvider");
+        request = GetIdentityProviderConverter.interceptRequest(request);
+        Invocation.Builder ib = GetIdentityProviderConverter.fromRequest(client, request);
+        Function<Response, GetIdentityProviderResponse> transformer =
+                GetIdentityProviderConverter.fromResponse();
+
+        Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public GetIdpGroupMappingResponse getIdpGroupMapping(GetIdpGroupMappingRequest request) {
+        LOG.trace("Called getIdpGroupMapping");
+        request = GetIdpGroupMappingConverter.interceptRequest(request);
+        Invocation.Builder ib = GetIdpGroupMappingConverter.fromRequest(client, request);
+        Function<Response, GetIdpGroupMappingResponse> transformer =
+                GetIdpGroupMappingConverter.fromResponse();
+
+        Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
     public GetPolicyResponse getPolicy(GetPolicyRequest request) {
         LOG.trace("Called getPolicy");
         request = GetPolicyConverter.interceptRequest(request);
         Invocation.Builder ib = GetPolicyConverter.fromRequest(client, request);
         Function<Response, GetPolicyResponse> transformer = GetPolicyConverter.fromResponse();
+
+        Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public GetTenancyResponse getTenancy(GetTenancyRequest request) {
+        LOG.trace("Called getTenancy");
+        request = GetTenancyConverter.interceptRequest(request);
+        Invocation.Builder ib = GetTenancyConverter.fromRequest(client, request);
+        Function<Response, GetTenancyResponse> transformer = GetTenancyConverter.fromResponse();
 
         Response response = client.get(ib, request);
         return transformer.apply(response);
@@ -383,11 +483,60 @@ public class IdentityClient implements Identity {
     }
 
     @Override
+    public ListIdentityProvidersResponse listIdentityProviders(
+            ListIdentityProvidersRequest request) {
+        LOG.trace("Called listIdentityProviders");
+        request = ListIdentityProvidersConverter.interceptRequest(request);
+        Invocation.Builder ib = ListIdentityProvidersConverter.fromRequest(client, request);
+        Function<Response, ListIdentityProvidersResponse> transformer =
+                ListIdentityProvidersConverter.fromResponse();
+
+        Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public ListIdpGroupMappingsResponse listIdpGroupMappings(ListIdpGroupMappingsRequest request) {
+        LOG.trace("Called listIdpGroupMappings");
+        request = ListIdpGroupMappingsConverter.interceptRequest(request);
+        Invocation.Builder ib = ListIdpGroupMappingsConverter.fromRequest(client, request);
+        Function<Response, ListIdpGroupMappingsResponse> transformer =
+                ListIdpGroupMappingsConverter.fromResponse();
+
+        Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
     public ListPoliciesResponse listPolicies(ListPoliciesRequest request) {
         LOG.trace("Called listPolicies");
         request = ListPoliciesConverter.interceptRequest(request);
         Invocation.Builder ib = ListPoliciesConverter.fromRequest(client, request);
         Function<Response, ListPoliciesResponse> transformer = ListPoliciesConverter.fromResponse();
+
+        Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public ListRegionSubscriptionsResponse listRegionSubscriptions(
+            ListRegionSubscriptionsRequest request) {
+        LOG.trace("Called listRegionSubscriptions");
+        request = ListRegionSubscriptionsConverter.interceptRequest(request);
+        Invocation.Builder ib = ListRegionSubscriptionsConverter.fromRequest(client, request);
+        Function<Response, ListRegionSubscriptionsResponse> transformer =
+                ListRegionSubscriptionsConverter.fromResponse();
+
+        Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public ListRegionsResponse listRegions(ListRegionsRequest request) {
+        LOG.trace("Called listRegions");
+        request = ListRegionsConverter.interceptRequest(request);
+        Invocation.Builder ib = ListRegionsConverter.fromRequest(client, request);
+        Function<Response, ListRegionsResponse> transformer = ListRegionsConverter.fromResponse();
 
         Response response = client.get(ib, request);
         return transformer.apply(response);
@@ -461,6 +610,32 @@ public class IdentityClient implements Identity {
         Function<Response, UpdateGroupResponse> transformer = UpdateGroupConverter.fromResponse();
 
         Response response = client.put(ib, request.getUpdateGroupDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public UpdateIdentityProviderResponse updateIdentityProvider(
+            UpdateIdentityProviderRequest request) {
+        LOG.trace("Called updateIdentityProvider");
+        request = UpdateIdentityProviderConverter.interceptRequest(request);
+        Invocation.Builder ib = UpdateIdentityProviderConverter.fromRequest(client, request);
+        Function<Response, UpdateIdentityProviderResponse> transformer =
+                UpdateIdentityProviderConverter.fromResponse();
+
+        Response response = client.put(ib, request.getUpdateIdentityProviderDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public UpdateIdpGroupMappingResponse updateIdpGroupMapping(
+            UpdateIdpGroupMappingRequest request) {
+        LOG.trace("Called updateIdpGroupMapping");
+        request = UpdateIdpGroupMappingConverter.interceptRequest(request);
+        Invocation.Builder ib = UpdateIdpGroupMappingConverter.fromRequest(client, request);
+        Function<Response, UpdateIdpGroupMappingResponse> transformer =
+                UpdateIdpGroupMappingConverter.fromResponse();
+
+        Response response = client.put(ib, request.getUpdateIdpGroupMappingDetails(), request);
         return transformer.apply(response);
     }
 

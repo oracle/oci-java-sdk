@@ -129,6 +129,54 @@ public interface IdentityAsync extends AutoCloseable {
             AsyncHandler<CreateGroupRequest, CreateGroupResponse> handler);
 
     /**
+     * Creates a new identity provider in your tenancy. For more information, see
+     * [Identity Providers and Federation](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/federation.htm).
+     * <p>
+     * You must specify your tenancy's OCID as the compartment ID in the request object.
+     * Remember that the tenancy is simply the root compartment. For information about
+     * OCIDs, see [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
+     * <p>
+     * You must also specify a *name* for the `IdentityProvider`, which must be unique
+     * across all `IdentityProvider` objects in your tenancy and cannot be changed.
+     * <p>
+     * You must also specify a *description* for the `IdentityProvider` (although
+     * it can be an empty string). It does not have to be unique, and you can change
+     * it anytime with
+     * {@link #updateIdentityProvider(UpdateIdentityProviderRequest, Consumer, Consumer) updateIdentityProvider}.
+     * <p>
+     * After you send your request, the new object's `lifecycleState` will temporarily
+     * be CREATING. Before using the object, first make sure its `lifecycleState` has
+     * changed to ACTIVE.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    Future<CreateIdentityProviderResponse> createIdentityProvider(
+            CreateIdentityProviderRequest request,
+            AsyncHandler<CreateIdentityProviderRequest, CreateIdentityProviderResponse> handler);
+
+    /**
+     * Creates a single mapping between an IdP group and an IAM Service
+     * {@link Group}.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    Future<CreateIdpGroupMappingResponse> createIdpGroupMapping(
+            CreateIdpGroupMappingRequest request,
+            AsyncHandler<CreateIdpGroupMappingRequest, CreateIdpGroupMappingResponse> handler);
+
+    /**
      * Creates a new Console one-time password for the specified user. For more information about user
      * credentials, see [User Credentials](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/usercredentials.htm).
      * <p>
@@ -183,6 +231,22 @@ public interface IdentityAsync extends AutoCloseable {
     Future<CreatePolicyResponse> createPolicy(
             CreatePolicyRequest request,
             AsyncHandler<CreatePolicyRequest, CreatePolicyResponse> handler);
+
+    /**
+     * Creates a subscription to a region for a tenancy.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    Future<CreateRegionSubscriptionResponse> createRegionSubscription(
+            CreateRegionSubscriptionRequest request,
+            AsyncHandler<CreateRegionSubscriptionRequest, CreateRegionSubscriptionResponse>
+                    handler);
 
     /**
      * Creates a new Swift password for the specified user. For information about what Swift passwords are for, see
@@ -292,6 +356,36 @@ public interface IdentityAsync extends AutoCloseable {
             AsyncHandler<DeleteGroupRequest, DeleteGroupResponse> handler);
 
     /**
+     * Deletes the specified identity provider. The identity provider must not have
+     * any group mappings (see {@link IdpGroupMapping}).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    Future<DeleteIdentityProviderResponse> deleteIdentityProvider(
+            DeleteIdentityProviderRequest request,
+            AsyncHandler<DeleteIdentityProviderRequest, DeleteIdentityProviderResponse> handler);
+
+    /**
+     * Deletes the specified group mapping.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    Future<DeleteIdpGroupMappingResponse> deleteIdpGroupMapping(
+            DeleteIdpGroupMappingRequest request,
+            AsyncHandler<DeleteIdpGroupMappingRequest, DeleteIdpGroupMappingResponse> handler);
+
+    /**
      * Deletes the specified policy. The deletion takes effect typically within 10 seconds.
      *
      * @param request The request object containing the details to send
@@ -374,6 +468,34 @@ public interface IdentityAsync extends AutoCloseable {
             GetGroupRequest request, AsyncHandler<GetGroupRequest, GetGroupResponse> handler);
 
     /**
+     * Gets the specified identity provider's information.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    Future<GetIdentityProviderResponse> getIdentityProvider(
+            GetIdentityProviderRequest request,
+            AsyncHandler<GetIdentityProviderRequest, GetIdentityProviderResponse> handler);
+
+    /**
+     * Gets the specified group mapping.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    Future<GetIdpGroupMappingResponse> getIdpGroupMapping(
+            GetIdpGroupMappingRequest request,
+            AsyncHandler<GetIdpGroupMappingRequest, GetIdpGroupMappingResponse> handler);
+
+    /**
      * Gets the specified policy's information.
      *
      * @param request The request object containing the details to send
@@ -385,6 +507,19 @@ public interface IdentityAsync extends AutoCloseable {
      */
     Future<GetPolicyResponse> getPolicy(
             GetPolicyRequest request, AsyncHandler<GetPolicyRequest, GetPolicyResponse> handler);
+
+    /**
+     * Get the specified tenancy's information.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    Future<GetTenancyResponse> getTenancy(
+            GetTenancyRequest request, AsyncHandler<GetTenancyRequest, GetTenancyResponse> handler);
 
     /**
      * Gets the specified user's information.
@@ -452,10 +587,6 @@ public interface IdentityAsync extends AutoCloseable {
      * Lists the compartments in your tenancy. You must specify your tenancy's OCID as the value
      * for the compartment ID (remember that the tenancy is simply the root compartment).
      * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five).
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -486,6 +617,39 @@ public interface IdentityAsync extends AutoCloseable {
             ListGroupsRequest request, AsyncHandler<ListGroupsRequest, ListGroupsResponse> handler);
 
     /**
+     * Lists all the identity providers in your tenancy. You must specify the identity provider type (e.g., `SAML2` for
+     * identity providers using the SAML2.0 protocol). You must specify your tenancy's OCID as the value for the
+     * compartment ID (remember that the tenancy is simply the root compartment).
+     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    Future<ListIdentityProvidersResponse> listIdentityProviders(
+            ListIdentityProvidersRequest request,
+            AsyncHandler<ListIdentityProvidersRequest, ListIdentityProvidersResponse> handler);
+
+    /**
+     * Lists the group mappings for the specified identity provider.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    Future<ListIdpGroupMappingsResponse> listIdpGroupMappings(
+            ListIdpGroupMappingsRequest request,
+            AsyncHandler<ListIdpGroupMappingsRequest, ListIdpGroupMappingsResponse> handler);
+
+    /**
      * Lists the policies in the specified compartment (either the tenancy or another of your compartments).
      * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five).
      * <p>
@@ -503,6 +667,34 @@ public interface IdentityAsync extends AutoCloseable {
     Future<ListPoliciesResponse> listPolicies(
             ListPoliciesRequest request,
             AsyncHandler<ListPoliciesRequest, ListPoliciesResponse> handler);
+
+    /**
+     * Lists the region subscriptions for the specified tenancy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    Future<ListRegionSubscriptionsResponse> listRegionSubscriptions(
+            ListRegionSubscriptionsRequest request,
+            AsyncHandler<ListRegionSubscriptionsRequest, ListRegionSubscriptionsResponse> handler);
+
+    /**
+     * Lists all the regions offered by Oracle Bare Metal Cloud Services.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    Future<ListRegionsResponse> listRegions(
+            ListRegionsRequest request,
+            AsyncHandler<ListRegionsRequest, ListRegionsResponse> handler);
 
     /**
      * Lists the Swift passwords for the specified user. The returned object contains the password's OCID, but not
@@ -530,10 +722,6 @@ public interface IdentityAsync extends AutoCloseable {
      * - Similarly, you can limit the results to just the memberships for a given group by specifying a `groupId`.
      * - You can set both the `userId` and `groupId` to determine if the specified user is in the specified group.
      * If the answer is no, the response is an empty list.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -605,6 +793,34 @@ public interface IdentityAsync extends AutoCloseable {
     Future<UpdateGroupResponse> updateGroup(
             UpdateGroupRequest request,
             AsyncHandler<UpdateGroupRequest, UpdateGroupResponse> handler);
+
+    /**
+     * Updates the specified identity provider.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    Future<UpdateIdentityProviderResponse> updateIdentityProvider(
+            UpdateIdentityProviderRequest request,
+            AsyncHandler<UpdateIdentityProviderRequest, UpdateIdentityProviderResponse> handler);
+
+    /**
+     * Updates the specified group mapping.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    Future<UpdateIdpGroupMappingResponse> updateIdpGroupMapping(
+            UpdateIdpGroupMappingRequest request,
+            AsyncHandler<UpdateIdpGroupMappingRequest, UpdateIdpGroupMappingResponse> handler);
 
     /**
      * Updates the specified policy. You can update the description or the policy statements themselves.

@@ -13,6 +13,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.2.8 - 2017-05-18
+### Added
+- Extended support for FastConnect
+- Support for Private VCN
+- Support for IAD Region (us-ashburn-1)
+
 ## 1.2.7 - 2017-04-27
 ### Changed
 - A new value called UnknownEnumValue has been added to all enums that are used in responses returned from services. If a service returns a value that cannot be recognized by the version of the SDK, then the enum will be set to this value. Previously this would throw an exception.

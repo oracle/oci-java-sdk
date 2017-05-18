@@ -33,8 +33,8 @@ public class AuthnClientFilter implements ClientRequestFilter {
                         clientRequestContext.getStringHeaders(),
                         clientRequestContext.getEntity());
 
-        for (String key : authHeaders.keySet()) {
-            clientRequestContext.getHeaders().putSingle(key, authHeaders.get(key));
+        for (Map.Entry<String, String> e : authHeaders.entrySet()) {
+            clientRequestContext.getHeaders().putSingle(e.getKey(), e.getValue());
         }
     }
 }
