@@ -36,6 +36,125 @@ public class VirtualNetworkWaiters {
      * @param targetState The desired state to wait for.
      * @return A new Waiter instance.
      */
+    public Waiter<GetCrossConnectRequest, GetCrossConnectResponse> forCrossConnect(
+            GetCrossConnectRequest request,
+            com.oracle.bmc.core.model.CrossConnect.LifecycleState targetState) {
+        return forCrossConnect(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using the provided configuration.
+     *
+     * @param request The request to send.
+     * @param targetState The desired state to wait for.
+     * @param terminationStrategy The {@link TerminationStrategy} to use.
+     * @param delayStrategy The {@link DelayStrategy} to use.
+     * @return A new Waiter instance.
+     */
+    public Waiter<GetCrossConnectRequest, GetCrossConnectResponse> forCrossConnect(
+            GetCrossConnectRequest request,
+            com.oracle.bmc.core.model.CrossConnect.LifecycleState targetState,
+            TerminationStrategy terminationStrategy,
+            DelayStrategy delayStrategy) {
+        return forCrossConnect(
+                Waiters.newWaiter(terminationStrategy, delayStrategy), request, targetState);
+    }
+
+    // Helper method to create a new Waiter for CrossConnect.
+    private Waiter<GetCrossConnectRequest, GetCrossConnectResponse> forCrossConnect(
+            BmcGenericWaiter waiter,
+            final GetCrossConnectRequest request,
+            final com.oracle.bmc.core.model.CrossConnect.LifecycleState targetState) {
+        return new SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        Suppliers.ofInstance(request),
+                        new Function<GetCrossConnectRequest, GetCrossConnectResponse>() {
+                            @Override
+                            public GetCrossConnectResponse apply(GetCrossConnectRequest request) {
+                                return client.getCrossConnect(request);
+                            }
+                        },
+                        new Predicate<GetCrossConnectResponse>() {
+                            @Override
+                            public boolean apply(GetCrossConnectResponse response) {
+                                return response.getCrossConnect().getLifecycleState()
+                                        == targetState;
+                            }
+                        },
+                        targetState
+                                == com.oracle.bmc.core.model.CrossConnect.LifecycleState
+                                        .Terminated),
+                request);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using default configuration.
+     *
+     * @param request The request to send.
+     * @param targetState The desired state to wait for.
+     * @return A new Waiter instance.
+     */
+    public Waiter<GetCrossConnectGroupRequest, GetCrossConnectGroupResponse> forCrossConnectGroup(
+            GetCrossConnectGroupRequest request,
+            com.oracle.bmc.core.model.CrossConnectGroup.LifecycleState targetState) {
+        return forCrossConnectGroup(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using the provided configuration.
+     *
+     * @param request The request to send.
+     * @param targetState The desired state to wait for.
+     * @param terminationStrategy The {@link TerminationStrategy} to use.
+     * @param delayStrategy The {@link DelayStrategy} to use.
+     * @return A new Waiter instance.
+     */
+    public Waiter<GetCrossConnectGroupRequest, GetCrossConnectGroupResponse> forCrossConnectGroup(
+            GetCrossConnectGroupRequest request,
+            com.oracle.bmc.core.model.CrossConnectGroup.LifecycleState targetState,
+            TerminationStrategy terminationStrategy,
+            DelayStrategy delayStrategy) {
+        return forCrossConnectGroup(
+                Waiters.newWaiter(terminationStrategy, delayStrategy), request, targetState);
+    }
+
+    // Helper method to create a new Waiter for CrossConnectGroup.
+    private Waiter<GetCrossConnectGroupRequest, GetCrossConnectGroupResponse> forCrossConnectGroup(
+            BmcGenericWaiter waiter,
+            final GetCrossConnectGroupRequest request,
+            final com.oracle.bmc.core.model.CrossConnectGroup.LifecycleState targetState) {
+        return new SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        Suppliers.ofInstance(request),
+                        new Function<GetCrossConnectGroupRequest, GetCrossConnectGroupResponse>() {
+                            @Override
+                            public GetCrossConnectGroupResponse apply(
+                                    GetCrossConnectGroupRequest request) {
+                                return client.getCrossConnectGroup(request);
+                            }
+                        },
+                        new Predicate<GetCrossConnectGroupResponse>() {
+                            @Override
+                            public boolean apply(GetCrossConnectGroupResponse response) {
+                                return response.getCrossConnectGroup().getLifecycleState()
+                                        == targetState;
+                            }
+                        },
+                        targetState
+                                == com.oracle.bmc.core.model.CrossConnectGroup.LifecycleState
+                                        .Terminated),
+                request);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using default configuration.
+     *
+     * @param request The request to send.
+     * @param targetState The desired state to wait for.
+     * @return A new Waiter instance.
+     */
     public Waiter<GetDhcpOptionsRequest, GetDhcpOptionsResponse> forDhcpOptions(
             GetDhcpOptionsRequest request,
             com.oracle.bmc.core.model.DhcpOptions.LifecycleState targetState) {

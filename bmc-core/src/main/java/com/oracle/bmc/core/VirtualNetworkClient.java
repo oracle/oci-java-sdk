@@ -151,6 +151,31 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public CreateCrossConnectResponse createCrossConnect(CreateCrossConnectRequest request) {
+        LOG.trace("Called createCrossConnect");
+        request = CreateCrossConnectConverter.interceptRequest(request);
+        Invocation.Builder ib = CreateCrossConnectConverter.fromRequest(client, request);
+        Function<Response, CreateCrossConnectResponse> transformer =
+                CreateCrossConnectConverter.fromResponse();
+
+        Response response = client.post(ib, request.getCreateCrossConnectDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public CreateCrossConnectGroupResponse createCrossConnectGroup(
+            CreateCrossConnectGroupRequest request) {
+        LOG.trace("Called createCrossConnectGroup");
+        request = CreateCrossConnectGroupConverter.interceptRequest(request);
+        Invocation.Builder ib = CreateCrossConnectGroupConverter.fromRequest(client, request);
+        Function<Response, CreateCrossConnectGroupResponse> transformer =
+                CreateCrossConnectGroupConverter.fromResponse();
+
+        Response response = client.post(ib, request.getCreateCrossConnectGroupDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
     public CreateDhcpOptionsResponse createDhcpOptions(CreateDhcpOptionsRequest request) {
         LOG.trace("Called createDhcpOptions");
         request = CreateDhcpOptionsConverter.interceptRequest(request);
@@ -281,6 +306,31 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public DeleteCrossConnectResponse deleteCrossConnect(DeleteCrossConnectRequest request) {
+        LOG.trace("Called deleteCrossConnect");
+        request = DeleteCrossConnectConverter.interceptRequest(request);
+        Invocation.Builder ib = DeleteCrossConnectConverter.fromRequest(client, request);
+        Function<Response, DeleteCrossConnectResponse> transformer =
+                DeleteCrossConnectConverter.fromResponse();
+
+        Response response = client.delete(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public DeleteCrossConnectGroupResponse deleteCrossConnectGroup(
+            DeleteCrossConnectGroupRequest request) {
+        LOG.trace("Called deleteCrossConnectGroup");
+        request = DeleteCrossConnectGroupConverter.interceptRequest(request);
+        Invocation.Builder ib = DeleteCrossConnectGroupConverter.fromRequest(client, request);
+        Function<Response, DeleteCrossConnectGroupResponse> transformer =
+                DeleteCrossConnectGroupConverter.fromResponse();
+
+        Response response = client.delete(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
     public DeleteDhcpOptionsResponse deleteDhcpOptions(DeleteDhcpOptionsRequest request) {
         LOG.trace("Called deleteDhcpOptions");
         request = DeleteDhcpOptionsConverter.interceptRequest(request);
@@ -405,6 +455,57 @@ public class VirtualNetworkClient implements VirtualNetwork {
         request = GetCpeConverter.interceptRequest(request);
         Invocation.Builder ib = GetCpeConverter.fromRequest(client, request);
         Function<Response, GetCpeResponse> transformer = GetCpeConverter.fromResponse();
+
+        Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public GetCrossConnectResponse getCrossConnect(GetCrossConnectRequest request) {
+        LOG.trace("Called getCrossConnect");
+        request = GetCrossConnectConverter.interceptRequest(request);
+        Invocation.Builder ib = GetCrossConnectConverter.fromRequest(client, request);
+        Function<Response, GetCrossConnectResponse> transformer =
+                GetCrossConnectConverter.fromResponse();
+
+        Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public GetCrossConnectGroupResponse getCrossConnectGroup(GetCrossConnectGroupRequest request) {
+        LOG.trace("Called getCrossConnectGroup");
+        request = GetCrossConnectGroupConverter.interceptRequest(request);
+        Invocation.Builder ib = GetCrossConnectGroupConverter.fromRequest(client, request);
+        Function<Response, GetCrossConnectGroupResponse> transformer =
+                GetCrossConnectGroupConverter.fromResponse();
+
+        Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public GetCrossConnectLetterOfAuthorityResponse getCrossConnectLetterOfAuthority(
+            GetCrossConnectLetterOfAuthorityRequest request) {
+        LOG.trace("Called getCrossConnectLetterOfAuthority");
+        request = GetCrossConnectLetterOfAuthorityConverter.interceptRequest(request);
+        Invocation.Builder ib =
+                GetCrossConnectLetterOfAuthorityConverter.fromRequest(client, request);
+        Function<Response, GetCrossConnectLetterOfAuthorityResponse> transformer =
+                GetCrossConnectLetterOfAuthorityConverter.fromResponse();
+
+        Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public GetCrossConnectStatusResponse getCrossConnectStatus(
+            GetCrossConnectStatusRequest request) {
+        LOG.trace("Called getCrossConnectStatus");
+        request = GetCrossConnectStatusConverter.interceptRequest(request);
+        Invocation.Builder ib = GetCrossConnectStatusConverter.fromRequest(client, request);
+        Function<Response, GetCrossConnectStatusResponse> transformer =
+                GetCrossConnectStatusConverter.fromResponse();
 
         Response response = client.get(ib, request);
         return transformer.apply(response);
@@ -578,6 +679,58 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public ListCrossConnectGroupsResponse listCrossConnectGroups(
+            ListCrossConnectGroupsRequest request) {
+        LOG.trace("Called listCrossConnectGroups");
+        request = ListCrossConnectGroupsConverter.interceptRequest(request);
+        Invocation.Builder ib = ListCrossConnectGroupsConverter.fromRequest(client, request);
+        Function<Response, ListCrossConnectGroupsResponse> transformer =
+                ListCrossConnectGroupsConverter.fromResponse();
+
+        Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public ListCrossConnectLocationsResponse listCrossConnectLocations(
+            ListCrossConnectLocationsRequest request) {
+        LOG.trace("Called listCrossConnectLocations");
+        request = ListCrossConnectLocationsConverter.interceptRequest(request);
+        Invocation.Builder ib = ListCrossConnectLocationsConverter.fromRequest(client, request);
+        Function<Response, ListCrossConnectLocationsResponse> transformer =
+                ListCrossConnectLocationsConverter.fromResponse();
+
+        Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public ListCrossConnectsResponse listCrossConnects(ListCrossConnectsRequest request) {
+        LOG.trace("Called listCrossConnects");
+        request = ListCrossConnectsConverter.interceptRequest(request);
+        Invocation.Builder ib = ListCrossConnectsConverter.fromRequest(client, request);
+        Function<Response, ListCrossConnectsResponse> transformer =
+                ListCrossConnectsConverter.fromResponse();
+
+        Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public ListCrossconnectPortSpeedShapesResponse listCrossconnectPortSpeedShapes(
+            ListCrossconnectPortSpeedShapesRequest request) {
+        LOG.trace("Called listCrossconnectPortSpeedShapes");
+        request = ListCrossconnectPortSpeedShapesConverter.interceptRequest(request);
+        Invocation.Builder ib =
+                ListCrossconnectPortSpeedShapesConverter.fromRequest(client, request);
+        Function<Response, ListCrossconnectPortSpeedShapesResponse> transformer =
+                ListCrossconnectPortSpeedShapesConverter.fromResponse();
+
+        Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
     public ListDhcpOptionsResponse listDhcpOptions(ListDhcpOptionsRequest request) {
         LOG.trace("Called listDhcpOptions");
         request = ListDhcpOptionsConverter.interceptRequest(request);
@@ -730,6 +883,31 @@ public class VirtualNetworkClient implements VirtualNetwork {
         Function<Response, UpdateCpeResponse> transformer = UpdateCpeConverter.fromResponse();
 
         Response response = client.put(ib, request.getUpdateCpeDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public UpdateCrossConnectResponse updateCrossConnect(UpdateCrossConnectRequest request) {
+        LOG.trace("Called updateCrossConnect");
+        request = UpdateCrossConnectConverter.interceptRequest(request);
+        Invocation.Builder ib = UpdateCrossConnectConverter.fromRequest(client, request);
+        Function<Response, UpdateCrossConnectResponse> transformer =
+                UpdateCrossConnectConverter.fromResponse();
+
+        Response response = client.put(ib, request.getUpdateCrossConnectDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public UpdateCrossConnectGroupResponse updateCrossConnectGroup(
+            UpdateCrossConnectGroupRequest request) {
+        LOG.trace("Called updateCrossConnectGroup");
+        request = UpdateCrossConnectGroupConverter.interceptRequest(request);
+        Invocation.Builder ib = UpdateCrossConnectGroupConverter.fromRequest(client, request);
+        Function<Response, UpdateCrossConnectGroupResponse> transformer =
+                UpdateCrossConnectGroupConverter.fromResponse();
+
+        Response response = client.put(ib, request.getUpdateCrossConnectGroupDetails(), request);
         return transformer.apply(response);
     }
 

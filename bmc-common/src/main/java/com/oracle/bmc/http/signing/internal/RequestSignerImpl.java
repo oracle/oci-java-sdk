@@ -380,7 +380,7 @@ public class RequestSignerImpl implements RequestSigner {
     private static byte[] getJsonBody(Object body) throws JsonProcessingException {
         // empty body is OK
         if (body == null) {
-            return "".getBytes();
+            return "".getBytes(StandardCharsets.UTF_8);
         }
         // use the same object mapper as the rest client to ensure the configurations match
         // what is sent
@@ -401,7 +401,7 @@ public class RequestSignerImpl implements RequestSigner {
         // encodeBase64String changed from chunked in v1.4 to not chunked in
         // v1.5 so we cannot rely on which version is going to be used by clients,
         // be explicit that this is not-chunked
-        return new String(Base64.encodeBase64(bytes, false));
+        return new String(Base64.encodeBase64(bytes, false), StandardCharsets.UTF_8);
     }
 
     private static SimpleDateFormat createFormatter() {

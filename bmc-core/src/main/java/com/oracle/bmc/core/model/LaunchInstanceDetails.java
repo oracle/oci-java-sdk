@@ -28,6 +28,9 @@ public class LaunchInstanceDetails {
         @JsonProperty("compartmentId")
         private String compartmentId;
 
+        @JsonProperty("createVnicDetails")
+        private CreateVnicDetails createVnicDetails;
+
         @JsonProperty("displayName")
         private String displayName;
 
@@ -53,6 +56,7 @@ public class LaunchInstanceDetails {
             return new LaunchInstanceDetails(
                     availabilityDomain,
                     compartmentId,
+                    createVnicDetails,
                     displayName,
                     hostnameLabel,
                     imageId,
@@ -66,6 +70,7 @@ public class LaunchInstanceDetails {
         public Builder copy(LaunchInstanceDetails o) {
             return availabilityDomain(o.getAvailabilityDomain())
                     .compartmentId(o.getCompartmentId())
+                    .createVnicDetails(o.getCreateVnicDetails())
                     .displayName(o.getDisplayName())
                     .hostnameLabel(o.getHostnameLabel())
                     .imageId(o.getImageId())
@@ -105,6 +110,12 @@ public class LaunchInstanceDetails {
     String compartmentId;
 
     /**
+     * Details for the VNIC that is automatically created when an instance is launched.
+     **/
+    @JsonProperty("createVnicDetails")
+    CreateVnicDetails createVnicDetails;
+
+    /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
      * <p>
      * Example: `My bare metal instance`
@@ -115,20 +126,9 @@ public class LaunchInstanceDetails {
     String displayName;
 
     /**
-     * The hostname for the VNIC that is created during instance launch.
-     * Used for DNS. The value is the hostname portion of the instance's
-     * fully qualified domain name (FQDN) (e.g., `bminstance-1` in FQDN
-     * `bminstance-1.subnet123.vcn1.oraclevcn.com`).
-     * Must be unique across all VNICs in the subnet and comply with
-     * [RFC 952](https://tools.ietf.org/html/rfc952) and
-     * [RFC 1123](https://tools.ietf.org/html/rfc1123).
-     * The value cannot be changed, and it can be retrieved from the
-     * {@link Vnic}.
-     * <p>
-     * For more information, see
-     * [DNS in Your Virtual Cloud Network](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm).
-     * <p>
-     * Example: `bminstance-1`
+     * Deprecated. Instead use `hostnameLabel` in
+     * {@link CreateVnicDetails}.
+     * If you provide both, the values must match.
      *
      **/
     @JsonProperty("hostnameLabel")
@@ -253,11 +253,12 @@ public class LaunchInstanceDetails {
     String shape;
 
     /**
-     * The OCID of the subnet.
+     * Deprecated. Instead use `subnetId` in
+     * {@link CreateVnicDetails}.
+     * At least one of them is required; if you provide both, the values must match.
+     *
      **/
     @JsonProperty("subnetId")
-    @Valid
-    @NotNull
     @Size(min = 1, max = 255)
     String subnetId;
 }

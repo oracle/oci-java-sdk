@@ -189,6 +189,48 @@ public class IdentityAsyncClient implements IdentityAsync {
     }
 
     @Override
+    public Future<CreateIdentityProviderResponse> createIdentityProvider(
+            CreateIdentityProviderRequest request,
+            AsyncHandler<CreateIdentityProviderRequest, CreateIdentityProviderResponse> handler) {
+        LOG.trace("Called async createIdentityProvider");
+        request = CreateIdentityProviderConverter.interceptRequest(request);
+        Invocation.Builder ib = CreateIdentityProviderConverter.fromRequest(client, request);
+        Function<Response, CreateIdentityProviderResponse> transformer =
+                CreateIdentityProviderConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture =
+                client.post(
+                        ib,
+                        request.getCreateIdentityProviderDetails(),
+                        request,
+                        onSuccess,
+                        onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<CreateIdpGroupMappingResponse> createIdpGroupMapping(
+            CreateIdpGroupMappingRequest request,
+            AsyncHandler<CreateIdpGroupMappingRequest, CreateIdpGroupMappingResponse> handler) {
+        LOG.trace("Called async createIdpGroupMapping");
+        request = CreateIdpGroupMappingConverter.interceptRequest(request);
+        Invocation.Builder ib = CreateIdpGroupMappingConverter.fromRequest(client, request);
+        Function<Response, CreateIdpGroupMappingResponse> transformer =
+                CreateIdpGroupMappingConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture =
+                client.post(
+                        ib, request.getCreateIdpGroupMappingDetails(), request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
     public Future<CreateOrResetUIPasswordResponse> createOrResetUIPassword(
             CreateOrResetUIPasswordRequest request,
             AsyncHandler<CreateOrResetUIPasswordRequest, CreateOrResetUIPasswordResponse> handler) {
@@ -219,6 +261,30 @@ public class IdentityAsyncClient implements IdentityAsync {
 
         Future<Response> responseFuture =
                 client.post(ib, request.getCreatePolicyDetails(), request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<CreateRegionSubscriptionResponse> createRegionSubscription(
+            CreateRegionSubscriptionRequest request,
+            AsyncHandler<CreateRegionSubscriptionRequest, CreateRegionSubscriptionResponse>
+                    handler) {
+        LOG.trace("Called async createRegionSubscription");
+        request = CreateRegionSubscriptionConverter.interceptRequest(request);
+        Invocation.Builder ib = CreateRegionSubscriptionConverter.fromRequest(client, request);
+        Function<Response, CreateRegionSubscriptionResponse> transformer =
+                CreateRegionSubscriptionConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture =
+                client.post(
+                        ib,
+                        request.getCreateRegionSubscriptionDetails(),
+                        request,
+                        onSuccess,
+                        onError);
         return new TransformingFuture<>(responseFuture, transformer);
     }
 
@@ -282,6 +348,40 @@ public class IdentityAsyncClient implements IdentityAsync {
         request = DeleteGroupConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteGroupConverter.fromRequest(client, request);
         Function<Response, DeleteGroupResponse> transformer = DeleteGroupConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture = client.delete(ib, request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<DeleteIdentityProviderResponse> deleteIdentityProvider(
+            DeleteIdentityProviderRequest request,
+            AsyncHandler<DeleteIdentityProviderRequest, DeleteIdentityProviderResponse> handler) {
+        LOG.trace("Called async deleteIdentityProvider");
+        request = DeleteIdentityProviderConverter.interceptRequest(request);
+        Invocation.Builder ib = DeleteIdentityProviderConverter.fromRequest(client, request);
+        Function<Response, DeleteIdentityProviderResponse> transformer =
+                DeleteIdentityProviderConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture = client.delete(ib, request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<DeleteIdpGroupMappingResponse> deleteIdpGroupMapping(
+            DeleteIdpGroupMappingRequest request,
+            AsyncHandler<DeleteIdpGroupMappingRequest, DeleteIdpGroupMappingResponse> handler) {
+        LOG.trace("Called async deleteIdpGroupMapping");
+        request = DeleteIdpGroupMappingConverter.interceptRequest(request);
+        Invocation.Builder ib = DeleteIdpGroupMappingConverter.fromRequest(client, request);
+        Function<Response, DeleteIdpGroupMappingResponse> transformer =
+                DeleteIdpGroupMappingConverter.fromResponse();
 
         Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
         Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
@@ -372,12 +472,62 @@ public class IdentityAsyncClient implements IdentityAsync {
     }
 
     @Override
+    public Future<GetIdentityProviderResponse> getIdentityProvider(
+            GetIdentityProviderRequest request,
+            AsyncHandler<GetIdentityProviderRequest, GetIdentityProviderResponse> handler) {
+        LOG.trace("Called async getIdentityProvider");
+        request = GetIdentityProviderConverter.interceptRequest(request);
+        Invocation.Builder ib = GetIdentityProviderConverter.fromRequest(client, request);
+        Function<Response, GetIdentityProviderResponse> transformer =
+                GetIdentityProviderConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<GetIdpGroupMappingResponse> getIdpGroupMapping(
+            GetIdpGroupMappingRequest request,
+            AsyncHandler<GetIdpGroupMappingRequest, GetIdpGroupMappingResponse> handler) {
+        LOG.trace("Called async getIdpGroupMapping");
+        request = GetIdpGroupMappingConverter.interceptRequest(request);
+        Invocation.Builder ib = GetIdpGroupMappingConverter.fromRequest(client, request);
+        Function<Response, GetIdpGroupMappingResponse> transformer =
+                GetIdpGroupMappingConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
     public Future<GetPolicyResponse> getPolicy(
             GetPolicyRequest request, AsyncHandler<GetPolicyRequest, GetPolicyResponse> handler) {
         LOG.trace("Called async getPolicy");
         request = GetPolicyConverter.interceptRequest(request);
         Invocation.Builder ib = GetPolicyConverter.fromRequest(client, request);
         Function<Response, GetPolicyResponse> transformer = GetPolicyConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<GetTenancyResponse> getTenancy(
+            GetTenancyRequest request,
+            AsyncHandler<GetTenancyRequest, GetTenancyResponse> handler) {
+        LOG.trace("Called async getTenancy");
+        request = GetTenancyConverter.interceptRequest(request);
+        Invocation.Builder ib = GetTenancyConverter.fromRequest(client, request);
+        Function<Response, GetTenancyResponse> transformer = GetTenancyConverter.fromResponse();
 
         Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
         Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
@@ -485,6 +635,40 @@ public class IdentityAsyncClient implements IdentityAsync {
     }
 
     @Override
+    public Future<ListIdentityProvidersResponse> listIdentityProviders(
+            ListIdentityProvidersRequest request,
+            AsyncHandler<ListIdentityProvidersRequest, ListIdentityProvidersResponse> handler) {
+        LOG.trace("Called async listIdentityProviders");
+        request = ListIdentityProvidersConverter.interceptRequest(request);
+        Invocation.Builder ib = ListIdentityProvidersConverter.fromRequest(client, request);
+        Function<Response, ListIdentityProvidersResponse> transformer =
+                ListIdentityProvidersConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<ListIdpGroupMappingsResponse> listIdpGroupMappings(
+            ListIdpGroupMappingsRequest request,
+            AsyncHandler<ListIdpGroupMappingsRequest, ListIdpGroupMappingsResponse> handler) {
+        LOG.trace("Called async listIdpGroupMappings");
+        request = ListIdpGroupMappingsConverter.interceptRequest(request);
+        Invocation.Builder ib = ListIdpGroupMappingsConverter.fromRequest(client, request);
+        Function<Response, ListIdpGroupMappingsResponse> transformer =
+                ListIdpGroupMappingsConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
     public Future<ListPoliciesResponse> listPolicies(
             ListPoliciesRequest request,
             AsyncHandler<ListPoliciesRequest, ListPoliciesResponse> handler) {
@@ -492,6 +676,39 @@ public class IdentityAsyncClient implements IdentityAsync {
         request = ListPoliciesConverter.interceptRequest(request);
         Invocation.Builder ib = ListPoliciesConverter.fromRequest(client, request);
         Function<Response, ListPoliciesResponse> transformer = ListPoliciesConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<ListRegionSubscriptionsResponse> listRegionSubscriptions(
+            ListRegionSubscriptionsRequest request,
+            AsyncHandler<ListRegionSubscriptionsRequest, ListRegionSubscriptionsResponse> handler) {
+        LOG.trace("Called async listRegionSubscriptions");
+        request = ListRegionSubscriptionsConverter.interceptRequest(request);
+        Invocation.Builder ib = ListRegionSubscriptionsConverter.fromRequest(client, request);
+        Function<Response, ListRegionSubscriptionsResponse> transformer =
+                ListRegionSubscriptionsConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<ListRegionsResponse> listRegions(
+            ListRegionsRequest request,
+            AsyncHandler<ListRegionsRequest, ListRegionsResponse> handler) {
+        LOG.trace("Called async listRegions");
+        request = ListRegionsConverter.interceptRequest(request);
+        Invocation.Builder ib = ListRegionsConverter.fromRequest(client, request);
+        Function<Response, ListRegionsResponse> transformer = ListRegionsConverter.fromResponse();
 
         Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
         Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
@@ -599,6 +816,48 @@ public class IdentityAsyncClient implements IdentityAsync {
 
         Future<Response> responseFuture =
                 client.put(ib, request.getUpdateGroupDetails(), request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<UpdateIdentityProviderResponse> updateIdentityProvider(
+            UpdateIdentityProviderRequest request,
+            AsyncHandler<UpdateIdentityProviderRequest, UpdateIdentityProviderResponse> handler) {
+        LOG.trace("Called async updateIdentityProvider");
+        request = UpdateIdentityProviderConverter.interceptRequest(request);
+        Invocation.Builder ib = UpdateIdentityProviderConverter.fromRequest(client, request);
+        Function<Response, UpdateIdentityProviderResponse> transformer =
+                UpdateIdentityProviderConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture =
+                client.put(
+                        ib,
+                        request.getUpdateIdentityProviderDetails(),
+                        request,
+                        onSuccess,
+                        onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<UpdateIdpGroupMappingResponse> updateIdpGroupMapping(
+            UpdateIdpGroupMappingRequest request,
+            AsyncHandler<UpdateIdpGroupMappingRequest, UpdateIdpGroupMappingResponse> handler) {
+        LOG.trace("Called async updateIdpGroupMapping");
+        request = UpdateIdpGroupMappingConverter.interceptRequest(request);
+        Invocation.Builder ib = UpdateIdpGroupMappingConverter.fromRequest(client, request);
+        Function<Response, UpdateIdpGroupMappingResponse> transformer =
+                UpdateIdpGroupMappingConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture =
+                client.put(
+                        ib, request.getUpdateIdpGroupMappingDetails(), request, onSuccess, onError);
         return new TransformingFuture<>(responseFuture, transformer);
     }
 

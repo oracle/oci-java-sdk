@@ -11,9 +11,12 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import lombok.AccessLevel;
@@ -90,7 +93,7 @@ public final class ConfigFileReader {
     }
 
     /**
-     * Create a new instance using an input stream.
+     * Create a new instance using an UTF-8 input stream.
      *
      * @param configurationStream
      *            The path to the config file.
@@ -103,9 +106,29 @@ public final class ConfigFileReader {
      */
     public static ConfigFile parse(InputStream configurationStream, @Nullable String profile)
             throws IOException {
+        return parse(configurationStream, profile, StandardCharsets.UTF_8);
+    }
+
+    /**
+     * Create a new instance using an input stream.
+     *
+     * @param configurationStream
+     *            The path to the config file.
+     * @param profile
+     *            The profile name to load, or null if you want to load the
+     *            "DEFAULT" profile.
+     * @param charset
+     *            The charset used when parsing the input stream
+     * @return A new ConfigFile instance.
+     * @throws IOException
+     *             if the file could not be read.
+     */
+    public static ConfigFile parse(
+            InputStream configurationStream, @Nullable String profile, @Nonnull Charset charset)
+            throws IOException {
         final ConfigAccumulator accumulator = new ConfigAccumulator();
         try (final BufferedReader reader =
-                new BufferedReader(new InputStreamReader(configurationStream))) {
+                new BufferedReader(new InputStreamReader(configurationStream, charset))) {
             String line = null;
             while ((line = reader.readLine()) != null) {
                 accumulator.accept(line);

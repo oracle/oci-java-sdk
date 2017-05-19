@@ -110,20 +110,17 @@ public class CreateVirtualCircuitDetails {
     String compartmentId;
 
     /**
-     * Leave this empty or null when creating the virtual circuit.
-     * The provider will later update the virtual circuit during
-     * provisioning and add one or more mappings, each containing
-     * properties for a cross-connect or cross-connect group
-     * associated with this virtual circuit.
+     * Create a `CrossConnectMapping` for each cross-connect or cross-connect
+     * group this virtual circuit will run on.
      *
      **/
     @JsonProperty("crossConnectMappings")
     List<CrossConnectMapping> crossConnectMappings;
 
     /**
-     * If the BGP session goes from your CPE to Oracle, then
-     * provide your BGP ASN (either public or private). Otherwise,
-     * leave this empty or null.
+     * Your BGP ASN (either public or private). Provide this value only if
+     * there's a BGP session that goes from your edge router to Oracle.
+     * Otherwise, leave this empty or null.
      *
      **/
     @JsonProperty("customerBgpAsn")
@@ -147,7 +144,8 @@ public class CreateVirtualCircuitDetails {
     String gatewayId;
 
     /**
-     * The name of the provider. To get a list of the provider names, see
+     * The name of the provider (if you're connecting via a provider).
+     * To get a list of the provider names, see
      * {@link #listFastConnectProviderServices(ListFastConnectProviderServicesRequest) listFastConnectProviderServices}.
      *
      **/
@@ -156,8 +154,8 @@ public class CreateVirtualCircuitDetails {
     String providerName;
 
     /**
-     * The name of the service offered by the provider. To get a list of the
-     * available service offerings, see
+     * The name of the service offered by the provider (if you're connecting
+     * via a provider). To get a list of the available service offerings, see
      * {@link #listFastConnectProviderServices(ListFastConnectProviderServicesRequest) listFastConnectProviderServices}.
      *
      **/

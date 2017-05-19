@@ -153,6 +153,48 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public Future<CreateCrossConnectResponse> createCrossConnect(
+            CreateCrossConnectRequest request,
+            AsyncHandler<CreateCrossConnectRequest, CreateCrossConnectResponse> handler) {
+        LOG.trace("Called async createCrossConnect");
+        request = CreateCrossConnectConverter.interceptRequest(request);
+        Invocation.Builder ib = CreateCrossConnectConverter.fromRequest(client, request);
+        Function<Response, CreateCrossConnectResponse> transformer =
+                CreateCrossConnectConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture =
+                client.post(
+                        ib, request.getCreateCrossConnectDetails(), request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<CreateCrossConnectGroupResponse> createCrossConnectGroup(
+            CreateCrossConnectGroupRequest request,
+            AsyncHandler<CreateCrossConnectGroupRequest, CreateCrossConnectGroupResponse> handler) {
+        LOG.trace("Called async createCrossConnectGroup");
+        request = CreateCrossConnectGroupConverter.interceptRequest(request);
+        Invocation.Builder ib = CreateCrossConnectGroupConverter.fromRequest(client, request);
+        Function<Response, CreateCrossConnectGroupResponse> transformer =
+                CreateCrossConnectGroupConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture =
+                client.post(
+                        ib,
+                        request.getCreateCrossConnectGroupDetails(),
+                        request,
+                        onSuccess,
+                        onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
     public Future<CreateDhcpOptionsResponse> createDhcpOptions(
             CreateDhcpOptionsRequest request,
             AsyncHandler<CreateDhcpOptionsRequest, CreateDhcpOptionsResponse> handler) {
@@ -348,6 +390,40 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public Future<DeleteCrossConnectResponse> deleteCrossConnect(
+            DeleteCrossConnectRequest request,
+            AsyncHandler<DeleteCrossConnectRequest, DeleteCrossConnectResponse> handler) {
+        LOG.trace("Called async deleteCrossConnect");
+        request = DeleteCrossConnectConverter.interceptRequest(request);
+        Invocation.Builder ib = DeleteCrossConnectConverter.fromRequest(client, request);
+        Function<Response, DeleteCrossConnectResponse> transformer =
+                DeleteCrossConnectConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture = client.delete(ib, request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<DeleteCrossConnectGroupResponse> deleteCrossConnectGroup(
+            DeleteCrossConnectGroupRequest request,
+            AsyncHandler<DeleteCrossConnectGroupRequest, DeleteCrossConnectGroupResponse> handler) {
+        LOG.trace("Called async deleteCrossConnectGroup");
+        request = DeleteCrossConnectGroupConverter.interceptRequest(request);
+        Invocation.Builder ib = DeleteCrossConnectGroupConverter.fromRequest(client, request);
+        Function<Response, DeleteCrossConnectGroupResponse> transformer =
+                DeleteCrossConnectGroupConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture = client.delete(ib, request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
     public Future<DeleteDhcpOptionsResponse> deleteDhcpOptions(
             DeleteDhcpOptionsRequest request,
             AsyncHandler<DeleteDhcpOptionsRequest, DeleteDhcpOptionsResponse> handler) {
@@ -519,6 +595,78 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         request = GetCpeConverter.interceptRequest(request);
         Invocation.Builder ib = GetCpeConverter.fromRequest(client, request);
         Function<Response, GetCpeResponse> transformer = GetCpeConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<GetCrossConnectResponse> getCrossConnect(
+            GetCrossConnectRequest request,
+            AsyncHandler<GetCrossConnectRequest, GetCrossConnectResponse> handler) {
+        LOG.trace("Called async getCrossConnect");
+        request = GetCrossConnectConverter.interceptRequest(request);
+        Invocation.Builder ib = GetCrossConnectConverter.fromRequest(client, request);
+        Function<Response, GetCrossConnectResponse> transformer =
+                GetCrossConnectConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<GetCrossConnectGroupResponse> getCrossConnectGroup(
+            GetCrossConnectGroupRequest request,
+            AsyncHandler<GetCrossConnectGroupRequest, GetCrossConnectGroupResponse> handler) {
+        LOG.trace("Called async getCrossConnectGroup");
+        request = GetCrossConnectGroupConverter.interceptRequest(request);
+        Invocation.Builder ib = GetCrossConnectGroupConverter.fromRequest(client, request);
+        Function<Response, GetCrossConnectGroupResponse> transformer =
+                GetCrossConnectGroupConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<GetCrossConnectLetterOfAuthorityResponse> getCrossConnectLetterOfAuthority(
+            GetCrossConnectLetterOfAuthorityRequest request,
+            AsyncHandler<
+                            GetCrossConnectLetterOfAuthorityRequest,
+                            GetCrossConnectLetterOfAuthorityResponse>
+                    handler) {
+        LOG.trace("Called async getCrossConnectLetterOfAuthority");
+        request = GetCrossConnectLetterOfAuthorityConverter.interceptRequest(request);
+        Invocation.Builder ib =
+                GetCrossConnectLetterOfAuthorityConverter.fromRequest(client, request);
+        Function<Response, GetCrossConnectLetterOfAuthorityResponse> transformer =
+                GetCrossConnectLetterOfAuthorityConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<GetCrossConnectStatusResponse> getCrossConnectStatus(
+            GetCrossConnectStatusRequest request,
+            AsyncHandler<GetCrossConnectStatusRequest, GetCrossConnectStatusResponse> handler) {
+        LOG.trace("Called async getCrossConnectStatus");
+        request = GetCrossConnectStatusConverter.interceptRequest(request);
+        Invocation.Builder ib = GetCrossConnectStatusConverter.fromRequest(client, request);
+        Function<Response, GetCrossConnectStatusResponse> transformer =
+                GetCrossConnectStatusConverter.fromResponse();
 
         Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
         Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
@@ -764,6 +912,79 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public Future<ListCrossConnectGroupsResponse> listCrossConnectGroups(
+            ListCrossConnectGroupsRequest request,
+            AsyncHandler<ListCrossConnectGroupsRequest, ListCrossConnectGroupsResponse> handler) {
+        LOG.trace("Called async listCrossConnectGroups");
+        request = ListCrossConnectGroupsConverter.interceptRequest(request);
+        Invocation.Builder ib = ListCrossConnectGroupsConverter.fromRequest(client, request);
+        Function<Response, ListCrossConnectGroupsResponse> transformer =
+                ListCrossConnectGroupsConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<ListCrossConnectLocationsResponse> listCrossConnectLocations(
+            ListCrossConnectLocationsRequest request,
+            AsyncHandler<ListCrossConnectLocationsRequest, ListCrossConnectLocationsResponse>
+                    handler) {
+        LOG.trace("Called async listCrossConnectLocations");
+        request = ListCrossConnectLocationsConverter.interceptRequest(request);
+        Invocation.Builder ib = ListCrossConnectLocationsConverter.fromRequest(client, request);
+        Function<Response, ListCrossConnectLocationsResponse> transformer =
+                ListCrossConnectLocationsConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<ListCrossConnectsResponse> listCrossConnects(
+            ListCrossConnectsRequest request,
+            AsyncHandler<ListCrossConnectsRequest, ListCrossConnectsResponse> handler) {
+        LOG.trace("Called async listCrossConnects");
+        request = ListCrossConnectsConverter.interceptRequest(request);
+        Invocation.Builder ib = ListCrossConnectsConverter.fromRequest(client, request);
+        Function<Response, ListCrossConnectsResponse> transformer =
+                ListCrossConnectsConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<ListCrossconnectPortSpeedShapesResponse> listCrossconnectPortSpeedShapes(
+            ListCrossconnectPortSpeedShapesRequest request,
+            AsyncHandler<
+                            ListCrossconnectPortSpeedShapesRequest,
+                            ListCrossconnectPortSpeedShapesResponse>
+                    handler) {
+        LOG.trace("Called async listCrossconnectPortSpeedShapes");
+        request = ListCrossconnectPortSpeedShapesConverter.interceptRequest(request);
+        Invocation.Builder ib =
+                ListCrossconnectPortSpeedShapesConverter.fromRequest(client, request);
+        Function<Response, ListCrossconnectPortSpeedShapesResponse> transformer =
+                ListCrossconnectPortSpeedShapesConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
     public Future<ListDhcpOptionsResponse> listDhcpOptions(
             ListDhcpOptionsRequest request,
             AsyncHandler<ListDhcpOptionsRequest, ListDhcpOptionsResponse> handler) {
@@ -983,6 +1204,47 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
 
         Future<Response> responseFuture =
                 client.put(ib, request.getUpdateCpeDetails(), request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<UpdateCrossConnectResponse> updateCrossConnect(
+            UpdateCrossConnectRequest request,
+            AsyncHandler<UpdateCrossConnectRequest, UpdateCrossConnectResponse> handler) {
+        LOG.trace("Called async updateCrossConnect");
+        request = UpdateCrossConnectConverter.interceptRequest(request);
+        Invocation.Builder ib = UpdateCrossConnectConverter.fromRequest(client, request);
+        Function<Response, UpdateCrossConnectResponse> transformer =
+                UpdateCrossConnectConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture =
+                client.put(ib, request.getUpdateCrossConnectDetails(), request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<UpdateCrossConnectGroupResponse> updateCrossConnectGroup(
+            UpdateCrossConnectGroupRequest request,
+            AsyncHandler<UpdateCrossConnectGroupRequest, UpdateCrossConnectGroupResponse> handler) {
+        LOG.trace("Called async updateCrossConnectGroup");
+        request = UpdateCrossConnectGroupConverter.interceptRequest(request);
+        Invocation.Builder ib = UpdateCrossConnectGroupConverter.fromRequest(client, request);
+        Function<Response, UpdateCrossConnectGroupResponse> transformer =
+                UpdateCrossConnectGroupConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture =
+                client.put(
+                        ib,
+                        request.getUpdateCrossConnectGroupDetails(),
+                        request,
+                        onSuccess,
+                        onError);
         return new TransformingFuture<>(responseFuture, transformer);
     }
 

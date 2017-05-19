@@ -63,6 +63,58 @@ public interface VirtualNetwork extends AutoCloseable {
     CreateCpeResponse createCpe(CreateCpeRequest request);
 
     /**
+     * Creates a new cross-connect. Oracle recommends you create each cross-connect in a
+     * {@link CrossConnectGroup} so you can use link aggregation
+     * with the connection.
+     * <p>
+     * After creating the `CrossConnect` object, you need to go the FastConnect location
+     * and request to have the physical cable installed. For more information, see
+     * [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
+     * <p>
+     * For the purposes of access control, you must provide the OCID of the
+     * compartment where you want the cross-connect to reside. If you're
+     * not sure which compartment to use, put the cross-connect in the
+     * same compartment with your VCN. For more information about
+     * compartments and access control, see
+     * [Overview of the IAM Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm).
+     * For information about OCIDs, see
+     * [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
+     * <p>
+     * You may optionally specify a *display name* for the cross-connect.
+     * It does not have to be unique, and you can change it.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateCrossConnectResponse createCrossConnect(CreateCrossConnectRequest request);
+
+    /**
+     * Creates a new cross-connect group to use with Oracle Bare Metal Cloud Services
+     * FastConnect. For more information, see
+     * [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
+     * <p>
+     * For the purposes of access control, you must provide the OCID of the
+     * compartment where you want the cross-connect group to reside. If you're
+     * not sure which compartment to use, put the cross-connect group in the
+     * same compartment with your VCN. For more information about
+     * compartments and access control, see
+     * [Overview of the IAM Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm).
+     * For information about OCIDs, see
+     * [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
+     * <p>
+     * You may optionally specify a *display name* for the cross-connect group.
+     * It does not have to be unique, and you can change it.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateCrossConnectGroupResponse createCrossConnectGroup(CreateCrossConnectGroupRequest request);
+
+    /**
      * Creates a new set of DHCP options for the specified VCN. For more information, see
      * {@link DhcpOptions}.
      * <p>
@@ -316,7 +368,7 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Creates a new virtual circuit to use with Oracle Bare Metal Cloud
      * Services FastConnect. For more information, see
-     * [FastConnect](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
+     * [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
      * <p>
      * For the purposes of access control, you must provide the OCID of the
      * compartment where you want the virtual circuit to reside. If you're
@@ -354,6 +406,29 @@ public interface VirtualNetwork extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     DeleteCpeResponse deleteCpe(DeleteCpeRequest request);
+
+    /**
+     * Deletes the specified cross-connect. It must not be mapped to a
+     * {@link VirtualCircuit}.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteCrossConnectResponse deleteCrossConnect(DeleteCrossConnectRequest request);
+
+    /**
+     * Deletes the specified cross-connect group. It must not contain any
+     * cross-connects, and it cannot be mapped to a
+     * {@link VirtualCircuit}.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteCrossConnectGroupResponse deleteCrossConnectGroup(DeleteCrossConnectGroupRequest request);
 
     /**
      * Deletes the specified set of DHCP options, but only if it's not associated with a subnet. You can't delete a
@@ -480,7 +555,8 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Deletes the specified virtual circuit.
      * <p>
-     **Important:** Make sure to also terminate the connection with
+     **Important:** If you're using FastConnect via a provider,
+     * make sure to also terminate the connection with
      * the provider, or else the provider may continue to bill you.
      *
      *
@@ -498,6 +574,44 @@ public interface VirtualNetwork extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     GetCpeResponse getCpe(GetCpeRequest request);
+
+    /**
+     * Gets the specified cross-connect's information.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetCrossConnectResponse getCrossConnect(GetCrossConnectRequest request);
+
+    /**
+     * Gets the specified cross-connect group's information.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetCrossConnectGroupResponse getCrossConnectGroup(GetCrossConnectGroupRequest request);
+
+    /**
+     * Gets the Letter of Authority for the specified cross-connect.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetCrossConnectLetterOfAuthorityResponse getCrossConnectLetterOfAuthority(
+            GetCrossConnectLetterOfAuthorityRequest request);
+
+    /**
+     * Gets the status of the specified cross-connect.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetCrossConnectStatusResponse getCrossConnectStatus(GetCrossConnectStatusRequest request);
 
     /**
      * Gets the specified set of DHCP options.
@@ -616,9 +730,9 @@ public interface VirtualNetwork extends AutoCloseable {
     GetVirtualCircuitResponse getVirtualCircuit(GetVirtualCircuitRequest request);
 
     /**
-     * Gets the information for the specified Virtual Network Interface Card (VNIC), including the attached
-     * instance's public and private IP addresses. You can get the instance's VNIC OCID from the
-     * Cloud Compute Service's {@link #listVnicAttachments(ListVnicAttachmentsRequest) listVnicAttachments} operation.
+     * Gets the information for the specified Virtual Network Interface Card (VNIC), including
+     * the IP addresses. You can get the instance's VNIC OCID from the
+     * {@link #listVnicAttachments(ListVnicAttachmentsRequest) listVnicAttachments} operation.
      *
      *
      * @param request The request object containing the details to send
@@ -636,6 +750,52 @@ public interface VirtualNetwork extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListCpesResponse listCpes(ListCpesRequest request);
+
+    /**
+     * Lists the cross-connect groups in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListCrossConnectGroupsResponse listCrossConnectGroups(ListCrossConnectGroupsRequest request);
+
+    /**
+     * Lists the available FastConnect locations for cross-connect installation. You need
+     * this information so you can specify your desired location when you create a cross-connect.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListCrossConnectLocationsResponse listCrossConnectLocations(
+            ListCrossConnectLocationsRequest request);
+
+    /**
+     * Lists the cross-connects in the specified compartment. You can filter the list
+     * by specifying the OCID of a cross-connect group.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListCrossConnectsResponse listCrossConnects(ListCrossConnectsRequest request);
+
+    /**
+     * Lists the available port speeds for cross-connects. You need this information
+     * so you can specify your desired port speed (i.e., shape) when you create a
+     * cross-connect.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListCrossconnectPortSpeedShapesResponse listCrossconnectPortSpeedShapes(
+            ListCrossconnectPortSpeedShapesRequest request);
 
     /**
      * Lists the sets of DHCP options in the specified VCN and specified compartment.
@@ -677,7 +837,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * <p>
      * For the compartment ID, provide the OCID of your tenancy (the root compartment).
      * <p>
-     * For more information, see [FastConnect](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
+     * For more information, see [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -758,7 +918,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * For the compartment ID, provide the OCID of your tenancy (the root compartment).
      * <p>
      * For more information about virtual circuits, see
-     * [FastConnect](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
+     * [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -787,6 +947,24 @@ public interface VirtualNetwork extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateCpeResponse updateCpe(UpdateCpeRequest request);
+
+    /**
+     * Updates the specified cross-connect.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateCrossConnectResponse updateCrossConnect(UpdateCrossConnectRequest request);
+
+    /**
+     * Updates the specified cross-connect group's display name.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateCrossConnectGroupResponse updateCrossConnectGroup(UpdateCrossConnectGroupRequest request);
 
     /**
      * Updates the specified set of DHCP options. You can update the display name or the options
@@ -901,7 +1079,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * its state will return to PROVISIONED. Make sure you confirm that
      * the associated BGP session is back up. For more information
      * about the various states and how to test connectivity, see
-     * [FastConnect](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
+     * [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
      *
      *
      * @param request The request object containing the details to send
