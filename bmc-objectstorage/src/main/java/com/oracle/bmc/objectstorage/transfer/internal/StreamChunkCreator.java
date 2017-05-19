@@ -15,7 +15,6 @@ public class StreamChunkCreator {
     private final long chunkLength;
     private final long sourceLength;
 
-    private boolean canDuplicate = false;
     private long startPosition = 0;
     private long endPosition = 0;
 
@@ -26,17 +25,14 @@ public class StreamChunkCreator {
     }
 
     /**
-     * Attempt to enable parallel reads from the underlying stream.  If this returns true,
+     * Test for whether or not the input stream can be read in parallel. If this returns true,
      * then streams returned by {@link #next()} are safe to be read from in parallel.  If this
      * returns false, then streams returned by {@link #next()} must be read from serially.
      *
      * @return true if parallel reads could be enabled, false if they could not.
      */
-    public boolean enableParallelReads() {
-        if (source instanceof DuplicatableInputStream) {
-            canDuplicate = true;
-        }
-        return canDuplicate;
+    public boolean supportsParallelReads() {
+        return isSrcStreamDuplicable();
     }
 
     private boolean isSrcStreamDuplicable() {
@@ -53,8 +49,8 @@ public class StreamChunkCreator {
 
     /**
      * Returns the next chunk as a new stream.  Returned streams must be
-     * consumed in order unless {@link #enableParallelReads()} was called and
-     * returned true, in which case the returned streams can be read out of order.
+     * consumed in order unless {@link #supportsParallelReads()} returned true,
+     * in which case the returned streams can be read out of order.
      * <p>
      * Users should call {@link #hasMore()} before calling this.
      *
@@ -74,6 +70,7 @@ public class StreamChunkCreator {
 
         SubRangeInputStream rangeInputStream = null;
 
+        // always use duplicated stream when possible, even if parallel reads not enabled
         if (isSrcStreamDuplicable()) {
             rangeInputStream =
                     new DuplicatedSubRangeInputStream(

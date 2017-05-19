@@ -79,7 +79,7 @@ public class StreamChunkCreatorTest {
     public void parallelChunks_readInOrder() throws Exception {
         StreamChunkCreator creator =
                 new StreamChunkCreator(stream, COMPLETE_STRING.length(), CHUNK_SIZE);
-        assertTrue(creator.enableParallelReads());
+        assertTrue(creator.supportsParallelReads());
 
         int chunkCount = 0;
         while (creator.hasMore()) {
@@ -103,7 +103,7 @@ public class StreamChunkCreatorTest {
     public void parallelChunks_readOutOfOrder() throws Exception {
         StreamChunkCreator creator =
                 new StreamChunkCreator(stream, COMPLETE_STRING.length(), CHUNK_SIZE);
-        assertTrue(creator.enableParallelReads());
+        assertTrue(creator.supportsParallelReads());
 
         ArrayList<SubRangeInputStream> chunks = new ArrayList<>();
         while (creator.hasMore()) {
