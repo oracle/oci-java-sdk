@@ -3,12 +3,11 @@
  */
 package com.oracle.bmc.objectstorage.transfer.internal;
 
+import com.oracle.bmc.io.DuplicatableInputStream;
+import lombok.extern.slf4j.Slf4j;
+
 import java.io.IOException;
 import java.io.InputStream;
-
-import com.oracle.bmc.io.DuplicatableInputStream;
-
-import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class StreamChunkCreator {
@@ -38,6 +37,10 @@ public class StreamChunkCreator {
             canDuplicate = true;
         }
         return canDuplicate;
+    }
+
+    private boolean isSrcStreamDuplicable() {
+        return source instanceof DuplicatableInputStream;
     }
 
     /**
@@ -71,7 +74,7 @@ public class StreamChunkCreator {
 
         SubRangeInputStream rangeInputStream = null;
 
-        if (canDuplicate) {
+        if (isSrcStreamDuplicable()) {
             rangeInputStream =
                     new DuplicatedSubRangeInputStream(
                             (DuplicatableInputStream) source, startPosition, endPosition);
