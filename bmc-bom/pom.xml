@@ -7,7 +7,7 @@
   <parent>
     <groupId>com.oracle.bmc.sdk</groupId>
     <artifactId>oracle-bmc-java-sdk</artifactId>
-    <version>1.2.8</version>
+    <version>1.2.9-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -24,7 +24,7 @@
       <dependency>
         <groupId>com.oracle.bmc.sdk</groupId>
         <artifactId>oracle-bmc-java-sdk-common</artifactId>
-        <version>1.2.8</version>
+        <version>1.2.9-SNAPSHOT</version>
         <optional>false</optional>
       </dependency>
 
@@ -33,31 +33,31 @@
       <dependency>
         <groupId>com.oracle.bmc.sdk</groupId>
         <artifactId>oracle-bmc-java-sdk-audit</artifactId>
-        <version>1.2.8</version>
+        <version>1.2.9-SNAPSHOT</version>
         <optional>false</optional>
       </dependency>
       <dependency>
         <groupId>com.oracle.bmc.sdk</groupId>
         <artifactId>oracle-bmc-java-sdk-core</artifactId>
-        <version>1.2.8</version>
+        <version>1.2.9-SNAPSHOT</version>
         <optional>false</optional>
       </dependency>
       <dependency>
         <groupId>com.oracle.bmc.sdk</groupId>
         <artifactId>oracle-bmc-java-sdk-identity</artifactId>
-        <version>1.2.8</version>
+        <version>1.2.9-SNAPSHOT</version>
         <optional>false</optional>
       </dependency>
       <dependency>
         <groupId>com.oracle.bmc.sdk</groupId>
         <artifactId>oracle-bmc-java-sdk-loadbalancer</artifactId>
-        <version>1.2.8</version>
+        <version>1.2.9-SNAPSHOT</version>
         <optional>false</optional>
       </dependency>
       <dependency>
         <groupId>com.oracle.bmc.sdk</groupId>
         <artifactId>oracle-bmc-java-sdk-objectstorage</artifactId>
-        <version>1.2.8</version>
+        <version>1.2.9-SNAPSHOT</version>
         <optional>false</optional>
       </dependency>
     </dependencies>
