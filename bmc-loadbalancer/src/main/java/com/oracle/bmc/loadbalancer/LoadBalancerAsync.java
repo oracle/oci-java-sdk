@@ -110,9 +110,6 @@ public interface LoadBalancerAsync extends AutoCloseable {
      * <p>
      * You must specify a display name for the load balancer. It does not have to be unique, and you can change it.
      * <p>
-     * To successfully create a load balancer within your Virtual Cloud Network (VCN), you must specify two
-     * subnets. Each subnet must reside in a separate Availability Domain.
-     * <p>
      * For information about Availability Domains, see
      * [Regions and Availability Domains](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/regions.htm).
      * To get a list of Availability Domains, use the `ListAvailabilityDomains` operation
@@ -127,7 +124,7 @@ public interface LoadBalancerAsync extends AutoCloseable {
      * After you send your request, the new object's state will temporarily be PROVISIONING. Before using the
      * object, first make sure its state has changed to RUNNING.
      * <p>
-     * When you create a load balancer, the system issues a public IP address.
+     * When you create a load balancer, the system assigns an IP address.
      * To get the IP address, use the {@link #getLoadBalancer(GetLoadBalancerRequest, Consumer, Consumer) getLoadBalancer} operation.
      *
      *

@@ -55,7 +55,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * You may optionally specify a *display name* for the CPE, otherwise a default is provided. It does not have to
      * be unique, and you can change it.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -83,7 +82,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * You may optionally specify a *display name* for the cross-connect.
      * It does not have to be unique, and you can change it.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -107,7 +105,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * You may optionally specify a *display name* for the cross-connect group.
      * It does not have to be unique, and you can change it.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -127,7 +124,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * <p>
      * You may optionally specify a *display name* for the set of DHCP options, otherwise a default is provided.
      * It does not have to be unique, and you can change it.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -149,7 +145,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * You may optionally specify a *display name* for the DRG, otherwise a default is provided.
      * It does not have to be unique, and you can change it.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -168,7 +163,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * For the purposes of access control, the DRG attachment is automatically placed into the same compartment
      * as the VCN. For more information about compartments and access control, see
      * [Overview of the IAM Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm).
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -204,7 +198,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * To get the status of the tunnels (whether they're up or down), use
      * {@link #getIPSecConnectionDeviceStatus(GetIPSecConnectionDeviceStatusRequest) getIPSecConnectionDeviceStatus}.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -234,7 +227,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * use {@link #updateInternetGateway(UpdateInternetGatewayRequest) updateInternetGateway} to easily disable/enable
      * the gateway without changing the route rule.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -257,7 +249,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * You may optionally specify a *display name* for the route table, otherwise a default is provided.
      * It does not have to be unique, and you can change it.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -279,7 +270,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * <p>
      * You may optionally specify a *display name* for the security list, otherwise a default is provided.
      * It does not have to be unique, and you can change it.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -320,7 +310,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * VCN Resolver to resolve hostnames for instances in the subnet. For more information, see
      * [DNS in Your Virtual Cloud Network](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm).
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -358,7 +347,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * or FastConnect. For more information, see
      * [Overview of the Networking Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm).
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -388,7 +376,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * traffic will not flow. For more information, see
      * [Managing Route Tables](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm).
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -400,7 +387,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * operation; the CPE's `lifecycleState` will change to TERMINATING temporarily until the CPE is completely
      * removed.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -410,7 +396,6 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Deletes the specified cross-connect. It must not be mapped to a
      * {@link VirtualCircuit}.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -422,7 +407,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * Deletes the specified cross-connect group. It must not contain any
      * cross-connects, and it cannot be mapped to a
      * {@link VirtualCircuit}.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -437,7 +421,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * This is an asynchronous operation; the state of the set of options will switch to TERMINATING temporarily
      * until the set is completely removed.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -450,7 +433,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * operation; the DRG's `lifecycleState` will change to TERMINATING temporarily until the DRG is completely
      * removed.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -461,7 +443,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * Detaches a DRG from a VCN by deleting the corresponding `DrgAttachment`. This is an asynchronous
      * operation; the attachment's `lifecycleState` will change to DETACHING temporarily until the attachment
      * is completely removed.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -479,7 +460,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * This is an asynchronous operation; the connection's `lifecycleState` will change to TERMINATING temporarily
      * until the connection is completely removed.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -492,7 +472,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * <p>
      * This is an asynchronous operation; the gateway's `lifecycleState` will change to TERMINATING temporarily
      * until the gateway is completely removed.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -507,7 +486,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * This is an asynchronous operation; the route table's `lifecycleState` will change to TERMINATING temporarily
      * until the route table is completely removed.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -521,7 +499,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * This is an asynchronous operation; the security list's `lifecycleState` will change to TERMINATING temporarily
      * until the security list is completely removed.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -533,7 +510,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * operation; the subnet's `lifecycleState` will change to TERMINATING temporarily. If there are any
      * instances in the subnet, the state will instead change back to AVAILABLE.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -544,7 +520,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * Deletes the specified VCN. The VCN must be empty and have no attached gateways. This is an asynchronous
      * operation; the VCN's `lifecycleState` will change to TERMINATING temporarily until the VCN is completely
      * removed.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -559,7 +534,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * make sure to also terminate the connection with
      * the provider, or else the provider may continue to bill you.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -568,7 +542,6 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Gets the specified CPE's information.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -577,7 +550,6 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Gets the specified cross-connect's information.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -586,7 +558,6 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Gets the specified cross-connect group's information.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -595,7 +566,6 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Gets the Letter of Authority for the specified cross-connect.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -606,7 +576,6 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Gets the status of the specified cross-connect.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -615,7 +584,6 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Gets the specified set of DHCP options.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -624,7 +592,6 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Gets the specified DRG's information.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -633,7 +600,6 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Gets the information for the specified `DrgAttachment`.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -645,7 +611,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * on-premise router. If you want the status of the connection (whether it's up or down), use
      * {@link #getIPSecConnectionDeviceStatus(GetIPSecConnectionDeviceStatusRequest) getIPSecConnectionDeviceStatus}.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -655,7 +620,6 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Gets the configuration information for the specified IPSec connection. For each tunnel, the
      * response includes the IP address of Oracle's VPN headend and the shared secret.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -667,7 +631,6 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Gets the status of the specified IPSec connection (whether it's up or down).
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -677,7 +640,6 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Gets the specified Internet Gateway's information.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -686,7 +648,6 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Gets the specified route table's information.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -695,7 +656,6 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Gets the specified security list's information.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -704,7 +664,6 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Gets the specified subnet's information.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -713,7 +672,6 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Gets the specified VCN's information.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -722,7 +680,6 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Gets the specified virtual circuit's information.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -734,7 +691,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * the IP addresses. You can get the instance's VNIC OCID from the
      * {@link #listVnicAttachments(ListVnicAttachmentsRequest) listVnicAttachments} operation.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -743,7 +699,6 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Lists the Customer-Premises Equipment objects (CPEs) in the specified compartment.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -754,7 +709,6 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Lists the cross-connect groups in the specified compartment.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -764,7 +718,6 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Lists the available FastConnect locations for cross-connect installation. You need
      * this information so you can specify your desired location when you create a cross-connect.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -777,7 +730,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * Lists the cross-connects in the specified compartment. You can filter the list
      * by specifying the OCID of a cross-connect group.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -788,7 +740,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * Lists the available port speeds for cross-connects. You need this information
      * so you can specify your desired port speed (i.e., shape) when you create a
      * cross-connect.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -802,7 +753,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * The response includes the default set of options that automatically comes with each VCN,
      * plus any other sets you've created.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -813,7 +763,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * Lists the `DrgAttachment` objects for the specified compartment. You can filter the
      * results by VCN or DRG.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -822,7 +771,6 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Lists the DRGs in the specified compartment.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -839,7 +787,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * <p>
      * For more information, see [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -851,7 +798,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * Lists the IPSec connections for the specified compartment. You can filter the
      * results by DRG or CPE.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -860,7 +806,6 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Lists the Internet Gateways in the specified VCN and the specified compartment.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -873,7 +818,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * includes the default route table that automatically comes with each VCN, plus any route tables
      * you've created.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -882,7 +826,6 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Lists the security lists in the specified VCN and compartment.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -893,7 +836,6 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Lists the subnets in the specified VCN and the specified compartment.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -902,7 +844,6 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Lists the Virtual Cloud Networks (VCNs) in the specified compartment.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -920,7 +861,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * For more information about virtual circuits, see
      * [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -931,7 +871,6 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Lists the virtual circuits in the specified compartment.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -941,7 +880,6 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Updates the specified CPE's display name.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -950,7 +888,6 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Updates the specified cross-connect.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -959,7 +896,6 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Updates the specified cross-connect group's display name.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -970,7 +906,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * Updates the specified set of DHCP options. You can update the display name or the options
      * themselves. Note that the `options` object you provide replaces the entire existing set of options.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -979,7 +914,6 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Updates the specified DRG's display name.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -990,7 +924,6 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Updates the display name for the specified `DrgAttachment`.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -999,7 +932,6 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Updates the display name for the specified IPSec connection.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1013,7 +945,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * If the gateway is disabled, that means no traffic will flow to/from the internet even if there's
      * a route rule that enables that traffic.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -1023,7 +954,6 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Updates the specified route table's display name or route rules. Note that the
      * `routeRules` object you provide replaces the entire existing set of rules.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1036,7 +966,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * `egressSecurityRules` or `ingressSecurityRules` objects you provide replace the entire
      * existing objects.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -1046,7 +975,6 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Updates the specified subnet's display name.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -1055,7 +983,6 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Updates the specified VCN's display name.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1080,7 +1007,6 @@ public interface VirtualNetwork extends AutoCloseable {
      * the associated BGP session is back up. For more information
      * about the various states and how to test connectivity, see
      * [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

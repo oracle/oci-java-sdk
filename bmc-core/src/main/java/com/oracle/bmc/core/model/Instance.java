@@ -42,6 +42,9 @@ public class Instance {
         @JsonProperty("displayName")
         private String displayName;
 
+        @JsonProperty("extendedMetadata")
+        private Map<String, Object> extendedMetadata;
+
         @JsonProperty("id")
         private String id;
 
@@ -71,6 +74,7 @@ public class Instance {
                     availabilityDomain,
                     compartmentId,
                     displayName,
+                    extendedMetadata,
                     id,
                     imageId,
                     ipxeScript,
@@ -86,6 +90,7 @@ public class Instance {
             return availabilityDomain(o.getAvailabilityDomain())
                     .compartmentId(o.getCompartmentId())
                     .displayName(o.getDisplayName())
+                    .extendedMetadata(o.getExtendedMetadata())
                     .id(o.getId())
                     .imageId(o.getImageId())
                     .ipxeScript(o.getIpxeScript())
@@ -134,6 +139,17 @@ public class Instance {
     @JsonProperty("displayName")
     @Size(min = 1, max = 255)
     String displayName;
+
+    /**
+     * Additional metadata key/value pairs that you provide.  They serve a similar purpose and functionality from fields in the 'metadata' object.
+     * <p>
+     * They are distinguished from 'metadata' fields in that these can be nested JSON objects (whereas 'metadata' fields are string/string maps only).
+     * <p>
+     * If you don't need nested metadata values, it is strongly advised to avoid using this object and use the Metadata object instead.
+     *
+     **/
+    @JsonProperty("extendedMetadata")
+    Map<String, Object> extendedMetadata;
 
     /**
      * The OCID of the instance.

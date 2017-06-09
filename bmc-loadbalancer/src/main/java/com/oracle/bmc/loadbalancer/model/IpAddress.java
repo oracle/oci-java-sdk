@@ -15,7 +15,7 @@ import lombok.*;
 import lombok.experimental.*;
 
 /**
- * A load balancer public IP address.
+ * A load balancer IP address.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @Value
@@ -28,13 +28,16 @@ public class IpAddress {
         @JsonProperty("ipAddress")
         private String ipAddress;
 
+        @JsonProperty("isPublic")
+        private Boolean isPublic;
+
         public IpAddress build() {
-            return new IpAddress(ipAddress);
+            return new IpAddress(ipAddress, isPublic);
         }
 
         @JsonIgnore
         public Builder copy(IpAddress o) {
-            return ipAddress(o.getIpAddress());
+            return ipAddress(o.getIpAddress()).isPublic(o.getIsPublic());
         }
     }
 
@@ -55,4 +58,15 @@ public class IpAddress {
     @Valid
     @NotNull
     String ipAddress;
+
+    /**
+     * Whether the IP address is public or private.
+     * <p>
+     * If \"true\", the IP address is public and accessible from the internet.
+     * <p>
+     * If \"false\", the IP address is private and accessible only from within the associated VCN.
+     *
+     **/
+    @JsonProperty("isPublic")
+    Boolean isPublic;
 }

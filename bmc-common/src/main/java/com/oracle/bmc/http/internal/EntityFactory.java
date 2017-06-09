@@ -57,7 +57,6 @@ class EntityFactory {
      */
     Entity<?> forPut(Object request, Object body) {
         // null bodies allowed
-        // TODO: is this valid for PUT?
         if (body == null) {
             return null;
         }
