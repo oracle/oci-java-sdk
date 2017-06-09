@@ -49,9 +49,19 @@ public class Bucket {
         @JsonProperty("etag")
         private String etag;
 
+        @JsonProperty("publicAccessType")
+        private PublicAccessType publicAccessType;
+
         public Bucket build() {
             return new Bucket(
-                    namespace, name, compartmentId, metadata, createdBy, timeCreated, etag);
+                    namespace,
+                    name,
+                    compartmentId,
+                    metadata,
+                    createdBy,
+                    timeCreated,
+                    etag,
+                    publicAccessType);
         }
 
         @JsonIgnore
@@ -62,7 +72,8 @@ public class Bucket {
                     .metadata(o.getMetadata())
                     .createdBy(o.getCreatedBy())
                     .timeCreated(o.getTimeCreated())
-                    .etag(o.getEtag());
+                    .etag(o.getEtag())
+                    .publicAccessType(o.getPublicAccessType());
         }
     }
 
@@ -128,4 +139,63 @@ public class Bucket {
     @Valid
     @NotNull
     String etag;
+    /**
+     * The type of public access available on this bucket. Allows authenticated caller to access the bucket or
+     * contents of this bucket. By default a bucket is set to NoPublicAccess. It is treated as NoPublicAccess
+     * when this value is not specified. When the type is NoPublicAccess the bucket does not allow any public access.
+     * When the type is ObjectRead the bucket allows public access to the GetObject, HeadObject, ListObjects.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum PublicAccessType {
+        NoPublicAccess("NoPublicAccess"),
+        ObjectRead("ObjectRead"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static Map<String, PublicAccessType> map;
+
+        static {
+            map = new HashMap<>();
+            for (PublicAccessType v : PublicAccessType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        PublicAccessType(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @JsonCreator
+        public static PublicAccessType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'PublicAccessType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The type of public access available on this bucket. Allows authenticated caller to access the bucket or
+     * contents of this bucket. By default a bucket is set to NoPublicAccess. It is treated as NoPublicAccess
+     * when this value is not specified. When the type is NoPublicAccess the bucket does not allow any public access.
+     * When the type is ObjectRead the bucket allows public access to the GetObject, HeadObject, ListObjects.
+     *
+     **/
+    @JsonProperty("publicAccessType")
+    PublicAccessType publicAccessType;
 }

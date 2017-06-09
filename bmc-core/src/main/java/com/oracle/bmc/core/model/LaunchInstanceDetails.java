@@ -34,6 +34,9 @@ public class LaunchInstanceDetails {
         @JsonProperty("displayName")
         private String displayName;
 
+        @JsonProperty("extendedMetadata")
+        private Map<String, Object> extendedMetadata;
+
         @JsonProperty("hostnameLabel")
         private String hostnameLabel;
 
@@ -58,6 +61,7 @@ public class LaunchInstanceDetails {
                     compartmentId,
                     createVnicDetails,
                     displayName,
+                    extendedMetadata,
                     hostnameLabel,
                     imageId,
                     ipxeScript,
@@ -72,6 +76,7 @@ public class LaunchInstanceDetails {
                     .compartmentId(o.getCompartmentId())
                     .createVnicDetails(o.getCreateVnicDetails())
                     .displayName(o.getDisplayName())
+                    .extendedMetadata(o.getExtendedMetadata())
                     .hostnameLabel(o.getHostnameLabel())
                     .imageId(o.getImageId())
                     .ipxeScript(o.getIpxeScript())
@@ -124,6 +129,17 @@ public class LaunchInstanceDetails {
     @JsonProperty("displayName")
     @Size(min = 1, max = 255)
     String displayName;
+
+    /**
+     * Additional metadata key/value pairs that you provide.  They serve a similar purpose and functionality from fields in the 'metadata' object.
+     * <p>
+     * They are distinguished from 'metadata' fields in that these can be nested JSON objects (whereas 'metadata' fields are string/string maps only).
+     * <p>
+     * If you don't need nested metadata values, it is strongly advised to avoid using this object and use the Metadata object instead.
+     *
+     **/
+    @JsonProperty("extendedMetadata")
+    Map<String, Object> extendedMetadata;
 
     /**
      * Deprecated. Instead use `hostnameLabel` in
@@ -188,34 +204,34 @@ public class LaunchInstanceDetails {
      * Get information about the instance, including the custom metadata that you
      *   provide when you launch the instance.
      * <p>
-     * __Providing Cloud-Init Metadata__
+     **Providing Cloud-Init Metadata**
      * <p>
      * You can use the following metadata key names to provide information to
      *  Cloud-Init:
      * <p>
-     * __\"ssh_authorized_keys\"__ - Provide one or more public SSH keys to be
+     **\"ssh_authorized_keys\"** - Provide one or more public SSH keys to be
      *  included in the `~/.ssh/authorized_keys` file for the default user on the
      *  instance. Use a newline character to separate multiple keys. The SSH
      *  keys must be in the format necessary for the `authorized_keys` file, as shown
      *  in the example below.
      * <p>
-     * __\"user_data\"__ - Provide your own base64-encoded data to be used by
+     **\"user_data\"** - Provide your own base64-encoded data to be used by
      *  Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For
      *  information about how to take advantage of user data, see the
      *  [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
      * <p>
-     * __Note:__ Cloud-Init does not pull this data from the `http://169.254.169.254/opc/v1/instance/metadata/`
+     **Note:** Cloud-Init does not pull this data from the `http://169.254.169.254/opc/v1/instance/metadata/`
      *  path. When the instance launches and either of these keys are provided, the key values are formatted as
      *  OpenStack metadata and copied to the following locations, which are recognized by Cloud-Init:
      * <p>
      * `http://169.254.169.254/openstack/latest/meta_data.json` - This JSON blob
      *  contains, among other things, the SSH keys that you provided for
-     *   __\"ssh_authorized_keys\"__.
+     *   **\"ssh_authorized_keys\"**.
      * <p>
      * `http://169.254.169.254/openstack/latest/user_data` - Contains the
-     *  base64-decoded data that you provided for __\"user_data\"__.
+     *  base64-decoded data that you provided for **\"user_data\"**.
      * <p>
-     * __Metadata Example__
+     **Metadata Example**
      * <p>
      * \"metadata\" : {
      *          \"quake_bot_level\" : \"Severe\",
@@ -223,7 +239,7 @@ public class LaunchInstanceDetails {
      *          ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAzJSAtwEPoB3Jmr58IXrDGzLuDYkWAYg8AsLYlo6JZvKpjY1xednIcfEVQJm4T2DhVmdWhRrwQ8DmayVZvBkLt+zs2LdoAJEVimKwXcJFD/7wtH8Lnk17HiglbbbNXsemjDY0hea4JUE5CfvkIdZBITuMrfqSmA4n3VNoorXYdvtTMoGG8fxMub46RPtuxtqi9bG9Zqenordkg5FJt2mVNfQRqf83CWojcOkklUWq4CjyxaeLf5i9gv1fRoBo4QhiA8I6NCSppO8GnoV/6Ox6TNoh9BiifqGKC9VGYuC89RvUajRBTZSK2TK4DPfaT+2R+slPsFrwiT/oPEhhEK1S5Q== rsa-key-20160227\",
      *          \"user_data\" : \"SWYgeW91IGNhbiBzZWUgdGhpcywgdGhlbiBpdCB3b3JrZWQgbWF5YmUuCg==\"
      *       }
-     *  __Getting Metadata on the Instance__
+     *  **Getting Metadata on the Instance**
      * <p>
      * To get information about your instance, connect to the instance using SSH and issue any of the
      *  following GET requests:

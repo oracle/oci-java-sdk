@@ -18,6 +18,8 @@ import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.http.signing.RequestSigner;
 
+import com.fasterxml.jackson.databind.SerializationFeature;
+
 /**
  * RestClientFactory is responsible for creating a new REST client whenever a
  * specific service instance is created. The factory will configure all of the
@@ -36,6 +38,9 @@ public class RestClientFactory {
         // Our default object mapper will ignore unknown properties when
         // deserializing results
         DEFAULT_MAPPER.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        // Serialize Date instances using com.fasterxml.jackson.databind.util.StdDateFormat,
+        // which corresponds to format string of "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        DEFAULT_MAPPER.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
     }
 
     private final ClientConfigurator clientConfigurator;
@@ -46,8 +51,6 @@ public class RestClientFactory {
      *
      * @param clientConfigurator
      *            The configurator to customize the REST client.
-     * @param requestSignerFactory
-     *            The factory used to generate request signers.
      */
     public RestClientFactory(@Nonnull ClientConfigurator clientConfigurator) {
         this.clientConfigurator = clientConfigurator;
@@ -57,9 +60,7 @@ public class RestClientFactory {
      * Creates a new client that will use the given
      * {@link AuthenticationDetailsProvider}.
      *
-     * @param service The service type.
-     * @param authProvider
-     *            The auth provider to use.
+     * @param requestSigner The strategy used to sign requests.
      * @return A new RestClient instance.
      */
     public RestClient create(RequestSigner requestSigner) {
@@ -70,9 +71,7 @@ public class RestClientFactory {
      * Creates a new client that will use the given
      * {@link AuthenticationDetailsProvider} and {@link ClientConfiguration}.
      *
-     * @param service The service type.
-     * @param authProvider
-     *            The auth provider to use.
+     * @param requestSigner The strategy used to sign requests.
      * @param configuration
      *            The client configuration to use, or null for default
      *            configuration.

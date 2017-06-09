@@ -40,12 +40,20 @@ public class CreateBackendSetDetails {
         @JsonProperty("policy")
         private String policy;
 
+        @JsonProperty("sessionPersistenceConfiguration")
+        private SessionPersistenceConfigurationDetails sessionPersistenceConfiguration;
+
         @JsonProperty("sslConfiguration")
         private SSLConfigurationDetails sslConfiguration;
 
         public CreateBackendSetDetails build() {
             return new CreateBackendSetDetails(
-                    backends, healthChecker, name, policy, sslConfiguration);
+                    backends,
+                    healthChecker,
+                    name,
+                    policy,
+                    sessionPersistenceConfiguration,
+                    sslConfiguration);
         }
 
         @JsonIgnore
@@ -54,6 +62,7 @@ public class CreateBackendSetDetails {
                     .healthChecker(o.getHealthChecker())
                     .name(o.getName())
                     .policy(o.getPolicy())
+                    .sessionPersistenceConfiguration(o.getSessionPersistenceConfiguration())
                     .sslConfiguration(o.getSslConfiguration());
         }
     }
@@ -95,6 +104,9 @@ public class CreateBackendSetDetails {
     @Valid
     @NotNull
     String policy;
+
+    @JsonProperty("sessionPersistenceConfiguration")
+    SessionPersistenceConfigurationDetails sessionPersistenceConfiguration;
 
     @JsonProperty("sslConfiguration")
     SSLConfigurationDetails sslConfiguration;

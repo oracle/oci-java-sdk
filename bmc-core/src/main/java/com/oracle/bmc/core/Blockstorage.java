@@ -53,7 +53,6 @@ public interface Blockstorage extends AutoCloseable {
      * You may optionally specify a *display name* for the volume, which is simply a friendly name or
      * description. It does not have to be unique, and you can change it.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -68,7 +67,6 @@ public interface Blockstorage extends AutoCloseable {
      * When the data is imaged, it goes into a CREATING state.
      * After the backup is fully uploaded to the cloud, it goes into an AVAILABLE state.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -81,7 +79,6 @@ public interface Blockstorage extends AutoCloseable {
      * [Disconnecting From a Volume](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Tasks/disconnectingfromavolume.htm).
      * **Warning:** All data on the volume will be permanently lost when the volume is deleted.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -90,7 +87,6 @@ public interface Blockstorage extends AutoCloseable {
 
     /**
      * Deletes a volume backup.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -99,7 +95,6 @@ public interface Blockstorage extends AutoCloseable {
 
     /**
      * Gets information for the specified volume.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -108,7 +103,6 @@ public interface Blockstorage extends AutoCloseable {
 
     /**
      * Gets information for the specified volume backup.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -117,7 +111,6 @@ public interface Blockstorage extends AutoCloseable {
 
     /**
      * Lists the volume backups in the specified compartment. You can filter the results by volume.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -128,7 +121,6 @@ public interface Blockstorage extends AutoCloseable {
     /**
      * Lists the volumes in the specified compartment and Availability Domain.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -137,7 +129,6 @@ public interface Blockstorage extends AutoCloseable {
 
     /**
      * Updates the specified volume's display name.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -146,7 +137,6 @@ public interface Blockstorage extends AutoCloseable {
 
     /**
      * Updates the display name for the specified volume backup.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.

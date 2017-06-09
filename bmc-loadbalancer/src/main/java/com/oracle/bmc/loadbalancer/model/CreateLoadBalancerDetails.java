@@ -37,6 +37,9 @@ public class CreateLoadBalancerDetails {
         @JsonProperty("displayName")
         private String displayName;
 
+        @JsonProperty("isPrivate")
+        private Boolean isPrivate;
+
         @JsonProperty("listeners")
         private Map<String, ListenerDetails> listeners;
 
@@ -52,6 +55,7 @@ public class CreateLoadBalancerDetails {
                     certificates,
                     compartmentId,
                     displayName,
+                    isPrivate,
                     listeners,
                     shapeName,
                     subnetIds);
@@ -63,6 +67,7 @@ public class CreateLoadBalancerDetails {
                     .certificates(o.getCertificates())
                     .compartmentId(o.getCompartmentId())
                     .displayName(o.getDisplayName())
+                    .isPrivate(o.getIsPrivate())
                     .listeners(o.getListeners())
                     .shapeName(o.getShapeName())
                     .subnetIds(o.getSubnetIds());
@@ -100,6 +105,27 @@ public class CreateLoadBalancerDetails {
     @Valid
     @NotNull
     String displayName;
+
+    /**
+     * Whether the load balancer has a VCN-local (private) IP address.
+     * <p>
+     * If \"true\", the service assigns a private IP address to the load balancer. The load balancer requires only one subnet
+     * to host both the primary and secondary load balancers. The private IP address is local to the subnet. The load balancer
+     * is accessible only from within the VCN that contains the associated subnet, or as further restricted by your security
+     * list rules. The load balancer can route traffic to any backend server that is reachable from the VCN.
+     * <p>
+     * For a private load balancer, both the primary and secondary load balancer hosts are within the same Availability Domain.
+     * <p>
+     * If \"false\", the service assigns a public IP address to the load balancer. A load balancer with a public IP address
+     * requires two subnets, each in a different Availability Domain. One subnet hosts the primary load balancer and the other
+     * hosts the secondary (stand-by) load balancer. A public load balancer is accessible from the internet, depending on your
+     * VCN's [security list rules](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/securitylists.htm).
+     * <p>
+     * Example: `false`
+     *
+     **/
+    @JsonProperty("isPrivate")
+    Boolean isPrivate;
 
     @JsonProperty("listeners")
     Map<String, ListenerDetails> listeners;

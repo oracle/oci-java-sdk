@@ -41,7 +41,6 @@ public interface ObjectStorage extends AutoCloseable {
     /**
      * Aborts an in-progress multipart upload and deletes all parts that have been uploaded.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -51,7 +50,6 @@ public interface ObjectStorage extends AutoCloseable {
     /**
      * Commits a multipart upload, which involves checking part numbers and ETags of the parts, to create an aggregate object.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -60,7 +58,10 @@ public interface ObjectStorage extends AutoCloseable {
 
     /**
      * Creates a bucket in the given namespace with a bucket name and optional user-defined metadata.
-     *
+     * <p>
+     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
+     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -71,7 +72,6 @@ public interface ObjectStorage extends AutoCloseable {
     /**
      * Starts a new multipart upload to a specific object in the given bucket in the given namespace.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -79,8 +79,17 @@ public interface ObjectStorage extends AutoCloseable {
     CreateMultipartUploadResponse createMultipartUpload(CreateMultipartUploadRequest request);
 
     /**
-     * Deletes a bucket if it is already empty. If the bucket is not empty, use {@link #deleteObject(DeleteObjectRequest) deleteObject} first.
+     * Create a pre-authenticated request specific to the bucket
      *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreatePreauthenticatedRequestResponse createPreauthenticatedRequest(
+            CreatePreauthenticatedRequestRequest request);
+
+    /**
+     * Deletes a bucket if it is already empty. If the bucket is not empty, use {@link #deleteObject(DeleteObjectRequest) deleteObject} first.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -91,7 +100,6 @@ public interface ObjectStorage extends AutoCloseable {
     /**
      * Deletes an object.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -99,8 +107,16 @@ public interface ObjectStorage extends AutoCloseable {
     DeleteObjectResponse deleteObject(DeleteObjectRequest request);
 
     /**
+     * Deletes the bucket level pre-authenticateted request
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeletePreauthenticatedRequestResponse deletePreauthenticatedRequest(
+            DeletePreauthenticatedRequestRequest request);
+
+    /**
      * Gets the current representation of the given bucket in the given namespace.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -112,7 +128,6 @@ public interface ObjectStorage extends AutoCloseable {
      * Gets the name of the namespace for the user making the request. An account name must be unique, must start with a
      * letter, and can have up to 15 lowercase letters and numbers. You cannot use spaces or special characters.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -122,7 +137,6 @@ public interface ObjectStorage extends AutoCloseable {
     /**
      * Gets the metadata and body of an object.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -130,8 +144,16 @@ public interface ObjectStorage extends AutoCloseable {
     GetObjectResponse getObject(GetObjectRequest request);
 
     /**
+     * Get the bucket level pre-authenticateted request
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetPreauthenticatedRequestResponse getPreauthenticatedRequest(
+            GetPreauthenticatedRequestRequest request);
+
+    /**
      * Efficiently checks if a bucket exists and gets the current ETag for the bucket.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -142,7 +164,6 @@ public interface ObjectStorage extends AutoCloseable {
     /**
      * Gets the user-defined metadata and entity tag for an object.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -152,7 +173,10 @@ public interface ObjectStorage extends AutoCloseable {
     /**
      * Gets a list of all `BucketSummary`s in a compartment. A `BucketSummary` contains only summary fields for the bucket
      * and does not contain fields like the user-defined metadata.
-     *
+     * <p>
+     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
+     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -162,7 +186,6 @@ public interface ObjectStorage extends AutoCloseable {
 
     /**
      * Lists the parts of an in-progress multipart upload.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -174,7 +197,6 @@ public interface ObjectStorage extends AutoCloseable {
     /**
      * Lists all in-progress multipart uploads for the given bucket in the given namespace.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -183,7 +205,10 @@ public interface ObjectStorage extends AutoCloseable {
 
     /**
      * Lists the objects in a bucket.
-     *
+     * <p>
+     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
+     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -192,8 +217,21 @@ public interface ObjectStorage extends AutoCloseable {
     ListObjectsResponse listObjects(ListObjectsRequest request);
 
     /**
-     * Creates a new object or overwrites an existing one.
+     * List pre-authenticated requests for the bucket
      *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListPreauthenticatedRequestsResponse listPreauthenticatedRequests(
+            ListPreauthenticatedRequestsRequest request);
+
+    /**
+     * Creates a new object or overwrites an existing one.
+     * <p>
+     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
+     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -204,7 +242,6 @@ public interface ObjectStorage extends AutoCloseable {
     /**
      * Performs a partial or full update of a bucket's user-defined metadata.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -213,7 +250,6 @@ public interface ObjectStorage extends AutoCloseable {
 
     /**
      * Uploads a single part of a multipart upload.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

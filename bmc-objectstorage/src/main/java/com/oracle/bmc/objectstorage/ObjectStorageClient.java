@@ -184,6 +184,20 @@ public class ObjectStorageClient implements ObjectStorage {
     }
 
     @Override
+    public CreatePreauthenticatedRequestResponse createPreauthenticatedRequest(
+            CreatePreauthenticatedRequestRequest request) {
+        LOG.trace("Called createPreauthenticatedRequest");
+        request = CreatePreauthenticatedRequestConverter.interceptRequest(request);
+        Invocation.Builder ib = CreatePreauthenticatedRequestConverter.fromRequest(client, request);
+        Function<Response, CreatePreauthenticatedRequestResponse> transformer =
+                CreatePreauthenticatedRequestConverter.fromResponse();
+
+        Response response =
+                client.post(ib, request.getCreatePreauthenticatedRequestDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
     public DeleteBucketResponse deleteBucket(DeleteBucketRequest request) {
         LOG.trace("Called deleteBucket");
         request = DeleteBucketConverter.interceptRequest(request);
@@ -200,6 +214,19 @@ public class ObjectStorageClient implements ObjectStorage {
         request = DeleteObjectConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteObjectConverter.fromRequest(client, request);
         Function<Response, DeleteObjectResponse> transformer = DeleteObjectConverter.fromResponse();
+
+        Response response = client.delete(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public DeletePreauthenticatedRequestResponse deletePreauthenticatedRequest(
+            DeletePreauthenticatedRequestRequest request) {
+        LOG.trace("Called deletePreauthenticatedRequest");
+        request = DeletePreauthenticatedRequestConverter.interceptRequest(request);
+        Invocation.Builder ib = DeletePreauthenticatedRequestConverter.fromRequest(client, request);
+        Function<Response, DeletePreauthenticatedRequestResponse> transformer =
+                DeletePreauthenticatedRequestConverter.fromResponse();
 
         Response response = client.delete(ib, request);
         return transformer.apply(response);
@@ -233,6 +260,19 @@ public class ObjectStorageClient implements ObjectStorage {
         request = GetObjectConverter.interceptRequest(request);
         Invocation.Builder ib = GetObjectConverter.fromRequest(client, request);
         Function<Response, GetObjectResponse> transformer = GetObjectConverter.fromResponse();
+
+        Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public GetPreauthenticatedRequestResponse getPreauthenticatedRequest(
+            GetPreauthenticatedRequestRequest request) {
+        LOG.trace("Called getPreauthenticatedRequest");
+        request = GetPreauthenticatedRequestConverter.interceptRequest(request);
+        Invocation.Builder ib = GetPreauthenticatedRequestConverter.fromRequest(client, request);
+        Function<Response, GetPreauthenticatedRequestResponse> transformer =
+                GetPreauthenticatedRequestConverter.fromResponse();
 
         Response response = client.get(ib, request);
         return transformer.apply(response);
@@ -302,6 +342,19 @@ public class ObjectStorageClient implements ObjectStorage {
         request = ListObjectsConverter.interceptRequest(request);
         Invocation.Builder ib = ListObjectsConverter.fromRequest(client, request);
         Function<Response, ListObjectsResponse> transformer = ListObjectsConverter.fromResponse();
+
+        Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public ListPreauthenticatedRequestsResponse listPreauthenticatedRequests(
+            ListPreauthenticatedRequestsRequest request) {
+        LOG.trace("Called listPreauthenticatedRequests");
+        request = ListPreauthenticatedRequestsConverter.interceptRequest(request);
+        Invocation.Builder ib = ListPreauthenticatedRequestsConverter.fromRequest(client, request);
+        Function<Response, ListPreauthenticatedRequestsResponse> transformer =
+                ListPreauthenticatedRequestsConverter.fromResponse();
 
         Response response = client.get(ib, request);
         return transformer.apply(response);
