@@ -37,10 +37,8 @@ public class RestClient implements AutoCloseable {
      * Create a new client that uses a provided client to make all its requests.
      * It's up to the caller to properly configure the client.
      *
-     * @param client
-     *            A HTTP client to make all requests with.
-     * @param entityFactory
-     *            An entity factory to create entities for POST/PUT operations.
+     * @param client        A HTTP client to make all requests with.
+     * @param entityFactory An entity factory to create entities for POST/PUT operations.
      */
     public RestClient(@NonNull Client client, @NonNull EntityFactory entityFactory) {
         this.client = client;
@@ -50,8 +48,7 @@ public class RestClient implements AutoCloseable {
     /**
      * Sets the endpoint that this client should talk to.
      *
-     * @param endpoint
-     *            The endpoint.
+     * @param endpoint The endpoint.
      */
     public void setEndpoint(@NonNull String endpoint) {
         this.baseTarget = client.target(endpoint);
@@ -79,14 +76,11 @@ public class RestClient implements AutoCloseable {
     /**
      * Request a resource.
      *
-     * @param ib
-     *            The invocation builder to use when making the request.
-     * @param request
-     *            The original client request object given to the service
-     *            client.
+     * @param ib      The invocation builder to use when making the request.
+     * @param request The original client request object given to the service
+     *                client.
      * @return The {@link Response} object.
-     * @throws BmcException
-     *             If an error was encountered while invoking the request.
+     * @throws BmcException If an error was encountered while invoking the request.
      */
     public Response get(@NonNull Invocation.Builder ib, @NonNull Object request)
             throws BmcException {
@@ -101,19 +95,15 @@ public class RestClient implements AutoCloseable {
     /**
      * Request a resource asynchronously.
      *
-     * @param ib
-     *            The invocation builder to use when making the request.
-     * @param request
-     *            The original client request object given to the service
-     *            client.
-     * @param onSuccess
-     *            The callback to invoke on success.
-     * @param onError
-     *            The callback to invoke on failure.
+     * @param ib        The invocation builder to use when making the request.
+     * @param request   The original client request object given to the service
+     *                  client.
+     * @param onSuccess The callback to invoke on success.
+     * @param onError   The callback to invoke on failure.
      * @return A Future that can be used to get the Response if no Consumer was
-     *         provided. Note, callers should be careful not to read the entity
-     *         from both the future and the consumer, as the entity stream may
-     *         not be able to support being consumed twice.
+     * provided. Note, callers should be careful not to read the entity
+     * from both the future and the consumer, as the entity stream may
+     * not be able to support being consumed twice.
      */
     public Future<Response> get(
             @NonNull Invocation.Builder ib,
@@ -127,16 +117,12 @@ public class RestClient implements AutoCloseable {
      * Post a request object to the endpoint represented by the web target and
      * get the response.
      *
-     * @param ib
-     *            An invocation builder to execute requests with.
-     * @param body
-     *            The content body to post to the web target.
-     * @param request
-     *            The original client request object given to the service
-     *            client.
+     * @param ib      An invocation builder to execute requests with.
+     * @param body    The content body to post to the web target.
+     * @param request The original client request object given to the service
+     *                client.
      * @return The {@link Response} object.
-     * @throws BmcException
-     *             If an error was encountered while invoking the request.
+     * @throws BmcException If an error was encountered while invoking the request.
      */
     public Response post(
             @NonNull Invocation.Builder ib, @Nullable Object body, @NonNull Object request)
@@ -154,21 +140,16 @@ public class RestClient implements AutoCloseable {
      * Post a request object to the endpoint represented by the web target
      * asynchronously and get the response.
      *
-     * @param ib
-     *            An invocation builder to execute requests with.
-     * @param body
-     *            The content body to post to the web target.
-     * @param request
-     *            The original client request object given to the service
-     *            client.
-     * @param onSuccess
-     *            The callback to invoke on success.
-     * @param onError
-     *            The callback to invoke on failure.
+     * @param ib        An invocation builder to execute requests with.
+     * @param body      The content body to post to the web target.
+     * @param request   The original client request object given to the service
+     *                  client.
+     * @param onSuccess The callback to invoke on success.
+     * @param onError   The callback to invoke on failure.
      * @return A Future that can be used to get the Response if no Consumer was
-     *         provided. Note, callers should be careful not to read the entity
-     *         from both the future and the consumer, as the entity stream may
-     *         not be able to support being consumed twice.
+     * provided. Note, callers should be careful not to read the entity
+     * from both the future and the consumer, as the entity stream may
+     * not be able to support being consumed twice.
      */
     public Future<Response> post(
             @NonNull Invocation.Builder ib,
@@ -184,14 +165,11 @@ public class RestClient implements AutoCloseable {
      * Post an empty body to the endpoint represented by the web target and get
      * the response.
      *
-     * @param ib
-     *            An invocation builder to execute requests with.
-     * @param request
-     *            The original client request object given to the service
-     *            client.
+     * @param ib      An invocation builder to execute requests with.
+     * @param request The original client request object given to the service
+     *                client.
      * @return The {@link Response} object.
-     * @throws BmcException
-     *             If an error was encountered while invoking the request.
+     * @throws BmcException If an error was encountered while invoking the request.
      */
     public Response post(@NonNull Invocation.Builder ib, @NonNull Object request) {
         return post(ib, null, request);
@@ -201,19 +179,15 @@ public class RestClient implements AutoCloseable {
      * Post an empty body to the endpoint represented by the web target
      * asynchronously and get the response.
      *
-     * @param ib
-     *            An invocation builder to execute requests with.
-     * @param request
-     *            The original client request object given to the service
-     *            client.
-     * @param onSuccess
-     *            The callback to invoke on success.
-     * @param onError
-     *            The callback to invoke on failure.
+     * @param ib        An invocation builder to execute requests with.
+     * @param request   The original client request object given to the service
+     *                  client.
+     * @param onSuccess The callback to invoke on success.
+     * @param onError   The callback to invoke on failure.
      * @return A Future that can be used to get the Response if no Consumer was
-     *         provided. Note, callers should be careful not to read the entity
-     *         from both the future and the consumer, as the entity stream may
-     *         not be able to support being consumed twice.
+     * provided. Note, callers should be careful not to read the entity
+     * from both the future and the consumer, as the entity stream may
+     * not be able to support being consumed twice.
      */
     public Future<Response> post(
             @NonNull Invocation.Builder ib,
@@ -224,19 +198,29 @@ public class RestClient implements AutoCloseable {
     }
 
     /**
+     * Patch a request object without body to the endpoint represented by the web target and
+     * get the response.
+     *
+     * @param ib      An invocation builder to execute requests with.
+     * @param request The original client request object given to the service
+     *                client.
+     * @return The {@link Response} object.
+     * @throws BmcException If an error was encountered while invoking the request.
+     */
+    public Response patch(@NonNull Invocation.Builder ib, @NonNull Object request) {
+        return patch(ib, null, request);
+    }
+
+    /**
      * Patch a request object to the endpoint represented by the web target and
      * get the response.
      *
-     * @param ib
-     *            An invocation builder to execute requests with.
-     * @param body
-     *            The content body to post to the web target.
-     * @param request
-     *            The original client request object given to the service
-     *            client.
+     * @param ib      An invocation builder to execute requests with.
+     * @param body    The content body to post to the web target.
+     * @param request The original client request object given to the service
+     *                client.
      * @return The {@link Response} object.
-     * @throws BmcException
-     *             If an error was encountered while invoking the request.
+     * @throws BmcException If an error was encountered while invoking the request.
      */
     public Response patch(
             @NonNull Invocation.Builder ib, @Nullable Object body, @NonNull Object request)
@@ -251,24 +235,41 @@ public class RestClient implements AutoCloseable {
     }
 
     /**
+     * Patch a request object without body to the endpoint represented by the web target
+     * asynchronously and get the response.
+     *
+     * @param ib        An invocation builder to execute requests with.
+     * @param request   The original client request object given to the service
+     *                  client.
+     * @param onSuccess The callback to invoke on success.
+     * @param onError   The callback to invoke on failure.
+     * @return A Future that can be used to get the Response if no Consumer was
+     * provided. Note, callers should be careful not to read the entity
+     * from both the future and the consumer, as the entity stream may
+     * not be able to support being consumed twice.
+     */
+    public Future<Response> patch(
+            @NonNull Invocation.Builder ib,
+            @NonNull Object request,
+            @Nullable Consumer<Response> onSuccess,
+            @Nullable Consumer<Throwable> onError) {
+        return patch(ib, null, request, onSuccess, onError);
+    }
+
+    /**
      * Patch a request object to the endpoint represented by the web target
      * asynchronously and get the response.
      *
-     * @param ib
-     *            An invocation builder to execute requests with.
-     * @param body
-     *            The content body object to post to the web target.
-     * @param request
-     *            The original client request object given to the service
-     *            client.
-     * @param onSuccess
-     *            The callback to invoke on success.
-     * @param onError
-     *            The callback to invoke on failure.
+     * @param ib        An invocation builder to execute requests with.
+     * @param body      The content body object to post to the web target.
+     * @param request   The original client request object given to the service
+     *                  client.
+     * @param onSuccess The callback to invoke on success.
+     * @param onError   The callback to invoke on failure.
      * @return A Future that can be used to get the Response if no Consumer was
-     *         provided. Note, callers should be careful not to read the entity
-     *         from both the future and the consumer, as the entity stream may
-     *         not be able to support being consumed twice.
+     * provided. Note, callers should be careful not to read the entity
+     * from both the future and the consumer, as the entity stream may
+     * not be able to support being consumed twice.
      */
     public Future<Response> patch(
             @NonNull Invocation.Builder ib,
@@ -280,6 +281,20 @@ public class RestClient implements AutoCloseable {
 
         return ib.async()
                 .method(PATCH_VERB, requestBody, new Callback(baseTarget, onSuccess, onError));
+    }
+
+    /**
+     * Put a request object without body to the endpoint represented by the web target and
+     * get the response.
+     *
+     * @param ib      An invocation builder to execute requests with.
+     * @param request The original client request object given to the service
+     *                client.
+     * @return The {@link Response} object.
+     * @throws BmcException If an error was encountered while invoking the request.
+     */
+    public Response put(@NonNull Invocation.Builder ib, @NonNull Object request) {
+        return put(ib, null, request);
     }
 
     /**
@@ -307,6 +322,32 @@ public class RestClient implements AutoCloseable {
         } catch (ProcessingException e) {
             throw convertToBmcException(baseTarget, e);
         }
+    }
+
+    /**
+     * Put a request object without body to the endpoint represented by the web target
+     * asynchronously and get the response.
+     *
+     * @param ib
+     *            An invocation builder to execute requests with.
+     * @param request
+     *            The original client request object given to the service
+     *            client.
+     * @param onSuccess
+     *            The callback to invoke on success.
+     * @param onError
+     *            The callback to invoke on failure.
+     * @return A Future that can be used to get the Response if no Consumer was
+     *         provided. Note, callers should be careful not to read the entity
+     *         from both the future and the consumer, as the entity stream may
+     *         not be able to support being consumed twice.
+     */
+    public Future<Response> put(
+            @NonNull Invocation.Builder ib,
+            @NonNull Object request,
+            @Nullable Consumer<Response> onSuccess,
+            @Nullable Consumer<Throwable> onError) {
+        return put(ib, null, request, onSuccess, onError);
     }
 
     /**

@@ -40,7 +40,6 @@ public interface Audit extends AutoCloseable {
 
     /**
      * Returns all audit events for the specified compartment that were processed within the specified time range.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.

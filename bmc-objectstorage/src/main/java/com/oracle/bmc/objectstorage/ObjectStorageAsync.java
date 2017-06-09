@@ -74,6 +74,10 @@ public interface ObjectStorageAsync extends AutoCloseable {
 
     /**
      * Creates a bucket in the given namespace with a bucket name and optional user-defined metadata.
+     * <p>
+     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
+     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -101,6 +105,24 @@ public interface ObjectStorageAsync extends AutoCloseable {
     Future<CreateMultipartUploadResponse> createMultipartUpload(
             CreateMultipartUploadRequest request,
             AsyncHandler<CreateMultipartUploadRequest, CreateMultipartUploadResponse> handler);
+
+    /**
+     * Create a pre-authenticated request specific to the bucket
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    Future<CreatePreauthenticatedRequestResponse> createPreauthenticatedRequest(
+            CreatePreauthenticatedRequestRequest request,
+            AsyncHandler<
+                            CreatePreauthenticatedRequestRequest,
+                            CreatePreauthenticatedRequestResponse>
+                    handler);
 
     /**
      * Deletes a bucket if it is already empty. If the bucket is not empty, use {@link #deleteObject(DeleteObjectRequest, Consumer, Consumer) deleteObject} first.
@@ -131,6 +153,23 @@ public interface ObjectStorageAsync extends AutoCloseable {
     Future<DeleteObjectResponse> deleteObject(
             DeleteObjectRequest request,
             AsyncHandler<DeleteObjectRequest, DeleteObjectResponse> handler);
+
+    /**
+     * Deletes the bucket level pre-authenticateted request
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    Future<DeletePreauthenticatedRequestResponse> deletePreauthenticatedRequest(
+            DeletePreauthenticatedRequestRequest request,
+            AsyncHandler<
+                            DeletePreauthenticatedRequestRequest,
+                            DeletePreauthenticatedRequestResponse>
+                    handler);
 
     /**
      * Gets the current representation of the given bucket in the given namespace.
@@ -177,6 +216,21 @@ public interface ObjectStorageAsync extends AutoCloseable {
             GetObjectRequest request, AsyncHandler<GetObjectRequest, GetObjectResponse> handler);
 
     /**
+     * Get the bucket level pre-authenticateted request
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    Future<GetPreauthenticatedRequestResponse> getPreauthenticatedRequest(
+            GetPreauthenticatedRequestRequest request,
+            AsyncHandler<GetPreauthenticatedRequestRequest, GetPreauthenticatedRequestResponse>
+                    handler);
+
+    /**
      * Efficiently checks if a bucket exists and gets the current ETag for the bucket.
      *
      *
@@ -207,6 +261,10 @@ public interface ObjectStorageAsync extends AutoCloseable {
     /**
      * Gets a list of all `BucketSummary`s in a compartment. A `BucketSummary` contains only summary fields for the bucket
      * and does not contain fields like the user-defined metadata.
+     * <p>
+     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
+     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -253,6 +311,10 @@ public interface ObjectStorageAsync extends AutoCloseable {
 
     /**
      * Lists the objects in a bucket.
+     * <p>
+     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
+     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -267,7 +329,27 @@ public interface ObjectStorageAsync extends AutoCloseable {
             AsyncHandler<ListObjectsRequest, ListObjectsResponse> handler);
 
     /**
+     * List pre-authenticated requests for the bucket
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    Future<ListPreauthenticatedRequestsResponse> listPreauthenticatedRequests(
+            ListPreauthenticatedRequestsRequest request,
+            AsyncHandler<ListPreauthenticatedRequestsRequest, ListPreauthenticatedRequestsResponse>
+                    handler);
+
+    /**
      * Creates a new object or overwrites an existing one.
+     * <p>
+     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
+     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      *
      * @param request The request object containing the details to send

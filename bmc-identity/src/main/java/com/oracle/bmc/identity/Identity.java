@@ -44,7 +44,6 @@ public interface Identity extends AutoCloseable {
      * After you send your request, the new object's `lifecycleState` will temporarily be CREATING. Before using the
      * object, first make sure its `lifecycleState` has changed to ACTIVE.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -71,7 +70,6 @@ public interface Identity extends AutoCloseable {
      * <p>
      * After you send your request, the new object's `lifecycleState` will temporarily be CREATING. Before using the
      * object, first make sure its `lifecycleState` has changed to ACTIVE.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -102,7 +100,6 @@ public interface Identity extends AutoCloseable {
      * See {@link #addUserToGroup(AddUserToGroupRequest) addUserToGroup} and
      * {@link #createPolicy(CreatePolicyRequest) createPolicy}.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -129,7 +126,6 @@ public interface Identity extends AutoCloseable {
      * be CREATING. Before using the object, first make sure its `lifecycleState` has
      * changed to ACTIVE.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -139,7 +135,6 @@ public interface Identity extends AutoCloseable {
     /**
      * Creates a single mapping between an IdP group and an IAM Service
      * {@link Group}.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -159,7 +154,6 @@ public interface Identity extends AutoCloseable {
      * <p>
      **Note:** The user's Console login is the unique name you specified when you created the user
      * (see {@link #createUser(CreateUserRequest) createUser}).
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -186,7 +180,6 @@ public interface Identity extends AutoCloseable {
      * <p>
      * New policies take effect typically within 10 seconds.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -195,7 +188,6 @@ public interface Identity extends AutoCloseable {
 
     /**
      * Creates a subscription to a region for a tenancy.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -215,7 +207,6 @@ public interface Identity extends AutoCloseable {
      * Every user has permission to create a Swift password for *their own user ID*. An administrator in your organization
      * does not need to write a policy to give users this ability. To compare, administrators who have permission to the
      * tenancy can use this operation to create a Swift password for any user, including themselves.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -260,7 +251,6 @@ public interface Identity extends AutoCloseable {
      * <p>
      **Important:** Make sure to inform the new user which compartment(s) they have access to.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -275,7 +265,6 @@ public interface Identity extends AutoCloseable {
      * To compare, administrators who have permission to the tenancy can use this operation to delete
      * a key for any user, including themselves.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -284,7 +273,6 @@ public interface Identity extends AutoCloseable {
 
     /**
      * Deletes the specified group. The group must be empty.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -296,7 +284,6 @@ public interface Identity extends AutoCloseable {
      * Deletes the specified identity provider. The identity provider must not have
      * any group mappings (see {@link IdpGroupMapping}).
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -305,7 +292,6 @@ public interface Identity extends AutoCloseable {
 
     /**
      * Deletes the specified group mapping.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -314,7 +300,6 @@ public interface Identity extends AutoCloseable {
 
     /**
      * Deletes the specified policy. The deletion takes effect typically within 10 seconds.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -324,7 +309,6 @@ public interface Identity extends AutoCloseable {
     /**
      * Deletes the specified Swift password for the specified user.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -333,7 +317,6 @@ public interface Identity extends AutoCloseable {
 
     /**
      * Deletes the specified user. The user must not be in any groups.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -350,7 +333,6 @@ public interface Identity extends AutoCloseable {
      * call the {@link #listInstances(ListInstancesRequest) listInstances} operation in the Cloud Compute
      * Service or the {@link #listVolumes(ListVolumesRequest) listVolumes} operation in Cloud Block Storage.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -364,7 +346,6 @@ public interface Identity extends AutoCloseable {
      * {@link #listUserGroupMemberships(ListUserGroupMembershipsRequest) listUserGroupMemberships} and
      * provide the group's OCID as a query parameter in the request.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -373,7 +354,6 @@ public interface Identity extends AutoCloseable {
 
     /**
      * Gets the specified identity provider's information.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -382,7 +362,6 @@ public interface Identity extends AutoCloseable {
 
     /**
      * Gets the specified group mapping.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -391,7 +370,6 @@ public interface Identity extends AutoCloseable {
 
     /**
      * Gets the specified policy's information.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -400,7 +378,6 @@ public interface Identity extends AutoCloseable {
 
     /**
      * Get the specified tenancy's information.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -409,7 +386,6 @@ public interface Identity extends AutoCloseable {
 
     /**
      * Gets the specified user's information.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -418,7 +394,6 @@ public interface Identity extends AutoCloseable {
 
     /**
      * Gets the specified UserGroupMembership's information.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -431,7 +406,6 @@ public interface Identity extends AutoCloseable {
      * Every user has permission to use this API call for *their own user ID*.  An administrator in your
      * organization does not need to write a policy to give users this ability.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -442,7 +416,6 @@ public interface Identity extends AutoCloseable {
      * Lists the Availability Domains in your tenancy. Specify the OCID of either the tenancy or another
      * of your compartments as the value for the compartment ID (remember that the tenancy is simply the root compartment).
      * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five).
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -455,7 +428,6 @@ public interface Identity extends AutoCloseable {
      * for the compartment ID (remember that the tenancy is simply the root compartment).
      * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five).
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -466,7 +438,6 @@ public interface Identity extends AutoCloseable {
      * Lists the groups in your tenancy. You must specify your tenancy's OCID as the value for
      * the compartment ID (remember that the tenancy is simply the root compartment).
      * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five).
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -480,7 +451,6 @@ public interface Identity extends AutoCloseable {
      * compartment ID (remember that the tenancy is simply the root compartment).
      * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five).
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -489,7 +459,6 @@ public interface Identity extends AutoCloseable {
 
     /**
      * Lists the group mappings for the specified identity provider.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -504,7 +473,6 @@ public interface Identity extends AutoCloseable {
      * To determine which policies apply to a particular group or compartment, you must view the individual
      * statements inside all your policies. There isn't a way to automatically obtain that information via the API.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -513,7 +481,6 @@ public interface Identity extends AutoCloseable {
 
     /**
      * Lists the region subscriptions for the specified tenancy.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -522,7 +489,6 @@ public interface Identity extends AutoCloseable {
 
     /**
      * Lists all the regions offered by Oracle Bare Metal Cloud Services.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -532,7 +498,6 @@ public interface Identity extends AutoCloseable {
     /**
      * Lists the Swift passwords for the specified user. The returned object contains the password's OCID, but not
      * the password itself. The actual password is returned only upon creation.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -551,7 +516,6 @@ public interface Identity extends AutoCloseable {
      * - You can set both the `userId` and `groupId` to determine if the specified user is in the specified group.
      * If the answer is no, the response is an empty list.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -564,7 +528,6 @@ public interface Identity extends AutoCloseable {
      * compartment ID (remember that the tenancy is simply the root compartment).
      * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five).
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -573,7 +536,6 @@ public interface Identity extends AutoCloseable {
 
     /**
      * Removes a user from a group by deleting the corresponding `UserGroupMembership`.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -582,7 +544,6 @@ public interface Identity extends AutoCloseable {
 
     /**
      * Updates the specified compartment's description.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -591,7 +552,6 @@ public interface Identity extends AutoCloseable {
 
     /**
      * Updates the specified group.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -600,7 +560,6 @@ public interface Identity extends AutoCloseable {
 
     /**
      * Updates the specified identity provider.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -609,7 +568,6 @@ public interface Identity extends AutoCloseable {
 
     /**
      * Updates the specified group mapping.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -621,7 +579,6 @@ public interface Identity extends AutoCloseable {
      * <p>
      * Policy changes take effect typically within 10 seconds.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -631,7 +588,6 @@ public interface Identity extends AutoCloseable {
     /**
      * Updates the specified Swift password's description.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -640,7 +596,6 @@ public interface Identity extends AutoCloseable {
 
     /**
      * Updates the description of the specified user.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -649,7 +604,6 @@ public interface Identity extends AutoCloseable {
 
     /**
      * Updates the state of the specified user.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -673,7 +627,6 @@ public interface Identity extends AutoCloseable {
      * <p>
      * After you send your request, the new object's `lifecycleState` will temporarily be CREATING. Before using
      * the object, first make sure its `lifecycleState` has changed to ACTIVE.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

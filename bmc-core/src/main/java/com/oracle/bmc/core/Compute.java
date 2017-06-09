@@ -41,7 +41,6 @@ public interface Compute extends AutoCloseable {
     /**
      * Attaches the specified storage volume to the specified instance.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -67,7 +66,6 @@ public interface Compute extends AutoCloseable {
      * 4. Optionally, use `DeleteConsoleHistory` to delete the console history metadata
      * and the console history data.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -84,7 +82,6 @@ public interface Compute extends AutoCloseable {
      * You may optionally specify a *display name* for the image, which is simply a friendly name or description.
      * It does not have to be unique, and you can change it. See {@link #updateImage(UpdateImageRequest) updateImage}.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -93,7 +90,6 @@ public interface Compute extends AutoCloseable {
 
     /**
      * Deletes the specified console history metadata and the console history data.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -102,7 +98,6 @@ public interface Compute extends AutoCloseable {
 
     /**
      * Deletes an image.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -115,7 +110,6 @@ public interface Compute extends AutoCloseable {
      * This is an asynchronous operation; the attachment's `lifecycleState` will change to DETACHING temporarily
      * until the attachment is completely removed.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -126,7 +120,6 @@ public interface Compute extends AutoCloseable {
      * Shows the metadata for the specified console history.
      * See {@link #captureConsoleHistory(CaptureConsoleHistoryRequest) captureConsoleHistory}
      * for details about using the console history operations.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -139,7 +132,6 @@ public interface Compute extends AutoCloseable {
      * See {@link #captureConsoleHistory(CaptureConsoleHistoryRequest) captureConsoleHistory}
      * for details about using the console history operations.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -149,7 +141,6 @@ public interface Compute extends AutoCloseable {
 
     /**
      * Gets the specified image.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -158,7 +149,6 @@ public interface Compute extends AutoCloseable {
 
     /**
      * Gets information about the specified instance.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -167,7 +157,6 @@ public interface Compute extends AutoCloseable {
 
     /**
      * Gets information about the specified volume attachment.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -177,7 +166,6 @@ public interface Compute extends AutoCloseable {
     /**
      * Gets the generated credentials for the instance. Only works for Windows instances. The returned credentials
      * are only valid for the initial login.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -203,7 +191,6 @@ public interface Compute extends AutoCloseable {
      * to apply against any relevant quotas. You must terminate an instance
      * ({@link #terminateInstance(TerminateInstanceRequest) terminateInstance})
      * to remove its resources from billing and quotas.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -237,7 +224,6 @@ public interface Compute extends AutoCloseable {
      * operation to get the VNIC ID for the instance, and then call
      * {@link #getVnic(GetVnicRequest) getVnic} with the VNIC ID.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -246,7 +232,6 @@ public interface Compute extends AutoCloseable {
 
     /**
      * Lists the console history metadata for the specified compartment or instance.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -259,7 +244,6 @@ public interface Compute extends AutoCloseable {
      * information about images, see
      * [Managing Custom Images](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/managingcustomimages.htm).
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -271,7 +255,6 @@ public interface Compute extends AutoCloseable {
      * You can filter the results by specifying an instance name (the list will include all the identically-named
      * instances in the compartment).
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -282,7 +265,6 @@ public interface Compute extends AutoCloseable {
      * Lists the shapes that can be used to launch an instance within the specified compartment. You can
      * filter the list by compatibility with a specific image.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -292,7 +274,6 @@ public interface Compute extends AutoCloseable {
     /**
      * Lists the VNIC attachments for the specified compartment. The list can be filtered by
      * instance and by VNIC.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -305,7 +286,6 @@ public interface Compute extends AutoCloseable {
      * list by specifying an instance OCID, volume OCID, or both.
      * <p>
      * Currently, the only supported volume attachment type is {@link IScsiVolumeAttachment}.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -320,7 +300,6 @@ public interface Compute extends AutoCloseable {
      * This is an asynchronous operation; the instance's `lifecycleState` will change to TERMINATING temporarily
      * until the instance is completely removed.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -329,7 +308,6 @@ public interface Compute extends AutoCloseable {
 
     /**
      * Updates the display name of the image.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -339,7 +317,6 @@ public interface Compute extends AutoCloseable {
     /**
      * Updates the display name of the specified instance. The OCID of the instance
      * remains the same.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
