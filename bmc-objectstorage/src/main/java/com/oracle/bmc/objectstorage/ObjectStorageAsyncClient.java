@@ -209,6 +209,32 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
     }
 
     @Override
+    public Future<CreatePreauthenticatedRequestResponse> createPreauthenticatedRequest(
+            CreatePreauthenticatedRequestRequest request,
+            AsyncHandler<
+                            CreatePreauthenticatedRequestRequest,
+                            CreatePreauthenticatedRequestResponse>
+                    handler) {
+        LOG.trace("Called async createPreauthenticatedRequest");
+        request = CreatePreauthenticatedRequestConverter.interceptRequest(request);
+        Invocation.Builder ib = CreatePreauthenticatedRequestConverter.fromRequest(client, request);
+        Function<Response, CreatePreauthenticatedRequestResponse> transformer =
+                CreatePreauthenticatedRequestConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture =
+                client.post(
+                        ib,
+                        request.getCreatePreauthenticatedRequestDetails(),
+                        request,
+                        onSuccess,
+                        onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
     public Future<DeleteBucketResponse> deleteBucket(
             DeleteBucketRequest request,
             AsyncHandler<DeleteBucketRequest, DeleteBucketResponse> handler) {
@@ -232,6 +258,26 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
         request = DeleteObjectConverter.interceptRequest(request);
         Invocation.Builder ib = DeleteObjectConverter.fromRequest(client, request);
         Function<Response, DeleteObjectResponse> transformer = DeleteObjectConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture = client.delete(ib, request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<DeletePreauthenticatedRequestResponse> deletePreauthenticatedRequest(
+            DeletePreauthenticatedRequestRequest request,
+            AsyncHandler<
+                            DeletePreauthenticatedRequestRequest,
+                            DeletePreauthenticatedRequestResponse>
+                    handler) {
+        LOG.trace("Called async deletePreauthenticatedRequest");
+        request = DeletePreauthenticatedRequestConverter.interceptRequest(request);
+        Invocation.Builder ib = DeletePreauthenticatedRequestConverter.fromRequest(client, request);
+        Function<Response, DeletePreauthenticatedRequestResponse> transformer =
+                DeletePreauthenticatedRequestConverter.fromResponse();
 
         Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
         Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
@@ -278,6 +324,24 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
         request = GetObjectConverter.interceptRequest(request);
         Invocation.Builder ib = GetObjectConverter.fromRequest(client, request);
         Function<Response, GetObjectResponse> transformer = GetObjectConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<GetPreauthenticatedRequestResponse> getPreauthenticatedRequest(
+            GetPreauthenticatedRequestRequest request,
+            AsyncHandler<GetPreauthenticatedRequestRequest, GetPreauthenticatedRequestResponse>
+                    handler) {
+        LOG.trace("Called async getPreauthenticatedRequest");
+        request = GetPreauthenticatedRequestConverter.interceptRequest(request);
+        Invocation.Builder ib = GetPreauthenticatedRequestConverter.fromRequest(client, request);
+        Function<Response, GetPreauthenticatedRequestResponse> transformer =
+                GetPreauthenticatedRequestConverter.fromResponse();
 
         Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
         Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
@@ -377,6 +441,24 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
         request = ListObjectsConverter.interceptRequest(request);
         Invocation.Builder ib = ListObjectsConverter.fromRequest(client, request);
         Function<Response, ListObjectsResponse> transformer = ListObjectsConverter.fromResponse();
+
+        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
+        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+
+        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
+        return new TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public Future<ListPreauthenticatedRequestsResponse> listPreauthenticatedRequests(
+            ListPreauthenticatedRequestsRequest request,
+            AsyncHandler<ListPreauthenticatedRequestsRequest, ListPreauthenticatedRequestsResponse>
+                    handler) {
+        LOG.trace("Called async listPreauthenticatedRequests");
+        request = ListPreauthenticatedRequestsConverter.interceptRequest(request);
+        Invocation.Builder ib = ListPreauthenticatedRequestsConverter.fromRequest(client, request);
+        Function<Response, ListPreauthenticatedRequestsResponse> transformer =
+                ListPreauthenticatedRequestsConverter.fromResponse();
 
         Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
         Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);

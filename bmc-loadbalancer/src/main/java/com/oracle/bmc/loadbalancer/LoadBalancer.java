@@ -40,7 +40,6 @@ public interface LoadBalancer extends AutoCloseable {
 
     /**
      * Adds a backend server to a backend set.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -49,7 +48,6 @@ public interface LoadBalancer extends AutoCloseable {
 
     /**
      * Adds a backend set to a load balancer.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -58,7 +56,6 @@ public interface LoadBalancer extends AutoCloseable {
 
     /**
      * Creates an asynchronous request to add an SSL certificate.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -67,7 +64,6 @@ public interface LoadBalancer extends AutoCloseable {
 
     /**
      * Adds a listener to a load balancer.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -86,9 +82,6 @@ public interface LoadBalancer extends AutoCloseable {
      * <p>
      * You must specify a display name for the load balancer. It does not have to be unique, and you can change it.
      * <p>
-     * To successfully create a load balancer within your Virtual Cloud Network (VCN), you must specify two
-     * subnets. Each subnet must reside in a separate Availability Domain.
-     * <p>
      * For information about Availability Domains, see
      * [Regions and Availability Domains](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/regions.htm).
      * To get a list of Availability Domains, use the `ListAvailabilityDomains` operation
@@ -103,9 +96,8 @@ public interface LoadBalancer extends AutoCloseable {
      * After you send your request, the new object's state will temporarily be PROVISIONING. Before using the
      * object, first make sure its state has changed to RUNNING.
      * <p>
-     * When you create a load balancer, the system issues a public IP address.
+     * When you create a load balancer, the system assigns an IP address.
      * To get the IP address, use the {@link #getLoadBalancer(GetLoadBalancerRequest) getLoadBalancer} operation.
-     *
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -115,7 +107,6 @@ public interface LoadBalancer extends AutoCloseable {
 
     /**
      * Removes a backend server from a given load balancer and backend set.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -127,7 +118,6 @@ public interface LoadBalancer extends AutoCloseable {
      * <p>
      * Before you can delete a backend set, you must remove it from any active listeners.
      *
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -136,7 +126,6 @@ public interface LoadBalancer extends AutoCloseable {
 
     /**
      * Deletes an SSL certificate from a load balancer.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -145,7 +134,6 @@ public interface LoadBalancer extends AutoCloseable {
 
     /**
      * Deletes a listener from a load balancer.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -154,7 +142,6 @@ public interface LoadBalancer extends AutoCloseable {
 
     /**
      * Stops a load balancer and removes it from service.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -163,7 +150,6 @@ public interface LoadBalancer extends AutoCloseable {
 
     /**
      * Gets the specified backend server's configuration information.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -172,7 +158,6 @@ public interface LoadBalancer extends AutoCloseable {
 
     /**
      * Gets the specified backend set's configuration information.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -181,7 +166,6 @@ public interface LoadBalancer extends AutoCloseable {
 
     /**
      * Gets the health check policy information for a given load balancer and backend set.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -190,7 +174,6 @@ public interface LoadBalancer extends AutoCloseable {
 
     /**
      * Gets the specified load balancer's configuration information.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -199,7 +182,6 @@ public interface LoadBalancer extends AutoCloseable {
 
     /**
      * Gets the details of a work request.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -208,7 +190,6 @@ public interface LoadBalancer extends AutoCloseable {
 
     /**
      * Lists all backend sets associated with a given load balancer.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -217,7 +198,6 @@ public interface LoadBalancer extends AutoCloseable {
 
     /**
      * Lists the backend servers for a given load balancer and backend set.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -226,7 +206,6 @@ public interface LoadBalancer extends AutoCloseable {
 
     /**
      * Lists all SSL certificates associated with a given load balancer.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -235,7 +214,6 @@ public interface LoadBalancer extends AutoCloseable {
 
     /**
      * Lists all load balancers in the specified compartment.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -244,7 +222,6 @@ public interface LoadBalancer extends AutoCloseable {
 
     /**
      * Lists the available load balancer policies.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -253,7 +230,6 @@ public interface LoadBalancer extends AutoCloseable {
 
     /**
      * Lists all supported traffic protocols.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -262,7 +238,6 @@ public interface LoadBalancer extends AutoCloseable {
 
     /**
      * Lists the valid load balancer shapes.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -271,7 +246,6 @@ public interface LoadBalancer extends AutoCloseable {
 
     /**
      * Lists the work requests for a given load balancer.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -280,7 +254,6 @@ public interface LoadBalancer extends AutoCloseable {
 
     /**
      * Updates the configuration of a backend server within the specified backend set.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -289,7 +262,6 @@ public interface LoadBalancer extends AutoCloseable {
 
     /**
      * Updates a backend set.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -298,7 +270,6 @@ public interface LoadBalancer extends AutoCloseable {
 
     /**
      * Updates the health check policy for a given load balancer and backend set.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -307,7 +278,6 @@ public interface LoadBalancer extends AutoCloseable {
 
     /**
      * Updates a listener for a given load balancer.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -316,7 +286,6 @@ public interface LoadBalancer extends AutoCloseable {
 
     /**
      * Updates a load balancer's configuration.
-     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.

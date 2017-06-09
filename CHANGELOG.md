@@ -13,6 +13,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.2.10 - 2017-06-09
+### Added
+- Support for object storage pre-authenticated requests and public buckets.
+- Support for load balancer session persistence operations.
+- Support for VCN local load balancer operations.
+- Support for nested instance metadata operations.
+
 ## 1.2.8 - 2017-05-18
 ### Added
 - Extended support for FastConnect
