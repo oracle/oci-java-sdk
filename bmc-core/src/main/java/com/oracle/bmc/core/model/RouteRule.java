@@ -3,41 +3,30 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * A mapping between a destination IP address range and a virtual device to route matching
  * packets to (a target).
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = RouteRule.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RouteRule.Builder.class)
 public class RouteRule {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("cidrBlock")
+        @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
         private String cidrBlock;
 
-        @JsonProperty("networkEntityId")
+        @com.fasterxml.jackson.annotation.JsonProperty("networkEntityId")
         private String networkEntityId;
 
         public RouteRule build() {
             return new RouteRule(cidrBlock, networkEntityId);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(RouteRule o) {
             return cidrBlock(o.getCidrBlock()).networkEntityId(o.getNetworkEntityId());
         }
@@ -57,18 +46,18 @@ public class RouteRule {
      * Example: `0.0.0.0/0`
      *
      **/
-    @JsonProperty("cidrBlock")
-    @Valid
-    @NotNull
-    @Size(min = 9, max = 18)
+    @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 9, max = 18)
     String cidrBlock;
 
     /**
      * The OCID for the route rule's target.
      **/
-    @JsonProperty("networkEntityId")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("networkEntityId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String networkEntityId;
 }

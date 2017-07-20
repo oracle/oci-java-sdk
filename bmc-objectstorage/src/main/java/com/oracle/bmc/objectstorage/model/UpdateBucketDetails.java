@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.objectstorage.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
@@ -21,30 +10,32 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = UpdateBucketDetails.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = UpdateBucketDetails.Builder.class
+)
 public class UpdateBucketDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("namespace")
+        @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
-        @JsonProperty("name")
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
-        @JsonProperty("metadata")
-        private Map<String, String> metadata;
+        @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+        private java.util.Map<String, String> metadata;
 
-        @JsonProperty("publicAccessType")
+        @com.fasterxml.jackson.annotation.JsonProperty("publicAccessType")
         private PublicAccessType publicAccessType;
 
         public UpdateBucketDetails build() {
             return new UpdateBucketDetails(namespace, name, metadata, publicAccessType);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateBucketDetails o) {
             return namespace(o.getNamespace())
                     .name(o.getName())
@@ -63,20 +54,20 @@ public class UpdateBucketDetails {
     /**
      * The namespace in which the bucket lives.
      **/
-    @JsonProperty("namespace")
+    @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     String namespace;
 
     /**
      * The name of the bucket.
      **/
-    @JsonProperty("name")
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
      * Arbitrary string, up to 4KB, of keys and values for user-defined metadata.
      **/
-    @JsonProperty("metadata")
-    Map<String, String> metadata;
+    @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+    java.util.Map<String, String> metadata;
     /**
      * The type of public access available on this bucket. Allows authenticated caller to access the bucket or
      * contents of this bucket. By default a bucket is set to NoPublicAccess. It is treated as NoPublicAccess
@@ -90,10 +81,10 @@ public class UpdateBucketDetails {
         ;
 
         private final String value;
-        private static Map<String, PublicAccessType> map;
+        private static java.util.Map<String, PublicAccessType> map;
 
         static {
-            map = new HashMap<>();
+            map = new java.util.HashMap<>();
             for (PublicAccessType v : PublicAccessType.values()) {
                 map.put(v.getValue(), v);
             }
@@ -103,12 +94,12 @@ public class UpdateBucketDetails {
             this.value = value;
         }
 
-        @JsonValue
+        @com.fasterxml.jackson.annotation.JsonValue
         public String getValue() {
             return value;
         }
 
-        @JsonCreator
+        @com.fasterxml.jackson.annotation.JsonCreator
         public static PublicAccessType create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
@@ -123,6 +114,6 @@ public class UpdateBucketDetails {
      * When the type is ObjectRead the bucket allows public access to the GetObject, HeadObject, ListObjects.
      *
      **/
-    @JsonProperty("publicAccessType")
+    @com.fasterxml.jackson.annotation.JsonProperty("publicAccessType")
     PublicAccessType publicAccessType;
 }

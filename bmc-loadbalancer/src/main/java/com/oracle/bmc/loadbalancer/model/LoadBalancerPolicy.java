@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.loadbalancer.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * A policy that determines how traffic is distributed among backend servers.
  * For more information on load balancing policies, see
@@ -21,21 +10,23 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@Value
-@JsonDeserialize(builder = LoadBalancerPolicy.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = LoadBalancerPolicy.Builder.class
+)
 public class LoadBalancerPolicy {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("name")
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         public LoadBalancerPolicy build() {
             return new LoadBalancerPolicy(name);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(LoadBalancerPolicy o) {
             return name(o.getName());
         }
@@ -51,8 +42,8 @@ public class LoadBalancerPolicy {
     /**
      * The name of the load balancing policy.
      **/
-    @JsonProperty("name")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String name;
 }

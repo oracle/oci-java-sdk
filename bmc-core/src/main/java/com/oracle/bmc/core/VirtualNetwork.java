@@ -6,8 +6,6 @@ package com.oracle.bmc.core;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
 
-import com.oracle.bmc.*;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface VirtualNetwork extends AutoCloseable {
 
@@ -23,7 +21,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the endpoint.  If the service is not available in this Region, however, an IllegalArgumentException will be raised.
      * @param region The region of the service.
      */
-    void setRegion(Region region);
+    void setRegion(com.oracle.bmc.Region region);
 
     /**
      * Sets the region to call (ex, 'us-phoenix-1').
@@ -53,7 +51,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * [Configuring Your On-Premise Router](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/configuringCPE.htm).
      * <p>
      * You may optionally specify a *display name* for the CPE, otherwise a default is provided. It does not have to
-     * be unique, and you can change it.
+     * be unique, and you can change it. Avoid entering confidential information.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -80,7 +78,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the cross-connect.
-     * It does not have to be unique, and you can change it.
+     * It does not have to be unique, and you can change it. Avoid entering confidential information.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -103,7 +101,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the cross-connect group.
-     * It does not have to be unique, and you can change it.
+     * It does not have to be unique, and you can change it. Avoid entering confidential information.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -123,7 +121,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the set of DHCP options, otherwise a default is provided.
-     * It does not have to be unique, and you can change it.
+     * It does not have to be unique, and you can change it. Avoid entering confidential information.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -143,7 +141,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * For information about OCIDs, see [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the DRG, otherwise a default is provided.
-     * It does not have to be unique, and you can change it.
+     * It does not have to be unique, and you can change it. Avoid entering confidential information.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -158,7 +156,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * [Managing Dynamic Routing Gateways (DRGs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingDRGs.htm).
      * <p>
      * You may optionally specify a *display name* for the attachment, otherwise a default is provided.
-     * It does not have to be unique, and you can change it.
+     * It does not have to be unique, and you can change it. Avoid entering confidential information.
      * <p>
      * For the purposes of access control, the DRG attachment is automatically placed into the same compartment
      * as the VCN. For more information about compartments and access control, see
@@ -186,7 +184,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * For information about OCIDs, see [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the IPSec connection, otherwise a default is provided.
-     * It does not have to be unique, and you can change it.
+     * It does not have to be unique, and you can change it. Avoid entering confidential information.
      * <p>
      * After creating the IPSec connection, you need to configure your on-premise router
      * with tunnel-specific information returned by
@@ -216,7 +214,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the Internet Gateway, otherwise a default is provided. It
-     * does not have to be unique, and you can change it.
+     * does not have to be unique, and you can change it. Avoid entering confidential information.
      * <p>
      * For traffic to flow between a subnet and an Internet Gateway, you must create a route rule accordingly in
      * the subnet's route table (e.g., 0.0.0.0/0 > Internet Gateway). See
@@ -234,6 +232,17 @@ public interface VirtualNetwork extends AutoCloseable {
     CreateInternetGatewayResponse createInternetGateway(CreateInternetGatewayRequest request);
 
     /**
+     * Creates a secondary private IP for the specified VNIC.
+     * For more information about secondary private IPs, see
+     * [Managing IP Addresses](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPaddresses.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreatePrivateIpResponse createPrivateIp(CreatePrivateIpRequest request);
+
+    /**
      * Creates a new route table for the specified VCN. In the request you must also include at least one route
      * rule for the new route table. For information on the number of rules you can have in a route table, see
      * [Service Limits](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/servicelimits.htm). For general information about route
@@ -247,7 +256,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the route table, otherwise a default is provided.
-     * It does not have to be unique, and you can change it.
+     * It does not have to be unique, and you can change it. Avoid entering confidential information.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -269,7 +278,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the security list, otherwise a default is provided.
-     * It does not have to be unique, and you can change it.
+     * It does not have to be unique, and you can change it. Avoid entering confidential information.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -304,7 +313,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * [Managing DHCP Options](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingDHCP.htm).
      * <p>
      * You may optionally specify a *display name* for the subnet, otherwise a default is provided.
-     * It does not have to be unique, and you can change it.
+     * It does not have to be unique, and you can change it. Avoid entering confidential information.
      * <p>
      * You can also add a DNS label for the subnet, which is required if you want the Internet and
      * VCN Resolver to resolve hostnames for instances in the subnet. For more information, see
@@ -320,10 +329,10 @@ public interface VirtualNetwork extends AutoCloseable {
      * Creates a new Virtual Cloud Network (VCN). For more information, see
      * [Managing Virtual Cloud Networks (VCNs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVCNs.htm).
      * <p>
-     * For the VCN you must specify a single, contiguous IPv4 CIDR block in the private IP address ranges specified in
-     * [RFC 1918](https://tools.ietf.org/html/rfc1918) (10.0.0.0/8, 172.16/12, and 192.168/16). Example: 172.16.0.0/16.
-     * The CIDR block can range from /16 to /30, and it must not overlap with your on-premise network. You can't
-     * change the size of the VCN after creation.
+     * For the VCN you must specify a single, contiguous IPv4 CIDR block. Oracle recommends using one of the
+     * private IP address ranges specified in [RFC 1918](https://tools.ietf.org/html/rfc1918) (10.0.0.0/8,
+     * 172.16/12, and 192.168/16). Example: 172.16.0.0/16. The CIDR block can range from /16 to /30, and it
+     * must not overlap with your on-premise network. You can't change the size of the VCN after creation.
      * <p>
      * For the purposes of access control, you must provide the OCID of the compartment where you want the VCN to
      * reside. Consult an Oracle Bare Metal Cloud Services administrator in your organization if you're not sure which
@@ -333,7 +342,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the VCN, otherwise a default is provided. It does not have to
-     * be unique, and you can change it.
+     * be unique, and you can change it. Avoid entering confidential information.
      * <p>
      * You can also add a DNS label for the VCN, which is required if you want the instances to use the
      * Interent and VCN Resolver option for DNS in the VCN. For more information, see
@@ -368,7 +377,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the virtual circuit.
-     * It does not have to be unique, and you can change it.
+     * It does not have to be unique, and you can change it. Avoid entering confidential information.
      * <p>
      **Important:** When creating a virtual circuit, you specify a DRG for
      * the traffic to flow through. Make sure you attach the DRG to your
@@ -478,6 +487,20 @@ public interface VirtualNetwork extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     DeleteInternetGatewayResponse deleteInternetGateway(DeleteInternetGatewayRequest request);
+
+    /**
+     * Unassigns and deletes the specified private IP. You must
+     * specify the object's OCID. The private IP address is returned to
+     * the subnet's pool of available addresses.
+     * <p>
+     * This operation cannot be used with primary private IPs, which are
+     * automatically unassigned and deleted when the VNIC is terminated.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeletePrivateIpResponse deletePrivateIp(DeletePrivateIpRequest request);
 
     /**
      * Deletes the specified route table, but only if it's not associated with a subnet. You can't delete a
@@ -647,6 +670,18 @@ public interface VirtualNetwork extends AutoCloseable {
     GetInternetGatewayResponse getInternetGateway(GetInternetGatewayRequest request);
 
     /**
+     * Gets the specified private IP. You must specify the object's OCID.
+     * Alternatively, you can get the object by using
+     * {@link #listPrivateIps(ListPrivateIpsRequest) listPrivateIps}
+     * with the private IP address (for example, 10.0.3.3) and subnet OCID.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetPrivateIpResponse getPrivateIp(GetPrivateIpRequest request);
+
+    /**
      * Gets the specified route table's information.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -687,9 +722,10 @@ public interface VirtualNetwork extends AutoCloseable {
     GetVirtualCircuitResponse getVirtualCircuit(GetVirtualCircuitRequest request);
 
     /**
-     * Gets the information for the specified Virtual Network Interface Card (VNIC), including
-     * the IP addresses. You can get the instance's VNIC OCID from the
-     * {@link #listVnicAttachments(ListVnicAttachmentsRequest) listVnicAttachments} operation.
+     * Gets the information for the specified virtual network interface card (VNIC).
+     * You can get the VNIC OCID from the
+     * {@link #listVnicAttachments(ListVnicAttachmentsRequest) listVnicAttachments}
+     * operation.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -814,6 +850,27 @@ public interface VirtualNetwork extends AutoCloseable {
     ListInternetGatewaysResponse listInternetGateways(ListInternetGatewaysRequest request);
 
     /**
+     * Lists the {@link PrivateIp} objects based
+     * on one of these filters:
+     * <p>
+     * - Subnet OCID.
+     *   - VNIC OCID.
+     *   - Both private IP address and subnet OCID: This lets
+     *   you get a `privateIP` object based on its private IP
+     *   address (for example, 10.0.3.3) and not its OCID. For comparison,
+     *   {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp}
+     *   requires the OCID.
+     * <p>
+     * If you're listing all the private IPs associated with a given subnet
+     * or VNIC, the response includes both primary and secondary private IPs.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListPrivateIpsResponse listPrivateIps(ListPrivateIpsRequest request);
+
+    /**
      * Lists the route tables in the specified VCN and specified compartment. The response
      * includes the default route table that automatically comes with each VCN, plus any route tables
      * you've created.
@@ -879,6 +936,7 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Updates the specified CPE's display name.
+     * Avoid entering confidential information.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -896,6 +954,8 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Updates the specified cross-connect group's display name.
+     * Avoid entering confidential information.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -904,7 +964,9 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Updates the specified set of DHCP options. You can update the display name or the options
-     * themselves. Note that the `options` object you provide replaces the entire existing set of options.
+     * themselves. Avoid entering confidential information.
+     * <p>
+     * Note that the `options` object you provide replaces the entire existing set of options.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -913,7 +975,7 @@ public interface VirtualNetwork extends AutoCloseable {
     UpdateDhcpOptionsResponse updateDhcpOptions(UpdateDhcpOptionsRequest request);
 
     /**
-     * Updates the specified DRG's display name.
+     * Updates the specified DRG's display name. Avoid entering confidential information.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -923,6 +985,7 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Updates the display name for the specified `DrgAttachment`.
+     * Avoid entering confidential information.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -932,6 +995,7 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Updates the display name for the specified IPSec connection.
+     * Avoid entering confidential information.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -941,6 +1005,7 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Updates the specified Internet Gateway. You can disable/enable it, or change its display name.
+     * Avoid entering confidential information.
      * <p>
      * If the gateway is disabled, that means no traffic will flow to/from the internet even if there's
      * a route rule that enables that traffic.
@@ -952,8 +1017,28 @@ public interface VirtualNetwork extends AutoCloseable {
     UpdateInternetGatewayResponse updateInternetGateway(UpdateInternetGatewayRequest request);
 
     /**
-     * Updates the specified route table's display name or route rules. Note that the
-     * `routeRules` object you provide replaces the entire existing set of rules.
+     * Updates the specified private IP. You must specify the object's OCID.
+     * Use this operation if you want to:
+     * <p>
+     * - Move a secondary private IP to a different VNIC in the same subnet.
+     *   - Change the display name for a secondary private IP.
+     *   - Change the hostname for a secondary private IP.
+     * <p>
+     * This operation cannot be used with primary private IPs.
+     * To update the hostname for the primary IP on a VNIC, use
+     * {@link #updateVnic(UpdateVnicRequest) updateVnic}.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdatePrivateIpResponse updatePrivateIp(UpdatePrivateIpRequest request);
+
+    /**
+     * Updates the specified route table's display name or route rules.
+     * Avoid entering confidential information.
+     * <p>
+     * Note that the `routeRules` object you provide replaces the entire existing set of rules.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -962,8 +1047,10 @@ public interface VirtualNetwork extends AutoCloseable {
     UpdateRouteTableResponse updateRouteTable(UpdateRouteTableRequest request);
 
     /**
-     * Updates the specified security list's display name or rules. Note that the
-     * `egressSecurityRules` or `ingressSecurityRules` objects you provide replace the entire
+     * Updates the specified security list's display name or rules.
+     * Avoid entering confidential information.
+     * <p>
+     * Note that the `egressSecurityRules` or `ingressSecurityRules` objects you provide replace the entire
      * existing objects.
      *
      * @param request The request object containing the details to send
@@ -973,7 +1060,7 @@ public interface VirtualNetwork extends AutoCloseable {
     UpdateSecurityListResponse updateSecurityList(UpdateSecurityListRequest request);
 
     /**
-     * Updates the specified subnet's display name.
+     * Updates the specified subnet's display name. Avoid entering confidential information.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -983,6 +1070,7 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Updates the specified VCN's display name.
+     * Avoid entering confidential information.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1013,6 +1101,15 @@ public interface VirtualNetwork extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateVirtualCircuitResponse updateVirtualCircuit(UpdateVirtualCircuitRequest request);
+
+    /**
+     * Updates the specified VNIC.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateVnicResponse updateVnic(UpdateVnicRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

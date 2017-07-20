@@ -3,44 +3,35 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * A rule for allowing outbound IP packets.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = EgressSecurityRule.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = EgressSecurityRule.Builder.class
+)
 public class EgressSecurityRule {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("destination")
+        @com.fasterxml.jackson.annotation.JsonProperty("destination")
         private String destination;
 
-        @JsonProperty("icmpOptions")
+        @com.fasterxml.jackson.annotation.JsonProperty("icmpOptions")
         private IcmpOptions icmpOptions;
 
-        @JsonProperty("isStateless")
+        @com.fasterxml.jackson.annotation.JsonProperty("isStateless")
         private Boolean isStateless;
 
-        @JsonProperty("protocol")
+        @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private String protocol;
 
-        @JsonProperty("tcpOptions")
+        @com.fasterxml.jackson.annotation.JsonProperty("tcpOptions")
         private TcpOptions tcpOptions;
 
-        @JsonProperty("udpOptions")
+        @com.fasterxml.jackson.annotation.JsonProperty("udpOptions")
         private UdpOptions udpOptions;
 
         public EgressSecurityRule build() {
@@ -48,7 +39,7 @@ public class EgressSecurityRule {
                     destination, icmpOptions, isStateless, protocol, tcpOptions, udpOptions);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(EgressSecurityRule o) {
             return destination(o.getDestination())
                     .icmpOptions(o.getIcmpOptions())
@@ -71,9 +62,9 @@ public class EgressSecurityRule {
      * packet originating from the instance can go to.
      *
      **/
-    @JsonProperty("destination")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("destination")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String destination;
 
     /**
@@ -87,7 +78,7 @@ public class EgressSecurityRule {
      * multiple codes for a single type, create a separate security list rule for each.
      *
      **/
-    @JsonProperty("icmpOptions")
+    @com.fasterxml.jackson.annotation.JsonProperty("icmpOptions")
     IcmpOptions icmpOptions;
 
     /**
@@ -98,7 +89,7 @@ public class EgressSecurityRule {
      * and a corresponding rule is not necessary for bidirectional traffic.
      *
      **/
-    @JsonProperty("isStateless")
+    @com.fasterxml.jackson.annotation.JsonProperty("isStateless")
     Boolean isStateless;
 
     /**
@@ -108,9 +99,9 @@ public class EgressSecurityRule {
      * Options are supported only for ICMP (\"1\"), TCP (\"6\"), and UDP (\"17\").
      *
      **/
-    @JsonProperty("protocol")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("protocol")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String protocol;
 
     /**
@@ -118,7 +109,7 @@ public class EgressSecurityRule {
      * If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
      *
      **/
-    @JsonProperty("tcpOptions")
+    @com.fasterxml.jackson.annotation.JsonProperty("tcpOptions")
     TcpOptions tcpOptions;
 
     /**
@@ -126,6 +117,6 @@ public class EgressSecurityRule {
      * If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
      *
      **/
-    @JsonProperty("udpOptions")
+    @com.fasterxml.jackson.annotation.JsonProperty("udpOptions")
     UdpOptions udpOptions;
 }

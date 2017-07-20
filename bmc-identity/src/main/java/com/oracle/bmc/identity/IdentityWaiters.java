@@ -6,17 +6,6 @@ package com.oracle.bmc.identity;
 import com.oracle.bmc.identity.requests.*;
 import com.oracle.bmc.identity.responses.*;
 
-import com.oracle.bmc.waiter.*;
-import com.oracle.bmc.waiter.internal.SimpleWaiterImpl;
-
-import java.util.concurrent.ExecutorService;
-
-import com.google.common.base.Function;
-import com.google.common.base.Predicate;
-import com.google.common.base.Suppliers;
-
-import lombok.RequiredArgsConstructor;
-
 /**
  * Collection of helper methods to produce {@link Waiter}s for different
  * resources of Identity.
@@ -24,9 +13,9 @@ import lombok.RequiredArgsConstructor;
  * The default configuration used is defined by {@link Waiters#DEFAULT_POLLING_WAITER}.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@RequiredArgsConstructor
+@lombok.RequiredArgsConstructor
 public class IdentityWaiters {
-    private final ExecutorService executorService;
+    private final java.util.concurrent.ExecutorService executorService;
     private final Identity client;
 
     /**
@@ -36,10 +25,12 @@ public class IdentityWaiters {
      * @param targetState The desired state to wait for.
      * @return A new Waiter instance.
      */
-    public Waiter<GetCompartmentRequest, GetCompartmentResponse> forCompartment(
-            GetCompartmentRequest request,
-            com.oracle.bmc.identity.model.Compartment.LifecycleState targetState) {
-        return forCompartment(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+    public com.oracle.bmc.waiter.Waiter<GetCompartmentRequest, GetCompartmentResponse>
+            forCompartment(
+                    GetCompartmentRequest request,
+                    com.oracle.bmc.identity.model.Compartment.LifecycleState targetState) {
+        return forCompartment(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
     /**
@@ -51,31 +42,36 @@ public class IdentityWaiters {
      * @param delayStrategy The {@link DelayStrategy} to use.
      * @return A new Waiter instance.
      */
-    public Waiter<GetCompartmentRequest, GetCompartmentResponse> forCompartment(
-            GetCompartmentRequest request,
-            com.oracle.bmc.identity.model.Compartment.LifecycleState targetState,
-            TerminationStrategy terminationStrategy,
-            DelayStrategy delayStrategy) {
+    public com.oracle.bmc.waiter.Waiter<GetCompartmentRequest, GetCompartmentResponse>
+            forCompartment(
+                    GetCompartmentRequest request,
+                    com.oracle.bmc.identity.model.Compartment.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
         return forCompartment(
-                Waiters.newWaiter(terminationStrategy, delayStrategy), request, targetState);
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
     }
 
     // Helper method to create a new Waiter for Compartment.
-    private Waiter<GetCompartmentRequest, GetCompartmentResponse> forCompartment(
-            BmcGenericWaiter waiter,
-            final GetCompartmentRequest request,
-            final com.oracle.bmc.identity.model.Compartment.LifecycleState targetState) {
-        return new SimpleWaiterImpl<>(
+    private com.oracle.bmc.waiter.Waiter<GetCompartmentRequest, GetCompartmentResponse>
+            forCompartment(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetCompartmentRequest request,
+                    final com.oracle.bmc.identity.model.Compartment.LifecycleState targetState) {
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        Suppliers.ofInstance(request),
-                        new Function<GetCompartmentRequest, GetCompartmentResponse>() {
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetCompartmentRequest, GetCompartmentResponse>() {
                             @Override
                             public GetCompartmentResponse apply(GetCompartmentRequest request) {
                                 return client.getCompartment(request);
                             }
                         },
-                        new Predicate<GetCompartmentResponse>() {
+                        new com.google.common.base.Predicate<GetCompartmentResponse>() {
                             @Override
                             public boolean apply(GetCompartmentResponse response) {
                                 return response.getCompartment().getLifecycleState() == targetState;
@@ -94,10 +90,10 @@ public class IdentityWaiters {
      * @param targetState The desired state to wait for.
      * @return A new Waiter instance.
      */
-    public Waiter<GetGroupRequest, GetGroupResponse> forGroup(
+    public com.oracle.bmc.waiter.Waiter<GetGroupRequest, GetGroupResponse> forGroup(
             GetGroupRequest request,
             com.oracle.bmc.identity.model.Group.LifecycleState targetState) {
-        return forGroup(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+        return forGroup(com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
     /**
@@ -109,31 +105,33 @@ public class IdentityWaiters {
      * @param delayStrategy The {@link DelayStrategy} to use.
      * @return A new Waiter instance.
      */
-    public Waiter<GetGroupRequest, GetGroupResponse> forGroup(
+    public com.oracle.bmc.waiter.Waiter<GetGroupRequest, GetGroupResponse> forGroup(
             GetGroupRequest request,
             com.oracle.bmc.identity.model.Group.LifecycleState targetState,
-            TerminationStrategy terminationStrategy,
-            DelayStrategy delayStrategy) {
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
         return forGroup(
-                Waiters.newWaiter(terminationStrategy, delayStrategy), request, targetState);
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
     }
 
     // Helper method to create a new Waiter for Group.
-    private Waiter<GetGroupRequest, GetGroupResponse> forGroup(
-            BmcGenericWaiter waiter,
+    private com.oracle.bmc.waiter.Waiter<GetGroupRequest, GetGroupResponse> forGroup(
+            com.oracle.bmc.waiter.BmcGenericWaiter waiter,
             final GetGroupRequest request,
             final com.oracle.bmc.identity.model.Group.LifecycleState targetState) {
-        return new SimpleWaiterImpl<>(
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        Suppliers.ofInstance(request),
-                        new Function<GetGroupRequest, GetGroupResponse>() {
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<GetGroupRequest, GetGroupResponse>() {
                             @Override
                             public GetGroupResponse apply(GetGroupRequest request) {
                                 return client.getGroup(request);
                             }
                         },
-                        new Predicate<GetGroupResponse>() {
+                        new com.google.common.base.Predicate<GetGroupResponse>() {
                             @Override
                             public boolean apply(GetGroupResponse response) {
                                 return response.getGroup().getLifecycleState() == targetState;
@@ -150,10 +148,12 @@ public class IdentityWaiters {
      * @param targetState The desired state to wait for.
      * @return A new Waiter instance.
      */
-    public Waiter<GetIdentityProviderRequest, GetIdentityProviderResponse> forIdentityProvider(
-            GetIdentityProviderRequest request,
-            com.oracle.bmc.identity.model.IdentityProvider.LifecycleState targetState) {
-        return forIdentityProvider(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+    public com.oracle.bmc.waiter.Waiter<GetIdentityProviderRequest, GetIdentityProviderResponse>
+            forIdentityProvider(
+                    GetIdentityProviderRequest request,
+                    com.oracle.bmc.identity.model.IdentityProvider.LifecycleState targetState) {
+        return forIdentityProvider(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
     /**
@@ -165,32 +165,38 @@ public class IdentityWaiters {
      * @param delayStrategy The {@link DelayStrategy} to use.
      * @return A new Waiter instance.
      */
-    public Waiter<GetIdentityProviderRequest, GetIdentityProviderResponse> forIdentityProvider(
-            GetIdentityProviderRequest request,
-            com.oracle.bmc.identity.model.IdentityProvider.LifecycleState targetState,
-            TerminationStrategy terminationStrategy,
-            DelayStrategy delayStrategy) {
+    public com.oracle.bmc.waiter.Waiter<GetIdentityProviderRequest, GetIdentityProviderResponse>
+            forIdentityProvider(
+                    GetIdentityProviderRequest request,
+                    com.oracle.bmc.identity.model.IdentityProvider.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
         return forIdentityProvider(
-                Waiters.newWaiter(terminationStrategy, delayStrategy), request, targetState);
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
     }
 
     // Helper method to create a new Waiter for IdentityProvider.
-    private Waiter<GetIdentityProviderRequest, GetIdentityProviderResponse> forIdentityProvider(
-            BmcGenericWaiter waiter,
-            final GetIdentityProviderRequest request,
-            final com.oracle.bmc.identity.model.IdentityProvider.LifecycleState targetState) {
-        return new SimpleWaiterImpl<>(
+    private com.oracle.bmc.waiter.Waiter<GetIdentityProviderRequest, GetIdentityProviderResponse>
+            forIdentityProvider(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetIdentityProviderRequest request,
+                    final com.oracle.bmc.identity.model.IdentityProvider.LifecycleState
+                            targetState) {
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        Suppliers.ofInstance(request),
-                        new Function<GetIdentityProviderRequest, GetIdentityProviderResponse>() {
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetIdentityProviderRequest, GetIdentityProviderResponse>() {
                             @Override
                             public GetIdentityProviderResponse apply(
                                     GetIdentityProviderRequest request) {
                                 return client.getIdentityProvider(request);
                             }
                         },
-                        new Predicate<GetIdentityProviderResponse>() {
+                        new com.google.common.base.Predicate<GetIdentityProviderResponse>() {
                             @Override
                             public boolean apply(GetIdentityProviderResponse response) {
                                 return response.getIdentityProvider().getLifecycleState()
@@ -210,10 +216,12 @@ public class IdentityWaiters {
      * @param targetState The desired state to wait for.
      * @return A new Waiter instance.
      */
-    public Waiter<GetIdpGroupMappingRequest, GetIdpGroupMappingResponse> forIdpGroupMapping(
-            GetIdpGroupMappingRequest request,
-            com.oracle.bmc.identity.model.IdpGroupMapping.LifecycleState targetState) {
-        return forIdpGroupMapping(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+    public com.oracle.bmc.waiter.Waiter<GetIdpGroupMappingRequest, GetIdpGroupMappingResponse>
+            forIdpGroupMapping(
+                    GetIdpGroupMappingRequest request,
+                    com.oracle.bmc.identity.model.IdpGroupMapping.LifecycleState targetState) {
+        return forIdpGroupMapping(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
     /**
@@ -225,32 +233,38 @@ public class IdentityWaiters {
      * @param delayStrategy The {@link DelayStrategy} to use.
      * @return A new Waiter instance.
      */
-    public Waiter<GetIdpGroupMappingRequest, GetIdpGroupMappingResponse> forIdpGroupMapping(
-            GetIdpGroupMappingRequest request,
-            com.oracle.bmc.identity.model.IdpGroupMapping.LifecycleState targetState,
-            TerminationStrategy terminationStrategy,
-            DelayStrategy delayStrategy) {
+    public com.oracle.bmc.waiter.Waiter<GetIdpGroupMappingRequest, GetIdpGroupMappingResponse>
+            forIdpGroupMapping(
+                    GetIdpGroupMappingRequest request,
+                    com.oracle.bmc.identity.model.IdpGroupMapping.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
         return forIdpGroupMapping(
-                Waiters.newWaiter(terminationStrategy, delayStrategy), request, targetState);
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
     }
 
     // Helper method to create a new Waiter for IdpGroupMapping.
-    private Waiter<GetIdpGroupMappingRequest, GetIdpGroupMappingResponse> forIdpGroupMapping(
-            BmcGenericWaiter waiter,
-            final GetIdpGroupMappingRequest request,
-            final com.oracle.bmc.identity.model.IdpGroupMapping.LifecycleState targetState) {
-        return new SimpleWaiterImpl<>(
+    private com.oracle.bmc.waiter.Waiter<GetIdpGroupMappingRequest, GetIdpGroupMappingResponse>
+            forIdpGroupMapping(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetIdpGroupMappingRequest request,
+                    final com.oracle.bmc.identity.model.IdpGroupMapping.LifecycleState
+                            targetState) {
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        Suppliers.ofInstance(request),
-                        new Function<GetIdpGroupMappingRequest, GetIdpGroupMappingResponse>() {
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetIdpGroupMappingRequest, GetIdpGroupMappingResponse>() {
                             @Override
                             public GetIdpGroupMappingResponse apply(
                                     GetIdpGroupMappingRequest request) {
                                 return client.getIdpGroupMapping(request);
                             }
                         },
-                        new Predicate<GetIdpGroupMappingResponse>() {
+                        new com.google.common.base.Predicate<GetIdpGroupMappingResponse>() {
                             @Override
                             public boolean apply(GetIdpGroupMappingResponse response) {
                                 return response.getIdpGroupMapping().getLifecycleState()
@@ -270,10 +284,11 @@ public class IdentityWaiters {
      * @param targetState The desired state to wait for.
      * @return A new Waiter instance.
      */
-    public Waiter<GetPolicyRequest, GetPolicyResponse> forPolicy(
+    public com.oracle.bmc.waiter.Waiter<GetPolicyRequest, GetPolicyResponse> forPolicy(
             GetPolicyRequest request,
             com.oracle.bmc.identity.model.Policy.LifecycleState targetState) {
-        return forPolicy(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+        return forPolicy(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
     /**
@@ -285,31 +300,33 @@ public class IdentityWaiters {
      * @param delayStrategy The {@link DelayStrategy} to use.
      * @return A new Waiter instance.
      */
-    public Waiter<GetPolicyRequest, GetPolicyResponse> forPolicy(
+    public com.oracle.bmc.waiter.Waiter<GetPolicyRequest, GetPolicyResponse> forPolicy(
             GetPolicyRequest request,
             com.oracle.bmc.identity.model.Policy.LifecycleState targetState,
-            TerminationStrategy terminationStrategy,
-            DelayStrategy delayStrategy) {
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
         return forPolicy(
-                Waiters.newWaiter(terminationStrategy, delayStrategy), request, targetState);
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
     }
 
     // Helper method to create a new Waiter for Policy.
-    private Waiter<GetPolicyRequest, GetPolicyResponse> forPolicy(
-            BmcGenericWaiter waiter,
+    private com.oracle.bmc.waiter.Waiter<GetPolicyRequest, GetPolicyResponse> forPolicy(
+            com.oracle.bmc.waiter.BmcGenericWaiter waiter,
             final GetPolicyRequest request,
             final com.oracle.bmc.identity.model.Policy.LifecycleState targetState) {
-        return new SimpleWaiterImpl<>(
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        Suppliers.ofInstance(request),
-                        new Function<GetPolicyRequest, GetPolicyResponse>() {
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<GetPolicyRequest, GetPolicyResponse>() {
                             @Override
                             public GetPolicyResponse apply(GetPolicyRequest request) {
                                 return client.getPolicy(request);
                             }
                         },
-                        new Predicate<GetPolicyResponse>() {
+                        new com.google.common.base.Predicate<GetPolicyResponse>() {
                             @Override
                             public boolean apply(GetPolicyResponse response) {
                                 return response.getPolicy().getLifecycleState() == targetState;
@@ -326,9 +343,9 @@ public class IdentityWaiters {
      * @param targetState The desired state to wait for.
      * @return A new Waiter instance.
      */
-    public Waiter<GetUserRequest, GetUserResponse> forUser(
+    public com.oracle.bmc.waiter.Waiter<GetUserRequest, GetUserResponse> forUser(
             GetUserRequest request, com.oracle.bmc.identity.model.User.LifecycleState targetState) {
-        return forUser(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+        return forUser(com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
     /**
@@ -340,30 +357,33 @@ public class IdentityWaiters {
      * @param delayStrategy The {@link DelayStrategy} to use.
      * @return A new Waiter instance.
      */
-    public Waiter<GetUserRequest, GetUserResponse> forUser(
+    public com.oracle.bmc.waiter.Waiter<GetUserRequest, GetUserResponse> forUser(
             GetUserRequest request,
             com.oracle.bmc.identity.model.User.LifecycleState targetState,
-            TerminationStrategy terminationStrategy,
-            DelayStrategy delayStrategy) {
-        return forUser(Waiters.newWaiter(terminationStrategy, delayStrategy), request, targetState);
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        return forUser(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
     }
 
     // Helper method to create a new Waiter for User.
-    private Waiter<GetUserRequest, GetUserResponse> forUser(
-            BmcGenericWaiter waiter,
+    private com.oracle.bmc.waiter.Waiter<GetUserRequest, GetUserResponse> forUser(
+            com.oracle.bmc.waiter.BmcGenericWaiter waiter,
             final GetUserRequest request,
             final com.oracle.bmc.identity.model.User.LifecycleState targetState) {
-        return new SimpleWaiterImpl<>(
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        Suppliers.ofInstance(request),
-                        new Function<GetUserRequest, GetUserResponse>() {
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<GetUserRequest, GetUserResponse>() {
                             @Override
                             public GetUserResponse apply(GetUserRequest request) {
                                 return client.getUser(request);
                             }
                         },
-                        new Predicate<GetUserResponse>() {
+                        new com.google.common.base.Predicate<GetUserResponse>() {
                             @Override
                             public boolean apply(GetUserResponse response) {
                                 return response.getUser().getLifecycleState() == targetState;
@@ -380,11 +400,13 @@ public class IdentityWaiters {
      * @param targetState The desired state to wait for.
      * @return A new Waiter instance.
      */
-    public Waiter<GetUserGroupMembershipRequest, GetUserGroupMembershipResponse>
+    public com.oracle.bmc.waiter.Waiter<
+                    GetUserGroupMembershipRequest, GetUserGroupMembershipResponse>
             forUserGroupMembership(
                     GetUserGroupMembershipRequest request,
                     com.oracle.bmc.identity.model.UserGroupMembership.LifecycleState targetState) {
-        return forUserGroupMembership(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+        return forUserGroupMembership(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
     /**
@@ -396,28 +418,32 @@ public class IdentityWaiters {
      * @param delayStrategy The {@link DelayStrategy} to use.
      * @return A new Waiter instance.
      */
-    public Waiter<GetUserGroupMembershipRequest, GetUserGroupMembershipResponse>
+    public com.oracle.bmc.waiter.Waiter<
+                    GetUserGroupMembershipRequest, GetUserGroupMembershipResponse>
             forUserGroupMembership(
                     GetUserGroupMembershipRequest request,
                     com.oracle.bmc.identity.model.UserGroupMembership.LifecycleState targetState,
-                    TerminationStrategy terminationStrategy,
-                    DelayStrategy delayStrategy) {
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
         return forUserGroupMembership(
-                Waiters.newWaiter(terminationStrategy, delayStrategy), request, targetState);
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
     }
 
     // Helper method to create a new Waiter for UserGroupMembership.
-    private Waiter<GetUserGroupMembershipRequest, GetUserGroupMembershipResponse>
+    private com.oracle.bmc.waiter.Waiter<
+                    GetUserGroupMembershipRequest, GetUserGroupMembershipResponse>
             forUserGroupMembership(
-                    BmcGenericWaiter waiter,
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
                     final GetUserGroupMembershipRequest request,
                     final com.oracle.bmc.identity.model.UserGroupMembership.LifecycleState
                             targetState) {
-        return new SimpleWaiterImpl<>(
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        Suppliers.ofInstance(request),
-                        new Function<
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
                                 GetUserGroupMembershipRequest, GetUserGroupMembershipResponse>() {
                             @Override
                             public GetUserGroupMembershipResponse apply(
@@ -425,7 +451,7 @@ public class IdentityWaiters {
                                 return client.getUserGroupMembership(request);
                             }
                         },
-                        new Predicate<GetUserGroupMembershipResponse>() {
+                        new com.google.common.base.Predicate<GetUserGroupMembershipResponse>() {
                             @Override
                             public boolean apply(GetUserGroupMembershipResponse response) {
                                 return response.getUserGroupMembership().getLifecycleState()

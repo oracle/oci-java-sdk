@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.identity.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * An object that represents your tenancy's access to a particular region (i.e., a subscription), the status of that
  * access, and whether that region is the home region. For more information, see [Managing Regions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingregions.htm).
@@ -24,30 +13,32 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = RegionSubscription.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = RegionSubscription.Builder.class
+)
 public class RegionSubscription {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("regionKey")
+        @com.fasterxml.jackson.annotation.JsonProperty("regionKey")
         private String regionKey;
 
-        @JsonProperty("regionName")
+        @com.fasterxml.jackson.annotation.JsonProperty("regionName")
         private String regionName;
 
-        @JsonProperty("status")
+        @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
-        @JsonProperty("isHomeRegion")
+        @com.fasterxml.jackson.annotation.JsonProperty("isHomeRegion")
         private Boolean isHomeRegion;
 
         public RegionSubscription build() {
             return new RegionSubscription(regionKey, regionName, status, isHomeRegion);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(RegionSubscription o) {
             return regionKey(o.getRegionKey())
                     .regionName(o.getRegionName())
@@ -71,10 +62,10 @@ public class RegionSubscription {
      * - `IAD`
      *
      **/
-    @JsonProperty("regionKey")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 16)
+    @com.fasterxml.jackson.annotation.JsonProperty("regionKey")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 16)
     String regionKey;
 
     /**
@@ -85,10 +76,10 @@ public class RegionSubscription {
      * - `us-ashburn-1`
      *
      **/
-    @JsonProperty("regionName")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 16)
+    @com.fasterxml.jackson.annotation.JsonProperty("regionName")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 16)
     String regionName;
     /**
      * The region subscription status.
@@ -105,10 +96,10 @@ public class RegionSubscription {
         UnknownEnumValue(null);
 
         private final String value;
-        private static Map<String, Status> map;
+        private static java.util.Map<String, Status> map;
 
         static {
-            map = new HashMap<>();
+            map = new java.util.HashMap<>();
             for (Status v : Status.values()) {
                 if (v != UnknownEnumValue) {
                     map.put(v.getValue(), v);
@@ -120,12 +111,12 @@ public class RegionSubscription {
             this.value = value;
         }
 
-        @JsonValue
+        @com.fasterxml.jackson.annotation.JsonValue
         public String getValue() {
             return value;
         }
 
-        @JsonCreator
+        @com.fasterxml.jackson.annotation.JsonCreator
         public static Status create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
@@ -139,16 +130,16 @@ public class RegionSubscription {
     /**
      * The region subscription status.
      **/
-    @JsonProperty("status")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("status")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     Status status;
 
     /**
      * Indicates if the region is the home region or not.
      **/
-    @JsonProperty("isHomeRegion")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("isHomeRegion")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     Boolean isHomeRegion;
 }

@@ -35,9 +35,27 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class DefaultConfigurator implements ClientConfigurator {
 
+    static final String SUN_NET_HTTP_ALLOW_RESTRICTED_HEADERS =
+            "sun.net.http.allowRestrictedHeaders";
+
     static {
-        // necessary for the default HttpUrlConnector implementation
-        System.setProperty("sun.net.http.allowRestrictedHeaders", "true");
+        setAllowRestrictedHeadersProperty(
+                System.getProperty(SUN_NET_HTTP_ALLOW_RESTRICTED_HEADERS));
+    }
+
+    static void setAllowRestrictedHeadersProperty(String previousValue) {
+        // necessary for the default HttpUrlConnector implementation;
+        // check if this property was explicitly set to false; if so, fail
+        if (previousValue != null && !Boolean.valueOf(previousValue)) {
+            throw new IllegalStateException(
+                    "Property "
+                            + SUN_NET_HTTP_ALLOW_RESTRICTED_HEADERS
+                            + " was explicitly "
+                            + "set to "
+                            + previousValue
+                            + "; the Oracle BMC SDK needs to set this property to true. Failing...");
+        }
+        System.setProperty(SUN_NET_HTTP_ALLOW_RESTRICTED_HEADERS, "true");
     }
 
     @Override

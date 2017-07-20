@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.objectstorage.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
@@ -21,24 +10,26 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = CommitMultipartUploadPartDetails.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = CommitMultipartUploadPartDetails.Builder.class
+)
 public class CommitMultipartUploadPartDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("partNum")
+        @com.fasterxml.jackson.annotation.JsonProperty("partNum")
         private Integer partNum;
 
-        @JsonProperty("etag")
+        @com.fasterxml.jackson.annotation.JsonProperty("etag")
         private String etag;
 
         public CommitMultipartUploadPartDetails build() {
             return new CommitMultipartUploadPartDetails(partNum, etag);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CommitMultipartUploadPartDetails o) {
             return partNum(o.getPartNum()).etag(o.getEtag());
         }
@@ -54,16 +45,16 @@ public class CommitMultipartUploadPartDetails {
     /**
      * The part number for this part.
      **/
-    @JsonProperty("partNum")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("partNum")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     Integer partNum;
 
     /**
      * The ETag returned when this part was uploaded.
      **/
-    @JsonProperty("etag")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("etag")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String etag;
 }

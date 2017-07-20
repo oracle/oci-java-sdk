@@ -3,32 +3,16 @@
  */
 package com.oracle.bmc.objectstorage.internal.http;
 
-import java.io.InputStream;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-
-import javax.ws.rs.client.*;
-import javax.ws.rs.core.*;
-
-import com.oracle.bmc.http.internal.*;
-import static com.oracle.bmc.util.internal.HttpUtils.*;
-import com.oracle.bmc.model.*;
 import com.oracle.bmc.objectstorage.model.*;
 import com.oracle.bmc.objectstorage.requests.*;
 import com.oracle.bmc.objectstorage.responses.*;
 
-import com.google.common.base.Function;
-import com.google.common.base.Optional;
-
-import lombok.extern.slf4j.Slf4j;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Slf4j
+@lombok.extern.slf4j.Slf4j
 public class CommitMultipartUploadConverter {
-    private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
-            new ResponseConversionFunctionFactory();
+    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
+            RESPONSE_CONVERSION_FACTORY =
+                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
     public static CommitMultipartUploadRequest interceptRequest(
             CommitMultipartUploadRequest request) {
@@ -36,8 +20,8 @@ public class CommitMultipartUploadConverter {
         return request;
     }
 
-    public static Invocation.Builder fromRequest(
-            RestClient client, CommitMultipartUploadRequest request) {
+    public static javax.ws.rs.client.Invocation.Builder fromRequest(
+            com.oracle.bmc.http.internal.RestClient client, CommitMultipartUploadRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
         }
@@ -62,21 +46,31 @@ public class CommitMultipartUploadConverter {
             throw new NullPointerException("commitMultipartUploadDetails is required");
         }
 
-        WebTarget target =
+        javax.ws.rs.client.WebTarget target =
                 client.getBaseTarget()
                         .path("/")
                         .path("n")
-                        .path(encodePathSegment(request.getNamespaceName()))
+                        .path(
+                                com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
+                                        request.getNamespaceName()))
                         .path("b")
-                        .path(encodePathSegment(request.getBucketName()))
+                        .path(
+                                com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
+                                        request.getBucketName()))
                         .path("u")
-                        .path(encodePathSegment(request.getObjectName()));
+                        .path(
+                                com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
+                                        request.getObjectName()));
 
-        target = target.queryParam("uploadId", attemptEncodeQueryParam(request.getUploadId()));
+        target =
+                target.queryParam(
+                        "uploadId",
+                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                request.getUploadId()));
 
-        Invocation.Builder ib = target.request();
+        javax.ws.rs.client.Invocation.Builder ib = target.request();
 
-        ib.accept(MediaType.APPLICATION_JSON);
+        ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 
         if (request.getIfMatch() != null) {
             ib.header("if-match", request.getIfMatch());
@@ -93,73 +87,94 @@ public class CommitMultipartUploadConverter {
         return ib;
     }
 
-    public static Function<Response, CommitMultipartUploadResponse> fromResponse() {
-        final Function<Response, CommitMultipartUploadResponse> transformer =
-                new Function<Response, CommitMultipartUploadResponse>() {
-                    @Override
-                    public CommitMultipartUploadResponse apply(Response rawResponse) {
-                        LOG.trace("Transform function invoked for CommitMultipartUploadResponse");
-                        Function<Response, WithHeaders<Void>> responseFn =
-                                RESPONSE_CONVERSION_FACTORY.create();
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, CommitMultipartUploadResponse>
+            fromResponse() {
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CommitMultipartUploadResponse>
+                transformer =
+                        new com.google.common.base.Function<
+                                javax.ws.rs.core.Response, CommitMultipartUploadResponse>() {
+                            @Override
+                            public CommitMultipartUploadResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for CommitMultipartUploadResponse");
+                                com.google.common.base.Function<
+                                                javax.ws.rs.core.Response,
+                                                com.oracle.bmc.http.internal.WithHeaders<Void>>
+                                        responseFn = RESPONSE_CONVERSION_FACTORY.create();
 
-                        WithHeaders<Void> response = responseFn.apply(rawResponse);
-                        MultivaluedMap<String, String> headers = response.getHeaders();
+                                com.oracle.bmc.http.internal.WithHeaders<Void> response =
+                                        responseFn.apply(rawResponse);
+                                javax.ws.rs.core.MultivaluedMap<String, String> headers =
+                                        response.getHeaders();
 
-                        CommitMultipartUploadResponse.Builder builder =
-                                CommitMultipartUploadResponse.builder();
+                                CommitMultipartUploadResponse.Builder builder =
+                                        CommitMultipartUploadResponse.builder();
 
-                        Optional<List<String>> opcClientRequestIdHeader =
-                                HeaderUtils.get(headers, "opc-client-request-id");
-                        if (opcClientRequestIdHeader.isPresent()) {
-                            builder.opcClientRequestId(
-                                    HeaderUtils.toValue(
-                                            "opc-client-request-id",
-                                            opcClientRequestIdHeader.get().get(0),
-                                            String.class));
-                        }
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcClientRequestIdHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-client-request-id");
+                                if (opcClientRequestIdHeader.isPresent()) {
+                                    builder.opcClientRequestId(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-client-request-id",
+                                                    opcClientRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
 
-                        Optional<List<String>> opcRequestIdHeader =
-                                HeaderUtils.get(headers, "opc-request-id");
-                        if (opcRequestIdHeader.isPresent()) {
-                            builder.opcRequestId(
-                                    HeaderUtils.toValue(
-                                            "opc-request-id",
-                                            opcRequestIdHeader.get().get(0),
-                                            String.class));
-                        }
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcRequestIdHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-request-id");
+                                if (opcRequestIdHeader.isPresent()) {
+                                    builder.opcRequestId(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-request-id",
+                                                    opcRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
 
-                        Optional<List<String>> opcMultipartMd5Header =
-                                HeaderUtils.get(headers, "opc-multipart-md5");
-                        if (opcMultipartMd5Header.isPresent()) {
-                            builder.opcMultipartMd5(
-                                    HeaderUtils.toValue(
-                                            "opc-multipart-md5",
-                                            opcMultipartMd5Header.get().get(0),
-                                            String.class));
-                        }
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcMultipartMd5Header =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-multipart-md5");
+                                if (opcMultipartMd5Header.isPresent()) {
+                                    builder.opcMultipartMd5(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-multipart-md5",
+                                                    opcMultipartMd5Header.get().get(0),
+                                                    String.class));
+                                }
 
-                        Optional<List<String>> eTagHeader = HeaderUtils.get(headers, "eTag");
-                        if (eTagHeader.isPresent()) {
-                            builder.eTag(
-                                    HeaderUtils.toValue(
-                                            "eTag", eTagHeader.get().get(0), String.class));
-                        }
+                                com.google.common.base.Optional<java.util.List<String>> eTagHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "eTag");
+                                if (eTagHeader.isPresent()) {
+                                    builder.eTag(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "eTag", eTagHeader.get().get(0), String.class));
+                                }
 
-                        Optional<List<String>> lastModifiedHeader =
-                                HeaderUtils.get(headers, "last-modified");
-                        if (lastModifiedHeader.isPresent()) {
-                            builder.lastModified(
-                                    HeaderUtils.toValue(
-                                            "last-modified",
-                                            lastModifiedHeader.get().get(0),
-                                            Date.class));
-                        }
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        lastModifiedHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "last-modified");
+                                if (lastModifiedHeader.isPresent()) {
+                                    builder.lastModified(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "last-modified",
+                                                    lastModifiedHeader.get().get(0),
+                                                    java.util.Date.class));
+                                }
 
-                        CommitMultipartUploadResponse responseWrapper = builder.build();
+                                CommitMultipartUploadResponse responseWrapper = builder.build();
 
-                        return responseWrapper;
-                    }
-                };
+                                return responseWrapper;
+                            }
+                        };
         return transformer;
     }
 }

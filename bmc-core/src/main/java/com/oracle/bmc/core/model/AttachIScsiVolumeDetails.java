@@ -3,45 +3,40 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = AttachIScsiVolumeDetails.Builder.class)
-@ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = true)
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = AttachIScsiVolumeDetails.Builder.class
+)
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode(callSuper = true)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
 public class AttachIScsiVolumeDetails extends AttachVolumeDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("displayName")
+        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
-        @JsonProperty("instanceId")
+        @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
-        @JsonProperty("volumeId")
+        @com.fasterxml.jackson.annotation.JsonProperty("volumeId")
         private String volumeId;
 
-        @JsonProperty("useChap")
+        @com.fasterxml.jackson.annotation.JsonProperty("useChap")
         private Boolean useChap;
 
         public AttachIScsiVolumeDetails build() {
             return new AttachIScsiVolumeDetails(displayName, instanceId, volumeId, useChap);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(AttachIScsiVolumeDetails o) {
             return displayName(o.getDisplayName())
                     .instanceId(o.getInstanceId())
@@ -66,6 +61,6 @@ public class AttachIScsiVolumeDetails extends AttachVolumeDetails {
     /**
      * Whether to use CHAP authentication for the volume attachment. Defaults to false.
      **/
-    @JsonProperty("useChap")
+    @com.fasterxml.jackson.annotation.JsonProperty("useChap")
     Boolean useChap;
 }

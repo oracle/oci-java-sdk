@@ -382,19 +382,12 @@ public class RequestSignerImpl implements RequestSigner {
         if (body == null) {
             return "".getBytes(StandardCharsets.UTF_8);
         }
-        // use the same object mapper as the rest client to ensure the configurations match
-        // what is sent
-        String bodyAsString = RestClientFactory.getObjectMapper().writeValueAsString(body);
-
-        // Annoying ObjectMapper edge case: If given a set of empty braces, it
-        // adds a set of quotes that causes auth to fail on the server-side as
-        // the message parser does not include them. Hence, the check and return
-        // of the quote-less braces.
-        if (bodyAsString.equals("\"{}\"")) {
-            return "{}".getBytes();
+        // if already a string, just use it unchanged
+        if (body instanceof String) {
+            return ((String) body).getBytes(StandardCharsets.UTF_8);
         }
 
-        return bodyAsString.getBytes();
+        throw new IllegalArgumentException("body must be a String");
     }
 
     private static String base64Encode(byte[] bytes) {

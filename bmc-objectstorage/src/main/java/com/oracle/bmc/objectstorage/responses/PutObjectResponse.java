@@ -3,21 +3,11 @@
  */
 package com.oracle.bmc.objectstorage.responses;
 
-import java.io.*;
-import java.util.*;
-
-import com.oracle.bmc.model.*;
-import javax.ws.rs.core.*;
-
-import lombok.Builder;
-import lombok.Getter;
-import lombok.experimental.Accessors;
-
 import com.oracle.bmc.objectstorage.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Builder(builderClassName = "Builder")
-@Getter
+@lombok.Builder(builderClassName = "Builder")
+@lombok.Getter
 public class PutObjectResponse {
 
     /**
@@ -45,7 +35,7 @@ public class PutObjectResponse {
     /**
      * The time the object was modified, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
      */
-    private Date lastModified;
+    private java.util.Date lastModified;
 
     public static class Builder {
         /**

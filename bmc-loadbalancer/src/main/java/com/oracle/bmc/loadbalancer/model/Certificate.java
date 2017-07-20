@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.loadbalancer.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * The configuration details of a listener certificate bundle.
  * For more information on SSL certficate configuration, see
@@ -21,27 +10,27 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@Value
-@JsonDeserialize(builder = Certificate.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Certificate.Builder.class)
 public class Certificate {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("caCertificate")
+        @com.fasterxml.jackson.annotation.JsonProperty("caCertificate")
         private String caCertificate;
 
-        @JsonProperty("certificateName")
+        @com.fasterxml.jackson.annotation.JsonProperty("certificateName")
         private String certificateName;
 
-        @JsonProperty("publicCertificate")
+        @com.fasterxml.jackson.annotation.JsonProperty("publicCertificate")
         private String publicCertificate;
 
         public Certificate build() {
             return new Certificate(caCertificate, certificateName, publicCertificate);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Certificate o) {
             return caCertificate(o.getCaCertificate())
                     .certificateName(o.getCertificateName())
@@ -70,9 +59,9 @@ public class Certificate {
      *     -----END CERTIFICATE-----
      *
      **/
-    @JsonProperty("caCertificate")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("caCertificate")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String caCertificate;
 
     /**
@@ -81,9 +70,9 @@ public class Certificate {
      * Example: `My certificate bundle`
      *
      **/
-    @JsonProperty("certificateName")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("certificateName")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String certificateName;
 
     /**
@@ -100,8 +89,8 @@ public class Certificate {
      *     -----END CERTIFICATE-----
      *
      **/
-    @JsonProperty("publicCertificate")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("publicCertificate")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String publicCertificate;
 }

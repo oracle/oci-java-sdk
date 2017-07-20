@@ -3,39 +3,24 @@
  */
 package com.oracle.bmc.loadbalancer.internal.http;
 
-import java.io.InputStream;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-
-import javax.ws.rs.client.*;
-import javax.ws.rs.core.*;
-
-import com.oracle.bmc.http.internal.*;
-import static com.oracle.bmc.util.internal.HttpUtils.*;
-import com.oracle.bmc.model.*;
 import com.oracle.bmc.loadbalancer.model.*;
 import com.oracle.bmc.loadbalancer.requests.*;
 import com.oracle.bmc.loadbalancer.responses.*;
 
-import com.google.common.base.Function;
-import com.google.common.base.Optional;
-
-import lombok.extern.slf4j.Slf4j;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@Slf4j
+@lombok.extern.slf4j.Slf4j
 public class ListProtocolsConverter {
-    private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
-            new ResponseConversionFunctionFactory();
+    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
+            RESPONSE_CONVERSION_FACTORY =
+                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
     public static ListProtocolsRequest interceptRequest(ListProtocolsRequest request) {
 
         return request;
     }
 
-    public static Invocation.Builder fromRequest(RestClient client, ListProtocolsRequest request) {
+    public static javax.ws.rs.client.Invocation.Builder fromRequest(
+            com.oracle.bmc.http.internal.RestClient client, ListProtocolsRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
         }
@@ -44,23 +29,34 @@ public class ListProtocolsConverter {
             throw new NullPointerException("compartmentId is required");
         }
 
-        WebTarget target = client.getBaseTarget().path("/20170115").path("loadBalancerProtocols");
+        javax.ws.rs.client.WebTarget target =
+                client.getBaseTarget().path("/20170115").path("loadBalancerProtocols");
 
         target =
                 target.queryParam(
-                        "compartmentId", attemptEncodeQueryParam(request.getCompartmentId()));
+                        "compartmentId",
+                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                request.getCompartmentId()));
 
         if (request.getLimit() != null) {
-            target = target.queryParam("limit", attemptEncodeQueryParam(request.getLimit()));
+            target =
+                    target.queryParam(
+                            "limit",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getLimit()));
         }
 
         if (request.getPage() != null) {
-            target = target.queryParam("page", attemptEncodeQueryParam(request.getPage()));
+            target =
+                    target.queryParam(
+                            "page",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getPage()));
         }
 
-        Invocation.Builder ib = target.request();
+        javax.ws.rs.client.Invocation.Builder ib = target.request();
 
-        ib.accept(MediaType.APPLICATION_JSON);
+        ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 
         if (request.getOpcRequestId() != null) {
             ib.header("opc-request-id", request.getOpcRequestId());
@@ -69,49 +65,66 @@ public class ListProtocolsConverter {
         return ib;
     }
 
-    public static Function<Response, ListProtocolsResponse> fromResponse() {
-        final Function<Response, ListProtocolsResponse> transformer =
-                new Function<Response, ListProtocolsResponse>() {
-                    @Override
-                    public ListProtocolsResponse apply(Response rawResponse) {
-                        LOG.trace("Transform function invoked for ListProtocolsResponse");
-                        Function<Response, WithHeaders<List<LoadBalancerProtocol>>> responseFn =
-                                RESPONSE_CONVERSION_FACTORY.create(
-                                        new GenericType<List<LoadBalancerProtocol>>() {});
+    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListProtocolsResponse>
+            fromResponse() {
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListProtocolsResponse>
+                transformer =
+                        new com.google.common.base.Function<
+                                javax.ws.rs.core.Response, ListProtocolsResponse>() {
+                            @Override
+                            public ListProtocolsResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace("Transform function invoked for ListProtocolsResponse");
+                                com.google.common.base.Function<
+                                                javax.ws.rs.core.Response,
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        java.util.List<LoadBalancerProtocol>>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        new javax.ws.rs.core.GenericType<
+                                                                java.util.List<
+                                                                        LoadBalancerProtocol>>() {});
 
-                        WithHeaders<List<LoadBalancerProtocol>> response =
-                                responseFn.apply(rawResponse);
-                        MultivaluedMap<String, String> headers = response.getHeaders();
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                java.util.List<LoadBalancerProtocol>>
+                                        response = responseFn.apply(rawResponse);
+                                javax.ws.rs.core.MultivaluedMap<String, String> headers =
+                                        response.getHeaders();
 
-                        ListProtocolsResponse.Builder builder = ListProtocolsResponse.builder();
+                                ListProtocolsResponse.Builder builder =
+                                        ListProtocolsResponse.builder();
 
-                        builder.items(response.getItem());
+                                builder.items(response.getItem());
 
-                        Optional<List<String>> opcNextPageHeader =
-                                HeaderUtils.get(headers, "opc-next-page");
-                        if (opcNextPageHeader.isPresent()) {
-                            builder.opcNextPage(
-                                    HeaderUtils.toValue(
-                                            "opc-next-page",
-                                            opcNextPageHeader.get().get(0),
-                                            String.class));
-                        }
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcNextPageHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-next-page");
+                                if (opcNextPageHeader.isPresent()) {
+                                    builder.opcNextPage(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-next-page",
+                                                    opcNextPageHeader.get().get(0),
+                                                    String.class));
+                                }
 
-                        Optional<List<String>> opcRequestIdHeader =
-                                HeaderUtils.get(headers, "opc-request-id");
-                        if (opcRequestIdHeader.isPresent()) {
-                            builder.opcRequestId(
-                                    HeaderUtils.toValue(
-                                            "opc-request-id",
-                                            opcRequestIdHeader.get().get(0),
-                                            String.class));
-                        }
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcRequestIdHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-request-id");
+                                if (opcRequestIdHeader.isPresent()) {
+                                    builder.opcRequestId(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-request-id",
+                                                    opcRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
 
-                        ListProtocolsResponse responseWrapper = builder.build();
+                                ListProtocolsResponse responseWrapper = builder.build();
 
-                        return responseWrapper;
-                    }
-                };
+                                return responseWrapper;
+                            }
+                        };
         return transformer;
     }
 }

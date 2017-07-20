@@ -3,56 +3,47 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = LaunchInstanceDetails.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = LaunchInstanceDetails.Builder.class
+)
 public class LaunchInstanceDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("availabilityDomain")
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
-        @JsonProperty("compartmentId")
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
-        @JsonProperty("createVnicDetails")
+        @com.fasterxml.jackson.annotation.JsonProperty("createVnicDetails")
         private CreateVnicDetails createVnicDetails;
 
-        @JsonProperty("displayName")
+        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
-        @JsonProperty("extendedMetadata")
-        private Map<String, Object> extendedMetadata;
+        @com.fasterxml.jackson.annotation.JsonProperty("extendedMetadata")
+        private java.util.Map<String, Object> extendedMetadata;
 
-        @JsonProperty("hostnameLabel")
+        @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
         private String hostnameLabel;
 
-        @JsonProperty("imageId")
+        @com.fasterxml.jackson.annotation.JsonProperty("imageId")
         private String imageId;
 
-        @JsonProperty("ipxeScript")
+        @com.fasterxml.jackson.annotation.JsonProperty("ipxeScript")
         private String ipxeScript;
 
-        @JsonProperty("metadata")
-        private Map<String, String> metadata;
+        @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+        private java.util.Map<String, String> metadata;
 
-        @JsonProperty("shape")
+        @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
-        @JsonProperty("subnetId")
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         public LaunchInstanceDetails build() {
@@ -70,7 +61,7 @@ public class LaunchInstanceDetails {
                     subnetId);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(LaunchInstanceDetails o) {
             return availabilityDomain(o.getAvailabilityDomain())
                     .compartmentId(o.getCompartmentId())
@@ -99,35 +90,38 @@ public class LaunchInstanceDetails {
      * Example: `Uocm:PHX-AD-1`
      *
      **/
-    @JsonProperty("availabilityDomain")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String availabilityDomain;
 
     /**
      * The OCID of the compartment.
      **/
-    @JsonProperty("compartmentId")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
-     * Details for the VNIC that is automatically created when an instance is launched.
+     * Details for the primary VNIC, which is automatically created and attached when
+     * the instance is launched.
+     *
      **/
-    @JsonProperty("createVnicDetails")
+    @com.fasterxml.jackson.annotation.JsonProperty("createVnicDetails")
     CreateVnicDetails createVnicDetails;
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      * <p>
      * Example: `My bare metal instance`
      *
      **/
-    @JsonProperty("displayName")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
@@ -138,8 +132,8 @@ public class LaunchInstanceDetails {
      * If you don't need nested metadata values, it is strongly advised to avoid using this object and use the Metadata object instead.
      *
      **/
-    @JsonProperty("extendedMetadata")
-    Map<String, Object> extendedMetadata;
+    @com.fasterxml.jackson.annotation.JsonProperty("extendedMetadata")
+    java.util.Map<String, Object> extendedMetadata;
 
     /**
      * Deprecated. Instead use `hostnameLabel` in
@@ -147,17 +141,17 @@ public class LaunchInstanceDetails {
      * If you provide both, the values must match.
      *
      **/
-    @JsonProperty("hostnameLabel")
-    @Size(min = 1, max = 63)
+    @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
+    @javax.validation.constraints.Size(min = 1, max = 63)
     String hostnameLabel;
 
     /**
      * The OCID of the image used to boot the instance.
      **/
-    @JsonProperty("imageId")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("imageId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String imageId;
 
     /**
@@ -187,8 +181,8 @@ public class LaunchInstanceDetails {
      * For more information about iPXE, see http://ipxe.org.
      *
      **/
-    @JsonProperty("ipxeScript")
-    @Size(min = 1, max = 10240)
+    @com.fasterxml.jackson.annotation.JsonProperty("ipxeScript")
+    @javax.validation.constraints.Size(min = 1, max = 10240)
     String ipxeScript;
 
     /**
@@ -252,8 +246,8 @@ public class LaunchInstanceDetails {
      *  the metadata information for the specified key name, respectively.
      *
      **/
-    @JsonProperty("metadata")
-    Map<String, String> metadata;
+    @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+    java.util.Map<String, String> metadata;
 
     /**
      * The shape of an instance. The shape determines the number of CPUs, amount of memory,
@@ -262,10 +256,10 @@ public class LaunchInstanceDetails {
      * You can enumerate all available shapes by calling {@link #listShapes(ListShapesRequest) listShapes}.
      *
      **/
-    @JsonProperty("shape")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("shape")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String shape;
 
     /**
@@ -274,7 +268,7 @@ public class LaunchInstanceDetails {
      * At least one of them is required; if you provide both, the values must match.
      *
      **/
-    @JsonProperty("subnetId")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String subnetId;
 }

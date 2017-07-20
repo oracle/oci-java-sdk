@@ -3,55 +3,47 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * Represents an attachment between a VNIC and an instance. For more information, see
- * [Overview of the Compute Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Concepts/computeoverview.htm).
+ * [Managing Virtual Network Interface Cards (VNICs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm).
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = VnicAttachment.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = VnicAttachment.Builder.class)
 public class VnicAttachment {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("availabilityDomain")
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
-        @JsonProperty("compartmentId")
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
-        @JsonProperty("displayName")
+        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
-        @JsonProperty("id")
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
-        @JsonProperty("instanceId")
+        @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
-        @JsonProperty("lifecycleState")
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
-        @JsonProperty("subnetId")
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
-        @JsonProperty("timeCreated")
-        private Date timeCreated;
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+        private java.util.Date timeCreated;
 
-        @JsonProperty("vnicId")
+        @com.fasterxml.jackson.annotation.JsonProperty("vlanTag")
+        private Integer vlanTag;
+
+        @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
         private String vnicId;
 
         public VnicAttachment build() {
@@ -64,10 +56,11 @@ public class VnicAttachment {
                     lifecycleState,
                     subnetId,
                     timeCreated,
+                    vlanTag,
                     vnicId);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(VnicAttachment o) {
             return availabilityDomain(o.getAvailabilityDomain())
                     .compartmentId(o.getCompartmentId())
@@ -77,6 +70,7 @@ public class VnicAttachment {
                     .lifecycleState(o.getLifecycleState())
                     .subnetId(o.getSubnetId())
                     .timeCreated(o.getTimeCreated())
+                    .vlanTag(o.getVlanTag())
                     .vnicId(o.getVnicId());
         }
     }
@@ -89,49 +83,53 @@ public class VnicAttachment {
     }
 
     /**
-     * The Availability Domain of an instance.
+     * The Availability Domain of the instance.
      * <p>
      * Example: `Uocm:PHX-AD-1`
      *
      **/
-    @JsonProperty("availabilityDomain")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String availabilityDomain;
 
     /**
-     * The OCID of the compartment.
+     * The OCID of the compartment the VNIC attachment is in, which is the same
+     * compartment the instance is in.
+     *
      **/
-    @JsonProperty("compartmentId")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
      * A user-friendly name. Does not have to be unique.
+     * Avoid entering confidential information.
+     *
      **/
-    @JsonProperty("displayName")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
      * The OCID of the VNIC attachment.
      **/
-    @JsonProperty("id")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String id;
 
     /**
      * The OCID of the instance.
      **/
-    @JsonProperty("instanceId")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String instanceId;
     /**
      * The current state of the VNIC attachment.
@@ -150,10 +148,10 @@ public class VnicAttachment {
         UnknownEnumValue(null);
 
         private final String value;
-        private static Map<String, LifecycleState> map;
+        private static java.util.Map<String, LifecycleState> map;
 
         static {
-            map = new HashMap<>();
+            map = new java.util.HashMap<>();
             for (LifecycleState v : LifecycleState.values()) {
                 if (v != UnknownEnumValue) {
                     map.put(v.getValue(), v);
@@ -165,12 +163,12 @@ public class VnicAttachment {
             this.value = value;
         }
 
-        @JsonValue
+        @com.fasterxml.jackson.annotation.JsonValue
         public String getValue() {
             return value;
         }
 
-        @JsonCreator
+        @com.fasterxml.jackson.annotation.JsonCreator
         public static LifecycleState create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
@@ -184,18 +182,18 @@ public class VnicAttachment {
     /**
      * The current state of the VNIC attachment.
      **/
-    @JsonProperty("lifecycleState")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     LifecycleState lifecycleState;
 
     /**
-     * The OCID of the subnet of the VNIC.
+     * The OCID of the VNIC's subnet.
      **/
-    @JsonProperty("subnetId")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String subnetId;
 
     /**
@@ -204,17 +202,25 @@ public class VnicAttachment {
      * Example: `2016-08-25T21:10:29.600Z`
      *
      **/
-    @JsonProperty("timeCreated")
-    @Valid
-    @NotNull
-    Date timeCreated;
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    java.util.Date timeCreated;
 
     /**
-     * The OCID of the VNIC.
+     * The Oracle-assigned VLAN tag of the attached VNIC. Available after the
+     * attachment process is complete.
+     * <p>
+     * Example: `0`
+     *
      **/
-    @JsonProperty("vnicId")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("vlanTag")
+    Integer vlanTag;
+
+    /**
+     * The OCID of the VNIC. Available after the attachment process is complete.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String vnicId;
 }

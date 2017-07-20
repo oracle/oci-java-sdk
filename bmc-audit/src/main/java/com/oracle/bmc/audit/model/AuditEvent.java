@@ -3,78 +3,67 @@
  */
 package com.oracle.bmc.audit.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = AuditEvent.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AuditEvent.Builder.class)
 public class AuditEvent {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("tenantId")
+        @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
 
-        @JsonProperty("compartmentId")
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
-        @JsonProperty("eventId")
+        @com.fasterxml.jackson.annotation.JsonProperty("eventId")
         private String eventId;
 
-        @JsonProperty("eventSource")
+        @com.fasterxml.jackson.annotation.JsonProperty("eventSource")
         private String eventSource;
 
-        @JsonProperty("eventType")
+        @com.fasterxml.jackson.annotation.JsonProperty("eventType")
         private String eventType;
 
-        @JsonProperty("eventTime")
-        private Date eventTime;
+        @com.fasterxml.jackson.annotation.JsonProperty("eventTime")
+        private java.util.Date eventTime;
 
-        @JsonProperty("principalId")
+        @com.fasterxml.jackson.annotation.JsonProperty("principalId")
         private String principalId;
 
-        @JsonProperty("credentialId")
+        @com.fasterxml.jackson.annotation.JsonProperty("credentialId")
         private String credentialId;
 
-        @JsonProperty("requestAction")
+        @com.fasterxml.jackson.annotation.JsonProperty("requestAction")
         private String requestAction;
 
-        @JsonProperty("requestId")
+        @com.fasterxml.jackson.annotation.JsonProperty("requestId")
         private String requestId;
 
-        @JsonProperty("requestAgent")
+        @com.fasterxml.jackson.annotation.JsonProperty("requestAgent")
         private String requestAgent;
 
-        @JsonProperty("requestHeaders")
-        private Map<String, List<String>> requestHeaders;
+        @com.fasterxml.jackson.annotation.JsonProperty("requestHeaders")
+        private java.util.Map<String, java.util.List<String>> requestHeaders;
 
-        @JsonProperty("requestOrigin")
+        @com.fasterxml.jackson.annotation.JsonProperty("requestOrigin")
         private String requestOrigin;
 
-        @JsonProperty("requestParameters")
-        private Map<String, List<String>> requestParameters;
+        @com.fasterxml.jackson.annotation.JsonProperty("requestParameters")
+        private java.util.Map<String, java.util.List<String>> requestParameters;
 
-        @JsonProperty("requestResource")
+        @com.fasterxml.jackson.annotation.JsonProperty("requestResource")
         private String requestResource;
 
-        @JsonProperty("responseHeaders")
-        private Map<String, List<String>> responseHeaders;
+        @com.fasterxml.jackson.annotation.JsonProperty("responseHeaders")
+        private java.util.Map<String, java.util.List<String>> responseHeaders;
 
-        @JsonProperty("responseStatus")
+        @com.fasterxml.jackson.annotation.JsonProperty("responseStatus")
         private String responseStatus;
 
-        @JsonProperty("responseTime")
-        private Date responseTime;
+        @com.fasterxml.jackson.annotation.JsonProperty("responseTime")
+        private java.util.Date responseTime;
 
         public AuditEvent build() {
             return new AuditEvent(
@@ -98,7 +87,7 @@ public class AuditEvent {
                     responseTime);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(AuditEvent o) {
             return tenantId(o.getTenantId())
                     .compartmentId(o.getCompartmentId())
@@ -131,117 +120,117 @@ public class AuditEvent {
     /**
      * The OCID of the tenant.
      **/
-    @JsonProperty("tenantId")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String tenantId;
 
     /**
      * The OCID of the compartment.
      **/
-    @JsonProperty("compartmentId")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
      * The GUID of the event.
      **/
-    @JsonProperty("eventId")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("eventId")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String eventId;
 
     /**
      * The source of the event.
      **/
-    @JsonProperty("eventSource")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("eventSource")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String eventSource;
 
     /**
      * The type of the event.
      **/
-    @JsonProperty("eventType")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("eventType")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String eventType;
 
     /**
      * The time the event occurred, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      **/
-    @JsonProperty("eventTime")
-    Date eventTime;
+    @com.fasterxml.jackson.annotation.JsonProperty("eventTime")
+    java.util.Date eventTime;
 
     /**
      * The OCID of the user whose action triggered the event.
      **/
-    @JsonProperty("principalId")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("principalId")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String principalId;
 
     /**
      * The credential ID of the user. This value is extracted from the HTTP 'Authorization' request header. It consists of the tenantId, userId, and user fingerprint, all delimited by a slash (/).
      **/
-    @JsonProperty("credentialId")
+    @com.fasterxml.jackson.annotation.JsonProperty("credentialId")
     String credentialId;
 
     /**
      * The HTTP method of the request.
      **/
-    @JsonProperty("requestAction")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("requestAction")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String requestAction;
 
     /**
      * The opc-request-id of the request.
      **/
-    @JsonProperty("requestId")
+    @com.fasterxml.jackson.annotation.JsonProperty("requestId")
     String requestId;
 
     /**
      * The user agent of the client that made the request.
      **/
-    @JsonProperty("requestAgent")
+    @com.fasterxml.jackson.annotation.JsonProperty("requestAgent")
     String requestAgent;
 
     /**
      * The HTTP header fields and values in the request.
      **/
-    @JsonProperty("requestHeaders")
-    Map<String, List<String>> requestHeaders;
+    @com.fasterxml.jackson.annotation.JsonProperty("requestHeaders")
+    java.util.Map<String, java.util.List<String>> requestHeaders;
 
     /**
      * The IP address of the source of the request.
      **/
-    @JsonProperty("requestOrigin")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("requestOrigin")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String requestOrigin;
 
     /**
      * The query parameter fields and values for the request.
      **/
-    @JsonProperty("requestParameters")
-    Map<String, List<String>> requestParameters;
+    @com.fasterxml.jackson.annotation.JsonProperty("requestParameters")
+    java.util.Map<String, java.util.List<String>> requestParameters;
 
     /**
      * The resource targeted by the request.
      **/
-    @JsonProperty("requestResource")
+    @com.fasterxml.jackson.annotation.JsonProperty("requestResource")
     String requestResource;
 
     /**
      * The headers of the response.
      **/
-    @JsonProperty("responseHeaders")
-    Map<String, List<String>> responseHeaders;
+    @com.fasterxml.jackson.annotation.JsonProperty("responseHeaders")
+    java.util.Map<String, java.util.List<String>> responseHeaders;
 
     /**
      * The status code of the response.
      **/
-    @JsonProperty("responseStatus")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("responseStatus")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String responseStatus;
 
     /**
      * The time of the response to the audited request, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      **/
-    @JsonProperty("responseTime")
-    Date responseTime;
+    @com.fasterxml.jackson.annotation.JsonProperty("responseTime")
+    java.util.Date responseTime;
 }

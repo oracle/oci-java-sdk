@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * A boot disk image for launching an instance. For more information, see
  * [Overview of the Compute Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Concepts/computeoverview.htm).
@@ -24,39 +13,39 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = Image.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Image.Builder.class)
 public class Image {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("baseImageId")
+        @com.fasterxml.jackson.annotation.JsonProperty("baseImageId")
         private String baseImageId;
 
-        @JsonProperty("compartmentId")
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
-        @JsonProperty("createImageAllowed")
+        @com.fasterxml.jackson.annotation.JsonProperty("createImageAllowed")
         private Boolean createImageAllowed;
 
-        @JsonProperty("displayName")
+        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
-        @JsonProperty("id")
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
-        @JsonProperty("lifecycleState")
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
-        @JsonProperty("operatingSystem")
+        @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
         private String operatingSystem;
 
-        @JsonProperty("operatingSystemVersion")
+        @com.fasterxml.jackson.annotation.JsonProperty("operatingSystemVersion")
         private String operatingSystemVersion;
 
-        @JsonProperty("timeCreated")
-        private Date timeCreated;
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+        private java.util.Date timeCreated;
 
         public Image build() {
             return new Image(
@@ -71,7 +60,7 @@ public class Image {
                     timeCreated);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Image o) {
             return baseImageId(o.getBaseImageId())
                     .compartmentId(o.getCompartmentId())
@@ -95,18 +84,18 @@ public class Image {
     /**
      * The OCID of the image originally used to launch the instance.
      **/
-    @JsonProperty("baseImageId")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("baseImageId")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String baseImageId;
 
     /**
      * The OCID of the compartment containing the instance you want to use as the basis for the image.
      *
      **/
-    @JsonProperty("compartmentId")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
@@ -116,36 +105,39 @@ public class Image {
      * Example: `true`
      *
      **/
-    @JsonProperty("createImageAllowed")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("createImageAllowed")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     Boolean createImageAllowed;
 
     /**
      * A user-friendly name for the image. It does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      * You cannot use an Oracle-provided image name as a custom image name.
      * <p>
      * Example: `My custom Oracle Linux image`
      *
      **/
-    @JsonProperty("displayName")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
      * The OCID of the image.
      **/
-    @JsonProperty("id")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String id;
     /**
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
         Provisioning("PROVISIONING"),
+        Importing("IMPORTING"),
         Available("AVAILABLE"),
+        Exporting("EXPORTING"),
         Disabled("DISABLED"),
         Deleted("DELETED"),
 
@@ -156,10 +148,10 @@ public class Image {
         UnknownEnumValue(null);
 
         private final String value;
-        private static Map<String, LifecycleState> map;
+        private static java.util.Map<String, LifecycleState> map;
 
         static {
-            map = new HashMap<>();
+            map = new java.util.HashMap<>();
             for (LifecycleState v : LifecycleState.values()) {
                 if (v != UnknownEnumValue) {
                     map.put(v.getValue(), v);
@@ -171,12 +163,12 @@ public class Image {
             this.value = value;
         }
 
-        @JsonValue
+        @com.fasterxml.jackson.annotation.JsonValue
         public String getValue() {
             return value;
         }
 
-        @JsonCreator
+        @com.fasterxml.jackson.annotation.JsonCreator
         public static LifecycleState create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
@@ -188,9 +180,9 @@ public class Image {
         }
     };
 
-    @JsonProperty("lifecycleState")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     LifecycleState lifecycleState;
 
     /**
@@ -199,10 +191,10 @@ public class Image {
      * Example: `Oracle Linux`
      *
      **/
-    @JsonProperty("operatingSystem")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String operatingSystem;
 
     /**
@@ -211,10 +203,10 @@ public class Image {
      * Example: `7.2`
      *
      **/
-    @JsonProperty("operatingSystemVersion")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("operatingSystemVersion")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String operatingSystemVersion;
 
     /**
@@ -223,8 +215,8 @@ public class Image {
      * Example: `2016-08-25T21:10:29.600Z`
      *
      **/
-    @JsonProperty("timeCreated")
-    @Valid
-    @NotNull
-    Date timeCreated;
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    java.util.Date timeCreated;
 }

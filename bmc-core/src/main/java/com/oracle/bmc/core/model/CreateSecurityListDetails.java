@@ -3,38 +3,29 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = CreateSecurityListDetails.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = CreateSecurityListDetails.Builder.class
+)
 public class CreateSecurityListDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("compartmentId")
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
-        @JsonProperty("displayName")
+        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
-        @JsonProperty("egressSecurityRules")
-        private List<EgressSecurityRule> egressSecurityRules;
+        @com.fasterxml.jackson.annotation.JsonProperty("egressSecurityRules")
+        private java.util.List<EgressSecurityRule> egressSecurityRules;
 
-        @JsonProperty("ingressSecurityRules")
-        private List<IngressSecurityRule> ingressSecurityRules;
+        @com.fasterxml.jackson.annotation.JsonProperty("ingressSecurityRules")
+        private java.util.List<IngressSecurityRule> ingressSecurityRules;
 
-        @JsonProperty("vcnId")
+        @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
         public CreateSecurityListDetails build() {
@@ -42,7 +33,7 @@ public class CreateSecurityListDetails {
                     compartmentId, displayName, egressSecurityRules, ingressSecurityRules, vcnId);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateSecurityListDetails o) {
             return compartmentId(o.getCompartmentId())
                     .displayName(o.getDisplayName())
@@ -62,41 +53,41 @@ public class CreateSecurityListDetails {
     /**
      * The OCID of the compartment to contain the security list.
      **/
-    @JsonProperty("compartmentId")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      **/
-    @JsonProperty("displayName")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
      * Rules for allowing egress IP packets.
      **/
-    @JsonProperty("egressSecurityRules")
-    @Valid
-    @NotNull
-    List<EgressSecurityRule> egressSecurityRules;
+    @com.fasterxml.jackson.annotation.JsonProperty("egressSecurityRules")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    java.util.List<EgressSecurityRule> egressSecurityRules;
 
     /**
      * Rules for allowing ingress IP packets.
      **/
-    @JsonProperty("ingressSecurityRules")
-    @Valid
-    @NotNull
-    List<IngressSecurityRule> ingressSecurityRules;
+    @com.fasterxml.jackson.annotation.JsonProperty("ingressSecurityRules")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    java.util.List<IngressSecurityRule> ingressSecurityRules;
 
     /**
      * The OCID of the VCN the security list belongs to.
      **/
-    @JsonProperty("vcnId")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String vcnId;
 }

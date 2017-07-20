@@ -3,51 +3,32 @@
  */
 package com.oracle.bmc.identity;
 
-import com.oracle.bmc.ClientConfiguration;
-import com.oracle.bmc.auth.*;
-import com.oracle.bmc.http.ClientConfigurator;
-import com.oracle.bmc.http.internal.*;
-import com.oracle.bmc.http.signing.*;
-import com.oracle.bmc.http.signing.internal.*;
-
-import com.google.common.base.Function;
-import com.google.common.base.Optional;
-
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
-import javax.ws.rs.client.*;
-import javax.ws.rs.core.*;
-
 import com.oracle.bmc.identity.internal.http.*;
 import com.oracle.bmc.identity.requests.*;
 import com.oracle.bmc.identity.responses.*;
 
-import com.oracle.bmc.*;
-
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Slf4j
+@lombok.extern.slf4j.Slf4j
 public class IdentityClient implements Identity {
     /**
      * Service instance for Identity.
      */
-    public static final Service SERVICE = Services.create("IDENTITY", "identity");
+    public static final com.oracle.bmc.Service SERVICE =
+            com.oracle.bmc.Services.create("IDENTITY", "identity");
 
-    private final ExecutorService executorService = Executors.newFixedThreadPool(50);
+    private final java.util.concurrent.ExecutorService executorService =
+            java.util.concurrent.Executors.newFixedThreadPool(50);
     private final IdentityWaiters waiters;
 
-    @Getter(value = AccessLevel.PACKAGE)
-    private final RestClient client;
+    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private final com.oracle.bmc.http.internal.RestClient client;
 
     /**
      * Creates a new service instance using the given authentication provider.
      * @param authenticationDetailsProvider The authentication details provider, required.
      */
-    public IdentityClient(BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+    public IdentityClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
         this(authenticationDetailsProvider, null);
     }
 
@@ -57,8 +38,8 @@ public class IdentityClient implements Identity {
      * @param configuration The client configuration, optional.
      */
     public IdentityClient(
-            BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            ClientConfiguration configuration) {
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
         this(authenticationDetailsProvider, configuration, null);
     }
 
@@ -70,14 +51,15 @@ public class IdentityClient implements Identity {
      * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      */
     public IdentityClient(
-            BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            ClientConfiguration configuration,
-            ClientConfigurator clientConfigurator) {
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
         this(
                 authenticationDetailsProvider,
                 configuration,
                 clientConfigurator,
-                new DefaultRequestSignerFactory(SigningStrategy.STANDARD));
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
     }
 
     /**
@@ -91,13 +73,15 @@ public class IdentityClient implements Identity {
      * @param requestSignerFactory The request signer factory used to create the request signer for this service.
      */
     public IdentityClient(
-            AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            ClientConfiguration configuration,
-            ClientConfigurator clientConfigurator,
-            RequestSignerFactory requestSignerFactory) {
-        RestClientFactory restClientFactory =
-                RestClientFactoryBuilder.builder().clientConfigurator(clientConfigurator).build();
-        RequestSigner requestSigner =
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory requestSignerFactory) {
+        com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
+                        .clientConfigurator(clientConfigurator)
+                        .build();
+        com.oracle.bmc.http.signing.RequestSigner requestSigner =
                 requestSignerFactory.createRequestSigner(SERVICE, authenticationDetailsProvider);
         this.client = restClientFactory.create(requestSigner, configuration);
 
@@ -111,8 +95,8 @@ public class IdentityClient implements Identity {
     }
 
     @Override
-    public void setRegion(Region region) {
-        Optional<String> endpoint = region.getEndpoint(SERVICE);
+    public void setRegion(com.oracle.bmc.Region region) {
+        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -125,11 +109,11 @@ public class IdentityClient implements Identity {
     public void setRegion(String regionId) {
         regionId = regionId.toLowerCase();
         try {
-            Region region = Region.fromRegionId(regionId);
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
             setRegion(region);
         } catch (IllegalArgumentException e) {
             LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
-            String endpoint = Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
             setEndpoint(endpoint);
         }
     }
@@ -143,11 +127,13 @@ public class IdentityClient implements Identity {
     public AddUserToGroupResponse addUserToGroup(AddUserToGroupRequest request) {
         LOG.trace("Called addUserToGroup");
         request = AddUserToGroupConverter.interceptRequest(request);
-        Invocation.Builder ib = AddUserToGroupConverter.fromRequest(client, request);
-        Function<Response, AddUserToGroupResponse> transformer =
-                AddUserToGroupConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                AddUserToGroupConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, AddUserToGroupResponse>
+                transformer = AddUserToGroupConverter.fromResponse();
 
-        Response response = client.post(ib, request.getAddUserToGroupDetails(), request);
+        javax.ws.rs.core.Response response =
+                client.post(ib, request.getAddUserToGroupDetails(), request);
         return transformer.apply(response);
     }
 
@@ -155,11 +141,13 @@ public class IdentityClient implements Identity {
     public CreateCompartmentResponse createCompartment(CreateCompartmentRequest request) {
         LOG.trace("Called createCompartment");
         request = CreateCompartmentConverter.interceptRequest(request);
-        Invocation.Builder ib = CreateCompartmentConverter.fromRequest(client, request);
-        Function<Response, CreateCompartmentResponse> transformer =
-                CreateCompartmentConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                CreateCompartmentConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateCompartmentResponse>
+                transformer = CreateCompartmentConverter.fromResponse();
 
-        Response response = client.post(ib, request.getCreateCompartmentDetails(), request);
+        javax.ws.rs.core.Response response =
+                client.post(ib, request.getCreateCompartmentDetails(), request);
         return transformer.apply(response);
     }
 
@@ -167,10 +155,13 @@ public class IdentityClient implements Identity {
     public CreateGroupResponse createGroup(CreateGroupRequest request) {
         LOG.trace("Called createGroup");
         request = CreateGroupConverter.interceptRequest(request);
-        Invocation.Builder ib = CreateGroupConverter.fromRequest(client, request);
-        Function<Response, CreateGroupResponse> transformer = CreateGroupConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                CreateGroupConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateGroupResponse>
+                transformer = CreateGroupConverter.fromResponse();
 
-        Response response = client.post(ib, request.getCreateGroupDetails(), request);
+        javax.ws.rs.core.Response response =
+                client.post(ib, request.getCreateGroupDetails(), request);
         return transformer.apply(response);
     }
 
@@ -179,11 +170,13 @@ public class IdentityClient implements Identity {
             CreateIdentityProviderRequest request) {
         LOG.trace("Called createIdentityProvider");
         request = CreateIdentityProviderConverter.interceptRequest(request);
-        Invocation.Builder ib = CreateIdentityProviderConverter.fromRequest(client, request);
-        Function<Response, CreateIdentityProviderResponse> transformer =
-                CreateIdentityProviderConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                CreateIdentityProviderConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateIdentityProviderResponse>
+                transformer = CreateIdentityProviderConverter.fromResponse();
 
-        Response response = client.post(ib, request.getCreateIdentityProviderDetails(), request);
+        javax.ws.rs.core.Response response =
+                client.post(ib, request.getCreateIdentityProviderDetails(), request);
         return transformer.apply(response);
     }
 
@@ -192,11 +185,13 @@ public class IdentityClient implements Identity {
             CreateIdpGroupMappingRequest request) {
         LOG.trace("Called createIdpGroupMapping");
         request = CreateIdpGroupMappingConverter.interceptRequest(request);
-        Invocation.Builder ib = CreateIdpGroupMappingConverter.fromRequest(client, request);
-        Function<Response, CreateIdpGroupMappingResponse> transformer =
-                CreateIdpGroupMappingConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                CreateIdpGroupMappingConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateIdpGroupMappingResponse>
+                transformer = CreateIdpGroupMappingConverter.fromResponse();
 
-        Response response = client.post(ib, request.getCreateIdpGroupMappingDetails(), request);
+        javax.ws.rs.core.Response response =
+                client.post(ib, request.getCreateIdpGroupMappingDetails(), request);
         return transformer.apply(response);
     }
 
@@ -205,11 +200,12 @@ public class IdentityClient implements Identity {
             CreateOrResetUIPasswordRequest request) {
         LOG.trace("Called createOrResetUIPassword");
         request = CreateOrResetUIPasswordConverter.interceptRequest(request);
-        Invocation.Builder ib = CreateOrResetUIPasswordConverter.fromRequest(client, request);
-        Function<Response, CreateOrResetUIPasswordResponse> transformer =
-                CreateOrResetUIPasswordConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                CreateOrResetUIPasswordConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateOrResetUIPasswordResponse>
+                transformer = CreateOrResetUIPasswordConverter.fromResponse();
 
-        Response response = client.post(ib, request);
+        javax.ws.rs.core.Response response = client.post(ib, request);
         return transformer.apply(response);
     }
 
@@ -217,10 +213,13 @@ public class IdentityClient implements Identity {
     public CreatePolicyResponse createPolicy(CreatePolicyRequest request) {
         LOG.trace("Called createPolicy");
         request = CreatePolicyConverter.interceptRequest(request);
-        Invocation.Builder ib = CreatePolicyConverter.fromRequest(client, request);
-        Function<Response, CreatePolicyResponse> transformer = CreatePolicyConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                CreatePolicyConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreatePolicyResponse>
+                transformer = CreatePolicyConverter.fromResponse();
 
-        Response response = client.post(ib, request.getCreatePolicyDetails(), request);
+        javax.ws.rs.core.Response response =
+                client.post(ib, request.getCreatePolicyDetails(), request);
         return transformer.apply(response);
     }
 
@@ -229,11 +228,13 @@ public class IdentityClient implements Identity {
             CreateRegionSubscriptionRequest request) {
         LOG.trace("Called createRegionSubscription");
         request = CreateRegionSubscriptionConverter.interceptRequest(request);
-        Invocation.Builder ib = CreateRegionSubscriptionConverter.fromRequest(client, request);
-        Function<Response, CreateRegionSubscriptionResponse> transformer =
-                CreateRegionSubscriptionConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                CreateRegionSubscriptionConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateRegionSubscriptionResponse>
+                transformer = CreateRegionSubscriptionConverter.fromResponse();
 
-        Response response = client.post(ib, request.getCreateRegionSubscriptionDetails(), request);
+        javax.ws.rs.core.Response response =
+                client.post(ib, request.getCreateRegionSubscriptionDetails(), request);
         return transformer.apply(response);
     }
 
@@ -241,11 +242,13 @@ public class IdentityClient implements Identity {
     public CreateSwiftPasswordResponse createSwiftPassword(CreateSwiftPasswordRequest request) {
         LOG.trace("Called createSwiftPassword");
         request = CreateSwiftPasswordConverter.interceptRequest(request);
-        Invocation.Builder ib = CreateSwiftPasswordConverter.fromRequest(client, request);
-        Function<Response, CreateSwiftPasswordResponse> transformer =
-                CreateSwiftPasswordConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                CreateSwiftPasswordConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateSwiftPasswordResponse>
+                transformer = CreateSwiftPasswordConverter.fromResponse();
 
-        Response response = client.post(ib, request.getCreateSwiftPasswordDetails(), request);
+        javax.ws.rs.core.Response response =
+                client.post(ib, request.getCreateSwiftPasswordDetails(), request);
         return transformer.apply(response);
     }
 
@@ -253,10 +256,12 @@ public class IdentityClient implements Identity {
     public CreateUserResponse createUser(CreateUserRequest request) {
         LOG.trace("Called createUser");
         request = CreateUserConverter.interceptRequest(request);
-        Invocation.Builder ib = CreateUserConverter.fromRequest(client, request);
-        Function<Response, CreateUserResponse> transformer = CreateUserConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = CreateUserConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateUserResponse> transformer =
+                CreateUserConverter.fromResponse();
 
-        Response response = client.post(ib, request.getCreateUserDetails(), request);
+        javax.ws.rs.core.Response response =
+                client.post(ib, request.getCreateUserDetails(), request);
         return transformer.apply(response);
     }
 
@@ -264,10 +269,12 @@ public class IdentityClient implements Identity {
     public DeleteApiKeyResponse deleteApiKey(DeleteApiKeyRequest request) {
         LOG.trace("Called deleteApiKey");
         request = DeleteApiKeyConverter.interceptRequest(request);
-        Invocation.Builder ib = DeleteApiKeyConverter.fromRequest(client, request);
-        Function<Response, DeleteApiKeyResponse> transformer = DeleteApiKeyConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                DeleteApiKeyConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteApiKeyResponse>
+                transformer = DeleteApiKeyConverter.fromResponse();
 
-        Response response = client.delete(ib, request);
+        javax.ws.rs.core.Response response = client.delete(ib, request);
         return transformer.apply(response);
     }
 
@@ -275,10 +282,12 @@ public class IdentityClient implements Identity {
     public DeleteGroupResponse deleteGroup(DeleteGroupRequest request) {
         LOG.trace("Called deleteGroup");
         request = DeleteGroupConverter.interceptRequest(request);
-        Invocation.Builder ib = DeleteGroupConverter.fromRequest(client, request);
-        Function<Response, DeleteGroupResponse> transformer = DeleteGroupConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                DeleteGroupConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteGroupResponse>
+                transformer = DeleteGroupConverter.fromResponse();
 
-        Response response = client.delete(ib, request);
+        javax.ws.rs.core.Response response = client.delete(ib, request);
         return transformer.apply(response);
     }
 
@@ -287,11 +296,12 @@ public class IdentityClient implements Identity {
             DeleteIdentityProviderRequest request) {
         LOG.trace("Called deleteIdentityProvider");
         request = DeleteIdentityProviderConverter.interceptRequest(request);
-        Invocation.Builder ib = DeleteIdentityProviderConverter.fromRequest(client, request);
-        Function<Response, DeleteIdentityProviderResponse> transformer =
-                DeleteIdentityProviderConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                DeleteIdentityProviderConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteIdentityProviderResponse>
+                transformer = DeleteIdentityProviderConverter.fromResponse();
 
-        Response response = client.delete(ib, request);
+        javax.ws.rs.core.Response response = client.delete(ib, request);
         return transformer.apply(response);
     }
 
@@ -300,11 +310,12 @@ public class IdentityClient implements Identity {
             DeleteIdpGroupMappingRequest request) {
         LOG.trace("Called deleteIdpGroupMapping");
         request = DeleteIdpGroupMappingConverter.interceptRequest(request);
-        Invocation.Builder ib = DeleteIdpGroupMappingConverter.fromRequest(client, request);
-        Function<Response, DeleteIdpGroupMappingResponse> transformer =
-                DeleteIdpGroupMappingConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                DeleteIdpGroupMappingConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteIdpGroupMappingResponse>
+                transformer = DeleteIdpGroupMappingConverter.fromResponse();
 
-        Response response = client.delete(ib, request);
+        javax.ws.rs.core.Response response = client.delete(ib, request);
         return transformer.apply(response);
     }
 
@@ -312,10 +323,12 @@ public class IdentityClient implements Identity {
     public DeletePolicyResponse deletePolicy(DeletePolicyRequest request) {
         LOG.trace("Called deletePolicy");
         request = DeletePolicyConverter.interceptRequest(request);
-        Invocation.Builder ib = DeletePolicyConverter.fromRequest(client, request);
-        Function<Response, DeletePolicyResponse> transformer = DeletePolicyConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                DeletePolicyConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeletePolicyResponse>
+                transformer = DeletePolicyConverter.fromResponse();
 
-        Response response = client.delete(ib, request);
+        javax.ws.rs.core.Response response = client.delete(ib, request);
         return transformer.apply(response);
     }
 
@@ -323,11 +336,12 @@ public class IdentityClient implements Identity {
     public DeleteSwiftPasswordResponse deleteSwiftPassword(DeleteSwiftPasswordRequest request) {
         LOG.trace("Called deleteSwiftPassword");
         request = DeleteSwiftPasswordConverter.interceptRequest(request);
-        Invocation.Builder ib = DeleteSwiftPasswordConverter.fromRequest(client, request);
-        Function<Response, DeleteSwiftPasswordResponse> transformer =
-                DeleteSwiftPasswordConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                DeleteSwiftPasswordConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSwiftPasswordResponse>
+                transformer = DeleteSwiftPasswordConverter.fromResponse();
 
-        Response response = client.delete(ib, request);
+        javax.ws.rs.core.Response response = client.delete(ib, request);
         return transformer.apply(response);
     }
 
@@ -335,10 +349,11 @@ public class IdentityClient implements Identity {
     public DeleteUserResponse deleteUser(DeleteUserRequest request) {
         LOG.trace("Called deleteUser");
         request = DeleteUserConverter.interceptRequest(request);
-        Invocation.Builder ib = DeleteUserConverter.fromRequest(client, request);
-        Function<Response, DeleteUserResponse> transformer = DeleteUserConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = DeleteUserConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteUserResponse> transformer =
+                DeleteUserConverter.fromResponse();
 
-        Response response = client.delete(ib, request);
+        javax.ws.rs.core.Response response = client.delete(ib, request);
         return transformer.apply(response);
     }
 
@@ -346,11 +361,12 @@ public class IdentityClient implements Identity {
     public GetCompartmentResponse getCompartment(GetCompartmentRequest request) {
         LOG.trace("Called getCompartment");
         request = GetCompartmentConverter.interceptRequest(request);
-        Invocation.Builder ib = GetCompartmentConverter.fromRequest(client, request);
-        Function<Response, GetCompartmentResponse> transformer =
-                GetCompartmentConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                GetCompartmentConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetCompartmentResponse>
+                transformer = GetCompartmentConverter.fromResponse();
 
-        Response response = client.get(ib, request);
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -358,10 +374,11 @@ public class IdentityClient implements Identity {
     public GetGroupResponse getGroup(GetGroupRequest request) {
         LOG.trace("Called getGroup");
         request = GetGroupConverter.interceptRequest(request);
-        Invocation.Builder ib = GetGroupConverter.fromRequest(client, request);
-        Function<Response, GetGroupResponse> transformer = GetGroupConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = GetGroupConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetGroupResponse> transformer =
+                GetGroupConverter.fromResponse();
 
-        Response response = client.get(ib, request);
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -369,11 +386,12 @@ public class IdentityClient implements Identity {
     public GetIdentityProviderResponse getIdentityProvider(GetIdentityProviderRequest request) {
         LOG.trace("Called getIdentityProvider");
         request = GetIdentityProviderConverter.interceptRequest(request);
-        Invocation.Builder ib = GetIdentityProviderConverter.fromRequest(client, request);
-        Function<Response, GetIdentityProviderResponse> transformer =
-                GetIdentityProviderConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                GetIdentityProviderConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetIdentityProviderResponse>
+                transformer = GetIdentityProviderConverter.fromResponse();
 
-        Response response = client.get(ib, request);
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -381,11 +399,12 @@ public class IdentityClient implements Identity {
     public GetIdpGroupMappingResponse getIdpGroupMapping(GetIdpGroupMappingRequest request) {
         LOG.trace("Called getIdpGroupMapping");
         request = GetIdpGroupMappingConverter.interceptRequest(request);
-        Invocation.Builder ib = GetIdpGroupMappingConverter.fromRequest(client, request);
-        Function<Response, GetIdpGroupMappingResponse> transformer =
-                GetIdpGroupMappingConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                GetIdpGroupMappingConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetIdpGroupMappingResponse>
+                transformer = GetIdpGroupMappingConverter.fromResponse();
 
-        Response response = client.get(ib, request);
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -393,10 +412,11 @@ public class IdentityClient implements Identity {
     public GetPolicyResponse getPolicy(GetPolicyRequest request) {
         LOG.trace("Called getPolicy");
         request = GetPolicyConverter.interceptRequest(request);
-        Invocation.Builder ib = GetPolicyConverter.fromRequest(client, request);
-        Function<Response, GetPolicyResponse> transformer = GetPolicyConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = GetPolicyConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetPolicyResponse> transformer =
+                GetPolicyConverter.fromResponse();
 
-        Response response = client.get(ib, request);
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -404,10 +424,11 @@ public class IdentityClient implements Identity {
     public GetTenancyResponse getTenancy(GetTenancyRequest request) {
         LOG.trace("Called getTenancy");
         request = GetTenancyConverter.interceptRequest(request);
-        Invocation.Builder ib = GetTenancyConverter.fromRequest(client, request);
-        Function<Response, GetTenancyResponse> transformer = GetTenancyConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = GetTenancyConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetTenancyResponse> transformer =
+                GetTenancyConverter.fromResponse();
 
-        Response response = client.get(ib, request);
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -415,10 +436,11 @@ public class IdentityClient implements Identity {
     public GetUserResponse getUser(GetUserRequest request) {
         LOG.trace("Called getUser");
         request = GetUserConverter.interceptRequest(request);
-        Invocation.Builder ib = GetUserConverter.fromRequest(client, request);
-        Function<Response, GetUserResponse> transformer = GetUserConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = GetUserConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetUserResponse> transformer =
+                GetUserConverter.fromResponse();
 
-        Response response = client.get(ib, request);
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -427,11 +449,12 @@ public class IdentityClient implements Identity {
             GetUserGroupMembershipRequest request) {
         LOG.trace("Called getUserGroupMembership");
         request = GetUserGroupMembershipConverter.interceptRequest(request);
-        Invocation.Builder ib = GetUserGroupMembershipConverter.fromRequest(client, request);
-        Function<Response, GetUserGroupMembershipResponse> transformer =
-                GetUserGroupMembershipConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                GetUserGroupMembershipConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetUserGroupMembershipResponse>
+                transformer = GetUserGroupMembershipConverter.fromResponse();
 
-        Response response = client.get(ib, request);
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -439,10 +462,12 @@ public class IdentityClient implements Identity {
     public ListApiKeysResponse listApiKeys(ListApiKeysRequest request) {
         LOG.trace("Called listApiKeys");
         request = ListApiKeysConverter.interceptRequest(request);
-        Invocation.Builder ib = ListApiKeysConverter.fromRequest(client, request);
-        Function<Response, ListApiKeysResponse> transformer = ListApiKeysConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListApiKeysConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListApiKeysResponse>
+                transformer = ListApiKeysConverter.fromResponse();
 
-        Response response = client.get(ib, request);
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -451,11 +476,12 @@ public class IdentityClient implements Identity {
             ListAvailabilityDomainsRequest request) {
         LOG.trace("Called listAvailabilityDomains");
         request = ListAvailabilityDomainsConverter.interceptRequest(request);
-        Invocation.Builder ib = ListAvailabilityDomainsConverter.fromRequest(client, request);
-        Function<Response, ListAvailabilityDomainsResponse> transformer =
-                ListAvailabilityDomainsConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListAvailabilityDomainsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListAvailabilityDomainsResponse>
+                transformer = ListAvailabilityDomainsConverter.fromResponse();
 
-        Response response = client.get(ib, request);
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -463,11 +489,12 @@ public class IdentityClient implements Identity {
     public ListCompartmentsResponse listCompartments(ListCompartmentsRequest request) {
         LOG.trace("Called listCompartments");
         request = ListCompartmentsConverter.interceptRequest(request);
-        Invocation.Builder ib = ListCompartmentsConverter.fromRequest(client, request);
-        Function<Response, ListCompartmentsResponse> transformer =
-                ListCompartmentsConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListCompartmentsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListCompartmentsResponse>
+                transformer = ListCompartmentsConverter.fromResponse();
 
-        Response response = client.get(ib, request);
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -475,10 +502,11 @@ public class IdentityClient implements Identity {
     public ListGroupsResponse listGroups(ListGroupsRequest request) {
         LOG.trace("Called listGroups");
         request = ListGroupsConverter.interceptRequest(request);
-        Invocation.Builder ib = ListGroupsConverter.fromRequest(client, request);
-        Function<Response, ListGroupsResponse> transformer = ListGroupsConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = ListGroupsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListGroupsResponse> transformer =
+                ListGroupsConverter.fromResponse();
 
-        Response response = client.get(ib, request);
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -487,11 +515,12 @@ public class IdentityClient implements Identity {
             ListIdentityProvidersRequest request) {
         LOG.trace("Called listIdentityProviders");
         request = ListIdentityProvidersConverter.interceptRequest(request);
-        Invocation.Builder ib = ListIdentityProvidersConverter.fromRequest(client, request);
-        Function<Response, ListIdentityProvidersResponse> transformer =
-                ListIdentityProvidersConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListIdentityProvidersConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListIdentityProvidersResponse>
+                transformer = ListIdentityProvidersConverter.fromResponse();
 
-        Response response = client.get(ib, request);
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -499,11 +528,12 @@ public class IdentityClient implements Identity {
     public ListIdpGroupMappingsResponse listIdpGroupMappings(ListIdpGroupMappingsRequest request) {
         LOG.trace("Called listIdpGroupMappings");
         request = ListIdpGroupMappingsConverter.interceptRequest(request);
-        Invocation.Builder ib = ListIdpGroupMappingsConverter.fromRequest(client, request);
-        Function<Response, ListIdpGroupMappingsResponse> transformer =
-                ListIdpGroupMappingsConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListIdpGroupMappingsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListIdpGroupMappingsResponse>
+                transformer = ListIdpGroupMappingsConverter.fromResponse();
 
-        Response response = client.get(ib, request);
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -511,10 +541,12 @@ public class IdentityClient implements Identity {
     public ListPoliciesResponse listPolicies(ListPoliciesRequest request) {
         LOG.trace("Called listPolicies");
         request = ListPoliciesConverter.interceptRequest(request);
-        Invocation.Builder ib = ListPoliciesConverter.fromRequest(client, request);
-        Function<Response, ListPoliciesResponse> transformer = ListPoliciesConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListPoliciesConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListPoliciesResponse>
+                transformer = ListPoliciesConverter.fromResponse();
 
-        Response response = client.get(ib, request);
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -523,11 +555,12 @@ public class IdentityClient implements Identity {
             ListRegionSubscriptionsRequest request) {
         LOG.trace("Called listRegionSubscriptions");
         request = ListRegionSubscriptionsConverter.interceptRequest(request);
-        Invocation.Builder ib = ListRegionSubscriptionsConverter.fromRequest(client, request);
-        Function<Response, ListRegionSubscriptionsResponse> transformer =
-                ListRegionSubscriptionsConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListRegionSubscriptionsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListRegionSubscriptionsResponse>
+                transformer = ListRegionSubscriptionsConverter.fromResponse();
 
-        Response response = client.get(ib, request);
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -535,10 +568,12 @@ public class IdentityClient implements Identity {
     public ListRegionsResponse listRegions(ListRegionsRequest request) {
         LOG.trace("Called listRegions");
         request = ListRegionsConverter.interceptRequest(request);
-        Invocation.Builder ib = ListRegionsConverter.fromRequest(client, request);
-        Function<Response, ListRegionsResponse> transformer = ListRegionsConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListRegionsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListRegionsResponse>
+                transformer = ListRegionsConverter.fromResponse();
 
-        Response response = client.get(ib, request);
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -546,11 +581,12 @@ public class IdentityClient implements Identity {
     public ListSwiftPasswordsResponse listSwiftPasswords(ListSwiftPasswordsRequest request) {
         LOG.trace("Called listSwiftPasswords");
         request = ListSwiftPasswordsConverter.interceptRequest(request);
-        Invocation.Builder ib = ListSwiftPasswordsConverter.fromRequest(client, request);
-        Function<Response, ListSwiftPasswordsResponse> transformer =
-                ListSwiftPasswordsConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListSwiftPasswordsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListSwiftPasswordsResponse>
+                transformer = ListSwiftPasswordsConverter.fromResponse();
 
-        Response response = client.get(ib, request);
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -559,11 +595,12 @@ public class IdentityClient implements Identity {
             ListUserGroupMembershipsRequest request) {
         LOG.trace("Called listUserGroupMemberships");
         request = ListUserGroupMembershipsConverter.interceptRequest(request);
-        Invocation.Builder ib = ListUserGroupMembershipsConverter.fromRequest(client, request);
-        Function<Response, ListUserGroupMembershipsResponse> transformer =
-                ListUserGroupMembershipsConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListUserGroupMembershipsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListUserGroupMembershipsResponse>
+                transformer = ListUserGroupMembershipsConverter.fromResponse();
 
-        Response response = client.get(ib, request);
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -571,10 +608,11 @@ public class IdentityClient implements Identity {
     public ListUsersResponse listUsers(ListUsersRequest request) {
         LOG.trace("Called listUsers");
         request = ListUsersConverter.interceptRequest(request);
-        Invocation.Builder ib = ListUsersConverter.fromRequest(client, request);
-        Function<Response, ListUsersResponse> transformer = ListUsersConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = ListUsersConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListUsersResponse> transformer =
+                ListUsersConverter.fromResponse();
 
-        Response response = client.get(ib, request);
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -582,11 +620,12 @@ public class IdentityClient implements Identity {
     public RemoveUserFromGroupResponse removeUserFromGroup(RemoveUserFromGroupRequest request) {
         LOG.trace("Called removeUserFromGroup");
         request = RemoveUserFromGroupConverter.interceptRequest(request);
-        Invocation.Builder ib = RemoveUserFromGroupConverter.fromRequest(client, request);
-        Function<Response, RemoveUserFromGroupResponse> transformer =
-                RemoveUserFromGroupConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                RemoveUserFromGroupConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, RemoveUserFromGroupResponse>
+                transformer = RemoveUserFromGroupConverter.fromResponse();
 
-        Response response = client.delete(ib, request);
+        javax.ws.rs.core.Response response = client.delete(ib, request);
         return transformer.apply(response);
     }
 
@@ -594,11 +633,13 @@ public class IdentityClient implements Identity {
     public UpdateCompartmentResponse updateCompartment(UpdateCompartmentRequest request) {
         LOG.trace("Called updateCompartment");
         request = UpdateCompartmentConverter.interceptRequest(request);
-        Invocation.Builder ib = UpdateCompartmentConverter.fromRequest(client, request);
-        Function<Response, UpdateCompartmentResponse> transformer =
-                UpdateCompartmentConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                UpdateCompartmentConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCompartmentResponse>
+                transformer = UpdateCompartmentConverter.fromResponse();
 
-        Response response = client.put(ib, request.getUpdateCompartmentDetails(), request);
+        javax.ws.rs.core.Response response =
+                client.put(ib, request.getUpdateCompartmentDetails(), request);
         return transformer.apply(response);
     }
 
@@ -606,10 +647,13 @@ public class IdentityClient implements Identity {
     public UpdateGroupResponse updateGroup(UpdateGroupRequest request) {
         LOG.trace("Called updateGroup");
         request = UpdateGroupConverter.interceptRequest(request);
-        Invocation.Builder ib = UpdateGroupConverter.fromRequest(client, request);
-        Function<Response, UpdateGroupResponse> transformer = UpdateGroupConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                UpdateGroupConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateGroupResponse>
+                transformer = UpdateGroupConverter.fromResponse();
 
-        Response response = client.put(ib, request.getUpdateGroupDetails(), request);
+        javax.ws.rs.core.Response response =
+                client.put(ib, request.getUpdateGroupDetails(), request);
         return transformer.apply(response);
     }
 
@@ -618,11 +662,13 @@ public class IdentityClient implements Identity {
             UpdateIdentityProviderRequest request) {
         LOG.trace("Called updateIdentityProvider");
         request = UpdateIdentityProviderConverter.interceptRequest(request);
-        Invocation.Builder ib = UpdateIdentityProviderConverter.fromRequest(client, request);
-        Function<Response, UpdateIdentityProviderResponse> transformer =
-                UpdateIdentityProviderConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                UpdateIdentityProviderConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateIdentityProviderResponse>
+                transformer = UpdateIdentityProviderConverter.fromResponse();
 
-        Response response = client.put(ib, request.getUpdateIdentityProviderDetails(), request);
+        javax.ws.rs.core.Response response =
+                client.put(ib, request.getUpdateIdentityProviderDetails(), request);
         return transformer.apply(response);
     }
 
@@ -631,11 +677,13 @@ public class IdentityClient implements Identity {
             UpdateIdpGroupMappingRequest request) {
         LOG.trace("Called updateIdpGroupMapping");
         request = UpdateIdpGroupMappingConverter.interceptRequest(request);
-        Invocation.Builder ib = UpdateIdpGroupMappingConverter.fromRequest(client, request);
-        Function<Response, UpdateIdpGroupMappingResponse> transformer =
-                UpdateIdpGroupMappingConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                UpdateIdpGroupMappingConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateIdpGroupMappingResponse>
+                transformer = UpdateIdpGroupMappingConverter.fromResponse();
 
-        Response response = client.put(ib, request.getUpdateIdpGroupMappingDetails(), request);
+        javax.ws.rs.core.Response response =
+                client.put(ib, request.getUpdateIdpGroupMappingDetails(), request);
         return transformer.apply(response);
     }
 
@@ -643,10 +691,13 @@ public class IdentityClient implements Identity {
     public UpdatePolicyResponse updatePolicy(UpdatePolicyRequest request) {
         LOG.trace("Called updatePolicy");
         request = UpdatePolicyConverter.interceptRequest(request);
-        Invocation.Builder ib = UpdatePolicyConverter.fromRequest(client, request);
-        Function<Response, UpdatePolicyResponse> transformer = UpdatePolicyConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                UpdatePolicyConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePolicyResponse>
+                transformer = UpdatePolicyConverter.fromResponse();
 
-        Response response = client.put(ib, request.getUpdatePolicyDetails(), request);
+        javax.ws.rs.core.Response response =
+                client.put(ib, request.getUpdatePolicyDetails(), request);
         return transformer.apply(response);
     }
 
@@ -654,11 +705,13 @@ public class IdentityClient implements Identity {
     public UpdateSwiftPasswordResponse updateSwiftPassword(UpdateSwiftPasswordRequest request) {
         LOG.trace("Called updateSwiftPassword");
         request = UpdateSwiftPasswordConverter.interceptRequest(request);
-        Invocation.Builder ib = UpdateSwiftPasswordConverter.fromRequest(client, request);
-        Function<Response, UpdateSwiftPasswordResponse> transformer =
-                UpdateSwiftPasswordConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                UpdateSwiftPasswordConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSwiftPasswordResponse>
+                transformer = UpdateSwiftPasswordConverter.fromResponse();
 
-        Response response = client.put(ib, request.getUpdateSwiftPasswordDetails(), request);
+        javax.ws.rs.core.Response response =
+                client.put(ib, request.getUpdateSwiftPasswordDetails(), request);
         return transformer.apply(response);
     }
 
@@ -666,10 +719,12 @@ public class IdentityClient implements Identity {
     public UpdateUserResponse updateUser(UpdateUserRequest request) {
         LOG.trace("Called updateUser");
         request = UpdateUserConverter.interceptRequest(request);
-        Invocation.Builder ib = UpdateUserConverter.fromRequest(client, request);
-        Function<Response, UpdateUserResponse> transformer = UpdateUserConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = UpdateUserConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateUserResponse> transformer =
+                UpdateUserConverter.fromResponse();
 
-        Response response = client.put(ib, request.getUpdateUserDetails(), request);
+        javax.ws.rs.core.Response response =
+                client.put(ib, request.getUpdateUserDetails(), request);
         return transformer.apply(response);
     }
 
@@ -677,11 +732,13 @@ public class IdentityClient implements Identity {
     public UpdateUserStateResponse updateUserState(UpdateUserStateRequest request) {
         LOG.trace("Called updateUserState");
         request = UpdateUserStateConverter.interceptRequest(request);
-        Invocation.Builder ib = UpdateUserStateConverter.fromRequest(client, request);
-        Function<Response, UpdateUserStateResponse> transformer =
-                UpdateUserStateConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                UpdateUserStateConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateUserStateResponse>
+                transformer = UpdateUserStateConverter.fromResponse();
 
-        Response response = client.put(ib, request.getUpdateStateDetails(), request);
+        javax.ws.rs.core.Response response =
+                client.put(ib, request.getUpdateStateDetails(), request);
         return transformer.apply(response);
     }
 
@@ -689,10 +746,13 @@ public class IdentityClient implements Identity {
     public UploadApiKeyResponse uploadApiKey(UploadApiKeyRequest request) {
         LOG.trace("Called uploadApiKey");
         request = UploadApiKeyConverter.interceptRequest(request);
-        Invocation.Builder ib = UploadApiKeyConverter.fromRequest(client, request);
-        Function<Response, UploadApiKeyResponse> transformer = UploadApiKeyConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                UploadApiKeyConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UploadApiKeyResponse>
+                transformer = UploadApiKeyConverter.fromResponse();
 
-        Response response = client.post(ib, request.getCreateApiKeyDetails(), request);
+        javax.ws.rs.core.Response response =
+                client.post(ib, request.getCreateApiKeyDetails(), request);
         return transformer.apply(response);
     }
 

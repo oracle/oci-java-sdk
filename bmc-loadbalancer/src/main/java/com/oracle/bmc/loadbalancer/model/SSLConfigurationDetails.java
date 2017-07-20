@@ -3,42 +3,33 @@
  */
 package com.oracle.bmc.loadbalancer.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * The load balancer's SSL handling configuration details.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@Value
-@JsonDeserialize(builder = SSLConfigurationDetails.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = SSLConfigurationDetails.Builder.class
+)
 public class SSLConfigurationDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("certificateName")
+        @com.fasterxml.jackson.annotation.JsonProperty("certificateName")
         private String certificateName;
 
-        @JsonProperty("verifyDepth")
+        @com.fasterxml.jackson.annotation.JsonProperty("verifyDepth")
         private Integer verifyDepth;
 
-        @JsonProperty("verifyPeerCertificate")
+        @com.fasterxml.jackson.annotation.JsonProperty("verifyPeerCertificate")
         private Boolean verifyPeerCertificate;
 
         public SSLConfigurationDetails build() {
             return new SSLConfigurationDetails(certificateName, verifyDepth, verifyPeerCertificate);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(SSLConfigurationDetails o) {
             return certificateName(o.getCertificateName())
                     .verifyDepth(o.getVerifyDepth())
@@ -59,9 +50,9 @@ public class SSLConfigurationDetails {
      * Example: `My certificate bundle`
      *
      **/
-    @JsonProperty("certificateName")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("certificateName")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String certificateName;
 
     /**
@@ -70,7 +61,7 @@ public class SSLConfigurationDetails {
      * Example: `3`
      *
      **/
-    @JsonProperty("verifyDepth")
+    @com.fasterxml.jackson.annotation.JsonProperty("verifyDepth")
     Integer verifyDepth;
 
     /**
@@ -79,6 +70,6 @@ public class SSLConfigurationDetails {
      * Example: `true`
      *
      **/
-    @JsonProperty("verifyPeerCertificate")
+    @com.fasterxml.jackson.annotation.JsonProperty("verifyPeerCertificate")
     Boolean verifyPeerCertificate;
 }

@@ -3,40 +3,24 @@
  */
 package com.oracle.bmc.loadbalancer.internal.http;
 
-import java.io.InputStream;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-
-import javax.ws.rs.client.*;
-import javax.ws.rs.core.*;
-
-import com.oracle.bmc.http.internal.*;
-import static com.oracle.bmc.util.internal.HttpUtils.*;
-import com.oracle.bmc.model.*;
 import com.oracle.bmc.loadbalancer.model.*;
 import com.oracle.bmc.loadbalancer.requests.*;
 import com.oracle.bmc.loadbalancer.responses.*;
 
-import com.google.common.base.Function;
-import com.google.common.base.Optional;
-
-import lombok.extern.slf4j.Slf4j;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@Slf4j
+@lombok.extern.slf4j.Slf4j
 public class GetHealthCheckerConverter {
-    private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
-            new ResponseConversionFunctionFactory();
+    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
+            RESPONSE_CONVERSION_FACTORY =
+                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
     public static GetHealthCheckerRequest interceptRequest(GetHealthCheckerRequest request) {
 
         return request;
     }
 
-    public static Invocation.Builder fromRequest(
-            RestClient client, GetHealthCheckerRequest request) {
+    public static javax.ws.rs.client.Invocation.Builder fromRequest(
+            com.oracle.bmc.http.internal.RestClient client, GetHealthCheckerRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
         }
@@ -49,18 +33,22 @@ public class GetHealthCheckerConverter {
             throw new NullPointerException("backendSetName is required");
         }
 
-        WebTarget target =
+        javax.ws.rs.client.WebTarget target =
                 client.getBaseTarget()
                         .path("/20170115")
                         .path("loadBalancers")
-                        .path(encodePathSegment(request.getLoadBalancerId()))
+                        .path(
+                                com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
+                                        request.getLoadBalancerId()))
                         .path("backendSets")
-                        .path(encodePathSegment(request.getBackendSetName()))
+                        .path(
+                                com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
+                                        request.getBackendSetName()))
                         .path("healthChecker");
 
-        Invocation.Builder ib = target.request();
+        javax.ws.rs.client.Invocation.Builder ib = target.request();
 
-        ib.accept(MediaType.APPLICATION_JSON);
+        ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 
         if (request.getOpcRequestId() != null) {
             ib.header("opc-request-id", request.getOpcRequestId());
@@ -69,38 +57,53 @@ public class GetHealthCheckerConverter {
         return ib;
     }
 
-    public static Function<Response, GetHealthCheckerResponse> fromResponse() {
-        final Function<Response, GetHealthCheckerResponse> transformer =
-                new Function<Response, GetHealthCheckerResponse>() {
-                    @Override
-                    public GetHealthCheckerResponse apply(Response rawResponse) {
-                        LOG.trace("Transform function invoked for GetHealthCheckerResponse");
-                        Function<Response, WithHeaders<HealthChecker>> responseFn =
-                                RESPONSE_CONVERSION_FACTORY.create(HealthChecker.class);
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, GetHealthCheckerResponse>
+            fromResponse() {
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetHealthCheckerResponse>
+                transformer =
+                        new com.google.common.base.Function<
+                                javax.ws.rs.core.Response, GetHealthCheckerResponse>() {
+                            @Override
+                            public GetHealthCheckerResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for GetHealthCheckerResponse");
+                                com.google.common.base.Function<
+                                                javax.ws.rs.core.Response,
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        HealthChecker>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        HealthChecker.class);
 
-                        WithHeaders<HealthChecker> response = responseFn.apply(rawResponse);
-                        MultivaluedMap<String, String> headers = response.getHeaders();
+                                com.oracle.bmc.http.internal.WithHeaders<HealthChecker> response =
+                                        responseFn.apply(rawResponse);
+                                javax.ws.rs.core.MultivaluedMap<String, String> headers =
+                                        response.getHeaders();
 
-                        GetHealthCheckerResponse.Builder builder =
-                                GetHealthCheckerResponse.builder();
+                                GetHealthCheckerResponse.Builder builder =
+                                        GetHealthCheckerResponse.builder();
 
-                        builder.healthChecker(response.getItem());
+                                builder.healthChecker(response.getItem());
 
-                        Optional<List<String>> opcRequestIdHeader =
-                                HeaderUtils.get(headers, "opc-request-id");
-                        if (opcRequestIdHeader.isPresent()) {
-                            builder.opcRequestId(
-                                    HeaderUtils.toValue(
-                                            "opc-request-id",
-                                            opcRequestIdHeader.get().get(0),
-                                            String.class));
-                        }
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcRequestIdHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-request-id");
+                                if (opcRequestIdHeader.isPresent()) {
+                                    builder.opcRequestId(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-request-id",
+                                                    opcRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
 
-                        GetHealthCheckerResponse responseWrapper = builder.build();
+                                GetHealthCheckerResponse responseWrapper = builder.build();
 
-                        return responseWrapper;
-                    }
-                };
+                                return responseWrapper;
+                            }
+                        };
         return transformer;
     }
 }

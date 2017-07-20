@@ -3,38 +3,29 @@
  */
 package com.oracle.bmc.loadbalancer.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * The configuration details for updating a listener.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@Value
-@JsonDeserialize(builder = UpdateListenerDetails.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = UpdateListenerDetails.Builder.class
+)
 public class UpdateListenerDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("defaultBackendSetName")
+        @com.fasterxml.jackson.annotation.JsonProperty("defaultBackendSetName")
         private String defaultBackendSetName;
 
-        @JsonProperty("port")
+        @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
-        @JsonProperty("protocol")
+        @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private String protocol;
 
-        @JsonProperty("sslConfiguration")
+        @com.fasterxml.jackson.annotation.JsonProperty("sslConfiguration")
         private SSLConfigurationDetails sslConfiguration;
 
         public UpdateListenerDetails build() {
@@ -42,7 +33,7 @@ public class UpdateListenerDetails {
                     defaultBackendSetName, port, protocol, sslConfiguration);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateListenerDetails o) {
             return defaultBackendSetName(o.getDefaultBackendSetName())
                     .port(o.getPort())
@@ -61,9 +52,9 @@ public class UpdateListenerDetails {
     /**
      * The name of the associated backend set.
      **/
-    @JsonProperty("defaultBackendSetName")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("defaultBackendSetName")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String defaultBackendSetName;
 
     /**
@@ -72,11 +63,11 @@ public class UpdateListenerDetails {
      * Example: `80`
      *
      **/
-    @JsonProperty("port")
-    @Valid
-    @NotNull
-    @Min(1)
-    @Max(65535)
+    @com.fasterxml.jackson.annotation.JsonProperty("port")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Min(1)
+    @javax.validation.constraints.Max(65535)
     Integer port;
 
     /**
@@ -87,11 +78,11 @@ public class UpdateListenerDetails {
      * Example: `HTTP`
      *
      **/
-    @JsonProperty("protocol")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("protocol")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String protocol;
 
-    @JsonProperty("sslConfiguration")
+    @com.fasterxml.jackson.annotation.JsonProperty("sslConfiguration")
     SSLConfigurationDetails sslConfiguration;
 }

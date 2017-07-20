@@ -3,32 +3,16 @@
  */
 package com.oracle.bmc.objectstorage.internal.http;
 
-import java.io.InputStream;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-
-import javax.ws.rs.client.*;
-import javax.ws.rs.core.*;
-
-import com.oracle.bmc.http.internal.*;
-import static com.oracle.bmc.util.internal.HttpUtils.*;
-import com.oracle.bmc.model.*;
 import com.oracle.bmc.objectstorage.model.*;
 import com.oracle.bmc.objectstorage.requests.*;
 import com.oracle.bmc.objectstorage.responses.*;
 
-import com.google.common.base.Function;
-import com.google.common.base.Optional;
-
-import lombok.extern.slf4j.Slf4j;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Slf4j
+@lombok.extern.slf4j.Slf4j
 public class CreateMultipartUploadConverter {
-    private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
-            new ResponseConversionFunctionFactory();
+    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
+            RESPONSE_CONVERSION_FACTORY =
+                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
     public static CreateMultipartUploadRequest interceptRequest(
             CreateMultipartUploadRequest request) {
@@ -36,8 +20,8 @@ public class CreateMultipartUploadConverter {
         return request;
     }
 
-    public static Invocation.Builder fromRequest(
-            RestClient client, CreateMultipartUploadRequest request) {
+    public static javax.ws.rs.client.Invocation.Builder fromRequest(
+            com.oracle.bmc.http.internal.RestClient client, CreateMultipartUploadRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
         }
@@ -54,18 +38,22 @@ public class CreateMultipartUploadConverter {
             throw new NullPointerException("createMultipartUploadDetails is required");
         }
 
-        WebTarget target =
+        javax.ws.rs.client.WebTarget target =
                 client.getBaseTarget()
                         .path("/")
                         .path("n")
-                        .path(encodePathSegment(request.getNamespaceName()))
+                        .path(
+                                com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
+                                        request.getNamespaceName()))
                         .path("b")
-                        .path(encodePathSegment(request.getBucketName()))
+                        .path(
+                                com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
+                                        request.getBucketName()))
                         .path("u");
 
-        Invocation.Builder ib = target.request();
+        javax.ws.rs.client.Invocation.Builder ib = target.request();
 
-        ib.accept(MediaType.APPLICATION_JSON);
+        ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 
         if (request.getIfMatch() != null) {
             ib.header("if-match", request.getIfMatch());
@@ -82,56 +70,78 @@ public class CreateMultipartUploadConverter {
         return ib;
     }
 
-    public static Function<Response, CreateMultipartUploadResponse> fromResponse() {
-        final Function<Response, CreateMultipartUploadResponse> transformer =
-                new Function<Response, CreateMultipartUploadResponse>() {
-                    @Override
-                    public CreateMultipartUploadResponse apply(Response rawResponse) {
-                        LOG.trace("Transform function invoked for CreateMultipartUploadResponse");
-                        Function<Response, WithHeaders<MultipartUpload>> responseFn =
-                                RESPONSE_CONVERSION_FACTORY.create(MultipartUpload.class);
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, CreateMultipartUploadResponse>
+            fromResponse() {
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateMultipartUploadResponse>
+                transformer =
+                        new com.google.common.base.Function<
+                                javax.ws.rs.core.Response, CreateMultipartUploadResponse>() {
+                            @Override
+                            public CreateMultipartUploadResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for CreateMultipartUploadResponse");
+                                com.google.common.base.Function<
+                                                javax.ws.rs.core.Response,
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        MultipartUpload>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        MultipartUpload.class);
 
-                        WithHeaders<MultipartUpload> response = responseFn.apply(rawResponse);
-                        MultivaluedMap<String, String> headers = response.getHeaders();
+                                com.oracle.bmc.http.internal.WithHeaders<MultipartUpload> response =
+                                        responseFn.apply(rawResponse);
+                                javax.ws.rs.core.MultivaluedMap<String, String> headers =
+                                        response.getHeaders();
 
-                        CreateMultipartUploadResponse.Builder builder =
-                                CreateMultipartUploadResponse.builder();
+                                CreateMultipartUploadResponse.Builder builder =
+                                        CreateMultipartUploadResponse.builder();
 
-                        builder.multipartUpload(response.getItem());
+                                builder.multipartUpload(response.getItem());
 
-                        Optional<List<String>> opcClientRequestIdHeader =
-                                HeaderUtils.get(headers, "opc-client-request-id");
-                        if (opcClientRequestIdHeader.isPresent()) {
-                            builder.opcClientRequestId(
-                                    HeaderUtils.toValue(
-                                            "opc-client-request-id",
-                                            opcClientRequestIdHeader.get().get(0),
-                                            String.class));
-                        }
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcClientRequestIdHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-client-request-id");
+                                if (opcClientRequestIdHeader.isPresent()) {
+                                    builder.opcClientRequestId(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-client-request-id",
+                                                    opcClientRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
 
-                        Optional<List<String>> opcRequestIdHeader =
-                                HeaderUtils.get(headers, "opc-request-id");
-                        if (opcRequestIdHeader.isPresent()) {
-                            builder.opcRequestId(
-                                    HeaderUtils.toValue(
-                                            "opc-request-id",
-                                            opcRequestIdHeader.get().get(0),
-                                            String.class));
-                        }
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcRequestIdHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-request-id");
+                                if (opcRequestIdHeader.isPresent()) {
+                                    builder.opcRequestId(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-request-id",
+                                                    opcRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
 
-                        Optional<List<String>> locationHeader =
-                                HeaderUtils.get(headers, "location");
-                        if (locationHeader.isPresent()) {
-                            builder.location(
-                                    HeaderUtils.toValue(
-                                            "location", locationHeader.get().get(0), String.class));
-                        }
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        locationHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "location");
+                                if (locationHeader.isPresent()) {
+                                    builder.location(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "location",
+                                                    locationHeader.get().get(0),
+                                                    String.class));
+                                }
 
-                        CreateMultipartUploadResponse responseWrapper = builder.build();
+                                CreateMultipartUploadResponse responseWrapper = builder.build();
 
-                        return responseWrapper;
-                    }
-                };
+                                return responseWrapper;
+                            }
+                        };
         return transformer;
     }
 }

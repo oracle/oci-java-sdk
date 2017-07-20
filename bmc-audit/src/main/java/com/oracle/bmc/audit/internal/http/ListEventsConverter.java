@@ -3,39 +3,24 @@
  */
 package com.oracle.bmc.audit.internal.http;
 
-import java.io.InputStream;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-
-import javax.ws.rs.client.*;
-import javax.ws.rs.core.*;
-
-import com.oracle.bmc.http.internal.*;
-import static com.oracle.bmc.util.internal.HttpUtils.*;
-import com.oracle.bmc.model.*;
 import com.oracle.bmc.audit.model.*;
 import com.oracle.bmc.audit.requests.*;
 import com.oracle.bmc.audit.responses.*;
 
-import com.google.common.base.Function;
-import com.google.common.base.Optional;
-
-import lombok.extern.slf4j.Slf4j;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Slf4j
+@lombok.extern.slf4j.Slf4j
 public class ListEventsConverter {
-    private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
-            new ResponseConversionFunctionFactory();
+    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
+            RESPONSE_CONVERSION_FACTORY =
+                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
     public static ListEventsRequest interceptRequest(ListEventsRequest request) {
 
         return request;
     }
 
-    public static Invocation.Builder fromRequest(RestClient client, ListEventsRequest request) {
+    public static javax.ws.rs.client.Invocation.Builder fromRequest(
+            com.oracle.bmc.http.internal.RestClient client, ListEventsRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
         }
@@ -52,23 +37,38 @@ public class ListEventsConverter {
             throw new NullPointerException("endTime is required");
         }
 
-        WebTarget target = client.getBaseTarget().path("/20160918").path("auditEvents");
+        javax.ws.rs.client.WebTarget target =
+                client.getBaseTarget().path("/20160918").path("auditEvents");
 
         target =
                 target.queryParam(
-                        "compartmentId", attemptEncodeQueryParam(request.getCompartmentId()));
+                        "compartmentId",
+                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                request.getCompartmentId()));
 
-        target = target.queryParam("startTime", attemptEncodeQueryParam(request.getStartTime()));
+        target =
+                target.queryParam(
+                        "startTime",
+                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                request.getStartTime()));
 
-        target = target.queryParam("endTime", attemptEncodeQueryParam(request.getEndTime()));
+        target =
+                target.queryParam(
+                        "endTime",
+                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                request.getEndTime()));
 
         if (request.getPage() != null) {
-            target = target.queryParam("page", attemptEncodeQueryParam(request.getPage()));
+            target =
+                    target.queryParam(
+                            "page",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getPage()));
         }
 
-        Invocation.Builder ib = target.request();
+        javax.ws.rs.client.Invocation.Builder ib = target.request();
 
-        ib.accept(MediaType.APPLICATION_JSON);
+        ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 
         if (request.getOpcRequestId() != null) {
             ib.header("opc-request-id", request.getOpcRequestId());
@@ -77,48 +77,62 @@ public class ListEventsConverter {
         return ib;
     }
 
-    public static Function<Response, ListEventsResponse> fromResponse() {
-        final Function<Response, ListEventsResponse> transformer =
-                new Function<Response, ListEventsResponse>() {
-                    @Override
-                    public ListEventsResponse apply(Response rawResponse) {
-                        LOG.trace("Transform function invoked for ListEventsResponse");
-                        Function<Response, WithHeaders<List<AuditEvent>>> responseFn =
-                                RESPONSE_CONVERSION_FACTORY.create(
-                                        new GenericType<List<AuditEvent>>() {});
+    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListEventsResponse>
+            fromResponse() {
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListEventsResponse>
+                transformer =
+                        new com.google.common.base.Function<
+                                javax.ws.rs.core.Response, ListEventsResponse>() {
+                            @Override
+                            public ListEventsResponse apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace("Transform function invoked for ListEventsResponse");
+                                com.google.common.base.Function<
+                                                javax.ws.rs.core.Response,
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        java.util.List<AuditEvent>>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        new javax.ws.rs.core.GenericType<
+                                                                java.util.List<AuditEvent>>() {});
 
-                        WithHeaders<List<AuditEvent>> response = responseFn.apply(rawResponse);
-                        MultivaluedMap<String, String> headers = response.getHeaders();
+                                com.oracle.bmc.http.internal.WithHeaders<java.util.List<AuditEvent>>
+                                        response = responseFn.apply(rawResponse);
+                                javax.ws.rs.core.MultivaluedMap<String, String> headers =
+                                        response.getHeaders();
 
-                        ListEventsResponse.Builder builder = ListEventsResponse.builder();
+                                ListEventsResponse.Builder builder = ListEventsResponse.builder();
 
-                        builder.items(response.getItem());
+                                builder.items(response.getItem());
 
-                        Optional<List<String>> opcNextPageHeader =
-                                HeaderUtils.get(headers, "opc-next-page");
-                        if (opcNextPageHeader.isPresent()) {
-                            builder.opcNextPage(
-                                    HeaderUtils.toValue(
-                                            "opc-next-page",
-                                            opcNextPageHeader.get().get(0),
-                                            String.class));
-                        }
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcNextPageHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-next-page");
+                                if (opcNextPageHeader.isPresent()) {
+                                    builder.opcNextPage(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-next-page",
+                                                    opcNextPageHeader.get().get(0),
+                                                    String.class));
+                                }
 
-                        Optional<List<String>> opcRequestIdHeader =
-                                HeaderUtils.get(headers, "opc-request-id");
-                        if (opcRequestIdHeader.isPresent()) {
-                            builder.opcRequestId(
-                                    HeaderUtils.toValue(
-                                            "opc-request-id",
-                                            opcRequestIdHeader.get().get(0),
-                                            String.class));
-                        }
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcRequestIdHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-request-id");
+                                if (opcRequestIdHeader.isPresent()) {
+                                    builder.opcRequestId(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-request-id",
+                                                    opcRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
 
-                        ListEventsResponse responseWrapper = builder.build();
+                                ListEventsResponse responseWrapper = builder.build();
 
-                        return responseWrapper;
-                    }
-                };
+                                return responseWrapper;
+                            }
+                        };
         return transformer;
     }
 }

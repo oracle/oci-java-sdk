@@ -3,42 +3,33 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = CreateDhcpDetails.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = CreateDhcpDetails.Builder.class
+)
 public class CreateDhcpDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("compartmentId")
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
-        @JsonProperty("displayName")
+        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
-        @JsonProperty("options")
-        private List<DhcpOption> options;
+        @com.fasterxml.jackson.annotation.JsonProperty("options")
+        private java.util.List<DhcpOption> options;
 
-        @JsonProperty("vcnId")
+        @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
         public CreateDhcpDetails build() {
             return new CreateDhcpDetails(compartmentId, displayName, options, vcnId);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateDhcpDetails o) {
             return compartmentId(o.getCompartmentId())
                     .displayName(o.getDisplayName())
@@ -57,33 +48,33 @@ public class CreateDhcpDetails {
     /**
      * The OCID of the compartment to contain the set of DHCP options.
      **/
-    @JsonProperty("compartmentId")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      **/
-    @JsonProperty("displayName")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
      * A set of DHCP options.
      **/
-    @JsonProperty("options")
-    @Valid
-    @NotNull
-    List<DhcpOption> options;
+    @com.fasterxml.jackson.annotation.JsonProperty("options")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    java.util.List<DhcpOption> options;
 
     /**
      * The OCID of the VCN the set of DHCP options belongs to.
      **/
-    @JsonProperty("vcnId")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String vcnId;
 }

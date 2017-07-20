@@ -3,49 +3,28 @@
  */
 package com.oracle.bmc.audit;
 
-import com.oracle.bmc.ClientConfiguration;
-import com.oracle.bmc.auth.*;
-import com.oracle.bmc.http.ClientConfigurator;
-import com.oracle.bmc.http.internal.*;
-import com.oracle.bmc.http.signing.*;
-import com.oracle.bmc.http.signing.internal.*;
-import com.oracle.bmc.responses.*;
-import com.oracle.bmc.util.internal.*;
-
-import com.google.common.base.Function;
-import com.google.common.base.Optional;
-
-import java.util.concurrent.Future;
-
-import javax.ws.rs.client.*;
-import javax.ws.rs.core.*;
-
 import com.oracle.bmc.audit.internal.http.*;
 import com.oracle.bmc.audit.requests.*;
 import com.oracle.bmc.audit.responses.*;
 
-import com.oracle.bmc.*;
-
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Slf4j
+@lombok.extern.slf4j.Slf4j
 public class AuditAsyncClient implements AuditAsync {
     /**
      * Service instance for Audit.
      */
-    public static final Service SERVICE = Services.create("AUDIT", "audit");
+    public static final com.oracle.bmc.Service SERVICE =
+            com.oracle.bmc.Services.create("AUDIT", "audit");
 
-    @Getter(value = AccessLevel.PACKAGE)
-    private final RestClient client;
+    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private final com.oracle.bmc.http.internal.RestClient client;
 
     /**
      * Creates a new service instance using the given authentication provider.
      * @param authenticationDetailsProvider The authentication details provider, required.
      */
-    public AuditAsyncClient(BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+    public AuditAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
         this(authenticationDetailsProvider, null);
     }
 
@@ -55,8 +34,8 @@ public class AuditAsyncClient implements AuditAsync {
      * @param configuration The client configuration, optional.
      */
     public AuditAsyncClient(
-            BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            ClientConfiguration configuration) {
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
         this(authenticationDetailsProvider, configuration, null);
     }
 
@@ -68,14 +47,15 @@ public class AuditAsyncClient implements AuditAsync {
      * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      */
     public AuditAsyncClient(
-            BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            ClientConfiguration configuration,
-            ClientConfigurator clientConfigurator) {
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
         this(
                 authenticationDetailsProvider,
                 configuration,
                 clientConfigurator,
-                new DefaultRequestSignerFactory(SigningStrategy.STANDARD));
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
     }
 
     /**
@@ -89,13 +69,15 @@ public class AuditAsyncClient implements AuditAsync {
      * @param requestSignerFactory The request signer factory used to create the request signer for this service.
      */
     public AuditAsyncClient(
-            AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            ClientConfiguration configuration,
-            ClientConfigurator clientConfigurator,
-            RequestSignerFactory requestSignerFactory) {
-        RestClientFactory restClientFactory =
-                RestClientFactoryBuilder.builder().clientConfigurator(clientConfigurator).build();
-        RequestSigner requestSigner =
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory requestSignerFactory) {
+        com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
+                        .clientConfigurator(clientConfigurator)
+                        .build();
+        com.oracle.bmc.http.signing.RequestSigner requestSigner =
                 requestSignerFactory.createRequestSigner(SERVICE, authenticationDetailsProvider);
         this.client = restClientFactory.create(requestSigner, configuration);
     }
@@ -107,8 +89,8 @@ public class AuditAsyncClient implements AuditAsync {
     }
 
     @Override
-    public void setRegion(Region region) {
-        Optional<String> endpoint = region.getEndpoint(SERVICE);
+    public void setRegion(com.oracle.bmc.Region region) {
+        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -121,11 +103,11 @@ public class AuditAsyncClient implements AuditAsync {
     public void setRegion(String regionId) {
         regionId = regionId.toLowerCase();
         try {
-            Region region = Region.fromRegionId(regionId);
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
             setRegion(region);
         } catch (IllegalArgumentException e) {
             LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
-            String endpoint = Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
             setEndpoint(endpoint);
         }
     }
@@ -136,18 +118,22 @@ public class AuditAsyncClient implements AuditAsync {
     }
 
     @Override
-    public Future<ListEventsResponse> listEvents(
+    public java.util.concurrent.Future<ListEventsResponse> listEvents(
             ListEventsRequest request,
-            AsyncHandler<ListEventsRequest, ListEventsResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<ListEventsRequest, ListEventsResponse> handler) {
         LOG.trace("Called async listEvents");
         request = ListEventsConverter.interceptRequest(request);
-        Invocation.Builder ib = ListEventsConverter.fromRequest(client, request);
-        Function<Response, ListEventsResponse> transformer = ListEventsConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = ListEventsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListEventsResponse> transformer =
+                ListEventsConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 }

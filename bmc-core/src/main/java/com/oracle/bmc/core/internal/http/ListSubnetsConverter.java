@@ -3,39 +3,24 @@
  */
 package com.oracle.bmc.core.internal.http;
 
-import java.io.InputStream;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-
-import javax.ws.rs.client.*;
-import javax.ws.rs.core.*;
-
-import com.oracle.bmc.http.internal.*;
-import static com.oracle.bmc.util.internal.HttpUtils.*;
-import com.oracle.bmc.model.*;
 import com.oracle.bmc.core.model.*;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
 
-import com.google.common.base.Function;
-import com.google.common.base.Optional;
-
-import lombok.extern.slf4j.Slf4j;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Slf4j
+@lombok.extern.slf4j.Slf4j
 public class ListSubnetsConverter {
-    private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
-            new ResponseConversionFunctionFactory();
+    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
+            RESPONSE_CONVERSION_FACTORY =
+                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
     public static ListSubnetsRequest interceptRequest(ListSubnetsRequest request) {
 
         return request;
     }
 
-    public static Invocation.Builder fromRequest(RestClient client, ListSubnetsRequest request) {
+    public static javax.ws.rs.client.Invocation.Builder fromRequest(
+            com.oracle.bmc.http.internal.RestClient client, ListSubnetsRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
         }
@@ -48,71 +33,101 @@ public class ListSubnetsConverter {
             throw new NullPointerException("vcnId is required");
         }
 
-        WebTarget target = client.getBaseTarget().path("/20160918").path("subnets");
+        javax.ws.rs.client.WebTarget target =
+                client.getBaseTarget().path("/20160918").path("subnets");
 
         target =
                 target.queryParam(
-                        "compartmentId", attemptEncodeQueryParam(request.getCompartmentId()));
+                        "compartmentId",
+                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                request.getCompartmentId()));
 
         if (request.getLimit() != null) {
-            target = target.queryParam("limit", attemptEncodeQueryParam(request.getLimit()));
+            target =
+                    target.queryParam(
+                            "limit",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getLimit()));
         }
 
         if (request.getPage() != null) {
-            target = target.queryParam("page", attemptEncodeQueryParam(request.getPage()));
+            target =
+                    target.queryParam(
+                            "page",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getPage()));
         }
 
-        target = target.queryParam("vcnId", attemptEncodeQueryParam(request.getVcnId()));
+        target =
+                target.queryParam(
+                        "vcnId",
+                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                request.getVcnId()));
 
-        Invocation.Builder ib = target.request();
+        javax.ws.rs.client.Invocation.Builder ib = target.request();
 
-        ib.accept(MediaType.APPLICATION_JSON);
+        ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 
         return ib;
     }
 
-    public static Function<Response, ListSubnetsResponse> fromResponse() {
-        final Function<Response, ListSubnetsResponse> transformer =
-                new Function<Response, ListSubnetsResponse>() {
-                    @Override
-                    public ListSubnetsResponse apply(Response rawResponse) {
-                        LOG.trace("Transform function invoked for ListSubnetsResponse");
-                        Function<Response, WithHeaders<List<Subnet>>> responseFn =
-                                RESPONSE_CONVERSION_FACTORY.create(
-                                        new GenericType<List<Subnet>>() {});
+    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListSubnetsResponse>
+            fromResponse() {
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListSubnetsResponse>
+                transformer =
+                        new com.google.common.base.Function<
+                                javax.ws.rs.core.Response, ListSubnetsResponse>() {
+                            @Override
+                            public ListSubnetsResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace("Transform function invoked for ListSubnetsResponse");
+                                com.google.common.base.Function<
+                                                javax.ws.rs.core.Response,
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        java.util.List<Subnet>>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        new javax.ws.rs.core.GenericType<
+                                                                java.util.List<Subnet>>() {});
 
-                        WithHeaders<List<Subnet>> response = responseFn.apply(rawResponse);
-                        MultivaluedMap<String, String> headers = response.getHeaders();
+                                com.oracle.bmc.http.internal.WithHeaders<java.util.List<Subnet>>
+                                        response = responseFn.apply(rawResponse);
+                                javax.ws.rs.core.MultivaluedMap<String, String> headers =
+                                        response.getHeaders();
 
-                        ListSubnetsResponse.Builder builder = ListSubnetsResponse.builder();
+                                ListSubnetsResponse.Builder builder = ListSubnetsResponse.builder();
 
-                        builder.items(response.getItem());
+                                builder.items(response.getItem());
 
-                        Optional<List<String>> opcNextPageHeader =
-                                HeaderUtils.get(headers, "opc-next-page");
-                        if (opcNextPageHeader.isPresent()) {
-                            builder.opcNextPage(
-                                    HeaderUtils.toValue(
-                                            "opc-next-page",
-                                            opcNextPageHeader.get().get(0),
-                                            String.class));
-                        }
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcNextPageHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-next-page");
+                                if (opcNextPageHeader.isPresent()) {
+                                    builder.opcNextPage(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-next-page",
+                                                    opcNextPageHeader.get().get(0),
+                                                    String.class));
+                                }
 
-                        Optional<List<String>> opcRequestIdHeader =
-                                HeaderUtils.get(headers, "opc-request-id");
-                        if (opcRequestIdHeader.isPresent()) {
-                            builder.opcRequestId(
-                                    HeaderUtils.toValue(
-                                            "opc-request-id",
-                                            opcRequestIdHeader.get().get(0),
-                                            String.class));
-                        }
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcRequestIdHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-request-id");
+                                if (opcRequestIdHeader.isPresent()) {
+                                    builder.opcRequestId(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-request-id",
+                                                    opcRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
 
-                        ListSubnetsResponse responseWrapper = builder.build();
+                                ListSubnetsResponse responseWrapper = builder.build();
 
-                        return responseWrapper;
-                    }
-                };
+                                return responseWrapper;
+                            }
+                        };
         return transformer;
     }
 }

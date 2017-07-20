@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.loadbalancer.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * The configuration details for implementing session persistence. Session persistence enables the Load Balancing
  * Service to direct any number of requests that originate from a single logical client to a single backend web server.
@@ -28,24 +17,26 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@Value
-@JsonDeserialize(builder = SessionPersistenceConfigurationDetails.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = SessionPersistenceConfigurationDetails.Builder.class
+)
 public class SessionPersistenceConfigurationDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("cookieName")
+        @com.fasterxml.jackson.annotation.JsonProperty("cookieName")
         private String cookieName;
 
-        @JsonProperty("disableFallback")
+        @com.fasterxml.jackson.annotation.JsonProperty("disableFallback")
         private Boolean disableFallback;
 
         public SessionPersistenceConfigurationDetails build() {
             return new SessionPersistenceConfigurationDetails(cookieName, disableFallback);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(SessionPersistenceConfigurationDetails o) {
             return cookieName(o.getCookieName()).disableFallback(o.getDisableFallback());
         }
@@ -65,9 +56,9 @@ public class SessionPersistenceConfigurationDetails {
      * Example: `myCookieName`
      *
      **/
-    @JsonProperty("cookieName")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("cookieName")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String cookieName;
 
     /**
@@ -77,6 +68,6 @@ public class SessionPersistenceConfigurationDetails {
      * Example: `true`
      *
      **/
-    @JsonProperty("disableFallback")
+    @com.fasterxml.jackson.annotation.JsonProperty("disableFallback")
     Boolean disableFallback;
 }

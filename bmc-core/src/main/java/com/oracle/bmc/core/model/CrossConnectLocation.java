@@ -3,39 +3,30 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * An individual FastConnect location.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = CrossConnectLocation.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = CrossConnectLocation.Builder.class
+)
 public class CrossConnectLocation {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("description")
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
-        @JsonProperty("name")
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         public CrossConnectLocation build() {
             return new CrossConnectLocation(description, name);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CrossConnectLocation o) {
             return description(o.getDescription()).name(o.getName());
         }
@@ -51,10 +42,10 @@ public class CrossConnectLocation {
     /**
      * A description of the location.
      **/
-    @JsonProperty("description")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String description;
 
     /**
@@ -63,9 +54,9 @@ public class CrossConnectLocation {
      * Example: `CyrusOne, Chandler, AZ`
      *
      **/
-    @JsonProperty("name")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String name;
 }

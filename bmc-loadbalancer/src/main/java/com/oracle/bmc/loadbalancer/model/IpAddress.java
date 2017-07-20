@@ -3,39 +3,28 @@
  */
 package com.oracle.bmc.loadbalancer.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * A load balancer IP address.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@Value
-@JsonDeserialize(builder = IpAddress.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = IpAddress.Builder.class)
 public class IpAddress {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("ipAddress")
+        @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
-        @JsonProperty("isPublic")
+        @com.fasterxml.jackson.annotation.JsonProperty("isPublic")
         private Boolean isPublic;
 
         public IpAddress build() {
             return new IpAddress(ipAddress, isPublic);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(IpAddress o) {
             return ipAddress(o.getIpAddress()).isPublic(o.getIsPublic());
         }
@@ -54,9 +43,9 @@ public class IpAddress {
      * Example: `128.148.10.20`
      *
      **/
-    @JsonProperty("ipAddress")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String ipAddress;
 
     /**
@@ -67,6 +56,6 @@ public class IpAddress {
      * If \"false\", the IP address is private and accessible only from within the associated VCN.
      *
      **/
-    @JsonProperty("isPublic")
+    @com.fasterxml.jackson.annotation.JsonProperty("isPublic")
     Boolean isPublic;
 }

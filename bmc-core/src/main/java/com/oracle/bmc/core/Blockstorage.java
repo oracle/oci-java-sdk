@@ -6,8 +6,6 @@ package com.oracle.bmc.core;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
 
-import com.oracle.bmc.*;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface Blockstorage extends AutoCloseable {
 
@@ -23,7 +21,7 @@ public interface Blockstorage extends AutoCloseable {
      * Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the endpoint.  If the service is not available in this Region, however, an IllegalArgumentException will be raised.
      * @param region The region of the service.
      */
-    void setRegion(Region region);
+    void setRegion(com.oracle.bmc.Region region);
 
     /**
      * Sets the region to call (ex, 'us-phoenix-1').
@@ -39,7 +37,8 @@ public interface Blockstorage extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Creates a new volume in the specified compartment. The size of a volume can be either 256 GB or 2 TB.
+     * Creates a new volume in the specified compartment. Volumes can be created in sizes ranging from
+     * 50 GB (51200 MB) to 2 TB (2097152 MB), in 1 GB (1024 MB) increments. By default, volumes are 1 TB (1048576 MB).
      * For general information about block volumes, see
      * [Overview of Block Volume Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/overview.htm).
      * <p>
@@ -51,7 +50,7 @@ public interface Blockstorage extends AutoCloseable {
      * in the Identity and Access Management Service API.
      * <p>
      * You may optionally specify a *display name* for the volume, which is simply a friendly name or
-     * description. It does not have to be unique, and you can change it.
+     * description. It does not have to be unique, and you can change it. Avoid entering confidential information.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -129,6 +128,8 @@ public interface Blockstorage extends AutoCloseable {
 
     /**
      * Updates the specified volume's display name.
+     * Avoid entering confidential information.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -137,6 +138,8 @@ public interface Blockstorage extends AutoCloseable {
 
     /**
      * Updates the display name for the specified volume backup.
+     * Avoid entering confidential information.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.

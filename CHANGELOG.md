@@ -13,6 +13,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.2.12 - 2017-07-20
+### Fixed
+- Reduced overhead in signing and serialization
+- Removed possibility of using different serializer for signing and transmission
+
+### Added
+- Support for compute image import/export
+- Support for multiple VNICs
+- Support for secondary IPs
+
 ## 1.2.10 - 2017-06-09
 ### Added
 - Support for object storage pre-authenticated requests and public buckets.

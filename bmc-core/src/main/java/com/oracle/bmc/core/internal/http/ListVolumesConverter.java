@@ -3,39 +3,24 @@
  */
 package com.oracle.bmc.core.internal.http;
 
-import java.io.InputStream;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-
-import javax.ws.rs.client.*;
-import javax.ws.rs.core.*;
-
-import com.oracle.bmc.http.internal.*;
-import static com.oracle.bmc.util.internal.HttpUtils.*;
-import com.oracle.bmc.model.*;
 import com.oracle.bmc.core.model.*;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
 
-import com.google.common.base.Function;
-import com.google.common.base.Optional;
-
-import lombok.extern.slf4j.Slf4j;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Slf4j
+@lombok.extern.slf4j.Slf4j
 public class ListVolumesConverter {
-    private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
-            new ResponseConversionFunctionFactory();
+    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
+            RESPONSE_CONVERSION_FACTORY =
+                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
     public static ListVolumesRequest interceptRequest(ListVolumesRequest request) {
 
         return request;
     }
 
-    public static Invocation.Builder fromRequest(RestClient client, ListVolumesRequest request) {
+    public static javax.ws.rs.client.Invocation.Builder fromRequest(
+            com.oracle.bmc.http.internal.RestClient client, ListVolumesRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
         }
@@ -44,76 +29,103 @@ public class ListVolumesConverter {
             throw new NullPointerException("compartmentId is required");
         }
 
-        WebTarget target = client.getBaseTarget().path("/20160918").path("volumes");
+        javax.ws.rs.client.WebTarget target =
+                client.getBaseTarget().path("/20160918").path("volumes");
 
         if (request.getAvailabilityDomain() != null) {
             target =
                     target.queryParam(
                             "availabilityDomain",
-                            attemptEncodeQueryParam(request.getAvailabilityDomain()));
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getAvailabilityDomain()));
         }
 
         target =
                 target.queryParam(
-                        "compartmentId", attemptEncodeQueryParam(request.getCompartmentId()));
+                        "compartmentId",
+                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                request.getCompartmentId()));
 
         if (request.getLimit() != null) {
-            target = target.queryParam("limit", attemptEncodeQueryParam(request.getLimit()));
+            target =
+                    target.queryParam(
+                            "limit",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getLimit()));
         }
 
         if (request.getPage() != null) {
-            target = target.queryParam("page", attemptEncodeQueryParam(request.getPage()));
+            target =
+                    target.queryParam(
+                            "page",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getPage()));
         }
 
-        Invocation.Builder ib = target.request();
+        javax.ws.rs.client.Invocation.Builder ib = target.request();
 
-        ib.accept(MediaType.APPLICATION_JSON);
+        ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 
         return ib;
     }
 
-    public static Function<Response, ListVolumesResponse> fromResponse() {
-        final Function<Response, ListVolumesResponse> transformer =
-                new Function<Response, ListVolumesResponse>() {
-                    @Override
-                    public ListVolumesResponse apply(Response rawResponse) {
-                        LOG.trace("Transform function invoked for ListVolumesResponse");
-                        Function<Response, WithHeaders<List<Volume>>> responseFn =
-                                RESPONSE_CONVERSION_FACTORY.create(
-                                        new GenericType<List<Volume>>() {});
+    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumesResponse>
+            fromResponse() {
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumesResponse>
+                transformer =
+                        new com.google.common.base.Function<
+                                javax.ws.rs.core.Response, ListVolumesResponse>() {
+                            @Override
+                            public ListVolumesResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace("Transform function invoked for ListVolumesResponse");
+                                com.google.common.base.Function<
+                                                javax.ws.rs.core.Response,
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        java.util.List<Volume>>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        new javax.ws.rs.core.GenericType<
+                                                                java.util.List<Volume>>() {});
 
-                        WithHeaders<List<Volume>> response = responseFn.apply(rawResponse);
-                        MultivaluedMap<String, String> headers = response.getHeaders();
+                                com.oracle.bmc.http.internal.WithHeaders<java.util.List<Volume>>
+                                        response = responseFn.apply(rawResponse);
+                                javax.ws.rs.core.MultivaluedMap<String, String> headers =
+                                        response.getHeaders();
 
-                        ListVolumesResponse.Builder builder = ListVolumesResponse.builder();
+                                ListVolumesResponse.Builder builder = ListVolumesResponse.builder();
 
-                        builder.items(response.getItem());
+                                builder.items(response.getItem());
 
-                        Optional<List<String>> opcNextPageHeader =
-                                HeaderUtils.get(headers, "opc-next-page");
-                        if (opcNextPageHeader.isPresent()) {
-                            builder.opcNextPage(
-                                    HeaderUtils.toValue(
-                                            "opc-next-page",
-                                            opcNextPageHeader.get().get(0),
-                                            String.class));
-                        }
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcNextPageHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-next-page");
+                                if (opcNextPageHeader.isPresent()) {
+                                    builder.opcNextPage(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-next-page",
+                                                    opcNextPageHeader.get().get(0),
+                                                    String.class));
+                                }
 
-                        Optional<List<String>> opcRequestIdHeader =
-                                HeaderUtils.get(headers, "opc-request-id");
-                        if (opcRequestIdHeader.isPresent()) {
-                            builder.opcRequestId(
-                                    HeaderUtils.toValue(
-                                            "opc-request-id",
-                                            opcRequestIdHeader.get().get(0),
-                                            String.class));
-                        }
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcRequestIdHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-request-id");
+                                if (opcRequestIdHeader.isPresent()) {
+                                    builder.opcRequestId(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-request-id",
+                                                    opcRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
 
-                        ListVolumesResponse responseWrapper = builder.build();
+                                ListVolumesResponse responseWrapper = builder.build();
 
-                        return responseWrapper;
-                    }
-                };
+                                return responseWrapper;
+                            }
+                        };
         return transformer;
     }
 }

@@ -3,40 +3,31 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * An individual port speed level for cross-connects.
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = CrossConnectPortSpeedShape.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = CrossConnectPortSpeedShape.Builder.class
+)
 public class CrossConnectPortSpeedShape {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("name")
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
-        @JsonProperty("portSpeedInGbps")
+        @com.fasterxml.jackson.annotation.JsonProperty("portSpeedInGbps")
         private Integer portSpeedInGbps;
 
         public CrossConnectPortSpeedShape build() {
             return new CrossConnectPortSpeedShape(name, portSpeedInGbps);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CrossConnectPortSpeedShape o) {
             return name(o.getName()).portSpeedInGbps(o.getPortSpeedInGbps());
         }
@@ -55,10 +46,10 @@ public class CrossConnectPortSpeedShape {
      * Example: `10 Gbps`
      *
      **/
-    @JsonProperty("name")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String name;
 
     /**
@@ -67,8 +58,8 @@ public class CrossConnectPortSpeedShape {
      * Example: `10`
      *
      **/
-    @JsonProperty("portSpeedInGbps")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("portSpeedInGbps")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     Integer portSpeedInGbps;
 }

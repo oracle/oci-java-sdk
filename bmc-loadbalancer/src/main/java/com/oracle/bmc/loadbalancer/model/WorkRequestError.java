@@ -3,39 +3,28 @@
  */
 package com.oracle.bmc.loadbalancer.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * An object returned in the event of a work request error.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@Value
-@JsonDeserialize(builder = WorkRequestError.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WorkRequestError.Builder.class)
 public class WorkRequestError {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("errorCode")
+        @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
         private ErrorCode errorCode;
 
-        @JsonProperty("message")
+        @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         public WorkRequestError build() {
             return new WorkRequestError(errorCode, message);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(WorkRequestError o) {
             return errorCode(o.getErrorCode()).message(o.getMessage());
         }
@@ -62,10 +51,10 @@ public class WorkRequestError {
         UnknownEnumValue(null);
 
         private final String value;
-        private static Map<String, ErrorCode> map;
+        private static java.util.Map<String, ErrorCode> map;
 
         static {
-            map = new HashMap<>();
+            map = new java.util.HashMap<>();
             for (ErrorCode v : ErrorCode.values()) {
                 if (v != UnknownEnumValue) {
                     map.put(v.getValue(), v);
@@ -77,12 +66,12 @@ public class WorkRequestError {
             this.value = value;
         }
 
-        @JsonValue
+        @com.fasterxml.jackson.annotation.JsonValue
         public String getValue() {
             return value;
         }
 
-        @JsonCreator
+        @com.fasterxml.jackson.annotation.JsonCreator
         public static ErrorCode create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
@@ -94,16 +83,16 @@ public class WorkRequestError {
         }
     };
 
-    @JsonProperty("errorCode")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     ErrorCode errorCode;
 
     /**
      * A human-readable error string.
      **/
-    @JsonProperty("message")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("message")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String message;
 }

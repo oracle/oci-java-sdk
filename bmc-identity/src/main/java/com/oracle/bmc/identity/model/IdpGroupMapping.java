@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.identity.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * A mapping between a single group defined by the identity provider (IdP) you're federating with
  * and a single IAM Service {@link Group} in Oracle Bare Metal Cloud
@@ -29,35 +18,35 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = IdpGroupMapping.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = IdpGroupMapping.Builder.class)
 public class IdpGroupMapping {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("id")
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
-        @JsonProperty("idpId")
+        @com.fasterxml.jackson.annotation.JsonProperty("idpId")
         private String idpId;
 
-        @JsonProperty("idpGroupName")
+        @com.fasterxml.jackson.annotation.JsonProperty("idpGroupName")
         private String idpGroupName;
 
-        @JsonProperty("groupId")
+        @com.fasterxml.jackson.annotation.JsonProperty("groupId")
         private String groupId;
 
-        @JsonProperty("compartmentId")
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
-        @JsonProperty("timeCreated")
-        private Date timeCreated;
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+        private java.util.Date timeCreated;
 
-        @JsonProperty("lifecycleState")
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
-        @JsonProperty("inactiveStatus")
+        @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
         private Long inactiveStatus;
 
         public IdpGroupMapping build() {
@@ -72,7 +61,7 @@ public class IdpGroupMapping {
                     inactiveStatus);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(IdpGroupMapping o) {
             return id(o.getId())
                     .idpId(o.getIdpId())
@@ -95,41 +84,41 @@ public class IdpGroupMapping {
     /**
      * The OCID of the `IdpGroupMapping`.
      **/
-    @JsonProperty("id")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String id;
 
     /**
      * The OCID of the `IdentityProvider` this mapping belongs to.
      **/
-    @JsonProperty("idpId")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("idpId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String idpId;
 
     /**
      * The name of the IdP group that is mapped to the IAM Service group.
      **/
-    @JsonProperty("idpGroupName")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("idpGroupName")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String idpGroupName;
 
     /**
      * The OCID of the IAM Service group that is mapped to the IdP group.
      **/
-    @JsonProperty("groupId")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("groupId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String groupId;
 
     /**
      * The OCID of the tenancy containing the `IdentityProvider`.
      **/
-    @JsonProperty("compartmentId")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String compartmentId;
 
     /**
@@ -138,10 +127,10 @@ public class IdpGroupMapping {
      * Example: `2016-08-25T21:10:29.600Z`
      *
      **/
-    @JsonProperty("timeCreated")
-    @Valid
-    @NotNull
-    Date timeCreated;
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    java.util.Date timeCreated;
     /**
      * The mapping's current state.  After creating a mapping object, make sure its `lifecycleState` changes
      * from CREATING to ACTIVE before using it.
@@ -162,10 +151,10 @@ public class IdpGroupMapping {
         UnknownEnumValue(null);
 
         private final String value;
-        private static Map<String, LifecycleState> map;
+        private static java.util.Map<String, LifecycleState> map;
 
         static {
-            map = new HashMap<>();
+            map = new java.util.HashMap<>();
             for (LifecycleState v : LifecycleState.values()) {
                 if (v != UnknownEnumValue) {
                     map.put(v.getValue(), v);
@@ -177,12 +166,12 @@ public class IdpGroupMapping {
             this.value = value;
         }
 
-        @JsonValue
+        @com.fasterxml.jackson.annotation.JsonValue
         public String getValue() {
             return value;
         }
 
-        @JsonCreator
+        @com.fasterxml.jackson.annotation.JsonCreator
         public static LifecycleState create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
@@ -198,15 +187,15 @@ public class IdpGroupMapping {
      * from CREATING to ACTIVE before using it.
      *
      **/
-    @JsonProperty("lifecycleState")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 64)
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 64)
     LifecycleState lifecycleState;
 
     /**
      * The detailed status of INACTIVE lifecycleState.
      **/
-    @JsonProperty("inactiveStatus")
+    @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
     Long inactiveStatus;
 }

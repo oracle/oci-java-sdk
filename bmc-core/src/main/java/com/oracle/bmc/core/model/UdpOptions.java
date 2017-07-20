@@ -3,41 +3,30 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * Optional object to specify ports for a UDP rule. If you specify UDP as the
  * protocol but omit this object, then all ports are allowed.
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = UdpOptions.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UdpOptions.Builder.class)
 public class UdpOptions {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("destinationPortRange")
+        @com.fasterxml.jackson.annotation.JsonProperty("destinationPortRange")
         private PortRange destinationPortRange;
 
-        @JsonProperty("sourcePortRange")
+        @com.fasterxml.jackson.annotation.JsonProperty("sourcePortRange")
         private PortRange sourcePortRange;
 
         public UdpOptions build() {
             return new UdpOptions(destinationPortRange, sourcePortRange);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UdpOptions o) {
             return destinationPortRange(o.getDestinationPortRange())
                     .sourcePortRange(o.getSourcePortRange());
@@ -56,7 +45,7 @@ public class UdpOptions {
      * to indicate a single port. Defaults to all ports if not specified.
      *
      **/
-    @JsonProperty("destinationPortRange")
+    @com.fasterxml.jackson.annotation.JsonProperty("destinationPortRange")
     PortRange destinationPortRange;
 
     /**
@@ -64,6 +53,6 @@ public class UdpOptions {
      * indicate a single port. Defaults to all ports if not specified.
      *
      **/
-    @JsonProperty("sourcePortRange")
+    @com.fasterxml.jackson.annotation.JsonProperty("sourcePortRange")
     PortRange sourcePortRange;
 }

@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.objectstorage.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
@@ -21,34 +10,36 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = CreateMultipartUploadDetails.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = CreateMultipartUploadDetails.Builder.class
+)
 public class CreateMultipartUploadDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("object")
+        @com.fasterxml.jackson.annotation.JsonProperty("object")
         private String object;
 
-        @JsonProperty("contentType")
+        @com.fasterxml.jackson.annotation.JsonProperty("contentType")
         private String contentType;
 
-        @JsonProperty("contentLanguage")
+        @com.fasterxml.jackson.annotation.JsonProperty("contentLanguage")
         private String contentLanguage;
 
-        @JsonProperty("contentEncoding")
+        @com.fasterxml.jackson.annotation.JsonProperty("contentEncoding")
         private String contentEncoding;
 
-        @JsonProperty("metadata")
-        private Map<String, String> metadata;
+        @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+        private java.util.Map<String, String> metadata;
 
         public CreateMultipartUploadDetails build() {
             return new CreateMultipartUploadDetails(
                     object, contentType, contentLanguage, contentEncoding, metadata);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateMultipartUploadDetails o) {
             return object(o.getObject())
                     .contentType(o.getContentType())
@@ -68,27 +59,27 @@ public class CreateMultipartUploadDetails {
     /**
      * the name of the object to which this multi-part upload is targetted.
      **/
-    @JsonProperty("object")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("object")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String object;
 
     /**
      * the content type of the object to upload.
      **/
-    @JsonProperty("contentType")
+    @com.fasterxml.jackson.annotation.JsonProperty("contentType")
     String contentType;
 
     /**
      * the content language of the object to upload.
      **/
-    @JsonProperty("contentLanguage")
+    @com.fasterxml.jackson.annotation.JsonProperty("contentLanguage")
     String contentLanguage;
 
     /**
      * the content encoding of the object to upload.
      **/
-    @JsonProperty("contentEncoding")
+    @com.fasterxml.jackson.annotation.JsonProperty("contentEncoding")
     String contentEncoding;
 
     /**
@@ -96,6 +87,6 @@ public class CreateMultipartUploadDetails {
      * Keys must be in \"opc-meta-*\" format.
      *
      **/
-    @JsonProperty("metadata")
-    Map<String, String> metadata;
+    @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+    java.util.Map<String, String> metadata;
 }

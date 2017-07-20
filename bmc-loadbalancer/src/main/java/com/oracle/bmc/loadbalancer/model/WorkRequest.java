@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.loadbalancer.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * Many of the API requests you use to create and configure load balancing do not take effect immediately.
  * In these cases, the request spawns an asynchronous work flow to fulfill the request. WorkRequest objects provide visibility
@@ -22,35 +11,35 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@Value
-@JsonDeserialize(builder = WorkRequest.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WorkRequest.Builder.class)
 public class WorkRequest {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("errorDetails")
-        private List<WorkRequestError> errorDetails;
+        @com.fasterxml.jackson.annotation.JsonProperty("errorDetails")
+        private java.util.List<WorkRequestError> errorDetails;
 
-        @JsonProperty("id")
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
-        @JsonProperty("lifecycleState")
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
-        @JsonProperty("loadBalancerId")
+        @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
         private String loadBalancerId;
 
-        @JsonProperty("message")
+        @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
-        @JsonProperty("timeAccepted")
-        private Date timeAccepted;
+        @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
+        private java.util.Date timeAccepted;
 
-        @JsonProperty("timeFinished")
-        private Date timeFinished;
+        @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
+        private java.util.Date timeFinished;
 
-        @JsonProperty("type")
+        @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         public WorkRequest build() {
@@ -65,7 +54,7 @@ public class WorkRequest {
                     type);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(WorkRequest o) {
             return errorDetails(o.getErrorDetails())
                     .id(o.getId())
@@ -85,17 +74,17 @@ public class WorkRequest {
         return new Builder();
     }
 
-    @JsonProperty("errorDetails")
-    @Valid
-    @NotNull
-    List<WorkRequestError> errorDetails;
+    @com.fasterxml.jackson.annotation.JsonProperty("errorDetails")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    java.util.List<WorkRequestError> errorDetails;
 
     /**
      * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the work request.
      **/
-    @JsonProperty("id")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String id;
     /**
      **/
@@ -113,10 +102,10 @@ public class WorkRequest {
         UnknownEnumValue(null);
 
         private final String value;
-        private static Map<String, LifecycleState> map;
+        private static java.util.Map<String, LifecycleState> map;
 
         static {
-            map = new HashMap<>();
+            map = new java.util.HashMap<>();
             for (LifecycleState v : LifecycleState.values()) {
                 if (v != UnknownEnumValue) {
                     map.put(v.getValue(), v);
@@ -128,12 +117,12 @@ public class WorkRequest {
             this.value = value;
         }
 
-        @JsonValue
+        @com.fasterxml.jackson.annotation.JsonValue
         public String getValue() {
             return value;
         }
 
-        @JsonCreator
+        @com.fasterxml.jackson.annotation.JsonCreator
         public static LifecycleState create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
@@ -145,9 +134,9 @@ public class WorkRequest {
         }
     };
 
-    @JsonProperty("lifecycleState")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     LifecycleState lifecycleState;
 
     /**
@@ -155,9 +144,9 @@ public class WorkRequest {
      * is associated.
      *
      **/
-    @JsonProperty("loadBalancerId")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String loadBalancerId;
 
     /**
@@ -171,9 +160,9 @@ public class WorkRequest {
      * - workflow completion message
      *
      **/
-    @JsonProperty("message")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("message")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String message;
 
     /**
@@ -182,10 +171,10 @@ public class WorkRequest {
      * Example: `2016-08-25T21:10:29.600Z`
      *
      **/
-    @JsonProperty("timeAccepted")
-    @Valid
-    @NotNull
-    Date timeAccepted;
+    @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    java.util.Date timeAccepted;
 
     /**
      * The date and time the work request was completed, in the format defined by RFC3339.
@@ -193,15 +182,15 @@ public class WorkRequest {
      * Example: `2016-08-25T21:10:29.600Z`
      *
      **/
-    @JsonProperty("timeFinished")
-    Date timeFinished;
+    @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
+    java.util.Date timeFinished;
 
     /**
      * The type of action the work request represents.
      *
      **/
-    @JsonProperty("type")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String type;
 }

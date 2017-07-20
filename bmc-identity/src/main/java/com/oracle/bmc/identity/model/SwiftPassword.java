@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.identity.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * Swift is the OpenStack object storage service. A `SwiftPassword` is an Oracle-provided password for using a
  * Swift client with the Oracle Bare Metal Cloud Services Object Storage Service. This password is associated with
@@ -25,35 +14,35 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = SwiftPassword.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SwiftPassword.Builder.class)
 public class SwiftPassword {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("password")
+        @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
-        @JsonProperty("id")
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
-        @JsonProperty("userId")
+        @com.fasterxml.jackson.annotation.JsonProperty("userId")
         private String userId;
 
-        @JsonProperty("description")
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
-        @JsonProperty("timeCreated")
-        private Date timeCreated;
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+        private java.util.Date timeCreated;
 
-        @JsonProperty("expiresOn")
-        private Date expiresOn;
+        @com.fasterxml.jackson.annotation.JsonProperty("expiresOn")
+        private java.util.Date expiresOn;
 
-        @JsonProperty("lifecycleState")
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
-        @JsonProperty("inactiveStatus")
+        @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
         private Long inactiveStatus;
 
         public SwiftPassword build() {
@@ -68,7 +57,7 @@ public class SwiftPassword {
                     inactiveStatus);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(SwiftPassword o) {
             return password(o.getPassword())
                     .id(o.getId())
@@ -93,25 +82,25 @@ public class SwiftPassword {
      * for `ListSwiftPasswords` or `UpdateSwiftPassword`.
      *
      **/
-    @JsonProperty("password")
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
     String password;
 
     /**
      * The OCID of the Swift password.
      **/
-    @JsonProperty("id")
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
      * The OCID of the user the password belongs to.
      **/
-    @JsonProperty("userId")
+    @com.fasterxml.jackson.annotation.JsonProperty("userId")
     String userId;
 
     /**
      * The description you assign to the Swift password. Does not have to be unique, and it's changeable.
      **/
-    @JsonProperty("description")
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
@@ -120,8 +109,8 @@ public class SwiftPassword {
      * Example: `2016-08-25T21:10:29.600Z`
      *
      **/
-    @JsonProperty("timeCreated")
-    Date timeCreated;
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    java.util.Date timeCreated;
 
     /**
      * Date and time when this password will expire, in the format defined by RFC3339.
@@ -130,8 +119,8 @@ public class SwiftPassword {
      * Example: `2016-08-25T21:10:29.600Z`
      *
      **/
-    @JsonProperty("expiresOn")
-    Date expiresOn;
+    @com.fasterxml.jackson.annotation.JsonProperty("expiresOn")
+    java.util.Date expiresOn;
     /**
      * The password's current state. After creating a password, make sure its `lifecycleState` changes from
      * CREATING to ACTIVE before using it.
@@ -152,10 +141,10 @@ public class SwiftPassword {
         UnknownEnumValue(null);
 
         private final String value;
-        private static Map<String, LifecycleState> map;
+        private static java.util.Map<String, LifecycleState> map;
 
         static {
-            map = new HashMap<>();
+            map = new java.util.HashMap<>();
             for (LifecycleState v : LifecycleState.values()) {
                 if (v != UnknownEnumValue) {
                     map.put(v.getValue(), v);
@@ -167,12 +156,12 @@ public class SwiftPassword {
             this.value = value;
         }
 
-        @JsonValue
+        @com.fasterxml.jackson.annotation.JsonValue
         public String getValue() {
             return value;
         }
 
-        @JsonCreator
+        @com.fasterxml.jackson.annotation.JsonCreator
         public static LifecycleState create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
@@ -188,13 +177,13 @@ public class SwiftPassword {
      * CREATING to ACTIVE before using it.
      *
      **/
-    @JsonProperty("lifecycleState")
-    @Size(min = 1, max = 64)
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    @javax.validation.constraints.Size(min = 1, max = 64)
     LifecycleState lifecycleState;
 
     /**
      * The detailed status of INACTIVE lifecycleState.
      **/
-    @JsonProperty("inactiveStatus")
+    @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
     Long inactiveStatus;
 }

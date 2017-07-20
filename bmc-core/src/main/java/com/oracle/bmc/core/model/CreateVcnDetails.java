@@ -3,42 +3,31 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = CreateVcnDetails.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CreateVcnDetails.Builder.class)
 public class CreateVcnDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("cidrBlock")
+        @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
         private String cidrBlock;
 
-        @JsonProperty("compartmentId")
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
-        @JsonProperty("displayName")
+        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
-        @JsonProperty("dnsLabel")
+        @com.fasterxml.jackson.annotation.JsonProperty("dnsLabel")
         private String dnsLabel;
 
         public CreateVcnDetails build() {
             return new CreateVcnDetails(cidrBlock, compartmentId, displayName, dnsLabel);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateVcnDetails o) {
             return cidrBlock(o.getCidrBlock())
                     .compartmentId(o.getCompartmentId())
@@ -60,26 +49,26 @@ public class CreateVcnDetails {
      * Example: `172.16.0.0/16`
      *
      **/
-    @JsonProperty("cidrBlock")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 32)
+    @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 32)
     String cidrBlock;
 
     /**
      * The OCID of the compartment to contain the VCN.
      **/
-    @JsonProperty("compartmentId")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      **/
-    @JsonProperty("displayName")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
@@ -87,8 +76,7 @@ public class CreateVcnDetails {
      * subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC
      * within this subnet (e.g., `bminstance-1.subnet123.vcn1.oraclevcn.com`).
      * Not required to be unique, but it's a best practice to set unique DNS labels
-     * for VCNs in your tenancy.
-     * Must be an alphanumeric string that begins with a letter.
+     * for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter.
      * The value cannot be changed.
      * <p>
      * You must set this value if you want instances to be able to use hostnames to
@@ -101,7 +89,7 @@ public class CreateVcnDetails {
      * Example: `vcn1`
      *
      **/
-    @JsonProperty("dnsLabel")
-    @Size(min = 1, max = 15)
+    @com.fasterxml.jackson.annotation.JsonProperty("dnsLabel")
+    @javax.validation.constraints.Size(min = 1, max = 15)
     String dnsLabel;
 }

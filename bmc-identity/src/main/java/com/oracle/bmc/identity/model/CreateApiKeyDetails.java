@@ -3,33 +3,24 @@
  */
 package com.oracle.bmc.identity.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = CreateApiKeyDetails.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = CreateApiKeyDetails.Builder.class
+)
 public class CreateApiKeyDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("key")
+        @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         public CreateApiKeyDetails build() {
             return new CreateApiKeyDetails(key);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateApiKeyDetails o) {
             return key(o.getKey());
         }
@@ -45,8 +36,8 @@ public class CreateApiKeyDetails {
     /**
      * The public key.  Must be an RSA key in PEM format.
      **/
-    @JsonProperty("key")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("key")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String key;
 }

@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.identity.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * One or more isolated, fault-tolerant Oracle data centers that host cloud resources such as instances, volumes,
  * and subnets. A region contains several Availability Domains. For more information, see
@@ -21,24 +10,26 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = AvailabilityDomain.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = AvailabilityDomain.Builder.class
+)
 public class AvailabilityDomain {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("name")
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
-        @JsonProperty("compartmentId")
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         public AvailabilityDomain build() {
             return new AvailabilityDomain(name, compartmentId);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(AvailabilityDomain o) {
             return name(o.getName()).compartmentId(o.getCompartmentId());
         }
@@ -54,12 +45,12 @@ public class AvailabilityDomain {
     /**
      * The name of the Availability Domain.
      **/
-    @JsonProperty("name")
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
      * The OCID of the tenancy.
      **/
-    @JsonProperty("compartmentId")
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 }

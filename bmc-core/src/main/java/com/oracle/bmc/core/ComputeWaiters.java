@@ -6,17 +6,6 @@ package com.oracle.bmc.core;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
 
-import com.oracle.bmc.waiter.*;
-import com.oracle.bmc.waiter.internal.SimpleWaiterImpl;
-
-import java.util.concurrent.ExecutorService;
-
-import com.google.common.base.Function;
-import com.google.common.base.Predicate;
-import com.google.common.base.Suppliers;
-
-import lombok.RequiredArgsConstructor;
-
 /**
  * Collection of helper methods to produce {@link Waiter}s for different
  * resources of Compute.
@@ -24,9 +13,9 @@ import lombok.RequiredArgsConstructor;
  * The default configuration used is defined by {@link Waiters#DEFAULT_POLLING_WAITER}.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@RequiredArgsConstructor
+@lombok.RequiredArgsConstructor
 public class ComputeWaiters {
-    private final ExecutorService executorService;
+    private final java.util.concurrent.ExecutorService executorService;
     private final Compute client;
 
     /**
@@ -36,10 +25,12 @@ public class ComputeWaiters {
      * @param targetState The desired state to wait for.
      * @return A new Waiter instance.
      */
-    public Waiter<GetConsoleHistoryRequest, GetConsoleHistoryResponse> forConsoleHistory(
-            GetConsoleHistoryRequest request,
-            com.oracle.bmc.core.model.ConsoleHistory.LifecycleState targetState) {
-        return forConsoleHistory(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+    public com.oracle.bmc.waiter.Waiter<GetConsoleHistoryRequest, GetConsoleHistoryResponse>
+            forConsoleHistory(
+                    GetConsoleHistoryRequest request,
+                    com.oracle.bmc.core.model.ConsoleHistory.LifecycleState targetState) {
+        return forConsoleHistory(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
     /**
@@ -51,32 +42,37 @@ public class ComputeWaiters {
      * @param delayStrategy The {@link DelayStrategy} to use.
      * @return A new Waiter instance.
      */
-    public Waiter<GetConsoleHistoryRequest, GetConsoleHistoryResponse> forConsoleHistory(
-            GetConsoleHistoryRequest request,
-            com.oracle.bmc.core.model.ConsoleHistory.LifecycleState targetState,
-            TerminationStrategy terminationStrategy,
-            DelayStrategy delayStrategy) {
+    public com.oracle.bmc.waiter.Waiter<GetConsoleHistoryRequest, GetConsoleHistoryResponse>
+            forConsoleHistory(
+                    GetConsoleHistoryRequest request,
+                    com.oracle.bmc.core.model.ConsoleHistory.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
         return forConsoleHistory(
-                Waiters.newWaiter(terminationStrategy, delayStrategy), request, targetState);
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
     }
 
     // Helper method to create a new Waiter for ConsoleHistory.
-    private Waiter<GetConsoleHistoryRequest, GetConsoleHistoryResponse> forConsoleHistory(
-            BmcGenericWaiter waiter,
-            final GetConsoleHistoryRequest request,
-            final com.oracle.bmc.core.model.ConsoleHistory.LifecycleState targetState) {
-        return new SimpleWaiterImpl<>(
+    private com.oracle.bmc.waiter.Waiter<GetConsoleHistoryRequest, GetConsoleHistoryResponse>
+            forConsoleHistory(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetConsoleHistoryRequest request,
+                    final com.oracle.bmc.core.model.ConsoleHistory.LifecycleState targetState) {
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        Suppliers.ofInstance(request),
-                        new Function<GetConsoleHistoryRequest, GetConsoleHistoryResponse>() {
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetConsoleHistoryRequest, GetConsoleHistoryResponse>() {
                             @Override
                             public GetConsoleHistoryResponse apply(
                                     GetConsoleHistoryRequest request) {
                                 return client.getConsoleHistory(request);
                             }
                         },
-                        new Predicate<GetConsoleHistoryResponse>() {
+                        new com.google.common.base.Predicate<GetConsoleHistoryResponse>() {
                             @Override
                             public boolean apply(GetConsoleHistoryResponse response) {
                                 return response.getConsoleHistory().getLifecycleState()
@@ -94,9 +90,9 @@ public class ComputeWaiters {
      * @param targetState The desired state to wait for.
      * @return A new Waiter instance.
      */
-    public Waiter<GetImageRequest, GetImageResponse> forImage(
+    public com.oracle.bmc.waiter.Waiter<GetImageRequest, GetImageResponse> forImage(
             GetImageRequest request, com.oracle.bmc.core.model.Image.LifecycleState targetState) {
-        return forImage(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+        return forImage(com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
     /**
@@ -108,31 +104,33 @@ public class ComputeWaiters {
      * @param delayStrategy The {@link DelayStrategy} to use.
      * @return A new Waiter instance.
      */
-    public Waiter<GetImageRequest, GetImageResponse> forImage(
+    public com.oracle.bmc.waiter.Waiter<GetImageRequest, GetImageResponse> forImage(
             GetImageRequest request,
             com.oracle.bmc.core.model.Image.LifecycleState targetState,
-            TerminationStrategy terminationStrategy,
-            DelayStrategy delayStrategy) {
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
         return forImage(
-                Waiters.newWaiter(terminationStrategy, delayStrategy), request, targetState);
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
     }
 
     // Helper method to create a new Waiter for Image.
-    private Waiter<GetImageRequest, GetImageResponse> forImage(
-            BmcGenericWaiter waiter,
+    private com.oracle.bmc.waiter.Waiter<GetImageRequest, GetImageResponse> forImage(
+            com.oracle.bmc.waiter.BmcGenericWaiter waiter,
             final GetImageRequest request,
             final com.oracle.bmc.core.model.Image.LifecycleState targetState) {
-        return new SimpleWaiterImpl<>(
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        Suppliers.ofInstance(request),
-                        new Function<GetImageRequest, GetImageResponse>() {
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<GetImageRequest, GetImageResponse>() {
                             @Override
                             public GetImageResponse apply(GetImageRequest request) {
                                 return client.getImage(request);
                             }
                         },
-                        new Predicate<GetImageResponse>() {
+                        new com.google.common.base.Predicate<GetImageResponse>() {
                             @Override
                             public boolean apply(GetImageResponse response) {
                                 return response.getImage().getLifecycleState() == targetState;
@@ -149,10 +147,11 @@ public class ComputeWaiters {
      * @param targetState The desired state to wait for.
      * @return A new Waiter instance.
      */
-    public Waiter<GetInstanceRequest, GetInstanceResponse> forInstance(
+    public com.oracle.bmc.waiter.Waiter<GetInstanceRequest, GetInstanceResponse> forInstance(
             GetInstanceRequest request,
             com.oracle.bmc.core.model.Instance.LifecycleState targetState) {
-        return forInstance(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+        return forInstance(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
     /**
@@ -164,31 +163,34 @@ public class ComputeWaiters {
      * @param delayStrategy The {@link DelayStrategy} to use.
      * @return A new Waiter instance.
      */
-    public Waiter<GetInstanceRequest, GetInstanceResponse> forInstance(
+    public com.oracle.bmc.waiter.Waiter<GetInstanceRequest, GetInstanceResponse> forInstance(
             GetInstanceRequest request,
             com.oracle.bmc.core.model.Instance.LifecycleState targetState,
-            TerminationStrategy terminationStrategy,
-            DelayStrategy delayStrategy) {
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
         return forInstance(
-                Waiters.newWaiter(terminationStrategy, delayStrategy), request, targetState);
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
     }
 
     // Helper method to create a new Waiter for Instance.
-    private Waiter<GetInstanceRequest, GetInstanceResponse> forInstance(
-            BmcGenericWaiter waiter,
+    private com.oracle.bmc.waiter.Waiter<GetInstanceRequest, GetInstanceResponse> forInstance(
+            com.oracle.bmc.waiter.BmcGenericWaiter waiter,
             final GetInstanceRequest request,
             final com.oracle.bmc.core.model.Instance.LifecycleState targetState) {
-        return new SimpleWaiterImpl<>(
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        Suppliers.ofInstance(request),
-                        new Function<GetInstanceRequest, GetInstanceResponse>() {
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetInstanceRequest, GetInstanceResponse>() {
                             @Override
                             public GetInstanceResponse apply(GetInstanceRequest request) {
                                 return client.getInstance(request);
                             }
                         },
-                        new Predicate<GetInstanceResponse>() {
+                        new com.google.common.base.Predicate<GetInstanceResponse>() {
                             @Override
                             public boolean apply(GetInstanceResponse response) {
                                 return response.getInstance().getLifecycleState() == targetState;
@@ -206,10 +208,12 @@ public class ComputeWaiters {
      * @param targetState The desired state to wait for.
      * @return A new Waiter instance.
      */
-    public Waiter<GetVolumeAttachmentRequest, GetVolumeAttachmentResponse> forVolumeAttachment(
-            GetVolumeAttachmentRequest request,
-            com.oracle.bmc.core.model.VolumeAttachment.LifecycleState targetState) {
-        return forVolumeAttachment(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+    public com.oracle.bmc.waiter.Waiter<GetVnicAttachmentRequest, GetVnicAttachmentResponse>
+            forVnicAttachment(
+                    GetVnicAttachmentRequest request,
+                    com.oracle.bmc.core.model.VnicAttachment.LifecycleState targetState) {
+        return forVnicAttachment(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
     /**
@@ -221,32 +225,102 @@ public class ComputeWaiters {
      * @param delayStrategy The {@link DelayStrategy} to use.
      * @return A new Waiter instance.
      */
-    public Waiter<GetVolumeAttachmentRequest, GetVolumeAttachmentResponse> forVolumeAttachment(
-            GetVolumeAttachmentRequest request,
-            com.oracle.bmc.core.model.VolumeAttachment.LifecycleState targetState,
-            TerminationStrategy terminationStrategy,
-            DelayStrategy delayStrategy) {
+    public com.oracle.bmc.waiter.Waiter<GetVnicAttachmentRequest, GetVnicAttachmentResponse>
+            forVnicAttachment(
+                    GetVnicAttachmentRequest request,
+                    com.oracle.bmc.core.model.VnicAttachment.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        return forVnicAttachment(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    // Helper method to create a new Waiter for VnicAttachment.
+    private com.oracle.bmc.waiter.Waiter<GetVnicAttachmentRequest, GetVnicAttachmentResponse>
+            forVnicAttachment(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetVnicAttachmentRequest request,
+                    final com.oracle.bmc.core.model.VnicAttachment.LifecycleState targetState) {
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetVnicAttachmentRequest, GetVnicAttachmentResponse>() {
+                            @Override
+                            public GetVnicAttachmentResponse apply(
+                                    GetVnicAttachmentRequest request) {
+                                return client.getVnicAttachment(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetVnicAttachmentResponse>() {
+                            @Override
+                            public boolean apply(GetVnicAttachmentResponse response) {
+                                return response.getVnicAttachment().getLifecycleState()
+                                        == targetState;
+                            }
+                        },
+                        false),
+                request);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using default configuration.
+     *
+     * @param request The request to send.
+     * @param targetState The desired state to wait for.
+     * @return A new Waiter instance.
+     */
+    public com.oracle.bmc.waiter.Waiter<GetVolumeAttachmentRequest, GetVolumeAttachmentResponse>
+            forVolumeAttachment(
+                    GetVolumeAttachmentRequest request,
+                    com.oracle.bmc.core.model.VolumeAttachment.LifecycleState targetState) {
         return forVolumeAttachment(
-                Waiters.newWaiter(terminationStrategy, delayStrategy), request, targetState);
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using the provided configuration.
+     *
+     * @param request The request to send.
+     * @param targetState The desired state to wait for.
+     * @param terminationStrategy The {@link TerminationStrategy} to use.
+     * @param delayStrategy The {@link DelayStrategy} to use.
+     * @return A new Waiter instance.
+     */
+    public com.oracle.bmc.waiter.Waiter<GetVolumeAttachmentRequest, GetVolumeAttachmentResponse>
+            forVolumeAttachment(
+                    GetVolumeAttachmentRequest request,
+                    com.oracle.bmc.core.model.VolumeAttachment.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        return forVolumeAttachment(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
     }
 
     // Helper method to create a new Waiter for VolumeAttachment.
-    private Waiter<GetVolumeAttachmentRequest, GetVolumeAttachmentResponse> forVolumeAttachment(
-            BmcGenericWaiter waiter,
-            final GetVolumeAttachmentRequest request,
-            final com.oracle.bmc.core.model.VolumeAttachment.LifecycleState targetState) {
-        return new SimpleWaiterImpl<>(
+    private com.oracle.bmc.waiter.Waiter<GetVolumeAttachmentRequest, GetVolumeAttachmentResponse>
+            forVolumeAttachment(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetVolumeAttachmentRequest request,
+                    final com.oracle.bmc.core.model.VolumeAttachment.LifecycleState targetState) {
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        Suppliers.ofInstance(request),
-                        new Function<GetVolumeAttachmentRequest, GetVolumeAttachmentResponse>() {
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetVolumeAttachmentRequest, GetVolumeAttachmentResponse>() {
                             @Override
                             public GetVolumeAttachmentResponse apply(
                                     GetVolumeAttachmentRequest request) {
                                 return client.getVolumeAttachment(request);
                             }
                         },
-                        new Predicate<GetVolumeAttachmentResponse>() {
+                        new com.google.common.base.Predicate<GetVolumeAttachmentResponse>() {
                             @Override
                             public boolean apply(GetVolumeAttachmentResponse response) {
                                 return response.getVolumeAttachment().getLifecycleState()

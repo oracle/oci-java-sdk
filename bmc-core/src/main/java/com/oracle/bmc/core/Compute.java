@@ -6,8 +6,6 @@ package com.oracle.bmc.core;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
 
-import com.oracle.bmc.*;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface Compute extends AutoCloseable {
 
@@ -23,7 +21,7 @@ public interface Compute extends AutoCloseable {
      * Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the endpoint.  If the service is not available in this Region, however, an IllegalArgumentException will be raised.
      * @param region The region of the service.
      */
-    void setRegion(Region region);
+    void setRegion(com.oracle.bmc.Region region);
 
     /**
      * Sets the region to call (ex, 'us-phoenix-1').
@@ -37,6 +35,17 @@ public interface Compute extends AutoCloseable {
      * @param regionId The public region ID.
      */
     void setRegion(String regionId);
+
+    /**
+     * Creates a secondary VNIC and attaches it to the specified instance.
+     * For more information about secondary VNICs, see
+     * [Managing Virtual Network Interface Cards (VNICs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    AttachVnicResponse attachVnic(AttachVnicRequest request);
 
     /**
      * Attaches the specified storage volume to the specified instance.
@@ -73,14 +82,29 @@ public interface Compute extends AutoCloseable {
     CaptureConsoleHistoryResponse captureConsoleHistory(CaptureConsoleHistoryRequest request);
 
     /**
-     * Creates a boot disk image for the specified instance. For more information about images, see
-     * [Managing Custom Images](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/managingcustomimages.htm).
+     * Creates a boot disk image for the specified instance or imports an exported image from the Oracle Bare Metal Cloud Object Storage Service.
      * <p>
-     * You must provide the OCID of the instance you want to use as the basis for the image, and
-     * the OCID of the compartment containing that instance.
+     * When creating a new image, you must provide the OCID of the instance you want to use as the basis for the image, and
+     * the OCID of the compartment containing that instance. For more information about images,
+     * see [Managing Custom Images](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/managingcustomimages.htm).
+     * <p>
+     * When importing an exported image from the Object Storage Service, you specify the source information
+     * in {@link #imageSourceDetails(ImageSourceDetailsRequest) imageSourceDetails}.
+     * <p>
+     * When importing an image based on the namespace, bucket name, and object name,
+     * use {@link #imageSourceViaObjectStorageTupleDetails(ImageSourceViaObjectStorageTupleDetailsRequest) imageSourceViaObjectStorageTupleDetails}.
+     * <p>
+     * When importing an image based on the Object Storage Service URL, use
+     * {@link #imageSourceViaObjectStorageUriDetails(ImageSourceViaObjectStorageUriDetailsRequest) imageSourceViaObjectStorageUriDetails}.
+     * See [Object Storage URLs](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/imageimportexport.htm#URLs) and [pre-authenticated requests](https://docs.us-phoenix-1.oraclecloud.com/Content/Object/Tasks/managingaccess.htm#pre-auth)
+     * for constructing URLs for image import/export.
+     * <p>
+     * For more information about importing exported images, see
+     * [Image Import/Export](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/imageimportexport.htm).
      * <p>
      * You may optionally specify a *display name* for the image, which is simply a friendly name or description.
      * It does not have to be unique, and you can change it. See {@link #updateImage(UpdateImageRequest) updateImage}.
+     * Avoid entering confidential information.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -105,6 +129,18 @@ public interface Compute extends AutoCloseable {
     DeleteImageResponse deleteImage(DeleteImageRequest request);
 
     /**
+     * Detaches and deletes the specified secondary VNIC.
+     * This operation cannot be used on the instance's primary VNIC.
+     * When you terminate an instance, all attached VNICs (primary
+     * and secondary) are automatically detached and deleted.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DetachVnicResponse detachVnic(DetachVnicRequest request);
+
+    /**
      * Detaches a storage volume from an instance. You must specify the OCID of the volume attachment.
      * <p>
      * This is an asynchronous operation; the attachment's `lifecycleState` will change to DETACHING temporarily
@@ -115,6 +151,24 @@ public interface Compute extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     DetachVolumeResponse detachVolume(DetachVolumeRequest request);
+
+    /**
+     * Exports the specified image to the Oracle Bare Metal Cloud Object Storage Service. You can use the Object Storage Service URL,
+     * or the namespace, bucket name, and object name when specifying the location to export to.
+     * <p>
+     * For more information about exporting images, see [Image Import/Export](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/imageimportexport.htm).
+     * <p>
+     * To perform an image export, you need write access to the Object Storage Service bucket for the image,
+     * see [Let Users Write Objects to Object Storage Buckets](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/commonpolicies.htm#Let4).
+     * <p>
+     * See [Object Storage URLs](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/imageimportexport.htm#URLs) and [pre-authenticated requests](https://docs.us-phoenix-1.oraclecloud.com/Content/Object/Tasks/managingaccess.htm#pre-auth)
+     * for constructing URLs for image import/export.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ExportImageResponse exportImage(ExportImageRequest request);
 
     /**
      * Shows the metadata for the specified console history.
@@ -154,6 +208,15 @@ public interface Compute extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     GetInstanceResponse getInstance(GetInstanceRequest request);
+
+    /**
+     * Gets the information for the specified VNIC attachment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetVnicAttachmentResponse getVnicAttachment(GetVnicAttachmentRequest request);
 
     /**
      * Gets information about the specified volume attachment.
@@ -217,12 +280,17 @@ public interface Compute extends AutoCloseable {
      * also retrieve a resource's OCID by using a List API operation
      * on that resource type, or by viewing the resource in the Console.
      * <p>
-     * When you launch an instance, it is automatically attached to a Virtual
-     * Network Interface Card (VNIC). The VNIC has a private IP address from
-     * the subnet's CIDR, and optionally a public IP address.
-     * To get the addresses, use the {@link #listVnicAttachments(ListVnicAttachmentsRequest) listVnicAttachments}
+     * When you launch an instance, it is automatically attached to a virtual
+     * network interface card (VNIC), called the *primary VNIC*. The VNIC
+     * has a private IP address from the subnet's CIDR. You can either assign a
+     * private IP address of your choice or let Oracle automatically assign one.
+     * You can choose whether the instance has a public IP address. To retrieve the
+     * addresses, use the {@link #listVnicAttachments(ListVnicAttachmentsRequest) listVnicAttachments}
      * operation to get the VNIC ID for the instance, and then call
      * {@link #getVnic(GetVnicRequest) getVnic} with the VNIC ID.
+     * <p>
+     * You can later add secondary VNICs to an instance. For more information, see
+     * [Managing Virtual Network Interface Cards (VNICs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -272,8 +340,9 @@ public interface Compute extends AutoCloseable {
     ListShapesResponse listShapes(ListShapesRequest request);
 
     /**
-     * Lists the VNIC attachments for the specified compartment. The list can be filtered by
-     * instance and by VNIC.
+     * Lists the VNIC attachments in the specified compartment. A VNIC attachment
+     * resides in the same compartment as the attached instance. The list can be
+     * filtered by instance, VNIC, or Availability Domain.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -307,7 +376,7 @@ public interface Compute extends AutoCloseable {
     TerminateInstanceResponse terminateInstance(TerminateInstanceRequest request);
 
     /**
-     * Updates the display name of the image.
+     * Updates the display name of the image. Avoid entering confidential information.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -315,8 +384,8 @@ public interface Compute extends AutoCloseable {
     UpdateImageResponse updateImage(UpdateImageRequest request);
 
     /**
-     * Updates the display name of the specified instance. The OCID of the instance
-     * remains the same.
+     * Updates the display name of the specified instance. Avoid entering confidential information.
+     * The OCID of the instance remains the same.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

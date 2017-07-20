@@ -3,39 +3,30 @@
  */
 package com.oracle.bmc.identity.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = CreateCompartmentDetails.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = CreateCompartmentDetails.Builder.class
+)
 public class CreateCompartmentDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("compartmentId")
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
-        @JsonProperty("name")
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
-        @JsonProperty("description")
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         public CreateCompartmentDetails build() {
             return new CreateCompartmentDetails(compartmentId, name, description);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateCompartmentDetails o) {
             return compartmentId(o.getCompartmentId())
                     .name(o.getName())
@@ -53,9 +44,9 @@ public class CreateCompartmentDetails {
     /**
      * The OCID of the tenancy containing the compartment.
      **/
-    @JsonProperty("compartmentId")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String compartmentId;
 
     /**
@@ -63,19 +54,19 @@ public class CreateCompartmentDetails {
      * in the tenancy and cannot be changed.
      *
      **/
-    @JsonProperty("name")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 100)
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 100)
     String name;
 
     /**
      * The description you assign to the compartment during creation. Does not have to be unique, and it's changeable.
      *
      **/
-    @JsonProperty("description")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 400)
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 400)
     String description;
 }

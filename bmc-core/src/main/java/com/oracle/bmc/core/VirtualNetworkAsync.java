@@ -3,14 +3,8 @@
  */
 package com.oracle.bmc.core;
 
-import com.oracle.bmc.responses.AsyncHandler;
-
-import java.util.concurrent.Future;
-
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
-
-import com.oracle.bmc.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface VirtualNetworkAsync extends AutoCloseable {
@@ -27,7 +21,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the endpoint.  If the service is not available in this region, however, an IllegalArgumentException will be raised.
      * @param region The region of the service.
      */
-    void setRegion(Region region);
+    void setRegion(com.oracle.bmc.Region region);
 
     /**
      * Sets the region to call (ex, 'us-phoenix-1').
@@ -57,18 +51,19 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * [Configuring Your On-Premise Router](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/configuringCPE.htm).
      * <p>
      * You may optionally specify a *display name* for the CPE, otherwise a default is provided. It does not have to
-     * be unique, and you can change it.
+     * be unique, and you can change it. Avoid entering confidential information.
      *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<CreateCpeResponse> createCpe(
-            CreateCpeRequest request, AsyncHandler<CreateCpeRequest, CreateCpeResponse> handler);
+    java.util.concurrent.Future<CreateCpeResponse> createCpe(
+            CreateCpeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateCpeRequest, CreateCpeResponse> handler);
 
     /**
      * Creates a new cross-connect. Oracle recommends you create each cross-connect in a
@@ -89,19 +84,21 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the cross-connect.
-     * It does not have to be unique, and you can change it.
+     * It does not have to be unique, and you can change it. Avoid entering confidential information.
      *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<CreateCrossConnectResponse> createCrossConnect(
+    java.util.concurrent.Future<CreateCrossConnectResponse> createCrossConnect(
             CreateCrossConnectRequest request,
-            AsyncHandler<CreateCrossConnectRequest, CreateCrossConnectResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateCrossConnectRequest, CreateCrossConnectResponse>
+                    handler);
 
     /**
      * Creates a new cross-connect group to use with Oracle Bare Metal Cloud Services
@@ -118,19 +115,21 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the cross-connect group.
-     * It does not have to be unique, and you can change it.
+     * It does not have to be unique, and you can change it. Avoid entering confidential information.
      *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<CreateCrossConnectGroupResponse> createCrossConnectGroup(
+    java.util.concurrent.Future<CreateCrossConnectGroupResponse> createCrossConnectGroup(
             CreateCrossConnectGroupRequest request,
-            AsyncHandler<CreateCrossConnectGroupRequest, CreateCrossConnectGroupResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateCrossConnectGroupRequest, CreateCrossConnectGroupResponse>
+                    handler);
 
     /**
      * Creates a new set of DHCP options for the specified VCN. For more information, see
@@ -144,19 +143,21 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the set of DHCP options, otherwise a default is provided.
-     * It does not have to be unique, and you can change it.
+     * It does not have to be unique, and you can change it. Avoid entering confidential information.
      *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<CreateDhcpOptionsResponse> createDhcpOptions(
+    java.util.concurrent.Future<CreateDhcpOptionsResponse> createDhcpOptions(
             CreateDhcpOptionsRequest request,
-            AsyncHandler<CreateDhcpOptionsRequest, CreateDhcpOptionsResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateDhcpOptionsRequest, CreateDhcpOptionsResponse>
+                    handler);
 
     /**
      * Creates a new Dynamic Routing Gateway (DRG) in the specified compartment. For more information,
@@ -170,18 +171,19 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * For information about OCIDs, see [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the DRG, otherwise a default is provided.
-     * It does not have to be unique, and you can change it.
+     * It does not have to be unique, and you can change it. Avoid entering confidential information.
      *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<CreateDrgResponse> createDrg(
-            CreateDrgRequest request, AsyncHandler<CreateDrgRequest, CreateDrgResponse> handler);
+    java.util.concurrent.Future<CreateDrgResponse> createDrg(
+            CreateDrgRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateDrgRequest, CreateDrgResponse> handler);
 
     /**
      * Attaches the specified DRG to the specified VCN. A VCN can be attached to only one DRG at a time,
@@ -190,7 +192,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * [Managing Dynamic Routing Gateways (DRGs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingDRGs.htm).
      * <p>
      * You may optionally specify a *display name* for the attachment, otherwise a default is provided.
-     * It does not have to be unique, and you can change it.
+     * It does not have to be unique, and you can change it. Avoid entering confidential information.
      * <p>
      * For the purposes of access control, the DRG attachment is automatically placed into the same compartment
      * as the VCN. For more information about compartments and access control, see
@@ -201,12 +203,14 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<CreateDrgAttachmentResponse> createDrgAttachment(
+    java.util.concurrent.Future<CreateDrgAttachmentResponse> createDrgAttachment(
             CreateDrgAttachmentRequest request,
-            AsyncHandler<CreateDrgAttachmentRequest, CreateDrgAttachmentResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateDrgAttachmentRequest, CreateDrgAttachmentResponse>
+                    handler);
 
     /**
      * Creates a new IPSec connection between the specified DRG and CPE. For more information, see
@@ -224,7 +228,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * For information about OCIDs, see [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the IPSec connection, otherwise a default is provided.
-     * It does not have to be unique, and you can change it.
+     * It does not have to be unique, and you can change it. Avoid entering confidential information.
      * <p>
      * After creating the IPSec connection, you need to configure your on-premise router
      * with tunnel-specific information returned by
@@ -241,12 +245,14 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<CreateIPSecConnectionResponse> createIPSecConnection(
+    java.util.concurrent.Future<CreateIPSecConnectionResponse> createIPSecConnection(
             CreateIPSecConnectionRequest request,
-            AsyncHandler<CreateIPSecConnectionRequest, CreateIPSecConnectionResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateIPSecConnectionRequest, CreateIPSecConnectionResponse>
+                    handler);
 
     /**
      * Creates a new Internet Gateway for the specified VCN. For more information, see
@@ -260,7 +266,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the Internet Gateway, otherwise a default is provided. It
-     * does not have to be unique, and you can change it.
+     * does not have to be unique, and you can change it. Avoid entering confidential information.
      * <p>
      * For traffic to flow between a subnet and an Internet Gateway, you must create a route rule accordingly in
      * the subnet's route table (e.g., 0.0.0.0/0 > Internet Gateway). See
@@ -276,12 +282,32 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<CreateInternetGatewayResponse> createInternetGateway(
+    java.util.concurrent.Future<CreateInternetGatewayResponse> createInternetGateway(
             CreateInternetGatewayRequest request,
-            AsyncHandler<CreateInternetGatewayRequest, CreateInternetGatewayResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateInternetGatewayRequest, CreateInternetGatewayResponse>
+                    handler);
+
+    /**
+     * Creates a secondary private IP for the specified VNIC.
+     * For more information about secondary private IPs, see
+     * [Managing IP Addresses](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPaddresses.htm).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreatePrivateIpResponse> createPrivateIp(
+            CreatePrivateIpRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreatePrivateIpRequest, CreatePrivateIpResponse>
+                    handler);
 
     /**
      * Creates a new route table for the specified VCN. In the request you must also include at least one route
@@ -297,19 +323,20 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the route table, otherwise a default is provided.
-     * It does not have to be unique, and you can change it.
+     * It does not have to be unique, and you can change it. Avoid entering confidential information.
      *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<CreateRouteTableResponse> createRouteTable(
+    java.util.concurrent.Future<CreateRouteTableResponse> createRouteTable(
             CreateRouteTableRequest request,
-            AsyncHandler<CreateRouteTableRequest, CreateRouteTableResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<CreateRouteTableRequest, CreateRouteTableResponse>
+                    handler);
 
     /**
      * Creates a new security list for the specified VCN. For more information
@@ -325,19 +352,21 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the security list, otherwise a default is provided.
-     * It does not have to be unique, and you can change it.
+     * It does not have to be unique, and you can change it. Avoid entering confidential information.
      *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<CreateSecurityListResponse> createSecurityList(
+    java.util.concurrent.Future<CreateSecurityListResponse> createSecurityList(
             CreateSecurityListRequest request,
-            AsyncHandler<CreateSecurityListRequest, CreateSecurityListResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateSecurityListRequest, CreateSecurityListResponse>
+                    handler);
 
     /**
      * Creates a new subnet in the specified VCN. You can't change the size of the subnet after creation,
@@ -366,7 +395,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * [Managing DHCP Options](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingDHCP.htm).
      * <p>
      * You may optionally specify a *display name* for the subnet, otherwise a default is provided.
-     * It does not have to be unique, and you can change it.
+     * It does not have to be unique, and you can change it. Avoid entering confidential information.
      * <p>
      * You can also add a DNS label for the subnet, which is required if you want the Internet and
      * VCN Resolver to resolve hostnames for instances in the subnet. For more information, see
@@ -377,21 +406,22 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<CreateSubnetResponse> createSubnet(
+    java.util.concurrent.Future<CreateSubnetResponse> createSubnet(
             CreateSubnetRequest request,
-            AsyncHandler<CreateSubnetRequest, CreateSubnetResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<CreateSubnetRequest, CreateSubnetResponse>
+                    handler);
 
     /**
      * Creates a new Virtual Cloud Network (VCN). For more information, see
      * [Managing Virtual Cloud Networks (VCNs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVCNs.htm).
      * <p>
-     * For the VCN you must specify a single, contiguous IPv4 CIDR block in the private IP address ranges specified in
-     * [RFC 1918](https://tools.ietf.org/html/rfc1918) (10.0.0.0/8, 172.16/12, and 192.168/16). Example: 172.16.0.0/16.
-     * The CIDR block can range from /16 to /30, and it must not overlap with your on-premise network. You can't
-     * change the size of the VCN after creation.
+     * For the VCN you must specify a single, contiguous IPv4 CIDR block. Oracle recommends using one of the
+     * private IP address ranges specified in [RFC 1918](https://tools.ietf.org/html/rfc1918) (10.0.0.0/8,
+     * 172.16/12, and 192.168/16). Example: 172.16.0.0/16. The CIDR block can range from /16 to /30, and it
+     * must not overlap with your on-premise network. You can't change the size of the VCN after creation.
      * <p>
      * For the purposes of access control, you must provide the OCID of the compartment where you want the VCN to
      * reside. Consult an Oracle Bare Metal Cloud Services administrator in your organization if you're not sure which
@@ -401,7 +431,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the VCN, otherwise a default is provided. It does not have to
-     * be unique, and you can change it.
+     * be unique, and you can change it. Avoid entering confidential information.
      * <p>
      * You can also add a DNS label for the VCN, which is required if you want the instances to use the
      * Interent and VCN Resolver option for DNS in the VCN. For more information, see
@@ -420,11 +450,12 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<CreateVcnResponse> createVcn(
-            CreateVcnRequest request, AsyncHandler<CreateVcnRequest, CreateVcnResponse> handler);
+    java.util.concurrent.Future<CreateVcnResponse> createVcn(
+            CreateVcnRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateVcnRequest, CreateVcnResponse> handler);
 
     /**
      * Creates a new virtual circuit to use with Oracle Bare Metal Cloud
@@ -441,7 +472,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      * <p>
      * You may optionally specify a *display name* for the virtual circuit.
-     * It does not have to be unique, and you can change it.
+     * It does not have to be unique, and you can change it. Avoid entering confidential information.
      * <p>
      **Important:** When creating a virtual circuit, you specify a DRG for
      * the traffic to flow through. Make sure you attach the DRG to your
@@ -454,12 +485,14 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<CreateVirtualCircuitResponse> createVirtualCircuit(
+    java.util.concurrent.Future<CreateVirtualCircuitResponse> createVirtualCircuit(
             CreateVirtualCircuitRequest request,
-            AsyncHandler<CreateVirtualCircuitRequest, CreateVirtualCircuitResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateVirtualCircuitRequest, CreateVirtualCircuitResponse>
+                    handler);
 
     /**
      * Deletes the specified CPE object. The CPE must not be connected to a DRG. This is an asynchronous
@@ -471,11 +504,12 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<DeleteCpeResponse> deleteCpe(
-            DeleteCpeRequest request, AsyncHandler<DeleteCpeRequest, DeleteCpeResponse> handler);
+    java.util.concurrent.Future<DeleteCpeResponse> deleteCpe(
+            DeleteCpeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteCpeRequest, DeleteCpeResponse> handler);
 
     /**
      * Deletes the specified cross-connect. It must not be mapped to a
@@ -486,12 +520,14 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<DeleteCrossConnectResponse> deleteCrossConnect(
+    java.util.concurrent.Future<DeleteCrossConnectResponse> deleteCrossConnect(
             DeleteCrossConnectRequest request,
-            AsyncHandler<DeleteCrossConnectRequest, DeleteCrossConnectResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteCrossConnectRequest, DeleteCrossConnectResponse>
+                    handler);
 
     /**
      * Deletes the specified cross-connect group. It must not contain any
@@ -503,12 +539,14 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<DeleteCrossConnectGroupResponse> deleteCrossConnectGroup(
+    java.util.concurrent.Future<DeleteCrossConnectGroupResponse> deleteCrossConnectGroup(
             DeleteCrossConnectGroupRequest request,
-            AsyncHandler<DeleteCrossConnectGroupRequest, DeleteCrossConnectGroupResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteCrossConnectGroupRequest, DeleteCrossConnectGroupResponse>
+                    handler);
 
     /**
      * Deletes the specified set of DHCP options, but only if it's not associated with a subnet. You can't delete a
@@ -522,12 +560,14 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<DeleteDhcpOptionsResponse> deleteDhcpOptions(
+    java.util.concurrent.Future<DeleteDhcpOptionsResponse> deleteDhcpOptions(
             DeleteDhcpOptionsRequest request,
-            AsyncHandler<DeleteDhcpOptionsRequest, DeleteDhcpOptionsResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteDhcpOptionsRequest, DeleteDhcpOptionsResponse>
+                    handler);
 
     /**
      * Deletes the specified DRG. The DRG must not be attached to a VCN or be connected to your on-premise
@@ -540,11 +580,12 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<DeleteDrgResponse> deleteDrg(
-            DeleteDrgRequest request, AsyncHandler<DeleteDrgRequest, DeleteDrgResponse> handler);
+    java.util.concurrent.Future<DeleteDrgResponse> deleteDrg(
+            DeleteDrgRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteDrgRequest, DeleteDrgResponse> handler);
 
     /**
      * Detaches a DRG from a VCN by deleting the corresponding `DrgAttachment`. This is an asynchronous
@@ -556,12 +597,14 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<DeleteDrgAttachmentResponse> deleteDrgAttachment(
+    java.util.concurrent.Future<DeleteDrgAttachmentResponse> deleteDrgAttachment(
             DeleteDrgAttachmentRequest request,
-            AsyncHandler<DeleteDrgAttachmentRequest, DeleteDrgAttachmentResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteDrgAttachmentRequest, DeleteDrgAttachmentResponse>
+                    handler);
 
     /**
      * Deletes the specified IPSec connection. If your goal is to disable the IPSec VPN between your VCN and
@@ -578,12 +621,14 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<DeleteIPSecConnectionResponse> deleteIPSecConnection(
+    java.util.concurrent.Future<DeleteIPSecConnectionResponse> deleteIPSecConnection(
             DeleteIPSecConnectionRequest request,
-            AsyncHandler<DeleteIPSecConnectionRequest, DeleteIPSecConnectionResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteIPSecConnectionRequest, DeleteIPSecConnectionResponse>
+                    handler);
 
     /**
      * Deletes the specified Internet Gateway. The Internet Gateway does not have to be disabled, but
@@ -597,12 +642,35 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<DeleteInternetGatewayResponse> deleteInternetGateway(
+    java.util.concurrent.Future<DeleteInternetGatewayResponse> deleteInternetGateway(
             DeleteInternetGatewayRequest request,
-            AsyncHandler<DeleteInternetGatewayRequest, DeleteInternetGatewayResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteInternetGatewayRequest, DeleteInternetGatewayResponse>
+                    handler);
+
+    /**
+     * Unassigns and deletes the specified private IP. You must
+     * specify the object's OCID. The private IP address is returned to
+     * the subnet's pool of available addresses.
+     * <p>
+     * This operation cannot be used with primary private IPs, which are
+     * automatically unassigned and deleted when the VNIC is terminated.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeletePrivateIpResponse> deletePrivateIp(
+            DeletePrivateIpRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeletePrivateIpRequest, DeletePrivateIpResponse>
+                    handler);
 
     /**
      * Deletes the specified route table, but only if it's not associated with a subnet. You can't delete a
@@ -616,12 +684,13 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<DeleteRouteTableResponse> deleteRouteTable(
+    java.util.concurrent.Future<DeleteRouteTableResponse> deleteRouteTable(
             DeleteRouteTableRequest request,
-            AsyncHandler<DeleteRouteTableRequest, DeleteRouteTableResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<DeleteRouteTableRequest, DeleteRouteTableResponse>
+                    handler);
 
     /**
      * Deletes the specified security list, but only if it's not associated with a subnet. You can't delete
@@ -635,12 +704,14 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<DeleteSecurityListResponse> deleteSecurityList(
+    java.util.concurrent.Future<DeleteSecurityListResponse> deleteSecurityList(
             DeleteSecurityListRequest request,
-            AsyncHandler<DeleteSecurityListRequest, DeleteSecurityListResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSecurityListRequest, DeleteSecurityListResponse>
+                    handler);
 
     /**
      * Deletes the specified subnet, but only if there are no instances in the subnet. This is an asynchronous
@@ -652,12 +723,13 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<DeleteSubnetResponse> deleteSubnet(
+    java.util.concurrent.Future<DeleteSubnetResponse> deleteSubnet(
             DeleteSubnetRequest request,
-            AsyncHandler<DeleteSubnetRequest, DeleteSubnetResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<DeleteSubnetRequest, DeleteSubnetResponse>
+                    handler);
 
     /**
      * Deletes the specified VCN. The VCN must be empty and have no attached gateways. This is an asynchronous
@@ -669,11 +741,12 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<DeleteVcnResponse> deleteVcn(
-            DeleteVcnRequest request, AsyncHandler<DeleteVcnRequest, DeleteVcnResponse> handler);
+    java.util.concurrent.Future<DeleteVcnResponse> deleteVcn(
+            DeleteVcnRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteVcnRequest, DeleteVcnResponse> handler);
 
     /**
      * Deletes the specified virtual circuit.
@@ -687,12 +760,14 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<DeleteVirtualCircuitResponse> deleteVirtualCircuit(
+    java.util.concurrent.Future<DeleteVirtualCircuitResponse> deleteVirtualCircuit(
             DeleteVirtualCircuitRequest request,
-            AsyncHandler<DeleteVirtualCircuitRequest, DeleteVirtualCircuitResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteVirtualCircuitRequest, DeleteVirtualCircuitResponse>
+                    handler);
 
     /**
      * Gets the specified CPE's information.
@@ -701,11 +776,12 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<GetCpeResponse> getCpe(
-            GetCpeRequest request, AsyncHandler<GetCpeRequest, GetCpeResponse> handler);
+    java.util.concurrent.Future<GetCpeResponse> getCpe(
+            GetCpeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetCpeRequest, GetCpeResponse> handler);
 
     /**
      * Gets the specified cross-connect's information.
@@ -714,12 +790,13 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<GetCrossConnectResponse> getCrossConnect(
+    java.util.concurrent.Future<GetCrossConnectResponse> getCrossConnect(
             GetCrossConnectRequest request,
-            AsyncHandler<GetCrossConnectRequest, GetCrossConnectResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<GetCrossConnectRequest, GetCrossConnectResponse>
+                    handler);
 
     /**
      * Gets the specified cross-connect group's information.
@@ -728,12 +805,14 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<GetCrossConnectGroupResponse> getCrossConnectGroup(
+    java.util.concurrent.Future<GetCrossConnectGroupResponse> getCrossConnectGroup(
             GetCrossConnectGroupRequest request,
-            AsyncHandler<GetCrossConnectGroupRequest, GetCrossConnectGroupResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetCrossConnectGroupRequest, GetCrossConnectGroupResponse>
+                    handler);
 
     /**
      * Gets the Letter of Authority for the specified cross-connect.
@@ -742,15 +821,16 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<GetCrossConnectLetterOfAuthorityResponse> getCrossConnectLetterOfAuthority(
-            GetCrossConnectLetterOfAuthorityRequest request,
-            AsyncHandler<
-                            GetCrossConnectLetterOfAuthorityRequest,
-                            GetCrossConnectLetterOfAuthorityResponse>
-                    handler);
+    java.util.concurrent.Future<GetCrossConnectLetterOfAuthorityResponse>
+            getCrossConnectLetterOfAuthority(
+                    GetCrossConnectLetterOfAuthorityRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetCrossConnectLetterOfAuthorityRequest,
+                                    GetCrossConnectLetterOfAuthorityResponse>
+                            handler);
 
     /**
      * Gets the status of the specified cross-connect.
@@ -760,12 +840,14 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<GetCrossConnectStatusResponse> getCrossConnectStatus(
+    java.util.concurrent.Future<GetCrossConnectStatusResponse> getCrossConnectStatus(
             GetCrossConnectStatusRequest request,
-            AsyncHandler<GetCrossConnectStatusRequest, GetCrossConnectStatusResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetCrossConnectStatusRequest, GetCrossConnectStatusResponse>
+                    handler);
 
     /**
      * Gets the specified set of DHCP options.
@@ -774,12 +856,13 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<GetDhcpOptionsResponse> getDhcpOptions(
+    java.util.concurrent.Future<GetDhcpOptionsResponse> getDhcpOptions(
             GetDhcpOptionsRequest request,
-            AsyncHandler<GetDhcpOptionsRequest, GetDhcpOptionsResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<GetDhcpOptionsRequest, GetDhcpOptionsResponse>
+                    handler);
 
     /**
      * Gets the specified DRG's information.
@@ -788,11 +871,12 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<GetDrgResponse> getDrg(
-            GetDrgRequest request, AsyncHandler<GetDrgRequest, GetDrgResponse> handler);
+    java.util.concurrent.Future<GetDrgResponse> getDrg(
+            GetDrgRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetDrgRequest, GetDrgResponse> handler);
 
     /**
      * Gets the information for the specified `DrgAttachment`.
@@ -801,12 +885,13 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<GetDrgAttachmentResponse> getDrgAttachment(
+    java.util.concurrent.Future<GetDrgAttachmentResponse> getDrgAttachment(
             GetDrgAttachmentRequest request,
-            AsyncHandler<GetDrgAttachmentRequest, GetDrgAttachmentResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<GetDrgAttachmentRequest, GetDrgAttachmentResponse>
+                    handler);
 
     /**
      * Gets the specified IPSec connection's basic information, including the static routes for the
@@ -818,12 +903,14 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<GetIPSecConnectionResponse> getIPSecConnection(
+    java.util.concurrent.Future<GetIPSecConnectionResponse> getIPSecConnection(
             GetIPSecConnectionRequest request,
-            AsyncHandler<GetIPSecConnectionRequest, GetIPSecConnectionResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetIPSecConnectionRequest, GetIPSecConnectionResponse>
+                    handler);
 
     /**
      * Gets the configuration information for the specified IPSec connection. For each tunnel, the
@@ -834,15 +921,16 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<GetIPSecConnectionDeviceConfigResponse> getIPSecConnectionDeviceConfig(
-            GetIPSecConnectionDeviceConfigRequest request,
-            AsyncHandler<
-                            GetIPSecConnectionDeviceConfigRequest,
-                            GetIPSecConnectionDeviceConfigResponse>
-                    handler);
+    java.util.concurrent.Future<GetIPSecConnectionDeviceConfigResponse>
+            getIPSecConnectionDeviceConfig(
+                    GetIPSecConnectionDeviceConfigRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetIPSecConnectionDeviceConfigRequest,
+                                    GetIPSecConnectionDeviceConfigResponse>
+                            handler);
 
     /**
      * Gets the status of the specified IPSec connection (whether it's up or down).
@@ -852,15 +940,16 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<GetIPSecConnectionDeviceStatusResponse> getIPSecConnectionDeviceStatus(
-            GetIPSecConnectionDeviceStatusRequest request,
-            AsyncHandler<
-                            GetIPSecConnectionDeviceStatusRequest,
-                            GetIPSecConnectionDeviceStatusResponse>
-                    handler);
+    java.util.concurrent.Future<GetIPSecConnectionDeviceStatusResponse>
+            getIPSecConnectionDeviceStatus(
+                    GetIPSecConnectionDeviceStatusRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetIPSecConnectionDeviceStatusRequest,
+                                    GetIPSecConnectionDeviceStatusResponse>
+                            handler);
 
     /**
      * Gets the specified Internet Gateway's information.
@@ -869,12 +958,33 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<GetInternetGatewayResponse> getInternetGateway(
+    java.util.concurrent.Future<GetInternetGatewayResponse> getInternetGateway(
             GetInternetGatewayRequest request,
-            AsyncHandler<GetInternetGatewayRequest, GetInternetGatewayResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetInternetGatewayRequest, GetInternetGatewayResponse>
+                    handler);
+
+    /**
+     * Gets the specified private IP. You must specify the object's OCID.
+     * Alternatively, you can get the object by using
+     * {@link #listPrivateIps(ListPrivateIpsRequest, Consumer, Consumer) listPrivateIps}
+     * with the private IP address (for example, 10.0.3.3) and subnet OCID.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPrivateIpResponse> getPrivateIp(
+            GetPrivateIpRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetPrivateIpRequest, GetPrivateIpResponse>
+                    handler);
 
     /**
      * Gets the specified route table's information.
@@ -883,12 +993,13 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<GetRouteTableResponse> getRouteTable(
+    java.util.concurrent.Future<GetRouteTableResponse> getRouteTable(
             GetRouteTableRequest request,
-            AsyncHandler<GetRouteTableRequest, GetRouteTableResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<GetRouteTableRequest, GetRouteTableResponse>
+                    handler);
 
     /**
      * Gets the specified security list's information.
@@ -897,12 +1008,13 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<GetSecurityListResponse> getSecurityList(
+    java.util.concurrent.Future<GetSecurityListResponse> getSecurityList(
             GetSecurityListRequest request,
-            AsyncHandler<GetSecurityListRequest, GetSecurityListResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<GetSecurityListRequest, GetSecurityListResponse>
+                    handler);
 
     /**
      * Gets the specified subnet's information.
@@ -911,11 +1023,12 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<GetSubnetResponse> getSubnet(
-            GetSubnetRequest request, AsyncHandler<GetSubnetRequest, GetSubnetResponse> handler);
+    java.util.concurrent.Future<GetSubnetResponse> getSubnet(
+            GetSubnetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetSubnetRequest, GetSubnetResponse> handler);
 
     /**
      * Gets the specified VCN's information.
@@ -924,11 +1037,12 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<GetVcnResponse> getVcn(
-            GetVcnRequest request, AsyncHandler<GetVcnRequest, GetVcnResponse> handler);
+    java.util.concurrent.Future<GetVcnResponse> getVcn(
+            GetVcnRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetVcnRequest, GetVcnResponse> handler);
 
     /**
      * Gets the specified virtual circuit's information.
@@ -937,28 +1051,32 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<GetVirtualCircuitResponse> getVirtualCircuit(
+    java.util.concurrent.Future<GetVirtualCircuitResponse> getVirtualCircuit(
             GetVirtualCircuitRequest request,
-            AsyncHandler<GetVirtualCircuitRequest, GetVirtualCircuitResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetVirtualCircuitRequest, GetVirtualCircuitResponse>
+                    handler);
 
     /**
-     * Gets the information for the specified Virtual Network Interface Card (VNIC), including
-     * the IP addresses. You can get the instance's VNIC OCID from the
-     * {@link #listVnicAttachments(ListVnicAttachmentsRequest, Consumer, Consumer) listVnicAttachments} operation.
+     * Gets the information for the specified virtual network interface card (VNIC).
+     * You can get the VNIC OCID from the
+     * {@link #listVnicAttachments(ListVnicAttachmentsRequest, Consumer, Consumer) listVnicAttachments}
+     * operation.
      *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<GetVnicResponse> getVnic(
-            GetVnicRequest request, AsyncHandler<GetVnicRequest, GetVnicResponse> handler);
+    java.util.concurrent.Future<GetVnicResponse> getVnic(
+            GetVnicRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetVnicRequest, GetVnicResponse> handler);
 
     /**
      * Lists the Customer-Premises Equipment objects (CPEs) in the specified compartment.
@@ -968,11 +1086,12 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListCpesResponse> listCpes(
-            ListCpesRequest request, AsyncHandler<ListCpesRequest, ListCpesResponse> handler);
+    java.util.concurrent.Future<ListCpesResponse> listCpes(
+            ListCpesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListCpesRequest, ListCpesResponse> handler);
 
     /**
      * Lists the cross-connect groups in the specified compartment.
@@ -982,12 +1101,14 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListCrossConnectGroupsResponse> listCrossConnectGroups(
+    java.util.concurrent.Future<ListCrossConnectGroupsResponse> listCrossConnectGroups(
             ListCrossConnectGroupsRequest request,
-            AsyncHandler<ListCrossConnectGroupsRequest, ListCrossConnectGroupsResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListCrossConnectGroupsRequest, ListCrossConnectGroupsResponse>
+                    handler);
 
     /**
      * Lists the available FastConnect locations for cross-connect installation. You need
@@ -998,12 +1119,13 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListCrossConnectLocationsResponse> listCrossConnectLocations(
+    java.util.concurrent.Future<ListCrossConnectLocationsResponse> listCrossConnectLocations(
             ListCrossConnectLocationsRequest request,
-            AsyncHandler<ListCrossConnectLocationsRequest, ListCrossConnectLocationsResponse>
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListCrossConnectLocationsRequest, ListCrossConnectLocationsResponse>
                     handler);
 
     /**
@@ -1015,12 +1137,14 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListCrossConnectsResponse> listCrossConnects(
+    java.util.concurrent.Future<ListCrossConnectsResponse> listCrossConnects(
             ListCrossConnectsRequest request,
-            AsyncHandler<ListCrossConnectsRequest, ListCrossConnectsResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListCrossConnectsRequest, ListCrossConnectsResponse>
+                    handler);
 
     /**
      * Lists the available port speeds for cross-connects. You need this information
@@ -1032,15 +1156,16 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListCrossconnectPortSpeedShapesResponse> listCrossconnectPortSpeedShapes(
-            ListCrossconnectPortSpeedShapesRequest request,
-            AsyncHandler<
-                            ListCrossconnectPortSpeedShapesRequest,
-                            ListCrossconnectPortSpeedShapesResponse>
-                    handler);
+    java.util.concurrent.Future<ListCrossconnectPortSpeedShapesResponse>
+            listCrossconnectPortSpeedShapes(
+                    ListCrossconnectPortSpeedShapesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListCrossconnectPortSpeedShapesRequest,
+                                    ListCrossconnectPortSpeedShapesResponse>
+                            handler);
 
     /**
      * Lists the sets of DHCP options in the specified VCN and specified compartment.
@@ -1052,12 +1177,13 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListDhcpOptionsResponse> listDhcpOptions(
+    java.util.concurrent.Future<ListDhcpOptionsResponse> listDhcpOptions(
             ListDhcpOptionsRequest request,
-            AsyncHandler<ListDhcpOptionsRequest, ListDhcpOptionsResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<ListDhcpOptionsRequest, ListDhcpOptionsResponse>
+                    handler);
 
     /**
      * Lists the `DrgAttachment` objects for the specified compartment. You can filter the
@@ -1068,12 +1194,14 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListDrgAttachmentsResponse> listDrgAttachments(
+    java.util.concurrent.Future<ListDrgAttachmentsResponse> listDrgAttachments(
             ListDrgAttachmentsRequest request,
-            AsyncHandler<ListDrgAttachmentsRequest, ListDrgAttachmentsResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDrgAttachmentsRequest, ListDrgAttachmentsResponse>
+                    handler);
 
     /**
      * Lists the DRGs in the specified compartment.
@@ -1083,11 +1211,12 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListDrgsResponse> listDrgs(
-            ListDrgsRequest request, AsyncHandler<ListDrgsRequest, ListDrgsResponse> handler);
+    java.util.concurrent.Future<ListDrgsResponse> listDrgs(
+            ListDrgsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListDrgsRequest, ListDrgsResponse> handler);
 
     /**
      * Lists the service offerings from supported providers. You need this
@@ -1103,15 +1232,16 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListFastConnectProviderServicesResponse> listFastConnectProviderServices(
-            ListFastConnectProviderServicesRequest request,
-            AsyncHandler<
-                            ListFastConnectProviderServicesRequest,
-                            ListFastConnectProviderServicesResponse>
-                    handler);
+    java.util.concurrent.Future<ListFastConnectProviderServicesResponse>
+            listFastConnectProviderServices(
+                    ListFastConnectProviderServicesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListFastConnectProviderServicesRequest,
+                                    ListFastConnectProviderServicesResponse>
+                            handler);
 
     /**
      * Lists the IPSec connections for the specified compartment. You can filter the
@@ -1122,12 +1252,14 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListIPSecConnectionsResponse> listIPSecConnections(
+    java.util.concurrent.Future<ListIPSecConnectionsResponse> listIPSecConnections(
             ListIPSecConnectionsRequest request,
-            AsyncHandler<ListIPSecConnectionsRequest, ListIPSecConnectionsResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListIPSecConnectionsRequest, ListIPSecConnectionsResponse>
+                    handler);
 
     /**
      * Lists the Internet Gateways in the specified VCN and the specified compartment.
@@ -1137,12 +1269,42 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListInternetGatewaysResponse> listInternetGateways(
+    java.util.concurrent.Future<ListInternetGatewaysResponse> listInternetGateways(
             ListInternetGatewaysRequest request,
-            AsyncHandler<ListInternetGatewaysRequest, ListInternetGatewaysResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListInternetGatewaysRequest, ListInternetGatewaysResponse>
+                    handler);
+
+    /**
+     * Lists the {@link PrivateIp} objects based
+     * on one of these filters:
+     * <p>
+     * - Subnet OCID.
+     *   - VNIC OCID.
+     *   - Both private IP address and subnet OCID: This lets
+     *   you get a `privateIP` object based on its private IP
+     *   address (for example, 10.0.3.3) and not its OCID. For comparison,
+     *   {@link #getPrivateIp(GetPrivateIpRequest, Consumer, Consumer) getPrivateIp}
+     *   requires the OCID.
+     * <p>
+     * If you're listing all the private IPs associated with a given subnet
+     * or VNIC, the response includes both primary and secondary private IPs.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPrivateIpsResponse> listPrivateIps(
+            ListPrivateIpsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListPrivateIpsRequest, ListPrivateIpsResponse>
+                    handler);
 
     /**
      * Lists the route tables in the specified VCN and specified compartment. The response
@@ -1154,12 +1316,13 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListRouteTablesResponse> listRouteTables(
+    java.util.concurrent.Future<ListRouteTablesResponse> listRouteTables(
             ListRouteTablesRequest request,
-            AsyncHandler<ListRouteTablesRequest, ListRouteTablesResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<ListRouteTablesRequest, ListRouteTablesResponse>
+                    handler);
 
     /**
      * Lists the security lists in the specified VCN and compartment.
@@ -1169,12 +1332,14 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListSecurityListsResponse> listSecurityLists(
+    java.util.concurrent.Future<ListSecurityListsResponse> listSecurityLists(
             ListSecurityListsRequest request,
-            AsyncHandler<ListSecurityListsRequest, ListSecurityListsResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSecurityListsRequest, ListSecurityListsResponse>
+                    handler);
 
     /**
      * Lists the subnets in the specified VCN and the specified compartment.
@@ -1184,12 +1349,12 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListSubnetsResponse> listSubnets(
+    java.util.concurrent.Future<ListSubnetsResponse> listSubnets(
             ListSubnetsRequest request,
-            AsyncHandler<ListSubnetsRequest, ListSubnetsResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<ListSubnetsRequest, ListSubnetsResponse> handler);
 
     /**
      * Lists the Virtual Cloud Networks (VCNs) in the specified compartment.
@@ -1199,11 +1364,12 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListVcnsResponse> listVcns(
-            ListVcnsRequest request, AsyncHandler<ListVcnsRequest, ListVcnsResponse> handler);
+    java.util.concurrent.Future<ListVcnsResponse> listVcns(
+            ListVcnsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListVcnsRequest, ListVcnsResponse> handler);
 
     /**
      * Lists the available bandwidth levels for virtual circuits. You need this
@@ -1220,15 +1386,16 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListVirtualCircuitBandwidthShapesResponse> listVirtualCircuitBandwidthShapes(
-            ListVirtualCircuitBandwidthShapesRequest request,
-            AsyncHandler<
-                            ListVirtualCircuitBandwidthShapesRequest,
-                            ListVirtualCircuitBandwidthShapesResponse>
-                    handler);
+    java.util.concurrent.Future<ListVirtualCircuitBandwidthShapesResponse>
+            listVirtualCircuitBandwidthShapes(
+                    ListVirtualCircuitBandwidthShapesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListVirtualCircuitBandwidthShapesRequest,
+                                    ListVirtualCircuitBandwidthShapesResponse>
+                            handler);
 
     /**
      * Lists the virtual circuits in the specified compartment.
@@ -1238,26 +1405,30 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListVirtualCircuitsResponse> listVirtualCircuits(
+    java.util.concurrent.Future<ListVirtualCircuitsResponse> listVirtualCircuits(
             ListVirtualCircuitsRequest request,
-            AsyncHandler<ListVirtualCircuitsRequest, ListVirtualCircuitsResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListVirtualCircuitsRequest, ListVirtualCircuitsResponse>
+                    handler);
 
     /**
      * Updates the specified CPE's display name.
+     * Avoid entering confidential information.
      *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<UpdateCpeResponse> updateCpe(
-            UpdateCpeRequest request, AsyncHandler<UpdateCpeRequest, UpdateCpeResponse> handler);
+    java.util.concurrent.Future<UpdateCpeResponse> updateCpe(
+            UpdateCpeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateCpeRequest, UpdateCpeResponse> handler);
 
     /**
      * Updates the specified cross-connect.
@@ -1266,89 +1437,107 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<UpdateCrossConnectResponse> updateCrossConnect(
+    java.util.concurrent.Future<UpdateCrossConnectResponse> updateCrossConnect(
             UpdateCrossConnectRequest request,
-            AsyncHandler<UpdateCrossConnectRequest, UpdateCrossConnectResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateCrossConnectRequest, UpdateCrossConnectResponse>
+                    handler);
 
     /**
      * Updates the specified cross-connect group's display name.
+     * Avoid entering confidential information.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<UpdateCrossConnectGroupResponse> updateCrossConnectGroup(
+    java.util.concurrent.Future<UpdateCrossConnectGroupResponse> updateCrossConnectGroup(
             UpdateCrossConnectGroupRequest request,
-            AsyncHandler<UpdateCrossConnectGroupRequest, UpdateCrossConnectGroupResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateCrossConnectGroupRequest, UpdateCrossConnectGroupResponse>
+                    handler);
 
     /**
      * Updates the specified set of DHCP options. You can update the display name or the options
-     * themselves. Note that the `options` object you provide replaces the entire existing set of options.
+     * themselves. Avoid entering confidential information.
+     * <p>
+     * Note that the `options` object you provide replaces the entire existing set of options.
      *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<UpdateDhcpOptionsResponse> updateDhcpOptions(
+    java.util.concurrent.Future<UpdateDhcpOptionsResponse> updateDhcpOptions(
             UpdateDhcpOptionsRequest request,
-            AsyncHandler<UpdateDhcpOptionsRequest, UpdateDhcpOptionsResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDhcpOptionsRequest, UpdateDhcpOptionsResponse>
+                    handler);
 
     /**
-     * Updates the specified DRG's display name.
+     * Updates the specified DRG's display name. Avoid entering confidential information.
      *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<UpdateDrgResponse> updateDrg(
-            UpdateDrgRequest request, AsyncHandler<UpdateDrgRequest, UpdateDrgResponse> handler);
+    java.util.concurrent.Future<UpdateDrgResponse> updateDrg(
+            UpdateDrgRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateDrgRequest, UpdateDrgResponse> handler);
 
     /**
      * Updates the display name for the specified `DrgAttachment`.
+     * Avoid entering confidential information.
      *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<UpdateDrgAttachmentResponse> updateDrgAttachment(
+    java.util.concurrent.Future<UpdateDrgAttachmentResponse> updateDrgAttachment(
             UpdateDrgAttachmentRequest request,
-            AsyncHandler<UpdateDrgAttachmentRequest, UpdateDrgAttachmentResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDrgAttachmentRequest, UpdateDrgAttachmentResponse>
+                    handler);
 
     /**
      * Updates the display name for the specified IPSec connection.
+     * Avoid entering confidential information.
      *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<UpdateIPSecConnectionResponse> updateIPSecConnection(
+    java.util.concurrent.Future<UpdateIPSecConnectionResponse> updateIPSecConnection(
             UpdateIPSecConnectionRequest request,
-            AsyncHandler<UpdateIPSecConnectionRequest, UpdateIPSecConnectionResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateIPSecConnectionRequest, UpdateIPSecConnectionResponse>
+                    handler);
 
     /**
      * Updates the specified Internet Gateway. You can disable/enable it, or change its display name.
+     * Avoid entering confidential information.
      * <p>
      * If the gateway is disabled, that means no traffic will flow to/from the internet even if there's
      * a route rule that enables that traffic.
@@ -1358,32 +1547,64 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<UpdateInternetGatewayResponse> updateInternetGateway(
+    java.util.concurrent.Future<UpdateInternetGatewayResponse> updateInternetGateway(
             UpdateInternetGatewayRequest request,
-            AsyncHandler<UpdateInternetGatewayRequest, UpdateInternetGatewayResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateInternetGatewayRequest, UpdateInternetGatewayResponse>
+                    handler);
 
     /**
-     * Updates the specified route table's display name or route rules. Note that the
-     * `routeRules` object you provide replaces the entire existing set of rules.
+     * Updates the specified private IP. You must specify the object's OCID.
+     * Use this operation if you want to:
+     * <p>
+     * - Move a secondary private IP to a different VNIC in the same subnet.
+     *   - Change the display name for a secondary private IP.
+     *   - Change the hostname for a secondary private IP.
+     * <p>
+     * This operation cannot be used with primary private IPs.
+     * To update the hostname for the primary IP on a VNIC, use
+     * {@link #updateVnic(UpdateVnicRequest, Consumer, Consumer) updateVnic}.
      *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<UpdateRouteTableResponse> updateRouteTable(
-            UpdateRouteTableRequest request,
-            AsyncHandler<UpdateRouteTableRequest, UpdateRouteTableResponse> handler);
+    java.util.concurrent.Future<UpdatePrivateIpResponse> updatePrivateIp(
+            UpdatePrivateIpRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdatePrivateIpRequest, UpdatePrivateIpResponse>
+                    handler);
 
     /**
-     * Updates the specified security list's display name or rules. Note that the
-     * `egressSecurityRules` or `ingressSecurityRules` objects you provide replace the entire
+     * Updates the specified route table's display name or route rules.
+     * Avoid entering confidential information.
+     * <p>
+     * Note that the `routeRules` object you provide replaces the entire existing set of rules.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateRouteTableResponse> updateRouteTable(
+            UpdateRouteTableRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateRouteTableRequest, UpdateRouteTableResponse>
+                    handler);
+
+    /**
+     * Updates the specified security list's display name or rules.
+     * Avoid entering confidential information.
+     * <p>
+     * Note that the `egressSecurityRules` or `ingressSecurityRules` objects you provide replace the entire
      * existing objects.
      *
      *
@@ -1391,41 +1612,46 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<UpdateSecurityListResponse> updateSecurityList(
+    java.util.concurrent.Future<UpdateSecurityListResponse> updateSecurityList(
             UpdateSecurityListRequest request,
-            AsyncHandler<UpdateSecurityListRequest, UpdateSecurityListResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSecurityListRequest, UpdateSecurityListResponse>
+                    handler);
 
     /**
-     * Updates the specified subnet's display name.
+     * Updates the specified subnet's display name. Avoid entering confidential information.
      *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<UpdateSubnetResponse> updateSubnet(
+    java.util.concurrent.Future<UpdateSubnetResponse> updateSubnet(
             UpdateSubnetRequest request,
-            AsyncHandler<UpdateSubnetRequest, UpdateSubnetResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<UpdateSubnetRequest, UpdateSubnetResponse>
+                    handler);
 
     /**
      * Updates the specified VCN's display name.
+     * Avoid entering confidential information.
      *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<UpdateVcnResponse> updateVcn(
-            UpdateVcnRequest request, AsyncHandler<UpdateVcnRequest, UpdateVcnResponse> handler);
+    java.util.concurrent.Future<UpdateVcnResponse> updateVcn(
+            UpdateVcnRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateVcnRequest, UpdateVcnResponse> handler);
 
     /**
      * Updates the specified virtual circuit. This can be called by
@@ -1450,10 +1676,27 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<UpdateVirtualCircuitResponse> updateVirtualCircuit(
+    java.util.concurrent.Future<UpdateVirtualCircuitResponse> updateVirtualCircuit(
             UpdateVirtualCircuitRequest request,
-            AsyncHandler<UpdateVirtualCircuitRequest, UpdateVirtualCircuitResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateVirtualCircuitRequest, UpdateVirtualCircuitResponse>
+                    handler);
+
+    /**
+     * Updates the specified VNIC.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateVnicResponse> updateVnic(
+            UpdateVnicRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateVnicRequest, UpdateVnicResponse> handler);
 }

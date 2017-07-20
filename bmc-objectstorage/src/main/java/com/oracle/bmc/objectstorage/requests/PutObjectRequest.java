@@ -3,19 +3,11 @@
  */
 package com.oracle.bmc.objectstorage.requests;
 
-import java.io.*;
-import java.util.*;
-
-import lombok.Builder;
-import lombok.Getter;
-import lombok.experimental.Accessors;
-
-import com.oracle.bmc.model.*;
 import com.oracle.bmc.objectstorage.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Builder(builderClassName = "Builder")
-@Getter
+@lombok.Builder(builderClassName = "Builder")
+@lombok.Getter
 public class PutObjectRequest {
 
     /**
@@ -47,7 +39,7 @@ public class PutObjectRequest {
     /**
      * The object to upload to the object store.
      */
-    private InputStream putObjectBody;
+    private java.io.InputStream putObjectBody;
 
     /**
      * The entity tag to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
@@ -97,7 +89,7 @@ public class PutObjectRequest {
     /**
      * Optional user-defined metadata key and value.
      */
-    private Map<String, String> opcMeta;
+    private java.util.Map<String, String> opcMeta;
 
     public static class Builder {
         /**

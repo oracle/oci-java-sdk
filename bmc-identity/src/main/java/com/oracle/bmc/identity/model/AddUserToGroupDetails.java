@@ -3,36 +3,27 @@
  */
 package com.oracle.bmc.identity.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = AddUserToGroupDetails.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = AddUserToGroupDetails.Builder.class
+)
 public class AddUserToGroupDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("userId")
+        @com.fasterxml.jackson.annotation.JsonProperty("userId")
         private String userId;
 
-        @JsonProperty("groupId")
+        @com.fasterxml.jackson.annotation.JsonProperty("groupId")
         private String groupId;
 
         public AddUserToGroupDetails build() {
             return new AddUserToGroupDetails(userId, groupId);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(AddUserToGroupDetails o) {
             return userId(o.getUserId()).groupId(o.getGroupId());
         }
@@ -48,16 +39,16 @@ public class AddUserToGroupDetails {
     /**
      * The OCID of the user.
      **/
-    @JsonProperty("userId")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("userId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String userId;
 
     /**
      * The OCID of the group.
      **/
-    @JsonProperty("groupId")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("groupId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String groupId;
 }

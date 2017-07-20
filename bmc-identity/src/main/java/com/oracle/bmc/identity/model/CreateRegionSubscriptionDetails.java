@@ -3,33 +3,24 @@
  */
 package com.oracle.bmc.identity.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = CreateRegionSubscriptionDetails.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = CreateRegionSubscriptionDetails.Builder.class
+)
 public class CreateRegionSubscriptionDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("regionKey")
+        @com.fasterxml.jackson.annotation.JsonProperty("regionKey")
         private String regionKey;
 
         public CreateRegionSubscriptionDetails build() {
             return new CreateRegionSubscriptionDetails(regionKey);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateRegionSubscriptionDetails o) {
             return regionKey(o.getRegionKey());
         }
@@ -52,9 +43,9 @@ public class CreateRegionSubscriptionDetails {
      * Example: `PHX`
      *
      **/
-    @JsonProperty("regionKey")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 16)
+    @com.fasterxml.jackson.annotation.JsonProperty("regionKey")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 16)
     String regionKey;
 }

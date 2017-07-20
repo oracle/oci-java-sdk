@@ -3,42 +3,31 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * Specific connection details for an IPSec tunnel.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = TunnelConfig.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TunnelConfig.Builder.class)
 public class TunnelConfig {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("ipAddress")
+        @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
-        @JsonProperty("sharedSecret")
+        @com.fasterxml.jackson.annotation.JsonProperty("sharedSecret")
         private String sharedSecret;
 
-        @JsonProperty("timeCreated")
-        private Date timeCreated;
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+        private java.util.Date timeCreated;
 
         public TunnelConfig build() {
             return new TunnelConfig(ipAddress, sharedSecret, timeCreated);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(TunnelConfig o) {
             return ipAddress(o.getIpAddress())
                     .sharedSecret(o.getSharedSecret())
@@ -59,10 +48,10 @@ public class TunnelConfig {
      * Example: `129.146.17.50`
      *
      **/
-    @JsonProperty("ipAddress")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 46)
+    @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 46)
     String ipAddress;
 
     /**
@@ -71,10 +60,10 @@ public class TunnelConfig {
      * Example: `vFG2IF6TWq4UToUiLSRDoJEUs6j1c.p8G.dVQxiMfMO0yXMLi.lZTbYIWhGu4V8o`
      *
      **/
-    @JsonProperty("sharedSecret")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("sharedSecret")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String sharedSecret;
 
     /**
@@ -83,6 +72,6 @@ public class TunnelConfig {
      * Example: `2016-08-25T21:10:29.600Z`
      *
      **/
-    @JsonProperty("timeCreated")
-    Date timeCreated;
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    java.util.Date timeCreated;
 }

@@ -3,14 +3,8 @@
  */
 package com.oracle.bmc.identity;
 
-import com.oracle.bmc.responses.AsyncHandler;
-
-import java.util.concurrent.Future;
-
 import com.oracle.bmc.identity.requests.*;
 import com.oracle.bmc.identity.responses.*;
-
-import com.oracle.bmc.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface IdentityAsync extends AutoCloseable {
@@ -27,7 +21,7 @@ public interface IdentityAsync extends AutoCloseable {
      * Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the endpoint.  If the service is not available in this region, however, an IllegalArgumentException will be raised.
      * @param region The region of the service.
      */
-    void setRegion(Region region);
+    void setRegion(com.oracle.bmc.Region region);
 
     /**
      * Sets the region to call (ex, 'us-phoenix-1').
@@ -53,12 +47,13 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<AddUserToGroupResponse> addUserToGroup(
+    java.util.concurrent.Future<AddUserToGroupResponse> addUserToGroup(
             AddUserToGroupRequest request,
-            AsyncHandler<AddUserToGroupRequest, AddUserToGroupResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<AddUserToGroupRequest, AddUserToGroupResponse>
+                    handler);
 
     /**
      * Creates a new compartment in your tenancy.
@@ -86,12 +81,14 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<CreateCompartmentResponse> createCompartment(
+    java.util.concurrent.Future<CreateCompartmentResponse> createCompartment(
             CreateCompartmentRequest request,
-            AsyncHandler<CreateCompartmentRequest, CreateCompartmentResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateCompartmentRequest, CreateCompartmentResponse>
+                    handler);
 
     /**
      * Creates a new group in your tenancy.
@@ -121,12 +118,12 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<CreateGroupResponse> createGroup(
+    java.util.concurrent.Future<CreateGroupResponse> createGroup(
             CreateGroupRequest request,
-            AsyncHandler<CreateGroupRequest, CreateGroupResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<CreateGroupRequest, CreateGroupResponse> handler);
 
     /**
      * Creates a new identity provider in your tenancy. For more information, see
@@ -153,12 +150,14 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<CreateIdentityProviderResponse> createIdentityProvider(
+    java.util.concurrent.Future<CreateIdentityProviderResponse> createIdentityProvider(
             CreateIdentityProviderRequest request,
-            AsyncHandler<CreateIdentityProviderRequest, CreateIdentityProviderResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateIdentityProviderRequest, CreateIdentityProviderResponse>
+                    handler);
 
     /**
      * Creates a single mapping between an IdP group and an IAM Service
@@ -169,12 +168,14 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<CreateIdpGroupMappingResponse> createIdpGroupMapping(
+    java.util.concurrent.Future<CreateIdpGroupMappingResponse> createIdpGroupMapping(
             CreateIdpGroupMappingRequest request,
-            AsyncHandler<CreateIdpGroupMappingRequest, CreateIdpGroupMappingResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateIdpGroupMappingRequest, CreateIdpGroupMappingResponse>
+                    handler);
 
     /**
      * Creates a new Console one-time password for the specified user. For more information about user
@@ -194,12 +195,14 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<CreateOrResetUIPasswordResponse> createOrResetUIPassword(
+    java.util.concurrent.Future<CreateOrResetUIPasswordResponse> createOrResetUIPassword(
             CreateOrResetUIPasswordRequest request,
-            AsyncHandler<CreateOrResetUIPasswordRequest, CreateOrResetUIPasswordResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateOrResetUIPasswordRequest, CreateOrResetUIPasswordResponse>
+                    handler);
 
     /**
      * Creates a new policy in the specified compartment (either the tenancy or another of your compartments).
@@ -225,12 +228,13 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<CreatePolicyResponse> createPolicy(
+    java.util.concurrent.Future<CreatePolicyResponse> createPolicy(
             CreatePolicyRequest request,
-            AsyncHandler<CreatePolicyRequest, CreatePolicyResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<CreatePolicyRequest, CreatePolicyResponse>
+                    handler);
 
     /**
      * Creates a subscription to a region for a tenancy.
@@ -240,12 +244,13 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<CreateRegionSubscriptionResponse> createRegionSubscription(
+    java.util.concurrent.Future<CreateRegionSubscriptionResponse> createRegionSubscription(
             CreateRegionSubscriptionRequest request,
-            AsyncHandler<CreateRegionSubscriptionRequest, CreateRegionSubscriptionResponse>
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateRegionSubscriptionRequest, CreateRegionSubscriptionResponse>
                     handler);
 
     /**
@@ -265,12 +270,14 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<CreateSwiftPasswordResponse> createSwiftPassword(
+    java.util.concurrent.Future<CreateSwiftPasswordResponse> createSwiftPassword(
             CreateSwiftPasswordRequest request,
-            AsyncHandler<CreateSwiftPasswordRequest, CreateSwiftPasswordResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateSwiftPasswordRequest, CreateSwiftPasswordResponse>
+                    handler);
 
     /**
      * Creates a new user in your tenancy. For conceptual information about users, your tenancy, and other
@@ -314,11 +321,12 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<CreateUserResponse> createUser(
-            CreateUserRequest request, AsyncHandler<CreateUserRequest, CreateUserResponse> handler);
+    java.util.concurrent.Future<CreateUserResponse> createUser(
+            CreateUserRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateUserRequest, CreateUserResponse> handler);
 
     /**
      * Deletes the specified API signing key for the specified user.
@@ -333,12 +341,13 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<DeleteApiKeyResponse> deleteApiKey(
+    java.util.concurrent.Future<DeleteApiKeyResponse> deleteApiKey(
             DeleteApiKeyRequest request,
-            AsyncHandler<DeleteApiKeyRequest, DeleteApiKeyResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<DeleteApiKeyRequest, DeleteApiKeyResponse>
+                    handler);
 
     /**
      * Deletes the specified group. The group must be empty.
@@ -348,12 +357,12 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<DeleteGroupResponse> deleteGroup(
+    java.util.concurrent.Future<DeleteGroupResponse> deleteGroup(
             DeleteGroupRequest request,
-            AsyncHandler<DeleteGroupRequest, DeleteGroupResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<DeleteGroupRequest, DeleteGroupResponse> handler);
 
     /**
      * Deletes the specified identity provider. The identity provider must not have
@@ -364,12 +373,14 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<DeleteIdentityProviderResponse> deleteIdentityProvider(
+    java.util.concurrent.Future<DeleteIdentityProviderResponse> deleteIdentityProvider(
             DeleteIdentityProviderRequest request,
-            AsyncHandler<DeleteIdentityProviderRequest, DeleteIdentityProviderResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteIdentityProviderRequest, DeleteIdentityProviderResponse>
+                    handler);
 
     /**
      * Deletes the specified group mapping.
@@ -378,12 +389,14 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<DeleteIdpGroupMappingResponse> deleteIdpGroupMapping(
+    java.util.concurrent.Future<DeleteIdpGroupMappingResponse> deleteIdpGroupMapping(
             DeleteIdpGroupMappingRequest request,
-            AsyncHandler<DeleteIdpGroupMappingRequest, DeleteIdpGroupMappingResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteIdpGroupMappingRequest, DeleteIdpGroupMappingResponse>
+                    handler);
 
     /**
      * Deletes the specified policy. The deletion takes effect typically within 10 seconds.
@@ -392,12 +405,13 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<DeletePolicyResponse> deletePolicy(
+    java.util.concurrent.Future<DeletePolicyResponse> deletePolicy(
             DeletePolicyRequest request,
-            AsyncHandler<DeletePolicyRequest, DeletePolicyResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<DeletePolicyRequest, DeletePolicyResponse>
+                    handler);
 
     /**
      * Deletes the specified Swift password for the specified user.
@@ -407,12 +421,14 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<DeleteSwiftPasswordResponse> deleteSwiftPassword(
+    java.util.concurrent.Future<DeleteSwiftPasswordResponse> deleteSwiftPassword(
             DeleteSwiftPasswordRequest request,
-            AsyncHandler<DeleteSwiftPasswordRequest, DeleteSwiftPasswordResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSwiftPasswordRequest, DeleteSwiftPasswordResponse>
+                    handler);
 
     /**
      * Deletes the specified user. The user must not be in any groups.
@@ -421,11 +437,12 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<DeleteUserResponse> deleteUser(
-            DeleteUserRequest request, AsyncHandler<DeleteUserRequest, DeleteUserResponse> handler);
+    java.util.concurrent.Future<DeleteUserResponse> deleteUser(
+            DeleteUserRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteUserRequest, DeleteUserResponse> handler);
 
     /**
      * Gets the specified compartment's information.
@@ -442,12 +459,13 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<GetCompartmentResponse> getCompartment(
+    java.util.concurrent.Future<GetCompartmentResponse> getCompartment(
             GetCompartmentRequest request,
-            AsyncHandler<GetCompartmentRequest, GetCompartmentResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<GetCompartmentRequest, GetCompartmentResponse>
+                    handler);
 
     /**
      * Gets the specified group's information.
@@ -461,11 +479,12 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<GetGroupResponse> getGroup(
-            GetGroupRequest request, AsyncHandler<GetGroupRequest, GetGroupResponse> handler);
+    java.util.concurrent.Future<GetGroupResponse> getGroup(
+            GetGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetGroupRequest, GetGroupResponse> handler);
 
     /**
      * Gets the specified identity provider's information.
@@ -474,12 +493,14 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<GetIdentityProviderResponse> getIdentityProvider(
+    java.util.concurrent.Future<GetIdentityProviderResponse> getIdentityProvider(
             GetIdentityProviderRequest request,
-            AsyncHandler<GetIdentityProviderRequest, GetIdentityProviderResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetIdentityProviderRequest, GetIdentityProviderResponse>
+                    handler);
 
     /**
      * Gets the specified group mapping.
@@ -488,12 +509,14 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<GetIdpGroupMappingResponse> getIdpGroupMapping(
+    java.util.concurrent.Future<GetIdpGroupMappingResponse> getIdpGroupMapping(
             GetIdpGroupMappingRequest request,
-            AsyncHandler<GetIdpGroupMappingRequest, GetIdpGroupMappingResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetIdpGroupMappingRequest, GetIdpGroupMappingResponse>
+                    handler);
 
     /**
      * Gets the specified policy's information.
@@ -502,11 +525,12 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<GetPolicyResponse> getPolicy(
-            GetPolicyRequest request, AsyncHandler<GetPolicyRequest, GetPolicyResponse> handler);
+    java.util.concurrent.Future<GetPolicyResponse> getPolicy(
+            GetPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetPolicyRequest, GetPolicyResponse> handler);
 
     /**
      * Get the specified tenancy's information.
@@ -515,11 +539,12 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<GetTenancyResponse> getTenancy(
-            GetTenancyRequest request, AsyncHandler<GetTenancyRequest, GetTenancyResponse> handler);
+    java.util.concurrent.Future<GetTenancyResponse> getTenancy(
+            GetTenancyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetTenancyRequest, GetTenancyResponse> handler);
 
     /**
      * Gets the specified user's information.
@@ -528,11 +553,12 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<GetUserResponse> getUser(
-            GetUserRequest request, AsyncHandler<GetUserRequest, GetUserResponse> handler);
+    java.util.concurrent.Future<GetUserResponse> getUser(
+            GetUserRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetUserRequest, GetUserResponse> handler);
 
     /**
      * Gets the specified UserGroupMembership's information.
@@ -541,12 +567,14 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<GetUserGroupMembershipResponse> getUserGroupMembership(
+    java.util.concurrent.Future<GetUserGroupMembershipResponse> getUserGroupMembership(
             GetUserGroupMembershipRequest request,
-            AsyncHandler<GetUserGroupMembershipRequest, GetUserGroupMembershipResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetUserGroupMembershipRequest, GetUserGroupMembershipResponse>
+                    handler);
 
     /**
      * Lists the API signing keys for the specified user. A user can have a maximum of three keys.
@@ -559,12 +587,12 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListApiKeysResponse> listApiKeys(
+    java.util.concurrent.Future<ListApiKeysResponse> listApiKeys(
             ListApiKeysRequest request,
-            AsyncHandler<ListApiKeysRequest, ListApiKeysResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<ListApiKeysRequest, ListApiKeysResponse> handler);
 
     /**
      * Lists the Availability Domains in your tenancy. Specify the OCID of either the tenancy or another
@@ -576,12 +604,14 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListAvailabilityDomainsResponse> listAvailabilityDomains(
+    java.util.concurrent.Future<ListAvailabilityDomainsResponse> listAvailabilityDomains(
             ListAvailabilityDomainsRequest request,
-            AsyncHandler<ListAvailabilityDomainsRequest, ListAvailabilityDomainsResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListAvailabilityDomainsRequest, ListAvailabilityDomainsResponse>
+                    handler);
 
     /**
      * Lists the compartments in your tenancy. You must specify your tenancy's OCID as the value
@@ -593,12 +623,13 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListCompartmentsResponse> listCompartments(
+    java.util.concurrent.Future<ListCompartmentsResponse> listCompartments(
             ListCompartmentsRequest request,
-            AsyncHandler<ListCompartmentsRequest, ListCompartmentsResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<ListCompartmentsRequest, ListCompartmentsResponse>
+                    handler);
 
     /**
      * Lists the groups in your tenancy. You must specify your tenancy's OCID as the value for
@@ -610,11 +641,12 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListGroupsResponse> listGroups(
-            ListGroupsRequest request, AsyncHandler<ListGroupsRequest, ListGroupsResponse> handler);
+    java.util.concurrent.Future<ListGroupsResponse> listGroups(
+            ListGroupsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListGroupsRequest, ListGroupsResponse> handler);
 
     /**
      * Lists all the identity providers in your tenancy. You must specify the identity provider type (e.g., `SAML2` for
@@ -627,12 +659,14 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListIdentityProvidersResponse> listIdentityProviders(
+    java.util.concurrent.Future<ListIdentityProvidersResponse> listIdentityProviders(
             ListIdentityProvidersRequest request,
-            AsyncHandler<ListIdentityProvidersRequest, ListIdentityProvidersResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListIdentityProvidersRequest, ListIdentityProvidersResponse>
+                    handler);
 
     /**
      * Lists the group mappings for the specified identity provider.
@@ -642,12 +676,14 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListIdpGroupMappingsResponse> listIdpGroupMappings(
+    java.util.concurrent.Future<ListIdpGroupMappingsResponse> listIdpGroupMappings(
             ListIdpGroupMappingsRequest request,
-            AsyncHandler<ListIdpGroupMappingsRequest, ListIdpGroupMappingsResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListIdpGroupMappingsRequest, ListIdpGroupMappingsResponse>
+                    handler);
 
     /**
      * Lists the policies in the specified compartment (either the tenancy or another of your compartments).
@@ -661,12 +697,13 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListPoliciesResponse> listPolicies(
+    java.util.concurrent.Future<ListPoliciesResponse> listPolicies(
             ListPoliciesRequest request,
-            AsyncHandler<ListPoliciesRequest, ListPoliciesResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<ListPoliciesRequest, ListPoliciesResponse>
+                    handler);
 
     /**
      * Lists the region subscriptions for the specified tenancy.
@@ -675,12 +712,14 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListRegionSubscriptionsResponse> listRegionSubscriptions(
+    java.util.concurrent.Future<ListRegionSubscriptionsResponse> listRegionSubscriptions(
             ListRegionSubscriptionsRequest request,
-            AsyncHandler<ListRegionSubscriptionsRequest, ListRegionSubscriptionsResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListRegionSubscriptionsRequest, ListRegionSubscriptionsResponse>
+                    handler);
 
     /**
      * Lists all the regions offered by Oracle Bare Metal Cloud Services.
@@ -689,12 +728,12 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListRegionsResponse> listRegions(
+    java.util.concurrent.Future<ListRegionsResponse> listRegions(
             ListRegionsRequest request,
-            AsyncHandler<ListRegionsRequest, ListRegionsResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<ListRegionsRequest, ListRegionsResponse> handler);
 
     /**
      * Lists the Swift passwords for the specified user. The returned object contains the password's OCID, but not
@@ -705,12 +744,14 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListSwiftPasswordsResponse> listSwiftPasswords(
+    java.util.concurrent.Future<ListSwiftPasswordsResponse> listSwiftPasswords(
             ListSwiftPasswordsRequest request,
-            AsyncHandler<ListSwiftPasswordsRequest, ListSwiftPasswordsResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSwiftPasswordsRequest, ListSwiftPasswordsResponse>
+                    handler);
 
     /**
      * Lists the `UserGroupMembership` objects in your tenancy. You must specify your tenancy's OCID
@@ -728,12 +769,13 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListUserGroupMembershipsResponse> listUserGroupMemberships(
+    java.util.concurrent.Future<ListUserGroupMembershipsResponse> listUserGroupMemberships(
             ListUserGroupMembershipsRequest request,
-            AsyncHandler<ListUserGroupMembershipsRequest, ListUserGroupMembershipsResponse>
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListUserGroupMembershipsRequest, ListUserGroupMembershipsResponse>
                     handler);
 
     /**
@@ -746,11 +788,12 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListUsersResponse> listUsers(
-            ListUsersRequest request, AsyncHandler<ListUsersRequest, ListUsersResponse> handler);
+    java.util.concurrent.Future<ListUsersResponse> listUsers(
+            ListUsersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListUsersRequest, ListUsersResponse> handler);
 
     /**
      * Removes a user from a group by deleting the corresponding `UserGroupMembership`.
@@ -759,12 +802,14 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<RemoveUserFromGroupResponse> removeUserFromGroup(
+    java.util.concurrent.Future<RemoveUserFromGroupResponse> removeUserFromGroup(
             RemoveUserFromGroupRequest request,
-            AsyncHandler<RemoveUserFromGroupRequest, RemoveUserFromGroupResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveUserFromGroupRequest, RemoveUserFromGroupResponse>
+                    handler);
 
     /**
      * Updates the specified compartment's description.
@@ -773,12 +818,14 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<UpdateCompartmentResponse> updateCompartment(
+    java.util.concurrent.Future<UpdateCompartmentResponse> updateCompartment(
             UpdateCompartmentRequest request,
-            AsyncHandler<UpdateCompartmentRequest, UpdateCompartmentResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateCompartmentRequest, UpdateCompartmentResponse>
+                    handler);
 
     /**
      * Updates the specified group.
@@ -787,12 +834,12 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<UpdateGroupResponse> updateGroup(
+    java.util.concurrent.Future<UpdateGroupResponse> updateGroup(
             UpdateGroupRequest request,
-            AsyncHandler<UpdateGroupRequest, UpdateGroupResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<UpdateGroupRequest, UpdateGroupResponse> handler);
 
     /**
      * Updates the specified identity provider.
@@ -801,12 +848,14 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<UpdateIdentityProviderResponse> updateIdentityProvider(
+    java.util.concurrent.Future<UpdateIdentityProviderResponse> updateIdentityProvider(
             UpdateIdentityProviderRequest request,
-            AsyncHandler<UpdateIdentityProviderRequest, UpdateIdentityProviderResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateIdentityProviderRequest, UpdateIdentityProviderResponse>
+                    handler);
 
     /**
      * Updates the specified group mapping.
@@ -815,12 +864,14 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<UpdateIdpGroupMappingResponse> updateIdpGroupMapping(
+    java.util.concurrent.Future<UpdateIdpGroupMappingResponse> updateIdpGroupMapping(
             UpdateIdpGroupMappingRequest request,
-            AsyncHandler<UpdateIdpGroupMappingRequest, UpdateIdpGroupMappingResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateIdpGroupMappingRequest, UpdateIdpGroupMappingResponse>
+                    handler);
 
     /**
      * Updates the specified policy. You can update the description or the policy statements themselves.
@@ -832,12 +883,13 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<UpdatePolicyResponse> updatePolicy(
+    java.util.concurrent.Future<UpdatePolicyResponse> updatePolicy(
             UpdatePolicyRequest request,
-            AsyncHandler<UpdatePolicyRequest, UpdatePolicyResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<UpdatePolicyRequest, UpdatePolicyResponse>
+                    handler);
 
     /**
      * Updates the specified Swift password's description.
@@ -847,12 +899,14 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<UpdateSwiftPasswordResponse> updateSwiftPassword(
+    java.util.concurrent.Future<UpdateSwiftPasswordResponse> updateSwiftPassword(
             UpdateSwiftPasswordRequest request,
-            AsyncHandler<UpdateSwiftPasswordRequest, UpdateSwiftPasswordResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSwiftPasswordRequest, UpdateSwiftPasswordResponse>
+                    handler);
 
     /**
      * Updates the description of the specified user.
@@ -861,11 +915,12 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<UpdateUserResponse> updateUser(
-            UpdateUserRequest request, AsyncHandler<UpdateUserRequest, UpdateUserResponse> handler);
+    java.util.concurrent.Future<UpdateUserResponse> updateUser(
+            UpdateUserRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateUserRequest, UpdateUserResponse> handler);
 
     /**
      * Updates the state of the specified user.
@@ -875,12 +930,13 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<UpdateUserStateResponse> updateUserState(
+    java.util.concurrent.Future<UpdateUserStateResponse> updateUserState(
             UpdateUserStateRequest request,
-            AsyncHandler<UpdateUserStateRequest, UpdateUserStateResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<UpdateUserStateRequest, UpdateUserStateResponse>
+                    handler);
 
     /**
      * Uploads an API signing key for the specified user.
@@ -904,10 +960,11 @@ public interface IdentityAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<UploadApiKeyResponse> uploadApiKey(
+    java.util.concurrent.Future<UploadApiKeyResponse> uploadApiKey(
             UploadApiKeyRequest request,
-            AsyncHandler<UploadApiKeyRequest, UploadApiKeyResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<UploadApiKeyRequest, UploadApiKeyResponse>
+                    handler);
 }

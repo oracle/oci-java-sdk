@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.identity.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * A localized geographic area, such as Phoenix, AZ. Oracle Bare Metal Cloud Services is hosted in regions and Availability
  * Domains. A region is composed of several Availability Domains. An Availability Domain is one or more data centers
@@ -25,24 +14,24 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = Region.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Region.Builder.class)
 public class Region {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("key")
+        @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
-        @JsonProperty("name")
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         public Region build() {
             return new Region(key, name);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Region o) {
             return key(o.getKey()).name(o.getName());
         }
@@ -63,8 +52,8 @@ public class Region {
      * - `IAD`
      *
      **/
-    @JsonProperty("key")
-    @Size(min = 1, max = 16)
+    @com.fasterxml.jackson.annotation.JsonProperty("key")
+    @javax.validation.constraints.Size(min = 1, max = 16)
     String key;
 
     /**
@@ -75,7 +64,7 @@ public class Region {
      * - `us-ashburn-1`
      *
      **/
-    @JsonProperty("name")
-    @Size(min = 1, max = 16)
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
+    @javax.validation.constraints.Size(min = 1, max = 16)
     String name;
 }

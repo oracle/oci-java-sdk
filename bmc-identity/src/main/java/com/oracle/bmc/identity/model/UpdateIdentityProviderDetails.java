@@ -3,29 +3,21 @@
  */
 package com.oracle.bmc.identity.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@NonFinal
-@AllArgsConstructor(access = AccessLevel.PROTECTED)
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
+@lombok.Value
+@lombok.experimental.NonFinal
+@lombok.AllArgsConstructor(access = lombok.AccessLevel.PROTECTED)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "protocol",
     defaultImpl = UpdateIdentityProviderDetails.class
 )
-@JsonSubTypes({
-    @JsonSubTypes.Type(value = UpdateSaml2IdentityProviderDetails.class, name = "SAML2")
+@com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateSaml2IdentityProviderDetails.class,
+        name = "SAML2"
+    )
 })
 public class UpdateIdentityProviderDetails {
 
@@ -34,7 +26,7 @@ public class UpdateIdentityProviderDetails {
      * be unique, and it's changeable.
      *
      **/
-    @JsonProperty("description")
-    @Size(min = 1, max = 400)
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    @javax.validation.constraints.Size(min = 1, max = 400)
     String description;
 }

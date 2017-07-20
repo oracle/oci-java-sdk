@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * For use with Oracle Bare Metal Cloud Services FastConnect.
  * <p>
@@ -39,62 +28,62 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = VirtualCircuit.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = VirtualCircuit.Builder.class)
 public class VirtualCircuit {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("bandwidthShapeName")
+        @com.fasterxml.jackson.annotation.JsonProperty("bandwidthShapeName")
         private String bandwidthShapeName;
 
-        @JsonProperty("bgpSessionState")
+        @com.fasterxml.jackson.annotation.JsonProperty("bgpSessionState")
         private BgpSessionState bgpSessionState;
 
-        @JsonProperty("compartmentId")
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
-        @JsonProperty("crossConnectMappings")
-        private List<CrossConnectMapping> crossConnectMappings;
+        @com.fasterxml.jackson.annotation.JsonProperty("crossConnectMappings")
+        private java.util.List<CrossConnectMapping> crossConnectMappings;
 
-        @JsonProperty("customerBgpAsn")
+        @com.fasterxml.jackson.annotation.JsonProperty("customerBgpAsn")
         private Integer customerBgpAsn;
 
-        @JsonProperty("displayName")
+        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
-        @JsonProperty("gatewayId")
+        @com.fasterxml.jackson.annotation.JsonProperty("gatewayId")
         private String gatewayId;
 
-        @JsonProperty("id")
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
-        @JsonProperty("lifecycleState")
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
-        @JsonProperty("oracleBgpAsn")
+        @com.fasterxml.jackson.annotation.JsonProperty("oracleBgpAsn")
         private Integer oracleBgpAsn;
 
-        @JsonProperty("providerName")
+        @com.fasterxml.jackson.annotation.JsonProperty("providerName")
         private String providerName;
 
-        @JsonProperty("providerServiceName")
+        @com.fasterxml.jackson.annotation.JsonProperty("providerServiceName")
         private String providerServiceName;
 
-        @JsonProperty("providerState")
+        @com.fasterxml.jackson.annotation.JsonProperty("providerState")
         private ProviderState providerState;
 
-        @JsonProperty("referenceComment")
+        @com.fasterxml.jackson.annotation.JsonProperty("referenceComment")
         private String referenceComment;
 
-        @JsonProperty("region")
+        @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
-        @JsonProperty("timeCreated")
-        private Date timeCreated;
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+        private java.util.Date timeCreated;
 
-        @JsonProperty("type")
+        @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         public VirtualCircuit build() {
@@ -118,7 +107,7 @@ public class VirtualCircuit {
                     type);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(VirtualCircuit o) {
             return bandwidthShapeName(o.getBandwidthShapeName())
                     .bgpSessionState(o.getBgpSessionState())
@@ -150,7 +139,7 @@ public class VirtualCircuit {
     /**
      * The provisioned data rate of the connection.
      **/
-    @JsonProperty("bandwidthShapeName")
+    @com.fasterxml.jackson.annotation.JsonProperty("bandwidthShapeName")
     String bandwidthShapeName;
     /**
      * The state of the BGP session associated with the virtual circuit.
@@ -167,10 +156,10 @@ public class VirtualCircuit {
         UnknownEnumValue(null);
 
         private final String value;
-        private static Map<String, BgpSessionState> map;
+        private static java.util.Map<String, BgpSessionState> map;
 
         static {
-            map = new HashMap<>();
+            map = new java.util.HashMap<>();
             for (BgpSessionState v : BgpSessionState.values()) {
                 if (v != UnknownEnumValue) {
                     map.put(v.getValue(), v);
@@ -182,12 +171,12 @@ public class VirtualCircuit {
             this.value = value;
         }
 
-        @JsonValue
+        @com.fasterxml.jackson.annotation.JsonValue
         public String getValue() {
             return value;
         }
 
-        @JsonCreator
+        @com.fasterxml.jackson.annotation.JsonCreator
         public static BgpSessionState create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
@@ -201,14 +190,14 @@ public class VirtualCircuit {
     /**
      * The state of the BGP session associated with the virtual circuit.
      **/
-    @JsonProperty("bgpSessionState")
+    @com.fasterxml.jackson.annotation.JsonProperty("bgpSessionState")
     BgpSessionState bgpSessionState;
 
     /**
      * The OCID of the compartment containing the virtual circuit.
      **/
-    @JsonProperty("compartmentId")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
@@ -217,8 +206,8 @@ public class VirtualCircuit {
      * virtual circuit.
      *
      **/
-    @JsonProperty("crossConnectMappings")
-    List<CrossConnectMapping> crossConnectMappings;
+    @com.fasterxml.jackson.annotation.JsonProperty("crossConnectMappings")
+    java.util.List<CrossConnectMapping> crossConnectMappings;
 
     /**
      * The BGP ASN of the network at the other end of the BGP
@@ -228,15 +217,16 @@ public class VirtualCircuit {
      * is the provider's ASN.
      *
      **/
-    @JsonProperty("customerBgpAsn")
+    @com.fasterxml.jackson.annotation.JsonProperty("customerBgpAsn")
     Integer customerBgpAsn;
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      **/
-    @JsonProperty("displayName")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
@@ -244,15 +234,15 @@ public class VirtualCircuit {
      * that this virtual circuit uses.
      *
      **/
-    @JsonProperty("gatewayId")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("gatewayId")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String gatewayId;
 
     /**
      * The virtual circuit's Oracle ID (OCID).
      **/
-    @JsonProperty("id")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String id;
     /**
      * The virtual circuit's current state. For information about
@@ -278,10 +268,10 @@ public class VirtualCircuit {
         UnknownEnumValue(null);
 
         private final String value;
-        private static Map<String, LifecycleState> map;
+        private static java.util.Map<String, LifecycleState> map;
 
         static {
-            map = new HashMap<>();
+            map = new java.util.HashMap<>();
             for (LifecycleState v : LifecycleState.values()) {
                 if (v != UnknownEnumValue) {
                     map.put(v.getValue(), v);
@@ -293,12 +283,12 @@ public class VirtualCircuit {
             this.value = value;
         }
 
-        @JsonValue
+        @com.fasterxml.jackson.annotation.JsonValue
         public String getValue() {
             return value;
         }
 
-        @JsonCreator
+        @com.fasterxml.jackson.annotation.JsonCreator
         public static LifecycleState create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
@@ -315,29 +305,29 @@ public class VirtualCircuit {
      * [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
      *
      **/
-    @JsonProperty("lifecycleState")
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
 
     /**
      * The Oracle BGP ASN.
      **/
-    @JsonProperty("oracleBgpAsn")
+    @com.fasterxml.jackson.annotation.JsonProperty("oracleBgpAsn")
     Integer oracleBgpAsn;
 
     /**
      * The name of the provider (if the customer is connecting via a provider).
      *
      **/
-    @JsonProperty("providerName")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("providerName")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String providerName;
 
     /**
      * The name of the service offered by the provider (if the customer is connecting via a provider).
      *
      **/
-    @JsonProperty("providerServiceName")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("providerServiceName")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String providerServiceName;
     /**
      * The provider's state in relation to this virtual circuit (if the
@@ -359,10 +349,10 @@ public class VirtualCircuit {
         UnknownEnumValue(null);
 
         private final String value;
-        private static Map<String, ProviderState> map;
+        private static java.util.Map<String, ProviderState> map;
 
         static {
-            map = new HashMap<>();
+            map = new java.util.HashMap<>();
             for (ProviderState v : ProviderState.values()) {
                 if (v != UnknownEnumValue) {
                     map.put(v.getValue(), v);
@@ -374,12 +364,12 @@ public class VirtualCircuit {
             this.value = value;
         }
 
-        @JsonValue
+        @com.fasterxml.jackson.annotation.JsonValue
         public String getValue() {
             return value;
         }
 
-        @JsonCreator
+        @com.fasterxml.jackson.annotation.JsonCreator
         public static ProviderState create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
@@ -398,7 +388,7 @@ public class VirtualCircuit {
      * circuit, or has de-provisioned it.
      *
      **/
-    @JsonProperty("providerState")
+    @com.fasterxml.jackson.annotation.JsonProperty("providerState")
     ProviderState providerState;
 
     /**
@@ -406,7 +396,7 @@ public class VirtualCircuit {
      * (if the customer is connecting via a provider).
      *
      **/
-    @JsonProperty("referenceComment")
+    @com.fasterxml.jackson.annotation.JsonProperty("referenceComment")
     String referenceComment;
 
     /**
@@ -414,8 +404,8 @@ public class VirtualCircuit {
      * circuit is located.
      *
      **/
-    @JsonProperty("region")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("region")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String region;
 
     /**
@@ -425,8 +415,8 @@ public class VirtualCircuit {
      * Example: `2016-08-25T21:10:29.600Z`
      *
      **/
-    @JsonProperty("timeCreated")
-    Date timeCreated;
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    java.util.Date timeCreated;
     /**
      * The type of IP addresses used in this virtual circuit. PRIVATE means
      * [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses
@@ -445,10 +435,10 @@ public class VirtualCircuit {
         UnknownEnumValue(null);
 
         private final String value;
-        private static Map<String, Type> map;
+        private static java.util.Map<String, Type> map;
 
         static {
-            map = new HashMap<>();
+            map = new java.util.HashMap<>();
             for (Type v : Type.values()) {
                 if (v != UnknownEnumValue) {
                     map.put(v.getValue(), v);
@@ -460,12 +450,12 @@ public class VirtualCircuit {
             this.value = value;
         }
 
-        @JsonValue
+        @com.fasterxml.jackson.annotation.JsonValue
         public String getValue() {
             return value;
         }
 
-        @JsonCreator
+        @com.fasterxml.jackson.annotation.JsonCreator
         public static Type create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
@@ -481,6 +471,6 @@ public class VirtualCircuit {
      * (10.0.0.0/8, 172.16/12, and 192.168/16). Only PRIVATE is supported.
      *
      **/
-    @JsonProperty("type")
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
     Type type;
 }

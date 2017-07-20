@@ -3,21 +3,11 @@
  */
 package com.oracle.bmc.core.responses;
 
-import java.io.*;
-import java.util.*;
-
-import com.oracle.bmc.model.*;
-import javax.ws.rs.core.*;
-
-import lombok.Builder;
-import lombok.Getter;
-import lombok.experimental.Accessors;
-
 import com.oracle.bmc.core.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Builder(builderClassName = "Builder")
-@Getter
+@lombok.Builder(builderClassName = "Builder")
+@lombok.Getter
 public class ListVolumeAttachmentsResponse {
 
     /**
@@ -38,7 +28,7 @@ public class ListVolumeAttachmentsResponse {
     /**
      * A list of VolumeAttachment instances.
      */
-    private List<VolumeAttachment> items;
+    private java.util.List<VolumeAttachment> items;
 
     public static class Builder {
         /**

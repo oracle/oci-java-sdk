@@ -3,39 +3,24 @@
  */
 package com.oracle.bmc.objectstorage.internal.http;
 
-import java.io.InputStream;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-
-import javax.ws.rs.client.*;
-import javax.ws.rs.core.*;
-
-import com.oracle.bmc.http.internal.*;
-import static com.oracle.bmc.util.internal.HttpUtils.*;
-import com.oracle.bmc.model.*;
 import com.oracle.bmc.objectstorage.model.*;
 import com.oracle.bmc.objectstorage.requests.*;
 import com.oracle.bmc.objectstorage.responses.*;
 
-import com.google.common.base.Function;
-import com.google.common.base.Optional;
-
-import lombok.extern.slf4j.Slf4j;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Slf4j
+@lombok.extern.slf4j.Slf4j
 public class ListObjectsConverter {
-    private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
-            new ResponseConversionFunctionFactory();
+    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
+            RESPONSE_CONVERSION_FACTORY =
+                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
     public static ListObjectsRequest interceptRequest(ListObjectsRequest request) {
 
         return request;
     }
 
-    public static Invocation.Builder fromRequest(RestClient client, ListObjectsRequest request) {
+    public static javax.ws.rs.client.Invocation.Builder fromRequest(
+            com.oracle.bmc.http.internal.RestClient client, ListObjectsRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
         }
@@ -48,43 +33,70 @@ public class ListObjectsConverter {
             throw new NullPointerException("bucketName is required");
         }
 
-        WebTarget target =
+        javax.ws.rs.client.WebTarget target =
                 client.getBaseTarget()
                         .path("/")
                         .path("n")
-                        .path(encodePathSegment(request.getNamespaceName()))
+                        .path(
+                                com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
+                                        request.getNamespaceName()))
                         .path("b")
-                        .path(encodePathSegment(request.getBucketName()))
+                        .path(
+                                com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
+                                        request.getBucketName()))
                         .path("o");
 
         if (request.getPrefix() != null) {
-            target = target.queryParam("prefix", attemptEncodeQueryParam(request.getPrefix()));
+            target =
+                    target.queryParam(
+                            "prefix",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getPrefix()));
         }
 
         if (request.getStart() != null) {
-            target = target.queryParam("start", attemptEncodeQueryParam(request.getStart()));
+            target =
+                    target.queryParam(
+                            "start",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getStart()));
         }
 
         if (request.getEnd() != null) {
-            target = target.queryParam("end", attemptEncodeQueryParam(request.getEnd()));
+            target =
+                    target.queryParam(
+                            "end",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getEnd()));
         }
 
         if (request.getLimit() != null) {
-            target = target.queryParam("limit", attemptEncodeQueryParam(request.getLimit()));
+            target =
+                    target.queryParam(
+                            "limit",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getLimit()));
         }
 
         if (request.getDelimiter() != null) {
             target =
-                    target.queryParam("delimiter", attemptEncodeQueryParam(request.getDelimiter()));
+                    target.queryParam(
+                            "delimiter",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getDelimiter()));
         }
 
         if (request.getFields() != null) {
-            target = target.queryParam("fields", attemptEncodeQueryParam(request.getFields()));
+            target =
+                    target.queryParam(
+                            "fields",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getFields()));
         }
 
-        Invocation.Builder ib = target.request();
+        javax.ws.rs.client.Invocation.Builder ib = target.request();
 
-        ib.accept(MediaType.APPLICATION_JSON);
+        ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 
         if (request.getOpcClientRequestId() != null) {
             ib.header("opc-client-request-id", request.getOpcClientRequestId());
@@ -93,47 +105,62 @@ public class ListObjectsConverter {
         return ib;
     }
 
-    public static Function<Response, ListObjectsResponse> fromResponse() {
-        final Function<Response, ListObjectsResponse> transformer =
-                new Function<Response, ListObjectsResponse>() {
-                    @Override
-                    public ListObjectsResponse apply(Response rawResponse) {
-                        LOG.trace("Transform function invoked for ListObjectsResponse");
-                        Function<Response, WithHeaders<ListObjects>> responseFn =
-                                RESPONSE_CONVERSION_FACTORY.create(ListObjects.class);
+    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListObjectsResponse>
+            fromResponse() {
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListObjectsResponse>
+                transformer =
+                        new com.google.common.base.Function<
+                                javax.ws.rs.core.Response, ListObjectsResponse>() {
+                            @Override
+                            public ListObjectsResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace("Transform function invoked for ListObjectsResponse");
+                                com.google.common.base.Function<
+                                                javax.ws.rs.core.Response,
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        ListObjects>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        ListObjects.class);
 
-                        WithHeaders<ListObjects> response = responseFn.apply(rawResponse);
-                        MultivaluedMap<String, String> headers = response.getHeaders();
+                                com.oracle.bmc.http.internal.WithHeaders<ListObjects> response =
+                                        responseFn.apply(rawResponse);
+                                javax.ws.rs.core.MultivaluedMap<String, String> headers =
+                                        response.getHeaders();
 
-                        ListObjectsResponse.Builder builder = ListObjectsResponse.builder();
+                                ListObjectsResponse.Builder builder = ListObjectsResponse.builder();
 
-                        builder.listObjects(response.getItem());
+                                builder.listObjects(response.getItem());
 
-                        Optional<List<String>> opcClientRequestIdHeader =
-                                HeaderUtils.get(headers, "opc-client-request-id");
-                        if (opcClientRequestIdHeader.isPresent()) {
-                            builder.opcClientRequestId(
-                                    HeaderUtils.toValue(
-                                            "opc-client-request-id",
-                                            opcClientRequestIdHeader.get().get(0),
-                                            String.class));
-                        }
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcClientRequestIdHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-client-request-id");
+                                if (opcClientRequestIdHeader.isPresent()) {
+                                    builder.opcClientRequestId(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-client-request-id",
+                                                    opcClientRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
 
-                        Optional<List<String>> opcRequestIdHeader =
-                                HeaderUtils.get(headers, "opc-request-id");
-                        if (opcRequestIdHeader.isPresent()) {
-                            builder.opcRequestId(
-                                    HeaderUtils.toValue(
-                                            "opc-request-id",
-                                            opcRequestIdHeader.get().get(0),
-                                            String.class));
-                        }
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcRequestIdHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-request-id");
+                                if (opcRequestIdHeader.isPresent()) {
+                                    builder.opcRequestId(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-request-id",
+                                                    opcRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
 
-                        ListObjectsResponse responseWrapper = builder.build();
+                                ListObjectsResponse responseWrapper = builder.build();
 
-                        return responseWrapper;
-                    }
-                };
+                                return responseWrapper;
+                            }
+                        };
         return transformer;
     }
 }

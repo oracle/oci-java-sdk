@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * A base object for all types of attachments between a storage volume and an instance.
  * For specific details about iSCSI attachments, see
@@ -24,16 +13,21 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@NonFinal
-@AllArgsConstructor(access = AccessLevel.PROTECTED)
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
+@lombok.Value
+@lombok.experimental.NonFinal
+@lombok.AllArgsConstructor(access = lombok.AccessLevel.PROTECTED)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "attachmentType",
     defaultImpl = VolumeAttachment.class
 )
-@JsonSubTypes({@JsonSubTypes.Type(value = IScsiVolumeAttachment.class, name = "iscsi")})
+@com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = IScsiVolumeAttachment.class,
+        name = "iscsi"
+    )
+})
 public class VolumeAttachment {
 
     /**
@@ -42,47 +36,48 @@ public class VolumeAttachment {
      * Example: `Uocm:PHX-AD-1`
      *
      **/
-    @JsonProperty("availabilityDomain")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String availabilityDomain;
 
     /**
      * The OCID of the compartment.
      **/
-    @JsonProperty("compartmentId")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
      * A user-friendly name. Does not have to be unique, and it cannot be changed.
+     * Avoid entering confidential information.
      * <p>
      * Example: `My volume attachment`
      *
      **/
-    @JsonProperty("displayName")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
      * The OCID of the volume attachment.
      **/
-    @JsonProperty("id")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String id;
 
     /**
      * The OCID of the instance the volume is attached to.
      **/
-    @JsonProperty("instanceId")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String instanceId;
     /**
      * The current state of the volume attachment.
@@ -101,10 +96,10 @@ public class VolumeAttachment {
         UnknownEnumValue(null);
 
         private final String value;
-        private static Map<String, LifecycleState> map;
+        private static java.util.Map<String, LifecycleState> map;
 
         static {
-            map = new HashMap<>();
+            map = new java.util.HashMap<>();
             for (LifecycleState v : LifecycleState.values()) {
                 if (v != UnknownEnumValue) {
                     map.put(v.getValue(), v);
@@ -116,12 +111,12 @@ public class VolumeAttachment {
             this.value = value;
         }
 
-        @JsonValue
+        @com.fasterxml.jackson.annotation.JsonValue
         public String getValue() {
             return value;
         }
 
-        @JsonCreator
+        @com.fasterxml.jackson.annotation.JsonCreator
         public static LifecycleState create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
@@ -135,9 +130,9 @@ public class VolumeAttachment {
     /**
      * The current state of the volume attachment.
      **/
-    @JsonProperty("lifecycleState")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     LifecycleState lifecycleState;
 
     /**
@@ -146,17 +141,17 @@ public class VolumeAttachment {
      * Example: `2016-08-25T21:10:29.600Z`
      *
      **/
-    @JsonProperty("timeCreated")
-    @Valid
-    @NotNull
-    Date timeCreated;
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    java.util.Date timeCreated;
 
     /**
      * The OCID of the volume.
      **/
-    @JsonProperty("volumeId")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("volumeId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String volumeId;
 }

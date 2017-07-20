@@ -3,40 +3,24 @@
  */
 package com.oracle.bmc.core.internal.http;
 
-import java.io.InputStream;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-
-import javax.ws.rs.client.*;
-import javax.ws.rs.core.*;
-
-import com.oracle.bmc.http.internal.*;
-import static com.oracle.bmc.util.internal.HttpUtils.*;
-import com.oracle.bmc.model.*;
 import com.oracle.bmc.core.model.*;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
 
-import com.google.common.base.Function;
-import com.google.common.base.Optional;
-
-import lombok.extern.slf4j.Slf4j;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Slf4j
+@lombok.extern.slf4j.Slf4j
 public class UpdateRouteTableConverter {
-    private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
-            new ResponseConversionFunctionFactory();
+    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
+            RESPONSE_CONVERSION_FACTORY =
+                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
     public static UpdateRouteTableRequest interceptRequest(UpdateRouteTableRequest request) {
 
         return request;
     }
 
-    public static Invocation.Builder fromRequest(
-            RestClient client, UpdateRouteTableRequest request) {
+    public static javax.ws.rs.client.Invocation.Builder fromRequest(
+            com.oracle.bmc.http.internal.RestClient client, UpdateRouteTableRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
         }
@@ -49,15 +33,17 @@ public class UpdateRouteTableConverter {
             throw new NullPointerException("updateRouteTableDetails is required");
         }
 
-        WebTarget target =
+        javax.ws.rs.client.WebTarget target =
                 client.getBaseTarget()
                         .path("/20160918")
                         .path("routeTables")
-                        .path(encodePathSegment(request.getRtId()));
+                        .path(
+                                com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
+                                        request.getRtId()));
 
-        Invocation.Builder ib = target.request();
+        javax.ws.rs.client.Invocation.Builder ib = target.request();
 
-        ib.accept(MediaType.APPLICATION_JSON);
+        ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 
         if (request.getIfMatch() != null) {
             ib.header("if-match", request.getIfMatch());
@@ -66,45 +52,62 @@ public class UpdateRouteTableConverter {
         return ib;
     }
 
-    public static Function<Response, UpdateRouteTableResponse> fromResponse() {
-        final Function<Response, UpdateRouteTableResponse> transformer =
-                new Function<Response, UpdateRouteTableResponse>() {
-                    @Override
-                    public UpdateRouteTableResponse apply(Response rawResponse) {
-                        LOG.trace("Transform function invoked for UpdateRouteTableResponse");
-                        Function<Response, WithHeaders<RouteTable>> responseFn =
-                                RESPONSE_CONVERSION_FACTORY.create(RouteTable.class);
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, UpdateRouteTableResponse>
+            fromResponse() {
+        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRouteTableResponse>
+                transformer =
+                        new com.google.common.base.Function<
+                                javax.ws.rs.core.Response, UpdateRouteTableResponse>() {
+                            @Override
+                            public UpdateRouteTableResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for UpdateRouteTableResponse");
+                                com.google.common.base.Function<
+                                                javax.ws.rs.core.Response,
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        RouteTable>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        RouteTable.class);
 
-                        WithHeaders<RouteTable> response = responseFn.apply(rawResponse);
-                        MultivaluedMap<String, String> headers = response.getHeaders();
+                                com.oracle.bmc.http.internal.WithHeaders<RouteTable> response =
+                                        responseFn.apply(rawResponse);
+                                javax.ws.rs.core.MultivaluedMap<String, String> headers =
+                                        response.getHeaders();
 
-                        UpdateRouteTableResponse.Builder builder =
-                                UpdateRouteTableResponse.builder();
+                                UpdateRouteTableResponse.Builder builder =
+                                        UpdateRouteTableResponse.builder();
 
-                        builder.routeTable(response.getItem());
+                                builder.routeTable(response.getItem());
 
-                        Optional<List<String>> etagHeader = HeaderUtils.get(headers, "etag");
-                        if (etagHeader.isPresent()) {
-                            builder.etag(
-                                    HeaderUtils.toValue(
-                                            "etag", etagHeader.get().get(0), String.class));
-                        }
+                                com.google.common.base.Optional<java.util.List<String>> etagHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "etag");
+                                if (etagHeader.isPresent()) {
+                                    builder.etag(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "etag", etagHeader.get().get(0), String.class));
+                                }
 
-                        Optional<List<String>> opcRequestIdHeader =
-                                HeaderUtils.get(headers, "opc-request-id");
-                        if (opcRequestIdHeader.isPresent()) {
-                            builder.opcRequestId(
-                                    HeaderUtils.toValue(
-                                            "opc-request-id",
-                                            opcRequestIdHeader.get().get(0),
-                                            String.class));
-                        }
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcRequestIdHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-request-id");
+                                if (opcRequestIdHeader.isPresent()) {
+                                    builder.opcRequestId(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-request-id",
+                                                    opcRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
 
-                        UpdateRouteTableResponse responseWrapper = builder.build();
+                                UpdateRouteTableResponse responseWrapper = builder.build();
 
-                        return responseWrapper;
-                    }
-                };
+                                return responseWrapper;
+                            }
+                        };
         return transformer;
     }
 }

@@ -3,32 +3,16 @@
  */
 package com.oracle.bmc.core.internal.http;
 
-import java.io.InputStream;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-
-import javax.ws.rs.client.*;
-import javax.ws.rs.core.*;
-
-import com.oracle.bmc.http.internal.*;
-import static com.oracle.bmc.util.internal.HttpUtils.*;
-import com.oracle.bmc.model.*;
 import com.oracle.bmc.core.model.*;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
 
-import com.google.common.base.Function;
-import com.google.common.base.Optional;
-
-import lombok.extern.slf4j.Slf4j;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Slf4j
+@lombok.extern.slf4j.Slf4j
 public class CreateCrossConnectGroupConverter {
-    private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
-            new ResponseConversionFunctionFactory();
+    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
+            RESPONSE_CONVERSION_FACTORY =
+                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
     public static CreateCrossConnectGroupRequest interceptRequest(
             CreateCrossConnectGroupRequest request) {
@@ -36,8 +20,9 @@ public class CreateCrossConnectGroupConverter {
         return request;
     }
 
-    public static Invocation.Builder fromRequest(
-            RestClient client, CreateCrossConnectGroupRequest request) {
+    public static javax.ws.rs.client.Invocation.Builder fromRequest(
+            com.oracle.bmc.http.internal.RestClient client,
+            CreateCrossConnectGroupRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
         }
@@ -46,11 +31,12 @@ public class CreateCrossConnectGroupConverter {
             throw new NullPointerException("createCrossConnectGroupDetails is required");
         }
 
-        WebTarget target = client.getBaseTarget().path("/20160918").path("crossConnectGroups");
+        javax.ws.rs.client.WebTarget target =
+                client.getBaseTarget().path("/20160918").path("crossConnectGroups");
 
-        Invocation.Builder ib = target.request();
+        javax.ws.rs.client.Invocation.Builder ib = target.request();
 
-        ib.accept(MediaType.APPLICATION_JSON);
+        ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 
         if (request.getOpcRetryToken() != null) {
             ib.header("opc-retry-token", request.getOpcRetryToken());
@@ -59,45 +45,63 @@ public class CreateCrossConnectGroupConverter {
         return ib;
     }
 
-    public static Function<Response, CreateCrossConnectGroupResponse> fromResponse() {
-        final Function<Response, CreateCrossConnectGroupResponse> transformer =
-                new Function<Response, CreateCrossConnectGroupResponse>() {
-                    @Override
-                    public CreateCrossConnectGroupResponse apply(Response rawResponse) {
-                        LOG.trace("Transform function invoked for CreateCrossConnectGroupResponse");
-                        Function<Response, WithHeaders<CrossConnectGroup>> responseFn =
-                                RESPONSE_CONVERSION_FACTORY.create(CrossConnectGroup.class);
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, CreateCrossConnectGroupResponse>
+            fromResponse() {
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateCrossConnectGroupResponse>
+                transformer =
+                        new com.google.common.base.Function<
+                                javax.ws.rs.core.Response, CreateCrossConnectGroupResponse>() {
+                            @Override
+                            public CreateCrossConnectGroupResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for CreateCrossConnectGroupResponse");
+                                com.google.common.base.Function<
+                                                javax.ws.rs.core.Response,
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        CrossConnectGroup>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        CrossConnectGroup.class);
 
-                        WithHeaders<CrossConnectGroup> response = responseFn.apply(rawResponse);
-                        MultivaluedMap<String, String> headers = response.getHeaders();
+                                com.oracle.bmc.http.internal.WithHeaders<CrossConnectGroup>
+                                        response = responseFn.apply(rawResponse);
+                                javax.ws.rs.core.MultivaluedMap<String, String> headers =
+                                        response.getHeaders();
 
-                        CreateCrossConnectGroupResponse.Builder builder =
-                                CreateCrossConnectGroupResponse.builder();
+                                CreateCrossConnectGroupResponse.Builder builder =
+                                        CreateCrossConnectGroupResponse.builder();
 
-                        builder.crossConnectGroup(response.getItem());
+                                builder.crossConnectGroup(response.getItem());
 
-                        Optional<List<String>> etagHeader = HeaderUtils.get(headers, "etag");
-                        if (etagHeader.isPresent()) {
-                            builder.etag(
-                                    HeaderUtils.toValue(
-                                            "etag", etagHeader.get().get(0), String.class));
-                        }
+                                com.google.common.base.Optional<java.util.List<String>> etagHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                headers, "etag");
+                                if (etagHeader.isPresent()) {
+                                    builder.etag(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "etag", etagHeader.get().get(0), String.class));
+                                }
 
-                        Optional<List<String>> opcRequestIdHeader =
-                                HeaderUtils.get(headers, "opc-request-id");
-                        if (opcRequestIdHeader.isPresent()) {
-                            builder.opcRequestId(
-                                    HeaderUtils.toValue(
-                                            "opc-request-id",
-                                            opcRequestIdHeader.get().get(0),
-                                            String.class));
-                        }
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcRequestIdHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-request-id");
+                                if (opcRequestIdHeader.isPresent()) {
+                                    builder.opcRequestId(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-request-id",
+                                                    opcRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
 
-                        CreateCrossConnectGroupResponse responseWrapper = builder.build();
+                                CreateCrossConnectGroupResponse responseWrapper = builder.build();
 
-                        return responseWrapper;
-                    }
-                };
+                                return responseWrapper;
+                            }
+                        };
         return transformer;
     }
 }

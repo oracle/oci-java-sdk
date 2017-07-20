@@ -3,41 +3,36 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * DHCP option for specifying a search domain name for DNS queries. For more information, see
  * [DNS in Your Virtual Cloud Network](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm).
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = DhcpSearchDomainOption.Builder.class)
-@ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = true)
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = DhcpSearchDomainOption.Builder.class
+)
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode(callSuper = true)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
 public class DhcpSearchDomainOption extends DhcpOption {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("searchDomainNames")
-        private List<String> searchDomainNames;
+        @com.fasterxml.jackson.annotation.JsonProperty("searchDomainNames")
+        private java.util.List<String> searchDomainNames;
 
         public DhcpSearchDomainOption build() {
             return new DhcpSearchDomainOption(searchDomainNames);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DhcpSearchDomainOption o) {
             return searchDomainNames(o.getSearchDomainNames());
         }
@@ -50,7 +45,7 @@ public class DhcpSearchDomainOption extends DhcpOption {
         return new Builder();
     }
 
-    public DhcpSearchDomainOption(List<String> searchDomainNames) {
+    public DhcpSearchDomainOption(java.util.List<String> searchDomainNames) {
         super();
         this.searchDomainNames = searchDomainNames;
     }
@@ -71,8 +66,8 @@ public class DhcpSearchDomainOption extends DhcpOption {
      * domain name.
      *
      **/
-    @JsonProperty("searchDomainNames")
-    @Valid
-    @NotNull
-    List<String> searchDomainNames;
+    @com.fasterxml.jackson.annotation.JsonProperty("searchDomainNames")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    java.util.List<String> searchDomainNames;
 }

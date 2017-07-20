@@ -3,40 +3,31 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * An individual bandwidth level for virtual circuits.
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = VirtualCircuitBandwidthShape.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = VirtualCircuitBandwidthShape.Builder.class
+)
 public class VirtualCircuitBandwidthShape {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("bandwidthInMbps")
+        @com.fasterxml.jackson.annotation.JsonProperty("bandwidthInMbps")
         private Integer bandwidthInMbps;
 
-        @JsonProperty("name")
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         public VirtualCircuitBandwidthShape build() {
             return new VirtualCircuitBandwidthShape(bandwidthInMbps, name);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(VirtualCircuitBandwidthShape o) {
             return bandwidthInMbps(o.getBandwidthInMbps()).name(o.getName());
         }
@@ -55,7 +46,7 @@ public class VirtualCircuitBandwidthShape {
      * Example: `10000`
      *
      **/
-    @JsonProperty("bandwidthInMbps")
+    @com.fasterxml.jackson.annotation.JsonProperty("bandwidthInMbps")
     Integer bandwidthInMbps;
 
     /**
@@ -64,9 +55,9 @@ public class VirtualCircuitBandwidthShape {
      * Example: `10 Gbps`
      *
      **/
-    @JsonProperty("name")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String name;
 }

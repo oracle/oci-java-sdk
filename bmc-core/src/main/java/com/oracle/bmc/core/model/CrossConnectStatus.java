@@ -3,38 +3,29 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * The status of the cross-connect.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = CrossConnectStatus.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = CrossConnectStatus.Builder.class
+)
 public class CrossConnectStatus {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("crossConnectId")
+        @com.fasterxml.jackson.annotation.JsonProperty("crossConnectId")
         private String crossConnectId;
 
-        @JsonProperty("interfaceState")
+        @com.fasterxml.jackson.annotation.JsonProperty("interfaceState")
         private InterfaceState interfaceState;
 
-        @JsonProperty("lightLevelIndBm")
+        @com.fasterxml.jackson.annotation.JsonProperty("lightLevelIndBm")
         private Float lightLevelIndBm;
 
-        @JsonProperty("lightLevelIndicator")
+        @com.fasterxml.jackson.annotation.JsonProperty("lightLevelIndicator")
         private LightLevelIndicator lightLevelIndicator;
 
         public CrossConnectStatus build() {
@@ -42,7 +33,7 @@ public class CrossConnectStatus {
                     crossConnectId, interfaceState, lightLevelIndBm, lightLevelIndicator);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CrossConnectStatus o) {
             return crossConnectId(o.getCrossConnectId())
                     .interfaceState(o.getInterfaceState())
@@ -61,10 +52,10 @@ public class CrossConnectStatus {
     /**
      * The OCID of the cross-connect.
      **/
-    @JsonProperty("crossConnectId")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("crossConnectId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String crossConnectId;
     /**
      * Whether Oracle's side of the interface is up or down.
@@ -81,10 +72,10 @@ public class CrossConnectStatus {
         UnknownEnumValue(null);
 
         private final String value;
-        private static Map<String, InterfaceState> map;
+        private static java.util.Map<String, InterfaceState> map;
 
         static {
-            map = new HashMap<>();
+            map = new java.util.HashMap<>();
             for (InterfaceState v : InterfaceState.values()) {
                 if (v != UnknownEnumValue) {
                     map.put(v.getValue(), v);
@@ -96,12 +87,12 @@ public class CrossConnectStatus {
             this.value = value;
         }
 
-        @JsonValue
+        @com.fasterxml.jackson.annotation.JsonValue
         public String getValue() {
             return value;
         }
 
-        @JsonCreator
+        @com.fasterxml.jackson.annotation.JsonCreator
         public static InterfaceState create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
@@ -115,7 +106,7 @@ public class CrossConnectStatus {
     /**
      * Whether Oracle's side of the interface is up or down.
      **/
-    @JsonProperty("interfaceState")
+    @com.fasterxml.jackson.annotation.JsonProperty("interfaceState")
     InterfaceState interfaceState;
 
     /**
@@ -124,9 +115,9 @@ public class CrossConnectStatus {
      * Example: `14.0`
      *
      **/
-    @JsonProperty("lightLevelIndBm")
-    @Min(-50)
-    @Max(50)
+    @com.fasterxml.jackson.annotation.JsonProperty("lightLevelIndBm")
+    @javax.validation.constraints.Min(-50)
+    @javax.validation.constraints.Max(50)
     Float lightLevelIndBm;
     /**
      * Status indicator corresponding to the light level.
@@ -157,10 +148,10 @@ public class CrossConnectStatus {
         UnknownEnumValue(null);
 
         private final String value;
-        private static Map<String, LightLevelIndicator> map;
+        private static java.util.Map<String, LightLevelIndicator> map;
 
         static {
-            map = new HashMap<>();
+            map = new java.util.HashMap<>();
             for (LightLevelIndicator v : LightLevelIndicator.values()) {
                 if (v != UnknownEnumValue) {
                     map.put(v.getValue(), v);
@@ -172,12 +163,12 @@ public class CrossConnectStatus {
             this.value = value;
         }
 
-        @JsonValue
+        @com.fasterxml.jackson.annotation.JsonValue
         public String getValue() {
             return value;
         }
 
-        @JsonCreator
+        @com.fasterxml.jackson.annotation.JsonCreator
         public static LightLevelIndicator create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
@@ -202,6 +193,6 @@ public class CrossConnectStatus {
      * **GOOD:** Good light level
      *
      **/
-    @JsonProperty("lightLevelIndicator")
+    @com.fasterxml.jackson.annotation.JsonProperty("lightLevelIndicator")
     LightLevelIndicator lightLevelIndicator;
 }

@@ -3,46 +3,35 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * Specific connection details for an IPSec tunnel.
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = TunnelStatus.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TunnelStatus.Builder.class)
 public class TunnelStatus {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("ipAddress")
+        @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
-        @JsonProperty("lifecycleState")
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
-        @JsonProperty("timeCreated")
-        private Date timeCreated;
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+        private java.util.Date timeCreated;
 
-        @JsonProperty("timeStateModified")
-        private Date timeStateModified;
+        @com.fasterxml.jackson.annotation.JsonProperty("timeStateModified")
+        private java.util.Date timeStateModified;
 
         public TunnelStatus build() {
             return new TunnelStatus(ipAddress, lifecycleState, timeCreated, timeStateModified);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(TunnelStatus o) {
             return ipAddress(o.getIpAddress())
                     .lifecycleState(o.getLifecycleState())
@@ -64,10 +53,10 @@ public class TunnelStatus {
      * Example: `129.146.17.50`
      *
      **/
-    @JsonProperty("ipAddress")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 46)
+    @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 46)
     String ipAddress;
     /**
      * The tunnel's current state.
@@ -85,10 +74,10 @@ public class TunnelStatus {
         UnknownEnumValue(null);
 
         private final String value;
-        private static Map<String, LifecycleState> map;
+        private static java.util.Map<String, LifecycleState> map;
 
         static {
-            map = new HashMap<>();
+            map = new java.util.HashMap<>();
             for (LifecycleState v : LifecycleState.values()) {
                 if (v != UnknownEnumValue) {
                     map.put(v.getValue(), v);
@@ -100,12 +89,12 @@ public class TunnelStatus {
             this.value = value;
         }
 
-        @JsonValue
+        @com.fasterxml.jackson.annotation.JsonValue
         public String getValue() {
             return value;
         }
 
-        @JsonCreator
+        @com.fasterxml.jackson.annotation.JsonCreator
         public static LifecycleState create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
@@ -119,7 +108,7 @@ public class TunnelStatus {
     /**
      * The tunnel's current state.
      **/
-    @JsonProperty("lifecycleState")
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
 
     /**
@@ -128,8 +117,8 @@ public class TunnelStatus {
      * Example: `2016-08-25T21:10:29.600Z`
      *
      **/
-    @JsonProperty("timeCreated")
-    Date timeCreated;
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    java.util.Date timeCreated;
 
     /**
      * When the state of the tunnel last changed, in the format defined by RFC3339.
@@ -137,6 +126,6 @@ public class TunnelStatus {
      * Example: `2016-08-25T21:10:29.600Z`
      *
      **/
-    @JsonProperty("timeStateModified")
-    Date timeStateModified;
+    @com.fasterxml.jackson.annotation.JsonProperty("timeStateModified")
+    java.util.Date timeStateModified;
 }

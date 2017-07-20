@@ -3,40 +3,31 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * Update a CrossConnect
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = UpdateCrossConnectDetails.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = UpdateCrossConnectDetails.Builder.class
+)
 public class UpdateCrossConnectDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("displayName")
+        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
-        @JsonProperty("isActive")
+        @com.fasterxml.jackson.annotation.JsonProperty("isActive")
         private Boolean isActive;
 
         public UpdateCrossConnectDetails build() {
             return new UpdateCrossConnectDetails(displayName, isActive);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateCrossConnectDetails o) {
             return displayName(o.getDisplayName()).isActive(o.getIsActive());
         }
@@ -51,9 +42,11 @@ public class UpdateCrossConnectDetails {
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
      **/
-    @JsonProperty("displayName")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
@@ -64,6 +57,6 @@ public class UpdateCrossConnectDetails {
      * Example: `true`
      *
      **/
-    @JsonProperty("isActive")
+    @com.fasterxml.jackson.annotation.JsonProperty("isActive")
     Boolean isActive;
 }

@@ -3,42 +3,33 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = CreateRouteTableDetails.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = CreateRouteTableDetails.Builder.class
+)
 public class CreateRouteTableDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("compartmentId")
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
-        @JsonProperty("displayName")
+        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
-        @JsonProperty("routeRules")
-        private List<RouteRule> routeRules;
+        @com.fasterxml.jackson.annotation.JsonProperty("routeRules")
+        private java.util.List<RouteRule> routeRules;
 
-        @JsonProperty("vcnId")
+        @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
         public CreateRouteTableDetails build() {
             return new CreateRouteTableDetails(compartmentId, displayName, routeRules, vcnId);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateRouteTableDetails o) {
             return compartmentId(o.getCompartmentId())
                     .displayName(o.getDisplayName())
@@ -57,33 +48,33 @@ public class CreateRouteTableDetails {
     /**
      * The OCID of the compartment to contain the route table.
      **/
-    @JsonProperty("compartmentId")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      **/
-    @JsonProperty("displayName")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
      * The collection of rules used for routing destination IPs to network devices.
      **/
-    @JsonProperty("routeRules")
-    @Valid
-    @NotNull
-    List<RouteRule> routeRules;
+    @com.fasterxml.jackson.annotation.JsonProperty("routeRules")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    java.util.List<RouteRule> routeRules;
 
     /**
      * The OCID of the VCN the route table belongs to.
      **/
-    @JsonProperty("vcnId")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String vcnId;
 }

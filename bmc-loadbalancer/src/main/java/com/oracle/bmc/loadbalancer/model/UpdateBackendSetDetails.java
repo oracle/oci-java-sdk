@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.loadbalancer.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * The configuration details for updating a load balancer backend set.
  * For more information on backend set configuration, see
@@ -21,26 +10,28 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@Value
-@JsonDeserialize(builder = UpdateBackendSetDetails.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = UpdateBackendSetDetails.Builder.class
+)
 public class UpdateBackendSetDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("backends")
-        private List<BackendDetails> backends;
+        @com.fasterxml.jackson.annotation.JsonProperty("backends")
+        private java.util.List<BackendDetails> backends;
 
-        @JsonProperty("healthChecker")
+        @com.fasterxml.jackson.annotation.JsonProperty("healthChecker")
         private HealthCheckerDetails healthChecker;
 
-        @JsonProperty("policy")
+        @com.fasterxml.jackson.annotation.JsonProperty("policy")
         private String policy;
 
-        @JsonProperty("sessionPersistenceConfiguration")
+        @com.fasterxml.jackson.annotation.JsonProperty("sessionPersistenceConfiguration")
         private SessionPersistenceConfigurationDetails sessionPersistenceConfiguration;
 
-        @JsonProperty("sslConfiguration")
+        @com.fasterxml.jackson.annotation.JsonProperty("sslConfiguration")
         private SSLConfigurationDetails sslConfiguration;
 
         public UpdateBackendSetDetails build() {
@@ -52,7 +43,7 @@ public class UpdateBackendSetDetails {
                     sslConfiguration);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateBackendSetDetails o) {
             return backends(o.getBackends())
                     .healthChecker(o.getHealthChecker())
@@ -69,14 +60,14 @@ public class UpdateBackendSetDetails {
         return new Builder();
     }
 
-    @JsonProperty("backends")
-    @Valid
-    @NotNull
-    List<BackendDetails> backends;
+    @com.fasterxml.jackson.annotation.JsonProperty("backends")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    java.util.List<BackendDetails> backends;
 
-    @JsonProperty("healthChecker")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("healthChecker")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     HealthCheckerDetails healthChecker;
 
     /**
@@ -87,14 +78,14 @@ public class UpdateBackendSetDetails {
      * Example: `LEAST_CONNECTIONS`
      *
      **/
-    @JsonProperty("policy")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("policy")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String policy;
 
-    @JsonProperty("sessionPersistenceConfiguration")
+    @com.fasterxml.jackson.annotation.JsonProperty("sessionPersistenceConfiguration")
     SessionPersistenceConfigurationDetails sessionPersistenceConfiguration;
 
-    @JsonProperty("sslConfiguration")
+    @com.fasterxml.jackson.annotation.JsonProperty("sslConfiguration")
     SSLConfigurationDetails sslConfiguration;
 }

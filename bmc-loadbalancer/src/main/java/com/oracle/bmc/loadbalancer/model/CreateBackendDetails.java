@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.loadbalancer.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * The configuration details for creating a backend server in a backend set.
  * For more information on backend server configuration, see
@@ -21,36 +10,38 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@Value
-@JsonDeserialize(builder = CreateBackendDetails.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = CreateBackendDetails.Builder.class
+)
 public class CreateBackendDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("backup")
+        @com.fasterxml.jackson.annotation.JsonProperty("backup")
         private Boolean backup;
 
-        @JsonProperty("drain")
+        @com.fasterxml.jackson.annotation.JsonProperty("drain")
         private Boolean drain;
 
-        @JsonProperty("ipAddress")
+        @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
-        @JsonProperty("offline")
+        @com.fasterxml.jackson.annotation.JsonProperty("offline")
         private Boolean offline;
 
-        @JsonProperty("port")
+        @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
-        @JsonProperty("weight")
+        @com.fasterxml.jackson.annotation.JsonProperty("weight")
         private Integer weight;
 
         public CreateBackendDetails build() {
             return new CreateBackendDetails(backup, drain, ipAddress, offline, port, weight);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateBackendDetails o) {
             return backup(o.getBackup())
                     .drain(o.getDrain())
@@ -75,7 +66,7 @@ public class CreateBackendDetails {
      * Example: `true`
      *
      **/
-    @JsonProperty("backup")
+    @com.fasterxml.jackson.annotation.JsonProperty("backup")
     Boolean backup;
 
     /**
@@ -85,7 +76,7 @@ public class CreateBackendDetails {
      * Example: `true`
      *
      **/
-    @JsonProperty("drain")
+    @com.fasterxml.jackson.annotation.JsonProperty("drain")
     Boolean drain;
 
     /**
@@ -94,9 +85,9 @@ public class CreateBackendDetails {
      * Example: `10.10.10.4`
      *
      **/
-    @JsonProperty("ipAddress")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String ipAddress;
 
     /**
@@ -106,7 +97,7 @@ public class CreateBackendDetails {
      * Example: `true`
      *
      **/
-    @JsonProperty("offline")
+    @com.fasterxml.jackson.annotation.JsonProperty("offline")
     Boolean offline;
 
     /**
@@ -115,11 +106,11 @@ public class CreateBackendDetails {
      * Example: `8080`
      *
      **/
-    @JsonProperty("port")
-    @Valid
-    @NotNull
-    @Min(1)
-    @Max(65535)
+    @com.fasterxml.jackson.annotation.JsonProperty("port")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Min(1)
+    @javax.validation.constraints.Max(65535)
     Integer port;
 
     /**
@@ -132,6 +123,6 @@ public class CreateBackendDetails {
      * Example: `3`
      *
      **/
-    @JsonProperty("weight")
+    @com.fasterxml.jackson.annotation.JsonProperty("weight")
     Integer weight;
 }

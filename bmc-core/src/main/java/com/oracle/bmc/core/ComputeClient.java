@@ -3,51 +3,32 @@
  */
 package com.oracle.bmc.core;
 
-import com.oracle.bmc.ClientConfiguration;
-import com.oracle.bmc.auth.*;
-import com.oracle.bmc.http.ClientConfigurator;
-import com.oracle.bmc.http.internal.*;
-import com.oracle.bmc.http.signing.*;
-import com.oracle.bmc.http.signing.internal.*;
-
-import com.google.common.base.Function;
-import com.google.common.base.Optional;
-
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
-import javax.ws.rs.client.*;
-import javax.ws.rs.core.*;
-
 import com.oracle.bmc.core.internal.http.*;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
 
-import com.oracle.bmc.*;
-
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Slf4j
+@lombok.extern.slf4j.Slf4j
 public class ComputeClient implements Compute {
     /**
      * Service instance for Compute.
      */
-    public static final Service SERVICE = Services.create("COMPUTE", "iaas");
+    public static final com.oracle.bmc.Service SERVICE =
+            com.oracle.bmc.Services.create("COMPUTE", "iaas");
 
-    private final ExecutorService executorService = Executors.newFixedThreadPool(50);
+    private final java.util.concurrent.ExecutorService executorService =
+            java.util.concurrent.Executors.newFixedThreadPool(50);
     private final ComputeWaiters waiters;
 
-    @Getter(value = AccessLevel.PACKAGE)
-    private final RestClient client;
+    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private final com.oracle.bmc.http.internal.RestClient client;
 
     /**
      * Creates a new service instance using the given authentication provider.
      * @param authenticationDetailsProvider The authentication details provider, required.
      */
-    public ComputeClient(BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+    public ComputeClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
         this(authenticationDetailsProvider, null);
     }
 
@@ -57,8 +38,8 @@ public class ComputeClient implements Compute {
      * @param configuration The client configuration, optional.
      */
     public ComputeClient(
-            BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            ClientConfiguration configuration) {
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
         this(authenticationDetailsProvider, configuration, null);
     }
 
@@ -70,14 +51,15 @@ public class ComputeClient implements Compute {
      * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      */
     public ComputeClient(
-            BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            ClientConfiguration configuration,
-            ClientConfigurator clientConfigurator) {
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
         this(
                 authenticationDetailsProvider,
                 configuration,
                 clientConfigurator,
-                new DefaultRequestSignerFactory(SigningStrategy.STANDARD));
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
     }
 
     /**
@@ -91,13 +73,15 @@ public class ComputeClient implements Compute {
      * @param requestSignerFactory The request signer factory used to create the request signer for this service.
      */
     public ComputeClient(
-            AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            ClientConfiguration configuration,
-            ClientConfigurator clientConfigurator,
-            RequestSignerFactory requestSignerFactory) {
-        RestClientFactory restClientFactory =
-                RestClientFactoryBuilder.builder().clientConfigurator(clientConfigurator).build();
-        RequestSigner requestSigner =
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory requestSignerFactory) {
+        com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
+                        .clientConfigurator(clientConfigurator)
+                        .build();
+        com.oracle.bmc.http.signing.RequestSigner requestSigner =
                 requestSignerFactory.createRequestSigner(SERVICE, authenticationDetailsProvider);
         this.client = restClientFactory.create(requestSigner, configuration);
 
@@ -111,8 +95,8 @@ public class ComputeClient implements Compute {
     }
 
     @Override
-    public void setRegion(Region region) {
-        Optional<String> endpoint = region.getEndpoint(SERVICE);
+    public void setRegion(com.oracle.bmc.Region region) {
+        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -125,11 +109,11 @@ public class ComputeClient implements Compute {
     public void setRegion(String regionId) {
         regionId = regionId.toLowerCase();
         try {
-            Region region = Region.fromRegionId(regionId);
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
             setRegion(region);
         } catch (IllegalArgumentException e) {
             LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
-            String endpoint = Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
             setEndpoint(endpoint);
         }
     }
@@ -140,13 +124,29 @@ public class ComputeClient implements Compute {
     }
 
     @Override
+    public AttachVnicResponse attachVnic(AttachVnicRequest request) {
+        LOG.trace("Called attachVnic");
+        request = AttachVnicConverter.interceptRequest(request);
+        javax.ws.rs.client.Invocation.Builder ib = AttachVnicConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, AttachVnicResponse> transformer =
+                AttachVnicConverter.fromResponse();
+
+        javax.ws.rs.core.Response response =
+                client.post(ib, request.getAttachVnicDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
     public AttachVolumeResponse attachVolume(AttachVolumeRequest request) {
         LOG.trace("Called attachVolume");
         request = AttachVolumeConverter.interceptRequest(request);
-        Invocation.Builder ib = AttachVolumeConverter.fromRequest(client, request);
-        Function<Response, AttachVolumeResponse> transformer = AttachVolumeConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                AttachVolumeConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, AttachVolumeResponse>
+                transformer = AttachVolumeConverter.fromResponse();
 
-        Response response = client.post(ib, request.getAttachVolumeDetails(), request);
+        javax.ws.rs.core.Response response =
+                client.post(ib, request.getAttachVolumeDetails(), request);
         return transformer.apply(response);
     }
 
@@ -155,11 +155,13 @@ public class ComputeClient implements Compute {
             CaptureConsoleHistoryRequest request) {
         LOG.trace("Called captureConsoleHistory");
         request = CaptureConsoleHistoryConverter.interceptRequest(request);
-        Invocation.Builder ib = CaptureConsoleHistoryConverter.fromRequest(client, request);
-        Function<Response, CaptureConsoleHistoryResponse> transformer =
-                CaptureConsoleHistoryConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                CaptureConsoleHistoryConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CaptureConsoleHistoryResponse>
+                transformer = CaptureConsoleHistoryConverter.fromResponse();
 
-        Response response = client.post(ib, request.getCaptureConsoleHistoryDetails(), request);
+        javax.ws.rs.core.Response response =
+                client.post(ib, request.getCaptureConsoleHistoryDetails(), request);
         return transformer.apply(response);
     }
 
@@ -167,10 +169,13 @@ public class ComputeClient implements Compute {
     public CreateImageResponse createImage(CreateImageRequest request) {
         LOG.trace("Called createImage");
         request = CreateImageConverter.interceptRequest(request);
-        Invocation.Builder ib = CreateImageConverter.fromRequest(client, request);
-        Function<Response, CreateImageResponse> transformer = CreateImageConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                CreateImageConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateImageResponse>
+                transformer = CreateImageConverter.fromResponse();
 
-        Response response = client.post(ib, request.getCreateImageDetails(), request);
+        javax.ws.rs.core.Response response =
+                client.post(ib, request.getCreateImageDetails(), request);
         return transformer.apply(response);
     }
 
@@ -178,11 +183,12 @@ public class ComputeClient implements Compute {
     public DeleteConsoleHistoryResponse deleteConsoleHistory(DeleteConsoleHistoryRequest request) {
         LOG.trace("Called deleteConsoleHistory");
         request = DeleteConsoleHistoryConverter.interceptRequest(request);
-        Invocation.Builder ib = DeleteConsoleHistoryConverter.fromRequest(client, request);
-        Function<Response, DeleteConsoleHistoryResponse> transformer =
-                DeleteConsoleHistoryConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                DeleteConsoleHistoryConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteConsoleHistoryResponse>
+                transformer = DeleteConsoleHistoryConverter.fromResponse();
 
-        Response response = client.delete(ib, request);
+        javax.ws.rs.core.Response response = client.delete(ib, request);
         return transformer.apply(response);
     }
 
@@ -190,10 +196,24 @@ public class ComputeClient implements Compute {
     public DeleteImageResponse deleteImage(DeleteImageRequest request) {
         LOG.trace("Called deleteImage");
         request = DeleteImageConverter.interceptRequest(request);
-        Invocation.Builder ib = DeleteImageConverter.fromRequest(client, request);
-        Function<Response, DeleteImageResponse> transformer = DeleteImageConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                DeleteImageConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteImageResponse>
+                transformer = DeleteImageConverter.fromResponse();
 
-        Response response = client.delete(ib, request);
+        javax.ws.rs.core.Response response = client.delete(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public DetachVnicResponse detachVnic(DetachVnicRequest request) {
+        LOG.trace("Called detachVnic");
+        request = DetachVnicConverter.interceptRequest(request);
+        javax.ws.rs.client.Invocation.Builder ib = DetachVnicConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DetachVnicResponse> transformer =
+                DetachVnicConverter.fromResponse();
+
+        javax.ws.rs.core.Response response = client.delete(ib, request);
         return transformer.apply(response);
     }
 
@@ -201,10 +221,26 @@ public class ComputeClient implements Compute {
     public DetachVolumeResponse detachVolume(DetachVolumeRequest request) {
         LOG.trace("Called detachVolume");
         request = DetachVolumeConverter.interceptRequest(request);
-        Invocation.Builder ib = DetachVolumeConverter.fromRequest(client, request);
-        Function<Response, DetachVolumeResponse> transformer = DetachVolumeConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                DetachVolumeConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DetachVolumeResponse>
+                transformer = DetachVolumeConverter.fromResponse();
 
-        Response response = client.delete(ib, request);
+        javax.ws.rs.core.Response response = client.delete(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public ExportImageResponse exportImage(ExportImageRequest request) {
+        LOG.trace("Called exportImage");
+        request = ExportImageConverter.interceptRequest(request);
+        javax.ws.rs.client.Invocation.Builder ib =
+                ExportImageConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ExportImageResponse>
+                transformer = ExportImageConverter.fromResponse();
+
+        javax.ws.rs.core.Response response =
+                client.post(ib, request.getExportImageDetails(), request);
         return transformer.apply(response);
     }
 
@@ -212,11 +248,12 @@ public class ComputeClient implements Compute {
     public GetConsoleHistoryResponse getConsoleHistory(GetConsoleHistoryRequest request) {
         LOG.trace("Called getConsoleHistory");
         request = GetConsoleHistoryConverter.interceptRequest(request);
-        Invocation.Builder ib = GetConsoleHistoryConverter.fromRequest(client, request);
-        Function<Response, GetConsoleHistoryResponse> transformer =
-                GetConsoleHistoryConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                GetConsoleHistoryConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetConsoleHistoryResponse>
+                transformer = GetConsoleHistoryConverter.fromResponse();
 
-        Response response = client.get(ib, request);
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -225,11 +262,12 @@ public class ComputeClient implements Compute {
             GetConsoleHistoryContentRequest request) {
         LOG.trace("Called getConsoleHistoryContent");
         request = GetConsoleHistoryContentConverter.interceptRequest(request);
-        Invocation.Builder ib = GetConsoleHistoryContentConverter.fromRequest(client, request);
-        Function<Response, GetConsoleHistoryContentResponse> transformer =
-                GetConsoleHistoryContentConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                GetConsoleHistoryContentConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetConsoleHistoryContentResponse>
+                transformer = GetConsoleHistoryContentConverter.fromResponse();
 
-        Response response = client.get(ib, request);
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -237,10 +275,11 @@ public class ComputeClient implements Compute {
     public GetImageResponse getImage(GetImageRequest request) {
         LOG.trace("Called getImage");
         request = GetImageConverter.interceptRequest(request);
-        Invocation.Builder ib = GetImageConverter.fromRequest(client, request);
-        Function<Response, GetImageResponse> transformer = GetImageConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = GetImageConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetImageResponse> transformer =
+                GetImageConverter.fromResponse();
 
-        Response response = client.get(ib, request);
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -248,10 +287,25 @@ public class ComputeClient implements Compute {
     public GetInstanceResponse getInstance(GetInstanceRequest request) {
         LOG.trace("Called getInstance");
         request = GetInstanceConverter.interceptRequest(request);
-        Invocation.Builder ib = GetInstanceConverter.fromRequest(client, request);
-        Function<Response, GetInstanceResponse> transformer = GetInstanceConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                GetInstanceConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetInstanceResponse>
+                transformer = GetInstanceConverter.fromResponse();
 
-        Response response = client.get(ib, request);
+        javax.ws.rs.core.Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public GetVnicAttachmentResponse getVnicAttachment(GetVnicAttachmentRequest request) {
+        LOG.trace("Called getVnicAttachment");
+        request = GetVnicAttachmentConverter.interceptRequest(request);
+        javax.ws.rs.client.Invocation.Builder ib =
+                GetVnicAttachmentConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetVnicAttachmentResponse>
+                transformer = GetVnicAttachmentConverter.fromResponse();
+
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -259,11 +313,12 @@ public class ComputeClient implements Compute {
     public GetVolumeAttachmentResponse getVolumeAttachment(GetVolumeAttachmentRequest request) {
         LOG.trace("Called getVolumeAttachment");
         request = GetVolumeAttachmentConverter.interceptRequest(request);
-        Invocation.Builder ib = GetVolumeAttachmentConverter.fromRequest(client, request);
-        Function<Response, GetVolumeAttachmentResponse> transformer =
-                GetVolumeAttachmentConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                GetVolumeAttachmentConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeAttachmentResponse>
+                transformer = GetVolumeAttachmentConverter.fromResponse();
 
-        Response response = client.get(ib, request);
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -272,12 +327,13 @@ public class ComputeClient implements Compute {
             GetWindowsInstanceInitialCredentialsRequest request) {
         LOG.trace("Called getWindowsInstanceInitialCredentials");
         request = GetWindowsInstanceInitialCredentialsConverter.interceptRequest(request);
-        Invocation.Builder ib =
+        javax.ws.rs.client.Invocation.Builder ib =
                 GetWindowsInstanceInitialCredentialsConverter.fromRequest(client, request);
-        Function<Response, GetWindowsInstanceInitialCredentialsResponse> transformer =
-                GetWindowsInstanceInitialCredentialsConverter.fromResponse();
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetWindowsInstanceInitialCredentialsResponse>
+                transformer = GetWindowsInstanceInitialCredentialsConverter.fromResponse();
 
-        Response response = client.get(ib, request);
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -285,11 +341,12 @@ public class ComputeClient implements Compute {
     public InstanceActionResponse instanceAction(InstanceActionRequest request) {
         LOG.trace("Called instanceAction");
         request = InstanceActionConverter.interceptRequest(request);
-        Invocation.Builder ib = InstanceActionConverter.fromRequest(client, request);
-        Function<Response, InstanceActionResponse> transformer =
-                InstanceActionConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                InstanceActionConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, InstanceActionResponse>
+                transformer = InstanceActionConverter.fromResponse();
 
-        Response response = client.post(ib, request);
+        javax.ws.rs.core.Response response = client.post(ib, request);
         return transformer.apply(response);
     }
 
@@ -297,11 +354,13 @@ public class ComputeClient implements Compute {
     public LaunchInstanceResponse launchInstance(LaunchInstanceRequest request) {
         LOG.trace("Called launchInstance");
         request = LaunchInstanceConverter.interceptRequest(request);
-        Invocation.Builder ib = LaunchInstanceConverter.fromRequest(client, request);
-        Function<Response, LaunchInstanceResponse> transformer =
-                LaunchInstanceConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                LaunchInstanceConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, LaunchInstanceResponse>
+                transformer = LaunchInstanceConverter.fromResponse();
 
-        Response response = client.post(ib, request.getLaunchInstanceDetails(), request);
+        javax.ws.rs.core.Response response =
+                client.post(ib, request.getLaunchInstanceDetails(), request);
         return transformer.apply(response);
     }
 
@@ -309,11 +368,12 @@ public class ComputeClient implements Compute {
     public ListConsoleHistoriesResponse listConsoleHistories(ListConsoleHistoriesRequest request) {
         LOG.trace("Called listConsoleHistories");
         request = ListConsoleHistoriesConverter.interceptRequest(request);
-        Invocation.Builder ib = ListConsoleHistoriesConverter.fromRequest(client, request);
-        Function<Response, ListConsoleHistoriesResponse> transformer =
-                ListConsoleHistoriesConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListConsoleHistoriesConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListConsoleHistoriesResponse>
+                transformer = ListConsoleHistoriesConverter.fromResponse();
 
-        Response response = client.get(ib, request);
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -321,10 +381,11 @@ public class ComputeClient implements Compute {
     public ListImagesResponse listImages(ListImagesRequest request) {
         LOG.trace("Called listImages");
         request = ListImagesConverter.interceptRequest(request);
-        Invocation.Builder ib = ListImagesConverter.fromRequest(client, request);
-        Function<Response, ListImagesResponse> transformer = ListImagesConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = ListImagesConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListImagesResponse> transformer =
+                ListImagesConverter.fromResponse();
 
-        Response response = client.get(ib, request);
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -332,11 +393,12 @@ public class ComputeClient implements Compute {
     public ListInstancesResponse listInstances(ListInstancesRequest request) {
         LOG.trace("Called listInstances");
         request = ListInstancesConverter.interceptRequest(request);
-        Invocation.Builder ib = ListInstancesConverter.fromRequest(client, request);
-        Function<Response, ListInstancesResponse> transformer =
-                ListInstancesConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListInstancesConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListInstancesResponse>
+                transformer = ListInstancesConverter.fromResponse();
 
-        Response response = client.get(ib, request);
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -344,10 +406,11 @@ public class ComputeClient implements Compute {
     public ListShapesResponse listShapes(ListShapesRequest request) {
         LOG.trace("Called listShapes");
         request = ListShapesConverter.interceptRequest(request);
-        Invocation.Builder ib = ListShapesConverter.fromRequest(client, request);
-        Function<Response, ListShapesResponse> transformer = ListShapesConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = ListShapesConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListShapesResponse> transformer =
+                ListShapesConverter.fromResponse();
 
-        Response response = client.get(ib, request);
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -355,11 +418,12 @@ public class ComputeClient implements Compute {
     public ListVnicAttachmentsResponse listVnicAttachments(ListVnicAttachmentsRequest request) {
         LOG.trace("Called listVnicAttachments");
         request = ListVnicAttachmentsConverter.interceptRequest(request);
-        Invocation.Builder ib = ListVnicAttachmentsConverter.fromRequest(client, request);
-        Function<Response, ListVnicAttachmentsResponse> transformer =
-                ListVnicAttachmentsConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListVnicAttachmentsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListVnicAttachmentsResponse>
+                transformer = ListVnicAttachmentsConverter.fromResponse();
 
-        Response response = client.get(ib, request);
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -368,11 +432,12 @@ public class ComputeClient implements Compute {
             ListVolumeAttachmentsRequest request) {
         LOG.trace("Called listVolumeAttachments");
         request = ListVolumeAttachmentsConverter.interceptRequest(request);
-        Invocation.Builder ib = ListVolumeAttachmentsConverter.fromRequest(client, request);
-        Function<Response, ListVolumeAttachmentsResponse> transformer =
-                ListVolumeAttachmentsConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListVolumeAttachmentsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumeAttachmentsResponse>
+                transformer = ListVolumeAttachmentsConverter.fromResponse();
 
-        Response response = client.get(ib, request);
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -380,11 +445,12 @@ public class ComputeClient implements Compute {
     public TerminateInstanceResponse terminateInstance(TerminateInstanceRequest request) {
         LOG.trace("Called terminateInstance");
         request = TerminateInstanceConverter.interceptRequest(request);
-        Invocation.Builder ib = TerminateInstanceConverter.fromRequest(client, request);
-        Function<Response, TerminateInstanceResponse> transformer =
-                TerminateInstanceConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                TerminateInstanceConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, TerminateInstanceResponse>
+                transformer = TerminateInstanceConverter.fromResponse();
 
-        Response response = client.delete(ib, request);
+        javax.ws.rs.core.Response response = client.delete(ib, request);
         return transformer.apply(response);
     }
 
@@ -392,10 +458,13 @@ public class ComputeClient implements Compute {
     public UpdateImageResponse updateImage(UpdateImageRequest request) {
         LOG.trace("Called updateImage");
         request = UpdateImageConverter.interceptRequest(request);
-        Invocation.Builder ib = UpdateImageConverter.fromRequest(client, request);
-        Function<Response, UpdateImageResponse> transformer = UpdateImageConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                UpdateImageConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateImageResponse>
+                transformer = UpdateImageConverter.fromResponse();
 
-        Response response = client.put(ib, request.getUpdateImageDetails(), request);
+        javax.ws.rs.core.Response response =
+                client.put(ib, request.getUpdateImageDetails(), request);
         return transformer.apply(response);
     }
 
@@ -403,11 +472,13 @@ public class ComputeClient implements Compute {
     public UpdateInstanceResponse updateInstance(UpdateInstanceRequest request) {
         LOG.trace("Called updateInstance");
         request = UpdateInstanceConverter.interceptRequest(request);
-        Invocation.Builder ib = UpdateInstanceConverter.fromRequest(client, request);
-        Function<Response, UpdateInstanceResponse> transformer =
-                UpdateInstanceConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                UpdateInstanceConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateInstanceResponse>
+                transformer = UpdateInstanceConverter.fromResponse();
 
-        Response response = client.put(ib, request.getUpdateInstanceDetails(), request);
+        javax.ws.rs.core.Response response =
+                client.put(ib, request.getUpdateInstanceDetails(), request);
         return transformer.apply(response);
     }
 

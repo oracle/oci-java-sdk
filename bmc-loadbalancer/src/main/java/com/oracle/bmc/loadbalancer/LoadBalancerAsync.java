@@ -3,14 +3,8 @@
  */
 package com.oracle.bmc.loadbalancer;
 
-import com.oracle.bmc.responses.AsyncHandler;
-
-import java.util.concurrent.Future;
-
 import com.oracle.bmc.loadbalancer.requests.*;
 import com.oracle.bmc.loadbalancer.responses.*;
-
-import com.oracle.bmc.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 public interface LoadBalancerAsync extends AutoCloseable {
@@ -27,7 +21,7 @@ public interface LoadBalancerAsync extends AutoCloseable {
      * Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the endpoint.  If the service is not available in this region, however, an IllegalArgumentException will be raised.
      * @param region The region of the service.
      */
-    void setRegion(Region region);
+    void setRegion(com.oracle.bmc.Region region);
 
     /**
      * Sets the region to call (ex, 'us-phoenix-1').
@@ -49,12 +43,13 @@ public interface LoadBalancerAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<CreateBackendResponse> createBackend(
+    java.util.concurrent.Future<CreateBackendResponse> createBackend(
             CreateBackendRequest request,
-            AsyncHandler<CreateBackendRequest, CreateBackendResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<CreateBackendRequest, CreateBackendResponse>
+                    handler);
 
     /**
      * Adds a backend set to a load balancer.
@@ -63,12 +58,13 @@ public interface LoadBalancerAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<CreateBackendSetResponse> createBackendSet(
+    java.util.concurrent.Future<CreateBackendSetResponse> createBackendSet(
             CreateBackendSetRequest request,
-            AsyncHandler<CreateBackendSetRequest, CreateBackendSetResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<CreateBackendSetRequest, CreateBackendSetResponse>
+                    handler);
 
     /**
      * Creates an asynchronous request to add an SSL certificate.
@@ -77,12 +73,14 @@ public interface LoadBalancerAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<CreateCertificateResponse> createCertificate(
+    java.util.concurrent.Future<CreateCertificateResponse> createCertificate(
             CreateCertificateRequest request,
-            AsyncHandler<CreateCertificateRequest, CreateCertificateResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateCertificateRequest, CreateCertificateResponse>
+                    handler);
 
     /**
      * Adds a listener to a load balancer.
@@ -91,12 +89,13 @@ public interface LoadBalancerAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<CreateListenerResponse> createListener(
+    java.util.concurrent.Future<CreateListenerResponse> createListener(
             CreateListenerRequest request,
-            AsyncHandler<CreateListenerRequest, CreateListenerResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<CreateListenerRequest, CreateListenerResponse>
+                    handler);
 
     /**
      * Creates a new load balancer in the specified compartment. For general information about load balancers,
@@ -132,12 +131,14 @@ public interface LoadBalancerAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<CreateLoadBalancerResponse> createLoadBalancer(
+    java.util.concurrent.Future<CreateLoadBalancerResponse> createLoadBalancer(
             CreateLoadBalancerRequest request,
-            AsyncHandler<CreateLoadBalancerRequest, CreateLoadBalancerResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateLoadBalancerRequest, CreateLoadBalancerResponse>
+                    handler);
 
     /**
      * Removes a backend server from a given load balancer and backend set.
@@ -146,12 +147,13 @@ public interface LoadBalancerAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<DeleteBackendResponse> deleteBackend(
+    java.util.concurrent.Future<DeleteBackendResponse> deleteBackend(
             DeleteBackendRequest request,
-            AsyncHandler<DeleteBackendRequest, DeleteBackendResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<DeleteBackendRequest, DeleteBackendResponse>
+                    handler);
 
     /**
      * Deletes the specified backend set. Note that deleting a backend set removes its backend servers from the load balancer.
@@ -163,12 +165,13 @@ public interface LoadBalancerAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<DeleteBackendSetResponse> deleteBackendSet(
+    java.util.concurrent.Future<DeleteBackendSetResponse> deleteBackendSet(
             DeleteBackendSetRequest request,
-            AsyncHandler<DeleteBackendSetRequest, DeleteBackendSetResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<DeleteBackendSetRequest, DeleteBackendSetResponse>
+                    handler);
 
     /**
      * Deletes an SSL certificate from a load balancer.
@@ -177,12 +180,14 @@ public interface LoadBalancerAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<DeleteCertificateResponse> deleteCertificate(
+    java.util.concurrent.Future<DeleteCertificateResponse> deleteCertificate(
             DeleteCertificateRequest request,
-            AsyncHandler<DeleteCertificateRequest, DeleteCertificateResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteCertificateRequest, DeleteCertificateResponse>
+                    handler);
 
     /**
      * Deletes a listener from a load balancer.
@@ -191,12 +196,13 @@ public interface LoadBalancerAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<DeleteListenerResponse> deleteListener(
+    java.util.concurrent.Future<DeleteListenerResponse> deleteListener(
             DeleteListenerRequest request,
-            AsyncHandler<DeleteListenerRequest, DeleteListenerResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<DeleteListenerRequest, DeleteListenerResponse>
+                    handler);
 
     /**
      * Stops a load balancer and removes it from service.
@@ -205,12 +211,14 @@ public interface LoadBalancerAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<DeleteLoadBalancerResponse> deleteLoadBalancer(
+    java.util.concurrent.Future<DeleteLoadBalancerResponse> deleteLoadBalancer(
             DeleteLoadBalancerRequest request,
-            AsyncHandler<DeleteLoadBalancerRequest, DeleteLoadBalancerResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteLoadBalancerRequest, DeleteLoadBalancerResponse>
+                    handler);
 
     /**
      * Gets the specified backend server's configuration information.
@@ -219,11 +227,12 @@ public interface LoadBalancerAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<GetBackendResponse> getBackend(
-            GetBackendRequest request, AsyncHandler<GetBackendRequest, GetBackendResponse> handler);
+    java.util.concurrent.Future<GetBackendResponse> getBackend(
+            GetBackendRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetBackendRequest, GetBackendResponse> handler);
 
     /**
      * Gets the specified backend set's configuration information.
@@ -232,12 +241,13 @@ public interface LoadBalancerAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<GetBackendSetResponse> getBackendSet(
+    java.util.concurrent.Future<GetBackendSetResponse> getBackendSet(
             GetBackendSetRequest request,
-            AsyncHandler<GetBackendSetRequest, GetBackendSetResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<GetBackendSetRequest, GetBackendSetResponse>
+                    handler);
 
     /**
      * Gets the health check policy information for a given load balancer and backend set.
@@ -246,12 +256,13 @@ public interface LoadBalancerAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<GetHealthCheckerResponse> getHealthChecker(
+    java.util.concurrent.Future<GetHealthCheckerResponse> getHealthChecker(
             GetHealthCheckerRequest request,
-            AsyncHandler<GetHealthCheckerRequest, GetHealthCheckerResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<GetHealthCheckerRequest, GetHealthCheckerResponse>
+                    handler);
 
     /**
      * Gets the specified load balancer's configuration information.
@@ -260,12 +271,13 @@ public interface LoadBalancerAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<GetLoadBalancerResponse> getLoadBalancer(
+    java.util.concurrent.Future<GetLoadBalancerResponse> getLoadBalancer(
             GetLoadBalancerRequest request,
-            AsyncHandler<GetLoadBalancerRequest, GetLoadBalancerResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<GetLoadBalancerRequest, GetLoadBalancerResponse>
+                    handler);
 
     /**
      * Gets the details of a work request.
@@ -274,12 +286,13 @@ public interface LoadBalancerAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<GetWorkRequestResponse> getWorkRequest(
+    java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
-            AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
+                    handler);
 
     /**
      * Lists all backend sets associated with a given load balancer.
@@ -288,12 +301,13 @@ public interface LoadBalancerAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListBackendSetsResponse> listBackendSets(
+    java.util.concurrent.Future<ListBackendSetsResponse> listBackendSets(
             ListBackendSetsRequest request,
-            AsyncHandler<ListBackendSetsRequest, ListBackendSetsResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<ListBackendSetsRequest, ListBackendSetsResponse>
+                    handler);
 
     /**
      * Lists the backend servers for a given load balancer and backend set.
@@ -302,12 +316,13 @@ public interface LoadBalancerAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListBackendsResponse> listBackends(
+    java.util.concurrent.Future<ListBackendsResponse> listBackends(
             ListBackendsRequest request,
-            AsyncHandler<ListBackendsRequest, ListBackendsResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<ListBackendsRequest, ListBackendsResponse>
+                    handler);
 
     /**
      * Lists all SSL certificates associated with a given load balancer.
@@ -316,12 +331,13 @@ public interface LoadBalancerAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListCertificatesResponse> listCertificates(
+    java.util.concurrent.Future<ListCertificatesResponse> listCertificates(
             ListCertificatesRequest request,
-            AsyncHandler<ListCertificatesRequest, ListCertificatesResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<ListCertificatesRequest, ListCertificatesResponse>
+                    handler);
 
     /**
      * Lists all load balancers in the specified compartment.
@@ -330,12 +346,14 @@ public interface LoadBalancerAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListLoadBalancersResponse> listLoadBalancers(
+    java.util.concurrent.Future<ListLoadBalancersResponse> listLoadBalancers(
             ListLoadBalancersRequest request,
-            AsyncHandler<ListLoadBalancersRequest, ListLoadBalancersResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListLoadBalancersRequest, ListLoadBalancersResponse>
+                    handler);
 
     /**
      * Lists the available load balancer policies.
@@ -344,12 +362,13 @@ public interface LoadBalancerAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListPoliciesResponse> listPolicies(
+    java.util.concurrent.Future<ListPoliciesResponse> listPolicies(
             ListPoliciesRequest request,
-            AsyncHandler<ListPoliciesRequest, ListPoliciesResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<ListPoliciesRequest, ListPoliciesResponse>
+                    handler);
 
     /**
      * Lists all supported traffic protocols.
@@ -358,12 +377,13 @@ public interface LoadBalancerAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListProtocolsResponse> listProtocols(
+    java.util.concurrent.Future<ListProtocolsResponse> listProtocols(
             ListProtocolsRequest request,
-            AsyncHandler<ListProtocolsRequest, ListProtocolsResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<ListProtocolsRequest, ListProtocolsResponse>
+                    handler);
 
     /**
      * Lists the valid load balancer shapes.
@@ -372,11 +392,12 @@ public interface LoadBalancerAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListShapesResponse> listShapes(
-            ListShapesRequest request, AsyncHandler<ListShapesRequest, ListShapesResponse> handler);
+    java.util.concurrent.Future<ListShapesResponse> listShapes(
+            ListShapesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListShapesRequest, ListShapesResponse> handler);
 
     /**
      * Lists the work requests for a given load balancer.
@@ -385,12 +406,13 @@ public interface LoadBalancerAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListWorkRequestsResponse> listWorkRequests(
+    java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
             ListWorkRequestsRequest request,
-            AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
+                    handler);
 
     /**
      * Updates the configuration of a backend server within the specified backend set.
@@ -399,12 +421,13 @@ public interface LoadBalancerAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<UpdateBackendResponse> updateBackend(
+    java.util.concurrent.Future<UpdateBackendResponse> updateBackend(
             UpdateBackendRequest request,
-            AsyncHandler<UpdateBackendRequest, UpdateBackendResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<UpdateBackendRequest, UpdateBackendResponse>
+                    handler);
 
     /**
      * Updates a backend set.
@@ -413,12 +436,13 @@ public interface LoadBalancerAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<UpdateBackendSetResponse> updateBackendSet(
+    java.util.concurrent.Future<UpdateBackendSetResponse> updateBackendSet(
             UpdateBackendSetRequest request,
-            AsyncHandler<UpdateBackendSetRequest, UpdateBackendSetResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<UpdateBackendSetRequest, UpdateBackendSetResponse>
+                    handler);
 
     /**
      * Updates the health check policy for a given load balancer and backend set.
@@ -427,12 +451,14 @@ public interface LoadBalancerAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<UpdateHealthCheckerResponse> updateHealthChecker(
+    java.util.concurrent.Future<UpdateHealthCheckerResponse> updateHealthChecker(
             UpdateHealthCheckerRequest request,
-            AsyncHandler<UpdateHealthCheckerRequest, UpdateHealthCheckerResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateHealthCheckerRequest, UpdateHealthCheckerResponse>
+                    handler);
 
     /**
      * Updates a listener for a given load balancer.
@@ -441,12 +467,13 @@ public interface LoadBalancerAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<UpdateListenerResponse> updateListener(
+    java.util.concurrent.Future<UpdateListenerResponse> updateListener(
             UpdateListenerRequest request,
-            AsyncHandler<UpdateListenerRequest, UpdateListenerResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<UpdateListenerRequest, UpdateListenerResponse>
+                    handler);
 
     /**
      * Updates a load balancer's configuration.
@@ -455,10 +482,12 @@ public interface LoadBalancerAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<UpdateLoadBalancerResponse> updateLoadBalancer(
+    java.util.concurrent.Future<UpdateLoadBalancerResponse> updateLoadBalancer(
             UpdateLoadBalancerRequest request,
-            AsyncHandler<UpdateLoadBalancerRequest, UpdateLoadBalancerResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateLoadBalancerRequest, UpdateLoadBalancerResponse>
+                    handler);
 }

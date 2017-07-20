@@ -3,42 +3,41 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
+/**
+ * Either instanceId or imageSourceDetails must be provided in addition to other required parameters.
+ **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = CreateImageDetails.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = CreateImageDetails.Builder.class
+)
 public class CreateImageDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("compartmentId")
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
-        @JsonProperty("displayName")
+        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
-        @JsonProperty("instanceId")
+        @com.fasterxml.jackson.annotation.JsonProperty("imageSourceDetails")
+        private ImageSourceDetails imageSourceDetails;
+
+        @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
         public CreateImageDetails build() {
-            return new CreateImageDetails(compartmentId, displayName, instanceId);
+            return new CreateImageDetails(
+                    compartmentId, displayName, imageSourceDetails, instanceId);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateImageDetails o) {
             return compartmentId(o.getCompartmentId())
                     .displayName(o.getDisplayName())
+                    .imageSourceDetails(o.getImageSourceDetails())
                     .instanceId(o.getInstanceId());
         }
     }
@@ -53,29 +52,35 @@ public class CreateImageDetails {
     /**
      * The OCID of the compartment containing the instance you want to use as the basis for the image.
      **/
-    @JsonProperty("compartmentId")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
-     * A user-friendly name for the image. It does not have to be unique, and it's changeable. You cannot use an
-     * Oracle-provided image name as a custom image name.
+     * A user-friendly name for the image. It does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     * <p>
+     * You cannot use an Oracle-provided image name as a custom image name.
      * <p>
      * Example: `My Oracle Linux image`
      *
      **/
-    @JsonProperty("displayName")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
+
+    /**
+     * Details for creating an image through import
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("imageSourceDetails")
+    ImageSourceDetails imageSourceDetails;
 
     /**
      * The OCID of the instance you want to use as the basis for the image.
      **/
-    @JsonProperty("instanceId")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String instanceId;
 }

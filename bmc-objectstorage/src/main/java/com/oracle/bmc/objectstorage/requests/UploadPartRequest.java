@@ -3,19 +3,11 @@
  */
 package com.oracle.bmc.objectstorage.requests;
 
-import java.io.*;
-import java.util.*;
-
-import lombok.Builder;
-import lombok.Getter;
-import lombok.experimental.Accessors;
-
-import com.oracle.bmc.model.*;
 import com.oracle.bmc.objectstorage.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Builder(builderClassName = "Builder")
-@Getter
+@lombok.Builder(builderClassName = "Builder")
+@lombok.Getter
 public class UploadPartRequest {
 
     /**
@@ -57,7 +49,7 @@ public class UploadPartRequest {
     /**
      * The part being uploaded to the Object Storage Service.
      */
-    private InputStream uploadPartBody;
+    private java.io.InputStream uploadPartBody;
 
     /**
      * The client request ID for tracing.

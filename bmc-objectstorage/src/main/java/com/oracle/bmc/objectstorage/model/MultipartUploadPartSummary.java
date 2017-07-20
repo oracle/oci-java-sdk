@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.objectstorage.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
@@ -21,30 +10,32 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = MultipartUploadPartSummary.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = MultipartUploadPartSummary.Builder.class
+)
 public class MultipartUploadPartSummary {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("etag")
+        @com.fasterxml.jackson.annotation.JsonProperty("etag")
         private String etag;
 
-        @JsonProperty("md5")
+        @com.fasterxml.jackson.annotation.JsonProperty("md5")
         private String md5;
 
-        @JsonProperty("size")
+        @com.fasterxml.jackson.annotation.JsonProperty("size")
         private Long size;
 
-        @JsonProperty("partNumber")
+        @com.fasterxml.jackson.annotation.JsonProperty("partNumber")
         private Integer partNumber;
 
         public MultipartUploadPartSummary build() {
             return new MultipartUploadPartSummary(etag, md5, size, partNumber);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(MultipartUploadPartSummary o) {
             return etag(o.getEtag())
                     .md5(o.getMd5())
@@ -63,32 +54,32 @@ public class MultipartUploadPartSummary {
     /**
      * the current entity tag for the part.
      **/
-    @JsonProperty("etag")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("etag")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String etag;
 
     /**
      * the MD5 hash of the bytes of the part.
      **/
-    @JsonProperty("md5")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("md5")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String md5;
 
     /**
      * the size of the part in bytes.
      **/
-    @JsonProperty("size")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("size")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     Long size;
 
     /**
      * the part number for this part.
      **/
-    @JsonProperty("partNumber")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("partNumber")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     Integer partNumber;
 }
