@@ -3,38 +3,30 @@
  */
 package com.oracle.bmc.identity.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@NonFinal
-@AllArgsConstructor(access = AccessLevel.PROTECTED)
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
+@lombok.Value
+@lombok.experimental.NonFinal
+@lombok.AllArgsConstructor(access = lombok.AccessLevel.PROTECTED)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "protocol",
     defaultImpl = CreateIdentityProviderDetails.class
 )
-@JsonSubTypes({
-    @JsonSubTypes.Type(value = CreateSaml2IdentityProviderDetails.class, name = "SAML2")
+@com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateSaml2IdentityProviderDetails.class,
+        name = "SAML2"
+    )
 })
 public class CreateIdentityProviderDetails {
 
     /**
      * The OCID of your tenancy.
      **/
-    @JsonProperty("compartmentId")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String compartmentId;
 
     /**
@@ -43,10 +35,10 @@ public class CreateIdentityProviderDetails {
      * tenancy and cannot be changed.
      *
      **/
-    @JsonProperty("name")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 100)
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 100)
     String name;
 
     /**
@@ -54,10 +46,10 @@ public class CreateIdentityProviderDetails {
      * Does not have to be unique, and it's changeable.
      *
      **/
-    @JsonProperty("description")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 400)
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 400)
     String description;
     /**
      * The identity provider service or product (e.g., Oracle Identity Cloud Service).
@@ -70,10 +62,10 @@ public class CreateIdentityProviderDetails {
         ;
 
         private final String value;
-        private static Map<String, ProductType> map;
+        private static java.util.Map<String, ProductType> map;
 
         static {
-            map = new HashMap<>();
+            map = new java.util.HashMap<>();
             for (ProductType v : ProductType.values()) {
                 map.put(v.getValue(), v);
             }
@@ -83,12 +75,12 @@ public class CreateIdentityProviderDetails {
             this.value = value;
         }
 
-        @JsonValue
+        @com.fasterxml.jackson.annotation.JsonValue
         public String getValue() {
             return value;
         }
 
-        @JsonCreator
+        @com.fasterxml.jackson.annotation.JsonCreator
         public static ProductType create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
@@ -102,8 +94,8 @@ public class CreateIdentityProviderDetails {
      * Example: `IDCS`
      *
      **/
-    @JsonProperty("productType")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("productType")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     ProductType productType;
 }

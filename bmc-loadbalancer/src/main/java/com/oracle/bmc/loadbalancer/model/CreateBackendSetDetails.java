@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.loadbalancer.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * The configuration details for creating a backend set in a load balancer.
  * For more information on backend set configuration, see
@@ -21,29 +10,31 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@Value
-@JsonDeserialize(builder = CreateBackendSetDetails.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = CreateBackendSetDetails.Builder.class
+)
 public class CreateBackendSetDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("backends")
-        private List<BackendDetails> backends;
+        @com.fasterxml.jackson.annotation.JsonProperty("backends")
+        private java.util.List<BackendDetails> backends;
 
-        @JsonProperty("healthChecker")
+        @com.fasterxml.jackson.annotation.JsonProperty("healthChecker")
         private HealthCheckerDetails healthChecker;
 
-        @JsonProperty("name")
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
-        @JsonProperty("policy")
+        @com.fasterxml.jackson.annotation.JsonProperty("policy")
         private String policy;
 
-        @JsonProperty("sessionPersistenceConfiguration")
+        @com.fasterxml.jackson.annotation.JsonProperty("sessionPersistenceConfiguration")
         private SessionPersistenceConfigurationDetails sessionPersistenceConfiguration;
 
-        @JsonProperty("sslConfiguration")
+        @com.fasterxml.jackson.annotation.JsonProperty("sslConfiguration")
         private SSLConfigurationDetails sslConfiguration;
 
         public CreateBackendSetDetails build() {
@@ -56,7 +47,7 @@ public class CreateBackendSetDetails {
                     sslConfiguration);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateBackendSetDetails o) {
             return backends(o.getBackends())
                     .healthChecker(o.getHealthChecker())
@@ -74,12 +65,12 @@ public class CreateBackendSetDetails {
         return new Builder();
     }
 
-    @JsonProperty("backends")
-    List<BackendDetails> backends;
+    @com.fasterxml.jackson.annotation.JsonProperty("backends")
+    java.util.List<BackendDetails> backends;
 
-    @JsonProperty("healthChecker")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("healthChecker")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     HealthCheckerDetails healthChecker;
 
     /**
@@ -88,9 +79,9 @@ public class CreateBackendSetDetails {
      * Example: `My backend set`
      *
      **/
-    @JsonProperty("name")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String name;
 
     /**
@@ -100,14 +91,14 @@ public class CreateBackendSetDetails {
      * Example: `LEAST_CONNECTIONS`
      *
      **/
-    @JsonProperty("policy")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("policy")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String policy;
 
-    @JsonProperty("sessionPersistenceConfiguration")
+    @com.fasterxml.jackson.annotation.JsonProperty("sessionPersistenceConfiguration")
     SessionPersistenceConfigurationDetails sessionPersistenceConfiguration;
 
-    @JsonProperty("sslConfiguration")
+    @com.fasterxml.jackson.annotation.JsonProperty("sslConfiguration")
     SSLConfigurationDetails sslConfiguration;
 }

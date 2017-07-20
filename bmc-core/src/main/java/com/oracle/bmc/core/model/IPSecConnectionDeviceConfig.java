@@ -3,45 +3,36 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * Information about the IPSecConnection device configuration.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = IPSecConnectionDeviceConfig.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = IPSecConnectionDeviceConfig.Builder.class
+)
 public class IPSecConnectionDeviceConfig {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("compartmentId")
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
-        @JsonProperty("id")
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
-        @JsonProperty("timeCreated")
-        private Date timeCreated;
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+        private java.util.Date timeCreated;
 
-        @JsonProperty("tunnels")
-        private List<TunnelConfig> tunnels;
+        @com.fasterxml.jackson.annotation.JsonProperty("tunnels")
+        private java.util.List<TunnelConfig> tunnels;
 
         public IPSecConnectionDeviceConfig build() {
             return new IPSecConnectionDeviceConfig(compartmentId, id, timeCreated, tunnels);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(IPSecConnectionDeviceConfig o) {
             return compartmentId(o.getCompartmentId())
                     .id(o.getId())
@@ -60,30 +51,30 @@ public class IPSecConnectionDeviceConfig {
     /**
      * The OCID of the compartment containing the IPSec connection.
      **/
-    @JsonProperty("compartmentId")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
      * The IPSec connection's Oracle ID (OCID).
      **/
-    @JsonProperty("id")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String id;
 
     /**
      * The date and time the IPSec connection was created.
      **/
-    @JsonProperty("timeCreated")
-    Date timeCreated;
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    java.util.Date timeCreated;
 
     /**
      * Two {@link TunnelConfig} objects.
      **/
-    @JsonProperty("tunnels")
-    List<TunnelConfig> tunnels;
+    @com.fasterxml.jackson.annotation.JsonProperty("tunnels")
+    java.util.List<TunnelConfig> tunnels;
 }

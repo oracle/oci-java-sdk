@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.identity.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * A document that specifies the type of access a group has to the resources in a compartment. For information about
  * policies and other IAM Service components, see
@@ -31,39 +20,39 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = Policy.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Policy.Builder.class)
 public class Policy {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("id")
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
-        @JsonProperty("compartmentId")
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
-        @JsonProperty("name")
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
-        @JsonProperty("statements")
-        private List<String> statements;
+        @com.fasterxml.jackson.annotation.JsonProperty("statements")
+        private java.util.List<String> statements;
 
-        @JsonProperty("description")
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
-        @JsonProperty("timeCreated")
-        private Date timeCreated;
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+        private java.util.Date timeCreated;
 
-        @JsonProperty("lifecycleState")
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
-        @JsonProperty("inactiveStatus")
+        @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
         private Long inactiveStatus;
 
-        @JsonProperty("versionDate")
-        private Date versionDate;
+        @com.fasterxml.jackson.annotation.JsonProperty("versionDate")
+        private java.util.Date versionDate;
 
         public Policy build() {
             return new Policy(
@@ -78,7 +67,7 @@ public class Policy {
                     versionDate);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Policy o) {
             return id(o.getId())
                     .compartmentId(o.getCompartmentId())
@@ -102,18 +91,18 @@ public class Policy {
     /**
      * The OCID of the policy.
      **/
-    @JsonProperty("id")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String id;
 
     /**
      * The OCID of the compartment containing the policy (either the tenancy or another compartment).
      *
      **/
-    @JsonProperty("compartmentId")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String compartmentId;
 
     /**
@@ -121,27 +110,27 @@ public class Policy {
      * in the tenancy and cannot be changed.
      *
      **/
-    @JsonProperty("name")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 100)
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 100)
     String name;
 
     /**
      * An array of one or more policy statements written in the policy language.
      **/
-    @JsonProperty("statements")
-    @Valid
-    @NotNull
-    List<String> statements;
+    @com.fasterxml.jackson.annotation.JsonProperty("statements")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    java.util.List<String> statements;
 
     /**
      * The description you assign to the policy. Does not have to be unique, and it's changeable.
      **/
-    @JsonProperty("description")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 400)
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 400)
     String description;
 
     /**
@@ -150,10 +139,10 @@ public class Policy {
      * Example: `2016-08-25T21:10:29.600Z`
      *
      **/
-    @JsonProperty("timeCreated")
-    @Valid
-    @NotNull
-    Date timeCreated;
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    java.util.Date timeCreated;
     /**
      * The policy's current state. After creating a policy, make sure its `lifecycleState` changes from CREATING to
      * ACTIVE before using it.
@@ -174,10 +163,10 @@ public class Policy {
         UnknownEnumValue(null);
 
         private final String value;
-        private static Map<String, LifecycleState> map;
+        private static java.util.Map<String, LifecycleState> map;
 
         static {
-            map = new HashMap<>();
+            map = new java.util.HashMap<>();
             for (LifecycleState v : LifecycleState.values()) {
                 if (v != UnknownEnumValue) {
                     map.put(v.getValue(), v);
@@ -189,12 +178,12 @@ public class Policy {
             this.value = value;
         }
 
-        @JsonValue
+        @com.fasterxml.jackson.annotation.JsonValue
         public String getValue() {
             return value;
         }
 
-        @JsonCreator
+        @com.fasterxml.jackson.annotation.JsonCreator
         public static LifecycleState create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
@@ -210,16 +199,16 @@ public class Policy {
      * ACTIVE before using it.
      *
      **/
-    @JsonProperty("lifecycleState")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 64)
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 64)
     LifecycleState lifecycleState;
 
     /**
      * The detailed status of INACTIVE lifecycleState.
      **/
-    @JsonProperty("inactiveStatus")
+    @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
     Long inactiveStatus;
 
     /**
@@ -228,6 +217,6 @@ public class Policy {
      * date (YYYY-MM-DD), the policy will be evaluated according to the behavior of the services on that date.
      *
      **/
-    @JsonProperty("versionDate")
-    Date versionDate;
+    @com.fasterxml.jackson.annotation.JsonProperty("versionDate")
+    java.util.Date versionDate;
 }

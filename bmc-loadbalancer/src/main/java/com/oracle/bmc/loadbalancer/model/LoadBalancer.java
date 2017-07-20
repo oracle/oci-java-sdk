@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.loadbalancer.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * The properties that define a load balancer. For more information, see
  * [Managing a Load Balancer](https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingloadbalancer.htm).
@@ -28,48 +17,48 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@Value
-@JsonDeserialize(builder = LoadBalancer.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = LoadBalancer.Builder.class)
 public class LoadBalancer {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("backendSets")
-        private Map<String, BackendSet> backendSets;
+        @com.fasterxml.jackson.annotation.JsonProperty("backendSets")
+        private java.util.Map<String, BackendSet> backendSets;
 
-        @JsonProperty("certificates")
-        private Map<String, Certificate> certificates;
+        @com.fasterxml.jackson.annotation.JsonProperty("certificates")
+        private java.util.Map<String, Certificate> certificates;
 
-        @JsonProperty("compartmentId")
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
-        @JsonProperty("displayName")
+        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
-        @JsonProperty("id")
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
-        @JsonProperty("ipAddresses")
-        private List<IpAddress> ipAddresses;
+        @com.fasterxml.jackson.annotation.JsonProperty("ipAddresses")
+        private java.util.List<IpAddress> ipAddresses;
 
-        @JsonProperty("isPrivate")
+        @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
         private Boolean isPrivate;
 
-        @JsonProperty("lifecycleState")
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
-        @JsonProperty("listeners")
-        private Map<String, Listener> listeners;
+        @com.fasterxml.jackson.annotation.JsonProperty("listeners")
+        private java.util.Map<String, Listener> listeners;
 
-        @JsonProperty("shapeName")
+        @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
         private String shapeName;
 
-        @JsonProperty("subnetIds")
-        private List<String> subnetIds;
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
+        private java.util.List<String> subnetIds;
 
-        @JsonProperty("timeCreated")
-        private Date timeCreated;
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+        private java.util.Date timeCreated;
 
         public LoadBalancer build() {
             return new LoadBalancer(
@@ -87,7 +76,7 @@ public class LoadBalancer {
                     timeCreated);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(LoadBalancer o) {
             return backendSets(o.getBackendSets())
                     .certificates(o.getCertificates())
@@ -111,18 +100,18 @@ public class LoadBalancer {
         return new Builder();
     }
 
-    @JsonProperty("backendSets")
-    Map<String, BackendSet> backendSets;
+    @com.fasterxml.jackson.annotation.JsonProperty("backendSets")
+    java.util.Map<String, BackendSet> backendSets;
 
-    @JsonProperty("certificates")
-    Map<String, Certificate> certificates;
+    @com.fasterxml.jackson.annotation.JsonProperty("certificates")
+    java.util.Map<String, Certificate> certificates;
 
     /**
      * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancer.
      **/
-    @JsonProperty("compartmentId")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String compartmentId;
 
     /**
@@ -131,25 +120,25 @@ public class LoadBalancer {
      * Example: `My load balancer`
      *
      **/
-    @JsonProperty("displayName")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String displayName;
 
     /**
      * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the load balancer.
      **/
-    @JsonProperty("id")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String id;
 
     /**
      * An array of IP addresses.
      *
      **/
-    @JsonProperty("ipAddresses")
-    List<IpAddress> ipAddresses;
+    @com.fasterxml.jackson.annotation.JsonProperty("ipAddresses")
+    java.util.List<IpAddress> ipAddresses;
 
     /**
      * Whether the load balancer has a VCN-local (private) IP address.
@@ -167,7 +156,7 @@ public class LoadBalancer {
      * VCN's [security list rules](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/securitylists.htm).
      *
      **/
-    @JsonProperty("isPrivate")
+    @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
     Boolean isPrivate;
     /**
      **/
@@ -186,10 +175,10 @@ public class LoadBalancer {
         UnknownEnumValue(null);
 
         private final String value;
-        private static Map<String, LifecycleState> map;
+        private static java.util.Map<String, LifecycleState> map;
 
         static {
-            map = new HashMap<>();
+            map = new java.util.HashMap<>();
             for (LifecycleState v : LifecycleState.values()) {
                 if (v != UnknownEnumValue) {
                     map.put(v.getValue(), v);
@@ -201,12 +190,12 @@ public class LoadBalancer {
             this.value = value;
         }
 
-        @JsonValue
+        @com.fasterxml.jackson.annotation.JsonValue
         public String getValue() {
             return value;
         }
 
-        @JsonCreator
+        @com.fasterxml.jackson.annotation.JsonCreator
         public static LifecycleState create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
@@ -218,13 +207,13 @@ public class LoadBalancer {
         }
     };
 
-    @JsonProperty("lifecycleState")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     LifecycleState lifecycleState;
 
-    @JsonProperty("listeners")
-    Map<String, Listener> listeners;
+    @com.fasterxml.jackson.annotation.JsonProperty("listeners")
+    java.util.Map<String, Listener> listeners;
 
     /**
      * A template that determines the total pre-provisioned bandwidth (ingress plus egress).
@@ -234,16 +223,16 @@ public class LoadBalancer {
      * Example: `100Mbps`
      *
      **/
-    @JsonProperty("shapeName")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String shapeName;
 
     /**
      * An array of subnet [OCIDs](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      **/
-    @JsonProperty("subnetIds")
-    List<String> subnetIds;
+    @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
+    java.util.List<String> subnetIds;
 
     /**
      * The date and time the load balancer was created, in the format defined by RFC3339.
@@ -251,8 +240,8 @@ public class LoadBalancer {
      * Example: `2016-08-25T21:10:29.600Z`
      *
      **/
-    @JsonProperty("timeCreated")
-    @Valid
-    @NotNull
-    Date timeCreated;
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    java.util.Date timeCreated;
 }

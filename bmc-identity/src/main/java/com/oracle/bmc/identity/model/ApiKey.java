@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.identity.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * A PEM-format RSA credential for securing requests to the Oracle Bare Metal Cloud Services REST API. Also known
  * as an *API signing key*. Specifically, this is the public key from the key pair. The private key remains with
@@ -28,32 +17,32 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = ApiKey.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ApiKey.Builder.class)
 public class ApiKey {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("keyId")
+        @com.fasterxml.jackson.annotation.JsonProperty("keyId")
         private String keyId;
 
-        @JsonProperty("keyValue")
+        @com.fasterxml.jackson.annotation.JsonProperty("keyValue")
         private String keyValue;
 
-        @JsonProperty("fingerprint")
+        @com.fasterxml.jackson.annotation.JsonProperty("fingerprint")
         private String fingerprint;
 
-        @JsonProperty("userId")
+        @com.fasterxml.jackson.annotation.JsonProperty("userId")
         private String userId;
 
-        @JsonProperty("timeCreated")
-        private Date timeCreated;
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+        private java.util.Date timeCreated;
 
-        @JsonProperty("lifecycleState")
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
-        @JsonProperty("inactiveStatus")
+        @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
         private Long inactiveStatus;
 
         public ApiKey build() {
@@ -67,7 +56,7 @@ public class ApiKey {
                     inactiveStatus);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ApiKey o) {
             return keyId(o.getKeyId())
                     .keyValue(o.getKeyValue())
@@ -91,25 +80,25 @@ public class ApiKey {
      * TENANCY_OCID/USER_OCID/KEY_FINGERPRINT.
      *
      **/
-    @JsonProperty("keyId")
+    @com.fasterxml.jackson.annotation.JsonProperty("keyId")
     String keyId;
 
     /**
      * The key's value.
      **/
-    @JsonProperty("keyValue")
+    @com.fasterxml.jackson.annotation.JsonProperty("keyValue")
     String keyValue;
 
     /**
      * The key's fingerprint (e.g., 12:34:56:78:90:ab:cd:ef:12:34:56:78:90:ab:cd:ef).
      **/
-    @JsonProperty("fingerprint")
+    @com.fasterxml.jackson.annotation.JsonProperty("fingerprint")
     String fingerprint;
 
     /**
      * The OCID of the user the key belongs to.
      **/
-    @JsonProperty("userId")
+    @com.fasterxml.jackson.annotation.JsonProperty("userId")
     String userId;
 
     /**
@@ -118,8 +107,8 @@ public class ApiKey {
      * Example: `2016-08-25T21:10:29.600Z`
      *
      **/
-    @JsonProperty("timeCreated")
-    Date timeCreated;
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    java.util.Date timeCreated;
     /**
      * The API key's current state. After creating an `ApiKey` object, make sure its `lifecycleState` changes from
      * CREATING to ACTIVE before using it.
@@ -140,10 +129,10 @@ public class ApiKey {
         UnknownEnumValue(null);
 
         private final String value;
-        private static Map<String, LifecycleState> map;
+        private static java.util.Map<String, LifecycleState> map;
 
         static {
-            map = new HashMap<>();
+            map = new java.util.HashMap<>();
             for (LifecycleState v : LifecycleState.values()) {
                 if (v != UnknownEnumValue) {
                     map.put(v.getValue(), v);
@@ -155,12 +144,12 @@ public class ApiKey {
             this.value = value;
         }
 
-        @JsonValue
+        @com.fasterxml.jackson.annotation.JsonValue
         public String getValue() {
             return value;
         }
 
-        @JsonCreator
+        @com.fasterxml.jackson.annotation.JsonCreator
         public static LifecycleState create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
@@ -176,13 +165,13 @@ public class ApiKey {
      * CREATING to ACTIVE before using it.
      *
      **/
-    @JsonProperty("lifecycleState")
-    @Size(min = 1, max = 64)
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    @javax.validation.constraints.Size(min = 1, max = 64)
     LifecycleState lifecycleState;
 
     /**
      * The detailed status of INACTIVE lifecycleState.
      **/
-    @JsonProperty("inactiveStatus")
+    @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
     Long inactiveStatus;
 }

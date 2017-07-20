@@ -3,36 +3,27 @@
  */
 package com.oracle.bmc.loadbalancer.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * Configuration details to update a load balancer.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@Value
-@JsonDeserialize(builder = UpdateLoadBalancerDetails.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = UpdateLoadBalancerDetails.Builder.class
+)
 public class UpdateLoadBalancerDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("displayName")
+        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         public UpdateLoadBalancerDetails build() {
             return new UpdateLoadBalancerDetails(displayName);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateLoadBalancerDetails o) {
             return displayName(o.getDisplayName());
         }
@@ -51,8 +42,8 @@ public class UpdateLoadBalancerDetails {
      * Example: `My load balancer`
      *
      **/
-    @JsonProperty("displayName")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String displayName;
 }

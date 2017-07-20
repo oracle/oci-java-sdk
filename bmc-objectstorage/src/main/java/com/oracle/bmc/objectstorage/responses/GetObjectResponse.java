@@ -3,21 +3,11 @@
  */
 package com.oracle.bmc.objectstorage.responses;
 
-import java.io.*;
-import java.util.*;
-
-import com.oracle.bmc.model.*;
-import javax.ws.rs.core.*;
-
-import lombok.Builder;
-import lombok.Getter;
-import lombok.experimental.Accessors;
-
 import com.oracle.bmc.objectstorage.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Builder(builderClassName = "Builder")
-@Getter
+@lombok.Builder(builderClassName = "Builder")
+@lombok.Getter
 public class GetObjectResponse {
 
     /**
@@ -40,7 +30,7 @@ public class GetObjectResponse {
     /**
      * The user-defined metadata for the object.
      */
-    private Map<String, String> opcMeta;
+    private java.util.Map<String, String> opcMeta;
 
     /**
      * The object size in bytes.
@@ -50,7 +40,7 @@ public class GetObjectResponse {
     /**
      * Content-Range header for range requests, per [RFC 7233](https://tools.ietf.org/rfc/rfc7233), section 4.2.
      */
-    private Range contentRange;
+    private com.oracle.bmc.model.Range contentRange;
 
     /**
      * Content-MD5 header, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.15.
@@ -87,12 +77,12 @@ public class GetObjectResponse {
     /**
      * The object modification time, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
      */
-    private Date lastModified;
+    private java.util.Date lastModified;
 
     /**
-     * The returned InputStream instance, or null if {@link #isNotModified()} is true.  Caller must always close the stream to avoid holding resources.
+     * The returned java.io.InputStream instance, or null if {@link #isNotModified()} is true.
      */
-    private InputStream inputStream;
+    private java.io.InputStream inputStream;
 
     /**
      * Flag to indicate whether or not the object was modified.  If this is true,

@@ -3,53 +3,44 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = CreateSubnetDetails.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = CreateSubnetDetails.Builder.class
+)
 public class CreateSubnetDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("availabilityDomain")
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
-        @JsonProperty("cidrBlock")
+        @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
         private String cidrBlock;
 
-        @JsonProperty("compartmentId")
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
-        @JsonProperty("dhcpOptionsId")
+        @com.fasterxml.jackson.annotation.JsonProperty("dhcpOptionsId")
         private String dhcpOptionsId;
 
-        @JsonProperty("displayName")
+        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
-        @JsonProperty("dnsLabel")
+        @com.fasterxml.jackson.annotation.JsonProperty("dnsLabel")
         private String dnsLabel;
 
-        @JsonProperty("prohibitPublicIpOnVnic")
+        @com.fasterxml.jackson.annotation.JsonProperty("prohibitPublicIpOnVnic")
         private Boolean prohibitPublicIpOnVnic;
 
-        @JsonProperty("routeTableId")
+        @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
         private String routeTableId;
 
-        @JsonProperty("securityListIds")
-        private List<String> securityListIds;
+        @com.fasterxml.jackson.annotation.JsonProperty("securityListIds")
+        private java.util.List<String> securityListIds;
 
-        @JsonProperty("vcnId")
+        @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
         public CreateSubnetDetails build() {
@@ -66,7 +57,7 @@ public class CreateSubnetDetails {
                     vcnId);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateSubnetDetails o) {
             return availabilityDomain(o.getAvailabilityDomain())
                     .cidrBlock(o.getCidrBlock())
@@ -94,10 +85,10 @@ public class CreateSubnetDetails {
      * Example: `Uocm:PHX-AD-1`
      *
      **/
-    @JsonProperty("availabilityDomain")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String availabilityDomain;
 
     /**
@@ -106,19 +97,19 @@ public class CreateSubnetDetails {
      * Example: `172.16.1.0/24`
      *
      **/
-    @JsonProperty("cidrBlock")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 32)
+    @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 32)
     String cidrBlock;
 
     /**
      * The OCID of the compartment to contain the subnet.
      **/
-    @JsonProperty("compartmentId")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
@@ -126,15 +117,15 @@ public class CreateSubnetDetails {
      * provide a value, the subnet will use the VCN's default set of DHCP options.
      *
      **/
-    @JsonProperty("dhcpOptionsId")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("dhcpOptionsId")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String dhcpOptionsId;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      **/
-    @JsonProperty("displayName")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
@@ -154,16 +145,16 @@ public class CreateSubnetDetails {
      * Example: `subnet123`
      *
      **/
-    @JsonProperty("dnsLabel")
-    @Size(min = 1, max = 15)
+    @com.fasterxml.jackson.annotation.JsonProperty("dnsLabel")
+    @javax.validation.constraints.Size(min = 1, max = 15)
     String dnsLabel;
 
     /**
      * Whether VNICs within this subnet can have public IP addresses.
      * Defaults to false, which means VNICs created in this subnet will
      * automatically be assigned public IP addresses unless specified
-     * otherwise during instance launch (with the `assignPublicIp` flag in
-     * {@link CreateVnicDetails}).
+     * otherwise during instance launch or VNIC creation (with the
+     * `assignPublicIp` flag in {@link CreateVnicDetails}).
      * If `prohibitPublicIpOnVnic` is set to true, VNICs created in this
      * subnet cannot have public IP addresses (i.e., it's a private
      * subnet).
@@ -171,7 +162,7 @@ public class CreateSubnetDetails {
      * Example: `true`
      *
      **/
-    @JsonProperty("prohibitPublicIpOnVnic")
+    @com.fasterxml.jackson.annotation.JsonProperty("prohibitPublicIpOnVnic")
     Boolean prohibitPublicIpOnVnic;
 
     /**
@@ -179,8 +170,8 @@ public class CreateSubnetDetails {
      * the subnet will use the VCN's default route table.
      *
      **/
-    @JsonProperty("routeTableId")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String routeTableId;
 
     /**
@@ -190,15 +181,15 @@ public class CreateSubnetDetails {
      * level, but the rules are applied to the individual VNICs in the subnet.
      *
      **/
-    @JsonProperty("securityListIds")
-    List<String> securityListIds;
+    @com.fasterxml.jackson.annotation.JsonProperty("securityListIds")
+    java.util.List<String> securityListIds;
 
     /**
      * The OCID of the VCN to contain the subnet.
      **/
-    @JsonProperty("vcnId")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String vcnId;
 }

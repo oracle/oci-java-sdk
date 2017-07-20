@@ -3,14 +3,8 @@
  */
 package com.oracle.bmc.core;
 
-import com.oracle.bmc.responses.AsyncHandler;
-
-import java.util.concurrent.Future;
-
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
-
-import com.oracle.bmc.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface BlockstorageAsync extends AutoCloseable {
@@ -27,7 +21,7 @@ public interface BlockstorageAsync extends AutoCloseable {
      * Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the endpoint.  If the service is not available in this region, however, an IllegalArgumentException will be raised.
      * @param region The region of the service.
      */
-    void setRegion(Region region);
+    void setRegion(com.oracle.bmc.Region region);
 
     /**
      * Sets the region to call (ex, 'us-phoenix-1').
@@ -43,7 +37,8 @@ public interface BlockstorageAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Creates a new volume in the specified compartment. The size of a volume can be either 256 GB or 2 TB.
+     * Creates a new volume in the specified compartment. Volumes can be created in sizes ranging from
+     * 50 GB (51200 MB) to 2 TB (2097152 MB), in 1 GB (1024 MB) increments. By default, volumes are 1 TB (1048576 MB).
      * For general information about block volumes, see
      * [Overview of Block Volume Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/overview.htm).
      * <p>
@@ -55,19 +50,20 @@ public interface BlockstorageAsync extends AutoCloseable {
      * in the Identity and Access Management Service API.
      * <p>
      * You may optionally specify a *display name* for the volume, which is simply a friendly name or
-     * description. It does not have to be unique, and you can change it.
+     * description. It does not have to be unique, and you can change it. Avoid entering confidential information.
      *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<CreateVolumeResponse> createVolume(
+    java.util.concurrent.Future<CreateVolumeResponse> createVolume(
             CreateVolumeRequest request,
-            AsyncHandler<CreateVolumeRequest, CreateVolumeResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<CreateVolumeRequest, CreateVolumeResponse>
+                    handler);
 
     /**
      * Creates a new backup of the specified volume. For general information about volume backups,
@@ -82,12 +78,14 @@ public interface BlockstorageAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<CreateVolumeBackupResponse> createVolumeBackup(
+    java.util.concurrent.Future<CreateVolumeBackupResponse> createVolumeBackup(
             CreateVolumeBackupRequest request,
-            AsyncHandler<CreateVolumeBackupRequest, CreateVolumeBackupResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateVolumeBackupRequest, CreateVolumeBackupResponse>
+                    handler);
 
     /**
      * Deletes the specified volume. The volume cannot have an active connection to an instance.
@@ -100,12 +98,13 @@ public interface BlockstorageAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<DeleteVolumeResponse> deleteVolume(
+    java.util.concurrent.Future<DeleteVolumeResponse> deleteVolume(
             DeleteVolumeRequest request,
-            AsyncHandler<DeleteVolumeRequest, DeleteVolumeResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<DeleteVolumeRequest, DeleteVolumeResponse>
+                    handler);
 
     /**
      * Deletes a volume backup.
@@ -114,12 +113,14 @@ public interface BlockstorageAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<DeleteVolumeBackupResponse> deleteVolumeBackup(
+    java.util.concurrent.Future<DeleteVolumeBackupResponse> deleteVolumeBackup(
             DeleteVolumeBackupRequest request,
-            AsyncHandler<DeleteVolumeBackupRequest, DeleteVolumeBackupResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteVolumeBackupRequest, DeleteVolumeBackupResponse>
+                    handler);
 
     /**
      * Gets information for the specified volume.
@@ -128,11 +129,12 @@ public interface BlockstorageAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<GetVolumeResponse> getVolume(
-            GetVolumeRequest request, AsyncHandler<GetVolumeRequest, GetVolumeResponse> handler);
+    java.util.concurrent.Future<GetVolumeResponse> getVolume(
+            GetVolumeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetVolumeRequest, GetVolumeResponse> handler);
 
     /**
      * Gets information for the specified volume backup.
@@ -141,12 +143,13 @@ public interface BlockstorageAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<GetVolumeBackupResponse> getVolumeBackup(
+    java.util.concurrent.Future<GetVolumeBackupResponse> getVolumeBackup(
             GetVolumeBackupRequest request,
-            AsyncHandler<GetVolumeBackupRequest, GetVolumeBackupResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<GetVolumeBackupRequest, GetVolumeBackupResponse>
+                    handler);
 
     /**
      * Lists the volume backups in the specified compartment. You can filter the results by volume.
@@ -156,12 +159,14 @@ public interface BlockstorageAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListVolumeBackupsResponse> listVolumeBackups(
+    java.util.concurrent.Future<ListVolumeBackupsResponse> listVolumeBackups(
             ListVolumeBackupsRequest request,
-            AsyncHandler<ListVolumeBackupsRequest, ListVolumeBackupsResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListVolumeBackupsRequest, ListVolumeBackupsResponse>
+                    handler);
 
     /**
      * Lists the volumes in the specified compartment and Availability Domain.
@@ -171,38 +176,45 @@ public interface BlockstorageAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListVolumesResponse> listVolumes(
+    java.util.concurrent.Future<ListVolumesResponse> listVolumes(
             ListVolumesRequest request,
-            AsyncHandler<ListVolumesRequest, ListVolumesResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<ListVolumesRequest, ListVolumesResponse> handler);
 
     /**
      * Updates the specified volume's display name.
+     * Avoid entering confidential information.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<UpdateVolumeResponse> updateVolume(
+    java.util.concurrent.Future<UpdateVolumeResponse> updateVolume(
             UpdateVolumeRequest request,
-            AsyncHandler<UpdateVolumeRequest, UpdateVolumeResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<UpdateVolumeRequest, UpdateVolumeResponse>
+                    handler);
 
     /**
      * Updates the display name for the specified volume backup.
+     * Avoid entering confidential information.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<UpdateVolumeBackupResponse> updateVolumeBackup(
+    java.util.concurrent.Future<UpdateVolumeBackupResponse> updateVolumeBackup(
             UpdateVolumeBackupRequest request,
-            AsyncHandler<UpdateVolumeBackupRequest, UpdateVolumeBackupResponse> handler);
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateVolumeBackupRequest, UpdateVolumeBackupResponse>
+                    handler);
 }

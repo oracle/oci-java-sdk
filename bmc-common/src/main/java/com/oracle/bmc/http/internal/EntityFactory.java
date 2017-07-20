@@ -5,10 +5,12 @@ package com.oracle.bmc.http.internal;
 
 import java.io.InputStream;
 
+import javax.annotation.Nullable;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Variant;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.glassfish.jersey.client.ClientRequest;
 
 import com.oracle.bmc.util.internal.ReflectionUtils;
@@ -31,7 +33,7 @@ class EntityFactory {
             return null;
         }
         // POST only supports JSON bodies
-        return Entity.json(body);
+        return Entity.json(getBodyAsString(body));
     }
 
     /**
@@ -46,7 +48,7 @@ class EntityFactory {
             return null;
         }
         // POST only supports JSON bodies
-        return Entity.json(body);
+        return Entity.json(getBodyAsString(body));
     }
 
     /**
@@ -74,7 +76,7 @@ class EntityFactory {
         if (body instanceof InputStream) {
             requestBody = Entity.entity(body, InputStreamVariantCreator.create(request));
         } else {
-            requestBody = Entity.json(body);
+            requestBody = Entity.json(getBodyAsString(body));
         }
         return requestBody;
     }
@@ -108,6 +110,21 @@ class EntityFactory {
                 return (String) response;
             }
             return defaultValue;
+        }
+    }
+
+    /**
+     * Convert the body to a JSON string, unless it is already a string.
+     * @param body body
+     * @return body as string
+     */
+    static String getBodyAsString(@Nullable Object body) {
+        try {
+            return (body instanceof String)
+                    ? (String) body
+                    : RestClientFactory.getObjectMapper().writeValueAsString(body);
+        } catch (JsonProcessingException e) {
+            throw new IllegalArgumentException("Unable to process JSON body", e);
         }
     }
 }

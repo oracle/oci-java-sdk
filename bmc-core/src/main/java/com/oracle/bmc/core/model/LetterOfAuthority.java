@@ -3,47 +3,38 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * The Letter of Authority for the cross-connect. You must submit this letter when
  * requesting cabling for the cross-connect at the FastConnect location.
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = LetterOfAuthority.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = LetterOfAuthority.Builder.class
+)
 public class LetterOfAuthority {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("circuitType")
+        @com.fasterxml.jackson.annotation.JsonProperty("circuitType")
         private CircuitType circuitType;
 
-        @JsonProperty("crossConnectId")
+        @com.fasterxml.jackson.annotation.JsonProperty("crossConnectId")
         private String crossConnectId;
 
-        @JsonProperty("facilityLocation")
+        @com.fasterxml.jackson.annotation.JsonProperty("facilityLocation")
         private String facilityLocation;
 
-        @JsonProperty("portName")
+        @com.fasterxml.jackson.annotation.JsonProperty("portName")
         private String portName;
 
-        @JsonProperty("timeExpires")
-        private Date timeExpires;
+        @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
+        private java.util.Date timeExpires;
 
-        @JsonProperty("timeIssued")
-        private Date timeIssued;
+        @com.fasterxml.jackson.annotation.JsonProperty("timeIssued")
+        private java.util.Date timeIssued;
 
         public LetterOfAuthority build() {
             return new LetterOfAuthority(
@@ -55,7 +46,7 @@ public class LetterOfAuthority {
                     timeIssued);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(LetterOfAuthority o) {
             return circuitType(o.getCircuitType())
                     .crossConnectId(o.getCrossConnectId())
@@ -88,10 +79,10 @@ public class LetterOfAuthority {
         UnknownEnumValue(null);
 
         private final String value;
-        private static Map<String, CircuitType> map;
+        private static java.util.Map<String, CircuitType> map;
 
         static {
-            map = new HashMap<>();
+            map = new java.util.HashMap<>();
             for (CircuitType v : CircuitType.values()) {
                 if (v != UnknownEnumValue) {
                     map.put(v.getValue(), v);
@@ -103,12 +94,12 @@ public class LetterOfAuthority {
             this.value = value;
         }
 
-        @JsonValue
+        @com.fasterxml.jackson.annotation.JsonValue
         public String getValue() {
             return value;
         }
 
-        @JsonCreator
+        @com.fasterxml.jackson.annotation.JsonCreator
         public static CircuitType create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
@@ -122,36 +113,36 @@ public class LetterOfAuthority {
     /**
      * The type of cross-connect fiber, termination, and optical specification.
      **/
-    @JsonProperty("circuitType")
+    @com.fasterxml.jackson.annotation.JsonProperty("circuitType")
     CircuitType circuitType;
 
     /**
      * The OCID of the cross-connect.
      **/
-    @JsonProperty("crossConnectId")
-    @Size(min = 1)
+    @com.fasterxml.jackson.annotation.JsonProperty("crossConnectId")
+    @javax.validation.constraints.Size(min = 1)
     String crossConnectId;
 
     /**
      * The address of the FastConnect location.
      **/
-    @JsonProperty("facilityLocation")
-    @Size(min = 1)
+    @com.fasterxml.jackson.annotation.JsonProperty("facilityLocation")
+    @javax.validation.constraints.Size(min = 1)
     String facilityLocation;
 
     /**
      * The meet-me room port for this cross-connect.
      **/
-    @JsonProperty("portName")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("portName")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String portName;
 
     /**
      * The date and time when the Letter of Authority expires, in the format defined by RFC3339.
      *
      **/
-    @JsonProperty("timeExpires")
-    Date timeExpires;
+    @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
+    java.util.Date timeExpires;
 
     /**
      * The date and time the Letter of Authority was created, in the format defined by RFC3339.
@@ -159,6 +150,6 @@ public class LetterOfAuthority {
      * Example: `2016-08-25T21:10:29.600Z`
      *
      **/
-    @JsonProperty("timeIssued")
-    Date timeIssued;
+    @com.fasterxml.jackson.annotation.JsonProperty("timeIssued")
+    java.util.Date timeIssued;
 }

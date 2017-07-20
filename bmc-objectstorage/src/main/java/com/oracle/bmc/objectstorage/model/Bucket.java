@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.objectstorage.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
@@ -21,35 +10,35 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = Bucket.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Bucket.Builder.class)
 public class Bucket {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("namespace")
+        @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
-        @JsonProperty("name")
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
-        @JsonProperty("compartmentId")
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
-        @JsonProperty("metadata")
-        private Map<String, String> metadata;
+        @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+        private java.util.Map<String, String> metadata;
 
-        @JsonProperty("createdBy")
+        @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
         private String createdBy;
 
-        @JsonProperty("timeCreated")
-        private Date timeCreated;
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+        private java.util.Date timeCreated;
 
-        @JsonProperty("etag")
+        @com.fasterxml.jackson.annotation.JsonProperty("etag")
         private String etag;
 
-        @JsonProperty("publicAccessType")
+        @com.fasterxml.jackson.annotation.JsonProperty("publicAccessType")
         private PublicAccessType publicAccessType;
 
         public Bucket build() {
@@ -64,7 +53,7 @@ public class Bucket {
                     publicAccessType);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Bucket o) {
             return namespace(o.getNamespace())
                     .name(o.getName())
@@ -87,57 +76,57 @@ public class Bucket {
     /**
      * The namespace in which the bucket lives.
      **/
-    @JsonProperty("namespace")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("namespace")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String namespace;
 
     /**
      * The name of the bucket.
      **/
-    @JsonProperty("name")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String name;
 
     /**
      * The compartment ID in which the bucket is authorized.
      **/
-    @JsonProperty("compartmentId")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String compartmentId;
 
     /**
      * Arbitrary string keys and values for user-defined metadata.
      **/
-    @JsonProperty("metadata")
-    @Valid
-    @NotNull
-    Map<String, String> metadata;
+    @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    java.util.Map<String, String> metadata;
 
     /**
      * The OCID of the user who created the bucket.
      **/
-    @JsonProperty("createdBy")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String createdBy;
 
     /**
      * The date and time at which the bucket was created.
      **/
-    @JsonProperty("timeCreated")
-    @Valid
-    @NotNull
-    Date timeCreated;
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    java.util.Date timeCreated;
 
     /**
      * The entity tag for the bucket.
      **/
-    @JsonProperty("etag")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("etag")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String etag;
     /**
      * The type of public access available on this bucket. Allows authenticated caller to access the bucket or
@@ -158,10 +147,10 @@ public class Bucket {
         UnknownEnumValue(null);
 
         private final String value;
-        private static Map<String, PublicAccessType> map;
+        private static java.util.Map<String, PublicAccessType> map;
 
         static {
-            map = new HashMap<>();
+            map = new java.util.HashMap<>();
             for (PublicAccessType v : PublicAccessType.values()) {
                 if (v != UnknownEnumValue) {
                     map.put(v.getValue(), v);
@@ -173,12 +162,12 @@ public class Bucket {
             this.value = value;
         }
 
-        @JsonValue
+        @com.fasterxml.jackson.annotation.JsonValue
         public String getValue() {
             return value;
         }
 
-        @JsonCreator
+        @com.fasterxml.jackson.annotation.JsonCreator
         public static PublicAccessType create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
@@ -196,6 +185,6 @@ public class Bucket {
      * When the type is ObjectRead the bucket allows public access to the GetObject, HeadObject, ListObjects.
      *
      **/
-    @JsonProperty("publicAccessType")
+    @com.fasterxml.jackson.annotation.JsonProperty("publicAccessType")
     PublicAccessType publicAccessType;
 }

@@ -3,44 +3,35 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = CreateCrossConnectDetails.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = CreateCrossConnectDetails.Builder.class
+)
 public class CreateCrossConnectDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("compartmentId")
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
-        @JsonProperty("crossConnectGroupId")
+        @com.fasterxml.jackson.annotation.JsonProperty("crossConnectGroupId")
         private String crossConnectGroupId;
 
-        @JsonProperty("displayName")
+        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
-        @JsonProperty("farCrossConnectOrCrossConnectGroupId")
+        @com.fasterxml.jackson.annotation.JsonProperty("farCrossConnectOrCrossConnectGroupId")
         private String farCrossConnectOrCrossConnectGroupId;
 
-        @JsonProperty("locationName")
+        @com.fasterxml.jackson.annotation.JsonProperty("locationName")
         private String locationName;
 
-        @JsonProperty("nearCrossConnectOrCrossConnectGroupId")
+        @com.fasterxml.jackson.annotation.JsonProperty("nearCrossConnectOrCrossConnectGroupId")
         private String nearCrossConnectOrCrossConnectGroupId;
 
-        @JsonProperty("portSpeedShapeName")
+        @com.fasterxml.jackson.annotation.JsonProperty("portSpeedShapeName")
         private String portSpeedShapeName;
 
         public CreateCrossConnectDetails build() {
@@ -54,7 +45,7 @@ public class CreateCrossConnectDetails {
                     portSpeedShapeName);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateCrossConnectDetails o) {
             return compartmentId(o.getCompartmentId())
                     .crossConnectGroupId(o.getCrossConnectGroupId())
@@ -78,24 +69,26 @@ public class CreateCrossConnectDetails {
     /**
      * The OCID of the compartment to contain the cross-connect.
      **/
-    @JsonProperty("compartmentId")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
      * The OCID of the cross-connect group to put this cross-connect in.
      **/
-    @JsonProperty("crossConnectGroupId")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("crossConnectGroupId")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String crossConnectGroupId;
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
      **/
-    @JsonProperty("displayName")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
@@ -105,8 +98,8 @@ public class CreateCrossConnectDetails {
      * cross-connect group.
      *
      **/
-    @JsonProperty("farCrossConnectOrCrossConnectGroupId")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("farCrossConnectOrCrossConnectGroupId")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String farCrossConnectOrCrossConnectGroupId;
 
     /**
@@ -117,10 +110,10 @@ public class CreateCrossConnectDetails {
      * Example: `CyrusOne, Chandler, AZ`
      *
      **/
-    @JsonProperty("locationName")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("locationName")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String locationName;
 
     /**
@@ -129,8 +122,8 @@ public class CreateCrossConnectDetails {
      * OCID of that existing cross-connect or cross-connect group.
      *
      **/
-    @JsonProperty("nearCrossConnectOrCrossConnectGroupId")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("nearCrossConnectOrCrossConnectGroupId")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String nearCrossConnectOrCrossConnectGroupId;
 
     /**
@@ -140,8 +133,8 @@ public class CreateCrossConnectDetails {
      * Example: `10 Gbps`
      *
      **/
-    @JsonProperty("portSpeedShapeName")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("portSpeedShapeName")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String portSpeedShapeName;
 }

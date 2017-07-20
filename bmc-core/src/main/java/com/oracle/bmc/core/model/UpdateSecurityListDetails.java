@@ -3,40 +3,31 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = UpdateSecurityListDetails.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = UpdateSecurityListDetails.Builder.class
+)
 public class UpdateSecurityListDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("displayName")
+        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
-        @JsonProperty("egressSecurityRules")
-        private List<EgressSecurityRule> egressSecurityRules;
+        @com.fasterxml.jackson.annotation.JsonProperty("egressSecurityRules")
+        private java.util.List<EgressSecurityRule> egressSecurityRules;
 
-        @JsonProperty("ingressSecurityRules")
-        private List<IngressSecurityRule> ingressSecurityRules;
+        @com.fasterxml.jackson.annotation.JsonProperty("ingressSecurityRules")
+        private java.util.List<IngressSecurityRule> ingressSecurityRules;
 
         public UpdateSecurityListDetails build() {
             return new UpdateSecurityListDetails(
                     displayName, egressSecurityRules, ingressSecurityRules);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateSecurityListDetails o) {
             return displayName(o.getDisplayName())
                     .egressSecurityRules(o.getEgressSecurityRules())
@@ -53,20 +44,22 @@ public class UpdateSecurityListDetails {
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
      **/
-    @JsonProperty("displayName")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
      * Rules for allowing egress IP packets.
      **/
-    @JsonProperty("egressSecurityRules")
-    List<EgressSecurityRule> egressSecurityRules;
+    @com.fasterxml.jackson.annotation.JsonProperty("egressSecurityRules")
+    java.util.List<EgressSecurityRule> egressSecurityRules;
 
     /**
      * Rules for allowing ingress IP packets.
      **/
-    @JsonProperty("ingressSecurityRules")
-    List<IngressSecurityRule> ingressSecurityRules;
+    @com.fasterxml.jackson.annotation.JsonProperty("ingressSecurityRules")
+    java.util.List<IngressSecurityRule> ingressSecurityRules;
 }

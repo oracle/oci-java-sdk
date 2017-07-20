@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * A Virtual Cloud Network (VCN). For more information, see
  * [Overview of the Networking Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm).
@@ -24,44 +13,44 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = Vcn.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Vcn.Builder.class)
 public class Vcn {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("cidrBlock")
+        @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
         private String cidrBlock;
 
-        @JsonProperty("compartmentId")
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
-        @JsonProperty("defaultDhcpOptionsId")
+        @com.fasterxml.jackson.annotation.JsonProperty("defaultDhcpOptionsId")
         private String defaultDhcpOptionsId;
 
-        @JsonProperty("defaultRouteTableId")
+        @com.fasterxml.jackson.annotation.JsonProperty("defaultRouteTableId")
         private String defaultRouteTableId;
 
-        @JsonProperty("defaultSecurityListId")
+        @com.fasterxml.jackson.annotation.JsonProperty("defaultSecurityListId")
         private String defaultSecurityListId;
 
-        @JsonProperty("displayName")
+        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
-        @JsonProperty("dnsLabel")
+        @com.fasterxml.jackson.annotation.JsonProperty("dnsLabel")
         private String dnsLabel;
 
-        @JsonProperty("id")
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
-        @JsonProperty("lifecycleState")
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
-        @JsonProperty("timeCreated")
-        private Date timeCreated;
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+        private java.util.Date timeCreated;
 
-        @JsonProperty("vcnDomainName")
+        @com.fasterxml.jackson.annotation.JsonProperty("vcnDomainName")
         private String vcnDomainName;
 
         public Vcn build() {
@@ -79,7 +68,7 @@ public class Vcn {
                     vcnDomainName);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Vcn o) {
             return cidrBlock(o.getCidrBlock())
                     .compartmentId(o.getCompartmentId())
@@ -108,48 +97,50 @@ public class Vcn {
      * Example: `172.16.0.0/16`
      *
      **/
-    @JsonProperty("cidrBlock")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 32)
+    @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 32)
     String cidrBlock;
 
     /**
      * The OCID of the compartment containing the VCN.
      **/
-    @JsonProperty("compartmentId")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
      * The OCID for the VCN's default set of DHCP options.
      *
      **/
-    @JsonProperty("defaultDhcpOptionsId")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("defaultDhcpOptionsId")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String defaultDhcpOptionsId;
 
     /**
      * The OCID for the VCN's default route table.
      **/
-    @JsonProperty("defaultRouteTableId")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("defaultRouteTableId")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String defaultRouteTableId;
 
     /**
      * The OCID for the VCN's default security list.
      **/
-    @JsonProperty("defaultSecurityListId")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("defaultSecurityListId")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String defaultSecurityListId;
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
      **/
-    @JsonProperty("displayName")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
@@ -168,17 +159,17 @@ public class Vcn {
      * Example: `vcn1`
      *
      **/
-    @JsonProperty("dnsLabel")
-    @Size(min = 1, max = 15)
+    @com.fasterxml.jackson.annotation.JsonProperty("dnsLabel")
+    @javax.validation.constraints.Size(min = 1, max = 15)
     String dnsLabel;
 
     /**
      * The VCN's Oracle ID (OCID).
      **/
-    @JsonProperty("id")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String id;
     /**
      * The VCN's current state.
@@ -197,10 +188,10 @@ public class Vcn {
         UnknownEnumValue(null);
 
         private final String value;
-        private static Map<String, LifecycleState> map;
+        private static java.util.Map<String, LifecycleState> map;
 
         static {
-            map = new HashMap<>();
+            map = new java.util.HashMap<>();
             for (LifecycleState v : LifecycleState.values()) {
                 if (v != UnknownEnumValue) {
                     map.put(v.getValue(), v);
@@ -212,12 +203,12 @@ public class Vcn {
             this.value = value;
         }
 
-        @JsonValue
+        @com.fasterxml.jackson.annotation.JsonValue
         public String getValue() {
             return value;
         }
 
-        @JsonCreator
+        @com.fasterxml.jackson.annotation.JsonCreator
         public static LifecycleState create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
@@ -231,9 +222,9 @@ public class Vcn {
     /**
      * The VCN's current state.
      **/
-    @JsonProperty("lifecycleState")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     LifecycleState lifecycleState;
 
     /**
@@ -242,8 +233,8 @@ public class Vcn {
      * Example: `2016-08-25T21:10:29.600Z`
      *
      **/
-    @JsonProperty("timeCreated")
-    Date timeCreated;
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    java.util.Date timeCreated;
 
     /**
      * The VCN's domain name, which consists of the VCN's DNS label, and the
@@ -255,7 +246,7 @@ public class Vcn {
      * Example: `vcn1.oraclevcn.com`
      *
      **/
-    @JsonProperty("vcnDomainName")
-    @Size(min = 1, max = 253)
+    @com.fasterxml.jackson.annotation.JsonProperty("vcnDomainName")
+    @javax.validation.constraints.Size(min = 1, max = 253)
     String vcnDomainName;
 }

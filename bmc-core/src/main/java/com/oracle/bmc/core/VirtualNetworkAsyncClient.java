@@ -3,50 +3,28 @@
  */
 package com.oracle.bmc.core;
 
-import com.oracle.bmc.ClientConfiguration;
-import com.oracle.bmc.auth.*;
-import com.oracle.bmc.http.ClientConfigurator;
-import com.oracle.bmc.http.internal.*;
-import com.oracle.bmc.http.signing.*;
-import com.oracle.bmc.http.signing.internal.*;
-import com.oracle.bmc.responses.*;
-import com.oracle.bmc.util.internal.*;
-
-import com.google.common.base.Function;
-import com.google.common.base.Optional;
-
-import java.util.concurrent.Future;
-
-import javax.ws.rs.client.*;
-import javax.ws.rs.core.*;
-
 import com.oracle.bmc.core.internal.http.*;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
 
-import com.oracle.bmc.*;
-
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Slf4j
+@lombok.extern.slf4j.Slf4j
 public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     /**
      * Service instance for VirtualNetwork.
      */
-    public static final Service SERVICE = Services.create("VIRTUALNETWORK", "iaas");
+    public static final com.oracle.bmc.Service SERVICE =
+            com.oracle.bmc.Services.create("VIRTUALNETWORK", "iaas");
 
-    @Getter(value = AccessLevel.PACKAGE)
-    private final RestClient client;
+    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private final com.oracle.bmc.http.internal.RestClient client;
 
     /**
      * Creates a new service instance using the given authentication provider.
      * @param authenticationDetailsProvider The authentication details provider, required.
      */
     public VirtualNetworkAsyncClient(
-            BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
         this(authenticationDetailsProvider, null);
     }
 
@@ -56,8 +34,8 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
      * @param configuration The client configuration, optional.
      */
     public VirtualNetworkAsyncClient(
-            BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            ClientConfiguration configuration) {
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
         this(authenticationDetailsProvider, configuration, null);
     }
 
@@ -69,14 +47,15 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
      * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      */
     public VirtualNetworkAsyncClient(
-            BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            ClientConfiguration configuration,
-            ClientConfigurator clientConfigurator) {
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
         this(
                 authenticationDetailsProvider,
                 configuration,
                 clientConfigurator,
-                new DefaultRequestSignerFactory(SigningStrategy.STANDARD));
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
     }
 
     /**
@@ -90,13 +69,15 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
      * @param requestSignerFactory The request signer factory used to create the request signer for this service.
      */
     public VirtualNetworkAsyncClient(
-            AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            ClientConfiguration configuration,
-            ClientConfigurator clientConfigurator,
-            RequestSignerFactory requestSignerFactory) {
-        RestClientFactory restClientFactory =
-                RestClientFactoryBuilder.builder().clientConfigurator(clientConfigurator).build();
-        RequestSigner requestSigner =
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory requestSignerFactory) {
+        com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
+                        .clientConfigurator(clientConfigurator)
+                        .build();
+        com.oracle.bmc.http.signing.RequestSigner requestSigner =
                 requestSignerFactory.createRequestSigner(SERVICE, authenticationDetailsProvider);
         this.client = restClientFactory.create(requestSigner, configuration);
     }
@@ -108,8 +89,8 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
-    public void setRegion(Region region) {
-        Optional<String> endpoint = region.getEndpoint(SERVICE);
+    public void setRegion(com.oracle.bmc.Region region) {
+        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -122,11 +103,11 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     public void setRegion(String regionId) {
         regionId = regionId.toLowerCase();
         try {
-            Region region = Region.fromRegionId(regionId);
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
             setRegion(region);
         } catch (IllegalArgumentException e) {
             LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
-            String endpoint = Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
             setEndpoint(endpoint);
         }
     }
@@ -137,1293 +118,1808 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
-    public Future<CreateCpeResponse> createCpe(
-            CreateCpeRequest request, AsyncHandler<CreateCpeRequest, CreateCpeResponse> handler) {
+    public java.util.concurrent.Future<CreateCpeResponse> createCpe(
+            CreateCpeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateCpeRequest, CreateCpeResponse> handler) {
         LOG.trace("Called async createCpe");
         request = CreateCpeConverter.interceptRequest(request);
-        Invocation.Builder ib = CreateCpeConverter.fromRequest(client, request);
-        Function<Response, CreateCpeResponse> transformer = CreateCpeConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = CreateCpeConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateCpeResponse> transformer =
+                CreateCpeConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture =
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.post(ib, request.getCreateCpeDetails(), request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<CreateCrossConnectResponse> createCrossConnect(
+    public java.util.concurrent.Future<CreateCrossConnectResponse> createCrossConnect(
             CreateCrossConnectRequest request,
-            AsyncHandler<CreateCrossConnectRequest, CreateCrossConnectResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateCrossConnectRequest, CreateCrossConnectResponse>
+                    handler) {
         LOG.trace("Called async createCrossConnect");
         request = CreateCrossConnectConverter.interceptRequest(request);
-        Invocation.Builder ib = CreateCrossConnectConverter.fromRequest(client, request);
-        Function<Response, CreateCrossConnectResponse> transformer =
-                CreateCrossConnectConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                CreateCrossConnectConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateCrossConnectResponse>
+                transformer = CreateCrossConnectConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture =
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.post(
                         ib, request.getCreateCrossConnectDetails(), request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<CreateCrossConnectGroupResponse> createCrossConnectGroup(
+    public java.util.concurrent.Future<CreateCrossConnectGroupResponse> createCrossConnectGroup(
             CreateCrossConnectGroupRequest request,
-            AsyncHandler<CreateCrossConnectGroupRequest, CreateCrossConnectGroupResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateCrossConnectGroupRequest, CreateCrossConnectGroupResponse>
+                    handler) {
         LOG.trace("Called async createCrossConnectGroup");
         request = CreateCrossConnectGroupConverter.interceptRequest(request);
-        Invocation.Builder ib = CreateCrossConnectGroupConverter.fromRequest(client, request);
-        Function<Response, CreateCrossConnectGroupResponse> transformer =
-                CreateCrossConnectGroupConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                CreateCrossConnectGroupConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateCrossConnectGroupResponse>
+                transformer = CreateCrossConnectGroupConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture =
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.post(
                         ib,
                         request.getCreateCrossConnectGroupDetails(),
                         request,
                         onSuccess,
                         onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<CreateDhcpOptionsResponse> createDhcpOptions(
+    public java.util.concurrent.Future<CreateDhcpOptionsResponse> createDhcpOptions(
             CreateDhcpOptionsRequest request,
-            AsyncHandler<CreateDhcpOptionsRequest, CreateDhcpOptionsResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateDhcpOptionsRequest, CreateDhcpOptionsResponse>
+                    handler) {
         LOG.trace("Called async createDhcpOptions");
         request = CreateDhcpOptionsConverter.interceptRequest(request);
-        Invocation.Builder ib = CreateDhcpOptionsConverter.fromRequest(client, request);
-        Function<Response, CreateDhcpOptionsResponse> transformer =
-                CreateDhcpOptionsConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                CreateDhcpOptionsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDhcpOptionsResponse>
+                transformer = CreateDhcpOptionsConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture =
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.post(ib, request.getCreateDhcpDetails(), request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<CreateDrgResponse> createDrg(
-            CreateDrgRequest request, AsyncHandler<CreateDrgRequest, CreateDrgResponse> handler) {
+    public java.util.concurrent.Future<CreateDrgResponse> createDrg(
+            CreateDrgRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateDrgRequest, CreateDrgResponse> handler) {
         LOG.trace("Called async createDrg");
         request = CreateDrgConverter.interceptRequest(request);
-        Invocation.Builder ib = CreateDrgConverter.fromRequest(client, request);
-        Function<Response, CreateDrgResponse> transformer = CreateDrgConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = CreateDrgConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDrgResponse> transformer =
+                CreateDrgConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture =
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.post(ib, request.getCreateDrgDetails(), request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<CreateDrgAttachmentResponse> createDrgAttachment(
+    public java.util.concurrent.Future<CreateDrgAttachmentResponse> createDrgAttachment(
             CreateDrgAttachmentRequest request,
-            AsyncHandler<CreateDrgAttachmentRequest, CreateDrgAttachmentResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateDrgAttachmentRequest, CreateDrgAttachmentResponse>
+                    handler) {
         LOG.trace("Called async createDrgAttachment");
         request = CreateDrgAttachmentConverter.interceptRequest(request);
-        Invocation.Builder ib = CreateDrgAttachmentConverter.fromRequest(client, request);
-        Function<Response, CreateDrgAttachmentResponse> transformer =
-                CreateDrgAttachmentConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                CreateDrgAttachmentConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDrgAttachmentResponse>
+                transformer = CreateDrgAttachmentConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture =
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.post(
                         ib, request.getCreateDrgAttachmentDetails(), request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<CreateIPSecConnectionResponse> createIPSecConnection(
+    public java.util.concurrent.Future<CreateIPSecConnectionResponse> createIPSecConnection(
             CreateIPSecConnectionRequest request,
-            AsyncHandler<CreateIPSecConnectionRequest, CreateIPSecConnectionResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateIPSecConnectionRequest, CreateIPSecConnectionResponse>
+                    handler) {
         LOG.trace("Called async createIPSecConnection");
         request = CreateIPSecConnectionConverter.interceptRequest(request);
-        Invocation.Builder ib = CreateIPSecConnectionConverter.fromRequest(client, request);
-        Function<Response, CreateIPSecConnectionResponse> transformer =
-                CreateIPSecConnectionConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                CreateIPSecConnectionConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateIPSecConnectionResponse>
+                transformer = CreateIPSecConnectionConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture =
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.post(
                         ib, request.getCreateIPSecConnectionDetails(), request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<CreateInternetGatewayResponse> createInternetGateway(
+    public java.util.concurrent.Future<CreateInternetGatewayResponse> createInternetGateway(
             CreateInternetGatewayRequest request,
-            AsyncHandler<CreateInternetGatewayRequest, CreateInternetGatewayResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateInternetGatewayRequest, CreateInternetGatewayResponse>
+                    handler) {
         LOG.trace("Called async createInternetGateway");
         request = CreateInternetGatewayConverter.interceptRequest(request);
-        Invocation.Builder ib = CreateInternetGatewayConverter.fromRequest(client, request);
-        Function<Response, CreateInternetGatewayResponse> transformer =
-                CreateInternetGatewayConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                CreateInternetGatewayConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateInternetGatewayResponse>
+                transformer = CreateInternetGatewayConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture =
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.post(
                         ib, request.getCreateInternetGatewayDetails(), request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<CreateRouteTableResponse> createRouteTable(
+    public java.util.concurrent.Future<CreatePrivateIpResponse> createPrivateIp(
+            CreatePrivateIpRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreatePrivateIpRequest, CreatePrivateIpResponse>
+                    handler) {
+        LOG.trace("Called async createPrivateIp");
+        request = CreatePrivateIpConverter.interceptRequest(request);
+        javax.ws.rs.client.Invocation.Builder ib =
+                CreatePrivateIpConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreatePrivateIpResponse>
+                transformer = CreatePrivateIpConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.post(ib, request.getCreatePrivateIpDetails(), request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRouteTableResponse> createRouteTable(
             CreateRouteTableRequest request,
-            AsyncHandler<CreateRouteTableRequest, CreateRouteTableResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<CreateRouteTableRequest, CreateRouteTableResponse>
+                    handler) {
         LOG.trace("Called async createRouteTable");
         request = CreateRouteTableConverter.interceptRequest(request);
-        Invocation.Builder ib = CreateRouteTableConverter.fromRequest(client, request);
-        Function<Response, CreateRouteTableResponse> transformer =
-                CreateRouteTableConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                CreateRouteTableConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateRouteTableResponse>
+                transformer = CreateRouteTableConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture =
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.post(ib, request.getCreateRouteTableDetails(), request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<CreateSecurityListResponse> createSecurityList(
+    public java.util.concurrent.Future<CreateSecurityListResponse> createSecurityList(
             CreateSecurityListRequest request,
-            AsyncHandler<CreateSecurityListRequest, CreateSecurityListResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateSecurityListRequest, CreateSecurityListResponse>
+                    handler) {
         LOG.trace("Called async createSecurityList");
         request = CreateSecurityListConverter.interceptRequest(request);
-        Invocation.Builder ib = CreateSecurityListConverter.fromRequest(client, request);
-        Function<Response, CreateSecurityListResponse> transformer =
-                CreateSecurityListConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                CreateSecurityListConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateSecurityListResponse>
+                transformer = CreateSecurityListConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture =
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.post(
                         ib, request.getCreateSecurityListDetails(), request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<CreateSubnetResponse> createSubnet(
+    public java.util.concurrent.Future<CreateSubnetResponse> createSubnet(
             CreateSubnetRequest request,
-            AsyncHandler<CreateSubnetRequest, CreateSubnetResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<CreateSubnetRequest, CreateSubnetResponse>
+                    handler) {
         LOG.trace("Called async createSubnet");
         request = CreateSubnetConverter.interceptRequest(request);
-        Invocation.Builder ib = CreateSubnetConverter.fromRequest(client, request);
-        Function<Response, CreateSubnetResponse> transformer = CreateSubnetConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                CreateSubnetConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateSubnetResponse>
+                transformer = CreateSubnetConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture =
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.post(ib, request.getCreateSubnetDetails(), request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<CreateVcnResponse> createVcn(
-            CreateVcnRequest request, AsyncHandler<CreateVcnRequest, CreateVcnResponse> handler) {
+    public java.util.concurrent.Future<CreateVcnResponse> createVcn(
+            CreateVcnRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateVcnRequest, CreateVcnResponse> handler) {
         LOG.trace("Called async createVcn");
         request = CreateVcnConverter.interceptRequest(request);
-        Invocation.Builder ib = CreateVcnConverter.fromRequest(client, request);
-        Function<Response, CreateVcnResponse> transformer = CreateVcnConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = CreateVcnConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateVcnResponse> transformer =
+                CreateVcnConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture =
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.post(ib, request.getCreateVcnDetails(), request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<CreateVirtualCircuitResponse> createVirtualCircuit(
+    public java.util.concurrent.Future<CreateVirtualCircuitResponse> createVirtualCircuit(
             CreateVirtualCircuitRequest request,
-            AsyncHandler<CreateVirtualCircuitRequest, CreateVirtualCircuitResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateVirtualCircuitRequest, CreateVirtualCircuitResponse>
+                    handler) {
         LOG.trace("Called async createVirtualCircuit");
         request = CreateVirtualCircuitConverter.interceptRequest(request);
-        Invocation.Builder ib = CreateVirtualCircuitConverter.fromRequest(client, request);
-        Function<Response, CreateVirtualCircuitResponse> transformer =
-                CreateVirtualCircuitConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                CreateVirtualCircuitConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateVirtualCircuitResponse>
+                transformer = CreateVirtualCircuitConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture =
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.post(
                         ib, request.getCreateVirtualCircuitDetails(), request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<DeleteCpeResponse> deleteCpe(
-            DeleteCpeRequest request, AsyncHandler<DeleteCpeRequest, DeleteCpeResponse> handler) {
+    public java.util.concurrent.Future<DeleteCpeResponse> deleteCpe(
+            DeleteCpeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteCpeRequest, DeleteCpeResponse> handler) {
         LOG.trace("Called async deleteCpe");
         request = DeleteCpeConverter.interceptRequest(request);
-        Invocation.Builder ib = DeleteCpeConverter.fromRequest(client, request);
-        Function<Response, DeleteCpeResponse> transformer = DeleteCpeConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = DeleteCpeConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCpeResponse> transformer =
+                DeleteCpeConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.delete(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.delete(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<DeleteCrossConnectResponse> deleteCrossConnect(
+    public java.util.concurrent.Future<DeleteCrossConnectResponse> deleteCrossConnect(
             DeleteCrossConnectRequest request,
-            AsyncHandler<DeleteCrossConnectRequest, DeleteCrossConnectResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteCrossConnectRequest, DeleteCrossConnectResponse>
+                    handler) {
         LOG.trace("Called async deleteCrossConnect");
         request = DeleteCrossConnectConverter.interceptRequest(request);
-        Invocation.Builder ib = DeleteCrossConnectConverter.fromRequest(client, request);
-        Function<Response, DeleteCrossConnectResponse> transformer =
-                DeleteCrossConnectConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                DeleteCrossConnectConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCrossConnectResponse>
+                transformer = DeleteCrossConnectConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.delete(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.delete(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<DeleteCrossConnectGroupResponse> deleteCrossConnectGroup(
+    public java.util.concurrent.Future<DeleteCrossConnectGroupResponse> deleteCrossConnectGroup(
             DeleteCrossConnectGroupRequest request,
-            AsyncHandler<DeleteCrossConnectGroupRequest, DeleteCrossConnectGroupResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteCrossConnectGroupRequest, DeleteCrossConnectGroupResponse>
+                    handler) {
         LOG.trace("Called async deleteCrossConnectGroup");
         request = DeleteCrossConnectGroupConverter.interceptRequest(request);
-        Invocation.Builder ib = DeleteCrossConnectGroupConverter.fromRequest(client, request);
-        Function<Response, DeleteCrossConnectGroupResponse> transformer =
-                DeleteCrossConnectGroupConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                DeleteCrossConnectGroupConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCrossConnectGroupResponse>
+                transformer = DeleteCrossConnectGroupConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.delete(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.delete(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<DeleteDhcpOptionsResponse> deleteDhcpOptions(
+    public java.util.concurrent.Future<DeleteDhcpOptionsResponse> deleteDhcpOptions(
             DeleteDhcpOptionsRequest request,
-            AsyncHandler<DeleteDhcpOptionsRequest, DeleteDhcpOptionsResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteDhcpOptionsRequest, DeleteDhcpOptionsResponse>
+                    handler) {
         LOG.trace("Called async deleteDhcpOptions");
         request = DeleteDhcpOptionsConverter.interceptRequest(request);
-        Invocation.Builder ib = DeleteDhcpOptionsConverter.fromRequest(client, request);
-        Function<Response, DeleteDhcpOptionsResponse> transformer =
-                DeleteDhcpOptionsConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                DeleteDhcpOptionsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDhcpOptionsResponse>
+                transformer = DeleteDhcpOptionsConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.delete(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.delete(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<DeleteDrgResponse> deleteDrg(
-            DeleteDrgRequest request, AsyncHandler<DeleteDrgRequest, DeleteDrgResponse> handler) {
+    public java.util.concurrent.Future<DeleteDrgResponse> deleteDrg(
+            DeleteDrgRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteDrgRequest, DeleteDrgResponse> handler) {
         LOG.trace("Called async deleteDrg");
         request = DeleteDrgConverter.interceptRequest(request);
-        Invocation.Builder ib = DeleteDrgConverter.fromRequest(client, request);
-        Function<Response, DeleteDrgResponse> transformer = DeleteDrgConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = DeleteDrgConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDrgResponse> transformer =
+                DeleteDrgConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.delete(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.delete(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<DeleteDrgAttachmentResponse> deleteDrgAttachment(
+    public java.util.concurrent.Future<DeleteDrgAttachmentResponse> deleteDrgAttachment(
             DeleteDrgAttachmentRequest request,
-            AsyncHandler<DeleteDrgAttachmentRequest, DeleteDrgAttachmentResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteDrgAttachmentRequest, DeleteDrgAttachmentResponse>
+                    handler) {
         LOG.trace("Called async deleteDrgAttachment");
         request = DeleteDrgAttachmentConverter.interceptRequest(request);
-        Invocation.Builder ib = DeleteDrgAttachmentConverter.fromRequest(client, request);
-        Function<Response, DeleteDrgAttachmentResponse> transformer =
-                DeleteDrgAttachmentConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                DeleteDrgAttachmentConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDrgAttachmentResponse>
+                transformer = DeleteDrgAttachmentConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.delete(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.delete(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<DeleteIPSecConnectionResponse> deleteIPSecConnection(
+    public java.util.concurrent.Future<DeleteIPSecConnectionResponse> deleteIPSecConnection(
             DeleteIPSecConnectionRequest request,
-            AsyncHandler<DeleteIPSecConnectionRequest, DeleteIPSecConnectionResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteIPSecConnectionRequest, DeleteIPSecConnectionResponse>
+                    handler) {
         LOG.trace("Called async deleteIPSecConnection");
         request = DeleteIPSecConnectionConverter.interceptRequest(request);
-        Invocation.Builder ib = DeleteIPSecConnectionConverter.fromRequest(client, request);
-        Function<Response, DeleteIPSecConnectionResponse> transformer =
-                DeleteIPSecConnectionConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                DeleteIPSecConnectionConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteIPSecConnectionResponse>
+                transformer = DeleteIPSecConnectionConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.delete(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.delete(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<DeleteInternetGatewayResponse> deleteInternetGateway(
+    public java.util.concurrent.Future<DeleteInternetGatewayResponse> deleteInternetGateway(
             DeleteInternetGatewayRequest request,
-            AsyncHandler<DeleteInternetGatewayRequest, DeleteInternetGatewayResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteInternetGatewayRequest, DeleteInternetGatewayResponse>
+                    handler) {
         LOG.trace("Called async deleteInternetGateway");
         request = DeleteInternetGatewayConverter.interceptRequest(request);
-        Invocation.Builder ib = DeleteInternetGatewayConverter.fromRequest(client, request);
-        Function<Response, DeleteInternetGatewayResponse> transformer =
-                DeleteInternetGatewayConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                DeleteInternetGatewayConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteInternetGatewayResponse>
+                transformer = DeleteInternetGatewayConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.delete(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.delete(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<DeleteRouteTableResponse> deleteRouteTable(
+    public java.util.concurrent.Future<DeletePrivateIpResponse> deletePrivateIp(
+            DeletePrivateIpRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeletePrivateIpRequest, DeletePrivateIpResponse>
+                    handler) {
+        LOG.trace("Called async deletePrivateIp");
+        request = DeletePrivateIpConverter.interceptRequest(request);
+        javax.ws.rs.client.Invocation.Builder ib =
+                DeletePrivateIpConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeletePrivateIpResponse>
+                transformer = DeletePrivateIpConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.delete(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRouteTableResponse> deleteRouteTable(
             DeleteRouteTableRequest request,
-            AsyncHandler<DeleteRouteTableRequest, DeleteRouteTableResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<DeleteRouteTableRequest, DeleteRouteTableResponse>
+                    handler) {
         LOG.trace("Called async deleteRouteTable");
         request = DeleteRouteTableConverter.interceptRequest(request);
-        Invocation.Builder ib = DeleteRouteTableConverter.fromRequest(client, request);
-        Function<Response, DeleteRouteTableResponse> transformer =
-                DeleteRouteTableConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                DeleteRouteTableConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRouteTableResponse>
+                transformer = DeleteRouteTableConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.delete(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.delete(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<DeleteSecurityListResponse> deleteSecurityList(
+    public java.util.concurrent.Future<DeleteSecurityListResponse> deleteSecurityList(
             DeleteSecurityListRequest request,
-            AsyncHandler<DeleteSecurityListRequest, DeleteSecurityListResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSecurityListRequest, DeleteSecurityListResponse>
+                    handler) {
         LOG.trace("Called async deleteSecurityList");
         request = DeleteSecurityListConverter.interceptRequest(request);
-        Invocation.Builder ib = DeleteSecurityListConverter.fromRequest(client, request);
-        Function<Response, DeleteSecurityListResponse> transformer =
-                DeleteSecurityListConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                DeleteSecurityListConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSecurityListResponse>
+                transformer = DeleteSecurityListConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.delete(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.delete(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<DeleteSubnetResponse> deleteSubnet(
+    public java.util.concurrent.Future<DeleteSubnetResponse> deleteSubnet(
             DeleteSubnetRequest request,
-            AsyncHandler<DeleteSubnetRequest, DeleteSubnetResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<DeleteSubnetRequest, DeleteSubnetResponse>
+                    handler) {
         LOG.trace("Called async deleteSubnet");
         request = DeleteSubnetConverter.interceptRequest(request);
-        Invocation.Builder ib = DeleteSubnetConverter.fromRequest(client, request);
-        Function<Response, DeleteSubnetResponse> transformer = DeleteSubnetConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                DeleteSubnetConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSubnetResponse>
+                transformer = DeleteSubnetConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.delete(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.delete(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<DeleteVcnResponse> deleteVcn(
-            DeleteVcnRequest request, AsyncHandler<DeleteVcnRequest, DeleteVcnResponse> handler) {
+    public java.util.concurrent.Future<DeleteVcnResponse> deleteVcn(
+            DeleteVcnRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteVcnRequest, DeleteVcnResponse> handler) {
         LOG.trace("Called async deleteVcn");
         request = DeleteVcnConverter.interceptRequest(request);
-        Invocation.Builder ib = DeleteVcnConverter.fromRequest(client, request);
-        Function<Response, DeleteVcnResponse> transformer = DeleteVcnConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = DeleteVcnConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVcnResponse> transformer =
+                DeleteVcnConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.delete(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.delete(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<DeleteVirtualCircuitResponse> deleteVirtualCircuit(
+    public java.util.concurrent.Future<DeleteVirtualCircuitResponse> deleteVirtualCircuit(
             DeleteVirtualCircuitRequest request,
-            AsyncHandler<DeleteVirtualCircuitRequest, DeleteVirtualCircuitResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteVirtualCircuitRequest, DeleteVirtualCircuitResponse>
+                    handler) {
         LOG.trace("Called async deleteVirtualCircuit");
         request = DeleteVirtualCircuitConverter.interceptRequest(request);
-        Invocation.Builder ib = DeleteVirtualCircuitConverter.fromRequest(client, request);
-        Function<Response, DeleteVirtualCircuitResponse> transformer =
-                DeleteVirtualCircuitConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                DeleteVirtualCircuitConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVirtualCircuitResponse>
+                transformer = DeleteVirtualCircuitConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.delete(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.delete(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<GetCpeResponse> getCpe(
-            GetCpeRequest request, AsyncHandler<GetCpeRequest, GetCpeResponse> handler) {
+    public java.util.concurrent.Future<GetCpeResponse> getCpe(
+            GetCpeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetCpeRequest, GetCpeResponse> handler) {
         LOG.trace("Called async getCpe");
         request = GetCpeConverter.interceptRequest(request);
-        Invocation.Builder ib = GetCpeConverter.fromRequest(client, request);
-        Function<Response, GetCpeResponse> transformer = GetCpeConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = GetCpeConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetCpeResponse> transformer =
+                GetCpeConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<GetCrossConnectResponse> getCrossConnect(
+    public java.util.concurrent.Future<GetCrossConnectResponse> getCrossConnect(
             GetCrossConnectRequest request,
-            AsyncHandler<GetCrossConnectRequest, GetCrossConnectResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<GetCrossConnectRequest, GetCrossConnectResponse>
+                    handler) {
         LOG.trace("Called async getCrossConnect");
         request = GetCrossConnectConverter.interceptRequest(request);
-        Invocation.Builder ib = GetCrossConnectConverter.fromRequest(client, request);
-        Function<Response, GetCrossConnectResponse> transformer =
-                GetCrossConnectConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                GetCrossConnectConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetCrossConnectResponse>
+                transformer = GetCrossConnectConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<GetCrossConnectGroupResponse> getCrossConnectGroup(
+    public java.util.concurrent.Future<GetCrossConnectGroupResponse> getCrossConnectGroup(
             GetCrossConnectGroupRequest request,
-            AsyncHandler<GetCrossConnectGroupRequest, GetCrossConnectGroupResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetCrossConnectGroupRequest, GetCrossConnectGroupResponse>
+                    handler) {
         LOG.trace("Called async getCrossConnectGroup");
         request = GetCrossConnectGroupConverter.interceptRequest(request);
-        Invocation.Builder ib = GetCrossConnectGroupConverter.fromRequest(client, request);
-        Function<Response, GetCrossConnectGroupResponse> transformer =
-                GetCrossConnectGroupConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                GetCrossConnectGroupConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetCrossConnectGroupResponse>
+                transformer = GetCrossConnectGroupConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<GetCrossConnectLetterOfAuthorityResponse> getCrossConnectLetterOfAuthority(
-            GetCrossConnectLetterOfAuthorityRequest request,
-            AsyncHandler<
-                            GetCrossConnectLetterOfAuthorityRequest,
-                            GetCrossConnectLetterOfAuthorityResponse>
-                    handler) {
+    public java.util.concurrent.Future<GetCrossConnectLetterOfAuthorityResponse>
+            getCrossConnectLetterOfAuthority(
+                    GetCrossConnectLetterOfAuthorityRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetCrossConnectLetterOfAuthorityRequest,
+                                    GetCrossConnectLetterOfAuthorityResponse>
+                            handler) {
         LOG.trace("Called async getCrossConnectLetterOfAuthority");
         request = GetCrossConnectLetterOfAuthorityConverter.interceptRequest(request);
-        Invocation.Builder ib =
+        javax.ws.rs.client.Invocation.Builder ib =
                 GetCrossConnectLetterOfAuthorityConverter.fromRequest(client, request);
-        Function<Response, GetCrossConnectLetterOfAuthorityResponse> transformer =
-                GetCrossConnectLetterOfAuthorityConverter.fromResponse();
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetCrossConnectLetterOfAuthorityResponse>
+                transformer = GetCrossConnectLetterOfAuthorityConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<GetCrossConnectStatusResponse> getCrossConnectStatus(
+    public java.util.concurrent.Future<GetCrossConnectStatusResponse> getCrossConnectStatus(
             GetCrossConnectStatusRequest request,
-            AsyncHandler<GetCrossConnectStatusRequest, GetCrossConnectStatusResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetCrossConnectStatusRequest, GetCrossConnectStatusResponse>
+                    handler) {
         LOG.trace("Called async getCrossConnectStatus");
         request = GetCrossConnectStatusConverter.interceptRequest(request);
-        Invocation.Builder ib = GetCrossConnectStatusConverter.fromRequest(client, request);
-        Function<Response, GetCrossConnectStatusResponse> transformer =
-                GetCrossConnectStatusConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                GetCrossConnectStatusConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetCrossConnectStatusResponse>
+                transformer = GetCrossConnectStatusConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<GetDhcpOptionsResponse> getDhcpOptions(
+    public java.util.concurrent.Future<GetDhcpOptionsResponse> getDhcpOptions(
             GetDhcpOptionsRequest request,
-            AsyncHandler<GetDhcpOptionsRequest, GetDhcpOptionsResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<GetDhcpOptionsRequest, GetDhcpOptionsResponse>
+                    handler) {
         LOG.trace("Called async getDhcpOptions");
         request = GetDhcpOptionsConverter.interceptRequest(request);
-        Invocation.Builder ib = GetDhcpOptionsConverter.fromRequest(client, request);
-        Function<Response, GetDhcpOptionsResponse> transformer =
-                GetDhcpOptionsConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                GetDhcpOptionsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetDhcpOptionsResponse>
+                transformer = GetDhcpOptionsConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<GetDrgResponse> getDrg(
-            GetDrgRequest request, AsyncHandler<GetDrgRequest, GetDrgResponse> handler) {
+    public java.util.concurrent.Future<GetDrgResponse> getDrg(
+            GetDrgRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetDrgRequest, GetDrgResponse> handler) {
         LOG.trace("Called async getDrg");
         request = GetDrgConverter.interceptRequest(request);
-        Invocation.Builder ib = GetDrgConverter.fromRequest(client, request);
-        Function<Response, GetDrgResponse> transformer = GetDrgConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = GetDrgConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetDrgResponse> transformer =
+                GetDrgConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<GetDrgAttachmentResponse> getDrgAttachment(
+    public java.util.concurrent.Future<GetDrgAttachmentResponse> getDrgAttachment(
             GetDrgAttachmentRequest request,
-            AsyncHandler<GetDrgAttachmentRequest, GetDrgAttachmentResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<GetDrgAttachmentRequest, GetDrgAttachmentResponse>
+                    handler) {
         LOG.trace("Called async getDrgAttachment");
         request = GetDrgAttachmentConverter.interceptRequest(request);
-        Invocation.Builder ib = GetDrgAttachmentConverter.fromRequest(client, request);
-        Function<Response, GetDrgAttachmentResponse> transformer =
-                GetDrgAttachmentConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                GetDrgAttachmentConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetDrgAttachmentResponse>
+                transformer = GetDrgAttachmentConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<GetIPSecConnectionResponse> getIPSecConnection(
+    public java.util.concurrent.Future<GetIPSecConnectionResponse> getIPSecConnection(
             GetIPSecConnectionRequest request,
-            AsyncHandler<GetIPSecConnectionRequest, GetIPSecConnectionResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetIPSecConnectionRequest, GetIPSecConnectionResponse>
+                    handler) {
         LOG.trace("Called async getIPSecConnection");
         request = GetIPSecConnectionConverter.interceptRequest(request);
-        Invocation.Builder ib = GetIPSecConnectionConverter.fromRequest(client, request);
-        Function<Response, GetIPSecConnectionResponse> transformer =
-                GetIPSecConnectionConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                GetIPSecConnectionConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetIPSecConnectionResponse>
+                transformer = GetIPSecConnectionConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<GetIPSecConnectionDeviceConfigResponse> getIPSecConnectionDeviceConfig(
-            GetIPSecConnectionDeviceConfigRequest request,
-            AsyncHandler<
-                            GetIPSecConnectionDeviceConfigRequest,
-                            GetIPSecConnectionDeviceConfigResponse>
-                    handler) {
+    public java.util.concurrent.Future<GetIPSecConnectionDeviceConfigResponse>
+            getIPSecConnectionDeviceConfig(
+                    GetIPSecConnectionDeviceConfigRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetIPSecConnectionDeviceConfigRequest,
+                                    GetIPSecConnectionDeviceConfigResponse>
+                            handler) {
         LOG.trace("Called async getIPSecConnectionDeviceConfig");
         request = GetIPSecConnectionDeviceConfigConverter.interceptRequest(request);
-        Invocation.Builder ib =
+        javax.ws.rs.client.Invocation.Builder ib =
                 GetIPSecConnectionDeviceConfigConverter.fromRequest(client, request);
-        Function<Response, GetIPSecConnectionDeviceConfigResponse> transformer =
-                GetIPSecConnectionDeviceConfigConverter.fromResponse();
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetIPSecConnectionDeviceConfigResponse>
+                transformer = GetIPSecConnectionDeviceConfigConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<GetIPSecConnectionDeviceStatusResponse> getIPSecConnectionDeviceStatus(
-            GetIPSecConnectionDeviceStatusRequest request,
-            AsyncHandler<
-                            GetIPSecConnectionDeviceStatusRequest,
-                            GetIPSecConnectionDeviceStatusResponse>
-                    handler) {
+    public java.util.concurrent.Future<GetIPSecConnectionDeviceStatusResponse>
+            getIPSecConnectionDeviceStatus(
+                    GetIPSecConnectionDeviceStatusRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetIPSecConnectionDeviceStatusRequest,
+                                    GetIPSecConnectionDeviceStatusResponse>
+                            handler) {
         LOG.trace("Called async getIPSecConnectionDeviceStatus");
         request = GetIPSecConnectionDeviceStatusConverter.interceptRequest(request);
-        Invocation.Builder ib =
+        javax.ws.rs.client.Invocation.Builder ib =
                 GetIPSecConnectionDeviceStatusConverter.fromRequest(client, request);
-        Function<Response, GetIPSecConnectionDeviceStatusResponse> transformer =
-                GetIPSecConnectionDeviceStatusConverter.fromResponse();
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetIPSecConnectionDeviceStatusResponse>
+                transformer = GetIPSecConnectionDeviceStatusConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<GetInternetGatewayResponse> getInternetGateway(
+    public java.util.concurrent.Future<GetInternetGatewayResponse> getInternetGateway(
             GetInternetGatewayRequest request,
-            AsyncHandler<GetInternetGatewayRequest, GetInternetGatewayResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetInternetGatewayRequest, GetInternetGatewayResponse>
+                    handler) {
         LOG.trace("Called async getInternetGateway");
         request = GetInternetGatewayConverter.interceptRequest(request);
-        Invocation.Builder ib = GetInternetGatewayConverter.fromRequest(client, request);
-        Function<Response, GetInternetGatewayResponse> transformer =
-                GetInternetGatewayConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                GetInternetGatewayConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetInternetGatewayResponse>
+                transformer = GetInternetGatewayConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<GetRouteTableResponse> getRouteTable(
+    public java.util.concurrent.Future<GetPrivateIpResponse> getPrivateIp(
+            GetPrivateIpRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetPrivateIpRequest, GetPrivateIpResponse>
+                    handler) {
+        LOG.trace("Called async getPrivateIp");
+        request = GetPrivateIpConverter.interceptRequest(request);
+        javax.ws.rs.client.Invocation.Builder ib =
+                GetPrivateIpConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetPrivateIpResponse>
+                transformer = GetPrivateIpConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRouteTableResponse> getRouteTable(
             GetRouteTableRequest request,
-            AsyncHandler<GetRouteTableRequest, GetRouteTableResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<GetRouteTableRequest, GetRouteTableResponse>
+                    handler) {
         LOG.trace("Called async getRouteTable");
         request = GetRouteTableConverter.interceptRequest(request);
-        Invocation.Builder ib = GetRouteTableConverter.fromRequest(client, request);
-        Function<Response, GetRouteTableResponse> transformer =
-                GetRouteTableConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                GetRouteTableConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetRouteTableResponse>
+                transformer = GetRouteTableConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<GetSecurityListResponse> getSecurityList(
+    public java.util.concurrent.Future<GetSecurityListResponse> getSecurityList(
             GetSecurityListRequest request,
-            AsyncHandler<GetSecurityListRequest, GetSecurityListResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<GetSecurityListRequest, GetSecurityListResponse>
+                    handler) {
         LOG.trace("Called async getSecurityList");
         request = GetSecurityListConverter.interceptRequest(request);
-        Invocation.Builder ib = GetSecurityListConverter.fromRequest(client, request);
-        Function<Response, GetSecurityListResponse> transformer =
-                GetSecurityListConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                GetSecurityListConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetSecurityListResponse>
+                transformer = GetSecurityListConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<GetSubnetResponse> getSubnet(
-            GetSubnetRequest request, AsyncHandler<GetSubnetRequest, GetSubnetResponse> handler) {
+    public java.util.concurrent.Future<GetSubnetResponse> getSubnet(
+            GetSubnetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetSubnetRequest, GetSubnetResponse> handler) {
         LOG.trace("Called async getSubnet");
         request = GetSubnetConverter.interceptRequest(request);
-        Invocation.Builder ib = GetSubnetConverter.fromRequest(client, request);
-        Function<Response, GetSubnetResponse> transformer = GetSubnetConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = GetSubnetConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetSubnetResponse> transformer =
+                GetSubnetConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<GetVcnResponse> getVcn(
-            GetVcnRequest request, AsyncHandler<GetVcnRequest, GetVcnResponse> handler) {
+    public java.util.concurrent.Future<GetVcnResponse> getVcn(
+            GetVcnRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetVcnRequest, GetVcnResponse> handler) {
         LOG.trace("Called async getVcn");
         request = GetVcnConverter.interceptRequest(request);
-        Invocation.Builder ib = GetVcnConverter.fromRequest(client, request);
-        Function<Response, GetVcnResponse> transformer = GetVcnConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = GetVcnConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetVcnResponse> transformer =
+                GetVcnConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<GetVirtualCircuitResponse> getVirtualCircuit(
+    public java.util.concurrent.Future<GetVirtualCircuitResponse> getVirtualCircuit(
             GetVirtualCircuitRequest request,
-            AsyncHandler<GetVirtualCircuitRequest, GetVirtualCircuitResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetVirtualCircuitRequest, GetVirtualCircuitResponse>
+                    handler) {
         LOG.trace("Called async getVirtualCircuit");
         request = GetVirtualCircuitConverter.interceptRequest(request);
-        Invocation.Builder ib = GetVirtualCircuitConverter.fromRequest(client, request);
-        Function<Response, GetVirtualCircuitResponse> transformer =
-                GetVirtualCircuitConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                GetVirtualCircuitConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetVirtualCircuitResponse>
+                transformer = GetVirtualCircuitConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<GetVnicResponse> getVnic(
-            GetVnicRequest request, AsyncHandler<GetVnicRequest, GetVnicResponse> handler) {
+    public java.util.concurrent.Future<GetVnicResponse> getVnic(
+            GetVnicRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetVnicRequest, GetVnicResponse> handler) {
         LOG.trace("Called async getVnic");
         request = GetVnicConverter.interceptRequest(request);
-        Invocation.Builder ib = GetVnicConverter.fromRequest(client, request);
-        Function<Response, GetVnicResponse> transformer = GetVnicConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = GetVnicConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetVnicResponse> transformer =
+                GetVnicConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<ListCpesResponse> listCpes(
-            ListCpesRequest request, AsyncHandler<ListCpesRequest, ListCpesResponse> handler) {
+    public java.util.concurrent.Future<ListCpesResponse> listCpes(
+            ListCpesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListCpesRequest, ListCpesResponse> handler) {
         LOG.trace("Called async listCpes");
         request = ListCpesConverter.interceptRequest(request);
-        Invocation.Builder ib = ListCpesConverter.fromRequest(client, request);
-        Function<Response, ListCpesResponse> transformer = ListCpesConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = ListCpesConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListCpesResponse> transformer =
+                ListCpesConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<ListCrossConnectGroupsResponse> listCrossConnectGroups(
+    public java.util.concurrent.Future<ListCrossConnectGroupsResponse> listCrossConnectGroups(
             ListCrossConnectGroupsRequest request,
-            AsyncHandler<ListCrossConnectGroupsRequest, ListCrossConnectGroupsResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListCrossConnectGroupsRequest, ListCrossConnectGroupsResponse>
+                    handler) {
         LOG.trace("Called async listCrossConnectGroups");
         request = ListCrossConnectGroupsConverter.interceptRequest(request);
-        Invocation.Builder ib = ListCrossConnectGroupsConverter.fromRequest(client, request);
-        Function<Response, ListCrossConnectGroupsResponse> transformer =
-                ListCrossConnectGroupsConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListCrossConnectGroupsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListCrossConnectGroupsResponse>
+                transformer = ListCrossConnectGroupsConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<ListCrossConnectLocationsResponse> listCrossConnectLocations(
+    public java.util.concurrent.Future<ListCrossConnectLocationsResponse> listCrossConnectLocations(
             ListCrossConnectLocationsRequest request,
-            AsyncHandler<ListCrossConnectLocationsRequest, ListCrossConnectLocationsResponse>
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListCrossConnectLocationsRequest, ListCrossConnectLocationsResponse>
                     handler) {
         LOG.trace("Called async listCrossConnectLocations");
         request = ListCrossConnectLocationsConverter.interceptRequest(request);
-        Invocation.Builder ib = ListCrossConnectLocationsConverter.fromRequest(client, request);
-        Function<Response, ListCrossConnectLocationsResponse> transformer =
-                ListCrossConnectLocationsConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListCrossConnectLocationsConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListCrossConnectLocationsResponse>
+                transformer = ListCrossConnectLocationsConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<ListCrossConnectsResponse> listCrossConnects(
+    public java.util.concurrent.Future<ListCrossConnectsResponse> listCrossConnects(
             ListCrossConnectsRequest request,
-            AsyncHandler<ListCrossConnectsRequest, ListCrossConnectsResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListCrossConnectsRequest, ListCrossConnectsResponse>
+                    handler) {
         LOG.trace("Called async listCrossConnects");
         request = ListCrossConnectsConverter.interceptRequest(request);
-        Invocation.Builder ib = ListCrossConnectsConverter.fromRequest(client, request);
-        Function<Response, ListCrossConnectsResponse> transformer =
-                ListCrossConnectsConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListCrossConnectsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListCrossConnectsResponse>
+                transformer = ListCrossConnectsConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<ListCrossconnectPortSpeedShapesResponse> listCrossconnectPortSpeedShapes(
-            ListCrossconnectPortSpeedShapesRequest request,
-            AsyncHandler<
-                            ListCrossconnectPortSpeedShapesRequest,
-                            ListCrossconnectPortSpeedShapesResponse>
-                    handler) {
+    public java.util.concurrent.Future<ListCrossconnectPortSpeedShapesResponse>
+            listCrossconnectPortSpeedShapes(
+                    ListCrossconnectPortSpeedShapesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListCrossconnectPortSpeedShapesRequest,
+                                    ListCrossconnectPortSpeedShapesResponse>
+                            handler) {
         LOG.trace("Called async listCrossconnectPortSpeedShapes");
         request = ListCrossconnectPortSpeedShapesConverter.interceptRequest(request);
-        Invocation.Builder ib =
+        javax.ws.rs.client.Invocation.Builder ib =
                 ListCrossconnectPortSpeedShapesConverter.fromRequest(client, request);
-        Function<Response, ListCrossconnectPortSpeedShapesResponse> transformer =
-                ListCrossconnectPortSpeedShapesConverter.fromResponse();
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListCrossconnectPortSpeedShapesResponse>
+                transformer = ListCrossconnectPortSpeedShapesConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<ListDhcpOptionsResponse> listDhcpOptions(
+    public java.util.concurrent.Future<ListDhcpOptionsResponse> listDhcpOptions(
             ListDhcpOptionsRequest request,
-            AsyncHandler<ListDhcpOptionsRequest, ListDhcpOptionsResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<ListDhcpOptionsRequest, ListDhcpOptionsResponse>
+                    handler) {
         LOG.trace("Called async listDhcpOptions");
         request = ListDhcpOptionsConverter.interceptRequest(request);
-        Invocation.Builder ib = ListDhcpOptionsConverter.fromRequest(client, request);
-        Function<Response, ListDhcpOptionsResponse> transformer =
-                ListDhcpOptionsConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListDhcpOptionsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListDhcpOptionsResponse>
+                transformer = ListDhcpOptionsConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<ListDrgAttachmentsResponse> listDrgAttachments(
+    public java.util.concurrent.Future<ListDrgAttachmentsResponse> listDrgAttachments(
             ListDrgAttachmentsRequest request,
-            AsyncHandler<ListDrgAttachmentsRequest, ListDrgAttachmentsResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDrgAttachmentsRequest, ListDrgAttachmentsResponse>
+                    handler) {
         LOG.trace("Called async listDrgAttachments");
         request = ListDrgAttachmentsConverter.interceptRequest(request);
-        Invocation.Builder ib = ListDrgAttachmentsConverter.fromRequest(client, request);
-        Function<Response, ListDrgAttachmentsResponse> transformer =
-                ListDrgAttachmentsConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListDrgAttachmentsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListDrgAttachmentsResponse>
+                transformer = ListDrgAttachmentsConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<ListDrgsResponse> listDrgs(
-            ListDrgsRequest request, AsyncHandler<ListDrgsRequest, ListDrgsResponse> handler) {
+    public java.util.concurrent.Future<ListDrgsResponse> listDrgs(
+            ListDrgsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListDrgsRequest, ListDrgsResponse> handler) {
         LOG.trace("Called async listDrgs");
         request = ListDrgsConverter.interceptRequest(request);
-        Invocation.Builder ib = ListDrgsConverter.fromRequest(client, request);
-        Function<Response, ListDrgsResponse> transformer = ListDrgsConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = ListDrgsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListDrgsResponse> transformer =
+                ListDrgsConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<ListFastConnectProviderServicesResponse> listFastConnectProviderServices(
-            ListFastConnectProviderServicesRequest request,
-            AsyncHandler<
-                            ListFastConnectProviderServicesRequest,
-                            ListFastConnectProviderServicesResponse>
-                    handler) {
+    public java.util.concurrent.Future<ListFastConnectProviderServicesResponse>
+            listFastConnectProviderServices(
+                    ListFastConnectProviderServicesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListFastConnectProviderServicesRequest,
+                                    ListFastConnectProviderServicesResponse>
+                            handler) {
         LOG.trace("Called async listFastConnectProviderServices");
         request = ListFastConnectProviderServicesConverter.interceptRequest(request);
-        Invocation.Builder ib =
+        javax.ws.rs.client.Invocation.Builder ib =
                 ListFastConnectProviderServicesConverter.fromRequest(client, request);
-        Function<Response, ListFastConnectProviderServicesResponse> transformer =
-                ListFastConnectProviderServicesConverter.fromResponse();
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListFastConnectProviderServicesResponse>
+                transformer = ListFastConnectProviderServicesConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<ListIPSecConnectionsResponse> listIPSecConnections(
+    public java.util.concurrent.Future<ListIPSecConnectionsResponse> listIPSecConnections(
             ListIPSecConnectionsRequest request,
-            AsyncHandler<ListIPSecConnectionsRequest, ListIPSecConnectionsResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListIPSecConnectionsRequest, ListIPSecConnectionsResponse>
+                    handler) {
         LOG.trace("Called async listIPSecConnections");
         request = ListIPSecConnectionsConverter.interceptRequest(request);
-        Invocation.Builder ib = ListIPSecConnectionsConverter.fromRequest(client, request);
-        Function<Response, ListIPSecConnectionsResponse> transformer =
-                ListIPSecConnectionsConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListIPSecConnectionsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListIPSecConnectionsResponse>
+                transformer = ListIPSecConnectionsConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<ListInternetGatewaysResponse> listInternetGateways(
+    public java.util.concurrent.Future<ListInternetGatewaysResponse> listInternetGateways(
             ListInternetGatewaysRequest request,
-            AsyncHandler<ListInternetGatewaysRequest, ListInternetGatewaysResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListInternetGatewaysRequest, ListInternetGatewaysResponse>
+                    handler) {
         LOG.trace("Called async listInternetGateways");
         request = ListInternetGatewaysConverter.interceptRequest(request);
-        Invocation.Builder ib = ListInternetGatewaysConverter.fromRequest(client, request);
-        Function<Response, ListInternetGatewaysResponse> transformer =
-                ListInternetGatewaysConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListInternetGatewaysConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListInternetGatewaysResponse>
+                transformer = ListInternetGatewaysConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<ListRouteTablesResponse> listRouteTables(
+    public java.util.concurrent.Future<ListPrivateIpsResponse> listPrivateIps(
+            ListPrivateIpsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListPrivateIpsRequest, ListPrivateIpsResponse>
+                    handler) {
+        LOG.trace("Called async listPrivateIps");
+        request = ListPrivateIpsConverter.interceptRequest(request);
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListPrivateIpsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListPrivateIpsResponse>
+                transformer = ListPrivateIpsConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRouteTablesResponse> listRouteTables(
             ListRouteTablesRequest request,
-            AsyncHandler<ListRouteTablesRequest, ListRouteTablesResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<ListRouteTablesRequest, ListRouteTablesResponse>
+                    handler) {
         LOG.trace("Called async listRouteTables");
         request = ListRouteTablesConverter.interceptRequest(request);
-        Invocation.Builder ib = ListRouteTablesConverter.fromRequest(client, request);
-        Function<Response, ListRouteTablesResponse> transformer =
-                ListRouteTablesConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListRouteTablesConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListRouteTablesResponse>
+                transformer = ListRouteTablesConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<ListSecurityListsResponse> listSecurityLists(
+    public java.util.concurrent.Future<ListSecurityListsResponse> listSecurityLists(
             ListSecurityListsRequest request,
-            AsyncHandler<ListSecurityListsRequest, ListSecurityListsResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSecurityListsRequest, ListSecurityListsResponse>
+                    handler) {
         LOG.trace("Called async listSecurityLists");
         request = ListSecurityListsConverter.interceptRequest(request);
-        Invocation.Builder ib = ListSecurityListsConverter.fromRequest(client, request);
-        Function<Response, ListSecurityListsResponse> transformer =
-                ListSecurityListsConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListSecurityListsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListSecurityListsResponse>
+                transformer = ListSecurityListsConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<ListSubnetsResponse> listSubnets(
+    public java.util.concurrent.Future<ListSubnetsResponse> listSubnets(
             ListSubnetsRequest request,
-            AsyncHandler<ListSubnetsRequest, ListSubnetsResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<ListSubnetsRequest, ListSubnetsResponse>
+                    handler) {
         LOG.trace("Called async listSubnets");
         request = ListSubnetsConverter.interceptRequest(request);
-        Invocation.Builder ib = ListSubnetsConverter.fromRequest(client, request);
-        Function<Response, ListSubnetsResponse> transformer = ListSubnetsConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListSubnetsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListSubnetsResponse>
+                transformer = ListSubnetsConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<ListVcnsResponse> listVcns(
-            ListVcnsRequest request, AsyncHandler<ListVcnsRequest, ListVcnsResponse> handler) {
+    public java.util.concurrent.Future<ListVcnsResponse> listVcns(
+            ListVcnsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListVcnsRequest, ListVcnsResponse> handler) {
         LOG.trace("Called async listVcns");
         request = ListVcnsConverter.interceptRequest(request);
-        Invocation.Builder ib = ListVcnsConverter.fromRequest(client, request);
-        Function<Response, ListVcnsResponse> transformer = ListVcnsConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = ListVcnsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListVcnsResponse> transformer =
+                ListVcnsConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<ListVirtualCircuitBandwidthShapesResponse> listVirtualCircuitBandwidthShapes(
-            ListVirtualCircuitBandwidthShapesRequest request,
-            AsyncHandler<
-                            ListVirtualCircuitBandwidthShapesRequest,
-                            ListVirtualCircuitBandwidthShapesResponse>
-                    handler) {
+    public java.util.concurrent.Future<ListVirtualCircuitBandwidthShapesResponse>
+            listVirtualCircuitBandwidthShapes(
+                    ListVirtualCircuitBandwidthShapesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListVirtualCircuitBandwidthShapesRequest,
+                                    ListVirtualCircuitBandwidthShapesResponse>
+                            handler) {
         LOG.trace("Called async listVirtualCircuitBandwidthShapes");
         request = ListVirtualCircuitBandwidthShapesConverter.interceptRequest(request);
-        Invocation.Builder ib =
+        javax.ws.rs.client.Invocation.Builder ib =
                 ListVirtualCircuitBandwidthShapesConverter.fromRequest(client, request);
-        Function<Response, ListVirtualCircuitBandwidthShapesResponse> transformer =
-                ListVirtualCircuitBandwidthShapesConverter.fromResponse();
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListVirtualCircuitBandwidthShapesResponse>
+                transformer = ListVirtualCircuitBandwidthShapesConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<ListVirtualCircuitsResponse> listVirtualCircuits(
+    public java.util.concurrent.Future<ListVirtualCircuitsResponse> listVirtualCircuits(
             ListVirtualCircuitsRequest request,
-            AsyncHandler<ListVirtualCircuitsRequest, ListVirtualCircuitsResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListVirtualCircuitsRequest, ListVirtualCircuitsResponse>
+                    handler) {
         LOG.trace("Called async listVirtualCircuits");
         request = ListVirtualCircuitsConverter.interceptRequest(request);
-        Invocation.Builder ib = ListVirtualCircuitsConverter.fromRequest(client, request);
-        Function<Response, ListVirtualCircuitsResponse> transformer =
-                ListVirtualCircuitsConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListVirtualCircuitsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListVirtualCircuitsResponse>
+                transformer = ListVirtualCircuitsConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<UpdateCpeResponse> updateCpe(
-            UpdateCpeRequest request, AsyncHandler<UpdateCpeRequest, UpdateCpeResponse> handler) {
+    public java.util.concurrent.Future<UpdateCpeResponse> updateCpe(
+            UpdateCpeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateCpeRequest, UpdateCpeResponse> handler) {
         LOG.trace("Called async updateCpe");
         request = UpdateCpeConverter.interceptRequest(request);
-        Invocation.Builder ib = UpdateCpeConverter.fromRequest(client, request);
-        Function<Response, UpdateCpeResponse> transformer = UpdateCpeConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = UpdateCpeConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCpeResponse> transformer =
+                UpdateCpeConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture =
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.put(ib, request.getUpdateCpeDetails(), request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<UpdateCrossConnectResponse> updateCrossConnect(
+    public java.util.concurrent.Future<UpdateCrossConnectResponse> updateCrossConnect(
             UpdateCrossConnectRequest request,
-            AsyncHandler<UpdateCrossConnectRequest, UpdateCrossConnectResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateCrossConnectRequest, UpdateCrossConnectResponse>
+                    handler) {
         LOG.trace("Called async updateCrossConnect");
         request = UpdateCrossConnectConverter.interceptRequest(request);
-        Invocation.Builder ib = UpdateCrossConnectConverter.fromRequest(client, request);
-        Function<Response, UpdateCrossConnectResponse> transformer =
-                UpdateCrossConnectConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                UpdateCrossConnectConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCrossConnectResponse>
+                transformer = UpdateCrossConnectConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture =
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.put(ib, request.getUpdateCrossConnectDetails(), request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<UpdateCrossConnectGroupResponse> updateCrossConnectGroup(
+    public java.util.concurrent.Future<UpdateCrossConnectGroupResponse> updateCrossConnectGroup(
             UpdateCrossConnectGroupRequest request,
-            AsyncHandler<UpdateCrossConnectGroupRequest, UpdateCrossConnectGroupResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateCrossConnectGroupRequest, UpdateCrossConnectGroupResponse>
+                    handler) {
         LOG.trace("Called async updateCrossConnectGroup");
         request = UpdateCrossConnectGroupConverter.interceptRequest(request);
-        Invocation.Builder ib = UpdateCrossConnectGroupConverter.fromRequest(client, request);
-        Function<Response, UpdateCrossConnectGroupResponse> transformer =
-                UpdateCrossConnectGroupConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                UpdateCrossConnectGroupConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCrossConnectGroupResponse>
+                transformer = UpdateCrossConnectGroupConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture =
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.put(
                         ib,
                         request.getUpdateCrossConnectGroupDetails(),
                         request,
                         onSuccess,
                         onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<UpdateDhcpOptionsResponse> updateDhcpOptions(
+    public java.util.concurrent.Future<UpdateDhcpOptionsResponse> updateDhcpOptions(
             UpdateDhcpOptionsRequest request,
-            AsyncHandler<UpdateDhcpOptionsRequest, UpdateDhcpOptionsResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDhcpOptionsRequest, UpdateDhcpOptionsResponse>
+                    handler) {
         LOG.trace("Called async updateDhcpOptions");
         request = UpdateDhcpOptionsConverter.interceptRequest(request);
-        Invocation.Builder ib = UpdateDhcpOptionsConverter.fromRequest(client, request);
-        Function<Response, UpdateDhcpOptionsResponse> transformer =
-                UpdateDhcpOptionsConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                UpdateDhcpOptionsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDhcpOptionsResponse>
+                transformer = UpdateDhcpOptionsConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture =
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.put(ib, request.getUpdateDhcpDetails(), request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<UpdateDrgResponse> updateDrg(
-            UpdateDrgRequest request, AsyncHandler<UpdateDrgRequest, UpdateDrgResponse> handler) {
+    public java.util.concurrent.Future<UpdateDrgResponse> updateDrg(
+            UpdateDrgRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateDrgRequest, UpdateDrgResponse> handler) {
         LOG.trace("Called async updateDrg");
         request = UpdateDrgConverter.interceptRequest(request);
-        Invocation.Builder ib = UpdateDrgConverter.fromRequest(client, request);
-        Function<Response, UpdateDrgResponse> transformer = UpdateDrgConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = UpdateDrgConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDrgResponse> transformer =
+                UpdateDrgConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture =
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.put(ib, request.getUpdateDrgDetails(), request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<UpdateDrgAttachmentResponse> updateDrgAttachment(
+    public java.util.concurrent.Future<UpdateDrgAttachmentResponse> updateDrgAttachment(
             UpdateDrgAttachmentRequest request,
-            AsyncHandler<UpdateDrgAttachmentRequest, UpdateDrgAttachmentResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDrgAttachmentRequest, UpdateDrgAttachmentResponse>
+                    handler) {
         LOG.trace("Called async updateDrgAttachment");
         request = UpdateDrgAttachmentConverter.interceptRequest(request);
-        Invocation.Builder ib = UpdateDrgAttachmentConverter.fromRequest(client, request);
-        Function<Response, UpdateDrgAttachmentResponse> transformer =
-                UpdateDrgAttachmentConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                UpdateDrgAttachmentConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDrgAttachmentResponse>
+                transformer = UpdateDrgAttachmentConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture =
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.put(
                         ib, request.getUpdateDrgAttachmentDetails(), request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<UpdateIPSecConnectionResponse> updateIPSecConnection(
+    public java.util.concurrent.Future<UpdateIPSecConnectionResponse> updateIPSecConnection(
             UpdateIPSecConnectionRequest request,
-            AsyncHandler<UpdateIPSecConnectionRequest, UpdateIPSecConnectionResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateIPSecConnectionRequest, UpdateIPSecConnectionResponse>
+                    handler) {
         LOG.trace("Called async updateIPSecConnection");
         request = UpdateIPSecConnectionConverter.interceptRequest(request);
-        Invocation.Builder ib = UpdateIPSecConnectionConverter.fromRequest(client, request);
-        Function<Response, UpdateIPSecConnectionResponse> transformer =
-                UpdateIPSecConnectionConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                UpdateIPSecConnectionConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateIPSecConnectionResponse>
+                transformer = UpdateIPSecConnectionConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture =
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.put(
                         ib, request.getUpdateIPSecConnectionDetails(), request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<UpdateInternetGatewayResponse> updateInternetGateway(
+    public java.util.concurrent.Future<UpdateInternetGatewayResponse> updateInternetGateway(
             UpdateInternetGatewayRequest request,
-            AsyncHandler<UpdateInternetGatewayRequest, UpdateInternetGatewayResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateInternetGatewayRequest, UpdateInternetGatewayResponse>
+                    handler) {
         LOG.trace("Called async updateInternetGateway");
         request = UpdateInternetGatewayConverter.interceptRequest(request);
-        Invocation.Builder ib = UpdateInternetGatewayConverter.fromRequest(client, request);
-        Function<Response, UpdateInternetGatewayResponse> transformer =
-                UpdateInternetGatewayConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                UpdateInternetGatewayConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateInternetGatewayResponse>
+                transformer = UpdateInternetGatewayConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture =
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.put(
                         ib, request.getUpdateInternetGatewayDetails(), request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<UpdateRouteTableResponse> updateRouteTable(
+    public java.util.concurrent.Future<UpdatePrivateIpResponse> updatePrivateIp(
+            UpdatePrivateIpRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdatePrivateIpRequest, UpdatePrivateIpResponse>
+                    handler) {
+        LOG.trace("Called async updatePrivateIp");
+        request = UpdatePrivateIpConverter.interceptRequest(request);
+        javax.ws.rs.client.Invocation.Builder ib =
+                UpdatePrivateIpConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePrivateIpResponse>
+                transformer = UpdatePrivateIpConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.put(ib, request.getUpdatePrivateIpDetails(), request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRouteTableResponse> updateRouteTable(
             UpdateRouteTableRequest request,
-            AsyncHandler<UpdateRouteTableRequest, UpdateRouteTableResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<UpdateRouteTableRequest, UpdateRouteTableResponse>
+                    handler) {
         LOG.trace("Called async updateRouteTable");
         request = UpdateRouteTableConverter.interceptRequest(request);
-        Invocation.Builder ib = UpdateRouteTableConverter.fromRequest(client, request);
-        Function<Response, UpdateRouteTableResponse> transformer =
-                UpdateRouteTableConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                UpdateRouteTableConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRouteTableResponse>
+                transformer = UpdateRouteTableConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture =
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.put(ib, request.getUpdateRouteTableDetails(), request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<UpdateSecurityListResponse> updateSecurityList(
+    public java.util.concurrent.Future<UpdateSecurityListResponse> updateSecurityList(
             UpdateSecurityListRequest request,
-            AsyncHandler<UpdateSecurityListRequest, UpdateSecurityListResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSecurityListRequest, UpdateSecurityListResponse>
+                    handler) {
         LOG.trace("Called async updateSecurityList");
         request = UpdateSecurityListConverter.interceptRequest(request);
-        Invocation.Builder ib = UpdateSecurityListConverter.fromRequest(client, request);
-        Function<Response, UpdateSecurityListResponse> transformer =
-                UpdateSecurityListConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                UpdateSecurityListConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSecurityListResponse>
+                transformer = UpdateSecurityListConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture =
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.put(ib, request.getUpdateSecurityListDetails(), request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<UpdateSubnetResponse> updateSubnet(
+    public java.util.concurrent.Future<UpdateSubnetResponse> updateSubnet(
             UpdateSubnetRequest request,
-            AsyncHandler<UpdateSubnetRequest, UpdateSubnetResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<UpdateSubnetRequest, UpdateSubnetResponse>
+                    handler) {
         LOG.trace("Called async updateSubnet");
         request = UpdateSubnetConverter.interceptRequest(request);
-        Invocation.Builder ib = UpdateSubnetConverter.fromRequest(client, request);
-        Function<Response, UpdateSubnetResponse> transformer = UpdateSubnetConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                UpdateSubnetConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSubnetResponse>
+                transformer = UpdateSubnetConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture =
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.put(ib, request.getUpdateSubnetDetails(), request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<UpdateVcnResponse> updateVcn(
-            UpdateVcnRequest request, AsyncHandler<UpdateVcnRequest, UpdateVcnResponse> handler) {
+    public java.util.concurrent.Future<UpdateVcnResponse> updateVcn(
+            UpdateVcnRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateVcnRequest, UpdateVcnResponse> handler) {
         LOG.trace("Called async updateVcn");
         request = UpdateVcnConverter.interceptRequest(request);
-        Invocation.Builder ib = UpdateVcnConverter.fromRequest(client, request);
-        Function<Response, UpdateVcnResponse> transformer = UpdateVcnConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = UpdateVcnConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVcnResponse> transformer =
+                UpdateVcnConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture =
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.put(ib, request.getUpdateVcnDetails(), request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<UpdateVirtualCircuitResponse> updateVirtualCircuit(
+    public java.util.concurrent.Future<UpdateVirtualCircuitResponse> updateVirtualCircuit(
             UpdateVirtualCircuitRequest request,
-            AsyncHandler<UpdateVirtualCircuitRequest, UpdateVirtualCircuitResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateVirtualCircuitRequest, UpdateVirtualCircuitResponse>
+                    handler) {
         LOG.trace("Called async updateVirtualCircuit");
         request = UpdateVirtualCircuitConverter.interceptRequest(request);
-        Invocation.Builder ib = UpdateVirtualCircuitConverter.fromRequest(client, request);
-        Function<Response, UpdateVirtualCircuitResponse> transformer =
-                UpdateVirtualCircuitConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                UpdateVirtualCircuitConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVirtualCircuitResponse>
+                transformer = UpdateVirtualCircuitConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture =
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.put(
                         ib, request.getUpdateVirtualCircuitDetails(), request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVnicResponse> updateVnic(
+            UpdateVnicRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateVnicRequest, UpdateVnicResponse> handler) {
+        LOG.trace("Called async updateVnic");
+        request = UpdateVnicConverter.interceptRequest(request);
+        javax.ws.rs.client.Invocation.Builder ib = UpdateVnicConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVnicResponse> transformer =
+                UpdateVnicConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.put(ib, request.getUpdateVnicDetails(), request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 }

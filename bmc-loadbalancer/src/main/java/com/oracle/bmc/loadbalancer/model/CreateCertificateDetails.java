@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.loadbalancer.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * The configuration details for adding a certificate bundle to a listener.
  * For more information on SSL certficate configuration, see
@@ -21,26 +10,28 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@Value
-@JsonDeserialize(builder = CreateCertificateDetails.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = CreateCertificateDetails.Builder.class
+)
 public class CreateCertificateDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("caCertificate")
+        @com.fasterxml.jackson.annotation.JsonProperty("caCertificate")
         private String caCertificate;
 
-        @JsonProperty("certificateName")
+        @com.fasterxml.jackson.annotation.JsonProperty("certificateName")
         private String certificateName;
 
-        @JsonProperty("passphrase")
+        @com.fasterxml.jackson.annotation.JsonProperty("passphrase")
         private String passphrase;
 
-        @JsonProperty("privateKey")
+        @com.fasterxml.jackson.annotation.JsonProperty("privateKey")
         private String privateKey;
 
-        @JsonProperty("publicCertificate")
+        @com.fasterxml.jackson.annotation.JsonProperty("publicCertificate")
         private String publicCertificate;
 
         public CreateCertificateDetails build() {
@@ -48,7 +39,7 @@ public class CreateCertificateDetails {
                     caCertificate, certificateName, passphrase, privateKey, publicCertificate);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateCertificateDetails o) {
             return caCertificate(o.getCaCertificate())
                     .certificateName(o.getCertificateName())
@@ -79,7 +70,7 @@ public class CreateCertificateDetails {
      *     -----END CERTIFICATE-----
      *
      **/
-    @JsonProperty("caCertificate")
+    @com.fasterxml.jackson.annotation.JsonProperty("caCertificate")
     String caCertificate;
 
     /**
@@ -88,9 +79,9 @@ public class CreateCertificateDetails {
      * Example: `My certificate bundle`
      *
      **/
-    @JsonProperty("certificateName")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("certificateName")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String certificateName;
 
     /**
@@ -99,7 +90,7 @@ public class CreateCertificateDetails {
      * Example: `Mysecretunlockingcode42!1!`
      *
      **/
-    @JsonProperty("passphrase")
+    @com.fasterxml.jackson.annotation.JsonProperty("passphrase")
     String passphrase;
 
     /**
@@ -116,7 +107,7 @@ public class CreateCertificateDetails {
      *     -----END RSA PRIVATE KEY-----
      *
      **/
-    @JsonProperty("privateKey")
+    @com.fasterxml.jackson.annotation.JsonProperty("privateKey")
     String privateKey;
 
     /**
@@ -133,6 +124,6 @@ public class CreateCertificateDetails {
      *     -----END CERTIFICATE-----
      *
      **/
-    @JsonProperty("publicCertificate")
+    @com.fasterxml.jackson.annotation.JsonProperty("publicCertificate")
     String publicCertificate;
 }

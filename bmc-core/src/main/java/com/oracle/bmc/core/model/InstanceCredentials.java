@@ -3,39 +3,30 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * The credentials for a particular instance.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = InstanceCredentials.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = InstanceCredentials.Builder.class
+)
 public class InstanceCredentials {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("password")
+        @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
-        @JsonProperty("username")
+        @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
         public InstanceCredentials build() {
             return new InstanceCredentials(password, username);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(InstanceCredentials o) {
             return password(o.getPassword()).username(o.getUsername());
         }
@@ -51,18 +42,18 @@ public class InstanceCredentials {
     /**
      * The password for the username.
      **/
-    @JsonProperty("password")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String password;
 
     /**
      * The username.
      **/
-    @JsonProperty("username")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("username")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String username;
 }

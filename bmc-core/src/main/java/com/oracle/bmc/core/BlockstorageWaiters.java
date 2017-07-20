@@ -6,17 +6,6 @@ package com.oracle.bmc.core;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
 
-import com.oracle.bmc.waiter.*;
-import com.oracle.bmc.waiter.internal.SimpleWaiterImpl;
-
-import java.util.concurrent.ExecutorService;
-
-import com.google.common.base.Function;
-import com.google.common.base.Predicate;
-import com.google.common.base.Suppliers;
-
-import lombok.RequiredArgsConstructor;
-
 /**
  * Collection of helper methods to produce {@link Waiter}s for different
  * resources of Blockstorage.
@@ -24,9 +13,9 @@ import lombok.RequiredArgsConstructor;
  * The default configuration used is defined by {@link Waiters#DEFAULT_POLLING_WAITER}.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@RequiredArgsConstructor
+@lombok.RequiredArgsConstructor
 public class BlockstorageWaiters {
-    private final ExecutorService executorService;
+    private final java.util.concurrent.ExecutorService executorService;
     private final Blockstorage client;
 
     /**
@@ -36,9 +25,10 @@ public class BlockstorageWaiters {
      * @param targetState The desired state to wait for.
      * @return A new Waiter instance.
      */
-    public Waiter<GetVolumeRequest, GetVolumeResponse> forVolume(
+    public com.oracle.bmc.waiter.Waiter<GetVolumeRequest, GetVolumeResponse> forVolume(
             GetVolumeRequest request, com.oracle.bmc.core.model.Volume.LifecycleState targetState) {
-        return forVolume(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+        return forVolume(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
     /**
@@ -50,31 +40,33 @@ public class BlockstorageWaiters {
      * @param delayStrategy The {@link DelayStrategy} to use.
      * @return A new Waiter instance.
      */
-    public Waiter<GetVolumeRequest, GetVolumeResponse> forVolume(
+    public com.oracle.bmc.waiter.Waiter<GetVolumeRequest, GetVolumeResponse> forVolume(
             GetVolumeRequest request,
             com.oracle.bmc.core.model.Volume.LifecycleState targetState,
-            TerminationStrategy terminationStrategy,
-            DelayStrategy delayStrategy) {
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
         return forVolume(
-                Waiters.newWaiter(terminationStrategy, delayStrategy), request, targetState);
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
     }
 
     // Helper method to create a new Waiter for Volume.
-    private Waiter<GetVolumeRequest, GetVolumeResponse> forVolume(
-            BmcGenericWaiter waiter,
+    private com.oracle.bmc.waiter.Waiter<GetVolumeRequest, GetVolumeResponse> forVolume(
+            com.oracle.bmc.waiter.BmcGenericWaiter waiter,
             final GetVolumeRequest request,
             final com.oracle.bmc.core.model.Volume.LifecycleState targetState) {
-        return new SimpleWaiterImpl<>(
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        Suppliers.ofInstance(request),
-                        new Function<GetVolumeRequest, GetVolumeResponse>() {
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<GetVolumeRequest, GetVolumeResponse>() {
                             @Override
                             public GetVolumeResponse apply(GetVolumeRequest request) {
                                 return client.getVolume(request);
                             }
                         },
-                        new Predicate<GetVolumeResponse>() {
+                        new com.google.common.base.Predicate<GetVolumeResponse>() {
                             @Override
                             public boolean apply(GetVolumeResponse response) {
                                 return response.getVolume().getLifecycleState() == targetState;
@@ -91,10 +83,12 @@ public class BlockstorageWaiters {
      * @param targetState The desired state to wait for.
      * @return A new Waiter instance.
      */
-    public Waiter<GetVolumeBackupRequest, GetVolumeBackupResponse> forVolumeBackup(
-            GetVolumeBackupRequest request,
-            com.oracle.bmc.core.model.VolumeBackup.LifecycleState targetState) {
-        return forVolumeBackup(Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+    public com.oracle.bmc.waiter.Waiter<GetVolumeBackupRequest, GetVolumeBackupResponse>
+            forVolumeBackup(
+                    GetVolumeBackupRequest request,
+                    com.oracle.bmc.core.model.VolumeBackup.LifecycleState targetState) {
+        return forVolumeBackup(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetState);
     }
 
     /**
@@ -106,31 +100,36 @@ public class BlockstorageWaiters {
      * @param delayStrategy The {@link DelayStrategy} to use.
      * @return A new Waiter instance.
      */
-    public Waiter<GetVolumeBackupRequest, GetVolumeBackupResponse> forVolumeBackup(
-            GetVolumeBackupRequest request,
-            com.oracle.bmc.core.model.VolumeBackup.LifecycleState targetState,
-            TerminationStrategy terminationStrategy,
-            DelayStrategy delayStrategy) {
+    public com.oracle.bmc.waiter.Waiter<GetVolumeBackupRequest, GetVolumeBackupResponse>
+            forVolumeBackup(
+                    GetVolumeBackupRequest request,
+                    com.oracle.bmc.core.model.VolumeBackup.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
         return forVolumeBackup(
-                Waiters.newWaiter(terminationStrategy, delayStrategy), request, targetState);
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
     }
 
     // Helper method to create a new Waiter for VolumeBackup.
-    private Waiter<GetVolumeBackupRequest, GetVolumeBackupResponse> forVolumeBackup(
-            BmcGenericWaiter waiter,
-            final GetVolumeBackupRequest request,
-            final com.oracle.bmc.core.model.VolumeBackup.LifecycleState targetState) {
-        return new SimpleWaiterImpl<>(
+    private com.oracle.bmc.waiter.Waiter<GetVolumeBackupRequest, GetVolumeBackupResponse>
+            forVolumeBackup(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetVolumeBackupRequest request,
+                    final com.oracle.bmc.core.model.VolumeBackup.LifecycleState targetState) {
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
-                        Suppliers.ofInstance(request),
-                        new Function<GetVolumeBackupRequest, GetVolumeBackupResponse>() {
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetVolumeBackupRequest, GetVolumeBackupResponse>() {
                             @Override
                             public GetVolumeBackupResponse apply(GetVolumeBackupRequest request) {
                                 return client.getVolumeBackup(request);
                             }
                         },
-                        new Predicate<GetVolumeBackupResponse>() {
+                        new com.google.common.base.Predicate<GetVolumeBackupResponse>() {
                             @Override
                             public boolean apply(GetVolumeBackupResponse response) {
                                 return response.getVolumeBackup().getLifecycleState()

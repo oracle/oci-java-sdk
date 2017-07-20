@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * A logical subdivision of a VCN. Each subnet exists in a single Availability Domain and
  * consists of a contiguous range of IP addresses that do not overlap with
@@ -27,59 +16,59 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = Subnet.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Subnet.Builder.class)
 public class Subnet {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("availabilityDomain")
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
-        @JsonProperty("cidrBlock")
+        @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
         private String cidrBlock;
 
-        @JsonProperty("compartmentId")
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
-        @JsonProperty("dhcpOptionsId")
+        @com.fasterxml.jackson.annotation.JsonProperty("dhcpOptionsId")
         private String dhcpOptionsId;
 
-        @JsonProperty("displayName")
+        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
-        @JsonProperty("dnsLabel")
+        @com.fasterxml.jackson.annotation.JsonProperty("dnsLabel")
         private String dnsLabel;
 
-        @JsonProperty("id")
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
-        @JsonProperty("lifecycleState")
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
-        @JsonProperty("prohibitPublicIpOnVnic")
+        @com.fasterxml.jackson.annotation.JsonProperty("prohibitPublicIpOnVnic")
         private Boolean prohibitPublicIpOnVnic;
 
-        @JsonProperty("routeTableId")
+        @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
         private String routeTableId;
 
-        @JsonProperty("securityListIds")
-        private List<String> securityListIds;
+        @com.fasterxml.jackson.annotation.JsonProperty("securityListIds")
+        private java.util.List<String> securityListIds;
 
-        @JsonProperty("subnetDomainName")
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetDomainName")
         private String subnetDomainName;
 
-        @JsonProperty("timeCreated")
-        private Date timeCreated;
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+        private java.util.Date timeCreated;
 
-        @JsonProperty("vcnId")
+        @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
-        @JsonProperty("virtualRouterIp")
+        @com.fasterxml.jackson.annotation.JsonProperty("virtualRouterIp")
         private String virtualRouterIp;
 
-        @JsonProperty("virtualRouterMac")
+        @com.fasterxml.jackson.annotation.JsonProperty("virtualRouterMac")
         private String virtualRouterMac;
 
         public Subnet build() {
@@ -102,7 +91,7 @@ public class Subnet {
                     virtualRouterMac);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Subnet o) {
             return availabilityDomain(o.getAvailabilityDomain())
                     .cidrBlock(o.getCidrBlock())
@@ -136,10 +125,10 @@ public class Subnet {
      * Example: `Uocm:PHX-AD-1`
      *
      **/
-    @JsonProperty("availabilityDomain")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String availabilityDomain;
 
     /**
@@ -148,34 +137,36 @@ public class Subnet {
      * Example: `172.16.1.0/24`
      *
      **/
-    @JsonProperty("cidrBlock")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 32)
+    @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 32)
     String cidrBlock;
 
     /**
      * The OCID of the compartment containing the subnet.
      **/
-    @JsonProperty("compartmentId")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
      * The OCID of the set of DHCP options associated with the subnet.
      *
      **/
-    @JsonProperty("dhcpOptionsId")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("dhcpOptionsId")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String dhcpOptionsId;
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
      **/
-    @JsonProperty("displayName")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
@@ -194,17 +185,17 @@ public class Subnet {
      * Example: `subnet123`
      *
      **/
-    @JsonProperty("dnsLabel")
-    @Size(min = 1, max = 15)
+    @com.fasterxml.jackson.annotation.JsonProperty("dnsLabel")
+    @javax.validation.constraints.Size(min = 1, max = 15)
     String dnsLabel;
 
     /**
      * The subnet's Oracle ID (OCID).
      **/
-    @JsonProperty("id")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String id;
     /**
      * The subnet's current state.
@@ -223,10 +214,10 @@ public class Subnet {
         UnknownEnumValue(null);
 
         private final String value;
-        private static Map<String, LifecycleState> map;
+        private static java.util.Map<String, LifecycleState> map;
 
         static {
-            map = new HashMap<>();
+            map = new java.util.HashMap<>();
             for (LifecycleState v : LifecycleState.values()) {
                 if (v != UnknownEnumValue) {
                     map.put(v.getValue(), v);
@@ -238,12 +229,12 @@ public class Subnet {
             this.value = value;
         }
 
-        @JsonValue
+        @com.fasterxml.jackson.annotation.JsonValue
         public String getValue() {
             return value;
         }
 
-        @JsonCreator
+        @com.fasterxml.jackson.annotation.JsonCreator
         public static LifecycleState create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
@@ -257,16 +248,17 @@ public class Subnet {
     /**
      * The subnet's current state.
      **/
-    @JsonProperty("lifecycleState")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     LifecycleState lifecycleState;
 
     /**
      * Whether VNICs within this subnet can have public IP addresses.
      * Defaults to false, which means VNICs created in this subnet will
      * automatically be assigned public IP addresses unless specified
-     * otherwise during instance launch (with the `assignPublicIp` flag in
+     * otherwise during instance launch or VNIC creation (with the
+     * `assignPublicIp` flag in
      * {@link CreateVnicDetails}).
      * If `prohibitPublicIpOnVnic` is set to true, VNICs created in this
      * subnet cannot have public IP addresses (i.e., it's a private
@@ -275,23 +267,23 @@ public class Subnet {
      * Example: `true`
      *
      **/
-    @JsonProperty("prohibitPublicIpOnVnic")
+    @com.fasterxml.jackson.annotation.JsonProperty("prohibitPublicIpOnVnic")
     Boolean prohibitPublicIpOnVnic;
 
     /**
      * The OCID of the route table the subnet is using.
      **/
-    @JsonProperty("routeTableId")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String routeTableId;
 
     /**
      * OCIDs for the security lists to use for VNICs in this subnet.
      **/
-    @JsonProperty("securityListIds")
-    List<String> securityListIds;
+    @com.fasterxml.jackson.annotation.JsonProperty("securityListIds")
+    java.util.List<String> securityListIds;
 
     /**
      * The subnet's domain name, which consists of the subnet's DNS label,
@@ -303,8 +295,8 @@ public class Subnet {
      * Example: `subnet123.vcn1.oraclevcn.com`
      *
      **/
-    @JsonProperty("subnetDomainName")
-    @Size(min = 1, max = 253)
+    @com.fasterxml.jackson.annotation.JsonProperty("subnetDomainName")
+    @javax.validation.constraints.Size(min = 1, max = 253)
     String subnetDomainName;
 
     /**
@@ -313,16 +305,16 @@ public class Subnet {
      * Example: `2016-08-25T21:10:29.600Z`
      *
      **/
-    @JsonProperty("timeCreated")
-    Date timeCreated;
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    java.util.Date timeCreated;
 
     /**
      * The OCID of the VCN the subnet is in.
      **/
-    @JsonProperty("vcnId")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String vcnId;
 
     /**
@@ -331,10 +323,10 @@ public class Subnet {
      * Example: `10.0.14.1`
      *
      **/
-    @JsonProperty("virtualRouterIp")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 32)
+    @com.fasterxml.jackson.annotation.JsonProperty("virtualRouterIp")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 32)
     String virtualRouterIp;
 
     /**
@@ -343,9 +335,9 @@ public class Subnet {
      * Example: `00:00:17:B6:4D:DD`
      *
      **/
-    @JsonProperty("virtualRouterMac")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 32)
+    @com.fasterxml.jackson.annotation.JsonProperty("virtualRouterMac")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 32)
     String virtualRouterMac;
 }

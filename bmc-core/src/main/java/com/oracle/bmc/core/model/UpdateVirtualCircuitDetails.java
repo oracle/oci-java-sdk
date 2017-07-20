@@ -3,44 +3,35 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = UpdateVirtualCircuitDetails.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = UpdateVirtualCircuitDetails.Builder.class
+)
 public class UpdateVirtualCircuitDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("bandwidthShapeName")
+        @com.fasterxml.jackson.annotation.JsonProperty("bandwidthShapeName")
         private String bandwidthShapeName;
 
-        @JsonProperty("crossConnectMappings")
-        private List<CrossConnectMapping> crossConnectMappings;
+        @com.fasterxml.jackson.annotation.JsonProperty("crossConnectMappings")
+        private java.util.List<CrossConnectMapping> crossConnectMappings;
 
-        @JsonProperty("customerBgpAsn")
+        @com.fasterxml.jackson.annotation.JsonProperty("customerBgpAsn")
         private Integer customerBgpAsn;
 
-        @JsonProperty("displayName")
+        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
-        @JsonProperty("gatewayId")
+        @com.fasterxml.jackson.annotation.JsonProperty("gatewayId")
         private String gatewayId;
 
-        @JsonProperty("providerState")
+        @com.fasterxml.jackson.annotation.JsonProperty("providerState")
         private ProviderState providerState;
 
-        @JsonProperty("referenceComment")
+        @com.fasterxml.jackson.annotation.JsonProperty("referenceComment")
         private String referenceComment;
 
         public UpdateVirtualCircuitDetails build() {
@@ -54,7 +45,7 @@ public class UpdateVirtualCircuitDetails {
                     referenceComment);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateVirtualCircuitDetails o) {
             return bandwidthShapeName(o.getBandwidthShapeName())
                     .crossConnectMappings(o.getCrossConnectMappings())
@@ -81,7 +72,7 @@ public class UpdateVirtualCircuitDetails {
      * To be updated only by the customer who owns the virtual circuit.
      *
      **/
-    @JsonProperty("bandwidthShapeName")
+    @com.fasterxml.jackson.annotation.JsonProperty("bandwidthShapeName")
     String bandwidthShapeName;
 
     /**
@@ -93,8 +84,8 @@ public class UpdateVirtualCircuitDetails {
      * {@link CrossConnectMapping}.
      *
      **/
-    @JsonProperty("crossConnectMappings")
-    List<CrossConnectMapping> crossConnectMappings;
+    @com.fasterxml.jackson.annotation.JsonProperty("crossConnectMappings")
+    java.util.List<CrossConnectMapping> crossConnectMappings;
 
     /**
      * The BGP ASN of the network at the other end of the BGP
@@ -109,17 +100,18 @@ public class UpdateVirtualCircuitDetails {
      * by the provider.
      *
      **/
-    @JsonProperty("customerBgpAsn")
+    @com.fasterxml.jackson.annotation.JsonProperty("customerBgpAsn")
     Integer customerBgpAsn;
 
     /**
      * A user-friendly name. Does not have to be unique.
+     * Avoid entering confidential information.
      * <p>
      * To be updated only by the customer who owns the virtual circuit.
      *
      **/
-    @JsonProperty("displayName")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
@@ -129,8 +121,8 @@ public class UpdateVirtualCircuitDetails {
      * To be updated only by the customer who owns the virtual circuit.
      *
      **/
-    @JsonProperty("gatewayId")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("gatewayId")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String gatewayId;
     /**
      * The provider's state in relation to this virtual circuit. Relevant only
@@ -148,10 +140,10 @@ public class UpdateVirtualCircuitDetails {
         ;
 
         private final String value;
-        private static Map<String, ProviderState> map;
+        private static java.util.Map<String, ProviderState> map;
 
         static {
-            map = new HashMap<>();
+            map = new java.util.HashMap<>();
             for (ProviderState v : ProviderState.values()) {
                 map.put(v.getValue(), v);
             }
@@ -161,12 +153,12 @@ public class UpdateVirtualCircuitDetails {
             this.value = value;
         }
 
-        @JsonValue
+        @com.fasterxml.jackson.annotation.JsonValue
         public String getValue() {
             return value;
         }
 
-        @JsonCreator
+        @com.fasterxml.jackson.annotation.JsonCreator
         public static ProviderState create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
@@ -184,7 +176,7 @@ public class UpdateVirtualCircuitDetails {
      * To be updated only by the provider.
      *
      **/
-    @JsonProperty("providerState")
+    @com.fasterxml.jackson.annotation.JsonProperty("providerState")
     ProviderState providerState;
 
     /**
@@ -194,6 +186,6 @@ public class UpdateVirtualCircuitDetails {
      * To be updated only by the provider.
      *
      **/
-    @JsonProperty("referenceComment")
+    @com.fasterxml.jackson.annotation.JsonProperty("referenceComment")
     String referenceComment;
 }

@@ -3,21 +3,11 @@
  */
 package com.oracle.bmc.loadbalancer.responses;
 
-import java.io.*;
-import java.util.*;
-
-import com.oracle.bmc.model.*;
-import javax.ws.rs.core.*;
-
-import lombok.Builder;
-import lombok.Getter;
-import lombok.experimental.Accessors;
-
 import com.oracle.bmc.loadbalancer.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@Builder(builderClassName = "Builder")
-@Getter
+@lombok.Builder(builderClassName = "Builder")
+@lombok.Getter
 public class ListBackendSetsResponse {
 
     /**
@@ -30,7 +20,7 @@ public class ListBackendSetsResponse {
     /**
      * A list of BackendSet instances.
      */
-    private List<BackendSet> items;
+    private java.util.List<BackendSet> items;
 
     public static class Builder {
         /**

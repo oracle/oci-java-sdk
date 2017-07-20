@@ -3,36 +3,27 @@
  */
 package com.oracle.bmc.identity.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = CreateIdpGroupMappingDetails.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = CreateIdpGroupMappingDetails.Builder.class
+)
 public class CreateIdpGroupMappingDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("idpGroupName")
+        @com.fasterxml.jackson.annotation.JsonProperty("idpGroupName")
         private String idpGroupName;
 
-        @JsonProperty("groupId")
+        @com.fasterxml.jackson.annotation.JsonProperty("groupId")
         private String groupId;
 
         public CreateIdpGroupMappingDetails build() {
             return new CreateIdpGroupMappingDetails(idpGroupName, groupId);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateIdpGroupMappingDetails o) {
             return idpGroupName(o.getIdpGroupName()).groupId(o.getGroupId());
         }
@@ -48,9 +39,9 @@ public class CreateIdpGroupMappingDetails {
     /**
      * The name of the IdP group you want to map.
      **/
-    @JsonProperty("idpGroupName")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("idpGroupName")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String idpGroupName;
 
     /**
@@ -58,8 +49,8 @@ public class CreateIdpGroupMappingDetails {
      * you want to map to the IdP group.
      *
      **/
-    @JsonProperty("groupId")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("groupId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String groupId;
 }

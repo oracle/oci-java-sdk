@@ -3,39 +3,24 @@
  */
 package com.oracle.bmc.loadbalancer.internal.http;
 
-import java.io.InputStream;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-
-import javax.ws.rs.client.*;
-import javax.ws.rs.core.*;
-
-import com.oracle.bmc.http.internal.*;
-import static com.oracle.bmc.util.internal.HttpUtils.*;
-import com.oracle.bmc.model.*;
 import com.oracle.bmc.loadbalancer.model.*;
 import com.oracle.bmc.loadbalancer.requests.*;
 import com.oracle.bmc.loadbalancer.responses.*;
 
-import com.google.common.base.Function;
-import com.google.common.base.Optional;
-
-import lombok.extern.slf4j.Slf4j;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@Slf4j
+@lombok.extern.slf4j.Slf4j
 public class CreateBackendConverter {
-    private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
-            new ResponseConversionFunctionFactory();
+    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
+            RESPONSE_CONVERSION_FACTORY =
+                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
     public static CreateBackendRequest interceptRequest(CreateBackendRequest request) {
 
         return request;
     }
 
-    public static Invocation.Builder fromRequest(RestClient client, CreateBackendRequest request) {
+    public static javax.ws.rs.client.Invocation.Builder fromRequest(
+            com.oracle.bmc.http.internal.RestClient client, CreateBackendRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
         }
@@ -52,18 +37,22 @@ public class CreateBackendConverter {
             throw new NullPointerException("backendSetName is required");
         }
 
-        WebTarget target =
+        javax.ws.rs.client.WebTarget target =
                 client.getBaseTarget()
                         .path("/20170115")
                         .path("loadBalancers")
-                        .path(encodePathSegment(request.getLoadBalancerId()))
+                        .path(
+                                com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
+                                        request.getLoadBalancerId()))
                         .path("backendSets")
-                        .path(encodePathSegment(request.getBackendSetName()))
+                        .path(
+                                com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
+                                        request.getBackendSetName()))
                         .path("backends");
 
-        Invocation.Builder ib = target.request();
+        javax.ws.rs.client.Invocation.Builder ib = target.request();
 
-        ib.accept(MediaType.APPLICATION_JSON);
+        ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 
         if (request.getOpcRequestId() != null) {
             ib.header("opc-request-id", request.getOpcRequestId());
@@ -76,45 +65,58 @@ public class CreateBackendConverter {
         return ib;
     }
 
-    public static Function<Response, CreateBackendResponse> fromResponse() {
-        final Function<Response, CreateBackendResponse> transformer =
-                new Function<Response, CreateBackendResponse>() {
-                    @Override
-                    public CreateBackendResponse apply(Response rawResponse) {
-                        LOG.trace("Transform function invoked for CreateBackendResponse");
-                        Function<Response, WithHeaders<Void>> responseFn =
-                                RESPONSE_CONVERSION_FACTORY.create();
+    public static com.google.common.base.Function<javax.ws.rs.core.Response, CreateBackendResponse>
+            fromResponse() {
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateBackendResponse>
+                transformer =
+                        new com.google.common.base.Function<
+                                javax.ws.rs.core.Response, CreateBackendResponse>() {
+                            @Override
+                            public CreateBackendResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace("Transform function invoked for CreateBackendResponse");
+                                com.google.common.base.Function<
+                                                javax.ws.rs.core.Response,
+                                                com.oracle.bmc.http.internal.WithHeaders<Void>>
+                                        responseFn = RESPONSE_CONVERSION_FACTORY.create();
 
-                        WithHeaders<Void> response = responseFn.apply(rawResponse);
-                        MultivaluedMap<String, String> headers = response.getHeaders();
+                                com.oracle.bmc.http.internal.WithHeaders<Void> response =
+                                        responseFn.apply(rawResponse);
+                                javax.ws.rs.core.MultivaluedMap<String, String> headers =
+                                        response.getHeaders();
 
-                        CreateBackendResponse.Builder builder = CreateBackendResponse.builder();
+                                CreateBackendResponse.Builder builder =
+                                        CreateBackendResponse.builder();
 
-                        Optional<List<String>> opcRequestIdHeader =
-                                HeaderUtils.get(headers, "opc-request-id");
-                        if (opcRequestIdHeader.isPresent()) {
-                            builder.opcRequestId(
-                                    HeaderUtils.toValue(
-                                            "opc-request-id",
-                                            opcRequestIdHeader.get().get(0),
-                                            String.class));
-                        }
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcRequestIdHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-request-id");
+                                if (opcRequestIdHeader.isPresent()) {
+                                    builder.opcRequestId(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-request-id",
+                                                    opcRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
 
-                        Optional<List<String>> opcWorkRequestIdHeader =
-                                HeaderUtils.get(headers, "opc-work-request-id");
-                        if (opcWorkRequestIdHeader.isPresent()) {
-                            builder.opcWorkRequestId(
-                                    HeaderUtils.toValue(
-                                            "opc-work-request-id",
-                                            opcWorkRequestIdHeader.get().get(0),
-                                            String.class));
-                        }
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcWorkRequestIdHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-work-request-id");
+                                if (opcWorkRequestIdHeader.isPresent()) {
+                                    builder.opcWorkRequestId(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-work-request-id",
+                                                    opcWorkRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
 
-                        CreateBackendResponse responseWrapper = builder.build();
+                                CreateBackendResponse responseWrapper = builder.build();
 
-                        return responseWrapper;
-                    }
-                };
+                                return responseWrapper;
+                            }
+                        };
         return transformer;
     }
 }

@@ -3,50 +3,28 @@
  */
 package com.oracle.bmc.objectstorage;
 
-import com.oracle.bmc.ClientConfiguration;
-import com.oracle.bmc.auth.*;
-import com.oracle.bmc.http.ClientConfigurator;
-import com.oracle.bmc.http.internal.*;
-import com.oracle.bmc.http.signing.*;
-import com.oracle.bmc.http.signing.internal.*;
-import com.oracle.bmc.responses.*;
-import com.oracle.bmc.util.internal.*;
-
-import com.google.common.base.Function;
-import com.google.common.base.Optional;
-
-import java.util.concurrent.Future;
-
-import javax.ws.rs.client.*;
-import javax.ws.rs.core.*;
-
 import com.oracle.bmc.objectstorage.internal.http.*;
 import com.oracle.bmc.objectstorage.requests.*;
 import com.oracle.bmc.objectstorage.responses.*;
 
-import com.oracle.bmc.*;
-
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Slf4j
+@lombok.extern.slf4j.Slf4j
 public class ObjectStorageAsyncClient implements ObjectStorageAsync {
     /**
      * Service instance for ObjectStorage.
      */
-    public static final Service SERVICE = Services.create("OBJECTSTORAGE", "objectstorage");
+    public static final com.oracle.bmc.Service SERVICE =
+            com.oracle.bmc.Services.create("OBJECTSTORAGE", "objectstorage");
 
-    @Getter(value = AccessLevel.PACKAGE)
-    private final RestClient client;
+    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private final com.oracle.bmc.http.internal.RestClient client;
 
     /**
      * Creates a new service instance using the given authentication provider.
      * @param authenticationDetailsProvider The authentication details provider, required.
      */
     public ObjectStorageAsyncClient(
-            BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
         this(authenticationDetailsProvider, null);
     }
 
@@ -56,8 +34,8 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
      * @param configuration The client configuration, optional.
      */
     public ObjectStorageAsyncClient(
-            BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            ClientConfiguration configuration) {
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
         this(authenticationDetailsProvider, configuration, null);
     }
 
@@ -69,14 +47,15 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
      * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      */
     public ObjectStorageAsyncClient(
-            BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            ClientConfiguration configuration,
-            ClientConfigurator clientConfigurator) {
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
         this(
                 authenticationDetailsProvider,
                 configuration,
                 clientConfigurator,
-                new DefaultRequestSignerFactory(SigningStrategy.OBJECT_STORAGE));
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.OBJECT_STORAGE));
     }
 
     /**
@@ -90,13 +69,15 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
      * @param requestSignerFactory The request signer factory used to create the request signer for this service.
      */
     public ObjectStorageAsyncClient(
-            AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            ClientConfiguration configuration,
-            ClientConfigurator clientConfigurator,
-            RequestSignerFactory requestSignerFactory) {
-        RestClientFactory restClientFactory =
-                RestClientFactoryBuilder.builder().clientConfigurator(clientConfigurator).build();
-        RequestSigner requestSigner =
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory requestSignerFactory) {
+        com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
+                        .clientConfigurator(clientConfigurator)
+                        .build();
+        com.oracle.bmc.http.signing.RequestSigner requestSigner =
                 requestSignerFactory.createRequestSigner(SERVICE, authenticationDetailsProvider);
         this.client = restClientFactory.create(requestSigner, configuration);
     }
@@ -108,8 +89,8 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
     }
 
     @Override
-    public void setRegion(Region region) {
-        Optional<String> endpoint = region.getEndpoint(SERVICE);
+    public void setRegion(com.oracle.bmc.Region region) {
+        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
         if (endpoint.isPresent()) {
             setEndpoint(endpoint.get());
         } else {
@@ -122,11 +103,11 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
     public void setRegion(String regionId) {
         regionId = regionId.toLowerCase();
         try {
-            Region region = Region.fromRegionId(regionId);
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
             setRegion(region);
         } catch (IllegalArgumentException e) {
             LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
-            String endpoint = Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
             setEndpoint(endpoint);
         }
     }
@@ -137,383 +118,502 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
     }
 
     @Override
-    public Future<AbortMultipartUploadResponse> abortMultipartUpload(
+    public java.util.concurrent.Future<AbortMultipartUploadResponse> abortMultipartUpload(
             AbortMultipartUploadRequest request,
-            AsyncHandler<AbortMultipartUploadRequest, AbortMultipartUploadResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            AbortMultipartUploadRequest, AbortMultipartUploadResponse>
+                    handler) {
         LOG.trace("Called async abortMultipartUpload");
         request = AbortMultipartUploadConverter.interceptRequest(request);
-        Invocation.Builder ib = AbortMultipartUploadConverter.fromRequest(client, request);
-        Function<Response, AbortMultipartUploadResponse> transformer =
-                AbortMultipartUploadConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                AbortMultipartUploadConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, AbortMultipartUploadResponse>
+                transformer = AbortMultipartUploadConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.delete(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.delete(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<CommitMultipartUploadResponse> commitMultipartUpload(
+    public java.util.concurrent.Future<CommitMultipartUploadResponse> commitMultipartUpload(
             CommitMultipartUploadRequest request,
-            AsyncHandler<CommitMultipartUploadRequest, CommitMultipartUploadResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            CommitMultipartUploadRequest, CommitMultipartUploadResponse>
+                    handler) {
         LOG.trace("Called async commitMultipartUpload");
         request = CommitMultipartUploadConverter.interceptRequest(request);
-        Invocation.Builder ib = CommitMultipartUploadConverter.fromRequest(client, request);
-        Function<Response, CommitMultipartUploadResponse> transformer =
-                CommitMultipartUploadConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                CommitMultipartUploadConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CommitMultipartUploadResponse>
+                transformer = CommitMultipartUploadConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture =
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.post(
                         ib, request.getCommitMultipartUploadDetails(), request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<CreateBucketResponse> createBucket(
+    public java.util.concurrent.Future<CreateBucketResponse> createBucket(
             CreateBucketRequest request,
-            AsyncHandler<CreateBucketRequest, CreateBucketResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<CreateBucketRequest, CreateBucketResponse>
+                    handler) {
         LOG.trace("Called async createBucket");
         request = CreateBucketConverter.interceptRequest(request);
-        Invocation.Builder ib = CreateBucketConverter.fromRequest(client, request);
-        Function<Response, CreateBucketResponse> transformer = CreateBucketConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                CreateBucketConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateBucketResponse>
+                transformer = CreateBucketConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture =
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.post(ib, request.getCreateBucketDetails(), request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<CreateMultipartUploadResponse> createMultipartUpload(
+    public java.util.concurrent.Future<CreateMultipartUploadResponse> createMultipartUpload(
             CreateMultipartUploadRequest request,
-            AsyncHandler<CreateMultipartUploadRequest, CreateMultipartUploadResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateMultipartUploadRequest, CreateMultipartUploadResponse>
+                    handler) {
         LOG.trace("Called async createMultipartUpload");
         request = CreateMultipartUploadConverter.interceptRequest(request);
-        Invocation.Builder ib = CreateMultipartUploadConverter.fromRequest(client, request);
-        Function<Response, CreateMultipartUploadResponse> transformer =
-                CreateMultipartUploadConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                CreateMultipartUploadConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateMultipartUploadResponse>
+                transformer = CreateMultipartUploadConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture =
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.post(
                         ib, request.getCreateMultipartUploadDetails(), request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<CreatePreauthenticatedRequestResponse> createPreauthenticatedRequest(
-            CreatePreauthenticatedRequestRequest request,
-            AsyncHandler<
-                            CreatePreauthenticatedRequestRequest,
-                            CreatePreauthenticatedRequestResponse>
-                    handler) {
+    public java.util.concurrent.Future<CreatePreauthenticatedRequestResponse>
+            createPreauthenticatedRequest(
+                    CreatePreauthenticatedRequestRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreatePreauthenticatedRequestRequest,
+                                    CreatePreauthenticatedRequestResponse>
+                            handler) {
         LOG.trace("Called async createPreauthenticatedRequest");
         request = CreatePreauthenticatedRequestConverter.interceptRequest(request);
-        Invocation.Builder ib = CreatePreauthenticatedRequestConverter.fromRequest(client, request);
-        Function<Response, CreatePreauthenticatedRequestResponse> transformer =
-                CreatePreauthenticatedRequestConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                CreatePreauthenticatedRequestConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreatePreauthenticatedRequestResponse>
+                transformer = CreatePreauthenticatedRequestConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture =
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.post(
                         ib,
                         request.getCreatePreauthenticatedRequestDetails(),
                         request,
                         onSuccess,
                         onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<DeleteBucketResponse> deleteBucket(
+    public java.util.concurrent.Future<DeleteBucketResponse> deleteBucket(
             DeleteBucketRequest request,
-            AsyncHandler<DeleteBucketRequest, DeleteBucketResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<DeleteBucketRequest, DeleteBucketResponse>
+                    handler) {
         LOG.trace("Called async deleteBucket");
         request = DeleteBucketConverter.interceptRequest(request);
-        Invocation.Builder ib = DeleteBucketConverter.fromRequest(client, request);
-        Function<Response, DeleteBucketResponse> transformer = DeleteBucketConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                DeleteBucketConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBucketResponse>
+                transformer = DeleteBucketConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.delete(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.delete(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<DeleteObjectResponse> deleteObject(
+    public java.util.concurrent.Future<DeleteObjectResponse> deleteObject(
             DeleteObjectRequest request,
-            AsyncHandler<DeleteObjectRequest, DeleteObjectResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<DeleteObjectRequest, DeleteObjectResponse>
+                    handler) {
         LOG.trace("Called async deleteObject");
         request = DeleteObjectConverter.interceptRequest(request);
-        Invocation.Builder ib = DeleteObjectConverter.fromRequest(client, request);
-        Function<Response, DeleteObjectResponse> transformer = DeleteObjectConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                DeleteObjectConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteObjectResponse>
+                transformer = DeleteObjectConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.delete(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.delete(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<DeletePreauthenticatedRequestResponse> deletePreauthenticatedRequest(
-            DeletePreauthenticatedRequestRequest request,
-            AsyncHandler<
-                            DeletePreauthenticatedRequestRequest,
-                            DeletePreauthenticatedRequestResponse>
-                    handler) {
+    public java.util.concurrent.Future<DeletePreauthenticatedRequestResponse>
+            deletePreauthenticatedRequest(
+                    DeletePreauthenticatedRequestRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeletePreauthenticatedRequestRequest,
+                                    DeletePreauthenticatedRequestResponse>
+                            handler) {
         LOG.trace("Called async deletePreauthenticatedRequest");
         request = DeletePreauthenticatedRequestConverter.interceptRequest(request);
-        Invocation.Builder ib = DeletePreauthenticatedRequestConverter.fromRequest(client, request);
-        Function<Response, DeletePreauthenticatedRequestResponse> transformer =
-                DeletePreauthenticatedRequestConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                DeletePreauthenticatedRequestConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeletePreauthenticatedRequestResponse>
+                transformer = DeletePreauthenticatedRequestConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.delete(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.delete(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<GetBucketResponse> getBucket(
-            GetBucketRequest request, AsyncHandler<GetBucketRequest, GetBucketResponse> handler) {
+    public java.util.concurrent.Future<GetBucketResponse> getBucket(
+            GetBucketRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetBucketRequest, GetBucketResponse> handler) {
         LOG.trace("Called async getBucket");
         request = GetBucketConverter.interceptRequest(request);
-        Invocation.Builder ib = GetBucketConverter.fromRequest(client, request);
-        Function<Response, GetBucketResponse> transformer = GetBucketConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = GetBucketConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetBucketResponse> transformer =
+                GetBucketConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<GetNamespaceResponse> getNamespace(
+    public java.util.concurrent.Future<GetNamespaceResponse> getNamespace(
             GetNamespaceRequest request,
-            AsyncHandler<GetNamespaceRequest, GetNamespaceResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<GetNamespaceRequest, GetNamespaceResponse>
+                    handler) {
         LOG.trace("Called async getNamespace");
         request = GetNamespaceConverter.interceptRequest(request);
-        Invocation.Builder ib = GetNamespaceConverter.fromRequest(client, request);
-        Function<Response, GetNamespaceResponse> transformer = GetNamespaceConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                GetNamespaceConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetNamespaceResponse>
+                transformer = GetNamespaceConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<GetObjectResponse> getObject(
-            GetObjectRequest request, AsyncHandler<GetObjectRequest, GetObjectResponse> handler) {
+    public java.util.concurrent.Future<GetObjectResponse> getObject(
+            GetObjectRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetObjectRequest, GetObjectResponse> handler) {
         LOG.trace("Called async getObject");
         request = GetObjectConverter.interceptRequest(request);
-        Invocation.Builder ib = GetObjectConverter.fromRequest(client, request);
-        Function<Response, GetObjectResponse> transformer = GetObjectConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = GetObjectConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetObjectResponse> transformer =
+                GetObjectConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<GetPreauthenticatedRequestResponse> getPreauthenticatedRequest(
-            GetPreauthenticatedRequestRequest request,
-            AsyncHandler<GetPreauthenticatedRequestRequest, GetPreauthenticatedRequestResponse>
-                    handler) {
+    public java.util.concurrent.Future<GetPreauthenticatedRequestResponse>
+            getPreauthenticatedRequest(
+                    GetPreauthenticatedRequestRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetPreauthenticatedRequestRequest,
+                                    GetPreauthenticatedRequestResponse>
+                            handler) {
         LOG.trace("Called async getPreauthenticatedRequest");
         request = GetPreauthenticatedRequestConverter.interceptRequest(request);
-        Invocation.Builder ib = GetPreauthenticatedRequestConverter.fromRequest(client, request);
-        Function<Response, GetPreauthenticatedRequestResponse> transformer =
-                GetPreauthenticatedRequestConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                GetPreauthenticatedRequestConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetPreauthenticatedRequestResponse>
+                transformer = GetPreauthenticatedRequestConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<HeadBucketResponse> headBucket(
+    public java.util.concurrent.Future<HeadBucketResponse> headBucket(
             HeadBucketRequest request,
-            AsyncHandler<HeadBucketRequest, HeadBucketResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<HeadBucketRequest, HeadBucketResponse> handler) {
         LOG.trace("Called async headBucket");
         request = HeadBucketConverter.interceptRequest(request);
-        Invocation.Builder ib = HeadBucketConverter.fromRequest(client, request);
-        Function<Response, HeadBucketResponse> transformer = HeadBucketConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = HeadBucketConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, HeadBucketResponse> transformer =
+                HeadBucketConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.head(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.head(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<HeadObjectResponse> headObject(
+    public java.util.concurrent.Future<HeadObjectResponse> headObject(
             HeadObjectRequest request,
-            AsyncHandler<HeadObjectRequest, HeadObjectResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<HeadObjectRequest, HeadObjectResponse> handler) {
         LOG.trace("Called async headObject");
         request = HeadObjectConverter.interceptRequest(request);
-        Invocation.Builder ib = HeadObjectConverter.fromRequest(client, request);
-        Function<Response, HeadObjectResponse> transformer = HeadObjectConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = HeadObjectConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, HeadObjectResponse> transformer =
+                HeadObjectConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.head(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.head(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<ListBucketsResponse> listBuckets(
+    public java.util.concurrent.Future<ListBucketsResponse> listBuckets(
             ListBucketsRequest request,
-            AsyncHandler<ListBucketsRequest, ListBucketsResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<ListBucketsRequest, ListBucketsResponse>
+                    handler) {
         LOG.trace("Called async listBuckets");
         request = ListBucketsConverter.interceptRequest(request);
-        Invocation.Builder ib = ListBucketsConverter.fromRequest(client, request);
-        Function<Response, ListBucketsResponse> transformer = ListBucketsConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListBucketsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListBucketsResponse>
+                transformer = ListBucketsConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<ListMultipartUploadPartsResponse> listMultipartUploadParts(
+    public java.util.concurrent.Future<ListMultipartUploadPartsResponse> listMultipartUploadParts(
             ListMultipartUploadPartsRequest request,
-            AsyncHandler<ListMultipartUploadPartsRequest, ListMultipartUploadPartsResponse>
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListMultipartUploadPartsRequest, ListMultipartUploadPartsResponse>
                     handler) {
         LOG.trace("Called async listMultipartUploadParts");
         request = ListMultipartUploadPartsConverter.interceptRequest(request);
-        Invocation.Builder ib = ListMultipartUploadPartsConverter.fromRequest(client, request);
-        Function<Response, ListMultipartUploadPartsResponse> transformer =
-                ListMultipartUploadPartsConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListMultipartUploadPartsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListMultipartUploadPartsResponse>
+                transformer = ListMultipartUploadPartsConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<ListMultipartUploadsResponse> listMultipartUploads(
+    public java.util.concurrent.Future<ListMultipartUploadsResponse> listMultipartUploads(
             ListMultipartUploadsRequest request,
-            AsyncHandler<ListMultipartUploadsRequest, ListMultipartUploadsResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListMultipartUploadsRequest, ListMultipartUploadsResponse>
+                    handler) {
         LOG.trace("Called async listMultipartUploads");
         request = ListMultipartUploadsConverter.interceptRequest(request);
-        Invocation.Builder ib = ListMultipartUploadsConverter.fromRequest(client, request);
-        Function<Response, ListMultipartUploadsResponse> transformer =
-                ListMultipartUploadsConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListMultipartUploadsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListMultipartUploadsResponse>
+                transformer = ListMultipartUploadsConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<ListObjectsResponse> listObjects(
+    public java.util.concurrent.Future<ListObjectsResponse> listObjects(
             ListObjectsRequest request,
-            AsyncHandler<ListObjectsRequest, ListObjectsResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<ListObjectsRequest, ListObjectsResponse>
+                    handler) {
         LOG.trace("Called async listObjects");
         request = ListObjectsConverter.interceptRequest(request);
-        Invocation.Builder ib = ListObjectsConverter.fromRequest(client, request);
-        Function<Response, ListObjectsResponse> transformer = ListObjectsConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListObjectsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListObjectsResponse>
+                transformer = ListObjectsConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<ListPreauthenticatedRequestsResponse> listPreauthenticatedRequests(
-            ListPreauthenticatedRequestsRequest request,
-            AsyncHandler<ListPreauthenticatedRequestsRequest, ListPreauthenticatedRequestsResponse>
-                    handler) {
+    public java.util.concurrent.Future<ListPreauthenticatedRequestsResponse>
+            listPreauthenticatedRequests(
+                    ListPreauthenticatedRequestsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListPreauthenticatedRequestsRequest,
+                                    ListPreauthenticatedRequestsResponse>
+                            handler) {
         LOG.trace("Called async listPreauthenticatedRequests");
         request = ListPreauthenticatedRequestsConverter.interceptRequest(request);
-        Invocation.Builder ib = ListPreauthenticatedRequestsConverter.fromRequest(client, request);
-        Function<Response, ListPreauthenticatedRequestsResponse> transformer =
-                ListPreauthenticatedRequestsConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListPreauthenticatedRequestsConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListPreauthenticatedRequestsResponse>
+                transformer = ListPreauthenticatedRequestsConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture = client.get(ib, request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<PutObjectResponse> putObject(
-            PutObjectRequest request, AsyncHandler<PutObjectRequest, PutObjectResponse> handler) {
+    public java.util.concurrent.Future<PutObjectResponse> putObject(
+            PutObjectRequest request,
+            com.oracle.bmc.responses.AsyncHandler<PutObjectRequest, PutObjectResponse> handler) {
         LOG.trace("Called async putObject");
         request = PutObjectConverter.interceptRequest(request);
-        Invocation.Builder ib = PutObjectConverter.fromRequest(client, request);
-        Function<Response, PutObjectResponse> transformer = PutObjectConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = PutObjectConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, PutObjectResponse> transformer =
+                PutObjectConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture =
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.put(ib, request.getPutObjectBody(), request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<UpdateBucketResponse> updateBucket(
+    public java.util.concurrent.Future<UpdateBucketResponse> updateBucket(
             UpdateBucketRequest request,
-            AsyncHandler<UpdateBucketRequest, UpdateBucketResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<UpdateBucketRequest, UpdateBucketResponse>
+                    handler) {
         LOG.trace("Called async updateBucket");
         request = UpdateBucketConverter.interceptRequest(request);
-        Invocation.Builder ib = UpdateBucketConverter.fromRequest(client, request);
-        Function<Response, UpdateBucketResponse> transformer = UpdateBucketConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib =
+                UpdateBucketConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBucketResponse>
+                transformer = UpdateBucketConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture =
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.post(ib, request.getUpdateBucketDetails(), request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
-    public Future<UploadPartResponse> uploadPart(
+    public java.util.concurrent.Future<UploadPartResponse> uploadPart(
             UploadPartRequest request,
-            AsyncHandler<UploadPartRequest, UploadPartResponse> handler) {
+            com.oracle.bmc.responses.AsyncHandler<UploadPartRequest, UploadPartResponse> handler) {
         LOG.trace("Called async uploadPart");
         request = UploadPartConverter.interceptRequest(request);
-        Invocation.Builder ib = UploadPartConverter.fromRequest(client, request);
-        Function<Response, UploadPartResponse> transformer = UploadPartConverter.fromResponse();
+        javax.ws.rs.client.Invocation.Builder ib = UploadPartConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UploadPartResponse> transformer =
+                UploadPartConverter.fromResponse();
 
-        Consumer<Response> onSuccess = new SuccessConsumer<>(handler, transformer, request);
-        Consumer<Throwable> onError = new ErrorConsumer<>(handler, request);
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
 
-        Future<Response> responseFuture =
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.put(ib, request.getUploadPartBody(), request, onSuccess, onError);
-        return new TransformingFuture<>(responseFuture, transformer);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 }

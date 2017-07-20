@@ -3,21 +3,11 @@
  */
 package com.oracle.bmc.audit.responses;
 
-import java.io.*;
-import java.util.*;
-
-import com.oracle.bmc.model.*;
-import javax.ws.rs.core.*;
-
-import lombok.Builder;
-import lombok.Getter;
-import lombok.experimental.Accessors;
-
 import com.oracle.bmc.audit.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Builder(builderClassName = "Builder")
-@Getter
+@lombok.Builder(builderClassName = "Builder")
+@lombok.Getter
 public class ListEventsResponse {
 
     /**
@@ -38,7 +28,7 @@ public class ListEventsResponse {
     /**
      * A list of AuditEvent instances.
      */
-    private List<AuditEvent> items;
+    private java.util.List<AuditEvent> items;
 
     public static class Builder {
         /**

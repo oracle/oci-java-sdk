@@ -3,14 +3,8 @@
  */
 package com.oracle.bmc.audit;
 
-import com.oracle.bmc.responses.AsyncHandler;
-
-import java.util.concurrent.Future;
-
 import com.oracle.bmc.audit.requests.*;
 import com.oracle.bmc.audit.responses.*;
-
-import com.oracle.bmc.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface AuditAsync extends AutoCloseable {
@@ -27,7 +21,7 @@ public interface AuditAsync extends AutoCloseable {
      * Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the endpoint.  If the service is not available in this region, however, an IllegalArgumentException will be raised.
      * @param region The region of the service.
      */
-    void setRegion(Region region);
+    void setRegion(com.oracle.bmc.Region region);
 
     /**
      * Sets the region to call (ex, 'us-phoenix-1').
@@ -49,9 +43,10 @@ public interface AuditAsync extends AutoCloseable {
      * @param handler The request handler to invoke upon completion, may be null.
      * @return A Future that can be used to get the response if no AsyncHandler was
      *         provided. Note, if you provide an AsyncHandler and use the Future, some
-     *         types of responses (like InputStream) may not be able to be read in
+     *         types of responses (like java.io.InputStream) may not be able to be read in
      *         both places as the underlying stream may only be consumed once.
      */
-    Future<ListEventsResponse> listEvents(
-            ListEventsRequest request, AsyncHandler<ListEventsRequest, ListEventsResponse> handler);
+    java.util.concurrent.Future<ListEventsResponse> listEvents(
+            ListEventsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListEventsRequest, ListEventsResponse> handler);
 }

@@ -3,39 +3,24 @@
  */
 package com.oracle.bmc.identity.internal.http;
 
-import java.io.InputStream;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-
-import javax.ws.rs.client.*;
-import javax.ws.rs.core.*;
-
-import com.oracle.bmc.http.internal.*;
-import static com.oracle.bmc.util.internal.HttpUtils.*;
-import com.oracle.bmc.model.*;
 import com.oracle.bmc.identity.model.*;
 import com.oracle.bmc.identity.requests.*;
 import com.oracle.bmc.identity.responses.*;
 
-import com.google.common.base.Function;
-import com.google.common.base.Optional;
-
-import lombok.extern.slf4j.Slf4j;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Slf4j
+@lombok.extern.slf4j.Slf4j
 public class DeleteUserConverter {
-    private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
-            new ResponseConversionFunctionFactory();
+    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
+            RESPONSE_CONVERSION_FACTORY =
+                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
     public static DeleteUserRequest interceptRequest(DeleteUserRequest request) {
 
         return request;
     }
 
-    public static Invocation.Builder fromRequest(RestClient client, DeleteUserRequest request) {
+    public static javax.ws.rs.client.Invocation.Builder fromRequest(
+            com.oracle.bmc.http.internal.RestClient client, DeleteUserRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
         }
@@ -44,15 +29,17 @@ public class DeleteUserConverter {
             throw new NullPointerException("userId is required");
         }
 
-        WebTarget target =
+        javax.ws.rs.client.WebTarget target =
                 client.getBaseTarget()
                         .path("/20160918")
                         .path("users")
-                        .path(encodePathSegment(request.getUserId()));
+                        .path(
+                                com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
+                                        request.getUserId()));
 
-        Invocation.Builder ib = target.request();
+        javax.ws.rs.client.Invocation.Builder ib = target.request();
 
-        ib.accept(MediaType.APPLICATION_JSON);
+        ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 
         if (request.getIfMatch() != null) {
             ib.header("if-match", request.getIfMatch());
@@ -61,35 +48,44 @@ public class DeleteUserConverter {
         return ib;
     }
 
-    public static Function<Response, DeleteUserResponse> fromResponse() {
-        final Function<Response, DeleteUserResponse> transformer =
-                new Function<Response, DeleteUserResponse>() {
-                    @Override
-                    public DeleteUserResponse apply(Response rawResponse) {
-                        LOG.trace("Transform function invoked for DeleteUserResponse");
-                        Function<Response, WithHeaders<Void>> responseFn =
-                                RESPONSE_CONVERSION_FACTORY.create();
+    public static com.google.common.base.Function<javax.ws.rs.core.Response, DeleteUserResponse>
+            fromResponse() {
+        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteUserResponse>
+                transformer =
+                        new com.google.common.base.Function<
+                                javax.ws.rs.core.Response, DeleteUserResponse>() {
+                            @Override
+                            public DeleteUserResponse apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace("Transform function invoked for DeleteUserResponse");
+                                com.google.common.base.Function<
+                                                javax.ws.rs.core.Response,
+                                                com.oracle.bmc.http.internal.WithHeaders<Void>>
+                                        responseFn = RESPONSE_CONVERSION_FACTORY.create();
 
-                        WithHeaders<Void> response = responseFn.apply(rawResponse);
-                        MultivaluedMap<String, String> headers = response.getHeaders();
+                                com.oracle.bmc.http.internal.WithHeaders<Void> response =
+                                        responseFn.apply(rawResponse);
+                                javax.ws.rs.core.MultivaluedMap<String, String> headers =
+                                        response.getHeaders();
 
-                        DeleteUserResponse.Builder builder = DeleteUserResponse.builder();
+                                DeleteUserResponse.Builder builder = DeleteUserResponse.builder();
 
-                        Optional<List<String>> opcRequestIdHeader =
-                                HeaderUtils.get(headers, "opc-request-id");
-                        if (opcRequestIdHeader.isPresent()) {
-                            builder.opcRequestId(
-                                    HeaderUtils.toValue(
-                                            "opc-request-id",
-                                            opcRequestIdHeader.get().get(0),
-                                            String.class));
-                        }
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcRequestIdHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-request-id");
+                                if (opcRequestIdHeader.isPresent()) {
+                                    builder.opcRequestId(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-request-id",
+                                                    opcRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
 
-                        DeleteUserResponse responseWrapper = builder.build();
+                                DeleteUserResponse responseWrapper = builder.build();
 
-                        return responseWrapper;
-                    }
-                };
+                                return responseWrapper;
+                            }
+                        };
         return transformer;
     }
 }

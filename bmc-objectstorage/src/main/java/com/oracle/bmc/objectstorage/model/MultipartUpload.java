@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.objectstorage.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
@@ -21,33 +10,33 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = MultipartUpload.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MultipartUpload.Builder.class)
 public class MultipartUpload {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("namespace")
+        @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
-        @JsonProperty("bucket")
+        @com.fasterxml.jackson.annotation.JsonProperty("bucket")
         private String bucket;
 
-        @JsonProperty("object")
+        @com.fasterxml.jackson.annotation.JsonProperty("object")
         private String object;
 
-        @JsonProperty("uploadId")
+        @com.fasterxml.jackson.annotation.JsonProperty("uploadId")
         private String uploadId;
 
-        @JsonProperty("timeCreated")
-        private Date timeCreated;
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+        private java.util.Date timeCreated;
 
         public MultipartUpload build() {
             return new MultipartUpload(namespace, bucket, object, uploadId, timeCreated);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(MultipartUpload o) {
             return namespace(o.getNamespace())
                     .bucket(o.getBucket())
@@ -67,40 +56,40 @@ public class MultipartUpload {
     /**
      * The namespace in which the in-progress multipart upload is stored.
      **/
-    @JsonProperty("namespace")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("namespace")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String namespace;
 
     /**
      * The bucket in which the in-progress multipart upload is stored.
      **/
-    @JsonProperty("bucket")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("bucket")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String bucket;
 
     /**
      * The object name of the in-progress multipart upload.
      **/
-    @JsonProperty("object")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("object")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String object;
 
     /**
      * The unique identifier for the in-progress multipart upload.
      **/
-    @JsonProperty("uploadId")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("uploadId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String uploadId;
 
     /**
      * The date and time when the upload was created.
      **/
-    @JsonProperty("timeCreated")
-    @Valid
-    @NotNull
-    Date timeCreated;
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    java.util.Date timeCreated;
 }

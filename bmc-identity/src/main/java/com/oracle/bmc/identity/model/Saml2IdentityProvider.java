@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.identity.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * A special type of {@link IdentityProvider} that
  * supports the SAML 2.0 protocol. For more information, see
@@ -21,47 +10,53 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = Saml2IdentityProvider.Builder.class)
-@ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = true)
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "protocol")
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = Saml2IdentityProvider.Builder.class
+)
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode(callSuper = true)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "protocol"
+)
 public class Saml2IdentityProvider extends IdentityProvider {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("id")
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
-        @JsonProperty("compartmentId")
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
-        @JsonProperty("name")
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
-        @JsonProperty("description")
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
-        @JsonProperty("productType")
+        @com.fasterxml.jackson.annotation.JsonProperty("productType")
         private String productType;
 
-        @JsonProperty("timeCreated")
-        private Date timeCreated;
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+        private java.util.Date timeCreated;
 
-        @JsonProperty("lifecycleState")
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
-        @JsonProperty("inactiveStatus")
+        @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
         private Long inactiveStatus;
 
-        @JsonProperty("metadataUrl")
+        @com.fasterxml.jackson.annotation.JsonProperty("metadataUrl")
         private String metadataUrl;
 
-        @JsonProperty("signingCertificate")
+        @com.fasterxml.jackson.annotation.JsonProperty("signingCertificate")
         private String signingCertificate;
 
-        @JsonProperty("redirectUrl")
+        @com.fasterxml.jackson.annotation.JsonProperty("redirectUrl")
         private String redirectUrl;
 
         public Saml2IdentityProvider build() {
@@ -79,7 +74,7 @@ public class Saml2IdentityProvider extends IdentityProvider {
                     redirectUrl);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Saml2IdentityProvider o) {
             return id(o.getId())
                     .compartmentId(o.getCompartmentId())
@@ -108,7 +103,7 @@ public class Saml2IdentityProvider extends IdentityProvider {
             String name,
             String description,
             String productType,
-            Date timeCreated,
+            java.util.Date timeCreated,
             LifecycleState lifecycleState,
             Long inactiveStatus,
             String metadataUrl,
@@ -133,10 +128,10 @@ public class Saml2IdentityProvider extends IdentityProvider {
      * contains information required for federating.
      *
      **/
-    @JsonProperty("metadataUrl")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 512)
+    @com.fasterxml.jackson.annotation.JsonProperty("metadataUrl")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 512)
     String metadataUrl;
 
     /**
@@ -144,10 +139,10 @@ public class Saml2IdentityProvider extends IdentityProvider {
      * to validate the SAML2 token.
      *
      **/
-    @JsonProperty("signingCertificate")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 10000)
+    @com.fasterxml.jackson.annotation.JsonProperty("signingCertificate")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 10000)
     String signingCertificate;
 
     /**
@@ -155,9 +150,9 @@ public class Saml2IdentityProvider extends IdentityProvider {
      * identity provider.
      *
      **/
-    @JsonProperty("redirectUrl")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 512)
+    @com.fasterxml.jackson.annotation.JsonProperty("redirectUrl")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 512)
     String redirectUrl;
 }

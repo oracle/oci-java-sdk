@@ -3,19 +3,11 @@
  */
 package com.oracle.bmc.objectstorage.requests;
 
-import java.io.*;
-import java.util.*;
-
-import lombok.Builder;
-import lombok.Getter;
-import lombok.experimental.Accessors;
-
-import com.oracle.bmc.model.*;
 import com.oracle.bmc.objectstorage.model.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Builder(builderClassName = "Builder")
-@Getter
+@lombok.Builder(builderClassName = "Builder")
+@lombok.Getter
 public class GetObjectRequest {
 
     /**
@@ -64,7 +56,7 @@ public class GetObjectRequest {
      * Note, only a single range of bytes is supported.
      *
      */
-    private Range range;
+    private com.oracle.bmc.model.Range range;
 
     public static class Builder {
         /**

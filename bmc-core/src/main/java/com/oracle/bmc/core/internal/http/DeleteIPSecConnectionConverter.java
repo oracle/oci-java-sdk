@@ -3,32 +3,16 @@
  */
 package com.oracle.bmc.core.internal.http;
 
-import java.io.InputStream;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-
-import javax.ws.rs.client.*;
-import javax.ws.rs.core.*;
-
-import com.oracle.bmc.http.internal.*;
-import static com.oracle.bmc.util.internal.HttpUtils.*;
-import com.oracle.bmc.model.*;
 import com.oracle.bmc.core.model.*;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
 
-import com.google.common.base.Function;
-import com.google.common.base.Optional;
-
-import lombok.extern.slf4j.Slf4j;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Slf4j
+@lombok.extern.slf4j.Slf4j
 public class DeleteIPSecConnectionConverter {
-    private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
-            new ResponseConversionFunctionFactory();
+    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
+            RESPONSE_CONVERSION_FACTORY =
+                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
     public static DeleteIPSecConnectionRequest interceptRequest(
             DeleteIPSecConnectionRequest request) {
@@ -36,8 +20,8 @@ public class DeleteIPSecConnectionConverter {
         return request;
     }
 
-    public static Invocation.Builder fromRequest(
-            RestClient client, DeleteIPSecConnectionRequest request) {
+    public static javax.ws.rs.client.Invocation.Builder fromRequest(
+            com.oracle.bmc.http.internal.RestClient client, DeleteIPSecConnectionRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
         }
@@ -46,15 +30,17 @@ public class DeleteIPSecConnectionConverter {
             throw new NullPointerException("ipscId is required");
         }
 
-        WebTarget target =
+        javax.ws.rs.client.WebTarget target =
                 client.getBaseTarget()
                         .path("/20160918")
                         .path("ipsecConnections")
-                        .path(encodePathSegment(request.getIpscId()));
+                        .path(
+                                com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
+                                        request.getIpscId()));
 
-        Invocation.Builder ib = target.request();
+        javax.ws.rs.client.Invocation.Builder ib = target.request();
 
-        ib.accept(MediaType.APPLICATION_JSON);
+        ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 
         if (request.getIfMatch() != null) {
             ib.header("if-match", request.getIfMatch());
@@ -63,36 +49,49 @@ public class DeleteIPSecConnectionConverter {
         return ib;
     }
 
-    public static Function<Response, DeleteIPSecConnectionResponse> fromResponse() {
-        final Function<Response, DeleteIPSecConnectionResponse> transformer =
-                new Function<Response, DeleteIPSecConnectionResponse>() {
-                    @Override
-                    public DeleteIPSecConnectionResponse apply(Response rawResponse) {
-                        LOG.trace("Transform function invoked for DeleteIPSecConnectionResponse");
-                        Function<Response, WithHeaders<Void>> responseFn =
-                                RESPONSE_CONVERSION_FACTORY.create();
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response, DeleteIPSecConnectionResponse>
+            fromResponse() {
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteIPSecConnectionResponse>
+                transformer =
+                        new com.google.common.base.Function<
+                                javax.ws.rs.core.Response, DeleteIPSecConnectionResponse>() {
+                            @Override
+                            public DeleteIPSecConnectionResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for DeleteIPSecConnectionResponse");
+                                com.google.common.base.Function<
+                                                javax.ws.rs.core.Response,
+                                                com.oracle.bmc.http.internal.WithHeaders<Void>>
+                                        responseFn = RESPONSE_CONVERSION_FACTORY.create();
 
-                        WithHeaders<Void> response = responseFn.apply(rawResponse);
-                        MultivaluedMap<String, String> headers = response.getHeaders();
+                                com.oracle.bmc.http.internal.WithHeaders<Void> response =
+                                        responseFn.apply(rawResponse);
+                                javax.ws.rs.core.MultivaluedMap<String, String> headers =
+                                        response.getHeaders();
 
-                        DeleteIPSecConnectionResponse.Builder builder =
-                                DeleteIPSecConnectionResponse.builder();
+                                DeleteIPSecConnectionResponse.Builder builder =
+                                        DeleteIPSecConnectionResponse.builder();
 
-                        Optional<List<String>> opcRequestIdHeader =
-                                HeaderUtils.get(headers, "opc-request-id");
-                        if (opcRequestIdHeader.isPresent()) {
-                            builder.opcRequestId(
-                                    HeaderUtils.toValue(
-                                            "opc-request-id",
-                                            opcRequestIdHeader.get().get(0),
-                                            String.class));
-                        }
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcRequestIdHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-request-id");
+                                if (opcRequestIdHeader.isPresent()) {
+                                    builder.opcRequestId(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-request-id",
+                                                    opcRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
 
-                        DeleteIPSecConnectionResponse responseWrapper = builder.build();
+                                DeleteIPSecConnectionResponse responseWrapper = builder.build();
 
-                        return responseWrapper;
-                    }
-                };
+                                return responseWrapper;
+                            }
+                        };
         return transformer;
     }
 }

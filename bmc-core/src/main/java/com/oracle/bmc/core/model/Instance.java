@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * A compute host. The image used to launch the instance determines its operating system and other
  * software. The shape specified during the launch process determines the number of CPUs and memory
@@ -26,48 +15,48 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = Instance.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Instance.Builder.class)
 public class Instance {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("availabilityDomain")
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
-        @JsonProperty("compartmentId")
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
-        @JsonProperty("displayName")
+        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
-        @JsonProperty("extendedMetadata")
-        private Map<String, Object> extendedMetadata;
+        @com.fasterxml.jackson.annotation.JsonProperty("extendedMetadata")
+        private java.util.Map<String, Object> extendedMetadata;
 
-        @JsonProperty("id")
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
-        @JsonProperty("imageId")
+        @com.fasterxml.jackson.annotation.JsonProperty("imageId")
         private String imageId;
 
-        @JsonProperty("ipxeScript")
+        @com.fasterxml.jackson.annotation.JsonProperty("ipxeScript")
         private String ipxeScript;
 
-        @JsonProperty("lifecycleState")
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
-        @JsonProperty("metadata")
-        private Map<String, String> metadata;
+        @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+        private java.util.Map<String, String> metadata;
 
-        @JsonProperty("region")
+        @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
-        @JsonProperty("shape")
+        @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
-        @JsonProperty("timeCreated")
-        private Date timeCreated;
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+        private java.util.Date timeCreated;
 
         public Instance build() {
             return new Instance(
@@ -85,7 +74,7 @@ public class Instance {
                     timeCreated);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Instance o) {
             return availabilityDomain(o.getAvailabilityDomain())
                     .compartmentId(o.getCompartmentId())
@@ -115,29 +104,30 @@ public class Instance {
      * Example: `Uocm:PHX-AD-1`
      *
      **/
-    @JsonProperty("availabilityDomain")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String availabilityDomain;
 
     /**
      * The OCID of the compartment that contains the instance.
      **/
-    @JsonProperty("compartmentId")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      * <p>
      * Example: `My bare metal instance`
      *
      **/
-    @JsonProperty("displayName")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
@@ -148,16 +138,16 @@ public class Instance {
      * If you don't need nested metadata values, it is strongly advised to avoid using this object and use the Metadata object instead.
      *
      **/
-    @JsonProperty("extendedMetadata")
-    Map<String, Object> extendedMetadata;
+    @com.fasterxml.jackson.annotation.JsonProperty("extendedMetadata")
+    java.util.Map<String, Object> extendedMetadata;
 
     /**
      * The OCID of the instance.
      **/
-    @JsonProperty("id")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String id;
 
     /**
@@ -165,8 +155,8 @@ public class Instance {
      * {@link #listImages(ListImagesRequest) listImages}.
      *
      **/
-    @JsonProperty("imageId")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("imageId")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String imageId;
 
     /**
@@ -194,8 +184,8 @@ public class Instance {
      * For more information about iPXE, see http://ipxe.org.
      *
      **/
-    @JsonProperty("ipxeScript")
-    @Size(min = 1, max = 10240)
+    @com.fasterxml.jackson.annotation.JsonProperty("ipxeScript")
+    @javax.validation.constraints.Size(min = 1, max = 10240)
     String ipxeScript;
     /**
      * The current state of the instance.
@@ -218,10 +208,10 @@ public class Instance {
         UnknownEnumValue(null);
 
         private final String value;
-        private static Map<String, LifecycleState> map;
+        private static java.util.Map<String, LifecycleState> map;
 
         static {
-            map = new HashMap<>();
+            map = new java.util.HashMap<>();
             for (LifecycleState v : LifecycleState.values()) {
                 if (v != UnknownEnumValue) {
                     map.put(v.getValue(), v);
@@ -233,12 +223,12 @@ public class Instance {
             this.value = value;
         }
 
-        @JsonValue
+        @com.fasterxml.jackson.annotation.JsonValue
         public String getValue() {
             return value;
         }
 
-        @JsonCreator
+        @com.fasterxml.jackson.annotation.JsonCreator
         public static LifecycleState create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
@@ -252,16 +242,16 @@ public class Instance {
     /**
      * The current state of the instance.
      **/
-    @JsonProperty("lifecycleState")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     LifecycleState lifecycleState;
 
     /**
      * Custom metadata that you provide.
      **/
-    @JsonProperty("metadata")
-    Map<String, String> metadata;
+    @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+    java.util.Map<String, String> metadata;
 
     /**
      * The region that contains the Availability Domain the instance is running in.
@@ -269,10 +259,10 @@ public class Instance {
      * Example: `phx`
      *
      **/
-    @JsonProperty("region")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("region")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String region;
 
     /**
@@ -281,10 +271,10 @@ public class Instance {
      * {@link #listShapes(ListShapesRequest) listShapes}.
      *
      **/
-    @JsonProperty("shape")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("shape")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String shape;
 
     /**
@@ -293,8 +283,8 @@ public class Instance {
      * Example: `2016-08-25T21:10:29.600Z`
      *
      **/
-    @JsonProperty("timeCreated")
-    @Valid
-    @NotNull
-    Date timeCreated;
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    java.util.Date timeCreated;
 }

@@ -3,39 +3,24 @@
  */
 package com.oracle.bmc.loadbalancer.internal.http;
 
-import java.io.InputStream;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-
-import javax.ws.rs.client.*;
-import javax.ws.rs.core.*;
-
-import com.oracle.bmc.http.internal.*;
-import static com.oracle.bmc.util.internal.HttpUtils.*;
-import com.oracle.bmc.model.*;
 import com.oracle.bmc.loadbalancer.model.*;
 import com.oracle.bmc.loadbalancer.requests.*;
 import com.oracle.bmc.loadbalancer.responses.*;
 
-import com.google.common.base.Function;
-import com.google.common.base.Optional;
-
-import lombok.extern.slf4j.Slf4j;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@Slf4j
+@lombok.extern.slf4j.Slf4j
 public class ListBackendsConverter {
-    private static final ResponseConversionFunctionFactory RESPONSE_CONVERSION_FACTORY =
-            new ResponseConversionFunctionFactory();
+    private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
+            RESPONSE_CONVERSION_FACTORY =
+                    new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
     public static ListBackendsRequest interceptRequest(ListBackendsRequest request) {
 
         return request;
     }
 
-    public static Invocation.Builder fromRequest(RestClient client, ListBackendsRequest request) {
+    public static javax.ws.rs.client.Invocation.Builder fromRequest(
+            com.oracle.bmc.http.internal.RestClient client, ListBackendsRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
         }
@@ -48,18 +33,22 @@ public class ListBackendsConverter {
             throw new NullPointerException("backendSetName is required");
         }
 
-        WebTarget target =
+        javax.ws.rs.client.WebTarget target =
                 client.getBaseTarget()
                         .path("/20170115")
                         .path("loadBalancers")
-                        .path(encodePathSegment(request.getLoadBalancerId()))
+                        .path(
+                                com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
+                                        request.getLoadBalancerId()))
                         .path("backendSets")
-                        .path(encodePathSegment(request.getBackendSetName()))
+                        .path(
+                                com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
+                                        request.getBackendSetName()))
                         .path("backends");
 
-        Invocation.Builder ib = target.request();
+        javax.ws.rs.client.Invocation.Builder ib = target.request();
 
-        ib.accept(MediaType.APPLICATION_JSON);
+        ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 
         if (request.getOpcRequestId() != null) {
             ib.header("opc-request-id", request.getOpcRequestId());
@@ -68,38 +57,52 @@ public class ListBackendsConverter {
         return ib;
     }
 
-    public static Function<Response, ListBackendsResponse> fromResponse() {
-        final Function<Response, ListBackendsResponse> transformer =
-                new Function<Response, ListBackendsResponse>() {
-                    @Override
-                    public ListBackendsResponse apply(Response rawResponse) {
-                        LOG.trace("Transform function invoked for ListBackendsResponse");
-                        Function<Response, WithHeaders<List<Backend>>> responseFn =
-                                RESPONSE_CONVERSION_FACTORY.create(
-                                        new GenericType<List<Backend>>() {});
+    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListBackendsResponse>
+            fromResponse() {
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListBackendsResponse>
+                transformer =
+                        new com.google.common.base.Function<
+                                javax.ws.rs.core.Response, ListBackendsResponse>() {
+                            @Override
+                            public ListBackendsResponse apply(
+                                    javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace("Transform function invoked for ListBackendsResponse");
+                                com.google.common.base.Function<
+                                                javax.ws.rs.core.Response,
+                                                com.oracle.bmc.http.internal.WithHeaders<
+                                                        java.util.List<Backend>>>
+                                        responseFn =
+                                                RESPONSE_CONVERSION_FACTORY.create(
+                                                        new javax.ws.rs.core.GenericType<
+                                                                java.util.List<Backend>>() {});
 
-                        WithHeaders<List<Backend>> response = responseFn.apply(rawResponse);
-                        MultivaluedMap<String, String> headers = response.getHeaders();
+                                com.oracle.bmc.http.internal.WithHeaders<java.util.List<Backend>>
+                                        response = responseFn.apply(rawResponse);
+                                javax.ws.rs.core.MultivaluedMap<String, String> headers =
+                                        response.getHeaders();
 
-                        ListBackendsResponse.Builder builder = ListBackendsResponse.builder();
+                                ListBackendsResponse.Builder builder =
+                                        ListBackendsResponse.builder();
 
-                        builder.items(response.getItem());
+                                builder.items(response.getItem());
 
-                        Optional<List<String>> opcRequestIdHeader =
-                                HeaderUtils.get(headers, "opc-request-id");
-                        if (opcRequestIdHeader.isPresent()) {
-                            builder.opcRequestId(
-                                    HeaderUtils.toValue(
-                                            "opc-request-id",
-                                            opcRequestIdHeader.get().get(0),
-                                            String.class));
-                        }
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcRequestIdHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-request-id");
+                                if (opcRequestIdHeader.isPresent()) {
+                                    builder.opcRequestId(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-request-id",
+                                                    opcRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
 
-                        ListBackendsResponse responseWrapper = builder.build();
+                                ListBackendsResponse responseWrapper = builder.build();
 
-                        return responseWrapper;
-                    }
-                };
+                                return responseWrapper;
+                            }
+                        };
         return transformer;
     }
 }

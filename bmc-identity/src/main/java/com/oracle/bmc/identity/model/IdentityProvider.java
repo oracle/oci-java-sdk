@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.identity.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * The resulting base object when you add an identity provider to your tenancy. A
  * {@link Saml2IdentityProvider}
@@ -27,32 +16,37 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@NonFinal
-@AllArgsConstructor(access = AccessLevel.PROTECTED)
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
+@lombok.Value
+@lombok.experimental.NonFinal
+@lombok.AllArgsConstructor(access = lombok.AccessLevel.PROTECTED)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "protocol",
     defaultImpl = IdentityProvider.class
 )
-@JsonSubTypes({@JsonSubTypes.Type(value = Saml2IdentityProvider.class, name = "SAML2")})
+@com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = Saml2IdentityProvider.class,
+        name = "SAML2"
+    )
+})
 public class IdentityProvider {
 
     /**
      * The OCID of the `IdentityProvider`.
      **/
-    @JsonProperty("id")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String id;
 
     /**
      * The OCID of the tenancy containing the `IdentityProvider`.
      **/
-    @JsonProperty("compartmentId")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String compartmentId;
 
     /**
@@ -63,10 +57,10 @@ public class IdentityProvider {
      * Services Console.
      *
      **/
-    @JsonProperty("name")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 100)
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 100)
     String name;
 
     /**
@@ -74,10 +68,10 @@ public class IdentityProvider {
      * not have to be unique, and it's changeable.
      *
      **/
-    @JsonProperty("description")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 400)
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 400)
     String description;
 
     /**
@@ -87,10 +81,10 @@ public class IdentityProvider {
      * Example: `IDCS`
      *
      **/
-    @JsonProperty("productType")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 64)
+    @com.fasterxml.jackson.annotation.JsonProperty("productType")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 64)
     String productType;
 
     /**
@@ -99,10 +93,10 @@ public class IdentityProvider {
      * Example: `2016-08-25T21:10:29.600Z`
      *
      **/
-    @JsonProperty("timeCreated")
-    @Valid
-    @NotNull
-    Date timeCreated;
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    java.util.Date timeCreated;
     /**
      * The current state. After creating an `IdentityProvider`, make sure its
      * `lifecycleState` changes from CREATING to ACTIVE before using it.
@@ -123,10 +117,10 @@ public class IdentityProvider {
         UnknownEnumValue(null);
 
         private final String value;
-        private static Map<String, LifecycleState> map;
+        private static java.util.Map<String, LifecycleState> map;
 
         static {
-            map = new HashMap<>();
+            map = new java.util.HashMap<>();
             for (LifecycleState v : LifecycleState.values()) {
                 if (v != UnknownEnumValue) {
                     map.put(v.getValue(), v);
@@ -138,12 +132,12 @@ public class IdentityProvider {
             this.value = value;
         }
 
-        @JsonValue
+        @com.fasterxml.jackson.annotation.JsonValue
         public String getValue() {
             return value;
         }
 
-        @JsonCreator
+        @com.fasterxml.jackson.annotation.JsonCreator
         public static LifecycleState create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
@@ -159,15 +153,15 @@ public class IdentityProvider {
      * `lifecycleState` changes from CREATING to ACTIVE before using it.
      *
      **/
-    @JsonProperty("lifecycleState")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 64)
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 64)
     LifecycleState lifecycleState;
 
     /**
      * The detailed status of INACTIVE lifecycleState.
      **/
-    @JsonProperty("inactiveStatus")
+    @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
     Long inactiveStatus;
 }

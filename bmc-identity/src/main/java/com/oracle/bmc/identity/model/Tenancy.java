@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.identity.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * The root compartment that contains all of your organization's compartments and other
  * Oracle Bare Metal Cloud Services cloud resources. When you sign up for Oracle Bare Metal Cloud Services,
@@ -26,30 +15,30 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = Tenancy.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Tenancy.Builder.class)
 public class Tenancy {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("id")
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
-        @JsonProperty("name")
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
-        @JsonProperty("description")
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
-        @JsonProperty("homeRegionKey")
+        @com.fasterxml.jackson.annotation.JsonProperty("homeRegionKey")
         private String homeRegionKey;
 
         public Tenancy build() {
             return new Tenancy(id, name, description, homeRegionKey);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Tenancy o) {
             return id(o.getId())
                     .name(o.getName())
@@ -68,19 +57,19 @@ public class Tenancy {
     /**
      * The OCID of the tenancy.
      **/
-    @JsonProperty("id")
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
      * The name of the tenancy.
      **/
-    @JsonProperty("name")
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
      * The description of the tenancy.
      **/
-    @JsonProperty("description")
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
@@ -91,6 +80,6 @@ public class Tenancy {
      * - `PHX`
      *
      **/
-    @JsonProperty("homeRegionKey")
+    @com.fasterxml.jackson.annotation.JsonProperty("homeRegionKey")
     String homeRegionKey;
 }

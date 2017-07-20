@@ -3,45 +3,36 @@
  */
 package com.oracle.bmc.loadbalancer.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * The configuration details for updating a backend server.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@Value
-@JsonDeserialize(builder = UpdateBackendDetails.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = UpdateBackendDetails.Builder.class
+)
 public class UpdateBackendDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("backup")
+        @com.fasterxml.jackson.annotation.JsonProperty("backup")
         private Boolean backup;
 
-        @JsonProperty("drain")
+        @com.fasterxml.jackson.annotation.JsonProperty("drain")
         private Boolean drain;
 
-        @JsonProperty("offline")
+        @com.fasterxml.jackson.annotation.JsonProperty("offline")
         private Boolean offline;
 
-        @JsonProperty("weight")
+        @com.fasterxml.jackson.annotation.JsonProperty("weight")
         private Integer weight;
 
         public UpdateBackendDetails build() {
             return new UpdateBackendDetails(backup, drain, offline, weight);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateBackendDetails o) {
             return backup(o.getBackup())
                     .drain(o.getDrain())
@@ -64,9 +55,9 @@ public class UpdateBackendDetails {
      * Example: `true`
      *
      **/
-    @JsonProperty("backup")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("backup")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     Boolean backup;
 
     /**
@@ -76,9 +67,9 @@ public class UpdateBackendDetails {
      * Example: `true`
      *
      **/
-    @JsonProperty("drain")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("drain")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     Boolean drain;
 
     /**
@@ -88,9 +79,9 @@ public class UpdateBackendDetails {
      * Example: `true`
      *
      **/
-    @JsonProperty("offline")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("offline")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     Boolean offline;
 
     /**
@@ -103,8 +94,8 @@ public class UpdateBackendDetails {
      * Example: `3`
      *
      **/
-    @JsonProperty("weight")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("weight")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     Integer weight;
 }

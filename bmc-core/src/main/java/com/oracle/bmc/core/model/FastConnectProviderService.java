@@ -3,44 +3,35 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * A service offering from a supported provider. For more information,
  * see [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = FastConnectProviderService.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = FastConnectProviderService.Builder.class
+)
 public class FastConnectProviderService {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("description")
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
-        @JsonProperty("providerName")
+        @com.fasterxml.jackson.annotation.JsonProperty("providerName")
         private String providerName;
 
-        @JsonProperty("providerServiceName")
+        @com.fasterxml.jackson.annotation.JsonProperty("providerServiceName")
         private String providerServiceName;
 
         public FastConnectProviderService build() {
             return new FastConnectProviderService(description, providerName, providerServiceName);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(FastConnectProviderService o) {
             return description(o.getDescription())
                     .providerName(o.getProviderName())
@@ -59,27 +50,27 @@ public class FastConnectProviderService {
      * A description of the service offered by the provider.
      *
      **/
-    @JsonProperty("description")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String description;
 
     /**
      * The name of the provider.
      *
      **/
-    @JsonProperty("providerName")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("providerName")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String providerName;
 
     /**
      * The name of the service offered by the provider.
      *
      **/
-    @JsonProperty("providerServiceName")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("providerServiceName")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String providerServiceName;
 }

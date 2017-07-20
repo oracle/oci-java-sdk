@@ -3,36 +3,25 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = PortRange.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PortRange.Builder.class)
 public class PortRange {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("max")
+        @com.fasterxml.jackson.annotation.JsonProperty("max")
         private Integer max;
 
-        @JsonProperty("min")
+        @com.fasterxml.jackson.annotation.JsonProperty("min")
         private Integer min;
 
         public PortRange build() {
             return new PortRange(max, min);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(PortRange o) {
             return max(o.getMax()).min(o.getMin());
         }
@@ -50,20 +39,20 @@ public class PortRange {
      * a single port number, set both the min and max to the same value.
      *
      **/
-    @JsonProperty("max")
-    @Valid
-    @NotNull
-    @Min(1)
-    @Max(65535)
+    @com.fasterxml.jackson.annotation.JsonProperty("max")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Min(1)
+    @javax.validation.constraints.Max(65535)
     Integer max;
 
     /**
      * The minimum port number. Must not be greater than the maximum port number.
      **/
-    @JsonProperty("min")
-    @Valid
-    @NotNull
-    @Min(1)
-    @Max(65535)
+    @com.fasterxml.jackson.annotation.JsonProperty("min")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Min(1)
+    @javax.validation.constraints.Max(65535)
     Integer min;
 }

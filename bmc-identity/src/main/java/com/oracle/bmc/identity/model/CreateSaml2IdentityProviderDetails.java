@@ -3,44 +3,39 @@
  */
 package com.oracle.bmc.identity.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = CreateSaml2IdentityProviderDetails.Builder.class)
-@ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = true)
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "protocol")
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = CreateSaml2IdentityProviderDetails.Builder.class
+)
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode(callSuper = true)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "protocol"
+)
 public class CreateSaml2IdentityProviderDetails extends CreateIdentityProviderDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("compartmentId")
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
-        @JsonProperty("name")
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
-        @JsonProperty("description")
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
-        @JsonProperty("productType")
+        @com.fasterxml.jackson.annotation.JsonProperty("productType")
         private ProductType productType;
 
-        @JsonProperty("metadataUrl")
+        @com.fasterxml.jackson.annotation.JsonProperty("metadataUrl")
         private String metadataUrl;
 
-        @JsonProperty("metadata")
+        @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private String metadata;
 
         public CreateSaml2IdentityProviderDetails build() {
@@ -48,7 +43,7 @@ public class CreateSaml2IdentityProviderDetails extends CreateIdentityProviderDe
                     compartmentId, name, description, productType, metadataUrl, metadata);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateSaml2IdentityProviderDetails o) {
             return compartmentId(o.getCompartmentId())
                     .name(o.getName())
@@ -83,19 +78,19 @@ public class CreateSaml2IdentityProviderDetails extends CreateIdentityProviderDe
      * which contains information required for federating.
      *
      **/
-    @JsonProperty("metadataUrl")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 512)
+    @com.fasterxml.jackson.annotation.JsonProperty("metadataUrl")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 512)
     String metadataUrl;
 
     /**
      * The XML that contains the information required for federating.
      *
      **/
-    @JsonProperty("metadata")
-    @Valid
-    @NotNull
-    @Size(min = 1, max = 100000)
+    @com.fasterxml.jackson.annotation.JsonProperty("metadata")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 100000)
     String metadata;
 }

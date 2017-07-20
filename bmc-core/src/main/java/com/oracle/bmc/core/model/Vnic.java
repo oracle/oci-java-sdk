@@ -3,21 +3,18 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
- * A virtual network interface card. Each instance automatically has a VNIC attached to it,
- * and the VNIC connects the instance to the subnet. For more information, see
- * [Overview of the Compute Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Concepts/computeoverview.htm).
+ * A virtual network interface card. Each VNIC resides in a subnet in a VCN.
+ * An instance attaches to a VNIC to obtain a network connection into the VCN
+ * through that subnet. Each instance has a *primary VNIC* that is automatically
+ * created and attached during launch. You can add *secondary VNICs* to an
+ * instance after it's launched. For more information, see
+ * [Managing Virtual Network Interface Cards (VNICs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm).
+ * <p>
+ * Each VNIC has a *primary private IP* that is automatically assigned during launch.
+ * You can add *secondary private IPs* to a VNIC after it's created. For more
+ * information, see {@link #createPrivateIp(CreatePrivateIpRequest) createPrivateIp} and
+ * [Managing IP Addresses](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPaddresses.htm).
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
@@ -25,42 +22,48 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = Vnic.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Vnic.Builder.class)
 public class Vnic {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("availabilityDomain")
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
-        @JsonProperty("compartmentId")
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
-        @JsonProperty("displayName")
+        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
-        @JsonProperty("hostnameLabel")
+        @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
         private String hostnameLabel;
 
-        @JsonProperty("id")
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
-        @JsonProperty("lifecycleState")
+        @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
+        private Boolean isPrimary;
+
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
-        @JsonProperty("privateIp")
+        @com.fasterxml.jackson.annotation.JsonProperty("macAddress")
+        private String macAddress;
+
+        @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
         private String privateIp;
 
-        @JsonProperty("publicIp")
+        @com.fasterxml.jackson.annotation.JsonProperty("publicIp")
         private String publicIp;
 
-        @JsonProperty("subnetId")
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
-        @JsonProperty("timeCreated")
-        private Date timeCreated;
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+        private java.util.Date timeCreated;
 
         public Vnic build() {
             return new Vnic(
@@ -69,21 +72,25 @@ public class Vnic {
                     displayName,
                     hostnameLabel,
                     id,
+                    isPrimary,
                     lifecycleState,
+                    macAddress,
                     privateIp,
                     publicIp,
                     subnetId,
                     timeCreated);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Vnic o) {
             return availabilityDomain(o.getAvailabilityDomain())
                     .compartmentId(o.getCompartmentId())
                     .displayName(o.getDisplayName())
                     .hostnameLabel(o.getHostnameLabel())
                     .id(o.getId())
+                    .isPrimary(o.getIsPrimary())
                     .lifecycleState(o.getLifecycleState())
+                    .macAddress(o.getMacAddress())
                     .privateIp(o.getPrivateIp())
                     .publicIp(o.getPublicIp())
                     .subnetId(o.getSubnetId())
@@ -104,33 +111,37 @@ public class Vnic {
      * Example: `Uocm:PHX-AD-1`
      *
      **/
-    @JsonProperty("availabilityDomain")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String availabilityDomain;
 
     /**
      * The OCID of the compartment containing the VNIC.
      **/
-    @JsonProperty("compartmentId")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
      * A user-friendly name. Does not have to be unique.
+     * Avoid entering confidential information.
+     *
      **/
-    @JsonProperty("displayName")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
-     * The hostname for the VNIC that is created during instance launch.
-     * Used for DNS. The value is the hostname portion of the instance's
-     * fully qualified domain name (FQDN) (e.g., `bminstance-1` in FQDN
-     * `bminstance-1.subnet123.vcn1.oraclevcn.com`).
+     * The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname
+     * portion of the primary private IP's fully qualified domain name (FQDN)
+     * (e.g., `bminstance-1` in FQDN `bminstance-1.subnet123.vcn1.oraclevcn.com`).
      * Must be unique across all VNICs in the subnet and comply with
      * [RFC 952](https://tools.ietf.org/html/rfc952) and
      * [RFC 1123](https://tools.ietf.org/html/rfc1123).
-     * The value cannot be changed.
      * <p>
      * For more information, see
      * [DNS in Your Virtual Cloud Network](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm).
@@ -138,16 +149,26 @@ public class Vnic {
      * Example: `bminstance-1`
      *
      **/
-    @JsonProperty("hostnameLabel")
-    @Size(min = 1, max = 63)
+    @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
+    @javax.validation.constraints.Size(min = 1, max = 63)
     String hostnameLabel;
 
     /**
      * The OCID of the VNIC.
      **/
-    @JsonProperty("id")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String id;
+
+    /**
+     * Whether the VNIC is the primary VNIC (the VNIC that is automatically created
+     * and attached during instance launch).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
+    Boolean isPrimary;
     /**
      * The current state of the VNIC.
      **/
@@ -165,10 +186,10 @@ public class Vnic {
         UnknownEnumValue(null);
 
         private final String value;
-        private static Map<String, LifecycleState> map;
+        private static java.util.Map<String, LifecycleState> map;
 
         static {
-            map = new HashMap<>();
+            map = new java.util.HashMap<>();
             for (LifecycleState v : LifecycleState.values()) {
                 if (v != UnknownEnumValue) {
                     map.put(v.getValue(), v);
@@ -180,12 +201,12 @@ public class Vnic {
             this.value = value;
         }
 
-        @JsonValue
+        @com.fasterxml.jackson.annotation.JsonValue
         public String getValue() {
             return value;
         }
 
-        @JsonCreator
+        @com.fasterxml.jackson.annotation.JsonCreator
         public static LifecycleState create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
@@ -199,29 +220,47 @@ public class Vnic {
     /**
      * The current state of the VNIC.
      **/
-    @JsonProperty("lifecycleState")
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     LifecycleState lifecycleState;
 
     /**
-     * The private IP address of the VNIC. The address is within the subnet's CIDR
-     * and is accessible within the VCN.
+     * The MAC address of the VNIC.
+     * <p>
+     * Example: `00:00:17:B6:4D:DD`
      *
      **/
-    @JsonProperty("privateIp")
+    @com.fasterxml.jackson.annotation.JsonProperty("macAddress")
+    @javax.validation.constraints.Size(min = 1, max = 32)
+    String macAddress;
+
+    /**
+     * The private IP address of the primary `privateIp` object on the VNIC.
+     * The address is within the CIDR of the VNIC's subnet.
+     * <p>
+     * Example: `10.0.3.3`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String privateIp;
 
     /**
      * The public IP address of the VNIC, if one is assigned.
      *
      **/
-    @JsonProperty("publicIp")
+    @com.fasterxml.jackson.annotation.JsonProperty("publicIp")
     String publicIp;
 
     /**
      * The OCID of the subnet the VNIC is in.
      **/
-    @JsonProperty("subnetId")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String subnetId;
 
     /**
@@ -230,6 +269,8 @@ public class Vnic {
      * Example: `2016-08-25T21:10:29.600Z`
      *
      **/
-    @JsonProperty("timeCreated")
-    Date timeCreated;
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    java.util.Date timeCreated;
 }

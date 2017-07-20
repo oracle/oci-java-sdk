@@ -3,52 +3,41 @@
  */
 package com.oracle.bmc.loadbalancer.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * The health check policy configuration.
  * For more information, see [Editing Health Check Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/editinghealthcheck.htm).
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@Value
-@JsonDeserialize(builder = HealthChecker.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = HealthChecker.Builder.class)
 public class HealthChecker {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("intervalInMillis")
+        @com.fasterxml.jackson.annotation.JsonProperty("intervalInMillis")
         private Integer intervalInMillis;
 
-        @JsonProperty("port")
+        @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
-        @JsonProperty("protocol")
+        @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private String protocol;
 
-        @JsonProperty("responseBodyRegex")
+        @com.fasterxml.jackson.annotation.JsonProperty("responseBodyRegex")
         private String responseBodyRegex;
 
-        @JsonProperty("retries")
+        @com.fasterxml.jackson.annotation.JsonProperty("retries")
         private Integer retries;
 
-        @JsonProperty("returnCode")
+        @com.fasterxml.jackson.annotation.JsonProperty("returnCode")
         private Integer returnCode;
 
-        @JsonProperty("timeoutInMillis")
+        @com.fasterxml.jackson.annotation.JsonProperty("timeoutInMillis")
         private Integer timeoutInMillis;
 
-        @JsonProperty("urlPath")
+        @com.fasterxml.jackson.annotation.JsonProperty("urlPath")
         private String urlPath;
 
         public HealthChecker build() {
@@ -63,7 +52,7 @@ public class HealthChecker {
                     urlPath);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(HealthChecker o) {
             return intervalInMillis(o.getIntervalInMillis())
                     .port(o.getPort())
@@ -89,7 +78,7 @@ public class HealthChecker {
      * Example: `30000`
      *
      **/
-    @JsonProperty("intervalInMillis")
+    @com.fasterxml.jackson.annotation.JsonProperty("intervalInMillis")
     Integer intervalInMillis;
 
     /**
@@ -99,9 +88,9 @@ public class HealthChecker {
      * Example: `8080`
      *
      **/
-    @JsonProperty("port")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("port")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     Integer port;
 
     /**
@@ -110,9 +99,9 @@ public class HealthChecker {
      * Example: `HTTP`
      *
      **/
-    @JsonProperty("protocol")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("protocol")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String protocol;
 
     /**
@@ -121,9 +110,9 @@ public class HealthChecker {
      * Example: `^(500|40[1348])$`
      *
      **/
-    @JsonProperty("responseBodyRegex")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("responseBodyRegex")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String responseBodyRegex;
 
     /**
@@ -132,7 +121,7 @@ public class HealthChecker {
      * Example: `3`
      *
      **/
-    @JsonProperty("retries")
+    @com.fasterxml.jackson.annotation.JsonProperty("retries")
     Integer retries;
 
     /**
@@ -142,9 +131,9 @@ public class HealthChecker {
      * Example: `200`
      *
      **/
-    @JsonProperty("returnCode")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("returnCode")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     Integer returnCode;
 
     /**
@@ -153,7 +142,7 @@ public class HealthChecker {
      * Example: `6000`
      *
      **/
-    @JsonProperty("timeoutInMillis")
+    @com.fasterxml.jackson.annotation.JsonProperty("timeoutInMillis")
     Integer timeoutInMillis;
 
     /**
@@ -162,8 +151,8 @@ public class HealthChecker {
      * Example: `/healthcheck`
      *
      **/
-    @JsonProperty("urlPath")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("urlPath")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String urlPath;
 }

@@ -3,33 +3,24 @@
  */
 package com.oracle.bmc.identity.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = UpdateSwiftPasswordDetails.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = UpdateSwiftPasswordDetails.Builder.class
+)
 public class UpdateSwiftPasswordDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("description")
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         public UpdateSwiftPasswordDetails build() {
             return new UpdateSwiftPasswordDetails(description);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateSwiftPasswordDetails o) {
             return description(o.getDescription());
         }
@@ -45,6 +36,6 @@ public class UpdateSwiftPasswordDetails {
     /**
      * The description you assign to the Swift password. Does not have to be unique, and it's changeable.
      **/
-    @JsonProperty("description")
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 }

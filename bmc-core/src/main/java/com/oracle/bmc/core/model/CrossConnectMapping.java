@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * For use with Oracle Bare Metal Cloud Services FastConnect. Each
  * {@link VirtualCircuit} runs on one or
@@ -40,26 +29,28 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = CrossConnectMapping.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = CrossConnectMapping.Builder.class
+)
 public class CrossConnectMapping {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("bgpMd5AuthKey")
+        @com.fasterxml.jackson.annotation.JsonProperty("bgpMd5AuthKey")
         private String bgpMd5AuthKey;
 
-        @JsonProperty("crossConnectOrCrossConnectGroupId")
+        @com.fasterxml.jackson.annotation.JsonProperty("crossConnectOrCrossConnectGroupId")
         private String crossConnectOrCrossConnectGroupId;
 
-        @JsonProperty("customerBgpPeeringIp")
+        @com.fasterxml.jackson.annotation.JsonProperty("customerBgpPeeringIp")
         private String customerBgpPeeringIp;
 
-        @JsonProperty("oracleBgpPeeringIp")
+        @com.fasterxml.jackson.annotation.JsonProperty("oracleBgpPeeringIp")
         private String oracleBgpPeeringIp;
 
-        @JsonProperty("vlan")
+        @com.fasterxml.jackson.annotation.JsonProperty("vlan")
         private Integer vlan;
 
         public CrossConnectMapping build() {
@@ -71,7 +62,7 @@ public class CrossConnectMapping {
                     vlan);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CrossConnectMapping o) {
             return bgpMd5AuthKey(o.getBgpMd5AuthKey())
                     .crossConnectOrCrossConnectGroupId(o.getCrossConnectOrCrossConnectGroupId())
@@ -94,8 +85,8 @@ public class CrossConnectMapping {
      * means you don't use BGP MD5 authentication.
      *
      **/
-    @JsonProperty("bgpMd5AuthKey")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("bgpMd5AuthKey")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String bgpMd5AuthKey;
 
     /**
@@ -105,8 +96,8 @@ public class CrossConnectMapping {
      * customer is connecting via provider).
      *
      **/
-    @JsonProperty("crossConnectOrCrossConnectGroupId")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("crossConnectOrCrossConnectGroupId")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String crossConnectOrCrossConnectGroupId;
 
     /**
@@ -119,8 +110,8 @@ public class CrossConnectMapping {
      * Example: `10.0.0.18/31`
      *
      **/
-    @JsonProperty("customerBgpPeeringIp")
-    @Size(min = 7, max = 46)
+    @com.fasterxml.jackson.annotation.JsonProperty("customerBgpPeeringIp")
+    @javax.validation.constraints.Size(min = 7, max = 46)
     String customerBgpPeeringIp;
 
     /**
@@ -132,8 +123,8 @@ public class CrossConnectMapping {
      * Example: `10.0.0.19/31`
      *
      **/
-    @JsonProperty("oracleBgpPeeringIp")
-    @Size(min = 7, max = 46)
+    @com.fasterxml.jackson.annotation.JsonProperty("oracleBgpPeeringIp")
+    @javax.validation.constraints.Size(min = 7, max = 46)
     String oracleBgpPeeringIp;
 
     /**
@@ -145,8 +136,8 @@ public class CrossConnectMapping {
      * Example: `200`
      *
      **/
-    @JsonProperty("vlan")
-    @Min(100)
-    @Max(16777216)
+    @com.fasterxml.jackson.annotation.JsonProperty("vlan")
+    @javax.validation.constraints.Min(100)
+    @javax.validation.constraints.Max(16777216)
     Integer vlan;
 }

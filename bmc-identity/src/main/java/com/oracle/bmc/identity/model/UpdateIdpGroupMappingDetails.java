@@ -3,36 +3,27 @@
  */
 package com.oracle.bmc.identity.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = UpdateIdpGroupMappingDetails.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = UpdateIdpGroupMappingDetails.Builder.class
+)
 public class UpdateIdpGroupMappingDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("idpGroupName")
+        @com.fasterxml.jackson.annotation.JsonProperty("idpGroupName")
         private String idpGroupName;
 
-        @JsonProperty("groupId")
+        @com.fasterxml.jackson.annotation.JsonProperty("groupId")
         private String groupId;
 
         public UpdateIdpGroupMappingDetails build() {
             return new UpdateIdpGroupMappingDetails(idpGroupName, groupId);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateIdpGroupMappingDetails o) {
             return idpGroupName(o.getIdpGroupName()).groupId(o.getGroupId());
         }
@@ -48,12 +39,12 @@ public class UpdateIdpGroupMappingDetails {
     /**
      * The idp group name.
      **/
-    @JsonProperty("idpGroupName")
+    @com.fasterxml.jackson.annotation.JsonProperty("idpGroupName")
     String idpGroupName;
 
     /**
      * The OCID of the group.
      **/
-    @JsonProperty("groupId")
+    @com.fasterxml.jackson.annotation.JsonProperty("groupId")
     String groupId;
 }

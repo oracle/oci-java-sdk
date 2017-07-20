@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * A single DHCP option according to [RFC 1533](https://tools.ietf.org/html/rfc1533).
  * The two options available to use are {@link DhcpDnsOption}
@@ -23,17 +12,23 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@NonFinal
-@AllArgsConstructor(access = AccessLevel.PROTECTED)
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    include = JsonTypeInfo.As.PROPERTY,
+@lombok.Value
+@lombok.experimental.NonFinal
+@lombok.AllArgsConstructor(access = lombok.AccessLevel.PROTECTED)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type",
     defaultImpl = DhcpOption.class
 )
-@JsonSubTypes({
-    @JsonSubTypes.Type(value = DhcpDnsOption.class, name = "DomainNameServer"),
-    @JsonSubTypes.Type(value = DhcpSearchDomainOption.class, name = "SearchDomain")
+@com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DhcpDnsOption.class,
+        name = "DomainNameServer"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DhcpSearchDomainOption.class,
+        name = "SearchDomain"
+    )
 })
 public class DhcpOption {}

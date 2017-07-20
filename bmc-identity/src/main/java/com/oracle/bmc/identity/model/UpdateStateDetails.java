@@ -3,33 +3,24 @@
  */
 package com.oracle.bmc.identity.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = UpdateStateDetails.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = UpdateStateDetails.Builder.class
+)
 public class UpdateStateDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("blocked")
+        @com.fasterxml.jackson.annotation.JsonProperty("blocked")
         private Boolean blocked;
 
         public UpdateStateDetails build() {
             return new UpdateStateDetails(blocked);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateStateDetails o) {
             return blocked(o.getBlocked());
         }
@@ -46,6 +37,6 @@ public class UpdateStateDetails {
      * Update state to blocked or unblocked. Only \"false\" is supported (for changing the state to unblocked).
      *
      **/
-    @JsonProperty("blocked")
+    @com.fasterxml.jackson.annotation.JsonProperty("blocked")
     Boolean blocked;
 }

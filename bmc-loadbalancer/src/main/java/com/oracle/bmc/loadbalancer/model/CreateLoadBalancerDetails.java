@@ -3,51 +3,42 @@
  */
 package com.oracle.bmc.loadbalancer.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * The configuration details for creating a load balancer.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
-@Value
-@JsonDeserialize(builder = CreateLoadBalancerDetails.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = CreateLoadBalancerDetails.Builder.class
+)
 public class CreateLoadBalancerDetails {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("backendSets")
-        private Map<String, BackendSetDetails> backendSets;
+        @com.fasterxml.jackson.annotation.JsonProperty("backendSets")
+        private java.util.Map<String, BackendSetDetails> backendSets;
 
-        @JsonProperty("certificates")
-        private Map<String, CertificateDetails> certificates;
+        @com.fasterxml.jackson.annotation.JsonProperty("certificates")
+        private java.util.Map<String, CertificateDetails> certificates;
 
-        @JsonProperty("compartmentId")
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
-        @JsonProperty("displayName")
+        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
-        @JsonProperty("isPrivate")
+        @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
         private Boolean isPrivate;
 
-        @JsonProperty("listeners")
-        private Map<String, ListenerDetails> listeners;
+        @com.fasterxml.jackson.annotation.JsonProperty("listeners")
+        private java.util.Map<String, ListenerDetails> listeners;
 
-        @JsonProperty("shapeName")
+        @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
         private String shapeName;
 
-        @JsonProperty("subnetIds")
-        private List<String> subnetIds;
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
+        private java.util.List<String> subnetIds;
 
         public CreateLoadBalancerDetails build() {
             return new CreateLoadBalancerDetails(
@@ -61,7 +52,7 @@ public class CreateLoadBalancerDetails {
                     subnetIds);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateLoadBalancerDetails o) {
             return backendSets(o.getBackendSets())
                     .certificates(o.getCertificates())
@@ -81,18 +72,18 @@ public class CreateLoadBalancerDetails {
         return new Builder();
     }
 
-    @JsonProperty("backendSets")
-    Map<String, BackendSetDetails> backendSets;
+    @com.fasterxml.jackson.annotation.JsonProperty("backendSets")
+    java.util.Map<String, BackendSetDetails> backendSets;
 
-    @JsonProperty("certificates")
-    Map<String, CertificateDetails> certificates;
+    @com.fasterxml.jackson.annotation.JsonProperty("certificates")
+    java.util.Map<String, CertificateDetails> certificates;
 
     /**
      * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the compartment in which to create the load balancer.
      **/
-    @JsonProperty("compartmentId")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String compartmentId;
 
     /**
@@ -101,9 +92,9 @@ public class CreateLoadBalancerDetails {
      * Example: `My load balancer`
      *
      **/
-    @JsonProperty("displayName")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String displayName;
 
     /**
@@ -124,11 +115,11 @@ public class CreateLoadBalancerDetails {
      * Example: `false`
      *
      **/
-    @JsonProperty("isPrivate")
+    @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
     Boolean isPrivate;
 
-    @JsonProperty("listeners")
-    Map<String, ListenerDetails> listeners;
+    @com.fasterxml.jackson.annotation.JsonProperty("listeners")
+    java.util.Map<String, ListenerDetails> listeners;
 
     /**
      * A template that determines the total pre-provisioned bandwidth (ingress plus egress).
@@ -138,16 +129,16 @@ public class CreateLoadBalancerDetails {
      * Example: `100Mbps`
      *
      **/
-    @JsonProperty("shapeName")
-    @Valid
-    @NotNull
+    @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
     String shapeName;
 
     /**
      * An array of subnet [OCIDs](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      **/
-    @JsonProperty("subnetIds")
-    @Valid
-    @NotNull
-    List<String> subnetIds;
+    @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
+    @javax.validation.Valid
+    @javax.validation.constraints.NotNull
+    java.util.List<String> subnetIds;
 }

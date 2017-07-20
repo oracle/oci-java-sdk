@@ -3,17 +3,6 @@
  */
 package com.oracle.bmc.core.model;
 
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.*;
-
-import java.util.*;
-import javax.validation.*;
-import javax.validation.constraints.*;
-
-import lombok.Value;
-import lombok.*;
-import lombok.experimental.*;
-
 /**
  * For use with Oracle Bare Metal Cloud Services FastConnect. A cross-connect represents a
  * physical connection between an existing network and Oracle. Customers who are colocated
@@ -34,39 +23,39 @@ import lombok.experimental.*;
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-@Value
-@JsonDeserialize(builder = CrossConnect.Builder.class)
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CrossConnect.Builder.class)
 public class CrossConnect {
-    @JsonPOJOBuilder(withPrefix = "")
-    @Accessors(fluent = true)
-    @Setter
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    @lombok.Setter
     public static class Builder {
-        @JsonProperty("compartmentId")
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
-        @JsonProperty("crossConnectGroupId")
+        @com.fasterxml.jackson.annotation.JsonProperty("crossConnectGroupId")
         private String crossConnectGroupId;
 
-        @JsonProperty("displayName")
+        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
-        @JsonProperty("id")
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
-        @JsonProperty("lifecycleState")
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
-        @JsonProperty("locationName")
+        @com.fasterxml.jackson.annotation.JsonProperty("locationName")
         private String locationName;
 
-        @JsonProperty("portName")
+        @com.fasterxml.jackson.annotation.JsonProperty("portName")
         private String portName;
 
-        @JsonProperty("portSpeedShapeName")
+        @com.fasterxml.jackson.annotation.JsonProperty("portSpeedShapeName")
         private String portSpeedShapeName;
 
-        @JsonProperty("timeCreated")
-        private Date timeCreated;
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+        private java.util.Date timeCreated;
 
         public CrossConnect build() {
             return new CrossConnect(
@@ -81,7 +70,7 @@ public class CrossConnect {
                     timeCreated);
         }
 
-        @JsonIgnore
+        @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CrossConnect o) {
             return compartmentId(o.getCompartmentId())
                     .crossConnectGroupId(o.getCrossConnectGroupId())
@@ -105,29 +94,31 @@ public class CrossConnect {
     /**
      * The OCID of the compartment containing the cross-connect group.
      **/
-    @JsonProperty("compartmentId")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
      * The OCID of the cross-connect group this cross-connect belongs to (if any).
      **/
-    @JsonProperty("crossConnectGroupId")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("crossConnectGroupId")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String crossConnectGroupId;
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
      **/
-    @JsonProperty("displayName")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
      * The cross-connect's Oracle ID (OCID).
      **/
-    @JsonProperty("id")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String id;
     /**
      * The cross-connect's current state.
@@ -148,10 +139,10 @@ public class CrossConnect {
         UnknownEnumValue(null);
 
         private final String value;
-        private static Map<String, LifecycleState> map;
+        private static java.util.Map<String, LifecycleState> map;
 
         static {
-            map = new HashMap<>();
+            map = new java.util.HashMap<>();
             for (LifecycleState v : LifecycleState.values()) {
                 if (v != UnknownEnumValue) {
                     map.put(v.getValue(), v);
@@ -163,12 +154,12 @@ public class CrossConnect {
             this.value = value;
         }
 
-        @JsonValue
+        @com.fasterxml.jackson.annotation.JsonValue
         public String getValue() {
             return value;
         }
 
-        @JsonCreator
+        @com.fasterxml.jackson.annotation.JsonCreator
         public static LifecycleState create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
@@ -182,21 +173,21 @@ public class CrossConnect {
     /**
      * The cross-connect's current state.
      **/
-    @JsonProperty("lifecycleState")
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
 
     /**
      * The name of the FastConnect location where this cross-connect is installed.
      **/
-    @JsonProperty("locationName")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("locationName")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String locationName;
 
     /**
      * A string identifying the meet-me room port for this cross-connect.
      **/
-    @JsonProperty("portName")
-    @Size(min = 1, max = 255)
+    @com.fasterxml.jackson.annotation.JsonProperty("portName")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String portName;
 
     /**
@@ -205,7 +196,7 @@ public class CrossConnect {
      * Example: `10 Gbps`
      *
      **/
-    @JsonProperty("portSpeedShapeName")
+    @com.fasterxml.jackson.annotation.JsonProperty("portSpeedShapeName")
     String portSpeedShapeName;
 
     /**
@@ -214,6 +205,6 @@ public class CrossConnect {
      * Example: `2016-08-25T21:10:29.600Z`
      *
      **/
-    @JsonProperty("timeCreated")
-    Date timeCreated;
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    java.util.Date timeCreated;
 }

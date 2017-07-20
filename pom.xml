@@ -4,7 +4,7 @@
 
   <groupId>com.oracle.bmc.sdk</groupId>
   <artifactId>oracle-bmc-java-sdk</artifactId>
-  <version>1.2.10</version>
+  <version>1.2.12</version>
   <packaging>pom</packaging>
 
   <name>Oracle Bare Metal Cloud Services SDK</name>
