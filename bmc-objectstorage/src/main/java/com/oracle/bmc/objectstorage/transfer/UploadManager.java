@@ -113,7 +113,7 @@ public class UploadManager {
 
         final ExecutorService executorServiceToUse;
         final boolean shutdownExecutor;
-        if (uploadConfiguration.isAllowParallelUploads() && chunkCreator.enableParallelReads()) {
+        if (uploadConfiguration.isAllowParallelUploads() && chunkCreator.supportsParallelReads()) {
             if (uploadDetails.parallelUploadExecutorService != null) {
                 executorServiceToUse = uploadDetails.parallelUploadExecutorService;
                 shutdownExecutor = false;
