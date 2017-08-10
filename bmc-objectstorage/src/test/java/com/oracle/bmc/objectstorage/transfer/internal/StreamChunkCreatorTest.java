@@ -5,6 +5,7 @@ package com.oracle.bmc.objectstorage.transfer.internal;
 
 import static org.junit.Assert.*;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -55,8 +56,12 @@ public class StreamChunkCreatorTest {
 
     @Test
     public void serialChunks_readOutOfOrder() throws Exception {
+        // set up a non-duplicable stream instead
+        stream = new ByteArrayInputStream(COMPLETE_STRING.getBytes());
+
         StreamChunkCreator creator =
                 new StreamChunkCreator(stream, COMPLETE_STRING.length(), CHUNK_SIZE);
+        assertFalse(creator.supportsParallelReads());
 
         ArrayList<SubRangeInputStream> chunks = new ArrayList<>();
         while (creator.hasMore()) {
@@ -71,15 +76,40 @@ public class StreamChunkCreatorTest {
             sb.append(content);
         }
         // even reading all chunks out of order will end up reading the
-        // underlying bytes in order
+        // underlying bytes in order, provided the stream is non-duplicable
         assertEquals(COMPLETE_STRING, sb.toString());
+    }
+
+    @Test
+    public void serialChunks_readOutOfOrder_duplicable() throws Exception {
+        StreamChunkCreator creator =
+                new StreamChunkCreator(stream, COMPLETE_STRING.length(), CHUNK_SIZE);
+        assertTrue(creator.supportsParallelReads());
+
+        ArrayList<SubRangeInputStream> chunks = new ArrayList<>();
+        while (creator.hasMore()) {
+            SubRangeInputStream chunk = creator.next();
+            chunks.add(chunk);
+        }
+        assertEquals(CHUNKS.length, chunks.size());
+
+        StringBuilder sb = new StringBuilder();
+        StringBuilder sbExpected = new StringBuilder();
+        for (int i = 0; i < CHUNKS.length; i++) {
+            String content = toString(chunks.get(RANDOM_ORDER[i]));
+            sb.append(content);
+            sbExpected.append(CHUNKS[RANDOM_ORDER[i]]);
+        }
+        // when reading chunks out of order of a duplicable stream, the bytes will come back
+        // in the order the chunks were read
+        assertEquals(sbExpected.toString(), sb.toString());
     }
 
     @Test
     public void parallelChunks_readInOrder() throws Exception {
         StreamChunkCreator creator =
                 new StreamChunkCreator(stream, COMPLETE_STRING.length(), CHUNK_SIZE);
-        assertTrue(creator.enableParallelReads());
+        assertTrue(creator.supportsParallelReads());
 
         int chunkCount = 0;
         while (creator.hasMore()) {
@@ -103,7 +133,7 @@ public class StreamChunkCreatorTest {
     public void parallelChunks_readOutOfOrder() throws Exception {
         StreamChunkCreator creator =
                 new StreamChunkCreator(stream, COMPLETE_STRING.length(), CHUNK_SIZE);
-        assertTrue(creator.enableParallelReads());
+        assertTrue(creator.supportsParallelReads());
 
         ArrayList<SubRangeInputStream> chunks = new ArrayList<>();
         while (creator.hasMore()) {

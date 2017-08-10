@@ -13,6 +13,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.2.13 - 2017-08-10
+### Fixed
+- Duplicable stream support (https://github.com/oracle/bmcs-java-sdk/issues/11)
+- Fixed NullPointerException on invalid PEM key file
+
 ## 1.2.12 - 2017-07-20
 ### Fixed
 - Reduced overhead in signing and serialization

@@ -90,9 +90,12 @@ public class PEMFileRSAPrivateKeySupplier implements KeySupplier<RSAPrivateKey> 
                 } else if (object instanceof SubjectPublicKeyInfo) {
                     throw new IllegalArgumentException(
                             "Public key provided instead of private key");
+                } else if (object != null) {
+                    throw new IllegalArgumentException(
+                            "Private key must be in PEM format, was: " + object.getClass());
                 } else {
                     throw new IllegalArgumentException(
-                            "Private key must be in PEM format: " + object.getClass());
+                            "Private key must be in PEM format");
                 }
 
                 this.key = (RSAPrivateKey) converter.getPrivateKey(keyInfo);
