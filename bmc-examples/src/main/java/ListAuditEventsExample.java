@@ -15,7 +15,7 @@ public class ListAuditEventsExample {
 
     public static void main(String[] args) throws Exception {
 
-        // TODO: Fill in these values
+        // TODO: Fill in these values with defaults
         String compartmentId = null;
         Date startTime = null;
         Date endTime = null;
