@@ -235,6 +235,21 @@ public interface LoadBalancerAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetBackendRequest, GetBackendResponse> handler);
 
     /**
+     * Gets the current health status of the specified backend server.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetBackendHealthResponse> getBackendHealth(
+            GetBackendHealthRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetBackendHealthRequest, GetBackendHealthResponse>
+                    handler);
+
+    /**
      * Gets the specified backend set's configuration information.
      *
      * @param request The request object containing the details to send
@@ -247,6 +262,22 @@ public interface LoadBalancerAsync extends AutoCloseable {
     java.util.concurrent.Future<GetBackendSetResponse> getBackendSet(
             GetBackendSetRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetBackendSetRequest, GetBackendSetResponse>
+                    handler);
+
+    /**
+     * Gets the health status for the specified backend set.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetBackendSetHealthResponse> getBackendSetHealth(
+            GetBackendSetHealthRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetBackendSetHealthRequest, GetBackendSetHealthResponse>
                     handler);
 
     /**
@@ -277,6 +308,22 @@ public interface LoadBalancerAsync extends AutoCloseable {
     java.util.concurrent.Future<GetLoadBalancerResponse> getLoadBalancer(
             GetLoadBalancerRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetLoadBalancerRequest, GetLoadBalancerResponse>
+                    handler);
+
+    /**
+     * Gets the health status for the specified load balancer.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetLoadBalancerHealthResponse> getLoadBalancerHealth(
+            GetLoadBalancerHealthRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetLoadBalancerHealthRequest, GetLoadBalancerHealthResponse>
                     handler);
 
     /**
@@ -337,6 +384,22 @@ public interface LoadBalancerAsync extends AutoCloseable {
     java.util.concurrent.Future<ListCertificatesResponse> listCertificates(
             ListCertificatesRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListCertificatesRequest, ListCertificatesResponse>
+                    handler);
+
+    /**
+     * Lists the summary health statuses for all load balancers in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListLoadBalancerHealthsResponse> listLoadBalancerHealths(
+            ListLoadBalancerHealthsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListLoadBalancerHealthsRequest, ListLoadBalancerHealthsResponse>
                     handler);
 
     /**

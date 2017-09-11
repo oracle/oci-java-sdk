@@ -84,6 +84,19 @@ public class LoadBalancerClient implements LoadBalancer {
         com.oracle.bmc.http.signing.RequestSigner requestSigner =
                 requestSignerFactory.createRequestSigner(SERVICE, authenticationDetailsProvider);
         this.client = restClientFactory.create(requestSigner, configuration);
+        // up to 50 (core) threads, time out after 60s idle, all daemon
+        java.util.concurrent.ThreadPoolExecutor executorService =
+                new java.util.concurrent.ThreadPoolExecutor(
+                        50,
+                        50,
+                        60L,
+                        java.util.concurrent.TimeUnit.SECONDS,
+                        new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
+                        new com.google.common.util.concurrent.ThreadFactoryBuilder()
+                                .setDaemon(false)
+                                .setNameFormat("LoadBalancer-waiters-%d")
+                                .build());
+        executorService.allowCoreThreadTimeOut(true);
 
         this.waiters = new LoadBalancerWaiters(executorService, this);
     }
@@ -271,6 +284,19 @@ public class LoadBalancerClient implements LoadBalancer {
     }
 
     @Override
+    public GetBackendHealthResponse getBackendHealth(GetBackendHealthRequest request) {
+        LOG.trace("Called getBackendHealth");
+        request = GetBackendHealthConverter.interceptRequest(request);
+        javax.ws.rs.client.Invocation.Builder ib =
+                GetBackendHealthConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetBackendHealthResponse>
+                transformer = GetBackendHealthConverter.fromResponse();
+
+        javax.ws.rs.core.Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
     public GetBackendSetResponse getBackendSet(GetBackendSetRequest request) {
         LOG.trace("Called getBackendSet");
         request = GetBackendSetConverter.interceptRequest(request);
@@ -278,6 +304,19 @@ public class LoadBalancerClient implements LoadBalancer {
                 GetBackendSetConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetBackendSetResponse>
                 transformer = GetBackendSetConverter.fromResponse();
+
+        javax.ws.rs.core.Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public GetBackendSetHealthResponse getBackendSetHealth(GetBackendSetHealthRequest request) {
+        LOG.trace("Called getBackendSetHealth");
+        request = GetBackendSetHealthConverter.interceptRequest(request);
+        javax.ws.rs.client.Invocation.Builder ib =
+                GetBackendSetHealthConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetBackendSetHealthResponse>
+                transformer = GetBackendSetHealthConverter.fromResponse();
 
         javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
@@ -304,6 +343,20 @@ public class LoadBalancerClient implements LoadBalancer {
                 GetLoadBalancerConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetLoadBalancerResponse>
                 transformer = GetLoadBalancerConverter.fromResponse();
+
+        javax.ws.rs.core.Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public GetLoadBalancerHealthResponse getLoadBalancerHealth(
+            GetLoadBalancerHealthRequest request) {
+        LOG.trace("Called getLoadBalancerHealth");
+        request = GetLoadBalancerHealthConverter.interceptRequest(request);
+        javax.ws.rs.client.Invocation.Builder ib =
+                GetLoadBalancerHealthConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetLoadBalancerHealthResponse>
+                transformer = GetLoadBalancerHealthConverter.fromResponse();
 
         javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
@@ -356,6 +409,20 @@ public class LoadBalancerClient implements LoadBalancer {
                 ListCertificatesConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListCertificatesResponse>
                 transformer = ListCertificatesConverter.fromResponse();
+
+        javax.ws.rs.core.Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public ListLoadBalancerHealthsResponse listLoadBalancerHealths(
+            ListLoadBalancerHealthsRequest request) {
+        LOG.trace("Called listLoadBalancerHealths");
+        request = ListLoadBalancerHealthsConverter.interceptRequest(request);
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListLoadBalancerHealthsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListLoadBalancerHealthsResponse>
+                transformer = ListLoadBalancerHealthsConverter.fromResponse();
 
         javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);

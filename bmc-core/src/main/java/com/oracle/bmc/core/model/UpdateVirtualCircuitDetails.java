@@ -66,7 +66,7 @@ public class UpdateVirtualCircuitDetails {
 
     /**
      * The provisioned data rate of the connection. To get a list of the
-     * available bandwidth levels (i.e., shapes), see
+     * available bandwidth levels (that is, shapes), see
      * {@link #listVirtualCircuitBandwidthShapes(ListVirtualCircuitBandwidthShapesRequest) listVirtualCircuitBandwidthShapes}.
      * <p>
      * To be updated only by the customer who owns the virtual circuit.

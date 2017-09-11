@@ -51,7 +51,7 @@ public class CreateCompartmentDetails {
 
     /**
      * The name you assign to the compartment during creation. The name must be unique across all compartments
-     * in the tenancy and cannot be changed.
+     * in the tenancy.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")

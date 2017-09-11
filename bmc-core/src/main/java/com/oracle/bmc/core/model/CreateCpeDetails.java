@@ -56,7 +56,7 @@ public class CreateCpeDetails {
     String displayName;
 
     /**
-     * The public IP address of the on-premise router.
+     * The public IP address of the on-premises router.
      * <p>
      * Example: `143.19.23.16`
      *

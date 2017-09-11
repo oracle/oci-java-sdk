@@ -2,13 +2,13 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.oracle.bmc.sdk</groupId>
-  <artifactId>oracle-bmc-java-sdk</artifactId>
-  <version>1.2.13</version>
+  <groupId>com.oracle.oci.sdk</groupId>
+  <artifactId>oci-java-sdk</artifactId>
+  <version>1.2.15</version>
   <packaging>pom</packaging>
 
-  <name>Oracle Bare Metal Cloud Services SDK</name>
-  <description>This project contains the SDK used for Oracle Bare Metal Cloud Services</description>
+  <name>Oracle Cloud Infrastructure SDK</name>
+  <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
   <url>https://docs.us-phoenix-1.oraclecloud.com/Content/API/SDKDocs/javasdk.htm</url>
   <inceptionYear>2016</inceptionYear>
 

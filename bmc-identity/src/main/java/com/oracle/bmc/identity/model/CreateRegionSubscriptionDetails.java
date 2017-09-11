@@ -39,6 +39,7 @@ public class CreateRegionSubscriptionDetails {
      * Allowed values are:
      * - `PHX`
      * - `IAD`
+     * - `FRA`
      * <p>
      * Example: `PHX`
      *

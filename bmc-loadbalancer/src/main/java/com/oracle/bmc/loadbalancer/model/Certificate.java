@@ -66,13 +66,17 @@ public class Certificate {
 
     /**
      * A friendly name for the certificate bundle. It must be unique and it cannot be changed.
+     * Valid certificate bundle names include only alphanumeric characters, dashes, and underscores.
+     * Certificate bundle names cannot contain spaces. Avoid entering confidential information.
      * <p>
-     * Example: `My certificate bundle`
+     * Example: `My_certificate_bundle`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateName")
     @javax.validation.Valid
     @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Pattern(regexp = "/^[a-zA-Z0-9_.-]*$/")
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String certificateName;
 
     /**

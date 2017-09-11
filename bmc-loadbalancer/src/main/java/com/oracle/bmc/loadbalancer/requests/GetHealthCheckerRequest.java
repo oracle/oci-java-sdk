@@ -16,9 +16,9 @@ public class GetHealthCheckerRequest {
     private String loadBalancerId;
 
     /**
-     * The name of the backend associated with the health check policy to be retrieved.
+     * The name of the backend set associated with the health check policy to be retrieved.
      * <p>
-     * Example: `My backend set`
+     * Example: `My_backend_set`
      *
      */
     private String backendSetName;

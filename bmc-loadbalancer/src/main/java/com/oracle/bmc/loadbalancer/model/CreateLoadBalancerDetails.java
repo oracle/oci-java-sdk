@@ -84,10 +84,12 @@ public class CreateLoadBalancerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     @javax.validation.Valid
     @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
      * A user-friendly name. It does not have to be unique, and it is changeable.
+     * Avoid entering confidential information.
      * <p>
      * Example: `My load balancer`
      *
@@ -95,6 +97,7 @@ public class CreateLoadBalancerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     @javax.validation.Valid
     @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 1024)
     String displayName;
 
     /**

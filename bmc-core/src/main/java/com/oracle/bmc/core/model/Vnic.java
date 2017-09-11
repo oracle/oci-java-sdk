@@ -9,12 +9,12 @@ package com.oracle.bmc.core.model;
  * through that subnet. Each instance has a *primary VNIC* that is automatically
  * created and attached during launch. You can add *secondary VNICs* to an
  * instance after it's launched. For more information, see
- * [Managing Virtual Network Interface Cards (VNICs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm).
+ * [Virtual Network Interface Cards (VNICs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm).
  * <p>
  * Each VNIC has a *primary private IP* that is automatically assigned during launch.
  * You can add *secondary private IPs* to a VNIC after it's created. For more
  * information, see {@link #createPrivateIp(CreatePrivateIpRequest) createPrivateIp} and
- * [Managing IP Addresses](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPaddresses.htm).
+ * [IP Addresses](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPaddresses.htm).
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
@@ -138,7 +138,7 @@ public class Vnic {
     /**
      * The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname
      * portion of the primary private IP's fully qualified domain name (FQDN)
-     * (e.g., `bminstance-1` in FQDN `bminstance-1.subnet123.vcn1.oraclevcn.com`).
+     * (for example, `bminstance-1` in FQDN `bminstance-1.subnet123.vcn1.oraclevcn.com`).
      * Must be unique across all VNICs in the subnet and comply with
      * [RFC 952](https://tools.ietf.org/html/rfc952) and
      * [RFC 1123](https://tools.ietf.org/html/rfc1123).

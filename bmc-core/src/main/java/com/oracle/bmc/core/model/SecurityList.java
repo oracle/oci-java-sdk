@@ -9,7 +9,7 @@ package com.oracle.bmc.core.model;
  * in the subnet. The rules can be stateful or stateless. For more information, see
  * [Security Lists](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/securitylists.htm).
  * <p>
- **Important:** Oracle Bare Metal Cloud Services images automatically include firewall rules (e.g.,
+ **Important:** Oracle Bare Metal Cloud Services images automatically include firewall rules (for example,
  * Linux iptables, Windows firewall). If there are issues with some type of access to an instance,
  * make sure both the security lists associated with the instance's subnet and the instance's
  * firewall rules are set correctly.

@@ -75,8 +75,13 @@ public class IdentityProvider {
     String description;
 
     /**
-     * The identity provider service or product (e.g., Oracle Identity Cloud Service).
-     * Allowed value: `IDCS`.
+     * The identity provider service or product.
+     * Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft
+     * Active Directory Federation Services (ADFS).
+     * <p>
+     * Allowed values are:
+     * - `ADFS`
+     * - `IDCS`
      * <p>
      * Example: `IDCS`
      *

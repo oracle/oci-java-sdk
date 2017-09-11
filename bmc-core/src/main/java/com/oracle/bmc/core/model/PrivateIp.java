@@ -15,7 +15,7 @@ package com.oracle.bmc.core.model;
  * <p>
  * You can add *secondary private IPs* to a VNIC after it's created. For more
  * information, see the `privateIp` operations and also
- * [Managing IP Addresses](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPaddresses.htm).
+ * [IP Addresses](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPaddresses.htm).
  * <p>
  **Note:** Only
  * {@link #listPrivateIps(ListPrivateIpsRequest) listPrivateIps} and

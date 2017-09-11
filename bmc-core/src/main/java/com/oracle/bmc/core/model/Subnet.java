@@ -8,7 +8,7 @@ package com.oracle.bmc.core.model;
  * consists of a contiguous range of IP addresses that do not overlap with
  * other subnets in the VCN. Example: 172.16.1.0/24. For more information, see
  * [Overview of the Networking Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm) and
- * [Managing Subnets](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingsubnets.htm).
+ * [VCNs and Subnets](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVCNs.htm).
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
@@ -172,7 +172,7 @@ public class Subnet {
     /**
      * A DNS label for the subnet, used in conjunction with the VNIC's hostname and
      * VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC
-     * within this subnet (e.g., `bminstance-1.subnet123.vcn1.oraclevcn.com`).
+     * within this subnet (for example, `bminstance-1.subnet123.vcn1.oraclevcn.com`).
      * Must be an alphanumeric string that begins with a letter and is unique within the VCN.
      * The value cannot be changed.
      * <p>
@@ -261,7 +261,7 @@ public class Subnet {
      * `assignPublicIp` flag in
      * {@link CreateVnicDetails}).
      * If `prohibitPublicIpOnVnic` is set to true, VNICs created in this
-     * subnet cannot have public IP addresses (i.e., it's a private
+     * subnet cannot have public IP addresses (that is, it's a private
      * subnet).
      * <p>
      * Example: `true`

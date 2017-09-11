@@ -363,6 +363,28 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetBackendHealthResponse> getBackendHealth(
+            GetBackendHealthRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetBackendHealthRequest, GetBackendHealthResponse>
+                    handler) {
+        LOG.trace("Called async getBackendHealth");
+        request = GetBackendHealthConverter.interceptRequest(request);
+        javax.ws.rs.client.Invocation.Builder ib =
+                GetBackendHealthConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetBackendHealthResponse>
+                transformer = GetBackendHealthConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetBackendSetResponse> getBackendSet(
             GetBackendSetRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetBackendSetRequest, GetBackendSetResponse>
@@ -373,6 +395,29 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 GetBackendSetConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetBackendSetResponse>
                 transformer = GetBackendSetConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBackendSetHealthResponse> getBackendSetHealth(
+            GetBackendSetHealthRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetBackendSetHealthRequest, GetBackendSetHealthResponse>
+                    handler) {
+        LOG.trace("Called async getBackendSetHealth");
+        request = GetBackendSetHealthConverter.interceptRequest(request);
+        javax.ws.rs.client.Invocation.Builder ib =
+                GetBackendSetHealthConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetBackendSetHealthResponse>
+                transformer = GetBackendSetHealthConverter.fromResponse();
 
         com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
                 new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
@@ -417,6 +462,29 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 GetLoadBalancerConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetLoadBalancerResponse>
                 transformer = GetLoadBalancerConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLoadBalancerHealthResponse> getLoadBalancerHealth(
+            GetLoadBalancerHealthRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetLoadBalancerHealthRequest, GetLoadBalancerHealthResponse>
+                    handler) {
+        LOG.trace("Called async getLoadBalancerHealth");
+        request = GetLoadBalancerHealthConverter.interceptRequest(request);
+        javax.ws.rs.client.Invocation.Builder ib =
+                GetLoadBalancerHealthConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetLoadBalancerHealthResponse>
+                transformer = GetLoadBalancerHealthConverter.fromResponse();
 
         com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
                 new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
@@ -505,6 +573,29 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                 ListCertificatesConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListCertificatesResponse>
                 transformer = ListCertificatesConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLoadBalancerHealthsResponse> listLoadBalancerHealths(
+            ListLoadBalancerHealthsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListLoadBalancerHealthsRequest, ListLoadBalancerHealthsResponse>
+                    handler) {
+        LOG.trace("Called async listLoadBalancerHealths");
+        request = ListLoadBalancerHealthsConverter.interceptRequest(request);
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListLoadBalancerHealthsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListLoadBalancerHealthsResponse>
+                transformer = ListLoadBalancerHealthsConverter.fromResponse();
 
         com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
                 new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);

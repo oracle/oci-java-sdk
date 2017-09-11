@@ -5,16 +5,16 @@
   <!-- http://howtodoinjava.com/maven/maven-bom-bill-of-materials-dependency/ -->
 
   <parent>
-    <groupId>com.oracle.bmc.sdk</groupId>
-    <artifactId>oracle-bmc-java-sdk</artifactId>
-    <version>1.2.13</version>
+    <groupId>com.oracle.oci.sdk</groupId>
+    <artifactId>oci-java-sdk</artifactId>
+    <version>1.2.15</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <artifactId>oracle-bmc-java-sdk-bom</artifactId>
+  <artifactId>oci-java-sdk-bom</artifactId>
   <packaging>pom</packaging>
-  <name>Oracle Bare Metal Cloud Services SDK - BOM</name>
-  <description>This project contains the BOM defining the SDK used for Oracle Bare Metal Cloud Services</description>
+  <name>Oracle Cloud Infrastructure SDK - BOM</name>
+  <description>This project contains the BOM defining the SDK used for Oracle Cloud Infrastructure</description>
   <url>https://docs.us-phoenix-1.oraclecloud.com/Content/API/SDKDocs/javasdk.htm</url>
 
   <dependencyManagement>
@@ -22,42 +22,42 @@
       <!-- Common packages -->
 
       <dependency>
-        <groupId>com.oracle.bmc.sdk</groupId>
-        <artifactId>oracle-bmc-java-sdk-common</artifactId>
-        <version>1.2.13</version>
+        <groupId>com.oracle.oci.sdk</groupId>
+        <artifactId>oci-java-sdk-common</artifactId>
+        <version>1.2.15</version>
         <optional>false</optional>
       </dependency>
 
       <!-- Service modules, alpha sorted -->
 
       <dependency>
-        <groupId>com.oracle.bmc.sdk</groupId>
-        <artifactId>oracle-bmc-java-sdk-audit</artifactId>
-        <version>1.2.13</version>
+        <groupId>com.oracle.oci.sdk</groupId>
+        <artifactId>oci-java-sdk-audit</artifactId>
+        <version>1.2.15</version>
         <optional>false</optional>
       </dependency>
       <dependency>
-        <groupId>com.oracle.bmc.sdk</groupId>
-        <artifactId>oracle-bmc-java-sdk-core</artifactId>
-        <version>1.2.13</version>
+        <groupId>com.oracle.oci.sdk</groupId>
+        <artifactId>oci-java-sdk-core</artifactId>
+        <version>1.2.15</version>
         <optional>false</optional>
       </dependency>
       <dependency>
-        <groupId>com.oracle.bmc.sdk</groupId>
-        <artifactId>oracle-bmc-java-sdk-identity</artifactId>
-        <version>1.2.13</version>
+        <groupId>com.oracle.oci.sdk</groupId>
+        <artifactId>oci-java-sdk-identity</artifactId>
+        <version>1.2.15</version>
         <optional>false</optional>
       </dependency>
       <dependency>
-        <groupId>com.oracle.bmc.sdk</groupId>
-        <artifactId>oracle-bmc-java-sdk-loadbalancer</artifactId>
-        <version>1.2.13</version>
+        <groupId>com.oracle.oci.sdk</groupId>
+        <artifactId>oci-java-sdk-loadbalancer</artifactId>
+        <version>1.2.15</version>
         <optional>false</optional>
       </dependency>
       <dependency>
-        <groupId>com.oracle.bmc.sdk</groupId>
-        <artifactId>oracle-bmc-java-sdk-objectstorage</artifactId>
-        <version>1.2.13</version>
+        <groupId>com.oracle.oci.sdk</groupId>
+        <artifactId>oci-java-sdk-objectstorage</artifactId>
+        <version>1.2.15</version>
         <optional>false</optional>
       </dependency>
     </dependencies>

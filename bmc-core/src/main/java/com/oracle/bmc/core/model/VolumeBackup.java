@@ -169,7 +169,7 @@ public class VolumeBackup {
     LifecycleState lifecycleState;
 
     /**
-     * The size of the volume, in MBs.
+     * The size of the volume, in MBs. The value must be a multiple of 1024.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInMBs")

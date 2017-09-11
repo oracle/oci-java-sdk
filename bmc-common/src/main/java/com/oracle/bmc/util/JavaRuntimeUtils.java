@@ -61,7 +61,7 @@ public class JavaRuntimeUtils {
             // http://www.oracle.com/technetwork/java/javase/versioning-naming-139433.html
             String[] versionParts = versionString.split("\\.");
             int featureVersion = Integer.parseInt(versionParts[1]);
-            // BMC requires TLS1.2, which is only supported on Java7+.
+            // OCI requires TLS1.2, which is only supported on Java7+.
             if (featureVersion < 7) {
                 version = JreVersion.Unsupported;
             } else if (featureVersion == 7) {

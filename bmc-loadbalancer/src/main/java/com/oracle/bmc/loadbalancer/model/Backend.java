@@ -96,9 +96,9 @@ public class Backend {
     String ipAddress;
 
     /**
-     * A name to uniquely identify this backend server in the backend set.
+     * A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.
      * <p>
-     * Example: `My first backend server`
+     * Example: `10.10.10.4:8080`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")

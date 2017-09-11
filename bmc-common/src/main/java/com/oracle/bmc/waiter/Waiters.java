@@ -21,7 +21,7 @@ public class Waiters {
             new MaxTimeTerminationStrategy(secondsToMillis(1200));
 
     /**
-     * The default BMC polling waiter that will be used. Configured using
+     * The default OCI polling waiter that will be used. Configured using
      * {@link #DEFAULT_POLLING_TERMINATION_STRATEGY} and
      * {@link #DEFAULT_POLLING_DELAY_STRATEGY}.
      */

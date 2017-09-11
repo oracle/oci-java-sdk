@@ -206,6 +206,37 @@ public class ComputeAsyncClient implements ComputeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateInstanceConsoleConnectionResponse>
+            createInstanceConsoleConnection(
+                    CreateInstanceConsoleConnectionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateInstanceConsoleConnectionRequest,
+                                    CreateInstanceConsoleConnectionResponse>
+                            handler) {
+        LOG.trace("Called async createInstanceConsoleConnection");
+        request = CreateInstanceConsoleConnectionConverter.interceptRequest(request);
+        javax.ws.rs.client.Invocation.Builder ib =
+                CreateInstanceConsoleConnectionConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateInstanceConsoleConnectionResponse>
+                transformer = CreateInstanceConsoleConnectionConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.post(
+                        ib,
+                        request.getCreateInstanceConsoleConnectionDetails(),
+                        request,
+                        onSuccess,
+                        onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteConsoleHistoryResponse> deleteConsoleHistory(
             DeleteConsoleHistoryRequest request,
             com.oracle.bmc.responses.AsyncHandler<
@@ -239,6 +270,32 @@ public class ComputeAsyncClient implements ComputeAsync {
                 DeleteImageConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteImageResponse>
                 transformer = DeleteImageConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.delete(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteInstanceConsoleConnectionResponse>
+            deleteInstanceConsoleConnection(
+                    DeleteInstanceConsoleConnectionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteInstanceConsoleConnectionRequest,
+                                    DeleteInstanceConsoleConnectionResponse>
+                            handler) {
+        LOG.trace("Called async deleteInstanceConsoleConnection");
+        request = DeleteInstanceConsoleConnectionConverter.interceptRequest(request);
+        javax.ws.rs.client.Invocation.Builder ib =
+                DeleteInstanceConsoleConnectionConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteInstanceConsoleConnectionResponse>
+                transformer = DeleteInstanceConsoleConnectionConverter.fromResponse();
 
         com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
                 new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
@@ -403,6 +460,32 @@ public class ComputeAsyncClient implements ComputeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetInstanceConsoleConnectionResponse>
+            getInstanceConsoleConnection(
+                    GetInstanceConsoleConnectionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetInstanceConsoleConnectionRequest,
+                                    GetInstanceConsoleConnectionResponse>
+                            handler) {
+        LOG.trace("Called async getInstanceConsoleConnection");
+        request = GetInstanceConsoleConnectionConverter.interceptRequest(request);
+        javax.ws.rs.client.Invocation.Builder ib =
+                GetInstanceConsoleConnectionConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetInstanceConsoleConnectionResponse>
+                transformer = GetInstanceConsoleConnectionConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetVnicAttachmentResponse> getVnicAttachment(
             GetVnicAttachmentRequest request,
             com.oracle.bmc.responses.AsyncHandler<
@@ -550,6 +633,32 @@ public class ComputeAsyncClient implements ComputeAsync {
         javax.ws.rs.client.Invocation.Builder ib = ListImagesConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListImagesResponse> transformer =
                 ListImagesConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInstanceConsoleConnectionsResponse>
+            listInstanceConsoleConnections(
+                    ListInstanceConsoleConnectionsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListInstanceConsoleConnectionsRequest,
+                                    ListInstanceConsoleConnectionsResponse>
+                            handler) {
+        LOG.trace("Called async listInstanceConsoleConnections");
+        request = ListInstanceConsoleConnectionsConverter.interceptRequest(request);
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListInstanceConsoleConnectionsConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListInstanceConsoleConnectionsResponse>
+                transformer = ListInstanceConsoleConnectionsConverter.fromResponse();
 
         com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
                 new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);

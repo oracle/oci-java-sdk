@@ -16,13 +16,16 @@ public class UpdateCompartmentDetails {
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
+        private String name;
+
         public UpdateCompartmentDetails build() {
-            return new UpdateCompartmentDetails(description);
+            return new UpdateCompartmentDetails(description, name);
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateCompartmentDetails o) {
-            return description(o.getDescription());
+            return description(o.getDescription()).name(o.getName());
         }
     }
 
@@ -39,4 +42,12 @@ public class UpdateCompartmentDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     @javax.validation.constraints.Size(min = 1, max = 400)
     String description;
+
+    /**
+     * The new name you assign to the compartment. The name must be unique across all compartments in the tenancy.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
+    @javax.validation.constraints.Size(min = 1, max = 100)
+    String name;
 }

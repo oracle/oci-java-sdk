@@ -20,7 +20,7 @@ public class ObjectStorageAsyncExample {
 
     public static void main(String[] args) throws Exception {
 
-        String configurationFilePath = "~/.oraclebmc/config";
+        String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
         AuthenticationDetailsProvider provider =

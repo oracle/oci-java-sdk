@@ -60,6 +60,7 @@ public class RegionSubscription {
      * Allowed values are:
      * - `PHX`
      * - `IAD`
+     * - 'FRA'
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regionKey")
@@ -74,6 +75,7 @@ public class RegionSubscription {
      * Allowed values are:
      * - `us-phoenix-1`
      * - `us-ashburn-1`
+     * - 'de-frankfurt-1'
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regionName")

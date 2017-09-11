@@ -20,7 +20,7 @@ public class GetImageLatestVersionExample {
         String operatingSystem = "Oracle Linux";
         String operatingSystemVersion = "6.7";
 
-        String configurationFilePath = "~/.oraclebmc/config";
+        String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
         AuthenticationDetailsProvider provider =

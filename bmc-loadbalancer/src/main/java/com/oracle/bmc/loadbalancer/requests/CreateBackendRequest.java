@@ -23,7 +23,7 @@ public class CreateBackendRequest {
     /**
      * The name of the backend set to add the backend server to.
      * <p>
-     * Example: `My backend set`
+     * Example: `My_backend_set`
      *
      */
     private String backendSetName;

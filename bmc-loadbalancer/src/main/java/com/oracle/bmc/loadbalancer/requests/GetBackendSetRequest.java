@@ -18,7 +18,7 @@ public class GetBackendSetRequest {
     /**
      * The name of the backend set to retrieve.
      * <p>
-     * Example: `My backend set`
+     * Example: `My_backend_set`
      *
      */
     private String backendSetName;

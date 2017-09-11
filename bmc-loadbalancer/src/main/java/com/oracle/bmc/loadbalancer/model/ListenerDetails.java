@@ -52,6 +52,7 @@ public class ListenerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultBackendSetName")
     @javax.validation.Valid
     @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 32)
     String defaultBackendSetName;
 
     /**

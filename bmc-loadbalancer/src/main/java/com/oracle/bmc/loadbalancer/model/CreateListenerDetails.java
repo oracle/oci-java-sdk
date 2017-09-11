@@ -62,10 +62,12 @@ public class CreateListenerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("defaultBackendSetName")
     @javax.validation.Valid
     @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 32)
     String defaultBackendSetName;
 
     /**
      * A friendly name for the listener. It must be unique and it cannot be changed.
+     * Avoid entering confidential information.
      * <p>
      * Example: `My listener`
      *
@@ -73,6 +75,7 @@ public class CreateListenerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     @javax.validation.Valid
     @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 255)
     String name;
 
     /**

@@ -56,10 +56,6 @@ public interface ObjectStorage extends AutoCloseable {
 
     /**
      * Creates a bucket in the given namespace with a bucket name and optional user-defined metadata.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -171,10 +167,6 @@ public interface ObjectStorage extends AutoCloseable {
     /**
      * Gets a list of all `BucketSummary`s in a compartment. A `BucketSummary` contains only summary fields for the bucket
      * and does not contain fields like the user-defined metadata.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -203,10 +195,6 @@ public interface ObjectStorage extends AutoCloseable {
 
     /**
      * Lists the objects in a bucket.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -226,10 +214,6 @@ public interface ObjectStorage extends AutoCloseable {
 
     /**
      * Creates a new object or overwrites an existing one.
-     * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

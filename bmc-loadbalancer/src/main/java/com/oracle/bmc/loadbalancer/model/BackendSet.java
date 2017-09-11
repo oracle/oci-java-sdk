@@ -76,7 +76,10 @@ public class BackendSet {
     /**
      * A friendly name for the backend set. It must be unique and it cannot be changed.
      * <p>
-     * Example: `My backend set`
+     * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot
+     * contain spaces. Avoid entering confidential information.
+     * <p>
+     * Example: `My_backend_set`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
