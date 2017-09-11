@@ -6,7 +6,7 @@ package com.oracle.bmc.auth;
 import java.io.InputStream;
 
 /**
- * Base interface used provide required information to sign requests to Oracle Bare Metal Services.
+ * Base interface used provide required information to sign requests to Oracle Cloud Infrastructure.
  * <p>
  * Implementations may choose to provide hints about the cacheability of the keyId and privateKey using
  * {@link AuthCachingPolicy} (optional).

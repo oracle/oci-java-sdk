@@ -7,7 +7,7 @@ package com.oracle.bmc.core.model;
  * Contains properties for a VNIC. You use this object when creating the
  * primary VNIC during instance launch or when creating a secondary VNIC.
  * For more information about VNICs, see
- * [Managing Virtual Network Interface Cards (VNICs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm).
+ * [Virtual Network Interface Cards (VNICs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm).
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
@@ -60,7 +60,7 @@ public class CreateVnicDetails {
     /**
      * Whether the VNIC should be assigned a public IP address. Defaults to whether
      * the subnet is public or private. If not set and the VNIC is being created
-     * in a private subnet (i.e., where `prohibitPublicIpOnVnic` = true in the
+     * in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the
      * {@link Subnet}), then no public IP address is assigned.
      * If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then
      * a public IP address is assigned. If set to true and
@@ -69,7 +69,7 @@ public class CreateVnicDetails {
      **Note:** This public IP address is associated with the primary private IP
      * on the VNIC. Secondary private IPs cannot have public IP
      * addresses associated with them. For more information, see
-     * [Managing IP Addresses](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPaddresses.htm).
+     * [IP Addresses](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPaddresses.htm).
      * <p>
      * Example: `false`
      *

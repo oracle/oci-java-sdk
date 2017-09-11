@@ -53,7 +53,7 @@ public class DefaultConfigurator implements ClientConfigurator {
                             + " was explicitly "
                             + "set to "
                             + previousValue
-                            + "; the Oracle BMC SDK needs to set this property to true. Failing...");
+                            + "; the OCI SDK needs to set this property to true. Failing...");
         }
         System.setProperty(SUN_NET_HTTP_ALLOW_RESTRICTED_HEADERS, "true");
     }

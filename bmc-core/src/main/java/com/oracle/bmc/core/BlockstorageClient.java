@@ -84,6 +84,19 @@ public class BlockstorageClient implements Blockstorage {
         com.oracle.bmc.http.signing.RequestSigner requestSigner =
                 requestSignerFactory.createRequestSigner(SERVICE, authenticationDetailsProvider);
         this.client = restClientFactory.create(requestSigner, configuration);
+        // up to 50 (core) threads, time out after 60s idle, all daemon
+        java.util.concurrent.ThreadPoolExecutor executorService =
+                new java.util.concurrent.ThreadPoolExecutor(
+                        50,
+                        50,
+                        60L,
+                        java.util.concurrent.TimeUnit.SECONDS,
+                        new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
+                        new com.google.common.util.concurrent.ThreadFactoryBuilder()
+                                .setDaemon(false)
+                                .setNameFormat("Blockstorage-waiters-%d")
+                                .build());
+        executorService.allowCoreThreadTimeOut(true);
 
         this.waiters = new BlockstorageWaiters(executorService, this);
     }

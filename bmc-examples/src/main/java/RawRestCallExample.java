@@ -34,7 +34,7 @@ public class RawRestCallExample {
         // TODO: fill this out
         String instanceId = null;
 
-        String configurationFilePath = "~/.oraclebmc/config";
+        String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
         // 1) Create your auth provider and request signer

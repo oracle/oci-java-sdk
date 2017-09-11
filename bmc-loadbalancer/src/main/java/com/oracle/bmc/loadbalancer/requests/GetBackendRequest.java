@@ -18,15 +18,15 @@ public class GetBackendRequest {
     /**
      * The name of the backend set that includes the backend server.
      * <p>
-     * Example: `My backend set`
+     * Example: `My_backend_set`
      *
      */
     private String backendSetName;
 
     /**
-     * The name of the backend server to retrieve.
+     * The IP address and port of the backend server to retrieve.
      * <p>
-     * Example: `My backend server`
+     * Example: `1.1.1.7:42`
      *
      */
     private String backendName;

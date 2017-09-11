@@ -155,12 +155,28 @@ public interface LoadBalancer extends AutoCloseable {
     GetBackendResponse getBackend(GetBackendRequest request);
 
     /**
+     * Gets the current health status of the specified backend server.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetBackendHealthResponse getBackendHealth(GetBackendHealthRequest request);
+
+    /**
      * Gets the specified backend set's configuration information.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      */
     GetBackendSetResponse getBackendSet(GetBackendSetRequest request);
+
+    /**
+     * Gets the health status for the specified backend set.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetBackendSetHealthResponse getBackendSetHealth(GetBackendSetHealthRequest request);
 
     /**
      * Gets the health check policy information for a given load balancer and backend set.
@@ -177,6 +193,14 @@ public interface LoadBalancer extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     GetLoadBalancerResponse getLoadBalancer(GetLoadBalancerRequest request);
+
+    /**
+     * Gets the health status for the specified load balancer.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetLoadBalancerHealthResponse getLoadBalancerHealth(GetLoadBalancerHealthRequest request);
 
     /**
      * Gets the details of a work request.
@@ -209,6 +233,14 @@ public interface LoadBalancer extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListCertificatesResponse listCertificates(ListCertificatesRequest request);
+
+    /**
+     * Lists the summary health statuses for all load balancers in the specified compartment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListLoadBalancerHealthsResponse listLoadBalancerHealths(ListLoadBalancerHealthsRequest request);
 
     /**
      * Lists all load balancers in the specified compartment.

@@ -131,7 +131,7 @@ public class CreateSubnetDetails {
     /**
      * A DNS label for the subnet, used in conjunction with the VNIC's hostname and
      * VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC
-     * within this subnet (e.g., `bminstance-1.subnet123.vcn1.oraclevcn.com`).
+     * within this subnet (for example, `bminstance-1.subnet123.vcn1.oraclevcn.com`).
      * Must be an alphanumeric string that begins with a letter and is unique within the VCN.
      * The value cannot be changed.
      * <p>
@@ -156,7 +156,7 @@ public class CreateSubnetDetails {
      * otherwise during instance launch or VNIC creation (with the
      * `assignPublicIp` flag in {@link CreateVnicDetails}).
      * If `prohibitPublicIpOnVnic` is set to true, VNICs created in this
-     * subnet cannot have public IP addresses (i.e., it's a private
+     * subnet cannot have public IP addresses (that is, it's a private
      * subnet).
      * <p>
      * Example: `true`

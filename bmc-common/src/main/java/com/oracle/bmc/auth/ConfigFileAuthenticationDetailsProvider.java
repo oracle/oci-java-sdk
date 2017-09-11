@@ -15,7 +15,7 @@ import lombok.ToString;
 
 /**
  * Implementation of {@link AuthenticationDetailsProvider} that uses a standard
- * BMC configuration file as an input.
+ * OCI configuration file as an input.
  */
 @ToString
 public class ConfigFileAuthenticationDetailsProvider implements AuthenticationDetailsProvider {
@@ -39,7 +39,7 @@ public class ConfigFileAuthenticationDetailsProvider implements AuthenticationDe
      * Creates a new instance.
      *
      * @param configurationFilePath
-     *            path to the BMC configuration file
+     *            path to the OCI configuration file
      * @param profile
      *            profile to load, optional
      * @throws IOException

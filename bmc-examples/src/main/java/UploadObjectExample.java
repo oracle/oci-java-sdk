@@ -28,7 +28,7 @@ import com.oracle.bmc.objectstorage.transfer.UploadManager.UploadResponse;
 public class UploadObjectExample {
 
     public static void main(String[] args) throws Exception {
-        String configurationFilePath = "~/.oraclebmc/config";
+        String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
         String namespaceName = null;

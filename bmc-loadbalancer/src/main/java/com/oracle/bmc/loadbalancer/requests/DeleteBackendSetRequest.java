@@ -18,7 +18,7 @@ public class DeleteBackendSetRequest {
     /**
      * The name of the backend set to delete.
      * <p>
-     * Example: `My backend set`
+     * Example: `My_backend_set`
      *
      */
     private String backendSetName;

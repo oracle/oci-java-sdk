@@ -10,7 +10,7 @@ package com.oracle.bmc.core.model;
  * network connections to provide a single, logical connection between the edge router
  * on the customer's existing network and a DRG. A customer could have multiple virtual
  * circuits, for example, to isolate traffic from different parts of their organization
- * (one virtual circuit for 10.0.1.0/24; another for 172.16.0.0/16), or to provide redundancy.
+ * (one virtual circuit for 10.0.1.0/24, another for 172.16.0.0/16), or to provide redundancy.
  * <p>
  * Each virtual circuit is made up of information shared between a customer, Oracle,
  * and a provider (if the customer is using FastConnect via a provider). Who fills in

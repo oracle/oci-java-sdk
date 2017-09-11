@@ -91,6 +91,33 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new secret key for the specified user. Secret keys are used for authentication with the Object Storage Service's Amazon S3
+     * compatible API. For information, see
+     * [Managing User Credentials](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingcredentials.htm).
+     * <p>
+     * You must specify a *description* for the secret key (although it can be an empty string). It does not
+     * have to be unique, and you can change it anytime with
+     * {@link #updateCustomerSecretKey(UpdateCustomerSecretKeyRequest, Consumer, Consumer) updateCustomerSecretKey}.
+     * <p>
+     * Every user has permission to create a secret key for *their own user ID*. An administrator in your organization
+     * does not need to write a policy to give users this ability. To compare, administrators who have permission to the
+     * tenancy can use this operation to create a secret key for any user, including themselves.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateCustomerSecretKeyResponse> createCustomerSecretKey(
+            CreateCustomerSecretKeyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateCustomerSecretKeyRequest, CreateCustomerSecretKeyResponse>
+                    handler);
+
+    /**
      * Creates a new group in your tenancy.
      * <p>
      * You must specify your tenancy's OCID as the compartment ID in the request object (remember that the tenancy
@@ -347,6 +374,23 @@ public interface IdentityAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteApiKeyResponse> deleteApiKey(
             DeleteApiKeyRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteApiKeyRequest, DeleteApiKeyResponse>
+                    handler);
+
+    /**
+     * Deletes the specified secret key for the specified user.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteCustomerSecretKeyResponse> deleteCustomerSecretKey(
+            DeleteCustomerSecretKeyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteCustomerSecretKeyRequest, DeleteCustomerSecretKeyResponse>
                     handler);
 
     /**
@@ -632,6 +676,24 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists the secret keys for the specified user. The returned object contains the secret key's OCID, but not
+     * the secret key itself. The actual secret key is returned only upon creation.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCustomerSecretKeysResponse> listCustomerSecretKeys(
+            ListCustomerSecretKeysRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListCustomerSecretKeysRequest, ListCustomerSecretKeysResponse>
+                    handler);
+
+    /**
      * Lists the groups in your tenancy. You must specify your tenancy's OCID as the value for
      * the compartment ID (remember that the tenancy is simply the root compartment).
      * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five).
@@ -825,6 +887,23 @@ public interface IdentityAsync extends AutoCloseable {
             UpdateCompartmentRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateCompartmentRequest, UpdateCompartmentResponse>
+                    handler);
+
+    /**
+     * Updates the specified secret key's description.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateCustomerSecretKeyResponse> updateCustomerSecretKey(
+            UpdateCustomerSecretKeyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateCustomerSecretKeyRequest, UpdateCustomerSecretKeyResponse>
                     handler);
 
     /**

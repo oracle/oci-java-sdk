@@ -84,6 +84,19 @@ public class IdentityClient implements Identity {
         com.oracle.bmc.http.signing.RequestSigner requestSigner =
                 requestSignerFactory.createRequestSigner(SERVICE, authenticationDetailsProvider);
         this.client = restClientFactory.create(requestSigner, configuration);
+        // up to 50 (core) threads, time out after 60s idle, all daemon
+        java.util.concurrent.ThreadPoolExecutor executorService =
+                new java.util.concurrent.ThreadPoolExecutor(
+                        50,
+                        50,
+                        60L,
+                        java.util.concurrent.TimeUnit.SECONDS,
+                        new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
+                        new com.google.common.util.concurrent.ThreadFactoryBuilder()
+                                .setDaemon(false)
+                                .setNameFormat("Identity-waiters-%d")
+                                .build());
+        executorService.allowCoreThreadTimeOut(true);
 
         this.waiters = new IdentityWaiters(executorService, this);
     }
@@ -148,6 +161,21 @@ public class IdentityClient implements Identity {
 
         javax.ws.rs.core.Response response =
                 client.post(ib, request.getCreateCompartmentDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public CreateCustomerSecretKeyResponse createCustomerSecretKey(
+            CreateCustomerSecretKeyRequest request) {
+        LOG.trace("Called createCustomerSecretKey");
+        request = CreateCustomerSecretKeyConverter.interceptRequest(request);
+        javax.ws.rs.client.Invocation.Builder ib =
+                CreateCustomerSecretKeyConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateCustomerSecretKeyResponse>
+                transformer = CreateCustomerSecretKeyConverter.fromResponse();
+
+        javax.ws.rs.core.Response response =
+                client.post(ib, request.getCreateCustomerSecretKeyDetails(), request);
         return transformer.apply(response);
     }
 
@@ -273,6 +301,20 @@ public class IdentityClient implements Identity {
                 DeleteApiKeyConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteApiKeyResponse>
                 transformer = DeleteApiKeyConverter.fromResponse();
+
+        javax.ws.rs.core.Response response = client.delete(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public DeleteCustomerSecretKeyResponse deleteCustomerSecretKey(
+            DeleteCustomerSecretKeyRequest request) {
+        LOG.trace("Called deleteCustomerSecretKey");
+        request = DeleteCustomerSecretKeyConverter.interceptRequest(request);
+        javax.ws.rs.client.Invocation.Builder ib =
+                DeleteCustomerSecretKeyConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCustomerSecretKeyResponse>
+                transformer = DeleteCustomerSecretKeyConverter.fromResponse();
 
         javax.ws.rs.core.Response response = client.delete(ib, request);
         return transformer.apply(response);
@@ -499,6 +541,20 @@ public class IdentityClient implements Identity {
     }
 
     @Override
+    public ListCustomerSecretKeysResponse listCustomerSecretKeys(
+            ListCustomerSecretKeysRequest request) {
+        LOG.trace("Called listCustomerSecretKeys");
+        request = ListCustomerSecretKeysConverter.interceptRequest(request);
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListCustomerSecretKeysConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListCustomerSecretKeysResponse>
+                transformer = ListCustomerSecretKeysConverter.fromResponse();
+
+        javax.ws.rs.core.Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
     public ListGroupsResponse listGroups(ListGroupsRequest request) {
         LOG.trace("Called listGroups");
         request = ListGroupsConverter.interceptRequest(request);
@@ -640,6 +696,21 @@ public class IdentityClient implements Identity {
 
         javax.ws.rs.core.Response response =
                 client.put(ib, request.getUpdateCompartmentDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public UpdateCustomerSecretKeyResponse updateCustomerSecretKey(
+            UpdateCustomerSecretKeyRequest request) {
+        LOG.trace("Called updateCustomerSecretKey");
+        request = UpdateCustomerSecretKeyConverter.interceptRequest(request);
+        javax.ws.rs.client.Invocation.Builder ib =
+                UpdateCustomerSecretKeyConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCustomerSecretKeyResponse>
+                transformer = UpdateCustomerSecretKeyConverter.fromResponse();
+
+        javax.ws.rs.core.Response response =
+                client.put(ib, request.getUpdateCustomerSecretKeyDetails(), request);
         return transformer.apply(response);
     }
 

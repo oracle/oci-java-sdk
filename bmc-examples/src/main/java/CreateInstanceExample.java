@@ -61,7 +61,7 @@ public class CreateInstanceExample {
         String vcnDisplayName = instanceDisplayName + "-vcn";
         String internetGatewayDisplayName = instanceDisplayName + "-internet-gateway";
 
-        String configurationFilePath = "~/.oraclebmc/config";
+        String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
         AuthenticationDetailsProvider provider =

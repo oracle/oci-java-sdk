@@ -81,7 +81,7 @@ public class CreateVirtualCircuitDetails {
 
     /**
      * The provisioned data rate of the connection.  To get a list of the
-     * available bandwidth levels (i.e., shapes), see
+     * available bandwidth levels (that is, shapes), see
      * {@link #listVirtualCircuitBandwidthShapes(ListVirtualCircuitBandwidthShapesRequest) listVirtualCircuitBandwidthShapes}.
      * <p>
      * Example: `10 Gbps`

@@ -22,7 +22,7 @@ public class GetInstancePublicIpExample {
         String instanceId = "SOME OCID";
         String compartmentId = "SOME OCID";
 
-        String configurationFilePath = "~/.oraclebmc/config";
+        String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
         AuthenticationDetailsProvider provider =

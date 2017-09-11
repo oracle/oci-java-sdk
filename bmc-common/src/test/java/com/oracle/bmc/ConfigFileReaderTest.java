@@ -8,11 +8,18 @@ import static org.junit.Assert.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.oracle.bmc.ConfigFileReader.ConfigFile;
 
 public class ConfigFileReaderTest {
+
+    @Test
+    @Ignore
+    public void defaultConfigFile() throws IOException {
+        ConfigFileReader.parseDefault();
+    }
 
     @Test(expected = FileNotFoundException.class)
     public void noConfigFile() throws IOException {

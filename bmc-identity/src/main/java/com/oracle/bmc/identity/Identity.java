@@ -76,6 +76,25 @@ public interface Identity extends AutoCloseable {
     CreateCompartmentResponse createCompartment(CreateCompartmentRequest request);
 
     /**
+     * Creates a new secret key for the specified user. Secret keys are used for authentication with the Object Storage Service's Amazon S3
+     * compatible API. For information, see
+     * [Managing User Credentials](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingcredentials.htm).
+     * <p>
+     * You must specify a *description* for the secret key (although it can be an empty string). It does not
+     * have to be unique, and you can change it anytime with
+     * {@link #updateCustomerSecretKey(UpdateCustomerSecretKeyRequest) updateCustomerSecretKey}.
+     * <p>
+     * Every user has permission to create a secret key for *their own user ID*. An administrator in your organization
+     * does not need to write a policy to give users this ability. To compare, administrators who have permission to the
+     * tenancy can use this operation to create a secret key for any user, including themselves.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateCustomerSecretKeyResponse createCustomerSecretKey(CreateCustomerSecretKeyRequest request);
+
+    /**
      * Creates a new group in your tenancy.
      * <p>
      * You must specify your tenancy's OCID as the compartment ID in the request object (remember that the tenancy
@@ -270,6 +289,15 @@ public interface Identity extends AutoCloseable {
     DeleteApiKeyResponse deleteApiKey(DeleteApiKeyRequest request);
 
     /**
+     * Deletes the specified secret key for the specified user.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteCustomerSecretKeyResponse deleteCustomerSecretKey(DeleteCustomerSecretKeyRequest request);
+
+    /**
      * Deletes the specified group. The group must be empty.
      *
      * @param request The request object containing the details to send
@@ -433,6 +461,16 @@ public interface Identity extends AutoCloseable {
     ListCompartmentsResponse listCompartments(ListCompartmentsRequest request);
 
     /**
+     * Lists the secret keys for the specified user. The returned object contains the secret key's OCID, but not
+     * the secret key itself. The actual secret key is returned only upon creation.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListCustomerSecretKeysResponse listCustomerSecretKeys(ListCustomerSecretKeysRequest request);
+
+    /**
      * Lists the groups in your tenancy. You must specify your tenancy's OCID as the value for
      * the compartment ID (remember that the tenancy is simply the root compartment).
      * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five).
@@ -547,6 +585,15 @@ public interface Identity extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateCompartmentResponse updateCompartment(UpdateCompartmentRequest request);
+
+    /**
+     * Updates the specified secret key's description.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateCustomerSecretKeyResponse updateCustomerSecretKey(UpdateCustomerSecretKeyRequest request);
 
     /**
      * Updates the specified group.

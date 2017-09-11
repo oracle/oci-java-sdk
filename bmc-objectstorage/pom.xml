@@ -3,22 +3,22 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.oracle.bmc.sdk</groupId>
-    <artifactId>oracle-bmc-java-sdk</artifactId>
-    <version>1.2.13</version>
+    <groupId>com.oracle.oci.sdk</groupId>
+    <artifactId>oci-java-sdk</artifactId>
+    <version>1.2.15</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <artifactId>oracle-bmc-java-sdk-objectstorage</artifactId>
-  <name>Oracle Bare Metal Cloud Services SDK - Object Storage</name>
-  <description>This project contains the SDK used for Oracle Bare Metal Cloud Object Storage Service</description>
+  <artifactId>oci-java-sdk-objectstorage</artifactId>
+  <name>Oracle Cloud Infrastructure SDK - Object Storage</name>
+  <description>This project contains the SDK used for Oracle Cloud Infrastructure Object Storage Service</description>
   <url>https://docs.us-phoenix-1.oraclecloud.com/Content/API/SDKDocs/javasdk.htm</url>
 
   <dependencies>
     <dependency>
-      <groupId>com.oracle.bmc.sdk</groupId>
-      <artifactId>oracle-bmc-java-sdk-common</artifactId>
-      <version>1.2.13</version>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-common</artifactId>
+      <version>1.2.15</version>
     </dependency>
   </dependencies>
 

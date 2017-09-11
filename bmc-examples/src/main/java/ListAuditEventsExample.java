@@ -20,7 +20,7 @@ public class ListAuditEventsExample {
         Date startTime = null;
         Date endTime = null;
 
-        String configurationFilePath = "~/.oraclebmc/config";
+        String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
         AuthenticationDetailsProvider provider =

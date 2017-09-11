@@ -1,9 +1,9 @@
-# Oracle Bare Metal Cloud Services Java SDK
+# Oracle Cloud Infrastructure Java SDK
 [![Build Status](https://travis-ci.org/oracle/bmcs-java-sdk.svg?branch=master)](https://travis-ci.org/oracle/bmcs-java-sdk)
 
 ## About
 
-bmcs-java-sdk provides a Java SDK for managing your Oracle Bare Metal Cloud Services resources.
+oci-java-sdk provides a Java SDK for managing your Oracle Cloud Infrastructure resources.
 
 The project is open source and maintained by Oracle Corp. The home page for the project is [here](https://docs.us-phoenix-1.oraclecloud.com/Content/API/SDKDocs/javasdk.htm).
 
@@ -31,9 +31,9 @@ See [CHANGELOG](/CHANGELOG.md).
 
 ## Contributing
 
-bmcs-java-sdk is an open source project. See [CONTRIBUTING](/CONTRIBUTING.md) for details.
+oci-java-sdk is an open source project. See [CONTRIBUTING](/CONTRIBUTING.md) for details.
 
-Oracle gratefully acknowledges the contributions to bmcs-java-sdk that have been made by the community.
+Oracle gratefully acknowledges the contributions to oci-java-sdk that have been made by the community.
 
 ## Known Issues
 

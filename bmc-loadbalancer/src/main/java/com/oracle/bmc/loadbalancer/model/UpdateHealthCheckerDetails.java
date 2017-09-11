@@ -118,6 +118,7 @@ public class UpdateHealthCheckerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("responseBodyRegex")
     @javax.validation.Valid
     @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(max = 255)
     String responseBodyRegex;
 
     /**
@@ -143,7 +144,8 @@ public class UpdateHealthCheckerDetails {
     Integer returnCode;
 
     /**
-     * The maximum timeout in milliseconds before a retry.
+     * The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply
+     * returns within this timeout period.
      * <p>
      * Example: `6000`
      *
@@ -164,5 +166,6 @@ public class UpdateHealthCheckerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("urlPath")
     @javax.validation.Valid
     @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(max = 1024)
     String urlPath;
 }

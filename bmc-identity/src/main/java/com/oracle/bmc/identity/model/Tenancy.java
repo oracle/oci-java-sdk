@@ -78,6 +78,7 @@ public class Tenancy {
      * Allowed values are:
      * - `IAD`
      * - `PHX`
+     * - `FRA`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("homeRegionKey")

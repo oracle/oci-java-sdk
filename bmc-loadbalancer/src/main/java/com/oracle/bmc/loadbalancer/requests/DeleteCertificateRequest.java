@@ -18,7 +18,7 @@ public class DeleteCertificateRequest {
     /**
      * The name of the certificate to delete.
      * <p>
-     * Example: `My certificate`
+     * Example: `My_certificate_bundle`
      *
      */
     private String certificateName;

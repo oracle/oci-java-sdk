@@ -6,7 +6,7 @@ package com.oracle.bmc;
 import java.util.regex.Pattern;
 
 /**
- * Oracle Bare Metal Cloud Services unique ID.
+ * Oracle Cloud Infrastructure unique ID.
  * <p>
  * See <a href="https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Concepts/concepts.htm#ocid">documentation</a>.
  */

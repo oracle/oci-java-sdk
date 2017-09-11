@@ -15,7 +15,7 @@ package com.oracle.bmc.core.model;
  * <p>
  **Note:** If you're a provider who is setting up a physical connection to Oracle so customers
  * can use FastConnect over the connection, be aware that your connection is modeled the
- * same way as a colocated customer's (with `CrossConnect` and `CrossConnectGroup` objects, etc.).
+ * same way as a colocated customer's (with `CrossConnect` and `CrossConnectGroup` objects, and so on).
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see

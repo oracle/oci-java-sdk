@@ -13,7 +13,7 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 /**
- * Enum for the various signing strategies used by BMC.
+ * Enum for the various signing strategies used by OCI.
  */
 @InternalSdk
 @RequiredArgsConstructor

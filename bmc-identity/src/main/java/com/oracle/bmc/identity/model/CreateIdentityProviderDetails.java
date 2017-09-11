@@ -52,13 +52,16 @@ public class CreateIdentityProviderDetails {
     @javax.validation.constraints.Size(min = 1, max = 400)
     String description;
     /**
-     * The identity provider service or product (e.g., Oracle Identity Cloud Service).
+     * The identity provider service or product.
+     * Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft
+     * Active Directory Federation Services (ADFS).
      * <p>
      * Example: `IDCS`
      *
      **/
     public enum ProductType {
         Idcs("IDCS"),
+        Adfs("ADFS"),
         ;
 
         private final String value;
@@ -89,7 +92,9 @@ public class CreateIdentityProviderDetails {
         }
     };
     /**
-     * The identity provider service or product (e.g., Oracle Identity Cloud Service).
+     * The identity provider service or product.
+     * Supported identity providers are Oracle Identity Cloud Service (IDCS) and Microsoft
+     * Active Directory Federation Services (ADFS).
      * <p>
      * Example: `IDCS`
      *

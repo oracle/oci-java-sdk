@@ -208,6 +208,80 @@ public class ComputeWaiters {
      * @param targetState The desired state to wait for.
      * @return A new Waiter instance.
      */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetInstanceConsoleConnectionRequest, GetInstanceConsoleConnectionResponse>
+            forInstanceConsoleConnection(
+                    GetInstanceConsoleConnectionRequest request,
+                    com.oracle.bmc.core.model.InstanceConsoleConnection.LifecycleState
+                            targetState) {
+        return forInstanceConsoleConnection(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using the provided configuration.
+     *
+     * @param request The request to send.
+     * @param targetState The desired state to wait for.
+     * @param terminationStrategy The {@link TerminationStrategy} to use.
+     * @param delayStrategy The {@link DelayStrategy} to use.
+     * @return A new Waiter instance.
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetInstanceConsoleConnectionRequest, GetInstanceConsoleConnectionResponse>
+            forInstanceConsoleConnection(
+                    GetInstanceConsoleConnectionRequest request,
+                    com.oracle.bmc.core.model.InstanceConsoleConnection.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        return forInstanceConsoleConnection(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    // Helper method to create a new Waiter for InstanceConsoleConnection.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetInstanceConsoleConnectionRequest, GetInstanceConsoleConnectionResponse>
+            forInstanceConsoleConnection(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetInstanceConsoleConnectionRequest request,
+                    final com.oracle.bmc.core.model.InstanceConsoleConnection.LifecycleState
+                            targetState) {
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetInstanceConsoleConnectionRequest,
+                                GetInstanceConsoleConnectionResponse>() {
+                            @Override
+                            public GetInstanceConsoleConnectionResponse apply(
+                                    GetInstanceConsoleConnectionRequest request) {
+                                return client.getInstanceConsoleConnection(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<
+                                GetInstanceConsoleConnectionResponse>() {
+                            @Override
+                            public boolean apply(GetInstanceConsoleConnectionResponse response) {
+                                return response.getInstanceConsoleConnection().getLifecycleState()
+                                        == targetState;
+                            }
+                        },
+                        targetState
+                                == com.oracle.bmc.core.model.InstanceConsoleConnection
+                                        .LifecycleState.Deleted),
+                request);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using default configuration.
+     *
+     * @param request The request to send.
+     * @param targetState The desired state to wait for.
+     * @return A new Waiter instance.
+     */
     public com.oracle.bmc.waiter.Waiter<GetVnicAttachmentRequest, GetVnicAttachmentResponse>
             forVnicAttachment(
                     GetVnicAttachmentRequest request,

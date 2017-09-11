@@ -137,7 +137,8 @@ public class HealthChecker {
     Integer returnCode;
 
     /**
-     * The maximum timeout before a retry, in milliseconds. Defaults to 3000 (3 seconds).
+     * The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply
+     * returns within this timeout period. Defaults to 3000 (3 seconds).
      * <p>
      * Example: `6000`
      *

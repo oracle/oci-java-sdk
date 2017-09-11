@@ -38,7 +38,7 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Creates a new virtual Customer-Premises Equipment (CPE) object in the specified compartment. For
-     * more information, see [Managing IPSec VPNs](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPsec.htm).
+     * more information, see [IPSec VPNs](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPsec.htm).
      * <p>
      * For the purposes of access control, you must provide the OCID of the compartment where you want
      * the CPE to reside. Notice that the CPE doesn't have to be in the same compartment as the IPSec
@@ -47,8 +47,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * compartments and access control, see [Overview of the IAM Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm).
      * For information about OCIDs, see [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      * <p>
-     * You must provide the public IP address of your on-premise router. See
-     * [Configuring Your On-Premise Router](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/configuringCPE.htm).
+     * You must provide the public IP address of your on-premises router. See
+     * [Configuring Your On-Premises Router for an IPSec VPN](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/configuringCPE.htm).
      * <p>
      * You may optionally specify a *display name* for the CPE, otherwise a default is provided. It does not have to
      * be unique, and you can change it. Avoid entering confidential information.
@@ -131,7 +131,7 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Creates a new Dynamic Routing Gateway (DRG) in the specified compartment. For more information,
-     * see [Managing Dynamic Routing Gateways (DRGs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingDRGs.htm).
+     * see [Dynamic Routing Gateways (DRGs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingDRGs.htm).
      * <p>
      * For the purposes of access control, you must provide the OCID of the compartment where you want
      * the DRG to reside. Notice that the DRG doesn't have to be in the same compartment as the VCN,
@@ -153,7 +153,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * Attaches the specified DRG to the specified VCN. A VCN can be attached to only one DRG at a time,
      * and vice versa. The response includes a `DrgAttachment` object with its own OCID. For more
      * information about DRGs, see
-     * [Managing Dynamic Routing Gateways (DRGs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingDRGs.htm).
+     * [Dynamic Routing Gateways (DRGs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingDRGs.htm).
      * <p>
      * You may optionally specify a *display name* for the attachment, otherwise a default is provided.
      * It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -170,7 +170,7 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Creates a new IPSec connection between the specified DRG and CPE. For more information, see
-     * [Managing IPSec Connections](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPsec.htm).
+     * [IPSec VPNs](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPsec.htm).
      * <p>
      * In the request, you must include at least one static route to the CPE object (you're allowed a maximum
      * of 10). For example: 10.0.8.0/16.
@@ -186,12 +186,12 @@ public interface VirtualNetwork extends AutoCloseable {
      * You may optionally specify a *display name* for the IPSec connection, otherwise a default is provided.
      * It does not have to be unique, and you can change it. Avoid entering confidential information.
      * <p>
-     * After creating the IPSec connection, you need to configure your on-premise router
+     * After creating the IPSec connection, you need to configure your on-premises router
      * with tunnel-specific information returned by
      * {@link #getIPSecConnectionDeviceConfig(GetIPSecConnectionDeviceConfigRequest) getIPSecConnectionDeviceConfig}.
      * For each tunnel, that operation gives you the IP address of Oracle's VPN headend and the shared secret
-     * (i.e., the pre-shared key). For more information, see
-     * [Configuring Your On-Premise Router](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/configuringCPE.htm).
+     * (that is, the pre-shared key). For more information, see
+     * [Configuring Your On-Premises Router for an IPSec VPN](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/configuringCPE.htm).
      * <p>
      * To get the status of the tunnels (whether they're up or down), use
      * {@link #getIPSecConnectionDeviceStatus(GetIPSecConnectionDeviceStatusRequest) getIPSecConnectionDeviceStatus}.
@@ -204,7 +204,7 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Creates a new Internet Gateway for the specified VCN. For more information, see
-     * [Managing Internet Gateways](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIGs.htm).
+     * [Connectivity to the Internet](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIGs.htm).
      * <p>
      * For the purposes of access control, you must provide the OCID of the compartment where you want the Internet
      * Gateway to reside. Notice that the Internet Gateway doesn't have to be in the same compartment as the VCN or
@@ -217,7 +217,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * does not have to be unique, and you can change it. Avoid entering confidential information.
      * <p>
      * For traffic to flow between a subnet and an Internet Gateway, you must create a route rule accordingly in
-     * the subnet's route table (e.g., 0.0.0.0/0 > Internet Gateway). See
+     * the subnet's route table (for example, 0.0.0.0/0 > Internet Gateway). See
      * {@link #updateRouteTable(UpdateRouteTableRequest) updateRouteTable}.
      * <p>
      * You must specify whether the Internet Gateway is enabled when you create it. If it's disabled, that means no
@@ -234,7 +234,7 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Creates a secondary private IP for the specified VNIC.
      * For more information about secondary private IPs, see
-     * [Managing IP Addresses](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPaddresses.htm).
+     * [IP Addresses](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPaddresses.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -246,7 +246,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * Creates a new route table for the specified VCN. In the request you must also include at least one route
      * rule for the new route table. For information on the number of rules you can have in a route table, see
      * [Service Limits](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/servicelimits.htm). For general information about route
-     * tables in your VCN, see [Managing Route Tables](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm).
+     * tables in your VCN, see [Route Tables](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm).
      * <p>
      * For the purposes of access control, you must provide the OCID of the compartment where you want the route
      * table to reside. Notice that the route table doesn't have to be in the same compartment as the VCN, subnets,
@@ -289,7 +289,7 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Creates a new subnet in the specified VCN. You can't change the size of the subnet after creation,
      * so it's important to think about the size of subnets you need before creating them.
-     * For more information, see [Managing Subnets](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingsubnets.htm).
+     * For more information, see [VCNs and Subnets](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVCNs.htm).
      * For information on the number of subnets you can have in a VCN, see
      * [Service Limits](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/servicelimits.htm).
      * <p>
@@ -302,7 +302,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * <p>
      * You may optionally associate a route table with the subnet. If you don't, the subnet will use the
      * VCN's default route table. For more information about route tables, see
-     * [Managing Route Tables](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm).
+     * [Route Tables](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm).
      * <p>
      * You may optionally associate a security list with the subnet. If you don't, the subnet will use the
      * VCN's default security list. For more information about security lists, see
@@ -310,7 +310,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * <p>
      * You may optionally associate a set of DHCP options with the subnet. If you don't, the subnet will use the
      * VCN's default set. For more information about DHCP options, see
-     * [Managing DHCP Options](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingDHCP.htm).
+     * [DHCP Options](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingDHCP.htm).
      * <p>
      * You may optionally specify a *display name* for the subnet, otherwise a default is provided.
      * It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -327,12 +327,12 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Creates a new Virtual Cloud Network (VCN). For more information, see
-     * [Managing Virtual Cloud Networks (VCNs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVCNs.htm).
+     * [VCNs and Subnets](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVCNs.htm).
      * <p>
      * For the VCN you must specify a single, contiguous IPv4 CIDR block. Oracle recommends using one of the
      * private IP address ranges specified in [RFC 1918](https://tools.ietf.org/html/rfc1918) (10.0.0.0/8,
      * 172.16/12, and 192.168/16). Example: 172.16.0.0/16. The CIDR block can range from /16 to /30, and it
-     * must not overlap with your on-premise network. You can't change the size of the VCN after creation.
+     * must not overlap with your on-premises network. You can't change the size of the VCN after creation.
      * <p>
      * For the purposes of access control, you must provide the OCID of the compartment where you want the VCN to
      * reside. Consult an Oracle Bare Metal Cloud Services administrator in your organization if you're not sure which
@@ -350,7 +350,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * <p>
      * The VCN automatically comes with a default route table, default security list, and default set of DHCP options.
      * The OCID for each is returned in the response. You can't delete these default objects, but you can change their
-     * contents (i.e., route rules, etc.)
+     * contents (that is, change the route rules, security list rules, and so on).
      * <p>
      * The VCN and subnets you create are not accessible until you attach an Internet Gateway or set up an IPSec VPN
      * or FastConnect. For more information, see
@@ -383,7 +383,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * the traffic to flow through. Make sure you attach the DRG to your
      * VCN and confirm the VCN's routing sends traffic to the DRG. Otherwise
      * traffic will not flow. For more information, see
-     * [Managing Route Tables](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm).
+     * [Route Tables](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -393,7 +393,7 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Deletes the specified CPE object. The CPE must not be connected to a DRG. This is an asynchronous
-     * operation; the CPE's `lifecycleState` will change to TERMINATING temporarily until the CPE is completely
+     * operation. The CPE's `lifecycleState` will change to TERMINATING temporarily until the CPE is completely
      * removed.
      *
      * @param request The request object containing the details to send
@@ -427,7 +427,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * Deletes the specified set of DHCP options, but only if it's not associated with a subnet. You can't delete a
      * VCN's default set of DHCP options.
      * <p>
-     * This is an asynchronous operation; the state of the set of options will switch to TERMINATING temporarily
+     * This is an asynchronous operation. The state of the set of options will switch to TERMINATING temporarily
      * until the set is completely removed.
      *
      * @param request The request object containing the details to send
@@ -439,7 +439,7 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Deletes the specified DRG. The DRG must not be attached to a VCN or be connected to your on-premise
      * network. Also, there must not be a route table that lists the DRG as a target. This is an asynchronous
-     * operation; the DRG's `lifecycleState` will change to TERMINATING temporarily until the DRG is completely
+     * operation. The DRG's `lifecycleState` will change to TERMINATING temporarily until the DRG is completely
      * removed.
      *
      * @param request The request object containing the details to send
@@ -450,7 +450,7 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Detaches a DRG from a VCN by deleting the corresponding `DrgAttachment`. This is an asynchronous
-     * operation; the attachment's `lifecycleState` will change to DETACHING temporarily until the attachment
+     * operation. The attachment's `lifecycleState` will change to DETACHING temporarily until the attachment
      * is completely removed.
      *
      * @param request The request object containing the details to send
@@ -461,12 +461,12 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Deletes the specified IPSec connection. If your goal is to disable the IPSec VPN between your VCN and
-     * on-premise network, it's easiest to simply detach the DRG but keep all the IPSec VPN components intact.
+     * on-premises network, it's easiest to simply detach the DRG but keep all the IPSec VPN components intact.
      * If you were to delete all the components and then later need to create an IPSec VPN again, you would
-     * need to configure your on-premise router again with the new information returned from
+     * need to configure your on-premises router again with the new information returned from
      * {@link #createIPSecConnection(CreateIPSecConnectionRequest) createIPSecConnection}.
      * <p>
-     * This is an asynchronous operation; the connection's `lifecycleState` will change to TERMINATING temporarily
+     * This is an asynchronous operation. The connection's `lifecycleState` will change to TERMINATING temporarily
      * until the connection is completely removed.
      *
      * @param request The request object containing the details to send
@@ -479,7 +479,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * Deletes the specified Internet Gateway. The Internet Gateway does not have to be disabled, but
      * there must not be a route table that lists it as a target.
      * <p>
-     * This is an asynchronous operation; the gateway's `lifecycleState` will change to TERMINATING temporarily
+     * This is an asynchronous operation. The gateway's `lifecycleState` will change to TERMINATING temporarily
      * until the gateway is completely removed.
      *
      * @param request The request object containing the details to send
@@ -506,7 +506,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * Deletes the specified route table, but only if it's not associated with a subnet. You can't delete a
      * VCN's default route table.
      * <p>
-     * This is an asynchronous operation; the route table's `lifecycleState` will change to TERMINATING temporarily
+     * This is an asynchronous operation. The route table's `lifecycleState` will change to TERMINATING temporarily
      * until the route table is completely removed.
      *
      * @param request The request object containing the details to send
@@ -519,7 +519,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * Deletes the specified security list, but only if it's not associated with a subnet. You can't delete
      * a VCN's default security list.
      * <p>
-     * This is an asynchronous operation; the security list's `lifecycleState` will change to TERMINATING temporarily
+     * This is an asynchronous operation. The security list's `lifecycleState` will change to TERMINATING temporarily
      * until the security list is completely removed.
      *
      * @param request The request object containing the details to send
@@ -530,7 +530,7 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Deletes the specified subnet, but only if there are no instances in the subnet. This is an asynchronous
-     * operation; the subnet's `lifecycleState` will change to TERMINATING temporarily. If there are any
+     * operation. The subnet's `lifecycleState` will change to TERMINATING temporarily. If there are any
      * instances in the subnet, the state will instead change back to AVAILABLE.
      *
      * @param request The request object containing the details to send
@@ -541,7 +541,7 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Deletes the specified VCN. The VCN must be empty and have no attached gateways. This is an asynchronous
-     * operation; the VCN's `lifecycleState` will change to TERMINATING temporarily until the VCN is completely
+     * operation. The VCN's `lifecycleState` will change to TERMINATING temporarily until the VCN is completely
      * removed.
      *
      * @param request The request object containing the details to send
@@ -631,7 +631,7 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Gets the specified IPSec connection's basic information, including the static routes for the
-     * on-premise router. If you want the status of the connection (whether it's up or down), use
+     * on-premises router. If you want the status of the connection (whether it's up or down), use
      * {@link #getIPSecConnectionDeviceStatus(GetIPSecConnectionDeviceStatusRequest) getIPSecConnectionDeviceStatus}.
      *
      * @param request The request object containing the details to send
@@ -774,7 +774,7 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Lists the available port speeds for cross-connects. You need this information
-     * so you can specify your desired port speed (i.e., shape) when you create a
+     * so you can specify your desired port speed (that is, shape) when you create a
      * cross-connect.
      *
      * @param request The request object containing the details to send
@@ -910,7 +910,7 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Lists the available bandwidth levels for virtual circuits. You need this
-     * information so you can specify your desired bandwidth level (i.e., shape)
+     * information so you can specify your desired bandwidth level (that is, shape)
      * when you create a virtual circuit.
      * <p>
      * For the compartment ID, provide the OCID of your tenancy (the root compartment).
@@ -1088,7 +1088,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * <p>
      **Important:** If the virtual circuit is working and in the
      * PROVISIONED state, updating any of the network-related properties
-     * (such as the DRG being used, the BGP ASN, etc.) will cause the virtual
+     * (such as the DRG being used, the BGP ASN, and so on) will cause the virtual
      * circuit's state to switch to PROVISIONING and the related BGP
      * session to go down. After Oracle re-provisions the virtual circuit,
      * its state will return to PROVISIONED. Make sure you confirm that

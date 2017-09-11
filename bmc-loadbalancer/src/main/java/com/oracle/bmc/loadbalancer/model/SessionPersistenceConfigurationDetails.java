@@ -6,8 +6,7 @@ package com.oracle.bmc.loadbalancer.model;
 /**
  * The configuration details for implementing session persistence. Session persistence enables the Load Balancing
  * Service to direct any number of requests that originate from a single logical client to a single backend web server.
- * <p>
- * For more information on session persistence, see [Session Persistence](https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Reference/sessionpersistence.htm).
+ * For more information, see [Session Persistence](https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Reference/sessionpersistence.htm).
  * <p>
  * To disable session persistence on a running load balancer, use the
  * {@link #updateBackendSet(UpdateBackendSetRequest) updateBackendSet} operation and specify \"null\" for the
@@ -59,6 +58,7 @@ public class SessionPersistenceConfigurationDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("cookieName")
     @javax.validation.Valid
     @javax.validation.constraints.NotNull
+    @javax.validation.constraints.Size(min = 1, max = 4096)
     String cookieName;
 
     /**

@@ -23,16 +23,24 @@ import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 
 /**
- * Simple implementation to read BMC configuration files.
+ * Simple implementation to read OCI configuration files.
  * <p>
  * Note, config files <b>MUST</b> contain a "DEFAULT" profile, else validation
  * will fail. Additional profiles are optional.
  */
+@lombok.extern.slf4j.Slf4j
 public final class ConfigFileReader {
     /**
      * Default location of the config file.
      */
-    public static final String DEFAULT_FILE_PATH = "~/.oraclebmc/config";
+    public static final String DEFAULT_FILE_PATH = "~/.oci/config";
+
+    /**
+     * The fallback default location of the config file. If and only if the {@link #DEFAULT_FILE_PATH} does not exist,
+     * this fallback default location will be used.
+     */
+    public static final String FALLBACK_DEFAULT_FILE_PATH = "~/.oraclebmc/config";
+
     private static final String DEFAULT_PROFILE_NAME = "DEFAULT";
 
     /**
@@ -56,7 +64,27 @@ public final class ConfigFileReader {
      *             if the file could not be read.
      */
     public static ConfigFile parseDefault(@Nullable String profile) throws IOException {
-        return parse(DEFAULT_FILE_PATH, profile);
+        File effectiveFile = null;
+
+        File defaultFile = new File(expandUserHome(DEFAULT_FILE_PATH));
+        File fallbackDefaultFile = new File(expandUserHome(FALLBACK_DEFAULT_FILE_PATH));
+
+        if (defaultFile.exists() && defaultFile.isFile()) {
+            effectiveFile = defaultFile;
+        } else if (fallbackDefaultFile.exists() && fallbackDefaultFile.isFile()) {
+            effectiveFile = fallbackDefaultFile;
+        }
+
+        if (effectiveFile != null) {
+            LOG.debug("Loading config file from: {}", effectiveFile);
+            return parse(effectiveFile.getAbsolutePath(), profile);
+        } else {
+            throw new IOException(
+                    String.format(
+                            "Can't load the default config from '%s' or '%s' because it does not exist or it is not a file.",
+                            defaultFile.getAbsolutePath(),
+                            fallbackDefaultFile.getAbsolutePath()));
+        }
     }
 
     /**
@@ -149,7 +177,7 @@ public final class ConfigFileReader {
     private ConfigFileReader() {}
 
     /**
-     * ConfigFile represents a simple lookup mechanism for a BMC config file.
+     * ConfigFile represents a simple lookup mechanism for a OCI config file.
      */
     @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
     public static final class ConfigFile {

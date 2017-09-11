@@ -163,6 +163,34 @@ public class IdentityAsyncClient implements IdentityAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateCustomerSecretKeyResponse> createCustomerSecretKey(
+            CreateCustomerSecretKeyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateCustomerSecretKeyRequest, CreateCustomerSecretKeyResponse>
+                    handler) {
+        LOG.trace("Called async createCustomerSecretKey");
+        request = CreateCustomerSecretKeyConverter.interceptRequest(request);
+        javax.ws.rs.client.Invocation.Builder ib =
+                CreateCustomerSecretKeyConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateCustomerSecretKeyResponse>
+                transformer = CreateCustomerSecretKeyConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.post(
+                        ib,
+                        request.getCreateCustomerSecretKeyDetails(),
+                        request,
+                        onSuccess,
+                        onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateGroupResponse> createGroup(
             CreateGroupRequest request,
             com.oracle.bmc.responses.AsyncHandler<CreateGroupRequest, CreateGroupResponse>
@@ -364,6 +392,29 @@ public class IdentityAsyncClient implements IdentityAsync {
                 DeleteApiKeyConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteApiKeyResponse>
                 transformer = DeleteApiKeyConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.delete(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCustomerSecretKeyResponse> deleteCustomerSecretKey(
+            DeleteCustomerSecretKeyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteCustomerSecretKeyRequest, DeleteCustomerSecretKeyResponse>
+                    handler) {
+        LOG.trace("Called async deleteCustomerSecretKey");
+        request = DeleteCustomerSecretKeyConverter.interceptRequest(request);
+        javax.ws.rs.client.Invocation.Builder ib =
+                DeleteCustomerSecretKeyConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCustomerSecretKeyResponse>
+                transformer = DeleteCustomerSecretKeyConverter.fromResponse();
 
         com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
                 new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
@@ -747,6 +798,29 @@ public class IdentityAsyncClient implements IdentityAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListCustomerSecretKeysResponse> listCustomerSecretKeys(
+            ListCustomerSecretKeysRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListCustomerSecretKeysRequest, ListCustomerSecretKeysResponse>
+                    handler) {
+        LOG.trace("Called async listCustomerSecretKeys");
+        request = ListCustomerSecretKeysConverter.interceptRequest(request);
+        javax.ws.rs.client.Invocation.Builder ib =
+                ListCustomerSecretKeysConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListCustomerSecretKeysResponse>
+                transformer = ListCustomerSecretKeysConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListGroupsResponse> listGroups(
             ListGroupsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListGroupsRequest, ListGroupsResponse> handler) {
@@ -988,6 +1062,34 @@ public class IdentityAsyncClient implements IdentityAsync {
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.put(ib, request.getUpdateCompartmentDetails(), request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCustomerSecretKeyResponse> updateCustomerSecretKey(
+            UpdateCustomerSecretKeyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateCustomerSecretKeyRequest, UpdateCustomerSecretKeyResponse>
+                    handler) {
+        LOG.trace("Called async updateCustomerSecretKey");
+        request = UpdateCustomerSecretKeyConverter.interceptRequest(request);
+        javax.ws.rs.client.Invocation.Builder ib =
+                UpdateCustomerSecretKeyConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCustomerSecretKeyResponse>
+                transformer = UpdateCustomerSecretKeyConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.put(
+                        ib,
+                        request.getUpdateCustomerSecretKeyDetails(),
+                        request,
+                        onSuccess,
+                        onError);
         return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 

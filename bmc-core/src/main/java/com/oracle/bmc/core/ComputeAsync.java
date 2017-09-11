@@ -39,7 +39,7 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Creates a secondary VNIC and attaches it to the specified instance.
      * For more information about secondary VNICs, see
-     * [Managing Virtual Network Interface Cards (VNICs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm).
+     * [Virtual Network Interface Cards (VNICs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -140,6 +140,24 @@ public interface ComputeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CreateImageRequest, CreateImageResponse> handler);
 
     /**
+     * Create a console connection for an instance.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateInstanceConsoleConnectionResponse>
+            createInstanceConsoleConnection(
+                    CreateInstanceConsoleConnectionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateInstanceConsoleConnectionRequest,
+                                    CreateInstanceConsoleConnectionResponse>
+                            handler);
+
+    /**
      * Deletes the specified console history metadata and the console history data.
      *
      * @param request The request object containing the details to send
@@ -170,6 +188,24 @@ public interface ComputeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<DeleteImageRequest, DeleteImageResponse> handler);
 
     /**
+     * Delete the console connection for an instance
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteInstanceConsoleConnectionResponse>
+            deleteInstanceConsoleConnection(
+                    DeleteInstanceConsoleConnectionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteInstanceConsoleConnectionRequest,
+                                    DeleteInstanceConsoleConnectionResponse>
+                            handler);
+
+    /**
      * Detaches and deletes the specified secondary VNIC.
      * This operation cannot be used on the instance's primary VNIC.
      * When you terminate an instance, all attached VNICs (primary
@@ -190,7 +226,7 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Detaches a storage volume from an instance. You must specify the OCID of the volume attachment.
      * <p>
-     * This is an asynchronous operation; the attachment's `lifecycleState` will change to DETACHING temporarily
+     * This is an asynchronous operation. The attachment's `lifecycleState` will change to DETACHING temporarily
      * until the attachment is completely removed.
      *
      *
@@ -295,6 +331,23 @@ public interface ComputeAsync extends AutoCloseable {
     java.util.concurrent.Future<GetInstanceResponse> getInstance(
             GetInstanceRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetInstanceRequest, GetInstanceResponse> handler);
+
+    /**
+     * Get the details of an instance console connection
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetInstanceConsoleConnectionResponse> getInstanceConsoleConnection(
+            GetInstanceConsoleConnectionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetInstanceConsoleConnectionRequest,
+                            GetInstanceConsoleConnectionResponse>
+                    handler);
 
     /**
      * Gets the information for the specified VNIC attachment.
@@ -409,7 +462,7 @@ public interface ComputeAsync extends AutoCloseable {
      * {@link #getVnic(GetVnicRequest, Consumer, Consumer) getVnic} with the VNIC ID.
      * <p>
      * You can later add secondary VNICs to an instance. For more information, see
-     * [Managing Virtual Network Interface Cards (VNICs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm).
+     * [Virtual Network Interface Cards (VNICs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -457,6 +510,24 @@ public interface ComputeAsync extends AutoCloseable {
     java.util.concurrent.Future<ListImagesResponse> listImages(
             ListImagesRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListImagesRequest, ListImagesResponse> handler);
+
+    /**
+     * Lists the console connections for the specified compartment or instance that have not been deleted.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListInstanceConsoleConnectionsResponse>
+            listInstanceConsoleConnections(
+                    ListInstanceConsoleConnectionsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListInstanceConsoleConnectionsRequest,
+                                    ListInstanceConsoleConnectionsResponse>
+                            handler);
 
     /**
      * Lists the instances in the specified compartment and the specified Availability Domain.
@@ -535,7 +606,7 @@ public interface ComputeAsync extends AutoCloseable {
      * Terminates the specified instance. Any attached VNICs and volumes are automatically detached
      * when the instance terminates.
      * <p>
-     * This is an asynchronous operation; the instance's `lifecycleState` will change to TERMINATING temporarily
+     * This is an asynchronous operation. The instance's `lifecycleState` will change to TERMINATING temporarily
      * until the instance is completely removed.
      *
      *
