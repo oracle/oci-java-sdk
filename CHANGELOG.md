@@ -16,8 +16,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ## 1.2.15 - 2017-09-11
 
 ### Changed
-- Maven packages renamed from "oracle-bmc-*" to "oci-*"" (group id renamed from "com.oracle.bmc.sdk" to "com.oracle.oci.sdk")
-- Default configuration file location changed from "~/.oraclebmc/config" to "~/.oci/config"; old location deprecated (see "Deprecated" below)
+- Maven packages renamed from `oracle-bmc-*` to `oci-*` (group id renamed from `com.oracle.bmc.sdk` to `com.oracle.oci.sdk`)
+- Default configuration file location changed from `~/.oraclebmc/config` to `~/.oci/config`; old location deprecated (see "Deprecated" below)
 
 ### Added
 - Support for instance console connections
@@ -26,7 +26,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for CustomerSecretKeys management
 
 ### Deprecated
-- The previous default configuration file location, "~/.oraclebmc/config", has been deprecated: please use "~/.oci/config" instead. The old location still works, if file at new location does not exist.
+- The previous default configuration file location, `~/.oraclebmc/config`, has been deprecated: please use `~/.oci/config` instead. The old location still works, if file at new location does not exist.
 
 ## 1.2.13 - 2017-08-10
 ### Fixed
