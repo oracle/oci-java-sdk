@@ -18,65 +18,149 @@ package com.oracle.bmc.core.model;
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "attachmentType"
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class IScsiVolumeAttachment extends VolumeAttachment {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
+        public Builder availabilityDomain(String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
+            this.__explicitlySet__.add("availabilityDomain");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
+
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            this.__explicitlySet__.add("displayName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
+
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
+        public Builder instanceId(String instanceId) {
+            this.instanceId = instanceId;
+            this.__explicitlySet__.add("instanceId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
+
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        public Builder timeCreated(java.util.Date timeCreated) {
+            this.timeCreated = timeCreated;
+            this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("volumeId")
         private String volumeId;
+
+        public Builder volumeId(String volumeId) {
+            this.volumeId = volumeId;
+            this.__explicitlySet__.add("volumeId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("chapSecret")
         private String chapSecret;
 
+        public Builder chapSecret(String chapSecret) {
+            this.chapSecret = chapSecret;
+            this.__explicitlySet__.add("chapSecret");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("chapUsername")
         private String chapUsername;
+
+        public Builder chapUsername(String chapUsername) {
+            this.chapUsername = chapUsername;
+            this.__explicitlySet__.add("chapUsername");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("ipv4")
         private String ipv4;
 
+        public Builder ipv4(String ipv4) {
+            this.ipv4 = ipv4;
+            this.__explicitlySet__.add("ipv4");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("iqn")
         private String iqn;
+
+        public Builder iqn(String iqn) {
+            this.iqn = iqn;
+            this.__explicitlySet__.add("iqn");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
+        public Builder port(Integer port) {
+            this.port = port;
+            this.__explicitlySet__.add("port");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public IScsiVolumeAttachment build() {
-            return new IScsiVolumeAttachment(
-                    availabilityDomain,
-                    compartmentId,
-                    displayName,
-                    id,
-                    instanceId,
-                    lifecycleState,
-                    timeCreated,
-                    volumeId,
-                    chapSecret,
-                    chapUsername,
-                    ipv4,
-                    iqn,
-                    port);
+            IScsiVolumeAttachment __instance__ =
+                    new IScsiVolumeAttachment(
+                            availabilityDomain,
+                            compartmentId,
+                            displayName,
+                            id,
+                            instanceId,
+                            lifecycleState,
+                            timeCreated,
+                            volumeId,
+                            chapSecret,
+                            chapUsername,
+                            ipv4,
+                            iqn,
+                            port);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -160,9 +244,6 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv4")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 7, max = 15)
     String ipv4;
 
     /**
@@ -172,9 +253,6 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("iqn")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1)
     String iqn;
 
     /**
@@ -184,9 +262,8 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Min(1)
-    @javax.validation.constraints.Max(65535)
     Integer port;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

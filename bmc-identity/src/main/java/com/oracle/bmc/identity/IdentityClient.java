@@ -140,7 +140,7 @@ public class IdentityClient implements Identity {
     public AddUserToGroupResponse addUserToGroup(AddUserToGroupRequest request) {
         LOG.trace("Called addUserToGroup");
         request = AddUserToGroupConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 AddUserToGroupConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, AddUserToGroupResponse>
                 transformer = AddUserToGroupConverter.fromResponse();
@@ -154,7 +154,7 @@ public class IdentityClient implements Identity {
     public CreateCompartmentResponse createCompartment(CreateCompartmentRequest request) {
         LOG.trace("Called createCompartment");
         request = CreateCompartmentConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateCompartmentConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateCompartmentResponse>
                 transformer = CreateCompartmentConverter.fromResponse();
@@ -169,7 +169,7 @@ public class IdentityClient implements Identity {
             CreateCustomerSecretKeyRequest request) {
         LOG.trace("Called createCustomerSecretKey");
         request = CreateCustomerSecretKeyConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateCustomerSecretKeyConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateCustomerSecretKeyResponse>
                 transformer = CreateCustomerSecretKeyConverter.fromResponse();
@@ -183,7 +183,7 @@ public class IdentityClient implements Identity {
     public CreateGroupResponse createGroup(CreateGroupRequest request) {
         LOG.trace("Called createGroup");
         request = CreateGroupConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateGroupConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateGroupResponse>
                 transformer = CreateGroupConverter.fromResponse();
@@ -198,7 +198,7 @@ public class IdentityClient implements Identity {
             CreateIdentityProviderRequest request) {
         LOG.trace("Called createIdentityProvider");
         request = CreateIdentityProviderConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateIdentityProviderConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateIdentityProviderResponse>
                 transformer = CreateIdentityProviderConverter.fromResponse();
@@ -213,7 +213,7 @@ public class IdentityClient implements Identity {
             CreateIdpGroupMappingRequest request) {
         LOG.trace("Called createIdpGroupMapping");
         request = CreateIdpGroupMappingConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateIdpGroupMappingConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateIdpGroupMappingResponse>
                 transformer = CreateIdpGroupMappingConverter.fromResponse();
@@ -228,7 +228,7 @@ public class IdentityClient implements Identity {
             CreateOrResetUIPasswordRequest request) {
         LOG.trace("Called createOrResetUIPassword");
         request = CreateOrResetUIPasswordConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateOrResetUIPasswordConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateOrResetUIPasswordResponse>
                 transformer = CreateOrResetUIPasswordConverter.fromResponse();
@@ -241,7 +241,7 @@ public class IdentityClient implements Identity {
     public CreatePolicyResponse createPolicy(CreatePolicyRequest request) {
         LOG.trace("Called createPolicy");
         request = CreatePolicyConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreatePolicyConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreatePolicyResponse>
                 transformer = CreatePolicyConverter.fromResponse();
@@ -256,7 +256,7 @@ public class IdentityClient implements Identity {
             CreateRegionSubscriptionRequest request) {
         LOG.trace("Called createRegionSubscription");
         request = CreateRegionSubscriptionConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateRegionSubscriptionConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateRegionSubscriptionResponse>
                 transformer = CreateRegionSubscriptionConverter.fromResponse();
@@ -270,7 +270,7 @@ public class IdentityClient implements Identity {
     public CreateSwiftPasswordResponse createSwiftPassword(CreateSwiftPasswordRequest request) {
         LOG.trace("Called createSwiftPassword");
         request = CreateSwiftPasswordConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateSwiftPasswordConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateSwiftPasswordResponse>
                 transformer = CreateSwiftPasswordConverter.fromResponse();
@@ -284,7 +284,8 @@ public class IdentityClient implements Identity {
     public CreateUserResponse createUser(CreateUserRequest request) {
         LOG.trace("Called createUser");
         request = CreateUserConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = CreateUserConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateUserConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateUserResponse> transformer =
                 CreateUserConverter.fromResponse();
 
@@ -297,7 +298,7 @@ public class IdentityClient implements Identity {
     public DeleteApiKeyResponse deleteApiKey(DeleteApiKeyRequest request) {
         LOG.trace("Called deleteApiKey");
         request = DeleteApiKeyConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteApiKeyConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteApiKeyResponse>
                 transformer = DeleteApiKeyConverter.fromResponse();
@@ -311,7 +312,7 @@ public class IdentityClient implements Identity {
             DeleteCustomerSecretKeyRequest request) {
         LOG.trace("Called deleteCustomerSecretKey");
         request = DeleteCustomerSecretKeyConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteCustomerSecretKeyConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCustomerSecretKeyResponse>
                 transformer = DeleteCustomerSecretKeyConverter.fromResponse();
@@ -324,7 +325,7 @@ public class IdentityClient implements Identity {
     public DeleteGroupResponse deleteGroup(DeleteGroupRequest request) {
         LOG.trace("Called deleteGroup");
         request = DeleteGroupConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteGroupConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteGroupResponse>
                 transformer = DeleteGroupConverter.fromResponse();
@@ -338,7 +339,7 @@ public class IdentityClient implements Identity {
             DeleteIdentityProviderRequest request) {
         LOG.trace("Called deleteIdentityProvider");
         request = DeleteIdentityProviderConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteIdentityProviderConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteIdentityProviderResponse>
                 transformer = DeleteIdentityProviderConverter.fromResponse();
@@ -352,7 +353,7 @@ public class IdentityClient implements Identity {
             DeleteIdpGroupMappingRequest request) {
         LOG.trace("Called deleteIdpGroupMapping");
         request = DeleteIdpGroupMappingConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteIdpGroupMappingConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteIdpGroupMappingResponse>
                 transformer = DeleteIdpGroupMappingConverter.fromResponse();
@@ -365,7 +366,7 @@ public class IdentityClient implements Identity {
     public DeletePolicyResponse deletePolicy(DeletePolicyRequest request) {
         LOG.trace("Called deletePolicy");
         request = DeletePolicyConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeletePolicyConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeletePolicyResponse>
                 transformer = DeletePolicyConverter.fromResponse();
@@ -378,7 +379,7 @@ public class IdentityClient implements Identity {
     public DeleteSwiftPasswordResponse deleteSwiftPassword(DeleteSwiftPasswordRequest request) {
         LOG.trace("Called deleteSwiftPassword");
         request = DeleteSwiftPasswordConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteSwiftPasswordConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSwiftPasswordResponse>
                 transformer = DeleteSwiftPasswordConverter.fromResponse();
@@ -391,7 +392,8 @@ public class IdentityClient implements Identity {
     public DeleteUserResponse deleteUser(DeleteUserRequest request) {
         LOG.trace("Called deleteUser");
         request = DeleteUserConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = DeleteUserConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteUserConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteUserResponse> transformer =
                 DeleteUserConverter.fromResponse();
 
@@ -403,7 +405,7 @@ public class IdentityClient implements Identity {
     public GetCompartmentResponse getCompartment(GetCompartmentRequest request) {
         LOG.trace("Called getCompartment");
         request = GetCompartmentConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetCompartmentConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetCompartmentResponse>
                 transformer = GetCompartmentConverter.fromResponse();
@@ -416,7 +418,8 @@ public class IdentityClient implements Identity {
     public GetGroupResponse getGroup(GetGroupRequest request) {
         LOG.trace("Called getGroup");
         request = GetGroupConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = GetGroupConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetGroupConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetGroupResponse> transformer =
                 GetGroupConverter.fromResponse();
 
@@ -428,7 +431,7 @@ public class IdentityClient implements Identity {
     public GetIdentityProviderResponse getIdentityProvider(GetIdentityProviderRequest request) {
         LOG.trace("Called getIdentityProvider");
         request = GetIdentityProviderConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetIdentityProviderConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetIdentityProviderResponse>
                 transformer = GetIdentityProviderConverter.fromResponse();
@@ -441,7 +444,7 @@ public class IdentityClient implements Identity {
     public GetIdpGroupMappingResponse getIdpGroupMapping(GetIdpGroupMappingRequest request) {
         LOG.trace("Called getIdpGroupMapping");
         request = GetIdpGroupMappingConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetIdpGroupMappingConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetIdpGroupMappingResponse>
                 transformer = GetIdpGroupMappingConverter.fromResponse();
@@ -454,7 +457,8 @@ public class IdentityClient implements Identity {
     public GetPolicyResponse getPolicy(GetPolicyRequest request) {
         LOG.trace("Called getPolicy");
         request = GetPolicyConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = GetPolicyConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPolicyConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetPolicyResponse> transformer =
                 GetPolicyConverter.fromResponse();
 
@@ -466,7 +470,8 @@ public class IdentityClient implements Identity {
     public GetTenancyResponse getTenancy(GetTenancyRequest request) {
         LOG.trace("Called getTenancy");
         request = GetTenancyConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = GetTenancyConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetTenancyConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetTenancyResponse> transformer =
                 GetTenancyConverter.fromResponse();
 
@@ -478,7 +483,8 @@ public class IdentityClient implements Identity {
     public GetUserResponse getUser(GetUserRequest request) {
         LOG.trace("Called getUser");
         request = GetUserConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = GetUserConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetUserConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetUserResponse> transformer =
                 GetUserConverter.fromResponse();
 
@@ -491,7 +497,7 @@ public class IdentityClient implements Identity {
             GetUserGroupMembershipRequest request) {
         LOG.trace("Called getUserGroupMembership");
         request = GetUserGroupMembershipConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetUserGroupMembershipConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetUserGroupMembershipResponse>
                 transformer = GetUserGroupMembershipConverter.fromResponse();
@@ -504,7 +510,7 @@ public class IdentityClient implements Identity {
     public ListApiKeysResponse listApiKeys(ListApiKeysRequest request) {
         LOG.trace("Called listApiKeys");
         request = ListApiKeysConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListApiKeysConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListApiKeysResponse>
                 transformer = ListApiKeysConverter.fromResponse();
@@ -518,7 +524,7 @@ public class IdentityClient implements Identity {
             ListAvailabilityDomainsRequest request) {
         LOG.trace("Called listAvailabilityDomains");
         request = ListAvailabilityDomainsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAvailabilityDomainsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListAvailabilityDomainsResponse>
                 transformer = ListAvailabilityDomainsConverter.fromResponse();
@@ -531,7 +537,7 @@ public class IdentityClient implements Identity {
     public ListCompartmentsResponse listCompartments(ListCompartmentsRequest request) {
         LOG.trace("Called listCompartments");
         request = ListCompartmentsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListCompartmentsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListCompartmentsResponse>
                 transformer = ListCompartmentsConverter.fromResponse();
@@ -545,7 +551,7 @@ public class IdentityClient implements Identity {
             ListCustomerSecretKeysRequest request) {
         LOG.trace("Called listCustomerSecretKeys");
         request = ListCustomerSecretKeysConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListCustomerSecretKeysConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListCustomerSecretKeysResponse>
                 transformer = ListCustomerSecretKeysConverter.fromResponse();
@@ -558,7 +564,8 @@ public class IdentityClient implements Identity {
     public ListGroupsResponse listGroups(ListGroupsRequest request) {
         LOG.trace("Called listGroups");
         request = ListGroupsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = ListGroupsConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListGroupsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListGroupsResponse> transformer =
                 ListGroupsConverter.fromResponse();
 
@@ -571,7 +578,7 @@ public class IdentityClient implements Identity {
             ListIdentityProvidersRequest request) {
         LOG.trace("Called listIdentityProviders");
         request = ListIdentityProvidersConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListIdentityProvidersConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListIdentityProvidersResponse>
                 transformer = ListIdentityProvidersConverter.fromResponse();
@@ -584,7 +591,7 @@ public class IdentityClient implements Identity {
     public ListIdpGroupMappingsResponse listIdpGroupMappings(ListIdpGroupMappingsRequest request) {
         LOG.trace("Called listIdpGroupMappings");
         request = ListIdpGroupMappingsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListIdpGroupMappingsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListIdpGroupMappingsResponse>
                 transformer = ListIdpGroupMappingsConverter.fromResponse();
@@ -597,7 +604,7 @@ public class IdentityClient implements Identity {
     public ListPoliciesResponse listPolicies(ListPoliciesRequest request) {
         LOG.trace("Called listPolicies");
         request = ListPoliciesConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListPoliciesConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListPoliciesResponse>
                 transformer = ListPoliciesConverter.fromResponse();
@@ -611,7 +618,7 @@ public class IdentityClient implements Identity {
             ListRegionSubscriptionsRequest request) {
         LOG.trace("Called listRegionSubscriptions");
         request = ListRegionSubscriptionsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListRegionSubscriptionsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListRegionSubscriptionsResponse>
                 transformer = ListRegionSubscriptionsConverter.fromResponse();
@@ -624,7 +631,7 @@ public class IdentityClient implements Identity {
     public ListRegionsResponse listRegions(ListRegionsRequest request) {
         LOG.trace("Called listRegions");
         request = ListRegionsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListRegionsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListRegionsResponse>
                 transformer = ListRegionsConverter.fromResponse();
@@ -637,7 +644,7 @@ public class IdentityClient implements Identity {
     public ListSwiftPasswordsResponse listSwiftPasswords(ListSwiftPasswordsRequest request) {
         LOG.trace("Called listSwiftPasswords");
         request = ListSwiftPasswordsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListSwiftPasswordsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListSwiftPasswordsResponse>
                 transformer = ListSwiftPasswordsConverter.fromResponse();
@@ -651,7 +658,7 @@ public class IdentityClient implements Identity {
             ListUserGroupMembershipsRequest request) {
         LOG.trace("Called listUserGroupMemberships");
         request = ListUserGroupMembershipsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListUserGroupMembershipsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListUserGroupMembershipsResponse>
                 transformer = ListUserGroupMembershipsConverter.fromResponse();
@@ -664,7 +671,8 @@ public class IdentityClient implements Identity {
     public ListUsersResponse listUsers(ListUsersRequest request) {
         LOG.trace("Called listUsers");
         request = ListUsersConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = ListUsersConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListUsersConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListUsersResponse> transformer =
                 ListUsersConverter.fromResponse();
 
@@ -676,7 +684,7 @@ public class IdentityClient implements Identity {
     public RemoveUserFromGroupResponse removeUserFromGroup(RemoveUserFromGroupRequest request) {
         LOG.trace("Called removeUserFromGroup");
         request = RemoveUserFromGroupConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RemoveUserFromGroupConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, RemoveUserFromGroupResponse>
                 transformer = RemoveUserFromGroupConverter.fromResponse();
@@ -689,7 +697,7 @@ public class IdentityClient implements Identity {
     public UpdateCompartmentResponse updateCompartment(UpdateCompartmentRequest request) {
         LOG.trace("Called updateCompartment");
         request = UpdateCompartmentConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateCompartmentConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCompartmentResponse>
                 transformer = UpdateCompartmentConverter.fromResponse();
@@ -704,7 +712,7 @@ public class IdentityClient implements Identity {
             UpdateCustomerSecretKeyRequest request) {
         LOG.trace("Called updateCustomerSecretKey");
         request = UpdateCustomerSecretKeyConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateCustomerSecretKeyConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCustomerSecretKeyResponse>
                 transformer = UpdateCustomerSecretKeyConverter.fromResponse();
@@ -718,7 +726,7 @@ public class IdentityClient implements Identity {
     public UpdateGroupResponse updateGroup(UpdateGroupRequest request) {
         LOG.trace("Called updateGroup");
         request = UpdateGroupConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateGroupConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateGroupResponse>
                 transformer = UpdateGroupConverter.fromResponse();
@@ -733,7 +741,7 @@ public class IdentityClient implements Identity {
             UpdateIdentityProviderRequest request) {
         LOG.trace("Called updateIdentityProvider");
         request = UpdateIdentityProviderConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateIdentityProviderConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateIdentityProviderResponse>
                 transformer = UpdateIdentityProviderConverter.fromResponse();
@@ -748,7 +756,7 @@ public class IdentityClient implements Identity {
             UpdateIdpGroupMappingRequest request) {
         LOG.trace("Called updateIdpGroupMapping");
         request = UpdateIdpGroupMappingConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateIdpGroupMappingConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateIdpGroupMappingResponse>
                 transformer = UpdateIdpGroupMappingConverter.fromResponse();
@@ -762,7 +770,7 @@ public class IdentityClient implements Identity {
     public UpdatePolicyResponse updatePolicy(UpdatePolicyRequest request) {
         LOG.trace("Called updatePolicy");
         request = UpdatePolicyConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdatePolicyConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePolicyResponse>
                 transformer = UpdatePolicyConverter.fromResponse();
@@ -776,7 +784,7 @@ public class IdentityClient implements Identity {
     public UpdateSwiftPasswordResponse updateSwiftPassword(UpdateSwiftPasswordRequest request) {
         LOG.trace("Called updateSwiftPassword");
         request = UpdateSwiftPasswordConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateSwiftPasswordConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSwiftPasswordResponse>
                 transformer = UpdateSwiftPasswordConverter.fromResponse();
@@ -790,7 +798,8 @@ public class IdentityClient implements Identity {
     public UpdateUserResponse updateUser(UpdateUserRequest request) {
         LOG.trace("Called updateUser");
         request = UpdateUserConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = UpdateUserConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateUserConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateUserResponse> transformer =
                 UpdateUserConverter.fromResponse();
 
@@ -803,7 +812,7 @@ public class IdentityClient implements Identity {
     public UpdateUserStateResponse updateUserState(UpdateUserStateRequest request) {
         LOG.trace("Called updateUserState");
         request = UpdateUserStateConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateUserStateConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateUserStateResponse>
                 transformer = UpdateUserStateConverter.fromResponse();
@@ -817,7 +826,7 @@ public class IdentityClient implements Identity {
     public UploadApiKeyResponse uploadApiKey(UploadApiKeyRequest request) {
         LOG.trace("Called uploadApiKey");
         request = UploadApiKeyConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UploadApiKeyConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UploadApiKeyResponse>
                 transformer = UploadApiKeyConverter.fromResponse();

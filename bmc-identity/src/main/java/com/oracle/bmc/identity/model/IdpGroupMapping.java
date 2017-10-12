@@ -20,45 +20,99 @@ package com.oracle.bmc.identity.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = IdpGroupMapping.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class IdpGroupMapping {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("idpId")
         private String idpId;
+
+        public Builder idpId(String idpId) {
+            this.idpId = idpId;
+            this.__explicitlySet__.add("idpId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("idpGroupName")
         private String idpGroupName;
 
+        public Builder idpGroupName(String idpGroupName) {
+            this.idpGroupName = idpGroupName;
+            this.__explicitlySet__.add("idpGroupName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("groupId")
         private String groupId;
+
+        public Builder groupId(String groupId) {
+            this.groupId = groupId;
+            this.__explicitlySet__.add("groupId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
+
+        public Builder timeCreated(java.util.Date timeCreated) {
+            this.timeCreated = timeCreated;
+            this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
         private Long inactiveStatus;
 
+        public Builder inactiveStatus(Long inactiveStatus) {
+            this.inactiveStatus = inactiveStatus;
+            this.__explicitlySet__.add("inactiveStatus");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public IdpGroupMapping build() {
-            return new IdpGroupMapping(
-                    id,
-                    idpId,
-                    idpGroupName,
-                    groupId,
-                    compartmentId,
-                    timeCreated,
-                    lifecycleState,
-                    inactiveStatus);
+            IdpGroupMapping __instance__ =
+                    new IdpGroupMapping(
+                            id,
+                            idpId,
+                            idpGroupName,
+                            groupId,
+                            compartmentId,
+                            timeCreated,
+                            lifecycleState,
+                            inactiveStatus);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -85,40 +139,30 @@ public class IdpGroupMapping {
      * The OCID of the `IdpGroupMapping`.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String id;
 
     /**
      * The OCID of the `IdentityProvider` this mapping belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("idpId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String idpId;
 
     /**
      * The name of the IdP group that is mapped to the IAM Service group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("idpGroupName")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String idpGroupName;
 
     /**
      * The OCID of the IAM Service group that is mapped to the IdP group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String groupId;
 
     /**
      * The OCID of the tenancy containing the `IdentityProvider`.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String compartmentId;
 
     /**
@@ -128,8 +172,6 @@ public class IdpGroupMapping {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     java.util.Date timeCreated;
     /**
      * The mapping's current state.  After creating a mapping object, make sure its `lifecycleState` changes
@@ -188,9 +230,6 @@ public class IdpGroupMapping {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 64)
     LifecycleState lifecycleState;
 
     /**
@@ -198,4 +237,7 @@ public class IdpGroupMapping {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
     Long inactiveStatus;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

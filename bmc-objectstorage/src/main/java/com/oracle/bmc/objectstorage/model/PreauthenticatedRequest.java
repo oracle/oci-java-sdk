@@ -8,35 +8,83 @@ package com.oracle.bmc.objectstorage.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = PreauthenticatedRequest.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class PreauthenticatedRequest {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
+
+        public Builder name(String name) {
+            this.name = name;
+            this.__explicitlySet__.add("name");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("accessUri")
         private String accessUri;
 
+        public Builder accessUri(String accessUri) {
+            this.accessUri = accessUri;
+            this.__explicitlySet__.add("accessUri");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
+
+        public Builder objectName(String objectName) {
+            this.objectName = objectName;
+            this.__explicitlySet__.add("objectName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("accessType")
         private AccessType accessType;
 
+        public Builder accessType(AccessType accessType) {
+            this.accessType = accessType;
+            this.__explicitlySet__.add("accessType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
         private java.util.Date timeExpires;
+
+        public Builder timeExpires(java.util.Date timeExpires) {
+            this.timeExpires = timeExpires;
+            this.__explicitlySet__.add("timeExpires");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        public Builder timeCreated(java.util.Date timeCreated) {
+            this.timeCreated = timeCreated;
+            this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public PreauthenticatedRequest build() {
-            return new PreauthenticatedRequest(
-                    id, name, accessUri, objectName, accessType, timeExpires, timeCreated);
+            PreauthenticatedRequest __instance__ =
+                    new PreauthenticatedRequest(
+                            id, name, accessUri, objectName, accessType, timeExpires, timeCreated);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -62,24 +110,18 @@ public class PreauthenticatedRequest {
      * the unique identifier to use when directly addressing the pre-authenticated request
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String id;
 
     /**
      * the user supplied name of the pre-authenticated request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String name;
 
     /**
      * the uri to embed in the url when using the pre-authenticated request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessUri")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String accessUri;
 
     /**
@@ -139,8 +181,6 @@ public class PreauthenticatedRequest {
      * the operation that can be performed on this resource e.g PUT or GET.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessType")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     AccessType accessType;
 
     /**
@@ -149,8 +189,6 @@ public class PreauthenticatedRequest {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     java.util.Date timeExpires;
 
     /**
@@ -159,7 +197,8 @@ public class PreauthenticatedRequest {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     java.util.Date timeCreated;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

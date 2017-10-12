@@ -20,7 +20,7 @@ public class DeleteCrossConnectGroupConverter {
         return request;
     }
 
-    public static javax.ws.rs.client.Invocation.Builder fromRequest(
+    public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
             DeleteCrossConnectGroupRequest request) {
         if (request == null) {
@@ -31,7 +31,7 @@ public class DeleteCrossConnectGroupConverter {
             throw new NullPointerException("crossConnectGroupId is required");
         }
 
-        javax.ws.rs.client.WebTarget target =
+        com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
                         .path("/20160918")
                         .path("crossConnectGroups")
@@ -39,7 +39,7 @@ public class DeleteCrossConnectGroupConverter {
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
                                         request.getCrossConnectGroupId()));
 
-        javax.ws.rs.client.Invocation.Builder ib = target.request();
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 

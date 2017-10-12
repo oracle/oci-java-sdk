@@ -24,61 +24,149 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Vnic.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class Vnic {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
+        public Builder availabilityDomain(String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
+            this.__explicitlySet__.add("availabilityDomain");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
+
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            this.__explicitlySet__.add("displayName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
         private String hostnameLabel;
+
+        public Builder hostnameLabel(String hostnameLabel) {
+            this.hostnameLabel = hostnameLabel;
+            this.__explicitlySet__.add("hostnameLabel");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
         private Boolean isPrimary;
+
+        public Builder isPrimary(Boolean isPrimary) {
+            this.isPrimary = isPrimary;
+            this.__explicitlySet__.add("isPrimary");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("macAddress")
         private String macAddress;
+
+        public Builder macAddress(String macAddress) {
+            this.macAddress = macAddress;
+            this.__explicitlySet__.add("macAddress");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
         private String privateIp;
 
+        public Builder privateIp(String privateIp) {
+            this.privateIp = privateIp;
+            this.__explicitlySet__.add("privateIp");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("publicIp")
         private String publicIp;
+
+        public Builder publicIp(String publicIp) {
+            this.publicIp = publicIp;
+            this.__explicitlySet__.add("publicIp");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("skipSourceDestCheck")
+        private Boolean skipSourceDestCheck;
+
+        public Builder skipSourceDestCheck(Boolean skipSourceDestCheck) {
+            this.skipSourceDestCheck = skipSourceDestCheck;
+            this.__explicitlySet__.add("skipSourceDestCheck");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        public Builder timeCreated(java.util.Date timeCreated) {
+            this.timeCreated = timeCreated;
+            this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public Vnic build() {
-            return new Vnic(
-                    availabilityDomain,
-                    compartmentId,
-                    displayName,
-                    hostnameLabel,
-                    id,
-                    isPrimary,
-                    lifecycleState,
-                    macAddress,
-                    privateIp,
-                    publicIp,
-                    subnetId,
-                    timeCreated);
+            Vnic __instance__ =
+                    new Vnic(
+                            availabilityDomain,
+                            compartmentId,
+                            displayName,
+                            hostnameLabel,
+                            id,
+                            isPrimary,
+                            lifecycleState,
+                            macAddress,
+                            privateIp,
+                            publicIp,
+                            skipSourceDestCheck,
+                            subnetId,
+                            timeCreated);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -93,6 +181,7 @@ public class Vnic {
                     .macAddress(o.getMacAddress())
                     .privateIp(o.getPrivateIp())
                     .publicIp(o.getPublicIp())
+                    .skipSourceDestCheck(o.getSkipSourceDestCheck())
                     .subnetId(o.getSubnetId())
                     .timeCreated(o.getTimeCreated());
         }
@@ -112,18 +201,12 @@ public class Vnic {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String availabilityDomain;
 
     /**
      * The OCID of the compartment containing the VNIC.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
@@ -132,7 +215,6 @@ public class Vnic {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
@@ -150,16 +232,12 @@ public class Vnic {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
-    @javax.validation.constraints.Size(min = 1, max = 63)
     String hostnameLabel;
 
     /**
      * The OCID of the VNIC.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String id;
 
     /**
@@ -221,8 +299,6 @@ public class Vnic {
      * The current state of the VNIC.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     LifecycleState lifecycleState;
 
     /**
@@ -232,7 +308,6 @@ public class Vnic {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("macAddress")
-    @javax.validation.constraints.Size(min = 1, max = 32)
     String macAddress;
 
     /**
@@ -243,8 +318,6 @@ public class Vnic {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String privateIp;
 
     /**
@@ -255,12 +328,21 @@ public class Vnic {
     String publicIp;
 
     /**
+     * Whether the source/destination check is disabled on the VNIC.
+     * Defaults to `false`, which means the check is performed. For information
+     * about why you would skip the source/destination check, see
+     * [Using a Private IP as a Route Target](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm#privateip).
+     * <p>
+     * Example: `true`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("skipSourceDestCheck")
+    Boolean skipSourceDestCheck;
+
+    /**
      * The OCID of the subnet the VNIC is in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String subnetId;
 
     /**
@@ -270,7 +352,8 @@ public class Vnic {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     java.util.Date timeCreated;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

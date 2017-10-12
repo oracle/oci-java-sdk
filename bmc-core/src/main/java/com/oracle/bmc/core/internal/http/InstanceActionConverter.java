@@ -19,7 +19,7 @@ public class InstanceActionConverter {
         return request;
     }
 
-    public static javax.ws.rs.client.Invocation.Builder fromRequest(
+    public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client, InstanceActionRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -33,7 +33,7 @@ public class InstanceActionConverter {
             throw new NullPointerException("action is required");
         }
 
-        javax.ws.rs.client.WebTarget target =
+        com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
                         .path("/20160918")
                         .path("instances")
@@ -47,7 +47,7 @@ public class InstanceActionConverter {
                         com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                 request.getAction()));
 
-        javax.ws.rs.client.Invocation.Builder ib = target.request();
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 

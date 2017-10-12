@@ -5,12 +5,17 @@ package com.oracle.bmc.util.internal;
 
 import static com.google.common.net.UrlEscapers.urlPathSegmentEscaper;
 
+import java.util.Collection;
 import java.util.Date;
+import java.util.Map;
 import java.util.UUID;
 
 import javax.annotation.Nonnull;
+import javax.ws.rs.client.WebTarget;
 
 import com.oracle.bmc.http.internal.HttpDateUtils;
+import com.oracle.bmc.http.internal.WrappedInvocationBuilder;
+import com.oracle.bmc.http.internal.WrappedWebTarget;
 
 /**
  * Utility functions related to HTTP calls.
@@ -105,5 +110,47 @@ public class HttpUtils {
             return urlPathSegmentEscaper().escape((String) queryParam);
         }
         return queryParam;
+    }
+
+    /**
+     * Attempts to encode a query param if it is a {@link Map}. Each key is prefixed with the value passed as
+     * {@code prefix}. If a value is a {@link Collection}, then the "{prefix}{key}={item}" output is repeated for each
+     * item in the collection, where "{item}" is encoded using {@link HttpUtils#attemptEncodeQueryParam(Object)}.
+     * If the value is not a collection, then the output is simply "{prefix}{key}={value}", where the value is again
+     * encoded.
+     * <p>
+     * Note: this should be called much lower in the HTTP stack (currently being
+     * called through the generated code), so it can encode the serialized values.
+     *
+     * @param target target instance
+     * @param prefix prefix for each key
+     * @param queryParam The map query parameter to encode.
+     * @return a new target instance
+     */
+    public static WrappedWebTarget encodeMapQueryParam(
+            WrappedWebTarget target, String prefix, Map<String, ?> queryParam) {
+        if (prefix == null) {
+            prefix = "";
+        }
+        if (queryParam != null) {
+            for (Map.Entry<String, ?> e : queryParam.entrySet()) {
+                target = encodeMapQueryParamValue(target, prefix + e.getKey(), e.getValue());
+            }
+        }
+        return target;
+    }
+
+    private static WrappedWebTarget encodeMapQueryParamValue(
+            WrappedWebTarget target, String prefixedKey, Object value) {
+        String name = attemptEncodeQueryParam(prefixedKey).toString();
+        if (value instanceof Collection) {
+            Collection<?> c = (Collection<?>) value;
+            for (Object v : c) {
+                target = target.queryParam(name, attemptEncodeQueryParam(v));
+            }
+        } else {
+            target = target.queryParam(name, attemptEncodeQueryParam(value));
+        }
+        return target;
     }
 }

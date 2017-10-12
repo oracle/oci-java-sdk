@@ -15,23 +15,47 @@ package com.oracle.bmc.core.model;
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "destinationType"
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class ExportImageViaObjectStorageTupleDetails extends ExportImageDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
+        public Builder bucketName(String bucketName) {
+            this.bucketName = bucketName;
+            this.__explicitlySet__.add("bucketName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
         private String namespaceName;
+
+        public Builder namespaceName(String namespaceName) {
+            this.namespaceName = namespaceName;
+            this.__explicitlySet__.add("namespaceName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
+        public Builder objectName(String objectName) {
+            this.objectName = objectName;
+            this.__explicitlySet__.add("objectName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public ExportImageViaObjectStorageTupleDetails build() {
-            return new ExportImageViaObjectStorageTupleDetails(
-                    bucketName, namespaceName, objectName);
+            ExportImageViaObjectStorageTupleDetails __instance__ =
+                    new ExportImageViaObjectStorageTupleDetails(
+                            bucketName, namespaceName, objectName);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -74,4 +98,7 @@ public class ExportImageViaObjectStorageTupleDetails extends ExportImageDetails 
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     String objectName;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

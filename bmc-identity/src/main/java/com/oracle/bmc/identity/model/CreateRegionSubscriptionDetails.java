@@ -8,16 +8,28 @@ package com.oracle.bmc.identity.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateRegionSubscriptionDetails.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CreateRegionSubscriptionDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("regionKey")
         private String regionKey;
 
+        public Builder regionKey(String regionKey) {
+            this.regionKey = regionKey;
+            this.__explicitlySet__.add("regionKey");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public CreateRegionSubscriptionDetails build() {
-            return new CreateRegionSubscriptionDetails(regionKey);
+            CreateRegionSubscriptionDetails __instance__ =
+                    new CreateRegionSubscriptionDetails(regionKey);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -45,8 +57,8 @@ public class CreateRegionSubscriptionDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regionKey")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 16)
     String regionKey;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

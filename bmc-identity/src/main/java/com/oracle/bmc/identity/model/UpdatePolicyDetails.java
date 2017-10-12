@@ -8,22 +8,46 @@ package com.oracle.bmc.identity.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdatePolicyDetails.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class UpdatePolicyDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("statements")
         private java.util.List<String> statements;
+
+        public Builder statements(java.util.List<String> statements) {
+            this.statements = statements;
+            this.__explicitlySet__.add("statements");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("versionDate")
         private java.util.Date versionDate;
 
+        public Builder versionDate(java.util.Date versionDate) {
+            this.versionDate = versionDate;
+            this.__explicitlySet__.add("versionDate");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public UpdatePolicyDetails build() {
-            return new UpdatePolicyDetails(description, statements, versionDate);
+            UpdatePolicyDetails __instance__ =
+                    new UpdatePolicyDetails(description, statements, versionDate);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -45,7 +69,6 @@ public class UpdatePolicyDetails {
      * The description you assign to the policy. Does not have to be unique, and it's changeable.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    @javax.validation.constraints.Size(min = 1, max = 400)
     String description;
 
     /**
@@ -65,4 +88,7 @@ public class UpdatePolicyDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("versionDate")
     java.util.Date versionDate;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

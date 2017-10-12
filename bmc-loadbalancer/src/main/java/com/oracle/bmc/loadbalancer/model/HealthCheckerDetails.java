@@ -11,45 +11,99 @@ package com.oracle.bmc.loadbalancer.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = HealthCheckerDetails.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class HealthCheckerDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("intervalInMillis")
         private Integer intervalInMillis;
 
+        public Builder intervalInMillis(Integer intervalInMillis) {
+            this.intervalInMillis = intervalInMillis;
+            this.__explicitlySet__.add("intervalInMillis");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
+
+        public Builder port(Integer port) {
+            this.port = port;
+            this.__explicitlySet__.add("port");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private String protocol;
 
+        public Builder protocol(String protocol) {
+            this.protocol = protocol;
+            this.__explicitlySet__.add("protocol");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("responseBodyRegex")
         private String responseBodyRegex;
+
+        public Builder responseBodyRegex(String responseBodyRegex) {
+            this.responseBodyRegex = responseBodyRegex;
+            this.__explicitlySet__.add("responseBodyRegex");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("retries")
         private Integer retries;
 
+        public Builder retries(Integer retries) {
+            this.retries = retries;
+            this.__explicitlySet__.add("retries");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("returnCode")
         private Integer returnCode;
+
+        public Builder returnCode(Integer returnCode) {
+            this.returnCode = returnCode;
+            this.__explicitlySet__.add("returnCode");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("timeoutInMillis")
         private Integer timeoutInMillis;
 
+        public Builder timeoutInMillis(Integer timeoutInMillis) {
+            this.timeoutInMillis = timeoutInMillis;
+            this.__explicitlySet__.add("timeoutInMillis");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("urlPath")
         private String urlPath;
 
+        public Builder urlPath(String urlPath) {
+            this.urlPath = urlPath;
+            this.__explicitlySet__.add("urlPath");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public HealthCheckerDetails build() {
-            return new HealthCheckerDetails(
-                    intervalInMillis,
-                    port,
-                    protocol,
-                    responseBodyRegex,
-                    retries,
-                    returnCode,
-                    timeoutInMillis,
-                    urlPath);
+            HealthCheckerDetails __instance__ =
+                    new HealthCheckerDetails(
+                            intervalInMillis,
+                            port,
+                            protocol,
+                            responseBodyRegex,
+                            retries,
+                            returnCode,
+                            timeoutInMillis,
+                            urlPath);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -79,8 +133,6 @@ public class HealthCheckerDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("intervalInMillis")
-    @javax.validation.constraints.Min(1000)
-    @javax.validation.constraints.Max(1800000)
     Integer intervalInMillis;
 
     /**
@@ -91,8 +143,6 @@ public class HealthCheckerDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
-    @javax.validation.constraints.Min(0)
-    @javax.validation.constraints.Max(65535)
     Integer port;
 
     /**
@@ -102,8 +152,6 @@ public class HealthCheckerDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String protocol;
 
     /**
@@ -113,7 +161,6 @@ public class HealthCheckerDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responseBodyRegex")
-    @javax.validation.constraints.Size(max = 255)
     String responseBodyRegex;
 
     /**
@@ -142,8 +189,6 @@ public class HealthCheckerDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInMillis")
-    @javax.validation.constraints.Min(1)
-    @javax.validation.constraints.Max(600000)
     Integer timeoutInMillis;
 
     /**
@@ -153,6 +198,8 @@ public class HealthCheckerDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("urlPath")
-    @javax.validation.constraints.Size(max = 1024)
     String urlPath;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

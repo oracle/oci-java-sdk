@@ -20,16 +20,27 @@ package com.oracle.bmc.core.model;
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class DhcpSearchDomainOption extends DhcpOption {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("searchDomainNames")
         private java.util.List<String> searchDomainNames;
 
+        public Builder searchDomainNames(java.util.List<String> searchDomainNames) {
+            this.searchDomainNames = searchDomainNames;
+            this.__explicitlySet__.add("searchDomainNames");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public DhcpSearchDomainOption build() {
-            return new DhcpSearchDomainOption(searchDomainNames);
+            DhcpSearchDomainOption __instance__ = new DhcpSearchDomainOption(searchDomainNames);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -67,7 +78,8 @@ public class DhcpSearchDomainOption extends DhcpOption {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("searchDomainNames")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     java.util.List<String> searchDomainNames;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

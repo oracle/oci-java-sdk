@@ -140,7 +140,7 @@ public class LoadBalancerClient implements LoadBalancer {
     public CreateBackendResponse createBackend(CreateBackendRequest request) {
         LOG.trace("Called createBackend");
         request = CreateBackendConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateBackendConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateBackendResponse>
                 transformer = CreateBackendConverter.fromResponse();
@@ -154,7 +154,7 @@ public class LoadBalancerClient implements LoadBalancer {
     public CreateBackendSetResponse createBackendSet(CreateBackendSetRequest request) {
         LOG.trace("Called createBackendSet");
         request = CreateBackendSetConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateBackendSetConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateBackendSetResponse>
                 transformer = CreateBackendSetConverter.fromResponse();
@@ -168,7 +168,7 @@ public class LoadBalancerClient implements LoadBalancer {
     public CreateCertificateResponse createCertificate(CreateCertificateRequest request) {
         LOG.trace("Called createCertificate");
         request = CreateCertificateConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateCertificateConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateCertificateResponse>
                 transformer = CreateCertificateConverter.fromResponse();
@@ -182,7 +182,7 @@ public class LoadBalancerClient implements LoadBalancer {
     public CreateListenerResponse createListener(CreateListenerRequest request) {
         LOG.trace("Called createListener");
         request = CreateListenerConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateListenerConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateListenerResponse>
                 transformer = CreateListenerConverter.fromResponse();
@@ -196,7 +196,7 @@ public class LoadBalancerClient implements LoadBalancer {
     public CreateLoadBalancerResponse createLoadBalancer(CreateLoadBalancerRequest request) {
         LOG.trace("Called createLoadBalancer");
         request = CreateLoadBalancerConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateLoadBalancerConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateLoadBalancerResponse>
                 transformer = CreateLoadBalancerConverter.fromResponse();
@@ -210,7 +210,7 @@ public class LoadBalancerClient implements LoadBalancer {
     public DeleteBackendResponse deleteBackend(DeleteBackendRequest request) {
         LOG.trace("Called deleteBackend");
         request = DeleteBackendConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteBackendConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBackendResponse>
                 transformer = DeleteBackendConverter.fromResponse();
@@ -223,7 +223,7 @@ public class LoadBalancerClient implements LoadBalancer {
     public DeleteBackendSetResponse deleteBackendSet(DeleteBackendSetRequest request) {
         LOG.trace("Called deleteBackendSet");
         request = DeleteBackendSetConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteBackendSetConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBackendSetResponse>
                 transformer = DeleteBackendSetConverter.fromResponse();
@@ -236,7 +236,7 @@ public class LoadBalancerClient implements LoadBalancer {
     public DeleteCertificateResponse deleteCertificate(DeleteCertificateRequest request) {
         LOG.trace("Called deleteCertificate");
         request = DeleteCertificateConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteCertificateConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCertificateResponse>
                 transformer = DeleteCertificateConverter.fromResponse();
@@ -249,7 +249,7 @@ public class LoadBalancerClient implements LoadBalancer {
     public DeleteListenerResponse deleteListener(DeleteListenerRequest request) {
         LOG.trace("Called deleteListener");
         request = DeleteListenerConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteListenerConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteListenerResponse>
                 transformer = DeleteListenerConverter.fromResponse();
@@ -262,7 +262,7 @@ public class LoadBalancerClient implements LoadBalancer {
     public DeleteLoadBalancerResponse deleteLoadBalancer(DeleteLoadBalancerRequest request) {
         LOG.trace("Called deleteLoadBalancer");
         request = DeleteLoadBalancerConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteLoadBalancerConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteLoadBalancerResponse>
                 transformer = DeleteLoadBalancerConverter.fromResponse();
@@ -275,7 +275,8 @@ public class LoadBalancerClient implements LoadBalancer {
     public GetBackendResponse getBackend(GetBackendRequest request) {
         LOG.trace("Called getBackend");
         request = GetBackendConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = GetBackendConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetBackendConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetBackendResponse> transformer =
                 GetBackendConverter.fromResponse();
 
@@ -287,7 +288,7 @@ public class LoadBalancerClient implements LoadBalancer {
     public GetBackendHealthResponse getBackendHealth(GetBackendHealthRequest request) {
         LOG.trace("Called getBackendHealth");
         request = GetBackendHealthConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetBackendHealthConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetBackendHealthResponse>
                 transformer = GetBackendHealthConverter.fromResponse();
@@ -300,7 +301,7 @@ public class LoadBalancerClient implements LoadBalancer {
     public GetBackendSetResponse getBackendSet(GetBackendSetRequest request) {
         LOG.trace("Called getBackendSet");
         request = GetBackendSetConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetBackendSetConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetBackendSetResponse>
                 transformer = GetBackendSetConverter.fromResponse();
@@ -313,7 +314,7 @@ public class LoadBalancerClient implements LoadBalancer {
     public GetBackendSetHealthResponse getBackendSetHealth(GetBackendSetHealthRequest request) {
         LOG.trace("Called getBackendSetHealth");
         request = GetBackendSetHealthConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetBackendSetHealthConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetBackendSetHealthResponse>
                 transformer = GetBackendSetHealthConverter.fromResponse();
@@ -326,7 +327,7 @@ public class LoadBalancerClient implements LoadBalancer {
     public GetHealthCheckerResponse getHealthChecker(GetHealthCheckerRequest request) {
         LOG.trace("Called getHealthChecker");
         request = GetHealthCheckerConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetHealthCheckerConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetHealthCheckerResponse>
                 transformer = GetHealthCheckerConverter.fromResponse();
@@ -339,7 +340,7 @@ public class LoadBalancerClient implements LoadBalancer {
     public GetLoadBalancerResponse getLoadBalancer(GetLoadBalancerRequest request) {
         LOG.trace("Called getLoadBalancer");
         request = GetLoadBalancerConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetLoadBalancerConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetLoadBalancerResponse>
                 transformer = GetLoadBalancerConverter.fromResponse();
@@ -353,7 +354,7 @@ public class LoadBalancerClient implements LoadBalancer {
             GetLoadBalancerHealthRequest request) {
         LOG.trace("Called getLoadBalancerHealth");
         request = GetLoadBalancerHealthConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetLoadBalancerHealthConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetLoadBalancerHealthResponse>
                 transformer = GetLoadBalancerHealthConverter.fromResponse();
@@ -366,7 +367,7 @@ public class LoadBalancerClient implements LoadBalancer {
     public GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request) {
         LOG.trace("Called getWorkRequest");
         request = GetWorkRequestConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetWorkRequestConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer = GetWorkRequestConverter.fromResponse();
@@ -379,7 +380,7 @@ public class LoadBalancerClient implements LoadBalancer {
     public ListBackendSetsResponse listBackendSets(ListBackendSetsRequest request) {
         LOG.trace("Called listBackendSets");
         request = ListBackendSetsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListBackendSetsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListBackendSetsResponse>
                 transformer = ListBackendSetsConverter.fromResponse();
@@ -392,7 +393,7 @@ public class LoadBalancerClient implements LoadBalancer {
     public ListBackendsResponse listBackends(ListBackendsRequest request) {
         LOG.trace("Called listBackends");
         request = ListBackendsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListBackendsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListBackendsResponse>
                 transformer = ListBackendsConverter.fromResponse();
@@ -405,7 +406,7 @@ public class LoadBalancerClient implements LoadBalancer {
     public ListCertificatesResponse listCertificates(ListCertificatesRequest request) {
         LOG.trace("Called listCertificates");
         request = ListCertificatesConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListCertificatesConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListCertificatesResponse>
                 transformer = ListCertificatesConverter.fromResponse();
@@ -419,7 +420,7 @@ public class LoadBalancerClient implements LoadBalancer {
             ListLoadBalancerHealthsRequest request) {
         LOG.trace("Called listLoadBalancerHealths");
         request = ListLoadBalancerHealthsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListLoadBalancerHealthsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListLoadBalancerHealthsResponse>
                 transformer = ListLoadBalancerHealthsConverter.fromResponse();
@@ -432,7 +433,7 @@ public class LoadBalancerClient implements LoadBalancer {
     public ListLoadBalancersResponse listLoadBalancers(ListLoadBalancersRequest request) {
         LOG.trace("Called listLoadBalancers");
         request = ListLoadBalancersConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListLoadBalancersConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListLoadBalancersResponse>
                 transformer = ListLoadBalancersConverter.fromResponse();
@@ -445,7 +446,7 @@ public class LoadBalancerClient implements LoadBalancer {
     public ListPoliciesResponse listPolicies(ListPoliciesRequest request) {
         LOG.trace("Called listPolicies");
         request = ListPoliciesConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListPoliciesConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListPoliciesResponse>
                 transformer = ListPoliciesConverter.fromResponse();
@@ -458,7 +459,7 @@ public class LoadBalancerClient implements LoadBalancer {
     public ListProtocolsResponse listProtocols(ListProtocolsRequest request) {
         LOG.trace("Called listProtocols");
         request = ListProtocolsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListProtocolsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListProtocolsResponse>
                 transformer = ListProtocolsConverter.fromResponse();
@@ -471,7 +472,8 @@ public class LoadBalancerClient implements LoadBalancer {
     public ListShapesResponse listShapes(ListShapesRequest request) {
         LOG.trace("Called listShapes");
         request = ListShapesConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = ListShapesConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListShapesConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListShapesResponse> transformer =
                 ListShapesConverter.fromResponse();
 
@@ -483,7 +485,7 @@ public class LoadBalancerClient implements LoadBalancer {
     public ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request) {
         LOG.trace("Called listWorkRequests");
         request = ListWorkRequestsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListWorkRequestsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer = ListWorkRequestsConverter.fromResponse();
@@ -496,7 +498,7 @@ public class LoadBalancerClient implements LoadBalancer {
     public UpdateBackendResponse updateBackend(UpdateBackendRequest request) {
         LOG.trace("Called updateBackend");
         request = UpdateBackendConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateBackendConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBackendResponse>
                 transformer = UpdateBackendConverter.fromResponse();
@@ -510,7 +512,7 @@ public class LoadBalancerClient implements LoadBalancer {
     public UpdateBackendSetResponse updateBackendSet(UpdateBackendSetRequest request) {
         LOG.trace("Called updateBackendSet");
         request = UpdateBackendSetConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateBackendSetConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBackendSetResponse>
                 transformer = UpdateBackendSetConverter.fromResponse();
@@ -524,7 +526,7 @@ public class LoadBalancerClient implements LoadBalancer {
     public UpdateHealthCheckerResponse updateHealthChecker(UpdateHealthCheckerRequest request) {
         LOG.trace("Called updateHealthChecker");
         request = UpdateHealthCheckerConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateHealthCheckerConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateHealthCheckerResponse>
                 transformer = UpdateHealthCheckerConverter.fromResponse();
@@ -537,7 +539,7 @@ public class LoadBalancerClient implements LoadBalancer {
     public UpdateListenerResponse updateListener(UpdateListenerRequest request) {
         LOG.trace("Called updateListener");
         request = UpdateListenerConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateListenerConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateListenerResponse>
                 transformer = UpdateListenerConverter.fromResponse();
@@ -551,7 +553,7 @@ public class LoadBalancerClient implements LoadBalancer {
     public UpdateLoadBalancerResponse updateLoadBalancer(UpdateLoadBalancerRequest request) {
         LOG.trace("Called updateLoadBalancer");
         request = UpdateLoadBalancerConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateLoadBalancerConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateLoadBalancerResponse>
                 transformer = UpdateLoadBalancerConverter.fromResponse();

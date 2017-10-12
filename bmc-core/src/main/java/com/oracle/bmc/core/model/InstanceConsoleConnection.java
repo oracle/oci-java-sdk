@@ -3,37 +3,92 @@
  */
 package com.oracle.bmc.core.model;
 
+/**
+ * The `InstanceConsoleConnection` API provides you with serial console access to virtual machine (VM) instances,
+ * enabling you to troubleshoot malfunctioning instances remotely.
+ * <p>
+ * For more information about serial console access, see
+ * [Accessing the Serial Console](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/serialconsole.htm).
+ *
+ **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = InstanceConsoleConnection.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class InstanceConsoleConnection {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
         private String connectionString;
+
+        public Builder connectionString(String connectionString) {
+            this.connectionString = connectionString;
+            this.__explicitlySet__.add("connectionString");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("fingerprint")
         private String fingerprint;
 
+        public Builder fingerprint(String fingerprint) {
+            this.fingerprint = fingerprint;
+            this.__explicitlySet__.add("fingerprint");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
+
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
+        public Builder instanceId(String instanceId) {
+            this.instanceId = instanceId;
+            this.__explicitlySet__.add("instanceId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public InstanceConsoleConnection build() {
-            return new InstanceConsoleConnection(
-                    compartmentId, connectionString, fingerprint, id, instanceId, lifecycleState);
+            InstanceConsoleConnection __instance__ =
+                    new InstanceConsoleConnection(
+                            compartmentId,
+                            connectionString,
+                            fingerprint,
+                            id,
+                            instanceId,
+                            lifecycleState);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -55,37 +110,36 @@ public class InstanceConsoleConnection {
     }
 
     /**
-     * The OCID of the compartment to contain the ConsoleConnection
+     * The OCID of the compartment to contain the serial console connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
-     * The ssh connection string to the instance console
+     * The SSH connection string for the serial console connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
     String connectionString;
 
     /**
-     * The fingerprint of the ssh publicKey.
+     * The SSH public key fingerprint for the serial console connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fingerprint")
     String fingerprint;
 
     /**
-     * The OCID of the instance console connection
+     * The OCID of the serial console connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The host instance OCID
+     * The OCID of the instance the serial console connection connects to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     String instanceId;
     /**
-     * The current state of the instance console connection.
+     * The current state of the serial console connection.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
@@ -134,8 +188,11 @@ public class InstanceConsoleConnection {
         }
     };
     /**
-     * The current state of the instance console connection.
+     * The current state of the serial console connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

@@ -12,19 +12,37 @@ package com.oracle.bmc.core.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CrossConnectPortSpeedShape.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CrossConnectPortSpeedShape {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        public Builder name(String name) {
+            this.name = name;
+            this.__explicitlySet__.add("name");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("portSpeedInGbps")
         private Integer portSpeedInGbps;
 
+        public Builder portSpeedInGbps(Integer portSpeedInGbps) {
+            this.portSpeedInGbps = portSpeedInGbps;
+            this.__explicitlySet__.add("portSpeedInGbps");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public CrossConnectPortSpeedShape build() {
-            return new CrossConnectPortSpeedShape(name, portSpeedInGbps);
+            CrossConnectPortSpeedShape __instance__ =
+                    new CrossConnectPortSpeedShape(name, portSpeedInGbps);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -47,9 +65,6 @@ public class CrossConnectPortSpeedShape {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String name;
 
     /**
@@ -59,7 +74,8 @@ public class CrossConnectPortSpeedShape {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("portSpeedInGbps")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     Integer portSpeedInGbps;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

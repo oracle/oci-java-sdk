@@ -19,7 +19,7 @@ public class DeleteUserConverter {
         return request;
     }
 
-    public static javax.ws.rs.client.Invocation.Builder fromRequest(
+    public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client, DeleteUserRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -29,7 +29,7 @@ public class DeleteUserConverter {
             throw new NullPointerException("userId is required");
         }
 
-        javax.ws.rs.client.WebTarget target =
+        com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
                         .path("/20160918")
                         .path("users")
@@ -37,7 +37,7 @@ public class DeleteUserConverter {
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
                                         request.getUserId()));
 
-        javax.ws.rs.client.Invocation.Builder ib = target.request();
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 

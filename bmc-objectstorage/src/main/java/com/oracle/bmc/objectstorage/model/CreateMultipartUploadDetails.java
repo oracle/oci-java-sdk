@@ -14,29 +14,65 @@ package com.oracle.bmc.objectstorage.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateMultipartUploadDetails.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CreateMultipartUploadDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("object")
         private String object;
 
+        public Builder object(String object) {
+            this.object = object;
+            this.__explicitlySet__.add("object");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("contentType")
         private String contentType;
+
+        public Builder contentType(String contentType) {
+            this.contentType = contentType;
+            this.__explicitlySet__.add("contentType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("contentLanguage")
         private String contentLanguage;
 
+        public Builder contentLanguage(String contentLanguage) {
+            this.contentLanguage = contentLanguage;
+            this.__explicitlySet__.add("contentLanguage");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("contentEncoding")
         private String contentEncoding;
+
+        public Builder contentEncoding(String contentEncoding) {
+            this.contentEncoding = contentEncoding;
+            this.__explicitlySet__.add("contentEncoding");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private java.util.Map<String, String> metadata;
 
+        public Builder metadata(java.util.Map<String, String> metadata) {
+            this.metadata = metadata;
+            this.__explicitlySet__.add("metadata");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public CreateMultipartUploadDetails build() {
-            return new CreateMultipartUploadDetails(
-                    object, contentType, contentLanguage, contentEncoding, metadata);
+            CreateMultipartUploadDetails __instance__ =
+                    new CreateMultipartUploadDetails(
+                            object, contentType, contentLanguage, contentEncoding, metadata);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -60,8 +96,6 @@ public class CreateMultipartUploadDetails {
      * the name of the object to which this multi-part upload is targetted.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("object")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String object;
 
     /**
@@ -89,4 +123,7 @@ public class CreateMultipartUploadDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     java.util.Map<String, String> metadata;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

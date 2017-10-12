@@ -8,29 +8,65 @@ package com.oracle.bmc.identity.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreatePolicyDetails.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CreatePolicyDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
+
+        public Builder name(String name) {
+            this.name = name;
+            this.__explicitlySet__.add("name");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("statements")
         private java.util.List<String> statements;
 
+        public Builder statements(java.util.List<String> statements) {
+            this.statements = statements;
+            this.__explicitlySet__.add("statements");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
+
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("versionDate")
         private java.util.Date versionDate;
 
+        public Builder versionDate(java.util.Date versionDate) {
+            this.versionDate = versionDate;
+            this.__explicitlySet__.add("versionDate");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public CreatePolicyDetails build() {
-            return new CreatePolicyDetails(
-                    compartmentId, name, statements, description, versionDate);
+            CreatePolicyDetails __instance__ =
+                    new CreatePolicyDetails(
+                            compartmentId, name, statements, description, versionDate);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -54,8 +90,6 @@ public class CreatePolicyDetails {
      * The OCID of the compartment containing the policy (either the tenancy or another compartment).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String compartmentId;
 
     /**
@@ -64,9 +98,6 @@ public class CreatePolicyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 100)
     String name;
 
     /**
@@ -76,8 +107,6 @@ public class CreatePolicyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("statements")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     java.util.List<String> statements;
 
     /**
@@ -85,9 +114,6 @@ public class CreatePolicyDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 400)
     String description;
 
     /**
@@ -98,4 +124,7 @@ public class CreatePolicyDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("versionDate")
     java.util.Date versionDate;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

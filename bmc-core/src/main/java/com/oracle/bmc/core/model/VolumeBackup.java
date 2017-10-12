@@ -16,49 +16,129 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = VolumeBackup.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class VolumeBackup {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
+
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            this.__explicitlySet__.add("displayName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
+
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
+        private Long sizeInGBs;
+
+        public Builder sizeInGBs(Long sizeInGBs) {
+            this.sizeInGBs = sizeInGBs;
+            this.__explicitlySet__.add("sizeInGBs");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInMBs")
         private Long sizeInMBs;
 
+        public Builder sizeInMBs(Long sizeInMBs) {
+            this.sizeInMBs = sizeInMBs;
+            this.__explicitlySet__.add("sizeInMBs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
+
+        public Builder timeCreated(java.util.Date timeCreated) {
+            this.timeCreated = timeCreated;
+            this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("timeRequestReceived")
         private java.util.Date timeRequestReceived;
 
+        public Builder timeRequestReceived(java.util.Date timeRequestReceived) {
+            this.timeRequestReceived = timeRequestReceived;
+            this.__explicitlySet__.add("timeRequestReceived");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("uniqueSizeInGBs")
+        private Long uniqueSizeInGBs;
+
+        public Builder uniqueSizeInGBs(Long uniqueSizeInGBs) {
+            this.uniqueSizeInGBs = uniqueSizeInGBs;
+            this.__explicitlySet__.add("uniqueSizeInGBs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("uniqueSizeInMbs")
         private Long uniqueSizeInMbs;
+
+        public Builder uniqueSizeInMbs(Long uniqueSizeInMbs) {
+            this.uniqueSizeInMbs = uniqueSizeInMbs;
+            this.__explicitlySet__.add("uniqueSizeInMbs");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("volumeId")
         private String volumeId;
 
+        public Builder volumeId(String volumeId) {
+            this.volumeId = volumeId;
+            this.__explicitlySet__.add("volumeId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public VolumeBackup build() {
-            return new VolumeBackup(
-                    compartmentId,
-                    displayName,
-                    id,
-                    lifecycleState,
-                    sizeInMBs,
-                    timeCreated,
-                    timeRequestReceived,
-                    uniqueSizeInMbs,
-                    volumeId);
+            VolumeBackup __instance__ =
+                    new VolumeBackup(
+                            compartmentId,
+                            displayName,
+                            id,
+                            lifecycleState,
+                            sizeInGBs,
+                            sizeInMBs,
+                            timeCreated,
+                            timeRequestReceived,
+                            uniqueSizeInGBs,
+                            uniqueSizeInMbs,
+                            volumeId);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -67,9 +147,11 @@ public class VolumeBackup {
                     .displayName(o.getDisplayName())
                     .id(o.getId())
                     .lifecycleState(o.getLifecycleState())
+                    .sizeInGBs(o.getSizeInGBs())
                     .sizeInMBs(o.getSizeInMBs())
                     .timeCreated(o.getTimeCreated())
                     .timeRequestReceived(o.getTimeRequestReceived())
+                    .uniqueSizeInGBs(o.getUniqueSizeInGBs())
                     .uniqueSizeInMbs(o.getUniqueSizeInMbs())
                     .volumeId(o.getVolumeId());
         }
@@ -86,9 +168,6 @@ public class VolumeBackup {
      * The OCID of the compartment that contains the volume backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
@@ -97,18 +176,12 @@ public class VolumeBackup {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
      * The OCID of the volume backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String id;
     /**
      * The current state of a volume backup.
@@ -164,17 +237,21 @@ public class VolumeBackup {
      * The current state of a volume backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     LifecycleState lifecycleState;
 
     /**
-     * The size of the volume, in MBs. The value must be a multiple of 1024.
+     * The size of the volume, in GBs.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
+    Long sizeInGBs;
+
+    /**
+     * The size of the volume in MBs. The value must be a multiple of 1024.
+     * This field is deprecated. Please use sizeInGBs.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInMBs")
-    @javax.validation.constraints.Min(100)
-    @javax.validation.constraints.Max(262144)
     Long sizeInMBs;
 
     /**
@@ -183,8 +260,6 @@ public class VolumeBackup {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     java.util.Date timeCreated;
 
     /**
@@ -195,19 +270,28 @@ public class VolumeBackup {
     java.util.Date timeRequestReceived;
 
     /**
-     * The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space
+     * The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space
      * consumed on the volume and whether the backup is full or incremental.
      *
      **/
+    @com.fasterxml.jackson.annotation.JsonProperty("uniqueSizeInGBs")
+    Long uniqueSizeInGBs;
+
+    /**
+     * The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space
+     * consumed on the volume and whether the backup is full or incremental.
+     * This field is deprecated. Please use uniqueSizeInGBs.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("uniqueSizeInMbs")
-    @javax.validation.constraints.Min(100)
-    @javax.validation.constraints.Max(262144)
     Long uniqueSizeInMbs;
 
     /**
      * The OCID of the volume.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("volumeId")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String volumeId;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

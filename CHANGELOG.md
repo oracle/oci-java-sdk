@@ -13,6 +13,23 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.2.16 - 2017-10-12
+
+### Changed
+- Removed javax.validation.constraints annotations from model classes. The annotations were not used, and may not necessarily be the same as the constraints enforced by the services.
+- The clients only serialize and transmit fields that were explicitly set. If you want to transmit a field that is `null`, please set it to `null` explicitly.
+
+### Added
+- Support for database as a service (DBaaS)
+- Support for VNIC routes and source/destination check
+- Support for specifying block volume size in GB
+- Support for updating console history metadata and specifying a display name when capturing console history
+- Support for FRA Region (eu-frankfurt-1)
+- Exceptions expose client-side request id in cases of timeout or client-side failure
+
+### Deprecated
+- Passing the block volume size in MB is deprecated
+
 ## 1.2.15 - 2017-09-11
 
 ### Changed

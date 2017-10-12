@@ -8,19 +8,37 @@ package com.oracle.bmc.identity.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateIdpGroupMappingDetails.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CreateIdpGroupMappingDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("idpGroupName")
         private String idpGroupName;
 
+        public Builder idpGroupName(String idpGroupName) {
+            this.idpGroupName = idpGroupName;
+            this.__explicitlySet__.add("idpGroupName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("groupId")
         private String groupId;
 
+        public Builder groupId(String groupId) {
+            this.groupId = groupId;
+            this.__explicitlySet__.add("groupId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public CreateIdpGroupMappingDetails build() {
-            return new CreateIdpGroupMappingDetails(idpGroupName, groupId);
+            CreateIdpGroupMappingDetails __instance__ =
+                    new CreateIdpGroupMappingDetails(idpGroupName, groupId);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -40,8 +58,6 @@ public class CreateIdpGroupMappingDetails {
      * The name of the IdP group you want to map.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("idpGroupName")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String idpGroupName;
 
     /**
@@ -50,7 +66,8 @@ public class CreateIdpGroupMappingDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String groupId;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

@@ -20,7 +20,7 @@ public class ListRegionSubscriptionsConverter {
         return request;
     }
 
-    public static javax.ws.rs.client.Invocation.Builder fromRequest(
+    public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
             ListRegionSubscriptionsRequest request) {
         if (request == null) {
@@ -31,7 +31,7 @@ public class ListRegionSubscriptionsConverter {
             throw new NullPointerException("tenancyId is required");
         }
 
-        javax.ws.rs.client.WebTarget target =
+        com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
                         .path("/20160918")
                         .path("tenancies")
@@ -40,7 +40,7 @@ public class ListRegionSubscriptionsConverter {
                                         request.getTenancyId()))
                         .path("regionSubscriptions");
 
-        javax.ws.rs.client.Invocation.Builder ib = target.request();
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 

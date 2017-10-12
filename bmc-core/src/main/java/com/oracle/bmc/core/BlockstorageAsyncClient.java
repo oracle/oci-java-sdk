@@ -124,7 +124,7 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                     handler) {
         LOG.trace("Called async createVolume");
         request = CreateVolumeConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateVolumeConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateVolumeResponse>
                 transformer = CreateVolumeConverter.fromResponse();
@@ -147,7 +147,7 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                     handler) {
         LOG.trace("Called async createVolumeBackup");
         request = CreateVolumeBackupConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateVolumeBackupConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateVolumeBackupResponse>
                 transformer = CreateVolumeBackupConverter.fromResponse();
@@ -170,7 +170,7 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                     handler) {
         LOG.trace("Called async deleteVolume");
         request = DeleteVolumeConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteVolumeConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVolumeResponse>
                 transformer = DeleteVolumeConverter.fromResponse();
@@ -193,7 +193,7 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                     handler) {
         LOG.trace("Called async deleteVolumeBackup");
         request = DeleteVolumeBackupConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteVolumeBackupConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVolumeBackupResponse>
                 transformer = DeleteVolumeBackupConverter.fromResponse();
@@ -214,7 +214,8 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
             com.oracle.bmc.responses.AsyncHandler<GetVolumeRequest, GetVolumeResponse> handler) {
         LOG.trace("Called async getVolume");
         request = GetVolumeConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = GetVolumeConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetVolumeConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeResponse> transformer =
                 GetVolumeConverter.fromResponse();
 
@@ -235,7 +236,7 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                     handler) {
         LOG.trace("Called async getVolumeBackup");
         request = GetVolumeBackupConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetVolumeBackupConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeBackupResponse>
                 transformer = GetVolumeBackupConverter.fromResponse();
@@ -258,7 +259,7 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                     handler) {
         LOG.trace("Called async listVolumeBackups");
         request = ListVolumeBackupsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListVolumeBackupsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumeBackupsResponse>
                 transformer = ListVolumeBackupsConverter.fromResponse();
@@ -280,7 +281,7 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                     handler) {
         LOG.trace("Called async listVolumes");
         request = ListVolumesConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListVolumesConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumesResponse>
                 transformer = ListVolumesConverter.fromResponse();
@@ -302,7 +303,7 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                     handler) {
         LOG.trace("Called async updateVolume");
         request = UpdateVolumeConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateVolumeConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVolumeResponse>
                 transformer = UpdateVolumeConverter.fromResponse();
@@ -325,7 +326,7 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                     handler) {
         LOG.trace("Called async updateVolumeBackup");
         request = UpdateVolumeBackupConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateVolumeBackupConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVolumeBackupResponse>
                 transformer = UpdateVolumeBackupConverter.fromResponse();

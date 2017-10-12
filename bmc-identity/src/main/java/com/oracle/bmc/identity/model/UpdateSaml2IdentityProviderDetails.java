@@ -15,22 +15,46 @@ package com.oracle.bmc.identity.model;
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "protocol"
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class UpdateSaml2IdentityProviderDetails extends UpdateIdentityProviderDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("metadataUrl")
         private String metadataUrl;
+
+        public Builder metadataUrl(String metadataUrl) {
+            this.metadataUrl = metadataUrl;
+            this.__explicitlySet__.add("metadataUrl");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private String metadata;
 
+        public Builder metadata(String metadata) {
+            this.metadata = metadata;
+            this.__explicitlySet__.add("metadata");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public UpdateSaml2IdentityProviderDetails build() {
-            return new UpdateSaml2IdentityProviderDetails(description, metadataUrl, metadata);
+            UpdateSaml2IdentityProviderDetails __instance__ =
+                    new UpdateSaml2IdentityProviderDetails(description, metadataUrl, metadata);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -61,7 +85,6 @@ public class UpdateSaml2IdentityProviderDetails extends UpdateIdentityProviderDe
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadataUrl")
-    @javax.validation.constraints.Size(min = 1, max = 512)
     String metadataUrl;
 
     /**
@@ -69,6 +92,8 @@ public class UpdateSaml2IdentityProviderDetails extends UpdateIdentityProviderDe
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
-    @javax.validation.constraints.Size(min = 1, max = 100000)
     String metadata;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

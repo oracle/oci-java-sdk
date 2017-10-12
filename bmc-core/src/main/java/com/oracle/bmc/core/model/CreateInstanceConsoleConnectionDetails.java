@@ -4,8 +4,8 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Properties used to create an instance console connection.  The instance console connection is created
- * in the same compartment as the instance.
+ * The details for creating a serial console connection.
+ * The serial console connection is created in the same compartment as the instance.
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
@@ -13,19 +13,37 @@ package com.oracle.bmc.core.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateInstanceConsoleConnectionDetails.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CreateInstanceConsoleConnectionDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
+        public Builder instanceId(String instanceId) {
+            this.instanceId = instanceId;
+            this.__explicitlySet__.add("instanceId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
         private String publicKey;
 
+        public Builder publicKey(String publicKey) {
+            this.publicKey = publicKey;
+            this.__explicitlySet__.add("publicKey");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public CreateInstanceConsoleConnectionDetails build() {
-            return new CreateInstanceConsoleConnectionDetails(instanceId, publicKey);
+            CreateInstanceConsoleConnectionDetails __instance__ =
+                    new CreateInstanceConsoleConnectionDetails(instanceId, publicKey);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -42,14 +60,17 @@ public class CreateInstanceConsoleConnectionDetails {
     }
 
     /**
-     * The host instance OCID
+     * The OCID of the instance to create the serial console connection to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     String instanceId;
 
     /**
-     * An ssh public key that will be used to authenticate the console connection.
+     * The SSH public key used to authenticate the serial console connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
     String publicKey;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

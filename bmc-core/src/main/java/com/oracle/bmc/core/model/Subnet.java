@@ -18,77 +18,179 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Subnet.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class Subnet {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
+        public Builder availabilityDomain(String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
+            this.__explicitlySet__.add("availabilityDomain");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
         private String cidrBlock;
+
+        public Builder cidrBlock(String cidrBlock) {
+            this.cidrBlock = cidrBlock;
+            this.__explicitlySet__.add("cidrBlock");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dhcpOptionsId")
         private String dhcpOptionsId;
+
+        public Builder dhcpOptionsId(String dhcpOptionsId) {
+            this.dhcpOptionsId = dhcpOptionsId;
+            this.__explicitlySet__.add("dhcpOptionsId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            this.__explicitlySet__.add("displayName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dnsLabel")
         private String dnsLabel;
+
+        public Builder dnsLabel(String dnsLabel) {
+            this.dnsLabel = dnsLabel;
+            this.__explicitlySet__.add("dnsLabel");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
+
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("prohibitPublicIpOnVnic")
         private Boolean prohibitPublicIpOnVnic;
 
+        public Builder prohibitPublicIpOnVnic(Boolean prohibitPublicIpOnVnic) {
+            this.prohibitPublicIpOnVnic = prohibitPublicIpOnVnic;
+            this.__explicitlySet__.add("prohibitPublicIpOnVnic");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
         private String routeTableId;
+
+        public Builder routeTableId(String routeTableId) {
+            this.routeTableId = routeTableId;
+            this.__explicitlySet__.add("routeTableId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("securityListIds")
         private java.util.List<String> securityListIds;
 
+        public Builder securityListIds(java.util.List<String> securityListIds) {
+            this.securityListIds = securityListIds;
+            this.__explicitlySet__.add("securityListIds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("subnetDomainName")
         private String subnetDomainName;
+
+        public Builder subnetDomainName(String subnetDomainName) {
+            this.subnetDomainName = subnetDomainName;
+            this.__explicitlySet__.add("subnetDomainName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        public Builder timeCreated(java.util.Date timeCreated) {
+            this.timeCreated = timeCreated;
+            this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
+
+        public Builder vcnId(String vcnId) {
+            this.vcnId = vcnId;
+            this.__explicitlySet__.add("vcnId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("virtualRouterIp")
         private String virtualRouterIp;
 
+        public Builder virtualRouterIp(String virtualRouterIp) {
+            this.virtualRouterIp = virtualRouterIp;
+            this.__explicitlySet__.add("virtualRouterIp");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("virtualRouterMac")
         private String virtualRouterMac;
 
+        public Builder virtualRouterMac(String virtualRouterMac) {
+            this.virtualRouterMac = virtualRouterMac;
+            this.__explicitlySet__.add("virtualRouterMac");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public Subnet build() {
-            return new Subnet(
-                    availabilityDomain,
-                    cidrBlock,
-                    compartmentId,
-                    dhcpOptionsId,
-                    displayName,
-                    dnsLabel,
-                    id,
-                    lifecycleState,
-                    prohibitPublicIpOnVnic,
-                    routeTableId,
-                    securityListIds,
-                    subnetDomainName,
-                    timeCreated,
-                    vcnId,
-                    virtualRouterIp,
-                    virtualRouterMac);
+            Subnet __instance__ =
+                    new Subnet(
+                            availabilityDomain,
+                            cidrBlock,
+                            compartmentId,
+                            dhcpOptionsId,
+                            displayName,
+                            dnsLabel,
+                            id,
+                            lifecycleState,
+                            prohibitPublicIpOnVnic,
+                            routeTableId,
+                            securityListIds,
+                            subnetDomainName,
+                            timeCreated,
+                            vcnId,
+                            virtualRouterIp,
+                            virtualRouterMac);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -126,9 +228,6 @@ public class Subnet {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String availabilityDomain;
 
     /**
@@ -138,18 +237,12 @@ public class Subnet {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 32)
     String cidrBlock;
 
     /**
      * The OCID of the compartment containing the subnet.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
@@ -157,7 +250,6 @@ public class Subnet {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dhcpOptionsId")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String dhcpOptionsId;
 
     /**
@@ -166,7 +258,6 @@ public class Subnet {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
@@ -186,16 +277,12 @@ public class Subnet {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnsLabel")
-    @javax.validation.constraints.Size(min = 1, max = 15)
     String dnsLabel;
 
     /**
      * The subnet's Oracle ID (OCID).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String id;
     /**
      * The subnet's current state.
@@ -249,8 +336,6 @@ public class Subnet {
      * The subnet's current state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     LifecycleState lifecycleState;
 
     /**
@@ -274,9 +359,6 @@ public class Subnet {
      * The OCID of the route table the subnet is using.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String routeTableId;
 
     /**
@@ -296,7 +378,6 @@ public class Subnet {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetDomainName")
-    @javax.validation.constraints.Size(min = 1, max = 253)
     String subnetDomainName;
 
     /**
@@ -312,9 +393,6 @@ public class Subnet {
      * The OCID of the VCN the subnet is in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String vcnId;
 
     /**
@@ -324,9 +402,6 @@ public class Subnet {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("virtualRouterIp")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 32)
     String virtualRouterIp;
 
     /**
@@ -336,8 +411,8 @@ public class Subnet {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("virtualRouterMac")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 32)
     String virtualRouterMac;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

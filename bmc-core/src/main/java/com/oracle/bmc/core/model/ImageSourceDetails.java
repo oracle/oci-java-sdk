@@ -23,4 +23,5 @@ package com.oracle.bmc.core.model;
         name = "objectStorageUri"
     )
 })
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class ImageSourceDetails {}

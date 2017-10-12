@@ -15,33 +15,72 @@ package com.oracle.bmc.loadbalancer.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LoadBalancerHealth.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class LoadBalancerHealth {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("criticalStateBackendSetNames")
         private java.util.List<String> criticalStateBackendSetNames;
 
+        public Builder criticalStateBackendSetNames(
+                java.util.List<String> criticalStateBackendSetNames) {
+            this.criticalStateBackendSetNames = criticalStateBackendSetNames;
+            this.__explicitlySet__.add("criticalStateBackendSetNames");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
+
+        public Builder status(Status status) {
+            this.status = status;
+            this.__explicitlySet__.add("status");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("totalBackendSetCount")
         private Integer totalBackendSetCount;
 
+        public Builder totalBackendSetCount(Integer totalBackendSetCount) {
+            this.totalBackendSetCount = totalBackendSetCount;
+            this.__explicitlySet__.add("totalBackendSetCount");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("unknownStateBackendSetNames")
         private java.util.List<String> unknownStateBackendSetNames;
+
+        public Builder unknownStateBackendSetNames(
+                java.util.List<String> unknownStateBackendSetNames) {
+            this.unknownStateBackendSetNames = unknownStateBackendSetNames;
+            this.__explicitlySet__.add("unknownStateBackendSetNames");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("warningStateBackendSetNames")
         private java.util.List<String> warningStateBackendSetNames;
 
+        public Builder warningStateBackendSetNames(
+                java.util.List<String> warningStateBackendSetNames) {
+            this.warningStateBackendSetNames = warningStateBackendSetNames;
+            this.__explicitlySet__.add("warningStateBackendSetNames");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public LoadBalancerHealth build() {
-            return new LoadBalancerHealth(
-                    criticalStateBackendSetNames,
-                    status,
-                    totalBackendSetCount,
-                    unknownStateBackendSetNames,
-                    warningStateBackendSetNames);
+            LoadBalancerHealth __instance__ =
+                    new LoadBalancerHealth(
+                            criticalStateBackendSetNames,
+                            status,
+                            totalBackendSetCount,
+                            unknownStateBackendSetNames,
+                            warningStateBackendSetNames);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -69,8 +108,6 @@ public class LoadBalancerHealth {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("criticalStateBackendSetNames")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     java.util.List<String> criticalStateBackendSetNames;
     /**
      * The overall health status of the load balancer.
@@ -162,8 +199,6 @@ public class LoadBalancerHealth {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     Status status;
 
     /**
@@ -173,8 +208,6 @@ public class LoadBalancerHealth {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalBackendSetCount")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     Integer totalBackendSetCount;
 
     /**
@@ -185,8 +218,6 @@ public class LoadBalancerHealth {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unknownStateBackendSetNames")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     java.util.List<String> unknownStateBackendSetNames;
 
     /**
@@ -197,7 +228,8 @@ public class LoadBalancerHealth {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("warningStateBackendSetNames")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     java.util.List<String> warningStateBackendSetNames;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

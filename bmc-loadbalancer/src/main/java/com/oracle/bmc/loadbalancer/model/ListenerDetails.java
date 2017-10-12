@@ -9,25 +9,55 @@ package com.oracle.bmc.loadbalancer.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ListenerDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class ListenerDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("defaultBackendSetName")
         private String defaultBackendSetName;
 
+        public Builder defaultBackendSetName(String defaultBackendSetName) {
+            this.defaultBackendSetName = defaultBackendSetName;
+            this.__explicitlySet__.add("defaultBackendSetName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
+
+        public Builder port(Integer port) {
+            this.port = port;
+            this.__explicitlySet__.add("port");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private String protocol;
 
+        public Builder protocol(String protocol) {
+            this.protocol = protocol;
+            this.__explicitlySet__.add("protocol");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sslConfiguration")
         private SSLConfigurationDetails sslConfiguration;
 
+        public Builder sslConfiguration(SSLConfigurationDetails sslConfiguration) {
+            this.sslConfiguration = sslConfiguration;
+            this.__explicitlySet__.add("sslConfiguration");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public ListenerDetails build() {
-            return new ListenerDetails(defaultBackendSetName, port, protocol, sslConfiguration);
+            ListenerDetails __instance__ =
+                    new ListenerDetails(defaultBackendSetName, port, protocol, sslConfiguration);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -50,9 +80,6 @@ public class ListenerDetails {
      * The name of the associated backend set.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultBackendSetName")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 32)
     String defaultBackendSetName;
 
     /**
@@ -62,10 +89,6 @@ public class ListenerDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Min(1)
-    @javax.validation.constraints.Max(65535)
     Integer port;
 
     /**
@@ -77,10 +100,11 @@ public class ListenerDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String protocol;
 
     @com.fasterxml.jackson.annotation.JsonProperty("sslConfiguration")
     SSLConfigurationDetails sslConfiguration;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

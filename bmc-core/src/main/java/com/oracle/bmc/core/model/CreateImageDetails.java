@@ -11,26 +11,56 @@ package com.oracle.bmc.core.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateImageDetails.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CreateImageDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
+
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            this.__explicitlySet__.add("displayName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("imageSourceDetails")
         private ImageSourceDetails imageSourceDetails;
 
+        public Builder imageSourceDetails(ImageSourceDetails imageSourceDetails) {
+            this.imageSourceDetails = imageSourceDetails;
+            this.__explicitlySet__.add("imageSourceDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
+        public Builder instanceId(String instanceId) {
+            this.instanceId = instanceId;
+            this.__explicitlySet__.add("instanceId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public CreateImageDetails build() {
-            return new CreateImageDetails(
-                    compartmentId, displayName, imageSourceDetails, instanceId);
+            CreateImageDetails __instance__ =
+                    new CreateImageDetails(
+                            compartmentId, displayName, imageSourceDetails, instanceId);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -53,9 +83,6 @@ public class CreateImageDetails {
      * The OCID of the compartment containing the instance you want to use as the basis for the image.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
@@ -68,7 +95,6 @@ public class CreateImageDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
@@ -81,6 +107,8 @@ public class CreateImageDetails {
      * The OCID of the instance you want to use as the basis for the image.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String instanceId;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

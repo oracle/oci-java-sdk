@@ -8,53 +8,120 @@ package com.oracle.bmc.core.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateVirtualCircuitDetails.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CreateVirtualCircuitDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("bandwidthShapeName")
         private String bandwidthShapeName;
 
+        public Builder bandwidthShapeName(String bandwidthShapeName) {
+            this.bandwidthShapeName = bandwidthShapeName;
+            this.__explicitlySet__.add("bandwidthShapeName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
+
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("crossConnectMappings")
         private java.util.List<CrossConnectMapping> crossConnectMappings;
 
+        public Builder crossConnectMappings(
+                java.util.List<CrossConnectMapping> crossConnectMappings) {
+            this.crossConnectMappings = crossConnectMappings;
+            this.__explicitlySet__.add("crossConnectMappings");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("customerBgpAsn")
         private Integer customerBgpAsn;
+
+        public Builder customerBgpAsn(Integer customerBgpAsn) {
+            this.customerBgpAsn = customerBgpAsn;
+            this.__explicitlySet__.add("customerBgpAsn");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            this.__explicitlySet__.add("displayName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("gatewayId")
         private String gatewayId;
+
+        public Builder gatewayId(String gatewayId) {
+            this.gatewayId = gatewayId;
+            this.__explicitlySet__.add("gatewayId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("providerName")
         private String providerName;
 
+        public Builder providerName(String providerName) {
+            this.providerName = providerName;
+            this.__explicitlySet__.add("providerName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("providerServiceName")
         private String providerServiceName;
+
+        public Builder providerServiceName(String providerServiceName) {
+            this.providerServiceName = providerServiceName;
+            this.__explicitlySet__.add("providerServiceName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
+        public Builder region(String region) {
+            this.region = region;
+            this.__explicitlySet__.add("region");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
+        public Builder type(Type type) {
+            this.type = type;
+            this.__explicitlySet__.add("type");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public CreateVirtualCircuitDetails build() {
-            return new CreateVirtualCircuitDetails(
-                    bandwidthShapeName,
-                    compartmentId,
-                    crossConnectMappings,
-                    customerBgpAsn,
-                    displayName,
-                    gatewayId,
-                    providerName,
-                    providerServiceName,
-                    region,
-                    type);
+            CreateVirtualCircuitDetails __instance__ =
+                    new CreateVirtualCircuitDetails(
+                            bandwidthShapeName,
+                            compartmentId,
+                            crossConnectMappings,
+                            customerBgpAsn,
+                            displayName,
+                            gatewayId,
+                            providerName,
+                            providerServiceName,
+                            region,
+                            type);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -95,9 +162,6 @@ public class CreateVirtualCircuitDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
@@ -122,7 +186,6 @@ public class CreateVirtualCircuitDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
@@ -131,7 +194,6 @@ public class CreateVirtualCircuitDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gatewayId")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String gatewayId;
 
     /**
@@ -141,7 +203,6 @@ public class CreateVirtualCircuitDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerName")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String providerName;
 
     /**
@@ -151,7 +212,6 @@ public class CreateVirtualCircuitDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerServiceName")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String providerServiceName;
 
     /**
@@ -162,9 +222,6 @@ public class CreateVirtualCircuitDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String region;
     /**
      * The type of IP addresses used in this virtual circuit. PRIVATE
@@ -211,7 +268,8 @@ public class CreateVirtualCircuitDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     Type type;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

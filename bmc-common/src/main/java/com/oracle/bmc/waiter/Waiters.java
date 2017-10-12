@@ -52,6 +52,6 @@ public class Waiters {
     }
 
     private static long secondsToMillis(int seconds) {
-        return seconds * 1000;
+        return seconds * 1000L;
     }
 }

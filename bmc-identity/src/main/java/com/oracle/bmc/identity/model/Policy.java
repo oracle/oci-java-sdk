@@ -22,49 +22,109 @@ package com.oracle.bmc.identity.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Policy.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class Policy {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
+
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        public Builder name(String name) {
+            this.name = name;
+            this.__explicitlySet__.add("name");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("statements")
         private java.util.List<String> statements;
+
+        public Builder statements(java.util.List<String> statements) {
+            this.statements = statements;
+            this.__explicitlySet__.add("statements");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
+
+        public Builder timeCreated(java.util.Date timeCreated) {
+            this.timeCreated = timeCreated;
+            this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
         private Long inactiveStatus;
+
+        public Builder inactiveStatus(Long inactiveStatus) {
+            this.inactiveStatus = inactiveStatus;
+            this.__explicitlySet__.add("inactiveStatus");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("versionDate")
         private java.util.Date versionDate;
 
+        public Builder versionDate(java.util.Date versionDate) {
+            this.versionDate = versionDate;
+            this.__explicitlySet__.add("versionDate");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public Policy build() {
-            return new Policy(
-                    id,
-                    compartmentId,
-                    name,
-                    statements,
-                    description,
-                    timeCreated,
-                    lifecycleState,
-                    inactiveStatus,
-                    versionDate);
+            Policy __instance__ =
+                    new Policy(
+                            id,
+                            compartmentId,
+                            name,
+                            statements,
+                            description,
+                            timeCreated,
+                            lifecycleState,
+                            inactiveStatus,
+                            versionDate);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -92,8 +152,6 @@ public class Policy {
      * The OCID of the policy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String id;
 
     /**
@@ -101,8 +159,6 @@ public class Policy {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String compartmentId;
 
     /**
@@ -111,26 +167,18 @@ public class Policy {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 100)
     String name;
 
     /**
      * An array of one or more policy statements written in the policy language.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("statements")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     java.util.List<String> statements;
 
     /**
      * The description you assign to the policy. Does not have to be unique, and it's changeable.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 400)
     String description;
 
     /**
@@ -140,8 +188,6 @@ public class Policy {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     java.util.Date timeCreated;
     /**
      * The policy's current state. After creating a policy, make sure its `lifecycleState` changes from CREATING to
@@ -200,9 +246,6 @@ public class Policy {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 64)
     LifecycleState lifecycleState;
 
     /**
@@ -219,4 +262,7 @@ public class Policy {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("versionDate")
     java.util.Date versionDate;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

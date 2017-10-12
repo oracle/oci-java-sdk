@@ -19,6 +19,7 @@ package com.oracle.bmc.core.model;
         name = "iscsi"
     )
 })
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class AttachVolumeDetails {
 
     /**
@@ -26,24 +27,17 @@ public class AttachVolumeDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
      * The OCID of the instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String instanceId;
 
     /**
      * The OCID of the volume.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("volumeId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String volumeId;
 }

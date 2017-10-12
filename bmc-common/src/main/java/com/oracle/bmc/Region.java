@@ -23,7 +23,8 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public enum Region {
     US_PHOENIX_1("us-phoenix-1"),
-    US_ASHBURN_1("us-ashburn-1");
+    US_ASHBURN_1("us-ashburn-1"),
+    EU_FRANKFURT_1("eu-frankfurt-1");
 
     private static final Map<String, Map<Region, String>> SERVICE_TO_REGION_ENDPOINTS =
             new HashMap<>();

@@ -11,19 +11,37 @@ package com.oracle.bmc.loadbalancer.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LoadBalancerHealthSummary.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class LoadBalancerHealthSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
         private String loadBalancerId;
 
+        public Builder loadBalancerId(String loadBalancerId) {
+            this.loadBalancerId = loadBalancerId;
+            this.__explicitlySet__.add("loadBalancerId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        public Builder status(Status status) {
+            this.status = status;
+            this.__explicitlySet__.add("status");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public LoadBalancerHealthSummary build() {
-            return new LoadBalancerHealthSummary(loadBalancerId, status);
+            LoadBalancerHealthSummary __instance__ =
+                    new LoadBalancerHealthSummary(loadBalancerId, status);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -44,8 +62,6 @@ public class LoadBalancerHealthSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String loadBalancerId;
     /**
      * The overall health status of the load balancer.
@@ -137,7 +153,8 @@ public class LoadBalancerHealthSummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     Status status;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

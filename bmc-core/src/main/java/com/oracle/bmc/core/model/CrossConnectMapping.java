@@ -33,33 +33,69 @@ package com.oracle.bmc.core.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CrossConnectMapping.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CrossConnectMapping {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("bgpMd5AuthKey")
         private String bgpMd5AuthKey;
 
+        public Builder bgpMd5AuthKey(String bgpMd5AuthKey) {
+            this.bgpMd5AuthKey = bgpMd5AuthKey;
+            this.__explicitlySet__.add("bgpMd5AuthKey");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("crossConnectOrCrossConnectGroupId")
         private String crossConnectOrCrossConnectGroupId;
+
+        public Builder crossConnectOrCrossConnectGroupId(String crossConnectOrCrossConnectGroupId) {
+            this.crossConnectOrCrossConnectGroupId = crossConnectOrCrossConnectGroupId;
+            this.__explicitlySet__.add("crossConnectOrCrossConnectGroupId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("customerBgpPeeringIp")
         private String customerBgpPeeringIp;
 
+        public Builder customerBgpPeeringIp(String customerBgpPeeringIp) {
+            this.customerBgpPeeringIp = customerBgpPeeringIp;
+            this.__explicitlySet__.add("customerBgpPeeringIp");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("oracleBgpPeeringIp")
         private String oracleBgpPeeringIp;
+
+        public Builder oracleBgpPeeringIp(String oracleBgpPeeringIp) {
+            this.oracleBgpPeeringIp = oracleBgpPeeringIp;
+            this.__explicitlySet__.add("oracleBgpPeeringIp");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("vlan")
         private Integer vlan;
 
+        public Builder vlan(Integer vlan) {
+            this.vlan = vlan;
+            this.__explicitlySet__.add("vlan");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public CrossConnectMapping build() {
-            return new CrossConnectMapping(
-                    bgpMd5AuthKey,
-                    crossConnectOrCrossConnectGroupId,
-                    customerBgpPeeringIp,
-                    oracleBgpPeeringIp,
-                    vlan);
+            CrossConnectMapping __instance__ =
+                    new CrossConnectMapping(
+                            bgpMd5AuthKey,
+                            crossConnectOrCrossConnectGroupId,
+                            customerBgpPeeringIp,
+                            oracleBgpPeeringIp,
+                            vlan);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -86,7 +122,6 @@ public class CrossConnectMapping {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bgpMd5AuthKey")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String bgpMd5AuthKey;
 
     /**
@@ -97,7 +132,6 @@ public class CrossConnectMapping {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("crossConnectOrCrossConnectGroupId")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String crossConnectOrCrossConnectGroupId;
 
     /**
@@ -111,7 +145,6 @@ public class CrossConnectMapping {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerBgpPeeringIp")
-    @javax.validation.constraints.Size(min = 7, max = 46)
     String customerBgpPeeringIp;
 
     /**
@@ -124,7 +157,6 @@ public class CrossConnectMapping {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleBgpPeeringIp")
-    @javax.validation.constraints.Size(min = 7, max = 46)
     String oracleBgpPeeringIp;
 
     /**
@@ -137,7 +169,8 @@ public class CrossConnectMapping {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vlan")
-    @javax.validation.constraints.Min(100)
-    @javax.validation.constraints.Max(16777216)
     Integer vlan;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

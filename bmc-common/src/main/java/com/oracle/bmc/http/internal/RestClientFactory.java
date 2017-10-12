@@ -11,14 +11,15 @@ import org.glassfish.jersey.client.ClientProperties;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ser.FilterProvider;
+import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider;
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 import com.oracle.bmc.ClientConfiguration;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.http.signing.RequestSigner;
-
-import com.fasterxml.jackson.databind.SerializationFeature;
 
 /**
  * RestClientFactory is responsible for creating a new REST client whenever a
@@ -31,7 +32,6 @@ public class RestClientFactory {
             new JacksonJaxbJsonProvider(
                     DEFAULT_MAPPER, JacksonJaxbJsonProvider.DEFAULT_ANNOTATIONS);
     private static final ClientIdFilter CLIENT_ID_FILTER = new ClientIdFilter();
-    private static final RequestIdFilter REQUEST_ID_FILTER = new RequestIdFilter();
     private static final LogHeadersFilter LOG_HEADERS_FILTER = new LogHeadersFilter();
 
     static {
@@ -41,6 +41,12 @@ public class RestClientFactory {
         // Serialize Date instances using com.fasterxml.jackson.databind.util.StdDateFormat,
         // which corresponds to format string of "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         DEFAULT_MAPPER.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
+
+        FilterProvider filters =
+                new SimpleFilterProvider()
+                        .addFilter(ExplicitlySetFilter.NAME, ExplicitlySetFilter.INSTANCE);
+
+        DEFAULT_MAPPER.setFilterProvider(filters);
     }
 
     private final ClientConfigurator clientConfigurator;
@@ -106,7 +112,6 @@ public class RestClientFactory {
 
         client.register(new AuthnClientFilter(requestSigner));
         client.register(CLIENT_ID_FILTER);
-        client.register(REQUEST_ID_FILTER);
         client.register(LOG_HEADERS_FILTER);
 
         clientConfigurator.customizeClient(client);

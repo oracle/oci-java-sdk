@@ -19,6 +19,7 @@ package com.oracle.bmc.identity.model;
         name = "SAML2"
     )
 })
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class UpdateIdentityProviderDetails {
 
     /**
@@ -27,6 +28,5 @@ public class UpdateIdentityProviderDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    @javax.validation.constraints.Size(min = 1, max = 400)
     String description;
 }

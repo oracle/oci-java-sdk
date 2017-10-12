@@ -12,25 +12,55 @@ package com.oracle.bmc.loadbalancer.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = HealthCheckResult.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class HealthCheckResult {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("healthCheckStatus")
         private HealthCheckStatus healthCheckStatus;
 
+        public Builder healthCheckStatus(HealthCheckStatus healthCheckStatus) {
+            this.healthCheckStatus = healthCheckStatus;
+            this.__explicitlySet__.add("healthCheckStatus");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sourceIpAddress")
         private String sourceIpAddress;
+
+        public Builder sourceIpAddress(String sourceIpAddress) {
+            this.sourceIpAddress = sourceIpAddress;
+            this.__explicitlySet__.add("sourceIpAddress");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
+        public Builder timestamp(java.util.Date timestamp) {
+            this.timestamp = timestamp;
+            this.__explicitlySet__.add("timestamp");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public HealthCheckResult build() {
-            return new HealthCheckResult(healthCheckStatus, sourceIpAddress, subnetId, timestamp);
+            HealthCheckResult __instance__ =
+                    new HealthCheckResult(healthCheckStatus, sourceIpAddress, subnetId, timestamp);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -107,8 +137,6 @@ public class HealthCheckResult {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("healthCheckStatus")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     HealthCheckStatus healthCheckStatus;
 
     /**
@@ -119,8 +147,6 @@ public class HealthCheckResult {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceIpAddress")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String sourceIpAddress;
 
     /**
@@ -128,8 +154,6 @@ public class HealthCheckResult {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String subnetId;
 
     /**
@@ -139,7 +163,8 @@ public class HealthCheckResult {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     java.util.Date timestamp;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

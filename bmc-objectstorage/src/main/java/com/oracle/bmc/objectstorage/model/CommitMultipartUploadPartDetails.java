@@ -14,19 +14,37 @@ package com.oracle.bmc.objectstorage.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CommitMultipartUploadPartDetails.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CommitMultipartUploadPartDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("partNum")
         private Integer partNum;
 
+        public Builder partNum(Integer partNum) {
+            this.partNum = partNum;
+            this.__explicitlySet__.add("partNum");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("etag")
         private String etag;
 
+        public Builder etag(String etag) {
+            this.etag = etag;
+            this.__explicitlySet__.add("etag");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public CommitMultipartUploadPartDetails build() {
-            return new CommitMultipartUploadPartDetails(partNum, etag);
+            CommitMultipartUploadPartDetails __instance__ =
+                    new CommitMultipartUploadPartDetails(partNum, etag);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -46,15 +64,14 @@ public class CommitMultipartUploadPartDetails {
      * The part number for this part.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("partNum")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     Integer partNum;
 
     /**
      * The ETag returned when this part was uploaded.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("etag")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String etag;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

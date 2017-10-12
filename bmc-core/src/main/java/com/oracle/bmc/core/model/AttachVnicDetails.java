@@ -8,22 +8,46 @@ package com.oracle.bmc.core.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AttachVnicDetails.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class AttachVnicDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("createVnicDetails")
         private CreateVnicDetails createVnicDetails;
 
+        public Builder createVnicDetails(CreateVnicDetails createVnicDetails) {
+            this.createVnicDetails = createVnicDetails;
+            this.__explicitlySet__.add("createVnicDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
+
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            this.__explicitlySet__.add("displayName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
 
+        public Builder instanceId(String instanceId) {
+            this.instanceId = instanceId;
+            this.__explicitlySet__.add("instanceId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public AttachVnicDetails build() {
-            return new AttachVnicDetails(createVnicDetails, displayName, instanceId);
+            AttachVnicDetails __instance__ =
+                    new AttachVnicDetails(createVnicDetails, displayName, instanceId);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -46,8 +70,6 @@ public class AttachVnicDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createVnicDetails")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     CreateVnicDetails createVnicDetails;
 
     /**
@@ -55,15 +77,14 @@ public class AttachVnicDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
      * The OCID of the instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String instanceId;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

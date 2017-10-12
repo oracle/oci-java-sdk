@@ -36,53 +36,119 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PrivateIp.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class PrivateIp {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
+        public Builder availabilityDomain(String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
+            this.__explicitlySet__.add("availabilityDomain");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
+
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            this.__explicitlySet__.add("displayName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
         private String hostnameLabel;
+
+        public Builder hostnameLabel(String hostnameLabel) {
+            this.hostnameLabel = hostnameLabel;
+            this.__explicitlySet__.add("hostnameLabel");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
+
+        public Builder ipAddress(String ipAddress) {
+            this.ipAddress = ipAddress;
+            this.__explicitlySet__.add("ipAddress");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
         private Boolean isPrimary;
 
+        public Builder isPrimary(Boolean isPrimary) {
+            this.isPrimary = isPrimary;
+            this.__explicitlySet__.add("isPrimary");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
+
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        public Builder timeCreated(java.util.Date timeCreated) {
+            this.timeCreated = timeCreated;
+            this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
         private String vnicId;
 
+        public Builder vnicId(String vnicId) {
+            this.vnicId = vnicId;
+            this.__explicitlySet__.add("vnicId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public PrivateIp build() {
-            return new PrivateIp(
-                    availabilityDomain,
-                    compartmentId,
-                    displayName,
-                    hostnameLabel,
-                    id,
-                    ipAddress,
-                    isPrimary,
-                    subnetId,
-                    timeCreated,
-                    vnicId);
+            PrivateIp __instance__ =
+                    new PrivateIp(
+                            availabilityDomain,
+                            compartmentId,
+                            displayName,
+                            hostnameLabel,
+                            id,
+                            ipAddress,
+                            isPrimary,
+                            subnetId,
+                            timeCreated,
+                            vnicId);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -114,14 +180,12 @@ public class PrivateIp {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String availabilityDomain;
 
     /**
      * The OCID of the compartment containing the private IP.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
@@ -130,7 +194,6 @@ public class PrivateIp {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
@@ -148,14 +211,12 @@ public class PrivateIp {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
-    @javax.validation.constraints.Size(min = 1, max = 63)
     String hostnameLabel;
 
     /**
      * The private IP's Oracle ID (OCID).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String id;
 
     /**
@@ -182,7 +243,6 @@ public class PrivateIp {
      * The OCID of the subnet the VNIC is in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String subnetId;
 
     /**
@@ -200,6 +260,8 @@ public class PrivateIp {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String vnicId;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

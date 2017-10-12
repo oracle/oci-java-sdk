@@ -20,7 +20,7 @@ public class ListMultipartUploadsConverter {
         return request;
     }
 
-    public static javax.ws.rs.client.Invocation.Builder fromRequest(
+    public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client, ListMultipartUploadsRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -34,7 +34,7 @@ public class ListMultipartUploadsConverter {
             throw new NullPointerException("bucketName is required");
         }
 
-        javax.ws.rs.client.WebTarget target =
+        com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
                         .path("/")
                         .path("n")
@@ -63,7 +63,7 @@ public class ListMultipartUploadsConverter {
                                     request.getPage()));
         }
 
-        javax.ws.rs.client.Invocation.Builder ib = target.request();
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 

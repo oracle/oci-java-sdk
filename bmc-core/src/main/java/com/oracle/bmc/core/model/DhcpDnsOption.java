@@ -19,19 +19,36 @@ package com.oracle.bmc.core.model;
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class DhcpDnsOption extends DhcpOption {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("customDnsServers")
         private java.util.List<String> customDnsServers;
 
+        public Builder customDnsServers(java.util.List<String> customDnsServers) {
+            this.customDnsServers = customDnsServers;
+            this.__explicitlySet__.add("customDnsServers");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("serverType")
         private ServerType serverType;
 
+        public Builder serverType(ServerType serverType) {
+            this.serverType = serverType;
+            this.__explicitlySet__.add("serverType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public DhcpDnsOption build() {
-            return new DhcpDnsOption(customDnsServers, serverType);
+            DhcpDnsOption __instance__ = new DhcpDnsOption(customDnsServers, serverType);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -139,7 +156,8 @@ public class DhcpDnsOption extends DhcpOption {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serverType")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     ServerType serverType;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

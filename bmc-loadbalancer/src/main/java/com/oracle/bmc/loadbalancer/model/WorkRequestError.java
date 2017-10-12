@@ -9,19 +9,36 @@ package com.oracle.bmc.loadbalancer.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WorkRequestError.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class WorkRequestError {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
         private ErrorCode errorCode;
 
+        public Builder errorCode(ErrorCode errorCode) {
+            this.errorCode = errorCode;
+            this.__explicitlySet__.add("errorCode");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
+        public Builder message(String message) {
+            this.message = message;
+            this.__explicitlySet__.add("message");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public WorkRequestError build() {
-            return new WorkRequestError(errorCode, message);
+            WorkRequestError __instance__ = new WorkRequestError(errorCode, message);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -84,15 +101,14 @@ public class WorkRequestError {
     };
 
     @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     ErrorCode errorCode;
 
     /**
      * A human-readable error string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String message;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

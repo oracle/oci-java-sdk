@@ -20,19 +20,37 @@ package com.oracle.bmc.loadbalancer.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = SessionPersistenceConfigurationDetails.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class SessionPersistenceConfigurationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("cookieName")
         private String cookieName;
 
+        public Builder cookieName(String cookieName) {
+            this.cookieName = cookieName;
+            this.__explicitlySet__.add("cookieName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("disableFallback")
         private Boolean disableFallback;
 
+        public Builder disableFallback(Boolean disableFallback) {
+            this.disableFallback = disableFallback;
+            this.__explicitlySet__.add("disableFallback");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public SessionPersistenceConfigurationDetails build() {
-            return new SessionPersistenceConfigurationDetails(cookieName, disableFallback);
+            SessionPersistenceConfigurationDetails __instance__ =
+                    new SessionPersistenceConfigurationDetails(cookieName, disableFallback);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -56,9 +74,6 @@ public class SessionPersistenceConfigurationDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cookieName")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 4096)
     String cookieName;
 
     /**
@@ -70,4 +85,7 @@ public class SessionPersistenceConfigurationDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("disableFallback")
     Boolean disableFallback;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

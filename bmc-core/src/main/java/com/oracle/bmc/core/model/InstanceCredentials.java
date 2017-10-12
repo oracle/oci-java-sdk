@@ -11,19 +11,36 @@ package com.oracle.bmc.core.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = InstanceCredentials.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class InstanceCredentials {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
+        public Builder password(String password) {
+            this.password = password;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
+        public Builder username(String username) {
+            this.username = username;
+            this.__explicitlySet__.add("username");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public InstanceCredentials build() {
-            return new InstanceCredentials(password, username);
+            InstanceCredentials __instance__ = new InstanceCredentials(password, username);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -43,17 +60,14 @@ public class InstanceCredentials {
      * The password for the username.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String password;
 
     /**
      * The username.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("username")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String username;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

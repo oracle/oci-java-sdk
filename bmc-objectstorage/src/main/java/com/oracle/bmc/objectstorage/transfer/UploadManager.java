@@ -183,7 +183,8 @@ public class UploadManager {
             if (e instanceof BmcException) {
                 throw e;
             }
-            throw new BmcException(false, "Failed to upload object using multi-part uploads", e);
+            throw new BmcException(
+                    false, "Failed to upload object using multi-part uploads", e, null);
         } finally {
             // always close the source stream at this point
             StreamUtils.closeQuietly(uploadDetails.putObjectRequest.getPutObjectBody());
@@ -240,6 +241,7 @@ public class UploadManager {
                         "Cannot compute MD5 client-size as content length ("
                                 + contentLength.longValue()
                                 + ") is larger than max buffer.  Disable MD5 enforcement or provide a DuplicableInputStream to avoid this problem",
+                        null,
                         null);
             }
             try {
@@ -265,7 +267,7 @@ public class UploadManager {
         try {
             bytesCopied = StreamHelper.copy(stream, digestOutputStream);
         } catch (IOException e) {
-            throw new BmcException(false, "Unable to calculate MD5", e);
+            throw new BmcException(false, "Unable to calculate MD5", e, null);
         }
         if (bytesCopied != contentLength) {
             throw new BmcException(
@@ -274,6 +276,7 @@ public class UploadManager {
                             + bytesCopied
                             + ", "
                             + contentLength,
+                    null,
                     null);
         }
         return StreamHelper.base64Encode(digestOutputStream.getMessageDigest());
