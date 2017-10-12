@@ -13,41 +13,89 @@ package com.oracle.bmc.identity.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UserGroupMembership.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class UserGroupMembership {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
+
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("groupId")
         private String groupId;
 
+        public Builder groupId(String groupId) {
+            this.groupId = groupId;
+            this.__explicitlySet__.add("groupId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("userId")
         private String userId;
+
+        public Builder userId(String userId) {
+            this.userId = userId;
+            this.__explicitlySet__.add("userId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        public Builder timeCreated(java.util.Date timeCreated) {
+            this.timeCreated = timeCreated;
+            this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
+
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
         private Long inactiveStatus;
 
+        public Builder inactiveStatus(Long inactiveStatus) {
+            this.inactiveStatus = inactiveStatus;
+            this.__explicitlySet__.add("inactiveStatus");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public UserGroupMembership build() {
-            return new UserGroupMembership(
-                    id,
-                    compartmentId,
-                    groupId,
-                    userId,
-                    timeCreated,
-                    lifecycleState,
-                    inactiveStatus);
+            UserGroupMembership __instance__ =
+                    new UserGroupMembership(
+                            id,
+                            compartmentId,
+                            groupId,
+                            userId,
+                            timeCreated,
+                            lifecycleState,
+                            inactiveStatus);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -73,32 +121,24 @@ public class UserGroupMembership {
      * The OCID of the membership.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String id;
 
     /**
      * The OCID of the tenancy containing the user, group, and membership object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String compartmentId;
 
     /**
      * The OCID of the group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String groupId;
 
     /**
      * The OCID of the user.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String userId;
 
     /**
@@ -108,8 +148,6 @@ public class UserGroupMembership {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     java.util.Date timeCreated;
     /**
      * The membership's current state.  After creating a membership object, make sure its `lifecycleState` changes
@@ -168,9 +206,6 @@ public class UserGroupMembership {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 64)
     LifecycleState lifecycleState;
 
     /**
@@ -178,4 +213,7 @@ public class UserGroupMembership {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
     Long inactiveStatus;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

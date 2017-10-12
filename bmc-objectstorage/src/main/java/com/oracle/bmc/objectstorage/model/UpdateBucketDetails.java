@@ -14,25 +14,55 @@ package com.oracle.bmc.objectstorage.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateBucketDetails.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class UpdateBucketDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
+        public Builder namespace(String namespace) {
+            this.namespace = namespace;
+            this.__explicitlySet__.add("namespace");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
+
+        public Builder name(String name) {
+            this.name = name;
+            this.__explicitlySet__.add("name");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private java.util.Map<String, String> metadata;
 
+        public Builder metadata(java.util.Map<String, String> metadata) {
+            this.metadata = metadata;
+            this.__explicitlySet__.add("metadata");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("publicAccessType")
         private PublicAccessType publicAccessType;
 
+        public Builder publicAccessType(PublicAccessType publicAccessType) {
+            this.publicAccessType = publicAccessType;
+            this.__explicitlySet__.add("publicAccessType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public UpdateBucketDetails build() {
-            return new UpdateBucketDetails(namespace, name, metadata, publicAccessType);
+            UpdateBucketDetails __instance__ =
+                    new UpdateBucketDetails(namespace, name, metadata, publicAccessType);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -116,4 +146,7 @@ public class UpdateBucketDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicAccessType")
     PublicAccessType publicAccessType;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

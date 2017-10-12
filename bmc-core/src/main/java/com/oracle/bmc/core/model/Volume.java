@@ -16,41 +16,99 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Volume.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class Volume {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
+        public Builder availabilityDomain(String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
+            this.__explicitlySet__.add("availabilityDomain");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
+
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            this.__explicitlySet__.add("displayName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
+
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
+        private Long sizeInGBs;
+
+        public Builder sizeInGBs(Long sizeInGBs) {
+            this.sizeInGBs = sizeInGBs;
+            this.__explicitlySet__.add("sizeInGBs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInMBs")
         private Long sizeInMBs;
+
+        public Builder sizeInMBs(Long sizeInMBs) {
+            this.sizeInMBs = sizeInMBs;
+            this.__explicitlySet__.add("sizeInMBs");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        public Builder timeCreated(java.util.Date timeCreated) {
+            this.timeCreated = timeCreated;
+            this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public Volume build() {
-            return new Volume(
-                    availabilityDomain,
-                    compartmentId,
-                    displayName,
-                    id,
-                    lifecycleState,
-                    sizeInMBs,
-                    timeCreated);
+            Volume __instance__ =
+                    new Volume(
+                            availabilityDomain,
+                            compartmentId,
+                            displayName,
+                            id,
+                            lifecycleState,
+                            sizeInGBs,
+                            sizeInMBs,
+                            timeCreated);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -60,6 +118,7 @@ public class Volume {
                     .displayName(o.getDisplayName())
                     .id(o.getId())
                     .lifecycleState(o.getLifecycleState())
+                    .sizeInGBs(o.getSizeInGBs())
                     .sizeInMBs(o.getSizeInMBs())
                     .timeCreated(o.getTimeCreated());
         }
@@ -79,18 +138,12 @@ public class Volume {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String availabilityDomain;
 
     /**
      * The OCID of the compartment that contains the volume.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
@@ -99,18 +152,12 @@ public class Volume {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
      * The volume's Oracle ID (OCID).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String id;
     /**
      * The current state of a volume.
@@ -166,23 +213,26 @@ public class Volume {
      * The current state of a volume.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     LifecycleState lifecycleState;
 
     /**
-     * The size of the volume in MBs. The value must be a multiple of 1024.
+     * The size of the volume in GBs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
+    Long sizeInGBs;
+
+    /**
+     * The size of the volume in MBs. This field is deprecated. Please use sizeInGBs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInMBs")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     Long sizeInMBs;
 
     /**
      * The date and time the volume was created. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     java.util.Date timeCreated;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

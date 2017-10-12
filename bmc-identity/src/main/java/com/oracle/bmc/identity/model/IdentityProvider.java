@@ -31,22 +31,19 @@ package com.oracle.bmc.identity.model;
         name = "SAML2"
     )
 })
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class IdentityProvider {
 
     /**
      * The OCID of the `IdentityProvider`.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String id;
 
     /**
      * The OCID of the tenancy containing the `IdentityProvider`.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String compartmentId;
 
     /**
@@ -58,9 +55,6 @@ public class IdentityProvider {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 100)
     String name;
 
     /**
@@ -69,9 +63,6 @@ public class IdentityProvider {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 400)
     String description;
 
     /**
@@ -87,9 +78,6 @@ public class IdentityProvider {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("productType")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 64)
     String productType;
 
     /**
@@ -99,8 +87,6 @@ public class IdentityProvider {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     java.util.Date timeCreated;
     /**
      * The current state. After creating an `IdentityProvider`, make sure its
@@ -159,9 +145,6 @@ public class IdentityProvider {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 64)
     LifecycleState lifecycleState;
 
     /**

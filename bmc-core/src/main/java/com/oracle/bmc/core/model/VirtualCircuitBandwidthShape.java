@@ -12,19 +12,37 @@ package com.oracle.bmc.core.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = VirtualCircuitBandwidthShape.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class VirtualCircuitBandwidthShape {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("bandwidthInMbps")
         private Integer bandwidthInMbps;
 
+        public Builder bandwidthInMbps(Integer bandwidthInMbps) {
+            this.bandwidthInMbps = bandwidthInMbps;
+            this.__explicitlySet__.add("bandwidthInMbps");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        public Builder name(String name) {
+            this.name = name;
+            this.__explicitlySet__.add("name");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public VirtualCircuitBandwidthShape build() {
-            return new VirtualCircuitBandwidthShape(bandwidthInMbps, name);
+            VirtualCircuitBandwidthShape __instance__ =
+                    new VirtualCircuitBandwidthShape(bandwidthInMbps, name);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -56,8 +74,8 @@ public class VirtualCircuitBandwidthShape {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String name;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

@@ -8,24 +8,53 @@ package com.oracle.bmc.core.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateVnicDetails.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class UpdateVnicDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            this.__explicitlySet__.add("displayName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
         private String hostnameLabel;
 
+        public Builder hostnameLabel(String hostnameLabel) {
+            this.hostnameLabel = hostnameLabel;
+            this.__explicitlySet__.add("hostnameLabel");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("skipSourceDestCheck")
+        private Boolean skipSourceDestCheck;
+
+        public Builder skipSourceDestCheck(Boolean skipSourceDestCheck) {
+            this.skipSourceDestCheck = skipSourceDestCheck;
+            this.__explicitlySet__.add("skipSourceDestCheck");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public UpdateVnicDetails build() {
-            return new UpdateVnicDetails(displayName, hostnameLabel);
+            UpdateVnicDetails __instance__ =
+                    new UpdateVnicDetails(displayName, hostnameLabel, skipSourceDestCheck);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateVnicDetails o) {
-            return displayName(o.getDisplayName()).hostnameLabel(o.getHostnameLabel());
+            return displayName(o.getDisplayName())
+                    .hostnameLabel(o.getHostnameLabel())
+                    .skipSourceDestCheck(o.getSkipSourceDestCheck());
         }
     }
 
@@ -40,7 +69,6 @@ public class UpdateVnicDetails {
      * A user-friendly name. Does not have to be unique, and it's changeable.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
@@ -60,6 +88,20 @@ public class UpdateVnicDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
-    @javax.validation.constraints.Size(min = 1, max = 63)
     String hostnameLabel;
+
+    /**
+     * Whether the source/destination check is disabled on the VNIC.
+     * Defaults to `false`, which means the check is performed. For information
+     * about why you would skip the source/destination check, see
+     * [Using a Private IP as a Route Target](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm#privateip).
+     * <p>
+     * Example: `true`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("skipSourceDestCheck")
+    Boolean skipSourceDestCheck;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

@@ -12,22 +12,46 @@ package com.oracle.bmc.loadbalancer.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SSLConfiguration.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class SSLConfiguration {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("certificateName")
         private String certificateName;
 
+        public Builder certificateName(String certificateName) {
+            this.certificateName = certificateName;
+            this.__explicitlySet__.add("certificateName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("verifyDepth")
         private Integer verifyDepth;
+
+        public Builder verifyDepth(Integer verifyDepth) {
+            this.verifyDepth = verifyDepth;
+            this.__explicitlySet__.add("verifyDepth");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("verifyPeerCertificate")
         private Boolean verifyPeerCertificate;
 
+        public Builder verifyPeerCertificate(Boolean verifyPeerCertificate) {
+            this.verifyPeerCertificate = verifyPeerCertificate;
+            this.__explicitlySet__.add("verifyPeerCertificate");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public SSLConfiguration build() {
-            return new SSLConfiguration(certificateName, verifyDepth, verifyPeerCertificate);
+            SSLConfiguration __instance__ =
+                    new SSLConfiguration(certificateName, verifyDepth, verifyPeerCertificate);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -54,10 +78,6 @@ public class SSLConfiguration {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateName")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Pattern(regexp = "/^[a-zA-Z0-9_.-]*$/")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String certificateName;
 
     /**
@@ -67,8 +87,6 @@ public class SSLConfiguration {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("verifyDepth")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     Integer verifyDepth;
 
     /**
@@ -78,7 +96,8 @@ public class SSLConfiguration {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("verifyPeerCertificate")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     Boolean verifyPeerCertificate;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

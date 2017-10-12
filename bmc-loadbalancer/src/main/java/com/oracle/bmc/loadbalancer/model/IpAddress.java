@@ -9,19 +9,36 @@ package com.oracle.bmc.loadbalancer.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = IpAddress.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class IpAddress {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
+        public Builder ipAddress(String ipAddress) {
+            this.ipAddress = ipAddress;
+            this.__explicitlySet__.add("ipAddress");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isPublic")
         private Boolean isPublic;
 
+        public Builder isPublic(Boolean isPublic) {
+            this.isPublic = isPublic;
+            this.__explicitlySet__.add("isPublic");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public IpAddress build() {
-            return new IpAddress(ipAddress, isPublic);
+            IpAddress __instance__ = new IpAddress(ipAddress, isPublic);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -44,8 +61,6 @@ public class IpAddress {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String ipAddress;
 
     /**
@@ -58,4 +73,7 @@ public class IpAddress {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPublic")
     Boolean isPublic;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

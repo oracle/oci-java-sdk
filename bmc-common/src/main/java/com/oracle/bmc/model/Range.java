@@ -6,6 +6,7 @@ package com.oracle.bmc.model;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * Class specifying a range-request is being made. Request mostly follows
@@ -70,13 +71,25 @@ public class Range {
         LOG.debug("Attempting to parse range: {}", value);
         value = value.replace("bytes", "").trim();
         String[] parts = value.split("/");
+        if (parts.length != 2) {
+            throw new IllegalArgumentException(
+                    "Must provide <range>/<length> format for range request: " + value);
+        }
         String byteRangePart = parts[0];
         String contentLengthPart = parts[1];
         Long contentLength =
                 contentLengthPart.equals("*") ? null : Long.parseLong(contentLengthPart);
-        String[] byteValues = byteRangePart.split("-");
-        Long startByte = Long.parseLong(byteValues[0]);
-        Long endByte = Long.parseLong(byteValues[1]);
+        String[] byteValues = byteRangePart.split("-", -1); // include trailing empty strings
+        if (byteValues.length != 2) {
+            throw new IllegalArgumentException(
+                    "Must provide <start>-<end> format for range request: " + value);
+        }
+        Long startByte = StringUtils.isBlank(byteValues[0]) ? null : Long.parseLong(byteValues[0]);
+        Long endByte = StringUtils.isBlank(byteValues[1]) ? null : Long.parseLong(byteValues[1]);
+        if (startByte == null && endByte == null) {
+            throw new IllegalArgumentException(
+                    "Must provide start/end byte for range request: " + value);
+        }
         Range range = new Range(startByte, endByte);
         range.contentLength = contentLength;
         return range;

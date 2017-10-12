@@ -8,16 +8,27 @@ package com.oracle.bmc.identity.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateSwiftPasswordDetails.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class UpdateSwiftPasswordDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public UpdateSwiftPasswordDetails build() {
-            return new UpdateSwiftPasswordDetails(description);
+            UpdateSwiftPasswordDetails __instance__ = new UpdateSwiftPasswordDetails(description);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -38,4 +49,7 @@ public class UpdateSwiftPasswordDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

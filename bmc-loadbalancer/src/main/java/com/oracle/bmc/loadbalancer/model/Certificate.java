@@ -12,22 +12,46 @@ package com.oracle.bmc.loadbalancer.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Certificate.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class Certificate {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("caCertificate")
         private String caCertificate;
 
+        public Builder caCertificate(String caCertificate) {
+            this.caCertificate = caCertificate;
+            this.__explicitlySet__.add("caCertificate");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("certificateName")
         private String certificateName;
+
+        public Builder certificateName(String certificateName) {
+            this.certificateName = certificateName;
+            this.__explicitlySet__.add("certificateName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("publicCertificate")
         private String publicCertificate;
 
+        public Builder publicCertificate(String publicCertificate) {
+            this.publicCertificate = publicCertificate;
+            this.__explicitlySet__.add("publicCertificate");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public Certificate build() {
-            return new Certificate(caCertificate, certificateName, publicCertificate);
+            Certificate __instance__ =
+                    new Certificate(caCertificate, certificateName, publicCertificate);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -60,8 +84,6 @@ public class Certificate {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("caCertificate")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String caCertificate;
 
     /**
@@ -73,10 +95,6 @@ public class Certificate {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateName")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Pattern(regexp = "/^[a-zA-Z0-9_.-]*$/")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String certificateName;
 
     /**
@@ -94,7 +112,8 @@ public class Certificate {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicCertificate")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String publicCertificate;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

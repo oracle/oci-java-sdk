@@ -15,16 +15,28 @@ package com.oracle.bmc.core.model;
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "destinationType"
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class ExportImageViaObjectStorageUriDetails extends ExportImageDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("destinationUri")
         private String destinationUri;
 
+        public Builder destinationUri(String destinationUri) {
+            this.destinationUri = destinationUri;
+            this.__explicitlySet__.add("destinationUri");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public ExportImageViaObjectStorageUriDetails build() {
-            return new ExportImageViaObjectStorageUriDetails(destinationUri);
+            ExportImageViaObjectStorageUriDetails __instance__ =
+                    new ExportImageViaObjectStorageUriDetails(destinationUri);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -51,7 +63,8 @@ public class ExportImageViaObjectStorageUriDetails extends ExportImageDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationUri")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String destinationUri;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

@@ -17,25 +17,54 @@ package com.oracle.bmc.identity.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Tenancy.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class Tenancy {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
+
+        public Builder name(String name) {
+            this.name = name;
+            this.__explicitlySet__.add("name");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("homeRegionKey")
         private String homeRegionKey;
 
+        public Builder homeRegionKey(String homeRegionKey) {
+            this.homeRegionKey = homeRegionKey;
+            this.__explicitlySet__.add("homeRegionKey");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public Tenancy build() {
-            return new Tenancy(id, name, description, homeRegionKey);
+            Tenancy __instance__ = new Tenancy(id, name, description, homeRegionKey);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -83,4 +112,7 @@ public class Tenancy {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("homeRegionKey")
     String homeRegionKey;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

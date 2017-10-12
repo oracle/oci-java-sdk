@@ -12,45 +12,99 @@ package com.oracle.bmc.objectstorage.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Bucket.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class Bucket {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
+        public Builder namespace(String namespace) {
+            this.namespace = namespace;
+            this.__explicitlySet__.add("namespace");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
+
+        public Builder name(String name) {
+            this.name = name;
+            this.__explicitlySet__.add("name");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private java.util.Map<String, String> metadata;
+
+        public Builder metadata(java.util.Map<String, String> metadata) {
+            this.metadata = metadata;
+            this.__explicitlySet__.add("metadata");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
         private String createdBy;
 
+        public Builder createdBy(String createdBy) {
+            this.createdBy = createdBy;
+            this.__explicitlySet__.add("createdBy");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
+
+        public Builder timeCreated(java.util.Date timeCreated) {
+            this.timeCreated = timeCreated;
+            this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("etag")
         private String etag;
 
+        public Builder etag(String etag) {
+            this.etag = etag;
+            this.__explicitlySet__.add("etag");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("publicAccessType")
         private PublicAccessType publicAccessType;
 
+        public Builder publicAccessType(PublicAccessType publicAccessType) {
+            this.publicAccessType = publicAccessType;
+            this.__explicitlySet__.add("publicAccessType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public Bucket build() {
-            return new Bucket(
-                    namespace,
-                    name,
-                    compartmentId,
-                    metadata,
-                    createdBy,
-                    timeCreated,
-                    etag,
-                    publicAccessType);
+            Bucket __instance__ =
+                    new Bucket(
+                            namespace,
+                            name,
+                            compartmentId,
+                            metadata,
+                            createdBy,
+                            timeCreated,
+                            etag,
+                            publicAccessType);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -77,56 +131,42 @@ public class Bucket {
      * The namespace in which the bucket lives.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String namespace;
 
     /**
      * The name of the bucket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String name;
 
     /**
      * The compartment ID in which the bucket is authorized.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String compartmentId;
 
     /**
      * Arbitrary string keys and values for user-defined metadata.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     java.util.Map<String, String> metadata;
 
     /**
      * The OCID of the user who created the bucket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String createdBy;
 
     /**
      * The date and time at which the bucket was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     java.util.Date timeCreated;
 
     /**
      * The entity tag for the bucket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("etag")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String etag;
     /**
      * The type of public access available on this bucket. Allows authenticated caller to access the bucket or
@@ -187,4 +227,7 @@ public class Bucket {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicAccessType")
     PublicAccessType publicAccessType;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

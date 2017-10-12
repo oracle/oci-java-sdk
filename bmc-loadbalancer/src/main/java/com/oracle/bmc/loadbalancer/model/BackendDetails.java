@@ -9,31 +9,73 @@ package com.oracle.bmc.loadbalancer.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BackendDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class BackendDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("backup")
         private Boolean backup;
 
+        public Builder backup(Boolean backup) {
+            this.backup = backup;
+            this.__explicitlySet__.add("backup");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("drain")
         private Boolean drain;
+
+        public Builder drain(Boolean drain) {
+            this.drain = drain;
+            this.__explicitlySet__.add("drain");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
+        public Builder ipAddress(String ipAddress) {
+            this.ipAddress = ipAddress;
+            this.__explicitlySet__.add("ipAddress");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("offline")
         private Boolean offline;
+
+        public Builder offline(Boolean offline) {
+            this.offline = offline;
+            this.__explicitlySet__.add("offline");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
+        public Builder port(Integer port) {
+            this.port = port;
+            this.__explicitlySet__.add("port");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("weight")
         private Integer weight;
 
+        public Builder weight(Integer weight) {
+            this.weight = weight;
+            this.__explicitlySet__.add("weight");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public BackendDetails build() {
-            return new BackendDetails(backup, drain, ipAddress, offline, port, weight);
+            BackendDetails __instance__ =
+                    new BackendDetails(backup, drain, ipAddress, offline, port, weight);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -81,8 +123,6 @@ public class BackendDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String ipAddress;
 
     /**
@@ -102,10 +142,6 @@ public class BackendDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Min(1)
-    @javax.validation.constraints.Max(65535)
     Integer port;
 
     /**
@@ -120,4 +156,7 @@ public class BackendDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("weight")
     Integer weight;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

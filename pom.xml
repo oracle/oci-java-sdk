@@ -4,7 +4,7 @@
 
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>1.2.15</version>
+  <version>1.2.16</version>
   <packaging>pom</packaging>
 
   <name>Oracle Cloud Infrastructure SDK</name>
@@ -27,7 +27,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <jackson.version>2.7.4</jackson.version>
+    <jackson.version>2.9.0</jackson.version>
     <jersey.version>2.24.1</jersey.version>
     <guava.version>19.0</guava.version>
     <junit.version>4.11</junit.version>
@@ -40,6 +40,27 @@
       <id>dev</id>
       <build>
         <plugins>
+          <plugin>
+            <groupId>org.commonjava.maven.plugins</groupId>
+            <artifactId>directory-maven-plugin</artifactId>
+            <version>0.1</version>
+            <executions>
+                <execution>
+                    <id>directories</id>
+                    <goals>
+                        <goal>directory-of</goal>
+                    </goals>
+                    <phase>initialize</phase>
+                    <configuration>
+                        <property>ocijavasdk.basedir</property>
+                        <project>
+                            <groupId>com.oracle.oci.sdk</groupId>
+                            <artifactId>oci-java-sdk</artifactId>
+                        </project>
+                    </configuration>
+                </execution>
+            </executions>
+          </plugin>
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>build-helper-maven-plugin</artifactId>
@@ -186,7 +207,7 @@
           <version>3.0</version>
           <configuration>
             <aggregate>true</aggregate>
-            <header>licenseheader.txt</header>
+            <header>${ocijavasdk.basedir}/licenseheader.txt</header>
             <includes>
               <include>src/main/java/**/*.java</include>
               <include>src/test/java/**/*.java</include>
@@ -319,7 +340,7 @@
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
-      <version>2.7.5</version>
+      <version>2.10.0</version>
       <scope>test</scope>
     </dependency>
 
@@ -439,6 +460,7 @@
     <module>bmc-bom</module>
     <module>bmc-common</module>
     <module>bmc-core</module>
+    <module>bmc-database</module>
     <module>bmc-examples</module>
     <module>bmc-identity</module>
     <module>bmc-loadbalancer</module>

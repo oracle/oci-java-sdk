@@ -13,28 +13,64 @@ package com.oracle.bmc.identity.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UIPassword.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class UIPassword {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
+        public Builder password(String password) {
+            this.password = password;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("userId")
         private String userId;
+
+        public Builder userId(String userId) {
+            this.userId = userId;
+            this.__explicitlySet__.add("userId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        public Builder timeCreated(java.util.Date timeCreated) {
+            this.timeCreated = timeCreated;
+            this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
+
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
         private Long inactiveStatus;
 
+        public Builder inactiveStatus(Long inactiveStatus) {
+            this.inactiveStatus = inactiveStatus;
+            this.__explicitlySet__.add("inactiveStatus");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public UIPassword build() {
-            return new UIPassword(password, userId, timeCreated, lifecycleState, inactiveStatus);
+            UIPassword __instance__ =
+                    new UIPassword(password, userId, timeCreated, lifecycleState, inactiveStatus);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -131,7 +167,6 @@ public class UIPassword {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    @javax.validation.constraints.Size(min = 1, max = 64)
     LifecycleState lifecycleState;
 
     /**
@@ -139,4 +174,7 @@ public class UIPassword {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
     Long inactiveStatus;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

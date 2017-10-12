@@ -3,35 +3,38 @@
  */
 package com.oracle.bmc.http.internal;
 
-import java.io.InterruptedIOException;
-import java.util.concurrent.Future;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.google.common.base.Throwables;
+import com.oracle.bmc.model.BmcException;
+import com.oracle.bmc.requests.BmcRequest;
+import com.oracle.bmc.util.internal.Consumer;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import lombok.Value;
+import lombok.extern.slf4j.Slf4j;
 
 import javax.annotation.Nullable;
 import javax.ws.rs.ProcessingException;
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.Entity;
-import javax.ws.rs.client.Invocation;
-import javax.ws.rs.client.InvocationCallback;
-import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.client.*;
+import javax.ws.rs.core.GenericType;
+import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
-
-import com.google.common.base.Throwables;
-import com.oracle.bmc.model.BmcException;
-import com.oracle.bmc.util.internal.Consumer;
-
-import lombok.NonNull;
-import lombok.extern.slf4j.Slf4j;
+import java.io.InputStream;
+import java.io.InterruptedIOException;
+import java.util.UUID;
+import java.util.concurrent.Future;
 
 /**
  * A REST client that can make synchronous and asynchronous calls.
  */
+@Slf4j
 public class RestClient implements AutoCloseable {
     private static final String PATCH_VERB = "PATCH";
 
     private final EntityFactory entityFactory;
     private final Client client;
 
-    private WebTarget baseTarget;
+    private WrappedWebTarget baseTarget;
 
     /**
      * Create a new client that uses a provided client to make all its requests.
@@ -51,7 +54,7 @@ public class RestClient implements AutoCloseable {
      * @param endpoint The endpoint.
      */
     public void setEndpoint(@NonNull String endpoint) {
-        this.baseTarget = client.target(endpoint);
+        this.baseTarget = new WrappedWebTarget(client.target(endpoint));
     }
 
     @Override
@@ -64,7 +67,7 @@ public class RestClient implements AutoCloseable {
      *
      * @return The target.
      */
-    public WebTarget getBaseTarget() {
+    public WrappedWebTarget getBaseTarget() {
         if (this.baseTarget == null) {
             throw new NullPointerException("No endpoint has been configured");
         }
@@ -82,13 +85,14 @@ public class RestClient implements AutoCloseable {
      * @return The {@link Response} object.
      * @throws BmcException If an error was encountered while invoking the request.
      */
-    public Response get(@NonNull Invocation.Builder ib, @NonNull Object request)
-            throws BmcException {
+    public <T extends BmcRequest> Response get(
+            @NonNull WrappedInvocationBuilder ib, @NonNull T request) throws BmcException {
+        InvocationInformation info = preprocessRequest(ib, request);
         try {
             Response response = ib.get();
             return response;
         } catch (ProcessingException ex) {
-            throw convertToBmcException(baseTarget, ex);
+            throw convertToBmcException(baseTarget, ex, info);
         }
     }
 
@@ -105,12 +109,13 @@ public class RestClient implements AutoCloseable {
      * from both the future and the consumer, as the entity stream may
      * not be able to support being consumed twice.
      */
-    public Future<Response> get(
-            @NonNull Invocation.Builder ib,
-            @NonNull Object request,
+    public <T extends BmcRequest> Future<Response> get(
+            @NonNull WrappedInvocationBuilder ib,
+            @NonNull T request,
             @Nullable Consumer<Response> onSuccess,
             @Nullable Consumer<Throwable> onError) {
-        return ib.async().get(new Callback(baseTarget, onSuccess, onError));
+        InvocationInformation info = preprocessRequest(ib, request);
+        return ib.async().get(new Callback(baseTarget, info, onSuccess, onError));
     }
 
     /**
@@ -124,15 +129,31 @@ public class RestClient implements AutoCloseable {
      * @return The {@link Response} object.
      * @throws BmcException If an error was encountered while invoking the request.
      */
-    public Response post(
-            @NonNull Invocation.Builder ib, @Nullable Object body, @NonNull Object request)
+    public <T extends BmcRequest> Response post(
+            @NonNull WrappedInvocationBuilder ib, @Nullable Object body, @NonNull T request)
             throws BmcException {
+        InvocationInformation info = preprocessRequest(ib, request);
         try {
-            Entity<?> requestBody = this.entityFactory.forPost(request, body);
+            Entity<?> requestBody = this.entityFactory.forPost(request, attemptToSerialize(body));
             final Response response = ib.post(requestBody);
             return response;
         } catch (ProcessingException e) {
-            throw convertToBmcException(baseTarget, e);
+            throw convertToBmcException(baseTarget, e, info);
+        }
+    }
+
+    /**
+     * Convert the body to a JSON string, unless it is already a string, or if it is an InputStream
+     * @param body body
+     * @return body as string, or unchanged if String or InputStream
+     */
+    private Object attemptToSerialize(@Nullable Object body) {
+        try {
+            return (body instanceof String || body instanceof InputStream)
+                    ? body
+                    : RestClientFactory.getObjectMapper().writeValueAsString(body);
+        } catch (JsonProcessingException e) {
+            throw new IllegalArgumentException("Unable to process JSON body", e);
         }
     }
 
@@ -151,14 +172,15 @@ public class RestClient implements AutoCloseable {
      * from both the future and the consumer, as the entity stream may
      * not be able to support being consumed twice.
      */
-    public Future<Response> post(
-            @NonNull Invocation.Builder ib,
+    public <T extends BmcRequest> Future<Response> post(
+            @NonNull WrappedInvocationBuilder ib,
             @Nullable Object body,
-            @NonNull Object request,
+            @NonNull T request,
             @Nullable Consumer<Response> onSuccess,
             @Nullable Consumer<Throwable> onError) {
-        Entity<?> requestBody = this.entityFactory.forPost(request, body);
-        return ib.async().post(requestBody, new Callback(baseTarget, onSuccess, onError));
+        InvocationInformation info = preprocessRequest(ib, request);
+        Entity<?> requestBody = this.entityFactory.forPost(request, attemptToSerialize(body));
+        return ib.async().post(requestBody, new Callback(baseTarget, info, onSuccess, onError));
     }
 
     /**
@@ -171,7 +193,8 @@ public class RestClient implements AutoCloseable {
      * @return The {@link Response} object.
      * @throws BmcException If an error was encountered while invoking the request.
      */
-    public Response post(@NonNull Invocation.Builder ib, @NonNull Object request) {
+    public <T extends BmcRequest> Response post(
+            @NonNull WrappedInvocationBuilder ib, @NonNull T request) {
         return post(ib, null, request);
     }
 
@@ -189,9 +212,9 @@ public class RestClient implements AutoCloseable {
      * from both the future and the consumer, as the entity stream may
      * not be able to support being consumed twice.
      */
-    public Future<Response> post(
-            @NonNull Invocation.Builder ib,
-            @NonNull Object request,
+    public <T extends BmcRequest> Future<Response> post(
+            @NonNull WrappedInvocationBuilder ib,
+            @NonNull T request,
             @Nullable Consumer<Response> onSuccess,
             @Nullable Consumer<Throwable> onError) {
         return post(ib, null, request, onSuccess, onError);
@@ -207,7 +230,8 @@ public class RestClient implements AutoCloseable {
      * @return The {@link Response} object.
      * @throws BmcException If an error was encountered while invoking the request.
      */
-    public Response patch(@NonNull Invocation.Builder ib, @NonNull Object request) {
+    public <T extends BmcRequest> Response patch(
+            @NonNull WrappedInvocationBuilder ib, @NonNull T request) {
         return patch(ib, null, request);
     }
 
@@ -222,15 +246,16 @@ public class RestClient implements AutoCloseable {
      * @return The {@link Response} object.
      * @throws BmcException If an error was encountered while invoking the request.
      */
-    public Response patch(
-            @NonNull Invocation.Builder ib, @Nullable Object body, @NonNull Object request)
+    public <T extends BmcRequest> Response patch(
+            @NonNull WrappedInvocationBuilder ib, @Nullable Object body, @NonNull T request)
             throws BmcException {
+        InvocationInformation info = preprocessRequest(ib, request);
         try {
-            Entity<?> requestBody = this.entityFactory.forPatch(request, body);
+            Entity<?> requestBody = this.entityFactory.forPatch(request, attemptToSerialize(body));
             final Response response = ib.method(PATCH_VERB, requestBody);
             return response;
         } catch (ProcessingException e) {
-            throw convertToBmcException(baseTarget, e);
+            throw convertToBmcException(baseTarget, e, info);
         }
     }
 
@@ -248,9 +273,9 @@ public class RestClient implements AutoCloseable {
      * from both the future and the consumer, as the entity stream may
      * not be able to support being consumed twice.
      */
-    public Future<Response> patch(
-            @NonNull Invocation.Builder ib,
-            @NonNull Object request,
+    public <T extends BmcRequest> Future<Response> patch(
+            @NonNull WrappedInvocationBuilder ib,
+            @NonNull T request,
             @Nullable Consumer<Response> onSuccess,
             @Nullable Consumer<Throwable> onError) {
         return patch(ib, null, request, onSuccess, onError);
@@ -271,16 +296,20 @@ public class RestClient implements AutoCloseable {
      * from both the future and the consumer, as the entity stream may
      * not be able to support being consumed twice.
      */
-    public Future<Response> patch(
-            @NonNull Invocation.Builder ib,
+    public <T extends BmcRequest> Future<Response> patch(
+            @NonNull WrappedInvocationBuilder ib,
             @Nullable Object body,
-            @NonNull Object request,
+            @NonNull T request,
             @Nullable Consumer<Response> onSuccess,
             @Nullable Consumer<Throwable> onError) {
-        Entity<?> requestBody = this.entityFactory.forPatch(request, body);
+        InvocationInformation info = preprocessRequest(ib, request);
+        Entity<?> requestBody = this.entityFactory.forPatch(request, attemptToSerialize(body));
 
         return ib.async()
-                .method(PATCH_VERB, requestBody, new Callback(baseTarget, onSuccess, onError));
+                .method(
+                        PATCH_VERB,
+                        requestBody,
+                        new Callback(baseTarget, info, onSuccess, onError));
     }
 
     /**
@@ -293,7 +322,8 @@ public class RestClient implements AutoCloseable {
      * @return The {@link Response} object.
      * @throws BmcException If an error was encountered while invoking the request.
      */
-    public Response put(@NonNull Invocation.Builder ib, @NonNull Object request) {
+    public <T extends BmcRequest> Response put(
+            @NonNull WrappedInvocationBuilder ib, @NonNull T request) {
         return put(ib, null, request);
     }
 
@@ -312,15 +342,16 @@ public class RestClient implements AutoCloseable {
      * @throws BmcException
      *             If an error was encountered while invoking the request.
      */
-    public Response put(
-            @NonNull Invocation.Builder ib, @Nullable Object body, @NonNull Object request)
+    public <T extends BmcRequest> Response put(
+            @NonNull WrappedInvocationBuilder ib, @Nullable Object body, @NonNull T request)
             throws BmcException {
+        InvocationInformation info = preprocessRequest(ib, request);
         try {
-            Entity<?> requestBody = this.entityFactory.forPut(request, body);
+            Entity<?> requestBody = this.entityFactory.forPut(request, attemptToSerialize(body));
             final Response response = ib.put(requestBody);
             return response;
         } catch (ProcessingException e) {
-            throw convertToBmcException(baseTarget, e);
+            throw convertToBmcException(baseTarget, e, info);
         }
     }
 
@@ -342,9 +373,9 @@ public class RestClient implements AutoCloseable {
      *         from both the future and the consumer, as the entity stream may
      *         not be able to support being consumed twice.
      */
-    public Future<Response> put(
-            @NonNull Invocation.Builder ib,
-            @NonNull Object request,
+    public <T extends BmcRequest> Future<Response> put(
+            @NonNull WrappedInvocationBuilder ib,
+            @NonNull T request,
             @Nullable Consumer<Response> onSuccess,
             @Nullable Consumer<Throwable> onError) {
         return put(ib, null, request, onSuccess, onError);
@@ -370,14 +401,15 @@ public class RestClient implements AutoCloseable {
      *         from both the future and the consumer, as the entity stream may
      *         not be able to support being consumed twice.
      */
-    public Future<Response> put(
-            @NonNull Invocation.Builder ib,
+    public <T extends BmcRequest> Future<Response> put(
+            @NonNull WrappedInvocationBuilder ib,
             @Nullable Object body,
-            @NonNull Object request,
+            @NonNull T request,
             @Nullable Consumer<Response> onSuccess,
             @Nullable Consumer<Throwable> onError) {
-        Entity<?> requestBody = this.entityFactory.forPut(request, body);
-        return ib.async().put(requestBody, new Callback(baseTarget, onSuccess, onError));
+        InvocationInformation info = preprocessRequest(ib, request);
+        Entity<?> requestBody = this.entityFactory.forPut(request, attemptToSerialize(body));
+        return ib.async().put(requestBody, new Callback(baseTarget, info, onSuccess, onError));
     }
 
     /**
@@ -392,13 +424,14 @@ public class RestClient implements AutoCloseable {
      * @throws BmcException
      *             If an error was encountered while invoking the request.
      */
-    public Response delete(@NonNull Invocation.Builder ib, @NonNull Object request)
-            throws BmcException {
+    public <T extends BmcRequest> Response delete(
+            @NonNull WrappedInvocationBuilder ib, @NonNull T request) throws BmcException {
+        InvocationInformation info = preprocessRequest(ib, request);
         try {
             Response response = ib.delete(Response.class);
             return response;
         } catch (ProcessingException e) {
-            throw convertToBmcException(baseTarget, e);
+            throw convertToBmcException(baseTarget, e, info);
         }
     }
 
@@ -419,12 +452,13 @@ public class RestClient implements AutoCloseable {
      *         from both the future and the consumer, as the entity stream may
      *         not be able to support being consumed twice.
      */
-    public Future<Response> delete(
-            @NonNull Invocation.Builder ib,
-            @NonNull Object request,
+    public <T extends BmcRequest> Future<Response> delete(
+            @NonNull WrappedInvocationBuilder ib,
+            @NonNull T request,
             @Nullable Consumer<Response> onSuccess,
             @Nullable Consumer<Throwable> onError) {
-        return ib.async().delete(new Callback(baseTarget, onSuccess, onError));
+        InvocationInformation info = preprocessRequest(ib, request);
+        return ib.async().delete(new Callback(baseTarget, info, onSuccess, onError));
     }
 
     /**
@@ -439,13 +473,14 @@ public class RestClient implements AutoCloseable {
      * @throws BmcException
      *             If an error was encountered while invoking the request.
      */
-    public Response head(@NonNull Invocation.Builder ib, @NonNull Object request)
-            throws BmcException {
+    public <T extends BmcRequest> Response head(
+            @NonNull WrappedInvocationBuilder ib, @NonNull T request) throws BmcException {
+        InvocationInformation info = preprocessRequest(ib, request);
         try {
             Response response = ib.head();
             return response;
         } catch (ProcessingException ex) {
-            throw convertToBmcException(baseTarget, ex);
+            throw convertToBmcException(baseTarget, ex, info);
         }
     }
 
@@ -467,12 +502,13 @@ public class RestClient implements AutoCloseable {
      *         from both the future and the consumer, as the entity stream may
      *         not be able to support being consumed twice.
      */
-    public Future<Response> head(
-            @NonNull Invocation.Builder ib,
-            @NonNull Object request,
+    public <T extends BmcRequest> Future<Response> head(
+            @NonNull WrappedInvocationBuilder ib,
+            @NonNull T request,
             @Nullable Consumer<Response> onSuccess,
             @Nullable Consumer<Throwable> onError) {
-        return ib.async().head(new Callback(baseTarget, onSuccess, onError));
+        InvocationInformation info = preprocessRequest(ib, request);
+        return ib.async().head(new Callback(baseTarget, info, onSuccess, onError));
     }
 
     /**
@@ -484,31 +520,237 @@ public class RestClient implements AutoCloseable {
      *            The processing exception.
      * @return A new BmcException.
      */
-    private static BmcException convertToBmcException(WebTarget target, ProcessingException e) {
+    private static BmcException convertToBmcException(
+            WebTarget target, ProcessingException e, InvocationInformation info) {
         Throwable t = Throwables.getRootCause(e);
         if (t instanceof InterruptedIOException) {
             return new BmcException(
-                    true, "Timed out while communicating to: " + target.getUri().toString(), e);
+                    true,
+                    "Timed out while communicating to: " + target.getUri().toString(),
+                    e,
+                    info.getRequestId());
         }
         return new BmcException(
                 false,
                 "Processing exception while communicating to: " + target.getUri().toString(),
-                e);
+                e,
+                info.getRequestId());
+    }
+
+    static <T extends BmcRequest> InvocationInformation preprocessRequest(
+            WrappedInvocationBuilder ib, T request) {
+        NonSubmittingInvocationBuilder nonSubmittingInvocationBuilder =
+                new NonSubmittingInvocationBuilder(ib);
+        Consumer<Invocation.Builder> invocationPreprocessor = request.getInvocationCallback();
+        if (invocationPreprocessor != null) {
+            invocationPreprocessor.accept(nonSubmittingInvocationBuilder);
+        }
+
+        Object first = ib.getHeaders().getFirst(BmcException.OPC_REQUEST_ID_HEADER);
+        String requestId;
+        if (first == null) {
+            // only add if the customer has not added it themselves.
+            requestId = generateRequestId();
+            LOG.debug("Generated request ID: {}", requestId);
+            ib.header(BmcException.OPC_REQUEST_ID_HEADER, requestId);
+        } else {
+            requestId = first.toString();
+            LOG.debug("User-set request ID: {}", requestId);
+        }
+
+        return new InvocationInformation(requestId, ib.getHeaders());
+    }
+
+    private static String generateRequestId() {
+        return UUID.randomUUID().toString().replace("-", "").toUpperCase();
+    }
+
+    // prevents users from being able to call any method that actually submits the request
+    @RequiredArgsConstructor
+    static class NonSubmittingInvocationBuilder extends ForwardingInvocationBuilder {
+        private final WrappedInvocationBuilder delegate;
+
+        @Override
+        public Invocation.Builder delegate() {
+            return delegate;
+        }
+
+        @Override
+        public Response get() {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
+
+        @Override
+        public <T> T get(Class<T> responseType) {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
+
+        @Override
+        public <T> T get(GenericType<T> responseType) {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
+
+        @Override
+        public Response put(Entity<?> entity) {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
+
+        @Override
+        public <T> T put(Entity<?> entity, Class<T> responseType) {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
+
+        @Override
+        public <T> T put(Entity<?> entity, GenericType<T> responseType) {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
+
+        @Override
+        public Response post(Entity<?> entity) {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
+
+        @Override
+        public <T> T post(Entity<?> entity, Class<T> responseType) {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
+
+        @Override
+        public <T> T post(Entity<?> entity, GenericType<T> responseType) {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
+
+        @Override
+        public Response delete() {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
+
+        @Override
+        public <T> T delete(Class<T> responseType) {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
+
+        @Override
+        public <T> T delete(GenericType<T> responseType) {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
+
+        @Override
+        public Response head() {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
+
+        @Override
+        public Response options() {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
+
+        @Override
+        public <T> T options(Class<T> responseType) {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
+
+        @Override
+        public <T> T options(GenericType<T> responseType) {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
+
+        @Override
+        public Response trace() {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
+
+        @Override
+        public <T> T trace(Class<T> responseType) {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
+
+        @Override
+        public <T> T trace(GenericType<T> responseType) {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
+
+        @Override
+        public Response method(String name) {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
+
+        @Override
+        public <T> T method(String name, Class<T> responseType) {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
+
+        @Override
+        public <T> T method(String name, GenericType<T> responseType) {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
+
+        @Override
+        public Response method(String name, Entity<?> entity) {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
+
+        @Override
+        public <T> T method(String name, Entity<?> entity, Class<T> responseType) {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
+
+        @Override
+        public <T> T method(String name, Entity<?> entity, GenericType<T> responseType) {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
+
+        @Override
+        public Invocation build(String method) {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
+
+        @Override
+        public Invocation build(String method, Entity<?> entity) {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
+
+        @Override
+        public Invocation buildGet() {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
+
+        @Override
+        public Invocation buildDelete() {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
+
+        @Override
+        public Invocation buildPost(Entity<?> entity) {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
+
+        @Override
+        public Invocation buildPut(Entity<?> entity) {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
+
+        @Override
+        public AsyncInvoker async() {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
     }
 
     @Slf4j
     private static class Callback implements InvocationCallback<Response> {
 
         private final WebTarget baseTarget;
+        private final InvocationInformation info;
         private final Consumer<Response> onSuccess;
         private final Consumer<Throwable> onError;
 
         private Callback(
                 @NonNull WebTarget baseTarget,
+                @NonNull InvocationInformation info,
                 @Nullable Consumer<Response> onSuccess,
                 @Nullable Consumer<Throwable> onError) {
-
             this.baseTarget = baseTarget;
+            this.info = info;
             this.onSuccess = onSuccess;
             this.onError = onError;
         }
@@ -540,9 +782,15 @@ public class RestClient implements AutoCloseable {
 
         private Throwable handleException(Throwable throwable) {
             if (throwable instanceof ProcessingException) {
-                return convertToBmcException(baseTarget, (ProcessingException) throwable);
+                return convertToBmcException(baseTarget, (ProcessingException) throwable, info);
             }
             return throwable;
         }
+    }
+
+    @Value
+    static class InvocationInformation {
+        private final String requestId;
+        private final MultivaluedMap<String, Object> headersSetInCallback;
     }
 }

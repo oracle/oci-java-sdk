@@ -15,25 +15,55 @@ package com.oracle.bmc.core.model;
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "type"
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class AttachIScsiVolumeDetails extends AttachVolumeDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            this.__explicitlySet__.add("displayName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
         private String instanceId;
+
+        public Builder instanceId(String instanceId) {
+            this.instanceId = instanceId;
+            this.__explicitlySet__.add("instanceId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("volumeId")
         private String volumeId;
 
+        public Builder volumeId(String volumeId) {
+            this.volumeId = volumeId;
+            this.__explicitlySet__.add("volumeId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("useChap")
         private Boolean useChap;
 
+        public Builder useChap(Boolean useChap) {
+            this.useChap = useChap;
+            this.__explicitlySet__.add("useChap");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public AttachIScsiVolumeDetails build() {
-            return new AttachIScsiVolumeDetails(displayName, instanceId, volumeId, useChap);
+            AttachIScsiVolumeDetails __instance__ =
+                    new AttachIScsiVolumeDetails(displayName, instanceId, volumeId, useChap);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -63,4 +93,7 @@ public class AttachIScsiVolumeDetails extends AttachVolumeDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("useChap")
     Boolean useChap;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

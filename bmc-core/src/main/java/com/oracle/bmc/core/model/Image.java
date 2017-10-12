@@ -15,49 +15,109 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Image.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class Image {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("baseImageId")
         private String baseImageId;
 
+        public Builder baseImageId(String baseImageId) {
+            this.baseImageId = baseImageId;
+            this.__explicitlySet__.add("baseImageId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
+
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("createImageAllowed")
         private Boolean createImageAllowed;
 
+        public Builder createImageAllowed(Boolean createImageAllowed) {
+            this.createImageAllowed = createImageAllowed;
+            this.__explicitlySet__.add("createImageAllowed");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
+
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            this.__explicitlySet__.add("displayName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
+
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
         private String operatingSystem;
 
+        public Builder operatingSystem(String operatingSystem) {
+            this.operatingSystem = operatingSystem;
+            this.__explicitlySet__.add("operatingSystem");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("operatingSystemVersion")
         private String operatingSystemVersion;
+
+        public Builder operatingSystemVersion(String operatingSystemVersion) {
+            this.operatingSystemVersion = operatingSystemVersion;
+            this.__explicitlySet__.add("operatingSystemVersion");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        public Builder timeCreated(java.util.Date timeCreated) {
+            this.timeCreated = timeCreated;
+            this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public Image build() {
-            return new Image(
-                    baseImageId,
-                    compartmentId,
-                    createImageAllowed,
-                    displayName,
-                    id,
-                    lifecycleState,
-                    operatingSystem,
-                    operatingSystemVersion,
-                    timeCreated);
+            Image __instance__ =
+                    new Image(
+                            baseImageId,
+                            compartmentId,
+                            createImageAllowed,
+                            displayName,
+                            id,
+                            lifecycleState,
+                            operatingSystem,
+                            operatingSystemVersion,
+                            timeCreated);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -85,7 +145,6 @@ public class Image {
      * The OCID of the image originally used to launch the instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("baseImageId")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String baseImageId;
 
     /**
@@ -93,9 +152,6 @@ public class Image {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
@@ -106,8 +162,6 @@ public class Image {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("createImageAllowed")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     Boolean createImageAllowed;
 
     /**
@@ -119,16 +173,12 @@ public class Image {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
      * The OCID of the image.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String id;
     /**
      **/
@@ -181,8 +231,6 @@ public class Image {
     };
 
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     LifecycleState lifecycleState;
 
     /**
@@ -192,9 +240,6 @@ public class Image {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String operatingSystem;
 
     /**
@@ -204,9 +249,6 @@ public class Image {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operatingSystemVersion")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String operatingSystemVersion;
 
     /**
@@ -216,7 +258,8 @@ public class Image {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     java.util.Date timeCreated;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

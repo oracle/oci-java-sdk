@@ -113,7 +113,14 @@ public interface Compute extends AutoCloseable {
     CreateImageResponse createImage(CreateImageRequest request);
 
     /**
-     * Create a console connection for an instance.
+     * Creates a new serial console connection to the specified instance.
+     * Once the serial console connection has been created and is available,
+     * you connect to the serial console using an SSH client.
+     * <p>
+     * The default number of enabled serial console connections per tenancy is 10.
+     * <p>
+     * For more information about serial console access, see [Accessing the Serial Console](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/serialconsole.htm).
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -138,7 +145,7 @@ public interface Compute extends AutoCloseable {
     DeleteImageResponse deleteImage(DeleteImageRequest request);
 
     /**
-     * Delete the console connection for an instance
+     * Deletes the specified serial console connection.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -151,6 +158,12 @@ public interface Compute extends AutoCloseable {
      * This operation cannot be used on the instance's primary VNIC.
      * When you terminate an instance, all attached VNICs (primary
      * and secondary) are automatically detached and deleted.
+     * <p>
+     **Important:** If the VNIC has a
+     * {@link PrivateIp} that is the
+     * [target of a route rule](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm#privateip),
+     * deleting the VNIC causes that route rule to blackhole and the traffic
+     * will be dropped.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -228,7 +241,7 @@ public interface Compute extends AutoCloseable {
     GetInstanceResponse getInstance(GetInstanceRequest request);
 
     /**
-     * Get the details of an instance console connection
+     * Gets the specified serial console connection's information.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -346,7 +359,10 @@ public interface Compute extends AutoCloseable {
     ListImagesResponse listImages(ListImagesRequest request);
 
     /**
-     * Lists the console connections for the specified compartment or instance that have not been deleted.
+     * Lists the serial console connections for the specified compartment or instance.
+     * <p>
+     * For more information about serial console access, see [Accessing the Serial Console](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/serialconsole.htm).
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -410,6 +426,14 @@ public interface Compute extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     TerminateInstanceResponse terminateInstance(TerminateInstanceRequest request);
+
+    /**
+     * Updates the specified console history metadata.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateConsoleHistoryResponse updateConsoleHistory(UpdateConsoleHistoryRequest request);
 
     /**
      * Updates the display name of the image. Avoid entering confidential information.

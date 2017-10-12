@@ -13,41 +13,89 @@ package com.oracle.bmc.identity.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CustomerSecretKeySummary.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CustomerSecretKeySummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("userId")
         private String userId;
+
+        public Builder userId(String userId) {
+            this.userId = userId;
+            this.__explicitlySet__.add("userId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            this.__explicitlySet__.add("displayName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
+
+        public Builder timeCreated(java.util.Date timeCreated) {
+            this.timeCreated = timeCreated;
+            this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
         private java.util.Date timeExpires;
 
+        public Builder timeExpires(java.util.Date timeExpires) {
+            this.timeExpires = timeExpires;
+            this.__explicitlySet__.add("timeExpires");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
+
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
         private Long inactiveStatus;
 
+        public Builder inactiveStatus(Long inactiveStatus) {
+            this.inactiveStatus = inactiveStatus;
+            this.__explicitlySet__.add("inactiveStatus");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public CustomerSecretKeySummary build() {
-            return new CustomerSecretKeySummary(
-                    id,
-                    userId,
-                    displayName,
-                    timeCreated,
-                    timeExpires,
-                    lifecycleState,
-                    inactiveStatus);
+            CustomerSecretKeySummary __instance__ =
+                    new CustomerSecretKeySummary(
+                            id,
+                            userId,
+                            displayName,
+                            timeCreated,
+                            timeExpires,
+                            lifecycleState,
+                            inactiveStatus);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -162,7 +210,6 @@ public class CustomerSecretKeySummary {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    @javax.validation.constraints.Size(min = 1, max = 64)
     LifecycleState lifecycleState;
 
     /**
@@ -170,4 +217,7 @@ public class CustomerSecretKeySummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
     Long inactiveStatus;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

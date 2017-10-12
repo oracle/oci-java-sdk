@@ -9,22 +9,45 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TunnelConfig.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class TunnelConfig {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
+        public Builder ipAddress(String ipAddress) {
+            this.ipAddress = ipAddress;
+            this.__explicitlySet__.add("ipAddress");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sharedSecret")
         private String sharedSecret;
+
+        public Builder sharedSecret(String sharedSecret) {
+            this.sharedSecret = sharedSecret;
+            this.__explicitlySet__.add("sharedSecret");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        public Builder timeCreated(java.util.Date timeCreated) {
+            this.timeCreated = timeCreated;
+            this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public TunnelConfig build() {
-            return new TunnelConfig(ipAddress, sharedSecret, timeCreated);
+            TunnelConfig __instance__ = new TunnelConfig(ipAddress, sharedSecret, timeCreated);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -49,9 +72,6 @@ public class TunnelConfig {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 46)
     String ipAddress;
 
     /**
@@ -61,9 +81,6 @@ public class TunnelConfig {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sharedSecret")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String sharedSecret;
 
     /**
@@ -74,4 +91,7 @@ public class TunnelConfig {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

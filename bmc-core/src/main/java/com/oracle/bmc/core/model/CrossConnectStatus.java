@@ -11,26 +11,56 @@ package com.oracle.bmc.core.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CrossConnectStatus.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CrossConnectStatus {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("crossConnectId")
         private String crossConnectId;
 
+        public Builder crossConnectId(String crossConnectId) {
+            this.crossConnectId = crossConnectId;
+            this.__explicitlySet__.add("crossConnectId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("interfaceState")
         private InterfaceState interfaceState;
+
+        public Builder interfaceState(InterfaceState interfaceState) {
+            this.interfaceState = interfaceState;
+            this.__explicitlySet__.add("interfaceState");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("lightLevelIndBm")
         private Float lightLevelIndBm;
 
+        public Builder lightLevelIndBm(Float lightLevelIndBm) {
+            this.lightLevelIndBm = lightLevelIndBm;
+            this.__explicitlySet__.add("lightLevelIndBm");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lightLevelIndicator")
         private LightLevelIndicator lightLevelIndicator;
 
+        public Builder lightLevelIndicator(LightLevelIndicator lightLevelIndicator) {
+            this.lightLevelIndicator = lightLevelIndicator;
+            this.__explicitlySet__.add("lightLevelIndicator");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public CrossConnectStatus build() {
-            return new CrossConnectStatus(
-                    crossConnectId, interfaceState, lightLevelIndBm, lightLevelIndicator);
+            CrossConnectStatus __instance__ =
+                    new CrossConnectStatus(
+                            crossConnectId, interfaceState, lightLevelIndBm, lightLevelIndicator);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -53,9 +83,6 @@ public class CrossConnectStatus {
      * The OCID of the cross-connect.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("crossConnectId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String crossConnectId;
     /**
      * Whether Oracle's side of the interface is up or down.
@@ -116,8 +143,6 @@ public class CrossConnectStatus {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lightLevelIndBm")
-    @javax.validation.constraints.Min(-50)
-    @javax.validation.constraints.Max(50)
     Float lightLevelIndBm;
     /**
      * Status indicator corresponding to the light level.
@@ -195,4 +220,7 @@ public class CrossConnectStatus {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lightLevelIndicator")
     LightLevelIndicator lightLevelIndicator;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

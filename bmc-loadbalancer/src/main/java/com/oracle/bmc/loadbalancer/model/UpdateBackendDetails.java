@@ -11,25 +11,55 @@ package com.oracle.bmc.loadbalancer.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateBackendDetails.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class UpdateBackendDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("backup")
         private Boolean backup;
 
+        public Builder backup(Boolean backup) {
+            this.backup = backup;
+            this.__explicitlySet__.add("backup");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("drain")
         private Boolean drain;
+
+        public Builder drain(Boolean drain) {
+            this.drain = drain;
+            this.__explicitlySet__.add("drain");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("offline")
         private Boolean offline;
 
+        public Builder offline(Boolean offline) {
+            this.offline = offline;
+            this.__explicitlySet__.add("offline");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("weight")
         private Integer weight;
 
+        public Builder weight(Integer weight) {
+            this.weight = weight;
+            this.__explicitlySet__.add("weight");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public UpdateBackendDetails build() {
-            return new UpdateBackendDetails(backup, drain, offline, weight);
+            UpdateBackendDetails __instance__ =
+                    new UpdateBackendDetails(backup, drain, offline, weight);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -56,8 +86,6 @@ public class UpdateBackendDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backup")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     Boolean backup;
 
     /**
@@ -68,8 +96,6 @@ public class UpdateBackendDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("drain")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     Boolean drain;
 
     /**
@@ -80,8 +106,6 @@ public class UpdateBackendDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("offline")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     Boolean offline;
 
     /**
@@ -95,7 +119,8 @@ public class UpdateBackendDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("weight")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     Integer weight;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

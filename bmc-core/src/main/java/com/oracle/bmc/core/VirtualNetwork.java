@@ -246,7 +246,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * Creates a new route table for the specified VCN. In the request you must also include at least one route
      * rule for the new route table. For information on the number of rules you can have in a route table, see
      * [Service Limits](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/servicelimits.htm). For general information about route
-     * tables in your VCN, see [Route Tables](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm).
+     * tables in your VCN and the types of targets you can use in route rules,
+     * see [Route Tables](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm).
      * <p>
      * For the purposes of access control, you must provide the OCID of the compartment where you want the route
      * table to reside. Notice that the route table doesn't have to be in the same compartment as the VCN, subnets,
@@ -495,6 +496,11 @@ public interface VirtualNetwork extends AutoCloseable {
      * <p>
      * This operation cannot be used with primary private IPs, which are
      * automatically unassigned and deleted when the VNIC is terminated.
+     * <p>
+     **Important:** If a secondary private IP is the
+     * [target of a route rule](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm#privateip),
+     * unassigning it from the VNIC causes that route rule to blackhole and the traffic
+     * will be dropped.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

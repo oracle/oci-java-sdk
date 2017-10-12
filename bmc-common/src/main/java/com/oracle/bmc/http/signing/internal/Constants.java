@@ -32,7 +32,12 @@ public class Constants {
 
     public static final ImmutableMap<String, List<String>> REQUIRED_SIGNING_HEADERS =
             createHeadersToSignMap(
-                    GENERIC_HEADERS, GENERIC_HEADERS, GENERIC_HEADERS, ALL_HEADERS, ALL_HEADERS);
+                    GENERIC_HEADERS,
+                    GENERIC_HEADERS,
+                    GENERIC_HEADERS,
+                    ALL_HEADERS,
+                    ALL_HEADERS,
+                    ALL_HEADERS);
 
     public static final ImmutableMap<String, List<String>> REQUIRED_OBJECTSTORAGE_SIGNING_HEADERS =
             createHeadersToSignMap(
@@ -40,6 +45,7 @@ public class Constants {
                     GENERIC_HEADERS,
                     GENERIC_HEADERS,
                     GENERIC_HEADERS, // PUT is special cased for object storage
+                    ALL_HEADERS,
                     ALL_HEADERS);
 
     /**
@@ -49,6 +55,7 @@ public class Constants {
      * @param deleteHeaders headers for DELETE requests
      * @param putHeaders headers for PUT requests
      * @param postHeaders headers for POST requests
+     * @param patchHeaders headers for PATCH requests
      * @return A new immutable map of headers
      */
     public static ImmutableMap<String, List<String>> createHeadersToSignMap(
@@ -56,13 +63,15 @@ public class Constants {
             List<String> headHeaders,
             List<String> deleteHeaders,
             List<String> putHeaders,
-            List<String> postHeaders) {
+            List<String> postHeaders,
+            List<String> patchHeaders) {
         return ImmutableMap.<String, List<String>>builder()
                 .put("get", getHeaders)
                 .put("head", headHeaders)
                 .put("delete", deleteHeaders)
                 .put("put", putHeaders)
                 .put("post", postHeaders)
+                .put("patch", patchHeaders)
                 .build();
     }
 

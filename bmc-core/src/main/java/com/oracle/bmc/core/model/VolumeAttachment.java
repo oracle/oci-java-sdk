@@ -28,6 +28,7 @@ package com.oracle.bmc.core.model;
         name = "iscsi"
     )
 })
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class VolumeAttachment {
 
     /**
@@ -37,18 +38,12 @@ public class VolumeAttachment {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String availabilityDomain;
 
     /**
      * The OCID of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
@@ -59,25 +54,18 @@ public class VolumeAttachment {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
      * The OCID of the volume attachment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String id;
 
     /**
      * The OCID of the instance the volume is attached to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String instanceId;
     /**
      * The current state of the volume attachment.
@@ -131,8 +119,6 @@ public class VolumeAttachment {
      * The current state of the volume attachment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     LifecycleState lifecycleState;
 
     /**
@@ -142,16 +128,11 @@ public class VolumeAttachment {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     java.util.Date timeCreated;
 
     /**
      * The OCID of the volume.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("volumeId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String volumeId;
 }

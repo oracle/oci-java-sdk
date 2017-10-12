@@ -19,7 +19,7 @@ public class GetBackendHealthConverter {
         return request;
     }
 
-    public static javax.ws.rs.client.Invocation.Builder fromRequest(
+    public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client, GetBackendHealthRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -37,7 +37,7 @@ public class GetBackendHealthConverter {
             throw new NullPointerException("backendName is required");
         }
 
-        javax.ws.rs.client.WebTarget target =
+        com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
                         .path("/20170115")
                         .path("loadBalancers")
@@ -54,7 +54,7 @@ public class GetBackendHealthConverter {
                                         request.getBackendName()))
                         .path("health");
 
-        javax.ws.rs.client.Invocation.Builder ib = target.request();
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 

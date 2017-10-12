@@ -35,4 +35,5 @@ package com.oracle.bmc.core.model;
         name = "objectStorageTuple"
     )
 })
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class ExportImageDetails {}

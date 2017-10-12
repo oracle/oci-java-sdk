@@ -20,7 +20,7 @@ public class ListPreauthenticatedRequestsConverter {
         return request;
     }
 
-    public static javax.ws.rs.client.Invocation.Builder fromRequest(
+    public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
             ListPreauthenticatedRequestsRequest request) {
         if (request == null) {
@@ -35,7 +35,7 @@ public class ListPreauthenticatedRequestsConverter {
             throw new NullPointerException("bucketName is required");
         }
 
-        javax.ws.rs.client.WebTarget target =
+        com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
                         .path("/")
                         .path("n")
@@ -72,7 +72,7 @@ public class ListPreauthenticatedRequestsConverter {
                                     request.getPage()));
         }
 
-        javax.ws.rs.client.Invocation.Builder ib = target.request();
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 

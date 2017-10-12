@@ -10,19 +10,36 @@ package com.oracle.bmc.loadbalancer.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BackendHealth.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class BackendHealth {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("healthCheckResults")
         private java.util.List<HealthCheckResult> healthCheckResults;
 
+        public Builder healthCheckResults(java.util.List<HealthCheckResult> healthCheckResults) {
+            this.healthCheckResults = healthCheckResults;
+            this.__explicitlySet__.add("healthCheckResults");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        public Builder status(Status status) {
+            this.status = status;
+            this.__explicitlySet__.add("status");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public BackendHealth build() {
-            return new BackendHealth(healthCheckResults, status);
+            BackendHealth __instance__ = new BackendHealth(healthCheckResults, status);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -43,8 +60,6 @@ public class BackendHealth {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("healthCheckResults")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     java.util.List<HealthCheckResult> healthCheckResults;
     /**
      * The general health status of the specified backend server as reported by the primary and stand-by load balancers.
@@ -116,7 +131,8 @@ public class BackendHealth {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     Status status;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

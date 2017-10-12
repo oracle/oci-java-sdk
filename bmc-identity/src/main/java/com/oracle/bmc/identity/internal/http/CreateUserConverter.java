@@ -19,7 +19,7 @@ public class CreateUserConverter {
         return request;
     }
 
-    public static javax.ws.rs.client.Invocation.Builder fromRequest(
+    public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client, CreateUserRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -29,10 +29,10 @@ public class CreateUserConverter {
             throw new NullPointerException("createUserDetails is required");
         }
 
-        javax.ws.rs.client.WebTarget target =
+        com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget().path("/20160918").path("users");
 
-        javax.ws.rs.client.Invocation.Builder ib = target.request();
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 

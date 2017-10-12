@@ -8,29 +8,70 @@ package com.oracle.bmc.core.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateSecurityListDetails.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CreateSecurityListDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
+
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            this.__explicitlySet__.add("displayName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("egressSecurityRules")
         private java.util.List<EgressSecurityRule> egressSecurityRules;
 
+        public Builder egressSecurityRules(java.util.List<EgressSecurityRule> egressSecurityRules) {
+            this.egressSecurityRules = egressSecurityRules;
+            this.__explicitlySet__.add("egressSecurityRules");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("ingressSecurityRules")
         private java.util.List<IngressSecurityRule> ingressSecurityRules;
+
+        public Builder ingressSecurityRules(
+                java.util.List<IngressSecurityRule> ingressSecurityRules) {
+            this.ingressSecurityRules = ingressSecurityRules;
+            this.__explicitlySet__.add("ingressSecurityRules");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
+        public Builder vcnId(String vcnId) {
+            this.vcnId = vcnId;
+            this.__explicitlySet__.add("vcnId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public CreateSecurityListDetails build() {
-            return new CreateSecurityListDetails(
-                    compartmentId, displayName, egressSecurityRules, ingressSecurityRules, vcnId);
+            CreateSecurityListDetails __instance__ =
+                    new CreateSecurityListDetails(
+                            compartmentId,
+                            displayName,
+                            egressSecurityRules,
+                            ingressSecurityRules,
+                            vcnId);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -54,40 +95,32 @@ public class CreateSecurityListDetails {
      * The OCID of the compartment to contain the security list.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
      * Rules for allowing egress IP packets.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("egressSecurityRules")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     java.util.List<EgressSecurityRule> egressSecurityRules;
 
     /**
      * Rules for allowing ingress IP packets.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ingressSecurityRules")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     java.util.List<IngressSecurityRule> ingressSecurityRules;
 
     /**
      * The OCID of the VCN the security list belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String vcnId;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

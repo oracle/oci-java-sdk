@@ -123,7 +123,8 @@ public class ComputeAsyncClient implements ComputeAsync {
             com.oracle.bmc.responses.AsyncHandler<AttachVnicRequest, AttachVnicResponse> handler) {
         LOG.trace("Called async attachVnic");
         request = AttachVnicConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = AttachVnicConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AttachVnicConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, AttachVnicResponse> transformer =
                 AttachVnicConverter.fromResponse();
 
@@ -144,7 +145,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                     handler) {
         LOG.trace("Called async attachVolume");
         request = AttachVolumeConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 AttachVolumeConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, AttachVolumeResponse>
                 transformer = AttachVolumeConverter.fromResponse();
@@ -167,7 +168,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                     handler) {
         LOG.trace("Called async captureConsoleHistory");
         request = CaptureConsoleHistoryConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CaptureConsoleHistoryConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CaptureConsoleHistoryResponse>
                 transformer = CaptureConsoleHistoryConverter.fromResponse();
@@ -190,7 +191,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                     handler) {
         LOG.trace("Called async createImage");
         request = CreateImageConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateImageConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateImageResponse>
                 transformer = CreateImageConverter.fromResponse();
@@ -215,7 +216,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                             handler) {
         LOG.trace("Called async createInstanceConsoleConnection");
         request = CreateInstanceConsoleConnectionConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateInstanceConsoleConnectionConverter.fromRequest(client, request);
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateInstanceConsoleConnectionResponse>
@@ -244,7 +245,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                     handler) {
         LOG.trace("Called async deleteConsoleHistory");
         request = DeleteConsoleHistoryConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteConsoleHistoryConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteConsoleHistoryResponse>
                 transformer = DeleteConsoleHistoryConverter.fromResponse();
@@ -266,7 +267,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                     handler) {
         LOG.trace("Called async deleteImage");
         request = DeleteImageConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteImageConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteImageResponse>
                 transformer = DeleteImageConverter.fromResponse();
@@ -291,7 +292,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                             handler) {
         LOG.trace("Called async deleteInstanceConsoleConnection");
         request = DeleteInstanceConsoleConnectionConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteInstanceConsoleConnectionConverter.fromRequest(client, request);
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteInstanceConsoleConnectionResponse>
@@ -313,7 +314,8 @@ public class ComputeAsyncClient implements ComputeAsync {
             com.oracle.bmc.responses.AsyncHandler<DetachVnicRequest, DetachVnicResponse> handler) {
         LOG.trace("Called async detachVnic");
         request = DetachVnicConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = DetachVnicConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DetachVnicConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DetachVnicResponse> transformer =
                 DetachVnicConverter.fromResponse();
 
@@ -334,7 +336,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                     handler) {
         LOG.trace("Called async detachVolume");
         request = DetachVolumeConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DetachVolumeConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DetachVolumeResponse>
                 transformer = DetachVolumeConverter.fromResponse();
@@ -356,7 +358,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                     handler) {
         LOG.trace("Called async exportImage");
         request = ExportImageConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ExportImageConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ExportImageResponse>
                 transformer = ExportImageConverter.fromResponse();
@@ -379,7 +381,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                     handler) {
         LOG.trace("Called async getConsoleHistory");
         request = GetConsoleHistoryConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetConsoleHistoryConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetConsoleHistoryResponse>
                 transformer = GetConsoleHistoryConverter.fromResponse();
@@ -402,7 +404,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                     handler) {
         LOG.trace("Called async getConsoleHistoryContent");
         request = GetConsoleHistoryContentConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetConsoleHistoryContentConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetConsoleHistoryContentResponse>
                 transformer = GetConsoleHistoryContentConverter.fromResponse();
@@ -423,7 +425,8 @@ public class ComputeAsyncClient implements ComputeAsync {
             com.oracle.bmc.responses.AsyncHandler<GetImageRequest, GetImageResponse> handler) {
         LOG.trace("Called async getImage");
         request = GetImageConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = GetImageConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetImageConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetImageResponse> transformer =
                 GetImageConverter.fromResponse();
 
@@ -444,7 +447,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                     handler) {
         LOG.trace("Called async getInstance");
         request = GetInstanceConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetInstanceConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetInstanceResponse>
                 transformer = GetInstanceConverter.fromResponse();
@@ -469,7 +472,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                             handler) {
         LOG.trace("Called async getInstanceConsoleConnection");
         request = GetInstanceConsoleConnectionConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetInstanceConsoleConnectionConverter.fromRequest(client, request);
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetInstanceConsoleConnectionResponse>
@@ -493,7 +496,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                     handler) {
         LOG.trace("Called async getVnicAttachment");
         request = GetVnicAttachmentConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetVnicAttachmentConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetVnicAttachmentResponse>
                 transformer = GetVnicAttachmentConverter.fromResponse();
@@ -516,7 +519,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                     handler) {
         LOG.trace("Called async getVolumeAttachment");
         request = GetVolumeAttachmentConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetVolumeAttachmentConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeAttachmentResponse>
                 transformer = GetVolumeAttachmentConverter.fromResponse();
@@ -541,7 +544,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                             handler) {
         LOG.trace("Called async getWindowsInstanceInitialCredentials");
         request = GetWindowsInstanceInitialCredentialsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetWindowsInstanceInitialCredentialsConverter.fromRequest(client, request);
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetWindowsInstanceInitialCredentialsResponse>
@@ -564,7 +567,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                     handler) {
         LOG.trace("Called async instanceAction");
         request = InstanceActionConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 InstanceActionConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, InstanceActionResponse>
                 transformer = InstanceActionConverter.fromResponse();
@@ -586,7 +589,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                     handler) {
         LOG.trace("Called async launchInstance");
         request = LaunchInstanceConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 LaunchInstanceConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, LaunchInstanceResponse>
                 transformer = LaunchInstanceConverter.fromResponse();
@@ -609,7 +612,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                     handler) {
         LOG.trace("Called async listConsoleHistories");
         request = ListConsoleHistoriesConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListConsoleHistoriesConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListConsoleHistoriesResponse>
                 transformer = ListConsoleHistoriesConverter.fromResponse();
@@ -630,7 +633,8 @@ public class ComputeAsyncClient implements ComputeAsync {
             com.oracle.bmc.responses.AsyncHandler<ListImagesRequest, ListImagesResponse> handler) {
         LOG.trace("Called async listImages");
         request = ListImagesConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = ListImagesConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListImagesConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListImagesResponse> transformer =
                 ListImagesConverter.fromResponse();
 
@@ -654,7 +658,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                             handler) {
         LOG.trace("Called async listInstanceConsoleConnections");
         request = ListInstanceConsoleConnectionsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListInstanceConsoleConnectionsConverter.fromRequest(client, request);
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListInstanceConsoleConnectionsResponse>
@@ -677,7 +681,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                     handler) {
         LOG.trace("Called async listInstances");
         request = ListInstancesConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListInstancesConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListInstancesResponse>
                 transformer = ListInstancesConverter.fromResponse();
@@ -698,7 +702,8 @@ public class ComputeAsyncClient implements ComputeAsync {
             com.oracle.bmc.responses.AsyncHandler<ListShapesRequest, ListShapesResponse> handler) {
         LOG.trace("Called async listShapes");
         request = ListShapesConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = ListShapesConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListShapesConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListShapesResponse> transformer =
                 ListShapesConverter.fromResponse();
 
@@ -720,7 +725,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                     handler) {
         LOG.trace("Called async listVnicAttachments");
         request = ListVnicAttachmentsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListVnicAttachmentsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListVnicAttachmentsResponse>
                 transformer = ListVnicAttachmentsConverter.fromResponse();
@@ -743,7 +748,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                     handler) {
         LOG.trace("Called async listVolumeAttachments");
         request = ListVolumeAttachmentsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListVolumeAttachmentsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumeAttachmentsResponse>
                 transformer = ListVolumeAttachmentsConverter.fromResponse();
@@ -766,7 +771,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                     handler) {
         LOG.trace("Called async terminateInstance");
         request = TerminateInstanceConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 TerminateInstanceConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, TerminateInstanceResponse>
                 transformer = TerminateInstanceConverter.fromResponse();
@@ -782,13 +787,37 @@ public class ComputeAsyncClient implements ComputeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateConsoleHistoryResponse> updateConsoleHistory(
+            UpdateConsoleHistoryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateConsoleHistoryRequest, UpdateConsoleHistoryResponse>
+                    handler) {
+        LOG.trace("Called async updateConsoleHistory");
+        request = UpdateConsoleHistoryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateConsoleHistoryConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateConsoleHistoryResponse>
+                transformer = UpdateConsoleHistoryConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.put(
+                        ib, request.getUpdateConsoleHistoryDetails(), request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateImageResponse> updateImage(
             UpdateImageRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateImageRequest, UpdateImageResponse>
                     handler) {
         LOG.trace("Called async updateImage");
         request = UpdateImageConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateImageConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateImageResponse>
                 transformer = UpdateImageConverter.fromResponse();
@@ -810,7 +839,7 @@ public class ComputeAsyncClient implements ComputeAsync {
                     handler) {
         LOG.trace("Called async updateInstance");
         request = UpdateInstanceConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateInstanceConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateInstanceResponse>
                 transformer = UpdateInstanceConverter.fromResponse();

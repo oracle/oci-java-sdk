@@ -20,7 +20,7 @@ public class ListCustomerSecretKeysConverter {
         return request;
     }
 
-    public static javax.ws.rs.client.Invocation.Builder fromRequest(
+    public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client, ListCustomerSecretKeysRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -30,7 +30,7 @@ public class ListCustomerSecretKeysConverter {
             throw new NullPointerException("userId is required");
         }
 
-        javax.ws.rs.client.WebTarget target =
+        com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
                         .path("/20160918")
                         .path("users")
@@ -39,7 +39,7 @@ public class ListCustomerSecretKeysConverter {
                                         request.getUserId()))
                         .path("customerSecretKeys");
 
-        javax.ws.rs.client.Invocation.Builder ib = target.request();
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 

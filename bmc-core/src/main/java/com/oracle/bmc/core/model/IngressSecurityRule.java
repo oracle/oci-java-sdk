@@ -11,32 +11,74 @@ package com.oracle.bmc.core.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = IngressSecurityRule.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class IngressSecurityRule {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("icmpOptions")
         private IcmpOptions icmpOptions;
 
+        public Builder icmpOptions(IcmpOptions icmpOptions) {
+            this.icmpOptions = icmpOptions;
+            this.__explicitlySet__.add("icmpOptions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isStateless")
         private Boolean isStateless;
+
+        public Builder isStateless(Boolean isStateless) {
+            this.isStateless = isStateless;
+            this.__explicitlySet__.add("isStateless");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private String protocol;
 
+        public Builder protocol(String protocol) {
+            this.protocol = protocol;
+            this.__explicitlySet__.add("protocol");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("source")
         private String source;
+
+        public Builder source(String source) {
+            this.source = source;
+            this.__explicitlySet__.add("source");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("tcpOptions")
         private TcpOptions tcpOptions;
 
+        public Builder tcpOptions(TcpOptions tcpOptions) {
+            this.tcpOptions = tcpOptions;
+            this.__explicitlySet__.add("tcpOptions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("udpOptions")
         private UdpOptions udpOptions;
 
+        public Builder udpOptions(UdpOptions udpOptions) {
+            this.udpOptions = udpOptions;
+            this.__explicitlySet__.add("udpOptions");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public IngressSecurityRule build() {
-            return new IngressSecurityRule(
-                    icmpOptions, isStateless, protocol, source, tcpOptions, udpOptions);
+            IngressSecurityRule __instance__ =
+                    new IngressSecurityRule(
+                            icmpOptions, isStateless, protocol, source, tcpOptions, udpOptions);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -90,8 +132,6 @@ public class IngressSecurityRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String protocol;
 
     /**
@@ -100,8 +140,6 @@ public class IngressSecurityRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("source")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String source;
 
     /**
@@ -119,4 +157,7 @@ public class IngressSecurityRule {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("udpOptions")
     UdpOptions udpOptions;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

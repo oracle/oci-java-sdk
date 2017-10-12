@@ -13,37 +13,79 @@ package com.oracle.bmc.core.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LetterOfAuthority.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class LetterOfAuthority {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("circuitType")
         private CircuitType circuitType;
 
+        public Builder circuitType(CircuitType circuitType) {
+            this.circuitType = circuitType;
+            this.__explicitlySet__.add("circuitType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("crossConnectId")
         private String crossConnectId;
+
+        public Builder crossConnectId(String crossConnectId) {
+            this.crossConnectId = crossConnectId;
+            this.__explicitlySet__.add("crossConnectId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("facilityLocation")
         private String facilityLocation;
 
+        public Builder facilityLocation(String facilityLocation) {
+            this.facilityLocation = facilityLocation;
+            this.__explicitlySet__.add("facilityLocation");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("portName")
         private String portName;
+
+        public Builder portName(String portName) {
+            this.portName = portName;
+            this.__explicitlySet__.add("portName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
         private java.util.Date timeExpires;
 
+        public Builder timeExpires(java.util.Date timeExpires) {
+            this.timeExpires = timeExpires;
+            this.__explicitlySet__.add("timeExpires");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeIssued")
         private java.util.Date timeIssued;
 
+        public Builder timeIssued(java.util.Date timeIssued) {
+            this.timeIssued = timeIssued;
+            this.__explicitlySet__.add("timeIssued");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public LetterOfAuthority build() {
-            return new LetterOfAuthority(
-                    circuitType,
-                    crossConnectId,
-                    facilityLocation,
-                    portName,
-                    timeExpires,
-                    timeIssued);
+            LetterOfAuthority __instance__ =
+                    new LetterOfAuthority(
+                            circuitType,
+                            crossConnectId,
+                            facilityLocation,
+                            portName,
+                            timeExpires,
+                            timeIssued);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -120,21 +162,18 @@ public class LetterOfAuthority {
      * The OCID of the cross-connect.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("crossConnectId")
-    @javax.validation.constraints.Size(min = 1)
     String crossConnectId;
 
     /**
      * The address of the FastConnect location.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("facilityLocation")
-    @javax.validation.constraints.Size(min = 1)
     String facilityLocation;
 
     /**
      * The meet-me room port for this cross-connect.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("portName")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String portName;
 
     /**
@@ -152,4 +191,7 @@ public class LetterOfAuthority {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeIssued")
     java.util.Date timeIssued;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

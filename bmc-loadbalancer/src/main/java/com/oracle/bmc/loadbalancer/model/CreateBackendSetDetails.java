@@ -14,37 +14,80 @@ package com.oracle.bmc.loadbalancer.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateBackendSetDetails.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CreateBackendSetDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("backends")
         private java.util.List<BackendDetails> backends;
 
+        public Builder backends(java.util.List<BackendDetails> backends) {
+            this.backends = backends;
+            this.__explicitlySet__.add("backends");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("healthChecker")
         private HealthCheckerDetails healthChecker;
+
+        public Builder healthChecker(HealthCheckerDetails healthChecker) {
+            this.healthChecker = healthChecker;
+            this.__explicitlySet__.add("healthChecker");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
+        public Builder name(String name) {
+            this.name = name;
+            this.__explicitlySet__.add("name");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("policy")
         private String policy;
+
+        public Builder policy(String policy) {
+            this.policy = policy;
+            this.__explicitlySet__.add("policy");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("sessionPersistenceConfiguration")
         private SessionPersistenceConfigurationDetails sessionPersistenceConfiguration;
 
+        public Builder sessionPersistenceConfiguration(
+                SessionPersistenceConfigurationDetails sessionPersistenceConfiguration) {
+            this.sessionPersistenceConfiguration = sessionPersistenceConfiguration;
+            this.__explicitlySet__.add("sessionPersistenceConfiguration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sslConfiguration")
         private SSLConfigurationDetails sslConfiguration;
 
+        public Builder sslConfiguration(SSLConfigurationDetails sslConfiguration) {
+            this.sslConfiguration = sslConfiguration;
+            this.__explicitlySet__.add("sslConfiguration");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public CreateBackendSetDetails build() {
-            return new CreateBackendSetDetails(
-                    backends,
-                    healthChecker,
-                    name,
-                    policy,
-                    sessionPersistenceConfiguration,
-                    sslConfiguration);
+            CreateBackendSetDetails __instance__ =
+                    new CreateBackendSetDetails(
+                            backends,
+                            healthChecker,
+                            name,
+                            policy,
+                            sessionPersistenceConfiguration,
+                            sslConfiguration);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -69,8 +112,6 @@ public class CreateBackendSetDetails {
     java.util.List<BackendDetails> backends;
 
     @com.fasterxml.jackson.annotation.JsonProperty("healthChecker")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     HealthCheckerDetails healthChecker;
 
     /**
@@ -83,9 +124,6 @@ public class CreateBackendSetDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 32)
     String name;
 
     /**
@@ -96,8 +134,6 @@ public class CreateBackendSetDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("policy")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String policy;
 
     @com.fasterxml.jackson.annotation.JsonProperty("sessionPersistenceConfiguration")
@@ -105,4 +141,7 @@ public class CreateBackendSetDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("sslConfiguration")
     SSLConfigurationDetails sslConfiguration;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

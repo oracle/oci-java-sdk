@@ -123,7 +123,8 @@ public class AuditAsyncClient implements AuditAsync {
             com.oracle.bmc.responses.AsyncHandler<ListEventsRequest, ListEventsResponse> handler) {
         LOG.trace("Called async listEvents");
         request = ListEventsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = ListEventsConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListEventsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListEventsResponse> transformer =
                 ListEventsConverter.fromResponse();
 

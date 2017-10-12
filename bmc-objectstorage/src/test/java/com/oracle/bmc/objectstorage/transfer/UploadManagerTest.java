@@ -269,7 +269,7 @@ public class UploadManagerTest {
         UploadRequest request = createUploadRequest();
         when(assembler.newRequest(CONTENT_TYPE, CONTENT_LANG, CONTENT_ENCODING, METADATA))
                 .thenReturn(new MultipartManifestImpl("uploadId"));
-        when(assembler.commit()).thenThrow(new BmcException(false, "test", null));
+        when(assembler.commit()).thenThrow(new BmcException(false, "test", null, null));
 
         try {
             uploadManager.upload(request);
@@ -303,7 +303,7 @@ public class UploadManagerTest {
         UploadRequest request = createUploadRequest();
         when(assembler.newRequest(CONTENT_TYPE, CONTENT_LANG, CONTENT_ENCODING, METADATA))
                 .thenReturn(new MultipartManifestImpl("uploadId"));
-        when(assembler.commit()).thenThrow(new BmcException(false, "test", null));
+        when(assembler.commit()).thenThrow(new BmcException(false, "test", null, null));
 
         try {
             uploadManager.upload(request);

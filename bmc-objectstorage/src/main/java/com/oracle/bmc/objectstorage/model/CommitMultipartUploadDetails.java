@@ -14,19 +14,38 @@ package com.oracle.bmc.objectstorage.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CommitMultipartUploadDetails.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CommitMultipartUploadDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("partsToCommit")
         private java.util.List<CommitMultipartUploadPartDetails> partsToCommit;
 
+        public Builder partsToCommit(
+                java.util.List<CommitMultipartUploadPartDetails> partsToCommit) {
+            this.partsToCommit = partsToCommit;
+            this.__explicitlySet__.add("partsToCommit");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("partsToExclude")
         private java.util.List<Integer> partsToExclude;
 
+        public Builder partsToExclude(java.util.List<Integer> partsToExclude) {
+            this.partsToExclude = partsToExclude;
+            this.__explicitlySet__.add("partsToExclude");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public CommitMultipartUploadDetails build() {
-            return new CommitMultipartUploadDetails(partsToCommit, partsToExclude);
+            CommitMultipartUploadDetails __instance__ =
+                    new CommitMultipartUploadDetails(partsToCommit, partsToExclude);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -46,8 +65,6 @@ public class CommitMultipartUploadDetails {
      * The part numbers and ETags for the parts to be committed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("partsToCommit")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     java.util.List<CommitMultipartUploadPartDetails> partsToCommit;
 
     /**
@@ -57,4 +74,7 @@ public class CommitMultipartUploadDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("partsToExclude")
     java.util.List<Integer> partsToExclude;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

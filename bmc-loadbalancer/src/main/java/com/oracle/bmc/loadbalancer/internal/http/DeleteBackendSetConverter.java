@@ -19,7 +19,7 @@ public class DeleteBackendSetConverter {
         return request;
     }
 
-    public static javax.ws.rs.client.Invocation.Builder fromRequest(
+    public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client, DeleteBackendSetRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -33,7 +33,7 @@ public class DeleteBackendSetConverter {
             throw new NullPointerException("backendSetName is required");
         }
 
-        javax.ws.rs.client.WebTarget target =
+        com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
                         .path("/20170115")
                         .path("loadBalancers")
@@ -45,7 +45,7 @@ public class DeleteBackendSetConverter {
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
                                         request.getBackendSetName()));
 
-        javax.ws.rs.client.Invocation.Builder ib = target.request();
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 

@@ -19,7 +19,7 @@ public class CreateSecurityListConverter {
         return request;
     }
 
-    public static javax.ws.rs.client.Invocation.Builder fromRequest(
+    public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client, CreateSecurityListRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
@@ -29,10 +29,10 @@ public class CreateSecurityListConverter {
             throw new NullPointerException("createSecurityListDetails is required");
         }
 
-        javax.ws.rs.client.WebTarget target =
+        com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget().path("/20160918").path("securityLists");
 
-        javax.ws.rs.client.Invocation.Builder ib = target.request();
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 

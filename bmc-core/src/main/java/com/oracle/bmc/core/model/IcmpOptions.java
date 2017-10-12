@@ -16,19 +16,36 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = IcmpOptions.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class IcmpOptions {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private Integer code;
 
+        public Builder code(Integer code) {
+            this.code = code;
+            this.__explicitlySet__.add("code");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Integer type;
 
+        public Builder type(Integer type) {
+            this.type = type;
+            this.__explicitlySet__.add("type");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public IcmpOptions build() {
-            return new IcmpOptions(code, type);
+            IcmpOptions __instance__ = new IcmpOptions(code, type);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -48,17 +65,14 @@ public class IcmpOptions {
      * The ICMP code (optional).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("code")
-    @javax.validation.constraints.Min(0)
-    @javax.validation.constraints.Max(16)
     Integer code;
 
     /**
      * The ICMP type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Min(0)
-    @javax.validation.constraints.Max(254)
     Integer type;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

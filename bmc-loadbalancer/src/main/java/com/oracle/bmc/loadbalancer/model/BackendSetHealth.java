@@ -13,33 +13,69 @@ package com.oracle.bmc.loadbalancer.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BackendSetHealth.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class BackendSetHealth {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("criticalStateBackendNames")
         private java.util.List<String> criticalStateBackendNames;
 
+        public Builder criticalStateBackendNames(java.util.List<String> criticalStateBackendNames) {
+            this.criticalStateBackendNames = criticalStateBackendNames;
+            this.__explicitlySet__.add("criticalStateBackendNames");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
+
+        public Builder status(Status status) {
+            this.status = status;
+            this.__explicitlySet__.add("status");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("totalBackendCount")
         private Integer totalBackendCount;
 
+        public Builder totalBackendCount(Integer totalBackendCount) {
+            this.totalBackendCount = totalBackendCount;
+            this.__explicitlySet__.add("totalBackendCount");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("unknownStateBackendNames")
         private java.util.List<String> unknownStateBackendNames;
+
+        public Builder unknownStateBackendNames(java.util.List<String> unknownStateBackendNames) {
+            this.unknownStateBackendNames = unknownStateBackendNames;
+            this.__explicitlySet__.add("unknownStateBackendNames");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("warningStateBackendNames")
         private java.util.List<String> warningStateBackendNames;
 
+        public Builder warningStateBackendNames(java.util.List<String> warningStateBackendNames) {
+            this.warningStateBackendNames = warningStateBackendNames;
+            this.__explicitlySet__.add("warningStateBackendNames");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public BackendSetHealth build() {
-            return new BackendSetHealth(
-                    criticalStateBackendNames,
-                    status,
-                    totalBackendCount,
-                    unknownStateBackendNames,
-                    warningStateBackendNames);
+            BackendSetHealth __instance__ =
+                    new BackendSetHealth(
+                            criticalStateBackendNames,
+                            status,
+                            totalBackendCount,
+                            unknownStateBackendNames,
+                            warningStateBackendNames);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -67,8 +103,6 @@ public class BackendSetHealth {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("criticalStateBackendNames")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     java.util.List<String> criticalStateBackendNames;
     /**
      * Overall health status of the backend set.
@@ -144,8 +178,6 @@ public class BackendSetHealth {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     Status status;
 
     /**
@@ -155,8 +187,6 @@ public class BackendSetHealth {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalBackendCount")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     Integer totalBackendCount;
 
     /**
@@ -167,8 +197,6 @@ public class BackendSetHealth {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unknownStateBackendNames")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     java.util.List<String> unknownStateBackendNames;
 
     /**
@@ -179,7 +207,8 @@ public class BackendSetHealth {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("warningStateBackendNames")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     java.util.List<String> warningStateBackendNames;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

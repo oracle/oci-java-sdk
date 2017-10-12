@@ -8,16 +8,27 @@ package com.oracle.bmc.identity.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateApiKeyDetails.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CreateApiKeyDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
+        public Builder key(String key) {
+            this.key = key;
+            this.__explicitlySet__.add("key");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public CreateApiKeyDetails build() {
-            return new CreateApiKeyDetails(key);
+            CreateApiKeyDetails __instance__ = new CreateApiKeyDetails(key);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -37,7 +48,8 @@ public class CreateApiKeyDetails {
      * The public key.  Must be an RSA key in PEM format.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String key;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

@@ -19,14 +19,13 @@ package com.oracle.bmc.identity.model;
         name = "SAML2"
     )
 })
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CreateIdentityProviderDetails {
 
     /**
      * The OCID of your tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String compartmentId;
 
     /**
@@ -36,9 +35,6 @@ public class CreateIdentityProviderDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 100)
     String name;
 
     /**
@@ -47,9 +43,6 @@ public class CreateIdentityProviderDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 400)
     String description;
     /**
      * The identity provider service or product.
@@ -100,7 +93,5 @@ public class CreateIdentityProviderDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("productType")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     ProductType productType;
 }

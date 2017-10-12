@@ -12,22 +12,45 @@ package com.oracle.bmc.objectstorage.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ListObjects.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class ListObjects {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("objects")
         private java.util.List<ObjectSummary> objects;
 
+        public Builder objects(java.util.List<ObjectSummary> objects) {
+            this.objects = objects;
+            this.__explicitlySet__.add("objects");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("prefixes")
         private java.util.List<String> prefixes;
+
+        public Builder prefixes(java.util.List<String> prefixes) {
+            this.prefixes = prefixes;
+            this.__explicitlySet__.add("prefixes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("nextStartWith")
         private String nextStartWith;
 
+        public Builder nextStartWith(String nextStartWith) {
+            this.nextStartWith = nextStartWith;
+            this.__explicitlySet__.add("nextStartWith");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public ListObjects build() {
-            return new ListObjects(objects, prefixes, nextStartWith);
+            ListObjects __instance__ = new ListObjects(objects, prefixes, nextStartWith);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -50,8 +73,6 @@ public class ListObjects {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objects")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     java.util.List<ObjectSummary> objects;
 
     /**
@@ -68,4 +89,7 @@ public class ListObjects {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nextStartWith")
     String nextStartWith;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

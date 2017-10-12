@@ -5,6 +5,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
 import javax.annotation.Priority;
@@ -64,7 +65,7 @@ public class RawRestCallExample {
         System.out.println(responseHeaders);
         InputStream responseBody = (InputStream) response.getEntity();
         try (final BufferedReader reader =
-                new BufferedReader(new InputStreamReader(responseBody))) {
+                new BufferedReader(new InputStreamReader(responseBody, StandardCharsets.UTF_8))) {
             StringBuilder jsonBody = new StringBuilder();
             String line;
             while ((line = reader.readLine()) != null) {
@@ -88,8 +89,8 @@ public class RawRestCallExample {
                             clientRequestContext.getStringHeaders(),
                             clientRequestContext.getEntity());
 
-            for (String key : authHeaders.keySet()) {
-                clientRequestContext.getHeaders().putSingle(key, authHeaders.get(key));
+            for (Map.Entry<String, String> e : authHeaders.entrySet()) {
+                clientRequestContext.getHeaders().putSingle(e.getKey(), e.getValue());
             }
         }
     }

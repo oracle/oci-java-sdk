@@ -11,45 +11,99 @@ package com.oracle.bmc.loadbalancer.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateLoadBalancerDetails.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CreateLoadBalancerDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("backendSets")
         private java.util.Map<String, BackendSetDetails> backendSets;
 
+        public Builder backendSets(java.util.Map<String, BackendSetDetails> backendSets) {
+            this.backendSets = backendSets;
+            this.__explicitlySet__.add("backendSets");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("certificates")
         private java.util.Map<String, CertificateDetails> certificates;
+
+        public Builder certificates(java.util.Map<String, CertificateDetails> certificates) {
+            this.certificates = certificates;
+            this.__explicitlySet__.add("certificates");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
+
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            this.__explicitlySet__.add("displayName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
         private Boolean isPrivate;
 
+        public Builder isPrivate(Boolean isPrivate) {
+            this.isPrivate = isPrivate;
+            this.__explicitlySet__.add("isPrivate");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("listeners")
         private java.util.Map<String, ListenerDetails> listeners;
+
+        public Builder listeners(java.util.Map<String, ListenerDetails> listeners) {
+            this.listeners = listeners;
+            this.__explicitlySet__.add("listeners");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
         private String shapeName;
 
+        public Builder shapeName(String shapeName) {
+            this.shapeName = shapeName;
+            this.__explicitlySet__.add("shapeName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
         private java.util.List<String> subnetIds;
 
+        public Builder subnetIds(java.util.List<String> subnetIds) {
+            this.subnetIds = subnetIds;
+            this.__explicitlySet__.add("subnetIds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public CreateLoadBalancerDetails build() {
-            return new CreateLoadBalancerDetails(
-                    backendSets,
-                    certificates,
-                    compartmentId,
-                    displayName,
-                    isPrivate,
-                    listeners,
-                    shapeName,
-                    subnetIds);
+            CreateLoadBalancerDetails __instance__ =
+                    new CreateLoadBalancerDetails(
+                            backendSets,
+                            certificates,
+                            compartmentId,
+                            displayName,
+                            isPrivate,
+                            listeners,
+                            shapeName,
+                            subnetIds);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -82,9 +136,6 @@ public class CreateLoadBalancerDetails {
      * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the compartment in which to create the load balancer.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
@@ -95,9 +146,6 @@ public class CreateLoadBalancerDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 1024)
     String displayName;
 
     /**
@@ -133,15 +181,14 @@ public class CreateLoadBalancerDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String shapeName;
 
     /**
      * An array of subnet [OCIDs](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     java.util.List<String> subnetIds;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

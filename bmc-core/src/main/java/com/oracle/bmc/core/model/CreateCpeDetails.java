@@ -6,22 +6,46 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CreateCpeDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CreateCpeDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
+
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            this.__explicitlySet__.add("displayName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
+        public Builder ipAddress(String ipAddress) {
+            this.ipAddress = ipAddress;
+            this.__explicitlySet__.add("ipAddress");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public CreateCpeDetails build() {
-            return new CreateCpeDetails(compartmentId, displayName, ipAddress);
+            CreateCpeDetails __instance__ =
+                    new CreateCpeDetails(compartmentId, displayName, ipAddress);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -43,16 +67,12 @@ public class CreateCpeDetails {
      * The OCID of the compartment to contain the CPE.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
@@ -62,8 +82,8 @@ public class CreateCpeDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 46)
     String ipAddress;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

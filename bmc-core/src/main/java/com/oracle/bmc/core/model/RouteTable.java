@@ -16,35 +16,89 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RouteTable.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class RouteTable {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
+
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            this.__explicitlySet__.add("displayName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
+
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("routeRules")
         private java.util.List<RouteRule> routeRules;
 
+        public Builder routeRules(java.util.List<RouteRule> routeRules) {
+            this.routeRules = routeRules;
+            this.__explicitlySet__.add("routeRules");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
+
+        public Builder timeCreated(java.util.Date timeCreated) {
+            this.timeCreated = timeCreated;
+            this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
+        public Builder vcnId(String vcnId) {
+            this.vcnId = vcnId;
+            this.__explicitlySet__.add("vcnId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public RouteTable build() {
-            return new RouteTable(
-                    compartmentId, displayName, id, lifecycleState, routeRules, timeCreated, vcnId);
+            RouteTable __instance__ =
+                    new RouteTable(
+                            compartmentId,
+                            displayName,
+                            id,
+                            lifecycleState,
+                            routeRules,
+                            timeCreated,
+                            vcnId);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -70,9 +124,6 @@ public class RouteTable {
      * The OCID of the compartment containing the route table.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
@@ -81,16 +132,12 @@ public class RouteTable {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
      * The route table's Oracle ID (OCID).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String id;
     /**
      * The route table's current state.
@@ -144,16 +191,12 @@ public class RouteTable {
      * The route table's current state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     LifecycleState lifecycleState;
 
     /**
      * The collection of rules for routing destination IPs to network devices.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeRules")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     java.util.List<RouteRule> routeRules;
 
     /**
@@ -169,8 +212,8 @@ public class RouteTable {
      * The OCID of the VCN the route table list belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String vcnId;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

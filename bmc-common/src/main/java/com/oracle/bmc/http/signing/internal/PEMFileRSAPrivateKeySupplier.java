@@ -107,8 +107,25 @@ public class PEMFileRSAPrivateKeySupplier implements KeySupplier<RSAPrivateKey> 
         }
     }
 
+    /**
+     * Get the key from the file.
+     *
+     * @param ignored
+     *            this parameter is ignored. The key returned is always the same, the one from the file.
+     * @return an Optional for the key
+     */
     @Override
-    public Optional<RSAPrivateKey> getKey(@Nonnull String keyId) {
+    public Optional<RSAPrivateKey> getKey(@Nonnull String ignored) {
+        return getKey();
+    }
+
+    /**
+     * Get the key from the file.
+     *
+     * @return an Optional for the key
+     */
+    @Nonnull
+    public Optional<RSAPrivateKey> getKey() {
         return Optional.of(key);
     }
 }

@@ -6,25 +6,55 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CreateVcnDetails.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CreateVcnDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
         private String cidrBlock;
 
+        public Builder cidrBlock(String cidrBlock) {
+            this.cidrBlock = cidrBlock;
+            this.__explicitlySet__.add("cidrBlock");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
+
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            this.__explicitlySet__.add("displayName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dnsLabel")
         private String dnsLabel;
 
+        public Builder dnsLabel(String dnsLabel) {
+            this.dnsLabel = dnsLabel;
+            this.__explicitlySet__.add("dnsLabel");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public CreateVcnDetails build() {
-            return new CreateVcnDetails(cidrBlock, compartmentId, displayName, dnsLabel);
+            CreateVcnDetails __instance__ =
+                    new CreateVcnDetails(cidrBlock, compartmentId, displayName, dnsLabel);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -50,25 +80,18 @@ public class CreateVcnDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 32)
     String cidrBlock;
 
     /**
      * The OCID of the compartment to contain the VCN.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
@@ -90,6 +113,8 @@ public class CreateVcnDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnsLabel")
-    @javax.validation.constraints.Size(min = 1, max = 15)
     String dnsLabel;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

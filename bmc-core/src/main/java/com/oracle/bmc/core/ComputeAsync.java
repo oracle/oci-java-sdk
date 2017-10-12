@@ -140,7 +140,14 @@ public interface ComputeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CreateImageRequest, CreateImageResponse> handler);
 
     /**
-     * Create a console connection for an instance.
+     * Creates a new serial console connection to the specified instance.
+     * Once the serial console connection has been created and is available,
+     * you connect to the serial console using an SSH client.
+     * <p>
+     * The default number of enabled serial console connections per tenancy is 10.
+     * <p>
+     * For more information about serial console access, see [Accessing the Serial Console](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/serialconsole.htm).
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -188,7 +195,7 @@ public interface ComputeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<DeleteImageRequest, DeleteImageResponse> handler);
 
     /**
-     * Delete the console connection for an instance
+     * Deletes the specified serial console connection.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -210,6 +217,12 @@ public interface ComputeAsync extends AutoCloseable {
      * This operation cannot be used on the instance's primary VNIC.
      * When you terminate an instance, all attached VNICs (primary
      * and secondary) are automatically detached and deleted.
+     * <p>
+     **Important:** If the VNIC has a
+     * {@link PrivateIp} that is the
+     * [target of a route rule](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm#privateip),
+     * deleting the VNIC causes that route rule to blackhole and the traffic
+     * will be dropped.
      *
      *
      * @param request The request object containing the details to send
@@ -333,7 +346,7 @@ public interface ComputeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetInstanceRequest, GetInstanceResponse> handler);
 
     /**
-     * Get the details of an instance console connection
+     * Gets the specified serial console connection's information.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -512,7 +525,10 @@ public interface ComputeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListImagesRequest, ListImagesResponse> handler);
 
     /**
-     * Lists the console connections for the specified compartment or instance that have not been deleted.
+     * Lists the serial console connections for the specified compartment or instance.
+     * <p>
+     * For more information about serial console access, see [Accessing the Serial Console](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/serialconsole.htm).
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -621,6 +637,22 @@ public interface ComputeAsync extends AutoCloseable {
             TerminateInstanceRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             TerminateInstanceRequest, TerminateInstanceResponse>
+                    handler);
+
+    /**
+     * Updates the specified console history metadata.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateConsoleHistoryResponse> updateConsoleHistory(
+            UpdateConsoleHistoryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateConsoleHistoryRequest, UpdateConsoleHistoryResponse>
                     handler);
 
     /**

@@ -121,7 +121,8 @@ public class AuditClient implements Audit {
     public ListEventsResponse listEvents(ListEventsRequest request) {
         LOG.trace("Called listEvents");
         request = ListEventsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = ListEventsConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListEventsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListEventsResponse> transformer =
                 ListEventsConverter.fromResponse();
 

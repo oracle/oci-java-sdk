@@ -15,16 +15,28 @@ package com.oracle.bmc.core.model;
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
     property = "sourceType"
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class ImageSourceViaObjectStorageUriDetails extends ImageSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("sourceUri")
         private String sourceUri;
 
+        public Builder sourceUri(String sourceUri) {
+            this.sourceUri = sourceUri;
+            this.__explicitlySet__.add("sourceUri");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public ImageSourceViaObjectStorageUriDetails build() {
-            return new ImageSourceViaObjectStorageUriDetails(sourceUri);
+            ImageSourceViaObjectStorageUriDetails __instance__ =
+                    new ImageSourceViaObjectStorageUriDetails(sourceUri);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -49,7 +61,8 @@ public class ImageSourceViaObjectStorageUriDetails extends ImageSourceDetails {
      * The Object Storage Service URL for the image.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceUri")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String sourceUri;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

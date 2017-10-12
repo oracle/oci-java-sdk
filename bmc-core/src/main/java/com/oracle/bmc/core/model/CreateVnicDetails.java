@@ -15,29 +15,79 @@ package com.oracle.bmc.core.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateVnicDetails.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CreateVnicDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("assignPublicIp")
         private Boolean assignPublicIp;
 
+        public Builder assignPublicIp(Boolean assignPublicIp) {
+            this.assignPublicIp = assignPublicIp;
+            this.__explicitlySet__.add("assignPublicIp");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
+
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            this.__explicitlySet__.add("displayName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
         private String hostnameLabel;
 
+        public Builder hostnameLabel(String hostnameLabel) {
+            this.hostnameLabel = hostnameLabel;
+            this.__explicitlySet__.add("hostnameLabel");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
         private String privateIp;
+
+        public Builder privateIp(String privateIp) {
+            this.privateIp = privateIp;
+            this.__explicitlySet__.add("privateIp");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("skipSourceDestCheck")
+        private Boolean skipSourceDestCheck;
+
+        public Builder skipSourceDestCheck(Boolean skipSourceDestCheck) {
+            this.skipSourceDestCheck = skipSourceDestCheck;
+            this.__explicitlySet__.add("skipSourceDestCheck");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public CreateVnicDetails build() {
-            return new CreateVnicDetails(
-                    assignPublicIp, displayName, hostnameLabel, privateIp, subnetId);
+            CreateVnicDetails __instance__ =
+                    new CreateVnicDetails(
+                            assignPublicIp,
+                            displayName,
+                            hostnameLabel,
+                            privateIp,
+                            skipSourceDestCheck,
+                            subnetId);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -46,6 +96,7 @@ public class CreateVnicDetails {
                     .displayName(o.getDisplayName())
                     .hostnameLabel(o.getHostnameLabel())
                     .privateIp(o.getPrivateIp())
+                    .skipSourceDestCheck(o.getSkipSourceDestCheck())
                     .subnetId(o.getSubnetId());
         }
     }
@@ -83,7 +134,6 @@ public class CreateVnicDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
@@ -110,7 +160,6 @@ public class CreateVnicDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
-    @javax.validation.constraints.Size(min = 1, max = 63)
     String hostnameLabel;
 
     /**
@@ -127,8 +176,19 @@ public class CreateVnicDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
-    @javax.validation.constraints.Size(min = 1, max = 46)
     String privateIp;
+
+    /**
+     * Whether the source/destination check is disabled on the VNIC.
+     * Defaults to `false`, which means the check is performed. For information
+     * about why you would skip the source/destination check, see
+     * [Using a Private IP as a Route Target](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm#privateip).
+     * <p>
+     * Example: `true`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("skipSourceDestCheck")
+    Boolean skipSourceDestCheck;
 
     /**
      * The OCID of the subnet to create the VNIC in. When launching an instance,
@@ -138,8 +198,8 @@ public class CreateVnicDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String subnetId;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

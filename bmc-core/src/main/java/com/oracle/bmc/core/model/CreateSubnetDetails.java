@@ -8,53 +8,119 @@ package com.oracle.bmc.core.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateSubnetDetails.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CreateSubnetDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
+        public Builder availabilityDomain(String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
+            this.__explicitlySet__.add("availabilityDomain");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
         private String cidrBlock;
+
+        public Builder cidrBlock(String cidrBlock) {
+            this.cidrBlock = cidrBlock;
+            this.__explicitlySet__.add("cidrBlock");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dhcpOptionsId")
         private String dhcpOptionsId;
+
+        public Builder dhcpOptionsId(String dhcpOptionsId) {
+            this.dhcpOptionsId = dhcpOptionsId;
+            this.__explicitlySet__.add("dhcpOptionsId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            this.__explicitlySet__.add("displayName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dnsLabel")
         private String dnsLabel;
+
+        public Builder dnsLabel(String dnsLabel) {
+            this.dnsLabel = dnsLabel;
+            this.__explicitlySet__.add("dnsLabel");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("prohibitPublicIpOnVnic")
         private Boolean prohibitPublicIpOnVnic;
 
+        public Builder prohibitPublicIpOnVnic(Boolean prohibitPublicIpOnVnic) {
+            this.prohibitPublicIpOnVnic = prohibitPublicIpOnVnic;
+            this.__explicitlySet__.add("prohibitPublicIpOnVnic");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
         private String routeTableId;
+
+        public Builder routeTableId(String routeTableId) {
+            this.routeTableId = routeTableId;
+            this.__explicitlySet__.add("routeTableId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("securityListIds")
         private java.util.List<String> securityListIds;
 
+        public Builder securityListIds(java.util.List<String> securityListIds) {
+            this.securityListIds = securityListIds;
+            this.__explicitlySet__.add("securityListIds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
+        public Builder vcnId(String vcnId) {
+            this.vcnId = vcnId;
+            this.__explicitlySet__.add("vcnId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public CreateSubnetDetails build() {
-            return new CreateSubnetDetails(
-                    availabilityDomain,
-                    cidrBlock,
-                    compartmentId,
-                    dhcpOptionsId,
-                    displayName,
-                    dnsLabel,
-                    prohibitPublicIpOnVnic,
-                    routeTableId,
-                    securityListIds,
-                    vcnId);
+            CreateSubnetDetails __instance__ =
+                    new CreateSubnetDetails(
+                            availabilityDomain,
+                            cidrBlock,
+                            compartmentId,
+                            dhcpOptionsId,
+                            displayName,
+                            dnsLabel,
+                            prohibitPublicIpOnVnic,
+                            routeTableId,
+                            securityListIds,
+                            vcnId);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -86,9 +152,6 @@ public class CreateSubnetDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String availabilityDomain;
 
     /**
@@ -98,18 +161,12 @@ public class CreateSubnetDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 32)
     String cidrBlock;
 
     /**
      * The OCID of the compartment to contain the subnet.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
@@ -118,14 +175,12 @@ public class CreateSubnetDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dhcpOptionsId")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String dhcpOptionsId;
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
@@ -146,7 +201,6 @@ public class CreateSubnetDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnsLabel")
-    @javax.validation.constraints.Size(min = 1, max = 15)
     String dnsLabel;
 
     /**
@@ -171,7 +225,6 @@ public class CreateSubnetDetails {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String routeTableId;
 
     /**
@@ -188,8 +241,8 @@ public class CreateSubnetDetails {
      * The OCID of the VCN to contain the subnet.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String vcnId;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

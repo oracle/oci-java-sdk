@@ -17,25 +17,55 @@ package com.oracle.bmc.identity.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = RegionSubscription.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class RegionSubscription {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("regionKey")
         private String regionKey;
 
+        public Builder regionKey(String regionKey) {
+            this.regionKey = regionKey;
+            this.__explicitlySet__.add("regionKey");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("regionName")
         private String regionName;
+
+        public Builder regionName(String regionName) {
+            this.regionName = regionName;
+            this.__explicitlySet__.add("regionName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
+        public Builder status(Status status) {
+            this.status = status;
+            this.__explicitlySet__.add("status");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isHomeRegion")
         private Boolean isHomeRegion;
 
+        public Builder isHomeRegion(Boolean isHomeRegion) {
+            this.isHomeRegion = isHomeRegion;
+            this.__explicitlySet__.add("isHomeRegion");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public RegionSubscription build() {
-            return new RegionSubscription(regionKey, regionName, status, isHomeRegion);
+            RegionSubscription __instance__ =
+                    new RegionSubscription(regionKey, regionName, status, isHomeRegion);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -64,9 +94,6 @@ public class RegionSubscription {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regionKey")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 16)
     String regionKey;
 
     /**
@@ -79,9 +106,6 @@ public class RegionSubscription {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("regionName")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 16)
     String regionName;
     /**
      * The region subscription status.
@@ -133,15 +157,14 @@ public class RegionSubscription {
      * The region subscription status.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     Status status;
 
     /**
      * Indicates if the region is the home region or not.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHomeRegion")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     Boolean isHomeRegion;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

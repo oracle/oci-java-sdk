@@ -13,45 +13,99 @@ package com.oracle.bmc.loadbalancer.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WorkRequest.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class WorkRequest {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("errorDetails")
         private java.util.List<WorkRequestError> errorDetails;
 
+        public Builder errorDetails(java.util.List<WorkRequestError> errorDetails) {
+            this.errorDetails = errorDetails;
+            this.__explicitlySet__.add("errorDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
+
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
         private String loadBalancerId;
+
+        public Builder loadBalancerId(String loadBalancerId) {
+            this.loadBalancerId = loadBalancerId;
+            this.__explicitlySet__.add("loadBalancerId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
+        public Builder message(String message) {
+            this.message = message;
+            this.__explicitlySet__.add("message");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
         private java.util.Date timeAccepted;
+
+        public Builder timeAccepted(java.util.Date timeAccepted) {
+            this.timeAccepted = timeAccepted;
+            this.__explicitlySet__.add("timeAccepted");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
+        public Builder timeFinished(java.util.Date timeFinished) {
+            this.timeFinished = timeFinished;
+            this.__explicitlySet__.add("timeFinished");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
+        public Builder type(String type) {
+            this.type = type;
+            this.__explicitlySet__.add("type");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public WorkRequest build() {
-            return new WorkRequest(
-                    errorDetails,
-                    id,
-                    lifecycleState,
-                    loadBalancerId,
-                    message,
-                    timeAccepted,
-                    timeFinished,
-                    type);
+            WorkRequest __instance__ =
+                    new WorkRequest(
+                            errorDetails,
+                            id,
+                            lifecycleState,
+                            loadBalancerId,
+                            message,
+                            timeAccepted,
+                            timeFinished,
+                            type);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -75,16 +129,12 @@ public class WorkRequest {
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("errorDetails")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     java.util.List<WorkRequestError> errorDetails;
 
     /**
      * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String id;
     /**
      **/
@@ -135,8 +185,6 @@ public class WorkRequest {
     };
 
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     LifecycleState lifecycleState;
 
     /**
@@ -145,8 +193,6 @@ public class WorkRequest {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String loadBalancerId;
 
     /**
@@ -161,8 +207,6 @@ public class WorkRequest {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String message;
 
     /**
@@ -172,8 +216,6 @@ public class WorkRequest {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     java.util.Date timeAccepted;
 
     /**
@@ -190,7 +232,8 @@ public class WorkRequest {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String type;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

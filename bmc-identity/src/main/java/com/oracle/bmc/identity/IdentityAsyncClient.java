@@ -124,7 +124,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async addUserToGroup");
         request = AddUserToGroupConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 AddUserToGroupConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, AddUserToGroupResponse>
                 transformer = AddUserToGroupConverter.fromResponse();
@@ -147,7 +147,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async createCompartment");
         request = CreateCompartmentConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateCompartmentConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateCompartmentResponse>
                 transformer = CreateCompartmentConverter.fromResponse();
@@ -170,7 +170,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async createCustomerSecretKey");
         request = CreateCustomerSecretKeyConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateCustomerSecretKeyConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateCustomerSecretKeyResponse>
                 transformer = CreateCustomerSecretKeyConverter.fromResponse();
@@ -197,7 +197,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async createGroup");
         request = CreateGroupConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateGroupConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateGroupResponse>
                 transformer = CreateGroupConverter.fromResponse();
@@ -220,7 +220,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async createIdentityProvider");
         request = CreateIdentityProviderConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateIdentityProviderConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateIdentityProviderResponse>
                 transformer = CreateIdentityProviderConverter.fromResponse();
@@ -248,7 +248,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async createIdpGroupMapping");
         request = CreateIdpGroupMappingConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateIdpGroupMappingConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateIdpGroupMappingResponse>
                 transformer = CreateIdpGroupMappingConverter.fromResponse();
@@ -272,7 +272,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async createOrResetUIPassword");
         request = CreateOrResetUIPasswordConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateOrResetUIPasswordConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateOrResetUIPasswordResponse>
                 transformer = CreateOrResetUIPasswordConverter.fromResponse();
@@ -294,7 +294,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async createPolicy");
         request = CreatePolicyConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreatePolicyConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreatePolicyResponse>
                 transformer = CreatePolicyConverter.fromResponse();
@@ -317,7 +317,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async createRegionSubscription");
         request = CreateRegionSubscriptionConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateRegionSubscriptionConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateRegionSubscriptionResponse>
                 transformer = CreateRegionSubscriptionConverter.fromResponse();
@@ -345,7 +345,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async createSwiftPassword");
         request = CreateSwiftPasswordConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateSwiftPasswordConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateSwiftPasswordResponse>
                 transformer = CreateSwiftPasswordConverter.fromResponse();
@@ -367,7 +367,8 @@ public class IdentityAsyncClient implements IdentityAsync {
             com.oracle.bmc.responses.AsyncHandler<CreateUserRequest, CreateUserResponse> handler) {
         LOG.trace("Called async createUser");
         request = CreateUserConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = CreateUserConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateUserConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateUserResponse> transformer =
                 CreateUserConverter.fromResponse();
 
@@ -388,7 +389,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async deleteApiKey");
         request = DeleteApiKeyConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteApiKeyConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteApiKeyResponse>
                 transformer = DeleteApiKeyConverter.fromResponse();
@@ -411,7 +412,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async deleteCustomerSecretKey");
         request = DeleteCustomerSecretKeyConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteCustomerSecretKeyConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCustomerSecretKeyResponse>
                 transformer = DeleteCustomerSecretKeyConverter.fromResponse();
@@ -433,7 +434,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async deleteGroup");
         request = DeleteGroupConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteGroupConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteGroupResponse>
                 transformer = DeleteGroupConverter.fromResponse();
@@ -456,7 +457,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async deleteIdentityProvider");
         request = DeleteIdentityProviderConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteIdentityProviderConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteIdentityProviderResponse>
                 transformer = DeleteIdentityProviderConverter.fromResponse();
@@ -479,7 +480,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async deleteIdpGroupMapping");
         request = DeleteIdpGroupMappingConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteIdpGroupMappingConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteIdpGroupMappingResponse>
                 transformer = DeleteIdpGroupMappingConverter.fromResponse();
@@ -501,7 +502,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async deletePolicy");
         request = DeletePolicyConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeletePolicyConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeletePolicyResponse>
                 transformer = DeletePolicyConverter.fromResponse();
@@ -524,7 +525,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async deleteSwiftPassword");
         request = DeleteSwiftPasswordConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteSwiftPasswordConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSwiftPasswordResponse>
                 transformer = DeleteSwiftPasswordConverter.fromResponse();
@@ -545,7 +546,8 @@ public class IdentityAsyncClient implements IdentityAsync {
             com.oracle.bmc.responses.AsyncHandler<DeleteUserRequest, DeleteUserResponse> handler) {
         LOG.trace("Called async deleteUser");
         request = DeleteUserConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = DeleteUserConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteUserConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteUserResponse> transformer =
                 DeleteUserConverter.fromResponse();
 
@@ -566,7 +568,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async getCompartment");
         request = GetCompartmentConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetCompartmentConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetCompartmentResponse>
                 transformer = GetCompartmentConverter.fromResponse();
@@ -587,7 +589,8 @@ public class IdentityAsyncClient implements IdentityAsync {
             com.oracle.bmc.responses.AsyncHandler<GetGroupRequest, GetGroupResponse> handler) {
         LOG.trace("Called async getGroup");
         request = GetGroupConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = GetGroupConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetGroupConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetGroupResponse> transformer =
                 GetGroupConverter.fromResponse();
 
@@ -609,7 +612,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async getIdentityProvider");
         request = GetIdentityProviderConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetIdentityProviderConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetIdentityProviderResponse>
                 transformer = GetIdentityProviderConverter.fromResponse();
@@ -632,7 +635,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async getIdpGroupMapping");
         request = GetIdpGroupMappingConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetIdpGroupMappingConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetIdpGroupMappingResponse>
                 transformer = GetIdpGroupMappingConverter.fromResponse();
@@ -653,7 +656,8 @@ public class IdentityAsyncClient implements IdentityAsync {
             com.oracle.bmc.responses.AsyncHandler<GetPolicyRequest, GetPolicyResponse> handler) {
         LOG.trace("Called async getPolicy");
         request = GetPolicyConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = GetPolicyConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPolicyConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetPolicyResponse> transformer =
                 GetPolicyConverter.fromResponse();
 
@@ -673,7 +677,8 @@ public class IdentityAsyncClient implements IdentityAsync {
             com.oracle.bmc.responses.AsyncHandler<GetTenancyRequest, GetTenancyResponse> handler) {
         LOG.trace("Called async getTenancy");
         request = GetTenancyConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = GetTenancyConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetTenancyConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetTenancyResponse> transformer =
                 GetTenancyConverter.fromResponse();
 
@@ -693,7 +698,8 @@ public class IdentityAsyncClient implements IdentityAsync {
             com.oracle.bmc.responses.AsyncHandler<GetUserRequest, GetUserResponse> handler) {
         LOG.trace("Called async getUser");
         request = GetUserConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = GetUserConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetUserConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetUserResponse> transformer =
                 GetUserConverter.fromResponse();
 
@@ -715,7 +721,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async getUserGroupMembership");
         request = GetUserGroupMembershipConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetUserGroupMembershipConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetUserGroupMembershipResponse>
                 transformer = GetUserGroupMembershipConverter.fromResponse();
@@ -737,7 +743,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async listApiKeys");
         request = ListApiKeysConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListApiKeysConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListApiKeysResponse>
                 transformer = ListApiKeysConverter.fromResponse();
@@ -760,7 +766,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async listAvailabilityDomains");
         request = ListAvailabilityDomainsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListAvailabilityDomainsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListAvailabilityDomainsResponse>
                 transformer = ListAvailabilityDomainsConverter.fromResponse();
@@ -782,7 +788,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async listCompartments");
         request = ListCompartmentsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListCompartmentsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListCompartmentsResponse>
                 transformer = ListCompartmentsConverter.fromResponse();
@@ -805,7 +811,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async listCustomerSecretKeys");
         request = ListCustomerSecretKeysConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListCustomerSecretKeysConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListCustomerSecretKeysResponse>
                 transformer = ListCustomerSecretKeysConverter.fromResponse();
@@ -826,7 +832,8 @@ public class IdentityAsyncClient implements IdentityAsync {
             com.oracle.bmc.responses.AsyncHandler<ListGroupsRequest, ListGroupsResponse> handler) {
         LOG.trace("Called async listGroups");
         request = ListGroupsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = ListGroupsConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListGroupsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListGroupsResponse> transformer =
                 ListGroupsConverter.fromResponse();
 
@@ -848,7 +855,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async listIdentityProviders");
         request = ListIdentityProvidersConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListIdentityProvidersConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListIdentityProvidersResponse>
                 transformer = ListIdentityProvidersConverter.fromResponse();
@@ -871,7 +878,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async listIdpGroupMappings");
         request = ListIdpGroupMappingsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListIdpGroupMappingsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListIdpGroupMappingsResponse>
                 transformer = ListIdpGroupMappingsConverter.fromResponse();
@@ -893,7 +900,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async listPolicies");
         request = ListPoliciesConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListPoliciesConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListPoliciesResponse>
                 transformer = ListPoliciesConverter.fromResponse();
@@ -916,7 +923,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async listRegionSubscriptions");
         request = ListRegionSubscriptionsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListRegionSubscriptionsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListRegionSubscriptionsResponse>
                 transformer = ListRegionSubscriptionsConverter.fromResponse();
@@ -938,7 +945,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async listRegions");
         request = ListRegionsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListRegionsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListRegionsResponse>
                 transformer = ListRegionsConverter.fromResponse();
@@ -961,7 +968,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async listSwiftPasswords");
         request = ListSwiftPasswordsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListSwiftPasswordsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListSwiftPasswordsResponse>
                 transformer = ListSwiftPasswordsConverter.fromResponse();
@@ -984,7 +991,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async listUserGroupMemberships");
         request = ListUserGroupMembershipsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListUserGroupMembershipsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListUserGroupMembershipsResponse>
                 transformer = ListUserGroupMembershipsConverter.fromResponse();
@@ -1005,7 +1012,8 @@ public class IdentityAsyncClient implements IdentityAsync {
             com.oracle.bmc.responses.AsyncHandler<ListUsersRequest, ListUsersResponse> handler) {
         LOG.trace("Called async listUsers");
         request = ListUsersConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = ListUsersConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListUsersConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListUsersResponse> transformer =
                 ListUsersConverter.fromResponse();
 
@@ -1027,7 +1035,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async removeUserFromGroup");
         request = RemoveUserFromGroupConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 RemoveUserFromGroupConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, RemoveUserFromGroupResponse>
                 transformer = RemoveUserFromGroupConverter.fromResponse();
@@ -1050,7 +1058,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async updateCompartment");
         request = UpdateCompartmentConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateCompartmentConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCompartmentResponse>
                 transformer = UpdateCompartmentConverter.fromResponse();
@@ -1073,7 +1081,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async updateCustomerSecretKey");
         request = UpdateCustomerSecretKeyConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateCustomerSecretKeyConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCustomerSecretKeyResponse>
                 transformer = UpdateCustomerSecretKeyConverter.fromResponse();
@@ -1100,7 +1108,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async updateGroup");
         request = UpdateGroupConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateGroupConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateGroupResponse>
                 transformer = UpdateGroupConverter.fromResponse();
@@ -1123,7 +1131,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async updateIdentityProvider");
         request = UpdateIdentityProviderConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateIdentityProviderConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateIdentityProviderResponse>
                 transformer = UpdateIdentityProviderConverter.fromResponse();
@@ -1151,7 +1159,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async updateIdpGroupMapping");
         request = UpdateIdpGroupMappingConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateIdpGroupMappingConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateIdpGroupMappingResponse>
                 transformer = UpdateIdpGroupMappingConverter.fromResponse();
@@ -1174,7 +1182,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async updatePolicy");
         request = UpdatePolicyConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdatePolicyConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePolicyResponse>
                 transformer = UpdatePolicyConverter.fromResponse();
@@ -1197,7 +1205,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async updateSwiftPassword");
         request = UpdateSwiftPasswordConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateSwiftPasswordConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSwiftPasswordResponse>
                 transformer = UpdateSwiftPasswordConverter.fromResponse();
@@ -1219,7 +1227,8 @@ public class IdentityAsyncClient implements IdentityAsync {
             com.oracle.bmc.responses.AsyncHandler<UpdateUserRequest, UpdateUserResponse> handler) {
         LOG.trace("Called async updateUser");
         request = UpdateUserConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = UpdateUserConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateUserConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateUserResponse> transformer =
                 UpdateUserConverter.fromResponse();
 
@@ -1240,7 +1249,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async updateUserState");
         request = UpdateUserStateConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateUserStateConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateUserStateResponse>
                 transformer = UpdateUserStateConverter.fromResponse();
@@ -1262,7 +1271,7 @@ public class IdentityAsyncClient implements IdentityAsync {
                     handler) {
         LOG.trace("Called async uploadApiKey");
         request = UploadApiKeyConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UploadApiKeyConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UploadApiKeyResponse>
                 transformer = UploadApiKeyConverter.fromResponse();

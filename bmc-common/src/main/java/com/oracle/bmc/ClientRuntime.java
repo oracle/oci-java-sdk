@@ -50,12 +50,12 @@ public class ClientRuntime {
 
         final String additionalUserAgentFromClient;
         if (clientUserAgent != null && !clientUserAgent.trim().isEmpty()) {
-            additionalUserAgentFromClient = "; " + clientUserAgent.trim();
+            additionalUserAgentFromClient = " " + clientUserAgent.trim();
         } else {
             additionalUserAgentFromClient = "";
         }
 
-        final String agentFormat = "%s (%s/%s; Java/%s; %s/%s%s)";
+        final String agentFormat = "%s (%s/%s; Java/%s; %s/%s)%s";
         userAgent =
                 String.format(
                         agentFormat,

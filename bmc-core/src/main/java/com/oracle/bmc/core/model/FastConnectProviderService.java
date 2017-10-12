@@ -13,22 +13,46 @@ package com.oracle.bmc.core.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = FastConnectProviderService.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class FastConnectProviderService {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("providerName")
         private String providerName;
+
+        public Builder providerName(String providerName) {
+            this.providerName = providerName;
+            this.__explicitlySet__.add("providerName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("providerServiceName")
         private String providerServiceName;
 
+        public Builder providerServiceName(String providerServiceName) {
+            this.providerServiceName = providerServiceName;
+            this.__explicitlySet__.add("providerServiceName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public FastConnectProviderService build() {
-            return new FastConnectProviderService(description, providerName, providerServiceName);
+            FastConnectProviderService __instance__ =
+                    new FastConnectProviderService(description, providerName, providerServiceName);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -51,7 +75,6 @@ public class FastConnectProviderService {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String description;
 
     /**
@@ -59,9 +82,6 @@ public class FastConnectProviderService {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerName")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String providerName;
 
     /**
@@ -69,8 +89,8 @@ public class FastConnectProviderService {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerServiceName")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String providerServiceName;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

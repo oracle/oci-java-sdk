@@ -140,7 +140,7 @@ public class BlockstorageClient implements Blockstorage {
     public CreateVolumeResponse createVolume(CreateVolumeRequest request) {
         LOG.trace("Called createVolume");
         request = CreateVolumeConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateVolumeConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateVolumeResponse>
                 transformer = CreateVolumeConverter.fromResponse();
@@ -154,7 +154,7 @@ public class BlockstorageClient implements Blockstorage {
     public CreateVolumeBackupResponse createVolumeBackup(CreateVolumeBackupRequest request) {
         LOG.trace("Called createVolumeBackup");
         request = CreateVolumeBackupConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateVolumeBackupConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateVolumeBackupResponse>
                 transformer = CreateVolumeBackupConverter.fromResponse();
@@ -168,7 +168,7 @@ public class BlockstorageClient implements Blockstorage {
     public DeleteVolumeResponse deleteVolume(DeleteVolumeRequest request) {
         LOG.trace("Called deleteVolume");
         request = DeleteVolumeConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteVolumeConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVolumeResponse>
                 transformer = DeleteVolumeConverter.fromResponse();
@@ -181,7 +181,7 @@ public class BlockstorageClient implements Blockstorage {
     public DeleteVolumeBackupResponse deleteVolumeBackup(DeleteVolumeBackupRequest request) {
         LOG.trace("Called deleteVolumeBackup");
         request = DeleteVolumeBackupConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteVolumeBackupConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVolumeBackupResponse>
                 transformer = DeleteVolumeBackupConverter.fromResponse();
@@ -194,7 +194,8 @@ public class BlockstorageClient implements Blockstorage {
     public GetVolumeResponse getVolume(GetVolumeRequest request) {
         LOG.trace("Called getVolume");
         request = GetVolumeConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = GetVolumeConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetVolumeConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeResponse> transformer =
                 GetVolumeConverter.fromResponse();
 
@@ -206,7 +207,7 @@ public class BlockstorageClient implements Blockstorage {
     public GetVolumeBackupResponse getVolumeBackup(GetVolumeBackupRequest request) {
         LOG.trace("Called getVolumeBackup");
         request = GetVolumeBackupConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetVolumeBackupConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeBackupResponse>
                 transformer = GetVolumeBackupConverter.fromResponse();
@@ -219,7 +220,7 @@ public class BlockstorageClient implements Blockstorage {
     public ListVolumeBackupsResponse listVolumeBackups(ListVolumeBackupsRequest request) {
         LOG.trace("Called listVolumeBackups");
         request = ListVolumeBackupsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListVolumeBackupsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumeBackupsResponse>
                 transformer = ListVolumeBackupsConverter.fromResponse();
@@ -232,7 +233,7 @@ public class BlockstorageClient implements Blockstorage {
     public ListVolumesResponse listVolumes(ListVolumesRequest request) {
         LOG.trace("Called listVolumes");
         request = ListVolumesConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListVolumesConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumesResponse>
                 transformer = ListVolumesConverter.fromResponse();
@@ -245,7 +246,7 @@ public class BlockstorageClient implements Blockstorage {
     public UpdateVolumeResponse updateVolume(UpdateVolumeRequest request) {
         LOG.trace("Called updateVolume");
         request = UpdateVolumeConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateVolumeConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVolumeResponse>
                 transformer = UpdateVolumeConverter.fromResponse();
@@ -259,7 +260,7 @@ public class BlockstorageClient implements Blockstorage {
     public UpdateVolumeBackupResponse updateVolumeBackup(UpdateVolumeBackupRequest request) {
         LOG.trace("Called updateVolumeBackup");
         request = UpdateVolumeBackupConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateVolumeBackupConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVolumeBackupResponse>
                 transformer = UpdateVolumeBackupConverter.fromResponse();

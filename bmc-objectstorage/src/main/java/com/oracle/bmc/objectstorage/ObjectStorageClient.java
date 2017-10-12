@@ -121,7 +121,7 @@ public class ObjectStorageClient implements ObjectStorage {
     public AbortMultipartUploadResponse abortMultipartUpload(AbortMultipartUploadRequest request) {
         LOG.trace("Called abortMultipartUpload");
         request = AbortMultipartUploadConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 AbortMultipartUploadConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, AbortMultipartUploadResponse>
                 transformer = AbortMultipartUploadConverter.fromResponse();
@@ -135,7 +135,7 @@ public class ObjectStorageClient implements ObjectStorage {
             CommitMultipartUploadRequest request) {
         LOG.trace("Called commitMultipartUpload");
         request = CommitMultipartUploadConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CommitMultipartUploadConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CommitMultipartUploadResponse>
                 transformer = CommitMultipartUploadConverter.fromResponse();
@@ -149,7 +149,7 @@ public class ObjectStorageClient implements ObjectStorage {
     public CreateBucketResponse createBucket(CreateBucketRequest request) {
         LOG.trace("Called createBucket");
         request = CreateBucketConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateBucketConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateBucketResponse>
                 transformer = CreateBucketConverter.fromResponse();
@@ -164,7 +164,7 @@ public class ObjectStorageClient implements ObjectStorage {
             CreateMultipartUploadRequest request) {
         LOG.trace("Called createMultipartUpload");
         request = CreateMultipartUploadConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateMultipartUploadConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateMultipartUploadResponse>
                 transformer = CreateMultipartUploadConverter.fromResponse();
@@ -179,7 +179,7 @@ public class ObjectStorageClient implements ObjectStorage {
             CreatePreauthenticatedRequestRequest request) {
         LOG.trace("Called createPreauthenticatedRequest");
         request = CreatePreauthenticatedRequestConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreatePreauthenticatedRequestConverter.fromRequest(client, request);
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreatePreauthenticatedRequestResponse>
@@ -194,7 +194,7 @@ public class ObjectStorageClient implements ObjectStorage {
     public DeleteBucketResponse deleteBucket(DeleteBucketRequest request) {
         LOG.trace("Called deleteBucket");
         request = DeleteBucketConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteBucketConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBucketResponse>
                 transformer = DeleteBucketConverter.fromResponse();
@@ -207,7 +207,7 @@ public class ObjectStorageClient implements ObjectStorage {
     public DeleteObjectResponse deleteObject(DeleteObjectRequest request) {
         LOG.trace("Called deleteObject");
         request = DeleteObjectConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteObjectConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteObjectResponse>
                 transformer = DeleteObjectConverter.fromResponse();
@@ -221,7 +221,7 @@ public class ObjectStorageClient implements ObjectStorage {
             DeletePreauthenticatedRequestRequest request) {
         LOG.trace("Called deletePreauthenticatedRequest");
         request = DeletePreauthenticatedRequestConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeletePreauthenticatedRequestConverter.fromRequest(client, request);
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeletePreauthenticatedRequestResponse>
@@ -235,7 +235,8 @@ public class ObjectStorageClient implements ObjectStorage {
     public GetBucketResponse getBucket(GetBucketRequest request) {
         LOG.trace("Called getBucket");
         request = GetBucketConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = GetBucketConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetBucketConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetBucketResponse> transformer =
                 GetBucketConverter.fromResponse();
 
@@ -247,7 +248,7 @@ public class ObjectStorageClient implements ObjectStorage {
     public GetNamespaceResponse getNamespace(GetNamespaceRequest request) {
         LOG.trace("Called getNamespace");
         request = GetNamespaceConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetNamespaceConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetNamespaceResponse>
                 transformer = GetNamespaceConverter.fromResponse();
@@ -260,7 +261,8 @@ public class ObjectStorageClient implements ObjectStorage {
     public GetObjectResponse getObject(GetObjectRequest request) {
         LOG.trace("Called getObject");
         request = GetObjectConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = GetObjectConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetObjectConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetObjectResponse> transformer =
                 GetObjectConverter.fromResponse();
 
@@ -273,7 +275,7 @@ public class ObjectStorageClient implements ObjectStorage {
             GetPreauthenticatedRequestRequest request) {
         LOG.trace("Called getPreauthenticatedRequest");
         request = GetPreauthenticatedRequestConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetPreauthenticatedRequestConverter.fromRequest(client, request);
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetPreauthenticatedRequestResponse>
@@ -287,7 +289,8 @@ public class ObjectStorageClient implements ObjectStorage {
     public HeadBucketResponse headBucket(HeadBucketRequest request) {
         LOG.trace("Called headBucket");
         request = HeadBucketConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = HeadBucketConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                HeadBucketConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, HeadBucketResponse> transformer =
                 HeadBucketConverter.fromResponse();
 
@@ -299,7 +302,8 @@ public class ObjectStorageClient implements ObjectStorage {
     public HeadObjectResponse headObject(HeadObjectRequest request) {
         LOG.trace("Called headObject");
         request = HeadObjectConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = HeadObjectConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                HeadObjectConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, HeadObjectResponse> transformer =
                 HeadObjectConverter.fromResponse();
 
@@ -311,7 +315,7 @@ public class ObjectStorageClient implements ObjectStorage {
     public ListBucketsResponse listBuckets(ListBucketsRequest request) {
         LOG.trace("Called listBuckets");
         request = ListBucketsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListBucketsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListBucketsResponse>
                 transformer = ListBucketsConverter.fromResponse();
@@ -325,7 +329,7 @@ public class ObjectStorageClient implements ObjectStorage {
             ListMultipartUploadPartsRequest request) {
         LOG.trace("Called listMultipartUploadParts");
         request = ListMultipartUploadPartsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListMultipartUploadPartsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListMultipartUploadPartsResponse>
                 transformer = ListMultipartUploadPartsConverter.fromResponse();
@@ -338,7 +342,7 @@ public class ObjectStorageClient implements ObjectStorage {
     public ListMultipartUploadsResponse listMultipartUploads(ListMultipartUploadsRequest request) {
         LOG.trace("Called listMultipartUploads");
         request = ListMultipartUploadsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListMultipartUploadsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListMultipartUploadsResponse>
                 transformer = ListMultipartUploadsConverter.fromResponse();
@@ -351,7 +355,7 @@ public class ObjectStorageClient implements ObjectStorage {
     public ListObjectsResponse listObjects(ListObjectsRequest request) {
         LOG.trace("Called listObjects");
         request = ListObjectsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListObjectsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListObjectsResponse>
                 transformer = ListObjectsConverter.fromResponse();
@@ -365,7 +369,7 @@ public class ObjectStorageClient implements ObjectStorage {
             ListPreauthenticatedRequestsRequest request) {
         LOG.trace("Called listPreauthenticatedRequests");
         request = ListPreauthenticatedRequestsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListPreauthenticatedRequestsConverter.fromRequest(client, request);
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListPreauthenticatedRequestsResponse>
@@ -379,7 +383,8 @@ public class ObjectStorageClient implements ObjectStorage {
     public PutObjectResponse putObject(PutObjectRequest request) {
         LOG.trace("Called putObject");
         request = PutObjectConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = PutObjectConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PutObjectConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, PutObjectResponse> transformer =
                 PutObjectConverter.fromResponse();
 
@@ -391,7 +396,7 @@ public class ObjectStorageClient implements ObjectStorage {
     public UpdateBucketResponse updateBucket(UpdateBucketRequest request) {
         LOG.trace("Called updateBucket");
         request = UpdateBucketConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateBucketConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBucketResponse>
                 transformer = UpdateBucketConverter.fromResponse();
@@ -405,7 +410,8 @@ public class ObjectStorageClient implements ObjectStorage {
     public UploadPartResponse uploadPart(UploadPartRequest request) {
         LOG.trace("Called uploadPart");
         request = UploadPartConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = UploadPartConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UploadPartConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UploadPartResponse> transformer =
                 UploadPartConverter.fromResponse();
 

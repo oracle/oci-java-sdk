@@ -10,25 +10,55 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TunnelStatus.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class TunnelStatus {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
+        public Builder ipAddress(String ipAddress) {
+            this.ipAddress = ipAddress;
+            this.__explicitlySet__.add("ipAddress");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
+
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        public Builder timeCreated(java.util.Date timeCreated) {
+            this.timeCreated = timeCreated;
+            this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeStateModified")
         private java.util.Date timeStateModified;
 
+        public Builder timeStateModified(java.util.Date timeStateModified) {
+            this.timeStateModified = timeStateModified;
+            this.__explicitlySet__.add("timeStateModified");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public TunnelStatus build() {
-            return new TunnelStatus(ipAddress, lifecycleState, timeCreated, timeStateModified);
+            TunnelStatus __instance__ =
+                    new TunnelStatus(ipAddress, lifecycleState, timeCreated, timeStateModified);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -54,9 +84,6 @@ public class TunnelStatus {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 46)
     String ipAddress;
     /**
      * The tunnel's current state.
@@ -128,4 +155,7 @@ public class TunnelStatus {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStateModified")
     java.util.Date timeStateModified;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

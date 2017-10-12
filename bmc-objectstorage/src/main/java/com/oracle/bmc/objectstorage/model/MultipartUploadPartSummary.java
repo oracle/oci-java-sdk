@@ -14,25 +14,55 @@ package com.oracle.bmc.objectstorage.model;
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = MultipartUploadPartSummary.Builder.class
 )
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class MultipartUploadPartSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("etag")
         private String etag;
 
+        public Builder etag(String etag) {
+            this.etag = etag;
+            this.__explicitlySet__.add("etag");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("md5")
         private String md5;
+
+        public Builder md5(String md5) {
+            this.md5 = md5;
+            this.__explicitlySet__.add("md5");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("size")
         private Long size;
 
+        public Builder size(Long size) {
+            this.size = size;
+            this.__explicitlySet__.add("size");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("partNumber")
         private Integer partNumber;
 
+        public Builder partNumber(Integer partNumber) {
+            this.partNumber = partNumber;
+            this.__explicitlySet__.add("partNumber");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public MultipartUploadPartSummary build() {
-            return new MultipartUploadPartSummary(etag, md5, size, partNumber);
+            MultipartUploadPartSummary __instance__ =
+                    new MultipartUploadPartSummary(etag, md5, size, partNumber);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -55,31 +85,26 @@ public class MultipartUploadPartSummary {
      * the current entity tag for the part.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("etag")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String etag;
 
     /**
      * the MD5 hash of the bytes of the part.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("md5")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String md5;
 
     /**
      * the size of the part in bytes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("size")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     Long size;
 
     /**
      * the part number for this part.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("partNumber")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     Integer partNumber;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

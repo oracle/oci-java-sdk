@@ -30,81 +30,190 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = VirtualCircuit.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class VirtualCircuit {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("bandwidthShapeName")
         private String bandwidthShapeName;
 
+        public Builder bandwidthShapeName(String bandwidthShapeName) {
+            this.bandwidthShapeName = bandwidthShapeName;
+            this.__explicitlySet__.add("bandwidthShapeName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("bgpSessionState")
         private BgpSessionState bgpSessionState;
+
+        public Builder bgpSessionState(BgpSessionState bgpSessionState) {
+            this.bgpSessionState = bgpSessionState;
+            this.__explicitlySet__.add("bgpSessionState");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("crossConnectMappings")
         private java.util.List<CrossConnectMapping> crossConnectMappings;
+
+        public Builder crossConnectMappings(
+                java.util.List<CrossConnectMapping> crossConnectMappings) {
+            this.crossConnectMappings = crossConnectMappings;
+            this.__explicitlySet__.add("crossConnectMappings");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("customerBgpAsn")
         private Integer customerBgpAsn;
 
+        public Builder customerBgpAsn(Integer customerBgpAsn) {
+            this.customerBgpAsn = customerBgpAsn;
+            this.__explicitlySet__.add("customerBgpAsn");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
+
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            this.__explicitlySet__.add("displayName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("gatewayId")
         private String gatewayId;
 
+        public Builder gatewayId(String gatewayId) {
+            this.gatewayId = gatewayId;
+            this.__explicitlySet__.add("gatewayId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
+
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("oracleBgpAsn")
         private Integer oracleBgpAsn;
+
+        public Builder oracleBgpAsn(Integer oracleBgpAsn) {
+            this.oracleBgpAsn = oracleBgpAsn;
+            this.__explicitlySet__.add("oracleBgpAsn");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("providerName")
         private String providerName;
 
+        public Builder providerName(String providerName) {
+            this.providerName = providerName;
+            this.__explicitlySet__.add("providerName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("providerServiceName")
         private String providerServiceName;
+
+        public Builder providerServiceName(String providerServiceName) {
+            this.providerServiceName = providerServiceName;
+            this.__explicitlySet__.add("providerServiceName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("providerState")
         private ProviderState providerState;
 
+        public Builder providerState(ProviderState providerState) {
+            this.providerState = providerState;
+            this.__explicitlySet__.add("providerState");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("referenceComment")
         private String referenceComment;
+
+        public Builder referenceComment(String referenceComment) {
+            this.referenceComment = referenceComment;
+            this.__explicitlySet__.add("referenceComment");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
+        public Builder region(String region) {
+            this.region = region;
+            this.__explicitlySet__.add("region");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
+
+        public Builder timeCreated(java.util.Date timeCreated) {
+            this.timeCreated = timeCreated;
+            this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
+        public Builder type(Type type) {
+            this.type = type;
+            this.__explicitlySet__.add("type");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public VirtualCircuit build() {
-            return new VirtualCircuit(
-                    bandwidthShapeName,
-                    bgpSessionState,
-                    compartmentId,
-                    crossConnectMappings,
-                    customerBgpAsn,
-                    displayName,
-                    gatewayId,
-                    id,
-                    lifecycleState,
-                    oracleBgpAsn,
-                    providerName,
-                    providerServiceName,
-                    providerState,
-                    referenceComment,
-                    region,
-                    timeCreated,
-                    type);
+            VirtualCircuit __instance__ =
+                    new VirtualCircuit(
+                            bandwidthShapeName,
+                            bgpSessionState,
+                            compartmentId,
+                            crossConnectMappings,
+                            customerBgpAsn,
+                            displayName,
+                            gatewayId,
+                            id,
+                            lifecycleState,
+                            oracleBgpAsn,
+                            providerName,
+                            providerServiceName,
+                            providerState,
+                            referenceComment,
+                            region,
+                            timeCreated,
+                            type);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -197,7 +306,6 @@ public class VirtualCircuit {
      * The OCID of the compartment containing the virtual circuit.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String compartmentId;
 
     /**
@@ -226,7 +334,6 @@ public class VirtualCircuit {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String displayName;
 
     /**
@@ -235,14 +342,12 @@ public class VirtualCircuit {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gatewayId")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String gatewayId;
 
     /**
      * The virtual circuit's Oracle ID (OCID).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String id;
     /**
      * The virtual circuit's current state. For information about
@@ -319,7 +424,6 @@ public class VirtualCircuit {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerName")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String providerName;
 
     /**
@@ -327,7 +431,6 @@ public class VirtualCircuit {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerServiceName")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String providerServiceName;
     /**
      * The provider's state in relation to this virtual circuit (if the
@@ -405,7 +508,6 @@ public class VirtualCircuit {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String region;
 
     /**
@@ -473,4 +575,7 @@ public class VirtualCircuit {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     Type type;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

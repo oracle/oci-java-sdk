@@ -11,19 +11,36 @@ package com.oracle.bmc.core.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RouteRule.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class RouteRule {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
         private String cidrBlock;
 
+        public Builder cidrBlock(String cidrBlock) {
+            this.cidrBlock = cidrBlock;
+            this.__explicitlySet__.add("cidrBlock");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("networkEntityId")
         private String networkEntityId;
 
+        public Builder networkEntityId(String networkEntityId) {
+            this.networkEntityId = networkEntityId;
+            this.__explicitlySet__.add("networkEntityId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public RouteRule build() {
-            return new RouteRule(cidrBlock, networkEntityId);
+            RouteRule __instance__ = new RouteRule(cidrBlock, networkEntityId);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -47,17 +64,17 @@ public class RouteRule {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 9, max = 18)
     String cidrBlock;
 
     /**
-     * The OCID for the route rule's target.
+     * The OCID for the route rule's target. For information about the type of
+     * targets you can specify, see
+     * [Route Tables](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkEntityId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 1, max = 255)
     String networkEntityId;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }

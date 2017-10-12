@@ -140,7 +140,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public CreateCpeResponse createCpe(CreateCpeRequest request) {
         LOG.trace("Called createCpe");
         request = CreateCpeConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = CreateCpeConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateCpeConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateCpeResponse> transformer =
                 CreateCpeConverter.fromResponse();
 
@@ -153,7 +154,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public CreateCrossConnectResponse createCrossConnect(CreateCrossConnectRequest request) {
         LOG.trace("Called createCrossConnect");
         request = CreateCrossConnectConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateCrossConnectConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateCrossConnectResponse>
                 transformer = CreateCrossConnectConverter.fromResponse();
@@ -168,7 +169,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
             CreateCrossConnectGroupRequest request) {
         LOG.trace("Called createCrossConnectGroup");
         request = CreateCrossConnectGroupConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateCrossConnectGroupConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateCrossConnectGroupResponse>
                 transformer = CreateCrossConnectGroupConverter.fromResponse();
@@ -182,7 +183,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public CreateDhcpOptionsResponse createDhcpOptions(CreateDhcpOptionsRequest request) {
         LOG.trace("Called createDhcpOptions");
         request = CreateDhcpOptionsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateDhcpOptionsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateDhcpOptionsResponse>
                 transformer = CreateDhcpOptionsConverter.fromResponse();
@@ -196,7 +197,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public CreateDrgResponse createDrg(CreateDrgRequest request) {
         LOG.trace("Called createDrg");
         request = CreateDrgConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = CreateDrgConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDrgConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateDrgResponse> transformer =
                 CreateDrgConverter.fromResponse();
 
@@ -209,7 +211,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public CreateDrgAttachmentResponse createDrgAttachment(CreateDrgAttachmentRequest request) {
         LOG.trace("Called createDrgAttachment");
         request = CreateDrgAttachmentConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateDrgAttachmentConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateDrgAttachmentResponse>
                 transformer = CreateDrgAttachmentConverter.fromResponse();
@@ -224,7 +226,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
             CreateIPSecConnectionRequest request) {
         LOG.trace("Called createIPSecConnection");
         request = CreateIPSecConnectionConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateIPSecConnectionConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateIPSecConnectionResponse>
                 transformer = CreateIPSecConnectionConverter.fromResponse();
@@ -239,7 +241,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
             CreateInternetGatewayRequest request) {
         LOG.trace("Called createInternetGateway");
         request = CreateInternetGatewayConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateInternetGatewayConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateInternetGatewayResponse>
                 transformer = CreateInternetGatewayConverter.fromResponse();
@@ -253,7 +255,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public CreatePrivateIpResponse createPrivateIp(CreatePrivateIpRequest request) {
         LOG.trace("Called createPrivateIp");
         request = CreatePrivateIpConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreatePrivateIpConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreatePrivateIpResponse>
                 transformer = CreatePrivateIpConverter.fromResponse();
@@ -267,7 +269,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public CreateRouteTableResponse createRouteTable(CreateRouteTableRequest request) {
         LOG.trace("Called createRouteTable");
         request = CreateRouteTableConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateRouteTableConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateRouteTableResponse>
                 transformer = CreateRouteTableConverter.fromResponse();
@@ -281,7 +283,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public CreateSecurityListResponse createSecurityList(CreateSecurityListRequest request) {
         LOG.trace("Called createSecurityList");
         request = CreateSecurityListConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateSecurityListConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateSecurityListResponse>
                 transformer = CreateSecurityListConverter.fromResponse();
@@ -295,7 +297,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public CreateSubnetResponse createSubnet(CreateSubnetRequest request) {
         LOG.trace("Called createSubnet");
         request = CreateSubnetConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateSubnetConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateSubnetResponse>
                 transformer = CreateSubnetConverter.fromResponse();
@@ -309,7 +311,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public CreateVcnResponse createVcn(CreateVcnRequest request) {
         LOG.trace("Called createVcn");
         request = CreateVcnConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = CreateVcnConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateVcnConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateVcnResponse> transformer =
                 CreateVcnConverter.fromResponse();
 
@@ -322,7 +325,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public CreateVirtualCircuitResponse createVirtualCircuit(CreateVirtualCircuitRequest request) {
         LOG.trace("Called createVirtualCircuit");
         request = CreateVirtualCircuitConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 CreateVirtualCircuitConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateVirtualCircuitResponse>
                 transformer = CreateVirtualCircuitConverter.fromResponse();
@@ -336,7 +339,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public DeleteCpeResponse deleteCpe(DeleteCpeRequest request) {
         LOG.trace("Called deleteCpe");
         request = DeleteCpeConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = DeleteCpeConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteCpeConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCpeResponse> transformer =
                 DeleteCpeConverter.fromResponse();
 
@@ -348,7 +352,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public DeleteCrossConnectResponse deleteCrossConnect(DeleteCrossConnectRequest request) {
         LOG.trace("Called deleteCrossConnect");
         request = DeleteCrossConnectConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteCrossConnectConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCrossConnectResponse>
                 transformer = DeleteCrossConnectConverter.fromResponse();
@@ -362,7 +366,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
             DeleteCrossConnectGroupRequest request) {
         LOG.trace("Called deleteCrossConnectGroup");
         request = DeleteCrossConnectGroupConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteCrossConnectGroupConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCrossConnectGroupResponse>
                 transformer = DeleteCrossConnectGroupConverter.fromResponse();
@@ -375,7 +379,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public DeleteDhcpOptionsResponse deleteDhcpOptions(DeleteDhcpOptionsRequest request) {
         LOG.trace("Called deleteDhcpOptions");
         request = DeleteDhcpOptionsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteDhcpOptionsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDhcpOptionsResponse>
                 transformer = DeleteDhcpOptionsConverter.fromResponse();
@@ -388,7 +392,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public DeleteDrgResponse deleteDrg(DeleteDrgRequest request) {
         LOG.trace("Called deleteDrg");
         request = DeleteDrgConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = DeleteDrgConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDrgConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDrgResponse> transformer =
                 DeleteDrgConverter.fromResponse();
 
@@ -400,7 +405,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public DeleteDrgAttachmentResponse deleteDrgAttachment(DeleteDrgAttachmentRequest request) {
         LOG.trace("Called deleteDrgAttachment");
         request = DeleteDrgAttachmentConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteDrgAttachmentConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDrgAttachmentResponse>
                 transformer = DeleteDrgAttachmentConverter.fromResponse();
@@ -414,7 +419,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
             DeleteIPSecConnectionRequest request) {
         LOG.trace("Called deleteIPSecConnection");
         request = DeleteIPSecConnectionConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteIPSecConnectionConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteIPSecConnectionResponse>
                 transformer = DeleteIPSecConnectionConverter.fromResponse();
@@ -428,7 +433,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
             DeleteInternetGatewayRequest request) {
         LOG.trace("Called deleteInternetGateway");
         request = DeleteInternetGatewayConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteInternetGatewayConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteInternetGatewayResponse>
                 transformer = DeleteInternetGatewayConverter.fromResponse();
@@ -441,7 +446,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public DeletePrivateIpResponse deletePrivateIp(DeletePrivateIpRequest request) {
         LOG.trace("Called deletePrivateIp");
         request = DeletePrivateIpConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeletePrivateIpConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeletePrivateIpResponse>
                 transformer = DeletePrivateIpConverter.fromResponse();
@@ -454,7 +459,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public DeleteRouteTableResponse deleteRouteTable(DeleteRouteTableRequest request) {
         LOG.trace("Called deleteRouteTable");
         request = DeleteRouteTableConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteRouteTableConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRouteTableResponse>
                 transformer = DeleteRouteTableConverter.fromResponse();
@@ -467,7 +472,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public DeleteSecurityListResponse deleteSecurityList(DeleteSecurityListRequest request) {
         LOG.trace("Called deleteSecurityList");
         request = DeleteSecurityListConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteSecurityListConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSecurityListResponse>
                 transformer = DeleteSecurityListConverter.fromResponse();
@@ -480,7 +485,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public DeleteSubnetResponse deleteSubnet(DeleteSubnetRequest request) {
         LOG.trace("Called deleteSubnet");
         request = DeleteSubnetConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteSubnetConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSubnetResponse>
                 transformer = DeleteSubnetConverter.fromResponse();
@@ -493,7 +498,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public DeleteVcnResponse deleteVcn(DeleteVcnRequest request) {
         LOG.trace("Called deleteVcn");
         request = DeleteVcnConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = DeleteVcnConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteVcnConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVcnResponse> transformer =
                 DeleteVcnConverter.fromResponse();
 
@@ -505,7 +511,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public DeleteVirtualCircuitResponse deleteVirtualCircuit(DeleteVirtualCircuitRequest request) {
         LOG.trace("Called deleteVirtualCircuit");
         request = DeleteVirtualCircuitConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 DeleteVirtualCircuitConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVirtualCircuitResponse>
                 transformer = DeleteVirtualCircuitConverter.fromResponse();
@@ -518,7 +524,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public GetCpeResponse getCpe(GetCpeRequest request) {
         LOG.trace("Called getCpe");
         request = GetCpeConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = GetCpeConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCpeConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetCpeResponse> transformer =
                 GetCpeConverter.fromResponse();
 
@@ -530,7 +537,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public GetCrossConnectResponse getCrossConnect(GetCrossConnectRequest request) {
         LOG.trace("Called getCrossConnect");
         request = GetCrossConnectConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetCrossConnectConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetCrossConnectResponse>
                 transformer = GetCrossConnectConverter.fromResponse();
@@ -543,7 +550,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public GetCrossConnectGroupResponse getCrossConnectGroup(GetCrossConnectGroupRequest request) {
         LOG.trace("Called getCrossConnectGroup");
         request = GetCrossConnectGroupConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetCrossConnectGroupConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetCrossConnectGroupResponse>
                 transformer = GetCrossConnectGroupConverter.fromResponse();
@@ -557,7 +564,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
             GetCrossConnectLetterOfAuthorityRequest request) {
         LOG.trace("Called getCrossConnectLetterOfAuthority");
         request = GetCrossConnectLetterOfAuthorityConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetCrossConnectLetterOfAuthorityConverter.fromRequest(client, request);
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetCrossConnectLetterOfAuthorityResponse>
@@ -572,7 +579,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
             GetCrossConnectStatusRequest request) {
         LOG.trace("Called getCrossConnectStatus");
         request = GetCrossConnectStatusConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetCrossConnectStatusConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetCrossConnectStatusResponse>
                 transformer = GetCrossConnectStatusConverter.fromResponse();
@@ -585,7 +592,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public GetDhcpOptionsResponse getDhcpOptions(GetDhcpOptionsRequest request) {
         LOG.trace("Called getDhcpOptions");
         request = GetDhcpOptionsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDhcpOptionsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetDhcpOptionsResponse>
                 transformer = GetDhcpOptionsConverter.fromResponse();
@@ -598,7 +605,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public GetDrgResponse getDrg(GetDrgRequest request) {
         LOG.trace("Called getDrg");
         request = GetDrgConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = GetDrgConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDrgConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetDrgResponse> transformer =
                 GetDrgConverter.fromResponse();
 
@@ -610,7 +618,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public GetDrgAttachmentResponse getDrgAttachment(GetDrgAttachmentRequest request) {
         LOG.trace("Called getDrgAttachment");
         request = GetDrgAttachmentConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetDrgAttachmentConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetDrgAttachmentResponse>
                 transformer = GetDrgAttachmentConverter.fromResponse();
@@ -623,7 +631,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public GetIPSecConnectionResponse getIPSecConnection(GetIPSecConnectionRequest request) {
         LOG.trace("Called getIPSecConnection");
         request = GetIPSecConnectionConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetIPSecConnectionConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetIPSecConnectionResponse>
                 transformer = GetIPSecConnectionConverter.fromResponse();
@@ -637,7 +645,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
             GetIPSecConnectionDeviceConfigRequest request) {
         LOG.trace("Called getIPSecConnectionDeviceConfig");
         request = GetIPSecConnectionDeviceConfigConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetIPSecConnectionDeviceConfigConverter.fromRequest(client, request);
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetIPSecConnectionDeviceConfigResponse>
@@ -652,7 +660,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
             GetIPSecConnectionDeviceStatusRequest request) {
         LOG.trace("Called getIPSecConnectionDeviceStatus");
         request = GetIPSecConnectionDeviceStatusConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetIPSecConnectionDeviceStatusConverter.fromRequest(client, request);
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetIPSecConnectionDeviceStatusResponse>
@@ -666,7 +674,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public GetInternetGatewayResponse getInternetGateway(GetInternetGatewayRequest request) {
         LOG.trace("Called getInternetGateway");
         request = GetInternetGatewayConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetInternetGatewayConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetInternetGatewayResponse>
                 transformer = GetInternetGatewayConverter.fromResponse();
@@ -679,7 +687,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public GetPrivateIpResponse getPrivateIp(GetPrivateIpRequest request) {
         LOG.trace("Called getPrivateIp");
         request = GetPrivateIpConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetPrivateIpConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetPrivateIpResponse>
                 transformer = GetPrivateIpConverter.fromResponse();
@@ -692,7 +700,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public GetRouteTableResponse getRouteTable(GetRouteTableRequest request) {
         LOG.trace("Called getRouteTable");
         request = GetRouteTableConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetRouteTableConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetRouteTableResponse>
                 transformer = GetRouteTableConverter.fromResponse();
@@ -705,7 +713,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public GetSecurityListResponse getSecurityList(GetSecurityListRequest request) {
         LOG.trace("Called getSecurityList");
         request = GetSecurityListConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetSecurityListConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetSecurityListResponse>
                 transformer = GetSecurityListConverter.fromResponse();
@@ -718,7 +726,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public GetSubnetResponse getSubnet(GetSubnetRequest request) {
         LOG.trace("Called getSubnet");
         request = GetSubnetConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = GetSubnetConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSubnetConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetSubnetResponse> transformer =
                 GetSubnetConverter.fromResponse();
 
@@ -730,7 +739,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public GetVcnResponse getVcn(GetVcnRequest request) {
         LOG.trace("Called getVcn");
         request = GetVcnConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = GetVcnConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetVcnConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetVcnResponse> transformer =
                 GetVcnConverter.fromResponse();
 
@@ -742,7 +752,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public GetVirtualCircuitResponse getVirtualCircuit(GetVirtualCircuitRequest request) {
         LOG.trace("Called getVirtualCircuit");
         request = GetVirtualCircuitConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 GetVirtualCircuitConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetVirtualCircuitResponse>
                 transformer = GetVirtualCircuitConverter.fromResponse();
@@ -755,7 +765,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public GetVnicResponse getVnic(GetVnicRequest request) {
         LOG.trace("Called getVnic");
         request = GetVnicConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = GetVnicConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetVnicConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetVnicResponse> transformer =
                 GetVnicConverter.fromResponse();
 
@@ -767,7 +778,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public ListCpesResponse listCpes(ListCpesRequest request) {
         LOG.trace("Called listCpes");
         request = ListCpesConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = ListCpesConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCpesConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListCpesResponse> transformer =
                 ListCpesConverter.fromResponse();
 
@@ -780,7 +792,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
             ListCrossConnectGroupsRequest request) {
         LOG.trace("Called listCrossConnectGroups");
         request = ListCrossConnectGroupsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListCrossConnectGroupsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListCrossConnectGroupsResponse>
                 transformer = ListCrossConnectGroupsConverter.fromResponse();
@@ -794,7 +806,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
             ListCrossConnectLocationsRequest request) {
         LOG.trace("Called listCrossConnectLocations");
         request = ListCrossConnectLocationsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListCrossConnectLocationsConverter.fromRequest(client, request);
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListCrossConnectLocationsResponse>
@@ -808,7 +820,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public ListCrossConnectsResponse listCrossConnects(ListCrossConnectsRequest request) {
         LOG.trace("Called listCrossConnects");
         request = ListCrossConnectsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListCrossConnectsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListCrossConnectsResponse>
                 transformer = ListCrossConnectsConverter.fromResponse();
@@ -822,7 +834,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
             ListCrossconnectPortSpeedShapesRequest request) {
         LOG.trace("Called listCrossconnectPortSpeedShapes");
         request = ListCrossconnectPortSpeedShapesConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListCrossconnectPortSpeedShapesConverter.fromRequest(client, request);
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListCrossconnectPortSpeedShapesResponse>
@@ -836,7 +848,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public ListDhcpOptionsResponse listDhcpOptions(ListDhcpOptionsRequest request) {
         LOG.trace("Called listDhcpOptions");
         request = ListDhcpOptionsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDhcpOptionsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListDhcpOptionsResponse>
                 transformer = ListDhcpOptionsConverter.fromResponse();
@@ -849,7 +861,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public ListDrgAttachmentsResponse listDrgAttachments(ListDrgAttachmentsRequest request) {
         LOG.trace("Called listDrgAttachments");
         request = ListDrgAttachmentsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListDrgAttachmentsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListDrgAttachmentsResponse>
                 transformer = ListDrgAttachmentsConverter.fromResponse();
@@ -862,7 +874,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public ListDrgsResponse listDrgs(ListDrgsRequest request) {
         LOG.trace("Called listDrgs");
         request = ListDrgsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = ListDrgsConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDrgsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListDrgsResponse> transformer =
                 ListDrgsConverter.fromResponse();
 
@@ -875,7 +888,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
             ListFastConnectProviderServicesRequest request) {
         LOG.trace("Called listFastConnectProviderServices");
         request = ListFastConnectProviderServicesConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListFastConnectProviderServicesConverter.fromRequest(client, request);
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListFastConnectProviderServicesResponse>
@@ -889,7 +902,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public ListIPSecConnectionsResponse listIPSecConnections(ListIPSecConnectionsRequest request) {
         LOG.trace("Called listIPSecConnections");
         request = ListIPSecConnectionsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListIPSecConnectionsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListIPSecConnectionsResponse>
                 transformer = ListIPSecConnectionsConverter.fromResponse();
@@ -902,7 +915,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public ListInternetGatewaysResponse listInternetGateways(ListInternetGatewaysRequest request) {
         LOG.trace("Called listInternetGateways");
         request = ListInternetGatewaysConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListInternetGatewaysConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListInternetGatewaysResponse>
                 transformer = ListInternetGatewaysConverter.fromResponse();
@@ -915,7 +928,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public ListPrivateIpsResponse listPrivateIps(ListPrivateIpsRequest request) {
         LOG.trace("Called listPrivateIps");
         request = ListPrivateIpsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListPrivateIpsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListPrivateIpsResponse>
                 transformer = ListPrivateIpsConverter.fromResponse();
@@ -928,7 +941,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public ListRouteTablesResponse listRouteTables(ListRouteTablesRequest request) {
         LOG.trace("Called listRouteTables");
         request = ListRouteTablesConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListRouteTablesConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListRouteTablesResponse>
                 transformer = ListRouteTablesConverter.fromResponse();
@@ -941,7 +954,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public ListSecurityListsResponse listSecurityLists(ListSecurityListsRequest request) {
         LOG.trace("Called listSecurityLists");
         request = ListSecurityListsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListSecurityListsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListSecurityListsResponse>
                 transformer = ListSecurityListsConverter.fromResponse();
@@ -954,7 +967,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public ListSubnetsResponse listSubnets(ListSubnetsRequest request) {
         LOG.trace("Called listSubnets");
         request = ListSubnetsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListSubnetsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListSubnetsResponse>
                 transformer = ListSubnetsConverter.fromResponse();
@@ -967,7 +980,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public ListVcnsResponse listVcns(ListVcnsRequest request) {
         LOG.trace("Called listVcns");
         request = ListVcnsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = ListVcnsConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListVcnsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListVcnsResponse> transformer =
                 ListVcnsConverter.fromResponse();
 
@@ -980,7 +994,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
             ListVirtualCircuitBandwidthShapesRequest request) {
         LOG.trace("Called listVirtualCircuitBandwidthShapes");
         request = ListVirtualCircuitBandwidthShapesConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListVirtualCircuitBandwidthShapesConverter.fromRequest(client, request);
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListVirtualCircuitBandwidthShapesResponse>
@@ -994,7 +1008,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public ListVirtualCircuitsResponse listVirtualCircuits(ListVirtualCircuitsRequest request) {
         LOG.trace("Called listVirtualCircuits");
         request = ListVirtualCircuitsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 ListVirtualCircuitsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListVirtualCircuitsResponse>
                 transformer = ListVirtualCircuitsConverter.fromResponse();
@@ -1007,7 +1021,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public UpdateCpeResponse updateCpe(UpdateCpeRequest request) {
         LOG.trace("Called updateCpe");
         request = UpdateCpeConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = UpdateCpeConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCpeConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCpeResponse> transformer =
                 UpdateCpeConverter.fromResponse();
 
@@ -1019,7 +1034,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public UpdateCrossConnectResponse updateCrossConnect(UpdateCrossConnectRequest request) {
         LOG.trace("Called updateCrossConnect");
         request = UpdateCrossConnectConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateCrossConnectConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCrossConnectResponse>
                 transformer = UpdateCrossConnectConverter.fromResponse();
@@ -1034,7 +1049,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
             UpdateCrossConnectGroupRequest request) {
         LOG.trace("Called updateCrossConnectGroup");
         request = UpdateCrossConnectGroupConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateCrossConnectGroupConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCrossConnectGroupResponse>
                 transformer = UpdateCrossConnectGroupConverter.fromResponse();
@@ -1048,7 +1063,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public UpdateDhcpOptionsResponse updateDhcpOptions(UpdateDhcpOptionsRequest request) {
         LOG.trace("Called updateDhcpOptions");
         request = UpdateDhcpOptionsConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateDhcpOptionsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDhcpOptionsResponse>
                 transformer = UpdateDhcpOptionsConverter.fromResponse();
@@ -1062,7 +1077,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public UpdateDrgResponse updateDrg(UpdateDrgRequest request) {
         LOG.trace("Called updateDrg");
         request = UpdateDrgConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = UpdateDrgConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDrgConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDrgResponse> transformer =
                 UpdateDrgConverter.fromResponse();
 
@@ -1074,7 +1090,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public UpdateDrgAttachmentResponse updateDrgAttachment(UpdateDrgAttachmentRequest request) {
         LOG.trace("Called updateDrgAttachment");
         request = UpdateDrgAttachmentConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateDrgAttachmentConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDrgAttachmentResponse>
                 transformer = UpdateDrgAttachmentConverter.fromResponse();
@@ -1089,7 +1105,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
             UpdateIPSecConnectionRequest request) {
         LOG.trace("Called updateIPSecConnection");
         request = UpdateIPSecConnectionConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateIPSecConnectionConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateIPSecConnectionResponse>
                 transformer = UpdateIPSecConnectionConverter.fromResponse();
@@ -1104,7 +1120,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
             UpdateInternetGatewayRequest request) {
         LOG.trace("Called updateInternetGateway");
         request = UpdateInternetGatewayConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateInternetGatewayConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateInternetGatewayResponse>
                 transformer = UpdateInternetGatewayConverter.fromResponse();
@@ -1118,7 +1134,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public UpdatePrivateIpResponse updatePrivateIp(UpdatePrivateIpRequest request) {
         LOG.trace("Called updatePrivateIp");
         request = UpdatePrivateIpConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdatePrivateIpConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePrivateIpResponse>
                 transformer = UpdatePrivateIpConverter.fromResponse();
@@ -1132,7 +1148,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public UpdateRouteTableResponse updateRouteTable(UpdateRouteTableRequest request) {
         LOG.trace("Called updateRouteTable");
         request = UpdateRouteTableConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateRouteTableConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRouteTableResponse>
                 transformer = UpdateRouteTableConverter.fromResponse();
@@ -1146,7 +1162,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public UpdateSecurityListResponse updateSecurityList(UpdateSecurityListRequest request) {
         LOG.trace("Called updateSecurityList");
         request = UpdateSecurityListConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateSecurityListConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSecurityListResponse>
                 transformer = UpdateSecurityListConverter.fromResponse();
@@ -1160,7 +1176,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public UpdateSubnetResponse updateSubnet(UpdateSubnetRequest request) {
         LOG.trace("Called updateSubnet");
         request = UpdateSubnetConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateSubnetConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSubnetResponse>
                 transformer = UpdateSubnetConverter.fromResponse();
@@ -1174,7 +1190,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public UpdateVcnResponse updateVcn(UpdateVcnRequest request) {
         LOG.trace("Called updateVcn");
         request = UpdateVcnConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = UpdateVcnConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateVcnConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVcnResponse> transformer =
                 UpdateVcnConverter.fromResponse();
 
@@ -1186,7 +1203,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public UpdateVirtualCircuitResponse updateVirtualCircuit(UpdateVirtualCircuitRequest request) {
         LOG.trace("Called updateVirtualCircuit");
         request = UpdateVirtualCircuitConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib =
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
                 UpdateVirtualCircuitConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVirtualCircuitResponse>
                 transformer = UpdateVirtualCircuitConverter.fromResponse();
@@ -1200,7 +1217,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
     public UpdateVnicResponse updateVnic(UpdateVnicRequest request) {
         LOG.trace("Called updateVnic");
         request = UpdateVnicConverter.interceptRequest(request);
-        javax.ws.rs.client.Invocation.Builder ib = UpdateVnicConverter.fromRequest(client, request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateVnicConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVnicResponse> transformer =
                 UpdateVnicConverter.fromResponse();
 

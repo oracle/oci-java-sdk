@@ -19,61 +19,139 @@ package com.oracle.bmc.loadbalancer.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = LoadBalancer.Builder.class)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class LoadBalancer {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
-    @lombok.Setter
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("backendSets")
         private java.util.Map<String, BackendSet> backendSets;
 
+        public Builder backendSets(java.util.Map<String, BackendSet> backendSets) {
+            this.backendSets = backendSets;
+            this.__explicitlySet__.add("backendSets");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("certificates")
         private java.util.Map<String, Certificate> certificates;
+
+        public Builder certificates(java.util.Map<String, Certificate> certificates) {
+            this.certificates = certificates;
+            this.__explicitlySet__.add("certificates");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
+
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            this.__explicitlySet__.add("displayName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddresses")
         private java.util.List<IpAddress> ipAddresses;
+
+        public Builder ipAddresses(java.util.List<IpAddress> ipAddresses) {
+            this.ipAddresses = ipAddresses;
+            this.__explicitlySet__.add("ipAddresses");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
         private Boolean isPrivate;
 
+        public Builder isPrivate(Boolean isPrivate) {
+            this.isPrivate = isPrivate;
+            this.__explicitlySet__.add("isPrivate");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
+
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("listeners")
         private java.util.Map<String, Listener> listeners;
 
+        public Builder listeners(java.util.Map<String, Listener> listeners) {
+            this.listeners = listeners;
+            this.__explicitlySet__.add("listeners");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
         private String shapeName;
+
+        public Builder shapeName(String shapeName) {
+            this.shapeName = shapeName;
+            this.__explicitlySet__.add("shapeName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
         private java.util.List<String> subnetIds;
 
+        public Builder subnetIds(java.util.List<String> subnetIds) {
+            this.subnetIds = subnetIds;
+            this.__explicitlySet__.add("subnetIds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
+        public Builder timeCreated(java.util.Date timeCreated) {
+            this.timeCreated = timeCreated;
+            this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
         public LoadBalancer build() {
-            return new LoadBalancer(
-                    backendSets,
-                    certificates,
-                    compartmentId,
-                    displayName,
-                    id,
-                    ipAddresses,
-                    isPrivate,
-                    lifecycleState,
-                    listeners,
-                    shapeName,
-                    subnetIds,
-                    timeCreated);
+            LoadBalancer __instance__ =
+                    new LoadBalancer(
+                            backendSets,
+                            certificates,
+                            compartmentId,
+                            displayName,
+                            id,
+                            ipAddresses,
+                            isPrivate,
+                            lifecycleState,
+                            listeners,
+                            shapeName,
+                            subnetIds,
+                            timeCreated);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
@@ -110,8 +188,6 @@ public class LoadBalancer {
      * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancer.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String compartmentId;
 
     /**
@@ -121,16 +197,12 @@ public class LoadBalancer {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String displayName;
 
     /**
      * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the load balancer.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String id;
 
     /**
@@ -208,8 +280,6 @@ public class LoadBalancer {
     };
 
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     LifecycleState lifecycleState;
 
     @com.fasterxml.jackson.annotation.JsonProperty("listeners")
@@ -224,8 +294,6 @@ public class LoadBalancer {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     String shapeName;
 
     /**
@@ -241,7 +309,8 @@ public class LoadBalancer {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    @javax.validation.Valid
-    @javax.validation.constraints.NotNull
     java.util.Date timeCreated;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 }
