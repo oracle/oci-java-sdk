@@ -16,8 +16,7 @@ public class UpdateBucketRequest extends com.oracle.bmc.requests.BmcRequest {
     private String namespaceName;
 
     /**
-     * The name of the bucket.
-     * <p>
+     * The name of the bucket. Avoid entering confidential information.
      * Example: `my-new-bucket1`
      *
      */

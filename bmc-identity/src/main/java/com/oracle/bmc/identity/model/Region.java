@@ -4,7 +4,7 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * A localized geographic area, such as Phoenix, AZ. Oracle Bare Metal Cloud Services is hosted in regions and Availability
+ * A localized geographic area, such as Phoenix, AZ. Oracle Cloud Infrastructure is hosted in regions and Availability
  * Domains. A region is composed of several Availability Domains. An Availability Domain is one or more data centers
  * located within a region. For more information, see [Regions and Availability Domains](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/regions.htm).
  * <p>
@@ -67,7 +67,7 @@ public class Region {
      * Allowed values are:
      * - `PHX`
      * - `IAD`
-     * - 'FRA'
+     * - `FRA`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
@@ -79,7 +79,7 @@ public class Region {
      * Allowed values are:
      * - `us-phoenix-1`
      * - `us-ashburn-1`
-     * - 'de-frankfurt-1'
+     * - `eu-frankfurt-1`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")

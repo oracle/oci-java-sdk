@@ -101,7 +101,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new cross-connect group to use with Oracle Bare Metal Cloud Services
+     * Creates a new cross-connect group to use with Oracle Cloud Infrastructure
      * FastConnect. For more information, see
      * [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
      * <p>
@@ -425,7 +425,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * must not overlap with your on-premises network. You can't change the size of the VCN after creation.
      * <p>
      * For the purposes of access control, you must provide the OCID of the compartment where you want the VCN to
-     * reside. Consult an Oracle Bare Metal Cloud Services administrator in your organization if you're not sure which
+     * reside. Consult an Oracle Cloud Infrastructure administrator in your organization if you're not sure which
      * compartment to use. Notice that the VCN doesn't have to be in the same compartment as the subnets or other
      * Networking Service components. For more information about compartments and access control, see
      * [Overview of the IAM Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
@@ -459,8 +459,8 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CreateVcnRequest, CreateVcnResponse> handler);
 
     /**
-     * Creates a new virtual circuit to use with Oracle Bare Metal Cloud
-     * Services FastConnect. For more information, see
+     * Creates a new virtual circuit to use with Oracle Cloud
+     * Infrastructure FastConnect. For more information, see
      * [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
      * <p>
      * For the purposes of access control, you must provide the OCID of the
@@ -1381,11 +1381,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * Lists the available bandwidth levels for virtual circuits. You need this
      * information so you can specify your desired bandwidth level (that is, shape)
      * when you create a virtual circuit.
-     * <p>
      * For the compartment ID, provide the OCID of your tenancy (the root compartment).
-     * <p>
-     * For more information about virtual circuits, see
-     * [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
      *
      *
      * @param request The request object containing the details to send

@@ -3,6 +3,15 @@
  */
 package com.oracle.bmc.objectstorage.model;
 
+/**
+ * Pre-authenticated requests provide a way to let users access a bucket or an object without having their own credentials.
+ * When you create a pre-authenticated request, a unique URL is generated. Users in your organization, partners, or third
+ * parties can use this URL to access the targets identified in the pre-authenticated request. See [Managing Access to Buckets and Objects](https://docs.us-phoenix-1.oraclecloud.com/Content/Object/Tasks/managingaccess.htm).
+ * <p>
+ * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator.
+ * If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
+ *
+ **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
@@ -107,30 +116,33 @@ public class PreauthenticatedRequest {
     }
 
     /**
-     * the unique identifier to use when directly addressing the pre-authenticated request
+     * The unique identifier to use when directly addressing the pre-authenticated request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * the user supplied name of the pre-authenticated request.
+     * The user-provided name of the pre-authenticated request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * the uri to embed in the url when using the pre-authenticated request.
+     * The URI to embed in the URL when using the pre-authenticated request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessUri")
     String accessUri;
 
     /**
-     * Name of object that is being granted access to by the pre-authenticated request. This can be null and that would mean that the pre-authenticated request is granting access to the entire bucket
+     * The name of the object that is being granted access to by the pre-authenticated request. This can be null and
+     * if so, the pre-authenticated request grants access to the entire bucket. Avoid entering confidential information.
+     * Example: test/object1.log
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     String objectName;
     /**
-     * the operation that can be performed on this resource e.g PUT or GET.
+     * The operation that can be performed on this resource.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum AccessType {
@@ -178,22 +190,21 @@ public class PreauthenticatedRequest {
         }
     };
     /**
-     * the operation that can be performed on this resource e.g PUT or GET.
+     * The operation that can be performed on this resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessType")
     AccessType accessType;
 
     /**
-     * the expiration date after which the pre authenticated request will no longer be valid as per spec
-     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
+     * The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/rfc/rfc3339). After this date the pre-authenticated request will no longer be valid.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
     java.util.Date timeExpires;
 
     /**
-     * the date when the pre-authenticated request was created as per spec
-     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
+     * The date when the pre-authenticated request was created as per specification
+     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")

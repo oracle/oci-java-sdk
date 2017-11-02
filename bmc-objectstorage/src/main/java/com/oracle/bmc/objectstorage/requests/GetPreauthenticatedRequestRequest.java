@@ -16,16 +16,15 @@ public class GetPreauthenticatedRequestRequest extends com.oracle.bmc.requests.B
     private String namespaceName;
 
     /**
-     * The name of the bucket.
-     * <p>
+     * The name of the bucket. Avoid entering confidential information.
      * Example: `my-new-bucket1`
      *
      */
     private String bucketName;
 
     /**
-     * The unique identifier for the pre-authenticated request (PAR). This can be used to manage the PAR
-     * such as GET or DELETE the PAR
+     * The unique identifier for the pre-authenticated request. This can be used to manage operations against
+     * the pre-authenticated request, such as GET or DELETE.
      *
      */
     private String parId;

@@ -17,7 +17,7 @@ public class HeadObjectResponse {
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
-     * request, please provide this request ID.
+     * request, provide this request ID.
      *
      */
     private String opcRequestId;
@@ -75,6 +75,16 @@ public class HeadObjectResponse {
     private java.util.Date lastModified;
 
     /**
+     * The current state of the object.
+     */
+    private String archivalState;
+
+    /**
+     * Time that the object is returned to the archived state. This field is only present for restored objects.
+     */
+    private java.util.Date timeOfArchival;
+
+    /**
      * Flag to indicate whether or not the object was modified.  If this is true,
      * the getter for the object itself will return null.  Callers should check this
      * if they specified one of the request params that might result in a conditional
@@ -99,6 +109,8 @@ public class HeadObjectResponse {
             contentLanguage(o.getContentLanguage());
             contentEncoding(o.getContentEncoding());
             lastModified(o.getLastModified());
+            archivalState(o.getArchivalState());
+            timeOfArchival(o.getTimeOfArchival());
 
             isNotModified(o.isNotModified());
             return this;

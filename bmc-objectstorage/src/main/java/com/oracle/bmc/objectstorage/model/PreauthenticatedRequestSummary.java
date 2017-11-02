@@ -3,6 +3,10 @@
  */
 package com.oracle.bmc.objectstorage.model;
 
+/**
+ * Get summary information about pre-authenticated requests.
+ *
+ **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
@@ -97,24 +101,24 @@ public class PreauthenticatedRequestSummary {
     }
 
     /**
-     * the unique identifier to use when directly addressing the pre-authenticated request
+     * The unique identifier to use when directly addressing the pre-authenticated request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * the user supplied name of the pre-authenticated request
+     * The user-provided name of the pre-authenticated request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * Name of object that is being granted access to by the pre-authenticated request. This can be null and that would mean that the pre-authenticated request is granting access to the entire bucket
+     * The name of object that is being granted access to by the pre-authenticated request. This can be null and if it is, the pre-authenticated request grants access to the entire bucket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     String objectName;
     /**
-     * the operation that can be performed on this resource e.g PUT or GET.
+     * The operation that can be performed on this resource.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum AccessType {
@@ -162,22 +166,20 @@ public class PreauthenticatedRequestSummary {
         }
     };
     /**
-     * the operation that can be performed on this resource e.g PUT or GET.
+     * The operation that can be performed on this resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessType")
     AccessType accessType;
 
     /**
-     * the expiration date after which the pre authenticated request will no longer be valid as per spec
-     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
+     * The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/rfc/rfc3339). After this date the pre-authenticated request will no longer be valid.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
     java.util.Date timeExpires;
 
     /**
-     * the date when the pre-authenticated request was created as per spec
-     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
+     * The date when the pre-authenticated request was created as per [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")

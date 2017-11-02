@@ -26,12 +26,12 @@ public class UpdateDbSystemDetails {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGB")
-        private Integer dataStorageSizeInGB;
+        @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
+        private Integer dataStorageSizeInGBs;
 
-        public Builder dataStorageSizeInGB(Integer dataStorageSizeInGB) {
-            this.dataStorageSizeInGB = dataStorageSizeInGB;
-            this.__explicitlySet__.add("dataStorageSizeInGB");
+        public Builder dataStorageSizeInGBs(Integer dataStorageSizeInGBs) {
+            this.dataStorageSizeInGBs = dataStorageSizeInGBs;
+            this.__explicitlySet__.add("dataStorageSizeInGBs");
             return this;
         }
 
@@ -59,7 +59,7 @@ public class UpdateDbSystemDetails {
         public UpdateDbSystemDetails build() {
             UpdateDbSystemDetails __instance__ =
                     new UpdateDbSystemDetails(
-                            cpuCoreCount, dataStorageSizeInGB, sshPublicKeys, version);
+                            cpuCoreCount, dataStorageSizeInGBs, sshPublicKeys, version);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -67,7 +67,7 @@ public class UpdateDbSystemDetails {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateDbSystemDetails o) {
             return cpuCoreCount(o.getCpuCoreCount())
-                    .dataStorageSizeInGB(o.getDataStorageSizeInGB())
+                    .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
                     .sshPublicKeys(o.getSshPublicKeys())
                     .version(o.getVersion());
         }
@@ -90,8 +90,8 @@ public class UpdateDbSystemDetails {
      * Size, in GBs, to which the currently attached storage needs to be scaled up to for VM based DB system. This must be greater than current storage size. Note that the total storage size attached will be more than what is requested, to account for REDO/RECO space and software volume.
      *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGB")
-    Integer dataStorageSizeInGB;
+    @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
+    Integer dataStorageSizeInGBs;
 
     /**
      * The public key portion of the key pair to use for SSH access to the DB System. Multiple public keys can be provided. The length of the combined keys cannot exceed 10,000 characters.

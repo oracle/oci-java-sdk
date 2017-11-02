@@ -37,6 +37,14 @@ public class DeleteDbHomeConverter {
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
                                         request.getDbHomeId()));
 
+        if (request.getPerformFinalBackup() != null) {
+            target =
+                    target.queryParam(
+                            "performFinalBackup",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getPerformFinalBackup()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

@@ -4,7 +4,7 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * A PEM-format RSA credential for securing requests to the Oracle Bare Metal Cloud Services REST API. Also known
+ * A PEM-format RSA credential for securing requests to the Oracle Cloud Infrastructure REST API. Also known
  * as an *API signing key*. Specifically, this is the public key from the key pair. The private key remains with
  * the user calling the API. For information about generating a key pair
  * in the required PEM format, see [Required Keys and OCIDs](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm).

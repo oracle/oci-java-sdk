@@ -25,6 +25,65 @@ public class DatabaseWaiters {
      * @param targetState The desired state to wait for.
      * @return A new Waiter instance.
      */
+    public com.oracle.bmc.waiter.Waiter<GetBackupRequest, GetBackupResponse> forBackup(
+            GetBackupRequest request,
+            com.oracle.bmc.database.model.Backup.LifecycleState targetState) {
+        return forBackup(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using the provided configuration.
+     *
+     * @param request The request to send.
+     * @param targetState The desired state to wait for.
+     * @param terminationStrategy The {@link TerminationStrategy} to use.
+     * @param delayStrategy The {@link DelayStrategy} to use.
+     * @return A new Waiter instance.
+     */
+    public com.oracle.bmc.waiter.Waiter<GetBackupRequest, GetBackupResponse> forBackup(
+            GetBackupRequest request,
+            com.oracle.bmc.database.model.Backup.LifecycleState targetState,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        return forBackup(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    // Helper method to create a new Waiter for Backup.
+    private com.oracle.bmc.waiter.Waiter<GetBackupRequest, GetBackupResponse> forBackup(
+            com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+            final GetBackupRequest request,
+            final com.oracle.bmc.database.model.Backup.LifecycleState targetState) {
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<GetBackupRequest, GetBackupResponse>() {
+                            @Override
+                            public GetBackupResponse apply(GetBackupRequest request) {
+                                return client.getBackup(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetBackupResponse>() {
+                            @Override
+                            public boolean apply(GetBackupResponse response) {
+                                return response.getBackup().getLifecycleState() == targetState;
+                            }
+                        },
+                        targetState == com.oracle.bmc.database.model.Backup.LifecycleState.Deleted),
+                request);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using default configuration.
+     *
+     * @param request The request to send.
+     * @param targetState The desired state to wait for.
+     * @return A new Waiter instance.
+     */
     public com.oracle.bmc.waiter.Waiter<
                     GetDataGuardAssociationRequest, GetDataGuardAssociationResponse>
             forDataGuardAssociation(

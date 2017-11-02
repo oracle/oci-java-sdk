@@ -58,7 +58,7 @@ public class ExportImageViaObjectStorageUriDetails extends ExportImageDetails {
     }
 
     /**
-     * The Object Storage Service URL to export the image to. See [Object Storage URLs](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/imageimportexport.htm#URLs)
+     * The Object Storage URL to export the image to. See [Object Storage URLs](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/imageimportexport.htm#URLs)
      * and [pre-authenticated requests](https://docs.us-phoenix-1.oraclecloud.com/Content/Object/Tasks/managingaccess.htm#pre-auth) for constructing URLs for image import/export.
      *
      **/

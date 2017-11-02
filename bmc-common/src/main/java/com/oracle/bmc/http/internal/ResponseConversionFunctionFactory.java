@@ -3,8 +3,6 @@
  */
 package com.oracle.bmc.http.internal;
 
-import java.util.List;
-
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.Response;
 
@@ -39,13 +37,14 @@ public class ResponseConversionFunctionFactory {
     }
 
     /**
-     * Creates a Function that will convert the Response into a List of objects.
+     * Creates a Function that will convert the Response into a parameterized collection object,
+     * or some other parameterized type.
      *
-     * @param type The generic type list to convert to.
+     * @param type The generic type to convert to.
      * @return A new Function.
      */
-    public <T> Function<Response, WithHeaders<List<T>>> create(GenericType<List<T>> type) {
-        return new ParsePagedResponseWithHeadersFunction<>(type);
+    public <T> Function<Response, WithHeaders<T>> create(GenericType<T> type) {
+        return new ParseGenericResponseWithHeadersFunction<>(type);
     }
 
     @RequiredArgsConstructor
@@ -61,14 +60,14 @@ public class ResponseConversionFunctionFactory {
     }
 
     @RequiredArgsConstructor
-    private static final class ParsePagedResponseWithHeadersFunction<T>
-            extends ValidatingParseResponseFunction<WithHeaders<List<T>>> {
-        private final GenericType<List<T>> genericType;
+    private static final class ParseGenericResponseWithHeadersFunction<T>
+            extends ValidatingParseResponseFunction<WithHeaders<T>> {
+        private final GenericType<T> genericType;
 
         @Override
-        protected WithHeaders<List<T>> doApply(Response response) {
-            List<T> list = ResponseHelper.readEntity(response, genericType);
-            return new WithHeaders<>(list, response.getStringHeaders(), response.getStatus());
+        protected WithHeaders<T> doApply(Response response) {
+            T entity = ResponseHelper.readEntity(response, genericType);
+            return new WithHeaders<>(entity, response.getStringHeaders(), response.getStatus());
         }
     }
 

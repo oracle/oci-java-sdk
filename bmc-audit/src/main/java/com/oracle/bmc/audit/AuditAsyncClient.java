@@ -118,6 +118,28 @@ public class AuditAsyncClient implements AuditAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetConfigurationResponse> getConfiguration(
+            GetConfigurationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetConfigurationRequest, GetConfigurationResponse>
+                    handler) {
+        LOG.trace("Called async getConfiguration");
+        request = GetConfigurationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetConfigurationConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetConfigurationResponse>
+                transformer = GetConfigurationConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListEventsResponse> listEvents(
             ListEventsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListEventsRequest, ListEventsResponse> handler) {
@@ -135,6 +157,30 @@ public class AuditAsyncClient implements AuditAsync {
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConfigurationResponse> updateConfiguration(
+            UpdateConfigurationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateConfigurationRequest, UpdateConfigurationResponse>
+                    handler) {
+        LOG.trace("Called async updateConfiguration");
+        request = UpdateConfigurationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateConfigurationConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateConfigurationResponse>
+                transformer = UpdateConfigurationConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.put(
+                        ib, request.getUpdateConfigurationDetails(), request, onSuccess, onError);
         return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 }

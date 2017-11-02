@@ -227,7 +227,7 @@ public class Instance {
     String imageId;
 
     /**
-     * When an Oracle Bare Metal Cloud Services or virtual machine
+     * When a bare metal or virtual machine
      * instance boots, the iPXE firmware that runs on the instance is
      * configured to run an iPXE script to continue the boot process.
      * <p>
@@ -245,7 +245,7 @@ public class Instance {
      * iqn.2015-02.oracle.boot.
      * <p>
      * For more information about the Bring Your Own Image feature of
-     * Oracle Bare Metal Cloud Services, see
+     * Oracle Cloud Infrastructure, see
      * [Bring Your Own Image](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/bringyourownimage.htm).
      * <p>
      * For more information about iPXE, see http://ipxe.org.

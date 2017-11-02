@@ -50,8 +50,8 @@ public class IdentityProvider {
      * The name you assign to the `IdentityProvider` during creation. The name
      * must be unique across all `IdentityProvider` objects in the tenancy and
      * cannot be changed. This is the name federated users see when choosing
-     * which identity provider to use when signing in to the Oracle Bare Metal Cloud
-     * Services Console.
+     * which identity provider to use when signing in to the Oracle Cloud Infrastructure
+     * Console.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")

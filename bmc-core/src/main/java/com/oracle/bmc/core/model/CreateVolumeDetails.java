@@ -58,6 +58,15 @@ public class CreateVolumeDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
+        private VolumeSourceDetails sourceDetails;
+
+        public Builder sourceDetails(VolumeSourceDetails sourceDetails) {
+            this.sourceDetails = sourceDetails;
+            this.__explicitlySet__.add("sourceDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("volumeBackupId")
         private String volumeBackupId;
 
@@ -78,6 +87,7 @@ public class CreateVolumeDetails {
                             displayName,
                             sizeInGBs,
                             sizeInMBs,
+                            sourceDetails,
                             volumeBackupId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -90,6 +100,7 @@ public class CreateVolumeDetails {
                     .displayName(o.getDisplayName())
                     .sizeInGBs(o.getSizeInGBs())
                     .sizeInMBs(o.getSizeInMBs())
+                    .sourceDetails(o.getSourceDetails())
                     .volumeBackupId(o.getVolumeBackupId());
         }
     }
@@ -132,14 +143,25 @@ public class CreateVolumeDetails {
 
     /**
      * The size of the volume in MBs. The value must be a multiple of 1024.
-     * This field is deprecated. Please use sizeInGBs.
+     * This field is deprecated. Use sizeInGBs instead.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInMBs")
     Long sizeInMBs;
 
     /**
+     * Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup.
+     * This is an optional field. If not specified or set to null, the new Block volume will be empty.
+     * When specified, the new Block volume will contain data from the source volume or backup.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
+    VolumeSourceDetails sourceDetails;
+
+    /**
      * The OCID of the volume backup from which the data should be restored on the newly created volume.
+     * This field is deprecated. Use the sourceDetails field instead to specify the
+     * backup for the volume.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("volumeBackupId")
