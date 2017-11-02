@@ -37,10 +37,19 @@ public interface Database extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Creates a new backup in the specified database based on the request parameters you provide. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateBackupResponse createBackup(CreateBackupRequest request);
+
+    /**
      * Creates a new Data Guard association.  A Data Guard association represents the replication relationship between the
      * specified database and a peer database. For more information, see [Using Oracle Data Guard](https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Tasks/usingdataguard.htm).
      * <p>
-     * All Oracle Bare Metal Cloud Services resources, including Data Guard associations, get an Oracle-assigned, unique ID
+     * All Oracle Cloud Infrastructure resources, including Data Guard associations, get an Oracle-assigned, unique ID
      * called an Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID in the response.
      * You can also retrieve a resource's OCID by using a List API operation on that resource type, or by viewing the
      * resource in the Console. Fore more information, see
@@ -86,6 +95,14 @@ public interface Database extends AutoCloseable {
     DbNodeActionResponse dbNodeAction(DbNodeActionRequest request);
 
     /**
+     * Deletes a full backup. You cannot delete automatic backups using this API.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteBackupResponse deleteBackup(DeleteBackupRequest request);
+
+    /**
      * Deletes a DB Home. The DB Home and its database data are local to the DB System and will be lost when it is deleted. Oracle recommends that you back up any data in the DB System prior to deleting it.
      *
      * @param request The request object containing the details to send
@@ -107,6 +124,14 @@ public interface Database extends AutoCloseable {
      */
     FailoverDataGuardAssociationResponse failoverDataGuardAssociation(
             FailoverDataGuardAssociationRequest request);
+
+    /**
+     * Gets information about the specified backup.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetBackupResponse getBackup(GetBackupRequest request);
 
     /**
      * Gets the specified Data Guard association's configuration information.
@@ -204,6 +229,15 @@ public interface Database extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     LaunchDbSystemResponse launchDbSystem(LaunchDbSystemRequest request);
+
+    /**
+     * Gets a list of backups based on the databaseId or compartmentId specified. Either one of the query parameters must be provided.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListBackupsResponse listBackups(ListBackupsRequest request);
 
     /**
      * Lists all Data Guard associations for the specified database.
@@ -317,6 +351,15 @@ public interface Database extends AutoCloseable {
             ReinstateDataGuardAssociationRequest request);
 
     /**
+     * Restore a Database based on the request parameters you provide.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    RestoreDatabaseResponse restoreDatabase(RestoreDatabaseRequest request);
+
+    /**
      * Performs a switchover to transition the primary database of a Data Guard association into a standby role. The
      * standby database associated with the `dataGuardAssociationId` assumes the primary database role.
      * <p>
@@ -336,6 +379,15 @@ public interface Database extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     TerminateDbSystemResponse terminateDbSystem(TerminateDbSystemRequest request);
+
+    /**
+     * Update a Database based on the request parameters you provide.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateDatabaseResponse updateDatabase(UpdateDatabaseRequest request);
 
     /**
      * Patches the specified dbHome.

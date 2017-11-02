@@ -121,6 +121,7 @@ public class PatchHistoryEntry {
     @lombok.extern.slf4j.Slf4j
     public enum Action {
         Apply("APPLY"),
+        Precheck("PRECHECK"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

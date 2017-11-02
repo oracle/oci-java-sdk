@@ -4,7 +4,7 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * An individual employee or system that needs to manage or use your company's Oracle Bare Metal Cloud Services
+ * An individual employee or system that needs to manage or use your company's Oracle Cloud Infrastructure
  * resources. Users might need to launch instances, manage remote disks, work with your cloud network, etc. Users
  * have one or more IAM Service credentials ({@link ApiKey},
  * {@link UIPassword}, and {@link SwiftPassword}).
@@ -12,9 +12,9 @@ package com.oracle.bmc.identity.model;
  * application are not typically IAM Service users. For conceptual information about users and other IAM Service
  * components, see [Overview of the IAM Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm).
  * <p>
- * These users are created directly within the Oracle Bare Metal Cloud Services system, via the IAM service.
- * They are different from *federated users*, who authenticate themselves to the Oracle Bare Metal
- * Cloud Services Console via an identity provider. For more information, see
+ * These users are created directly within the Oracle Cloud Infrastructure system, via the IAM service.
+ * They are different from *federated users*, who authenticate themselves to the Oracle Cloud Infrastructure
+ * Console via an identity provider. For more information, see
  * [Identity Providers and Federation](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/federation.htm).
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,

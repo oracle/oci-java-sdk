@@ -73,7 +73,7 @@ public interface ObjectStorage extends AutoCloseable {
     CreateMultipartUploadResponse createMultipartUpload(CreateMultipartUploadRequest request);
 
     /**
-     * Create a pre-authenticated request specific to the bucket
+     * Creates a pre-authenticated request specific to the bucket.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -101,7 +101,7 @@ public interface ObjectStorage extends AutoCloseable {
     DeleteObjectResponse deleteObject(DeleteObjectRequest request);
 
     /**
-     * Deletes the bucket level pre-authenticateted request
+     * Deletes the pre-authenticated request for the bucket.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -129,6 +129,18 @@ public interface ObjectStorage extends AutoCloseable {
     GetNamespaceResponse getNamespace(GetNamespaceRequest request);
 
     /**
+     * Get the metadata for the namespace, which contains defaultS3CompartmentId and defaultSwiftCompartmentId.
+     * Any user with the NAMESPACE_READ permission will be able to see the current metadata. If you're not authorized,
+     * talk to an administrator. If you're an administrator who needs to write
+     * policies to give users access, see [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetNamespaceMetadataResponse getNamespaceMetadata(GetNamespaceMetadataRequest request);
+
+    /**
      * Gets the metadata and body of an object.
      *
      * @param request The request object containing the details to send
@@ -138,7 +150,7 @@ public interface ObjectStorage extends AutoCloseable {
     GetObjectResponse getObject(GetObjectRequest request);
 
     /**
-     * Get the bucket level pre-authenticateted request
+     * Gets the pre-authenticated request for the bucket.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -147,7 +159,7 @@ public interface ObjectStorage extends AutoCloseable {
             GetPreauthenticatedRequestRequest request);
 
     /**
-     * Efficiently checks if a bucket exists and gets the current ETag for the bucket.
+     * Efficiently checks to see if a bucket exists and gets the current ETag for the bucket.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -167,6 +179,10 @@ public interface ObjectStorage extends AutoCloseable {
     /**
      * Gets a list of all `BucketSummary`s in a compartment. A `BucketSummary` contains only summary fields for the bucket
      * and does not contain fields like the user-defined metadata.
+     * <p>
+     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
+     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -195,6 +211,10 @@ public interface ObjectStorage extends AutoCloseable {
 
     /**
      * Lists the objects in a bucket.
+     * <p>
+     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
+     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -203,7 +223,7 @@ public interface ObjectStorage extends AutoCloseable {
     ListObjectsResponse listObjects(ListObjectsRequest request);
 
     /**
-     * List pre-authenticated requests for the bucket
+     * Lists pre-authenticated requests for the bucket.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -222,6 +242,24 @@ public interface ObjectStorage extends AutoCloseable {
     PutObjectResponse putObject(PutObjectRequest request);
 
     /**
+     * Rename an object from source key to target key in the given namespace.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    RenameObjectResponse renameObject(RenameObjectRequest request);
+
+    /**
+     * Restore one or more objects specified by objectName parameter.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    RestoreObjectsResponse restoreObjects(RestoreObjectsRequest request);
+
+    /**
      * Performs a partial or full update of a bucket's user-defined metadata.
      *
      * @param request The request object containing the details to send
@@ -229,6 +267,18 @@ public interface ObjectStorage extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateBucketResponse updateBucket(UpdateBucketRequest request);
+
+    /**
+     * Change the default Swift/S3 compartmentId of user's namespace into the user-defined compartmentId. Upon doing
+     * this, all subsequent bucket creations will use the new default compartment, but no previously created
+     * buckets will be modified. A user must have the NAMESPACE_UPDATE permission to make changes to the default
+     * compartments for S3 and Swift.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateNamespaceMetadataResponse updateNamespaceMetadata(UpdateNamespaceMetadataRequest request);
 
     /**
      * Uploads a single part of a multipart upload.

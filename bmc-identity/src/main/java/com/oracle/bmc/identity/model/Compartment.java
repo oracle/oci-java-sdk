@@ -4,7 +4,7 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * A collection of related resources. Compartments are a fundamental component of Oracle Bare Metal Cloud Services
+ * A collection of related resources. Compartments are a fundamental component of Oracle Cloud Infrastructure
  * for organizing and isolating your cloud resources. You use them to clearly separate resources for the purposes
  * of measuring usage and billing, access (through the use of IAM Service policies), and isolation (separating the
  * resources for one project or business unit from another). A common approach is to create a compartment for each
@@ -143,7 +143,7 @@ public class Compartment {
 
     /**
      * The name you assign to the compartment during creation. The name must be unique across all
-     * compartments in the tenancy and cannot be changed.
+     * compartments in the tenancy.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")

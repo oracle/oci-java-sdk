@@ -226,6 +226,30 @@ public class HeadObjectConverter {
                                                     java.util.Date.class));
                                 }
 
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        archivalStateHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "archival-state");
+                                if (archivalStateHeader.isPresent()) {
+                                    builder.archivalState(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "archival-state",
+                                                    archivalStateHeader.get().get(0),
+                                                    String.class));
+                                }
+
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        timeOfArchivalHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "time-of-archival");
+                                if (timeOfArchivalHeader.isPresent()) {
+                                    builder.timeOfArchival(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "time-of-archival",
+                                                    timeOfArchivalHeader.get().get(0),
+                                                    java.util.Date.class));
+                                }
+
                                 HeadObjectResponse responseWrapper = builder.build();
                                 responseWrapper =
                                         ObjectMetadataInterceptor.intercept(responseWrapper);

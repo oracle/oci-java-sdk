@@ -93,32 +93,34 @@ public class CreateMultipartUploadDetails {
     }
 
     /**
-     * the name of the object to which this multi-part upload is targetted.
+     * The name of the object to which this multi-part upload is targeted. Avoid entering confidential information.
+     * Example: test/object1.log
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("object")
     String object;
 
     /**
-     * the content type of the object to upload.
+     * The content type of the object to upload.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contentType")
     String contentType;
 
     /**
-     * the content language of the object to upload.
+     * The content language of the object to upload.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contentLanguage")
     String contentLanguage;
 
     /**
-     * the content encoding of the object to upload.
+     * The content encoding of the object to upload.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contentEncoding")
     String contentEncoding;
 
     /**
      * Arbitrary string keys and values for the user-defined metadata for the object.
-     * Keys must be in \"opc-meta-*\" format.
+     * Keys must be in \"opc-meta-*\" format. Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")

@@ -82,19 +82,19 @@ public class ExportImageViaObjectStorageTupleDetails extends ExportImageDetails 
     }
 
     /**
-     * The Object Storage Service bucket to export the image to.
+     * The Object Storage bucket to export the image to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     String bucketName;
 
     /**
-     * The Object Storage Service namespace to export the image to.
+     * The Object Storage namespace to export the image to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
     String namespaceName;
 
     /**
-     * The Object Storage Service object name for the exported image.
+     * The Object Storage object name for the exported image.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     String objectName;

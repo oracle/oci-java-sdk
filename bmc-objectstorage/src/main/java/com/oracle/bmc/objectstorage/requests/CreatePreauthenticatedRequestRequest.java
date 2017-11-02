@@ -16,15 +16,14 @@ public class CreatePreauthenticatedRequestRequest extends com.oracle.bmc.request
     private String namespaceName;
 
     /**
-     * The name of the bucket.
-     * <p>
+     * The name of the bucket. Avoid entering confidential information.
      * Example: `my-new-bucket1`
      *
      */
     private String bucketName;
 
     /**
-     * details for creating the pre-authenticated request.
+     * Information needed to create the pre-authenticated request.
      */
     private CreatePreauthenticatedRequestDetails createPreauthenticatedRequestDetails;
 

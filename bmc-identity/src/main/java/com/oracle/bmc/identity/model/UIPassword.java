@@ -4,8 +4,8 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * A text password that enables a user to sign in to the Console, the user interface for interacting with Oracle Bare
- * Metal Cloud Services.
+ * A text password that enables a user to sign in to the Console, the user interface for interacting with Oracle
+ * Cloud Infrastructure.
  * <p>
  * For more information about user credentials, see [User Credentials](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/usercredentials.htm).
  *

@@ -16,16 +16,14 @@ public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest {
     private String namespaceName;
 
     /**
-     * The name of the bucket.
-     * <p>
+     * The name of the bucket. Avoid entering confidential information.
      * Example: `my-new-bucket1`
      *
      */
     private String bucketName;
 
     /**
-     * The name of the object.
-     * <p>
+     * The name of the object. Avoid entering confidential information.
      * Example: `test/object1.log`
      *
      */
@@ -40,8 +38,7 @@ public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
      * The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
-     * For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag
-     * of the target part.
+     * For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag of the target part.
      *
      */
     private String ifNoneMatch;
@@ -53,7 +50,7 @@ public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
      * Optional byte range to fetch, as described in [RFC 7233](https://tools.ietf.org/rfc/rfc7233), section 2.1.
-     * Note, only a single range of bytes is supported.
+     * Note that only a single range of bytes is supported.
      *
      */
     private com.oracle.bmc.model.Range range;

@@ -58,7 +58,7 @@ public class ImageSourceViaObjectStorageUriDetails extends ImageSourceDetails {
     }
 
     /**
-     * The Object Storage Service URL for the image.
+     * The Object Storage URL for the image.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceUri")
     String sourceUri;

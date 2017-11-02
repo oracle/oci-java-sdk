@@ -16,8 +16,7 @@ public class HeadBucketRequest extends com.oracle.bmc.requests.BmcRequest {
     private String namespaceName;
 
     /**
-     * The name of the bucket.
-     * <p>
+     * The name of the bucket. Avoid entering confidential information.
      * Example: `my-new-bucket1`
      *
      */
@@ -32,8 +31,7 @@ public class HeadBucketRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
      * The entity tag to avoid matching. The only valid value is \u2018*\u2019, which indicates that the request should fail if the object already exists.
-     * For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag
-     * of the target part.
+     * For creating and committing a multipart upload, this is the entity tag of the target object. For uploading a part, this is the entity tag of the target part.
      *
      */
     private String ifNoneMatch;

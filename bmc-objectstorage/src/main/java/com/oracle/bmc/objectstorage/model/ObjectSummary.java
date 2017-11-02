@@ -79,7 +79,9 @@ public class ObjectSummary {
     }
 
     /**
-     * The name of the object.
+     * The name of the object. Avoid entering confidential information.
+     * Example: test/object1.log
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
@@ -97,7 +99,7 @@ public class ObjectSummary {
     String md5;
 
     /**
-     * Date and time of object creation.
+     * The date and time the object was created, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;

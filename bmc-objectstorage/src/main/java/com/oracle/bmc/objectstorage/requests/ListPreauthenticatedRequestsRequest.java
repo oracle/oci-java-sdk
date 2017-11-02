@@ -16,15 +16,14 @@ public class ListPreauthenticatedRequestsRequest extends com.oracle.bmc.requests
     private String namespaceName;
 
     /**
-     * The name of the bucket.
-     * <p>
+     * The name of the bucket. Avoid entering confidential information.
      * Example: `my-new-bucket1`
      *
      */
     private String bucketName;
 
     /**
-     * Pre-authenticated requests returned by the list must have object names starting with prefix
+     * User-specified object name prefixes can be used to query and return a list of pre-authenticated requests.
      */
     private String objectNamePrefix;
 

@@ -258,6 +258,19 @@ public class ObjectStorageClient implements ObjectStorage {
     }
 
     @Override
+    public GetNamespaceMetadataResponse getNamespaceMetadata(GetNamespaceMetadataRequest request) {
+        LOG.trace("Called getNamespaceMetadata");
+        request = GetNamespaceMetadataConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetNamespaceMetadataConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetNamespaceMetadataResponse>
+                transformer = GetNamespaceMetadataConverter.fromResponse();
+
+        javax.ws.rs.core.Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
     public GetObjectResponse getObject(GetObjectRequest request) {
         LOG.trace("Called getObject");
         request = GetObjectConverter.interceptRequest(request);
@@ -393,6 +406,34 @@ public class ObjectStorageClient implements ObjectStorage {
     }
 
     @Override
+    public RenameObjectResponse renameObject(RenameObjectRequest request) {
+        LOG.trace("Called renameObject");
+        request = RenameObjectConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RenameObjectConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, RenameObjectResponse>
+                transformer = RenameObjectConverter.fromResponse();
+
+        javax.ws.rs.core.Response response =
+                client.post(ib, request.getRenameObjectDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public RestoreObjectsResponse restoreObjects(RestoreObjectsRequest request) {
+        LOG.trace("Called restoreObjects");
+        request = RestoreObjectsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RestoreObjectsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, RestoreObjectsResponse>
+                transformer = RestoreObjectsConverter.fromResponse();
+
+        javax.ws.rs.core.Response response =
+                client.post(ib, request.getRestoreObjectsDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
     public UpdateBucketResponse updateBucket(UpdateBucketRequest request) {
         LOG.trace("Called updateBucket");
         request = UpdateBucketConverter.interceptRequest(request);
@@ -403,6 +444,21 @@ public class ObjectStorageClient implements ObjectStorage {
 
         javax.ws.rs.core.Response response =
                 client.post(ib, request.getUpdateBucketDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public UpdateNamespaceMetadataResponse updateNamespaceMetadata(
+            UpdateNamespaceMetadataRequest request) {
+        LOG.trace("Called updateNamespaceMetadata");
+        request = UpdateNamespaceMetadataConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateNamespaceMetadataConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateNamespaceMetadataResponse>
+                transformer = UpdateNamespaceMetadataConverter.fromResponse();
+
+        javax.ws.rs.core.Response response =
+                client.put(ib, request.getUpdateNamespaceMetadataDetails(), request);
         return transformer.apply(response);
     }
 

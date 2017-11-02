@@ -17,7 +17,7 @@ public class GetObjectResponse {
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
-     * request, please provide this request ID.
+     * request, provide this request ID.
      *
      */
     private String opcRequestId;
@@ -80,6 +80,16 @@ public class GetObjectResponse {
     private java.util.Date lastModified;
 
     /**
+     * The current state of the object.
+     */
+    private String archivalState;
+
+    /**
+     * Time that the object is returned to the archived state. This field is only present for restored objects.
+     */
+    private java.util.Date timeOfArchival;
+
+    /**
      * The returned java.io.InputStream instance, or null if {@link #isNotModified()} is true.
      */
     private java.io.InputStream inputStream;
@@ -110,6 +120,8 @@ public class GetObjectResponse {
             contentLanguage(o.getContentLanguage());
             contentEncoding(o.getContentEncoding());
             lastModified(o.getLastModified());
+            archivalState(o.getArchivalState());
+            timeOfArchival(o.getTimeOfArchival());
             inputStream(o.getInputStream());
             isNotModified(o.isNotModified());
             return this;

@@ -82,19 +82,19 @@ public class ImageSourceViaObjectStorageTupleDetails extends ImageSourceDetails 
     }
 
     /**
-     * The Object Storage Service bucket for the image.
+     * The Object Storage bucket for the image.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     String bucketName;
 
     /**
-     * The Object Storage Service namespace for the image.
+     * The Object Storage namespace for the image.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
     String namespaceName;
 
     /**
-     * The Object Storage Service name for the image.
+     * The Object Storage name for the image.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     String objectName;

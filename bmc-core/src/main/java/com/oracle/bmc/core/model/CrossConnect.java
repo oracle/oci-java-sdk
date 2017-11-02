@@ -4,7 +4,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * For use with Oracle Bare Metal Cloud Services FastConnect. A cross-connect represents a
+ * For use with Oracle Cloud Infrastructure FastConnect. A cross-connect represents a
  * physical connection between an existing network and Oracle. Customers who are colocated
  * with Oracle in a FastConnect location create and use cross-connects. For more
  * information, see [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).

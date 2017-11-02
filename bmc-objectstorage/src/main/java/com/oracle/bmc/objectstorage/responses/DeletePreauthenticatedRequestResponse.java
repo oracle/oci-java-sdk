@@ -17,7 +17,7 @@ public class DeletePreauthenticatedRequestResponse {
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
-     * request, please provide this request ID.
+     * request, provide this request ID.
      *
      */
     private String opcRequestId;

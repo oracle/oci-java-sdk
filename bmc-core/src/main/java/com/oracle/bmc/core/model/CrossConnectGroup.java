@@ -4,7 +4,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * For use with Oracle Bare Metal Cloud Services FastConnect. A cross-connect group
+ * For use with Oracle Cloud Infrastructure FastConnect. A cross-connect group
  * is a link aggregation group (LAG), which can contain one or more
  * {@link CrossConnect}. Customers who are colocated with
  * Oracle in a FastConnect location create and use cross-connect groups. For more

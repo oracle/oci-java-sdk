@@ -104,7 +104,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Create a pre-authenticated request specific to the bucket
+     * Creates a pre-authenticated request specific to the bucket.
      *
      *
      * @param request The request object containing the details to send
@@ -155,7 +155,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes the bucket level pre-authenticateted request
+     * Deletes the pre-authenticated request for the bucket.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -205,6 +205,26 @@ public interface ObjectStorageAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Get the metadata for the namespace, which contains defaultS3CompartmentId and defaultSwiftCompartmentId.
+     * Any user with the NAMESPACE_READ permission will be able to see the current metadata. If you're not authorized,
+     * talk to an administrator. If you're an administrator who needs to write
+     * policies to give users access, see [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetNamespaceMetadataResponse> getNamespaceMetadata(
+            GetNamespaceMetadataRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetNamespaceMetadataRequest, GetNamespaceMetadataResponse>
+                    handler);
+
+    /**
      * Gets the metadata and body of an object.
      *
      *
@@ -220,7 +240,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetObjectRequest, GetObjectResponse> handler);
 
     /**
-     * Get the bucket level pre-authenticateted request
+     * Gets the pre-authenticated request for the bucket.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -236,7 +256,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Efficiently checks if a bucket exists and gets the current ETag for the bucket.
+     * Efficiently checks to see if a bucket exists and gets the current ETag for the bucket.
      *
      *
      * @param request The request object containing the details to send
@@ -268,6 +288,10 @@ public interface ObjectStorageAsync extends AutoCloseable {
     /**
      * Gets a list of all `BucketSummary`s in a compartment. A `BucketSummary` contains only summary fields for the bucket
      * and does not contain fields like the user-defined metadata.
+     * <p>
+     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
+     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -317,6 +341,10 @@ public interface ObjectStorageAsync extends AutoCloseable {
 
     /**
      * Lists the objects in a bucket.
+     * <p>
+     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
+     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -331,7 +359,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListObjectsRequest, ListObjectsResponse> handler);
 
     /**
-     * List pre-authenticated requests for the bucket
+     * Lists pre-authenticated requests for the bucket.
      *
      *
      * @param request The request object containing the details to send
@@ -364,6 +392,38 @@ public interface ObjectStorageAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<PutObjectRequest, PutObjectResponse> handler);
 
     /**
+     * Rename an object from source key to target key in the given namespace.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RenameObjectResponse> renameObject(
+            RenameObjectRequest request,
+            com.oracle.bmc.responses.AsyncHandler<RenameObjectRequest, RenameObjectResponse>
+                    handler);
+
+    /**
+     * Restore one or more objects specified by objectName parameter.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RestoreObjectsResponse> restoreObjects(
+            RestoreObjectsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<RestoreObjectsRequest, RestoreObjectsResponse>
+                    handler);
+
+    /**
      * Performs a partial or full update of a bucket's user-defined metadata.
      *
      *
@@ -377,6 +437,26 @@ public interface ObjectStorageAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateBucketResponse> updateBucket(
             UpdateBucketRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateBucketRequest, UpdateBucketResponse>
+                    handler);
+
+    /**
+     * Change the default Swift/S3 compartmentId of user's namespace into the user-defined compartmentId. Upon doing
+     * this, all subsequent bucket creations will use the new default compartment, but no previously created
+     * buckets will be modified. A user must have the NAMESPACE_UPDATE permission to make changes to the default
+     * compartments for S3 and Swift.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateNamespaceMetadataResponse> updateNamespaceMetadata(
+            UpdateNamespaceMetadataRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateNamespaceMetadataRequest, UpdateNamespaceMetadataResponse>
                     handler);
 
     /**

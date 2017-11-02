@@ -4,7 +4,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * For use with Oracle Bare Metal Cloud Services FastConnect. Each
+ * For use with Oracle Cloud Infrastructure FastConnect. Each
  * {@link VirtualCircuit} runs on one or
  * more cross-connects or cross-connect groups. A `CrossConnectMapping`
  * contains the properties for an individual cross-connect or cross-connect group

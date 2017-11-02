@@ -28,6 +28,15 @@ public class UpdateBucketDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
@@ -60,7 +69,8 @@ public class UpdateBucketDetails {
 
         public UpdateBucketDetails build() {
             UpdateBucketDetails __instance__ =
-                    new UpdateBucketDetails(namespace, name, metadata, publicAccessType);
+                    new UpdateBucketDetails(
+                            namespace, compartmentId, name, metadata, publicAccessType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -68,6 +78,7 @@ public class UpdateBucketDetails {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateBucketDetails o) {
             return namespace(o.getNamespace())
+                    .compartmentId(o.getCompartmentId())
                     .name(o.getName())
                     .metadata(o.getMetadata())
                     .publicAccessType(o.getPublicAccessType());
@@ -88,7 +99,15 @@ public class UpdateBucketDetails {
     String namespace;
 
     /**
-     * The name of the bucket.
+     * The compartmentId for the compartment to which the bucket is targeted to move to.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    String compartmentId;
+
+    /**
+     * The name of the bucket. Avoid entering confidential information.
+     * Example: my-new-bucket1
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
@@ -99,10 +118,9 @@ public class UpdateBucketDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     java.util.Map<String, String> metadata;
     /**
-     * The type of public access available on this bucket. Allows authenticated caller to access the bucket or
-     * contents of this bucket. By default a bucket is set to NoPublicAccess. It is treated as NoPublicAccess
-     * when this value is not specified. When the type is NoPublicAccess the bucket does not allow any public access.
-     * When the type is ObjectRead the bucket allows public access to the GetObject, HeadObject, ListObjects.
+     * The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an
+     * authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access
+     * is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations.
      *
      **/
     public enum PublicAccessType {
@@ -138,10 +156,9 @@ public class UpdateBucketDetails {
         }
     };
     /**
-     * The type of public access available on this bucket. Allows authenticated caller to access the bucket or
-     * contents of this bucket. By default a bucket is set to NoPublicAccess. It is treated as NoPublicAccess
-     * when this value is not specified. When the type is NoPublicAccess the bucket does not allow any public access.
-     * When the type is ObjectRead the bucket allows public access to the GetObject, HeadObject, ListObjects.
+     * The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an
+     * authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access
+     * is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicAccessType")

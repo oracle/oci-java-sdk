@@ -27,9 +27,9 @@ public class ListDataGuardAssociationsResponse {
     private String opcRequestId;
 
     /**
-     * A list of DataGuardAssociation instances.
+     * A list of DataGuardAssociationSummary instances.
      */
-    private java.util.List<DataGuardAssociation> items;
+    private java.util.List<DataGuardAssociationSummary> items;
 
     public static class Builder {
         /**

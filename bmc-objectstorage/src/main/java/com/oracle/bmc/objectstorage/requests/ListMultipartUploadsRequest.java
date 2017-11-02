@@ -16,8 +16,7 @@ public class ListMultipartUploadsRequest extends com.oracle.bmc.requests.BmcRequ
     private String namespaceName;
 
     /**
-     * The name of the bucket.
-     * <p>
+     * The name of the bucket. Avoid entering confidential information.
      * Example: `my-new-bucket1`
      *
      */
