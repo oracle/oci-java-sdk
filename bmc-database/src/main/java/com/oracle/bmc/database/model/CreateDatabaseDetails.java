@@ -31,6 +31,15 @@ public class CreateDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dbBackupConfig")
+        private DbBackupConfig dbBackupConfig;
+
+        public Builder dbBackupConfig(DbBackupConfig dbBackupConfig) {
+            this.dbBackupConfig = dbBackupConfig;
+            this.__explicitlySet__.add("dbBackupConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dbName")
         private String dbName;
 
@@ -75,6 +84,7 @@ public class CreateDatabaseDetails {
                     new CreateDatabaseDetails(
                             adminPassword,
                             characterSet,
+                            dbBackupConfig,
                             dbName,
                             dbWorkload,
                             ncharacterSet,
@@ -87,6 +97,7 @@ public class CreateDatabaseDetails {
         public Builder copy(CreateDatabaseDetails o) {
             return adminPassword(o.getAdminPassword())
                     .characterSet(o.getCharacterSet())
+                    .dbBackupConfig(o.getDbBackupConfig())
                     .dbName(o.getDbName())
                     .dbWorkload(o.getDbWorkload())
                     .ncharacterSet(o.getNcharacterSet())
@@ -115,6 +126,9 @@ public class CreateDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("characterSet")
     String characterSet;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("dbBackupConfig")
+    DbBackupConfig dbBackupConfig;
 
     /**
      * The database name. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.

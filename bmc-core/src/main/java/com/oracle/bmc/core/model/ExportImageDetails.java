@@ -12,7 +12,7 @@ package com.oracle.bmc.core.model;
  * <p>
  * Set `destinationType` to `objectStorageUri` and
  * use {@link #exportImageViaObjectStorageUriDetails(ExportImageViaObjectStorageUriDetailsRequest) exportImageViaObjectStorageUriDetails}
- * when specifying the Object Storage Service URL.
+ * when specifying the Object Storage URL.
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")

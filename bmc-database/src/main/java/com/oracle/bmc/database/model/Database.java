@@ -35,6 +35,15 @@ public class Database {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dbBackupConfig")
+        private DbBackupConfig dbBackupConfig;
+
+        public Builder dbBackupConfig(DbBackupConfig dbBackupConfig) {
+            this.dbBackupConfig = dbBackupConfig;
+            this.__explicitlySet__.add("dbBackupConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dbHomeId")
         private String dbHomeId;
 
@@ -133,6 +142,7 @@ public class Database {
                     new Database(
                             characterSet,
                             compartmentId,
+                            dbBackupConfig,
                             dbHomeId,
                             dbName,
                             dbUniqueName,
@@ -151,6 +161,7 @@ public class Database {
         public Builder copy(Database o) {
             return characterSet(o.getCharacterSet())
                     .compartmentId(o.getCompartmentId())
+                    .dbBackupConfig(o.getDbBackupConfig())
                     .dbHomeId(o.getDbHomeId())
                     .dbName(o.getDbName())
                     .dbUniqueName(o.getDbUniqueName())
@@ -182,6 +193,9 @@ public class Database {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("dbBackupConfig")
+    DbBackupConfig dbBackupConfig;
 
     /**
      * The OCID of the database home.
@@ -227,8 +241,10 @@ public class Database {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
         Updating("UPDATING"),
+        BackupInProgress("BACKUP_IN_PROGRESS"),
         Terminating("TERMINATING"),
         Terminated("TERMINATED"),
+        RestoreFailed("RESTORE_FAILED"),
         Failed("FAILED"),
 
         /**

@@ -106,7 +106,9 @@ public class BucketSummary {
     String namespace;
 
     /**
-     * The name of the bucket.
+     * The name of the bucket. Avoid entering confidential information.
+     * Example: my-new-bucket1
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
@@ -124,7 +126,7 @@ public class BucketSummary {
     String createdBy;
 
     /**
-     * The date and time at which the bucket was created.
+     * The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;

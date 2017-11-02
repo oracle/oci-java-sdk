@@ -37,10 +37,26 @@ public interface DatabaseAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Creates a new backup in the specified database based on the request parameters you provide. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateBackupResponse> createBackup(
+            CreateBackupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateBackupRequest, CreateBackupResponse>
+                    handler);
+
+    /**
      * Creates a new Data Guard association.  A Data Guard association represents the replication relationship between the
      * specified database and a peer database. For more information, see [Using Oracle Data Guard](https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Tasks/usingdataguard.htm).
      * <p>
-     * All Oracle Bare Metal Cloud Services resources, including Data Guard associations, get an Oracle-assigned, unique ID
+     * All Oracle Cloud Infrastructure resources, including Data Guard associations, get an Oracle-assigned, unique ID
      * called an Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID in the response.
      * You can also retrieve a resource's OCID by using a List API operation on that resource type, or by viewing the
      * resource in the Console. Fore more information, see
@@ -107,6 +123,21 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes a full backup. You cannot delete automatic backups using this API.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteBackupResponse> deleteBackup(
+            DeleteBackupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteBackupRequest, DeleteBackupResponse>
+                    handler);
+
+    /**
      * Deletes a DB Home. The DB Home and its database data are local to the DB System and will be lost when it is deleted. Oracle recommends that you back up any data in the DB System prior to deleting it.
      *
      *
@@ -143,6 +174,20 @@ public interface DatabaseAsync extends AutoCloseable {
                             FailoverDataGuardAssociationRequest,
                             FailoverDataGuardAssociationResponse>
                     handler);
+
+    /**
+     * Gets information about the specified backup.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetBackupResponse> getBackup(
+            GetBackupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetBackupRequest, GetBackupResponse> handler);
 
     /**
      * Gets the specified Data Guard association's configuration information.
@@ -308,6 +353,21 @@ public interface DatabaseAsync extends AutoCloseable {
             LaunchDbSystemRequest request,
             com.oracle.bmc.responses.AsyncHandler<LaunchDbSystemRequest, LaunchDbSystemResponse>
                     handler);
+
+    /**
+     * Gets a list of backups based on the databaseId or compartmentId specified. Either one of the query parameters must be provided.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListBackupsResponse> listBackups(
+            ListBackupsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListBackupsRequest, ListBackupsResponse> handler);
 
     /**
      * Lists all Data Guard associations for the specified database.
@@ -512,6 +572,22 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Restore a Database based on the request parameters you provide.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RestoreDatabaseResponse> restoreDatabase(
+            RestoreDatabaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<RestoreDatabaseRequest, RestoreDatabaseResponse>
+                    handler);
+
+    /**
      * Performs a switchover to transition the primary database of a Data Guard association into a standby role. The
      * standby database associated with the `dataGuardAssociationId` assumes the primary database role.
      * <p>
@@ -547,6 +623,22 @@ public interface DatabaseAsync extends AutoCloseable {
             TerminateDbSystemRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             TerminateDbSystemRequest, TerminateDbSystemResponse>
+                    handler);
+
+    /**
+     * Update a Database based on the request parameters you provide.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateDatabaseResponse> updateDatabase(
+            UpdateDatabaseRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateDatabaseRequest, UpdateDatabaseResponse>
                     handler);
 
     /**

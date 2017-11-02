@@ -5,8 +5,8 @@ package com.oracle.bmc.identity.model;
 
 /**
  * A mapping between a single group defined by the identity provider (IdP) you're federating with
- * and a single IAM Service {@link Group} in Oracle Bare Metal Cloud
- * Services. For more information about group mappings and what they're for, see
+ * and a single IAM Service {@link Group} in Oracle Cloud Infrastructure.
+ * For more information about group mappings and what they're for, see
  * [Identity Providers and Federation](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/federation.htm).
  * <p>
  * A given IdP group can be mapped to zero, one, or multiple IAM Service groups, and vice versa.
@@ -14,7 +14,7 @@ package com.oracle.bmc.identity.model;
  * Each `IdPGroupMapping` object has its own OCID.
  * <p>
  **Note:** Any users who are in more than 50 IdP groups cannot be authenticated to use the Oracle
- * Bare Metal Cloud Services Console.
+ * Cloud Infrastructure Console.
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")

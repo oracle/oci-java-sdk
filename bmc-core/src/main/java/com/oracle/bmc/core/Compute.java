@@ -82,19 +82,19 @@ public interface Compute extends AutoCloseable {
     CaptureConsoleHistoryResponse captureConsoleHistory(CaptureConsoleHistoryRequest request);
 
     /**
-     * Creates a boot disk image for the specified instance or imports an exported image from the Oracle Bare Metal Cloud Object Storage Service.
+     * Creates a boot disk image for the specified instance or imports an exported image from the Oracle Cloud Infrastructure Object Storage service.
      * <p>
      * When creating a new image, you must provide the OCID of the instance you want to use as the basis for the image, and
      * the OCID of the compartment containing that instance. For more information about images,
      * see [Managing Custom Images](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/managingcustomimages.htm).
      * <p>
-     * When importing an exported image from the Object Storage Service, you specify the source information
+     * When importing an exported image from Object Storage, you specify the source information
      * in {@link #imageSourceDetails(ImageSourceDetailsRequest) imageSourceDetails}.
      * <p>
      * When importing an image based on the namespace, bucket name, and object name,
      * use {@link #imageSourceViaObjectStorageTupleDetails(ImageSourceViaObjectStorageTupleDetailsRequest) imageSourceViaObjectStorageTupleDetails}.
      * <p>
-     * When importing an image based on the Object Storage Service URL, use
+     * When importing an image based on the Object Storage URL, use
      * {@link #imageSourceViaObjectStorageUriDetails(ImageSourceViaObjectStorageUriDetailsRequest) imageSourceViaObjectStorageUriDetails}.
      * See [Object Storage URLs](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/imageimportexport.htm#URLs) and [pre-authenticated requests](https://docs.us-phoenix-1.oraclecloud.com/Content/Object/Tasks/managingaccess.htm#pre-auth)
      * for constructing URLs for image import/export.
@@ -184,12 +184,12 @@ public interface Compute extends AutoCloseable {
     DetachVolumeResponse detachVolume(DetachVolumeRequest request);
 
     /**
-     * Exports the specified image to the Oracle Bare Metal Cloud Object Storage Service. You can use the Object Storage Service URL,
+     * Exports the specified image to the Oracle Cloud Infrastructure Object Storage service. You can use the Object Storage URL,
      * or the namespace, bucket name, and object name when specifying the location to export to.
      * <p>
      * For more information about exporting images, see [Image Import/Export](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/imageimportexport.htm).
      * <p>
-     * To perform an image export, you need write access to the Object Storage Service bucket for the image,
+     * To perform an image export, you need write access to the Object Storage bucket for the image,
      * see [Let Users Write Objects to Object Storage Buckets](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/commonpolicies.htm#Let4).
      * <p>
      * See [Object Storage URLs](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/imageimportexport.htm#URLs) and [pre-authenticated requests](https://docs.us-phoenix-1.oraclecloud.com/Content/Object/Tasks/managingaccess.htm#pre-auth)
@@ -314,7 +314,7 @@ public interface Compute extends AutoCloseable {
      * To get a list of Availability Domains, use the `ListAvailabilityDomains` operation
      * in the Identity and Access Management Service API.
      * <p>
-     * All Oracle Bare Metal Cloud Services resources, including instances, get an Oracle-assigned,
+     * All Oracle Cloud Infrastructure resources, including instances, get an Oracle-assigned,
      * unique ID called an Oracle Cloud Identifier (OCID).
      * When you create a resource, you can find its OCID in the response. You can
      * also retrieve a resource's OCID by using a List API operation
@@ -348,7 +348,9 @@ public interface Compute extends AutoCloseable {
     ListConsoleHistoriesResponse listConsoleHistories(ListConsoleHistoriesRequest request);
 
     /**
-     * Lists the available images in the specified compartment. For more
+     * Lists the available images in the specified compartment.
+     * If you specify a value for the `sortBy` parameter, Oracle-provided images appear first in the list, followed by custom images.
+     * For more
      * information about images, see
      * [Managing Custom Images](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/managingcustomimages.htm).
      *

@@ -206,8 +206,8 @@ public class CreateVirtualCircuitDetails {
     String providerName;
 
     /**
-     * The name of the service offered by the provider (if you're connecting
-     * via a provider). To get a list of the available service offerings, see
+     * The name of the provider (if you're connecting via a provider).
+     * To get a list of the provider names, see
      * {@link #listFastConnectProviderServices(ListFastConnectProviderServicesRequest) listFastConnectProviderServices}.
      *
      **/
@@ -215,9 +215,8 @@ public class CreateVirtualCircuitDetails {
     String providerServiceName;
 
     /**
-     * The Oracle Bare Metal Cloud Services region where this virtual
+     * The Oracle Cloud Infrastructure region where this virtual
      * circuit is located.
-     * <p>
      * Example: `phx`
      *
      **/

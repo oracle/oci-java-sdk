@@ -58,14 +58,14 @@ public interface IdentityAsync extends AutoCloseable {
     /**
      * Creates a new compartment in your tenancy.
      * <p>
-     **Important:** Compartments cannot be renamed or deleted.
+     **Important:** Compartments cannot be deleted.
      * <p>
      * You must specify your tenancy's OCID as the compartment ID in the request object. Remember that the tenancy
      * is simply the root compartment. For information about OCIDs, see
      * [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      * <p>
      * You must also specify a *name* for the compartment, which must be unique across all compartments in
-     * your tenancy and cannot be changed. You can use this name or the OCID when writing policies that apply
+     * your tenancy. You can use this name or the OCID when writing policies that apply
      * to the compartment. For more information about policies, see
      * [How Policies Work](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policies.htm).
      * <p>
@@ -336,7 +336,7 @@ public interface IdentityAsync extends AutoCloseable {
      * {@link #addUserToGroup(AddUserToGroupRequest, Consumer, Consumer) addUserToGroup}). If the user needs to
      * access the Console, you need to provide the user a password (see
      * {@link #createOrResetUIPassword(CreateOrResetUIPasswordRequest, Consumer, Consumer) createOrResetUIPassword}).
-     * If the user needs to access the Oracle Bare Metal Cloud Services REST API, you need to upload a
+     * If the user needs to access the Oracle Cloud Infrastructure REST API, you need to upload a
      * public API signing key for that user (see
      * [Required Keys and OCIDs](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm) and also
      * {@link #uploadApiKey(UploadApiKeyRequest, Consumer, Consumer) uploadApiKey}).
@@ -784,7 +784,7 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists all the regions offered by Oracle Bare Metal Cloud Services.
+     * Lists all the regions offered by Oracle Cloud Infrastructure.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -874,7 +874,7 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the specified compartment's description.
+     * Updates the specified compartment's description or name. You can't update the root compartment.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

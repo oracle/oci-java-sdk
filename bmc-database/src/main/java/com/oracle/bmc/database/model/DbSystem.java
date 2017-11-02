@@ -83,12 +83,12 @@ public class DbSystem {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGB")
-        private Integer dataStorageSizeInGB;
+        @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
+        private Integer dataStorageSizeInGBs;
 
-        public Builder dataStorageSizeInGB(Integer dataStorageSizeInGB) {
-            this.dataStorageSizeInGB = dataStorageSizeInGB;
-            this.__explicitlySet__.add("dataStorageSizeInGB");
+        public Builder dataStorageSizeInGBs(Integer dataStorageSizeInGBs) {
+            this.dataStorageSizeInGBs = dataStorageSizeInGBs;
+            this.__explicitlySet__.add("dataStorageSizeInGBs");
             return this;
         }
 
@@ -293,7 +293,7 @@ public class DbSystem {
                             compartmentId,
                             cpuCoreCount,
                             dataStoragePercentage,
-                            dataStorageSizeInGB,
+                            dataStorageSizeInGBs,
                             databaseEdition,
                             diskRedundancy,
                             displayName,
@@ -327,7 +327,7 @@ public class DbSystem {
                     .compartmentId(o.getCompartmentId())
                     .cpuCoreCount(o.getCpuCoreCount())
                     .dataStoragePercentage(o.getDataStoragePercentage())
-                    .dataStorageSizeInGB(o.getDataStorageSizeInGB())
+                    .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
                     .databaseEdition(o.getDatabaseEdition())
                     .diskRedundancy(o.getDiskRedundancy())
                     .displayName(o.getDisplayName())
@@ -406,8 +406,8 @@ public class DbSystem {
      * Data storage size, in GBs, that is currently available to the DB system. This is applicable only for VM-based DBs.
      *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGB")
-    Integer dataStorageSizeInGB;
+    @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
+    Integer dataStorageSizeInGBs;
     /**
      * The Oracle Database Edition that applies to all the databases on the DB System.
      *

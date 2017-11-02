@@ -4,6 +4,10 @@
 package com.oracle.bmc.objectstorage.model;
 
 /**
+ * A bucket is a container for storing objects in a compartment within a namespace. A bucket is associated with a single compartment.
+ * The compartment has policies that indicate what actions a user can perform on a bucket and all the objects in the bucket. For more
+ * information, see [Managing Buckets](https://docs.us-phoenix-1.oraclecloud.com/Content/Object/Tasks/managingbuckets.htm).
+ * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
  * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
@@ -89,6 +93,15 @@ public class Bucket {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("storageTier")
+        private StorageTier storageTier;
+
+        public Builder storageTier(StorageTier storageTier) {
+            this.storageTier = storageTier;
+            this.__explicitlySet__.add("storageTier");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -102,7 +115,8 @@ public class Bucket {
                             createdBy,
                             timeCreated,
                             etag,
-                            publicAccessType);
+                            publicAccessType,
+                            storageTier);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -116,7 +130,8 @@ public class Bucket {
                     .createdBy(o.getCreatedBy())
                     .timeCreated(o.getTimeCreated())
                     .etag(o.getEtag())
-                    .publicAccessType(o.getPublicAccessType());
+                    .publicAccessType(o.getPublicAccessType())
+                    .storageTier(o.getStorageTier());
         }
     }
 
@@ -134,7 +149,9 @@ public class Bucket {
     String namespace;
 
     /**
-     * The name of the bucket.
+     * The name of the bucket. Avoid entering confidential information.
+     * Example: my-new-bucket1
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
@@ -158,7 +175,7 @@ public class Bucket {
     String createdBy;
 
     /**
-     * The date and time at which the bucket was created.
+     * The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
@@ -169,10 +186,10 @@ public class Bucket {
     @com.fasterxml.jackson.annotation.JsonProperty("etag")
     String etag;
     /**
-     * The type of public access available on this bucket. Allows authenticated caller to access the bucket or
-     * contents of this bucket. By default a bucket is set to NoPublicAccess. It is treated as NoPublicAccess
-     * when this value is not specified. When the type is NoPublicAccess the bucket does not allow any public access.
-     * When the type is ObjectRead the bucket allows public access to the GetObject, HeadObject, ListObjects.
+     * The type of public access enabled on this bucket.
+     * A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the
+     * bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the
+     * `GetObject`, `HeadObject`, and `ListObjects` operations.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -219,14 +236,73 @@ public class Bucket {
         }
     };
     /**
-     * The type of public access available on this bucket. Allows authenticated caller to access the bucket or
-     * contents of this bucket. By default a bucket is set to NoPublicAccess. It is treated as NoPublicAccess
-     * when this value is not specified. When the type is NoPublicAccess the bucket does not allow any public access.
-     * When the type is ObjectRead the bucket allows public access to the GetObject, HeadObject, ListObjects.
+     * The type of public access enabled on this bucket.
+     * A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the
+     * bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the
+     * `GetObject`, `HeadObject`, and `ListObjects` operations.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicAccessType")
     PublicAccessType publicAccessType;
+    /**
+     * The type of storage tier of this bucket.
+     * A bucket is set to 'Standard' tier by default, which means the bucket will be put in the standard storage tier.
+     * When 'Archive' tier type is set explicitly, the bucket is put in the Archive Storage tier. The 'storageTier'
+     * property is immutable once the bucket is created.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum StorageTier {
+        Standard("Standard"),
+        Archive("Archive"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, StorageTier> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (StorageTier v : StorageTier.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        StorageTier(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static StorageTier create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'StorageTier', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The type of storage tier of this bucket.
+     * A bucket is set to 'Standard' tier by default, which means the bucket will be put in the standard storage tier.
+     * When 'Archive' tier type is set explicitly, the bucket is put in the Archive Storage tier. The 'storageTier'
+     * property is immutable once the bucket is created.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("storageTier")
+    StorageTier storageTier;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

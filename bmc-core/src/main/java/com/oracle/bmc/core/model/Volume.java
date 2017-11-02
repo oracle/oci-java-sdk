@@ -57,6 +57,15 @@ public class Volume {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isHydrated")
+        private Boolean isHydrated;
+
+        public Builder isHydrated(Boolean isHydrated) {
+            this.isHydrated = isHydrated;
+            this.__explicitlySet__.add("isHydrated");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -84,6 +93,15 @@ public class Volume {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
+        private VolumeSourceDetails sourceDetails;
+
+        public Builder sourceDetails(VolumeSourceDetails sourceDetails) {
+            this.sourceDetails = sourceDetails;
+            this.__explicitlySet__.add("sourceDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -103,9 +121,11 @@ public class Volume {
                             compartmentId,
                             displayName,
                             id,
+                            isHydrated,
                             lifecycleState,
                             sizeInGBs,
                             sizeInMBs,
+                            sourceDetails,
                             timeCreated);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -117,9 +137,11 @@ public class Volume {
                     .compartmentId(o.getCompartmentId())
                     .displayName(o.getDisplayName())
                     .id(o.getId())
+                    .isHydrated(o.getIsHydrated())
                     .lifecycleState(o.getLifecycleState())
                     .sizeInGBs(o.getSizeInGBs())
                     .sizeInMBs(o.getSizeInMBs())
+                    .sourceDetails(o.getSourceDetails())
                     .timeCreated(o.getTimeCreated());
         }
     }
@@ -155,10 +177,16 @@ public class Volume {
     String displayName;
 
     /**
-     * The volume's Oracle ID (OCID).
+     * The OCID of the volume.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
+
+    /**
+     * Specifies whether the cloned volume's data has finished copying from the source volume or backup.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isHydrated")
+    Boolean isHydrated;
     /**
      * The current state of a volume.
      **/
@@ -222,10 +250,18 @@ public class Volume {
     Long sizeInGBs;
 
     /**
-     * The size of the volume in MBs. This field is deprecated. Please use sizeInGBs.
+     * The size of the volume in MBs. This field is deprecated. Use sizeInGBs instead.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInMBs")
     Long sizeInMBs;
+
+    /**
+     * The volume source, either an existing volume in the same Availability Domain or a volume backup.
+     * If null, an empty volume is created.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
+    VolumeSourceDetails sourceDetails;
 
     /**
      * The date and time the volume was created. Format defined by RFC3339.

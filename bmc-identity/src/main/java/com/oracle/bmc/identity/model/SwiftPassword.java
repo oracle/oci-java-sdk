@@ -5,7 +5,7 @@ package com.oracle.bmc.identity.model;
 
 /**
  * Swift is the OpenStack object storage service. A `SwiftPassword` is an Oracle-provided password for using a
- * Swift client with the Oracle Bare Metal Cloud Services Object Storage Service. This password is associated with
+ * Swift client with the Oracle Cloud Infrastructure Object Storage Service. This password is associated with
  * the user's Console login. Swift passwords never expire. A user can have up to two Swift passwords at a time.
  * <p>
  **Note:** The password is always an Oracle-generated string; you can't change it to a string of your choice.

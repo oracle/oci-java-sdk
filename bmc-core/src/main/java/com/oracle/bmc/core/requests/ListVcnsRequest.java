@@ -29,6 +29,120 @@ public class ListVcnsRequest extends com.oracle.bmc.requests.BmcRequest {
      */
     private String page;
 
+    /**
+     * A filter to return only resources that match the given display name exactly.
+     *
+     */
+    private String displayName;
+
+    /**
+     * The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+     * sort order is case sensitive.
+     * <p>
+     **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+     * optionally filter by Availability Domain if the scope of the resource type is within a
+     * single Availability Domain. If you call one of these \"List\" operations without specifying
+     * an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+     *
+     */
+    private SortBy sortBy;
+
+    /**
+     * The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+     * sort order is case sensitive.
+     * <p>
+     **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+     * optionally filter by Availability Domain if the scope of the resource type is within a
+     * single Availability Domain. If you call one of these \"List\" operations without specifying
+     * an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+     *
+     **/
+    public enum SortBy {
+        Timecreated("TIMECREATED"),
+        Displayname("DISPLAYNAME"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, SortBy> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SortBy v : SortBy.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        SortBy(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SortBy create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new RuntimeException("Invalid SortBy: " + key);
+        }
+    };
+
+    /**
+     * The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
+     * is case sensitive.
+     *
+     */
+    private SortOrder sortOrder;
+
+    /**
+     * The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order
+     * is case sensitive.
+     *
+     **/
+    public enum SortOrder {
+        Asc("ASC"),
+        Desc("DESC"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, SortOrder> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SortOrder v : SortOrder.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        SortOrder(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SortOrder create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new RuntimeException("Invalid SortOrder: " + key);
+        }
+    };
+
+    /**
+     * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+     *
+     */
+    private Vcn.LifecycleState lifecycleState;
+
     public static class Builder {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
@@ -53,6 +167,10 @@ public class ListVcnsRequest extends com.oracle.bmc.requests.BmcRequest {
             compartmentId(o.getCompartmentId());
             limit(o.getLimit());
             page(o.getPage());
+            displayName(o.getDisplayName());
+            sortBy(o.getSortBy());
+            sortOrder(o.getSortOrder());
+            lifecycleState(o.getLifecycleState());
             return this;
         }
 

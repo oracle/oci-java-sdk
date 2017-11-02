@@ -355,6 +355,29 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetNamespaceMetadataResponse> getNamespaceMetadata(
+            GetNamespaceMetadataRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetNamespaceMetadataRequest, GetNamespaceMetadataResponse>
+                    handler) {
+        LOG.trace("Called async getNamespaceMetadata");
+        request = GetNamespaceMetadataConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetNamespaceMetadataConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetNamespaceMetadataResponse>
+                transformer = GetNamespaceMetadataConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetObjectResponse> getObject(
             GetObjectRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetObjectRequest, GetObjectResponse> handler) {
@@ -581,6 +604,50 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<RenameObjectResponse> renameObject(
+            RenameObjectRequest request,
+            com.oracle.bmc.responses.AsyncHandler<RenameObjectRequest, RenameObjectResponse>
+                    handler) {
+        LOG.trace("Called async renameObject");
+        request = RenameObjectConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RenameObjectConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, RenameObjectResponse>
+                transformer = RenameObjectConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.post(ib, request.getRenameObjectDetails(), request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreObjectsResponse> restoreObjects(
+            RestoreObjectsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<RestoreObjectsRequest, RestoreObjectsResponse>
+                    handler) {
+        LOG.trace("Called async restoreObjects");
+        request = RestoreObjectsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RestoreObjectsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, RestoreObjectsResponse>
+                transformer = RestoreObjectsConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.post(ib, request.getRestoreObjectsDetails(), request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateBucketResponse> updateBucket(
             UpdateBucketRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateBucketRequest, UpdateBucketResponse>
@@ -599,6 +666,34 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.post(ib, request.getUpdateBucketDetails(), request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateNamespaceMetadataResponse> updateNamespaceMetadata(
+            UpdateNamespaceMetadataRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateNamespaceMetadataRequest, UpdateNamespaceMetadataResponse>
+                    handler) {
+        LOG.trace("Called async updateNamespaceMetadata");
+        request = UpdateNamespaceMetadataConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateNamespaceMetadataConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateNamespaceMetadataResponse>
+                transformer = UpdateNamespaceMetadataConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.put(
+                        ib,
+                        request.getUpdateNamespaceMetadataDetails(),
+                        request,
+                        onSuccess,
+                        onError);
         return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 

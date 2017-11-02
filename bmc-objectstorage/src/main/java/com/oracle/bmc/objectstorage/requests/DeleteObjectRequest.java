@@ -16,16 +16,14 @@ public class DeleteObjectRequest extends com.oracle.bmc.requests.BmcRequest {
     private String namespaceName;
 
     /**
-     * The name of the bucket.
-     * <p>
+     * The name of the bucket. Avoid entering confidential information.
      * Example: `my-new-bucket1`
      *
      */
     private String bucketName;
 
     /**
-     * The name of the object.
-     * <p>
+     * The name of the object. Avoid entering confidential information.
      * Example: `test/object1.log`
      *
      */

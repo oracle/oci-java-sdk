@@ -4,7 +4,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * For use with Oracle Bare Metal Cloud Services FastConnect.
+ * For use with Oracle Cloud Infrastructure FastConnect.
  * <p>
  * A virtual circuit is an isolated network path that runs over one or more physical
  * network connections to provide a single, logical connection between the edge router
@@ -420,14 +420,14 @@ public class VirtualCircuit {
     Integer oracleBgpAsn;
 
     /**
-     * The name of the provider (if the customer is connecting via a provider).
+     * The name of the provider (if you're connecting via a provider).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerName")
     String providerName;
 
     /**
-     * The name of the service offered by the provider (if the customer is connecting via a provider).
+     * The name of the service offered by the provider.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerServiceName")
@@ -503,7 +503,7 @@ public class VirtualCircuit {
     String referenceComment;
 
     /**
-     * The Oracle Bare Metal Cloud Services region where this virtual
+     * The Oracle Cloud Infrastructure region where this virtual
      * circuit is located.
      *
      **/

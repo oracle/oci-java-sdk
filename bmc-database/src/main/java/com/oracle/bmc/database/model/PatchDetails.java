@@ -62,6 +62,7 @@ public class PatchDetails {
      **/
     public enum Action {
         Apply("APPLY"),
+        Precheck("PRECHECK"),
         ;
 
         private final String value;

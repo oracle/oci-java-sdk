@@ -137,6 +137,20 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public CreateBackupResponse createBackup(CreateBackupRequest request) {
+        LOG.trace("Called createBackup");
+        request = CreateBackupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateBackupConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateBackupResponse>
+                transformer = CreateBackupConverter.fromResponse();
+
+        javax.ws.rs.core.Response response =
+                client.post(ib, request.getCreateBackupDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
     public CreateDataGuardAssociationResponse createDataGuardAssociation(
             CreateDataGuardAssociationRequest request) {
         LOG.trace("Called createDataGuardAssociation");
@@ -180,6 +194,19 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public DeleteBackupResponse deleteBackup(DeleteBackupRequest request) {
+        LOG.trace("Called deleteBackup");
+        request = DeleteBackupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteBackupConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBackupResponse>
+                transformer = DeleteBackupConverter.fromResponse();
+
+        javax.ws.rs.core.Response response = client.delete(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
     public DeleteDbHomeResponse deleteDbHome(DeleteDbHomeRequest request) {
         LOG.trace("Called deleteDbHome");
         request = DeleteDbHomeConverter.interceptRequest(request);
@@ -205,6 +232,19 @@ public class DatabaseClient implements Database {
 
         javax.ws.rs.core.Response response =
                 client.post(ib, request.getFailoverDataGuardAssociationDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public GetBackupResponse getBackup(GetBackupRequest request) {
+        LOG.trace("Called getBackup");
+        request = GetBackupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetBackupConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetBackupResponse> transformer =
+                GetBackupConverter.fromResponse();
+
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -341,6 +381,19 @@ public class DatabaseClient implements Database {
 
         javax.ws.rs.core.Response response =
                 client.post(ib, request.getLaunchDbSystemDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public ListBackupsResponse listBackups(ListBackupsRequest request) {
+        LOG.trace("Called listBackups");
+        request = ListBackupsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListBackupsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListBackupsResponse>
+                transformer = ListBackupsConverter.fromResponse();
+
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -510,6 +563,20 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public RestoreDatabaseResponse restoreDatabase(RestoreDatabaseRequest request) {
+        LOG.trace("Called restoreDatabase");
+        request = RestoreDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RestoreDatabaseConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, RestoreDatabaseResponse>
+                transformer = RestoreDatabaseConverter.fromResponse();
+
+        javax.ws.rs.core.Response response =
+                client.post(ib, request.getRestoreDatabaseDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
     public SwitchoverDataGuardAssociationResponse switchoverDataGuardAssociation(
             SwitchoverDataGuardAssociationRequest request) {
         LOG.trace("Called switchoverDataGuardAssociation");
@@ -535,6 +602,20 @@ public class DatabaseClient implements Database {
                 transformer = TerminateDbSystemConverter.fromResponse();
 
         javax.ws.rs.core.Response response = client.delete(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public UpdateDatabaseResponse updateDatabase(UpdateDatabaseRequest request) {
+        LOG.trace("Called updateDatabase");
+        request = UpdateDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDatabaseConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDatabaseResponse>
+                transformer = UpdateDatabaseConverter.fromResponse();
+
+        javax.ws.rs.core.Response response =
+                client.put(ib, request.getUpdateDatabaseDetails(), request);
         return transformer.apply(response);
     }
 

@@ -118,6 +118,19 @@ public class AuditClient implements Audit {
     }
 
     @Override
+    public GetConfigurationResponse getConfiguration(GetConfigurationRequest request) {
+        LOG.trace("Called getConfiguration");
+        request = GetConfigurationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetConfigurationConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetConfigurationResponse>
+                transformer = GetConfigurationConverter.fromResponse();
+
+        javax.ws.rs.core.Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
     public ListEventsResponse listEvents(ListEventsRequest request) {
         LOG.trace("Called listEvents");
         request = ListEventsConverter.interceptRequest(request);
@@ -127,6 +140,20 @@ public class AuditClient implements Audit {
                 ListEventsConverter.fromResponse();
 
         javax.ws.rs.core.Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public UpdateConfigurationResponse updateConfiguration(UpdateConfigurationRequest request) {
+        LOG.trace("Called updateConfiguration");
+        request = UpdateConfigurationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateConfigurationConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateConfigurationResponse>
+                transformer = UpdateConfigurationConverter.fromResponse();
+
+        javax.ws.rs.core.Response response =
+                client.put(ib, request.getUpdateConfigurationDetails(), request);
         return transformer.apply(response);
     }
 }
