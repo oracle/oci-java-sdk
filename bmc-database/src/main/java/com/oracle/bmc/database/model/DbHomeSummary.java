@@ -114,14 +114,18 @@ public class DbHomeSummary {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DbHomeSummary o) {
-            return compartmentId(o.getCompartmentId())
-                    .dbSystemId(o.getDbSystemId())
-                    .dbVersion(o.getDbVersion())
-                    .displayName(o.getDisplayName())
-                    .id(o.getId())
-                    .lastPatchHistoryEntryId(o.getLastPatchHistoryEntryId())
-                    .lifecycleState(o.getLifecycleState())
-                    .timeCreated(o.getTimeCreated());
+            Builder copiedBuilder =
+                    compartmentId(o.getCompartmentId())
+                            .dbSystemId(o.getDbSystemId())
+                            .dbVersion(o.getDbVersion())
+                            .displayName(o.getDisplayName())
+                            .id(o.getId())
+                            .lastPatchHistoryEntryId(o.getLastPatchHistoryEntryId())
+                            .lifecycleState(o.getLifecycleState())
+                            .timeCreated(o.getTimeCreated());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

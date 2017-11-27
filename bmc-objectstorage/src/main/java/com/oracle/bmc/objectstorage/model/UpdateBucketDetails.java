@@ -77,11 +77,15 @@ public class UpdateBucketDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateBucketDetails o) {
-            return namespace(o.getNamespace())
-                    .compartmentId(o.getCompartmentId())
-                    .name(o.getName())
-                    .metadata(o.getMetadata())
-                    .publicAccessType(o.getPublicAccessType());
+            Builder copiedBuilder =
+                    namespace(o.getNamespace())
+                            .compartmentId(o.getCompartmentId())
+                            .name(o.getName())
+                            .metadata(o.getMetadata())
+                            .publicAccessType(o.getPublicAccessType());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

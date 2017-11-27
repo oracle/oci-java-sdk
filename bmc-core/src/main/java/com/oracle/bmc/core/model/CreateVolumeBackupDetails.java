@@ -43,7 +43,10 @@ public class CreateVolumeBackupDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateVolumeBackupDetails o) {
-            return displayName(o.getDisplayName()).volumeId(o.getVolumeId());
+            Builder copiedBuilder = displayName(o.getDisplayName()).volumeId(o.getVolumeId());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

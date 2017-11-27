@@ -77,11 +77,15 @@ public class CreateMultipartUploadDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateMultipartUploadDetails o) {
-            return object(o.getObject())
-                    .contentType(o.getContentType())
-                    .contentLanguage(o.getContentLanguage())
-                    .contentEncoding(o.getContentEncoding())
-                    .metadata(o.getMetadata());
+            Builder copiedBuilder =
+                    object(o.getObject())
+                            .contentType(o.getContentType())
+                            .contentLanguage(o.getContentLanguage())
+                            .contentEncoding(o.getContentEncoding())
+                            .metadata(o.getMetadata());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

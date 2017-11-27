@@ -321,34 +321,38 @@ public class DbSystem {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DbSystem o) {
-            return availabilityDomain(o.getAvailabilityDomain())
-                    .backupSubnetId(o.getBackupSubnetId())
-                    .clusterName(o.getClusterName())
-                    .compartmentId(o.getCompartmentId())
-                    .cpuCoreCount(o.getCpuCoreCount())
-                    .dataStoragePercentage(o.getDataStoragePercentage())
-                    .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
-                    .databaseEdition(o.getDatabaseEdition())
-                    .diskRedundancy(o.getDiskRedundancy())
-                    .displayName(o.getDisplayName())
-                    .domain(o.getDomain())
-                    .hostname(o.getHostname())
-                    .id(o.getId())
-                    .lastPatchHistoryEntryId(o.getLastPatchHistoryEntryId())
-                    .licenseModel(o.getLicenseModel())
-                    .lifecycleDetails(o.getLifecycleDetails())
-                    .lifecycleState(o.getLifecycleState())
-                    .listenerPort(o.getListenerPort())
-                    .nodeCount(o.getNodeCount())
-                    .recoStorageSizeInGB(o.getRecoStorageSizeInGB())
-                    .scanDnsRecordId(o.getScanDnsRecordId())
-                    .scanIpIds(o.getScanIpIds())
-                    .shape(o.getShape())
-                    .sshPublicKeys(o.getSshPublicKeys())
-                    .subnetId(o.getSubnetId())
-                    .timeCreated(o.getTimeCreated())
-                    .version(o.getVersion())
-                    .vipIds(o.getVipIds());
+            Builder copiedBuilder =
+                    availabilityDomain(o.getAvailabilityDomain())
+                            .backupSubnetId(o.getBackupSubnetId())
+                            .clusterName(o.getClusterName())
+                            .compartmentId(o.getCompartmentId())
+                            .cpuCoreCount(o.getCpuCoreCount())
+                            .dataStoragePercentage(o.getDataStoragePercentage())
+                            .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
+                            .databaseEdition(o.getDatabaseEdition())
+                            .diskRedundancy(o.getDiskRedundancy())
+                            .displayName(o.getDisplayName())
+                            .domain(o.getDomain())
+                            .hostname(o.getHostname())
+                            .id(o.getId())
+                            .lastPatchHistoryEntryId(o.getLastPatchHistoryEntryId())
+                            .licenseModel(o.getLicenseModel())
+                            .lifecycleDetails(o.getLifecycleDetails())
+                            .lifecycleState(o.getLifecycleState())
+                            .listenerPort(o.getListenerPort())
+                            .nodeCount(o.getNodeCount())
+                            .recoStorageSizeInGB(o.getRecoStorageSizeInGB())
+                            .scanDnsRecordId(o.getScanDnsRecordId())
+                            .scanIpIds(o.getScanIpIds())
+                            .shape(o.getShape())
+                            .sshPublicKeys(o.getSshPublicKeys())
+                            .subnetId(o.getSubnetId())
+                            .timeCreated(o.getTimeCreated())
+                            .version(o.getVersion())
+                            .vipIds(o.getVipIds());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

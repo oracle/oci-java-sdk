@@ -81,11 +81,15 @@ public class RenameObjectDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(RenameObjectDetails o) {
-            return sourceName(o.getSourceName())
-                    .newName(o.getNewName())
-                    .srcObjIfMatchETag(o.getSrcObjIfMatchETag())
-                    .newObjIfMatchETag(o.getNewObjIfMatchETag())
-                    .newObjIfNoneMatchETag(o.getNewObjIfNoneMatchETag());
+            Builder copiedBuilder =
+                    sourceName(o.getSourceName())
+                            .newName(o.getNewName())
+                            .srcObjIfMatchETag(o.getSrcObjIfMatchETag())
+                            .newObjIfMatchETag(o.getNewObjIfMatchETag())
+                            .newObjIfNoneMatchETag(o.getNewObjIfNoneMatchETag());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

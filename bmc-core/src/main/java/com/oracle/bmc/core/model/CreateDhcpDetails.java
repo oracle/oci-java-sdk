@@ -61,10 +61,14 @@ public class CreateDhcpDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateDhcpDetails o) {
-            return compartmentId(o.getCompartmentId())
-                    .displayName(o.getDisplayName())
-                    .options(o.getOptions())
-                    .vcnId(o.getVcnId());
+            Builder copiedBuilder =
+                    compartmentId(o.getCompartmentId())
+                            .displayName(o.getDisplayName())
+                            .options(o.getOptions())
+                            .vcnId(o.getVcnId());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

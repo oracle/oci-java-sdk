@@ -111,14 +111,18 @@ public class Patch {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Patch o) {
-            return availableActions(o.getAvailableActions())
-                    .description(o.getDescription())
-                    .id(o.getId())
-                    .lastAction(o.getLastAction())
-                    .lifecycleDetails(o.getLifecycleDetails())
-                    .lifecycleState(o.getLifecycleState())
-                    .timeReleased(o.getTimeReleased())
-                    .version(o.getVersion());
+            Builder copiedBuilder =
+                    availableActions(o.getAvailableActions())
+                            .description(o.getDescription())
+                            .id(o.getId())
+                            .lastAction(o.getLastAction())
+                            .lifecycleDetails(o.getLifecycleDetails())
+                            .lifecycleState(o.getLifecycleState())
+                            .timeReleased(o.getTimeReleased())
+                            .version(o.getVersion());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

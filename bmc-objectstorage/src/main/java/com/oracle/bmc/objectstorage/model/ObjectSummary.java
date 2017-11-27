@@ -64,10 +64,14 @@ public class ObjectSummary {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ObjectSummary o) {
-            return name(o.getName())
-                    .size(o.getSize())
-                    .md5(o.getMd5())
-                    .timeCreated(o.getTimeCreated());
+            Builder copiedBuilder =
+                    name(o.getName())
+                            .size(o.getSize())
+                            .md5(o.getMd5())
+                            .timeCreated(o.getTimeCreated());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

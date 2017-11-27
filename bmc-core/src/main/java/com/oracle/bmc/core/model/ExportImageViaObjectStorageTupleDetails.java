@@ -60,9 +60,13 @@ public class ExportImageViaObjectStorageTupleDetails extends ExportImageDetails 
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ExportImageViaObjectStorageTupleDetails o) {
-            return bucketName(o.getBucketName())
-                    .namespaceName(o.getNamespaceName())
-                    .objectName(o.getObjectName());
+            Builder copiedBuilder =
+                    bucketName(o.getBucketName())
+                            .namespaceName(o.getNamespaceName())
+                            .objectName(o.getObjectName());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

@@ -83,12 +83,16 @@ public class BucketSummary {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(BucketSummary o) {
-            return namespace(o.getNamespace())
-                    .name(o.getName())
-                    .compartmentId(o.getCompartmentId())
-                    .createdBy(o.getCreatedBy())
-                    .timeCreated(o.getTimeCreated())
-                    .etag(o.getEtag());
+            Builder copiedBuilder =
+                    namespace(o.getNamespace())
+                            .name(o.getName())
+                            .compartmentId(o.getCompartmentId())
+                            .createdBy(o.getCreatedBy())
+                            .timeCreated(o.getTimeCreated())
+                            .etag(o.getEtag());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

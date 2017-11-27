@@ -49,8 +49,12 @@ public class UpdateNamespaceMetadataDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateNamespaceMetadataDetails o) {
-            return defaultS3CompartmentId(o.getDefaultS3CompartmentId())
-                    .defaultSwiftCompartmentId(o.getDefaultSwiftCompartmentId());
+            Builder copiedBuilder =
+                    defaultS3CompartmentId(o.getDefaultS3CompartmentId())
+                            .defaultSwiftCompartmentId(o.getDefaultSwiftCompartmentId());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

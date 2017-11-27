@@ -37,7 +37,10 @@ public class UpdateDbHomeDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateDbHomeDetails o) {
-            return dbVersion(o.getDbVersion());
+            Builder copiedBuilder = dbVersion(o.getDbVersion());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

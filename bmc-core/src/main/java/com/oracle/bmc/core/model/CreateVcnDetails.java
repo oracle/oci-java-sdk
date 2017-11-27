@@ -59,10 +59,14 @@ public class CreateVcnDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateVcnDetails o) {
-            return cidrBlock(o.getCidrBlock())
-                    .compartmentId(o.getCompartmentId())
-                    .displayName(o.getDisplayName())
-                    .dnsLabel(o.getDnsLabel());
+            Builder copiedBuilder =
+                    cidrBlock(o.getCidrBlock())
+                            .compartmentId(o.getCompartmentId())
+                            .displayName(o.getDisplayName())
+                            .dnsLabel(o.getDnsLabel());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

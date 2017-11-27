@@ -45,8 +45,12 @@ public class UdpOptions {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UdpOptions o) {
-            return destinationPortRange(o.getDestinationPortRange())
-                    .sourcePortRange(o.getSourcePortRange());
+            Builder copiedBuilder =
+                    destinationPortRange(o.getDestinationPortRange())
+                            .sourcePortRange(o.getSourcePortRange());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

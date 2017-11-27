@@ -100,13 +100,17 @@ public class CustomerSecretKeySummary {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CustomerSecretKeySummary o) {
-            return id(o.getId())
-                    .userId(o.getUserId())
-                    .displayName(o.getDisplayName())
-                    .timeCreated(o.getTimeCreated())
-                    .timeExpires(o.getTimeExpires())
-                    .lifecycleState(o.getLifecycleState())
-                    .inactiveStatus(o.getInactiveStatus());
+            Builder copiedBuilder =
+                    id(o.getId())
+                            .userId(o.getUserId())
+                            .displayName(o.getDisplayName())
+                            .timeCreated(o.getTimeCreated())
+                            .timeExpires(o.getTimeExpires())
+                            .lifecycleState(o.getLifecycleState())
+                            .inactiveStatus(o.getInactiveStatus());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

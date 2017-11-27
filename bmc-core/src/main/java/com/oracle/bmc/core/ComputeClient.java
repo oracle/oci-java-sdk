@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc.core;
 
+import java.util.Locale;
 import com.oracle.bmc.core.internal.http.*;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
@@ -120,7 +121,7 @@ public class ComputeClient implements Compute {
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase();
+        regionId = regionId.toLowerCase(Locale.ENGLISH);
         try {
             com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
             setRegion(region);
@@ -134,6 +135,20 @@ public class ComputeClient implements Compute {
     @Override
     public void close() {
         client.close();
+    }
+
+    @Override
+    public AttachBootVolumeResponse attachBootVolume(AttachBootVolumeRequest request) {
+        LOG.trace("Called attachBootVolume");
+        request = AttachBootVolumeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AttachBootVolumeConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, AttachBootVolumeResponse>
+                transformer = AttachBootVolumeConverter.fromResponse();
+
+        javax.ws.rs.core.Response response =
+                client.post(ib, request.getAttachBootVolumeDetails(), request);
+        return transformer.apply(response);
     }
 
     @Override
@@ -251,6 +266,19 @@ public class ComputeClient implements Compute {
     }
 
     @Override
+    public DetachBootVolumeResponse detachBootVolume(DetachBootVolumeRequest request) {
+        LOG.trace("Called detachBootVolume");
+        request = DetachBootVolumeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DetachBootVolumeConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DetachBootVolumeResponse>
+                transformer = DetachBootVolumeConverter.fromResponse();
+
+        javax.ws.rs.core.Response response = client.delete(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
     public DetachVnicResponse detachVnic(DetachVnicRequest request) {
         LOG.trace("Called detachVnic");
         request = DetachVnicConverter.interceptRequest(request);
@@ -287,6 +315,20 @@ public class ComputeClient implements Compute {
 
         javax.ws.rs.core.Response response =
                 client.post(ib, request.getExportImageDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public GetBootVolumeAttachmentResponse getBootVolumeAttachment(
+            GetBootVolumeAttachmentRequest request) {
+        LOG.trace("Called getBootVolumeAttachment");
+        request = GetBootVolumeAttachmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetBootVolumeAttachmentConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetBootVolumeAttachmentResponse>
+                transformer = GetBootVolumeAttachmentConverter.fromResponse();
+
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -423,6 +465,21 @@ public class ComputeClient implements Compute {
 
         javax.ws.rs.core.Response response =
                 client.post(ib, request.getLaunchInstanceDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public ListBootVolumeAttachmentsResponse listBootVolumeAttachments(
+            ListBootVolumeAttachmentsRequest request) {
+        LOG.trace("Called listBootVolumeAttachments");
+        request = ListBootVolumeAttachmentsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListBootVolumeAttachmentsConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListBootVolumeAttachmentsResponse>
+                transformer = ListBootVolumeAttachmentsConverter.fromResponse();
+
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 

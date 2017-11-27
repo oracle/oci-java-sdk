@@ -103,6 +103,15 @@ public class LaunchInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
+        private InstanceSourceDetails sourceDetails;
+
+        public Builder sourceDetails(InstanceSourceDetails sourceDetails) {
+            this.sourceDetails = sourceDetails;
+            this.__explicitlySet__.add("sourceDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
@@ -128,6 +137,7 @@ public class LaunchInstanceDetails {
                             ipxeScript,
                             metadata,
                             shape,
+                            sourceDetails,
                             subnetId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -135,17 +145,22 @@ public class LaunchInstanceDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(LaunchInstanceDetails o) {
-            return availabilityDomain(o.getAvailabilityDomain())
-                    .compartmentId(o.getCompartmentId())
-                    .createVnicDetails(o.getCreateVnicDetails())
-                    .displayName(o.getDisplayName())
-                    .extendedMetadata(o.getExtendedMetadata())
-                    .hostnameLabel(o.getHostnameLabel())
-                    .imageId(o.getImageId())
-                    .ipxeScript(o.getIpxeScript())
-                    .metadata(o.getMetadata())
-                    .shape(o.getShape())
-                    .subnetId(o.getSubnetId());
+            Builder copiedBuilder =
+                    availabilityDomain(o.getAvailabilityDomain())
+                            .compartmentId(o.getCompartmentId())
+                            .createVnicDetails(o.getCreateVnicDetails())
+                            .displayName(o.getDisplayName())
+                            .extendedMetadata(o.getExtendedMetadata())
+                            .hostnameLabel(o.getHostnameLabel())
+                            .imageId(o.getImageId())
+                            .ipxeScript(o.getIpxeScript())
+                            .metadata(o.getMetadata())
+                            .shape(o.getShape())
+                            .sourceDetails(o.getSourceDetails())
+                            .subnetId(o.getSubnetId());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 
@@ -201,7 +216,7 @@ public class LaunchInstanceDetails {
     java.util.Map<String, Object> extendedMetadata;
 
     /**
-     * Deprecated. Instead use `hostnameLabel` in
+     * Deprecated. Instead Use `hostnameLabel` in
      * {@link CreateVnicDetails}.
      * If you provide both, the values must match.
      *
@@ -210,7 +225,9 @@ public class LaunchInstanceDetails {
     String hostnameLabel;
 
     /**
-     * The OCID of the image used to boot the instance.
+     * Deprecated. Use `sourceDetails` with {@link #instanceSourceViaImageDetails(InstanceSourceViaImageDetailsRequest) instanceSourceViaImageDetails}
+     * source type instead. If you specify values for both, the values must match.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
     String imageId;
@@ -318,6 +335,12 @@ public class LaunchInstanceDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     String shape;
+
+    /**
+     * Details for creating an instance.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
+    InstanceSourceDetails sourceDetails;
 
     /**
      * Deprecated. Instead use `subnetId` in

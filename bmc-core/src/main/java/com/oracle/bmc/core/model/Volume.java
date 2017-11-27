@@ -133,16 +133,20 @@ public class Volume {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Volume o) {
-            return availabilityDomain(o.getAvailabilityDomain())
-                    .compartmentId(o.getCompartmentId())
-                    .displayName(o.getDisplayName())
-                    .id(o.getId())
-                    .isHydrated(o.getIsHydrated())
-                    .lifecycleState(o.getLifecycleState())
-                    .sizeInGBs(o.getSizeInGBs())
-                    .sizeInMBs(o.getSizeInMBs())
-                    .sourceDetails(o.getSourceDetails())
-                    .timeCreated(o.getTimeCreated());
+            Builder copiedBuilder =
+                    availabilityDomain(o.getAvailabilityDomain())
+                            .compartmentId(o.getCompartmentId())
+                            .displayName(o.getDisplayName())
+                            .id(o.getId())
+                            .isHydrated(o.getIsHydrated())
+                            .lifecycleState(o.getLifecycleState())
+                            .sizeInGBs(o.getSizeInGBs())
+                            .sizeInMBs(o.getSizeInMBs())
+                            .sourceDetails(o.getSourceDetails())
+                            .timeCreated(o.getTimeCreated());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

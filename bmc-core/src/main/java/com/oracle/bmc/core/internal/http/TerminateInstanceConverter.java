@@ -37,6 +37,14 @@ public class TerminateInstanceConverter {
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
                                         request.getInstanceId()));
 
+        if (request.getPreserveBootVolume() != null) {
+            target =
+                    target.queryParam(
+                            "preserveBootVolume",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getPreserveBootVolume()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

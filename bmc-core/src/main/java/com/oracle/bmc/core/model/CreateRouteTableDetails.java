@@ -61,10 +61,14 @@ public class CreateRouteTableDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateRouteTableDetails o) {
-            return compartmentId(o.getCompartmentId())
-                    .displayName(o.getDisplayName())
-                    .routeRules(o.getRouteRules())
-                    .vcnId(o.getVcnId());
+            Builder copiedBuilder =
+                    compartmentId(o.getCompartmentId())
+                            .displayName(o.getDisplayName())
+                            .routeRules(o.getRouteRules())
+                            .vcnId(o.getVcnId());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

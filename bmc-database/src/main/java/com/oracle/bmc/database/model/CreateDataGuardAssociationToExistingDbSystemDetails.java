@@ -73,10 +73,14 @@ public class CreateDataGuardAssociationToExistingDbSystemDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateDataGuardAssociationToExistingDbSystemDetails o) {
-            return databaseAdminPassword(o.getDatabaseAdminPassword())
-                    .protectionMode(o.getProtectionMode())
-                    .transportType(o.getTransportType())
-                    .peerDbSystemId(o.getPeerDbSystemId());
+            Builder copiedBuilder =
+                    databaseAdminPassword(o.getDatabaseAdminPassword())
+                            .protectionMode(o.getProtectionMode())
+                            .transportType(o.getTransportType())
+                            .peerDbSystemId(o.getPeerDbSystemId());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

@@ -110,14 +110,18 @@ public class WorkRequest {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(WorkRequest o) {
-            return errorDetails(o.getErrorDetails())
-                    .id(o.getId())
-                    .lifecycleState(o.getLifecycleState())
-                    .loadBalancerId(o.getLoadBalancerId())
-                    .message(o.getMessage())
-                    .timeAccepted(o.getTimeAccepted())
-                    .timeFinished(o.getTimeFinished())
-                    .type(o.getType());
+            Builder copiedBuilder =
+                    errorDetails(o.getErrorDetails())
+                            .id(o.getId())
+                            .lifecycleState(o.getLifecycleState())
+                            .loadBalancerId(o.getLoadBalancerId())
+                            .message(o.getMessage())
+                            .timeAccepted(o.getTimeAccepted())
+                            .timeFinished(o.getTimeFinished())
+                            .type(o.getType());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 
@@ -137,6 +141,8 @@ public class WorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
     /**
+     * The current state of the work request.
+     *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
@@ -183,7 +189,10 @@ public class WorkRequest {
             return UnknownEnumValue;
         }
     };
-
+    /**
+     * The current state of the work request.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
 

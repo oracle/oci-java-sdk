@@ -32,10 +32,11 @@ public enum Region {
     private static final String DEFAULT_ENDPOINT_FORMAT;
 
     static {
-        InputStream propertyStream =
-                Region.class.getClassLoader().getResourceAsStream("com/oracle/bmc/sdk.properties");
         Properties properties = new Properties();
-        try {
+        try (InputStream propertyStream =
+                Region.class
+                        .getClassLoader()
+                        .getResourceAsStream("com/oracle/bmc/sdk.properties")) {
             properties.load(propertyStream);
         } catch (Exception e) {
             throw new IllegalStateException("Failed to load required properties file", e);

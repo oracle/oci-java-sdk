@@ -97,15 +97,19 @@ public class CreateCrossConnectDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateCrossConnectDetails o) {
-            return compartmentId(o.getCompartmentId())
-                    .crossConnectGroupId(o.getCrossConnectGroupId())
-                    .displayName(o.getDisplayName())
-                    .farCrossConnectOrCrossConnectGroupId(
-                            o.getFarCrossConnectOrCrossConnectGroupId())
-                    .locationName(o.getLocationName())
-                    .nearCrossConnectOrCrossConnectGroupId(
-                            o.getNearCrossConnectOrCrossConnectGroupId())
-                    .portSpeedShapeName(o.getPortSpeedShapeName());
+            Builder copiedBuilder =
+                    compartmentId(o.getCompartmentId())
+                            .crossConnectGroupId(o.getCrossConnectGroupId())
+                            .displayName(o.getDisplayName())
+                            .farCrossConnectOrCrossConnectGroupId(
+                                    o.getFarCrossConnectOrCrossConnectGroupId())
+                            .locationName(o.getLocationName())
+                            .nearCrossConnectOrCrossConnectGroupId(
+                                    o.getNearCrossConnectOrCrossConnectGroupId())
+                            .portSpeedShapeName(o.getPortSpeedShapeName());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

@@ -52,9 +52,13 @@ public class RestoreDatabaseDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(RestoreDatabaseDetails o) {
-            return databaseSCN(o.getDatabaseSCN())
-                    .latest(o.getLatest())
-                    .timestamp(o.getTimestamp());
+            Builder copiedBuilder =
+                    databaseSCN(o.getDatabaseSCN())
+                            .latest(o.getLatest())
+                            .timestamp(o.getTimestamp());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

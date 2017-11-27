@@ -31,7 +31,10 @@ public class Configuration {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Configuration o) {
-            return retentionPeriodDays(o.getRetentionPeriodDays());
+            Builder copiedBuilder = retentionPeriodDays(o.getRetentionPeriodDays());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

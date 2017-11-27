@@ -52,9 +52,13 @@ public class CreateGroupDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateGroupDetails o) {
-            return compartmentId(o.getCompartmentId())
-                    .name(o.getName())
-                    .description(o.getDescription());
+            Builder copiedBuilder =
+                    compartmentId(o.getCompartmentId())
+                            .name(o.getName())
+                            .description(o.getDescription());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

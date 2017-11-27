@@ -218,23 +218,27 @@ public class VirtualCircuit {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(VirtualCircuit o) {
-            return bandwidthShapeName(o.getBandwidthShapeName())
-                    .bgpSessionState(o.getBgpSessionState())
-                    .compartmentId(o.getCompartmentId())
-                    .crossConnectMappings(o.getCrossConnectMappings())
-                    .customerBgpAsn(o.getCustomerBgpAsn())
-                    .displayName(o.getDisplayName())
-                    .gatewayId(o.getGatewayId())
-                    .id(o.getId())
-                    .lifecycleState(o.getLifecycleState())
-                    .oracleBgpAsn(o.getOracleBgpAsn())
-                    .providerName(o.getProviderName())
-                    .providerServiceName(o.getProviderServiceName())
-                    .providerState(o.getProviderState())
-                    .referenceComment(o.getReferenceComment())
-                    .region(o.getRegion())
-                    .timeCreated(o.getTimeCreated())
-                    .type(o.getType());
+            Builder copiedBuilder =
+                    bandwidthShapeName(o.getBandwidthShapeName())
+                            .bgpSessionState(o.getBgpSessionState())
+                            .compartmentId(o.getCompartmentId())
+                            .crossConnectMappings(o.getCrossConnectMappings())
+                            .customerBgpAsn(o.getCustomerBgpAsn())
+                            .displayName(o.getDisplayName())
+                            .gatewayId(o.getGatewayId())
+                            .id(o.getId())
+                            .lifecycleState(o.getLifecycleState())
+                            .oracleBgpAsn(o.getOracleBgpAsn())
+                            .providerName(o.getProviderName())
+                            .providerServiceName(o.getProviderServiceName())
+                            .providerState(o.getProviderState())
+                            .referenceComment(o.getReferenceComment())
+                            .region(o.getRegion())
+                            .timeCreated(o.getTimeCreated())
+                            .type(o.getType());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

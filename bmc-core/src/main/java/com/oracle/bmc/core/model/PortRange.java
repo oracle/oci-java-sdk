@@ -40,7 +40,10 @@ public class PortRange {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(PortRange o) {
-            return max(o.getMax()).min(o.getMin());
+            Builder copiedBuilder = max(o.getMax()).min(o.getMin());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

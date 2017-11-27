@@ -156,18 +156,22 @@ public class LoadBalancer {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(LoadBalancer o) {
-            return backendSets(o.getBackendSets())
-                    .certificates(o.getCertificates())
-                    .compartmentId(o.getCompartmentId())
-                    .displayName(o.getDisplayName())
-                    .id(o.getId())
-                    .ipAddresses(o.getIpAddresses())
-                    .isPrivate(o.getIsPrivate())
-                    .lifecycleState(o.getLifecycleState())
-                    .listeners(o.getListeners())
-                    .shapeName(o.getShapeName())
-                    .subnetIds(o.getSubnetIds())
-                    .timeCreated(o.getTimeCreated());
+            Builder copiedBuilder =
+                    backendSets(o.getBackendSets())
+                            .certificates(o.getCertificates())
+                            .compartmentId(o.getCompartmentId())
+                            .displayName(o.getDisplayName())
+                            .id(o.getId())
+                            .ipAddresses(o.getIpAddresses())
+                            .isPrivate(o.getIsPrivate())
+                            .lifecycleState(o.getLifecycleState())
+                            .listeners(o.getListeners())
+                            .shapeName(o.getShapeName())
+                            .subnetIds(o.getSubnetIds())
+                            .timeCreated(o.getTimeCreated());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 
@@ -224,13 +228,15 @@ public class LoadBalancer {
      * <p>
      * If \"false\", the service assigns a public IP address to the load balancer. A load balancer with a public IP address
      * requires two subnets, each in a different Availability Domain. One subnet hosts the primary load balancer and the other
-     * hosts the secondary (stand-by) load balancer. A public load balancer is accessible from the internet, depending on your
+     * hosts the secondary (standby) load balancer. A public load balancer is accessible from the internet, depending on your
      * VCN's [security list rules](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/securitylists.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
     Boolean isPrivate;
     /**
+     * The current state of the load balancer.
+     *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
@@ -278,7 +284,10 @@ public class LoadBalancer {
             return UnknownEnumValue;
         }
     };
-
+    /**
+     * The current state of the load balancer.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
 
