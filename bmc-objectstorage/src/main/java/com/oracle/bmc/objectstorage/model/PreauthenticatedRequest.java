@@ -98,13 +98,17 @@ public class PreauthenticatedRequest {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(PreauthenticatedRequest o) {
-            return id(o.getId())
-                    .name(o.getName())
-                    .accessUri(o.getAccessUri())
-                    .objectName(o.getObjectName())
-                    .accessType(o.getAccessType())
-                    .timeExpires(o.getTimeExpires())
-                    .timeCreated(o.getTimeCreated());
+            Builder copiedBuilder =
+                    id(o.getId())
+                            .name(o.getName())
+                            .accessUri(o.getAccessUri())
+                            .objectName(o.getObjectName())
+                            .accessType(o.getAccessType())
+                            .timeExpires(o.getTimeExpires())
+                            .timeCreated(o.getTimeCreated());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

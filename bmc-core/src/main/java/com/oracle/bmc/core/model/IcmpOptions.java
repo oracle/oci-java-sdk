@@ -50,7 +50,10 @@ public class IcmpOptions {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(IcmpOptions o) {
-            return code(o.getCode()).type(o.getType());
+            Builder copiedBuilder = code(o.getCode()).type(o.getType());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

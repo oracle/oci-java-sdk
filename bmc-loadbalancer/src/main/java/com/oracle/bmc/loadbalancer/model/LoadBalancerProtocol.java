@@ -36,7 +36,10 @@ public class LoadBalancerProtocol {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(LoadBalancerProtocol o) {
-            return name(o.getName());
+            Builder copiedBuilder = name(o.getName());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

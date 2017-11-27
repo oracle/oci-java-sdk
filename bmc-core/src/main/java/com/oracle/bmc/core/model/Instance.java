@@ -121,6 +121,15 @@ public class Instance {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
+        private InstanceSourceDetails sourceDetails;
+
+        public Builder sourceDetails(InstanceSourceDetails sourceDetails) {
+            this.sourceDetails = sourceDetails;
+            this.__explicitlySet__.add("sourceDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -147,6 +156,7 @@ public class Instance {
                             metadata,
                             region,
                             shape,
+                            sourceDetails,
                             timeCreated);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -154,18 +164,23 @@ public class Instance {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Instance o) {
-            return availabilityDomain(o.getAvailabilityDomain())
-                    .compartmentId(o.getCompartmentId())
-                    .displayName(o.getDisplayName())
-                    .extendedMetadata(o.getExtendedMetadata())
-                    .id(o.getId())
-                    .imageId(o.getImageId())
-                    .ipxeScript(o.getIpxeScript())
-                    .lifecycleState(o.getLifecycleState())
-                    .metadata(o.getMetadata())
-                    .region(o.getRegion())
-                    .shape(o.getShape())
-                    .timeCreated(o.getTimeCreated());
+            Builder copiedBuilder =
+                    availabilityDomain(o.getAvailabilityDomain())
+                            .compartmentId(o.getCompartmentId())
+                            .displayName(o.getDisplayName())
+                            .extendedMetadata(o.getExtendedMetadata())
+                            .id(o.getId())
+                            .imageId(o.getImageId())
+                            .ipxeScript(o.getIpxeScript())
+                            .lifecycleState(o.getLifecycleState())
+                            .metadata(o.getMetadata())
+                            .region(o.getRegion())
+                            .shape(o.getShape())
+                            .sourceDetails(o.getSourceDetails())
+                            .timeCreated(o.getTimeCreated());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 
@@ -219,8 +234,7 @@ public class Instance {
     String id;
 
     /**
-     * The image used to boot the instance. You can enumerate all available images by calling
-     * {@link #listImages(ListImagesRequest) listImages}.
+     * Deprecated. Use `sourceDetails` instead.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
@@ -334,6 +348,12 @@ public class Instance {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     String shape;
+
+    /**
+     * Details for creating an instance
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
+    InstanceSourceDetails sourceDetails;
 
     /**
      * The date and time the instance was created, in the format defined by RFC3339.

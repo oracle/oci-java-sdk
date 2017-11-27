@@ -41,7 +41,10 @@ public class ExportImageViaObjectStorageUriDetails extends ExportImageDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ExportImageViaObjectStorageUriDetails o) {
-            return destinationUri(o.getDestinationUri());
+            Builder copiedBuilder = destinationUri(o.getDestinationUri());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

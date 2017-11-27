@@ -43,7 +43,10 @@ public class IpAddress {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(IpAddress o) {
-            return ipAddress(o.getIpAddress()).isPublic(o.getIsPublic());
+            Builder copiedBuilder = ipAddress(o.getIpAddress()).isPublic(o.getIsPublic());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

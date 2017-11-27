@@ -54,9 +54,13 @@ public class UpdateSecurityListDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateSecurityListDetails o) {
-            return displayName(o.getDisplayName())
-                    .egressSecurityRules(o.getEgressSecurityRules())
-                    .ingressSecurityRules(o.getIngressSecurityRules());
+            Builder copiedBuilder =
+                    displayName(o.getDisplayName())
+                            .egressSecurityRules(o.getEgressSecurityRules())
+                            .ingressSecurityRules(o.getIngressSecurityRules());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

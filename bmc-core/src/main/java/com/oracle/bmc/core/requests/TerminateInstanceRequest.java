@@ -23,6 +23,11 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String ifMatch;
 
+    /**
+     * Specifies whether to delete or preserve the boot volume when terminating an instance.
+     */
+    private Boolean preserveBootVolume;
+
     public static class Builder {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
@@ -46,6 +51,7 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
         public Builder copy(TerminateInstanceRequest o) {
             instanceId(o.getInstanceId());
             ifMatch(o.getIfMatch());
+            preserveBootVolume(o.getPreserveBootVolume());
             return this;
         }
 

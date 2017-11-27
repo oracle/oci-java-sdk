@@ -33,7 +33,10 @@ public class UpdateGroupDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateGroupDetails o) {
-            return description(o.getDescription());
+            Builder copiedBuilder = description(o.getDescription());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

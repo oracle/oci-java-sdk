@@ -88,12 +88,16 @@ public class EgressSecurityRule {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(EgressSecurityRule o) {
-            return destination(o.getDestination())
-                    .icmpOptions(o.getIcmpOptions())
-                    .isStateless(o.getIsStateless())
-                    .protocol(o.getProtocol())
-                    .tcpOptions(o.getTcpOptions())
-                    .udpOptions(o.getUdpOptions());
+            Builder copiedBuilder =
+                    destination(o.getDestination())
+                            .icmpOptions(o.getIcmpOptions())
+                            .isStateless(o.getIsStateless())
+                            .protocol(o.getProtocol())
+                            .tcpOptions(o.getTcpOptions())
+                            .udpOptions(o.getUdpOptions());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

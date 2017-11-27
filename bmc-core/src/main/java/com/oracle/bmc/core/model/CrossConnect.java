@@ -132,15 +132,19 @@ public class CrossConnect {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CrossConnect o) {
-            return compartmentId(o.getCompartmentId())
-                    .crossConnectGroupId(o.getCrossConnectGroupId())
-                    .displayName(o.getDisplayName())
-                    .id(o.getId())
-                    .lifecycleState(o.getLifecycleState())
-                    .locationName(o.getLocationName())
-                    .portName(o.getPortName())
-                    .portSpeedShapeName(o.getPortSpeedShapeName())
-                    .timeCreated(o.getTimeCreated());
+            Builder copiedBuilder =
+                    compartmentId(o.getCompartmentId())
+                            .crossConnectGroupId(o.getCrossConnectGroupId())
+                            .displayName(o.getDisplayName())
+                            .id(o.getId())
+                            .lifecycleState(o.getLifecycleState())
+                            .locationName(o.getLocationName())
+                            .portName(o.getPortName())
+                            .portSpeedShapeName(o.getPortSpeedShapeName())
+                            .timeCreated(o.getTimeCreated());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

@@ -74,11 +74,15 @@ public class Listener {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Listener o) {
-            return defaultBackendSetName(o.getDefaultBackendSetName())
-                    .name(o.getName())
-                    .port(o.getPort())
-                    .protocol(o.getProtocol())
-                    .sslConfiguration(o.getSslConfiguration());
+            Builder copiedBuilder =
+                    defaultBackendSetName(o.getDefaultBackendSetName())
+                            .name(o.getName())
+                            .port(o.getPort())
+                            .protocol(o.getProtocol())
+                            .sslConfiguration(o.getSslConfiguration());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

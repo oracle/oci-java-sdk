@@ -195,22 +195,26 @@ public class Subnet {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Subnet o) {
-            return availabilityDomain(o.getAvailabilityDomain())
-                    .cidrBlock(o.getCidrBlock())
-                    .compartmentId(o.getCompartmentId())
-                    .dhcpOptionsId(o.getDhcpOptionsId())
-                    .displayName(o.getDisplayName())
-                    .dnsLabel(o.getDnsLabel())
-                    .id(o.getId())
-                    .lifecycleState(o.getLifecycleState())
-                    .prohibitPublicIpOnVnic(o.getProhibitPublicIpOnVnic())
-                    .routeTableId(o.getRouteTableId())
-                    .securityListIds(o.getSecurityListIds())
-                    .subnetDomainName(o.getSubnetDomainName())
-                    .timeCreated(o.getTimeCreated())
-                    .vcnId(o.getVcnId())
-                    .virtualRouterIp(o.getVirtualRouterIp())
-                    .virtualRouterMac(o.getVirtualRouterMac());
+            Builder copiedBuilder =
+                    availabilityDomain(o.getAvailabilityDomain())
+                            .cidrBlock(o.getCidrBlock())
+                            .compartmentId(o.getCompartmentId())
+                            .dhcpOptionsId(o.getDhcpOptionsId())
+                            .displayName(o.getDisplayName())
+                            .dnsLabel(o.getDnsLabel())
+                            .id(o.getId())
+                            .lifecycleState(o.getLifecycleState())
+                            .prohibitPublicIpOnVnic(o.getProhibitPublicIpOnVnic())
+                            .routeTableId(o.getRouteTableId())
+                            .securityListIds(o.getSecurityListIds())
+                            .subnetDomainName(o.getSubnetDomainName())
+                            .timeCreated(o.getTimeCreated())
+                            .vcnId(o.getVcnId())
+                            .virtualRouterIp(o.getVirtualRouterIp())
+                            .virtualRouterMac(o.getVirtualRouterMac());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

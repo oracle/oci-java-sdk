@@ -25,6 +25,75 @@ public class ComputeWaiters {
      * @param targetState The desired state to wait for.
      * @return A new Waiter instance.
      */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetBootVolumeAttachmentRequest, GetBootVolumeAttachmentResponse>
+            forBootVolumeAttachment(
+                    GetBootVolumeAttachmentRequest request,
+                    com.oracle.bmc.core.model.BootVolumeAttachment.LifecycleState targetState) {
+        return forBootVolumeAttachment(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using the provided configuration.
+     *
+     * @param request The request to send.
+     * @param targetState The desired state to wait for.
+     * @param terminationStrategy The {@link TerminationStrategy} to use.
+     * @param delayStrategy The {@link DelayStrategy} to use.
+     * @return A new Waiter instance.
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetBootVolumeAttachmentRequest, GetBootVolumeAttachmentResponse>
+            forBootVolumeAttachment(
+                    GetBootVolumeAttachmentRequest request,
+                    com.oracle.bmc.core.model.BootVolumeAttachment.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        return forBootVolumeAttachment(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    // Helper method to create a new Waiter for BootVolumeAttachment.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetBootVolumeAttachmentRequest, GetBootVolumeAttachmentResponse>
+            forBootVolumeAttachment(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetBootVolumeAttachmentRequest request,
+                    final com.oracle.bmc.core.model.BootVolumeAttachment.LifecycleState
+                            targetState) {
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetBootVolumeAttachmentRequest, GetBootVolumeAttachmentResponse>() {
+                            @Override
+                            public GetBootVolumeAttachmentResponse apply(
+                                    GetBootVolumeAttachmentRequest request) {
+                                return client.getBootVolumeAttachment(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetBootVolumeAttachmentResponse>() {
+                            @Override
+                            public boolean apply(GetBootVolumeAttachmentResponse response) {
+                                return response.getBootVolumeAttachment().getLifecycleState()
+                                        == targetState;
+                            }
+                        },
+                        false),
+                request);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using default configuration.
+     *
+     * @param request The request to send.
+     * @param targetState The desired state to wait for.
+     * @return A new Waiter instance.
+     */
     public com.oracle.bmc.waiter.Waiter<GetConsoleHistoryRequest, GetConsoleHistoryResponse>
             forConsoleHistory(
                     GetConsoleHistoryRequest request,

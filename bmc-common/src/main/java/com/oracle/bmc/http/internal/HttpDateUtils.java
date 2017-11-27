@@ -99,7 +99,7 @@ public class HttpDateUtils {
     static Date parse(String headerName, String value) {
         // date and last-modified use 'HTTP-date' format, rfc2616:
         // https://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html
-        String lowerCasedHeaderName = headerName.toLowerCase();
+        String lowerCasedHeaderName = headerName.toLowerCase(Locale.ROOT);
         if ("date".equals(lowerCasedHeaderName) || "last-modified".equals(lowerCasedHeaderName)) {
             Date date = tryParse(value, RFC2616_DATE_FORMATS.get());
             if (date == null) {

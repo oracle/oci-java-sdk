@@ -90,12 +90,16 @@ public class LetterOfAuthority {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(LetterOfAuthority o) {
-            return circuitType(o.getCircuitType())
-                    .crossConnectId(o.getCrossConnectId())
-                    .facilityLocation(o.getFacilityLocation())
-                    .portName(o.getPortName())
-                    .timeExpires(o.getTimeExpires())
-                    .timeIssued(o.getTimeIssued());
+            Builder copiedBuilder =
+                    circuitType(o.getCircuitType())
+                            .crossConnectId(o.getCrossConnectId())
+                            .facilityLocation(o.getFacilityLocation())
+                            .portName(o.getPortName())
+                            .timeExpires(o.getTimeExpires())
+                            .timeIssued(o.getTimeIssued());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

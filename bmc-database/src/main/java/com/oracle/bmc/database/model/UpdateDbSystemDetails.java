@@ -66,10 +66,14 @@ public class UpdateDbSystemDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateDbSystemDetails o) {
-            return cpuCoreCount(o.getCpuCoreCount())
-                    .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
-                    .sshPublicKeys(o.getSshPublicKeys())
-                    .version(o.getVersion());
+            Builder copiedBuilder =
+                    cpuCoreCount(o.getCpuCoreCount())
+                            .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
+                            .sshPublicKeys(o.getSshPublicKeys())
+                            .version(o.getVersion());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

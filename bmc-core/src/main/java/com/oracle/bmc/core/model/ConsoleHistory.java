@@ -99,13 +99,17 @@ public class ConsoleHistory {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ConsoleHistory o) {
-            return availabilityDomain(o.getAvailabilityDomain())
-                    .compartmentId(o.getCompartmentId())
-                    .displayName(o.getDisplayName())
-                    .id(o.getId())
-                    .instanceId(o.getInstanceId())
-                    .lifecycleState(o.getLifecycleState())
-                    .timeCreated(o.getTimeCreated());
+            Builder copiedBuilder =
+                    availabilityDomain(o.getAvailabilityDomain())
+                            .compartmentId(o.getCompartmentId())
+                            .displayName(o.getDisplayName())
+                            .id(o.getId())
+                            .instanceId(o.getInstanceId())
+                            .lifecycleState(o.getLifecycleState())
+                            .timeCreated(o.getTimeCreated());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

@@ -141,10 +141,13 @@ public class GetObjectConverter {
                                 }
 
                                 java.util.Map<String, String> opcMeta = new java.util.HashMap<>();
-                                String opcMetaPattern = "opc-meta-".toLowerCase();
+                                String opcMetaPattern =
+                                        "opc-meta-".toLowerCase(java.util.Locale.ROOT);
                                 for (java.util.Map.Entry<String, java.util.List<String>> header :
                                         headers.entrySet()) {
-                                    if (header.getKey().toLowerCase().startsWith(opcMetaPattern)) {
+                                    if (header.getKey()
+                                            .toLowerCase(java.util.Locale.ROOT)
+                                            .startsWith(opcMetaPattern)) {
                                         opcMeta.put(header.getKey(), header.getValue().get(0));
                                     }
                                 }

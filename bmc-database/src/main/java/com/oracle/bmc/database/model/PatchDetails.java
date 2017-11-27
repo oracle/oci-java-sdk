@@ -46,7 +46,10 @@ public class PatchDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(PatchDetails o) {
-            return action(o.getAction()).patchId(o.getPatchId());
+            Builder copiedBuilder = action(o.getAction()).patchId(o.getPatchId());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

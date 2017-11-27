@@ -4,11 +4,11 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The `InstanceConsoleConnection` API provides you with serial console access to virtual machine (VM) instances,
+ * The `InstanceConsoleConnection` API provides you with console access to virtual machine (VM) instances,
  * enabling you to troubleshoot malfunctioning instances remotely.
  * <p>
- * For more information about serial console access, see
- * [Accessing the Serial Console](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/serialconsole.htm).
+ * For more information about console access, see
+ * [Accessing the Console](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/serialconsole.htm).
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
@@ -93,12 +93,16 @@ public class InstanceConsoleConnection {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(InstanceConsoleConnection o) {
-            return compartmentId(o.getCompartmentId())
-                    .connectionString(o.getConnectionString())
-                    .fingerprint(o.getFingerprint())
-                    .id(o.getId())
-                    .instanceId(o.getInstanceId())
-                    .lifecycleState(o.getLifecycleState());
+            Builder copiedBuilder =
+                    compartmentId(o.getCompartmentId())
+                            .connectionString(o.getConnectionString())
+                            .fingerprint(o.getFingerprint())
+                            .id(o.getId())
+                            .instanceId(o.getInstanceId())
+                            .lifecycleState(o.getLifecycleState());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 
@@ -110,36 +114,36 @@ public class InstanceConsoleConnection {
     }
 
     /**
-     * The OCID of the compartment to contain the serial console connection.
+     * The OCID of the compartment to contain the console connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The SSH connection string for the serial console connection.
+     * The SSH connection string for the console connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
     String connectionString;
 
     /**
-     * The SSH public key fingerprint for the serial console connection.
+     * The SSH public key fingerprint for the console connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fingerprint")
     String fingerprint;
 
     /**
-     * The OCID of the serial console connection.
+     * The OCID of the console connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The OCID of the instance the serial console connection connects to.
+     * The OCID of the instance the console connection connects to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     String instanceId;
     /**
-     * The current state of the serial console connection.
+     * The current state of the console connection.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
@@ -188,7 +192,7 @@ public class InstanceConsoleConnection {
         }
     };
     /**
-     * The current state of the serial console connection.
+     * The current state of the console connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;

@@ -33,7 +33,10 @@ public class UpdateDatabaseDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateDatabaseDetails o) {
-            return dbBackupConfig(o.getDbBackupConfig());
+            Builder copiedBuilder = dbBackupConfig(o.getDbBackupConfig());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

@@ -52,9 +52,13 @@ public class UpdatePolicyDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdatePolicyDetails o) {
-            return description(o.getDescription())
-                    .statements(o.getStatements())
-                    .versionDate(o.getVersionDate());
+            Builder copiedBuilder =
+                    description(o.getDescription())
+                            .statements(o.getStatements())
+                            .versionDate(o.getVersionDate());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 
