@@ -43,7 +43,10 @@ public class VolumeSourceFromVolumeDetails extends VolumeSourceDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(VolumeSourceFromVolumeDetails o) {
-            return id(o.getId());
+            Builder copiedBuilder = id(o.getId());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

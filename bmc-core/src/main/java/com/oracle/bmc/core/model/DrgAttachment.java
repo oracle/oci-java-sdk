@@ -98,13 +98,17 @@ public class DrgAttachment {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DrgAttachment o) {
-            return compartmentId(o.getCompartmentId())
-                    .displayName(o.getDisplayName())
-                    .drgId(o.getDrgId())
-                    .id(o.getId())
-                    .lifecycleState(o.getLifecycleState())
-                    .timeCreated(o.getTimeCreated())
-                    .vcnId(o.getVcnId());
+            Builder copiedBuilder =
+                    compartmentId(o.getCompartmentId())
+                            .displayName(o.getDisplayName())
+                            .drgId(o.getDrgId())
+                            .id(o.getId())
+                            .lifecycleState(o.getLifecycleState())
+                            .timeCreated(o.getTimeCreated())
+                            .vcnId(o.getVcnId());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

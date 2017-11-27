@@ -4,8 +4,8 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The details for creating a serial console connection.
- * The serial console connection is created in the same compartment as the instance.
+ * The details for creating a instance console connection.
+ * The instance console connection is created in the same compartment as the instance.
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
@@ -48,7 +48,10 @@ public class CreateInstanceConsoleConnectionDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateInstanceConsoleConnectionDetails o) {
-            return instanceId(o.getInstanceId()).publicKey(o.getPublicKey());
+            Builder copiedBuilder = instanceId(o.getInstanceId()).publicKey(o.getPublicKey());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 
@@ -60,13 +63,13 @@ public class CreateInstanceConsoleConnectionDetails {
     }
 
     /**
-     * The OCID of the instance to create the serial console connection to.
+     * The OCID of the instance to create the console connection to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     String instanceId;
 
     /**
-     * The SSH public key used to authenticate the serial console connection.
+     * The SSH public key used to authenticate the console connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
     String publicKey;

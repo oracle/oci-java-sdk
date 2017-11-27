@@ -103,13 +103,17 @@ public class InternetGateway {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(InternetGateway o) {
-            return compartmentId(o.getCompartmentId())
-                    .displayName(o.getDisplayName())
-                    .id(o.getId())
-                    .isEnabled(o.getIsEnabled())
-                    .lifecycleState(o.getLifecycleState())
-                    .timeCreated(o.getTimeCreated())
-                    .vcnId(o.getVcnId());
+            Builder copiedBuilder =
+                    compartmentId(o.getCompartmentId())
+                            .displayName(o.getDisplayName())
+                            .id(o.getId())
+                            .isEnabled(o.getIsEnabled())
+                            .lifecycleState(o.getLifecycleState())
+                            .timeCreated(o.getTimeCreated())
+                            .vcnId(o.getVcnId());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

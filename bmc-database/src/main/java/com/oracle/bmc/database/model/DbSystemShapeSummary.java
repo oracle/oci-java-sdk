@@ -60,9 +60,13 @@ public class DbSystemShapeSummary {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DbSystemShapeSummary o) {
-            return availableCoreCount(o.getAvailableCoreCount())
-                    .name(o.getName())
-                    .shape(o.getShape());
+            Builder copiedBuilder =
+                    availableCoreCount(o.getAvailableCoreCount())
+                            .name(o.getName())
+                            .shape(o.getShape());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

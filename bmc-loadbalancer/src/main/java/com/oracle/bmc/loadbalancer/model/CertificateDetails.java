@@ -81,11 +81,15 @@ public class CertificateDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CertificateDetails o) {
-            return caCertificate(o.getCaCertificate())
-                    .certificateName(o.getCertificateName())
-                    .passphrase(o.getPassphrase())
-                    .privateKey(o.getPrivateKey())
-                    .publicCertificate(o.getPublicCertificate());
+            Builder copiedBuilder =
+                    caCertificate(o.getCaCertificate())
+                            .certificateName(o.getCertificateName())
+                            .passphrase(o.getPassphrase())
+                            .privateKey(o.getPrivateKey())
+                            .publicCertificate(o.getPublicCertificate());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

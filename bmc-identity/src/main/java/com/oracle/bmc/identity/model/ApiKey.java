@@ -106,13 +106,17 @@ public class ApiKey {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ApiKey o) {
-            return keyId(o.getKeyId())
-                    .keyValue(o.getKeyValue())
-                    .fingerprint(o.getFingerprint())
-                    .userId(o.getUserId())
-                    .timeCreated(o.getTimeCreated())
-                    .lifecycleState(o.getLifecycleState())
-                    .inactiveStatus(o.getInactiveStatus());
+            Builder copiedBuilder =
+                    keyId(o.getKeyId())
+                            .keyValue(o.getKeyValue())
+                            .fingerprint(o.getFingerprint())
+                            .userId(o.getUserId())
+                            .timeCreated(o.getTimeCreated())
+                            .lifecycleState(o.getLifecycleState())
+                            .inactiveStatus(o.getInactiveStatus());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

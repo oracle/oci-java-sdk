@@ -46,7 +46,10 @@ public class LoadBalancerHealthSummary {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(LoadBalancerHealthSummary o) {
-            return loadBalancerId(o.getLoadBalancerId()).status(o.getStatus());
+            Builder copiedBuilder = loadBalancerId(o.getLoadBalancerId()).status(o.getStatus());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

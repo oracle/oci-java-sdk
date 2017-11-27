@@ -128,16 +128,20 @@ public class BackupSummary {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(BackupSummary o) {
-            return availabilityDomain(o.getAvailabilityDomain())
-                    .compartmentId(o.getCompartmentId())
-                    .databaseId(o.getDatabaseId())
-                    .displayName(o.getDisplayName())
-                    .id(o.getId())
-                    .lifecycleDetails(o.getLifecycleDetails())
-                    .lifecycleState(o.getLifecycleState())
-                    .timeEnded(o.getTimeEnded())
-                    .timeStarted(o.getTimeStarted())
-                    .type(o.getType());
+            Builder copiedBuilder =
+                    availabilityDomain(o.getAvailabilityDomain())
+                            .compartmentId(o.getCompartmentId())
+                            .databaseId(o.getDatabaseId())
+                            .displayName(o.getDisplayName())
+                            .id(o.getId())
+                            .lifecycleDetails(o.getLifecycleDetails())
+                            .lifecycleState(o.getLifecycleState())
+                            .timeEnded(o.getTimeEnded())
+                            .timeStarted(o.getTimeStarted())
+                            .type(o.getType());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

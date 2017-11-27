@@ -63,10 +63,14 @@ public class TunnelStatus {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(TunnelStatus o) {
-            return ipAddress(o.getIpAddress())
-                    .lifecycleState(o.getLifecycleState())
-                    .timeCreated(o.getTimeCreated())
-                    .timeStateModified(o.getTimeStateModified());
+            Builder copiedBuilder =
+                    ipAddress(o.getIpAddress())
+                            .lifecycleState(o.getLifecycleState())
+                            .timeCreated(o.getTimeCreated())
+                            .timeStateModified(o.getTimeStateModified());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

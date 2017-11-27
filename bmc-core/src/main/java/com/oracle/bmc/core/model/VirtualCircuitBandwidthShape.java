@@ -47,7 +47,10 @@ public class VirtualCircuitBandwidthShape {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(VirtualCircuitBandwidthShape o) {
-            return bandwidthInMbps(o.getBandwidthInMbps()).name(o.getName());
+            Builder copiedBuilder = bandwidthInMbps(o.getBandwidthInMbps()).name(o.getName());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

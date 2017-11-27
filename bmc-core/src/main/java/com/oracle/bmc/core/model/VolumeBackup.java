@@ -143,17 +143,21 @@ public class VolumeBackup {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(VolumeBackup o) {
-            return compartmentId(o.getCompartmentId())
-                    .displayName(o.getDisplayName())
-                    .id(o.getId())
-                    .lifecycleState(o.getLifecycleState())
-                    .sizeInGBs(o.getSizeInGBs())
-                    .sizeInMBs(o.getSizeInMBs())
-                    .timeCreated(o.getTimeCreated())
-                    .timeRequestReceived(o.getTimeRequestReceived())
-                    .uniqueSizeInGBs(o.getUniqueSizeInGBs())
-                    .uniqueSizeInMbs(o.getUniqueSizeInMbs())
-                    .volumeId(o.getVolumeId());
+            Builder copiedBuilder =
+                    compartmentId(o.getCompartmentId())
+                            .displayName(o.getDisplayName())
+                            .id(o.getId())
+                            .lifecycleState(o.getLifecycleState())
+                            .sizeInGBs(o.getSizeInGBs())
+                            .sizeInMBs(o.getSizeInMBs())
+                            .timeCreated(o.getTimeCreated())
+                            .timeRequestReceived(o.getTimeRequestReceived())
+                            .uniqueSizeInGBs(o.getUniqueSizeInGBs())
+                            .uniqueSizeInMbs(o.getUniqueSizeInMbs())
+                            .volumeId(o.getVolumeId());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

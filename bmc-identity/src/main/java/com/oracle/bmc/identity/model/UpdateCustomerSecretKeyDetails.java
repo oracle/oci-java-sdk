@@ -34,7 +34,10 @@ public class UpdateCustomerSecretKeyDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateCustomerSecretKeyDetails o) {
-            return displayName(o.getDisplayName());
+            Builder copiedBuilder = displayName(o.getDisplayName());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

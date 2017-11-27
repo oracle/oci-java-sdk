@@ -33,7 +33,10 @@ public class CreateApiKeyDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateApiKeyDetails o) {
-            return key(o.getKey());
+            Builder copiedBuilder = key(o.getKey());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

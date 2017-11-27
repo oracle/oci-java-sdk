@@ -42,7 +42,10 @@ public class UpdateCompartmentDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateCompartmentDetails o) {
-            return description(o.getDescription()).name(o.getName());
+            Builder copiedBuilder = description(o.getDescription()).name(o.getName());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

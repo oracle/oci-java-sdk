@@ -52,9 +52,13 @@ public class UpdatePrivateIpDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdatePrivateIpDetails o) {
-            return displayName(o.getDisplayName())
-                    .hostnameLabel(o.getHostnameLabel())
-                    .vnicId(o.getVnicId());
+            Builder copiedBuilder =
+                    displayName(o.getDisplayName())
+                            .hostnameLabel(o.getHostnameLabel())
+                            .vnicId(o.getVnicId());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

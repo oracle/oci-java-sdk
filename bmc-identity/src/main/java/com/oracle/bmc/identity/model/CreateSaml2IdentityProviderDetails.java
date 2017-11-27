@@ -87,12 +87,16 @@ public class CreateSaml2IdentityProviderDetails extends CreateIdentityProviderDe
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateSaml2IdentityProviderDetails o) {
-            return compartmentId(o.getCompartmentId())
-                    .name(o.getName())
-                    .description(o.getDescription())
-                    .productType(o.getProductType())
-                    .metadataUrl(o.getMetadataUrl())
-                    .metadata(o.getMetadata());
+            Builder copiedBuilder =
+                    compartmentId(o.getCompartmentId())
+                            .name(o.getName())
+                            .description(o.getDescription())
+                            .productType(o.getProductType())
+                            .metadataUrl(o.getMetadataUrl())
+                            .metadata(o.getMetadata());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

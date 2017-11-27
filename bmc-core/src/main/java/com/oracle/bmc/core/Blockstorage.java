@@ -73,6 +73,18 @@ public interface Blockstorage extends AutoCloseable {
     CreateVolumeBackupResponse createVolumeBackup(CreateVolumeBackupRequest request);
 
     /**
+     * Deletes the specified boot volume. The volume cannot have an active connection to an instance.
+     * To disconnect the boot volume from a connected instance, see
+     * [Disconnecting From a Boot Volume](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Tasks/deletingbootvolume.htm).
+     * **Warning:** All data on the boot volume will be permanently lost when the boot volume is deleted.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteBootVolumeResponse deleteBootVolume(DeleteBootVolumeRequest request);
+
+    /**
      * Deletes the specified volume. The volume cannot have an active connection to an instance.
      * To disconnect the volume from a connected instance, see
      * [Disconnecting From a Volume](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Tasks/disconnectingfromavolume.htm).
@@ -93,6 +105,14 @@ public interface Blockstorage extends AutoCloseable {
     DeleteVolumeBackupResponse deleteVolumeBackup(DeleteVolumeBackupRequest request);
 
     /**
+     * Gets information for the specified boot volume.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetBootVolumeResponse getBootVolume(GetBootVolumeRequest request);
+
+    /**
      * Gets information for the specified volume.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -107,6 +127,15 @@ public interface Blockstorage extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     GetVolumeBackupResponse getVolumeBackup(GetVolumeBackupRequest request);
+
+    /**
+     * Lists the boot volumes in the specified compartment and Availability Domain.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListBootVolumesResponse listBootVolumes(ListBootVolumesRequest request);
 
     /**
      * Lists the volume backups in the specified compartment. You can filter the results by volume.
@@ -125,6 +154,14 @@ public interface Blockstorage extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListVolumesResponse listVolumes(ListVolumesRequest request);
+
+    /**
+     * Updates the specified boot volume's display name.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateBootVolumeResponse updateBootVolume(UpdateBootVolumeRequest request);
 
     /**
      * Updates the specified volume's display name.

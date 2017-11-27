@@ -57,9 +57,13 @@ public class FastConnectProviderService {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(FastConnectProviderService o) {
-            return description(o.getDescription())
-                    .providerName(o.getProviderName())
-                    .providerServiceName(o.getProviderServiceName());
+            Builder copiedBuilder =
+                    description(o.getDescription())
+                            .providerName(o.getProviderName())
+                            .providerServiceName(o.getProviderServiceName());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

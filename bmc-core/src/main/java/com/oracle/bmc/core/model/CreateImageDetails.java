@@ -65,10 +65,14 @@ public class CreateImageDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateImageDetails o) {
-            return compartmentId(o.getCompartmentId())
-                    .displayName(o.getDisplayName())
-                    .imageSourceDetails(o.getImageSourceDetails())
-                    .instanceId(o.getInstanceId());
+            Builder copiedBuilder =
+                    compartmentId(o.getCompartmentId())
+                            .displayName(o.getDisplayName())
+                            .imageSourceDetails(o.getImageSourceDetails())
+                            .instanceId(o.getInstanceId());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

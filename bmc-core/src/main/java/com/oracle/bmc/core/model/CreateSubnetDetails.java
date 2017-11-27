@@ -125,16 +125,20 @@ public class CreateSubnetDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateSubnetDetails o) {
-            return availabilityDomain(o.getAvailabilityDomain())
-                    .cidrBlock(o.getCidrBlock())
-                    .compartmentId(o.getCompartmentId())
-                    .dhcpOptionsId(o.getDhcpOptionsId())
-                    .displayName(o.getDisplayName())
-                    .dnsLabel(o.getDnsLabel())
-                    .prohibitPublicIpOnVnic(o.getProhibitPublicIpOnVnic())
-                    .routeTableId(o.getRouteTableId())
-                    .securityListIds(o.getSecurityListIds())
-                    .vcnId(o.getVcnId());
+            Builder copiedBuilder =
+                    availabilityDomain(o.getAvailabilityDomain())
+                            .cidrBlock(o.getCidrBlock())
+                            .compartmentId(o.getCompartmentId())
+                            .dhcpOptionsId(o.getDhcpOptionsId())
+                            .displayName(o.getDisplayName())
+                            .dnsLabel(o.getDnsLabel())
+                            .prohibitPublicIpOnVnic(o.getProhibitPublicIpOnVnic())
+                            .routeTableId(o.getRouteTableId())
+                            .securityListIds(o.getSecurityListIds())
+                            .vcnId(o.getVcnId());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

@@ -65,10 +65,14 @@ public class CrossConnectStatus {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CrossConnectStatus o) {
-            return crossConnectId(o.getCrossConnectId())
-                    .interfaceState(o.getInterfaceState())
-                    .lightLevelIndBm(o.getLightLevelIndBm())
-                    .lightLevelIndicator(o.getLightLevelIndicator());
+            Builder copiedBuilder =
+                    crossConnectId(o.getCrossConnectId())
+                            .interfaceState(o.getInterfaceState())
+                            .lightLevelIndBm(o.getLightLevelIndBm())
+                            .lightLevelIndicator(o.getLightLevelIndicator());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

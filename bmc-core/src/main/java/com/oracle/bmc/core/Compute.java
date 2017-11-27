@@ -37,6 +37,15 @@ public interface Compute extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Attaches the specified boot volume to the specified instance.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    AttachBootVolumeResponse attachBootVolume(AttachBootVolumeRequest request);
+
+    /**
      * Creates a secondary VNIC and attaches it to the specified instance.
      * For more information about secondary VNICs, see
      * [Virtual Network Interface Cards (VNICs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm).
@@ -113,13 +122,11 @@ public interface Compute extends AutoCloseable {
     CreateImageResponse createImage(CreateImageRequest request);
 
     /**
-     * Creates a new serial console connection to the specified instance.
-     * Once the serial console connection has been created and is available,
-     * you connect to the serial console using an SSH client.
+     * Creates a new console connection to the specified instance.
+     * Once the console connection has been created and is available,
+     * you connect to the console using SSH.
      * <p>
-     * The default number of enabled serial console connections per tenancy is 10.
-     * <p>
-     * For more information about serial console access, see [Accessing the Serial Console](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/serialconsole.htm).
+     * For more information about console access, see [Accessing the Console](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/serialconsole.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -145,13 +152,25 @@ public interface Compute extends AutoCloseable {
     DeleteImageResponse deleteImage(DeleteImageRequest request);
 
     /**
-     * Deletes the specified serial console connection.
+     * Deletes the specified instance console connection.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      */
     DeleteInstanceConsoleConnectionResponse deleteInstanceConsoleConnection(
             DeleteInstanceConsoleConnectionRequest request);
+
+    /**
+     * Detaches a boot volume from an instance. You must specify the OCID of the boot volume attachment.
+     * <p>
+     * This is an asynchronous operation. The attachment's `lifecycleState` will change to DETACHING temporarily
+     * until the attachment is completely removed.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DetachBootVolumeResponse detachBootVolume(DetachBootVolumeRequest request);
 
     /**
      * Detaches and deletes the specified secondary VNIC.
@@ -202,6 +221,14 @@ public interface Compute extends AutoCloseable {
     ExportImageResponse exportImage(ExportImageRequest request);
 
     /**
+     * Gets information about the specified boot volume attachment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetBootVolumeAttachmentResponse getBootVolumeAttachment(GetBootVolumeAttachmentRequest request);
+
+    /**
      * Shows the metadata for the specified console history.
      * See {@link #captureConsoleHistory(CaptureConsoleHistoryRequest) captureConsoleHistory}
      * for details about using the console history operations.
@@ -241,7 +268,7 @@ public interface Compute extends AutoCloseable {
     GetInstanceResponse getInstance(GetInstanceRequest request);
 
     /**
-     * Gets the specified serial console connection's information.
+     * Gets the specified instance console connection's information.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -339,6 +366,17 @@ public interface Compute extends AutoCloseable {
     LaunchInstanceResponse launchInstance(LaunchInstanceRequest request);
 
     /**
+     * Lists the boot volume attachments in the specified compartment. You can filter the
+     * list by specifying an instance OCID, boot volume OCID, or both.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListBootVolumeAttachmentsResponse listBootVolumeAttachments(
+            ListBootVolumeAttachmentsRequest request);
+
+    /**
      * Lists the console history metadata for the specified compartment or instance.
      *
      * @param request The request object containing the details to send
@@ -361,9 +399,9 @@ public interface Compute extends AutoCloseable {
     ListImagesResponse listImages(ListImagesRequest request);
 
     /**
-     * Lists the serial console connections for the specified compartment or instance.
+     * Lists the console connections for the specified compartment or instance.
      * <p>
-     * For more information about serial console access, see [Accessing the Serial Console](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/serialconsole.htm).
+     * For more information about console access, see [Accessing the Instance Console](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/serialconsole.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -419,6 +457,9 @@ public interface Compute extends AutoCloseable {
     /**
      * Terminates the specified instance. Any attached VNICs and volumes are automatically detached
      * when the instance terminates.
+     * <p>
+     * To preserve the boot volume associated with the instance, specify `true` for `PreserveBootVolumeQueryParam`.
+     * To delete the boot volume when the instance is deleted, specify `false` or do not specify a value for `PreserveBootVolumeQueryParam`.
      * <p>
      * This is an asynchronous operation. The instance's `lifecycleState` will change to TERMINATING temporarily
      * until the instance is completely removed.

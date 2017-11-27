@@ -32,6 +32,16 @@ public interface BasicAuthenticationDetailsProvider extends AbstractAuthenticati
      * Returns the optional pass phrase for the (encrypted) private key.
      *
      * @return The pass phrase, or null if not applicable
+     *
+     * @deprecated Use getPassphraseCharacters instead
      */
+    @Deprecated
     String getPassPhrase();
+
+    /**
+     * Returns the optional pass phrase for the (encrypted) private key, as a character array.
+     *
+     * @return The pass phrase as character array, or null if not applicable
+     */
+    char[] getPassphraseCharacters();
 }

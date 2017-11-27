@@ -205,24 +205,28 @@ public class LaunchDbSystemDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(LaunchDbSystemDetails o) {
-            return availabilityDomain(o.getAvailabilityDomain())
-                    .backupSubnetId(o.getBackupSubnetId())
-                    .clusterName(o.getClusterName())
-                    .compartmentId(o.getCompartmentId())
-                    .cpuCoreCount(o.getCpuCoreCount())
-                    .dataStoragePercentage(o.getDataStoragePercentage())
-                    .databaseEdition(o.getDatabaseEdition())
-                    .dbHome(o.getDbHome())
-                    .diskRedundancy(o.getDiskRedundancy())
-                    .displayName(o.getDisplayName())
-                    .domain(o.getDomain())
-                    .hostname(o.getHostname())
-                    .initialDataStorageSizeInGB(o.getInitialDataStorageSizeInGB())
-                    .licenseModel(o.getLicenseModel())
-                    .nodeCount(o.getNodeCount())
-                    .shape(o.getShape())
-                    .sshPublicKeys(o.getSshPublicKeys())
-                    .subnetId(o.getSubnetId());
+            Builder copiedBuilder =
+                    availabilityDomain(o.getAvailabilityDomain())
+                            .backupSubnetId(o.getBackupSubnetId())
+                            .clusterName(o.getClusterName())
+                            .compartmentId(o.getCompartmentId())
+                            .cpuCoreCount(o.getCpuCoreCount())
+                            .dataStoragePercentage(o.getDataStoragePercentage())
+                            .databaseEdition(o.getDatabaseEdition())
+                            .dbHome(o.getDbHome())
+                            .diskRedundancy(o.getDiskRedundancy())
+                            .displayName(o.getDisplayName())
+                            .domain(o.getDomain())
+                            .hostname(o.getHostname())
+                            .initialDataStorageSizeInGB(o.getInitialDataStorageSizeInGB())
+                            .licenseModel(o.getLicenseModel())
+                            .nodeCount(o.getNodeCount())
+                            .shape(o.getShape())
+                            .sshPublicKeys(o.getSshPublicKeys())
+                            .subnetId(o.getSubnetId());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

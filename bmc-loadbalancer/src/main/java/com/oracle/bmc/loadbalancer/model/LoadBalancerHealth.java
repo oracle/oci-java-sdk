@@ -85,11 +85,15 @@ public class LoadBalancerHealth {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(LoadBalancerHealth o) {
-            return criticalStateBackendSetNames(o.getCriticalStateBackendSetNames())
-                    .status(o.getStatus())
-                    .totalBackendSetCount(o.getTotalBackendSetCount())
-                    .unknownStateBackendSetNames(o.getUnknownStateBackendSetNames())
-                    .warningStateBackendSetNames(o.getWarningStateBackendSetNames());
+            Builder copiedBuilder =
+                    criticalStateBackendSetNames(o.getCriticalStateBackendSetNames())
+                            .status(o.getStatus())
+                            .totalBackendSetCount(o.getTotalBackendSetCount())
+                            .unknownStateBackendSetNames(o.getUnknownStateBackendSetNames())
+                            .warningStateBackendSetNames(o.getWarningStateBackendSetNames());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 
@@ -214,7 +218,7 @@ public class LoadBalancerHealth {
      * A list of backend sets that are currently in the `UNKNOWN` health state. The list identifies each backend set by the
      * friendly name you assigned when you created it.
      * <p>
-     * Example: `Backend set2`
+     * Example: `Backend_set2`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unknownStateBackendSetNames")
@@ -224,7 +228,7 @@ public class LoadBalancerHealth {
      * A list of backend sets that are currently in the `WARNING` health state. The list identifies each backend set by the
      * friendly name you assigned when you created it.
      * <p>
-     * Example: `Backend set3`
+     * Example: `Backend_set3`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("warningStateBackendSetNames")

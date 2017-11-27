@@ -129,7 +129,7 @@ public class RequestSignerImpl implements RequestSigner {
             String keyId = keyIdSupplier.get();
             Version version = validateVersion(versionName, algorithm);
             final RSAPrivateKey key = getPrivateKey(keyId);
-            final String lowerHttpMethod = httpMethod.toLowerCase();
+            final String lowerHttpMethod = httpMethod.toLowerCase(Locale.ENGLISH);
             final String path = extractPath(uri);
 
             // 1) get the required headers that must be signed
@@ -213,7 +213,7 @@ public class RequestSignerImpl implements RequestSigner {
                 throw new RuntimeException(
                         "Expecting exactly one value for header " + entry.getKey());
             }
-            transformedMap.put(entry.getKey().toLowerCase(), entry.getValue().get(0));
+            transformedMap.put(entry.getKey().toLowerCase(Locale.ROOT), entry.getValue().get(0));
         }
         return transformedMap;
     }
@@ -282,7 +282,7 @@ public class RequestSignerImpl implements RequestSigner {
                 missingHeaders.put(Constants.CONTENT_TYPE, Constants.JSON_CONTENT_TYPE);
             } else if (!existingHeaders
                     .get(Constants.CONTENT_TYPE)
-                    .toLowerCase()
+                    .toLowerCase(Locale.ROOT)
                     .equals(Constants.JSON_CONTENT_TYPE)) {
                 throw new IllegalArgumentException(
                         "Only 'application/json' supported for content type");

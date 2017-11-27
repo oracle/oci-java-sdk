@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc.database;
 
+import java.util.Locale;
 import com.oracle.bmc.database.internal.http.*;
 import com.oracle.bmc.database.requests.*;
 import com.oracle.bmc.database.responses.*;
@@ -120,7 +121,7 @@ public class DatabaseClient implements Database {
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase();
+        regionId = regionId.toLowerCase(Locale.ENGLISH);
         try {
             com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
             setRegion(region);

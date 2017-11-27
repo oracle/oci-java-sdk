@@ -70,10 +70,14 @@ public class RegionSubscription {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(RegionSubscription o) {
-            return regionKey(o.getRegionKey())
-                    .regionName(o.getRegionName())
-                    .status(o.getStatus())
-                    .isHomeRegion(o.getIsHomeRegion());
+            Builder copiedBuilder =
+                    regionKey(o.getRegionKey())
+                            .regionName(o.getRegionName())
+                            .status(o.getStatus())
+                            .isHomeRegion(o.getIsHomeRegion());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

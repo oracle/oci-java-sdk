@@ -65,10 +65,14 @@ public class HealthCheckResult {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(HealthCheckResult o) {
-            return healthCheckStatus(o.getHealthCheckStatus())
-                    .sourceIpAddress(o.getSourceIpAddress())
-                    .subnetId(o.getSubnetId())
-                    .timestamp(o.getTimestamp());
+            Builder copiedBuilder =
+                    healthCheckStatus(o.getHealthCheckStatus())
+                            .sourceIpAddress(o.getSourceIpAddress())
+                            .subnetId(o.getSubnetId())
+                            .timestamp(o.getTimestamp());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 
