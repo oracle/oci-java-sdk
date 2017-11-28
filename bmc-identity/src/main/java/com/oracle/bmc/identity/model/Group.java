@@ -109,13 +109,17 @@ public class Group {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Group o) {
-            return id(o.getId())
-                    .compartmentId(o.getCompartmentId())
-                    .name(o.getName())
-                    .description(o.getDescription())
-                    .timeCreated(o.getTimeCreated())
-                    .lifecycleState(o.getLifecycleState())
-                    .inactiveStatus(o.getInactiveStatus());
+            Builder copiedBuilder =
+                    id(o.getId())
+                            .compartmentId(o.getCompartmentId())
+                            .name(o.getName())
+                            .description(o.getDescription())
+                            .timeCreated(o.getTimeCreated())
+                            .lifecycleState(o.getLifecycleState())
+                            .inactiveStatus(o.getInactiveStatus());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

@@ -69,10 +69,14 @@ public class Tenancy {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Tenancy o) {
-            return id(o.getId())
-                    .name(o.getName())
-                    .description(o.getDescription())
-                    .homeRegionKey(o.getHomeRegionKey());
+            Builder copiedBuilder =
+                    id(o.getId())
+                            .name(o.getName())
+                            .description(o.getDescription())
+                            .homeRegionKey(o.getHomeRegionKey());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

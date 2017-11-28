@@ -42,7 +42,10 @@ public class AddUserToGroupDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(AddUserToGroupDetails o) {
-            return userId(o.getUserId()).groupId(o.getGroupId());
+            Builder copiedBuilder = userId(o.getUserId()).groupId(o.getGroupId());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

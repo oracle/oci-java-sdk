@@ -64,10 +64,14 @@ public class IPSecConnectionDeviceStatus {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(IPSecConnectionDeviceStatus o) {
-            return compartmentId(o.getCompartmentId())
-                    .id(o.getId())
-                    .timeCreated(o.getTimeCreated())
-                    .tunnels(o.getTunnels());
+            Builder copiedBuilder =
+                    compartmentId(o.getCompartmentId())
+                            .id(o.getId())
+                            .timeCreated(o.getTimeCreated())
+                            .tunnels(o.getTunnels());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

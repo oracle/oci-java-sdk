@@ -80,11 +80,15 @@ public class BackendSetHealth {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(BackendSetHealth o) {
-            return criticalStateBackendNames(o.getCriticalStateBackendNames())
-                    .status(o.getStatus())
-                    .totalBackendCount(o.getTotalBackendCount())
-                    .unknownStateBackendNames(o.getUnknownStateBackendNames())
-                    .warningStateBackendNames(o.getWarningStateBackendNames());
+            Builder copiedBuilder =
+                    criticalStateBackendNames(o.getCriticalStateBackendNames())
+                            .status(o.getStatus())
+                            .totalBackendCount(o.getTotalBackendCount())
+                            .unknownStateBackendNames(o.getUnknownStateBackendNames())
+                            .warningStateBackendNames(o.getWarningStateBackendNames());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

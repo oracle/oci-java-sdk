@@ -50,9 +50,13 @@ public class CreateCpeDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateCpeDetails o) {
-            return compartmentId(o.getCompartmentId())
-                    .displayName(o.getDisplayName())
-                    .ipAddress(o.getIpAddress());
+            Builder copiedBuilder =
+                    compartmentId(o.getCompartmentId())
+                            .displayName(o.getDisplayName())
+                            .ipAddress(o.getIpAddress());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

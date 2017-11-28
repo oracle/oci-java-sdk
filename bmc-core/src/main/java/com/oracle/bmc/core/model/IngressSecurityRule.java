@@ -83,12 +83,16 @@ public class IngressSecurityRule {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(IngressSecurityRule o) {
-            return icmpOptions(o.getIcmpOptions())
-                    .isStateless(o.getIsStateless())
-                    .protocol(o.getProtocol())
-                    .source(o.getSource())
-                    .tcpOptions(o.getTcpOptions())
-                    .udpOptions(o.getUdpOptions());
+            Builder copiedBuilder =
+                    icmpOptions(o.getIcmpOptions())
+                            .isStateless(o.getIsStateless())
+                            .protocol(o.getProtocol())
+                            .source(o.getSource())
+                            .tcpOptions(o.getTcpOptions())
+                            .udpOptions(o.getUdpOptions());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

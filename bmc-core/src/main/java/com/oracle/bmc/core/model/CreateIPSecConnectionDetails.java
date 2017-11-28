@@ -71,11 +71,15 @@ public class CreateIPSecConnectionDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateIPSecConnectionDetails o) {
-            return compartmentId(o.getCompartmentId())
-                    .cpeId(o.getCpeId())
-                    .displayName(o.getDisplayName())
-                    .drgId(o.getDrgId())
-                    .staticRoutes(o.getStaticRoutes());
+            Builder copiedBuilder =
+                    compartmentId(o.getCompartmentId())
+                            .cpeId(o.getCpeId())
+                            .displayName(o.getDisplayName())
+                            .drgId(o.getDrgId())
+                            .staticRoutes(o.getStaticRoutes());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

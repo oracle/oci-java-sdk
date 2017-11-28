@@ -71,11 +71,15 @@ public class CreatePolicyDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreatePolicyDetails o) {
-            return compartmentId(o.getCompartmentId())
-                    .name(o.getName())
-                    .statements(o.getStatements())
-                    .description(o.getDescription())
-                    .versionDate(o.getVersionDate());
+            Builder copiedBuilder =
+                    compartmentId(o.getCompartmentId())
+                            .name(o.getName())
+                            .statements(o.getStatements())
+                            .description(o.getDescription())
+                            .versionDate(o.getVersionDate());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

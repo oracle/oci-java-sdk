@@ -43,7 +43,10 @@ public class CreateIdpGroupMappingDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateIdpGroupMappingDetails o) {
-            return idpGroupName(o.getIdpGroupName()).groupId(o.getGroupId());
+            Builder copiedBuilder = idpGroupName(o.getIdpGroupName()).groupId(o.getGroupId());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

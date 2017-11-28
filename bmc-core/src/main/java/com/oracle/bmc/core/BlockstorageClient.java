@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc.core;
 
+import java.util.Locale;
 import com.oracle.bmc.core.internal.http.*;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
@@ -120,7 +121,7 @@ public class BlockstorageClient implements Blockstorage {
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase();
+        regionId = regionId.toLowerCase(Locale.ENGLISH);
         try {
             com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
             setRegion(region);
@@ -165,6 +166,19 @@ public class BlockstorageClient implements Blockstorage {
     }
 
     @Override
+    public DeleteBootVolumeResponse deleteBootVolume(DeleteBootVolumeRequest request) {
+        LOG.trace("Called deleteBootVolume");
+        request = DeleteBootVolumeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteBootVolumeConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBootVolumeResponse>
+                transformer = DeleteBootVolumeConverter.fromResponse();
+
+        javax.ws.rs.core.Response response = client.delete(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
     public DeleteVolumeResponse deleteVolume(DeleteVolumeRequest request) {
         LOG.trace("Called deleteVolume");
         request = DeleteVolumeConverter.interceptRequest(request);
@@ -187,6 +201,19 @@ public class BlockstorageClient implements Blockstorage {
                 transformer = DeleteVolumeBackupConverter.fromResponse();
 
         javax.ws.rs.core.Response response = client.delete(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public GetBootVolumeResponse getBootVolume(GetBootVolumeRequest request) {
+        LOG.trace("Called getBootVolume");
+        request = GetBootVolumeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetBootVolumeConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetBootVolumeResponse>
+                transformer = GetBootVolumeConverter.fromResponse();
+
+        javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
     }
 
@@ -217,6 +244,19 @@ public class BlockstorageClient implements Blockstorage {
     }
 
     @Override
+    public ListBootVolumesResponse listBootVolumes(ListBootVolumesRequest request) {
+        LOG.trace("Called listBootVolumes");
+        request = ListBootVolumesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListBootVolumesConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListBootVolumesResponse>
+                transformer = ListBootVolumesConverter.fromResponse();
+
+        javax.ws.rs.core.Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
     public ListVolumeBackupsResponse listVolumeBackups(ListVolumeBackupsRequest request) {
         LOG.trace("Called listVolumeBackups");
         request = ListVolumeBackupsConverter.interceptRequest(request);
@@ -239,6 +279,20 @@ public class BlockstorageClient implements Blockstorage {
                 transformer = ListVolumesConverter.fromResponse();
 
         javax.ws.rs.core.Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public UpdateBootVolumeResponse updateBootVolume(UpdateBootVolumeRequest request) {
+        LOG.trace("Called updateBootVolume");
+        request = UpdateBootVolumeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateBootVolumeConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBootVolumeResponse>
+                transformer = UpdateBootVolumeConverter.fromResponse();
+
+        javax.ws.rs.core.Response response =
+                client.put(ib, request.getUpdateBootVolumeDetails(), request);
         return transformer.apply(response);
     }
 

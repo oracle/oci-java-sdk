@@ -96,13 +96,17 @@ public class UpdateVirtualCircuitDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateVirtualCircuitDetails o) {
-            return bandwidthShapeName(o.getBandwidthShapeName())
-                    .crossConnectMappings(o.getCrossConnectMappings())
-                    .customerBgpAsn(o.getCustomerBgpAsn())
-                    .displayName(o.getDisplayName())
-                    .gatewayId(o.getGatewayId())
-                    .providerState(o.getProviderState())
-                    .referenceComment(o.getReferenceComment());
+            Builder copiedBuilder =
+                    bandwidthShapeName(o.getBandwidthShapeName())
+                            .crossConnectMappings(o.getCrossConnectMappings())
+                            .customerBgpAsn(o.getCustomerBgpAsn())
+                            .displayName(o.getDisplayName())
+                            .gatewayId(o.getGatewayId())
+                            .providerState(o.getProviderState())
+                            .referenceComment(o.getReferenceComment());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

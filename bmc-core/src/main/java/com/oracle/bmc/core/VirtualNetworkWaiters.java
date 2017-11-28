@@ -478,6 +478,77 @@ public class VirtualNetworkWaiters {
      * @param targetState The desired state to wait for.
      * @return A new Waiter instance.
      */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetLocalPeeringGatewayRequest, GetLocalPeeringGatewayResponse>
+            forLocalPeeringGateway(
+                    GetLocalPeeringGatewayRequest request,
+                    com.oracle.bmc.core.model.LocalPeeringGateway.LifecycleState targetState) {
+        return forLocalPeeringGateway(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using the provided configuration.
+     *
+     * @param request The request to send.
+     * @param targetState The desired state to wait for.
+     * @param terminationStrategy The {@link TerminationStrategy} to use.
+     * @param delayStrategy The {@link DelayStrategy} to use.
+     * @return A new Waiter instance.
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetLocalPeeringGatewayRequest, GetLocalPeeringGatewayResponse>
+            forLocalPeeringGateway(
+                    GetLocalPeeringGatewayRequest request,
+                    com.oracle.bmc.core.model.LocalPeeringGateway.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        return forLocalPeeringGateway(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    // Helper method to create a new Waiter for LocalPeeringGateway.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetLocalPeeringGatewayRequest, GetLocalPeeringGatewayResponse>
+            forLocalPeeringGateway(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetLocalPeeringGatewayRequest request,
+                    final com.oracle.bmc.core.model.LocalPeeringGateway.LifecycleState
+                            targetState) {
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetLocalPeeringGatewayRequest, GetLocalPeeringGatewayResponse>() {
+                            @Override
+                            public GetLocalPeeringGatewayResponse apply(
+                                    GetLocalPeeringGatewayRequest request) {
+                                return client.getLocalPeeringGateway(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetLocalPeeringGatewayResponse>() {
+                            @Override
+                            public boolean apply(GetLocalPeeringGatewayResponse response) {
+                                return response.getLocalPeeringGateway().getLifecycleState()
+                                        == targetState;
+                            }
+                        },
+                        targetState
+                                == com.oracle.bmc.core.model.LocalPeeringGateway.LifecycleState
+                                        .Terminated),
+                request);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using default configuration.
+     *
+     * @param request The request to send.
+     * @param targetState The desired state to wait for.
+     * @return A new Waiter instance.
+     */
     public com.oracle.bmc.waiter.Waiter<GetRouteTableRequest, GetRouteTableResponse> forRouteTable(
             GetRouteTableRequest request,
             com.oracle.bmc.core.model.RouteTable.LifecycleState targetState) {

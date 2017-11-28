@@ -1,5 +1,5 @@
 # Oracle Cloud Infrastructure Java SDK
-[![Build Status](https://travis-ci.org/oracle/bmcs-java-sdk.svg?branch=master)](https://travis-ci.org/oracle/bmcs-java-sdk)
+[![Build Status](https://travis-ci.org/oracle/oci-java-sdk.svg?branch=master)](https://travis-ci.org/oracle/oci-java-sdk)
 
 ## About
 

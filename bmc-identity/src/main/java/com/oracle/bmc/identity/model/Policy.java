@@ -129,15 +129,19 @@ public class Policy {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Policy o) {
-            return id(o.getId())
-                    .compartmentId(o.getCompartmentId())
-                    .name(o.getName())
-                    .statements(o.getStatements())
-                    .description(o.getDescription())
-                    .timeCreated(o.getTimeCreated())
-                    .lifecycleState(o.getLifecycleState())
-                    .inactiveStatus(o.getInactiveStatus())
-                    .versionDate(o.getVersionDate());
+            Builder copiedBuilder =
+                    id(o.getId())
+                            .compartmentId(o.getCompartmentId())
+                            .name(o.getName())
+                            .statements(o.getStatements())
+                            .description(o.getDescription())
+                            .timeCreated(o.getTimeCreated())
+                            .lifecycleState(o.getLifecycleState())
+                            .inactiveStatus(o.getInactiveStatus())
+                            .versionDate(o.getVersionDate());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

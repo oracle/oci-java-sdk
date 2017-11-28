@@ -142,17 +142,21 @@ public class Vcn {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Vcn o) {
-            return cidrBlock(o.getCidrBlock())
-                    .compartmentId(o.getCompartmentId())
-                    .defaultDhcpOptionsId(o.getDefaultDhcpOptionsId())
-                    .defaultRouteTableId(o.getDefaultRouteTableId())
-                    .defaultSecurityListId(o.getDefaultSecurityListId())
-                    .displayName(o.getDisplayName())
-                    .dnsLabel(o.getDnsLabel())
-                    .id(o.getId())
-                    .lifecycleState(o.getLifecycleState())
-                    .timeCreated(o.getTimeCreated())
-                    .vcnDomainName(o.getVcnDomainName());
+            Builder copiedBuilder =
+                    cidrBlock(o.getCidrBlock())
+                            .compartmentId(o.getCompartmentId())
+                            .defaultDhcpOptionsId(o.getDefaultDhcpOptionsId())
+                            .defaultRouteTableId(o.getDefaultRouteTableId())
+                            .defaultSecurityListId(o.getDefaultSecurityListId())
+                            .displayName(o.getDisplayName())
+                            .dnsLabel(o.getDnsLabel())
+                            .id(o.getId())
+                            .lifecycleState(o.getLifecycleState())
+                            .timeCreated(o.getTimeCreated())
+                            .vcnDomainName(o.getVcnDomainName());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

@@ -43,7 +43,10 @@ public class CaptureConsoleHistoryDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CaptureConsoleHistoryDetails o) {
-            return displayName(o.getDisplayName()).instanceId(o.getInstanceId());
+            Builder copiedBuilder = displayName(o.getDisplayName()).instanceId(o.getInstanceId());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

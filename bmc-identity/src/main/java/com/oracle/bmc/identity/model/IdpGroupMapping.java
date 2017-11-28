@@ -117,14 +117,18 @@ public class IdpGroupMapping {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(IdpGroupMapping o) {
-            return id(o.getId())
-                    .idpId(o.getIdpId())
-                    .idpGroupName(o.getIdpGroupName())
-                    .groupId(o.getGroupId())
-                    .compartmentId(o.getCompartmentId())
-                    .timeCreated(o.getTimeCreated())
-                    .lifecycleState(o.getLifecycleState())
-                    .inactiveStatus(o.getInactiveStatus());
+            Builder copiedBuilder =
+                    id(o.getId())
+                            .idpId(o.getIdpId())
+                            .idpGroupName(o.getIdpGroupName())
+                            .groupId(o.getGroupId())
+                            .compartmentId(o.getCompartmentId())
+                            .timeCreated(o.getTimeCreated())
+                            .lifecycleState(o.getLifecycleState())
+                            .inactiveStatus(o.getInactiveStatus());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

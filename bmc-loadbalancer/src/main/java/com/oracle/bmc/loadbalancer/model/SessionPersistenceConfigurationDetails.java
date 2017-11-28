@@ -55,7 +55,11 @@ public class SessionPersistenceConfigurationDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(SessionPersistenceConfigurationDetails o) {
-            return cookieName(o.getCookieName()).disableFallback(o.getDisableFallback());
+            Builder copiedBuilder =
+                    cookieName(o.getCookieName()).disableFallback(o.getDisableFallback());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

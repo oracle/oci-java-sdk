@@ -46,7 +46,10 @@ public class DbVersionSummary {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DbVersionSummary o) {
-            return supportsPdb(o.getSupportsPdb()).version(o.getVersion());
+            Builder copiedBuilder = supportsPdb(o.getSupportsPdb()).version(o.getVersion());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

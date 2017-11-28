@@ -43,7 +43,10 @@ public class WorkRequestError {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(WorkRequestError o) {
-            return errorCode(o.getErrorCode()).message(o.getMessage());
+            Builder copiedBuilder = errorCode(o.getErrorCode()).message(o.getMessage());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

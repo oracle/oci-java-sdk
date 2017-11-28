@@ -96,7 +96,7 @@ public class DefaultRequestSignerFactory implements RequestSignerFactory {
                 public Optional<RSAPrivateKey> getKey(String keyId) {
                     return new PEMFileRSAPrivateKeySupplier(
                                     authenticationDetailsProvider.getPrivateKey(),
-                                    authenticationDetailsProvider.getPassPhrase())
+                                    authenticationDetailsProvider.getPassphraseCharacters())
                             .getKey(keyId);
                 }
             };
@@ -105,7 +105,7 @@ public class DefaultRequestSignerFactory implements RequestSignerFactory {
         // else parse once now and return a fixed supplier
         return new PEMFileRSAPrivateKeySupplier(
                 authenticationDetailsProvider.getPrivateKey(),
-                authenticationDetailsProvider.getPassPhrase());
+                authenticationDetailsProvider.getPassphraseCharacters());
     }
 
     private static AuthCachingPolicy getAuthCachingPolicy(

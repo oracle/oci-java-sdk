@@ -113,14 +113,18 @@ public class SwiftPassword {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(SwiftPassword o) {
-            return password(o.getPassword())
-                    .id(o.getId())
-                    .userId(o.getUserId())
-                    .description(o.getDescription())
-                    .timeCreated(o.getTimeCreated())
-                    .expiresOn(o.getExpiresOn())
-                    .lifecycleState(o.getLifecycleState())
-                    .inactiveStatus(o.getInactiveStatus());
+            Builder copiedBuilder =
+                    password(o.getPassword())
+                            .id(o.getId())
+                            .userId(o.getUserId())
+                            .description(o.getDescription())
+                            .timeCreated(o.getTimeCreated())
+                            .expiresOn(o.getExpiresOn())
+                            .lifecycleState(o.getLifecycleState())
+                            .inactiveStatus(o.getInactiveStatus());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

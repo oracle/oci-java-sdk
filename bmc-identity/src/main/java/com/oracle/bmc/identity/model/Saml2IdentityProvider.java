@@ -148,17 +148,21 @@ public class Saml2IdentityProvider extends IdentityProvider {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Saml2IdentityProvider o) {
-            return id(o.getId())
-                    .compartmentId(o.getCompartmentId())
-                    .name(o.getName())
-                    .description(o.getDescription())
-                    .productType(o.getProductType())
-                    .timeCreated(o.getTimeCreated())
-                    .lifecycleState(o.getLifecycleState())
-                    .inactiveStatus(o.getInactiveStatus())
-                    .metadataUrl(o.getMetadataUrl())
-                    .signingCertificate(o.getSigningCertificate())
-                    .redirectUrl(o.getRedirectUrl());
+            Builder copiedBuilder =
+                    id(o.getId())
+                            .compartmentId(o.getCompartmentId())
+                            .name(o.getName())
+                            .description(o.getDescription())
+                            .productType(o.getProductType())
+                            .timeCreated(o.getTimeCreated())
+                            .lifecycleState(o.getLifecycleState())
+                            .inactiveStatus(o.getInactiveStatus())
+                            .metadataUrl(o.getMetadataUrl())
+                            .signingCertificate(o.getSigningCertificate())
+                            .redirectUrl(o.getRedirectUrl());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

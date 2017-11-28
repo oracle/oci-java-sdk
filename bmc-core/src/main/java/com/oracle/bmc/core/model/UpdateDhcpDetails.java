@@ -42,7 +42,10 @@ public class UpdateDhcpDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateDhcpDetails o) {
-            return displayName(o.getDisplayName()).options(o.getOptions());
+            Builder copiedBuilder = displayName(o.getDisplayName()).options(o.getOptions());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

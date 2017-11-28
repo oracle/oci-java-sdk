@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc.objectstorage;
 
+import java.util.Locale;
 import com.oracle.bmc.objectstorage.internal.http.*;
 import com.oracle.bmc.objectstorage.requests.*;
 import com.oracle.bmc.objectstorage.responses.*;
@@ -75,6 +76,8 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
             com.oracle.bmc.http.signing.RequestSignerFactory requestSignerFactory) {
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
+                        .defaultConfigurator(
+                                new com.oracle.bmc.http.DefaultConfigurator.NonBuffering())
                         .clientConfigurator(clientConfigurator)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner requestSigner =
@@ -101,7 +104,7 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase();
+        regionId = regionId.toLowerCase(Locale.ENGLISH);
         try {
             com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
             setRegion(region);
