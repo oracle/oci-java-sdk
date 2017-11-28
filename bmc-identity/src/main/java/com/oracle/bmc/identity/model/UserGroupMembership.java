@@ -100,13 +100,17 @@ public class UserGroupMembership {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UserGroupMembership o) {
-            return id(o.getId())
-                    .compartmentId(o.getCompartmentId())
-                    .groupId(o.getGroupId())
-                    .userId(o.getUserId())
-                    .timeCreated(o.getTimeCreated())
-                    .lifecycleState(o.getLifecycleState())
-                    .inactiveStatus(o.getInactiveStatus());
+            Builder copiedBuilder =
+                    id(o.getId())
+                            .compartmentId(o.getCompartmentId())
+                            .groupId(o.getGroupId())
+                            .userId(o.getUserId())
+                            .timeCreated(o.getTimeCreated())
+                            .lifecycleState(o.getLifecycleState())
+                            .inactiveStatus(o.getInactiveStatus());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

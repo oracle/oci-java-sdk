@@ -47,7 +47,10 @@ public class UpdateCrossConnectDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateCrossConnectDetails o) {
-            return displayName(o.getDisplayName()).isActive(o.getIsActive());
+            Builder copiedBuilder = displayName(o.getDisplayName()).isActive(o.getIsActive());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

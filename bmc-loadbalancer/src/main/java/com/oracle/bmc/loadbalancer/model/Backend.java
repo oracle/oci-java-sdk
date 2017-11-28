@@ -91,13 +91,17 @@ public class Backend {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Backend o) {
-            return backup(o.getBackup())
-                    .drain(o.getDrain())
-                    .ipAddress(o.getIpAddress())
-                    .name(o.getName())
-                    .offline(o.getOffline())
-                    .port(o.getPort())
-                    .weight(o.getWeight());
+            Builder copiedBuilder =
+                    backup(o.getBackup())
+                            .drain(o.getDrain())
+                            .ipAddress(o.getIpAddress())
+                            .name(o.getName())
+                            .offline(o.getOffline())
+                            .port(o.getPort())
+                            .weight(o.getWeight());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

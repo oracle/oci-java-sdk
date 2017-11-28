@@ -70,6 +70,15 @@ public class VnicAttachment {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nicIndex")
+        private Integer nicIndex;
+
+        public Builder nicIndex(Integer nicIndex) {
+            this.nicIndex = nicIndex;
+            this.__explicitlySet__.add("nicIndex");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
@@ -118,6 +127,7 @@ public class VnicAttachment {
                             id,
                             instanceId,
                             lifecycleState,
+                            nicIndex,
                             subnetId,
                             timeCreated,
                             vlanTag,
@@ -128,16 +138,21 @@ public class VnicAttachment {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(VnicAttachment o) {
-            return availabilityDomain(o.getAvailabilityDomain())
-                    .compartmentId(o.getCompartmentId())
-                    .displayName(o.getDisplayName())
-                    .id(o.getId())
-                    .instanceId(o.getInstanceId())
-                    .lifecycleState(o.getLifecycleState())
-                    .subnetId(o.getSubnetId())
-                    .timeCreated(o.getTimeCreated())
-                    .vlanTag(o.getVlanTag())
-                    .vnicId(o.getVnicId());
+            Builder copiedBuilder =
+                    availabilityDomain(o.getAvailabilityDomain())
+                            .compartmentId(o.getCompartmentId())
+                            .displayName(o.getDisplayName())
+                            .id(o.getId())
+                            .instanceId(o.getInstanceId())
+                            .lifecycleState(o.getLifecycleState())
+                            .nicIndex(o.getNicIndex())
+                            .subnetId(o.getSubnetId())
+                            .timeCreated(o.getTimeCreated())
+                            .vlanTag(o.getVlanTag())
+                            .vnicId(o.getVnicId());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 
@@ -237,6 +252,17 @@ public class VnicAttachment {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
+
+    /**
+     * Which physical network interface card (NIC) the VNIC uses.
+     * Certain bare metal instance shapes have two active physical NICs (0 and 1). If
+     * you add a secondary VNIC to one of these instances, you can specify which NIC
+     * the VNIC will use. For more information, see
+     * [Virtual Network Interface Cards (VNICs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nicIndex")
+    Integer nicIndex;
 
     /**
      * The OCID of the VNIC's subnet.

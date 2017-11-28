@@ -187,21 +187,25 @@ public class DataGuardAssociationSummary {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DataGuardAssociationSummary o) {
-            return applyLag(o.getApplyLag())
-                    .applyRate(o.getApplyRate())
-                    .databaseId(o.getDatabaseId())
-                    .id(o.getId())
-                    .lifecycleDetails(o.getLifecycleDetails())
-                    .lifecycleState(o.getLifecycleState())
-                    .peerDataGuardAssociationId(o.getPeerDataGuardAssociationId())
-                    .peerDatabaseId(o.getPeerDatabaseId())
-                    .peerDbHomeId(o.getPeerDbHomeId())
-                    .peerDbSystemId(o.getPeerDbSystemId())
-                    .peerRole(o.getPeerRole())
-                    .protectionMode(o.getProtectionMode())
-                    .role(o.getRole())
-                    .timeCreated(o.getTimeCreated())
-                    .transportType(o.getTransportType());
+            Builder copiedBuilder =
+                    applyLag(o.getApplyLag())
+                            .applyRate(o.getApplyRate())
+                            .databaseId(o.getDatabaseId())
+                            .id(o.getId())
+                            .lifecycleDetails(o.getLifecycleDetails())
+                            .lifecycleState(o.getLifecycleState())
+                            .peerDataGuardAssociationId(o.getPeerDataGuardAssociationId())
+                            .peerDatabaseId(o.getPeerDatabaseId())
+                            .peerDbHomeId(o.getPeerDbHomeId())
+                            .peerDbSystemId(o.getPeerDbSystemId())
+                            .peerRole(o.getPeerRole())
+                            .protectionMode(o.getProtectionMode())
+                            .role(o.getRole())
+                            .timeCreated(o.getTimeCreated())
+                            .transportType(o.getTransportType());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

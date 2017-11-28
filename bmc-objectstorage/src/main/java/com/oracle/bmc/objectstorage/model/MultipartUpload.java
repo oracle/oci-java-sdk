@@ -80,11 +80,15 @@ public class MultipartUpload {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(MultipartUpload o) {
-            return namespace(o.getNamespace())
-                    .bucket(o.getBucket())
-                    .object(o.getObject())
-                    .uploadId(o.getUploadId())
-                    .timeCreated(o.getTimeCreated());
+            Builder copiedBuilder =
+                    namespace(o.getNamespace())
+                            .bucket(o.getBucket())
+                            .object(o.getObject())
+                            .uploadId(o.getUploadId())
+                            .timeCreated(o.getTimeCreated());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

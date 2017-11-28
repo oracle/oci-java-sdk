@@ -52,9 +52,13 @@ public class CreateDbHomeDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateDbHomeDetails o) {
-            return database(o.getDatabase())
-                    .dbVersion(o.getDbVersion())
-                    .displayName(o.getDisplayName());
+            Builder copiedBuilder =
+                    database(o.getDatabase())
+                            .dbVersion(o.getDbVersion())
+                            .displayName(o.getDisplayName());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

@@ -53,7 +53,11 @@ public class DhcpDnsOption extends DhcpOption {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DhcpDnsOption o) {
-            return customDnsServers(o.getCustomDnsServers()).serverType(o.getServerType());
+            Builder copiedBuilder =
+                    customDnsServers(o.getCustomDnsServers()).serverType(o.getServerType());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

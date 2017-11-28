@@ -79,11 +79,15 @@ public class Cpe {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Cpe o) {
-            return compartmentId(o.getCompartmentId())
-                    .displayName(o.getDisplayName())
-                    .id(o.getId())
-                    .ipAddress(o.getIpAddress())
-                    .timeCreated(o.getTimeCreated());
+            Builder copiedBuilder =
+                    compartmentId(o.getCompartmentId())
+                            .displayName(o.getDisplayName())
+                            .id(o.getId())
+                            .ipAddress(o.getIpAddress())
+                            .timeCreated(o.getTimeCreated());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

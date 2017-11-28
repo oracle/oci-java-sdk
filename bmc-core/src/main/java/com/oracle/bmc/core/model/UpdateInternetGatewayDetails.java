@@ -43,7 +43,10 @@ public class UpdateInternetGatewayDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateInternetGatewayDetails o) {
-            return displayName(o.getDisplayName()).isEnabled(o.getIsEnabled());
+            Builder copiedBuilder = displayName(o.getDisplayName()).isEnabled(o.getIsEnabled());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

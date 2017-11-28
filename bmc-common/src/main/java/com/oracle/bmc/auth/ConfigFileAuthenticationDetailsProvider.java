@@ -72,14 +72,16 @@ public class ConfigFileAuthenticationDetailsProvider implements AuthenticationDe
 
         Supplier<InputStream> privateKeySupplier = new SimplePrivateKeySupplier(pemFilePath);
 
-        this.delegate =
+        SimpleAuthenticationDetailsProvider.SimpleAuthenticationDetailsProviderBuilder builder =
                 SimpleAuthenticationDetailsProvider.builder()
                         .fingerprint(fingerprint)
-                        .passPhrase(passPhrase)
                         .privateKeySupplier(privateKeySupplier)
                         .tenantId(tenantId)
-                        .userId(userId)
-                        .build();
+                        .userId(userId);
+        if (passPhrase != null) {
+            builder = builder.passphraseCharacters(passPhrase.toCharArray());
+        }
+        this.delegate = builder.build();
     }
 
     @Override
@@ -97,9 +99,15 @@ public class ConfigFileAuthenticationDetailsProvider implements AuthenticationDe
         return this.delegate.getUserId();
     }
 
+    @Deprecated
     @Override
     public String getPassPhrase() {
         return this.delegate.getPassPhrase();
+    }
+
+    @Override
+    public char[] getPassphraseCharacters() {
+        return this.delegate.getPassphraseCharacters();
     }
 
     @Override

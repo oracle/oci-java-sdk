@@ -48,7 +48,10 @@ public class AvailabilityDomain {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(AvailabilityDomain o) {
-            return name(o.getName()).compartmentId(o.getCompartmentId());
+            Builder copiedBuilder = name(o.getName()).compartmentId(o.getCompartmentId());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

@@ -33,7 +33,10 @@ public class RestoreObjectsDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(RestoreObjectsDetails o) {
-            return objectName(o.getObjectName());
+            Builder copiedBuilder = objectName(o.getObjectName());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

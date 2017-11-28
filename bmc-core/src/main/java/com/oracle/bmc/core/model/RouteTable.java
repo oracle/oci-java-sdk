@@ -103,13 +103,17 @@ public class RouteTable {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(RouteTable o) {
-            return compartmentId(o.getCompartmentId())
-                    .displayName(o.getDisplayName())
-                    .id(o.getId())
-                    .lifecycleState(o.getLifecycleState())
-                    .routeRules(o.getRouteRules())
-                    .timeCreated(o.getTimeCreated())
-                    .vcnId(o.getVcnId());
+            Builder copiedBuilder =
+                    compartmentId(o.getCompartmentId())
+                            .displayName(o.getDisplayName())
+                            .id(o.getId())
+                            .lifecycleState(o.getLifecycleState())
+                            .routeRules(o.getRouteRules())
+                            .timeCreated(o.getTimeCreated())
+                            .vcnId(o.getVcnId());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

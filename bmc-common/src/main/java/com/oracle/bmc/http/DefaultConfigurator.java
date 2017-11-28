@@ -16,6 +16,7 @@ import com.oracle.bmc.util.JavaRuntimeUtils;
 import com.oracle.bmc.util.JavaRuntimeUtils.JreVersion;
 
 import lombok.extern.slf4j.Slf4j;
+import org.glassfish.jersey.client.RequestEntityProcessing;
 
 /**
  * DefaultConfigurator handles basic configuration of clients under different
@@ -100,20 +101,50 @@ public class DefaultConfigurator implements ClientConfigurator {
         LOG.info("Setting connector provider to HttpUrlConnectorProvider");
 
         ClientConfig clientConfig = new ClientConfig();
-        // 1) use fixed length streaming when possible to allow large uploads without
-        // buffering.
-        // 2) enable workaround for 'patch' requests
-        HttpUrlConnectorProvider provider =
-                new HttpUrlConnectorProvider().useFixedLengthStreaming().useSetMethodWorkaround();
+        // 1) enable workaround for 'patch' requests
+        HttpUrlConnectorProvider provider = new HttpUrlConnectorProvider().useSetMethodWorkaround();
 
         clientConfig.connectorProvider(provider);
+
         builder.withConfig(clientConfig);
     }
 
     @Override
     public void customizeClient(Client client) {
-        // do not use buffered processing, which will allow large uploads to be
-        // directly written to output streams.
-        client.property(ClientProperties.REQUEST_ENTITY_PROCESSING, null);
+        // Use buffered processing to get better error messages on POST and PUT
+        // but the downside is that this will buffer large uploads in memory.
+        // Operations that should not use buffering should set null instead
+        client.property(
+                ClientProperties.REQUEST_ENTITY_PROCESSING, RequestEntityProcessing.BUFFERED);
+    }
+
+    /**
+     * A {@link ClientConfigurator} for a client that does not buffer requests in memory.
+     *
+     * Note: for PUT and POST requests, this will result in less accurate error messages
+     */
+    public static class NonBuffering extends DefaultConfigurator {
+        @Override
+        public void customizeClient(Client client) {
+            super.customizeClient(client);
+            client.property(ClientProperties.REQUEST_ENTITY_PROCESSING, null);
+        }
+
+        @Override
+        protected void setConnectorProvider(ClientBuilder builder) {
+            LOG.info("Setting non-buffering connector provider to HttpUrlConnectorProvider");
+
+            ClientConfig clientConfig = new ClientConfig();
+            // 1) use fixed length streaming when possible to allow large uploads without
+            // buffering.
+            // 2) enable workaround for 'patch' requests
+            HttpUrlConnectorProvider provider =
+                    new HttpUrlConnectorProvider()
+                            .useFixedLengthStreaming()
+                            .useSetMethodWorkaround();
+
+            clientConfig.connectorProvider(provider);
+            builder.withConfig(clientConfig);
+        }
     }
 }

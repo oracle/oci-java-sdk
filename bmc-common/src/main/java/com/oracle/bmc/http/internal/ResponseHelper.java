@@ -6,6 +6,7 @@ package com.oracle.bmc.http.internal;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Locale;
 
 import javax.ws.rs.ProcessingException;
 import javax.ws.rs.core.GenericType;
@@ -159,7 +160,8 @@ public class ResponseHelper {
 
                 T entity = response.readEntity(entityType);
                 String contentType = response.getHeaderString("content-type");
-                if (contentType != null && contentType.toLowerCase().equals("application/json")) {
+                if (contentType != null
+                        && contentType.toLowerCase(Locale.ROOT).equals("application/json")) {
                     // HACK alert, if the entry is a string, and it's mime was
                     // application/json, jackson's provider won't deserialize it since
                     // the default provider takes presidence. Need to explicitly remove

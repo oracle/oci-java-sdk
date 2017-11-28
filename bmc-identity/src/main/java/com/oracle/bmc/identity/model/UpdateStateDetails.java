@@ -33,7 +33,10 @@ public class UpdateStateDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateStateDetails o) {
-            return blocked(o.getBlocked());
+            Builder copiedBuilder = blocked(o.getBlocked());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

@@ -109,14 +109,18 @@ public class DbNodeSummary {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DbNodeSummary o) {
-            return backupVnicId(o.getBackupVnicId())
-                    .dbSystemId(o.getDbSystemId())
-                    .hostname(o.getHostname())
-                    .id(o.getId())
-                    .lifecycleState(o.getLifecycleState())
-                    .softwareStorageSizeInGB(o.getSoftwareStorageSizeInGB())
-                    .timeCreated(o.getTimeCreated())
-                    .vnicId(o.getVnicId());
+            Builder copiedBuilder =
+                    backupVnicId(o.getBackupVnicId())
+                            .dbSystemId(o.getDbSystemId())
+                            .hostname(o.getHostname())
+                            .id(o.getId())
+                            .lifecycleState(o.getLifecycleState())
+                            .softwareStorageSizeInGB(o.getSoftwareStorageSizeInGB())
+                            .timeCreated(o.getTimeCreated())
+                            .vnicId(o.getVnicId());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

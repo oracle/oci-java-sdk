@@ -45,7 +45,10 @@ public class InstanceCredentials {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(InstanceCredentials o) {
-            return password(o.getPassword()).username(o.getUsername());
+            Builder copiedBuilder = password(o.getPassword()).username(o.getUsername());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

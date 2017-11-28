@@ -42,7 +42,10 @@ public class CreateBackupDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateBackupDetails o) {
-            return databaseId(o.getDatabaseId()).displayName(o.getDisplayName());
+            Builder copiedBuilder = databaseId(o.getDatabaseId()).displayName(o.getDisplayName());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

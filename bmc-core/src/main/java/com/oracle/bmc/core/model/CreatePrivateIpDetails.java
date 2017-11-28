@@ -61,10 +61,14 @@ public class CreatePrivateIpDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreatePrivateIpDetails o) {
-            return displayName(o.getDisplayName())
-                    .hostnameLabel(o.getHostnameLabel())
-                    .ipAddress(o.getIpAddress())
-                    .vnicId(o.getVnicId());
+            Builder copiedBuilder =
+                    displayName(o.getDisplayName())
+                            .hostnameLabel(o.getHostnameLabel())
+                            .ipAddress(o.getIpAddress())
+                            .vnicId(o.getVnicId());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

@@ -114,14 +114,18 @@ public class IPSecConnection {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(IPSecConnection o) {
-            return compartmentId(o.getCompartmentId())
-                    .cpeId(o.getCpeId())
-                    .displayName(o.getDisplayName())
-                    .drgId(o.getDrgId())
-                    .id(o.getId())
-                    .lifecycleState(o.getLifecycleState())
-                    .staticRoutes(o.getStaticRoutes())
-                    .timeCreated(o.getTimeCreated());
+            Builder copiedBuilder =
+                    compartmentId(o.getCompartmentId())
+                            .cpeId(o.getCpeId())
+                            .displayName(o.getDisplayName())
+                            .drgId(o.getDrgId())
+                            .id(o.getId())
+                            .lifecycleState(o.getLifecycleState())
+                            .staticRoutes(o.getStaticRoutes())
+                            .timeCreated(o.getTimeCreated());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

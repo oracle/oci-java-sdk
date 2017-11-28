@@ -206,24 +206,28 @@ public class AuditEvent {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(AuditEvent o) {
-            return tenantId(o.getTenantId())
-                    .compartmentId(o.getCompartmentId())
-                    .eventId(o.getEventId())
-                    .eventSource(o.getEventSource())
-                    .eventType(o.getEventType())
-                    .eventTime(o.getEventTime())
-                    .principalId(o.getPrincipalId())
-                    .credentialId(o.getCredentialId())
-                    .requestAction(o.getRequestAction())
-                    .requestId(o.getRequestId())
-                    .requestAgent(o.getRequestAgent())
-                    .requestHeaders(o.getRequestHeaders())
-                    .requestOrigin(o.getRequestOrigin())
-                    .requestParameters(o.getRequestParameters())
-                    .requestResource(o.getRequestResource())
-                    .responseHeaders(o.getResponseHeaders())
-                    .responseStatus(o.getResponseStatus())
-                    .responseTime(o.getResponseTime());
+            Builder copiedBuilder =
+                    tenantId(o.getTenantId())
+                            .compartmentId(o.getCompartmentId())
+                            .eventId(o.getEventId())
+                            .eventSource(o.getEventSource())
+                            .eventType(o.getEventType())
+                            .eventTime(o.getEventTime())
+                            .principalId(o.getPrincipalId())
+                            .credentialId(o.getCredentialId())
+                            .requestAction(o.getRequestAction())
+                            .requestId(o.getRequestId())
+                            .requestAgent(o.getRequestAgent())
+                            .requestHeaders(o.getRequestHeaders())
+                            .requestOrigin(o.getRequestOrigin())
+                            .requestParameters(o.getRequestParameters())
+                            .requestResource(o.getRequestResource())
+                            .responseHeaders(o.getResponseHeaders())
+                            .responseStatus(o.getResponseStatus())
+                            .responseTime(o.getResponseTime());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

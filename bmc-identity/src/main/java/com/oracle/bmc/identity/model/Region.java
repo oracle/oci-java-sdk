@@ -50,7 +50,10 @@ public class Region {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Region o) {
-            return key(o.getKey()).name(o.getName());
+            Builder copiedBuilder = key(o.getKey()).name(o.getName());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

@@ -7,11 +7,21 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Fixed
 - N/A
 
+## 1.2.18 - 2017-11-27
+
 ### Changed
-- N/A
+- Passphrases are now passed as char[] instead of as String
+- Requests are now buffered in memory by default, except by the ObjectStorageClient and ObjectStorageAsyncClient. This allows for better error messages on PUT and POST requests. If you do not want to buffer requests in memory, pass an instance of `com.oracle.bmc.http.DefaultConfigurator.NonBuffering` to the constructor of the client.
 
 ### Added
-- N/A
+- Support for VCN to VCN peering within region
+- Support option for second NIC on X7 bare metal instances
+- Support for user-managed boot volumes
+- Support for creating database from backup in Database service
+- Support for sort and filter in ListLoadBalancers method in Load Balancer Service
+
+### Deprecated
+- Methods accepting passphrases as String are deprecated; use char[] instead
 
 ## 1.2.17 - 2017-11-02
 

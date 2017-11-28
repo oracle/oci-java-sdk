@@ -159,19 +159,23 @@ public class Database {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Database o) {
-            return characterSet(o.getCharacterSet())
-                    .compartmentId(o.getCompartmentId())
-                    .dbBackupConfig(o.getDbBackupConfig())
-                    .dbHomeId(o.getDbHomeId())
-                    .dbName(o.getDbName())
-                    .dbUniqueName(o.getDbUniqueName())
-                    .dbWorkload(o.getDbWorkload())
-                    .id(o.getId())
-                    .lifecycleDetails(o.getLifecycleDetails())
-                    .lifecycleState(o.getLifecycleState())
-                    .ncharacterSet(o.getNcharacterSet())
-                    .pdbName(o.getPdbName())
-                    .timeCreated(o.getTimeCreated());
+            Builder copiedBuilder =
+                    characterSet(o.getCharacterSet())
+                            .compartmentId(o.getCompartmentId())
+                            .dbBackupConfig(o.getDbBackupConfig())
+                            .dbHomeId(o.getDbHomeId())
+                            .dbName(o.getDbName())
+                            .dbUniqueName(o.getDbUniqueName())
+                            .dbWorkload(o.getDbWorkload())
+                            .id(o.getId())
+                            .lifecycleDetails(o.getLifecycleDetails())
+                            .lifecycleState(o.getLifecycleState())
+                            .ncharacterSet(o.getNcharacterSet())
+                            .pdbName(o.getPdbName())
+                            .timeCreated(o.getTimeCreated());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

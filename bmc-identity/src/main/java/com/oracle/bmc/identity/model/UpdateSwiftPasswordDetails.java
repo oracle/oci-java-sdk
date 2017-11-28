@@ -33,7 +33,10 @@ public class UpdateSwiftPasswordDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateSwiftPasswordDetails o) {
-            return description(o.getDescription());
+            Builder copiedBuilder = description(o.getDescription());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

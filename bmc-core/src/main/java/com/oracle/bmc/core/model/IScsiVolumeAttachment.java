@@ -165,19 +165,23 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(IScsiVolumeAttachment o) {
-            return availabilityDomain(o.getAvailabilityDomain())
-                    .compartmentId(o.getCompartmentId())
-                    .displayName(o.getDisplayName())
-                    .id(o.getId())
-                    .instanceId(o.getInstanceId())
-                    .lifecycleState(o.getLifecycleState())
-                    .timeCreated(o.getTimeCreated())
-                    .volumeId(o.getVolumeId())
-                    .chapSecret(o.getChapSecret())
-                    .chapUsername(o.getChapUsername())
-                    .ipv4(o.getIpv4())
-                    .iqn(o.getIqn())
-                    .port(o.getPort());
+            Builder copiedBuilder =
+                    availabilityDomain(o.getAvailabilityDomain())
+                            .compartmentId(o.getCompartmentId())
+                            .displayName(o.getDisplayName())
+                            .id(o.getId())
+                            .instanceId(o.getInstanceId())
+                            .lifecycleState(o.getLifecycleState())
+                            .timeCreated(o.getTimeCreated())
+                            .volumeId(o.getVolumeId())
+                            .chapSecret(o.getChapSecret())
+                            .chapUsername(o.getChapUsername())
+                            .ipv4(o.getIpv4())
+                            .iqn(o.getIqn())
+                            .port(o.getPort());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

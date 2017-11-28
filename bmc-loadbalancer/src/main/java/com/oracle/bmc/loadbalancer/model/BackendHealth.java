@@ -4,7 +4,7 @@
 package com.oracle.bmc.loadbalancer.model;
 
 /**
- * The health status of the specified backend server as reported by the primary and stand-by load balancers.
+ * The health status of the specified backend server as reported by the primary and standby load balancers.
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
@@ -44,7 +44,11 @@ public class BackendHealth {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(BackendHealth o) {
-            return healthCheckResults(o.getHealthCheckResults()).status(o.getStatus());
+            Builder copiedBuilder =
+                    healthCheckResults(o.getHealthCheckResults()).status(o.getStatus());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 
@@ -62,7 +66,7 @@ public class BackendHealth {
     @com.fasterxml.jackson.annotation.JsonProperty("healthCheckResults")
     java.util.List<HealthCheckResult> healthCheckResults;
     /**
-     * The general health status of the specified backend server as reported by the primary and stand-by load balancers.
+     * The general health status of the specified backend server as reported by the primary and standby load balancers.
      * <p>
      *   **OK:** Both health checks returned `OK`.
      * <p>
@@ -119,7 +123,7 @@ public class BackendHealth {
         }
     };
     /**
-     * The general health status of the specified backend server as reported by the primary and stand-by load balancers.
+     * The general health status of the specified backend server as reported by the primary and standby load balancers.
      * <p>
      *   **OK:** Both health checks returned `OK`.
      * <p>

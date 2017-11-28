@@ -108,14 +108,18 @@ public class UpdateHealthCheckerDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateHealthCheckerDetails o) {
-            return intervalInMillis(o.getIntervalInMillis())
-                    .port(o.getPort())
-                    .protocol(o.getProtocol())
-                    .responseBodyRegex(o.getResponseBodyRegex())
-                    .retries(o.getRetries())
-                    .returnCode(o.getReturnCode())
-                    .timeoutInMillis(o.getTimeoutInMillis())
-                    .urlPath(o.getUrlPath());
+            Builder copiedBuilder =
+                    intervalInMillis(o.getIntervalInMillis())
+                            .port(o.getPort())
+                            .protocol(o.getProtocol())
+                            .responseBodyRegex(o.getResponseBodyRegex())
+                            .retries(o.getRetries())
+                            .returnCode(o.getReturnCode())
+                            .timeoutInMillis(o.getTimeoutInMillis())
+                            .urlPath(o.getUrlPath());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 
