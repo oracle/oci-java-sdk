@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## Unreleased
+### Fixed
+- N/A
+
 ## 1.2.18 - 2017-11-27
 
 ### Changed
