@@ -122,15 +122,19 @@ public class Image {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Image o) {
-            return baseImageId(o.getBaseImageId())
-                    .compartmentId(o.getCompartmentId())
-                    .createImageAllowed(o.getCreateImageAllowed())
-                    .displayName(o.getDisplayName())
-                    .id(o.getId())
-                    .lifecycleState(o.getLifecycleState())
-                    .operatingSystem(o.getOperatingSystem())
-                    .operatingSystemVersion(o.getOperatingSystemVersion())
-                    .timeCreated(o.getTimeCreated());
+            Builder copiedBuilder =
+                    baseImageId(o.getBaseImageId())
+                            .compartmentId(o.getCompartmentId())
+                            .createImageAllowed(o.getCreateImageAllowed())
+                            .displayName(o.getDisplayName())
+                            .id(o.getId())
+                            .lifecycleState(o.getLifecycleState())
+                            .operatingSystem(o.getOperatingSystem())
+                            .operatingSystemVersion(o.getOperatingSystemVersion())
+                            .timeCreated(o.getTimeCreated());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

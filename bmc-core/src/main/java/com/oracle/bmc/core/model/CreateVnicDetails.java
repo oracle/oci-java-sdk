@@ -92,12 +92,16 @@ public class CreateVnicDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateVnicDetails o) {
-            return assignPublicIp(o.getAssignPublicIp())
-                    .displayName(o.getDisplayName())
-                    .hostnameLabel(o.getHostnameLabel())
-                    .privateIp(o.getPrivateIp())
-                    .skipSourceDestCheck(o.getSkipSourceDestCheck())
-                    .subnetId(o.getSubnetId());
+            Builder copiedBuilder =
+                    assignPublicIp(o.getAssignPublicIp())
+                            .displayName(o.getDisplayName())
+                            .hostnameLabel(o.getHostnameLabel())
+                            .privateIp(o.getPrivateIp())
+                            .skipSourceDestCheck(o.getSkipSourceDestCheck())
+                            .subnetId(o.getSubnetId());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

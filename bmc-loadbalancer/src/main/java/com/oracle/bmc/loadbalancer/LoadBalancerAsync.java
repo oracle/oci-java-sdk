@@ -114,7 +114,7 @@ public interface LoadBalancerAsync extends AutoCloseable {
      * To get a list of Availability Domains, use the `ListAvailabilityDomains` operation
      * in the Identity and Access Management Service API.
      * <p>
-     * All Oracle Bare Metal Cloud Services resources, including load balancers, get an Oracle-assigned,
+     * All Oracle Cloud Infrastructure resources, including load balancers, get an Oracle-assigned,
      * unique ID called an Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID
      * in the response. You can also retrieve a resource's OCID by using a List API operation on that resource type,
      * or by viewing the resource in the Console. Fore more information, see

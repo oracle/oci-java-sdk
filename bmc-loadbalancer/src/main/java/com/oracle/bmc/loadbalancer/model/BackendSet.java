@@ -90,12 +90,16 @@ public class BackendSet {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(BackendSet o) {
-            return backends(o.getBackends())
-                    .healthChecker(o.getHealthChecker())
-                    .name(o.getName())
-                    .policy(o.getPolicy())
-                    .sessionPersistenceConfiguration(o.getSessionPersistenceConfiguration())
-                    .sslConfiguration(o.getSslConfiguration());
+            Builder copiedBuilder =
+                    backends(o.getBackends())
+                            .healthChecker(o.getHealthChecker())
+                            .name(o.getName())
+                            .policy(o.getPolicy())
+                            .sessionPersistenceConfiguration(o.getSessionPersistenceConfiguration())
+                            .sslConfiguration(o.getSslConfiguration());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 
@@ -125,9 +129,8 @@ public class BackendSet {
     String name;
 
     /**
-     * The load balancer policy for the backend set. The default load balancing policy is 'ROUND_ROBIN'
-     * To get a list of available policies, use the {@link #listPolicies(ListPoliciesRequest) listPolicies}
-     * operation.
+     * The load balancer policy for the backend set. To get a list of available policies, use the
+     * {@link #listPolicies(ListPoliciesRequest) listPolicies} operation.
      * <p>
      * Example: `LEAST_CONNECTIONS`
      *

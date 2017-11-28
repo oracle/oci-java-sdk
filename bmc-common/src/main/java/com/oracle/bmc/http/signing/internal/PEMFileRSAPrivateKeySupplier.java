@@ -54,11 +54,11 @@ public class PEMFileRSAPrivateKeySupplier implements KeySupplier<RSAPrivateKey> 
      *
      * @param inputStream
      *            the path to the RSA private key
-     * @param password
+     * @param passphraseCharacters
      *            the passphrase of the private key, optional
      */
     public PEMFileRSAPrivateKeySupplier(
-            @Nonnull final InputStream inputStream, @Nullable final String password) {
+            @Nonnull final InputStream inputStream, @Nullable final char[] passphraseCharacters) {
         try {
             LOG.debug("Initializing private key");
 
@@ -70,10 +70,10 @@ public class PEMFileRSAPrivateKeySupplier implements KeySupplier<RSAPrivateKey> 
 
                 if (object instanceof PEMEncryptedKeyPair) {
                     Preconditions.checkNotNull(
-                            password, "The provided private key requires a passphrase");
+                            passphraseCharacters, "The provided private key requires a passphrase");
 
                     PEMDecryptorProvider decProv =
-                            new JcePEMDecryptorProviderBuilder().build(password.toCharArray());
+                            new JcePEMDecryptorProviderBuilder().build(passphraseCharacters);
                     try {
                         keyInfo =
                                 ((PEMEncryptedKeyPair) object)

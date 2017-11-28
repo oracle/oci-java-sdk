@@ -37,6 +37,23 @@ public interface VirtualNetwork extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Connects this local peering gateway (LPG) to another one in the same region.
+     * <p>
+     * This operation must be called by the VCN administrator who is designated as
+     * the *requestor* in the peering relationship. The *acceptor* must implement
+     * an Identity and Access Management (IAM) policy that gives the requestor permission
+     * to connect to LPGs in the acceptor's compartment. Without that permission, this
+     * operation will fail. For more information, see
+     * [VCN Peering](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/VCNpeering.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ConnectLocalPeeringGatewaysResponse connectLocalPeeringGateways(
+            ConnectLocalPeeringGatewaysRequest request);
+
+    /**
      * Creates a new virtual Customer-Premises Equipment (CPE) object in the specified compartment. For
      * more information, see [IPSec VPNs](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPsec.htm).
      * <p>
@@ -230,6 +247,16 @@ public interface VirtualNetwork extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     CreateInternetGatewayResponse createInternetGateway(CreateInternetGatewayRequest request);
+
+    /**
+     * Creates a new local peering gateway (LPG) for the specified VCN.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateLocalPeeringGatewayResponse createLocalPeeringGateway(
+            CreateLocalPeeringGatewayRequest request);
 
     /**
      * Creates a secondary private IP for the specified VNIC.
@@ -490,6 +517,19 @@ public interface VirtualNetwork extends AutoCloseable {
     DeleteInternetGatewayResponse deleteInternetGateway(DeleteInternetGatewayRequest request);
 
     /**
+     * Deletes the specified local peering gateway (LPG).
+     * <p>
+     * This is an asynchronous operation; the local peering gateway's `lifecycleState` changes to TERMINATING temporarily
+     * until the local peering gateway is completely removed.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteLocalPeeringGatewayResponse deleteLocalPeeringGateway(
+            DeleteLocalPeeringGatewayRequest request);
+
+    /**
      * Unassigns and deletes the specified private IP. You must
      * specify the object's OCID. The private IP address is returned to
      * the subnet's pool of available addresses.
@@ -676,6 +716,14 @@ public interface VirtualNetwork extends AutoCloseable {
     GetInternetGatewayResponse getInternetGateway(GetInternetGatewayRequest request);
 
     /**
+     * Gets the specified local peering gateway's information.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetLocalPeeringGatewayResponse getLocalPeeringGateway(GetLocalPeeringGatewayRequest request);
+
+    /**
      * Gets the specified private IP. You must specify the object's OCID.
      * Alternatively, you can get the object by using
      * {@link #listPrivateIps(ListPrivateIpsRequest) listPrivateIps}
@@ -856,6 +904,17 @@ public interface VirtualNetwork extends AutoCloseable {
     ListInternetGatewaysResponse listInternetGateways(ListInternetGatewaysRequest request);
 
     /**
+     * Lists the local peering gateways (LPGs) for the specified VCN and compartment
+     * (the LPG's compartment).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListLocalPeeringGatewaysResponse listLocalPeeringGateways(
+            ListLocalPeeringGatewaysRequest request);
+
+    /**
      * Lists the {@link PrivateIp} objects based
      * on one of these filters:
      * <p>
@@ -1017,6 +1076,16 @@ public interface VirtualNetwork extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateInternetGatewayResponse updateInternetGateway(UpdateInternetGatewayRequest request);
+
+    /**
+     * Updates the specified local peering gateway (LPG).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateLocalPeeringGatewayResponse updateLocalPeeringGateway(
+            UpdateLocalPeeringGatewayRequest request);
 
     /**
      * Updates the specified private IP. You must specify the object's OCID.

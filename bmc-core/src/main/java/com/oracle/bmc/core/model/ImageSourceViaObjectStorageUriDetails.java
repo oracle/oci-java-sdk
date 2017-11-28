@@ -41,7 +41,10 @@ public class ImageSourceViaObjectStorageUriDetails extends ImageSourceDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ImageSourceViaObjectStorageUriDetails o) {
-            return sourceUri(o.getSourceUri());
+            Builder copiedBuilder = sourceUri(o.getSourceUri());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

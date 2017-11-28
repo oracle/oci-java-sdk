@@ -75,11 +75,15 @@ public class UIPassword {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UIPassword o) {
-            return password(o.getPassword())
-                    .userId(o.getUserId())
-                    .timeCreated(o.getTimeCreated())
-                    .lifecycleState(o.getLifecycleState())
-                    .inactiveStatus(o.getInactiveStatus());
+            Builder copiedBuilder =
+                    password(o.getPassword())
+                            .userId(o.getUserId())
+                            .timeCreated(o.getTimeCreated())
+                            .lifecycleState(o.getLifecycleState())
+                            .inactiveStatus(o.getInactiveStatus());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

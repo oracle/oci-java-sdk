@@ -25,6 +25,67 @@ public class BlockstorageWaiters {
      * @param targetState The desired state to wait for.
      * @return A new Waiter instance.
      */
+    public com.oracle.bmc.waiter.Waiter<GetBootVolumeRequest, GetBootVolumeResponse> forBootVolume(
+            GetBootVolumeRequest request,
+            com.oracle.bmc.core.model.BootVolume.LifecycleState targetState) {
+        return forBootVolume(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using the provided configuration.
+     *
+     * @param request The request to send.
+     * @param targetState The desired state to wait for.
+     * @param terminationStrategy The {@link TerminationStrategy} to use.
+     * @param delayStrategy The {@link DelayStrategy} to use.
+     * @return A new Waiter instance.
+     */
+    public com.oracle.bmc.waiter.Waiter<GetBootVolumeRequest, GetBootVolumeResponse> forBootVolume(
+            GetBootVolumeRequest request,
+            com.oracle.bmc.core.model.BootVolume.LifecycleState targetState,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        return forBootVolume(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    // Helper method to create a new Waiter for BootVolume.
+    private com.oracle.bmc.waiter.Waiter<GetBootVolumeRequest, GetBootVolumeResponse> forBootVolume(
+            com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+            final GetBootVolumeRequest request,
+            final com.oracle.bmc.core.model.BootVolume.LifecycleState targetState) {
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetBootVolumeRequest, GetBootVolumeResponse>() {
+                            @Override
+                            public GetBootVolumeResponse apply(GetBootVolumeRequest request) {
+                                return client.getBootVolume(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetBootVolumeResponse>() {
+                            @Override
+                            public boolean apply(GetBootVolumeResponse response) {
+                                return response.getBootVolume().getLifecycleState() == targetState;
+                            }
+                        },
+                        targetState
+                                == com.oracle.bmc.core.model.BootVolume.LifecycleState.Terminated),
+                request);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using default configuration.
+     *
+     * @param request The request to send.
+     * @param targetState The desired state to wait for.
+     * @return A new Waiter instance.
+     */
     public com.oracle.bmc.waiter.Waiter<GetVolumeRequest, GetVolumeResponse> forVolume(
             GetVolumeRequest request, com.oracle.bmc.core.model.Volume.LifecycleState targetState) {
         return forVolume(

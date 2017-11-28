@@ -50,7 +50,11 @@ public class CommitMultipartUploadDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CommitMultipartUploadDetails o) {
-            return partsToCommit(o.getPartsToCommit()).partsToExclude(o.getPartsToExclude());
+            Builder copiedBuilder =
+                    partsToCommit(o.getPartsToCommit()).partsToExclude(o.getPartsToExclude());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

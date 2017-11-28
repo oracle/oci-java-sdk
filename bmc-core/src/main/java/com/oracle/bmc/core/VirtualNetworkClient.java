@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc.core;
 
+import java.util.Locale;
 import com.oracle.bmc.core.internal.http.*;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
@@ -120,7 +121,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase();
+        regionId = regionId.toLowerCase(Locale.ENGLISH);
         try {
             com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
             setRegion(region);
@@ -134,6 +135,22 @@ public class VirtualNetworkClient implements VirtualNetwork {
     @Override
     public void close() {
         client.close();
+    }
+
+    @Override
+    public ConnectLocalPeeringGatewaysResponse connectLocalPeeringGateways(
+            ConnectLocalPeeringGatewaysRequest request) {
+        LOG.trace("Called connectLocalPeeringGateways");
+        request = ConnectLocalPeeringGatewaysConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ConnectLocalPeeringGatewaysConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ConnectLocalPeeringGatewaysResponse>
+                transformer = ConnectLocalPeeringGatewaysConverter.fromResponse();
+
+        javax.ws.rs.core.Response response =
+                client.post(ib, request.getConnectLocalPeeringGatewaysDetails(), request);
+        return transformer.apply(response);
     }
 
     @Override
@@ -248,6 +265,22 @@ public class VirtualNetworkClient implements VirtualNetwork {
 
         javax.ws.rs.core.Response response =
                 client.post(ib, request.getCreateInternetGatewayDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public CreateLocalPeeringGatewayResponse createLocalPeeringGateway(
+            CreateLocalPeeringGatewayRequest request) {
+        LOG.trace("Called createLocalPeeringGateway");
+        request = CreateLocalPeeringGatewayConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateLocalPeeringGatewayConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateLocalPeeringGatewayResponse>
+                transformer = CreateLocalPeeringGatewayConverter.fromResponse();
+
+        javax.ws.rs.core.Response response =
+                client.post(ib, request.getCreateLocalPeeringGatewayDetails(), request);
         return transformer.apply(response);
     }
 
@@ -437,6 +470,21 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 DeleteInternetGatewayConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteInternetGatewayResponse>
                 transformer = DeleteInternetGatewayConverter.fromResponse();
+
+        javax.ws.rs.core.Response response = client.delete(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public DeleteLocalPeeringGatewayResponse deleteLocalPeeringGateway(
+            DeleteLocalPeeringGatewayRequest request) {
+        LOG.trace("Called deleteLocalPeeringGateway");
+        request = DeleteLocalPeeringGatewayConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteLocalPeeringGatewayConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteLocalPeeringGatewayResponse>
+                transformer = DeleteLocalPeeringGatewayConverter.fromResponse();
 
         javax.ws.rs.core.Response response = client.delete(ib, request);
         return transformer.apply(response);
@@ -684,6 +732,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public GetLocalPeeringGatewayResponse getLocalPeeringGateway(
+            GetLocalPeeringGatewayRequest request) {
+        LOG.trace("Called getLocalPeeringGateway");
+        request = GetLocalPeeringGatewayConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetLocalPeeringGatewayConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetLocalPeeringGatewayResponse>
+                transformer = GetLocalPeeringGatewayConverter.fromResponse();
+
+        javax.ws.rs.core.Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
     public GetPrivateIpResponse getPrivateIp(GetPrivateIpRequest request) {
         LOG.trace("Called getPrivateIp");
         request = GetPrivateIpConverter.interceptRequest(request);
@@ -925,6 +987,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public ListLocalPeeringGatewaysResponse listLocalPeeringGateways(
+            ListLocalPeeringGatewaysRequest request) {
+        LOG.trace("Called listLocalPeeringGateways");
+        request = ListLocalPeeringGatewaysConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListLocalPeeringGatewaysConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListLocalPeeringGatewaysResponse>
+                transformer = ListLocalPeeringGatewaysConverter.fromResponse();
+
+        javax.ws.rs.core.Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
     public ListPrivateIpsResponse listPrivateIps(ListPrivateIpsRequest request) {
         LOG.trace("Called listPrivateIps");
         request = ListPrivateIpsConverter.interceptRequest(request);
@@ -1127,6 +1203,22 @@ public class VirtualNetworkClient implements VirtualNetwork {
 
         javax.ws.rs.core.Response response =
                 client.put(ib, request.getUpdateInternetGatewayDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public UpdateLocalPeeringGatewayResponse updateLocalPeeringGateway(
+            UpdateLocalPeeringGatewayRequest request) {
+        LOG.trace("Called updateLocalPeeringGateway");
+        request = UpdateLocalPeeringGatewayConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateLocalPeeringGatewayConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateLocalPeeringGatewayResponse>
+                transformer = UpdateLocalPeeringGatewayConverter.fromResponse();
+
+        javax.ws.rs.core.Response response =
+                client.put(ib, request.getUpdateLocalPeeringGatewayDetails(), request);
         return transformer.apply(response);
     }
 

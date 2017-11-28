@@ -45,7 +45,10 @@ public class DhcpSearchDomainOption extends DhcpOption {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DhcpSearchDomainOption o) {
-            return searchDomainNames(o.getSearchDomainNames());
+            Builder copiedBuilder = searchDomainNames(o.getSearchDomainNames());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

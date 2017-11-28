@@ -47,7 +47,10 @@ public class CrossConnectPortSpeedShape {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CrossConnectPortSpeedShape o) {
-            return name(o.getName()).portSpeedInGbps(o.getPortSpeedInGbps());
+            Builder copiedBuilder = name(o.getName()).portSpeedInGbps(o.getPortSpeedInGbps());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

@@ -5,6 +5,7 @@ package com.oracle.bmc.http.internal;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map.Entry;
 
 import javax.ws.rs.core.MultivaluedMap;
@@ -31,9 +32,9 @@ public class HeaderUtils {
         }
         // NOTE: this multivaluedmap should be the case-insensitive-key version,
         // but opting to do a simple search instead.
-        String lowerCaseHeaderName = name.toLowerCase();
+        String lowerCaseHeaderName = name.toLowerCase(Locale.ROOT);
         for (Entry<String, List<String>> entry : headers.entrySet()) {
-            if (entry.getKey().toLowerCase().equals(lowerCaseHeaderName)) {
+            if (entry.getKey().toLowerCase(Locale.ROOT).equals(lowerCaseHeaderName)) {
                 return Optional.of(entry.getValue());
             }
         }

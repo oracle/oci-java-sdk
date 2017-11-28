@@ -311,7 +311,13 @@ public class UploadManager {
          * @return a new UploadRequestBuilder instance.
          */
         public static UploadRequestBuilder builder(File file) {
-            return new UploadRequestBuilder(StreamUtils.toInputStream(file), file.length());
+            InputStream stream = StreamUtils.toInputStream(file);
+            try {
+                return new UploadRequestBuilder(stream, file.length());
+            } catch (Exception e) {
+                StreamUtils.closeQuietly(stream);
+                throw e;
+            }
         }
 
         @RequiredArgsConstructor

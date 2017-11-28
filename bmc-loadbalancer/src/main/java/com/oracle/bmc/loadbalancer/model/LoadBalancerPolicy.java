@@ -39,7 +39,10 @@ public class LoadBalancerPolicy {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(LoadBalancerPolicy o) {
-            return name(o.getName());
+            Builder copiedBuilder = name(o.getName());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

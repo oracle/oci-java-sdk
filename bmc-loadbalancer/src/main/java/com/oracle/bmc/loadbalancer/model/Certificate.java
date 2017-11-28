@@ -56,9 +56,13 @@ public class Certificate {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Certificate o) {
-            return caCertificate(o.getCaCertificate())
-                    .certificateName(o.getCertificateName())
-                    .publicCertificate(o.getPublicCertificate());
+            Builder copiedBuilder =
+                    caCertificate(o.getCaCertificate())
+                            .certificateName(o.getCertificateName())
+                            .publicCertificate(o.getPublicCertificate());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

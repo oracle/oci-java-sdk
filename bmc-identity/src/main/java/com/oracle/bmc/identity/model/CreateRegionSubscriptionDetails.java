@@ -34,7 +34,10 @@ public class CreateRegionSubscriptionDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateRegionSubscriptionDetails o) {
-            return regionKey(o.getRegionKey());
+            Builder copiedBuilder = regionKey(o.getRegionKey());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

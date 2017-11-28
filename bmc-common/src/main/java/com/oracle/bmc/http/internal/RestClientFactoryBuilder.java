@@ -16,6 +16,13 @@ import lombok.NoArgsConstructor;
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class RestClientFactoryBuilder {
+    public static final DefaultConfigurator DEFAULT_CONFIGURATOR = new DefaultConfigurator();
+
+    /**
+     * This is the client configurator used if a caller passes <code>null</code> to
+     * {@link RestClientFactoryBuilder#clientConfigurator(ClientConfigurator)}.
+     */
+    private ClientConfigurator defaultConfigurator = DEFAULT_CONFIGURATOR;
     private ClientConfigurator clientConfigurator;
 
     /**
@@ -27,7 +34,21 @@ public class RestClientFactoryBuilder {
     }
 
     /**
-     * Sets the ClientConfigurator to use, or null to use the {@link DefaultConfigurator}.
+     * Sets the default ClientConfigurator.
+     * @param defaultConfigurator the {@link ClientConfigurator} used if null is passed to the clientConfigurator method
+     * @return The builder.
+     */
+    public RestClientFactoryBuilder defaultConfigurator(ClientConfigurator defaultConfigurator) {
+        if (defaultConfigurator != null) {
+            defaultConfigurator = defaultConfigurator;
+        } else {
+            defaultConfigurator = DEFAULT_CONFIGURATOR;
+        }
+        return this;
+    }
+
+    /**
+     * Sets the ClientConfigurator to use, or null to use the default client configurator.
      *
      * @param clientConfigurator The client configurator to use.
      * @return The builder.
@@ -45,7 +66,7 @@ public class RestClientFactoryBuilder {
      */
     public RestClientFactory build() {
         ClientConfigurator clientConfigurator =
-                MoreObjects.firstNonNull(this.clientConfigurator, new DefaultConfigurator());
+                MoreObjects.firstNonNull(this.clientConfigurator, defaultConfigurator);
 
         return new RestClientFactory(clientConfigurator);
     }

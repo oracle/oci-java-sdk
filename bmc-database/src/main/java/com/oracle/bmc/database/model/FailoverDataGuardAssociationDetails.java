@@ -38,7 +38,10 @@ public class FailoverDataGuardAssociationDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(FailoverDataGuardAssociationDetails o) {
-            return databaseAdminPassword(o.getDatabaseAdminPassword());
+            Builder copiedBuilder = databaseAdminPassword(o.getDatabaseAdminPassword());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

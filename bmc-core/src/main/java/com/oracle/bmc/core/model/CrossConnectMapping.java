@@ -100,11 +100,16 @@ public class CrossConnectMapping {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CrossConnectMapping o) {
-            return bgpMd5AuthKey(o.getBgpMd5AuthKey())
-                    .crossConnectOrCrossConnectGroupId(o.getCrossConnectOrCrossConnectGroupId())
-                    .customerBgpPeeringIp(o.getCustomerBgpPeeringIp())
-                    .oracleBgpPeeringIp(o.getOracleBgpPeeringIp())
-                    .vlan(o.getVlan());
+            Builder copiedBuilder =
+                    bgpMd5AuthKey(o.getBgpMd5AuthKey())
+                            .crossConnectOrCrossConnectGroupId(
+                                    o.getCrossConnectOrCrossConnectGroupId())
+                            .customerBgpPeeringIp(o.getCustomerBgpPeeringIp())
+                            .oracleBgpPeeringIp(o.getOracleBgpPeeringIp())
+                            .vlan(o.getVlan());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

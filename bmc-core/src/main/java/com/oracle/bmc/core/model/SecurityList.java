@@ -120,14 +120,18 @@ public class SecurityList {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(SecurityList o) {
-            return compartmentId(o.getCompartmentId())
-                    .displayName(o.getDisplayName())
-                    .egressSecurityRules(o.getEgressSecurityRules())
-                    .id(o.getId())
-                    .ingressSecurityRules(o.getIngressSecurityRules())
-                    .lifecycleState(o.getLifecycleState())
-                    .timeCreated(o.getTimeCreated())
-                    .vcnId(o.getVcnId());
+            Builder copiedBuilder =
+                    compartmentId(o.getCompartmentId())
+                            .displayName(o.getDisplayName())
+                            .egressSecurityRules(o.getEgressSecurityRules())
+                            .id(o.getId())
+                            .ingressSecurityRules(o.getIngressSecurityRules())
+                            .lifecycleState(o.getLifecycleState())
+                            .timeCreated(o.getTimeCreated())
+                            .vcnId(o.getVcnId());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

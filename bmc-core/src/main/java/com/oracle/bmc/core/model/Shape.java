@@ -36,7 +36,10 @@ public class Shape {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Shape o) {
-            return shape(o.getShape());
+            Builder copiedBuilder = shape(o.getShape());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

@@ -64,10 +64,14 @@ public class UpdateBackendDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateBackendDetails o) {
-            return backup(o.getBackup())
-                    .drain(o.getDrain())
-                    .offline(o.getOffline())
-                    .weight(o.getWeight());
+            Builder copiedBuilder =
+                    backup(o.getBackup())
+                            .drain(o.getDrain())
+                            .offline(o.getOffline())
+                            .weight(o.getWeight());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

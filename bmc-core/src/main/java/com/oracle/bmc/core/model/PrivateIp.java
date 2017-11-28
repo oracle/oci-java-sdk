@@ -153,16 +153,20 @@ public class PrivateIp {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(PrivateIp o) {
-            return availabilityDomain(o.getAvailabilityDomain())
-                    .compartmentId(o.getCompartmentId())
-                    .displayName(o.getDisplayName())
-                    .hostnameLabel(o.getHostnameLabel())
-                    .id(o.getId())
-                    .ipAddress(o.getIpAddress())
-                    .isPrimary(o.getIsPrimary())
-                    .subnetId(o.getSubnetId())
-                    .timeCreated(o.getTimeCreated())
-                    .vnicId(o.getVnicId());
+            Builder copiedBuilder =
+                    availabilityDomain(o.getAvailabilityDomain())
+                            .compartmentId(o.getCompartmentId())
+                            .displayName(o.getDisplayName())
+                            .hostnameLabel(o.getHostnameLabel())
+                            .id(o.getId())
+                            .ipAddress(o.getIpAddress())
+                            .isPrimary(o.getIsPrimary())
+                            .subnetId(o.getSubnetId())
+                            .timeCreated(o.getTimeCreated())
+                            .vnicId(o.getVnicId());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

@@ -219,10 +219,9 @@ public class MultipartObjectAssemblerTest {
 
         File file = File.createTempFile("unitTest", ".txt");
         file.deleteOnExit();
-        FileOutputStream fos = new FileOutputStream(file);
-
-        fos.write(bytes);
-        fos.close();
+        try (FileOutputStream fos = new FileOutputStream(file)) {
+            fos.write(bytes);
+        }
 
         String etag1 = "etag1";
         String etag2 = "etag2";
@@ -274,10 +273,9 @@ public class MultipartObjectAssemblerTest {
 
         File file = File.createTempFile("unitTest", ".txt");
         file.deleteOnExit();
-        FileOutputStream fos = new FileOutputStream(file);
-
-        fos.write(bytes);
-        fos.close();
+        try (FileOutputStream fos = new FileOutputStream(file)) {
+            fos.write(bytes);
+        }
 
         String etag1 = "etag1";
         UploadPartResponse uploadPartResponse1 = UploadPartResponse.builder().eTag(etag1).build();
