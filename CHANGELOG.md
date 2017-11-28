@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## Unrelased
+### Fixed
+- N/A
+
 ## 1.2.18 - 2017-11-27
 
 ### Changed
@@ -18,15 +22,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Deprecated
 - Methods accepting passphrases as String are deprecated; use char[] instead
-
-## 1.2.17 - 2017-11-02
-
-### Added
-- Support for updating audit retention policy in Audit service
-- Support for archive storage tier, object rename and namespace metadata in Object Storage service
-- Support for fast clones of volumes in Block Storage service
-- Support for backup and restore in Database service
-- Support for sorting and filtering in list APIs in Core Services
 
 ## 1.2.17 - 2017-11-02
 
