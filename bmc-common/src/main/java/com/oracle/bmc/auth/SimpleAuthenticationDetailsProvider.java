@@ -4,6 +4,7 @@
 package com.oracle.bmc.auth;
 
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 
 import com.google.common.base.Supplier;
 
@@ -27,7 +28,7 @@ public class SimpleAuthenticationDetailsProvider extends CustomerAuthenticationD
     private final String fingerprint;
 
     @Getter(onMethod = @__({@Override}))
-    private final String passPhrase;
+    private final char[] passphraseCharacters;
 
     private final Supplier<InputStream> privateKeySupplier;
 
@@ -36,29 +37,41 @@ public class SimpleAuthenticationDetailsProvider extends CustomerAuthenticationD
         return privateKeySupplier.get();
     }
 
+    @Deprecated
+    @Override
+    public String getPassPhrase() {
+        return passphraseCharacters != null ? new String(passphraseCharacters) : null;
+    }
+
     @Override
     public String toString() {
         // show that there was a passphrase, but not what it was
         return String.format(
-                "SimpleAuthenticationDetailsProvider(tenantId=%s, userId=%s, fingerprint=%s, passPhrase=%s, privateKeySupplier=%s)",
+                "SimpleAuthenticationDetailsProvider(tenantId=%s, userId=%s, fingerprint=%s, passphraseCharacters=%s, privateKeySupplier=%s)",
                 tenantId,
                 userId,
                 fingerprint,
-                passPhrase != null ? "<provided>" : passPhrase,
+                passphraseCharacters != null ? "<provided>" : passphraseCharacters,
                 privateKeySupplier);
     }
 
     public static class SimpleAuthenticationDetailsProviderBuilder {
+
+        // want to provide both passPhrase(String) and passphraseCharacters(char[])
+        public SimpleAuthenticationDetailsProviderBuilder passPhrase(String passPhrase) {
+            return passphraseCharacters(passPhrase != null ? passPhrase.toCharArray() : null);
+        }
+
         // toString overridden as the default lombok builder prints all builder properties
         // including the passphrase.  manually overriding to just show that there was a passphrase
         @Override
         public String toString() {
             return String.format(
-                    "SimpleAuthenticationDetailsProvider.SimpleAuthenticationDetailsProviderBuilder(tenantId=%s, userId=%s, fingerprint=%s, passPhrase=%s, privateKeySupplier=%s)",
+                    "SimpleAuthenticationDetailsProvider.SimpleAuthenticationDetailsProviderBuilder(tenantId=%s, userId=%s, fingerprint=%s, passphraseCharacters=%s, privateKeySupplier=%s)",
                     tenantId,
                     userId,
                     fingerprint,
-                    passPhrase != null ? "<provided>" : passPhrase,
+                    passphraseCharacters != null ? "<provided>" : passphraseCharacters,
                     privateKeySupplier);
         }
     }

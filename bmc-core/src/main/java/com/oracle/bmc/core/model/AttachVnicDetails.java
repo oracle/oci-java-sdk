@@ -40,21 +40,35 @@ public class AttachVnicDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nicIndex")
+        private Integer nicIndex;
+
+        public Builder nicIndex(Integer nicIndex) {
+            this.nicIndex = nicIndex;
+            this.__explicitlySet__.add("nicIndex");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AttachVnicDetails build() {
             AttachVnicDetails __instance__ =
-                    new AttachVnicDetails(createVnicDetails, displayName, instanceId);
+                    new AttachVnicDetails(createVnicDetails, displayName, instanceId, nicIndex);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(AttachVnicDetails o) {
-            return createVnicDetails(o.getCreateVnicDetails())
-                    .displayName(o.getDisplayName())
-                    .instanceId(o.getInstanceId());
+            Builder copiedBuilder =
+                    createVnicDetails(o.getCreateVnicDetails())
+                            .displayName(o.getDisplayName())
+                            .instanceId(o.getInstanceId())
+                            .nicIndex(o.getNicIndex());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 
@@ -84,6 +98,17 @@ public class AttachVnicDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     String instanceId;
+
+    /**
+     * Which physical network interface card (NIC) the VNIC will use. Defaults to 0.
+     * Certain bare metal instance shapes have two active physical NICs (0 and 1). If
+     * you add a secondary VNIC to one of these instances, you can specify which NIC
+     * the VNIC will use. For more information, see
+     * [Virtual Network Interface Cards (VNICs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nicIndex")
+    Integer nicIndex;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

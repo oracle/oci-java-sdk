@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc.core;
 
+import java.util.Locale;
 import com.oracle.bmc.core.internal.http.*;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
@@ -101,7 +102,7 @@ public class ComputeAsyncClient implements ComputeAsync {
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase();
+        regionId = regionId.toLowerCase(Locale.ENGLISH);
         try {
             com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
             setRegion(region);
@@ -115,6 +116,28 @@ public class ComputeAsyncClient implements ComputeAsync {
     @Override
     public void close() {
         client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<AttachBootVolumeResponse> attachBootVolume(
+            AttachBootVolumeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<AttachBootVolumeRequest, AttachBootVolumeResponse>
+                    handler) {
+        LOG.trace("Called async attachBootVolume");
+        request = AttachBootVolumeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AttachBootVolumeConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, AttachBootVolumeResponse>
+                transformer = AttachBootVolumeConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.post(ib, request.getAttachBootVolumeDetails(), request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
@@ -309,6 +332,28 @@ public class ComputeAsyncClient implements ComputeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DetachBootVolumeResponse> detachBootVolume(
+            DetachBootVolumeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DetachBootVolumeRequest, DetachBootVolumeResponse>
+                    handler) {
+        LOG.trace("Called async detachBootVolume");
+        request = DetachBootVolumeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DetachBootVolumeConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DetachBootVolumeResponse>
+                transformer = DetachBootVolumeConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.delete(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
     public java.util.concurrent.Future<DetachVnicResponse> detachVnic(
             DetachVnicRequest request,
             com.oracle.bmc.responses.AsyncHandler<DetachVnicRequest, DetachVnicResponse> handler) {
@@ -370,6 +415,29 @@ public class ComputeAsyncClient implements ComputeAsync {
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.post(ib, request.getExportImageDetails(), request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBootVolumeAttachmentResponse> getBootVolumeAttachment(
+            GetBootVolumeAttachmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetBootVolumeAttachmentRequest, GetBootVolumeAttachmentResponse>
+                    handler) {
+        LOG.trace("Called async getBootVolumeAttachment");
+        request = GetBootVolumeAttachmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetBootVolumeAttachmentConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetBootVolumeAttachmentResponse>
+                transformer = GetBootVolumeAttachmentConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
         return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
@@ -601,6 +669,30 @@ public class ComputeAsyncClient implements ComputeAsync {
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.post(ib, request.getLaunchInstanceDetails(), request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBootVolumeAttachmentsResponse> listBootVolumeAttachments(
+            ListBootVolumeAttachmentsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListBootVolumeAttachmentsRequest, ListBootVolumeAttachmentsResponse>
+                    handler) {
+        LOG.trace("Called async listBootVolumeAttachments");
+        request = ListBootVolumeAttachmentsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListBootVolumeAttachmentsConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListBootVolumeAttachmentsResponse>
+                transformer = ListBootVolumeAttachmentsConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
         return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 

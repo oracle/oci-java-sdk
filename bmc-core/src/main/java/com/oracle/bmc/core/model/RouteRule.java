@@ -45,7 +45,11 @@ public class RouteRule {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(RouteRule o) {
-            return cidrBlock(o.getCidrBlock()).networkEntityId(o.getNetworkEntityId());
+            Builder copiedBuilder =
+                    cidrBlock(o.getCidrBlock()).networkEntityId(o.getNetworkEntityId());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

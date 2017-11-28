@@ -68,10 +68,14 @@ public class MultipartUploadPartSummary {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(MultipartUploadPartSummary o) {
-            return etag(o.getEtag())
-                    .md5(o.getMd5())
-                    .size(o.getSize())
-                    .partNumber(o.getPartNumber());
+            Builder copiedBuilder =
+                    etag(o.getEtag())
+                            .md5(o.getMd5())
+                            .size(o.getSize())
+                            .partNumber(o.getPartNumber());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

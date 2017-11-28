@@ -98,13 +98,17 @@ public class PatchHistoryEntrySummary {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(PatchHistoryEntrySummary o) {
-            return action(o.getAction())
-                    .id(o.getId())
-                    .lifecycleDetails(o.getLifecycleDetails())
-                    .lifecycleState(o.getLifecycleState())
-                    .patchId(o.getPatchId())
-                    .timeEnded(o.getTimeEnded())
-                    .timeStarted(o.getTimeStarted());
+            Builder copiedBuilder =
+                    action(o.getAction())
+                            .id(o.getId())
+                            .lifecycleDetails(o.getLifecycleDetails())
+                            .lifecycleState(o.getLifecycleState())
+                            .patchId(o.getPatchId())
+                            .timeEnded(o.getTimeEnded())
+                            .timeStarted(o.getTimeStarted());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

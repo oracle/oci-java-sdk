@@ -52,9 +52,13 @@ public class UpdateVnicDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateVnicDetails o) {
-            return displayName(o.getDisplayName())
-                    .hostnameLabel(o.getHostnameLabel())
-                    .skipSourceDestCheck(o.getSkipSourceDestCheck());
+            Builder copiedBuilder =
+                    displayName(o.getDisplayName())
+                            .hostnameLabel(o.getHostnameLabel())
+                            .skipSourceDestCheck(o.getSkipSourceDestCheck());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

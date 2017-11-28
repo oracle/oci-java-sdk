@@ -36,7 +36,10 @@ public class DbBackupConfig {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DbBackupConfig o) {
-            return autoBackupEnabled(o.getAutoBackupEnabled());
+            Builder copiedBuilder = autoBackupEnabled(o.getAutoBackupEnabled());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

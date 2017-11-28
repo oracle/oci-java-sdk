@@ -56,9 +56,13 @@ public class SSLConfiguration {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(SSLConfiguration o) {
-            return certificateName(o.getCertificateName())
-                    .verifyDepth(o.getVerifyDepth())
-                    .verifyPeerCertificate(o.getVerifyPeerCertificate());
+            Builder copiedBuilder =
+                    certificateName(o.getCertificateName())
+                            .verifyDepth(o.getVerifyDepth())
+                            .verifyPeerCertificate(o.getVerifyPeerCertificate());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

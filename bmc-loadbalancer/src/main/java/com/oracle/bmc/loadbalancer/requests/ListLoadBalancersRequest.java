@@ -46,6 +46,104 @@ public class ListLoadBalancersRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String detail;
 
+    /**
+     * The field to sort by.  Only one sort order may be provided.  Time created is default ordered as descending.  Display name is default ordered as ascending.
+     *
+     */
+    private SortBy sortBy;
+
+    /**
+     * The field to sort by.  Only one sort order may be provided.  Time created is default ordered as descending.  Display name is default ordered as ascending.
+     *
+     **/
+    public enum SortBy {
+        Timecreated("TIMECREATED"),
+        Displayname("DISPLAYNAME"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, SortBy> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SortBy v : SortBy.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        SortBy(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SortBy create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new RuntimeException("Invalid SortBy: " + key);
+        }
+    };
+
+    /**
+     * The sort order to use, either 'asc' or 'desc'
+     *
+     */
+    private SortOrder sortOrder;
+
+    /**
+     * The sort order to use, either 'asc' or 'desc'
+     *
+     **/
+    public enum SortOrder {
+        Asc("ASC"),
+        Desc("DESC"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, SortOrder> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SortOrder v : SortOrder.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        SortOrder(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SortOrder create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new RuntimeException("Invalid SortOrder: " + key);
+        }
+    };
+
+    /**
+     * A filter to only return resources that match the given display name exactly.
+     *
+     */
+    private String displayName;
+
+    /**
+     * A filter to only return resources that match the given lifecycle state.
+     *
+     */
+    private LoadBalancer.LifecycleState lifecycleState;
+
     public static class Builder {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
@@ -72,6 +170,10 @@ public class ListLoadBalancersRequest extends com.oracle.bmc.requests.BmcRequest
             limit(o.getLimit());
             page(o.getPage());
             detail(o.getDetail());
+            sortBy(o.getSortBy());
+            sortOrder(o.getSortOrder());
+            displayName(o.getDisplayName());
+            lifecycleState(o.getLifecycleState());
             return this;
         }
 

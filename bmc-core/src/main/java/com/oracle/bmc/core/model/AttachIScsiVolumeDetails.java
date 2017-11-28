@@ -68,10 +68,14 @@ public class AttachIScsiVolumeDetails extends AttachVolumeDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(AttachIScsiVolumeDetails o) {
-            return displayName(o.getDisplayName())
-                    .instanceId(o.getInstanceId())
-                    .volumeId(o.getVolumeId())
-                    .useChap(o.getUseChap());
+            Builder copiedBuilder =
+                    displayName(o.getDisplayName())
+                            .instanceId(o.getInstanceId())
+                            .volumeId(o.getVolumeId())
+                            .useChap(o.getUseChap());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

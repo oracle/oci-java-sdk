@@ -52,7 +52,11 @@ public class CreateDrgAttachmentDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateDrgAttachmentDetails o) {
-            return displayName(o.getDisplayName()).drgId(o.getDrgId()).vcnId(o.getVcnId());
+            Builder copiedBuilder =
+                    displayName(o.getDisplayName()).drgId(o.getDrgId()).vcnId(o.getVcnId());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

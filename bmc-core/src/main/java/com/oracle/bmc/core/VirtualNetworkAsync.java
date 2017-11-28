@@ -37,6 +37,30 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Connects this local peering gateway (LPG) to another one in the same region.
+     * <p>
+     * This operation must be called by the VCN administrator who is designated as
+     * the *requestor* in the peering relationship. The *acceptor* must implement
+     * an Identity and Access Management (IAM) policy that gives the requestor permission
+     * to connect to LPGs in the acceptor's compartment. Without that permission, this
+     * operation will fail. For more information, see
+     * [VCN Peering](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/VCNpeering.htm).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ConnectLocalPeeringGatewaysResponse> connectLocalPeeringGateways(
+            ConnectLocalPeeringGatewaysRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ConnectLocalPeeringGatewaysRequest, ConnectLocalPeeringGatewaysResponse>
+                    handler);
+
+    /**
      * Creates a new virtual Customer-Premises Equipment (CPE) object in the specified compartment. For
      * more information, see [IPSec VPNs](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPsec.htm).
      * <p>
@@ -289,6 +313,23 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             CreateInternetGatewayRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CreateInternetGatewayRequest, CreateInternetGatewayResponse>
+                    handler);
+
+    /**
+     * Creates a new local peering gateway (LPG) for the specified VCN.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateLocalPeeringGatewayResponse> createLocalPeeringGateway(
+            CreateLocalPeeringGatewayRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateLocalPeeringGatewayRequest, CreateLocalPeeringGatewayResponse>
                     handler);
 
     /**
@@ -653,6 +694,26 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes the specified local peering gateway (LPG).
+     * <p>
+     * This is an asynchronous operation; the local peering gateway's `lifecycleState` changes to TERMINATING temporarily
+     * until the local peering gateway is completely removed.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteLocalPeeringGatewayResponse> deleteLocalPeeringGateway(
+            DeleteLocalPeeringGatewayRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteLocalPeeringGatewayRequest, DeleteLocalPeeringGatewayResponse>
+                    handler);
+
+    /**
      * Unassigns and deletes the specified private IP. You must
      * specify the object's OCID. The private IP address is returned to
      * the subnet's pool of available addresses.
@@ -974,6 +1035,22 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the specified local peering gateway's information.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetLocalPeeringGatewayResponse> getLocalPeeringGateway(
+            GetLocalPeeringGatewayRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetLocalPeeringGatewayRequest, GetLocalPeeringGatewayResponse>
+                    handler);
+
+    /**
      * Gets the specified private IP. You must specify the object's OCID.
      * Alternatively, you can get the object by using
      * {@link #listPrivateIps(ListPrivateIpsRequest, Consumer, Consumer) listPrivateIps}
@@ -1285,6 +1362,24 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists the local peering gateways (LPGs) for the specified VCN and compartment
+     * (the LPG's compartment).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListLocalPeeringGatewaysResponse> listLocalPeeringGateways(
+            ListLocalPeeringGatewaysRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListLocalPeeringGatewaysRequest, ListLocalPeeringGatewaysResponse>
+                    handler);
+
+    /**
      * Lists the {@link PrivateIp} objects based
      * on one of these filters:
      * <p>
@@ -1556,6 +1651,23 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             UpdateInternetGatewayRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateInternetGatewayRequest, UpdateInternetGatewayResponse>
+                    handler);
+
+    /**
+     * Updates the specified local peering gateway (LPG).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateLocalPeeringGatewayResponse> updateLocalPeeringGateway(
+            UpdateLocalPeeringGatewayRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateLocalPeeringGatewayRequest, UpdateLocalPeeringGatewayResponse>
                     handler);
 
     /**

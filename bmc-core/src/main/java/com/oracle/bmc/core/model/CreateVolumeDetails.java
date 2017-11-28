@@ -95,13 +95,17 @@ public class CreateVolumeDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateVolumeDetails o) {
-            return availabilityDomain(o.getAvailabilityDomain())
-                    .compartmentId(o.getCompartmentId())
-                    .displayName(o.getDisplayName())
-                    .sizeInGBs(o.getSizeInGBs())
-                    .sizeInMBs(o.getSizeInMBs())
-                    .sourceDetails(o.getSourceDetails())
-                    .volumeBackupId(o.getVolumeBackupId());
+            Builder copiedBuilder =
+                    availabilityDomain(o.getAvailabilityDomain())
+                            .compartmentId(o.getCompartmentId())
+                            .displayName(o.getDisplayName())
+                            .sizeInGBs(o.getSizeInGBs())
+                            .sizeInMBs(o.getSizeInMBs())
+                            .sourceDetails(o.getSourceDetails())
+                            .volumeBackupId(o.getVolumeBackupId());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

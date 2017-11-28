@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc.core;
 
+import java.util.Locale;
 import com.oracle.bmc.core.internal.http.*;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
@@ -101,7 +102,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
 
     @Override
     public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase();
+        regionId = regionId.toLowerCase(Locale.ENGLISH);
         try {
             com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
             setRegion(region);
@@ -115,6 +116,37 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     @Override
     public void close() {
         client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConnectLocalPeeringGatewaysResponse>
+            connectLocalPeeringGateways(
+                    ConnectLocalPeeringGatewaysRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ConnectLocalPeeringGatewaysRequest,
+                                    ConnectLocalPeeringGatewaysResponse>
+                            handler) {
+        LOG.trace("Called async connectLocalPeeringGateways");
+        request = ConnectLocalPeeringGatewaysConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ConnectLocalPeeringGatewaysConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ConnectLocalPeeringGatewaysResponse>
+                transformer = ConnectLocalPeeringGatewaysConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.post(
+                        ib,
+                        request.getConnectLocalPeeringGatewaysDetails(),
+                        request,
+                        onSuccess,
+                        onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
     @Override
@@ -303,6 +335,35 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.post(
                         ib, request.getCreateInternetGatewayDetails(), request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLocalPeeringGatewayResponse> createLocalPeeringGateway(
+            CreateLocalPeeringGatewayRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateLocalPeeringGatewayRequest, CreateLocalPeeringGatewayResponse>
+                    handler) {
+        LOG.trace("Called async createLocalPeeringGateway");
+        request = CreateLocalPeeringGatewayConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateLocalPeeringGatewayConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateLocalPeeringGatewayResponse>
+                transformer = CreateLocalPeeringGatewayConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.post(
+                        ib,
+                        request.getCreateLocalPeeringGatewayDetails(),
+                        request,
+                        onSuccess,
+                        onError);
         return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 
@@ -610,6 +671,30 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 DeleteInternetGatewayConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteInternetGatewayResponse>
                 transformer = DeleteInternetGatewayConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.delete(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLocalPeeringGatewayResponse> deleteLocalPeeringGateway(
+            DeleteLocalPeeringGatewayRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteLocalPeeringGatewayRequest, DeleteLocalPeeringGatewayResponse>
+                    handler) {
+        LOG.trace("Called async deleteLocalPeeringGateway");
+        request = DeleteLocalPeeringGatewayConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteLocalPeeringGatewayConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteLocalPeeringGatewayResponse>
+                transformer = DeleteLocalPeeringGatewayConverter.fromResponse();
 
         com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
                 new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
@@ -1033,6 +1118,29 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetLocalPeeringGatewayResponse> getLocalPeeringGateway(
+            GetLocalPeeringGatewayRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetLocalPeeringGatewayRequest, GetLocalPeeringGatewayResponse>
+                    handler) {
+        LOG.trace("Called async getLocalPeeringGateway");
+        request = GetLocalPeeringGatewayConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetLocalPeeringGatewayConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetLocalPeeringGatewayResponse>
+                transformer = GetLocalPeeringGatewayConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPrivateIpResponse> getPrivateIp(
             GetPrivateIpRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetPrivateIpRequest, GetPrivateIpResponse>
@@ -1440,6 +1548,29 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListLocalPeeringGatewaysResponse> listLocalPeeringGateways(
+            ListLocalPeeringGatewaysRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListLocalPeeringGatewaysRequest, ListLocalPeeringGatewaysResponse>
+                    handler) {
+        LOG.trace("Called async listLocalPeeringGateways");
+        request = ListLocalPeeringGatewaysConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListLocalPeeringGatewaysConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListLocalPeeringGatewaysResponse>
+                transformer = ListLocalPeeringGatewaysConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPrivateIpsResponse> listPrivateIps(
             ListPrivateIpsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListPrivateIpsRequest, ListPrivateIpsResponse>
@@ -1783,6 +1914,35 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.put(
                         ib, request.getUpdateInternetGatewayDetails(), request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLocalPeeringGatewayResponse> updateLocalPeeringGateway(
+            UpdateLocalPeeringGatewayRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateLocalPeeringGatewayRequest, UpdateLocalPeeringGatewayResponse>
+                    handler) {
+        LOG.trace("Called async updateLocalPeeringGateway");
+        request = UpdateLocalPeeringGatewayConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateLocalPeeringGatewayConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateLocalPeeringGatewayResponse>
+                transformer = UpdateLocalPeeringGatewayConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.put(
+                        ib,
+                        request.getUpdateLocalPeeringGatewayDetails(),
+                        request,
+                        onSuccess,
+                        onError);
         return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 

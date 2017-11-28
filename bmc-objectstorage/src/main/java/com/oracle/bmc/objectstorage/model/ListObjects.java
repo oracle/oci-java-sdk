@@ -55,9 +55,13 @@ public class ListObjects {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ListObjects o) {
-            return objects(o.getObjects())
-                    .prefixes(o.getPrefixes())
-                    .nextStartWith(o.getNextStartWith());
+            Builder copiedBuilder =
+                    objects(o.getObjects())
+                            .prefixes(o.getPrefixes())
+                            .nextStartWith(o.getNextStartWith());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

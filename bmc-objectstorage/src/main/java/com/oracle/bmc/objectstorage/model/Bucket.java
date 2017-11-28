@@ -123,15 +123,19 @@ public class Bucket {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Bucket o) {
-            return namespace(o.getNamespace())
-                    .name(o.getName())
-                    .compartmentId(o.getCompartmentId())
-                    .metadata(o.getMetadata())
-                    .createdBy(o.getCreatedBy())
-                    .timeCreated(o.getTimeCreated())
-                    .etag(o.getEtag())
-                    .publicAccessType(o.getPublicAccessType())
-                    .storageTier(o.getStorageTier());
+            Builder copiedBuilder =
+                    namespace(o.getNamespace())
+                            .name(o.getName())
+                            .compartmentId(o.getCompartmentId())
+                            .metadata(o.getMetadata())
+                            .createdBy(o.getCreatedBy())
+                            .timeCreated(o.getTimeCreated())
+                            .etag(o.getEtag())
+                            .publicAccessType(o.getPublicAccessType())
+                            .storageTier(o.getStorageTier());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

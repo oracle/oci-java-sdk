@@ -43,7 +43,10 @@ public class UpdateRouteTableDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateRouteTableDetails o) {
-            return displayName(o.getDisplayName()).routeRules(o.getRouteRules());
+            Builder copiedBuilder = displayName(o.getDisplayName()).routeRules(o.getRouteRules());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

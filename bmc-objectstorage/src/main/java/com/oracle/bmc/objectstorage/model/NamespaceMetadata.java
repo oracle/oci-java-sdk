@@ -57,9 +57,13 @@ public class NamespaceMetadata {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(NamespaceMetadata o) {
-            return namespace(o.getNamespace())
-                    .defaultS3CompartmentId(o.getDefaultS3CompartmentId())
-                    .defaultSwiftCompartmentId(o.getDefaultSwiftCompartmentId());
+            Builder copiedBuilder =
+                    namespace(o.getNamespace())
+                            .defaultS3CompartmentId(o.getDefaultS3CompartmentId())
+                            .defaultSwiftCompartmentId(o.getDefaultSwiftCompartmentId());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

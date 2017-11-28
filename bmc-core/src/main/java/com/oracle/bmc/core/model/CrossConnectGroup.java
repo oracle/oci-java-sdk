@@ -87,11 +87,15 @@ public class CrossConnectGroup {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CrossConnectGroup o) {
-            return compartmentId(o.getCompartmentId())
-                    .displayName(o.getDisplayName())
-                    .id(o.getId())
-                    .lifecycleState(o.getLifecycleState())
-                    .timeCreated(o.getTimeCreated());
+            Builder copiedBuilder =
+                    compartmentId(o.getCompartmentId())
+                            .displayName(o.getDisplayName())
+                            .id(o.getId())
+                            .lifecycleState(o.getLifecycleState())
+                            .timeCreated(o.getTimeCreated());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

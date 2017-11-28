@@ -49,7 +49,10 @@ public class CommitMultipartUploadPartDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CommitMultipartUploadPartDetails o) {
-            return partNum(o.getPartNum()).etag(o.getEtag());
+            Builder copiedBuilder = partNum(o.getPartNum()).etag(o.getEtag());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

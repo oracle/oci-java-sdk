@@ -85,12 +85,16 @@ public class CreateBackendDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateBackendDetails o) {
-            return backup(o.getBackup())
-                    .drain(o.getDrain())
-                    .ipAddress(o.getIpAddress())
-                    .offline(o.getOffline())
-                    .port(o.getPort())
-                    .weight(o.getWeight());
+            Builder copiedBuilder =
+                    backup(o.getBackup())
+                            .drain(o.getDrain())
+                            .ipAddress(o.getIpAddress())
+                            .offline(o.getOffline())
+                            .port(o.getPort())
+                            .weight(o.getWeight());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

@@ -171,19 +171,23 @@ public class Vnic {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Vnic o) {
-            return availabilityDomain(o.getAvailabilityDomain())
-                    .compartmentId(o.getCompartmentId())
-                    .displayName(o.getDisplayName())
-                    .hostnameLabel(o.getHostnameLabel())
-                    .id(o.getId())
-                    .isPrimary(o.getIsPrimary())
-                    .lifecycleState(o.getLifecycleState())
-                    .macAddress(o.getMacAddress())
-                    .privateIp(o.getPrivateIp())
-                    .publicIp(o.getPublicIp())
-                    .skipSourceDestCheck(o.getSkipSourceDestCheck())
-                    .subnetId(o.getSubnetId())
-                    .timeCreated(o.getTimeCreated());
+            Builder copiedBuilder =
+                    availabilityDomain(o.getAvailabilityDomain())
+                            .compartmentId(o.getCompartmentId())
+                            .displayName(o.getDisplayName())
+                            .hostnameLabel(o.getHostnameLabel())
+                            .id(o.getId())
+                            .isPrimary(o.getIsPrimary())
+                            .lifecycleState(o.getLifecycleState())
+                            .macAddress(o.getMacAddress())
+                            .privateIp(o.getPrivateIp())
+                            .publicIp(o.getPublicIp())
+                            .skipSourceDestCheck(o.getSkipSourceDestCheck())
+                            .subnetId(o.getSubnetId())
+                            .timeCreated(o.getTimeCreated());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

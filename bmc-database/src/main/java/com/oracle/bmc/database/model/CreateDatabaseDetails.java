@@ -95,13 +95,17 @@ public class CreateDatabaseDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateDatabaseDetails o) {
-            return adminPassword(o.getAdminPassword())
-                    .characterSet(o.getCharacterSet())
-                    .dbBackupConfig(o.getDbBackupConfig())
-                    .dbName(o.getDbName())
-                    .dbWorkload(o.getDbWorkload())
-                    .ncharacterSet(o.getNcharacterSet())
-                    .pdbName(o.getPdbName());
+            Builder copiedBuilder =
+                    adminPassword(o.getAdminPassword())
+                            .characterSet(o.getCharacterSet())
+                            .dbBackupConfig(o.getDbBackupConfig())
+                            .dbName(o.getDbName())
+                            .dbWorkload(o.getDbWorkload())
+                            .ncharacterSet(o.getNcharacterSet())
+                            .pdbName(o.getPdbName());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

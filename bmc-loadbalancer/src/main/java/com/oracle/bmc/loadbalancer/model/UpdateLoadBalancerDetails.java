@@ -36,7 +36,10 @@ public class UpdateLoadBalancerDetails {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateLoadBalancerDetails o) {
-            return displayName(o.getDisplayName());
+            Builder copiedBuilder = displayName(o.getDisplayName());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 

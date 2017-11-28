@@ -59,9 +59,13 @@ public class UpdateSaml2IdentityProviderDetails extends UpdateIdentityProviderDe
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateSaml2IdentityProviderDetails o) {
-            return description(o.getDescription())
-                    .metadataUrl(o.getMetadataUrl())
-                    .metadata(o.getMetadata());
+            Builder copiedBuilder =
+                    description(o.getDescription())
+                            .metadataUrl(o.getMetadataUrl())
+                            .metadata(o.getMetadata());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
         }
     }
 
