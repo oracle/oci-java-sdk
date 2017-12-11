@@ -37,6 +37,32 @@ public interface VirtualNetwork extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Adds one or more customer public IP prefixes to the specified public virtual circuit.
+     * Use this operation (and not {@link #updateVirtualCircuit(UpdateVirtualCircuitRequest) updateVirtualCircuit})
+     * to add prefixes to the virtual circuit. Oracle must verify the customer's ownership
+     * of each prefix before traffic for that prefix will flow across the virtual circuit.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    BulkAddVirtualCircuitPublicPrefixesResponse bulkAddVirtualCircuitPublicPrefixes(
+            BulkAddVirtualCircuitPublicPrefixesRequest request);
+
+    /**
+     * Removes one or more customer public IP prefixes from the specified public virtual circuit.
+     * Use this operation (and not {@link #updateVirtualCircuit(UpdateVirtualCircuitRequest) updateVirtualCircuit})
+     * to remove prefixes from the virtual circuit. When the virtual circuit's state switches
+     * back to PROVISIONED, Oracle stops advertising the specified prefixes across the connection.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    BulkDeleteVirtualCircuitPublicPrefixesResponse bulkDeleteVirtualCircuitPublicPrefixes(
+            BulkDeleteVirtualCircuitPublicPrefixesRequest request);
+
+    /**
      * Connects this local peering gateway (LPG) to another one in the same region.
      * <p>
      * This operation must be called by the VCN administrator who is designated as
@@ -676,6 +702,17 @@ public interface VirtualNetwork extends AutoCloseable {
     GetDrgAttachmentResponse getDrgAttachment(GetDrgAttachmentRequest request);
 
     /**
+     * Gets the specified provider service.
+     * For more information, see [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetFastConnectProviderServiceResponse getFastConnectProviderService(
+            GetFastConnectProviderServiceRequest request);
+
+    /**
      * Gets the specified IPSec connection's basic information, including the static routes for the
      * on-premises router. If you want the status of the connection (whether it's up or down), use
      * {@link #getIPSecConnectionDeviceStatus(GetIPSecConnectionDeviceStatusRequest) getIPSecConnectionDeviceStatus}.
@@ -885,6 +922,20 @@ public interface VirtualNetwork extends AutoCloseable {
             ListFastConnectProviderServicesRequest request);
 
     /**
+     * Gets the list of available virtual circuit bandwidth levels for a provider.
+     * You need this information so you can specify your desired bandwidth level (shape) when you create a virtual circuit.
+     * <p>
+     * For more information about virtual circuits, see [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListFastConnectProviderVirtualCircuitBandwidthShapesResponse
+            listFastConnectProviderVirtualCircuitBandwidthShapes(
+                    ListFastConnectProviderVirtualCircuitBandwidthShapesRequest request);
+
+    /**
      * Lists the IPSec connections for the specified compartment. You can filter the
      * results by DRG or CPE.
      *
@@ -974,10 +1025,7 @@ public interface VirtualNetwork extends AutoCloseable {
     ListVcnsResponse listVcns(ListVcnsRequest request);
 
     /**
-     * Lists the available bandwidth levels for virtual circuits. You need this
-     * information so you can specify your desired bandwidth level (that is, shape)
-     * when you create a virtual circuit.
-     * For the compartment ID, provide the OCID of your tenancy (the root compartment).
+     * The deprecated operation lists available bandwidth levels for virtual circuits. For the compartment ID, provide the OCID of your tenancy (the root compartment).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -985,6 +1033,17 @@ public interface VirtualNetwork extends AutoCloseable {
      */
     ListVirtualCircuitBandwidthShapesResponse listVirtualCircuitBandwidthShapes(
             ListVirtualCircuitBandwidthShapesRequest request);
+
+    /**
+     * Lists the public IP prefixes and their details for the specified
+     * public virtual circuit.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListVirtualCircuitPublicPrefixesResponse listVirtualCircuitPublicPrefixes(
+            ListVirtualCircuitPublicPrefixesRequest request);
 
     /**
      * Lists the virtual circuits in the specified compartment.
@@ -1166,6 +1225,14 @@ public interface VirtualNetwork extends AutoCloseable {
      * the associated BGP session is back up. For more information
      * about the various states and how to test connectivity, see
      * [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
+     * <p>
+     * To change the list of public IP prefixes for a public virtual circuit,
+     * use {@link #bulkAddVirtualCircuitPublicPrefixes(BulkAddVirtualCircuitPublicPrefixesRequest) bulkAddVirtualCircuitPublicPrefixes}
+     * and
+     * {@link #bulkDeleteVirtualCircuitPublicPrefixes(BulkDeleteVirtualCircuitPublicPrefixesRequest) bulkDeleteVirtualCircuitPublicPrefixes}.
+     * Updating the list of prefixes does NOT cause the BGP session to go down. However,
+     * Oracle must verify the customer's ownership of each added prefix before
+     * traffic for that prefix will flow across the virtual circuit.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

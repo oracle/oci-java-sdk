@@ -7,6 +7,24 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Fixed
 - N/A
 
+### Changed
+- N/A
+
+### Added
+- N/A
+
+## 1.2.20 - 2017-12-11
+
+### Added
+- Support for retrieving custom operation metadata, such as the OCID of a resource, from responsePayload attribute on the AuditEvent model of the Audit Service
+- Support for public peering for FastConnect
+- Support for specifying an authorized entity name in a Letter of Authority for FastConnect
+- Support for showing a list of bandwidth shapes for FastConnect provider
+
+### Deprecated
+- The `listVirtualCircuitBandwidthShapes` operation in `VirtualNetwork` has been deprecated. Use the `listFastConnectProviderVirtualCircuitBandwidthShapes` operation instead
+- When using `CreateVirtualCircuitDetails`, supplying a `providerName` is deprecated and `providerServiceId` should be used instead
+
 ## 1.2.18 - 2017-11-27
 
 ### Changed

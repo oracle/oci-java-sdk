@@ -8,27 +8,27 @@ import com.oracle.bmc.core.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ListFastConnectProviderVirtualCircuitBandwidthShapesRequest
+        extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The OCID of the instance.
+     * The OCID of the provider service.
      */
-    private String instanceId;
+    private String providerServiceId;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     * The maximum number of items to return in a paginated \"List\" call.
+     * <p>
+     * Example: `500`
      *
      */
-    private String ifMatch;
+    private Integer limit;
 
     /**
-     * Specifies whether to delete or preserve the boot volume when terminating an instance.
-     * The default value is false.
+     * The value of the `opc-next-page` response header from the previous \"List\" call.
      *
      */
-    private Boolean preserveBootVolume;
+    private String page;
 
     public static class Builder {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
@@ -50,25 +50,26 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
          */
-        public Builder copy(TerminateInstanceRequest o) {
-            instanceId(o.getInstanceId());
-            ifMatch(o.getIfMatch());
-            preserveBootVolume(o.getPreserveBootVolume());
+        public Builder copy(ListFastConnectProviderVirtualCircuitBandwidthShapesRequest o) {
+            providerServiceId(o.getProviderServiceId());
+            limit(o.getLimit());
+            page(o.getPage());
             return this;
         }
 
         /**
-         * Build the instance of TerminateInstanceRequest as configured by this builder
+         * Build the instance of ListFastConnectProviderVirtualCircuitBandwidthShapesRequest as configured by this builder
          *
          * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
          * This is the preferred method to build an instance.
          *
-         * @return instance of TerminateInstanceRequest
+         * @return instance of ListFastConnectProviderVirtualCircuitBandwidthShapesRequest
          */
-        public TerminateInstanceRequest build() {
-            TerminateInstanceRequest request = buildWithoutInvocationCallback();
+        public ListFastConnectProviderVirtualCircuitBandwidthShapesRequest build() {
+            ListFastConnectProviderVirtualCircuitBandwidthShapesRequest request =
+                    buildWithoutInvocationCallback();
             request.setInvocationCallback(invocationCallback);
             return request;
         }

@@ -138,6 +138,39 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public BulkAddVirtualCircuitPublicPrefixesResponse bulkAddVirtualCircuitPublicPrefixes(
+            BulkAddVirtualCircuitPublicPrefixesRequest request) {
+        LOG.trace("Called bulkAddVirtualCircuitPublicPrefixes");
+        request = BulkAddVirtualCircuitPublicPrefixesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkAddVirtualCircuitPublicPrefixesConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, BulkAddVirtualCircuitPublicPrefixesResponse>
+                transformer = BulkAddVirtualCircuitPublicPrefixesConverter.fromResponse();
+
+        javax.ws.rs.core.Response response =
+                client.post(ib, request.getBulkAddVirtualCircuitPublicPrefixesDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public BulkDeleteVirtualCircuitPublicPrefixesResponse bulkDeleteVirtualCircuitPublicPrefixes(
+            BulkDeleteVirtualCircuitPublicPrefixesRequest request) {
+        LOG.trace("Called bulkDeleteVirtualCircuitPublicPrefixes");
+        request = BulkDeleteVirtualCircuitPublicPrefixesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkDeleteVirtualCircuitPublicPrefixesConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, BulkDeleteVirtualCircuitPublicPrefixesResponse>
+                transformer = BulkDeleteVirtualCircuitPublicPrefixesConverter.fromResponse();
+
+        javax.ws.rs.core.Response response =
+                client.post(
+                        ib, request.getBulkDeleteVirtualCircuitPublicPrefixesDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
     public ConnectLocalPeeringGatewaysResponse connectLocalPeeringGateways(
             ConnectLocalPeeringGatewaysRequest request) {
         LOG.trace("Called connectLocalPeeringGateways");
@@ -676,6 +709,21 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public GetFastConnectProviderServiceResponse getFastConnectProviderService(
+            GetFastConnectProviderServiceRequest request) {
+        LOG.trace("Called getFastConnectProviderService");
+        request = GetFastConnectProviderServiceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetFastConnectProviderServiceConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetFastConnectProviderServiceResponse>
+                transformer = GetFastConnectProviderServiceConverter.fromResponse();
+
+        javax.ws.rs.core.Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
     public GetIPSecConnectionResponse getIPSecConnection(GetIPSecConnectionRequest request) {
         LOG.trace("Called getIPSecConnection");
         request = GetIPSecConnectionConverter.interceptRequest(request);
@@ -961,6 +1009,28 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public ListFastConnectProviderVirtualCircuitBandwidthShapesResponse
+            listFastConnectProviderVirtualCircuitBandwidthShapes(
+                    ListFastConnectProviderVirtualCircuitBandwidthShapesRequest request) {
+        LOG.trace("Called listFastConnectProviderVirtualCircuitBandwidthShapes");
+        request =
+                ListFastConnectProviderVirtualCircuitBandwidthShapesConverter.interceptRequest(
+                        request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListFastConnectProviderVirtualCircuitBandwidthShapesConverter.fromRequest(
+                        client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ListFastConnectProviderVirtualCircuitBandwidthShapesResponse>
+                transformer =
+                        ListFastConnectProviderVirtualCircuitBandwidthShapesConverter
+                                .fromResponse();
+
+        javax.ws.rs.core.Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
     public ListIPSecConnectionsResponse listIPSecConnections(ListIPSecConnectionsRequest request) {
         LOG.trace("Called listIPSecConnections");
         request = ListIPSecConnectionsConverter.interceptRequest(request);
@@ -1075,6 +1145,21 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListVirtualCircuitBandwidthShapesResponse>
                 transformer = ListVirtualCircuitBandwidthShapesConverter.fromResponse();
+
+        javax.ws.rs.core.Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public ListVirtualCircuitPublicPrefixesResponse listVirtualCircuitPublicPrefixes(
+            ListVirtualCircuitPublicPrefixesRequest request) {
+        LOG.trace("Called listVirtualCircuitPublicPrefixes");
+        request = ListVirtualCircuitPublicPrefixesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListVirtualCircuitPublicPrefixesConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListVirtualCircuitPublicPrefixesResponse>
+                transformer = ListVirtualCircuitPublicPrefixesConverter.fromResponse();
 
         javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);

@@ -37,6 +37,50 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Adds one or more customer public IP prefixes to the specified public virtual circuit.
+     * Use this operation (and not {@link #updateVirtualCircuit(UpdateVirtualCircuitRequest, Consumer, Consumer) updateVirtualCircuit})
+     * to add prefixes to the virtual circuit. Oracle must verify the customer's ownership
+     * of each prefix before traffic for that prefix will flow across the virtual circuit.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<BulkAddVirtualCircuitPublicPrefixesResponse>
+            bulkAddVirtualCircuitPublicPrefixes(
+                    BulkAddVirtualCircuitPublicPrefixesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    BulkAddVirtualCircuitPublicPrefixesRequest,
+                                    BulkAddVirtualCircuitPublicPrefixesResponse>
+                            handler);
+
+    /**
+     * Removes one or more customer public IP prefixes from the specified public virtual circuit.
+     * Use this operation (and not {@link #updateVirtualCircuit(UpdateVirtualCircuitRequest, Consumer, Consumer) updateVirtualCircuit})
+     * to remove prefixes from the virtual circuit. When the virtual circuit's state switches
+     * back to PROVISIONED, Oracle stops advertising the specified prefixes across the connection.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<BulkDeleteVirtualCircuitPublicPrefixesResponse>
+            bulkDeleteVirtualCircuitPublicPrefixes(
+                    BulkDeleteVirtualCircuitPublicPrefixesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    BulkDeleteVirtualCircuitPublicPrefixesRequest,
+                                    BulkDeleteVirtualCircuitPublicPrefixesResponse>
+                            handler);
+
+    /**
      * Connects this local peering gateway (LPG) to another one in the same region.
      * <p>
      * This operation must be called by the VCN administrator who is designated as
@@ -961,6 +1005,26 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the specified provider service.
+     * For more information, see [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetFastConnectProviderServiceResponse>
+            getFastConnectProviderService(
+                    GetFastConnectProviderServiceRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetFastConnectProviderServiceRequest,
+                                    GetFastConnectProviderServiceResponse>
+                            handler);
+
+    /**
      * Gets the specified IPSec connection's basic information, including the static routes for the
      * on-premises router. If you want the status of the connection (whether it's up or down), use
      * {@link #getIPSecConnectionDeviceStatus(GetIPSecConnectionDeviceStatusRequest, Consumer, Consumer) getIPSecConnectionDeviceStatus}.
@@ -1327,6 +1391,28 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Gets the list of available virtual circuit bandwidth levels for a provider.
+     * You need this information so you can specify your desired bandwidth level (shape) when you create a virtual circuit.
+     * <p>
+     * For more information about virtual circuits, see [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListFastConnectProviderVirtualCircuitBandwidthShapesResponse>
+            listFastConnectProviderVirtualCircuitBandwidthShapes(
+                    ListFastConnectProviderVirtualCircuitBandwidthShapesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListFastConnectProviderVirtualCircuitBandwidthShapesRequest,
+                                    ListFastConnectProviderVirtualCircuitBandwidthShapesResponse>
+                            handler);
+
+    /**
      * Lists the IPSec connections for the specified compartment. You can filter the
      * results by DRG or CPE.
      *
@@ -1473,10 +1559,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListVcnsRequest, ListVcnsResponse> handler);
 
     /**
-     * Lists the available bandwidth levels for virtual circuits. You need this
-     * information so you can specify your desired bandwidth level (that is, shape)
-     * when you create a virtual circuit.
-     * For the compartment ID, provide the OCID of your tenancy (the root compartment).
+     * The deprecated operation lists available bandwidth levels for virtual circuits. For the compartment ID, provide the OCID of your tenancy (the root compartment).
      *
      *
      * @param request The request object containing the details to send
@@ -1492,6 +1575,26 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ListVirtualCircuitBandwidthShapesRequest,
                                     ListVirtualCircuitBandwidthShapesResponse>
+                            handler);
+
+    /**
+     * Lists the public IP prefixes and their details for the specified
+     * public virtual circuit.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListVirtualCircuitPublicPrefixesResponse>
+            listVirtualCircuitPublicPrefixes(
+                    ListVirtualCircuitPublicPrefixesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListVirtualCircuitPublicPrefixesRequest,
+                                    ListVirtualCircuitPublicPrefixesResponse>
                             handler);
 
     /**
@@ -1784,6 +1887,14 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * the associated BGP session is back up. For more information
      * about the various states and how to test connectivity, see
      * [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
+     * <p>
+     * To change the list of public IP prefixes for a public virtual circuit,
+     * use {@link #bulkAddVirtualCircuitPublicPrefixes(BulkAddVirtualCircuitPublicPrefixesRequest, Consumer, Consumer) bulkAddVirtualCircuitPublicPrefixes}
+     * and
+     * {@link #bulkDeleteVirtualCircuitPublicPrefixes(BulkDeleteVirtualCircuitPublicPrefixesRequest, Consumer, Consumer) bulkDeleteVirtualCircuitPublicPrefixes}.
+     * Updating the list of prefixes does NOT cause the BGP session to go down. However,
+     * Oracle must verify the customer's ownership of each added prefix before
+     * traffic for that prefix will flow across the virtual circuit.
      *
      *
      * @param request The request object containing the details to send
