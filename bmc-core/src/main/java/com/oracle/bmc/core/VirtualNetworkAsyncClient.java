@@ -119,6 +119,68 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<BulkAddVirtualCircuitPublicPrefixesResponse>
+            bulkAddVirtualCircuitPublicPrefixes(
+                    BulkAddVirtualCircuitPublicPrefixesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    BulkAddVirtualCircuitPublicPrefixesRequest,
+                                    BulkAddVirtualCircuitPublicPrefixesResponse>
+                            handler) {
+        LOG.trace("Called async bulkAddVirtualCircuitPublicPrefixes");
+        request = BulkAddVirtualCircuitPublicPrefixesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkAddVirtualCircuitPublicPrefixesConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, BulkAddVirtualCircuitPublicPrefixesResponse>
+                transformer = BulkAddVirtualCircuitPublicPrefixesConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.post(
+                        ib,
+                        request.getBulkAddVirtualCircuitPublicPrefixesDetails(),
+                        request,
+                        onSuccess,
+                        onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BulkDeleteVirtualCircuitPublicPrefixesResponse>
+            bulkDeleteVirtualCircuitPublicPrefixes(
+                    BulkDeleteVirtualCircuitPublicPrefixesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    BulkDeleteVirtualCircuitPublicPrefixesRequest,
+                                    BulkDeleteVirtualCircuitPublicPrefixesResponse>
+                            handler) {
+        LOG.trace("Called async bulkDeleteVirtualCircuitPublicPrefixes");
+        request = BulkDeleteVirtualCircuitPublicPrefixesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkDeleteVirtualCircuitPublicPrefixesConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, BulkDeleteVirtualCircuitPublicPrefixesResponse>
+                transformer = BulkDeleteVirtualCircuitPublicPrefixesConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.post(
+                        ib,
+                        request.getBulkDeleteVirtualCircuitPublicPrefixesDetails(),
+                        request,
+                        onSuccess,
+                        onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
     public java.util.concurrent.Future<ConnectLocalPeeringGatewaysResponse>
             connectLocalPeeringGateways(
                     ConnectLocalPeeringGatewaysRequest request,
@@ -1020,6 +1082,32 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetFastConnectProviderServiceResponse>
+            getFastConnectProviderService(
+                    GetFastConnectProviderServiceRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetFastConnectProviderServiceRequest,
+                                    GetFastConnectProviderServiceResponse>
+                            handler) {
+        LOG.trace("Called async getFastConnectProviderService");
+        request = GetFastConnectProviderServiceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetFastConnectProviderServiceConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetFastConnectProviderServiceResponse>
+                transformer = GetFastConnectProviderServiceConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetIPSecConnectionResponse> getIPSecConnection(
             GetIPSecConnectionRequest request,
             com.oracle.bmc.responses.AsyncHandler<
@@ -1502,6 +1590,38 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListFastConnectProviderVirtualCircuitBandwidthShapesResponse>
+            listFastConnectProviderVirtualCircuitBandwidthShapes(
+                    ListFastConnectProviderVirtualCircuitBandwidthShapesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListFastConnectProviderVirtualCircuitBandwidthShapesRequest,
+                                    ListFastConnectProviderVirtualCircuitBandwidthShapesResponse>
+                            handler) {
+        LOG.trace("Called async listFastConnectProviderVirtualCircuitBandwidthShapes");
+        request =
+                ListFastConnectProviderVirtualCircuitBandwidthShapesConverter.interceptRequest(
+                        request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListFastConnectProviderVirtualCircuitBandwidthShapesConverter.fromRequest(
+                        client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ListFastConnectProviderVirtualCircuitBandwidthShapesResponse>
+                transformer =
+                        ListFastConnectProviderVirtualCircuitBandwidthShapesConverter
+                                .fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListIPSecConnectionsResponse> listIPSecConnections(
             ListIPSecConnectionsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
@@ -1695,6 +1815,32 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListVirtualCircuitBandwidthShapesResponse>
                 transformer = ListVirtualCircuitBandwidthShapesConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVirtualCircuitPublicPrefixesResponse>
+            listVirtualCircuitPublicPrefixes(
+                    ListVirtualCircuitPublicPrefixesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListVirtualCircuitPublicPrefixesRequest,
+                                    ListVirtualCircuitPublicPrefixesResponse>
+                            handler) {
+        LOG.trace("Called async listVirtualCircuitPublicPrefixes");
+        request = ListVirtualCircuitPublicPrefixesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListVirtualCircuitPublicPrefixesConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListVirtualCircuitPublicPrefixesResponse>
+                transformer = ListVirtualCircuitPublicPrefixesConverter.fromResponse();
 
         com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
                 new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);

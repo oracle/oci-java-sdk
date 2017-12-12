@@ -18,6 +18,15 @@ public class LetterOfAuthority {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("authorizedEntityName")
+        private String authorizedEntityName;
+
+        public Builder authorizedEntityName(String authorizedEntityName) {
+            this.authorizedEntityName = authorizedEntityName;
+            this.__explicitlySet__.add("authorizedEntityName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("circuitType")
         private CircuitType circuitType;
 
@@ -78,6 +87,7 @@ public class LetterOfAuthority {
         public LetterOfAuthority build() {
             LetterOfAuthority __instance__ =
                     new LetterOfAuthority(
+                            authorizedEntityName,
                             circuitType,
                             crossConnectId,
                             facilityLocation,
@@ -91,7 +101,8 @@ public class LetterOfAuthority {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(LetterOfAuthority o) {
             Builder copiedBuilder =
-                    circuitType(o.getCircuitType())
+                    authorizedEntityName(o.getAuthorizedEntityName())
+                            .circuitType(o.getCircuitType())
                             .crossConnectId(o.getCrossConnectId())
                             .facilityLocation(o.getFacilityLocation())
                             .portName(o.getPortName())
@@ -110,6 +121,11 @@ public class LetterOfAuthority {
         return new Builder();
     }
 
+    /**
+     * The name of the entity authorized by this Letter of Authority.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("authorizedEntityName")
+    String authorizedEntityName;
     /**
      * The type of cross-connect fiber, termination, and optical specification.
      **/

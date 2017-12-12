@@ -77,12 +77,31 @@ public class CreateVirtualCircuitDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("providerServiceId")
+        private String providerServiceId;
+
+        public Builder providerServiceId(String providerServiceId) {
+            this.providerServiceId = providerServiceId;
+            this.__explicitlySet__.add("providerServiceId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("providerServiceName")
         private String providerServiceName;
 
         public Builder providerServiceName(String providerServiceName) {
             this.providerServiceName = providerServiceName;
             this.__explicitlySet__.add("providerServiceName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("publicPrefixes")
+        private java.util.List<CreateVirtualCircuitPublicPrefixDetails> publicPrefixes;
+
+        public Builder publicPrefixes(
+                java.util.List<CreateVirtualCircuitPublicPrefixDetails> publicPrefixes) {
+            this.publicPrefixes = publicPrefixes;
+            this.__explicitlySet__.add("publicPrefixes");
             return this;
         }
 
@@ -117,7 +136,9 @@ public class CreateVirtualCircuitDetails {
                             displayName,
                             gatewayId,
                             providerName,
+                            providerServiceId,
                             providerServiceName,
+                            publicPrefixes,
                             region,
                             type);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -134,7 +155,9 @@ public class CreateVirtualCircuitDetails {
                             .displayName(o.getDisplayName())
                             .gatewayId(o.getGatewayId())
                             .providerName(o.getProviderName())
+                            .providerServiceId(o.getProviderServiceId())
                             .providerServiceName(o.getProviderServiceName())
+                            .publicPrefixes(o.getPublicPrefixes())
                             .region(o.getRegion())
                             .type(o.getType());
 
@@ -153,7 +176,7 @@ public class CreateVirtualCircuitDetails {
     /**
      * The provisioned data rate of the connection.  To get a list of the
      * available bandwidth levels (that is, shapes), see
-     * {@link #listVirtualCircuitBandwidthShapes(ListVirtualCircuitBandwidthShapesRequest) listVirtualCircuitBandwidthShapes}.
+     * {@link #listFastConnectProviderVirtualCircuitBandwidthShapes(ListFastConnectProviderVirtualCircuitBandwidthShapesRequest) listFastConnectProviderVirtualCircuitBandwidthShapes}.
      * <p>
      * Example: `10 Gbps`
      *
@@ -193,7 +216,7 @@ public class CreateVirtualCircuitDetails {
     String displayName;
 
     /**
-     * The OCID of the {@link Drg}
+     * For private virtual circuits only. The OCID of the {@link Drg}
      * that this virtual circuit uses.
      *
      **/
@@ -201,7 +224,7 @@ public class CreateVirtualCircuitDetails {
     String gatewayId;
 
     /**
-     * The name of the provider (if you're connecting via a provider).
+     * Deprecated. Instead use `providerServiceId`.
      * To get a list of the provider names, see
      * {@link #listFastConnectProviderServices(ListFastConnectProviderServicesRequest) listFastConnectProviderServices}.
      *
@@ -210,13 +233,30 @@ public class CreateVirtualCircuitDetails {
     String providerName;
 
     /**
-     * The name of the provider (if you're connecting via a provider).
+     * The OCID of the service offered by the provider (if you're connecting
+     * via a provider). To get a list of the available service offerings, see
+     * {@link #listFastConnectProviderServices(ListFastConnectProviderServicesRequest) listFastConnectProviderServices}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("providerServiceId")
+    String providerServiceId;
+
+    /**
+     * Deprecated. Instead use `providerServiceId`.
      * To get a list of the provider names, see
      * {@link #listFastConnectProviderServices(ListFastConnectProviderServicesRequest) listFastConnectProviderServices}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerServiceName")
     String providerServiceName;
+
+    /**
+     * For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to
+     * advertise across the connection.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("publicPrefixes")
+    java.util.List<CreateVirtualCircuitPublicPrefixDetails> publicPrefixes;
 
     /**
      * The Oracle Cloud Infrastructure region where this virtual

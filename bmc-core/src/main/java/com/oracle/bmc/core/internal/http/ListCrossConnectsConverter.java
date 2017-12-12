@@ -91,7 +91,7 @@ public class ListCrossConnectsConverter {
                     target.queryParam(
                             "lifecycleState",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getLifecycleState()));
+                                    request.getLifecycleState().getValue()));
         }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();

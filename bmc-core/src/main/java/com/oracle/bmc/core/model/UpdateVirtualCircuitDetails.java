@@ -120,7 +120,7 @@ public class UpdateVirtualCircuitDetails {
     /**
      * The provisioned data rate of the connection. To get a list of the
      * available bandwidth levels (that is, shapes), see
-     * {@link #listVirtualCircuitBandwidthShapes(ListVirtualCircuitBandwidthShapesRequest) listVirtualCircuitBandwidthShapes}.
+     * {@link #listFastConnectProviderVirtualCircuitBandwidthShapes(ListFastConnectProviderVirtualCircuitBandwidthShapesRequest) listFastConnectProviderVirtualCircuitBandwidthShapes}.
      * To be updated only by the customer who owns the virtual circuit.
      *
      **/
@@ -167,7 +167,7 @@ public class UpdateVirtualCircuitDetails {
 
     /**
      * The OCID of the {@link Drg}
-     * that this virtual circuit uses.
+     * that this private virtual circuit uses.
      * <p>
      * To be updated only by the customer who owns the virtual circuit.
      *

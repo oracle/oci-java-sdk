@@ -7,7 +7,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>1.2.18</version>
+    <version>1.2.20</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -24,7 +24,7 @@
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-common</artifactId>
-        <version>1.2.18</version>
+        <version>1.2.20</version>
         <optional>false</optional>
       </dependency>
 
@@ -33,37 +33,37 @@
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-audit</artifactId>
-        <version>1.2.18</version>
+        <version>1.2.20</version>
         <optional>false</optional>
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-core</artifactId>
-        <version>1.2.18</version>
+        <version>1.2.20</version>
         <optional>false</optional>
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-database</artifactId>
-        <version>1.2.18</version>
+        <version>1.2.20</version>
         <optional>false</optional>
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-identity</artifactId>
-        <version>1.2.18</version>
+        <version>1.2.20</version>
         <optional>false</optional>
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-loadbalancer</artifactId>
-        <version>1.2.18</version>
+        <version>1.2.20</version>
         <optional>false</optional>
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-objectstorage</artifactId>
-        <version>1.2.18</version>
+        <version>1.2.20</version>
         <optional>false</optional>
       </dependency>
     </dependencies>

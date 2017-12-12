@@ -3,6 +3,11 @@
  */
 package com.oracle.bmc.core.model;
 
+/**
+ * Instance launch details.
+ * Use the sourceDetails parameter to specify whether a boot volume should be used for a new instance launch.
+ *
+ **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(

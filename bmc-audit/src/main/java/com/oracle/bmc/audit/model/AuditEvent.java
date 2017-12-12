@@ -176,6 +176,15 @@ public class AuditEvent {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("responsePayload")
+        private java.util.Map<String, Object> responsePayload;
+
+        public Builder responsePayload(java.util.Map<String, Object> responsePayload) {
+            this.responsePayload = responsePayload;
+            this.__explicitlySet__.add("responsePayload");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -199,7 +208,8 @@ public class AuditEvent {
                             requestResource,
                             responseHeaders,
                             responseStatus,
-                            responseTime);
+                            responseTime,
+                            responsePayload);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -224,7 +234,8 @@ public class AuditEvent {
                             .requestResource(o.getRequestResource())
                             .responseHeaders(o.getResponseHeaders())
                             .responseStatus(o.getResponseStatus())
-                            .responseTime(o.getResponseTime());
+                            .responseTime(o.getResponseTime())
+                            .responsePayload(o.getResponsePayload());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -345,6 +356,12 @@ public class AuditEvent {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responseTime")
     java.util.Date responseTime;
+
+    /**
+     * Metadata of interest from the response payload. For example, the OCID of a resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("responsePayload")
+    java.util.Map<String, Object> responsePayload;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

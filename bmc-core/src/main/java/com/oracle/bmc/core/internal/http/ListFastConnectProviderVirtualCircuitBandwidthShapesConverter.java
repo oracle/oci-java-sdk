@@ -9,50 +9,36 @@ import com.oracle.bmc.core.responses.*;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.extern.slf4j.Slf4j
-public class ListInstancesConverter {
+public class ListFastConnectProviderVirtualCircuitBandwidthShapesConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListInstancesRequest interceptRequest(ListInstancesRequest request) {
+    public static ListFastConnectProviderVirtualCircuitBandwidthShapesRequest interceptRequest(
+            ListFastConnectProviderVirtualCircuitBandwidthShapesRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
-            com.oracle.bmc.http.internal.RestClient client, ListInstancesRequest request) {
+            com.oracle.bmc.http.internal.RestClient client,
+            ListFastConnectProviderVirtualCircuitBandwidthShapesRequest request) {
         if (request == null) {
             throw new NullPointerException("request instance is required");
         }
 
-        if (request.getCompartmentId() == null) {
-            throw new NullPointerException("compartmentId is required");
+        if (request.getProviderServiceId() == null) {
+            throw new NullPointerException("providerServiceId is required");
         }
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20160918").path("instances");
-
-        if (request.getAvailabilityDomain() != null) {
-            target =
-                    target.queryParam(
-                            "availabilityDomain",
-                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getAvailabilityDomain()));
-        }
-
-        target =
-                target.queryParam(
-                        "compartmentId",
-                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                request.getCompartmentId()));
-
-        if (request.getDisplayName() != null) {
-            target =
-                    target.queryParam(
-                            "displayName",
-                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getDisplayName()));
-        }
+                client.getBaseTarget()
+                        .path("/20160918")
+                        .path("fastConnectProviderServices")
+                        .path(
+                                com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
+                                        request.getProviderServiceId()))
+                        .path("virtualCircuitBandwidthShapes");
 
         if (request.getLimit() != null) {
             target =
@@ -70,30 +56,6 @@ public class ListInstancesConverter {
                                     request.getPage()));
         }
 
-        if (request.getSortBy() != null) {
-            target =
-                    target.queryParam(
-                            "sortBy",
-                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getSortBy().getValue()));
-        }
-
-        if (request.getSortOrder() != null) {
-            target =
-                    target.queryParam(
-                            "sortOrder",
-                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getSortOrder().getValue()));
-        }
-
-        if (request.getLifecycleState() != null) {
-            target =
-                    target.queryParam(
-                            "lifecycleState",
-                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getLifecycleState().getValue()));
-        }
-
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
@@ -101,32 +63,43 @@ public class ListInstancesConverter {
         return ib;
     }
 
-    public static com.google.common.base.Function<javax.ws.rs.core.Response, ListInstancesResponse>
+    public static com.google.common.base.Function<
+                    javax.ws.rs.core.Response,
+                    ListFastConnectProviderVirtualCircuitBandwidthShapesResponse>
             fromResponse() {
-        final com.google.common.base.Function<javax.ws.rs.core.Response, ListInstancesResponse>
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ListFastConnectProviderVirtualCircuitBandwidthShapesResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListInstancesResponse>() {
+                                javax.ws.rs.core.Response,
+                                ListFastConnectProviderVirtualCircuitBandwidthShapesResponse>() {
                             @Override
-                            public ListInstancesResponse apply(
-                                    javax.ws.rs.core.Response rawResponse) {
-                                LOG.trace("Transform function invoked for ListInstancesResponse");
+                            public ListFastConnectProviderVirtualCircuitBandwidthShapesResponse
+                                    apply(javax.ws.rs.core.Response rawResponse) {
+                                LOG.trace(
+                                        "Transform function invoked for ListFastConnectProviderVirtualCircuitBandwidthShapesResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<Instance>>>
+                                                        java.util.List<
+                                                                VirtualCircuitBandwidthShape>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
-                                                                java.util.List<Instance>>() {});
+                                                                java.util.List<
+                                                                        VirtualCircuitBandwidthShape>>() {});
 
-                                com.oracle.bmc.http.internal.WithHeaders<java.util.List<Instance>>
+                                com.oracle.bmc.http.internal.WithHeaders<
+                                                java.util.List<VirtualCircuitBandwidthShape>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListInstancesResponse.Builder builder =
-                                        ListInstancesResponse.builder();
+                                ListFastConnectProviderVirtualCircuitBandwidthShapesResponse.Builder
+                                        builder =
+                                                ListFastConnectProviderVirtualCircuitBandwidthShapesResponse
+                                                        .builder();
 
                                 builder.items(response.getItem());
 
@@ -154,7 +127,8 @@ public class ListInstancesConverter {
                                                     String.class));
                                 }
 
-                                ListInstancesResponse responseWrapper = builder.build();
+                                ListFastConnectProviderVirtualCircuitBandwidthShapesResponse
+                                        responseWrapper = builder.build();
 
                                 return responseWrapper;
                             }

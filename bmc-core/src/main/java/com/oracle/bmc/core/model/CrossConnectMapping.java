@@ -15,7 +15,9 @@ package com.oracle.bmc.core.model;
  * <p>
  * If you're a customer who is colocated with Oracle, that means you own both
  * the virtual circuit and the physical connection it runs on (cross-connect or
- * cross-connect group), so you specify all the information in the mapping.
+ * cross-connect group), so you specify all the information in the mapping. There's
+ * one exception: for a public virtual circuit, Oracle specifies the BGP IP
+ * addresses.
  * <p>
  * If you're a provider, then you own the physical connection that the customer's
  * virtual circuit runs on, so you contribute information about the cross-connect
@@ -25,7 +27,8 @@ package com.oracle.bmc.core.model;
  * provider? If the BGP session goes from Oracle to the provider's edge router, then
  * the provider also specifies the BGP peering information. If the BGP session instead
  * goes from Oracle to the customer's edge router, then the customer specifies the BGP
- * peering information.
+ * peering information. There's one exception: for a public virtual circuit, Oracle
+ * specifies the BGP IP addresses.
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
@@ -146,6 +149,8 @@ public class CrossConnectMapping {
      * session goes from Oracle to a provider, this is the BGP IP address of the
      * provider's edge router. Must use a /30 or /31 subnet mask.
      * <p>
+     * There's one exception: for a public virtual circuit, Oracle specifies the BGP IP addresses.
+     * <p>
      * Example: `10.0.0.18/31`
      *
      **/
@@ -157,6 +162,8 @@ public class CrossConnectMapping {
      * subnet mask. If the session goes from Oracle to a customer's edge router,
      * the customer specifies this information. If the session goes from Oracle to
      * a provider's edge router, the provider specifies this.
+     * <p>
+     * There's one exception: for a public virtual circuit, Oracle specifies the BGP IP addresses.
      * <p>
      * Example: `10.0.0.19/31`
      *

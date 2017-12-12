@@ -8,9 +8,9 @@ package com.oracle.bmc.core.model;
  * <p>
  * A virtual circuit is an isolated network path that runs over one or more physical
  * network connections to provide a single, logical connection between the edge router
- * on the customer's existing network and a DRG. A customer could have multiple virtual
- * circuits, for example, to isolate traffic from different parts of their organization
- * (one virtual circuit for 10.0.1.0/24, another for 172.16.0.0/16), or to provide redundancy.
+ * on the customer's existing network and Oracle Cloud Infrastructure. *Private*
+ * virtual circuits support private peering, and *public* virtual circuits support
+ * public peering. For more information, see [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
  * <p>
  * Each virtual circuit is made up of information shared between a customer, Oracle,
  * and a provider (if the customer is using FastConnect via a provider). Who fills in
@@ -19,8 +19,6 @@ package com.oracle.bmc.core.model;
  * edge router to Oracle. Also, in the case where the customer is using a provider, values
  * for some of the properties may not be present immediately, but may get filled in as the
  * provider and Oracle each do their part to provision the virtual circuit.
- * <p>
- * For more information, see [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
@@ -41,6 +39,15 @@ public class VirtualCircuit {
         public Builder bandwidthShapeName(String bandwidthShapeName) {
             this.bandwidthShapeName = bandwidthShapeName;
             this.__explicitlySet__.add("bandwidthShapeName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("bgpManagement")
+        private BgpManagement bgpManagement;
+
+        public Builder bgpManagement(BgpManagement bgpManagement) {
+            this.bgpManagement = bgpManagement;
+            this.__explicitlySet__.add("bgpManagement");
             return this;
         }
 
@@ -135,6 +142,15 @@ public class VirtualCircuit {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("providerServiceId")
+        private String providerServiceId;
+
+        public Builder providerServiceId(String providerServiceId) {
+            this.providerServiceId = providerServiceId;
+            this.__explicitlySet__.add("providerServiceId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("providerServiceName")
         private String providerServiceName;
 
@@ -153,6 +169,15 @@ public class VirtualCircuit {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("publicPrefixes")
+        private java.util.List<String> publicPrefixes;
+
+        public Builder publicPrefixes(java.util.List<String> publicPrefixes) {
+            this.publicPrefixes = publicPrefixes;
+            this.__explicitlySet__.add("publicPrefixes");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("referenceComment")
         private String referenceComment;
 
@@ -168,6 +193,15 @@ public class VirtualCircuit {
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("serviceType")
+        private ServiceType serviceType;
+
+        public Builder serviceType(ServiceType serviceType) {
+            this.serviceType = serviceType;
+            this.__explicitlySet__.add("serviceType");
             return this;
         }
 
@@ -196,6 +230,7 @@ public class VirtualCircuit {
             VirtualCircuit __instance__ =
                     new VirtualCircuit(
                             bandwidthShapeName,
+                            bgpManagement,
                             bgpSessionState,
                             compartmentId,
                             crossConnectMappings,
@@ -206,10 +241,13 @@ public class VirtualCircuit {
                             lifecycleState,
                             oracleBgpAsn,
                             providerName,
+                            providerServiceId,
                             providerServiceName,
                             providerState,
+                            publicPrefixes,
                             referenceComment,
                             region,
+                            serviceType,
                             timeCreated,
                             type);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -220,6 +258,7 @@ public class VirtualCircuit {
         public Builder copy(VirtualCircuit o) {
             Builder copiedBuilder =
                     bandwidthShapeName(o.getBandwidthShapeName())
+                            .bgpManagement(o.getBgpManagement())
                             .bgpSessionState(o.getBgpSessionState())
                             .compartmentId(o.getCompartmentId())
                             .crossConnectMappings(o.getCrossConnectMappings())
@@ -230,10 +269,13 @@ public class VirtualCircuit {
                             .lifecycleState(o.getLifecycleState())
                             .oracleBgpAsn(o.getOracleBgpAsn())
                             .providerName(o.getProviderName())
+                            .providerServiceId(o.getProviderServiceId())
                             .providerServiceName(o.getProviderServiceName())
                             .providerState(o.getProviderState())
+                            .publicPrefixes(o.getPublicPrefixes())
                             .referenceComment(o.getReferenceComment())
                             .region(o.getRegion())
+                            .serviceType(o.getServiceType())
                             .timeCreated(o.getTimeCreated())
                             .type(o.getType());
 
@@ -254,6 +296,60 @@ public class VirtualCircuit {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bandwidthShapeName")
     String bandwidthShapeName;
+    /**
+     * BGP management option.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum BgpManagement {
+        CustomerManaged("CUSTOMER_MANAGED"),
+        ProviderManaged("PROVIDER_MANAGED"),
+        OracleManaged("ORACLE_MANAGED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, BgpManagement> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (BgpManagement v : BgpManagement.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        BgpManagement(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static BgpManagement create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'BgpManagement', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * BGP management option.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("bgpManagement")
+    BgpManagement bgpManagement;
     /**
      * The state of the BGP session associated with the virtual circuit.
      **/
@@ -342,7 +438,7 @@ public class VirtualCircuit {
 
     /**
      * The OCID of the customer's {@link Drg}
-     * that this virtual circuit uses.
+     * that this virtual circuit uses. Applicable only to private virtual circuits.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gatewayId")
@@ -424,14 +520,21 @@ public class VirtualCircuit {
     Integer oracleBgpAsn;
 
     /**
-     * The name of the provider (if you're connecting via a provider).
+     * Deprecated. Instead use `providerServiceId`.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerName")
     String providerName;
 
     /**
-     * The name of the service offered by the provider.
+     * The OCID of the service offered by the provider (if the customer is connecting via a provider).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("providerServiceId")
+    String providerServiceId;
+
+    /**
+     * Deprecated. Instead use `providerServiceId`.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerServiceName")
@@ -499,6 +602,14 @@ public class VirtualCircuit {
     ProviderState providerState;
 
     /**
+     * For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to
+     * advertise across the connection. Each prefix must be /24 or less specific.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("publicPrefixes")
+    java.util.List<String> publicPrefixes;
+
+    /**
      * Provider-supplied reference information about this virtual circuit
      * (if the customer is connecting via a provider).
      *
@@ -513,6 +624,60 @@ public class VirtualCircuit {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     String region;
+    /**
+     * Provider service type.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum ServiceType {
+        Colocated("COLOCATED"),
+        Layer2("LAYER2"),
+        Layer3("LAYER3"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, ServiceType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ServiceType v : ServiceType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ServiceType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ServiceType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ServiceType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Provider service type.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("serviceType")
+    ServiceType serviceType;
 
     /**
      * The date and time the virtual circuit was created,
@@ -524,9 +689,8 @@ public class VirtualCircuit {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
     /**
-     * The type of IP addresses used in this virtual circuit. PRIVATE means
-     * [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses
-     * (10.0.0.0/8, 172.16/12, and 192.168/16). Only PRIVATE is supported.
+     * Whether the virtual circuit supports private or public peering. For more information,
+     * see [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -572,9 +736,8 @@ public class VirtualCircuit {
         }
     };
     /**
-     * The type of IP addresses used in this virtual circuit. PRIVATE means
-     * [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses
-     * (10.0.0.0/8, 172.16/12, and 192.168/16). Only PRIVATE is supported.
+     * Whether the virtual circuit supports private or public peering. For more information,
+     * see [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
