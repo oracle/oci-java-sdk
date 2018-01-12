@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.model;
 
@@ -40,6 +40,16 @@ public class Instance {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -55,6 +65,15 @@ public class Instance {
         public Builder extendedMetadata(java.util.Map<String, Object> extendedMetadata) {
             this.extendedMetadata = extendedMetadata;
             this.__explicitlySet__.add("extendedMetadata");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
             return this;
         }
 
@@ -82,6 +101,24 @@ public class Instance {
         public Builder ipxeScript(String ipxeScript) {
             this.ipxeScript = ipxeScript;
             this.__explicitlySet__.add("ipxeScript");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("launchMode")
+        private LaunchMode launchMode;
+
+        public Builder launchMode(LaunchMode launchMode) {
+            this.launchMode = launchMode;
+            this.__explicitlySet__.add("launchMode");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("launchOptions")
+        private LaunchOptions launchOptions;
+
+        public Builder launchOptions(LaunchOptions launchOptions) {
+            this.launchOptions = launchOptions;
+            this.__explicitlySet__.add("launchOptions");
             return this;
         }
 
@@ -147,11 +184,15 @@ public class Instance {
                     new Instance(
                             availabilityDomain,
                             compartmentId,
+                            definedTags,
                             displayName,
                             extendedMetadata,
+                            freeformTags,
                             id,
                             imageId,
                             ipxeScript,
+                            launchMode,
+                            launchOptions,
                             lifecycleState,
                             metadata,
                             region,
@@ -167,11 +208,15 @@ public class Instance {
             Builder copiedBuilder =
                     availabilityDomain(o.getAvailabilityDomain())
                             .compartmentId(o.getCompartmentId())
+                            .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .extendedMetadata(o.getExtendedMetadata())
+                            .freeformTags(o.getFreeformTags())
                             .id(o.getId())
                             .imageId(o.getImageId())
                             .ipxeScript(o.getIpxeScript())
+                            .launchMode(o.getLaunchMode())
+                            .launchOptions(o.getLaunchOptions())
                             .lifecycleState(o.getLifecycleState())
                             .metadata(o.getMetadata())
                             .region(o.getRegion())
@@ -207,6 +252,16 @@ public class Instance {
     String compartmentId;
 
     /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
      * <p>
@@ -226,6 +281,17 @@ public class Instance {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("extendedMetadata")
     java.util.Map<String, Object> extendedMetadata;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see
+     * [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Department\": \"Finance\"}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    java.util.Map<String, String> freeformTags;
 
     /**
      * The OCID of the instance.
@@ -267,6 +333,69 @@ public class Instance {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipxeScript")
     String ipxeScript;
+    /**
+     * Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+     * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for Oracle-provided images.
+     * * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+     * * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum LaunchMode {
+        Native("NATIVE"),
+        Emulated("EMULATED"),
+        Custom("CUSTOM"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, LaunchMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (LaunchMode v : LaunchMode.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        LaunchMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static LaunchMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'LaunchMode', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+     * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for Oracle-provided images.
+     * * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+     * * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("launchMode")
+    LaunchMode launchMode;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("launchOptions")
+    LaunchOptions launchOptions;
     /**
      * The current state of the instance.
      **/

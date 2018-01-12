@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.model;
 
@@ -22,6 +22,16 @@ public class CreateSecurityListDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -37,6 +47,15 @@ public class CreateSecurityListDetails {
         public Builder egressSecurityRules(java.util.List<EgressSecurityRule> egressSecurityRules) {
             this.egressSecurityRules = egressSecurityRules;
             this.__explicitlySet__.add("egressSecurityRules");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
             return this;
         }
 
@@ -66,8 +85,10 @@ public class CreateSecurityListDetails {
             CreateSecurityListDetails __instance__ =
                     new CreateSecurityListDetails(
                             compartmentId,
+                            definedTags,
                             displayName,
                             egressSecurityRules,
+                            freeformTags,
                             ingressSecurityRules,
                             vcnId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -78,8 +99,10 @@ public class CreateSecurityListDetails {
         public Builder copy(CreateSecurityListDetails o) {
             Builder copiedBuilder =
                     compartmentId(o.getCompartmentId())
+                            .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .egressSecurityRules(o.getEgressSecurityRules())
+                            .freeformTags(o.getFreeformTags())
                             .ingressSecurityRules(o.getIngressSecurityRules())
                             .vcnId(o.getVcnId());
 
@@ -102,6 +125,16 @@ public class CreateSecurityListDetails {
     String compartmentId;
 
     /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -112,6 +145,17 @@ public class CreateSecurityListDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("egressSecurityRules")
     java.util.List<EgressSecurityRule> egressSecurityRules;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see
+     * [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Department\": \"Finance\"}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    java.util.Map<String, String> freeformTags;
 
     /**
      * Rules for allowing ingress IP packets.

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.identity;
 
@@ -282,6 +282,34 @@ public class IdentityClient implements Identity {
     }
 
     @Override
+    public CreateTagResponse createTag(CreateTagRequest request) {
+        LOG.trace("Called createTag");
+        request = CreateTagConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateTagConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateTagResponse> transformer =
+                CreateTagConverter.fromResponse();
+
+        javax.ws.rs.core.Response response =
+                client.post(ib, request.getCreateTagDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public CreateTagNamespaceResponse createTagNamespace(CreateTagNamespaceRequest request) {
+        LOG.trace("Called createTagNamespace");
+        request = CreateTagNamespaceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateTagNamespaceConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateTagNamespaceResponse>
+                transformer = CreateTagNamespaceConverter.fromResponse();
+
+        javax.ws.rs.core.Response response =
+                client.post(ib, request.getCreateTagNamespaceDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
     public CreateUserResponse createUser(CreateUserRequest request) {
         LOG.trace("Called createUser");
         request = CreateUserConverter.interceptRequest(request);
@@ -462,6 +490,32 @@ public class IdentityClient implements Identity {
                 GetPolicyConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetPolicyResponse> transformer =
                 GetPolicyConverter.fromResponse();
+
+        javax.ws.rs.core.Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public GetTagResponse getTag(GetTagRequest request) {
+        LOG.trace("Called getTag");
+        request = GetTagConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetTagConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetTagResponse> transformer =
+                GetTagConverter.fromResponse();
+
+        javax.ws.rs.core.Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public GetTagNamespaceResponse getTagNamespace(GetTagNamespaceRequest request) {
+        LOG.trace("Called getTagNamespace");
+        request = GetTagNamespaceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetTagNamespaceConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetTagNamespaceResponse>
+                transformer = GetTagNamespaceConverter.fromResponse();
 
         javax.ws.rs.core.Response response = client.get(ib, request);
         return transformer.apply(response);
@@ -655,6 +709,32 @@ public class IdentityClient implements Identity {
     }
 
     @Override
+    public ListTagNamespacesResponse listTagNamespaces(ListTagNamespacesRequest request) {
+        LOG.trace("Called listTagNamespaces");
+        request = ListTagNamespacesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTagNamespacesConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListTagNamespacesResponse>
+                transformer = ListTagNamespacesConverter.fromResponse();
+
+        javax.ws.rs.core.Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public ListTagsResponse listTags(ListTagsRequest request) {
+        LOG.trace("Called listTags");
+        request = ListTagsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTagsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListTagsResponse> transformer =
+                ListTagsConverter.fromResponse();
+
+        javax.ws.rs.core.Response response = client.get(ib, request);
+        return transformer.apply(response);
+    }
+
+    @Override
     public ListUserGroupMembershipsResponse listUserGroupMemberships(
             ListUserGroupMembershipsRequest request) {
         LOG.trace("Called listUserGroupMemberships");
@@ -792,6 +872,33 @@ public class IdentityClient implements Identity {
 
         javax.ws.rs.core.Response response =
                 client.put(ib, request.getUpdateSwiftPasswordDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public UpdateTagResponse updateTag(UpdateTagRequest request) {
+        LOG.trace("Called updateTag");
+        request = UpdateTagConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateTagConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTagResponse> transformer =
+                UpdateTagConverter.fromResponse();
+
+        javax.ws.rs.core.Response response = client.put(ib, request.getUpdateTagDetails(), request);
+        return transformer.apply(response);
+    }
+
+    @Override
+    public UpdateTagNamespaceResponse updateTagNamespace(UpdateTagNamespaceRequest request) {
+        LOG.trace("Called updateTagNamespace");
+        request = UpdateTagNamespaceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateTagNamespaceConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTagNamespaceResponse>
+                transformer = UpdateTagNamespaceConverter.fromResponse();
+
+        javax.ws.rs.core.Response response =
+                client.put(ib, request.getUpdateTagNamespaceDetails(), request);
         return transformer.apply(response);
     }
 

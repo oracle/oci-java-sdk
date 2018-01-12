@@ -1,12 +1,14 @@
 /**
- * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.util.internal;
 
 import static com.google.common.net.UrlEscapers.urlPathSegmentEscaper;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -16,6 +18,8 @@ import javax.ws.rs.client.WebTarget;
 import com.oracle.bmc.http.internal.HttpDateUtils;
 import com.oracle.bmc.http.internal.WrappedInvocationBuilder;
 import com.oracle.bmc.http.internal.WrappedWebTarget;
+
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * Utility functions related to HTTP calls.
@@ -137,6 +141,91 @@ public class HttpUtils {
                 target = encodeMapQueryParamValue(target, prefix + e.getKey(), e.getValue());
             }
         }
+        return target;
+    }
+
+    /**
+     * Attempts to encode a query parameter which is described by a list of values for that parameter and a
+     * {@link com.oracle.bmc.util.internal.CollectionFormatType} which describes how the values should appear
+     * in the query string (e.g. as multiple parameters, as a single parameter with a given delimiter).
+     *
+     * @param target target instance
+     * @param queryParamName the name of the query parameter as it should appear in the query string
+     * @param values the values for the query parameter. An empty or null list will result in no action being taken
+     * on the target instance. Additionally, any null values inside the list will be ignored
+     * @param collectionFormatType describes how entries should appear in the query string, for example as multiple
+     * parameters with the name query string parameter name/key, or as a single parameter with its values separated
+     * by a delimiter character (comma, space, tab or pipe)
+     * @return a new target instance
+     */
+    public static <T> WrappedWebTarget encodeCollectionFormatQueryParam(
+            WrappedWebTarget target,
+            String queryParamName,
+            List<T> values,
+            CollectionFormatType collectionFormatType) {
+
+        if (StringUtils.isBlank(queryParamName)) {
+            throw new IllegalArgumentException("A non-blank queryParamName must be provided");
+        }
+
+        if (values != null && !values.isEmpty()) {
+            final List<Object> valuesToUse = new ArrayList<>();
+            for (T v : values) {
+                if (v == null) {
+                    continue;
+                }
+
+                if (v instanceof Enum) {
+                    final Object rawValue = ReflectionUtils.invokeGetter(v, "getValue");
+                    if (rawValue != null) {
+                        valuesToUse.add((String) rawValue);
+                    } else {
+                        throw new IllegalArgumentException(
+                                String.format(
+                                        "Could not get the correct value for enum %s",
+                                        v.getClass().getCanonicalName()));
+                    }
+                } else {
+                    valuesToUse.add(v);
+                }
+            }
+
+            if (valuesToUse.isEmpty()) {
+                return target;
+            }
+
+            if (collectionFormatType == CollectionFormatType.CommaSeparated) {
+                target =
+                        target.queryParam(
+                                queryParamName,
+                                attemptEncodeQueryParam(StringUtils.join(valuesToUse, ',')));
+            } else if (collectionFormatType == CollectionFormatType.PipeSeparated) {
+                target =
+                        target.queryParam(
+                                queryParamName,
+                                attemptEncodeQueryParam(StringUtils.join(valuesToUse, '|')));
+            } else if (collectionFormatType == CollectionFormatType.SpaceSeparated) {
+                target =
+                        target.queryParam(
+                                queryParamName,
+                                attemptEncodeQueryParam(StringUtils.join(valuesToUse, ' ')));
+            } else if (collectionFormatType == CollectionFormatType.TabSeparated) {
+                target =
+                        target.queryParam(
+                                queryParamName,
+                                attemptEncodeQueryParam(StringUtils.join(valuesToUse, '\t')));
+            } else if (collectionFormatType == CollectionFormatType.Multi) {
+                final List<Object> encodedValuesToUse = new ArrayList<>();
+                for (Object v : valuesToUse) {
+                    encodedValuesToUse.add(attemptEncodeQueryParam(v));
+                }
+                target = target.queryParam(queryParamName, encodedValuesToUse);
+            } else {
+                throw new IllegalArgumentException(
+                        String.format("Unknown collection format type: %s", collectionFormatType));
+            }
+        }
+
         return target;
     }
 

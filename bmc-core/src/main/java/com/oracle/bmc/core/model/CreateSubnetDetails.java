@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.model;
 
@@ -40,6 +40,16 @@ public class CreateSubnetDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dhcpOptionsId")
         private String dhcpOptionsId;
 
@@ -64,6 +74,15 @@ public class CreateSubnetDetails {
         public Builder dnsLabel(String dnsLabel) {
             this.dnsLabel = dnsLabel;
             this.__explicitlySet__.add("dnsLabel");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
             return this;
         }
 
@@ -112,9 +131,11 @@ public class CreateSubnetDetails {
                             availabilityDomain,
                             cidrBlock,
                             compartmentId,
+                            definedTags,
                             dhcpOptionsId,
                             displayName,
                             dnsLabel,
+                            freeformTags,
                             prohibitPublicIpOnVnic,
                             routeTableId,
                             securityListIds,
@@ -129,9 +150,11 @@ public class CreateSubnetDetails {
                     availabilityDomain(o.getAvailabilityDomain())
                             .cidrBlock(o.getCidrBlock())
                             .compartmentId(o.getCompartmentId())
+                            .definedTags(o.getDefinedTags())
                             .dhcpOptionsId(o.getDhcpOptionsId())
                             .displayName(o.getDisplayName())
                             .dnsLabel(o.getDnsLabel())
+                            .freeformTags(o.getFreeformTags())
                             .prohibitPublicIpOnVnic(o.getProhibitPublicIpOnVnic())
                             .routeTableId(o.getRouteTableId())
                             .securityListIds(o.getSecurityListIds())
@@ -174,6 +197,16 @@ public class CreateSubnetDetails {
     String compartmentId;
 
     /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
      * The OCID of the set of DHCP options the subnet will use. If you don't
      * provide a value, the subnet will use the VCN's default set of DHCP options.
      *
@@ -206,6 +239,17 @@ public class CreateSubnetDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnsLabel")
     String dnsLabel;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see
+     * [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Department\": \"Finance\"}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    java.util.Map<String, String> freeformTags;
 
     /**
      * Whether VNICs within this subnet can have public IP addresses.

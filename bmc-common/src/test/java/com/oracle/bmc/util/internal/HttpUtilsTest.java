@@ -1,11 +1,12 @@
 /**
- * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.util.internal;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
@@ -21,6 +22,7 @@ import org.mockito.Mockito;
 
 import javax.ws.rs.client.WebTarget;
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -170,4 +172,196 @@ public class HttpUtilsTest {
         verify(target).queryParam(prefixEncoded + keyName1, true);
         verify(target).queryParam(prefixEncoded + keyName2Encoded, false);
     }
+
+    @Test
+    @Ignore("DEX-1801: Fix Mockito Problem in Release TeamCity Job")
+    public void encodeCollectionFormatQueryParam_null() {
+        WebTarget target = mock(WebTarget.class);
+        WrappedWebTarget wrapped = new WrappedWebTarget(target);
+        WrappedWebTarget result =
+                HttpUtils.encodeCollectionFormatQueryParam(
+                        wrapped, "unitTest", null, CollectionFormatType.Multi);
+        assertTrue(result == wrapped);
+
+        Mockito.verifyNoMoreInteractions(target);
+    }
+
+    @Test
+    @Ignore("DEX-1801: Fix Mockito Problem in Release TeamCity Job")
+    public void encodeCollectionFormatQueryParam_emptyList() {
+        WebTarget target = mock(WebTarget.class);
+        WrappedWebTarget wrapped = new WrappedWebTarget(target);
+        WrappedWebTarget result =
+                HttpUtils.encodeCollectionFormatQueryParam(
+                        wrapped, "unitTest", new ArrayList<String>(), CollectionFormatType.Multi);
+        assertTrue(result == wrapped);
+
+        Mockito.verifyNoMoreInteractions(target);
+    }
+
+    @Test
+    @Ignore("DEX-1801: Fix Mockito Problem in Release TeamCity Job")
+    public void encodeCollectionFormatQueryParam_listOfNulls() {
+        final List<String> values = new ArrayList<>();
+        values.add(null);
+        values.add(null);
+
+        WebTarget target = mock(WebTarget.class);
+        WrappedWebTarget wrapped = new WrappedWebTarget(target);
+        WrappedWebTarget result =
+                HttpUtils.encodeCollectionFormatQueryParam(
+                        wrapped, "unitTest", values, CollectionFormatType.Multi);
+        assertTrue(result == wrapped);
+
+        Mockito.verifyNoMoreInteractions(target);
+    }
+
+    @Test
+    @Ignore("DEX-1801: Fix Mockito Problem in Release TeamCity Job")
+    public void encodeCollectionFormatQueryParam_singleElementList() {
+        final List<String> values = new ArrayList<>();
+        values.add("single");
+
+        for (CollectionFormatType cft : CollectionFormatType.values()) {
+            WebTarget target = mock(WebTarget.class);
+            WrappedWebTarget wrapped = new WrappedWebTarget(target);
+            WrappedWebTarget result =
+                    HttpUtils.encodeCollectionFormatQueryParam(wrapped, "unitTest", values, cft);
+
+            if (cft == CollectionFormatType.Multi) {
+                final List<Object> expected = new ArrayList<>();
+                expected.add("single");
+                verify(target).queryParam("unitTest", expected);
+            } else {
+                verify(target).queryParam("unitTest", "single");
+            }
+        }
+    }
+
+    @Test
+    @Ignore("DEX-1801: Fix Mockito Problem in Release TeamCity Job")
+    public void encodeCollectionFormatQueryParam_multipleElementList() {
+        final List<String> values = new ArrayList<>();
+        values.add("number1");
+        values.add("number2");
+
+        for (CollectionFormatType cft : CollectionFormatType.values()) {
+            WebTarget target = mock(WebTarget.class);
+            WrappedWebTarget wrapped = new WrappedWebTarget(target);
+            WrappedWebTarget result =
+                    HttpUtils.encodeCollectionFormatQueryParam(wrapped, "unitTest", values, cft);
+
+            if (cft == CollectionFormatType.CommaSeparated) {
+                verify(target).queryParam("unitTest", "number1,number2");
+            } else if (cft == CollectionFormatType.PipeSeparated) {
+                verify(target).queryParam("unitTest", "number1%7Cnumber2");
+            } else if (cft == CollectionFormatType.SpaceSeparated) {
+                verify(target).queryParam("unitTest", "number1%20number2");
+            } else if (cft == CollectionFormatType.TabSeparated) {
+                verify(target).queryParam("unitTest", "number1%09number2");
+            } else if (cft == CollectionFormatType.Multi) {
+                final List<Object> expected = new ArrayList<>();
+                expected.add("number1");
+                expected.add("number2");
+                verify(target).queryParam("unitTest", expected);
+            } else {
+                fail("Unrecognized CollectionFormatType: " + cft.toString());
+            }
+        }
+    }
+
+    @Test
+    @Ignore("DEX-1801: Fix Mockito Problem in Release TeamCity Job")
+    public void encodeCollectionFormatQueryParam_enumListMembers() {
+        final List<LifecycleState> values = new ArrayList<>();
+        values.add(LifecycleState.Provisioning);
+        values.add(LifecycleState.Stopping);
+
+        for (CollectionFormatType cft : CollectionFormatType.values()) {
+            WebTarget target = mock(WebTarget.class);
+            WrappedWebTarget wrapped = new WrappedWebTarget(target);
+            WrappedWebTarget result =
+                    HttpUtils.encodeCollectionFormatQueryParam(wrapped, "unitTest", values, cft);
+
+            if (cft == CollectionFormatType.CommaSeparated) {
+                verify(target).queryParam("unitTest", "PROVISIONING,STOPPING");
+            } else if (cft == CollectionFormatType.PipeSeparated) {
+                verify(target).queryParam("unitTest", "PROVISIONING%7CSTOPPING");
+            } else if (cft == CollectionFormatType.SpaceSeparated) {
+                verify(target).queryParam("unitTest", "PROVISIONING%20STOPPING");
+            } else if (cft == CollectionFormatType.TabSeparated) {
+                verify(target).queryParam("unitTest", "PROVISIONING%09STOPPING");
+            } else if (cft == CollectionFormatType.Multi) {
+                final List<Object> expected = new ArrayList<>();
+                expected.add("PROVISIONING");
+                expected.add("STOPPING");
+                verify(target).queryParam("unitTest", expected);
+            } else {
+                fail("Unrecognized CollectionFormatType: " + cft.toString());
+            }
+        }
+    }
+
+    @Test
+    @Ignore("DEX-1801: Fix Mockito Problem in Release TeamCity Job")
+    public void encodeCollectionFormatQueryParam_nullMembersIgnored() {
+        final List<LifecycleState> values = new ArrayList<>();
+        values.add(LifecycleState.Running);
+        values.add(null);
+
+        for (CollectionFormatType cft : CollectionFormatType.values()) {
+            WebTarget target = mock(WebTarget.class);
+            WrappedWebTarget wrapped = new WrappedWebTarget(target);
+            WrappedWebTarget result =
+                    HttpUtils.encodeCollectionFormatQueryParam(wrapped, "unitTest", values, cft);
+
+            if (cft == CollectionFormatType.CommaSeparated) {
+                verify(target).queryParam("unitTest", "RUNNING");
+            } else if (cft == CollectionFormatType.PipeSeparated) {
+                verify(target).queryParam("unitTest", "RUNNING");
+            } else if (cft == CollectionFormatType.SpaceSeparated) {
+                verify(target).queryParam("unitTest", "RUNNING");
+            } else if (cft == CollectionFormatType.TabSeparated) {
+                verify(target).queryParam("unitTest", "RUNNING");
+            } else if (cft == CollectionFormatType.Multi) {
+                final List<Object> expected = new ArrayList<>();
+                expected.add("RUNNING");
+                verify(target).queryParam("unitTest", expected);
+            } else {
+                fail("Unrecognized CollectionFormatType: " + cft.toString());
+            }
+        }
+    }
+
+    public enum LifecycleState {
+        Provisioning("PROVISIONING"),
+        Running("RUNNING"),
+        Starting("STARTING"),
+        Stopping("STOPPING"),
+        Stopped("STOPPED"),
+        CreatingImage("CREATING_IMAGE"),
+        Terminating("TERMINATING"),
+        Terminated("TERMINATED"),
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, LifecycleState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (LifecycleState v : LifecycleState.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        LifecycleState(String value) {
+            this.value = value;
+        }
+
+        public String getValue() {
+            return value;
+        }
+    };
 }

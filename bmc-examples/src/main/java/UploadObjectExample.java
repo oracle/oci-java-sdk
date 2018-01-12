@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
  */
 import java.io.File;
 import java.io.InputStream;
@@ -84,6 +84,8 @@ public class UploadObjectExample {
                                 .build());
 
         // stream contents should match the file uploaded
-        InputStream fileStream = getResponse.getInputStream();
+        try (final InputStream fileStream = getResponse.getInputStream()) {
+            // use fileStream
+        } // try-with-resources automatically closes fileStream
     }
 }

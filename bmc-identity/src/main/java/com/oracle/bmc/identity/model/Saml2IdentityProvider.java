@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.identity.model;
 
@@ -98,6 +98,25 @@ public class Saml2IdentityProvider extends IdentityProvider {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("metadataUrl")
         private String metadataUrl;
 
@@ -139,6 +158,8 @@ public class Saml2IdentityProvider extends IdentityProvider {
                             timeCreated,
                             lifecycleState,
                             inactiveStatus,
+                            freeformTags,
+                            definedTags,
                             metadataUrl,
                             signingCertificate,
                             redirectUrl);
@@ -157,6 +178,8 @@ public class Saml2IdentityProvider extends IdentityProvider {
                             .timeCreated(o.getTimeCreated())
                             .lifecycleState(o.getLifecycleState())
                             .inactiveStatus(o.getInactiveStatus())
+                            .freeformTags(o.getFreeformTags())
+                            .definedTags(o.getDefinedTags())
                             .metadataUrl(o.getMetadataUrl())
                             .signingCertificate(o.getSigningCertificate())
                             .redirectUrl(o.getRedirectUrl());
@@ -182,6 +205,8 @@ public class Saml2IdentityProvider extends IdentityProvider {
             java.util.Date timeCreated,
             LifecycleState lifecycleState,
             Long inactiveStatus,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String metadataUrl,
             String signingCertificate,
             String redirectUrl) {
@@ -193,7 +218,9 @@ public class Saml2IdentityProvider extends IdentityProvider {
                 productType,
                 timeCreated,
                 lifecycleState,
-                inactiveStatus);
+                inactiveStatus,
+                freeformTags,
+                definedTags);
         this.metadataUrl = metadataUrl;
         this.signingCertificate = signingCertificate;
         this.redirectUrl = redirectUrl;

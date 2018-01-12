@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.model;
 
@@ -20,6 +20,15 @@ public class ImageSourceViaObjectStorageTupleDetails extends ImageSourceDetails 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceImageType")
+        private SourceImageType sourceImageType;
+
+        public Builder sourceImageType(SourceImageType sourceImageType) {
+            this.sourceImageType = sourceImageType;
+            this.__explicitlySet__.add("sourceImageType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
@@ -53,7 +62,7 @@ public class ImageSourceViaObjectStorageTupleDetails extends ImageSourceDetails 
         public ImageSourceViaObjectStorageTupleDetails build() {
             ImageSourceViaObjectStorageTupleDetails __instance__ =
                     new ImageSourceViaObjectStorageTupleDetails(
-                            bucketName, namespaceName, objectName);
+                            sourceImageType, bucketName, namespaceName, objectName);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -61,7 +70,8 @@ public class ImageSourceViaObjectStorageTupleDetails extends ImageSourceDetails 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ImageSourceViaObjectStorageTupleDetails o) {
             Builder copiedBuilder =
-                    bucketName(o.getBucketName())
+                    sourceImageType(o.getSourceImageType())
+                            .bucketName(o.getBucketName())
                             .namespaceName(o.getNamespaceName())
                             .objectName(o.getObjectName());
 
@@ -78,8 +88,11 @@ public class ImageSourceViaObjectStorageTupleDetails extends ImageSourceDetails 
     }
 
     public ImageSourceViaObjectStorageTupleDetails(
-            String bucketName, String namespaceName, String objectName) {
-        super();
+            SourceImageType sourceImageType,
+            String bucketName,
+            String namespaceName,
+            String objectName) {
+        super(sourceImageType);
         this.bucketName = bucketName;
         this.namespaceName = namespaceName;
         this.objectName = objectName;
