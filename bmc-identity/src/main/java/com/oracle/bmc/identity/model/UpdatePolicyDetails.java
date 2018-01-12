@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.identity.model;
 
@@ -40,12 +40,32 @@ public class UpdatePolicyDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdatePolicyDetails build() {
             UpdatePolicyDetails __instance__ =
-                    new UpdatePolicyDetails(description, statements, versionDate);
+                    new UpdatePolicyDetails(
+                            description, statements, versionDate, freeformTags, definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -55,7 +75,9 @@ public class UpdatePolicyDetails {
             Builder copiedBuilder =
                     description(o.getDescription())
                             .statements(o.getStatements())
-                            .versionDate(o.getVersionDate());
+                            .versionDate(o.getVersionDate())
+                            .freeformTags(o.getFreeformTags())
+                            .definedTags(o.getDefinedTags());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -92,6 +114,22 @@ public class UpdatePolicyDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("versionDate")
     java.util.Date versionDate;
+
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: `{\"bar-key\": \"value\"}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    java.util.Map<String, String> freeformTags;
+
+    /**
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+     * Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.identity.model;
 
@@ -56,6 +56,25 @@ public class CreateSaml2IdentityProviderDetails extends CreateIdentityProviderDe
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("metadataUrl")
         private String metadataUrl;
 
@@ -80,7 +99,14 @@ public class CreateSaml2IdentityProviderDetails extends CreateIdentityProviderDe
         public CreateSaml2IdentityProviderDetails build() {
             CreateSaml2IdentityProviderDetails __instance__ =
                     new CreateSaml2IdentityProviderDetails(
-                            compartmentId, name, description, productType, metadataUrl, metadata);
+                            compartmentId,
+                            name,
+                            description,
+                            productType,
+                            freeformTags,
+                            definedTags,
+                            metadataUrl,
+                            metadata);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -92,6 +118,8 @@ public class CreateSaml2IdentityProviderDetails extends CreateIdentityProviderDe
                             .name(o.getName())
                             .description(o.getDescription())
                             .productType(o.getProductType())
+                            .freeformTags(o.getFreeformTags())
+                            .definedTags(o.getDefinedTags())
                             .metadataUrl(o.getMetadataUrl())
                             .metadata(o.getMetadata());
 
@@ -112,9 +140,11 @@ public class CreateSaml2IdentityProviderDetails extends CreateIdentityProviderDe
             String name,
             String description,
             ProductType productType,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String metadataUrl,
             String metadata) {
-        super(compartmentId, name, description, productType);
+        super(compartmentId, name, description, productType, freeformTags, definedTags);
         this.metadataUrl = metadataUrl;
         this.metadata = metadata;
     }

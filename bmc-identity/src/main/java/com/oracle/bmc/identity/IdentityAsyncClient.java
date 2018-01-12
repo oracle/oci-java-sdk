@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.identity;
 
@@ -363,6 +363,51 @@ public class IdentityAsyncClient implements IdentityAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateTagResponse> createTag(
+            CreateTagRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateTagRequest, CreateTagResponse> handler) {
+        LOG.trace("Called async createTag");
+        request = CreateTagConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateTagConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateTagResponse> transformer =
+                CreateTagConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.post(ib, request.getCreateTagDetails(), request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTagNamespaceResponse> createTagNamespace(
+            CreateTagNamespaceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateTagNamespaceRequest, CreateTagNamespaceResponse>
+                    handler) {
+        LOG.trace("Called async createTagNamespace");
+        request = CreateTagNamespaceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateTagNamespaceConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateTagNamespaceResponse>
+                transformer = CreateTagNamespaceConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.post(
+                        ib, request.getCreateTagNamespaceDetails(), request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateUserResponse> createUser(
             CreateUserRequest request,
             com.oracle.bmc.responses.AsyncHandler<CreateUserRequest, CreateUserResponse> handler) {
@@ -661,6 +706,49 @@ public class IdentityAsyncClient implements IdentityAsync {
                 GetPolicyConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetPolicyResponse> transformer =
                 GetPolicyConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTagResponse> getTag(
+            GetTagRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetTagRequest, GetTagResponse> handler) {
+        LOG.trace("Called async getTag");
+        request = GetTagConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetTagConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetTagResponse> transformer =
+                GetTagConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTagNamespaceResponse> getTagNamespace(
+            GetTagNamespaceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetTagNamespaceRequest, GetTagNamespaceResponse>
+                    handler) {
+        LOG.trace("Called async getTagNamespace");
+        request = GetTagNamespaceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetTagNamespaceConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetTagNamespaceResponse>
+                transformer = GetTagNamespaceConverter.fromResponse();
 
         com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
                 new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
@@ -985,6 +1073,50 @@ public class IdentityAsyncClient implements IdentityAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListTagNamespacesResponse> listTagNamespaces(
+            ListTagNamespacesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListTagNamespacesRequest, ListTagNamespacesResponse>
+                    handler) {
+        LOG.trace("Called async listTagNamespaces");
+        request = ListTagNamespacesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTagNamespacesConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListTagNamespacesResponse>
+                transformer = ListTagNamespacesConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsResponse> listTags(
+            ListTagsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListTagsRequest, ListTagsResponse> handler) {
+        LOG.trace("Called async listTags");
+        request = ListTagsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTagsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListTagsResponse> transformer =
+                ListTagsConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListUserGroupMembershipsResponse> listUserGroupMemberships(
             ListUserGroupMembershipsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
@@ -1219,6 +1351,50 @@ public class IdentityAsyncClient implements IdentityAsync {
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.put(
                         ib, request.getUpdateSwiftPasswordDetails(), request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTagResponse> updateTag(
+            UpdateTagRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateTagRequest, UpdateTagResponse> handler) {
+        LOG.trace("Called async updateTag");
+        request = UpdateTagConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateTagConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTagResponse> transformer =
+                UpdateTagConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.put(ib, request.getUpdateTagDetails(), request, onSuccess, onError);
+        return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTagNamespaceResponse> updateTagNamespace(
+            UpdateTagNamespaceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateTagNamespaceRequest, UpdateTagNamespaceResponse>
+                    handler) {
+        LOG.trace("Called async updateTagNamespace");
+        request = UpdateTagNamespaceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateTagNamespaceConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTagNamespaceResponse>
+                transformer = UpdateTagNamespaceConverter.fromResponse();
+
+        com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(handler, transformer, request);
+        com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handler, request);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.put(ib, request.getUpdateTagNamespaceDetails(), request, onSuccess, onError);
         return new com.oracle.bmc.util.internal.TransformingFuture<>(responseFuture, transformer);
     }
 

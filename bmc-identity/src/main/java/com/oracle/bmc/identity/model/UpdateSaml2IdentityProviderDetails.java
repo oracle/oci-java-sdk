@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.identity.model;
 
@@ -29,6 +29,25 @@ public class UpdateSaml2IdentityProviderDetails extends UpdateIdentityProviderDe
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("metadataUrl")
         private String metadataUrl;
 
@@ -52,7 +71,8 @@ public class UpdateSaml2IdentityProviderDetails extends UpdateIdentityProviderDe
 
         public UpdateSaml2IdentityProviderDetails build() {
             UpdateSaml2IdentityProviderDetails __instance__ =
-                    new UpdateSaml2IdentityProviderDetails(description, metadataUrl, metadata);
+                    new UpdateSaml2IdentityProviderDetails(
+                            description, freeformTags, definedTags, metadataUrl, metadata);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -61,6 +81,8 @@ public class UpdateSaml2IdentityProviderDetails extends UpdateIdentityProviderDe
         public Builder copy(UpdateSaml2IdentityProviderDetails o) {
             Builder copiedBuilder =
                     description(o.getDescription())
+                            .freeformTags(o.getFreeformTags())
+                            .definedTags(o.getDefinedTags())
                             .metadataUrl(o.getMetadataUrl())
                             .metadata(o.getMetadata());
 
@@ -77,8 +99,12 @@ public class UpdateSaml2IdentityProviderDetails extends UpdateIdentityProviderDe
     }
 
     public UpdateSaml2IdentityProviderDetails(
-            String description, String metadataUrl, String metadata) {
-        super(description);
+            String description,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String metadataUrl,
+            String metadata) {
+        super(description, freeformTags, definedTags);
         this.metadataUrl = metadataUrl;
         this.metadata = metadata;
     }

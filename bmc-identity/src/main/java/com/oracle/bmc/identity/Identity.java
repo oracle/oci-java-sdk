@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.identity;
 
@@ -232,6 +232,50 @@ public interface Identity extends AutoCloseable {
     CreateSwiftPasswordResponse createSwiftPassword(CreateSwiftPasswordRequest request);
 
     /**
+     * Creates a new tag in a given tagNamespace.
+     * <p>
+     * You have to specify either the id or the name of the tagNamespace that will contain this tag definition.
+     * <p>
+     * You must also specify a *name* for the tag, which must be unique across all tags in the tagNamespace
+     * and cannot be changed. All ascii characters are allowed except spaces and dots. Note that names are case
+     * insenstive, that means you can not have two different tags with same name but with different casing in
+     * one tagNamespace.
+     * If you specify a name that's already in use in the tagNamespace, you'll get a 409 error.
+     * <p>
+     * You must also specify a *description* for the tag.
+     * It does not have to be unique, and you can change it anytime with
+     * {@link #updateTag(UpdateTagRequest) updateTag}.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateTagResponse createTag(CreateTagRequest request);
+
+    /**
+     * Creates a new tagNamespace in a given compartment.
+     * <p>
+     * You must specify the compartment ID in the request object (remember that the tenancy is simply the root
+     * compartment).
+     * <p>
+     * You must also specify a *name* for the namespace, which must be unique across all namespaces in your tenancy
+     * and cannot be changed. All ascii characters are allowed except spaces and dots.
+     * Note that names are case insenstive, that means you can not have two different namespaces with same name
+     * but with different casing in one tenancy.
+     * Once you created a namespace, you can not change the name
+     * If you specify a name that's already in use in the tennacy, you'll get a 409 error.
+     * <p>
+     * You must also specify a *description* for the namespace.
+     * It does not have to be unique, and you can change it anytime with
+     * {@link #updateTagNamespace(UpdateTagNamespaceRequest) updateTagNamespace}.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateTagNamespaceResponse createTagNamespace(CreateTagNamespaceRequest request);
+
+    /**
      * Creates a new user in your tenancy. For conceptual information about users, your tenancy, and other
      * IAM Service components, see [Overview of the IAM Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm).
      * <p>
@@ -403,6 +447,23 @@ public interface Identity extends AutoCloseable {
     GetPolicyResponse getPolicy(GetPolicyRequest request);
 
     /**
+     * Gets the specified tag's information.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetTagResponse getTag(GetTagRequest request);
+
+    /**
+     * Gets the specified tagNamespace's information.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetTagNamespaceResponse getTagNamespace(GetTagNamespaceRequest request);
+
+    /**
      * Get the specified tenancy's information.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -542,6 +603,24 @@ public interface Identity extends AutoCloseable {
     ListSwiftPasswordsResponse listSwiftPasswords(ListSwiftPasswordsRequest request);
 
     /**
+     * List the tagNamespaces in a given compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListTagNamespacesResponse listTagNamespaces(ListTagNamespacesRequest request);
+
+    /**
+     * List the tags that are defined in a given tagNamespace.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListTagsResponse listTags(ListTagsRequest request);
+
+    /**
      * Lists the `UserGroupMembership` objects in your tenancy. You must specify your tenancy's OCID
      * as the value for the compartment ID
      * (see [Where to Get the Tenancy's OCID and User's OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five)).
@@ -638,6 +717,31 @@ public interface Identity extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateSwiftPasswordResponse updateSwiftPassword(UpdateSwiftPasswordRequest request);
+
+    /**
+     * Updates the the specified tag. Only description and isRetired can be updated. Retiring a tag will also retire
+     * the related rules. You can not a tag with the same name as a retired tag. Tags must be unique within their tag
+     * namespace but can be repeated across namespaces. You cannot add a tag with the same name as a retired tag in
+     * the same tag namespace.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateTagResponse updateTag(UpdateTagRequest request);
+
+    /**
+     * Updates the the specified tagNamespace. Only description, isRetired and assigned tags can be updated. Updating
+     * isRetired to be true will retire the namespace, all the contained tags and the related rules. Reactivating a
+     * namespace  will not reactivate any tag definition that was retired when the namespace was retired. They will
+     * have to be individually reactivated *after* the namespace is reactivated. You can't add a namespace with the
+     * same name as a retired namespace in the same tenant.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateTagNamespaceResponse updateTagNamespace(UpdateTagNamespaceRequest request);
 
     /**
      * Updates the description of the specified user.

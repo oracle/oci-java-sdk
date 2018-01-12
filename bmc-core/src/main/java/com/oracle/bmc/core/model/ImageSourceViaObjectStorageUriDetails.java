@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.model;
 
@@ -20,6 +20,15 @@ public class ImageSourceViaObjectStorageUriDetails extends ImageSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceImageType")
+        private SourceImageType sourceImageType;
+
+        public Builder sourceImageType(SourceImageType sourceImageType) {
+            this.sourceImageType = sourceImageType;
+            this.__explicitlySet__.add("sourceImageType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sourceUri")
         private String sourceUri;
 
@@ -34,14 +43,15 @@ public class ImageSourceViaObjectStorageUriDetails extends ImageSourceDetails {
 
         public ImageSourceViaObjectStorageUriDetails build() {
             ImageSourceViaObjectStorageUriDetails __instance__ =
-                    new ImageSourceViaObjectStorageUriDetails(sourceUri);
+                    new ImageSourceViaObjectStorageUriDetails(sourceImageType, sourceUri);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ImageSourceViaObjectStorageUriDetails o) {
-            Builder copiedBuilder = sourceUri(o.getSourceUri());
+            Builder copiedBuilder =
+                    sourceImageType(o.getSourceImageType()).sourceUri(o.getSourceUri());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -55,8 +65,9 @@ public class ImageSourceViaObjectStorageUriDetails extends ImageSourceDetails {
         return new Builder();
     }
 
-    public ImageSourceViaObjectStorageUriDetails(String sourceUri) {
-        super();
+    public ImageSourceViaObjectStorageUriDetails(
+            SourceImageType sourceImageType, String sourceUri) {
+        super(sourceImageType);
         this.sourceUri = sourceUri;
     }
 

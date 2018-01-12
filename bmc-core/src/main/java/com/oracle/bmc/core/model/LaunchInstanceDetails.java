@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.model;
 
 /**
  * Instance launch details.
- * Use the sourceDetails parameter to specify whether a boot volume should be used for a new instance launch.
+ * Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
@@ -45,6 +45,16 @@ public class LaunchInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -60,6 +70,15 @@ public class LaunchInstanceDetails {
         public Builder extendedMetadata(java.util.Map<String, Object> extendedMetadata) {
             this.extendedMetadata = extendedMetadata;
             this.__explicitlySet__.add("extendedMetadata");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
             return this;
         }
 
@@ -135,8 +154,10 @@ public class LaunchInstanceDetails {
                             availabilityDomain,
                             compartmentId,
                             createVnicDetails,
+                            definedTags,
                             displayName,
                             extendedMetadata,
+                            freeformTags,
                             hostnameLabel,
                             imageId,
                             ipxeScript,
@@ -154,8 +175,10 @@ public class LaunchInstanceDetails {
                     availabilityDomain(o.getAvailabilityDomain())
                             .compartmentId(o.getCompartmentId())
                             .createVnicDetails(o.getCreateVnicDetails())
+                            .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .extendedMetadata(o.getExtendedMetadata())
+                            .freeformTags(o.getFreeformTags())
                             .hostnameLabel(o.getHostnameLabel())
                             .imageId(o.getImageId())
                             .ipxeScript(o.getIpxeScript())
@@ -200,6 +223,16 @@ public class LaunchInstanceDetails {
     CreateVnicDetails createVnicDetails;
 
     /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
      * <p>
@@ -221,7 +254,18 @@ public class LaunchInstanceDetails {
     java.util.Map<String, Object> extendedMetadata;
 
     /**
-     * Deprecated. Instead Use `hostnameLabel` in
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see
+     * [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Department\": \"Finance\"}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    java.util.Map<String, String> freeformTags;
+
+    /**
+     * Deprecated. Instead use `hostnameLabel` in
      * {@link CreateVnicDetails}.
      * If you provide both, the values must match.
      *
@@ -343,6 +387,8 @@ public class LaunchInstanceDetails {
 
     /**
      * Details for creating an instance.
+     * Use this parameter to specify whether a boot volume or an image should be used to launch a new instance.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
     InstanceSourceDetails sourceDetails;

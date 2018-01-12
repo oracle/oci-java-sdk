@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2017, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.model;
 
@@ -24,4 +24,50 @@ package com.oracle.bmc.core.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class ImageSourceDetails {}
+public class ImageSourceDetails {
+
+    /**
+     * The format of the image to be imported.  Exported Oracle images are QCOW2.  Only monolithic
+     * images are supported.
+     *
+     **/
+    public enum SourceImageType {
+        Qcow2("QCOW2"),
+        Vmdk("VMDK"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, SourceImageType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SourceImageType v : SourceImageType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        SourceImageType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SourceImageType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new RuntimeException("Invalid SourceImageType: " + key);
+        }
+    };
+    /**
+     * The format of the image to be imported.  Exported Oracle images are QCOW2.  Only monolithic
+     * images are supported.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceImageType")
+    SourceImageType sourceImageType;
+}
