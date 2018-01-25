@@ -11,13 +11,13 @@ import com.oracle.bmc.identity.model.*;
 public class CreateTagRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The OCID of the tagNamespace
+     * The OCID of the tag namespace.
      *
      */
     private String tagNamespaceId;
 
     /**
-     * Request object for creating a new tag in a given tagNamespace.
+     * Request object for creating a new tag in the specified tag namespace.
      */
     private CreateTagDetails createTagDetails;
 

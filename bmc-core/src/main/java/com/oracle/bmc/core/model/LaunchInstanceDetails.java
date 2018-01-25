@@ -7,6 +7,13 @@ package com.oracle.bmc.core.model;
  * Instance launch details.
  * Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
  *
+ * <br/>
+ * Note: This model distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a set of all
+ * explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods
+ * are implemented to take {@link #__explicitlySet__} into account. The constructor, on the other hand, does not
+ * set {@link #__explicitlySet__} (since the constructor cannot distinguish explicit {@code null} from unset
+ * {@code null}). As a consequence, objects should always be created or deserialized using the {@link Builder}.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Value

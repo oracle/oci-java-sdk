@@ -22,9 +22,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RequiredArgsConstructor
 public enum Region {
-    US_PHOENIX_1("us-phoenix-1"),
-    US_ASHBURN_1("us-ashburn-1"),
-    EU_FRANKFURT_1("eu-frankfurt-1");
+    US_PHOENIX_1("us-phoenix-1", "phx"),
+    US_ASHBURN_1("us-ashburn-1", "iad"),
+    EU_FRANKFURT_1("eu-frankfurt-1", "fra");
 
     private static final Map<String, Map<Region, String>> SERVICE_TO_REGION_ENDPOINTS =
             new HashMap<>();
@@ -54,6 +54,11 @@ public enum Region {
      * Get the region ID.
      */
     @Getter private final String regionId;
+
+    /**
+     * Get the region code.
+     */
+    @Getter private final String regionCode;
 
     /**
      * Resolves a service name to its endpoint in the region, if available.
@@ -110,5 +115,22 @@ public enum Region {
             }
         }
         throw new IllegalArgumentException("Unknown regionId: " + regionId);
+    }
+
+    /**
+     * Returns the region enum from the public region code. Throws
+     * IllegalArgumentException if the region code is not known.
+     *
+     * @param regionCode
+     *            The region code.
+     * @return The enum value.
+     */
+    public static Region fromRegionCode(String regionCode) {
+        for (Region region : Region.values()) {
+            if (region.regionCode.compareToIgnoreCase(regionCode) == 0) {
+                return region;
+            }
+        }
+        throw new IllegalArgumentException("Unknown regionId: " + regionCode);
     }
 }

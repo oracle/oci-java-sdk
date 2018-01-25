@@ -90,6 +90,72 @@ public class IdentityWaiters {
      * @param targetState The desired state to wait for.
      * @return A new Waiter instance.
      */
+    public com.oracle.bmc.waiter.Waiter<GetDynamicGroupRequest, GetDynamicGroupResponse>
+            forDynamicGroup(
+                    GetDynamicGroupRequest request,
+                    com.oracle.bmc.identity.model.DynamicGroup.LifecycleState targetState) {
+        return forDynamicGroup(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using the provided configuration.
+     *
+     * @param request The request to send.
+     * @param targetState The desired state to wait for.
+     * @param terminationStrategy The {@link TerminationStrategy} to use.
+     * @param delayStrategy The {@link DelayStrategy} to use.
+     * @return A new Waiter instance.
+     */
+    public com.oracle.bmc.waiter.Waiter<GetDynamicGroupRequest, GetDynamicGroupResponse>
+            forDynamicGroup(
+                    GetDynamicGroupRequest request,
+                    com.oracle.bmc.identity.model.DynamicGroup.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        return forDynamicGroup(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    // Helper method to create a new Waiter for DynamicGroup.
+    private com.oracle.bmc.waiter.Waiter<GetDynamicGroupRequest, GetDynamicGroupResponse>
+            forDynamicGroup(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetDynamicGroupRequest request,
+                    final com.oracle.bmc.identity.model.DynamicGroup.LifecycleState targetState) {
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetDynamicGroupRequest, GetDynamicGroupResponse>() {
+                            @Override
+                            public GetDynamicGroupResponse apply(GetDynamicGroupRequest request) {
+                                return client.getDynamicGroup(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetDynamicGroupResponse>() {
+                            @Override
+                            public boolean apply(GetDynamicGroupResponse response) {
+                                return response.getDynamicGroup().getLifecycleState()
+                                        == targetState;
+                            }
+                        },
+                        targetState
+                                == com.oracle.bmc.identity.model.DynamicGroup.LifecycleState
+                                        .Deleted),
+                request);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using default configuration.
+     *
+     * @param request The request to send.
+     * @param targetState The desired state to wait for.
+     * @return A new Waiter instance.
+     */
     public com.oracle.bmc.waiter.Waiter<GetGroupRequest, GetGroupResponse> forGroup(
             GetGroupRequest request,
             com.oracle.bmc.identity.model.Group.LifecycleState targetState) {

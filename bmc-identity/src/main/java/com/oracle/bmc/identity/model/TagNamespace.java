@@ -4,8 +4,16 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * A bag of tags that is attached to a compartment and has unique existence in tenancy.
+ * A managed container for defined tags. A tag namespace is unique in a tenancy. A tag namespace can't be deleted.
+ * For more information, see [Managing Tags and Tag Namespaces](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm).
  *
+ * <br/>
+ * Note: This model distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a set of all
+ * explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods
+ * are implemented to take {@link #__explicitlySet__} into account. The constructor, on the other hand, does not
+ * set {@link #__explicitlySet__} (since the constructor cannot distinguish explicit {@code null} from unset
+ * {@code null}). As a consequence, objects should always be created or deserialized using the {@link Builder}.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Value
@@ -131,48 +139,51 @@ public class TagNamespace {
     }
 
     /**
-     * The OCID of the tagNamespace.
+     * The OCID of the tag namespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The OCID of the compartment which the namespace is attached to.
+     * The OCID of the compartment that contains the tag namespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The name of the tagNamespace. It must be unique across all tagNamespaces in the tenancy and cannot be changed.
+     * The name of the tag namespace. It must be unique across all tag namespaces in the tenancy and cannot be changed.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
-     * The description you assign to the tagNamespace.
+     * The description you assign to the tag namespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: `{\"bar-key\": \"value\"}`
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * Example: `{\"Department\": \"Finance\"}`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Indicated whether or not the tagNamespace is retired
+     * Whether the tag namespace is retired.
+     * See [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRetired")

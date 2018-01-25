@@ -11,7 +11,7 @@ import com.oracle.bmc.identity.model.*;
 public class ListTagsRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The OCID of the tagNamespace
+     * The OCID of the tag namespace.
      *
      */
     private String tagNamespaceId;

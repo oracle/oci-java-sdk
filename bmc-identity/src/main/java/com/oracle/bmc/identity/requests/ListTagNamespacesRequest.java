@@ -29,8 +29,8 @@ public class ListTagNamespacesRequest extends com.oracle.bmc.requests.BmcRequest
     private Integer limit;
 
     /**
-     * An optional boolean parameter for whether or not to retrieve all tagNamespaces in sub compartments. In case
-     * of absence of this parameter, only tagNamespaces that exist directly in this compartment will be retrieved.
+     * An optional boolean parameter indicating whether to retrieve all tag namespaces in subcompartments. If this
+     * parameter is not specified, only the tag namespaces defined in the specified compartment are retrieved.
      *
      */
     private Boolean includeSubcompartments;

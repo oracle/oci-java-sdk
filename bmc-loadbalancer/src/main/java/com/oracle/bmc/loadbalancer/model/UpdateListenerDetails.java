@@ -5,6 +5,13 @@ package com.oracle.bmc.loadbalancer.model;
 
 /**
  * The configuration details for updating a listener.
+ * <br/>
+ * Note: This model distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a set of all
+ * explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods
+ * are implemented to take {@link #__explicitlySet__} into account. The constructor, on the other hand, does not
+ * set {@link #__explicitlySet__} (since the constructor cannot distinguish explicit {@code null} from unset
+ * {@code null}). As a consequence, objects should always be created or deserialized using the {@link Builder}.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @lombok.Value
@@ -16,6 +23,15 @@ public class UpdateListenerDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("connectionConfiguration")
+        private ConnectionConfiguration connectionConfiguration;
+
+        public Builder connectionConfiguration(ConnectionConfiguration connectionConfiguration) {
+            this.connectionConfiguration = connectionConfiguration;
+            this.__explicitlySet__.add("connectionConfiguration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("defaultBackendSetName")
         private String defaultBackendSetName;
 
@@ -58,7 +74,11 @@ public class UpdateListenerDetails {
         public UpdateListenerDetails build() {
             UpdateListenerDetails __instance__ =
                     new UpdateListenerDetails(
-                            defaultBackendSetName, port, protocol, sslConfiguration);
+                            connectionConfiguration,
+                            defaultBackendSetName,
+                            port,
+                            protocol,
+                            sslConfiguration);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -66,7 +86,8 @@ public class UpdateListenerDetails {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateListenerDetails o) {
             Builder copiedBuilder =
-                    defaultBackendSetName(o.getDefaultBackendSetName())
+                    connectionConfiguration(o.getConnectionConfiguration())
+                            .defaultBackendSetName(o.getDefaultBackendSetName())
                             .port(o.getPort())
                             .protocol(o.getProtocol())
                             .sslConfiguration(o.getSslConfiguration());
@@ -83,8 +104,14 @@ public class UpdateListenerDetails {
         return new Builder();
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("connectionConfiguration")
+    ConnectionConfiguration connectionConfiguration;
+
     /**
      * The name of the associated backend set.
+     * <p>
+     * Example: `My_backend_set`
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultBackendSetName")
     String defaultBackendSetName;
