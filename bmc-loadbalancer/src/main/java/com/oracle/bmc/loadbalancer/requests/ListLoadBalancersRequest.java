@@ -47,13 +47,15 @@ public class ListLoadBalancersRequest extends com.oracle.bmc.requests.BmcRequest
     private String detail;
 
     /**
-     * The field to sort by.  Only one sort order may be provided.  Time created is default ordered as descending.  Display name is default ordered as ascending.
+     * The field to sort by.  You can provide one sort order (`sortOrder`). Default order for TIMECREATED is descending.
+     * Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by.  Only one sort order may be provided.  Time created is default ordered as descending.  Display name is default ordered as ascending.
+     * The field to sort by.  You can provide one sort order (`sortOrder`). Default order for TIMECREATED is descending.
+     * Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
      *
      **/
     public enum SortBy {
@@ -90,13 +92,13 @@ public class ListLoadBalancersRequest extends com.oracle.bmc.requests.BmcRequest
     };
 
     /**
-     * The sort order to use, either 'asc' or 'desc'
+     * The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order is case sensitive.
      *
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use, either 'asc' or 'desc'
+     * The sort order to use, either ascending (`ASC`) or descending (`DESC`). The DISPLAYNAME sort order is case sensitive.
      *
      **/
     public enum SortOrder {
@@ -133,13 +135,13 @@ public class ListLoadBalancersRequest extends com.oracle.bmc.requests.BmcRequest
     };
 
     /**
-     * A filter to only return resources that match the given display name exactly.
+     * A filter to return only resources that match the given display name exactly.
      *
      */
     private String displayName;
 
     /**
-     * A filter to only return resources that match the given lifecycle state.
+     * A filter to return only resources that match the given lifecycle state.
      *
      */
     private LoadBalancer.LifecycleState lifecycleState;

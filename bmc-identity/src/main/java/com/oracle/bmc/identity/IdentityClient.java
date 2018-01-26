@@ -24,6 +24,9 @@ public class IdentityClient implements Identity {
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
     private final com.oracle.bmc.http.internal.RestClient client;
 
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+
     /**
      * Creates a new service instance using the given authentication provider.
      * @param authenticationDetailsProvider The authentication details provider, required.
@@ -78,12 +81,14 @@ public class IdentityClient implements Identity {
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
             com.oracle.bmc.http.signing.RequestSignerFactory requestSignerFactory) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner requestSigner =
-                requestSignerFactory.createRequestSigner(SERVICE, authenticationDetailsProvider);
+                requestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
         this.client = restClientFactory.create(requestSigner, configuration);
         // up to 50 (core) threads, time out after 60s idle, all daemon
         java.util.concurrent.ThreadPoolExecutor executorService =
@@ -100,6 +105,15 @@ public class IdentityClient implements Identity {
         executorService.allowCoreThreadTimeOut(true);
 
         this.waiters = new IdentityWaiters(executorService, this);
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.setRegion(provider.getRegion());
+            }
+        }
     }
 
     @Override
@@ -146,9 +160,29 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, AddUserToGroupResponse>
                 transformer = AddUserToGroupConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.post(ib, request.getAddUserToGroupDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getAddUserToGroupDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.post(ib, request.getAddUserToGroupDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.post(ib, request.getAddUserToGroupDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -160,9 +194,29 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateCompartmentResponse>
                 transformer = CreateCompartmentConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.post(ib, request.getCreateCompartmentDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCreateCompartmentDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.post(ib, request.getCreateCompartmentDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.post(ib, request.getCreateCompartmentDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -175,9 +229,63 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateCustomerSecretKeyResponse>
                 transformer = CreateCustomerSecretKeyConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.post(ib, request.getCreateCustomerSecretKeyDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCreateCustomerSecretKeyDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.post(ib, request.getCreateCustomerSecretKeyDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.post(ib, request.getCreateCustomerSecretKeyDetails(), request);
+            return transformer.apply(response);
+        }
+    }
+
+    @Override
+    public CreateDynamicGroupResponse createDynamicGroup(CreateDynamicGroupRequest request) {
+        LOG.trace("Called createDynamicGroup");
+        request = CreateDynamicGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDynamicGroupConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDynamicGroupResponse>
+                transformer = CreateDynamicGroupConverter.fromResponse();
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCreateDynamicGroupDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.post(ib, request.getCreateDynamicGroupDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.post(ib, request.getCreateDynamicGroupDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -189,9 +297,29 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateGroupResponse>
                 transformer = CreateGroupConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.post(ib, request.getCreateGroupDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCreateGroupDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.post(ib, request.getCreateGroupDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.post(ib, request.getCreateGroupDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -204,9 +332,29 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateIdentityProviderResponse>
                 transformer = CreateIdentityProviderConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.post(ib, request.getCreateIdentityProviderDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCreateIdentityProviderDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.post(ib, request.getCreateIdentityProviderDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.post(ib, request.getCreateIdentityProviderDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -219,9 +367,29 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateIdpGroupMappingResponse>
                 transformer = CreateIdpGroupMappingConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.post(ib, request.getCreateIdpGroupMappingDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCreateIdpGroupMappingDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.post(ib, request.getCreateIdpGroupMappingDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.post(ib, request.getCreateIdpGroupMappingDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -234,8 +402,26 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateOrResetUIPasswordResponse>
                 transformer = CreateOrResetUIPasswordConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.post(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.post(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.post(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.post(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -247,9 +433,29 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, CreatePolicyResponse>
                 transformer = CreatePolicyConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.post(ib, request.getCreatePolicyDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCreatePolicyDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.post(ib, request.getCreatePolicyDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.post(ib, request.getCreatePolicyDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -262,9 +468,29 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateRegionSubscriptionResponse>
                 transformer = CreateRegionSubscriptionConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.post(ib, request.getCreateRegionSubscriptionDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCreateRegionSubscriptionDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.post(ib, request.getCreateRegionSubscriptionDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.post(ib, request.getCreateRegionSubscriptionDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -276,9 +502,29 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateSwiftPasswordResponse>
                 transformer = CreateSwiftPasswordConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.post(ib, request.getCreateSwiftPasswordDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCreateSwiftPasswordDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.post(ib, request.getCreateSwiftPasswordDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.post(ib, request.getCreateSwiftPasswordDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -290,9 +536,29 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateTagResponse> transformer =
                 CreateTagConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.post(ib, request.getCreateTagDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCreateTagDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.post(ib, request.getCreateTagDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.post(ib, request.getCreateTagDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -304,9 +570,29 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateTagNamespaceResponse>
                 transformer = CreateTagNamespaceConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.post(ib, request.getCreateTagNamespaceDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCreateTagNamespaceDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.post(ib, request.getCreateTagNamespaceDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.post(ib, request.getCreateTagNamespaceDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -318,9 +604,29 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateUserResponse> transformer =
                 CreateUserConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.post(ib, request.getCreateUserDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCreateUserDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.post(ib, request.getCreateUserDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.post(ib, request.getCreateUserDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -332,8 +638,26 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteApiKeyResponse>
                 transformer = DeleteApiKeyConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.delete(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.delete(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.delete(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -346,8 +670,57 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCustomerSecretKeyResponse>
                 transformer = DeleteCustomerSecretKeyConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.delete(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.delete(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.delete(ib, request);
+            return transformer.apply(response);
+        }
+    }
+
+    @Override
+    public DeleteDynamicGroupResponse deleteDynamicGroup(DeleteDynamicGroupRequest request) {
+        LOG.trace("Called deleteDynamicGroup");
+        request = DeleteDynamicGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDynamicGroupConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDynamicGroupResponse>
+                transformer = DeleteDynamicGroupConverter.fromResponse();
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.delete(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.delete(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -359,8 +732,26 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteGroupResponse>
                 transformer = DeleteGroupConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.delete(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.delete(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.delete(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -373,8 +764,26 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteIdentityProviderResponse>
                 transformer = DeleteIdentityProviderConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.delete(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.delete(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.delete(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -387,8 +796,26 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteIdpGroupMappingResponse>
                 transformer = DeleteIdpGroupMappingConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.delete(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.delete(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.delete(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -400,8 +827,26 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, DeletePolicyResponse>
                 transformer = DeletePolicyConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.delete(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.delete(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.delete(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -413,8 +858,26 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSwiftPasswordResponse>
                 transformer = DeleteSwiftPasswordConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.delete(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.delete(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.delete(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -426,8 +889,26 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteUserResponse> transformer =
                 DeleteUserConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.delete(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.delete(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.delete(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -439,8 +920,57 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetCompartmentResponse>
                 transformer = GetCompartmentConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
+    }
+
+    @Override
+    public GetDynamicGroupResponse getDynamicGroup(GetDynamicGroupRequest request) {
+        LOG.trace("Called getDynamicGroup");
+        request = GetDynamicGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDynamicGroupConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetDynamicGroupResponse>
+                transformer = GetDynamicGroupConverter.fromResponse();
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -452,8 +982,26 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetGroupResponse> transformer =
                 GetGroupConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -465,8 +1013,26 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetIdentityProviderResponse>
                 transformer = GetIdentityProviderConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -478,8 +1044,26 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetIdpGroupMappingResponse>
                 transformer = GetIdpGroupMappingConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -491,8 +1075,26 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetPolicyResponse> transformer =
                 GetPolicyConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -504,8 +1106,26 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetTagResponse> transformer =
                 GetTagConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -517,8 +1137,26 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetTagNamespaceResponse>
                 transformer = GetTagNamespaceConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -530,8 +1168,26 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetTenancyResponse> transformer =
                 GetTenancyConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -543,8 +1199,26 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetUserResponse> transformer =
                 GetUserConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -557,8 +1231,26 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetUserGroupMembershipResponse>
                 transformer = GetUserGroupMembershipConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -570,8 +1262,26 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListApiKeysResponse>
                 transformer = ListApiKeysConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -584,8 +1294,26 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListAvailabilityDomainsResponse>
                 transformer = ListAvailabilityDomainsConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -597,8 +1325,26 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListCompartmentsResponse>
                 transformer = ListCompartmentsConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -611,8 +1357,57 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListCustomerSecretKeysResponse>
                 transformer = ListCustomerSecretKeysConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
+    }
+
+    @Override
+    public ListDynamicGroupsResponse listDynamicGroups(ListDynamicGroupsRequest request) {
+        LOG.trace("Called listDynamicGroups");
+        request = ListDynamicGroupsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDynamicGroupsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListDynamicGroupsResponse>
+                transformer = ListDynamicGroupsConverter.fromResponse();
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -624,8 +1419,26 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListGroupsResponse> transformer =
                 ListGroupsConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -638,8 +1451,26 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListIdentityProvidersResponse>
                 transformer = ListIdentityProvidersConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -651,8 +1482,26 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListIdpGroupMappingsResponse>
                 transformer = ListIdpGroupMappingsConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -664,8 +1513,26 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListPoliciesResponse>
                 transformer = ListPoliciesConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -678,8 +1545,26 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListRegionSubscriptionsResponse>
                 transformer = ListRegionSubscriptionsConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -691,8 +1576,26 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListRegionsResponse>
                 transformer = ListRegionsConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -704,8 +1607,26 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListSwiftPasswordsResponse>
                 transformer = ListSwiftPasswordsConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -717,8 +1638,26 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListTagNamespacesResponse>
                 transformer = ListTagNamespacesConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -730,8 +1669,26 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListTagsResponse> transformer =
                 ListTagsConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -744,8 +1701,26 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListUserGroupMembershipsResponse>
                 transformer = ListUserGroupMembershipsConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -757,8 +1732,26 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListUsersResponse> transformer =
                 ListUsersConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -770,8 +1763,26 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, RemoveUserFromGroupResponse>
                 transformer = RemoveUserFromGroupConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.delete(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.delete(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.delete(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -783,9 +1794,29 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCompartmentResponse>
                 transformer = UpdateCompartmentConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.put(ib, request.getUpdateCompartmentDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateCompartmentDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.put(ib, request.getUpdateCompartmentDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.put(ib, request.getUpdateCompartmentDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -798,9 +1829,63 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCustomerSecretKeyResponse>
                 transformer = UpdateCustomerSecretKeyConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.put(ib, request.getUpdateCustomerSecretKeyDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateCustomerSecretKeyDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.put(ib, request.getUpdateCustomerSecretKeyDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.put(ib, request.getUpdateCustomerSecretKeyDetails(), request);
+            return transformer.apply(response);
+        }
+    }
+
+    @Override
+    public UpdateDynamicGroupResponse updateDynamicGroup(UpdateDynamicGroupRequest request) {
+        LOG.trace("Called updateDynamicGroup");
+        request = UpdateDynamicGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDynamicGroupConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDynamicGroupResponse>
+                transformer = UpdateDynamicGroupConverter.fromResponse();
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateDynamicGroupDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.put(ib, request.getUpdateDynamicGroupDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.put(ib, request.getUpdateDynamicGroupDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -812,9 +1897,29 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateGroupResponse>
                 transformer = UpdateGroupConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.put(ib, request.getUpdateGroupDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateGroupDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.put(ib, request.getUpdateGroupDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.put(ib, request.getUpdateGroupDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -827,9 +1932,29 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateIdentityProviderResponse>
                 transformer = UpdateIdentityProviderConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.put(ib, request.getUpdateIdentityProviderDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateIdentityProviderDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.put(ib, request.getUpdateIdentityProviderDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.put(ib, request.getUpdateIdentityProviderDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -842,9 +1967,29 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateIdpGroupMappingResponse>
                 transformer = UpdateIdpGroupMappingConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.put(ib, request.getUpdateIdpGroupMappingDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateIdpGroupMappingDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.put(ib, request.getUpdateIdpGroupMappingDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.put(ib, request.getUpdateIdpGroupMappingDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -856,9 +2001,29 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePolicyResponse>
                 transformer = UpdatePolicyConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.put(ib, request.getUpdatePolicyDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdatePolicyDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.put(ib, request.getUpdatePolicyDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.put(ib, request.getUpdatePolicyDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -870,9 +2035,29 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSwiftPasswordResponse>
                 transformer = UpdateSwiftPasswordConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.put(ib, request.getUpdateSwiftPasswordDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateSwiftPasswordDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.put(ib, request.getUpdateSwiftPasswordDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.put(ib, request.getUpdateSwiftPasswordDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -884,8 +2069,29 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTagResponse> transformer =
                 UpdateTagConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.put(ib, request.getUpdateTagDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateTagDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.put(ib, request.getUpdateTagDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.put(ib, request.getUpdateTagDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -897,9 +2103,29 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTagNamespaceResponse>
                 transformer = UpdateTagNamespaceConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.put(ib, request.getUpdateTagNamespaceDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateTagNamespaceDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.put(ib, request.getUpdateTagNamespaceDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.put(ib, request.getUpdateTagNamespaceDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -911,9 +2137,29 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateUserResponse> transformer =
                 UpdateUserConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.put(ib, request.getUpdateUserDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateUserDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.put(ib, request.getUpdateUserDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.put(ib, request.getUpdateUserDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -925,9 +2171,29 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateUserStateResponse>
                 transformer = UpdateUserStateConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.put(ib, request.getUpdateStateDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateStateDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.put(ib, request.getUpdateStateDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.put(ib, request.getUpdateStateDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -939,9 +2205,29 @@ public class IdentityClient implements Identity {
         com.google.common.base.Function<javax.ws.rs.core.Response, UploadApiKeyResponse>
                 transformer = UploadApiKeyConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.post(ib, request.getCreateApiKeyDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCreateApiKeyDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.post(ib, request.getCreateApiKeyDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.post(ib, request.getCreateApiKeyDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override

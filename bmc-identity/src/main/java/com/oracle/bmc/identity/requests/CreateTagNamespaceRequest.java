@@ -11,7 +11,7 @@ import com.oracle.bmc.identity.model.*;
 public class CreateTagNamespaceRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * Request object for creating a new tagNamespace.
+     * Request object for creating a new tag namespace.
      */
     private CreateTagNamespaceDetails createTagNamespaceDetails;
 

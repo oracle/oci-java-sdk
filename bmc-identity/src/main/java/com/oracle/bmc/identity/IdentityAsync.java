@@ -118,6 +118,40 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new dynamic group in your tenancy.
+     * <p>
+     * You must specify your tenancy's OCID as the compartment ID in the request object (remember that the tenancy
+     * is simply the root compartment). Notice that IAM resources (users, groups, compartments, and some policies)
+     * reside within the tenancy itself, unlike cloud resources such as compute instances, which typically
+     * reside within compartments inside the tenancy. For information about OCIDs, see
+     * [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
+     * <p>
+     * You must also specify a *name* for the dynamic group, which must be unique across all dynamic groups in your
+     * tenancy, and cannot be changed. Note that this name has to be also unique accross all groups in your tenancy.
+     * You can use this name or the OCID when writing policies that apply to the dynamic group. For more information
+     * about policies, see [How Policies Work](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policies.htm).
+     * <p>
+     * You must also specify a *description* for the dynamic group (although it can be an empty string). It does not
+     * have to be unique, and you can change it anytime with {@link #updateDynamicGroup(UpdateDynamicGroupRequest, Consumer, Consumer) updateDynamicGroup}.
+     * <p>
+     * After you send your request, the new object's `lifecycleState` will temporarily be CREATING. Before using the
+     * object, first make sure its `lifecycleState` has changed to ACTIVE.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateDynamicGroupResponse> createDynamicGroup(
+            CreateDynamicGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateDynamicGroupRequest, CreateDynamicGroupResponse>
+                    handler);
+
+    /**
      * Creates a new group in your tenancy.
      * <p>
      * You must specify your tenancy's OCID as the compartment ID in the request object (remember that the tenancy
@@ -307,18 +341,17 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new tag in a given tagNamespace.
+     * Creates a new tag in the specified tag namespace.
      * <p>
-     * You have to specify either the id or the name of the tagNamespace that will contain this tag definition.
+     * You must specify either the OCID or the name of the tag namespace that will contain this tag definition.
      * <p>
-     * You must also specify a *name* for the tag, which must be unique across all tags in the tagNamespace
-     * and cannot be changed. All ascii characters are allowed except spaces and dots. Note that names are case
-     * insenstive, that means you can not have two different tags with same name but with different casing in
-     * one tagNamespace.
-     * If you specify a name that's already in use in the tagNamespace, you'll get a 409 error.
+     * You must also specify a *name* for the tag, which must be unique across all tags in the tag namespace
+     * and cannot be changed. The name can contain any ASCII character except the space (_) or period (.) characters.
+     * Names are case insensitive. That means, for example, \"myTag\" and \"mytag\" are not allowed in the same namespace.
+     * If you specify a name that's already in use in the tag namespace, a 409 error is returned.
      * <p>
      * You must also specify a *description* for the tag.
-     * It does not have to be unique, and you can change it anytime with
+     * It does not have to be unique, and you can change it with
      * {@link #updateTag(UpdateTagRequest, Consumer, Consumer) updateTag}.
      *
      *
@@ -334,21 +367,23 @@ public interface IdentityAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CreateTagRequest, CreateTagResponse> handler);
 
     /**
-     * Creates a new tagNamespace in a given compartment.
+     * Creates a new tag namespace in the specified compartment.
      * <p>
      * You must specify the compartment ID in the request object (remember that the tenancy is simply the root
      * compartment).
      * <p>
      * You must also specify a *name* for the namespace, which must be unique across all namespaces in your tenancy
-     * and cannot be changed. All ascii characters are allowed except spaces and dots.
-     * Note that names are case insenstive, that means you can not have two different namespaces with same name
-     * but with different casing in one tenancy.
-     * Once you created a namespace, you can not change the name
-     * If you specify a name that's already in use in the tennacy, you'll get a 409 error.
+     * and cannot be changed. The name can contain any ASCII character except the space (_) or period (.).
+     * Names are case insensitive. That means, for example, \"myNamespace\" and \"mynamespace\" are not allowed
+     * in the same tenancy. Once you created a namespace, you cannot change the name.
+     * If you specify a name that's already in use in the tenancy, a 409 error is returned.
      * <p>
      * You must also specify a *description* for the namespace.
-     * It does not have to be unique, and you can change it anytime with
+     * It does not have to be unique, and you can change it with
      * {@link #updateTagNamespace(UpdateTagNamespaceRequest, Consumer, Consumer) updateTagNamespace}.
+     * <p>
+     * Tag namespaces cannot be deleted, but they can be retired.
+     * See [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring) for more information.
      *
      *
      * @param request The request object containing the details to send
@@ -449,6 +484,23 @@ public interface IdentityAsync extends AutoCloseable {
             DeleteCustomerSecretKeyRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteCustomerSecretKeyRequest, DeleteCustomerSecretKeyResponse>
+                    handler);
+
+    /**
+     * Deletes the specified dynamic group.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteDynamicGroupResponse> deleteDynamicGroup(
+            DeleteDynamicGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteDynamicGroupRequest, DeleteDynamicGroupResponse>
                     handler);
 
     /**
@@ -570,6 +622,22 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the specified dynamic group's information.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDynamicGroupResponse> getDynamicGroup(
+            GetDynamicGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetDynamicGroupRequest, GetDynamicGroupResponse>
+                    handler);
+
+    /**
      * Gets the specified group's information.
      * <p>
      * This operation does not return a list of all the users in the group. To do that, use
@@ -649,7 +717,7 @@ public interface IdentityAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetTagRequest, GetTagResponse> handler);
 
     /**
-     * Gets the specified tagNamespace's information.
+     * Gets the specified tag namespace's information.
      *
      *
      * @param request The request object containing the details to send
@@ -782,6 +850,25 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists the dynamic groups in your tenancy. You must specify your tenancy's OCID as the value for
+     * the compartment ID (remember that the tenancy is simply the root compartment).
+     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDynamicGroupsResponse> listDynamicGroups(
+            ListDynamicGroupsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDynamicGroupsRequest, ListDynamicGroupsResponse>
+                    handler);
+
+    /**
      * Lists the groups in your tenancy. You must specify your tenancy's OCID as the value for
      * the compartment ID (remember that the tenancy is simply the root compartment).
      * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five).
@@ -904,7 +991,7 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
-     * List the tagNamespaces in a given compartment.
+     * Lists the tag namespaces in the specified compartment.
      *
      *
      * @param request The request object containing the details to send
@@ -921,7 +1008,7 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
-     * List the tags that are defined in a given tagNamespace.
+     * Lists the tag definitions in the specified tag namespace.
      *
      *
      * @param request The request object containing the details to send
@@ -1027,6 +1114,22 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Updates the specified dynamic group.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateDynamicGroupResponse> updateDynamicGroup(
+            UpdateDynamicGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDynamicGroupRequest, UpdateDynamicGroupResponse>
+                    handler);
+
+    /**
      * Updates the specified group.
      *
      * @param request The request object containing the details to send
@@ -1108,10 +1211,7 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the the specified tag. Only description and isRetired can be updated. Retiring a tag will also retire
-     * the related rules. You can not a tag with the same name as a retired tag. Tags must be unique within their tag
-     * namespace but can be repeated across namespaces. You cannot add a tag with the same name as a retired tag in
-     * the same tag namespace.
+     * Updates the the specified tag definition. You can update `description`, and `isRetired`.
      *
      *
      * @param request The request object containing the details to send
@@ -1126,11 +1226,15 @@ public interface IdentityAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<UpdateTagRequest, UpdateTagResponse> handler);
 
     /**
-     * Updates the the specified tagNamespace. Only description, isRetired and assigned tags can be updated. Updating
-     * isRetired to be true will retire the namespace, all the contained tags and the related rules. Reactivating a
-     * namespace  will not reactivate any tag definition that was retired when the namespace was retired. They will
-     * have to be individually reactivated *after* the namespace is reactivated. You can't add a namespace with the
-     * same name as a retired namespace in the same tenant.
+     * Updates the the specified tag namespace. You can't update the namespace name.
+     * <p>
+     * Updating `isRetired` to 'true' retires the namespace and all the tag definitions in the namespace. Reactivating a
+     * namespace (changing `isRetired` from 'true' to 'false') does not reactivate tag definitions.
+     * To reactivate the tag definitions, you must reactivate each one indvidually *after* you reactivate the namespace,
+     * using {@link #updateTag(UpdateTagRequest, Consumer, Consumer) updateTag}. For more information about retiring tag namespaces, see
+     * [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
+     * <p>
+     * You can't add a namespace with the same name as a retired namespace in the same tenancy.
      *
      *
      * @param request The request object containing the details to send

@@ -11,13 +11,13 @@ import com.oracle.bmc.identity.model.*;
 public class GetTagRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The OCID of the tagNamespace
+     * The OCID of the tag namespace.
      *
      */
     private String tagNamespaceId;
 
     /**
-     * The name of the tag
+     * The name of the tag.
      *
      */
     private String tagName;

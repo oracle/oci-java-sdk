@@ -24,6 +24,9 @@ public class ComputeClient implements Compute {
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
     private final com.oracle.bmc.http.internal.RestClient client;
 
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+
     /**
      * Creates a new service instance using the given authentication provider.
      * @param authenticationDetailsProvider The authentication details provider, required.
@@ -78,12 +81,14 @@ public class ComputeClient implements Compute {
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
             com.oracle.bmc.http.signing.RequestSignerFactory requestSignerFactory) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner requestSigner =
-                requestSignerFactory.createRequestSigner(SERVICE, authenticationDetailsProvider);
+                requestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
         this.client = restClientFactory.create(requestSigner, configuration);
         // up to 50 (core) threads, time out after 60s idle, all daemon
         java.util.concurrent.ThreadPoolExecutor executorService =
@@ -100,6 +105,15 @@ public class ComputeClient implements Compute {
         executorService.allowCoreThreadTimeOut(true);
 
         this.waiters = new ComputeWaiters(executorService, this);
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.setRegion(provider.getRegion());
+            }
+        }
     }
 
     @Override
@@ -146,9 +160,29 @@ public class ComputeClient implements Compute {
         com.google.common.base.Function<javax.ws.rs.core.Response, AttachBootVolumeResponse>
                 transformer = AttachBootVolumeConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.post(ib, request.getAttachBootVolumeDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getAttachBootVolumeDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.post(ib, request.getAttachBootVolumeDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.post(ib, request.getAttachBootVolumeDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -160,9 +194,29 @@ public class ComputeClient implements Compute {
         com.google.common.base.Function<javax.ws.rs.core.Response, AttachVnicResponse> transformer =
                 AttachVnicConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.post(ib, request.getAttachVnicDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getAttachVnicDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.post(ib, request.getAttachVnicDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.post(ib, request.getAttachVnicDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -174,9 +228,29 @@ public class ComputeClient implements Compute {
         com.google.common.base.Function<javax.ws.rs.core.Response, AttachVolumeResponse>
                 transformer = AttachVolumeConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.post(ib, request.getAttachVolumeDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getAttachVolumeDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.post(ib, request.getAttachVolumeDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.post(ib, request.getAttachVolumeDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -189,9 +263,29 @@ public class ComputeClient implements Compute {
         com.google.common.base.Function<javax.ws.rs.core.Response, CaptureConsoleHistoryResponse>
                 transformer = CaptureConsoleHistoryConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.post(ib, request.getCaptureConsoleHistoryDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCaptureConsoleHistoryDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.post(ib, request.getCaptureConsoleHistoryDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.post(ib, request.getCaptureConsoleHistoryDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -203,9 +297,29 @@ public class ComputeClient implements Compute {
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateImageResponse>
                 transformer = CreateImageConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.post(ib, request.getCreateImageDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCreateImageDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.post(ib, request.getCreateImageDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.post(ib, request.getCreateImageDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -219,9 +333,33 @@ public class ComputeClient implements Compute {
                         javax.ws.rs.core.Response, CreateInstanceConsoleConnectionResponse>
                 transformer = CreateInstanceConsoleConnectionConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.post(ib, request.getCreateInstanceConsoleConnectionDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(
+                                ib, request.getCreateInstanceConsoleConnectionDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.post(
+                                    ib,
+                                    request.getCreateInstanceConsoleConnectionDetails(),
+                                    request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.post(ib, request.getCreateInstanceConsoleConnectionDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -233,8 +371,26 @@ public class ComputeClient implements Compute {
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteConsoleHistoryResponse>
                 transformer = DeleteConsoleHistoryConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.delete(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.delete(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.delete(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -246,8 +402,26 @@ public class ComputeClient implements Compute {
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteImageResponse>
                 transformer = DeleteImageConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.delete(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.delete(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.delete(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -261,8 +435,26 @@ public class ComputeClient implements Compute {
                         javax.ws.rs.core.Response, DeleteInstanceConsoleConnectionResponse>
                 transformer = DeleteInstanceConsoleConnectionConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.delete(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.delete(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.delete(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -274,8 +466,26 @@ public class ComputeClient implements Compute {
         com.google.common.base.Function<javax.ws.rs.core.Response, DetachBootVolumeResponse>
                 transformer = DetachBootVolumeConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.delete(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.delete(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.delete(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -287,8 +497,26 @@ public class ComputeClient implements Compute {
         com.google.common.base.Function<javax.ws.rs.core.Response, DetachVnicResponse> transformer =
                 DetachVnicConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.delete(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.delete(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.delete(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -300,8 +528,26 @@ public class ComputeClient implements Compute {
         com.google.common.base.Function<javax.ws.rs.core.Response, DetachVolumeResponse>
                 transformer = DetachVolumeConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.delete(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.delete(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.delete(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -313,9 +559,29 @@ public class ComputeClient implements Compute {
         com.google.common.base.Function<javax.ws.rs.core.Response, ExportImageResponse>
                 transformer = ExportImageConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.post(ib, request.getExportImageDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getExportImageDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.post(ib, request.getExportImageDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.post(ib, request.getExportImageDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -328,8 +594,26 @@ public class ComputeClient implements Compute {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetBootVolumeAttachmentResponse>
                 transformer = GetBootVolumeAttachmentConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -341,8 +625,26 @@ public class ComputeClient implements Compute {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetConsoleHistoryResponse>
                 transformer = GetConsoleHistoryConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -355,8 +657,26 @@ public class ComputeClient implements Compute {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetConsoleHistoryContentResponse>
                 transformer = GetConsoleHistoryContentConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -368,8 +688,26 @@ public class ComputeClient implements Compute {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetImageResponse> transformer =
                 GetImageConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -381,8 +719,26 @@ public class ComputeClient implements Compute {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetInstanceResponse>
                 transformer = GetInstanceConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -396,8 +752,26 @@ public class ComputeClient implements Compute {
                         javax.ws.rs.core.Response, GetInstanceConsoleConnectionResponse>
                 transformer = GetInstanceConsoleConnectionConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -409,8 +783,26 @@ public class ComputeClient implements Compute {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetVnicAttachmentResponse>
                 transformer = GetVnicAttachmentConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -422,8 +814,26 @@ public class ComputeClient implements Compute {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeAttachmentResponse>
                 transformer = GetVolumeAttachmentConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -437,8 +847,26 @@ public class ComputeClient implements Compute {
                         javax.ws.rs.core.Response, GetWindowsInstanceInitialCredentialsResponse>
                 transformer = GetWindowsInstanceInitialCredentialsConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -450,8 +878,26 @@ public class ComputeClient implements Compute {
         com.google.common.base.Function<javax.ws.rs.core.Response, InstanceActionResponse>
                 transformer = InstanceActionConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.post(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.post(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.post(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.post(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -463,9 +909,29 @@ public class ComputeClient implements Compute {
         com.google.common.base.Function<javax.ws.rs.core.Response, LaunchInstanceResponse>
                 transformer = LaunchInstanceConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.post(ib, request.getLaunchInstanceDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getLaunchInstanceDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.post(ib, request.getLaunchInstanceDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.post(ib, request.getLaunchInstanceDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -479,8 +945,26 @@ public class ComputeClient implements Compute {
                         javax.ws.rs.core.Response, ListBootVolumeAttachmentsResponse>
                 transformer = ListBootVolumeAttachmentsConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -492,8 +976,26 @@ public class ComputeClient implements Compute {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListConsoleHistoriesResponse>
                 transformer = ListConsoleHistoriesConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -505,8 +1007,26 @@ public class ComputeClient implements Compute {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListImagesResponse> transformer =
                 ListImagesConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -520,8 +1040,26 @@ public class ComputeClient implements Compute {
                         javax.ws.rs.core.Response, ListInstanceConsoleConnectionsResponse>
                 transformer = ListInstanceConsoleConnectionsConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -533,8 +1071,26 @@ public class ComputeClient implements Compute {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListInstancesResponse>
                 transformer = ListInstancesConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -546,8 +1102,26 @@ public class ComputeClient implements Compute {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListShapesResponse> transformer =
                 ListShapesConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -559,8 +1133,26 @@ public class ComputeClient implements Compute {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListVnicAttachmentsResponse>
                 transformer = ListVnicAttachmentsConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -573,8 +1165,26 @@ public class ComputeClient implements Compute {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumeAttachmentsResponse>
                 transformer = ListVolumeAttachmentsConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -586,8 +1196,26 @@ public class ComputeClient implements Compute {
         com.google.common.base.Function<javax.ws.rs.core.Response, TerminateInstanceResponse>
                 transformer = TerminateInstanceConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.delete(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.delete(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.delete(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -599,9 +1227,29 @@ public class ComputeClient implements Compute {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateConsoleHistoryResponse>
                 transformer = UpdateConsoleHistoryConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.put(ib, request.getUpdateConsoleHistoryDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateConsoleHistoryDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.put(ib, request.getUpdateConsoleHistoryDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.put(ib, request.getUpdateConsoleHistoryDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -613,9 +1261,29 @@ public class ComputeClient implements Compute {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateImageResponse>
                 transformer = UpdateImageConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.put(ib, request.getUpdateImageDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateImageDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.put(ib, request.getUpdateImageDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.put(ib, request.getUpdateImageDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -627,9 +1295,29 @@ public class ComputeClient implements Compute {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateInstanceResponse>
                 transformer = UpdateInstanceConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.put(ib, request.getUpdateInstanceDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateInstanceDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.put(ib, request.getUpdateInstanceDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.put(ib, request.getUpdateInstanceDetails(), request);
+            return transformer.apply(response);
+        }
     }
 
     @Override

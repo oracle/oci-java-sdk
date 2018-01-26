@@ -20,6 +20,9 @@ public class AuditClient implements Audit {
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
     private final com.oracle.bmc.http.internal.RestClient client;
 
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+
     /**
      * Creates a new service instance using the given authentication provider.
      * @param authenticationDetailsProvider The authentication details provider, required.
@@ -74,13 +77,24 @@ public class AuditClient implements Audit {
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
             com.oracle.bmc.http.signing.RequestSignerFactory requestSignerFactory) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner requestSigner =
-                requestSignerFactory.createRequestSigner(SERVICE, authenticationDetailsProvider);
+                requestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
         this.client = restClientFactory.create(requestSigner, configuration);
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.setRegion(provider.getRegion());
+            }
+        }
     }
 
     @Override
@@ -127,8 +141,26 @@ public class AuditClient implements Audit {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetConfigurationResponse>
                 transformer = GetConfigurationConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -140,8 +172,26 @@ public class AuditClient implements Audit {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListEventsResponse> transformer =
                 ListEventsConverter.fromResponse();
 
-        javax.ws.rs.core.Response response = client.get(ib, request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
     }
 
     @Override
@@ -153,8 +203,28 @@ public class AuditClient implements Audit {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateConfigurationResponse>
                 transformer = UpdateConfigurationConverter.fromResponse();
 
-        javax.ws.rs.core.Response response =
-                client.put(ib, request.getUpdateConfigurationDetails(), request);
-        return transformer.apply(response);
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateConfigurationDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.put(ib, request.getUpdateConfigurationDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.put(ib, request.getUpdateConfigurationDetails(), request);
+            return transformer.apply(response);
+        }
     }
 }

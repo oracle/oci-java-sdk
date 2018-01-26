@@ -7,6 +7,13 @@ package com.oracle.bmc.identity.model;
  * As the name suggests, a `CustomerSecretKeySummary` object contains information about a `CustomerSecretKey`.
  * A `CustomerSecretKey` is an Oracle-provided key for using the Object Storage Service's Amazon S3 compatible API.
  *
+ * <br/>
+ * Note: This model distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a set of all
+ * explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods
+ * are implemented to take {@link #__explicitlySet__} into account. The constructor, on the other hand, does not
+ * set {@link #__explicitlySet__} (since the constructor cannot distinguish explicit {@code null} from unset
+ * {@code null}). As a consequence, objects should always be created or deserialized using the {@link Builder}.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Value

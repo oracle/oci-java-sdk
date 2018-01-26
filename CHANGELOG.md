@@ -13,6 +13,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.2.22 - 2018-01-25
+
+### Added
+- Support for VNC console connections in Compute Service
+- Support for using the `ObjectReadWithoutList` public access type when creating and updating buckets
+- Support for dynamic groups in Identity Service
+- Support for instance principals authentication when calling OCI services, an example can be found on [GitHub](https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/InstancePrincipalsAuthenticationDetailsProviderExample.java)
+- Support for configuring idle timeout for listeners in Load Balancer Service
+- Better documentation on every model class on how the change in version [1.2.16 - 2017-10-12](#1216---2017-10-12) to only serialize and transmit fields that were explicitly set to null affects the `equals(Object)` and `hashCode()` methods
+
 ## 1.2.21 - 2018-01-11
 
 ### Added
