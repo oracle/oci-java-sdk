@@ -13,6 +13,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.2.23 - 2018-01-29
+
+### Fixed
+* Javadoc for the Object Storage Service is being generated again
+
 ## 1.2.22 - 2018-01-25
 
 ### Added
