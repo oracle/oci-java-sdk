@@ -4,7 +4,7 @@
 
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>1.2.23</version>
+  <version>1.2.27</version>
   <packaging>pom</packaging>
 
   <name>Oracle Cloud Infrastructure SDK</name>
@@ -461,6 +461,7 @@
     <module>bmc-common</module>
     <module>bmc-core</module>
     <module>bmc-database</module>
+    <module>bmc-dns</module>
     <module>bmc-examples</module>
     <module>bmc-identity</module>
     <module>bmc-loadbalancer</module>

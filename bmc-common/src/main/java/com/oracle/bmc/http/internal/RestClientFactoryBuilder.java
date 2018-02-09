@@ -40,9 +40,9 @@ public class RestClientFactoryBuilder {
      */
     public RestClientFactoryBuilder defaultConfigurator(ClientConfigurator defaultConfigurator) {
         if (defaultConfigurator != null) {
-            defaultConfigurator = defaultConfigurator;
+            this.defaultConfigurator = defaultConfigurator;
         } else {
-            defaultConfigurator = DEFAULT_CONFIGURATOR;
+            this.defaultConfigurator = DEFAULT_CONFIGURATOR;
         }
         return this;
     }

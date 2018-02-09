@@ -36,7 +36,7 @@ public class HttpDateUtilsTest {
 
     @Test
     public void otherDateHeader_rfc3339_dateTime_withMillis_utc() {
-        Date date = HttpDateUtils.parse("other-date", "1985-04-12T23:20:50.52Z");
+        Date date = HttpDateUtils.parse("other-date", "1985-04-12T23:20:50.052Z");
         assertEquals(482196050052L, date.getTime());
     }
 
@@ -74,6 +74,6 @@ public class HttpDateUtilsTest {
         cal.set(1985, 3, 12, 23, 20, 50);
         cal.set(Calendar.MILLISECOND, 52);
         Date date = cal.getTime();
-        assertEquals("1985-04-12T23:20:50.52Z", HttpDateUtils.format(date));
+        assertEquals("1985-04-12T23:20:50.052Z", HttpDateUtils.format(date));
     }
 }

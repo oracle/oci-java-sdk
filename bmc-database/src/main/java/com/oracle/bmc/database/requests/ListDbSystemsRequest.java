@@ -25,6 +25,11 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest {
      */
     private String page;
 
+    /**
+     * The OCID of the backup. Specify a backupId to list only the DB Systems that support creating a database using this backup in this compartment.
+     */
+    private String backupId;
+
     public static class Builder {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
@@ -49,6 +54,7 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest {
             compartmentId(o.getCompartmentId());
             limit(o.getLimit());
             page(o.getPage());
+            backupId(o.getBackupId());
             return this;
         }
 

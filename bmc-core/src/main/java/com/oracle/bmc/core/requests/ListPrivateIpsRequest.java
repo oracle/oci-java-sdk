@@ -25,7 +25,7 @@ public class ListPrivateIpsRequest extends com.oracle.bmc.requests.BmcRequest {
     private String page;
 
     /**
-     * The private IP address of the `privateIp` object.
+     * An IP address.
      * <p>
      * Example: `10.0.3.3`
      *

@@ -56,6 +56,15 @@ public class VolumeBackup {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("expirationTime")
+        private java.util.Date expirationTime;
+
+        public Builder expirationTime(java.util.Date expirationTime) {
+            this.expirationTime = expirationTime;
+            this.__explicitlySet__.add("expirationTime");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -101,6 +110,15 @@ public class VolumeBackup {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+        private SourceType sourceType;
+
+        public Builder sourceType(SourceType sourceType) {
+            this.sourceType = sourceType;
+            this.__explicitlySet__.add("sourceType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -116,6 +134,15 @@ public class VolumeBackup {
         public Builder timeRequestReceived(java.util.Date timeRequestReceived) {
             this.timeRequestReceived = timeRequestReceived;
             this.__explicitlySet__.add("timeRequestReceived");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("type")
+        private Type type;
+
+        public Builder type(Type type) {
+            this.type = type;
+            this.__explicitlySet__.add("type");
             return this;
         }
 
@@ -155,13 +182,16 @@ public class VolumeBackup {
                             compartmentId,
                             definedTags,
                             displayName,
+                            expirationTime,
                             freeformTags,
                             id,
                             lifecycleState,
                             sizeInGBs,
                             sizeInMBs,
+                            sourceType,
                             timeCreated,
                             timeRequestReceived,
+                            type,
                             uniqueSizeInGBs,
                             uniqueSizeInMbs,
                             volumeId);
@@ -175,13 +205,16 @@ public class VolumeBackup {
                     compartmentId(o.getCompartmentId())
                             .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
+                            .expirationTime(o.getExpirationTime())
                             .freeformTags(o.getFreeformTags())
                             .id(o.getId())
                             .lifecycleState(o.getLifecycleState())
                             .sizeInGBs(o.getSizeInGBs())
                             .sizeInMBs(o.getSizeInMBs())
+                            .sourceType(o.getSourceType())
                             .timeCreated(o.getTimeCreated())
                             .timeRequestReceived(o.getTimeRequestReceived())
+                            .type(o.getType())
                             .uniqueSizeInGBs(o.getUniqueSizeInGBs())
                             .uniqueSizeInMbs(o.getUniqueSizeInMbs())
                             .volumeId(o.getVolumeId());
@@ -221,6 +254,17 @@ public class VolumeBackup {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * The date and time the volume backup will expire and be automatically deleted.
+     * Format defined by RFC3339. This parameter will always be present for backups that
+     * were created automatically by a scheduled-backup policy. For manually created backups,
+     * it will be absent, signifying that there is no expiration time and the backup will
+     * last forever until manually deleted.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("expirationTime")
+    java.util.Date expirationTime;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
@@ -308,6 +352,57 @@ public class VolumeBackup {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInMBs")
     Long sizeInMBs;
+    /**
+     * Specifies whether the backup was created manually, or via scheduled backup policy.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum SourceType {
+        Manual("MANUAL"),
+        Scheduled("SCHEDULED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, SourceType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SourceType v : SourceType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        SourceType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SourceType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'SourceType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Specifies whether the backup was created manually, or via scheduled backup policy.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+    SourceType sourceType;
 
     /**
      * The date and time the volume backup was created. This is the time the actual point-in-time image
@@ -323,6 +418,56 @@ public class VolumeBackup {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeRequestReceived")
     java.util.Date timeRequestReceived;
+    /**
+     * The type of a volume backup.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum Type {
+        Full("FULL"),
+        Incremental("INCREMENTAL"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, Type> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Type v : Type.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        Type(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Type create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Type', returning UnknownEnumValue", key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The type of a volume backup.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
+    Type type;
 
     /**
      * The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space

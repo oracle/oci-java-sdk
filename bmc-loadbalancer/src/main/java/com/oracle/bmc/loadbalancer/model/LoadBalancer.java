@@ -112,6 +112,15 @@ public class LoadBalancer {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("pathRouteSets")
+        private java.util.Map<String, PathRouteSet> pathRouteSets;
+
+        public Builder pathRouteSets(java.util.Map<String, PathRouteSet> pathRouteSets) {
+            this.pathRouteSets = pathRouteSets;
+            this.__explicitlySet__.add("pathRouteSets");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
         private String shapeName;
 
@@ -154,6 +163,7 @@ public class LoadBalancer {
                             isPrivate,
                             lifecycleState,
                             listeners,
+                            pathRouteSets,
                             shapeName,
                             subnetIds,
                             timeCreated);
@@ -173,6 +183,7 @@ public class LoadBalancer {
                             .isPrivate(o.getIsPrivate())
                             .lifecycleState(o.getLifecycleState())
                             .listeners(o.getListeners())
+                            .pathRouteSets(o.getPathRouteSets())
                             .shapeName(o.getShapeName())
                             .subnetIds(o.getSubnetIds())
                             .timeCreated(o.getTimeCreated());
@@ -300,6 +311,9 @@ public class LoadBalancer {
 
     @com.fasterxml.jackson.annotation.JsonProperty("listeners")
     java.util.Map<String, Listener> listeners;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("pathRouteSets")
+    java.util.Map<String, PathRouteSet> pathRouteSets;
 
     /**
      * A template that determines the total pre-provisioned bandwidth (ingress plus egress).

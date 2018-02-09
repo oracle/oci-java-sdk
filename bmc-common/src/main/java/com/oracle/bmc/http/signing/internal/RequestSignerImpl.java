@@ -246,8 +246,9 @@ public class RequestSignerImpl implements RequestSigner {
 
         boolean isPost = httpMethod.equals("post");
         boolean isPut = httpMethod.equals("put");
+        boolean isPatch = httpMethod.equals("patch");
         // for post and put, also verify the presence of content headers
-        if (!(isPut || isPost)) {
+        if (!(isPut || isPost || isPatch)) {
             // Asking to sign a body on GET/DELETE/HEAD is not allowed
             if (body != null) {
                 throw new RuntimeException("MUST NOT send body on non-POST/PUT request");
@@ -259,7 +260,7 @@ public class RequestSignerImpl implements RequestSigner {
 
         // the one exception for the below is when doing a PUT if the body is an InputStream
         // and the configuration allows it to be skipped
-        if (isPut) {
+        if (isPut || isPatch) {
             if (body instanceof InputStream) {
                 if (signingConfiguration.skipContentHeadersForStreamingPutRequests) {
                     return missingHeaders;

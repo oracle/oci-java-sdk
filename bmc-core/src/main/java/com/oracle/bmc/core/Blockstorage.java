@@ -73,6 +73,18 @@ public interface Blockstorage extends AutoCloseable {
     CreateVolumeBackupResponse createVolumeBackup(CreateVolumeBackupRequest request);
 
     /**
+     * Assigns a policy to the specified asset, such as a volume. Note that a given asset can
+     * only have one policy assigned to it; if this method is called for an asset that previously
+     * has a different policy assigned, the prior assignment will be silently deleted.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateVolumeBackupPolicyAssignmentResponse createVolumeBackupPolicyAssignment(
+            CreateVolumeBackupPolicyAssignmentRequest request);
+
+    /**
      * Deletes the specified boot volume. The volume cannot have an active connection to an instance.
      * To disconnect the boot volume from a connected instance, see
      * [Disconnecting From a Boot Volume](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Tasks/deletingbootvolume.htm).
@@ -105,6 +117,15 @@ public interface Blockstorage extends AutoCloseable {
     DeleteVolumeBackupResponse deleteVolumeBackup(DeleteVolumeBackupRequest request);
 
     /**
+     * Deletes a volume backup policy assignment (i.e. unassigns the policy from an asset).
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteVolumeBackupPolicyAssignmentResponse deleteVolumeBackupPolicyAssignment(
+            DeleteVolumeBackupPolicyAssignmentRequest request);
+
+    /**
      * Gets information for the specified boot volume.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -129,6 +150,35 @@ public interface Blockstorage extends AutoCloseable {
     GetVolumeBackupResponse getVolumeBackup(GetVolumeBackupRequest request);
 
     /**
+     * Gets information for the specified volume backup policy.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetVolumeBackupPolicyResponse getVolumeBackupPolicy(GetVolumeBackupPolicyRequest request);
+
+    /**
+     * Gets the volume backup policy assignment for the specified asset. Note that the
+     * assetId query parameter is required, and that the returned list will contain at most
+     * one item (since any given asset can only have one policy assigned to it).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetVolumeBackupPolicyAssetAssignmentResponse getVolumeBackupPolicyAssetAssignment(
+            GetVolumeBackupPolicyAssetAssignmentRequest request);
+
+    /**
+     * Gets information for the specified volume backup policy assignment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetVolumeBackupPolicyAssignmentResponse getVolumeBackupPolicyAssignment(
+            GetVolumeBackupPolicyAssignmentRequest request);
+
+    /**
      * Lists the boot volumes in the specified compartment and Availability Domain.
      *
      * @param request The request object containing the details to send
@@ -136,6 +186,15 @@ public interface Blockstorage extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListBootVolumesResponse listBootVolumes(ListBootVolumesRequest request);
+
+    /**
+     * Lists all volume backup policies available to the caller.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListVolumeBackupPoliciesResponse listVolumeBackupPolicies(
+            ListVolumeBackupPoliciesRequest request);
 
     /**
      * Lists the volume backups in the specified compartment. You can filter the results by volume.

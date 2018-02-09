@@ -104,6 +104,16 @@ public interface LoadBalancer extends AutoCloseable {
     CreateLoadBalancerResponse createLoadBalancer(CreateLoadBalancerRequest request);
 
     /**
+     * Adds a path route set to a load balancer. For more information, see
+     * [Managing Request Routing](https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingrequest.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreatePathRouteSetResponse createPathRouteSet(CreatePathRouteSetRequest request);
+
+    /**
      * Removes a backend server from a given load balancer and backend set.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -145,6 +155,18 @@ public interface LoadBalancer extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     DeleteLoadBalancerResponse deleteLoadBalancer(DeleteLoadBalancerRequest request);
+
+    /**
+     * Deletes a path route set from the specified load balancer.
+     * <p>
+     * To delete a path route rule from a path route set, use the
+     * {@link #updatePathRouteSet(UpdatePathRouteSetRequest) updatePathRouteSet} operation.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeletePathRouteSetResponse deletePathRouteSet(DeletePathRouteSetRequest request);
 
     /**
      * Gets the specified backend server's configuration information.
@@ -203,6 +225,14 @@ public interface LoadBalancer extends AutoCloseable {
     GetLoadBalancerHealthResponse getLoadBalancerHealth(GetLoadBalancerHealthRequest request);
 
     /**
+     * Gets the specified path route set's configuration information.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetPathRouteSetResponse getPathRouteSet(GetPathRouteSetRequest request);
+
+    /**
      * Gets the details of a work request.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -249,6 +279,14 @@ public interface LoadBalancer extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListLoadBalancersResponse listLoadBalancers(ListLoadBalancersRequest request);
+
+    /**
+     * Lists all path route sets associated with the specified load balancer.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListPathRouteSetsResponse listPathRouteSets(ListPathRouteSetsRequest request);
 
     /**
      * Lists the available load balancer policies.
@@ -321,6 +359,20 @@ public interface LoadBalancer extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateLoadBalancerResponse updateLoadBalancer(UpdateLoadBalancerRequest request);
+
+    /**
+     * Overwrites an existing path route set on the specified load balancer. Use this operation to add, delete, or alter
+     * path route rules in a path route set.
+     * <p>
+     * To add a new path route rule to a path route set, the `pathRoutes` in the
+     * {@link #updatePathRouteSetDetails(UpdatePathRouteSetDetailsRequest) updatePathRouteSetDetails} object must include
+     * both the new path route rule to add and the existing path route rules to retain.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdatePathRouteSetResponse updatePathRouteSet(UpdatePathRouteSetRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

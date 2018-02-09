@@ -1,0 +1,119 @@
+/**
+ * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ */
+package com.oracle.bmc.core.model;
+
+/**
+ * Specifies that a particular volume backup policy is assigned to an asset such as a volume.
+ * <br/>
+ * Note: This model distinguishes fields that are {@code null} because they are unset from fields that are explicitly
+ * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a set of all
+ * explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods
+ * are implemented to take {@link #__explicitlySet__} into account. The constructor, on the other hand, does not
+ * set {@link #__explicitlySet__} (since the constructor cannot distinguish explicit {@code null} from unset
+ * {@code null}). As a consequence, objects should always be created or deserialized using the {@link Builder}.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@lombok.Value
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
+    builder = VolumeBackupPolicyAssignment.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class VolumeBackupPolicyAssignment {
+    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
+    @lombok.experimental.Accessors(fluent = true)
+    public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("assetId")
+        private String assetId;
+
+        public Builder assetId(String assetId) {
+            this.assetId = assetId;
+            this.__explicitlySet__.add("assetId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
+        private String id;
+
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("policyId")
+        private String policyId;
+
+        public Builder policyId(String policyId) {
+            this.policyId = policyId;
+            this.__explicitlySet__.add("policyId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+        private java.util.Date timeCreated;
+
+        public Builder timeCreated(java.util.Date timeCreated) {
+            this.timeCreated = timeCreated;
+            this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+
+        public VolumeBackupPolicyAssignment build() {
+            VolumeBackupPolicyAssignment __instance__ =
+                    new VolumeBackupPolicyAssignment(assetId, id, policyId, timeCreated);
+            __instance__.__explicitlySet__.addAll(__explicitlySet__);
+            return __instance__;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonIgnore
+        public Builder copy(VolumeBackupPolicyAssignment o) {
+            Builder copiedBuilder =
+                    assetId(o.getAssetId())
+                            .id(o.getId())
+                            .policyId(o.getPolicyId())
+                            .timeCreated(o.getTimeCreated());
+
+            copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
+            return copiedBuilder;
+        }
+    }
+
+    /**
+     * Create a new builder.
+     */
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    /**
+     * The OCID of the asset (e.g. a volume) to which the policy has been assigned.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("assetId")
+    String assetId;
+
+    /**
+     * The OCID of the volume backup policy assignment.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    String id;
+
+    /**
+     * The OCID of the volume backup policy that has been assigned to an asset.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("policyId")
+    String policyId;
+
+    /**
+     * The date and time the volume backup policy assignment was created. Format defined by RFC3339.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    java.util.Date timeCreated;
+
+    @com.fasterxml.jackson.annotation.JsonIgnore
+    private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
+}

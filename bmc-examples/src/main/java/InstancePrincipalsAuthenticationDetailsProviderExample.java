@@ -1,35 +1,136 @@
 /**
  * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
  */
+import com.google.common.base.Function;
+
 import com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider;
+import com.oracle.bmc.identity.IdentityAsyncClient;
 import com.oracle.bmc.identity.IdentityClient;
 import com.oracle.bmc.identity.model.AvailabilityDomain;
 import com.oracle.bmc.identity.requests.ListAvailabilityDomainsRequest;
 import com.oracle.bmc.identity.responses.ListAvailabilityDomainsResponse;
+import com.oracle.bmc.model.BmcException;
+import com.oracle.bmc.responses.AsyncHandler;
+
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.Future;
 
 public class InstancePrincipalsAuthenticationDetailsProviderExample {
 
     public static void main(String[] args) throws Exception {
 
-        InstancePrincipalsAuthenticationDetailsProvider provider =
+        final InstancePrincipalsAuthenticationDetailsProvider provider =
                 InstancePrincipalsAuthenticationDetailsProvider.builder().build();
 
-        IdentityClient identityClient = new IdentityClient(provider);
+        final IdentityClient identityClient = new IdentityClient(provider);
+        final IdentityAsyncClient identityAsyncClient = new IdentityAsyncClient(provider);
 
         // TODO: Pass in the compartment ID as an argument, or enter the value directly here (if known)
-        String compartmentId = args[0];
+        final String compartmentId = args[0];
         System.out.println(compartmentId);
 
+        final ListAvailabilityDomainsRequest request =
+                ListAvailabilityDomainsRequest.builder().compartmentId(compartmentId).build();
+
+        System.out.println(
+                "*******************Synchronous List Availability Domains*********************************");
         ListAvailabilityDomainsResponse listAvailabilityDomainsResponse =
-                identityClient.listAvailabilityDomains(
-                        ListAvailabilityDomainsRequest.builder()
-                                .compartmentId(compartmentId)
-                                .build());
+                identityClient.listAvailabilityDomains(request);
 
         identityClient.close();
 
         for (AvailabilityDomain domain : listAvailabilityDomainsResponse.getItems()) {
             System.out.println(domain.toString());
+        }
+        System.out.println(
+                "*****************************************************************************************");
+        System.out.println();
+        System.out.println();
+
+        System.out.println(
+                "*************Asynchronous List Availability Domains with Futures*************************");
+        final Future<ListAvailabilityDomainsResponse> future =
+                identityAsyncClient.listAvailabilityDomains(request, null);
+        final ListAvailabilityDomainsResponse responseFromFuture = future.get();
+        for (AvailabilityDomain domain : responseFromFuture.getItems()) {
+            System.out.println(domain.toString());
+        }
+        System.out.println(
+                "*****************************************************************************************");
+        System.out.println();
+        System.out.println();
+
+        System.out.println(
+                "***********Asynchronous List Availability Domains with Async Handler************");
+        final AsyncHandler<ListAvailabilityDomainsRequest, ListAvailabilityDomainsResponse>
+                asyncHandler =
+                        new ExampleAsyncHandler(
+                                provider,
+                                new Function<
+                                        AsyncHandler<
+                                                ListAvailabilityDomainsRequest,
+                                                ListAvailabilityDomainsResponse>,
+                                        Future<ListAvailabilityDomainsResponse>>() {
+                                    @Override
+                                    public Future<ListAvailabilityDomainsResponse> apply(
+                                            AsyncHandler<
+                                                            ListAvailabilityDomainsRequest,
+                                                            ListAvailabilityDomainsResponse>
+                                                    handler) {
+                                        return identityAsyncClient.listAvailabilityDomains(
+                                                request, handler);
+                                    }
+                                });
+        identityAsyncClient.listAvailabilityDomains(request, asyncHandler);
+        ((ExampleAsyncHandler) asyncHandler).waitForCompletion();
+        System.out.println(
+                "*****************************************************************************************");
+
+        identityClient.close();
+        identityAsyncClient.close();
+    }
+
+    public static class ExampleAsyncHandler
+            implements AsyncHandler<
+                    ListAvailabilityDomainsRequest, ListAvailabilityDomainsResponse> {
+        private final CountDownLatch latch = new CountDownLatch(1);
+        private final InstancePrincipalsAuthenticationDetailsProvider authDetailsProvider;
+        private final Function<
+                        AsyncHandler<
+                                ListAvailabilityDomainsRequest, ListAvailabilityDomainsResponse>,
+                        Future<ListAvailabilityDomainsResponse>>
+                retryCall;
+        private int numTries = 0;
+
+        public ExampleAsyncHandler(
+                final InstancePrincipalsAuthenticationDetailsProvider authDetailsProvider,
+                final Function<
+                                AsyncHandler<
+                                        ListAvailabilityDomainsRequest,
+                                        ListAvailabilityDomainsResponse>,
+                                Future<ListAvailabilityDomainsResponse>>
+                        retryCall) {
+            this.authDetailsProvider = authDetailsProvider;
+            this.retryCall = retryCall;
+        }
+
+        @Override
+        public void onSuccess(
+                ListAvailabilityDomainsRequest request, ListAvailabilityDomainsResponse response) {
+            for (AvailabilityDomain domain : response.getItems()) {
+                System.out.println(domain.toString());
+            }
+            latch.countDown();
+        }
+
+        @Override
+        public void onError(ListAvailabilityDomainsRequest request, Throwable t) {
+            t.printStackTrace();
+            latch.countDown();
+        }
+
+        public void waitForCompletion() throws Exception {
+            latch.await();
         }
     }
 }

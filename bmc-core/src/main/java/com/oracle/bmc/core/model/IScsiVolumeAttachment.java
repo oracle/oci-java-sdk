@@ -75,6 +75,15 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isReadOnly")
+        private Boolean isReadOnly;
+
+        public Builder isReadOnly(Boolean isReadOnly) {
+            this.isReadOnly = isReadOnly;
+            this.__explicitlySet__.add("isReadOnly");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -158,6 +167,7 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
                             displayName,
                             id,
                             instanceId,
+                            isReadOnly,
                             lifecycleState,
                             timeCreated,
                             volumeId,
@@ -178,6 +188,7 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
                             .displayName(o.getDisplayName())
                             .id(o.getId())
                             .instanceId(o.getInstanceId())
+                            .isReadOnly(o.getIsReadOnly())
                             .lifecycleState(o.getLifecycleState())
                             .timeCreated(o.getTimeCreated())
                             .volumeId(o.getVolumeId())
@@ -205,6 +216,7 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
             String displayName,
             String id,
             String instanceId,
+            Boolean isReadOnly,
             LifecycleState lifecycleState,
             java.util.Date timeCreated,
             String volumeId,
@@ -219,6 +231,7 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
                 displayName,
                 id,
                 instanceId,
+                isReadOnly,
                 lifecycleState,
                 timeCreated,
                 volumeId);

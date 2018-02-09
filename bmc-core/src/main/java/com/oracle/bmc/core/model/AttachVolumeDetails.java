@@ -46,6 +46,12 @@ public class AttachVolumeDetails {
     String instanceId;
 
     /**
+     * Whether the attachment was created in read-only mode.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isReadOnly")
+    Boolean isReadOnly;
+
+    /**
      * The OCID of the volume.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("volumeId")
