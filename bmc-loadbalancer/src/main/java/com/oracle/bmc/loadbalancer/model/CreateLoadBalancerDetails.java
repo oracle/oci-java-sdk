@@ -77,6 +77,15 @@ public class CreateLoadBalancerDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("pathRouteSets")
+        private java.util.Map<String, PathRouteSetDetails> pathRouteSets;
+
+        public Builder pathRouteSets(java.util.Map<String, PathRouteSetDetails> pathRouteSets) {
+            this.pathRouteSets = pathRouteSets;
+            this.__explicitlySet__.add("pathRouteSets");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
         private String shapeName;
 
@@ -107,6 +116,7 @@ public class CreateLoadBalancerDetails {
                             displayName,
                             isPrivate,
                             listeners,
+                            pathRouteSets,
                             shapeName,
                             subnetIds);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -122,6 +132,7 @@ public class CreateLoadBalancerDetails {
                             .displayName(o.getDisplayName())
                             .isPrivate(o.getIsPrivate())
                             .listeners(o.getListeners())
+                            .pathRouteSets(o.getPathRouteSets())
                             .shapeName(o.getShapeName())
                             .subnetIds(o.getSubnetIds());
 
@@ -182,6 +193,9 @@ public class CreateLoadBalancerDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("listeners")
     java.util.Map<String, ListenerDetails> listeners;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("pathRouteSets")
+    java.util.Map<String, PathRouteSetDetails> pathRouteSets;
 
     /**
      * A template that determines the total pre-provisioned bandwidth (ingress plus egress).

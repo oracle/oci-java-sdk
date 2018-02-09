@@ -4,7 +4,7 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * Properties for updating a dynamic group
+ * Properties for updating a dynamic group.
  * <br/>
  * Note: This model distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a set of all
@@ -75,7 +75,9 @@ public class UpdateDynamicGroupDetails {
     String description;
 
     /**
-     * The matching rule to dynamically match an instance certificate to this dynamic group
+     * The matching rule to dynamically match an instance certificate to this dynamic group.
+     * For rule syntax, see [Managing Dynamic Groups](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingdynamicgroups.htm).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchingRule")
     String matchingRule;

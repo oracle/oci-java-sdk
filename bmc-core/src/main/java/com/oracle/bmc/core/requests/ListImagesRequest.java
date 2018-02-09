@@ -38,6 +38,11 @@ public class ListImagesRequest extends com.oracle.bmc.requests.BmcRequest {
     private String operatingSystemVersion;
 
     /**
+     * Shape name.
+     */
+    private String shape;
+
+    /**
      * The maximum number of items to return in a paginated \"List\" call.
      * <p>
      * Example: `500`
@@ -184,6 +189,7 @@ public class ListImagesRequest extends com.oracle.bmc.requests.BmcRequest {
             displayName(o.getDisplayName());
             operatingSystem(o.getOperatingSystem());
             operatingSystemVersion(o.getOperatingSystemVersion());
+            shape(o.getShape());
             limit(o.getLimit());
             page(o.getPage());
             sortBy(o.getSortBy());

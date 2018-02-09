@@ -549,6 +549,67 @@ public class VirtualNetworkWaiters {
      * @param targetState The desired state to wait for.
      * @return A new Waiter instance.
      */
+    public com.oracle.bmc.waiter.Waiter<GetPublicIpRequest, GetPublicIpResponse> forPublicIp(
+            GetPublicIpRequest request,
+            com.oracle.bmc.core.model.PublicIp.LifecycleState targetState) {
+        return forPublicIp(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using the provided configuration.
+     *
+     * @param request The request to send.
+     * @param targetState The desired state to wait for.
+     * @param terminationStrategy The {@link TerminationStrategy} to use.
+     * @param delayStrategy The {@link DelayStrategy} to use.
+     * @return A new Waiter instance.
+     */
+    public com.oracle.bmc.waiter.Waiter<GetPublicIpRequest, GetPublicIpResponse> forPublicIp(
+            GetPublicIpRequest request,
+            com.oracle.bmc.core.model.PublicIp.LifecycleState targetState,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        return forPublicIp(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    // Helper method to create a new Waiter for PublicIp.
+    private com.oracle.bmc.waiter.Waiter<GetPublicIpRequest, GetPublicIpResponse> forPublicIp(
+            com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+            final GetPublicIpRequest request,
+            final com.oracle.bmc.core.model.PublicIp.LifecycleState targetState) {
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetPublicIpRequest, GetPublicIpResponse>() {
+                            @Override
+                            public GetPublicIpResponse apply(GetPublicIpRequest request) {
+                                return client.getPublicIp(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetPublicIpResponse>() {
+                            @Override
+                            public boolean apply(GetPublicIpResponse response) {
+                                return response.getPublicIp().getLifecycleState() == targetState;
+                            }
+                        },
+                        targetState
+                                == com.oracle.bmc.core.model.PublicIp.LifecycleState.Terminated),
+                request);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using default configuration.
+     *
+     * @param request The request to send.
+     * @param targetState The desired state to wait for.
+     * @return A new Waiter instance.
+     */
     public com.oracle.bmc.waiter.Waiter<GetRouteTableRequest, GetRouteTableResponse> forRouteTable(
             GetRouteTableRequest request,
             com.oracle.bmc.core.model.RouteTable.LifecycleState targetState) {

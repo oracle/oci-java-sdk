@@ -48,6 +48,15 @@ public class AttachIScsiVolumeDetails extends AttachVolumeDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isReadOnly")
+        private Boolean isReadOnly;
+
+        public Builder isReadOnly(Boolean isReadOnly) {
+            this.isReadOnly = isReadOnly;
+            this.__explicitlySet__.add("isReadOnly");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("volumeId")
         private String volumeId;
 
@@ -71,7 +80,8 @@ public class AttachIScsiVolumeDetails extends AttachVolumeDetails {
 
         public AttachIScsiVolumeDetails build() {
             AttachIScsiVolumeDetails __instance__ =
-                    new AttachIScsiVolumeDetails(displayName, instanceId, volumeId, useChap);
+                    new AttachIScsiVolumeDetails(
+                            displayName, instanceId, isReadOnly, volumeId, useChap);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -81,6 +91,7 @@ public class AttachIScsiVolumeDetails extends AttachVolumeDetails {
             Builder copiedBuilder =
                     displayName(o.getDisplayName())
                             .instanceId(o.getInstanceId())
+                            .isReadOnly(o.getIsReadOnly())
                             .volumeId(o.getVolumeId())
                             .useChap(o.getUseChap());
 
@@ -97,8 +108,12 @@ public class AttachIScsiVolumeDetails extends AttachVolumeDetails {
     }
 
     public AttachIScsiVolumeDetails(
-            String displayName, String instanceId, String volumeId, Boolean useChap) {
-        super(displayName, instanceId, volumeId);
+            String displayName,
+            String instanceId,
+            Boolean isReadOnly,
+            String volumeId,
+            Boolean useChap) {
+        super(displayName, instanceId, isReadOnly, volumeId);
         this.useChap = useChap;
     }
 

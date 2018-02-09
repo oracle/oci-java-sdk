@@ -220,6 +220,49 @@ public class BlockstorageClient implements Blockstorage {
     }
 
     @Override
+    public CreateVolumeBackupPolicyAssignmentResponse createVolumeBackupPolicyAssignment(
+            CreateVolumeBackupPolicyAssignmentRequest request) {
+        LOG.trace("Called createVolumeBackupPolicyAssignment");
+        request = CreateVolumeBackupPolicyAssignmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateVolumeBackupPolicyAssignmentConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateVolumeBackupPolicyAssignmentResponse>
+                transformer = CreateVolumeBackupPolicyAssignmentConverter.fromResponse();
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(
+                                ib,
+                                request.getCreateVolumeBackupPolicyAssignmentDetails(),
+                                request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.post(
+                                    ib,
+                                    request.getCreateVolumeBackupPolicyAssignmentDetails(),
+                                    request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.post(
+                            ib, request.getCreateVolumeBackupPolicyAssignmentDetails(), request);
+            return transformer.apply(response);
+        }
+    }
+
+    @Override
     public DeleteBootVolumeResponse deleteBootVolume(DeleteBootVolumeRequest request) {
         LOG.trace("Called deleteBootVolume");
         request = DeleteBootVolumeConverter.interceptRequest(request);
@@ -289,6 +332,39 @@ public class BlockstorageClient implements Blockstorage {
                 DeleteVolumeBackupConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVolumeBackupResponse>
                 transformer = DeleteVolumeBackupConverter.fromResponse();
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.delete(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.delete(ib, request);
+            return transformer.apply(response);
+        }
+    }
+
+    @Override
+    public DeleteVolumeBackupPolicyAssignmentResponse deleteVolumeBackupPolicyAssignment(
+            DeleteVolumeBackupPolicyAssignmentRequest request) {
+        LOG.trace("Called deleteVolumeBackupPolicyAssignment");
+        request = DeleteVolumeBackupPolicyAssignmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteVolumeBackupPolicyAssignmentConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteVolumeBackupPolicyAssignmentResponse>
+                transformer = DeleteVolumeBackupPolicyAssignmentConverter.fromResponse();
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
@@ -406,6 +482,104 @@ public class BlockstorageClient implements Blockstorage {
     }
 
     @Override
+    public GetVolumeBackupPolicyResponse getVolumeBackupPolicy(
+            GetVolumeBackupPolicyRequest request) {
+        LOG.trace("Called getVolumeBackupPolicy");
+        request = GetVolumeBackupPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetVolumeBackupPolicyConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeBackupPolicyResponse>
+                transformer = GetVolumeBackupPolicyConverter.fromResponse();
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
+    }
+
+    @Override
+    public GetVolumeBackupPolicyAssetAssignmentResponse getVolumeBackupPolicyAssetAssignment(
+            GetVolumeBackupPolicyAssetAssignmentRequest request) {
+        LOG.trace("Called getVolumeBackupPolicyAssetAssignment");
+        request = GetVolumeBackupPolicyAssetAssignmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetVolumeBackupPolicyAssetAssignmentConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetVolumeBackupPolicyAssetAssignmentResponse>
+                transformer = GetVolumeBackupPolicyAssetAssignmentConverter.fromResponse();
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
+    }
+
+    @Override
+    public GetVolumeBackupPolicyAssignmentResponse getVolumeBackupPolicyAssignment(
+            GetVolumeBackupPolicyAssignmentRequest request) {
+        LOG.trace("Called getVolumeBackupPolicyAssignment");
+        request = GetVolumeBackupPolicyAssignmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetVolumeBackupPolicyAssignmentConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetVolumeBackupPolicyAssignmentResponse>
+                transformer = GetVolumeBackupPolicyAssignmentConverter.fromResponse();
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
+    }
+
+    @Override
     public ListBootVolumesResponse listBootVolumes(ListBootVolumesRequest request) {
         LOG.trace("Called listBootVolumes");
         request = ListBootVolumesConverter.interceptRequest(request);
@@ -413,6 +587,38 @@ public class BlockstorageClient implements Blockstorage {
                 ListBootVolumesConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListBootVolumesResponse>
                 transformer = ListBootVolumesConverter.fromResponse();
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
+    }
+
+    @Override
+    public ListVolumeBackupPoliciesResponse listVolumeBackupPolicies(
+            ListVolumeBackupPoliciesRequest request) {
+        LOG.trace("Called listVolumeBackupPolicies");
+        request = ListVolumeBackupPoliciesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListVolumeBackupPoliciesConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumeBackupPoliciesResponse>
+                transformer = ListVolumeBackupPoliciesConverter.fromResponse();
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {

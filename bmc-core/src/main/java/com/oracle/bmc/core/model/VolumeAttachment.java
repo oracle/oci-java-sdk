@@ -74,6 +74,12 @@ public class VolumeAttachment {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")
     String instanceId;
+
+    /**
+     * Whether the attachment was created in read-only mode.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isReadOnly")
+    Boolean isReadOnly;
     /**
      * The current state of the volume attachment.
      **/

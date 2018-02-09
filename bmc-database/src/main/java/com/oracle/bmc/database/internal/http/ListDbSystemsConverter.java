@@ -54,6 +54,14 @@ public class ListDbSystemsConverter {
                                     request.getPage()));
         }
 
+        if (request.getBackupId() != null) {
+            target =
+                    target.queryParam(
+                            "backupId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getBackupId()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

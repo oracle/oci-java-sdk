@@ -51,6 +51,15 @@ public class Listener {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("pathRouteSetName")
+        private String pathRouteSetName;
+
+        public Builder pathRouteSetName(String pathRouteSetName) {
+            this.pathRouteSetName = pathRouteSetName;
+            this.__explicitlySet__.add("pathRouteSetName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
@@ -87,6 +96,7 @@ public class Listener {
                             connectionConfiguration,
                             defaultBackendSetName,
                             name,
+                            pathRouteSetName,
                             port,
                             protocol,
                             sslConfiguration);
@@ -100,6 +110,7 @@ public class Listener {
                     connectionConfiguration(o.getConnectionConfiguration())
                             .defaultBackendSetName(o.getDefaultBackendSetName())
                             .name(o.getName())
+                            .pathRouteSetName(o.getPathRouteSetName())
                             .port(o.getPort())
                             .protocol(o.getProtocol())
                             .sslConfiguration(o.getSslConfiguration());
@@ -136,6 +147,16 @@ public class Listener {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
+
+    /**
+     * The name of the set of path-based routing rules, {@link PathRouteSet},
+     * applied to this listener's traffic.
+     * <p>
+     * Example: `path-route-set-001`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("pathRouteSetName")
+    String pathRouteSetName;
 
     /**
      * The communication port for the listener.

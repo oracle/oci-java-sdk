@@ -3,10 +3,12 @@
  */
 package com.oracle.bmc.http.internal;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -25,19 +27,20 @@ public class HttpDateUtils {
     private static final TimeZone TIMEZONE_GMT = TimeZone.getTimeZone("GMT");
     private static final Date AMBIGUOUS_YEAR_TWO_DIGIT_YEAR_START;
 
-    private static final ThreadLocal<List<SimpleDateFormat>> RFC2616_DATE_FORMATS =
-            new ThreadLocal<List<SimpleDateFormat>>() {
+    private static final ThreadLocal<List<DateFormat>> RFC2616_DATE_FORMATS =
+            new ThreadLocal<List<DateFormat>>() {
                 @Override
-                protected synchronized List<SimpleDateFormat> initialValue() {
+                protected synchronized List<DateFormat> initialValue() {
                     return createRfc2616DateFormats();
                 }
             };
 
-    private static final ThreadLocal<List<SimpleDateFormat>> RFC3339_DATE_FORMATS =
-            new ThreadLocal<List<SimpleDateFormat>>() {
+    private static final ThreadLocal<List<DateFormat>> RFC3339_DATE_FORMATS =
+            new ThreadLocal<List<DateFormat>>() {
                 @Override
-                protected synchronized List<SimpleDateFormat> initialValue() {
-                    return createRfc3339DateFormats();
+                protected List<DateFormat> initialValue() {
+                    DateFormat format = new RFC3339DateFormat();
+                    return Collections.singletonList(format);
                 }
             };
 
@@ -49,8 +52,8 @@ public class HttpDateUtils {
         AMBIGUOUS_YEAR_TWO_DIGIT_YEAR_START = calendar.getTime();
     }
 
-    private static List<SimpleDateFormat> createRfc2616DateFormats() {
-        List<SimpleDateFormat> dateFormats = new ArrayList<>();
+    private static List<DateFormat> createRfc2616DateFormats() {
+        List<DateFormat> dateFormats = new ArrayList<>();
 
         // rfc 1123
         dateFormats.add(new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z", Locale.US));
@@ -67,22 +70,8 @@ public class HttpDateUtils {
         return dateFormats;
     }
 
-    private static List<SimpleDateFormat> createRfc3339DateFormats() {
-        List<SimpleDateFormat> dateFormats = new ArrayList<>();
-
-        // 'date-time' format
-        dateFormats.add(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX"));
-        // 'date-time' with millis format
-        dateFormats.add(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX"));
-        // 'full-date' format
-        dateFormats.add(new SimpleDateFormat("yyyy-MM-dd"));
-
-        init(dateFormats);
-        return dateFormats;
-    }
-
-    private static void init(List<SimpleDateFormat> formats) {
-        for (SimpleDateFormat format : formats) {
+    private static void init(List<DateFormat> formats) {
+        for (DateFormat format : formats) {
             format.setTimeZone(TIMEZONE_GMT);
         }
     }
@@ -119,23 +108,21 @@ public class HttpDateUtils {
     }
 
     /**
-     * Format the given date into Swagger date-time format.
+     * Format the given date into Swagger RFC3339 date-time format.
      *
      * @param date
      *            The date to format.
      * @return The formatted date.
      */
     public static String format(Date date) {
-        final SimpleDateFormat format =
-                (date.getTime() % 1000 == 0)
-                        ? new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
-                        : new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.S'Z'");
-        format.setTimeZone(TimeZone.getTimeZone("UTC"));
-        return format.format(date);
+        // for backwards compatibility, if there are no millis, do not
+        // include them in the string.
+        boolean includeMillis = date.getTime() % 1000 != 0;
+        return RFC3339DateFormat.formatRfc3339(date, includeMillis);
     }
 
-    private static Date tryParse(String date, List<SimpleDateFormat> formats) {
-        for (final SimpleDateFormat format : formats) {
+    private static Date tryParse(String date, List<DateFormat> formats) {
+        for (final DateFormat format : formats) {
             try {
                 Date result = format.parse(date);
                 // parse can modify TZ, reset it

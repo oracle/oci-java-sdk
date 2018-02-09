@@ -62,6 +62,14 @@ public class ListImagesConverter {
                                     request.getOperatingSystemVersion()));
         }
 
+        if (request.getShape() != null) {
+            target =
+                    target.queryParam(
+                            "shape",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getShape()));
+        }
+
         if (request.getLimit() != null) {
             target =
                     target.queryParam(

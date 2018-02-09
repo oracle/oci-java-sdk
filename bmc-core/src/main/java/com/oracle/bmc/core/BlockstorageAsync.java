@@ -88,6 +88,27 @@ public interface BlockstorageAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Assigns a policy to the specified asset, such as a volume. Note that a given asset can
+     * only have one policy assigned to it; if this method is called for an asset that previously
+     * has a different policy assigned, the prior assignment will be silently deleted.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateVolumeBackupPolicyAssignmentResponse>
+            createVolumeBackupPolicyAssignment(
+                    CreateVolumeBackupPolicyAssignmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateVolumeBackupPolicyAssignmentRequest,
+                                    CreateVolumeBackupPolicyAssignmentResponse>
+                            handler);
+
+    /**
      * Deletes the specified boot volume. The volume cannot have an active connection to an instance.
      * To disconnect the boot volume from a connected instance, see
      * [Disconnecting From a Boot Volume](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Tasks/deletingbootvolume.htm).
@@ -142,6 +163,24 @@ public interface BlockstorageAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes a volume backup policy assignment (i.e. unassigns the policy from an asset).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteVolumeBackupPolicyAssignmentResponse>
+            deleteVolumeBackupPolicyAssignment(
+                    DeleteVolumeBackupPolicyAssignmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteVolumeBackupPolicyAssignmentRequest,
+                                    DeleteVolumeBackupPolicyAssignmentResponse>
+                            handler);
+
+    /**
      * Gets information for the specified boot volume.
      *
      * @param request The request object containing the details to send
@@ -186,6 +225,61 @@ public interface BlockstorageAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets information for the specified volume backup policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetVolumeBackupPolicyResponse> getVolumeBackupPolicy(
+            GetVolumeBackupPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetVolumeBackupPolicyRequest, GetVolumeBackupPolicyResponse>
+                    handler);
+
+    /**
+     * Gets the volume backup policy assignment for the specified asset. Note that the
+     * assetId query parameter is required, and that the returned list will contain at most
+     * one item (since any given asset can only have one policy assigned to it).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetVolumeBackupPolicyAssetAssignmentResponse>
+            getVolumeBackupPolicyAssetAssignment(
+                    GetVolumeBackupPolicyAssetAssignmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetVolumeBackupPolicyAssetAssignmentRequest,
+                                    GetVolumeBackupPolicyAssetAssignmentResponse>
+                            handler);
+
+    /**
+     * Gets information for the specified volume backup policy assignment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetVolumeBackupPolicyAssignmentResponse>
+            getVolumeBackupPolicyAssignment(
+                    GetVolumeBackupPolicyAssignmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetVolumeBackupPolicyAssignmentRequest,
+                                    GetVolumeBackupPolicyAssignmentResponse>
+                            handler);
+
+    /**
      * Lists the boot volumes in the specified compartment and Availability Domain.
      *
      *
@@ -199,6 +293,22 @@ public interface BlockstorageAsync extends AutoCloseable {
     java.util.concurrent.Future<ListBootVolumesResponse> listBootVolumes(
             ListBootVolumesRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListBootVolumesRequest, ListBootVolumesResponse>
+                    handler);
+
+    /**
+     * Lists all volume backup policies available to the caller.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListVolumeBackupPoliciesResponse> listVolumeBackupPolicies(
+            ListVolumeBackupPoliciesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListVolumeBackupPoliciesRequest, ListVolumeBackupPoliciesResponse>
                     handler);
 
     /**

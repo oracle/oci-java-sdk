@@ -51,6 +51,15 @@ public class CreateVolumeBackupDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("type")
+        private Type type;
+
+        public Builder type(Type type) {
+            this.type = type;
+            this.__explicitlySet__.add("type");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("volumeId")
         private String volumeId;
 
@@ -65,7 +74,8 @@ public class CreateVolumeBackupDetails {
 
         public CreateVolumeBackupDetails build() {
             CreateVolumeBackupDetails __instance__ =
-                    new CreateVolumeBackupDetails(definedTags, displayName, freeformTags, volumeId);
+                    new CreateVolumeBackupDetails(
+                            definedTags, displayName, freeformTags, type, volumeId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -76,6 +86,7 @@ public class CreateVolumeBackupDetails {
                     definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
+                            .type(o.getType())
                             .volumeId(o.getVolumeId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -118,6 +129,46 @@ public class CreateVolumeBackupDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
+    /**
+     * The type of backup to create. If omitted, defaults to INCREMENTAL.
+     **/
+    public enum Type {
+        Full("FULL"),
+        Incremental("INCREMENTAL"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Type> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Type v : Type.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Type(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Type create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new RuntimeException("Invalid Type: " + key);
+        }
+    };
+    /**
+     * The type of backup to create. If omitted, defaults to INCREMENTAL.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
+    Type type;
 
     /**
      * The OCID of the volume that needs to be backed up.

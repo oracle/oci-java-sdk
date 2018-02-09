@@ -322,6 +322,40 @@ public class LoadBalancerClient implements LoadBalancer {
     }
 
     @Override
+    public CreatePathRouteSetResponse createPathRouteSet(CreatePathRouteSetRequest request) {
+        LOG.trace("Called createPathRouteSet");
+        request = CreatePathRouteSetConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreatePathRouteSetConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreatePathRouteSetResponse>
+                transformer = CreatePathRouteSetConverter.fromResponse();
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCreatePathRouteSetDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.post(ib, request.getCreatePathRouteSetDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.post(ib, request.getCreatePathRouteSetDetails(), request);
+            return transformer.apply(response);
+        }
+    }
+
+    @Override
     public DeleteBackendResponse deleteBackend(DeleteBackendRequest request) {
         LOG.trace("Called deleteBackend");
         request = DeleteBackendConverter.interceptRequest(request);
@@ -453,6 +487,37 @@ public class LoadBalancerClient implements LoadBalancer {
                 DeleteLoadBalancerConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteLoadBalancerResponse>
                 transformer = DeleteLoadBalancerConverter.fromResponse();
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.delete(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.delete(ib, request);
+            return transformer.apply(response);
+        }
+    }
+
+    @Override
+    public DeletePathRouteSetResponse deletePathRouteSet(DeletePathRouteSetRequest request) {
+        LOG.trace("Called deletePathRouteSet");
+        request = DeletePathRouteSetConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeletePathRouteSetConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeletePathRouteSetResponse>
+                transformer = DeletePathRouteSetConverter.fromResponse();
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
@@ -695,6 +760,37 @@ public class LoadBalancerClient implements LoadBalancer {
     }
 
     @Override
+    public GetPathRouteSetResponse getPathRouteSet(GetPathRouteSetRequest request) {
+        LOG.trace("Called getPathRouteSet");
+        request = GetPathRouteSetConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPathRouteSetConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetPathRouteSetResponse>
+                transformer = GetPathRouteSetConverter.fromResponse();
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
+    }
+
+    @Override
     public GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request) {
         LOG.trace("Called getWorkRequest");
         request = GetWorkRequestConverter.interceptRequest(request);
@@ -858,6 +954,37 @@ public class LoadBalancerClient implements LoadBalancer {
                 ListLoadBalancersConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListLoadBalancersResponse>
                 transformer = ListLoadBalancersConverter.fromResponse();
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
+    }
+
+    @Override
+    public ListPathRouteSetsResponse listPathRouteSets(ListPathRouteSetsRequest request) {
+        LOG.trace("Called listPathRouteSets");
+        request = ListPathRouteSetsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPathRouteSetsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListPathRouteSetsResponse>
+                transformer = ListPathRouteSetsConverter.fromResponse();
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
@@ -1171,6 +1298,40 @@ public class LoadBalancerClient implements LoadBalancer {
         } else {
             javax.ws.rs.core.Response response =
                     client.put(ib, request.getUpdateLoadBalancerDetails(), request);
+            return transformer.apply(response);
+        }
+    }
+
+    @Override
+    public UpdatePathRouteSetResponse updatePathRouteSet(UpdatePathRouteSetRequest request) {
+        LOG.trace("Called updatePathRouteSet");
+        request = UpdatePathRouteSetConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdatePathRouteSetConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePathRouteSetResponse>
+                transformer = UpdatePathRouteSetConverter.fromResponse();
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdatePathRouteSetDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.put(ib, request.getUpdatePathRouteSetDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.put(ib, request.getUpdatePathRouteSetDetails(), request);
             return transformer.apply(response);
         }
     }

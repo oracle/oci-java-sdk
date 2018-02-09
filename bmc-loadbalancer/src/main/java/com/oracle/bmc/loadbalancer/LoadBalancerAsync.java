@@ -141,6 +141,24 @@ public interface LoadBalancerAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Adds a path route set to a load balancer. For more information, see
+     * [Managing Request Routing](https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingrequest.htm).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreatePathRouteSetResponse> createPathRouteSet(
+            CreatePathRouteSetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreatePathRouteSetRequest, CreatePathRouteSetResponse>
+                    handler);
+
+    /**
      * Removes a backend server from a given load balancer and backend set.
      *
      * @param request The request object containing the details to send
@@ -218,6 +236,26 @@ public interface LoadBalancerAsync extends AutoCloseable {
             DeleteLoadBalancerRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteLoadBalancerRequest, DeleteLoadBalancerResponse>
+                    handler);
+
+    /**
+     * Deletes a path route set from the specified load balancer.
+     * <p>
+     * To delete a path route rule from a path route set, use the
+     * {@link #updatePathRouteSet(UpdatePathRouteSetRequest, Consumer, Consumer) updatePathRouteSet} operation.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeletePathRouteSetResponse> deletePathRouteSet(
+            DeletePathRouteSetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeletePathRouteSetRequest, DeletePathRouteSetResponse>
                     handler);
 
     /**
@@ -327,6 +365,21 @@ public interface LoadBalancerAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the specified path route set's configuration information.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPathRouteSetResponse> getPathRouteSet(
+            GetPathRouteSetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetPathRouteSetRequest, GetPathRouteSetResponse>
+                    handler);
+
+    /**
      * Gets the details of a work request.
      *
      * @param request The request object containing the details to send
@@ -416,6 +469,22 @@ public interface LoadBalancerAsync extends AutoCloseable {
             ListLoadBalancersRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListLoadBalancersRequest, ListLoadBalancersResponse>
+                    handler);
+
+    /**
+     * Lists all path route sets associated with the specified load balancer.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPathRouteSetsResponse> listPathRouteSets(
+            ListPathRouteSetsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListPathRouteSetsRequest, ListPathRouteSetsResponse>
                     handler);
 
     /**
@@ -552,5 +621,27 @@ public interface LoadBalancerAsync extends AutoCloseable {
             UpdateLoadBalancerRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateLoadBalancerRequest, UpdateLoadBalancerResponse>
+                    handler);
+
+    /**
+     * Overwrites an existing path route set on the specified load balancer. Use this operation to add, delete, or alter
+     * path route rules in a path route set.
+     * <p>
+     * To add a new path route rule to a path route set, the `pathRoutes` in the
+     * {@link #updatePathRouteSetDetails(UpdatePathRouteSetDetailsRequest, Consumer, Consumer) updatePathRouteSetDetails} object must include
+     * both the new path route rule to add and the existing path route rules to retain.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdatePathRouteSetResponse> updatePathRouteSet(
+            UpdatePathRouteSetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdatePathRouteSetRequest, UpdatePathRouteSetResponse>
                     handler);
 }

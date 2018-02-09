@@ -521,7 +521,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of the DB Systems in the specified compartment.
+     * Gets a list of the DB Systems in the specified compartment. You can specify a backupId to list only the DB Systems that support creating a database using this backup in this compartment.
      *
      *
      *

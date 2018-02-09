@@ -38,9 +38,11 @@ public class RestClientFactory {
         // Our default object mapper will ignore unknown properties when
         // deserializing results
         DEFAULT_MAPPER.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        // Serialize Date instances using com.fasterxml.jackson.databind.util.StdDateFormat,
-        // which corresponds to format string of "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        // Serialize Date instances using the DateFormat we specify, do not serialize into
+        // timestamps.
         DEFAULT_MAPPER.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
+        // set explicit formatter that will serialize correctly
+        DEFAULT_MAPPER.setDateFormat(new RFC3339DateFormat());
 
         FilterProvider filters =
                 new SimpleFilterProvider()

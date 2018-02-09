@@ -13,10 +13,22 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.2.27 - 2018-02-08
+
+### Fixed
+- Bug fix for not serializing dates in request bodies correctly to RFC-3339
+
+### Added
+- Support for DNS Service. An example of calling this service is available [here](https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/DnsExample.java)
+- Support for Reserved Public IPs in Virtual Networking Service
+- Support for path route sets in Load Balancing Service
+- Support for automated and policy-based backups, read-only volume attachments, and incremental backups in Block Storage Service
+- Support for filtering by backupId in ListDbSystems operation in Database Service
+
 ## 1.2.23 - 2018-01-29
 
 ### Fixed
-* Javadoc for the Object Storage Service is being generated again
+- Javadoc for the Object Storage Service is being generated again
 
 ## 1.2.22 - 2018-01-25
 

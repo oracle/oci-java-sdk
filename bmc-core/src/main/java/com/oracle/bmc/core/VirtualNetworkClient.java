@@ -622,6 +622,40 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public CreatePublicIpResponse createPublicIp(CreatePublicIpRequest request) {
+        LOG.trace("Called createPublicIp");
+        request = CreatePublicIpConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreatePublicIpConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreatePublicIpResponse>
+                transformer = CreatePublicIpConverter.fromResponse();
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCreatePublicIpDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.post(ib, request.getCreatePublicIpDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.post(ib, request.getCreatePublicIpDetails(), request);
+            return transformer.apply(response);
+        }
+    }
+
+    @Override
     public CreateRouteTableResponse createRouteTable(CreateRouteTableRequest request) {
         LOG.trace("Called createRouteTable");
         request = CreateRouteTableConverter.interceptRequest(request);
@@ -1083,6 +1117,37 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 DeletePrivateIpConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeletePrivateIpResponse>
                 transformer = DeletePrivateIpConverter.fromResponse();
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.delete(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.delete(ib, request);
+            return transformer.apply(response);
+        }
+    }
+
+    @Override
+    public DeletePublicIpResponse deletePublicIp(DeletePublicIpRequest request) {
+        LOG.trace("Called deletePublicIp");
+        request = DeletePublicIpConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeletePublicIpConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeletePublicIpResponse>
+                transformer = DeletePublicIpConverter.fromResponse();
 
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
@@ -1737,6 +1802,107 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public GetPublicIpResponse getPublicIp(GetPublicIpRequest request) {
+        LOG.trace("Called getPublicIp");
+        request = GetPublicIpConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPublicIpConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetPublicIpResponse>
+                transformer = GetPublicIpConverter.fromResponse();
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
+    }
+
+    @Override
+    public GetPublicIpByIpAddressResponse getPublicIpByIpAddress(
+            GetPublicIpByIpAddressRequest request) {
+        LOG.trace("Called getPublicIpByIpAddress");
+        request = GetPublicIpByIpAddressConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPublicIpByIpAddressConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetPublicIpByIpAddressResponse>
+                transformer = GetPublicIpByIpAddressConverter.fromResponse();
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getGetPublicIpByIpAddressDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.post(ib, request.getGetPublicIpByIpAddressDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.post(ib, request.getGetPublicIpByIpAddressDetails(), request);
+            return transformer.apply(response);
+        }
+    }
+
+    @Override
+    public GetPublicIpByPrivateIpIdResponse getPublicIpByPrivateIpId(
+            GetPublicIpByPrivateIpIdRequest request) {
+        LOG.trace("Called getPublicIpByPrivateIpId");
+        request = GetPublicIpByPrivateIpIdConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPublicIpByPrivateIpIdConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetPublicIpByPrivateIpIdResponse>
+                transformer = GetPublicIpByPrivateIpIdConverter.fromResponse();
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getGetPublicIpByPrivateIpIdDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.post(ib, request.getGetPublicIpByPrivateIpIdDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.post(ib, request.getGetPublicIpByPrivateIpIdDetails(), request);
+            return transformer.apply(response);
+        }
+    }
+
+    @Override
     public GetRouteTableResponse getRouteTable(GetRouteTableRequest request) {
         LOG.trace("Called getRouteTable");
         request = GetRouteTableConverter.interceptRequest(request);
@@ -2374,6 +2540,37 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public ListPublicIpsResponse listPublicIps(ListPublicIpsRequest request) {
+        LOG.trace("Called listPublicIps");
+        request = ListPublicIpsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPublicIpsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListPublicIpsResponse>
+                transformer = ListPublicIpsConverter.fromResponse();
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response = client.get(ib, request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response = client.get(ib, request);
+            return transformer.apply(response);
+        }
+    }
+
+    @Override
     public ListRouteTablesResponse listRouteTables(ListRouteTablesRequest request) {
         LOG.trace("Called listRouteTables");
         request = ListRouteTablesConverter.interceptRequest(request);
@@ -2935,6 +3132,40 @@ public class VirtualNetworkClient implements VirtualNetwork {
         } else {
             javax.ws.rs.core.Response response =
                     client.put(ib, request.getUpdatePrivateIpDetails(), request);
+            return transformer.apply(response);
+        }
+    }
+
+    @Override
+    public UpdatePublicIpResponse updatePublicIp(UpdatePublicIpRequest request) {
+        LOG.trace("Called updatePublicIp");
+        request = UpdatePublicIpConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdatePublicIpConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePublicIpResponse>
+                transformer = UpdatePublicIpConverter.fromResponse();
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdatePublicIpDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (e.getStatusCode() == 401) {
+                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider)
+                            .refreshSecurityToken();
+                    javax.ws.rs.core.Response response =
+                            client.put(ib, request.getUpdatePublicIpDetails(), request);
+                    return transformer.apply(response);
+                } else {
+                    throw e;
+                }
+            }
+        } else {
+            javax.ws.rs.core.Response response =
+                    client.put(ib, request.getUpdatePublicIpDetails(), request);
             return transformer.apply(response);
         }
     }

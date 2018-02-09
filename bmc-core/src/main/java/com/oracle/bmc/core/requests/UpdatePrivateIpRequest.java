@@ -11,7 +11,7 @@ import com.oracle.bmc.core.model.*;
 public class UpdatePrivateIpRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The private IP's OCID.
+     * The OCID of the private IP.
      */
     private String privateIpId;
 
