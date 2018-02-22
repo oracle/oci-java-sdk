@@ -15,8 +15,10 @@ import com.oracle.bmc.core.VirtualNetworkClient;
 import com.oracle.bmc.core.model.CreateInternetGatewayDetails;
 import com.oracle.bmc.core.model.CreateSubnetDetails;
 import com.oracle.bmc.core.model.CreateVcnDetails;
+import com.oracle.bmc.core.model.CreateVnicDetails;
 import com.oracle.bmc.core.model.Image;
 import com.oracle.bmc.core.model.Instance;
+import com.oracle.bmc.core.model.InstanceSourceViaImageDetails;
 import com.oracle.bmc.core.model.InternetGateway;
 import com.oracle.bmc.core.model.LaunchInstanceDetails;
 import com.oracle.bmc.core.model.RouteRule;
@@ -28,6 +30,7 @@ import com.oracle.bmc.core.requests.CreateInternetGatewayRequest;
 import com.oracle.bmc.core.requests.CreateSubnetRequest;
 import com.oracle.bmc.core.requests.CreateVcnRequest;
 import com.oracle.bmc.core.requests.GetInstanceRequest;
+import com.oracle.bmc.core.requests.GetSubnetRequest;
 import com.oracle.bmc.core.requests.LaunchInstanceRequest;
 import com.oracle.bmc.core.requests.ListImagesRequest;
 import com.oracle.bmc.core.requests.ListShapesRequest;
@@ -82,6 +85,26 @@ public class CreateInstanceExample {
         List<Image> images = getImages(provider, computeClient, compartmentId);
         List<Shape> shapes = getShapes(provider, computeClient, compartmentId);
 
+        Image image = null;
+        for (Image item : images) {
+            if (item.getDisplayName().equals("Oracle-Linux-7.4-2018.01.20-0")) {
+                image = item;
+                break;
+            }
+        }
+
+        Shape shape = null;
+        for (Shape item : shapes) {
+            if (item.getShape().equals("VM.Standard1.1")) {
+                shape = item;
+                break;
+            }
+        }
+
+        if (image == null || shape == null) {
+            throw new NullPointerException("Image or shape was not found.");
+        }
+
         Vcn vcn = createVcn(vcnClient, compartmentId, vcnDisplayName, networkCidrBlock);
 
         // TODO: If you don't want to connect the created instance to the public internet
@@ -103,6 +126,14 @@ public class CreateInstanceExample {
                         vcn.getId(),
                         vcn.getDefaultRouteTableId());
 
+        // Wait for subnet to be available
+        vcnClient
+                .getWaiters()
+                .forSubnet(
+                        GetSubnetRequest.builder().subnetId(subnet.getId()).build(),
+                        Subnet.LifecycleState.Available)
+                .execute();
+
         // TODO: For this example we're just using the first image and shape returned.
         // You'll probably want different logic around which of each of these to use
         Instance instance =
@@ -111,8 +142,8 @@ public class CreateInstanceExample {
                         compartmentId,
                         adToUse,
                         instanceDisplayName,
-                        images.get(0),
-                        shapes.get(0),
+                        image,
+                        shape,
                         subnet,
                         sshPublicKey);
 
@@ -233,10 +264,16 @@ public class CreateInstanceExample {
                                                 .availabilityDomain(availabilityDomain.getName())
                                                 .compartmentId(compartmentId)
                                                 .displayName(instanceName)
-                                                .imageId(image.getId())
                                                 .metadata(metadata)
                                                 .shape(shape.getShape())
-                                                .subnetId(subnet.getId())
+                                                .sourceDetails(
+                                                        InstanceSourceViaImageDetails.builder()
+                                                                .imageId(image.getId())
+                                                                .build())
+                                                .createVnicDetails(
+                                                        CreateVnicDetails.builder()
+                                                                .subnetId(subnet.getId())
+                                                                .build())
                                                 .build())
                                 .build());
 

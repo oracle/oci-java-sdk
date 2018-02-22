@@ -409,6 +409,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
 
     /**
      * Restore one or more objects specified by objectName parameter.
+     * By default object will be restored for 24 hours.Duration can be configured using hours parameter.
      *
      *
      * @param request The request object containing the details to send

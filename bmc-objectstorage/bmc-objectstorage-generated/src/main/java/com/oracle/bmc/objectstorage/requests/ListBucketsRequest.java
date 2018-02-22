@@ -31,6 +31,52 @@ public class ListBucketsRequest extends com.oracle.bmc.requests.BmcRequest {
     private String page;
 
     /**
+     * Bucket summary in list of buckets includes the 'namespace', 'name', 'compartmentId', 'createdBy', 'timeCreated',
+     * and 'etag' fields. This parameter can also include 'tags' (freeformTags and definedTags). The only supported value
+     * of this parameter is 'tags' for now. Example 'tags'.
+     *
+     */
+    private java.util.List<Fields> fields;
+
+    /**
+     * Bucket summary in list of buckets includes the 'namespace', 'name', 'compartmentId', 'createdBy', 'timeCreated',
+     * and 'etag' fields. This parameter can also include 'tags' (freeformTags and definedTags). The only supported value
+     * of this parameter is 'tags' for now. Example 'tags'.
+     *
+     **/
+    public enum Fields {
+        Tags("tags"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Fields> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Fields v : Fields.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Fields(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Fields create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new RuntimeException("Invalid Fields: " + key);
+        }
+    };
+
+    /**
      * The client request ID for tracing.
      */
     private String opcClientRequestId;
@@ -60,6 +106,7 @@ public class ListBucketsRequest extends com.oracle.bmc.requests.BmcRequest {
             compartmentId(o.getCompartmentId());
             limit(o.getLimit());
             page(o.getPage());
+            fields(o.getFields());
             opcClientRequestId(o.getOpcClientRequestId());
             return this;
         }

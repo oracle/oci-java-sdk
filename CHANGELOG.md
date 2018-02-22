@@ -13,6 +13,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.2.28 - 2018-02-22
+
+### Added
+- Added support for the File Storage Service. An example on how to call this service can be found [here](https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/FileStorageServiceExample.java)
+- Added support for tagging Bucket resources in the Object Storage Service
+- Added support for specifying a restore period for archived objects in the `restoreObjects` operation of the Object Storage service
+- Added `paginators` to provide an `Iterable` interface over list operations offered by the SDK
+
 ## 1.2.27 - 2018-02-08
 
 ### Fixed

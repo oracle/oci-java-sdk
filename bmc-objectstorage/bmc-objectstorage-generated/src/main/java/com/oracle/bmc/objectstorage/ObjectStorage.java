@@ -252,6 +252,7 @@ public interface ObjectStorage extends AutoCloseable {
 
     /**
      * Restore one or more objects specified by objectName parameter.
+     * By default object will be restored for 24 hours.Duration can be configured using hours parameter.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -288,4 +289,13 @@ public interface ObjectStorage extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UploadPartResponse uploadPart(UploadPartRequest request);
+
+    /**
+     * Gets the pre-configured paginators available for list operations in this service which may return multiple
+     * pages of data. These paginators provide an {@link java.lang.Iterable} interface so that service responses, or
+     * resources/records, can be iterated through without having to manually deal with pagination and page tokens.
+     *
+     * @return The service paginators.
+     */
+    ObjectStoragePaginators getPaginators();
 }

@@ -16,6 +16,10 @@ public class AuditClient implements Audit {
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.create("AUDIT", "audit");
+    // attempt twice if it's instance principals, immediately failures will try to refresh the token
+    private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
+
+    private final AuditPaginators paginators;
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
     private final com.oracle.bmc.http.internal.RestClient client;
@@ -87,6 +91,8 @@ public class AuditClient implements Audit {
                         SERVICE, this.authenticationDetailsProvider);
         this.client = restClientFactory.create(requestSigner, configuration);
 
+        this.paginators = new AuditPaginators(this);
+
         if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
             com.oracle.bmc.auth.RegionProvider provider =
                     (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
@@ -141,25 +147,19 @@ public class AuditClient implements Audit {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetConfigurationResponse>
                 transformer = GetConfigurationConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -172,25 +172,19 @@ public class AuditClient implements Audit {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListEventsResponse> transformer =
                 ListEventsConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -203,28 +197,38 @@ public class AuditClient implements Audit {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateConfigurationResponse>
                 transformer = UpdateConfigurationConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdateConfigurationDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.put(ib, request.getUpdateConfigurationDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.put(ib, request.getUpdateConfigurationDetails(), request);
-            return transformer.apply(response);
         }
+    }
+
+    private boolean canRetryRequestIfInstancePrincipalsUsed(com.oracle.bmc.model.BmcException e) {
+        if (e.getStatusCode() == 401
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider)
+                    .refreshSecurityToken();
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public AuditPaginators getPaginators() {
+        return paginators;
     }
 }

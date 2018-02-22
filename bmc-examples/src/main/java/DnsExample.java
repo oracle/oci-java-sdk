@@ -184,6 +184,10 @@ public class DnsExample {
                 break;
             }
         }
+        if (txtRecord == null) {
+            throw new NullPointerException(
+                    "Expected to find a TXT record in the list of zone records");
+        }
 
         final List<RecordOperation> patchAddRemoveTxtRecord = new ArrayList<>();
         patchAddRemoveTxtRecord.add(
@@ -229,14 +233,6 @@ public class DnsExample {
         //
         // Note that currently (as of 6 February 2018) sending through rdata or a record hash as part of a
         // precondition is not supported
-
-        Record aRecord = null;
-        for (Record r : recordsAfterPatch) {
-            if (r.getRtype().equals("A")) {
-                aRecord = r;
-                break;
-            }
-        }
 
         final List<RecordOperation> failingPatchOperation = new ArrayList<>();
         failingPatchOperation.add( // This will fail as nothing matches this criteria
@@ -373,7 +369,7 @@ public class DnsExample {
         System.out.println();
         System.out.println("Domain records after update");
         System.out.println("==========================");
-        System.out.println(originalDomainRecords);
+        System.out.println(updatedDomainRecords);
 
         Record aRecord = null;
         Record txtRecord = null;
@@ -383,6 +379,10 @@ public class DnsExample {
             } else if (r.getRtype().equals("TXT")) {
                 txtRecord = r;
             }
+        }
+        if (aRecord == null || txtRecord == null) {
+            throw new NullPointerException(
+                    "Expected to find both an A record and a TXT record in the domain records after update");
         }
 
         /*

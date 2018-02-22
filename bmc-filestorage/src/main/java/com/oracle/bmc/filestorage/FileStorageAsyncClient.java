@@ -1,0 +1,1700 @@
+/**
+ * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ */
+package com.oracle.bmc.filestorage;
+
+import java.util.Locale;
+import com.oracle.bmc.filestorage.internal.http.*;
+import com.oracle.bmc.filestorage.requests.*;
+import com.oracle.bmc.filestorage.responses.*;
+
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
+@lombok.extern.slf4j.Slf4j
+public class FileStorageAsyncClient implements FileStorageAsync {
+    /**
+     * Service instance for FileStorage.
+     */
+    public static final com.oracle.bmc.Service SERVICE =
+            com.oracle.bmc.Services.create("FILESTORAGE", "filestorage");
+
+    @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
+    private final com.oracle.bmc.http.internal.RestClient client;
+
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
+    public FileStorageAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(authenticationDetailsProvider, null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     */
+    public FileStorageAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(authenticationDetailsProvider, configuration, null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     */
+    public FileStorageAsyncClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param requestSignerFactory The request signer factory used to create the request signer for this service.
+     */
+    public FileStorageAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory requestSignerFactory) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
+                        .clientConfigurator(clientConfigurator)
+                        .build();
+        com.oracle.bmc.http.signing.RequestSigner requestSigner =
+                requestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+        this.client = restClientFactory.create(requestSigner, configuration);
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.setRegion(provider.getRegion());
+            }
+        }
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+        client.setEndpoint(endpoint);
+    }
+
+    @Override
+    public void setRegion(com.oracle.bmc.Region region) {
+        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
+    }
+
+    @Override
+    public void setRegion(String regionId) {
+        regionId = regionId.toLowerCase(Locale.ENGLISH);
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public void close() {
+        client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateExportResponse> createExport(
+            final CreateExportRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CreateExportRequest, CreateExportResponse>
+                    handler) {
+        LOG.trace("Called async createExport");
+        final CreateExportRequest interceptedRequest =
+                CreateExportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateExportConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateExportResponse>
+                transformer = CreateExportConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<CreateExportRequest, CreateExportResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            CreateExportRequest, CreateExportResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.post(
+                                    ib,
+                                    interceptedRequest.getCreateExportDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.post(
+                        ib,
+                        interceptedRequest.getCreateExportDetails(),
+                        interceptedRequest,
+                        onSuccess,
+                        onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, CreateExportResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.post(
+                                    ib,
+                                    interceptedRequest.getCreateExportDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFileSystemResponse> createFileSystem(
+            final CreateFileSystemRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateFileSystemRequest, CreateFileSystemResponse>
+                    handler) {
+        LOG.trace("Called async createFileSystem");
+        final CreateFileSystemRequest interceptedRequest =
+                CreateFileSystemConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateFileSystemConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateFileSystemResponse>
+                transformer = CreateFileSystemConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<CreateFileSystemRequest, CreateFileSystemResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            CreateFileSystemRequest, CreateFileSystemResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.post(
+                                    ib,
+                                    interceptedRequest.getCreateFileSystemDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.post(
+                        ib,
+                        interceptedRequest.getCreateFileSystemDetails(),
+                        interceptedRequest,
+                        onSuccess,
+                        onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, CreateFileSystemResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.post(
+                                    ib,
+                                    interceptedRequest.getCreateFileSystemDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMountTargetResponse> createMountTarget(
+            final CreateMountTargetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateMountTargetRequest, CreateMountTargetResponse>
+                    handler) {
+        LOG.trace("Called async createMountTarget");
+        final CreateMountTargetRequest interceptedRequest =
+                CreateMountTargetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateMountTargetConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateMountTargetResponse>
+                transformer = CreateMountTargetConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<CreateMountTargetRequest, CreateMountTargetResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            CreateMountTargetRequest, CreateMountTargetResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.post(
+                                    ib,
+                                    interceptedRequest.getCreateMountTargetDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.post(
+                        ib,
+                        interceptedRequest.getCreateMountTargetDetails(),
+                        interceptedRequest,
+                        onSuccess,
+                        onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, CreateMountTargetResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.post(
+                                    ib,
+                                    interceptedRequest.getCreateMountTargetDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSnapshotResponse> createSnapshot(
+            final CreateSnapshotRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateSnapshotRequest, CreateSnapshotResponse>
+                    handler) {
+        LOG.trace("Called async createSnapshot");
+        final CreateSnapshotRequest interceptedRequest =
+                CreateSnapshotConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateSnapshotConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateSnapshotResponse>
+                transformer = CreateSnapshotConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<CreateSnapshotRequest, CreateSnapshotResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            CreateSnapshotRequest, CreateSnapshotResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.post(
+                                    ib,
+                                    interceptedRequest.getCreateSnapshotDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.post(
+                        ib,
+                        interceptedRequest.getCreateSnapshotDetails(),
+                        interceptedRequest,
+                        onSuccess,
+                        onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, CreateSnapshotResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.post(
+                                    ib,
+                                    interceptedRequest.getCreateSnapshotDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteExportResponse> deleteExport(
+            final DeleteExportRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeleteExportRequest, DeleteExportResponse>
+                    handler) {
+        LOG.trace("Called async deleteExport");
+        final DeleteExportRequest interceptedRequest =
+                DeleteExportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteExportConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteExportResponse>
+                transformer = DeleteExportConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<DeleteExportRequest, DeleteExportResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            DeleteExportRequest, DeleteExportResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.delete(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.delete(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, DeleteExportResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.delete(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFileSystemResponse> deleteFileSystem(
+            final DeleteFileSystemRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteFileSystemRequest, DeleteFileSystemResponse>
+                    handler) {
+        LOG.trace("Called async deleteFileSystem");
+        final DeleteFileSystemRequest interceptedRequest =
+                DeleteFileSystemConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteFileSystemConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteFileSystemResponse>
+                transformer = DeleteFileSystemConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<DeleteFileSystemRequest, DeleteFileSystemResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            DeleteFileSystemRequest, DeleteFileSystemResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.delete(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.delete(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, DeleteFileSystemResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.delete(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMountTargetResponse> deleteMountTarget(
+            final DeleteMountTargetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteMountTargetRequest, DeleteMountTargetResponse>
+                    handler) {
+        LOG.trace("Called async deleteMountTarget");
+        final DeleteMountTargetRequest interceptedRequest =
+                DeleteMountTargetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteMountTargetConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteMountTargetResponse>
+                transformer = DeleteMountTargetConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<DeleteMountTargetRequest, DeleteMountTargetResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            DeleteMountTargetRequest, DeleteMountTargetResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.delete(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.delete(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, DeleteMountTargetResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.delete(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSnapshotResponse> deleteSnapshot(
+            final DeleteSnapshotRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSnapshotRequest, DeleteSnapshotResponse>
+                    handler) {
+        LOG.trace("Called async deleteSnapshot");
+        final DeleteSnapshotRequest interceptedRequest =
+                DeleteSnapshotConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteSnapshotConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSnapshotResponse>
+                transformer = DeleteSnapshotConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<DeleteSnapshotRequest, DeleteSnapshotResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            DeleteSnapshotRequest, DeleteSnapshotResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.delete(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.delete(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, DeleteSnapshotResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.delete(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExportResponse> getExport(
+            final GetExportRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetExportRequest, GetExportResponse>
+                    handler) {
+        LOG.trace("Called async getExport");
+        final GetExportRequest interceptedRequest = GetExportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetExportConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetExportResponse>
+                transformer = GetExportConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetExportRequest, GetExportResponse> handlerToUse =
+                handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            GetExportRequest, GetExportResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, GetExportResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExportSetResponse> getExportSet(
+            final GetExportSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetExportSetRequest, GetExportSetResponse>
+                    handler) {
+        LOG.trace("Called async getExportSet");
+        final GetExportSetRequest interceptedRequest =
+                GetExportSetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetExportSetConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetExportSetResponse>
+                transformer = GetExportSetConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetExportSetRequest, GetExportSetResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            GetExportSetRequest, GetExportSetResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, GetExportSetResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFileSystemResponse> getFileSystem(
+            final GetFileSystemRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetFileSystemRequest, GetFileSystemResponse>
+                    handler) {
+        LOG.trace("Called async getFileSystem");
+        final GetFileSystemRequest interceptedRequest =
+                GetFileSystemConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetFileSystemConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetFileSystemResponse>
+                transformer = GetFileSystemConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetFileSystemRequest, GetFileSystemResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            GetFileSystemRequest, GetFileSystemResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, GetFileSystemResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMountTargetResponse> getMountTarget(
+            final GetMountTargetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetMountTargetRequest, GetMountTargetResponse>
+                    handler) {
+        LOG.trace("Called async getMountTarget");
+        final GetMountTargetRequest interceptedRequest =
+                GetMountTargetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMountTargetConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetMountTargetResponse>
+                transformer = GetMountTargetConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetMountTargetRequest, GetMountTargetResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            GetMountTargetRequest, GetMountTargetResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, GetMountTargetResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSnapshotResponse> getSnapshot(
+            final GetSnapshotRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetSnapshotRequest, GetSnapshotResponse>
+                    handler) {
+        LOG.trace("Called async getSnapshot");
+        final GetSnapshotRequest interceptedRequest =
+                GetSnapshotConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSnapshotConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetSnapshotResponse>
+                transformer = GetSnapshotConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetSnapshotRequest, GetSnapshotResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            GetSnapshotRequest, GetSnapshotResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, GetSnapshotResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExportSetsResponse> listExportSets(
+            final ListExportSetsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListExportSetsRequest, ListExportSetsResponse>
+                    handler) {
+        LOG.trace("Called async listExportSets");
+        final ListExportSetsRequest interceptedRequest =
+                ListExportSetsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListExportSetsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListExportSetsResponse>
+                transformer = ListExportSetsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListExportSetsRequest, ListExportSetsResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            ListExportSetsRequest, ListExportSetsResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, ListExportSetsResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExportsResponse> listExports(
+            final ListExportsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListExportsRequest, ListExportsResponse>
+                    handler) {
+        LOG.trace("Called async listExports");
+        final ListExportsRequest interceptedRequest =
+                ListExportsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListExportsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListExportsResponse>
+                transformer = ListExportsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListExportsRequest, ListExportsResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            ListExportsRequest, ListExportsResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, ListExportsResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFileSystemsResponse> listFileSystems(
+            final ListFileSystemsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListFileSystemsRequest, ListFileSystemsResponse>
+                    handler) {
+        LOG.trace("Called async listFileSystems");
+        final ListFileSystemsRequest interceptedRequest =
+                ListFileSystemsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListFileSystemsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListFileSystemsResponse>
+                transformer = ListFileSystemsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListFileSystemsRequest, ListFileSystemsResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            ListFileSystemsRequest, ListFileSystemsResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, ListFileSystemsResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMountTargetsResponse> listMountTargets(
+            final ListMountTargetsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListMountTargetsRequest, ListMountTargetsResponse>
+                    handler) {
+        LOG.trace("Called async listMountTargets");
+        final ListMountTargetsRequest interceptedRequest =
+                ListMountTargetsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMountTargetsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListMountTargetsResponse>
+                transformer = ListMountTargetsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListMountTargetsRequest, ListMountTargetsResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            ListMountTargetsRequest, ListMountTargetsResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, ListMountTargetsResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSnapshotsResponse> listSnapshots(
+            final ListSnapshotsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListSnapshotsRequest, ListSnapshotsResponse>
+                    handler) {
+        LOG.trace("Called async listSnapshots");
+        final ListSnapshotsRequest interceptedRequest =
+                ListSnapshotsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSnapshotsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListSnapshotsResponse>
+                transformer = ListSnapshotsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListSnapshotsRequest, ListSnapshotsResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            ListSnapshotsRequest, ListSnapshotsResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, ListSnapshotsResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateExportSetResponse> updateExportSet(
+            final UpdateExportSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateExportSetRequest, UpdateExportSetResponse>
+                    handler) {
+        LOG.trace("Called async updateExportSet");
+        final UpdateExportSetRequest interceptedRequest =
+                UpdateExportSetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateExportSetConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateExportSetResponse>
+                transformer = UpdateExportSetConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<UpdateExportSetRequest, UpdateExportSetResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            UpdateExportSetRequest, UpdateExportSetResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.put(
+                                    ib,
+                                    interceptedRequest.getUpdateExportSetDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.put(
+                        ib,
+                        interceptedRequest.getUpdateExportSetDetails(),
+                        interceptedRequest,
+                        onSuccess,
+                        onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, UpdateExportSetResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.put(
+                                    ib,
+                                    interceptedRequest.getUpdateExportSetDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFileSystemResponse> updateFileSystem(
+            final UpdateFileSystemRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateFileSystemRequest, UpdateFileSystemResponse>
+                    handler) {
+        LOG.trace("Called async updateFileSystem");
+        final UpdateFileSystemRequest interceptedRequest =
+                UpdateFileSystemConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateFileSystemConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateFileSystemResponse>
+                transformer = UpdateFileSystemConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<UpdateFileSystemRequest, UpdateFileSystemResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            UpdateFileSystemRequest, UpdateFileSystemResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.put(
+                                    ib,
+                                    interceptedRequest.getUpdateFileSystemDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.put(
+                        ib,
+                        interceptedRequest.getUpdateFileSystemDetails(),
+                        interceptedRequest,
+                        onSuccess,
+                        onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, UpdateFileSystemResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.put(
+                                    ib,
+                                    interceptedRequest.getUpdateFileSystemDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMountTargetResponse> updateMountTarget(
+            final UpdateMountTargetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateMountTargetRequest, UpdateMountTargetResponse>
+                    handler) {
+        LOG.trace("Called async updateMountTarget");
+        final UpdateMountTargetRequest interceptedRequest =
+                UpdateMountTargetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateMountTargetConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateMountTargetResponse>
+                transformer = UpdateMountTargetConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<UpdateMountTargetRequest, UpdateMountTargetResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            UpdateMountTargetRequest, UpdateMountTargetResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.put(
+                                    ib,
+                                    interceptedRequest.getUpdateMountTargetDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.put(
+                        ib,
+                        interceptedRequest.getUpdateMountTargetDetails(),
+                        interceptedRequest,
+                        onSuccess,
+                        onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, UpdateMountTargetResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.put(
+                                    ib,
+                                    interceptedRequest.getUpdateMountTargetDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+}
