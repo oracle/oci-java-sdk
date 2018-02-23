@@ -32,18 +32,27 @@ public class RestoreObjectsDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("hours")
+        private Integer hours;
+
+        public Builder hours(Integer hours) {
+            this.hours = hours;
+            this.__explicitlySet__.add("hours");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RestoreObjectsDetails build() {
-            RestoreObjectsDetails __instance__ = new RestoreObjectsDetails(objectName);
+            RestoreObjectsDetails __instance__ = new RestoreObjectsDetails(objectName, hours);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(RestoreObjectsDetails o) {
-            Builder copiedBuilder = objectName(o.getObjectName());
+            Builder copiedBuilder = objectName(o.getObjectName()).hours(o.getHours());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -62,6 +71,14 @@ public class RestoreObjectsDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     String objectName;
+
+    /**
+     * The number of hours for which this object will be restored.
+     * By default object will be restored for 24 hours.It can be configured using hours parameter.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("hours")
+    Integer hours;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

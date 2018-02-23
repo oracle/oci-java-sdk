@@ -16,10 +16,11 @@ public class DatabaseClient implements Database {
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.create("DATABASE", "database");
+    // attempt twice if it's instance principals, immediately failures will try to refresh the token
+    private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
-    private final java.util.concurrent.ExecutorService executorService =
-            java.util.concurrent.Executors.newFixedThreadPool(50);
     private final DatabaseWaiters waiters;
+    private final DatabasePaginators paginators;
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
     private final com.oracle.bmc.http.internal.RestClient client;
@@ -106,6 +107,8 @@ public class DatabaseClient implements Database {
 
         this.waiters = new DatabaseWaiters(executorService, this);
 
+        this.paginators = new DatabasePaginators(this);
+
         if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
             com.oracle.bmc.auth.RegionProvider provider =
                     (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
@@ -160,28 +163,20 @@ public class DatabaseClient implements Database {
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateBackupResponse>
                 transformer = CreateBackupConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getCreateBackupDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.post(ib, request.getCreateBackupDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.post(ib, request.getCreateBackupDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -196,29 +191,20 @@ public class DatabaseClient implements Database {
                         javax.ws.rs.core.Response, CreateDataGuardAssociationResponse>
                 transformer = CreateDataGuardAssociationConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getCreateDataGuardAssociationDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.post(
-                                    ib, request.getCreateDataGuardAssociationDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.post(ib, request.getCreateDataGuardAssociationDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -231,29 +217,20 @@ public class DatabaseClient implements Database {
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateDbHomeResponse>
                 transformer = CreateDbHomeConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getCreateDbHomeWithDbSystemIdDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.post(
-                                    ib, request.getCreateDbHomeWithDbSystemIdDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.post(ib, request.getCreateDbHomeWithDbSystemIdDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -266,25 +243,19 @@ public class DatabaseClient implements Database {
         com.google.common.base.Function<javax.ws.rs.core.Response, DbNodeActionResponse>
                 transformer = DbNodeActionConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.post(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.post(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.post(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -297,25 +268,19 @@ public class DatabaseClient implements Database {
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBackupResponse>
                 transformer = DeleteBackupConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.delete(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.delete(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.delete(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -328,25 +293,19 @@ public class DatabaseClient implements Database {
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDbHomeResponse>
                 transformer = DeleteDbHomeConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.delete(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.delete(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.delete(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -361,29 +320,20 @@ public class DatabaseClient implements Database {
                         javax.ws.rs.core.Response, FailoverDataGuardAssociationResponse>
                 transformer = FailoverDataGuardAssociationConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getFailoverDataGuardAssociationDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.post(
-                                    ib, request.getFailoverDataGuardAssociationDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.post(ib, request.getFailoverDataGuardAssociationDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -396,25 +346,19 @@ public class DatabaseClient implements Database {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetBackupResponse> transformer =
                 GetBackupConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -428,25 +372,19 @@ public class DatabaseClient implements Database {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetDataGuardAssociationResponse>
                 transformer = GetDataGuardAssociationConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -459,25 +397,19 @@ public class DatabaseClient implements Database {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetDatabaseResponse>
                 transformer = GetDatabaseConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -490,25 +422,19 @@ public class DatabaseClient implements Database {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetDbHomeResponse> transformer =
                 GetDbHomeConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -521,25 +447,19 @@ public class DatabaseClient implements Database {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetDbHomePatchResponse>
                 transformer = GetDbHomePatchConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -554,25 +474,19 @@ public class DatabaseClient implements Database {
                         javax.ws.rs.core.Response, GetDbHomePatchHistoryEntryResponse>
                 transformer = GetDbHomePatchHistoryEntryConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -585,25 +499,19 @@ public class DatabaseClient implements Database {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetDbNodeResponse> transformer =
                 GetDbNodeConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -616,25 +524,19 @@ public class DatabaseClient implements Database {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetDbSystemResponse>
                 transformer = GetDbSystemConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -647,25 +549,19 @@ public class DatabaseClient implements Database {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetDbSystemPatchResponse>
                 transformer = GetDbSystemPatchConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -680,25 +576,19 @@ public class DatabaseClient implements Database {
                         javax.ws.rs.core.Response, GetDbSystemPatchHistoryEntryResponse>
                 transformer = GetDbSystemPatchHistoryEntryConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -711,28 +601,20 @@ public class DatabaseClient implements Database {
         com.google.common.base.Function<javax.ws.rs.core.Response, LaunchDbSystemResponse>
                 transformer = LaunchDbSystemConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getLaunchDbSystemDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.post(ib, request.getLaunchDbSystemDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.post(ib, request.getLaunchDbSystemDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -745,25 +627,19 @@ public class DatabaseClient implements Database {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListBackupsResponse>
                 transformer = ListBackupsConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -778,25 +654,19 @@ public class DatabaseClient implements Database {
                         javax.ws.rs.core.Response, ListDataGuardAssociationsResponse>
                 transformer = ListDataGuardAssociationsConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -809,25 +679,19 @@ public class DatabaseClient implements Database {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListDatabasesResponse>
                 transformer = ListDatabasesConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -842,25 +706,19 @@ public class DatabaseClient implements Database {
                         javax.ws.rs.core.Response, ListDbHomePatchHistoryEntriesResponse>
                 transformer = ListDbHomePatchHistoryEntriesConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -873,25 +731,19 @@ public class DatabaseClient implements Database {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListDbHomePatchesResponse>
                 transformer = ListDbHomePatchesConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -904,25 +756,19 @@ public class DatabaseClient implements Database {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListDbHomesResponse>
                 transformer = ListDbHomesConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -935,25 +781,19 @@ public class DatabaseClient implements Database {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListDbNodesResponse>
                 transformer = ListDbNodesConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -968,25 +808,19 @@ public class DatabaseClient implements Database {
                         javax.ws.rs.core.Response, ListDbSystemPatchHistoryEntriesResponse>
                 transformer = ListDbSystemPatchHistoryEntriesConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -999,25 +833,19 @@ public class DatabaseClient implements Database {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListDbSystemPatchesResponse>
                 transformer = ListDbSystemPatchesConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1030,25 +858,19 @@ public class DatabaseClient implements Database {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListDbSystemShapesResponse>
                 transformer = ListDbSystemShapesConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1061,25 +883,19 @@ public class DatabaseClient implements Database {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListDbSystemsResponse>
                 transformer = ListDbSystemsConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1092,25 +908,19 @@ public class DatabaseClient implements Database {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListDbVersionsResponse>
                 transformer = ListDbVersionsConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1125,29 +935,20 @@ public class DatabaseClient implements Database {
                         javax.ws.rs.core.Response, ReinstateDataGuardAssociationResponse>
                 transformer = ReinstateDataGuardAssociationConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getReinstateDataGuardAssociationDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.post(
-                                    ib, request.getReinstateDataGuardAssociationDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.post(ib, request.getReinstateDataGuardAssociationDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -1160,28 +961,20 @@ public class DatabaseClient implements Database {
         com.google.common.base.Function<javax.ws.rs.core.Response, RestoreDatabaseResponse>
                 transformer = RestoreDatabaseConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getRestoreDatabaseDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.post(ib, request.getRestoreDatabaseDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.post(ib, request.getRestoreDatabaseDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -1196,32 +989,21 @@ public class DatabaseClient implements Database {
                         javax.ws.rs.core.Response, SwitchoverDataGuardAssociationResponse>
                 transformer = SwitchoverDataGuardAssociationConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(
                                 ib, request.getSwitchoverDataGuardAssociationDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.post(
-                                    ib,
-                                    request.getSwitchoverDataGuardAssociationDetails(),
-                                    request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.post(ib, request.getSwitchoverDataGuardAssociationDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -1234,25 +1016,19 @@ public class DatabaseClient implements Database {
         com.google.common.base.Function<javax.ws.rs.core.Response, TerminateDbSystemResponse>
                 transformer = TerminateDbSystemConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.delete(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.delete(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.delete(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1265,28 +1041,20 @@ public class DatabaseClient implements Database {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDatabaseResponse>
                 transformer = UpdateDatabaseConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdateDatabaseDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.put(ib, request.getUpdateDatabaseDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.put(ib, request.getUpdateDatabaseDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -1299,28 +1067,20 @@ public class DatabaseClient implements Database {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDbHomeResponse>
                 transformer = UpdateDbHomeConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdateDbHomeDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.put(ib, request.getUpdateDbHomeDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.put(ib, request.getUpdateDbHomeDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -1333,33 +1093,43 @@ public class DatabaseClient implements Database {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDbSystemResponse>
                 transformer = UpdateDbSystemConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdateDbSystemDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.put(ib, request.getUpdateDbSystemDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.put(ib, request.getUpdateDbSystemDetails(), request);
-            return transformer.apply(response);
         }
+    }
+
+    private boolean canRetryRequestIfInstancePrincipalsUsed(com.oracle.bmc.model.BmcException e) {
+        if (e.getStatusCode() == 401
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider)
+                    .refreshSecurityToken();
+            return true;
+        }
+        return false;
     }
 
     @Override
     public DatabaseWaiters getWaiters() {
         return waiters;
+    }
+
+    @Override
+    public DatabasePaginators getPaginators() {
+        return paginators;
     }
 }

@@ -16,10 +16,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.create("VIRTUALNETWORK", "iaas");
+    // attempt twice if it's instance principals, immediately failures will try to refresh the token
+    private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
-    private final java.util.concurrent.ExecutorService executorService =
-            java.util.concurrent.Executors.newFixedThreadPool(50);
     private final VirtualNetworkWaiters waiters;
+    private final VirtualNetworkPaginators paginators;
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
     private final com.oracle.bmc.http.internal.RestClient client;
@@ -106,6 +107,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
 
         this.waiters = new VirtualNetworkWaiters(executorService, this);
 
+        this.paginators = new VirtualNetworkPaginators(this);
+
         if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
             com.oracle.bmc.auth.RegionProvider provider =
                     (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
@@ -162,8 +165,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         javax.ws.rs.core.Response, BulkAddVirtualCircuitPublicPrefixesResponse>
                 transformer = BulkAddVirtualCircuitPublicPrefixesConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(
@@ -172,25 +175,13 @@ public class VirtualNetworkClient implements VirtualNetwork {
                                 request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.post(
-                                    ib,
-                                    request.getBulkAddVirtualCircuitPublicPrefixesDetails(),
-                                    request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.post(
-                            ib, request.getBulkAddVirtualCircuitPublicPrefixesDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -205,8 +196,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         javax.ws.rs.core.Response, BulkDeleteVirtualCircuitPublicPrefixesResponse>
                 transformer = BulkDeleteVirtualCircuitPublicPrefixesConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(
@@ -215,27 +206,13 @@ public class VirtualNetworkClient implements VirtualNetwork {
                                 request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.post(
-                                    ib,
-                                    request.getBulkDeleteVirtualCircuitPublicPrefixesDetails(),
-                                    request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.post(
-                            ib,
-                            request.getBulkDeleteVirtualCircuitPublicPrefixesDetails(),
-                            request);
-            return transformer.apply(response);
         }
     }
 
@@ -250,29 +227,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         javax.ws.rs.core.Response, ConnectLocalPeeringGatewaysResponse>
                 transformer = ConnectLocalPeeringGatewaysConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getConnectLocalPeeringGatewaysDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.post(
-                                    ib, request.getConnectLocalPeeringGatewaysDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.post(ib, request.getConnectLocalPeeringGatewaysDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -285,28 +253,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateCpeResponse> transformer =
                 CreateCpeConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getCreateCpeDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.post(ib, request.getCreateCpeDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.post(ib, request.getCreateCpeDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -319,28 +279,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateCrossConnectResponse>
                 transformer = CreateCrossConnectConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getCreateCrossConnectDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.post(ib, request.getCreateCrossConnectDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.post(ib, request.getCreateCrossConnectDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -354,28 +306,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateCrossConnectGroupResponse>
                 transformer = CreateCrossConnectGroupConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getCreateCrossConnectGroupDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.post(ib, request.getCreateCrossConnectGroupDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.post(ib, request.getCreateCrossConnectGroupDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -388,28 +332,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateDhcpOptionsResponse>
                 transformer = CreateDhcpOptionsConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getCreateDhcpDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.post(ib, request.getCreateDhcpDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.post(ib, request.getCreateDhcpDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -422,28 +358,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateDrgResponse> transformer =
                 CreateDrgConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getCreateDrgDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.post(ib, request.getCreateDrgDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.post(ib, request.getCreateDrgDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -456,28 +384,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateDrgAttachmentResponse>
                 transformer = CreateDrgAttachmentConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getCreateDrgAttachmentDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.post(ib, request.getCreateDrgAttachmentDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.post(ib, request.getCreateDrgAttachmentDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -491,28 +411,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateIPSecConnectionResponse>
                 transformer = CreateIPSecConnectionConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getCreateIPSecConnectionDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.post(ib, request.getCreateIPSecConnectionDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.post(ib, request.getCreateIPSecConnectionDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -526,28 +438,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateInternetGatewayResponse>
                 transformer = CreateInternetGatewayConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getCreateInternetGatewayDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.post(ib, request.getCreateInternetGatewayDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.post(ib, request.getCreateInternetGatewayDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -562,28 +466,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         javax.ws.rs.core.Response, CreateLocalPeeringGatewayResponse>
                 transformer = CreateLocalPeeringGatewayConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getCreateLocalPeeringGatewayDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.post(ib, request.getCreateLocalPeeringGatewayDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.post(ib, request.getCreateLocalPeeringGatewayDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -596,28 +492,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, CreatePrivateIpResponse>
                 transformer = CreatePrivateIpConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getCreatePrivateIpDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.post(ib, request.getCreatePrivateIpDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.post(ib, request.getCreatePrivateIpDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -630,28 +518,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, CreatePublicIpResponse>
                 transformer = CreatePublicIpConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getCreatePublicIpDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.post(ib, request.getCreatePublicIpDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.post(ib, request.getCreatePublicIpDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -664,28 +544,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateRouteTableResponse>
                 transformer = CreateRouteTableConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getCreateRouteTableDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.post(ib, request.getCreateRouteTableDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.post(ib, request.getCreateRouteTableDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -698,28 +570,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateSecurityListResponse>
                 transformer = CreateSecurityListConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getCreateSecurityListDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.post(ib, request.getCreateSecurityListDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.post(ib, request.getCreateSecurityListDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -732,28 +596,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateSubnetResponse>
                 transformer = CreateSubnetConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getCreateSubnetDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.post(ib, request.getCreateSubnetDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.post(ib, request.getCreateSubnetDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -766,28 +622,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateVcnResponse> transformer =
                 CreateVcnConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getCreateVcnDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.post(ib, request.getCreateVcnDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.post(ib, request.getCreateVcnDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -800,28 +648,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateVirtualCircuitResponse>
                 transformer = CreateVirtualCircuitConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getCreateVirtualCircuitDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.post(ib, request.getCreateVirtualCircuitDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.post(ib, request.getCreateVirtualCircuitDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -834,25 +674,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCpeResponse> transformer =
                 DeleteCpeConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.delete(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.delete(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.delete(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -865,25 +699,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCrossConnectResponse>
                 transformer = DeleteCrossConnectConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.delete(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.delete(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.delete(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -897,25 +725,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCrossConnectGroupResponse>
                 transformer = DeleteCrossConnectGroupConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.delete(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.delete(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.delete(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -928,25 +750,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDhcpOptionsResponse>
                 transformer = DeleteDhcpOptionsConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.delete(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.delete(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.delete(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -959,25 +775,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDrgResponse> transformer =
                 DeleteDrgConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.delete(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.delete(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.delete(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -990,25 +800,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDrgAttachmentResponse>
                 transformer = DeleteDrgAttachmentConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.delete(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.delete(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.delete(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1022,25 +826,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteIPSecConnectionResponse>
                 transformer = DeleteIPSecConnectionConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.delete(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.delete(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.delete(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1054,25 +852,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteInternetGatewayResponse>
                 transformer = DeleteInternetGatewayConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.delete(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.delete(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.delete(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1087,25 +879,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         javax.ws.rs.core.Response, DeleteLocalPeeringGatewayResponse>
                 transformer = DeleteLocalPeeringGatewayConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.delete(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.delete(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.delete(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1118,25 +904,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, DeletePrivateIpResponse>
                 transformer = DeletePrivateIpConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.delete(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.delete(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.delete(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1149,25 +929,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, DeletePublicIpResponse>
                 transformer = DeletePublicIpConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.delete(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.delete(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.delete(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1180,25 +954,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRouteTableResponse>
                 transformer = DeleteRouteTableConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.delete(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.delete(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.delete(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1211,25 +979,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSecurityListResponse>
                 transformer = DeleteSecurityListConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.delete(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.delete(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.delete(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1242,25 +1004,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSubnetResponse>
                 transformer = DeleteSubnetConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.delete(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.delete(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.delete(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1273,25 +1029,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVcnResponse> transformer =
                 DeleteVcnConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.delete(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.delete(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.delete(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1304,25 +1054,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVirtualCircuitResponse>
                 transformer = DeleteVirtualCircuitConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.delete(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.delete(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.delete(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1335,25 +1079,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetCpeResponse> transformer =
                 GetCpeConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1366,25 +1104,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetCrossConnectResponse>
                 transformer = GetCrossConnectConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1397,25 +1129,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetCrossConnectGroupResponse>
                 transformer = GetCrossConnectGroupConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1430,25 +1156,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         javax.ws.rs.core.Response, GetCrossConnectLetterOfAuthorityResponse>
                 transformer = GetCrossConnectLetterOfAuthorityConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1462,25 +1182,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetCrossConnectStatusResponse>
                 transformer = GetCrossConnectStatusConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1493,25 +1207,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetDhcpOptionsResponse>
                 transformer = GetDhcpOptionsConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1524,25 +1232,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetDrgResponse> transformer =
                 GetDrgConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1555,25 +1257,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetDrgAttachmentResponse>
                 transformer = GetDrgAttachmentConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1588,25 +1284,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         javax.ws.rs.core.Response, GetFastConnectProviderServiceResponse>
                 transformer = GetFastConnectProviderServiceConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1619,25 +1309,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetIPSecConnectionResponse>
                 transformer = GetIPSecConnectionConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1652,25 +1336,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         javax.ws.rs.core.Response, GetIPSecConnectionDeviceConfigResponse>
                 transformer = GetIPSecConnectionDeviceConfigConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1685,25 +1363,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         javax.ws.rs.core.Response, GetIPSecConnectionDeviceStatusResponse>
                 transformer = GetIPSecConnectionDeviceStatusConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1716,25 +1388,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetInternetGatewayResponse>
                 transformer = GetInternetGatewayConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1748,25 +1414,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetLocalPeeringGatewayResponse>
                 transformer = GetLocalPeeringGatewayConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1779,25 +1439,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetPrivateIpResponse>
                 transformer = GetPrivateIpConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1810,25 +1464,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetPublicIpResponse>
                 transformer = GetPublicIpConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1842,28 +1490,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetPublicIpByIpAddressResponse>
                 transformer = GetPublicIpByIpAddressConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getGetPublicIpByIpAddressDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.post(ib, request.getGetPublicIpByIpAddressDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.post(ib, request.getGetPublicIpByIpAddressDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -1877,28 +1517,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetPublicIpByPrivateIpIdResponse>
                 transformer = GetPublicIpByPrivateIpIdConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getGetPublicIpByPrivateIpIdDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.post(ib, request.getGetPublicIpByPrivateIpIdDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.post(ib, request.getGetPublicIpByPrivateIpIdDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -1911,25 +1543,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetRouteTableResponse>
                 transformer = GetRouteTableConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1942,25 +1568,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetSecurityListResponse>
                 transformer = GetSecurityListConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -1973,25 +1593,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetSubnetResponse> transformer =
                 GetSubnetConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -2004,25 +1618,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetVcnResponse> transformer =
                 GetVcnConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -2035,25 +1643,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetVirtualCircuitResponse>
                 transformer = GetVirtualCircuitConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -2066,25 +1668,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetVnicResponse> transformer =
                 GetVnicConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -2097,25 +1693,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListCpesResponse> transformer =
                 ListCpesConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -2129,25 +1719,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListCrossConnectGroupsResponse>
                 transformer = ListCrossConnectGroupsConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -2162,25 +1746,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         javax.ws.rs.core.Response, ListCrossConnectLocationsResponse>
                 transformer = ListCrossConnectLocationsConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -2193,25 +1771,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListCrossConnectsResponse>
                 transformer = ListCrossConnectsConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -2226,25 +1798,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         javax.ws.rs.core.Response, ListCrossconnectPortSpeedShapesResponse>
                 transformer = ListCrossconnectPortSpeedShapesConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -2257,25 +1823,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListDhcpOptionsResponse>
                 transformer = ListDhcpOptionsConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -2288,25 +1848,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListDrgAttachmentsResponse>
                 transformer = ListDrgAttachmentsConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -2319,25 +1873,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListDrgsResponse> transformer =
                 ListDrgsConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -2352,25 +1900,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         javax.ws.rs.core.Response, ListFastConnectProviderServicesResponse>
                 transformer = ListFastConnectProviderServicesConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -2392,25 +1934,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         ListFastConnectProviderVirtualCircuitBandwidthShapesConverter
                                 .fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -2423,25 +1959,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListIPSecConnectionsResponse>
                 transformer = ListIPSecConnectionsConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -2454,25 +1984,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListInternetGatewaysResponse>
                 transformer = ListInternetGatewaysConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -2486,25 +2010,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListLocalPeeringGatewaysResponse>
                 transformer = ListLocalPeeringGatewaysConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -2517,25 +2035,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListPrivateIpsResponse>
                 transformer = ListPrivateIpsConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -2548,25 +2060,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListPublicIpsResponse>
                 transformer = ListPublicIpsConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -2579,25 +2085,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListRouteTablesResponse>
                 transformer = ListRouteTablesConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -2610,25 +2110,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListSecurityListsResponse>
                 transformer = ListSecurityListsConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -2641,25 +2135,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListSubnetsResponse>
                 transformer = ListSubnetsConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -2672,25 +2160,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListVcnsResponse> transformer =
                 ListVcnsConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -2705,25 +2187,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         javax.ws.rs.core.Response, ListVirtualCircuitBandwidthShapesResponse>
                 transformer = ListVirtualCircuitBandwidthShapesConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -2738,25 +2214,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         javax.ws.rs.core.Response, ListVirtualCircuitPublicPrefixesResponse>
                 transformer = ListVirtualCircuitPublicPrefixesConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -2769,25 +2239,19 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListVirtualCircuitsResponse>
                 transformer = ListVirtualCircuitsConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -2800,28 +2264,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCpeResponse> transformer =
                 UpdateCpeConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdateCpeDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.put(ib, request.getUpdateCpeDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.put(ib, request.getUpdateCpeDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -2834,28 +2290,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCrossConnectResponse>
                 transformer = UpdateCrossConnectConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdateCrossConnectDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.put(ib, request.getUpdateCrossConnectDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.put(ib, request.getUpdateCrossConnectDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -2869,28 +2317,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCrossConnectGroupResponse>
                 transformer = UpdateCrossConnectGroupConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdateCrossConnectGroupDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.put(ib, request.getUpdateCrossConnectGroupDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.put(ib, request.getUpdateCrossConnectGroupDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -2903,28 +2343,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDhcpOptionsResponse>
                 transformer = UpdateDhcpOptionsConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdateDhcpDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.put(ib, request.getUpdateDhcpDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.put(ib, request.getUpdateDhcpDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -2937,28 +2369,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDrgResponse> transformer =
                 UpdateDrgConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdateDrgDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.put(ib, request.getUpdateDrgDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.put(ib, request.getUpdateDrgDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -2971,28 +2395,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDrgAttachmentResponse>
                 transformer = UpdateDrgAttachmentConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdateDrgAttachmentDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.put(ib, request.getUpdateDrgAttachmentDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.put(ib, request.getUpdateDrgAttachmentDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -3006,28 +2422,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateIPSecConnectionResponse>
                 transformer = UpdateIPSecConnectionConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdateIPSecConnectionDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.put(ib, request.getUpdateIPSecConnectionDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.put(ib, request.getUpdateIPSecConnectionDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -3041,28 +2449,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateInternetGatewayResponse>
                 transformer = UpdateInternetGatewayConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdateInternetGatewayDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.put(ib, request.getUpdateInternetGatewayDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.put(ib, request.getUpdateInternetGatewayDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -3077,28 +2477,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         javax.ws.rs.core.Response, UpdateLocalPeeringGatewayResponse>
                 transformer = UpdateLocalPeeringGatewayConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdateLocalPeeringGatewayDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.put(ib, request.getUpdateLocalPeeringGatewayDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.put(ib, request.getUpdateLocalPeeringGatewayDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -3111,28 +2503,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePrivateIpResponse>
                 transformer = UpdatePrivateIpConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdatePrivateIpDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.put(ib, request.getUpdatePrivateIpDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.put(ib, request.getUpdatePrivateIpDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -3145,28 +2529,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdatePublicIpResponse>
                 transformer = UpdatePublicIpConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdatePublicIpDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.put(ib, request.getUpdatePublicIpDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.put(ib, request.getUpdatePublicIpDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -3179,28 +2555,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRouteTableResponse>
                 transformer = UpdateRouteTableConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdateRouteTableDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.put(ib, request.getUpdateRouteTableDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.put(ib, request.getUpdateRouteTableDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -3213,28 +2581,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSecurityListResponse>
                 transformer = UpdateSecurityListConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdateSecurityListDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.put(ib, request.getUpdateSecurityListDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.put(ib, request.getUpdateSecurityListDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -3247,28 +2607,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSubnetResponse>
                 transformer = UpdateSubnetConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdateSubnetDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.put(ib, request.getUpdateSubnetDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.put(ib, request.getUpdateSubnetDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -3281,28 +2633,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVcnResponse> transformer =
                 UpdateVcnConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdateVcnDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.put(ib, request.getUpdateVcnDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.put(ib, request.getUpdateVcnDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -3315,28 +2659,20 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVirtualCircuitResponse>
                 transformer = UpdateVirtualCircuitConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdateVirtualCircuitDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.put(ib, request.getUpdateVirtualCircuitDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.put(ib, request.getUpdateVirtualCircuitDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -3349,33 +2685,43 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVnicResponse> transformer =
                 UpdateVnicConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdateVnicDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.put(ib, request.getUpdateVnicDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.put(ib, request.getUpdateVnicDetails(), request);
-            return transformer.apply(response);
         }
+    }
+
+    private boolean canRetryRequestIfInstancePrincipalsUsed(com.oracle.bmc.model.BmcException e) {
+        if (e.getStatusCode() == 401
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider)
+                    .refreshSecurityToken();
+            return true;
+        }
+        return false;
     }
 
     @Override
     public VirtualNetworkWaiters getWaiters() {
         return waiters;
+    }
+
+    @Override
+    public VirtualNetworkPaginators getPaginators() {
+        return paginators;
     }
 }

@@ -1,17 +1,14 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>1.2.27</version>
+  <version>1.2.28</version>
   <packaging>pom</packaging>
-
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
   <url>https://docs.us-phoenix-1.oraclecloud.com/Content/API/SDKDocs/javasdk.htm</url>
   <inceptionYear>2016</inceptionYear>
-
   <licenses>
     <license>
       <name>The Universal Permissive License (UPL), Version 1.0</name>
@@ -24,17 +21,15 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
-
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <jackson.version>2.9.0</jackson.version>
+    <jackson.version>2.9.3</jackson.version>
     <jersey.version>2.24.1</jersey.version>
     <guava.version>19.0</guava.version>
     <junit.version>4.11</junit.version>
     <lombok.version>1.16.16</lombok.version>
     <lombok.maven.version>1.16.16.0</lombok.maven.version>
   </properties>
-
   <profiles>
     <profile>
       <id>dev</id>
@@ -45,20 +40,20 @@
             <artifactId>directory-maven-plugin</artifactId>
             <version>0.1</version>
             <executions>
-                <execution>
-                    <id>directories</id>
-                    <goals>
-                        <goal>directory-of</goal>
-                    </goals>
-                    <phase>initialize</phase>
-                    <configuration>
-                        <property>ocijavasdk.basedir</property>
-                        <project>
-                            <groupId>com.oracle.oci.sdk</groupId>
-                            <artifactId>oci-java-sdk</artifactId>
-                        </project>
-                    </configuration>
-                </execution>
+              <execution>
+                <id>directories</id>
+                <goals>
+                  <goal>directory-of</goal>
+                </goals>
+                <phase>initialize</phase>
+                <configuration>
+                  <property>ocijavasdk.basedir</property>
+                  <project>
+                    <groupId>com.oracle.oci.sdk</groupId>
+                    <artifactId>oci-java-sdk</artifactId>
+                  </project>
+                </configuration>
+              </execution>
             </executions>
           </plugin>
           <plugin>
@@ -87,8 +82,7 @@
                 <phase>process-sources</phase>
                 <configuration>
                   <target>
-                    <replace dir="src/main/java" token="{{DOC_SERVER_URL}}"
-                      value="https://docs.us-phoenix-1.oraclecloud.com" />
+                    <replace dir="src/main/java" token="{{DOC_SERVER_URL}}" value="https://docs.us-phoenix-1.oraclecloud.com"/>
                   </target>
                   <failOnError>false</failOnError>
                 </configuration>
@@ -139,7 +133,6 @@
       </build>
     </profile>
   </profiles>
-
   <build>
     <pluginManagement>
       <plugins>
@@ -295,7 +288,6 @@
         </plugin>
       </plugins>
     </pluginManagement>
-
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -313,7 +305,6 @@
       </plugin>
     </plugins>
   </build>
-
   <reporting>
     <plugins>
       <plugin>
@@ -323,7 +314,6 @@
       </plugin>
     </plugins>
   </reporting>
-
   <dependencies>
     <!-- Test dependencies -->
     <dependency>
@@ -343,14 +333,12 @@
       <version>2.10.0</version>
       <scope>test</scope>
     </dependency>
-
     <!-- Build only dependencies -->
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <scope>provided</scope>
     </dependency>
-
     <!-- Direct dependencies -->
     <dependency>
       <groupId>javax.ws.rs</groupId>
@@ -367,9 +355,7 @@
       <artifactId>slf4j-api</artifactId>
       <version>1.7.23</version>
     </dependency>
-
   </dependencies>
-
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -377,7 +363,6 @@
         <artifactId>jersey-client</artifactId>
         <version>${jersey.version}</version>
       </dependency>
-
       <dependency>
         <groupId>com.google.code.findbugs</groupId>
         <artifactId>jsr305</artifactId>
@@ -388,14 +373,12 @@
         <artifactId>guava</artifactId>
         <version>${guava.version}</version>
       </dependency>
-
       <dependency>
         <groupId>org.projectlombok</groupId>
         <artifactId>lombok</artifactId>
         <version>${lombok.version}</version>
         <scope>provided</scope>
       </dependency>
-
       <dependency>
         <groupId>commons-codec</groupId>
         <artifactId>commons-codec</artifactId>
@@ -411,7 +394,6 @@
         <artifactId>commons-io</artifactId>
         <version>2.5</version>
       </dependency>
-
       <dependency>
         <groupId>com.fasterxml.jackson.jaxrs</groupId>
         <artifactId>jackson-jaxrs-json-provider</artifactId>
@@ -454,7 +436,6 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-
   <modules>
     <module>bmc-audit</module>
     <module>bmc-bom</module>
@@ -466,5 +447,6 @@
     <module>bmc-identity</module>
     <module>bmc-loadbalancer</module>
     <module>bmc-objectstorage</module>
+    <module>bmc-filestorage</module>
   </modules>
 </project>

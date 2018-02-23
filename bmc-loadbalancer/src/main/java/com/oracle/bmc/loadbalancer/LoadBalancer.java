@@ -380,4 +380,13 @@ public interface LoadBalancer extends AutoCloseable {
      * @return The service waiters.
      */
     LoadBalancerWaiters getWaiters();
+
+    /**
+     * Gets the pre-configured paginators available for list operations in this service which may return multiple
+     * pages of data. These paginators provide an {@link java.lang.Iterable} interface so that service responses, or
+     * resources/records, can be iterated through without having to manually deal with pagination and page tokens.
+     *
+     * @return The service paginators.
+     */
+    LoadBalancerPaginators getPaginators();
 }

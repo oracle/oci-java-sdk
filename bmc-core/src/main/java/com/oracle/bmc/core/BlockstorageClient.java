@@ -16,10 +16,11 @@ public class BlockstorageClient implements Blockstorage {
      */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.create("BLOCKSTORAGE", "iaas");
+    // attempt twice if it's instance principals, immediately failures will try to refresh the token
+    private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
-    private final java.util.concurrent.ExecutorService executorService =
-            java.util.concurrent.Executors.newFixedThreadPool(50);
     private final BlockstorageWaiters waiters;
+    private final BlockstoragePaginators paginators;
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
     private final com.oracle.bmc.http.internal.RestClient client;
@@ -106,6 +107,8 @@ public class BlockstorageClient implements Blockstorage {
 
         this.waiters = new BlockstorageWaiters(executorService, this);
 
+        this.paginators = new BlockstoragePaginators(this);
+
         if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
             com.oracle.bmc.auth.RegionProvider provider =
                     (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
@@ -160,28 +163,20 @@ public class BlockstorageClient implements Blockstorage {
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateVolumeResponse>
                 transformer = CreateVolumeConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getCreateVolumeDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.post(ib, request.getCreateVolumeDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.post(ib, request.getCreateVolumeDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -194,28 +189,20 @@ public class BlockstorageClient implements Blockstorage {
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateVolumeBackupResponse>
                 transformer = CreateVolumeBackupConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getCreateVolumeBackupDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.post(ib, request.getCreateVolumeBackupDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.post(ib, request.getCreateVolumeBackupDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -230,8 +217,8 @@ public class BlockstorageClient implements Blockstorage {
                         javax.ws.rs.core.Response, CreateVolumeBackupPolicyAssignmentResponse>
                 transformer = CreateVolumeBackupPolicyAssignmentConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(
@@ -240,25 +227,13 @@ public class BlockstorageClient implements Blockstorage {
                                 request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.post(
-                                    ib,
-                                    request.getCreateVolumeBackupPolicyAssignmentDetails(),
-                                    request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.post(
-                            ib, request.getCreateVolumeBackupPolicyAssignmentDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -271,25 +246,19 @@ public class BlockstorageClient implements Blockstorage {
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBootVolumeResponse>
                 transformer = DeleteBootVolumeConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.delete(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.delete(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.delete(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -302,25 +271,19 @@ public class BlockstorageClient implements Blockstorage {
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVolumeResponse>
                 transformer = DeleteVolumeConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.delete(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.delete(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.delete(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -333,25 +296,19 @@ public class BlockstorageClient implements Blockstorage {
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVolumeBackupResponse>
                 transformer = DeleteVolumeBackupConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.delete(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.delete(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.delete(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -366,25 +323,19 @@ public class BlockstorageClient implements Blockstorage {
                         javax.ws.rs.core.Response, DeleteVolumeBackupPolicyAssignmentResponse>
                 transformer = DeleteVolumeBackupPolicyAssignmentConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.delete(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.delete(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.delete(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -397,25 +348,19 @@ public class BlockstorageClient implements Blockstorage {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetBootVolumeResponse>
                 transformer = GetBootVolumeConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -428,25 +373,19 @@ public class BlockstorageClient implements Blockstorage {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeResponse> transformer =
                 GetVolumeConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -459,25 +398,19 @@ public class BlockstorageClient implements Blockstorage {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeBackupResponse>
                 transformer = GetVolumeBackupConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -491,25 +424,19 @@ public class BlockstorageClient implements Blockstorage {
         com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeBackupPolicyResponse>
                 transformer = GetVolumeBackupPolicyConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -524,25 +451,19 @@ public class BlockstorageClient implements Blockstorage {
                         javax.ws.rs.core.Response, GetVolumeBackupPolicyAssetAssignmentResponse>
                 transformer = GetVolumeBackupPolicyAssetAssignmentConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -557,25 +478,19 @@ public class BlockstorageClient implements Blockstorage {
                         javax.ws.rs.core.Response, GetVolumeBackupPolicyAssignmentResponse>
                 transformer = GetVolumeBackupPolicyAssignmentConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -588,25 +503,19 @@ public class BlockstorageClient implements Blockstorage {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListBootVolumesResponse>
                 transformer = ListBootVolumesConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -620,25 +529,19 @@ public class BlockstorageClient implements Blockstorage {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumeBackupPoliciesResponse>
                 transformer = ListVolumeBackupPoliciesConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -651,25 +554,19 @@ public class BlockstorageClient implements Blockstorage {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumeBackupsResponse>
                 transformer = ListVolumeBackupsConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -682,25 +579,19 @@ public class BlockstorageClient implements Blockstorage {
         com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumesResponse>
                 transformer = ListVolumesConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response = client.get(ib, request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response = client.get(ib, request);
-            return transformer.apply(response);
         }
     }
 
@@ -713,28 +604,20 @@ public class BlockstorageClient implements Blockstorage {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBootVolumeResponse>
                 transformer = UpdateBootVolumeConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdateBootVolumeDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.put(ib, request.getUpdateBootVolumeDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.put(ib, request.getUpdateBootVolumeDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -747,28 +630,20 @@ public class BlockstorageClient implements Blockstorage {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVolumeResponse>
                 transformer = UpdateVolumeConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdateVolumeDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.put(ib, request.getUpdateVolumeDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.put(ib, request.getUpdateVolumeDetails(), request);
-            return transformer.apply(response);
         }
     }
 
@@ -781,33 +656,43 @@ public class BlockstorageClient implements Blockstorage {
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVolumeBackupResponse>
                 transformer = UpdateVolumeBackupConverter.fromResponse();
 
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+        int attempts = 0;
+        while (true) {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdateVolumeBackupDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
-                if (e.getStatusCode() == 401) {
-                    ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
-                                    this.authenticationDetailsProvider)
-                            .refreshSecurityToken();
-                    javax.ws.rs.core.Response response =
-                            client.put(ib, request.getUpdateVolumeBackupDetails(), request);
-                    return transformer.apply(response);
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
                 } else {
                     throw e;
                 }
             }
-        } else {
-            javax.ws.rs.core.Response response =
-                    client.put(ib, request.getUpdateVolumeBackupDetails(), request);
-            return transformer.apply(response);
         }
+    }
+
+    private boolean canRetryRequestIfInstancePrincipalsUsed(com.oracle.bmc.model.BmcException e) {
+        if (e.getStatusCode() == 401
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider)
+                    .refreshSecurityToken();
+            return true;
+        }
+        return false;
     }
 
     @Override
     public BlockstorageWaiters getWaiters() {
         return waiters;
+    }
+
+    @Override
+    public BlockstoragePaginators getPaginators() {
+        return paginators;
     }
 }

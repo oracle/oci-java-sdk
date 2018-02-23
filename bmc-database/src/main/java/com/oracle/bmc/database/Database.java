@@ -52,8 +52,8 @@ public interface Database extends AutoCloseable {
      * All Oracle Cloud Infrastructure resources, including Data Guard associations, get an Oracle-assigned, unique ID
      * called an Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID in the response.
      * You can also retrieve a resource's OCID by using a List API operation on that resource type, or by viewing the
-     * resource in the Console. Fore more information, see
-     * [Resource Identifiers](http://localhost:8000/Content/General/Concepts/identifiers.htm).
+     * resource in the Console. For more information, see
+     * [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -411,4 +411,13 @@ public interface Database extends AutoCloseable {
      * @return The service waiters.
      */
     DatabaseWaiters getWaiters();
+
+    /**
+     * Gets the pre-configured paginators available for list operations in this service which may return multiple
+     * pages of data. These paginators provide an {@link java.lang.Iterable} interface so that service responses, or
+     * resources/records, can be iterated through without having to manually deal with pagination and page tokens.
+     *
+     * @return The service paginators.
+     */
+    DatabasePaginators getPaginators();
 }
