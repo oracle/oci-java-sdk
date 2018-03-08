@@ -21,9 +21,9 @@ public class FileStorageWaiters {
     /**
      * Creates a new {@link Waiter} using default configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetExportRequest, GetExportResponse> forExport(
             GetExportRequest request,
@@ -35,11 +35,11 @@ public class FileStorageWaiters {
     /**
      * Creates a new {@link Waiter} using the provided configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @param terminationStrategy The {@link TerminationStrategy} to use.
-     * @param delayStrategy The {@link DelayStrategy} to use.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetExportRequest, GetExportResponse> forExport(
             GetExportRequest request,
@@ -81,9 +81,9 @@ public class FileStorageWaiters {
     /**
      * Creates a new {@link Waiter} using default configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetExportSetRequest, GetExportSetResponse> forExportSet(
             GetExportSetRequest request,
@@ -95,11 +95,11 @@ public class FileStorageWaiters {
     /**
      * Creates a new {@link Waiter} using the provided configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @param terminationStrategy The {@link TerminationStrategy} to use.
-     * @param delayStrategy The {@link DelayStrategy} to use.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetExportSetRequest, GetExportSetResponse> forExportSet(
             GetExportSetRequest request,
@@ -143,9 +143,9 @@ public class FileStorageWaiters {
     /**
      * Creates a new {@link Waiter} using default configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetFileSystemRequest, GetFileSystemResponse> forFileSystem(
             GetFileSystemRequest request,
@@ -157,11 +157,11 @@ public class FileStorageWaiters {
     /**
      * Creates a new {@link Waiter} using the provided configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @param terminationStrategy The {@link TerminationStrategy} to use.
-     * @param delayStrategy The {@link DelayStrategy} to use.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetFileSystemRequest, GetFileSystemResponse> forFileSystem(
             GetFileSystemRequest request,
@@ -205,9 +205,9 @@ public class FileStorageWaiters {
     /**
      * Creates a new {@link Waiter} using default configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetMountTargetRequest, GetMountTargetResponse>
             forMountTarget(
@@ -220,11 +220,11 @@ public class FileStorageWaiters {
     /**
      * Creates a new {@link Waiter} using the provided configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @param terminationStrategy The {@link TerminationStrategy} to use.
-     * @param delayStrategy The {@link DelayStrategy} to use.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetMountTargetRequest, GetMountTargetResponse>
             forMountTarget(
@@ -270,9 +270,9 @@ public class FileStorageWaiters {
     /**
      * Creates a new {@link Waiter} using default configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetSnapshotRequest, GetSnapshotResponse> forSnapshot(
             GetSnapshotRequest request,
@@ -284,11 +284,11 @@ public class FileStorageWaiters {
     /**
      * Creates a new {@link Waiter} using the provided configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @param terminationStrategy The {@link TerminationStrategy} to use.
-     * @param delayStrategy The {@link DelayStrategy} to use.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetSnapshotRequest, GetSnapshotResponse> forSnapshot(
             GetSnapshotRequest request,

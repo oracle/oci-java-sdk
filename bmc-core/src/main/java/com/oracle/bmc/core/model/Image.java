@@ -136,6 +136,15 @@ public class Image {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sizeInMBs")
+        private Long sizeInMBs;
+
+        public Builder sizeInMBs(Long sizeInMBs) {
+            this.sizeInMBs = sizeInMBs;
+            this.__explicitlySet__.add("sizeInMBs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -163,6 +172,7 @@ public class Image {
                             lifecycleState,
                             operatingSystem,
                             operatingSystemVersion,
+                            sizeInMBs,
                             timeCreated);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -183,6 +193,7 @@ public class Image {
                             .lifecycleState(o.getLifecycleState())
                             .operatingSystem(o.getOperatingSystem())
                             .operatingSystemVersion(o.getOperatingSystemVersion())
+                            .sizeInMBs(o.getSizeInMBs())
                             .timeCreated(o.getTimeCreated());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -389,6 +400,15 @@ public class Image {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operatingSystemVersion")
     String operatingSystemVersion;
+
+    /**
+     * Image size (1 MB = 1048576 bytes)
+     * <p>
+     * Example: `47694`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sizeInMBs")
+    Long sizeInMBs;
 
     /**
      * The date and time the image was created, in the format defined by RFC3339.

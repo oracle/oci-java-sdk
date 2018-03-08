@@ -240,6 +240,18 @@ public interface Identity extends AutoCloseable {
             CreateRegionSubscriptionRequest request);
 
     /**
+     * Creates a new SMTP credential for the specified user. An SMTP credential has an SMTP user name and an SMTP password.
+     * You must specify a *description* for the SMTP credential (although it can be an empty string). It does not
+     * have to be unique, and you can change it anytime with
+     * {@link #updateSmtpCredential(UpdateSmtpCredentialRequest) updateSmtpCredential}.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateSmtpCredentialResponse createSmtpCredential(CreateSmtpCredentialRequest request);
+
+    /**
      * Creates a new Swift password for the specified user. For information about what Swift passwords are for, see
      * [Managing User Credentials](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingcredentials.htm).
      * <p>
@@ -411,6 +423,15 @@ public interface Identity extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     DeletePolicyResponse deletePolicy(DeletePolicyRequest request);
+
+    /**
+     * Deletes the specified SMTP credential for the specified user.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteSmtpCredentialResponse deleteSmtpCredential(DeleteSmtpCredentialRequest request);
 
     /**
      * Deletes the specified Swift password for the specified user.
@@ -649,6 +670,16 @@ public interface Identity extends AutoCloseable {
     ListRegionsResponse listRegions(ListRegionsRequest request);
 
     /**
+     * Lists the SMTP credentials for the specified user. The returned object contains the credential's OCID,
+     * the SMTP user name but not the SMTP password. The SMTP password is returned only upon creation.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListSmtpCredentialsResponse listSmtpCredentials(ListSmtpCredentialsRequest request);
+
+    /**
      * Lists the Swift passwords for the specified user. The returned object contains the password's OCID, but not
      * the password itself. The actual password is returned only upon creation.
      *
@@ -773,6 +804,15 @@ public interface Identity extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdatePolicyResponse updatePolicy(UpdatePolicyRequest request);
+
+    /**
+     * Updates the specified SMTP credential's description.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateSmtpCredentialResponse updateSmtpCredential(UpdateSmtpCredentialRequest request);
 
     /**
      * Updates the specified Swift password's description.

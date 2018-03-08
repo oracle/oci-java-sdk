@@ -82,10 +82,36 @@ public class IdentityClient implements Identity {
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
             com.oracle.bmc.http.signing.RequestSignerFactory requestSignerFactory) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                requestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param requestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     */
+    public IdentityClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory requestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
         this.authenticationDetailsProvider = authenticationDetailsProvider;
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
                         .clientConfigurator(clientConfigurator)
+                        .additionalClientConfigurators(additionalClientConfigurators)
                         .build();
         com.oracle.bmc.http.signing.RequestSigner requestSigner =
                 requestSignerFactory.createRequestSigner(
@@ -116,6 +142,108 @@ public class IdentityClient implements Identity {
             if (provider.getRegion() != null) {
                 this.setRegion(provider.getRegion());
             }
+        }
+    }
+
+    /**
+     * Create a builder for this client.
+     * @return builder
+     */
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    /**
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     */
+    public static class Builder {
+        protected com.oracle.bmc.ClientConfiguration configuration;
+        protected com.oracle.bmc.http.ClientConfigurator clientConfigurator;
+        protected java.util.List<com.oracle.bmc.http.ClientConfigurator>
+                additionalClientConfigurators = new java.util.ArrayList<>();
+        protected com.oracle.bmc.http.signing.RequestSignerFactory requestSignerFactory =
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+
+        private Builder() {}
+
+        private Builder(
+                com.oracle.bmc.ClientConfiguration configuration,
+                com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+                java.util.List<com.oracle.bmc.http.ClientConfigurator>
+                        additionalClientConfigurators,
+                com.oracle.bmc.http.signing.RequestSignerFactory requestSignerFactory) {
+            this.configuration = configuration;
+            this.clientConfigurator = clientConfigurator;
+            this.additionalClientConfigurators = additionalClientConfigurators;
+        }
+
+        /**
+         * Set the configuration. May be null.
+         * @param configuration configuration. May be null.
+         * @return this builder
+         */
+        public Builder configuration(com.oracle.bmc.ClientConfiguration configuration) {
+            this.configuration = configuration;
+            return this;
+        }
+
+        /**
+         * Set the client configurator. May be null.
+         * @param clientConfigurator client configurator. May be null.
+         * @return this builder
+         */
+        public Builder clientConfigurator(
+                com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+            this.clientConfigurator = clientConfigurator;
+            return this;
+        }
+
+        /**
+         * Add an additional client configurator to be run after the primary configurator.
+         * @param additionalClientConfigurator the additional client configurator
+         * @return this builder
+         */
+        public Builder additionalClientConfigurator(
+                @lombok.NonNull
+                com.oracle.bmc.http.ClientConfigurator additionalClientConfigurator) {
+            this.additionalClientConfigurators.add(additionalClientConfigurator);
+            return this;
+        }
+
+        /**
+         * Set the request signer factory. May be null.
+         * @param requestSignerFactory request signer factory. May be null.
+         * @return this builder
+         */
+        public Builder requestSignerFactory(
+                com.oracle.bmc.http.signing.RequestSignerFactory requestSignerFactory) {
+            if (requestSignerFactory == null) {
+                this.requestSignerFactory =
+                        new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                                com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+            } else {
+                this.requestSignerFactory = requestSignerFactory;
+            }
+            return this;
+        }
+
+        /**
+         * Set the authentication details provider. Once this is called, the builder can build the client.
+         * @param authenticationDetailsProvider authentication details provider
+         * @return a builder that can build the client
+         */
+        public IdentityClient build(
+                @lombok.NonNull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            return new IdentityClient(
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    additionalClientConfigurators);
         }
     }
 
@@ -419,6 +547,32 @@ public class IdentityClient implements Identity {
     }
 
     @Override
+    public CreateSmtpCredentialResponse createSmtpCredential(CreateSmtpCredentialRequest request) {
+        LOG.trace("Called createSmtpCredential");
+        request = CreateSmtpCredentialConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateSmtpCredentialConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateSmtpCredentialResponse>
+                transformer = CreateSmtpCredentialConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCreateSmtpCredentialDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public CreateSwiftPasswordResponse createSwiftPassword(CreateSwiftPasswordRequest request) {
         LOG.trace("Called createSwiftPassword");
         request = CreateSwiftPasswordConverter.interceptRequest(request);
@@ -683,6 +837,31 @@ public class IdentityClient implements Identity {
                 DeletePolicyConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeletePolicyResponse>
                 transformer = DeletePolicyConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public DeleteSmtpCredentialResponse deleteSmtpCredential(DeleteSmtpCredentialRequest request) {
+        LOG.trace("Called deleteSmtpCredential");
+        request = DeleteSmtpCredentialConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteSmtpCredentialConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSmtpCredentialResponse>
+                transformer = DeleteSmtpCredentialConverter.fromResponse();
 
         int attempts = 0;
         while (true) {
@@ -1306,6 +1485,31 @@ public class IdentityClient implements Identity {
     }
 
     @Override
+    public ListSmtpCredentialsResponse listSmtpCredentials(ListSmtpCredentialsRequest request) {
+        LOG.trace("Called listSmtpCredentials");
+        request = ListSmtpCredentialsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSmtpCredentialsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListSmtpCredentialsResponse>
+                transformer = ListSmtpCredentialsConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public ListSwiftPasswordsResponse listSwiftPasswords(ListSwiftPasswordsRequest request) {
         LOG.trace("Called listSwiftPasswords");
         request = ListSwiftPasswordsConverter.interceptRequest(request);
@@ -1629,6 +1833,32 @@ public class IdentityClient implements Identity {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdatePolicyDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public UpdateSmtpCredentialResponse updateSmtpCredential(UpdateSmtpCredentialRequest request) {
+        LOG.trace("Called updateSmtpCredential");
+        request = UpdateSmtpCredentialConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateSmtpCredentialConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSmtpCredentialResponse>
+                transformer = UpdateSmtpCredentialConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateSmtpCredentialDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS

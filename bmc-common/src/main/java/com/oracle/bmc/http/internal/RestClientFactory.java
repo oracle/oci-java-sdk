@@ -7,6 +7,7 @@ import javax.annotation.Nonnull;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 
+import lombok.Getter;
 import org.glassfish.jersey.client.ClientProperties;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -51,7 +52,7 @@ public class RestClientFactory {
         DEFAULT_MAPPER.setFilterProvider(filters);
     }
 
-    private final ClientConfigurator clientConfigurator;
+    @Getter private final ClientConfigurator clientConfigurator;
 
     /**
      * Creates a new REST client factor that allow the given configurator to

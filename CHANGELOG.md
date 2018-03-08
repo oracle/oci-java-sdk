@@ -13,6 +13,19 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.2.29 - 2018-03-08
+
+### Added
+- Added support for the Email Service. An example on how to call this service can be found [here](https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/EmailServiceExample.java)
+- Added support for SMTP credentials in the Identity Service. An example of managing SMTP credentials is available in the email service example [here](https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/EmailServiceExample.java)
+- Added support for paravirtualized volume attachments in Core Services. An example can be found [here](https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/VolumeAttachmentExample.java)
+- Added support for variable size boot volumes in Core Services
+
+## Changed
+- Allowing additional client configurators, and starting builder pattern for clients
+- Added an explicit pagination example [here](https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/PaginationExample.java)
+- Updated [ListAuditEventsExample](https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ListAuditEventsExample.java) to show other pagination techniques
+
 ## 1.2.28 - 2018-02-22
 
 ### Added

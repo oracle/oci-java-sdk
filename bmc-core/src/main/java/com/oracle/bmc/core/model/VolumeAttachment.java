@@ -33,6 +33,10 @@ package com.oracle.bmc.core.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = IScsiVolumeAttachment.class,
         name = "iscsi"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ParavirtualizedVolumeAttachment.class,
+        name = "paravirtualized"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)

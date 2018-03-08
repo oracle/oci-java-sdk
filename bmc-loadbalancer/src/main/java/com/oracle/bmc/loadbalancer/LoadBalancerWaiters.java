@@ -21,9 +21,9 @@ public class LoadBalancerWaiters {
     /**
      * Creates a new {@link Waiter} using default configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetLoadBalancerRequest, GetLoadBalancerResponse>
             forLoadBalancer(
@@ -36,11 +36,11 @@ public class LoadBalancerWaiters {
     /**
      * Creates a new {@link Waiter} using the provided configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @param terminationStrategy The {@link TerminationStrategy} to use.
-     * @param delayStrategy The {@link DelayStrategy} to use.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetLoadBalancerRequest, GetLoadBalancerResponse>
             forLoadBalancer(
@@ -88,8 +88,8 @@ public class LoadBalancerWaiters {
     /**
      * Creates a new {@link Waiter} using default configuration.
      *
-     * @param request The request to send.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @return a new Waiter instance
      */
     public com.oracle.bmc.waiter.Waiter<GetWorkRequestRequest, GetWorkRequestResponse>
             forWorkRequest(GetWorkRequestRequest request) {
@@ -99,10 +99,10 @@ public class LoadBalancerWaiters {
     /**
      * Creates a new {@link Waiter} using the provided configuration.
      *
-     * @param request The request to send.
-     * @param terminationStrategy The {@link TerminationStrategy} to use.
-     * @param delayStrategy The {@link DelayStrategy} to use.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetWorkRequestRequest, GetWorkRequestResponse>
             forWorkRequest(
