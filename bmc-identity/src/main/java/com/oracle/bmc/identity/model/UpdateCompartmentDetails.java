@@ -98,6 +98,7 @@ public class UpdateCompartmentDetails {
 
     /**
      * The new name you assign to the compartment. The name must be unique across all compartments in the tenancy.
+     * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")

@@ -21,9 +21,9 @@ public class ComputeWaiters {
     /**
      * Creates a new {@link Waiter} using default configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
                     GetBootVolumeAttachmentRequest, GetBootVolumeAttachmentResponse>
@@ -37,11 +37,11 @@ public class ComputeWaiters {
     /**
      * Creates a new {@link Waiter} using the provided configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @param terminationStrategy The {@link TerminationStrategy} to use.
-     * @param delayStrategy The {@link DelayStrategy} to use.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
                     GetBootVolumeAttachmentRequest, GetBootVolumeAttachmentResponse>
@@ -90,9 +90,9 @@ public class ComputeWaiters {
     /**
      * Creates a new {@link Waiter} using default configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetConsoleHistoryRequest, GetConsoleHistoryResponse>
             forConsoleHistory(
@@ -105,11 +105,11 @@ public class ComputeWaiters {
     /**
      * Creates a new {@link Waiter} using the provided configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @param terminationStrategy The {@link TerminationStrategy} to use.
-     * @param delayStrategy The {@link DelayStrategy} to use.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetConsoleHistoryRequest, GetConsoleHistoryResponse>
             forConsoleHistory(
@@ -155,9 +155,9 @@ public class ComputeWaiters {
     /**
      * Creates a new {@link Waiter} using default configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetImageRequest, GetImageResponse> forImage(
             GetImageRequest request, com.oracle.bmc.core.model.Image.LifecycleState targetState) {
@@ -167,11 +167,11 @@ public class ComputeWaiters {
     /**
      * Creates a new {@link Waiter} using the provided configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @param terminationStrategy The {@link TerminationStrategy} to use.
-     * @param delayStrategy The {@link DelayStrategy} to use.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetImageRequest, GetImageResponse> forImage(
             GetImageRequest request,
@@ -212,9 +212,9 @@ public class ComputeWaiters {
     /**
      * Creates a new {@link Waiter} using default configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetInstanceRequest, GetInstanceResponse> forInstance(
             GetInstanceRequest request,
@@ -226,11 +226,11 @@ public class ComputeWaiters {
     /**
      * Creates a new {@link Waiter} using the provided configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @param terminationStrategy The {@link TerminationStrategy} to use.
-     * @param delayStrategy The {@link DelayStrategy} to use.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetInstanceRequest, GetInstanceResponse> forInstance(
             GetInstanceRequest request,
@@ -273,9 +273,9 @@ public class ComputeWaiters {
     /**
      * Creates a new {@link Waiter} using default configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
                     GetInstanceConsoleConnectionRequest, GetInstanceConsoleConnectionResponse>
@@ -290,11 +290,11 @@ public class ComputeWaiters {
     /**
      * Creates a new {@link Waiter} using the provided configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @param terminationStrategy The {@link TerminationStrategy} to use.
-     * @param delayStrategy The {@link DelayStrategy} to use.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
                     GetInstanceConsoleConnectionRequest, GetInstanceConsoleConnectionResponse>
@@ -347,9 +347,9 @@ public class ComputeWaiters {
     /**
      * Creates a new {@link Waiter} using default configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetVnicAttachmentRequest, GetVnicAttachmentResponse>
             forVnicAttachment(
@@ -362,11 +362,11 @@ public class ComputeWaiters {
     /**
      * Creates a new {@link Waiter} using the provided configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @param terminationStrategy The {@link TerminationStrategy} to use.
-     * @param delayStrategy The {@link DelayStrategy} to use.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetVnicAttachmentRequest, GetVnicAttachmentResponse>
             forVnicAttachment(
@@ -412,9 +412,9 @@ public class ComputeWaiters {
     /**
      * Creates a new {@link Waiter} using default configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetVolumeAttachmentRequest, GetVolumeAttachmentResponse>
             forVolumeAttachment(
@@ -427,11 +427,11 @@ public class ComputeWaiters {
     /**
      * Creates a new {@link Waiter} using the provided configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @param terminationStrategy The {@link TerminationStrategy} to use.
-     * @param delayStrategy The {@link DelayStrategy} to use.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetVolumeAttachmentRequest, GetVolumeAttachmentResponse>
             forVolumeAttachment(

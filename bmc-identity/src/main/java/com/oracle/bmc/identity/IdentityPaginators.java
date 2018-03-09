@@ -19,7 +19,7 @@ import com.oracle.bmc.identity.responses.*;
  * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
  * They will automatically fetch more data from the service when required.
  *
- * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Interable} returned by calling a
+ * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
  * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
  * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.

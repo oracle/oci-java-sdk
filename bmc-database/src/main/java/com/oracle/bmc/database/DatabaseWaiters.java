@@ -21,9 +21,9 @@ public class DatabaseWaiters {
     /**
      * Creates a new {@link Waiter} using default configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetBackupRequest, GetBackupResponse> forBackup(
             GetBackupRequest request,
@@ -35,11 +35,11 @@ public class DatabaseWaiters {
     /**
      * Creates a new {@link Waiter} using the provided configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @param terminationStrategy The {@link TerminationStrategy} to use.
-     * @param delayStrategy The {@link DelayStrategy} to use.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetBackupRequest, GetBackupResponse> forBackup(
             GetBackupRequest request,
@@ -80,9 +80,9 @@ public class DatabaseWaiters {
     /**
      * Creates a new {@link Waiter} using default configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
                     GetDataGuardAssociationRequest, GetDataGuardAssociationResponse>
@@ -96,11 +96,11 @@ public class DatabaseWaiters {
     /**
      * Creates a new {@link Waiter} using the provided configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @param terminationStrategy The {@link TerminationStrategy} to use.
-     * @param delayStrategy The {@link DelayStrategy} to use.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
                     GetDataGuardAssociationRequest, GetDataGuardAssociationResponse>
@@ -151,9 +151,9 @@ public class DatabaseWaiters {
     /**
      * Creates a new {@link Waiter} using default configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetDatabaseRequest, GetDatabaseResponse> forDatabase(
             GetDatabaseRequest request,
@@ -165,11 +165,11 @@ public class DatabaseWaiters {
     /**
      * Creates a new {@link Waiter} using the provided configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @param terminationStrategy The {@link TerminationStrategy} to use.
-     * @param delayStrategy The {@link DelayStrategy} to use.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetDatabaseRequest, GetDatabaseResponse> forDatabase(
             GetDatabaseRequest request,
@@ -213,9 +213,9 @@ public class DatabaseWaiters {
     /**
      * Creates a new {@link Waiter} using default configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetDbHomeRequest, GetDbHomeResponse> forDbHome(
             GetDbHomeRequest request,
@@ -227,11 +227,11 @@ public class DatabaseWaiters {
     /**
      * Creates a new {@link Waiter} using the provided configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @param terminationStrategy The {@link TerminationStrategy} to use.
-     * @param delayStrategy The {@link DelayStrategy} to use.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetDbHomeRequest, GetDbHomeResponse> forDbHome(
             GetDbHomeRequest request,
@@ -273,9 +273,9 @@ public class DatabaseWaiters {
     /**
      * Creates a new {@link Waiter} using default configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetDbNodeRequest, GetDbNodeResponse> forDbNode(
             GetDbNodeRequest request,
@@ -287,11 +287,11 @@ public class DatabaseWaiters {
     /**
      * Creates a new {@link Waiter} using the provided configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @param terminationStrategy The {@link TerminationStrategy} to use.
-     * @param delayStrategy The {@link DelayStrategy} to use.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetDbNodeRequest, GetDbNodeResponse> forDbNode(
             GetDbNodeRequest request,
@@ -333,9 +333,9 @@ public class DatabaseWaiters {
     /**
      * Creates a new {@link Waiter} using default configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetDbSystemRequest, GetDbSystemResponse> forDbSystem(
             GetDbSystemRequest request,
@@ -347,11 +347,11 @@ public class DatabaseWaiters {
     /**
      * Creates a new {@link Waiter} using the provided configuration.
      *
-     * @param request The request to send.
-     * @param targetState The desired state to wait for.
-     * @param terminationStrategy The {@link TerminationStrategy} to use.
-     * @param delayStrategy The {@link DelayStrategy} to use.
-     * @return A new Waiter instance.
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetDbSystemRequest, GetDbSystemResponse> forDbSystem(
             GetDbSystemRequest request,

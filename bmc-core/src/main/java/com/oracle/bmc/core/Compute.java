@@ -448,7 +448,8 @@ public interface Compute extends AutoCloseable {
      * Lists the volume attachments in the specified compartment. You can filter the
      * list by specifying an instance OCID, volume OCID, or both.
      * <p>
-     * Currently, the only supported volume attachment type is {@link IScsiVolumeAttachment}.
+     * Currently, the only supported volume attachment type are {@link IScsiVolumeAttachment} and
+     * {@link ParavirtualizedVolumeAttachment}.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

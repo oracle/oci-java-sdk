@@ -4,11 +4,16 @@
 package com.oracle.bmc.http.internal;
 
 import com.google.common.base.MoreObjects;
+import com.google.common.collect.ImmutableList;
 import com.oracle.bmc.http.ClientConfigurator;
+import com.oracle.bmc.http.CompositeClientConfigurator;
 import com.oracle.bmc.http.DefaultConfigurator;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Builder for {@link RestClientFactory}.  Will use default values
@@ -16,7 +21,7 @@ import lombok.NoArgsConstructor;
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class RestClientFactoryBuilder {
-    public static final DefaultConfigurator DEFAULT_CONFIGURATOR = new DefaultConfigurator();
+    public static final ClientConfigurator DEFAULT_CONFIGURATOR = new DefaultConfigurator();
 
     /**
      * This is the client configurator used if a caller passes <code>null</code> to
@@ -24,6 +29,7 @@ public class RestClientFactoryBuilder {
      */
     private ClientConfigurator defaultConfigurator = DEFAULT_CONFIGURATOR;
     private ClientConfigurator clientConfigurator;
+    private List<ClientConfigurator> additionalClientConfigurators = new ArrayList<>();
 
     /**
      * Create a new builder instance.
@@ -50,11 +56,38 @@ public class RestClientFactoryBuilder {
     /**
      * Sets the ClientConfigurator to use, or null to use the default client configurator.
      *
+     * Setting a non-null client configurator will completely replace the existing client configurator, and also not
+     * use the default client configurator.
+     *
      * @param clientConfigurator The client configurator to use.
      * @return The builder.
      */
     public RestClientFactoryBuilder clientConfigurator(ClientConfigurator clientConfigurator) {
         this.clientConfigurator = clientConfigurator;
+        return this;
+    }
+
+    /**
+     * Adds client configurators, which will be run after the client configurators that have already been registered.
+     *
+     * @param clientConfigurators The list of client configurator to run after the other client configurators.
+     * @return The builder
+     */
+    public RestClientFactoryBuilder additionalClientConfigurators(
+            ClientConfigurator... clientConfigurators) {
+        additionalClientConfigurators = ImmutableList.copyOf(clientConfigurators);
+        return this;
+    }
+
+    /**
+     * Adds client configurators, which will be run after the client configurators that have already been registered.
+     *
+     * @param clientConfigurators The list of client configurator to run after the other client configurators.
+     * @return The builder
+     */
+    public RestClientFactoryBuilder additionalClientConfigurators(
+            List<ClientConfigurator> clientConfigurators) {
+        additionalClientConfigurators = ImmutableList.copyOf(clientConfigurators);
         return this;
     }
 
@@ -65,9 +98,16 @@ public class RestClientFactoryBuilder {
      * @return A new RestClientFactory instance.
      */
     public RestClientFactory build() {
-        ClientConfigurator clientConfigurator =
-                MoreObjects.firstNonNull(this.clientConfigurator, defaultConfigurator);
+        ClientConfigurator preferredClientConfigurator = getClientConfigurator();
+        return new RestClientFactory(
+                new CompositeClientConfigurator(
+                        ImmutableList.<ClientConfigurator>builder()
+                                .add(preferredClientConfigurator)
+                                .addAll(additionalClientConfigurators)
+                                .build()));
+    }
 
-        return new RestClientFactory(clientConfigurator);
+    private ClientConfigurator getClientConfigurator() {
+        return MoreObjects.firstNonNull(this.clientConfigurator, defaultConfigurator);
     }
 }

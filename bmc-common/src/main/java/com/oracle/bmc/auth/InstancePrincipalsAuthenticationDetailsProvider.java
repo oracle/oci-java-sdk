@@ -31,7 +31,8 @@ import java.util.Set;
  */
 @AuthCachingPolicy(cacheKeyId = false, cachePrivateKey = false)
 public class InstancePrincipalsAuthenticationDetailsProvider
-        extends AbstractRequestingAuthenticationDetailsProvider implements RegionProvider {
+        extends AbstractRequestingAuthenticationDetailsProvider
+        implements RegionProvider, RefreshableOnNotAuthenticatedProvider<String> {
 
     @Getter private final Region region;
 
@@ -53,6 +54,11 @@ public class InstancePrincipalsAuthenticationDetailsProvider
 
     public String refreshSecurityToken() {
         return this.federationClient.refreshAndGetSecurityToken();
+    }
+
+    @Override
+    public String refresh() {
+        return refreshSecurityToken();
     }
 
     /**

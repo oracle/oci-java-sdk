@@ -315,6 +315,26 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new SMTP credential for the specified user. An SMTP credential has an SMTP user name and an SMTP password.
+     * You must specify a *description* for the SMTP credential (although it can be an empty string). It does not
+     * have to be unique, and you can change it anytime with
+     * {@link #updateSmtpCredential(UpdateSmtpCredentialRequest, Consumer, Consumer) updateSmtpCredential}.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateSmtpCredentialResponse> createSmtpCredential(
+            CreateSmtpCredentialRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateSmtpCredentialRequest, CreateSmtpCredentialResponse>
+                    handler);
+
+    /**
      * Creates a new Swift password for the specified user. For information about what Swift passwords are for, see
      * [Managing User Credentials](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingcredentials.htm).
      * <p>
@@ -565,6 +585,23 @@ public interface IdentityAsync extends AutoCloseable {
     java.util.concurrent.Future<DeletePolicyResponse> deletePolicy(
             DeletePolicyRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeletePolicyRequest, DeletePolicyResponse>
+                    handler);
+
+    /**
+     * Deletes the specified SMTP credential for the specified user.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSmtpCredentialResponse> deleteSmtpCredential(
+            DeleteSmtpCredentialRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSmtpCredentialRequest, DeleteSmtpCredentialResponse>
                     handler);
 
     /**
@@ -973,6 +1010,24 @@ public interface IdentityAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListRegionsRequest, ListRegionsResponse> handler);
 
     /**
+     * Lists the SMTP credentials for the specified user. The returned object contains the credential's OCID,
+     * the SMTP user name but not the SMTP password. The SMTP password is returned only upon creation.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSmtpCredentialsResponse> listSmtpCredentials(
+            ListSmtpCredentialsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSmtpCredentialsRequest, ListSmtpCredentialsResponse>
+                    handler);
+
+    /**
      * Lists the Swift passwords for the specified user. The returned object contains the password's OCID, but not
      * the password itself. The actual password is returned only upon creation.
      *
@@ -1192,6 +1247,23 @@ public interface IdentityAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdatePolicyResponse> updatePolicy(
             UpdatePolicyRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdatePolicyRequest, UpdatePolicyResponse>
+                    handler);
+
+    /**
+     * Updates the specified SMTP credential's description.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateSmtpCredentialResponse> updateSmtpCredential(
+            UpdateSmtpCredentialRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSmtpCredentialRequest, UpdateSmtpCredentialResponse>
                     handler);
 
     /**
