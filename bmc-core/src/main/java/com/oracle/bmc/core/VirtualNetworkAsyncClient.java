@@ -102,6 +102,34 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
             com.oracle.bmc.http.signing.RequestSignerFactory requestSignerFactory,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                requestSignerFactory,
+                additionalClientConfigurators,
+                null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param requestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     */
+    public VirtualNetworkAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory requestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
         this.authenticationDetailsProvider = authenticationDetailsProvider;
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
@@ -119,7 +147,16 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
 
             if (provider.getRegion() != null) {
                 this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
             }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
         }
     }
 
@@ -143,6 +180,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         protected com.oracle.bmc.http.signing.RequestSignerFactory requestSignerFactory =
                 new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                         com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        protected String endpoint;
 
         private Builder() {}
 
@@ -208,6 +246,51 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
         }
 
         /**
+         * Set the endpoint for the client to be created.
+         * @param endpoint endpoint
+         * @return this builder
+         */
+        public Builder endpoint(String endpoint) {
+            this.endpoint = endpoint;
+            return this;
+        }
+
+        /**
+         * Set the region for the client to be created.
+         * @param region region
+         * @return this builder
+         */
+        public Builder region(com.oracle.bmc.Region region) {
+            com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+            if (endpoint.isPresent()) {
+                endpoint(endpoint.get());
+            } else {
+                throw new IllegalArgumentException(
+                        "Endpoint for " + SERVICE + " is not known in region " + region);
+            }
+            return this;
+        }
+
+        /**
+         * Set the region for the client to be created.
+         * @param region region
+         * @return this builder
+         */
+        public Builder region(String regionId) {
+            regionId = regionId.toLowerCase(Locale.ENGLISH);
+            try {
+                com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+                return region(region);
+            } catch (IllegalArgumentException e) {
+                LOG.info(
+                        "Unknown regionId '{}', falling back to default endpoint format", regionId);
+                String endpoint =
+                        com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+                return endpoint(endpoint);
+            }
+        }
+
+        /**
          * Build the client, with the authentication details provider.
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
@@ -221,7 +304,8 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                     configuration,
                     clientConfigurator,
                     requestSignerFactory,
-                    additionalClientConfigurators);
+                    additionalClientConfigurators,
+                    endpoint);
         }
     }
 
@@ -527,6 +611,97 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                             return client.post(
                                     ib,
                                     interceptedRequest.getConnectLocalPeeringGatewaysDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConnectRemotePeeringConnectionsResponse>
+            connectRemotePeeringConnections(
+                    final ConnectRemotePeeringConnectionsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ConnectRemotePeeringConnectionsRequest,
+                                    ConnectRemotePeeringConnectionsResponse>
+                            handler) {
+        LOG.trace("Called async connectRemotePeeringConnections");
+        final ConnectRemotePeeringConnectionsRequest interceptedRequest =
+                ConnectRemotePeeringConnectionsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ConnectRemotePeeringConnectionsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ConnectRemotePeeringConnectionsResponse>
+                transformer = ConnectRemotePeeringConnectionsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ConnectRemotePeeringConnectionsRequest,
+                        ConnectRemotePeeringConnectionsResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            ConnectRemotePeeringConnectionsRequest,
+                            ConnectRemotePeeringConnectionsResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.post(
+                                    ib,
+                                    interceptedRequest.getConnectRemotePeeringConnectionsDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.post(
+                        ib,
+                        interceptedRequest.getConnectRemotePeeringConnectionsDetails(),
+                        interceptedRequest,
+                        onSuccess,
+                        onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, ConnectRemotePeeringConnectionsResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.post(
+                                    ib,
+                                    interceptedRequest.getConnectRemotePeeringConnectionsDetails(),
                                     interceptedRequest,
                                     onSuccess,
                                     onError);
@@ -1468,6 +1643,96 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                             return client.post(
                                     ib,
                                     interceptedRequest.getCreatePublicIpDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRemotePeeringConnectionResponse>
+            createRemotePeeringConnection(
+                    final CreateRemotePeeringConnectionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateRemotePeeringConnectionRequest,
+                                    CreateRemotePeeringConnectionResponse>
+                            handler) {
+        LOG.trace("Called async createRemotePeeringConnection");
+        final CreateRemotePeeringConnectionRequest interceptedRequest =
+                CreateRemotePeeringConnectionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateRemotePeeringConnectionConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateRemotePeeringConnectionResponse>
+                transformer = CreateRemotePeeringConnectionConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateRemotePeeringConnectionRequest, CreateRemotePeeringConnectionResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            CreateRemotePeeringConnectionRequest,
+                            CreateRemotePeeringConnectionResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.post(
+                                    ib,
+                                    interceptedRequest.getCreateRemotePeeringConnectionDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.post(
+                        ib,
+                        interceptedRequest.getCreateRemotePeeringConnectionDetails(),
+                        interceptedRequest,
+                        onSuccess,
+                        onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, CreateRemotePeeringConnectionResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.post(
+                                    ib,
+                                    interceptedRequest.getCreateRemotePeeringConnectionDetails(),
                                     interceptedRequest,
                                     onSuccess,
                                     onError);
@@ -2662,6 +2927,81 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
             return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
                     javax.ws.rs.core.Response, DeletePublicIpResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.delete(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRemotePeeringConnectionResponse>
+            deleteRemotePeeringConnection(
+                    final DeleteRemotePeeringConnectionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteRemotePeeringConnectionRequest,
+                                    DeleteRemotePeeringConnectionResponse>
+                            handler) {
+        LOG.trace("Called async deleteRemotePeeringConnection");
+        final DeleteRemotePeeringConnectionRequest interceptedRequest =
+                DeleteRemotePeeringConnectionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteRemotePeeringConnectionConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteRemotePeeringConnectionResponse>
+                transformer = DeleteRemotePeeringConnectionConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteRemotePeeringConnectionRequest, DeleteRemotePeeringConnectionResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            DeleteRemotePeeringConnectionRequest,
+                            DeleteRemotePeeringConnectionResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.delete(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.delete(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, DeleteRemotePeeringConnectionResponse>(
                     responseFuture,
                     transformer,
                     (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
@@ -4342,6 +4682,80 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetRemotePeeringConnectionResponse>
+            getRemotePeeringConnection(
+                    final GetRemotePeeringConnectionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetRemotePeeringConnectionRequest,
+                                    GetRemotePeeringConnectionResponse>
+                            handler) {
+        LOG.trace("Called async getRemotePeeringConnection");
+        final GetRemotePeeringConnectionRequest interceptedRequest =
+                GetRemotePeeringConnectionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRemotePeeringConnectionConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetRemotePeeringConnectionResponse>
+                transformer = GetRemotePeeringConnectionConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetRemotePeeringConnectionRequest, GetRemotePeeringConnectionResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            GetRemotePeeringConnectionRequest, GetRemotePeeringConnectionResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, GetRemotePeeringConnectionResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetRouteTableResponse> getRouteTable(
             final GetRouteTableRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetRouteTableRequest, GetRouteTableResponse>
@@ -4734,6 +5148,83 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
             return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
                     javax.ws.rs.core.Response, GetVnicResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAllowedPeerRegionsForRemotePeeringResponse>
+            listAllowedPeerRegionsForRemotePeering(
+                    final ListAllowedPeerRegionsForRemotePeeringRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListAllowedPeerRegionsForRemotePeeringRequest,
+                                    ListAllowedPeerRegionsForRemotePeeringResponse>
+                            handler) {
+        LOG.trace("Called async listAllowedPeerRegionsForRemotePeering");
+        final ListAllowedPeerRegionsForRemotePeeringRequest interceptedRequest =
+                ListAllowedPeerRegionsForRemotePeeringConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAllowedPeerRegionsForRemotePeeringConverter.fromRequest(
+                        client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListAllowedPeerRegionsForRemotePeeringResponse>
+                transformer = ListAllowedPeerRegionsForRemotePeeringConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListAllowedPeerRegionsForRemotePeeringRequest,
+                        ListAllowedPeerRegionsForRemotePeeringResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            ListAllowedPeerRegionsForRemotePeeringRequest,
+                            ListAllowedPeerRegionsForRemotePeeringResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, ListAllowedPeerRegionsForRemotePeeringResponse>(
                     responseFuture,
                     transformer,
                     (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
@@ -5813,6 +6304,81 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
             return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
                     javax.ws.rs.core.Response, ListPublicIpsResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRemotePeeringConnectionsResponse>
+            listRemotePeeringConnections(
+                    final ListRemotePeeringConnectionsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListRemotePeeringConnectionsRequest,
+                                    ListRemotePeeringConnectionsResponse>
+                            handler) {
+        LOG.trace("Called async listRemotePeeringConnections");
+        final ListRemotePeeringConnectionsRequest interceptedRequest =
+                ListRemotePeeringConnectionsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRemotePeeringConnectionsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListRemotePeeringConnectionsResponse>
+                transformer = ListRemotePeeringConnectionsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListRemotePeeringConnectionsRequest, ListRemotePeeringConnectionsResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            ListRemotePeeringConnectionsRequest,
+                            ListRemotePeeringConnectionsResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, ListRemotePeeringConnectionsResponse>(
                     responseFuture,
                     transformer,
                     (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
@@ -7261,6 +7827,96 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                             return client.put(
                                     ib,
                                     interceptedRequest.getUpdatePublicIpDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRemotePeeringConnectionResponse>
+            updateRemotePeeringConnection(
+                    final UpdateRemotePeeringConnectionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateRemotePeeringConnectionRequest,
+                                    UpdateRemotePeeringConnectionResponse>
+                            handler) {
+        LOG.trace("Called async updateRemotePeeringConnection");
+        final UpdateRemotePeeringConnectionRequest interceptedRequest =
+                UpdateRemotePeeringConnectionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateRemotePeeringConnectionConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateRemotePeeringConnectionResponse>
+                transformer = UpdateRemotePeeringConnectionConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateRemotePeeringConnectionRequest, UpdateRemotePeeringConnectionResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            UpdateRemotePeeringConnectionRequest,
+                            UpdateRemotePeeringConnectionResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.put(
+                                    ib,
+                                    interceptedRequest.getUpdateRemotePeeringConnectionDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.put(
+                        ib,
+                        interceptedRequest.getUpdateRemotePeeringConnectionDetails(),
+                        interceptedRequest,
+                        onSuccess,
+                        onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, UpdateRemotePeeringConnectionResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.put(
+                                    ib,
+                                    interceptedRequest.getUpdateRemotePeeringConnectionDetails(),
                                     interceptedRequest,
                                     onSuccess,
                                     onError);

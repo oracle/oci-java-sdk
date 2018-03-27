@@ -65,6 +65,7 @@ public class CreateRegionSubscriptionDetails {
      * - `PHX`
      * - `IAD`
      * - `FRA`
+     * - `LHR`
      * <p>
      * Example: `PHX`
      *

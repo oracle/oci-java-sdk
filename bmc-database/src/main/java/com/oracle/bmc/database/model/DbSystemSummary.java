@@ -7,7 +7,7 @@ package com.oracle.bmc.database.model;
  * The Database Service supports several types of DB Systems, ranging in size, price, and performance. For details about each type of system, see:
  * <p>
  * - [Exadata DB Systems](https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Concepts/exaoverview.htm)
- * - [Bare Metal or VM DB Systems](https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Concepts/overview.htm)
+ * - [Bare Metal and Virtual Machine DB Systems](https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Concepts/overview.htm)
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
  *

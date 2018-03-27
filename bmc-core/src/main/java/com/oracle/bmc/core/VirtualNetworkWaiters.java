@@ -680,6 +680,150 @@ public class VirtualNetworkWaiters {
      * @param targetState the desired state to wait for
      * @return a new {@code Waiter} instance
      */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetRemotePeeringConnectionRequest, GetRemotePeeringConnectionResponse>
+            forRemotePeeringConnection(
+                    GetRemotePeeringConnectionRequest request,
+                    com.oracle.bmc.core.model.RemotePeeringConnection.PeeringStatus targetState) {
+        return forRemotePeeringConnection(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetRemotePeeringConnectionRequest, GetRemotePeeringConnectionResponse>
+            forRemotePeeringConnection(
+                    GetRemotePeeringConnectionRequest request,
+                    com.oracle.bmc.core.model.RemotePeeringConnection.PeeringStatus targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        return forRemotePeeringConnection(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    // Helper method to create a new Waiter for RemotePeeringConnection.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetRemotePeeringConnectionRequest, GetRemotePeeringConnectionResponse>
+            forRemotePeeringConnection(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetRemotePeeringConnectionRequest request,
+                    final com.oracle.bmc.core.model.RemotePeeringConnection.PeeringStatus
+                            targetState) {
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetRemotePeeringConnectionRequest,
+                                GetRemotePeeringConnectionResponse>() {
+                            @Override
+                            public GetRemotePeeringConnectionResponse apply(
+                                    GetRemotePeeringConnectionRequest request) {
+                                return client.getRemotePeeringConnection(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetRemotePeeringConnectionResponse>() {
+                            @Override
+                            public boolean apply(GetRemotePeeringConnectionResponse response) {
+                                return response.getRemotePeeringConnection().getPeeringStatus()
+                                        == targetState;
+                            }
+                        },
+                        targetState
+                                == com.oracle.bmc.core.model.RemotePeeringConnection.PeeringStatus
+                                        .Revoked),
+                request);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetRemotePeeringConnectionRequest, GetRemotePeeringConnectionResponse>
+            forRemotePeeringConnection(
+                    GetRemotePeeringConnectionRequest request,
+                    com.oracle.bmc.core.model.RemotePeeringConnection.LifecycleState targetState) {
+        return forRemotePeeringConnection(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetRemotePeeringConnectionRequest, GetRemotePeeringConnectionResponse>
+            forRemotePeeringConnection(
+                    GetRemotePeeringConnectionRequest request,
+                    com.oracle.bmc.core.model.RemotePeeringConnection.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        return forRemotePeeringConnection(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    // Helper method to create a new Waiter for RemotePeeringConnection.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetRemotePeeringConnectionRequest, GetRemotePeeringConnectionResponse>
+            forRemotePeeringConnection(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetRemotePeeringConnectionRequest request,
+                    final com.oracle.bmc.core.model.RemotePeeringConnection.LifecycleState
+                            targetState) {
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetRemotePeeringConnectionRequest,
+                                GetRemotePeeringConnectionResponse>() {
+                            @Override
+                            public GetRemotePeeringConnectionResponse apply(
+                                    GetRemotePeeringConnectionRequest request) {
+                                return client.getRemotePeeringConnection(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetRemotePeeringConnectionResponse>() {
+                            @Override
+                            public boolean apply(GetRemotePeeringConnectionResponse response) {
+                                return response.getRemotePeeringConnection().getLifecycleState()
+                                        == targetState;
+                            }
+                        },
+                        targetState
+                                == com.oracle.bmc.core.model.RemotePeeringConnection.LifecycleState
+                                        .Terminated),
+                request);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @return a new {@code Waiter} instance
+     */
     public com.oracle.bmc.waiter.Waiter<GetRouteTableRequest, GetRouteTableResponse> forRouteTable(
             GetRouteTableRequest request,
             com.oracle.bmc.core.model.RouteTable.LifecycleState targetState) {

@@ -105,6 +105,32 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Connects this RPC to another one in a different region.
+     * <p>
+     * This operation must be called by the VCN administrator who is designated as
+     * the *requestor* in the peering relationship. The *acceptor* must implement
+     * an Identity and Access Management (IAM) policy that gives the requestor permission
+     * to connect to RPCs in the acceptor's compartment. Without that permission, this
+     * operation will fail. For more information, see
+     * [VCN Peering](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/VCNpeering.htm).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ConnectRemotePeeringConnectionsResponse>
+            connectRemotePeeringConnections(
+                    ConnectRemotePeeringConnectionsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ConnectRemotePeeringConnectionsRequest,
+                                    ConnectRemotePeeringConnectionsResponse>
+                            handler);
+
+    /**
      * Creates a new virtual Customer-Premises Equipment (CPE) object in the specified compartment. For
      * more information, see [IPSec VPNs](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPsec.htm).
      * <p>
@@ -428,6 +454,25 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             CreatePublicIpRequest request,
             com.oracle.bmc.responses.AsyncHandler<CreatePublicIpRequest, CreatePublicIpResponse>
                     handler);
+
+    /**
+     * Creates a new remote peering connection (RPC) for the specified DRG.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateRemotePeeringConnectionResponse>
+            createRemotePeeringConnection(
+                    CreateRemotePeeringConnectionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateRemotePeeringConnectionRequest,
+                                    CreateRemotePeeringConnectionResponse>
+                            handler);
 
     /**
      * Creates a new route table for the specified VCN. In the request you must also include at least one route
@@ -843,6 +888,28 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             DeletePublicIpRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeletePublicIpRequest, DeletePublicIpResponse>
                     handler);
+
+    /**
+     * Deletes the remote peering connection (RPC).
+     * <p>
+     * This is an asynchronous operation; the RPC's `lifecycleState` changes to TERMINATING temporarily
+     * until the RPC is completely removed.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteRemotePeeringConnectionResponse>
+            deleteRemotePeeringConnection(
+                    DeleteRemotePeeringConnectionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteRemotePeeringConnectionRequest,
+                                    DeleteRemotePeeringConnectionResponse>
+                            handler);
 
     /**
      * Deletes the specified route table, but only if it's not associated with a subnet. You can't delete a
@@ -1268,6 +1335,23 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Get the specified remote peering connection's information.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetRemotePeeringConnectionResponse> getRemotePeeringConnection(
+            GetRemotePeeringConnectionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetRemotePeeringConnectionRequest, GetRemotePeeringConnectionResponse>
+                    handler);
+
+    /**
      * Gets the specified route table's information.
      *
      * @param request The request object containing the details to send
@@ -1358,6 +1442,26 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     java.util.concurrent.Future<GetVnicResponse> getVnic(
             GetVnicRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetVnicRequest, GetVnicResponse> handler);
+
+    /**
+     * Lists the regions that support remote VCN peering (which is peering across regions).
+     * For more information, see [VCN Peering](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/VCNpeering.htm).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAllowedPeerRegionsForRemotePeeringResponse>
+            listAllowedPeerRegionsForRemotePeering(
+                    ListAllowedPeerRegionsForRemotePeeringRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListAllowedPeerRegionsForRemotePeeringRequest,
+                                    ListAllowedPeerRegionsForRemotePeeringResponse>
+                            handler);
 
     /**
      * Lists the Customer-Premises Equipment objects (CPEs) in the specified compartment.
@@ -1649,6 +1753,25 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     java.util.concurrent.Future<ListPublicIpsResponse> listPublicIps(
             ListPublicIpsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListPublicIpsRequest, ListPublicIpsResponse>
+                    handler);
+
+    /**
+     * Lists the remote peering connections (RPCs) for the specified DRG and compartment
+     * (the RPC's compartment).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListRemotePeeringConnectionsResponse> listRemotePeeringConnections(
+            ListRemotePeeringConnectionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListRemotePeeringConnectionsRequest,
+                            ListRemotePeeringConnectionsResponse>
                     handler);
 
     /**
@@ -2009,6 +2132,25 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             UpdatePublicIpRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdatePublicIpRequest, UpdatePublicIpResponse>
                     handler);
+
+    /**
+     * Updates the specified remote peering connection (RPC).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateRemotePeeringConnectionResponse>
+            updateRemotePeeringConnection(
+                    UpdateRemotePeeringConnectionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateRemotePeeringConnectionRequest,
+                                    UpdateRemotePeeringConnectionResponse>
+                            handler);
 
     /**
      * Updates the specified route table's display name or route rules.

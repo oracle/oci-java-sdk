@@ -113,7 +113,7 @@ public class InstancePrincipalsAuthenticationDetailsProvider
                 String regionStr =
                         base.path("region").request(MediaType.TEXT_PLAIN).get(String.class);
 
-                region = Region.fromRegionCode(regionStr);
+                region = Region.fromRegionCodeOrId(regionStr);
 
                 Optional<String> endpoint = region.getEndpoint(SERVICE);
 

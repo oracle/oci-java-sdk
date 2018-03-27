@@ -107,6 +107,34 @@ public class VirtualNetworkClient implements VirtualNetwork {
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
             com.oracle.bmc.http.signing.RequestSignerFactory requestSignerFactory,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                requestSignerFactory,
+                additionalClientConfigurators,
+                null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param requestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     */
+    public VirtualNetworkClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory requestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
         this.authenticationDetailsProvider = authenticationDetailsProvider;
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
@@ -141,7 +169,16 @@ public class VirtualNetworkClient implements VirtualNetwork {
 
             if (provider.getRegion() != null) {
                 this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
             }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
         }
     }
 
@@ -165,6 +202,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
         protected com.oracle.bmc.http.signing.RequestSignerFactory requestSignerFactory =
                 new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                         com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        protected String endpoint;
 
         private Builder() {}
 
@@ -230,6 +268,51 @@ public class VirtualNetworkClient implements VirtualNetwork {
         }
 
         /**
+         * Set the endpoint for the client to be created.
+         * @param endpoint endpoint
+         * @return this builder
+         */
+        public Builder endpoint(String endpoint) {
+            this.endpoint = endpoint;
+            return this;
+        }
+
+        /**
+         * Set the region for the client to be created.
+         * @param region region
+         * @return this builder
+         */
+        public Builder region(com.oracle.bmc.Region region) {
+            com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+            if (endpoint.isPresent()) {
+                endpoint(endpoint.get());
+            } else {
+                throw new IllegalArgumentException(
+                        "Endpoint for " + SERVICE + " is not known in region " + region);
+            }
+            return this;
+        }
+
+        /**
+         * Set the region for the client to be created.
+         * @param region region
+         * @return this builder
+         */
+        public Builder region(String regionId) {
+            regionId = regionId.toLowerCase(Locale.ENGLISH);
+            try {
+                com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+                return region(region);
+            } catch (IllegalArgumentException e) {
+                LOG.info(
+                        "Unknown regionId '{}', falling back to default endpoint format", regionId);
+                String endpoint =
+                        com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+                return endpoint(endpoint);
+            }
+        }
+
+        /**
          * Set the authentication details provider. Once this is called, the builder can build the client.
          * @param authenticationDetailsProvider authentication details provider
          * @return a builder that can build the client
@@ -243,7 +326,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                     configuration,
                     clientConfigurator,
                     requestSignerFactory,
-                    additionalClientConfigurators);
+                    additionalClientConfigurators,
+                    endpoint);
         }
     }
 
@@ -360,6 +444,35 @@ public class VirtualNetworkClient implements VirtualNetwork {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getConnectLocalPeeringGatewaysDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public ConnectRemotePeeringConnectionsResponse connectRemotePeeringConnections(
+            ConnectRemotePeeringConnectionsRequest request) {
+        LOG.trace("Called connectRemotePeeringConnections");
+        request = ConnectRemotePeeringConnectionsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ConnectRemotePeeringConnectionsConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ConnectRemotePeeringConnectionsResponse>
+                transformer = ConnectRemotePeeringConnectionsConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(
+                                ib, request.getConnectRemotePeeringConnectionsDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
@@ -651,6 +764,34 @@ public class VirtualNetworkClient implements VirtualNetwork {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getCreatePublicIpDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public CreateRemotePeeringConnectionResponse createRemotePeeringConnection(
+            CreateRemotePeeringConnectionRequest request) {
+        LOG.trace("Called createRemotePeeringConnection");
+        request = CreateRemotePeeringConnectionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateRemotePeeringConnectionConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateRemotePeeringConnectionResponse>
+                transformer = CreateRemotePeeringConnectionConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCreateRemotePeeringConnectionDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
@@ -1056,6 +1197,33 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 DeletePublicIpConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeletePublicIpResponse>
                 transformer = DeletePublicIpConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public DeleteRemotePeeringConnectionResponse deleteRemotePeeringConnection(
+            DeleteRemotePeeringConnectionRequest request) {
+        LOG.trace("Called deleteRemotePeeringConnection");
+        request = DeleteRemotePeeringConnectionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteRemotePeeringConnectionConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteRemotePeeringConnectionResponse>
+                transformer = DeleteRemotePeeringConnectionConverter.fromResponse();
 
         int attempts = 0;
         while (true) {
@@ -1663,6 +1831,33 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public GetRemotePeeringConnectionResponse getRemotePeeringConnection(
+            GetRemotePeeringConnectionRequest request) {
+        LOG.trace("Called getRemotePeeringConnection");
+        request = GetRemotePeeringConnectionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRemotePeeringConnectionConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetRemotePeeringConnectionResponse>
+                transformer = GetRemotePeeringConnectionConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public GetRouteTableResponse getRouteTable(GetRouteTableRequest request) {
         LOG.trace("Called getRouteTable");
         request = GetRouteTableConverter.interceptRequest(request);
@@ -1795,6 +1990,33 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 GetVnicConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetVnicResponse> transformer =
                 GetVnicConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public ListAllowedPeerRegionsForRemotePeeringResponse listAllowedPeerRegionsForRemotePeering(
+            ListAllowedPeerRegionsForRemotePeeringRequest request) {
+        LOG.trace("Called listAllowedPeerRegionsForRemotePeering");
+        request = ListAllowedPeerRegionsForRemotePeeringConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAllowedPeerRegionsForRemotePeeringConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListAllowedPeerRegionsForRemotePeeringResponse>
+                transformer = ListAllowedPeerRegionsForRemotePeeringConverter.fromResponse();
 
         int attempts = 0;
         while (true) {
@@ -2187,6 +2409,33 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 ListPublicIpsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListPublicIpsResponse>
                 transformer = ListPublicIpsConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public ListRemotePeeringConnectionsResponse listRemotePeeringConnections(
+            ListRemotePeeringConnectionsRequest request) {
+        LOG.trace("Called listRemotePeeringConnections");
+        request = ListRemotePeeringConnectionsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRemotePeeringConnectionsConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListRemotePeeringConnectionsResponse>
+                transformer = ListRemotePeeringConnectionsConverter.fromResponse();
 
         int attempts = 0;
         while (true) {
@@ -2662,6 +2911,34 @@ public class VirtualNetworkClient implements VirtualNetwork {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdatePublicIpDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public UpdateRemotePeeringConnectionResponse updateRemotePeeringConnection(
+            UpdateRemotePeeringConnectionRequest request) {
+        LOG.trace("Called updateRemotePeeringConnection");
+        request = UpdateRemotePeeringConnectionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateRemotePeeringConnectionConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateRemotePeeringConnectionResponse>
+                transformer = UpdateRemotePeeringConnectionConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateRemotePeeringConnectionDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS

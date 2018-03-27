@@ -37,6 +37,42 @@ public class DbSystemShapeSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("coreCountIncrement")
+        private Integer coreCountIncrement;
+
+        public Builder coreCountIncrement(Integer coreCountIncrement) {
+            this.coreCountIncrement = coreCountIncrement;
+            this.__explicitlySet__.add("coreCountIncrement");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("maximumNodeCount")
+        private Integer maximumNodeCount;
+
+        public Builder maximumNodeCount(Integer maximumNodeCount) {
+            this.maximumNodeCount = maximumNodeCount;
+            this.__explicitlySet__.add("maximumNodeCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("minimumCoreCount")
+        private Integer minimumCoreCount;
+
+        public Builder minimumCoreCount(Integer minimumCoreCount) {
+            this.minimumCoreCount = minimumCoreCount;
+            this.__explicitlySet__.add("minimumCoreCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("minimumNodeCount")
+        private Integer minimumNodeCount;
+
+        public Builder minimumNodeCount(Integer minimumNodeCount) {
+            this.minimumNodeCount = minimumNodeCount;
+            this.__explicitlySet__.add("minimumNodeCount");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
@@ -60,7 +96,14 @@ public class DbSystemShapeSummary {
 
         public DbSystemShapeSummary build() {
             DbSystemShapeSummary __instance__ =
-                    new DbSystemShapeSummary(availableCoreCount, name, shape);
+                    new DbSystemShapeSummary(
+                            availableCoreCount,
+                            coreCountIncrement,
+                            maximumNodeCount,
+                            minimumCoreCount,
+                            minimumNodeCount,
+                            name,
+                            shape);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -69,6 +112,10 @@ public class DbSystemShapeSummary {
         public Builder copy(DbSystemShapeSummary o) {
             Builder copiedBuilder =
                     availableCoreCount(o.getAvailableCoreCount())
+                            .coreCountIncrement(o.getCoreCountIncrement())
+                            .maximumNodeCount(o.getMaximumNodeCount())
+                            .minimumCoreCount(o.getMinimumCoreCount())
+                            .minimumNodeCount(o.getMinimumNodeCount())
                             .name(o.getName())
                             .shape(o.getShape());
 
@@ -85,10 +132,34 @@ public class DbSystemShapeSummary {
     }
 
     /**
-     * The maximum number of CPU cores that can be enabled on the DB System.
+     * The maximum number of CPU cores that can be enabled on the DB System for this shape.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableCoreCount")
     Integer availableCoreCount;
+
+    /**
+     * The discrete number by which the CPU core count for this shape can be increased or decreased.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("coreCountIncrement")
+    Integer coreCountIncrement;
+
+    /**
+     * The maximum number of database nodes available for this shape.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maximumNodeCount")
+    Integer maximumNodeCount;
+
+    /**
+     * The minimum number of CPU cores that can be enabled on the DB System for this shape.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("minimumCoreCount")
+    Integer minimumCoreCount;
+
+    /**
+     * The minimum number of database nodes available for this shape.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("minimumNodeCount")
+    Integer minimumNodeCount;
 
     /**
      * The name of the shape used for the DB System.
