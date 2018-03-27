@@ -1764,6 +1764,128 @@ public class VirtualNetworkPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listRemotePeeringConnections operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListRemotePeeringConnectionsResponse>
+            listRemotePeeringConnectionsResponseIterator(
+                    final ListRemotePeeringConnectionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListRemotePeeringConnectionsRequest.Builder, ListRemotePeeringConnectionsRequest,
+                ListRemotePeeringConnectionsResponse>(
+                new com.google.common.base.Supplier<ListRemotePeeringConnectionsRequest.Builder>() {
+                    @Override
+                    public ListRemotePeeringConnectionsRequest.Builder get() {
+                        return ListRemotePeeringConnectionsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListRemotePeeringConnectionsResponse, String>() {
+                    @Override
+                    public String apply(ListRemotePeeringConnectionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRemotePeeringConnectionsRequest.Builder>,
+                        ListRemotePeeringConnectionsRequest>() {
+                    @Override
+                    public ListRemotePeeringConnectionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRemotePeeringConnectionsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListRemotePeeringConnectionsRequest,
+                        ListRemotePeeringConnectionsResponse>() {
+                    @Override
+                    public ListRemotePeeringConnectionsResponse apply(
+                            ListRemotePeeringConnectionsRequest request) {
+                        return client.listRemotePeeringConnections(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.RemotePeeringConnection} objects
+     * contained in responses from the listRemotePeeringConnections operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.RemotePeeringConnection} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.RemotePeeringConnection>
+            listRemotePeeringConnectionsRecordIterator(
+                    final ListRemotePeeringConnectionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListRemotePeeringConnectionsRequest.Builder, ListRemotePeeringConnectionsRequest,
+                ListRemotePeeringConnectionsResponse,
+                com.oracle.bmc.core.model.RemotePeeringConnection>(
+                new com.google.common.base.Supplier<ListRemotePeeringConnectionsRequest.Builder>() {
+                    @Override
+                    public ListRemotePeeringConnectionsRequest.Builder get() {
+                        return ListRemotePeeringConnectionsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListRemotePeeringConnectionsResponse, String>() {
+                    @Override
+                    public String apply(ListRemotePeeringConnectionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRemotePeeringConnectionsRequest.Builder>,
+                        ListRemotePeeringConnectionsRequest>() {
+                    @Override
+                    public ListRemotePeeringConnectionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRemotePeeringConnectionsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListRemotePeeringConnectionsRequest,
+                        ListRemotePeeringConnectionsResponse>() {
+                    @Override
+                    public ListRemotePeeringConnectionsResponse apply(
+                            ListRemotePeeringConnectionsRequest request) {
+                        return client.listRemotePeeringConnections(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListRemotePeeringConnectionsResponse,
+                        java.util.List<com.oracle.bmc.core.model.RemotePeeringConnection>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.RemotePeeringConnection> apply(
+                            ListRemotePeeringConnectionsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listRouteTables operation. This iterable
      * will fetch more data from the server as needed.
      *

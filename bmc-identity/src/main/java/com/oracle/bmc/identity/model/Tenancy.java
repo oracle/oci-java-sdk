@@ -135,12 +135,14 @@ public class Tenancy {
     String description;
 
     /**
-     * The region key for the tenancy's home region.
+     * The region key for the tenancy's home region. For more information about regions, see
+     * [Regions and Availability Domains](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/regions.htm).
      * <p>
      * Allowed values are:
      * - `IAD`
      * - `PHX`
      * - `FRA`
+     * - `LHR`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("homeRegionKey")

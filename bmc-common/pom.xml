@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>1.2.29</version>
+    <version>1.2.33</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -84,11 +84,6 @@
         <artifactId>nimbus-jose-jwt</artifactId>
         <version>4.9</version>
     </dependency>
-      <dependency>
-          <groupId>com.nimbusds</groupId>
-          <artifactId>nimbus-jose-jwt</artifactId>
-          <version>4.9</version>
-      </dependency>
   </dependencies>
 
 </project>

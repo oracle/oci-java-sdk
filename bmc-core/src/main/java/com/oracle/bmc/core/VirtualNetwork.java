@@ -80,6 +80,23 @@ public interface VirtualNetwork extends AutoCloseable {
             ConnectLocalPeeringGatewaysRequest request);
 
     /**
+     * Connects this RPC to another one in a different region.
+     * <p>
+     * This operation must be called by the VCN administrator who is designated as
+     * the *requestor* in the peering relationship. The *acceptor* must implement
+     * an Identity and Access Management (IAM) policy that gives the requestor permission
+     * to connect to RPCs in the acceptor's compartment. Without that permission, this
+     * operation will fail. For more information, see
+     * [VCN Peering](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/VCNpeering.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ConnectRemotePeeringConnectionsResponse connectRemotePeeringConnections(
+            ConnectRemotePeeringConnectionsRequest request);
+
+    /**
      * Creates a new virtual Customer-Premises Equipment (CPE) object in the specified compartment. For
      * more information, see [IPSec VPNs](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPsec.htm).
      * <p>
@@ -322,6 +339,16 @@ public interface VirtualNetwork extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     CreatePublicIpResponse createPublicIp(CreatePublicIpRequest request);
+
+    /**
+     * Creates a new remote peering connection (RPC) for the specified DRG.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateRemotePeeringConnectionResponse createRemotePeeringConnection(
+            CreateRemotePeeringConnectionRequest request);
 
     /**
      * Creates a new route table for the specified VCN. In the request you must also include at least one route
@@ -622,6 +649,19 @@ public interface VirtualNetwork extends AutoCloseable {
     DeletePublicIpResponse deletePublicIp(DeletePublicIpRequest request);
 
     /**
+     * Deletes the remote peering connection (RPC).
+     * <p>
+     * This is an asynchronous operation; the RPC's `lifecycleState` changes to TERMINATING temporarily
+     * until the RPC is completely removed.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteRemotePeeringConnectionResponse deleteRemotePeeringConnection(
+            DeleteRemotePeeringConnectionRequest request);
+
+    /**
      * Deletes the specified route table, but only if it's not associated with a subnet. You can't delete a
      * VCN's default route table.
      * <p>
@@ -872,6 +912,16 @@ public interface VirtualNetwork extends AutoCloseable {
             GetPublicIpByPrivateIpIdRequest request);
 
     /**
+     * Get the specified remote peering connection's information.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetRemotePeeringConnectionResponse getRemotePeeringConnection(
+            GetRemotePeeringConnectionRequest request);
+
+    /**
      * Gets the specified route table's information.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -922,6 +972,17 @@ public interface VirtualNetwork extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     GetVnicResponse getVnic(GetVnicRequest request);
+
+    /**
+     * Lists the regions that support remote VCN peering (which is peering across regions).
+     * For more information, see [VCN Peering](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/VCNpeering.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListAllowedPeerRegionsForRemotePeeringResponse listAllowedPeerRegionsForRemotePeering(
+            ListAllowedPeerRegionsForRemotePeeringRequest request);
 
     /**
      * Lists the Customer-Premises Equipment objects (CPEs) in the specified compartment.
@@ -1101,6 +1162,17 @@ public interface VirtualNetwork extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListPublicIpsResponse listPublicIps(ListPublicIpsRequest request);
+
+    /**
+     * Lists the remote peering connections (RPCs) for the specified DRG and compartment
+     * (the RPC's compartment).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListRemotePeeringConnectionsResponse listRemotePeeringConnections(
+            ListRemotePeeringConnectionsRequest request);
 
     /**
      * Lists the route tables in the specified VCN and specified compartment. The response
@@ -1326,6 +1398,16 @@ public interface VirtualNetwork extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdatePublicIpResponse updatePublicIp(UpdatePublicIpRequest request);
+
+    /**
+     * Updates the specified remote peering connection (RPC).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateRemotePeeringConnectionResponse updateRemotePeeringConnection(
+            UpdateRemotePeeringConnectionRequest request);
 
     /**
      * Updates the specified route table's display name or route rules.

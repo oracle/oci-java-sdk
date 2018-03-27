@@ -13,6 +13,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.2.33 - 2018-03-27
+
+### Added
+- Added support for remote VCN peering across regions.  See [here](https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/RemotePeeringConnectionExample.java) for a sample
+- Added support for calling Oracle Cloud Infrastructure services in the uk-london-1 (LHR) region
+- Added a version of the Java SDK library that bundles several of its dependencies in shaded form
+
 ## 1.2.29 - 2018-03-08
 
 ### Added

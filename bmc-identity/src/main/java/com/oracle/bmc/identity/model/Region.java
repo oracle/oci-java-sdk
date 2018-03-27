@@ -78,6 +78,7 @@ public class Region {
      * - `PHX`
      * - `IAD`
      * - `FRA`
+     * - `LHR`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
@@ -90,6 +91,7 @@ public class Region {
      * - `us-phoenix-1`
      * - `us-ashburn-1`
      * - `eu-frankfurt-1`
+     * - `uk-london-1`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")

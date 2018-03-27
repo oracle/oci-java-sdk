@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>1.2.29</version>
+  <version>1.2.33</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -29,8 +29,48 @@
     <junit.version>4.11</junit.version>
     <lombok.version>1.16.16</lombok.version>
     <lombok.maven.version>1.16.16.0</lombok.maven.version>
+    <jsr305.version>3.0.2</jsr305.version>
+    <slf4j.version>1.7.23</slf4j.version>
+    <validation-api.version>1.1.0.Final</validation-api.version>
+    <javax.ws.rs-api.version>2.0.1</javax.ws.rs-api.version>
+    <commons-codec.version>1.10</commons-codec.version>
+    <commons-lang3.version>3.4</commons-lang3.version>
+    <commons-io.version>2.5</commons-io.version>
+
+    <!-- To allow for encrypted PEM (PBKDF-OpenSSL), we need to use a version before 1.53. >= 1.53 introduced 
+      a breaking change. http://bouncy-castle.1462172.n4.nabble.com/Issues-when-migrating-to-1-53-td4657955.html 
+      https://github.com/box/box-java-sdk/issues/168 Has not been fixed as of 1.55. -->
+    <bouncycastle.version>1.52</bouncycastle.version>
   </properties>
   <profiles>
+    <profile>
+      <id>sign</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.commonjava.maven.plugins</groupId>
+            <artifactId>directory-maven-plugin</artifactId>
+            <version>0.1</version>
+            <executions>
+              <execution>
+                <id>directories</id>
+                <goals>
+                  <goal>directory-of</goal>
+                </goals>
+                <phase>initialize</phase>
+                <configuration>
+                  <property>ocijavasdk.basedir</property>
+                  <project>
+                    <groupId>com.oracle.oci.sdk</groupId>
+                    <artifactId>oci-java-sdk</artifactId>
+                  </project>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
     <profile>
       <id>dev</id>
       <build>
@@ -284,7 +324,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-assembly-plugin</artifactId>
-          <version>2.6</version>
+          <version>3.1.0</version>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -343,17 +383,17 @@
     <dependency>
       <groupId>javax.ws.rs</groupId>
       <artifactId>javax.ws.rs-api</artifactId>
-      <version>2.0.1</version>
+      <version>${javax.ws.rs-api.version}</version>
     </dependency>
     <dependency>
       <groupId>javax.validation</groupId>
       <artifactId>validation-api</artifactId>
-      <version>1.1.0.Final</version>
+      <version>${validation-api.version}</version>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
-      <version>1.7.23</version>
+      <version>${slf4j.version}</version>
     </dependency>
   </dependencies>
   <dependencyManagement>
@@ -366,7 +406,7 @@
       <dependency>
         <groupId>com.google.code.findbugs</groupId>
         <artifactId>jsr305</artifactId>
-        <version>3.0.2</version>
+        <version>${jsr305.version}</version>
       </dependency>
       <dependency>
         <groupId>com.google.guava</groupId>
@@ -382,17 +422,17 @@
       <dependency>
         <groupId>commons-codec</groupId>
         <artifactId>commons-codec</artifactId>
-        <version>1.10</version>
+        <version>${commons-codec.version}</version>
       </dependency>
       <dependency>
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-lang3</artifactId>
-        <version>3.4</version>
+        <version>${commons-lang3.version}</version>
       </dependency>
       <dependency>
         <groupId>commons-io</groupId>
         <artifactId>commons-io</artifactId>
-        <version>2.5</version>
+        <version>${commons-io.version}</version>
       </dependency>
       <dependency>
         <groupId>com.fasterxml.jackson.jaxrs</groupId>

@@ -371,6 +371,116 @@ public class ObjectStoragePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listObjects operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListObjectsResponse> listObjectsResponseIterator(
+            final ListObjectsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListObjectsRequest.Builder, ListObjectsRequest, ListObjectsResponse>(
+                new com.google.common.base.Supplier<ListObjectsRequest.Builder>() {
+                    @Override
+                    public ListObjectsRequest.Builder get() {
+                        return ListObjectsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListObjectsResponse, String>() {
+                    @Override
+                    public String apply(ListObjectsResponse response) {
+                        return response.getListObjects().getNextStartWith();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListObjectsRequest.Builder>,
+                        ListObjectsRequest>() {
+                    @Override
+                    public ListObjectsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListObjectsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .start(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListObjectsRequest, ListObjectsResponse>() {
+                    @Override
+                    public ListObjectsResponse apply(ListObjectsRequest request) {
+                        return client.listObjects(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.objectstorage.model.ObjectSummary} objects
+     * contained in responses from the listObjects operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.objectstorage.model.ObjectSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.objectstorage.model.ObjectSummary> listObjectsRecordIterator(
+            final ListObjectsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListObjectsRequest.Builder, ListObjectsRequest, ListObjectsResponse,
+                com.oracle.bmc.objectstorage.model.ObjectSummary>(
+                new com.google.common.base.Supplier<ListObjectsRequest.Builder>() {
+                    @Override
+                    public ListObjectsRequest.Builder get() {
+                        return ListObjectsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListObjectsResponse, String>() {
+                    @Override
+                    public String apply(ListObjectsResponse response) {
+                        return response.getListObjects().getNextStartWith();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListObjectsRequest.Builder>,
+                        ListObjectsRequest>() {
+                    @Override
+                    public ListObjectsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListObjectsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .start(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListObjectsRequest, ListObjectsResponse>() {
+                    @Override
+                    public ListObjectsResponse apply(ListObjectsRequest request) {
+                        return client.listObjects(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListObjectsResponse,
+                        java.util.List<com.oracle.bmc.objectstorage.model.ObjectSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.objectstorage.model.ObjectSummary> apply(
+                            ListObjectsResponse response) {
+                        return response.getListObjects().getObjects();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listPreauthenticatedRequests operation. This iterable
      * will fetch more data from the server as needed.
      *

@@ -102,6 +102,34 @@ public class ComputeAsyncClient implements ComputeAsync {
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
             com.oracle.bmc.http.signing.RequestSignerFactory requestSignerFactory,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                requestSignerFactory,
+                additionalClientConfigurators,
+                null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param requestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     */
+    public ComputeAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory requestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
         this.authenticationDetailsProvider = authenticationDetailsProvider;
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
@@ -119,7 +147,16 @@ public class ComputeAsyncClient implements ComputeAsync {
 
             if (provider.getRegion() != null) {
                 this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
             }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
         }
     }
 
@@ -143,6 +180,7 @@ public class ComputeAsyncClient implements ComputeAsync {
         protected com.oracle.bmc.http.signing.RequestSignerFactory requestSignerFactory =
                 new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                         com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        protected String endpoint;
 
         private Builder() {}
 
@@ -208,6 +246,51 @@ public class ComputeAsyncClient implements ComputeAsync {
         }
 
         /**
+         * Set the endpoint for the client to be created.
+         * @param endpoint endpoint
+         * @return this builder
+         */
+        public Builder endpoint(String endpoint) {
+            this.endpoint = endpoint;
+            return this;
+        }
+
+        /**
+         * Set the region for the client to be created.
+         * @param region region
+         * @return this builder
+         */
+        public Builder region(com.oracle.bmc.Region region) {
+            com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
+            if (endpoint.isPresent()) {
+                endpoint(endpoint.get());
+            } else {
+                throw new IllegalArgumentException(
+                        "Endpoint for " + SERVICE + " is not known in region " + region);
+            }
+            return this;
+        }
+
+        /**
+         * Set the region for the client to be created.
+         * @param region region
+         * @return this builder
+         */
+        public Builder region(String regionId) {
+            regionId = regionId.toLowerCase(Locale.ENGLISH);
+            try {
+                com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+                return region(region);
+            } catch (IllegalArgumentException e) {
+                LOG.info(
+                        "Unknown regionId '{}', falling back to default endpoint format", regionId);
+                String endpoint =
+                        com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+                return endpoint(endpoint);
+            }
+        }
+
+        /**
          * Build the client, with the authentication details provider.
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
@@ -221,7 +304,8 @@ public class ComputeAsyncClient implements ComputeAsync {
                     configuration,
                     clientConfigurator,
                     requestSignerFactory,
-                    additionalClientConfigurators);
+                    additionalClientConfigurators,
+                    endpoint);
         }
     }
 
