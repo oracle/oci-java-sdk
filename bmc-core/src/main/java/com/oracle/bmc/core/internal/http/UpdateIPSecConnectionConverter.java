@@ -6,6 +6,7 @@ package com.oracle.bmc.core.internal.http;
 import com.oracle.bmc.core.model.*;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
+import org.apache.commons.lang3.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.extern.slf4j.Slf4j
@@ -22,17 +23,11 @@ public class UpdateIPSecConnectionConverter {
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client, UpdateIPSecConnectionRequest request) {
-        if (request == null) {
-            throw new NullPointerException("request instance is required");
-        }
-
-        if (request.getIpscId() == null) {
-            throw new NullPointerException("ipscId is required");
-        }
-
-        if (request.getUpdateIPSecConnectionDetails() == null) {
-            throw new NullPointerException("updateIPSecConnectionDetails is required");
-        }
+        Validate.notNull(request, "request instance is required");
+        Validate.notBlank(request.getIpscId(), "ipscId must not be blank");
+        Validate.notNull(
+                request.getUpdateIPSecConnectionDetails(),
+                "updateIPSecConnectionDetails is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()

@@ -6,6 +6,7 @@ package com.oracle.bmc.core.internal.http;
 import com.oracle.bmc.core.model.*;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
+import org.apache.commons.lang3.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.extern.slf4j.Slf4j
@@ -21,17 +22,10 @@ public class UpdateCrossConnectConverter {
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client, UpdateCrossConnectRequest request) {
-        if (request == null) {
-            throw new NullPointerException("request instance is required");
-        }
-
-        if (request.getCrossConnectId() == null) {
-            throw new NullPointerException("crossConnectId is required");
-        }
-
-        if (request.getUpdateCrossConnectDetails() == null) {
-            throw new NullPointerException("updateCrossConnectDetails is required");
-        }
+        Validate.notNull(request, "request instance is required");
+        Validate.notBlank(request.getCrossConnectId(), "crossConnectId must not be blank");
+        Validate.notNull(
+                request.getUpdateCrossConnectDetails(), "updateCrossConnectDetails is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()

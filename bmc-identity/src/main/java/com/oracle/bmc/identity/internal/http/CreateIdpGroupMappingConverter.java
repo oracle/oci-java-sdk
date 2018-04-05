@@ -6,6 +6,7 @@ package com.oracle.bmc.identity.internal.http;
 import com.oracle.bmc.identity.model.*;
 import com.oracle.bmc.identity.requests.*;
 import com.oracle.bmc.identity.responses.*;
+import org.apache.commons.lang3.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.extern.slf4j.Slf4j
@@ -22,17 +23,11 @@ public class CreateIdpGroupMappingConverter {
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client, CreateIdpGroupMappingRequest request) {
-        if (request == null) {
-            throw new NullPointerException("request instance is required");
-        }
-
-        if (request.getCreateIdpGroupMappingDetails() == null) {
-            throw new NullPointerException("createIdpGroupMappingDetails is required");
-        }
-
-        if (request.getIdentityProviderId() == null) {
-            throw new NullPointerException("identityProviderId is required");
-        }
+        Validate.notNull(request, "request instance is required");
+        Validate.notNull(
+                request.getCreateIdpGroupMappingDetails(),
+                "createIdpGroupMappingDetails is required");
+        Validate.notBlank(request.getIdentityProviderId(), "identityProviderId must not be blank");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()

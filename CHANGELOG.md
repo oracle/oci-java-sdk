@@ -13,6 +13,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.2.34 - 2018-04-05
+
+### Fixed
+- Provide better exception message when the required path parameter is empty
+
+### Added
+- Added example [here](https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/LaunchDbSystemExample.java) for how to launch a DB system
+- Added example [here](https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/TaggingExample.java) for managing tags and tag namespaces, as well as how to apply freeform and defined tags to a resource
+
 ## 1.2.33 - 2018-03-27
 
 ### Added
