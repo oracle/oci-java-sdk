@@ -6,6 +6,7 @@ package com.oracle.bmc.audit.internal.http;
 import com.oracle.bmc.audit.model.*;
 import com.oracle.bmc.audit.requests.*;
 import com.oracle.bmc.audit.responses.*;
+import org.apache.commons.lang3.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.extern.slf4j.Slf4j
@@ -21,21 +22,10 @@ public class ListEventsConverter {
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client, ListEventsRequest request) {
-        if (request == null) {
-            throw new NullPointerException("request instance is required");
-        }
-
-        if (request.getCompartmentId() == null) {
-            throw new NullPointerException("compartmentId is required");
-        }
-
-        if (request.getStartTime() == null) {
-            throw new NullPointerException("startTime is required");
-        }
-
-        if (request.getEndTime() == null) {
-            throw new NullPointerException("endTime is required");
-        }
+        Validate.notNull(request, "request instance is required");
+        Validate.notNull(request.getCompartmentId(), "compartmentId is required");
+        Validate.notNull(request.getStartTime(), "startTime is required");
+        Validate.notNull(request.getEndTime(), "endTime is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget().path("/20160918").path("auditEvents");

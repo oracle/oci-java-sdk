@@ -6,6 +6,7 @@ package com.oracle.bmc.database.internal.http;
 import com.oracle.bmc.database.model.*;
 import com.oracle.bmc.database.requests.*;
 import com.oracle.bmc.database.responses.*;
+import org.apache.commons.lang3.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.extern.slf4j.Slf4j
@@ -21,17 +22,9 @@ public class UpdateDbHomeConverter {
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client, UpdateDbHomeRequest request) {
-        if (request == null) {
-            throw new NullPointerException("request instance is required");
-        }
-
-        if (request.getDbHomeId() == null) {
-            throw new NullPointerException("dbHomeId is required");
-        }
-
-        if (request.getUpdateDbHomeDetails() == null) {
-            throw new NullPointerException("updateDbHomeDetails is required");
-        }
+        Validate.notNull(request, "request instance is required");
+        Validate.notBlank(request.getDbHomeId(), "dbHomeId must not be blank");
+        Validate.notNull(request.getUpdateDbHomeDetails(), "updateDbHomeDetails is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()

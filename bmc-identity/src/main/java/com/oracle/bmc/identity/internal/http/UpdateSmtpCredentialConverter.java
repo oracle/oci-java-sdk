@@ -6,6 +6,7 @@ package com.oracle.bmc.identity.internal.http;
 import com.oracle.bmc.identity.model.*;
 import com.oracle.bmc.identity.requests.*;
 import com.oracle.bmc.identity.responses.*;
+import org.apache.commons.lang3.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.extern.slf4j.Slf4j
@@ -22,21 +23,12 @@ public class UpdateSmtpCredentialConverter {
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client, UpdateSmtpCredentialRequest request) {
-        if (request == null) {
-            throw new NullPointerException("request instance is required");
-        }
-
-        if (request.getUserId() == null) {
-            throw new NullPointerException("userId is required");
-        }
-
-        if (request.getSmtpCredentialId() == null) {
-            throw new NullPointerException("smtpCredentialId is required");
-        }
-
-        if (request.getUpdateSmtpCredentialDetails() == null) {
-            throw new NullPointerException("updateSmtpCredentialDetails is required");
-        }
+        Validate.notNull(request, "request instance is required");
+        Validate.notBlank(request.getUserId(), "userId must not be blank");
+        Validate.notBlank(request.getSmtpCredentialId(), "smtpCredentialId must not be blank");
+        Validate.notNull(
+                request.getUpdateSmtpCredentialDetails(),
+                "updateSmtpCredentialDetails is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()

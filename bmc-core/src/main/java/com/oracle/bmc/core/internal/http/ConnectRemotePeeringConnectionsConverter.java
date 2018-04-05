@@ -6,6 +6,7 @@ package com.oracle.bmc.core.internal.http;
 import com.oracle.bmc.core.model.*;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
+import org.apache.commons.lang3.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.extern.slf4j.Slf4j
@@ -23,17 +24,13 @@ public class ConnectRemotePeeringConnectionsConverter {
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
             ConnectRemotePeeringConnectionsRequest request) {
-        if (request == null) {
-            throw new NullPointerException("request instance is required");
-        }
-
-        if (request.getRemotePeeringConnectionId() == null) {
-            throw new NullPointerException("remotePeeringConnectionId is required");
-        }
-
-        if (request.getConnectRemotePeeringConnectionsDetails() == null) {
-            throw new NullPointerException("connectRemotePeeringConnectionsDetails is required");
-        }
+        Validate.notNull(request, "request instance is required");
+        Validate.notBlank(
+                request.getRemotePeeringConnectionId(),
+                "remotePeeringConnectionId must not be blank");
+        Validate.notNull(
+                request.getConnectRemotePeeringConnectionsDetails(),
+                "connectRemotePeeringConnectionsDetails is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()

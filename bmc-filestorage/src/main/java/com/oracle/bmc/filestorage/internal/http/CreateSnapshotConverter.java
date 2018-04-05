@@ -6,6 +6,7 @@ package com.oracle.bmc.filestorage.internal.http;
 import com.oracle.bmc.filestorage.model.*;
 import com.oracle.bmc.filestorage.requests.*;
 import com.oracle.bmc.filestorage.responses.*;
+import org.apache.commons.lang3.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 @lombok.extern.slf4j.Slf4j
@@ -21,13 +22,8 @@ public class CreateSnapshotConverter {
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client, CreateSnapshotRequest request) {
-        if (request == null) {
-            throw new NullPointerException("request instance is required");
-        }
-
-        if (request.getCreateSnapshotDetails() == null) {
-            throw new NullPointerException("createSnapshotDetails is required");
-        }
+        Validate.notNull(request, "request instance is required");
+        Validate.notNull(request.getCreateSnapshotDetails(), "createSnapshotDetails is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget().path("/20171215").path("snapshots");

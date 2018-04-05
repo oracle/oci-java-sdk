@@ -6,6 +6,7 @@ package com.oracle.bmc.dns.internal.http;
 import com.oracle.bmc.dns.model.*;
 import com.oracle.bmc.dns.requests.*;
 import com.oracle.bmc.dns.responses.*;
+import org.apache.commons.lang3.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 @lombok.extern.slf4j.Slf4j
@@ -21,25 +22,11 @@ public class UpdateRRSetConverter {
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client, UpdateRRSetRequest request) {
-        if (request == null) {
-            throw new NullPointerException("request instance is required");
-        }
-
-        if (request.getZoneNameOrId() == null) {
-            throw new NullPointerException("zoneNameOrId is required");
-        }
-
-        if (request.getDomain() == null) {
-            throw new NullPointerException("domain is required");
-        }
-
-        if (request.getRtype() == null) {
-            throw new NullPointerException("rtype is required");
-        }
-
-        if (request.getUpdateRRSetDetails() == null) {
-            throw new NullPointerException("updateRRSetDetails is required");
-        }
+        Validate.notNull(request, "request instance is required");
+        Validate.notBlank(request.getZoneNameOrId(), "zoneNameOrId must not be blank");
+        Validate.notBlank(request.getDomain(), "domain must not be blank");
+        Validate.notBlank(request.getRtype(), "rtype must not be blank");
+        Validate.notNull(request.getUpdateRRSetDetails(), "updateRRSetDetails is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()

@@ -187,135 +187,26 @@ public class BlockstorageClient implements Blockstorage {
      * @return builder
      */
     public static Builder builder() {
-        return new Builder();
+        return new Builder(SERVICE);
     }
 
     /**
      * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
-     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * {@link #build(AbstractAuthenticationDetailsProvider)} or {@link #buildAsync(AbstractAuthenticationDetailsProvider)} method.
      */
-    public static class Builder {
-        protected com.oracle.bmc.ClientConfiguration configuration;
-        protected com.oracle.bmc.http.ClientConfigurator clientConfigurator;
-        protected java.util.List<com.oracle.bmc.http.ClientConfigurator>
-                additionalClientConfigurators = new java.util.ArrayList<>();
-        protected com.oracle.bmc.http.signing.RequestSignerFactory requestSignerFactory =
-                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
-        protected String endpoint;
-
-        private Builder() {}
-
-        private Builder(
-                com.oracle.bmc.ClientConfiguration configuration,
-                com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-                java.util.List<com.oracle.bmc.http.ClientConfigurator>
-                        additionalClientConfigurators,
-                com.oracle.bmc.http.signing.RequestSignerFactory requestSignerFactory) {
-            this.configuration = configuration;
-            this.clientConfigurator = clientConfigurator;
-            this.additionalClientConfigurators = additionalClientConfigurators;
+    public static class Builder
+            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, BlockstorageClient> {
+        private Builder(com.oracle.bmc.Service service) {
+            super(service);
+            requestSignerFactory =
+                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
         }
 
         /**
-         * Set the configuration. May be null.
-         * @param configuration configuration. May be null.
-         * @return this builder
-         */
-        public Builder configuration(com.oracle.bmc.ClientConfiguration configuration) {
-            this.configuration = configuration;
-            return this;
-        }
-
-        /**
-         * Set the client configurator. May be null.
-         * @param clientConfigurator client configurator. May be null.
-         * @return this builder
-         */
-        public Builder clientConfigurator(
-                com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-            this.clientConfigurator = clientConfigurator;
-            return this;
-        }
-
-        /**
-         * Add an additional client configurator to be run after the primary configurator.
-         * @param additionalClientConfigurator the additional client configurator
-         * @return this builder
-         */
-        public Builder additionalClientConfigurator(
-                @lombok.NonNull
-                com.oracle.bmc.http.ClientConfigurator additionalClientConfigurator) {
-            this.additionalClientConfigurators.add(additionalClientConfigurator);
-            return this;
-        }
-
-        /**
-         * Set the request signer factory. May be null.
-         * @param requestSignerFactory request signer factory. May be null.
-         * @return this builder
-         */
-        public Builder requestSignerFactory(
-                com.oracle.bmc.http.signing.RequestSignerFactory requestSignerFactory) {
-            if (requestSignerFactory == null) {
-                this.requestSignerFactory =
-                        new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                                com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
-            } else {
-                this.requestSignerFactory = requestSignerFactory;
-            }
-            return this;
-        }
-
-        /**
-         * Set the endpoint for the client to be created.
-         * @param endpoint endpoint
-         * @return this builder
-         */
-        public Builder endpoint(String endpoint) {
-            this.endpoint = endpoint;
-            return this;
-        }
-
-        /**
-         * Set the region for the client to be created.
-         * @param region region
-         * @return this builder
-         */
-        public Builder region(com.oracle.bmc.Region region) {
-            com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
-            if (endpoint.isPresent()) {
-                endpoint(endpoint.get());
-            } else {
-                throw new IllegalArgumentException(
-                        "Endpoint for " + SERVICE + " is not known in region " + region);
-            }
-            return this;
-        }
-
-        /**
-         * Set the region for the client to be created.
-         * @param region region
-         * @return this builder
-         */
-        public Builder region(String regionId) {
-            regionId = regionId.toLowerCase(Locale.ENGLISH);
-            try {
-                com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
-                return region(region);
-            } catch (IllegalArgumentException e) {
-                LOG.info(
-                        "Unknown regionId '{}', falling back to default endpoint format", regionId);
-                String endpoint =
-                        com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
-                return endpoint(endpoint);
-            }
-        }
-
-        /**
-         * Set the authentication details provider. Once this is called, the builder can build the client.
+         * Build the client.
          * @param authenticationDetailsProvider authentication details provider
-         * @return a builder that can build the client
+         * @return the client
          */
         public BlockstorageClient build(
                 @lombok.NonNull

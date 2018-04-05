@@ -6,6 +6,7 @@ package com.oracle.bmc.email.internal.http;
 import com.oracle.bmc.email.model.*;
 import com.oracle.bmc.email.requests.*;
 import com.oracle.bmc.email.responses.*;
+import org.apache.commons.lang3.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
 @lombok.extern.slf4j.Slf4j
@@ -21,13 +22,9 @@ public class CreateSuppressionConverter {
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client, CreateSuppressionRequest request) {
-        if (request == null) {
-            throw new NullPointerException("request instance is required");
-        }
-
-        if (request.getCreateSuppressionDetails() == null) {
-            throw new NullPointerException("createSuppressionDetails is required");
-        }
+        Validate.notNull(request, "request instance is required");
+        Validate.notNull(
+                request.getCreateSuppressionDetails(), "createSuppressionDetails is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget().path("/20170907").path("suppressions");

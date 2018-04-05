@@ -6,6 +6,7 @@ package com.oracle.bmc.objectstorage.internal.http;
 import com.oracle.bmc.objectstorage.model.*;
 import com.oracle.bmc.objectstorage.requests.*;
 import com.oracle.bmc.objectstorage.responses.*;
+import org.apache.commons.lang3.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.extern.slf4j.Slf4j
@@ -21,25 +22,11 @@ public class PutObjectConverter {
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client, PutObjectRequest request) {
-        if (request == null) {
-            throw new NullPointerException("request instance is required");
-        }
-
-        if (request.getNamespaceName() == null) {
-            throw new NullPointerException("namespaceName is required");
-        }
-
-        if (request.getBucketName() == null) {
-            throw new NullPointerException("bucketName is required");
-        }
-
-        if (request.getObjectName() == null) {
-            throw new NullPointerException("objectName is required");
-        }
-
-        if (request.getPutObjectBody() == null) {
-            throw new NullPointerException("putObjectBody is required");
-        }
+        Validate.notNull(request, "request instance is required");
+        Validate.notBlank(request.getNamespaceName(), "namespaceName must not be blank");
+        Validate.notBlank(request.getBucketName(), "bucketName must not be blank");
+        Validate.notBlank(request.getObjectName(), "objectName must not be blank");
+        Validate.notNull(request.getPutObjectBody(), "putObjectBody is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()

@@ -6,6 +6,7 @@ package com.oracle.bmc.identity.internal.http;
 import com.oracle.bmc.identity.model.*;
 import com.oracle.bmc.identity.requests.*;
 import com.oracle.bmc.identity.responses.*;
+import org.apache.commons.lang3.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.extern.slf4j.Slf4j
@@ -21,21 +22,10 @@ public class UpdateTagConverter {
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client, UpdateTagRequest request) {
-        if (request == null) {
-            throw new NullPointerException("request instance is required");
-        }
-
-        if (request.getTagNamespaceId() == null) {
-            throw new NullPointerException("tagNamespaceId is required");
-        }
-
-        if (request.getTagName() == null) {
-            throw new NullPointerException("tagName is required");
-        }
-
-        if (request.getUpdateTagDetails() == null) {
-            throw new NullPointerException("updateTagDetails is required");
-        }
+        Validate.notNull(request, "request instance is required");
+        Validate.notBlank(request.getTagNamespaceId(), "tagNamespaceId must not be blank");
+        Validate.notBlank(request.getTagName(), "tagName must not be blank");
+        Validate.notNull(request.getUpdateTagDetails(), "updateTagDetails is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()

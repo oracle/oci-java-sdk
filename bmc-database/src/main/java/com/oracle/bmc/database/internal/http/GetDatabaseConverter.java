@@ -6,6 +6,7 @@ package com.oracle.bmc.database.internal.http;
 import com.oracle.bmc.database.model.*;
 import com.oracle.bmc.database.requests.*;
 import com.oracle.bmc.database.responses.*;
+import org.apache.commons.lang3.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.extern.slf4j.Slf4j
@@ -21,13 +22,8 @@ public class GetDatabaseConverter {
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client, GetDatabaseRequest request) {
-        if (request == null) {
-            throw new NullPointerException("request instance is required");
-        }
-
-        if (request.getDatabaseId() == null) {
-            throw new NullPointerException("databaseId is required");
-        }
+        Validate.notNull(request, "request instance is required");
+        Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
