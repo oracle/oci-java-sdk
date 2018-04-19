@@ -37,6 +37,7 @@ public class GetGroupRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(GetGroupRequest o) {
             groupId(o.getGroupId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

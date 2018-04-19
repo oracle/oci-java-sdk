@@ -55,6 +55,7 @@ public class ListDbSystemShapesRequest extends com.oracle.bmc.requests.BmcReques
             compartmentId(o.getCompartmentId());
             limit(o.getLimit());
             page(o.getPage());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

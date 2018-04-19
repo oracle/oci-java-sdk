@@ -65,6 +65,7 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
             drgId(o.getDrgId());
             limit(o.getLimit());
             page(o.getPage());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -54,6 +54,7 @@ public class TerminateInstanceRequest extends com.oracle.bmc.requests.BmcRequest
             instanceId(o.getInstanceId());
             ifMatch(o.getIfMatch());
             preserveBootVolume(o.getPreserveBootVolume());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

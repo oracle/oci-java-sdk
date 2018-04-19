@@ -64,6 +64,7 @@ public class ListUserGroupMembershipsRequest extends com.oracle.bmc.requests.Bmc
             groupId(o.getGroupId());
             page(o.getPage());
             limit(o.getLimit());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

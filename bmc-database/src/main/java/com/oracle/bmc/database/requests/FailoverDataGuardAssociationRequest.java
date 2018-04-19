@@ -58,6 +58,7 @@ public class FailoverDataGuardAssociationRequest extends com.oracle.bmc.requests
             dataGuardAssociationId(o.getDataGuardAssociationId());
             failoverDataGuardAssociationDetails(o.getFailoverDataGuardAssociationDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

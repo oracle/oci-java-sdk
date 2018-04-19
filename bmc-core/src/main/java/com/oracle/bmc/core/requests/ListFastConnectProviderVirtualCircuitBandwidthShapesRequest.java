@@ -54,6 +54,7 @@ public class ListFastConnectProviderVirtualCircuitBandwidthShapesRequest
             providerServiceId(o.getProviderServiceId());
             limit(o.getLimit());
             page(o.getPage());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

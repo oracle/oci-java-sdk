@@ -45,6 +45,7 @@ public class ListBackendSetsRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(ListBackendSetsRequest o) {
             loadBalancerId(o.getLoadBalancerId());
             opcRequestId(o.getOpcRequestId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

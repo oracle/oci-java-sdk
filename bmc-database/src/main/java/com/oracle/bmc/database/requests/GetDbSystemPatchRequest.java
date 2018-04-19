@@ -43,6 +43,7 @@ public class GetDbSystemPatchRequest extends com.oracle.bmc.requests.BmcRequest 
         public Builder copy(GetDbSystemPatchRequest o) {
             dbSystemId(o.getDbSystemId());
             patchId(o.getPatchId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

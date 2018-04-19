@@ -111,6 +111,7 @@ public class UploadPartRequest extends com.oracle.bmc.requests.BmcRequest {
             ifNoneMatch(o.getIfNoneMatch());
             expect(o.getExpect());
             contentMD5(o.getContentMD5());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

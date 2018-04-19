@@ -68,6 +68,25 @@ public class CreateDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("ncharacterSet")
         private String ncharacterSet;
 
@@ -97,6 +116,8 @@ public class CreateDatabaseDetails {
                             dbBackupConfig,
                             dbName,
                             dbWorkload,
+                            definedTags,
+                            freeformTags,
                             ncharacterSet,
                             pdbName);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -111,6 +132,8 @@ public class CreateDatabaseDetails {
                             .dbBackupConfig(o.getDbBackupConfig())
                             .dbName(o.getDbName())
                             .dbWorkload(o.getDbWorkload())
+                            .definedTags(o.getDefinedTags())
+                            .freeformTags(o.getFreeformTags())
                             .ncharacterSet(o.getNcharacterSet())
                             .pdbName(o.getPdbName());
 
@@ -189,6 +212,26 @@ public class CreateDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
     DbWorkload dbWorkload;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Department\": \"Finance\"}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    java.util.Map<String, String> freeformTags;
 
     /**
      * National character set for the database.  The default is AL16UTF16. Allowed values are:

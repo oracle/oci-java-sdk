@@ -37,6 +37,7 @@ public class GetVolumeAttachmentRequest extends com.oracle.bmc.requests.BmcReque
          */
         public Builder copy(GetVolumeAttachmentRequest o) {
             volumeAttachmentId(o.getVolumeAttachmentId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

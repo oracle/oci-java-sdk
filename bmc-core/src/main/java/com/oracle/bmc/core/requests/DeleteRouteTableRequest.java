@@ -46,6 +46,7 @@ public class DeleteRouteTableRequest extends com.oracle.bmc.requests.BmcRequest 
         public Builder copy(DeleteRouteTableRequest o) {
             rtId(o.getRtId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

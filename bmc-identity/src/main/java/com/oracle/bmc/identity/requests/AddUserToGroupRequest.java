@@ -48,6 +48,7 @@ public class AddUserToGroupRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(AddUserToGroupRequest o) {
             addUserToGroupDetails(o.getAddUserToGroupDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

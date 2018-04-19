@@ -55,6 +55,7 @@ public class ListDbHomesRequest extends com.oracle.bmc.requests.BmcRequest {
             dbSystemId(o.getDbSystemId());
             limit(o.getLimit());
             page(o.getPage());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

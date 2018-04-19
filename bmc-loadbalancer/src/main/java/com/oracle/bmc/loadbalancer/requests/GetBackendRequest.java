@@ -63,6 +63,7 @@ public class GetBackendRequest extends com.oracle.bmc.requests.BmcRequest {
             backendSetName(o.getBackendSetName());
             backendName(o.getBackendName());
             opcRequestId(o.getOpcRequestId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

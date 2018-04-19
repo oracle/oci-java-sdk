@@ -63,6 +63,7 @@ public class ListMultipartUploadsRequest extends com.oracle.bmc.requests.BmcRequ
             limit(o.getLimit());
             page(o.getPage());
             opcClientRequestId(o.getOpcClientRequestId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

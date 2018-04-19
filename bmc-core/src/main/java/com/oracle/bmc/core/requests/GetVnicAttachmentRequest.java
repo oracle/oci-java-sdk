@@ -37,6 +37,7 @@ public class GetVnicAttachmentRequest extends com.oracle.bmc.requests.BmcRequest
          */
         public Builder copy(GetVnicAttachmentRequest o) {
             vnicAttachmentId(o.getVnicAttachmentId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

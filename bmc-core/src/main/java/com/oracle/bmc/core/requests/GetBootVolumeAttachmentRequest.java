@@ -37,6 +37,7 @@ public class GetBootVolumeAttachmentRequest extends com.oracle.bmc.requests.BmcR
          */
         public Builder copy(GetBootVolumeAttachmentRequest o) {
             bootVolumeAttachmentId(o.getBootVolumeAttachmentId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

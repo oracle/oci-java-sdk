@@ -58,6 +58,7 @@ public class UpdateCustomerSecretKeyRequest extends com.oracle.bmc.requests.BmcR
             customerSecretKeyId(o.getCustomerSecretKeyId());
             updateCustomerSecretKeyDetails(o.getUpdateCustomerSecretKeyDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

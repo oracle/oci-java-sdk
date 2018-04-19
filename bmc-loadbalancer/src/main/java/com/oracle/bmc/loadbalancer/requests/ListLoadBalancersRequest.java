@@ -176,6 +176,7 @@ public class ListLoadBalancersRequest extends com.oracle.bmc.requests.BmcRequest
             sortOrder(o.getSortOrder());
             displayName(o.getDisplayName());
             lifecycleState(o.getLifecycleState());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

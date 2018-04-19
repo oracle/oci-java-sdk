@@ -52,6 +52,7 @@ public class UpdateInternetGatewayRequest extends com.oracle.bmc.requests.BmcReq
             igId(o.getIgId());
             updateInternetGatewayDetails(o.getUpdateInternetGatewayDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

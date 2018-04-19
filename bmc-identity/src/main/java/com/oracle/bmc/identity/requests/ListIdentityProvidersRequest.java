@@ -58,6 +58,7 @@ public class ListIdentityProvidersRequest extends com.oracle.bmc.requests.BmcReq
             compartmentId(o.getCompartmentId());
             page(o.getPage());
             limit(o.getLimit());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

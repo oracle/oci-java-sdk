@@ -65,6 +65,7 @@ public class DeleteZoneRequest extends com.oracle.bmc.requests.BmcRequest {
             ifMatch(o.getIfMatch());
             ifUnmodifiedSince(o.getIfUnmodifiedSince());
             compartmentId(o.getCompartmentId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

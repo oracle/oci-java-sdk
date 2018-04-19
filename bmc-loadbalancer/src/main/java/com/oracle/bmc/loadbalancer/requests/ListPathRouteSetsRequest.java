@@ -47,6 +47,7 @@ public class ListPathRouteSetsRequest extends com.oracle.bmc.requests.BmcRequest
         public Builder copy(ListPathRouteSetsRequest o) {
             loadBalancerId(o.getLoadBalancerId());
             opcRequestId(o.getOpcRequestId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

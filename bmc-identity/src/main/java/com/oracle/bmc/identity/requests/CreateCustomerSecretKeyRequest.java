@@ -54,6 +54,7 @@ public class CreateCustomerSecretKeyRequest extends com.oracle.bmc.requests.BmcR
             createCustomerSecretKeyDetails(o.getCreateCustomerSecretKeyDetails());
             userId(o.getUserId());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

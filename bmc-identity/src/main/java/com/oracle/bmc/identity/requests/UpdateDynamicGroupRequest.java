@@ -52,6 +52,7 @@ public class UpdateDynamicGroupRequest extends com.oracle.bmc.requests.BmcReques
             dynamicGroupId(o.getDynamicGroupId());
             updateDynamicGroupDetails(o.getUpdateDynamicGroupDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

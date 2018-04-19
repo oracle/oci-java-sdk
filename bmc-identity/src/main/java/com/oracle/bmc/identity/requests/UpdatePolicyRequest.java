@@ -52,6 +52,7 @@ public class UpdatePolicyRequest extends com.oracle.bmc.requests.BmcRequest {
             policyId(o.getPolicyId());
             updatePolicyDetails(o.getUpdatePolicyDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

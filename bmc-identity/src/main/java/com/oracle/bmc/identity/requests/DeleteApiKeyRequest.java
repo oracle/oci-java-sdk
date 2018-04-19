@@ -52,6 +52,7 @@ public class DeleteApiKeyRequest extends com.oracle.bmc.requests.BmcRequest {
             userId(o.getUserId());
             fingerprint(o.getFingerprint());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

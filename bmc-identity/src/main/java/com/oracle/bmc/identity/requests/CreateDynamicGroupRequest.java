@@ -48,6 +48,7 @@ public class CreateDynamicGroupRequest extends com.oracle.bmc.requests.BmcReques
         public Builder copy(CreateDynamicGroupRequest o) {
             createDynamicGroupDetails(o.getCreateDynamicGroupDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

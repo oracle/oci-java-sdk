@@ -52,6 +52,7 @@ public class UpdateGroupRequest extends com.oracle.bmc.requests.BmcRequest {
             groupId(o.getGroupId());
             updateGroupDetails(o.getUpdateGroupDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

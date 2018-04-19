@@ -13,6 +13,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.2.35 - 2018-04-19
+
+### Fixed
+- Upgraded Jackson to version 2.9.5 to address vulnerability [issue#55](https://github.com/oracle/oci-java-sdk/issues/55)
+- PutObjectRequest does not callback invocationCallback object [issue#58](https://github.com/oracle/oci-java-sdk/issues/58)
+
+### Added
+- Support for tagging DbSystem and Database resources in the Database Service
+- Support for filtering by `dbSystemId` in `listDbVersions` operation in Database Service
+
 ## 1.2.34 - 2018-04-05
 
 ### Fixed

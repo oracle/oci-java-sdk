@@ -48,6 +48,7 @@ public class CreateFileSystemRequest extends com.oracle.bmc.requests.BmcRequest 
         public Builder copy(CreateFileSystemRequest o) {
             createFileSystemDetails(o.getCreateFileSystemDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

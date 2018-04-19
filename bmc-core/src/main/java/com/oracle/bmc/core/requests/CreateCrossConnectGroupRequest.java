@@ -48,6 +48,7 @@ public class CreateCrossConnectGroupRequest extends com.oracle.bmc.requests.BmcR
         public Builder copy(CreateCrossConnectGroupRequest o) {
             createCrossConnectGroupDetails(o.getCreateCrossConnectGroupDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

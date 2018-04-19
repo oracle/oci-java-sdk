@@ -39,6 +39,11 @@ public class Constants {
                     ALL_HEADERS,
                     ALL_HEADERS);
 
+    @Deprecated
+    /**
+     * A signing strategy that signs headers and body, except for PUT, where bodies are not signed
+     * @deprecated use REQUIRED_EXCLUDE_BODY_SIGNING_HEADERS instead; Object Storage has migrated to using STANDARD, with EXCLUDE_BODY as a per-operation override.  We therefore do not want to maintain a service-specific signing strategy.
+     */
     public static final ImmutableMap<String, List<String>> REQUIRED_OBJECTSTORAGE_SIGNING_HEADERS =
             createHeadersToSignMap(
                     GENERIC_HEADERS,
@@ -48,6 +53,17 @@ public class Constants {
                     ALL_HEADERS,
                     ALL_HEADERS);
 
+    /**
+     * A signing strategy that signs headers only.
+     */
+    public static final ImmutableMap<String, List<String>> REQUIRED_EXCLUDE_BODY_SIGNING_HEADERS =
+            createHeadersToSignMap(
+                    GENERIC_HEADERS,
+                    GENERIC_HEADERS,
+                    GENERIC_HEADERS,
+                    GENERIC_HEADERS,
+                    GENERIC_HEADERS,
+                    GENERIC_HEADERS);
     /**
      * Creates a map of headers to sign for each HTTP method.
      * @param getHeaders headers for GET requests

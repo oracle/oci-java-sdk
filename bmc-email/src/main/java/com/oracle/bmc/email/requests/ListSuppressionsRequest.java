@@ -180,6 +180,7 @@ public class ListSuppressionsRequest extends com.oracle.bmc.requests.BmcRequest 
             limit(o.getLimit());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

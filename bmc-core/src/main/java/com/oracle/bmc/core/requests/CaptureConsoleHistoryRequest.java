@@ -48,6 +48,7 @@ public class CaptureConsoleHistoryRequest extends com.oracle.bmc.requests.BmcReq
         public Builder copy(CaptureConsoleHistoryRequest o) {
             captureConsoleHistoryDetails(o.getCaptureConsoleHistoryDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

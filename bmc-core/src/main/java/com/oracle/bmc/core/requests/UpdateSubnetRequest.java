@@ -52,6 +52,7 @@ public class UpdateSubnetRequest extends com.oracle.bmc.requests.BmcRequest {
             subnetId(o.getSubnetId());
             updateSubnetDetails(o.getUpdateSubnetDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

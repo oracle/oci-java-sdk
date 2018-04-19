@@ -37,6 +37,7 @@ public class GetBackupRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(GetBackupRequest o) {
             backupId(o.getBackupId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

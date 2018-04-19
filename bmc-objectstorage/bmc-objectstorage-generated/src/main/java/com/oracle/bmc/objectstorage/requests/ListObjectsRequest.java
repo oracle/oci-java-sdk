@@ -96,6 +96,7 @@ public class ListObjectsRequest extends com.oracle.bmc.requests.BmcRequest {
             delimiter(o.getDelimiter());
             fields(o.getFields());
             opcClientRequestId(o.getOpcClientRequestId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

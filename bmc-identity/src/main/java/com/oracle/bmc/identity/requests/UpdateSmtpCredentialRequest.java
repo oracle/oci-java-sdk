@@ -58,6 +58,7 @@ public class UpdateSmtpCredentialRequest extends com.oracle.bmc.requests.BmcRequ
             smtpCredentialId(o.getSmtpCredentialId());
             updateSmtpCredentialDetails(o.getUpdateSmtpCredentialDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

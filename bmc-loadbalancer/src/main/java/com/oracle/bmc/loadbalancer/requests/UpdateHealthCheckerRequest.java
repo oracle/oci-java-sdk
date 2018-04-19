@@ -71,6 +71,7 @@ public class UpdateHealthCheckerRequest extends com.oracle.bmc.requests.BmcReque
             backendSetName(o.getBackendSetName());
             opcRequestId(o.getOpcRequestId());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

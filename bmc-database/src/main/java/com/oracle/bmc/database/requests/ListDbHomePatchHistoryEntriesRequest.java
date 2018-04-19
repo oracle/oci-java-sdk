@@ -49,6 +49,7 @@ public class ListDbHomePatchHistoryEntriesRequest extends com.oracle.bmc.request
             dbHomeId(o.getDbHomeId());
             limit(o.getLimit());
             page(o.getPage());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -43,6 +43,7 @@ public class GetIdpGroupMappingRequest extends com.oracle.bmc.requests.BmcReques
         public Builder copy(GetIdpGroupMappingRequest o) {
             identityProviderId(o.getIdentityProviderId());
             mappingId(o.getMappingId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

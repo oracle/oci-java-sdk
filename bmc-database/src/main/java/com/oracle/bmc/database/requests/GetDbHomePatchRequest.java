@@ -43,6 +43,7 @@ public class GetDbHomePatchRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(GetDbHomePatchRequest o) {
             dbHomeId(o.getDbHomeId());
             patchId(o.getPatchId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

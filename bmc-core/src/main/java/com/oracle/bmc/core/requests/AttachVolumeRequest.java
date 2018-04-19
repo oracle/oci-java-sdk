@@ -48,6 +48,7 @@ public class AttachVolumeRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(AttachVolumeRequest o) {
             attachVolumeDetails(o.getAttachVolumeDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

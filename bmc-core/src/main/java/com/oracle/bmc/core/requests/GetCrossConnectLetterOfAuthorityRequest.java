@@ -37,6 +37,7 @@ public class GetCrossConnectLetterOfAuthorityRequest extends com.oracle.bmc.requ
          */
         public Builder copy(GetCrossConnectLetterOfAuthorityRequest o) {
             crossConnectId(o.getCrossConnectId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

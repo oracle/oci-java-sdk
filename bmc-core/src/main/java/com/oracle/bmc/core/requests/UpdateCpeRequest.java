@@ -52,6 +52,7 @@ public class UpdateCpeRequest extends com.oracle.bmc.requests.BmcRequest {
             cpeId(o.getCpeId());
             updateCpeDetails(o.getUpdateCpeDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

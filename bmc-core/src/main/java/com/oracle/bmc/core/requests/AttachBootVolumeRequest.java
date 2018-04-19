@@ -48,6 +48,7 @@ public class AttachBootVolumeRequest extends com.oracle.bmc.requests.BmcRequest 
         public Builder copy(AttachBootVolumeRequest o) {
             attachBootVolumeDetails(o.getAttachBootVolumeDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -48,6 +48,7 @@ public class DeleteExportRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(DeleteExportRequest o) {
             exportId(o.getExportId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -49,6 +49,7 @@ public class ListDbSystemPatchHistoryEntriesRequest extends com.oracle.bmc.reque
             dbSystemId(o.getDbSystemId());
             limit(o.getLimit());
             page(o.getPage());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

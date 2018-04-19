@@ -48,6 +48,7 @@ public class CreateRouteTableRequest extends com.oracle.bmc.requests.BmcRequest 
         public Builder copy(CreateRouteTableRequest o) {
             createRouteTableDetails(o.getCreateRouteTableDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

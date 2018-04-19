@@ -46,6 +46,7 @@ public class DeleteVcnRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(DeleteVcnRequest o) {
             vcnId(o.getVcnId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

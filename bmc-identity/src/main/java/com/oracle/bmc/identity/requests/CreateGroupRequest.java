@@ -48,6 +48,7 @@ public class CreateGroupRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(CreateGroupRequest o) {
             createGroupDetails(o.getCreateGroupDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

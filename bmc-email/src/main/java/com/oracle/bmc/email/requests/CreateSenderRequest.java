@@ -37,6 +37,7 @@ public class CreateSenderRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(CreateSenderRequest o) {
             createSenderDetails(o.getCreateSenderDetails());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

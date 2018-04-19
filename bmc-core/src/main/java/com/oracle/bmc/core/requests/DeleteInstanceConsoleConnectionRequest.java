@@ -46,6 +46,7 @@ public class DeleteInstanceConsoleConnectionRequest extends com.oracle.bmc.reque
         public Builder copy(DeleteInstanceConsoleConnectionRequest o) {
             instanceConsoleConnectionId(o.getInstanceConsoleConnectionId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

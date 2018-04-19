@@ -43,6 +43,7 @@ public class CreateZoneRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(CreateZoneRequest o) {
             createZoneDetails(o.getCreateZoneDetails());
             compartmentId(o.getCompartmentId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

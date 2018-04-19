@@ -48,6 +48,7 @@ public class CreateSubnetRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(CreateSubnetRequest o) {
             createSubnetDetails(o.getCreateSubnetDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

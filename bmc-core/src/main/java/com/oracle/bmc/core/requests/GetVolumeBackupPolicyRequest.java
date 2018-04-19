@@ -37,6 +37,7 @@ public class GetVolumeBackupPolicyRequest extends com.oracle.bmc.requests.BmcReq
          */
         public Builder copy(GetVolumeBackupPolicyRequest o) {
             policyId(o.getPolicyId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

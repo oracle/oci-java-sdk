@@ -63,6 +63,7 @@ public class GetZoneRequest extends com.oracle.bmc.requests.BmcRequest {
             ifNoneMatch(o.getIfNoneMatch());
             ifModifiedSince(o.getIfModifiedSince());
             compartmentId(o.getCompartmentId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

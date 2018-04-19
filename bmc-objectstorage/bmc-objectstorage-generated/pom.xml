@@ -4,9 +4,9 @@
 
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
-    <artifactId>oci-java-sdk-objectstorage-parent</artifactId>
-    <version>1.2.34</version>
-    <relativePath>../pom.xml</relativePath>
+    <artifactId>oci-java-sdk</artifactId>
+    <version>1.2.35</version>
+    <relativePath>../../pom.xml</relativePath>
   </parent>
 
   <artifactId>oci-java-sdk-objectstorage-generated</artifactId>
@@ -18,7 +18,7 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common</artifactId>
-      <version>1.2.34</version>
+      <version>1.2.35</version>
     </dependency>
   </dependencies>
 

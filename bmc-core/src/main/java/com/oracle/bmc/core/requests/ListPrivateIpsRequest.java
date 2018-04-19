@@ -68,6 +68,7 @@ public class ListPrivateIpsRequest extends com.oracle.bmc.requests.BmcRequest {
             ipAddress(o.getIpAddress());
             subnetId(o.getSubnetId());
             vnicId(o.getVnicId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -224,6 +224,7 @@ public class ListFileSystemsRequest extends com.oracle.bmc.requests.BmcRequest {
             id(o.getId());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

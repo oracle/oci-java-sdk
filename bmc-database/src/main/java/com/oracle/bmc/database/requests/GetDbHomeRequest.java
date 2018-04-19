@@ -37,6 +37,7 @@ public class GetDbHomeRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(GetDbHomeRequest o) {
             dbHomeId(o.getDbHomeId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

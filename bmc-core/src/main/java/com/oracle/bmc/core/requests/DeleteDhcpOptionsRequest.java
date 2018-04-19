@@ -46,6 +46,7 @@ public class DeleteDhcpOptionsRequest extends com.oracle.bmc.requests.BmcRequest
         public Builder copy(DeleteDhcpOptionsRequest o) {
             dhcpId(o.getDhcpId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

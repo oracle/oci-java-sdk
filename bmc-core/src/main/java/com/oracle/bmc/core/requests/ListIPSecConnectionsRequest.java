@@ -65,6 +65,7 @@ public class ListIPSecConnectionsRequest extends com.oracle.bmc.requests.BmcRequ
             cpeId(o.getCpeId());
             limit(o.getLimit());
             page(o.getPage());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

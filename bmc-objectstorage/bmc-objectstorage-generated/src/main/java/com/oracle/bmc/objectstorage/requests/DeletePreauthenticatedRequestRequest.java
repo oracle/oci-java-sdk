@@ -59,6 +59,7 @@ public class DeletePreauthenticatedRequestRequest extends com.oracle.bmc.request
             bucketName(o.getBucketName());
             parId(o.getParId());
             opcClientRequestId(o.getOpcClientRequestId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

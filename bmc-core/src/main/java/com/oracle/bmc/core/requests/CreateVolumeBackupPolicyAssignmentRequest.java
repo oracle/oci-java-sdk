@@ -38,6 +38,7 @@ public class CreateVolumeBackupPolicyAssignmentRequest extends com.oracle.bmc.re
         public Builder copy(CreateVolumeBackupPolicyAssignmentRequest o) {
             createVolumeBackupPolicyAssignmentDetails(
                     o.getCreateVolumeBackupPolicyAssignmentDetails());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

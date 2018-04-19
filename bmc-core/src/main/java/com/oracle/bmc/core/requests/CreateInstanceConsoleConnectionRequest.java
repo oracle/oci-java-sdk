@@ -48,6 +48,7 @@ public class CreateInstanceConsoleConnectionRequest extends com.oracle.bmc.reque
         public Builder copy(CreateInstanceConsoleConnectionRequest o) {
             createInstanceConsoleConnectionDetails(o.getCreateInstanceConsoleConnectionDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -52,6 +52,7 @@ public class RestoreDatabaseRequest extends com.oracle.bmc.requests.BmcRequest {
             databaseId(o.getDatabaseId());
             restoreDatabaseDetails(o.getRestoreDatabaseDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

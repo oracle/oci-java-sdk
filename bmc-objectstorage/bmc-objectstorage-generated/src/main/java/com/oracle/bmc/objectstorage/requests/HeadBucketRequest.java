@@ -67,6 +67,7 @@ public class HeadBucketRequest extends com.oracle.bmc.requests.BmcRequest {
             ifMatch(o.getIfMatch());
             ifNoneMatch(o.getIfNoneMatch());
             opcClientRequestId(o.getOpcClientRequestId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

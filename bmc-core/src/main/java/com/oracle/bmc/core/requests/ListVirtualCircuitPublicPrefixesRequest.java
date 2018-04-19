@@ -45,6 +45,7 @@ public class ListVirtualCircuitPublicPrefixesRequest extends com.oracle.bmc.requ
         public Builder copy(ListVirtualCircuitPublicPrefixesRequest o) {
             virtualCircuitId(o.getVirtualCircuitId());
             verificationState(o.getVerificationState());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

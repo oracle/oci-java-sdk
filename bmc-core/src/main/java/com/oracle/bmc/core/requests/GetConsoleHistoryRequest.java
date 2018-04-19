@@ -37,6 +37,7 @@ public class GetConsoleHistoryRequest extends com.oracle.bmc.requests.BmcRequest
          */
         public Builder copy(GetConsoleHistoryRequest o) {
             instanceConsoleHistoryId(o.getInstanceConsoleHistoryId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

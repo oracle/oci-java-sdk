@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.oracle.oci.sdk</groupId>
+    <artifactId>oci-java-sdk</artifactId>
+    <version>1.2.35</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+  <artifactId>oci-java-sdk-full</artifactId>
+  <name>Oracle Cloud Infrastructure SDK - Full SDK</name>
+  <description>This project contains the complete SDK distribution used for Oracle Cloud Infrastructure</description>
+  <url>https://docs.us-phoenix-1.oraclecloud.com/Content/API/SDKDocs/javasdk.htm</url>
+  <profiles>
+    <!-- Just do assembly, no signing -->
+    <profile>
+      <id>ziponly</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <configuration>
+              <appendAssemblyId>true</appendAssemblyId>
+              <attach>true</attach>
+              <descriptors>
+                <descriptor>src/main/assembly/assembly.xml</descriptor>
+              </descriptors>
+            </configuration>
+            <executions>
+              <execution>
+                <phase>package</phase>
+                <goals>
+                  <goal>single</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+  <build>
+    <plugins>
+      <!-- First create the single jar -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>2.3</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <minimizeJar>false</minimizeJar>
+              <createDependencyReducedPom>false</createDependencyReducedPom>
+              <createSourcesJar>true</createSourcesJar>
+              <dependencyReducedPomLocation>
+                ${java.io.tmpdir}/dependency-reduced-pom.xml
+              </dependencyReducedPomLocation>
+              <artifactSet>
+                <includes>
+                  <include>com.oracle.oci.sdk:*</include>
+                </includes>
+              </artifactSet>
+              <filters>
+                <filter>
+                  <artifact>*:*</artifact>
+                  <excludes>
+                    <exclude>**/pom.xml</exclude>
+                    <exclude>**/pom.properties</exclude>
+                  </excludes>
+                </filter>
+              </filters>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- Second, create the aggregated javadocs -->
+      <!-- TODO: this method needs to be cleaned up -->
+      <plugin>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <configuration>
+          <includeDependencySources>true</includeDependencySources>
+          <windowtitle>Oracle Cloud Infrastructure Java SDK - ${project.version}</windowtitle>
+          <doctitle>Oracle Cloud Infrastructure Java SDK - ${project.version}</doctitle>
+          <packagesheader>OCI Java SDK</packagesheader>
+          <sourcepath>
+            ../bmc-audit/target/generated-sources-for-docs/delombok;
+            ../bmc-common/target/generated-sources-for-docs/delombok;
+            ../bmc-core/target/generated-sources-for-docs/delombok;
+            ../bmc-database/target/generated-sources-for-docs/delombok;
+            ../bmc-dns/target/generated-sources-for-docs/delombok;
+            ../bmc-email/target/generated-sources-for-docs/delombok;
+            ../bmc-filestorage/target/generated-sources-for-docs/delombok;
+            ../bmc-identity/target/generated-sources-for-docs/delombok;
+            ../bmc-loadbalancer/target/generated-sources-for-docs/delombok;
+            ../bmc-objectstorage/bmc-objectstorage-extensions/target/generated-sources-for-docs/delombok;
+            ../bmc-objectstorage/bmc-objectstorage-generated/target/generated-sources-for-docs/delombok;
+          </sourcepath>
+          <groups>
+            <group>
+              <title>Oracle Cloud Infrastructure Audit Service</title>
+              <packages>com.oracle.bmc.audit*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Core Services (Compute/Virtual Network/Block Storage)</title>
+              <packages>com.oracle.bmc.core*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Database Service</title>
+              <packages>com.oracle.bmc.database*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure DNS Service</title>
+              <packages>com.oracle.bmc.dns*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Email Service</title>
+              <packages>com.oracle.bmc.email*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure File Storage</title>
+              <packages>com.oracle.bmc.filestorage*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Identity Service</title>
+              <packages>com.oracle.bmc.identity*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Load Balancer Service</title>
+              <packages>com.oracle.bmc.loadbalancer*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Object Storage Service</title>
+              <packages>com.oracle.bmc.objectstorage*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Common Runtime</title>
+              <packages>com.oracle.bmc*</packages>
+            </group>
+          </groups>
+          <overview>src/main/java/overview.html</overview>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.oracle.oci.sdk</groupId>
+        <artifactId>oci-java-sdk-bom</artifactId>
+        <version>1.2.35</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-audit</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-common</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-database</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-dns</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-email</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-filestorage</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-identity</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-loadbalancer</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-objectstorage</artifactId>
+      <type>pom</type>
+    </dependency>
+  </dependencies>
+</project>

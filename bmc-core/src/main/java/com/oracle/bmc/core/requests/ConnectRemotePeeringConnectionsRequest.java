@@ -43,6 +43,7 @@ public class ConnectRemotePeeringConnectionsRequest extends com.oracle.bmc.reque
         public Builder copy(ConnectRemotePeeringConnectionsRequest o) {
             remotePeeringConnectionId(o.getRemotePeeringConnectionId());
             connectRemotePeeringConnectionsDetails(o.getConnectRemotePeeringConnectionsDetails());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -49,6 +49,7 @@ public class ListDbSystemPatchesRequest extends com.oracle.bmc.requests.BmcReque
             dbSystemId(o.getDbSystemId());
             limit(o.getLimit());
             page(o.getPage());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

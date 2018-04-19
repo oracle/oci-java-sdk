@@ -48,6 +48,7 @@ public class CreatePolicyRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(CreatePolicyRequest o) {
             createPolicyDetails(o.getCreatePolicyDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

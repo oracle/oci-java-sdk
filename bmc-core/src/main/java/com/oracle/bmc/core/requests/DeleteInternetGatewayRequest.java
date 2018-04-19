@@ -46,6 +46,7 @@ public class DeleteInternetGatewayRequest extends com.oracle.bmc.requests.BmcReq
         public Builder copy(DeleteInternetGatewayRequest o) {
             igId(o.getIgId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

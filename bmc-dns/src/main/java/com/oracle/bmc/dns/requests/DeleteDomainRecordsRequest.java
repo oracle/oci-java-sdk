@@ -71,6 +71,7 @@ public class DeleteDomainRecordsRequest extends com.oracle.bmc.requests.BmcReque
             ifMatch(o.getIfMatch());
             ifUnmodifiedSince(o.getIfUnmodifiedSince());
             compartmentId(o.getCompartmentId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

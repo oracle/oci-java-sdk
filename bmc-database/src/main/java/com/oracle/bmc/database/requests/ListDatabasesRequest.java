@@ -55,6 +55,7 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest {
             dbHomeId(o.getDbHomeId());
             limit(o.getLimit());
             page(o.getPage());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

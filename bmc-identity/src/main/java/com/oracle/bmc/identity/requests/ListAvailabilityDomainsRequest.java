@@ -38,6 +38,7 @@ public class ListAvailabilityDomainsRequest extends com.oracle.bmc.requests.BmcR
          */
         public Builder copy(ListAvailabilityDomainsRequest o) {
             compartmentId(o.getCompartmentId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

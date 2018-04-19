@@ -45,6 +45,7 @@ public class ListCertificatesRequest extends com.oracle.bmc.requests.BmcRequest 
         public Builder copy(ListCertificatesRequest o) {
             loadBalancerId(o.getLoadBalancerId());
             opcRequestId(o.getOpcRequestId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

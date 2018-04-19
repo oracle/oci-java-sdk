@@ -46,6 +46,7 @@ public class DeleteVolumeBackupPolicyAssignmentRequest extends com.oracle.bmc.re
         public Builder copy(DeleteVolumeBackupPolicyAssignmentRequest o) {
             policyAssignmentId(o.getPolicyAssignmentId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

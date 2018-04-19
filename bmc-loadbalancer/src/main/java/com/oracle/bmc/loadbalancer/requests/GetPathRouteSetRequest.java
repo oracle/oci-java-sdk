@@ -54,6 +54,7 @@ public class GetPathRouteSetRequest extends com.oracle.bmc.requests.BmcRequest {
             loadBalancerId(o.getLoadBalancerId());
             pathRouteSetName(o.getPathRouteSetName());
             opcRequestId(o.getOpcRequestId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

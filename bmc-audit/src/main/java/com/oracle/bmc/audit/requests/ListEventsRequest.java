@@ -69,6 +69,7 @@ public class ListEventsRequest extends com.oracle.bmc.requests.BmcRequest {
             endTime(o.getEndTime());
             page(o.getPage());
             opcRequestId(o.getOpcRequestId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

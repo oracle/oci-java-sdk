@@ -46,6 +46,7 @@ public class DeleteDynamicGroupRequest extends com.oracle.bmc.requests.BmcReques
         public Builder copy(DeleteDynamicGroupRequest o) {
             dynamicGroupId(o.getDynamicGroupId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -52,6 +52,7 @@ public class UpdateCrossConnectGroupRequest extends com.oracle.bmc.requests.BmcR
             crossConnectGroupId(o.getCrossConnectGroupId());
             updateCrossConnectGroupDetails(o.getUpdateCrossConnectGroupDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

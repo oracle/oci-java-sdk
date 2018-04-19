@@ -3,14 +3,13 @@
  */
 package com.oracle.bmc.http.signing;
 
-import java.util.List;
-
 import com.google.common.collect.ImmutableMap;
 import com.oracle.bmc.InternalSdk;
 import com.oracle.bmc.http.signing.internal.Constants;
-
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+
+import java.util.List;
 
 /**
  * Enum for the various signing strategies used by OCI.
@@ -23,10 +22,18 @@ public enum SigningStrategy {
      * Standard signing strategy.
      */
     STANDARD(Constants.REQUIRED_SIGNING_HEADERS, false),
+
+    @Deprecated
     /**
      * Modified strategy specific to Object Storage.
+     * @deprecated use EXCLUDE_BODY instead; Object Storage has migrated to using STANDARD, with EXCLUDE_BODY as a per-operation override.  We therefore do not want to maintain a service-specific signing strategy.
      */
-    OBJECT_STORAGE(Constants.REQUIRED_OBJECTSTORAGE_SIGNING_HEADERS, true);
+    OBJECT_STORAGE(Constants.REQUIRED_OBJECTSTORAGE_SIGNING_HEADERS, true),
+
+    /**
+     * A strategy that does not sign the body.
+     */
+    EXCLUDE_BODY(Constants.REQUIRED_EXCLUDE_BODY_SIGNING_HEADERS, true);
 
     /**
      * The Map of headers (by HTTP method) to sign.

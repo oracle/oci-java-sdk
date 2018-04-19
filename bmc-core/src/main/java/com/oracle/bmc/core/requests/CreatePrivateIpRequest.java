@@ -48,6 +48,7 @@ public class CreatePrivateIpRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(CreatePrivateIpRequest o) {
             createPrivateIpDetails(o.getCreatePrivateIpDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

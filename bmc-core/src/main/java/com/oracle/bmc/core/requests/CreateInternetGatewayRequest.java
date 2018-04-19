@@ -48,6 +48,7 @@ public class CreateInternetGatewayRequest extends com.oracle.bmc.requests.BmcReq
         public Builder copy(CreateInternetGatewayRequest o) {
             createInternetGatewayDetails(o.getCreateInternetGatewayDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

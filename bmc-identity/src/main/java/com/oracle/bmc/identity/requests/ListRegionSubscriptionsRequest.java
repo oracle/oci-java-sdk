@@ -37,6 +37,7 @@ public class ListRegionSubscriptionsRequest extends com.oracle.bmc.requests.BmcR
          */
         public Builder copy(ListRegionSubscriptionsRequest o) {
             tenancyId(o.getTenancyId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

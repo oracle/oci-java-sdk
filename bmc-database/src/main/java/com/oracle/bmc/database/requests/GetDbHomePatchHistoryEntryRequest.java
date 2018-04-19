@@ -43,6 +43,7 @@ public class GetDbHomePatchHistoryEntryRequest extends com.oracle.bmc.requests.B
         public Builder copy(GetDbHomePatchHistoryEntryRequest o) {
             dbHomeId(o.getDbHomeId());
             patchHistoryEntryId(o.getPatchHistoryEntryId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

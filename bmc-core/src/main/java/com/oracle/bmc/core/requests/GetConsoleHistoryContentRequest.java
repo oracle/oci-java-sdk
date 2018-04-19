@@ -49,6 +49,7 @@ public class GetConsoleHistoryContentRequest extends com.oracle.bmc.requests.Bmc
             instanceConsoleHistoryId(o.getInstanceConsoleHistoryId());
             offset(o.getOffset());
             length(o.getLength());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

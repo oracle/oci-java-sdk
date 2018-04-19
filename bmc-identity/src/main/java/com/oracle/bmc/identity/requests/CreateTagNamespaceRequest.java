@@ -48,6 +48,7 @@ public class CreateTagNamespaceRequest extends com.oracle.bmc.requests.BmcReques
         public Builder copy(CreateTagNamespaceRequest o) {
             createTagNamespaceDetails(o.getCreateTagNamespaceDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

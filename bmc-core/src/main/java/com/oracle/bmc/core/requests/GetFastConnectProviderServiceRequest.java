@@ -37,6 +37,7 @@ public class GetFastConnectProviderServiceRequest extends com.oracle.bmc.request
          */
         public Builder copy(GetFastConnectProviderServiceRequest o) {
             providerServiceId(o.getProviderServiceId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

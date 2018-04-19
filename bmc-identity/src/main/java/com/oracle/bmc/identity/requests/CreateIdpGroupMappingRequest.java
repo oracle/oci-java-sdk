@@ -54,6 +54,7 @@ public class CreateIdpGroupMappingRequest extends com.oracle.bmc.requests.BmcReq
             createIdpGroupMappingDetails(o.getCreateIdpGroupMappingDetails());
             identityProviderId(o.getIdentityProviderId());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

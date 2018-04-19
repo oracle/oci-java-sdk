@@ -42,6 +42,25 @@ public class UpdateDbSystemDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKeys")
         private java.util.List<String> sshPublicKeys;
 
@@ -66,7 +85,12 @@ public class UpdateDbSystemDetails {
         public UpdateDbSystemDetails build() {
             UpdateDbSystemDetails __instance__ =
                     new UpdateDbSystemDetails(
-                            cpuCoreCount, dataStorageSizeInGBs, sshPublicKeys, version);
+                            cpuCoreCount,
+                            dataStorageSizeInGBs,
+                            definedTags,
+                            freeformTags,
+                            sshPublicKeys,
+                            version);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -76,6 +100,8 @@ public class UpdateDbSystemDetails {
             Builder copiedBuilder =
                     cpuCoreCount(o.getCpuCoreCount())
                             .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
+                            .definedTags(o.getDefinedTags())
+                            .freeformTags(o.getFreeformTags())
                             .sshPublicKeys(o.getSshPublicKeys())
                             .version(o.getVersion());
 
@@ -103,6 +129,26 @@ public class UpdateDbSystemDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
     Integer dataStorageSizeInGBs;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Department\": \"Finance\"}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    java.util.Map<String, String> freeformTags;
 
     /**
      * The public key portion of the key pair to use for SSH access to the DB System. Multiple public keys can be provided. The length of the combined keys cannot exceed 10,000 characters.

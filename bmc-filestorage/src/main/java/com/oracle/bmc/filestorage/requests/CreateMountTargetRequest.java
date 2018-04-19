@@ -48,6 +48,7 @@ public class CreateMountTargetRequest extends com.oracle.bmc.requests.BmcRequest
         public Builder copy(CreateMountTargetRequest o) {
             createMountTargetDetails(o.getCreateMountTargetDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -74,6 +74,7 @@ public class ListVolumeAttachmentsRequest extends com.oracle.bmc.requests.BmcReq
             page(o.getPage());
             instanceId(o.getInstanceId());
             volumeId(o.getVolumeId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -45,6 +45,7 @@ public class GetWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(GetWorkRequestRequest o) {
             workRequestId(o.getWorkRequestId());
             opcRequestId(o.getOpcRequestId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

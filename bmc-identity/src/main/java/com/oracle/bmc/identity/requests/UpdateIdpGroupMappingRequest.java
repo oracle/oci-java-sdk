@@ -58,6 +58,7 @@ public class UpdateIdpGroupMappingRequest extends com.oracle.bmc.requests.BmcReq
             mappingId(o.getMappingId());
             updateIdpGroupMappingDetails(o.getUpdateIdpGroupMappingDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -54,6 +54,7 @@ public class CreateRegionSubscriptionRequest extends com.oracle.bmc.requests.Bmc
             createRegionSubscriptionDetails(o.getCreateRegionSubscriptionDetails());
             tenancyId(o.getTenancyId());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

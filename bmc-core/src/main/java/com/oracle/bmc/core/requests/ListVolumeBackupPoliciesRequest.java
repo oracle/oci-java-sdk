@@ -47,6 +47,7 @@ public class ListVolumeBackupPoliciesRequest extends com.oracle.bmc.requests.Bmc
         public Builder copy(ListVolumeBackupPoliciesRequest o) {
             limit(o.getLimit());
             page(o.getPage());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

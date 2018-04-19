@@ -48,6 +48,7 @@ public class CreateImageRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(CreateImageRequest o) {
             createImageDetails(o.getCreateImageDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -37,6 +37,7 @@ public class DeleteSenderRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(DeleteSenderRequest o) {
             senderId(o.getSenderId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -37,6 +37,7 @@ public class GetBootVolumeRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(GetBootVolumeRequest o) {
             bootVolumeId(o.getBootVolumeId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

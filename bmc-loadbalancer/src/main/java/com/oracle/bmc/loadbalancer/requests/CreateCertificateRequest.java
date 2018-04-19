@@ -62,6 +62,7 @@ public class CreateCertificateRequest extends com.oracle.bmc.requests.BmcRequest
             loadBalancerId(o.getLoadBalancerId());
             opcRequestId(o.getOpcRequestId());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -59,6 +59,7 @@ public class DeleteBucketRequest extends com.oracle.bmc.requests.BmcRequest {
             bucketName(o.getBucketName());
             ifMatch(o.getIfMatch());
             opcClientRequestId(o.getOpcClientRequestId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

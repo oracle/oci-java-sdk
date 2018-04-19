@@ -37,6 +37,7 @@ public class GetFileSystemRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(GetFileSystemRequest o) {
             fileSystemId(o.getFileSystemId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

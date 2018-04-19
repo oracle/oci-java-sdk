@@ -52,6 +52,7 @@ public class DeleteDbHomeRequest extends com.oracle.bmc.requests.BmcRequest {
             dbHomeId(o.getDbHomeId());
             ifMatch(o.getIfMatch());
             performFinalBackup(o.getPerformFinalBackup());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

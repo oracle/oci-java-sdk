@@ -52,6 +52,7 @@ public class DeleteSwiftPasswordRequest extends com.oracle.bmc.requests.BmcReque
             userId(o.getUserId());
             swiftPasswordId(o.getSwiftPasswordId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

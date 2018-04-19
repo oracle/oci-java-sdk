@@ -3,24 +3,25 @@
  */
 package com.oracle.bmc.http.internal;
 
-import javax.annotation.Nonnull;
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
-
-import lombok.Getter;
-import org.glassfish.jersey.client.ClientProperties;
-
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.ser.FilterProvider;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
-import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider;
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 import com.oracle.bmc.ClientConfiguration;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.http.signing.RequestSigner;
+import com.oracle.bmc.http.signing.SigningStrategy;
+import lombok.Getter;
+import org.glassfish.jersey.client.ClientProperties;
+
+import javax.annotation.Nonnull;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import java.util.Map;
 
 /**
  * RestClientFactory is responsible for creating a new REST client whenever a
@@ -69,33 +70,48 @@ public class RestClientFactory {
      * Creates a new client that will use the given
      * {@link AuthenticationDetailsProvider}.
      *
-     * @param requestSigner The strategy used to sign requests.
+     * @param defaultRequestSigner
+     *            The default strategy used to sign requests.
+     * @param requestSigners
+     *            The strategies used to sign requests, per signing strategy.
      * @return A new RestClient instance.
      */
-    public RestClient create(RequestSigner requestSigner) {
-        return this.create(requestSigner, null);
+    public RestClient create(
+            RequestSigner defaultRequestSigner,
+            Map<SigningStrategy, RequestSigner> requestSigners) {
+        return this.create(defaultRequestSigner, requestSigners, null);
     }
-
     /**
      * Creates a new client that will use the given
      * {@link AuthenticationDetailsProvider} and {@link ClientConfiguration}.
      *
-     * @param requestSigner The strategy used to sign requests.
+     * @param defaultRequestSigner
+     *            The default strategy used to sign requests.
+     * @param requestSigners
+     *            The strategies used to sign requests, per signing strategy.
      * @param configuration
      *            The client configuration to use, or null for default
      *            configuration.
      * @return A new RestClient instance.
      */
-    public RestClient create(RequestSigner requestSigner, ClientConfiguration configuration) {
+    public RestClient create(
+            RequestSigner defaultRequestSigner,
+            Map<SigningStrategy, RequestSigner> requestSigners,
+            ClientConfiguration configuration) {
         ClientConfiguration clientConfigurationToUse =
                 configuration != null ? configuration : ClientConfiguration.builder().build();
         Client client =
-                createClient(requestSigner, clientConfigurationToUse, this.clientConfigurator);
+                createClient(
+                        defaultRequestSigner,
+                        requestSigners,
+                        clientConfigurationToUse,
+                        this.clientConfigurator);
         return new RestClient(client, new EntityFactory());
     }
 
     private static Client createClient(
-            RequestSigner requestSigner,
+            RequestSigner defaultRequestSigner,
+            Map<SigningStrategy, RequestSigner> requestSigners,
             ClientConfiguration configuration,
             ClientConfigurator clientConfigurator) {
         ClientBuilder builder = ClientBuilder.newBuilder();
@@ -113,7 +129,7 @@ public class RestClientFactory {
                                 ClientProperties.ASYNC_THREADPOOL_SIZE,
                                 configuration.getMaxAsyncThreads());
 
-        client.register(new AuthnClientFilter(requestSigner));
+        client.register(new AuthnClientFilter(defaultRequestSigner, requestSigners));
         client.register(CLIENT_ID_FILTER);
         client.register(LOG_HEADERS_FILTER);
 

@@ -177,6 +177,7 @@ public class ListInternetGatewaysRequest extends com.oracle.bmc.requests.BmcRequ
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             lifecycleState(o.getLifecycleState());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -74,6 +74,7 @@ public class ListBootVolumeAttachmentsRequest extends com.oracle.bmc.requests.Bm
             page(o.getPage());
             instanceId(o.getInstanceId());
             bootVolumeId(o.getBootVolumeId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

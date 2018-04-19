@@ -56,6 +56,7 @@ public class CreateLoadBalancerRequest extends com.oracle.bmc.requests.BmcReques
             createLoadBalancerDetails(o.getCreateLoadBalancerDetails());
             opcRequestId(o.getOpcRequestId());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

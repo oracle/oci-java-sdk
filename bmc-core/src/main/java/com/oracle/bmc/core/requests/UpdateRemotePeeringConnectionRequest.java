@@ -52,6 +52,7 @@ public class UpdateRemotePeeringConnectionRequest extends com.oracle.bmc.request
             remotePeeringConnectionId(o.getRemotePeeringConnectionId());
             updateRemotePeeringConnectionDetails(o.getUpdateRemotePeeringConnectionDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

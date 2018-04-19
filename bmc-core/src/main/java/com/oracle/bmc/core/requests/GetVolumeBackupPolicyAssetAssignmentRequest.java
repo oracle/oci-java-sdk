@@ -54,6 +54,7 @@ public class GetVolumeBackupPolicyAssetAssignmentRequest
             assetId(o.getAssetId());
             limit(o.getLimit());
             page(o.getPage());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

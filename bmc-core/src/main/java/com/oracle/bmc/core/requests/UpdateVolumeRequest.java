@@ -52,6 +52,7 @@ public class UpdateVolumeRequest extends com.oracle.bmc.requests.BmcRequest {
             volumeId(o.getVolumeId());
             updateVolumeDetails(o.getUpdateVolumeDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

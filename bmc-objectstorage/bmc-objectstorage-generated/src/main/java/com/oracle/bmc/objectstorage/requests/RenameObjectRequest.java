@@ -57,6 +57,7 @@ public class RenameObjectRequest extends com.oracle.bmc.requests.BmcRequest {
             bucketName(o.getBucketName());
             renameObjectDetails(o.getRenameObjectDetails());
             opcClientRequestId(o.getOpcClientRequestId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

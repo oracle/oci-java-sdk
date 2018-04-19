@@ -53,6 +53,7 @@ public class ListDrgsRequest extends com.oracle.bmc.requests.BmcRequest {
             compartmentId(o.getCompartmentId());
             limit(o.getLimit());
             page(o.getPage());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

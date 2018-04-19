@@ -57,6 +57,7 @@ public class RestoreObjectsRequest extends com.oracle.bmc.requests.BmcRequest {
             bucketName(o.getBucketName());
             restoreObjectsDetails(o.getRestoreObjectsDetails());
             opcClientRequestId(o.getOpcClientRequestId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -48,6 +48,7 @@ public class CreateIdentityProviderRequest extends com.oracle.bmc.requests.BmcRe
         public Builder copy(CreateIdentityProviderRequest o) {
             createIdentityProviderDetails(o.getCreateIdentityProviderDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

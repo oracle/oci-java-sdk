@@ -48,6 +48,7 @@ public class CreateExportRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(CreateExportRequest o) {
             createExportDetails(o.getCreateExportDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

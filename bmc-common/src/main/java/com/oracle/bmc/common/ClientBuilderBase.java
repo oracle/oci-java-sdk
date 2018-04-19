@@ -3,7 +3,17 @@
  */
 package com.oracle.bmc.common;
 
+import com.google.common.collect.ImmutableMap;
+import com.oracle.bmc.ClientConfiguration;
 import com.oracle.bmc.Service;
+import com.oracle.bmc.http.ClientConfigurator;
+import com.oracle.bmc.http.signing.RequestSignerFactory;
+import com.oracle.bmc.http.signing.SigningStrategy;
+import com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Base client builder.
@@ -11,13 +21,13 @@ import com.oracle.bmc.Service;
  */
 public abstract class ClientBuilderBase<B extends ClientBuilderBase, C> {
     protected final Service service;
-    protected com.oracle.bmc.ClientConfiguration configuration;
-    protected com.oracle.bmc.http.ClientConfigurator clientConfigurator;
-    protected java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators =
-            new java.util.ArrayList<>();
-    protected com.oracle.bmc.http.signing.RequestSignerFactory requestSignerFactory =
-            new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                    com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+    protected ClientConfiguration configuration;
+    protected ClientConfigurator clientConfigurator;
+    protected List<ClientConfigurator> additionalClientConfigurators = new ArrayList<>();
+    protected RequestSignerFactory requestSignerFactory =
+            new DefaultRequestSignerFactory(com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+    protected Map<SigningStrategy, RequestSignerFactory> signingStrategyRequestSignerFactories =
+            DefaultRequestSignerFactory.createDefaultRequestSignerFactories();
     protected String endpoint;
 
     public ClientBuilderBase(Service service) {
@@ -82,6 +92,18 @@ public abstract class ClientBuilderBase<B extends ClientBuilderBase, C> {
      */
     public B endpoint(String endpoint) {
         this.endpoint = endpoint;
+        return (B) this;
+    }
+
+    /**
+     * Set the request signer factories for each signing strategy.
+     * @param signingStrategyRequestSignerFactories request signer factories for each signing strategy
+     * @return this builder
+     */
+    public B signingStrategyRequestSignerFactories(
+            Map<SigningStrategy, RequestSignerFactory> signingStrategyRequestSignerFactories) {
+        this.signingStrategyRequestSignerFactories =
+                ImmutableMap.copyOf(signingStrategyRequestSignerFactories);
         return (B) this;
     }
 

@@ -43,6 +43,7 @@ public class GetDataGuardAssociationRequest extends com.oracle.bmc.requests.BmcR
         public Builder copy(GetDataGuardAssociationRequest o) {
             databaseId(o.getDatabaseId());
             dataGuardAssociationId(o.getDataGuardAssociationId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

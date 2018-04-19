@@ -37,6 +37,7 @@ public class GetDatabaseRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(GetDatabaseRequest o) {
             databaseId(o.getDatabaseId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

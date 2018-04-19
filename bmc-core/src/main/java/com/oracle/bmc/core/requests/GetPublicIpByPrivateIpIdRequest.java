@@ -37,6 +37,7 @@ public class GetPublicIpByPrivateIpIdRequest extends com.oracle.bmc.requests.Bmc
          */
         public Builder copy(GetPublicIpByPrivateIpIdRequest o) {
             getPublicIpByPrivateIpIdDetails(o.getGetPublicIpByPrivateIpIdDetails());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

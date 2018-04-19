@@ -37,6 +37,7 @@ public class GetCrossConnectGroupRequest extends com.oracle.bmc.requests.BmcRequ
          */
         public Builder copy(GetCrossConnectGroupRequest o) {
             crossConnectGroupId(o.getCrossConnectGroupId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

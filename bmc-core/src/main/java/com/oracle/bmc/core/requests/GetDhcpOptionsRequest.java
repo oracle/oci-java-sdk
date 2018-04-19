@@ -37,6 +37,7 @@ public class GetDhcpOptionsRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(GetDhcpOptionsRequest o) {
             dhcpId(o.getDhcpId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -59,6 +59,7 @@ public class ListLocalPeeringGatewaysRequest extends com.oracle.bmc.requests.Bmc
             vcnId(o.getVcnId());
             limit(o.getLimit());
             page(o.getPage());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

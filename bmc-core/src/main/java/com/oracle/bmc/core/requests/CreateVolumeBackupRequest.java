@@ -48,6 +48,7 @@ public class CreateVolumeBackupRequest extends com.oracle.bmc.requests.BmcReques
         public Builder copy(CreateVolumeBackupRequest o) {
             createVolumeBackupDetails(o.getCreateVolumeBackupDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -54,6 +54,7 @@ public class CreateSmtpCredentialRequest extends com.oracle.bmc.requests.BmcRequ
             createSmtpCredentialDetails(o.getCreateSmtpCredentialDetails());
             userId(o.getUserId());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

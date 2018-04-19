@@ -52,6 +52,7 @@ public class UpdateCompartmentRequest extends com.oracle.bmc.requests.BmcRequest
             compartmentId(o.getCompartmentId());
             updateCompartmentDetails(o.getUpdateCompartmentDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

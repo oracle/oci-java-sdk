@@ -48,6 +48,7 @@ public class CreateVcnRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(CreateVcnRequest o) {
             createVcnDetails(o.getCreateVcnDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

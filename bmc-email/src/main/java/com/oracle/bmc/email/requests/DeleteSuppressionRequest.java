@@ -37,6 +37,7 @@ public class DeleteSuppressionRequest extends com.oracle.bmc.requests.BmcRequest
          */
         public Builder copy(DeleteSuppressionRequest o) {
             suppressionId(o.getSuppressionId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

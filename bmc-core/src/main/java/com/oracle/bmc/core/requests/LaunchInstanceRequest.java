@@ -48,6 +48,7 @@ public class LaunchInstanceRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(LaunchInstanceRequest o) {
             launchInstanceDetails(o.getLaunchInstanceDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

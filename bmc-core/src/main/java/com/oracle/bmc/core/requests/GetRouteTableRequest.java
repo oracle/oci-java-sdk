@@ -37,6 +37,7 @@ public class GetRouteTableRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(GetRouteTableRequest o) {
             rtId(o.getRtId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

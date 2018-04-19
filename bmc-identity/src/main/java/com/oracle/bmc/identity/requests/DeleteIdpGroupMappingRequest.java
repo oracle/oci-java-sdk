@@ -52,6 +52,7 @@ public class DeleteIdpGroupMappingRequest extends com.oracle.bmc.requests.BmcReq
             identityProviderId(o.getIdentityProviderId());
             mappingId(o.getMappingId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

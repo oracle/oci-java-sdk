@@ -171,6 +171,7 @@ public class ListVirtualCircuitsRequest extends com.oracle.bmc.requests.BmcReque
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             lifecycleState(o.getLifecycleState());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

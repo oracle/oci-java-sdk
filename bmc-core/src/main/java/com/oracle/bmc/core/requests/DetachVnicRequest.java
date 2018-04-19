@@ -46,6 +46,7 @@ public class DetachVnicRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(DetachVnicRequest o) {
             vnicAttachmentId(o.getVnicAttachmentId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

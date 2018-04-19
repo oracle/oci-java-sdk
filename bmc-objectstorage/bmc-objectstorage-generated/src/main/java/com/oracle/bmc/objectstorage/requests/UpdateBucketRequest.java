@@ -65,6 +65,7 @@ public class UpdateBucketRequest extends com.oracle.bmc.requests.BmcRequest {
             updateBucketDetails(o.getUpdateBucketDetails());
             ifMatch(o.getIfMatch());
             opcClientRequestId(o.getOpcClientRequestId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

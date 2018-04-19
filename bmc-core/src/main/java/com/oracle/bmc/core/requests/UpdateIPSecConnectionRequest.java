@@ -52,6 +52,7 @@ public class UpdateIPSecConnectionRequest extends com.oracle.bmc.requests.BmcReq
             ipscId(o.getIpscId());
             updateIPSecConnectionDetails(o.getUpdateIPSecConnectionDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

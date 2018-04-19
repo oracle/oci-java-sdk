@@ -37,6 +37,7 @@ public class GetCpeRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(GetCpeRequest o) {
             cpeId(o.getCpeId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

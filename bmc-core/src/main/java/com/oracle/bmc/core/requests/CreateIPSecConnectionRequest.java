@@ -48,6 +48,7 @@ public class CreateIPSecConnectionRequest extends com.oracle.bmc.requests.BmcReq
         public Builder copy(CreateIPSecConnectionRequest o) {
             createIPSecConnectionDetails(o.getCreateIPSecConnectionDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

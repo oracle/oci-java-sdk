@@ -48,6 +48,7 @@ public class CreateDhcpOptionsRequest extends com.oracle.bmc.requests.BmcRequest
         public Builder copy(CreateDhcpOptionsRequest o) {
             createDhcpDetails(o.getCreateDhcpDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

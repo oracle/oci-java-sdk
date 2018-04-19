@@ -46,6 +46,7 @@ public class DeleteCrossConnectGroupRequest extends com.oracle.bmc.requests.BmcR
         public Builder copy(DeleteCrossConnectGroupRequest o) {
             crossConnectGroupId(o.getCrossConnectGroupId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

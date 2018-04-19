@@ -37,6 +37,7 @@ public class GetSecurityListRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(GetSecurityListRequest o) {
             securityListId(o.getSecurityListId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

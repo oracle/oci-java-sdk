@@ -37,6 +37,7 @@ public class GetIPSecConnectionRequest extends com.oracle.bmc.requests.BmcReques
          */
         public Builder copy(GetIPSecConnectionRequest o) {
             ipscId(o.getIpscId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

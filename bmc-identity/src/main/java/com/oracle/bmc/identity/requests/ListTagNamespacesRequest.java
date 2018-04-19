@@ -60,6 +60,7 @@ public class ListTagNamespacesRequest extends com.oracle.bmc.requests.BmcRequest
             page(o.getPage());
             limit(o.getLimit());
             includeSubcompartments(o.getIncludeSubcompartments());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

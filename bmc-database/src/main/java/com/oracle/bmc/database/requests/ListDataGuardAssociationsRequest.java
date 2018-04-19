@@ -49,6 +49,7 @@ public class ListDataGuardAssociationsRequest extends com.oracle.bmc.requests.Bm
             databaseId(o.getDatabaseId());
             limit(o.getLimit());
             page(o.getPage());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

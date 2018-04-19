@@ -46,6 +46,7 @@ public class DeleteRemotePeeringConnectionRequest extends com.oracle.bmc.request
         public Builder copy(DeleteRemotePeeringConnectionRequest o) {
             remotePeeringConnectionId(o.getRemotePeeringConnectionId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

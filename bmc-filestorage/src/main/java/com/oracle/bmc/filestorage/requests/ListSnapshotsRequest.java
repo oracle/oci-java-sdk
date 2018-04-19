@@ -156,6 +156,7 @@ public class ListSnapshotsRequest extends com.oracle.bmc.requests.BmcRequest {
             lifecycleState(o.getLifecycleState());
             id(o.getId());
             sortOrder(o.getSortOrder());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

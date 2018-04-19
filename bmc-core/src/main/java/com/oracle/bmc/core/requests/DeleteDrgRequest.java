@@ -46,6 +46,7 @@ public class DeleteDrgRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(DeleteDrgRequest o) {
             drgId(o.getDrgId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

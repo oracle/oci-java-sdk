@@ -52,6 +52,7 @@ public class UpdateDrgAttachmentRequest extends com.oracle.bmc.requests.BmcReque
             drgAttachmentId(o.getDrgAttachmentId());
             updateDrgAttachmentDetails(o.getUpdateDrgAttachmentDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

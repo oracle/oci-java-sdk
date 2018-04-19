@@ -54,6 +54,7 @@ public class GetHealthCheckerRequest extends com.oracle.bmc.requests.BmcRequest 
             loadBalancerId(o.getLoadBalancerId());
             backendSetName(o.getBackendSetName());
             opcRequestId(o.getOpcRequestId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

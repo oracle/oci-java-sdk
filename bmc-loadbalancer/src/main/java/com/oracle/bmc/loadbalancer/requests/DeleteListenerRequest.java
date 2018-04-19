@@ -54,6 +54,7 @@ public class DeleteListenerRequest extends com.oracle.bmc.requests.BmcRequest {
             loadBalancerId(o.getLoadBalancerId());
             listenerName(o.getListenerName());
             opcRequestId(o.getOpcRequestId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

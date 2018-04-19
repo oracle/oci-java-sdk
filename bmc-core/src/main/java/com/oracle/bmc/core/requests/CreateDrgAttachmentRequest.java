@@ -48,6 +48,7 @@ public class CreateDrgAttachmentRequest extends com.oracle.bmc.requests.BmcReque
         public Builder copy(CreateDrgAttachmentRequest o) {
             createDrgAttachmentDetails(o.getCreateDrgAttachmentDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -52,6 +52,7 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest {
             compartmentId(o.getCompartmentId());
             page(o.getPage());
             limit(o.getLimit());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

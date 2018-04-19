@@ -37,6 +37,7 @@ public class GetPublicIpRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(GetPublicIpRequest o) {
             publicIpId(o.getPublicIpId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

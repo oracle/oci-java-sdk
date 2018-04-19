@@ -44,6 +44,7 @@ public class BulkAddVirtualCircuitPublicPrefixesRequest extends com.oracle.bmc.r
             virtualCircuitId(o.getVirtualCircuitId());
             bulkAddVirtualCircuitPublicPrefixesDetails(
                     o.getBulkAddVirtualCircuitPublicPrefixesDetails());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

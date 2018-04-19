@@ -123,6 +123,7 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest {
             contentLanguage(o.getContentLanguage());
             contentEncoding(o.getContentEncoding());
             opcMeta(o.getOpcMeta());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

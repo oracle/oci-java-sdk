@@ -37,6 +37,7 @@ public class GetImageRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(GetImageRequest o) {
             imageId(o.getImageId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 
