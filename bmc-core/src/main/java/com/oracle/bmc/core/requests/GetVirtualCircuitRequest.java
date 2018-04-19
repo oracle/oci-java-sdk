@@ -37,6 +37,7 @@ public class GetVirtualCircuitRequest extends com.oracle.bmc.requests.BmcRequest
          */
         public Builder copy(GetVirtualCircuitRequest o) {
             virtualCircuitId(o.getVirtualCircuitId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

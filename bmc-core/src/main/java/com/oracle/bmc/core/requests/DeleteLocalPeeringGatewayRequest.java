@@ -46,6 +46,7 @@ public class DeleteLocalPeeringGatewayRequest extends com.oracle.bmc.requests.Bm
         public Builder copy(DeleteLocalPeeringGatewayRequest o) {
             localPeeringGatewayId(o.getLocalPeeringGatewayId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

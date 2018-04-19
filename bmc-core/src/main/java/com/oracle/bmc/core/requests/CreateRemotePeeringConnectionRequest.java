@@ -48,6 +48,7 @@ public class CreateRemotePeeringConnectionRequest extends com.oracle.bmc.request
         public Builder copy(CreateRemotePeeringConnectionRequest o) {
             createRemotePeeringConnectionDetails(o.getCreateRemotePeeringConnectionDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

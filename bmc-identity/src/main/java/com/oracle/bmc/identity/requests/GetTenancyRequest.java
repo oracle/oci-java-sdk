@@ -37,6 +37,7 @@ public class GetTenancyRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(GetTenancyRequest o) {
             tenancyId(o.getTenancyId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

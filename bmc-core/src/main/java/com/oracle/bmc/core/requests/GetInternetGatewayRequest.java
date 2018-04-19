@@ -37,6 +37,7 @@ public class GetInternetGatewayRequest extends com.oracle.bmc.requests.BmcReques
          */
         public Builder copy(GetInternetGatewayRequest o) {
             igId(o.getIgId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

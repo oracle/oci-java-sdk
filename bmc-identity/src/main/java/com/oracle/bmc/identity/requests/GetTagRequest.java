@@ -45,6 +45,7 @@ public class GetTagRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(GetTagRequest o) {
             tagNamespaceId(o.getTagNamespaceId());
             tagName(o.getTagName());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -49,6 +49,7 @@ public class CreateBucketRequest extends com.oracle.bmc.requests.BmcRequest {
             namespaceName(o.getNamespaceName());
             createBucketDetails(o.getCreateBucketDetails());
             opcClientRequestId(o.getOpcClientRequestId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

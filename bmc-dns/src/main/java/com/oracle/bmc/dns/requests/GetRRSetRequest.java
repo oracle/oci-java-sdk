@@ -96,6 +96,7 @@ public class GetRRSetRequest extends com.oracle.bmc.requests.BmcRequest {
             page(o.getPage());
             zoneVersion(o.getZoneVersion());
             compartmentId(o.getCompartmentId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

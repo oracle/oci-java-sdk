@@ -37,6 +37,7 @@ public class GetIPSecConnectionDeviceStatusRequest extends com.oracle.bmc.reques
          */
         public Builder copy(GetIPSecConnectionDeviceStatusRequest o) {
             ipscId(o.getIpscId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

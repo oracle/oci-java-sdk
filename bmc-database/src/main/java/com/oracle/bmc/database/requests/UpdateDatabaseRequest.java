@@ -52,6 +52,7 @@ public class UpdateDatabaseRequest extends com.oracle.bmc.requests.BmcRequest {
             databaseId(o.getDatabaseId());
             updateDatabaseDetails(o.getUpdateDatabaseDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

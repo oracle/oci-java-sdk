@@ -54,6 +54,7 @@ public class DeleteCertificateRequest extends com.oracle.bmc.requests.BmcRequest
             loadBalancerId(o.getLoadBalancerId());
             certificateName(o.getCertificateName());
             opcRequestId(o.getOpcRequestId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

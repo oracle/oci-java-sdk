@@ -37,6 +37,7 @@ public class GetInstanceRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(GetInstanceRequest o) {
             instanceId(o.getInstanceId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

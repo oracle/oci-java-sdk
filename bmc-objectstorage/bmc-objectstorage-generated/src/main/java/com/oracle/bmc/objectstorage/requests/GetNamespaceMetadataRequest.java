@@ -43,6 +43,7 @@ public class GetNamespaceMetadataRequest extends com.oracle.bmc.requests.BmcRequ
         public Builder copy(GetNamespaceMetadataRequest o) {
             namespaceName(o.getNamespaceName());
             opcClientRequestId(o.getOpcClientRequestId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -46,6 +46,7 @@ public class BulkDeleteVirtualCircuitPublicPrefixesRequest
             virtualCircuitId(o.getVirtualCircuitId());
             bulkDeleteVirtualCircuitPublicPrefixesDetails(
                     o.getBulkDeleteVirtualCircuitPublicPrefixesDetails());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

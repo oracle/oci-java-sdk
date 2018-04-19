@@ -38,6 +38,7 @@ public class CreateSuppressionRequest extends com.oracle.bmc.requests.BmcRequest
          */
         public Builder copy(CreateSuppressionRequest o) {
             createSuppressionDetails(o.getCreateSuppressionDetails());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

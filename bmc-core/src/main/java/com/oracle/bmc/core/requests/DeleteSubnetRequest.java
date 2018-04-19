@@ -46,6 +46,7 @@ public class DeleteSubnetRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(DeleteSubnetRequest o) {
             subnetId(o.getSubnetId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -52,6 +52,7 @@ public class UpdateConsoleHistoryRequest extends com.oracle.bmc.requests.BmcRequ
             instanceConsoleHistoryId(o.getInstanceConsoleHistoryId());
             updateConsoleHistoryDetails(o.getUpdateConsoleHistoryDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

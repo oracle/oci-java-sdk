@@ -37,6 +37,7 @@ public class GetConfigurationRequest extends com.oracle.bmc.requests.BmcRequest 
          */
         public Builder copy(GetConfigurationRequest o) {
             compartmentId(o.getCompartmentId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

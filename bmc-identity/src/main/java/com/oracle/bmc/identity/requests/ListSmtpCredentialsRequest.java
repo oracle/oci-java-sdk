@@ -37,6 +37,7 @@ public class ListSmtpCredentialsRequest extends com.oracle.bmc.requests.BmcReque
          */
         public Builder copy(ListSmtpCredentialsRequest o) {
             userId(o.getUserId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -48,6 +48,7 @@ public class CreateDrgRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(CreateDrgRequest o) {
             createDrgDetails(o.getCreateDrgDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

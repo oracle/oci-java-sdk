@@ -54,6 +54,7 @@ public class UploadApiKeyRequest extends com.oracle.bmc.requests.BmcRequest {
             userId(o.getUserId());
             createApiKeyDetails(o.getCreateApiKeyDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

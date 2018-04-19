@@ -46,6 +46,7 @@ public class DeleteImageRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(DeleteImageRequest o) {
             imageId(o.getImageId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

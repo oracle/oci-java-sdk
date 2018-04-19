@@ -37,6 +37,7 @@ public class ListCustomerSecretKeysRequest extends com.oracle.bmc.requests.BmcRe
          */
         public Builder copy(ListCustomerSecretKeysRequest o) {
             userId(o.getUserId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

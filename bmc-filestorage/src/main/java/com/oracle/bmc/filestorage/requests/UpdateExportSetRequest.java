@@ -54,6 +54,7 @@ public class UpdateExportSetRequest extends com.oracle.bmc.requests.BmcRequest {
             exportSetId(o.getExportSetId());
             updateExportSetDetails(o.getUpdateExportSetDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

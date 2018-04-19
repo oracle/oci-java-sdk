@@ -46,6 +46,7 @@ public class RemoveUserFromGroupRequest extends com.oracle.bmc.requests.BmcReque
         public Builder copy(RemoveUserFromGroupRequest o) {
             userGroupMembershipId(o.getUserGroupMembershipId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

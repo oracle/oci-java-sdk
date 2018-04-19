@@ -37,6 +37,7 @@ public class GetUserGroupMembershipRequest extends com.oracle.bmc.requests.BmcRe
          */
         public Builder copy(GetUserGroupMembershipRequest o) {
             userGroupMembershipId(o.getUserGroupMembershipId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

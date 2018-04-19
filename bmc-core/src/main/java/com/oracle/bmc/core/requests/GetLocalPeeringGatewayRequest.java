@@ -37,6 +37,7 @@ public class GetLocalPeeringGatewayRequest extends com.oracle.bmc.requests.BmcRe
          */
         public Builder copy(GetLocalPeeringGatewayRequest o) {
             localPeeringGatewayId(o.getLocalPeeringGatewayId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

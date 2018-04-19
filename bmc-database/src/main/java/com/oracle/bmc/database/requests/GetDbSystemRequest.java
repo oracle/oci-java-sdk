@@ -37,6 +37,7 @@ public class GetDbSystemRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(GetDbSystemRequest o) {
             dbSystemId(o.getDbSystemId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

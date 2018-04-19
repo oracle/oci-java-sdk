@@ -48,6 +48,7 @@ public class CreateUserRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(CreateUserRequest o) {
             createUserDetails(o.getCreateUserDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

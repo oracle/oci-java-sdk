@@ -52,6 +52,7 @@ public class DeleteSmtpCredentialRequest extends com.oracle.bmc.requests.BmcRequ
             userId(o.getUserId());
             smtpCredentialId(o.getSmtpCredentialId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

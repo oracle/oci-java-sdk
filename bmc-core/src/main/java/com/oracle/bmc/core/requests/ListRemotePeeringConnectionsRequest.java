@@ -59,6 +59,7 @@ public class ListRemotePeeringConnectionsRequest extends com.oracle.bmc.requests
             drgId(o.getDrgId());
             limit(o.getLimit());
             page(o.getPage());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

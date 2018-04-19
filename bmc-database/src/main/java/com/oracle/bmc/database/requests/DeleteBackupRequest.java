@@ -46,6 +46,7 @@ public class DeleteBackupRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(DeleteBackupRequest o) {
             backupId(o.getBackupId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

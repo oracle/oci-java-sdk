@@ -37,6 +37,7 @@ public class GetDrgRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(GetDrgRequest o) {
             drgId(o.getDrgId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

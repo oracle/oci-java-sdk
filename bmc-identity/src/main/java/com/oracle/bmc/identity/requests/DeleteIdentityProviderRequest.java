@@ -46,6 +46,7 @@ public class DeleteIdentityProviderRequest extends com.oracle.bmc.requests.BmcRe
         public Builder copy(DeleteIdentityProviderRequest o) {
             identityProviderId(o.getIdentityProviderId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

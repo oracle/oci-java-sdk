@@ -53,6 +53,7 @@ public class ListFastConnectProviderServicesRequest extends com.oracle.bmc.reque
             compartmentId(o.getCompartmentId());
             limit(o.getLimit());
             page(o.getPage());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

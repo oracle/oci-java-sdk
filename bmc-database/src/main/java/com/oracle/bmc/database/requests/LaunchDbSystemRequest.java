@@ -48,6 +48,7 @@ public class LaunchDbSystemRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(LaunchDbSystemRequest o) {
             launchDbSystemDetails(o.getLaunchDbSystemDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

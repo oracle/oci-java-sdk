@@ -70,18 +70,18 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
      * @param authenticationDetailsProvider The authentication details provider, required.
      * @param configuration The client configuration, optional.
      * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param requestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
      */
     public LoadBalancerAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory requestSignerFactory) {
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
         this(
                 authenticationDetailsProvider,
                 configuration,
                 clientConfigurator,
-                requestSignerFactory,
+                defaultRequestSignerFactory,
                 new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
     }
 
@@ -93,20 +93,20 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
      * @param authenticationDetailsProvider The authentication details provider, required.
      * @param configuration The client configuration, optional.
      * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param requestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
      * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      */
     public LoadBalancerAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory requestSignerFactory,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
         this(
                 authenticationDetailsProvider,
                 configuration,
                 clientConfigurator,
-                requestSignerFactory,
+                defaultRequestSignerFactory,
                 additionalClientConfigurators,
                 null);
     }
@@ -119,7 +119,7 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
      * @param authenticationDetailsProvider The authentication details provider, required.
      * @param configuration The client configuration, optional.
      * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
-     * @param requestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
      * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
@@ -127,7 +127,42 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory requestSignerFactory,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     */
+    public LoadBalancerAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this.authenticationDetailsProvider = authenticationDetailsProvider;
@@ -136,10 +171,22 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                         .clientConfigurator(clientConfigurator)
                         .additionalClientConfigurators(additionalClientConfigurators)
                         .build();
-        com.oracle.bmc.http.signing.RequestSigner requestSigner =
-                requestSignerFactory.createRequestSigner(
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                defaultRequestSignerFactory.createRequestSigner(
                         SERVICE, this.authenticationDetailsProvider);
-        this.client = restClientFactory.create(requestSigner, configuration);
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        for (com.oracle.bmc.http.signing.SigningStrategy s :
+                com.oracle.bmc.http.signing.SigningStrategy.values()) {
+            requestSigners.put(
+                    s,
+                    signingStrategyRequestSignerFactories
+                            .get(s)
+                            .createRequestSigner(SERVICE, authenticationDetailsProvider));
+        }
+        this.client = restClientFactory.create(defaultRequestSigner, requestSigners, configuration);
 
         if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
             com.oracle.bmc.auth.RegionProvider provider =

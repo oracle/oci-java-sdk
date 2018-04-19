@@ -108,6 +108,7 @@ public class ListBucketsRequest extends com.oracle.bmc.requests.BmcRequest {
             page(o.getPage());
             fields(o.getFields());
             opcClientRequestId(o.getOpcClientRequestId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

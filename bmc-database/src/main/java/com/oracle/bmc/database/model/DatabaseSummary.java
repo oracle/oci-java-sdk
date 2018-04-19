@@ -87,6 +87,25 @@ public class DatabaseSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
@@ -154,6 +173,8 @@ public class DatabaseSummary {
                             dbName,
                             dbUniqueName,
                             dbWorkload,
+                            definedTags,
+                            freeformTags,
                             id,
                             lifecycleDetails,
                             lifecycleState,
@@ -174,6 +195,8 @@ public class DatabaseSummary {
                             .dbName(o.getDbName())
                             .dbUniqueName(o.getDbUniqueName())
                             .dbWorkload(o.getDbWorkload())
+                            .definedTags(o.getDefinedTags())
+                            .freeformTags(o.getFreeformTags())
                             .id(o.getId())
                             .lifecycleDetails(o.getLifecycleDetails())
                             .lifecycleState(o.getLifecycleState())
@@ -232,6 +255,26 @@ public class DatabaseSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
     String dbWorkload;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Department\": \"Finance\"}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    java.util.Map<String, String> freeformTags;
 
     /**
      * The OCID of the database.

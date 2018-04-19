@@ -43,6 +43,7 @@ public class UpdateConfigurationRequest extends com.oracle.bmc.requests.BmcReque
         public Builder copy(UpdateConfigurationRequest o) {
             compartmentId(o.getCompartmentId());
             updateConfigurationDetails(o.getUpdateConfigurationDetails());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

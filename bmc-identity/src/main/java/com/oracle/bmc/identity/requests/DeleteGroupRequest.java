@@ -46,6 +46,7 @@ public class DeleteGroupRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(DeleteGroupRequest o) {
             groupId(o.getGroupId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

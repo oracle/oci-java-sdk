@@ -46,6 +46,7 @@ public class DeletePublicIpRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(DeletePublicIpRequest o) {
             publicIpId(o.getPublicIpId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

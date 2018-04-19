@@ -177,6 +177,7 @@ public class ListCrossConnectsRequest extends com.oracle.bmc.requests.BmcRequest
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             lifecycleState(o.getLifecycleState());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

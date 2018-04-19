@@ -46,6 +46,7 @@ public class DeleteSecurityListRequest extends com.oracle.bmc.requests.BmcReques
         public Builder copy(DeleteSecurityListRequest o) {
             securityListId(o.getSecurityListId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

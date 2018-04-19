@@ -33,6 +33,7 @@ public class ListAllowedPeerRegionsForRemotePeeringRequest
          */
         public Builder copy(ListAllowedPeerRegionsForRemotePeeringRequest o) {
 
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

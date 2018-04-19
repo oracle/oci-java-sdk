@@ -54,6 +54,7 @@ public class UpdateFileSystemRequest extends com.oracle.bmc.requests.BmcRequest 
             fileSystemId(o.getFileSystemId());
             updateFileSystemDetails(o.getUpdateFileSystemDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

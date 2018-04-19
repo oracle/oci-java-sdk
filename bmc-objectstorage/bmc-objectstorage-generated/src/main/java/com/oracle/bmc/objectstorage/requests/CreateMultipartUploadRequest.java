@@ -73,6 +73,7 @@ public class CreateMultipartUploadRequest extends com.oracle.bmc.requests.BmcReq
             ifMatch(o.getIfMatch());
             ifNoneMatch(o.getIfNoneMatch());
             opcClientRequestId(o.getOpcClientRequestId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

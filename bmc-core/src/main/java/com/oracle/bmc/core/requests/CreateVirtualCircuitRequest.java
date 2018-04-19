@@ -48,6 +48,7 @@ public class CreateVirtualCircuitRequest extends com.oracle.bmc.requests.BmcRequ
         public Builder copy(CreateVirtualCircuitRequest o) {
             createVirtualCircuitDetails(o.getCreateVirtualCircuitDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

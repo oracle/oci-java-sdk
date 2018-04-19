@@ -74,6 +74,7 @@ public class ListVnicAttachmentsRequest extends com.oracle.bmc.requests.BmcReque
             limit(o.getLimit());
             page(o.getPage());
             vnicId(o.getVnicId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

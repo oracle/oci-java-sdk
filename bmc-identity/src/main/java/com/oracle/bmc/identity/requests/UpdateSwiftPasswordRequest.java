@@ -58,6 +58,7 @@ public class UpdateSwiftPasswordRequest extends com.oracle.bmc.requests.BmcReque
             swiftPasswordId(o.getSwiftPasswordId());
             updateSwiftPasswordDetails(o.getUpdateSwiftPasswordDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

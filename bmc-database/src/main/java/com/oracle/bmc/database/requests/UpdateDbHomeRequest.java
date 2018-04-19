@@ -52,6 +52,7 @@ public class UpdateDbHomeRequest extends com.oracle.bmc.requests.BmcRequest {
             dbHomeId(o.getDbHomeId());
             updateDbHomeDetails(o.getUpdateDbHomeDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -63,6 +63,7 @@ public class ExportImageRequest extends com.oracle.bmc.requests.BmcRequest {
             exportImageDetails(o.getExportImageDetails());
             opcRetryToken(o.getOpcRetryToken());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -52,6 +52,7 @@ public class UpdateUserRequest extends com.oracle.bmc.requests.BmcRequest {
             userId(o.getUserId());
             updateUserDetails(o.getUpdateUserDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

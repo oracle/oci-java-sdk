@@ -51,6 +51,7 @@ public class UpdateTagRequest extends com.oracle.bmc.requests.BmcRequest {
             tagNamespaceId(o.getTagNamespaceId());
             tagName(o.getTagName());
             updateTagDetails(o.getUpdateTagDetails());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

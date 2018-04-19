@@ -71,6 +71,7 @@ public class UpdatePathRouteSetRequest extends com.oracle.bmc.requests.BmcReques
             pathRouteSetName(o.getPathRouteSetName());
             opcRequestId(o.getOpcRequestId());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -48,6 +48,7 @@ public class AttachVnicRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(AttachVnicRequest o) {
             attachVnicDetails(o.getAttachVnicDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -48,6 +48,7 @@ public class CreateOrResetUIPasswordRequest extends com.oracle.bmc.requests.BmcR
         public Builder copy(CreateOrResetUIPasswordRequest o) {
             userId(o.getUserId());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

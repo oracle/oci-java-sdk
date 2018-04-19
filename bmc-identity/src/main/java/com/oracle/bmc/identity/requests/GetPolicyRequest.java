@@ -37,6 +37,7 @@ public class GetPolicyRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(GetPolicyRequest o) {
             policyId(o.getPolicyId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

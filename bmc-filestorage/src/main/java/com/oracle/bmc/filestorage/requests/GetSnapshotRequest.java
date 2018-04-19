@@ -37,6 +37,7 @@ public class GetSnapshotRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(GetSnapshotRequest o) {
             snapshotId(o.getSnapshotId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -46,6 +46,7 @@ public class DetachBootVolumeRequest extends com.oracle.bmc.requests.BmcRequest 
         public Builder copy(DetachBootVolumeRequest o) {
             bootVolumeAttachmentId(o.getBootVolumeAttachmentId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

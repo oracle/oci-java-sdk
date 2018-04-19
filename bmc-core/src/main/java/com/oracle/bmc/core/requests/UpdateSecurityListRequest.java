@@ -52,6 +52,7 @@ public class UpdateSecurityListRequest extends com.oracle.bmc.requests.BmcReques
             securityListId(o.getSecurityListId());
             updateSecurityListDetails(o.getUpdateSecurityListDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

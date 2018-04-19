@@ -54,6 +54,7 @@ public class GetBackendSetHealthRequest extends com.oracle.bmc.requests.BmcReque
             loadBalancerId(o.getLoadBalancerId());
             backendSetName(o.getBackendSetName());
             opcRequestId(o.getOpcRequestId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

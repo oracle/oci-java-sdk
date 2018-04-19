@@ -45,6 +45,7 @@ public class DeleteLoadBalancerRequest extends com.oracle.bmc.requests.BmcReques
         public Builder copy(DeleteLoadBalancerRequest o) {
             loadBalancerId(o.getLoadBalancerId());
             opcRequestId(o.getOpcRequestId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

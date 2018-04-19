@@ -32,6 +32,7 @@ public class ListRegionsRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(ListRegionsRequest o) {
 
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

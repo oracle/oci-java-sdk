@@ -1,0 +1,63 @@
+<style type="text/css">
+.properties {
+  border-collapse: collapse;
+}
+.properties table, .properties th, .properties td {
+    border: 1px solid black;
+}
+.properties thead {
+    background-color: rgb(138, 138, 138);
+    color: black;
+    font-weight: bold;
+}
+.properties tr:nth-child(even) {
+    background-color: rgb(248, 248, 248);
+}
+    abbr {cursor: help;
+    color: green}
+</style>
+<body>
+    <h1>Quick Start Guide</h1>
+    
+    <h2>User Documentation</h2>
+    <p>More complete user documentation is available on the <a href="https://docs.us-phoenix-1.oraclecloud.com/Content/API/SDKDocs/javasdk.htm">Oracle Cloud Infrastructure documentation portal</a>.
+    
+    <h2 id="bmc-config">Configuring the SDK</h2>
+    <p>The SDK services need two types of configuration: credentials and client-side HTTP options.</p>
+    
+    <h3>Configuring Credentials</h3>
+    <p>First, you need to create set up your credentials and config file. For instructions, see <a href="https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdkconfig.htm">SDK and Tool Configuration</a> in the User Guide.</p>   
+    
+    <p>Next you need to set up the client to use the credentials. The credentials are abstracted through an <code>AuthenticationDetailsProvider</code> interface. Clients can implement this however you choose. 
+    There are numerous classes provided that help build an implementation for this provider, but for simplicity, assuming you have configured a credentials file under the 'DEFAULT' profile in the default location, you can do:</p>
+
+    <pre><code>AuthenticationDetailsProvider provider = new ConfigFileAuthenticationDetailsProvider(null);</code></pre>
+
+    <h3>Configuring Client-side HTTP Options</h3>
+    <p>Create a client-side configuration through the <code>ClientConfiguration</code> class. If you do not provide your own configuration, the Java SDK uses a default configuration. To provide your own configuration, use the following:</p>
+    
+    <pre><code>ClientConfiguration clientConfig = ClientConfiguration.builder()
+    .connectionTimeoutMillis(3000)
+    .readTimeoutMillis(60000)
+    .build();</code></pre>
+    
+    <p>Note that a service instance cannot be used to communicate with different regions. If you need to make requests to different regions, create multiple service instances.</p>
+    
+    <h2>Instantiating Service Clients</h2>
+    <p>Now that you have configured a credentials provider and client configuration, a service client may be instantiated:
+    
+    <pre><code>ObjectStorage client = new ObjectStorageClient(provider, clientConfig);</code></pre>
+    
+    <h2>Setting the Endpoints</h2>
+    <p>Service endpoints can be set in one of two ways.</p>
+    
+    <ul>
+      <li>Call <code>setEndpoint()</code> on the service instance. This lets you to specify a full host name (for example, https://www.example.com).</li>        
+      <li>Call <code>setRegion()</code> on the service instance. This selects the appropriate hostname for the service for the given region.</li>
+    </ul>
+    
+    <p>Ex, using the previously constructed client:
+    <pre><code>client.setRegion(Region.US_PHOENIX_1);</code></pre>
+    
+    
+</body>

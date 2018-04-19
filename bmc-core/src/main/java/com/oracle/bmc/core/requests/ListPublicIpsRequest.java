@@ -120,6 +120,7 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest {
             limit(o.getLimit());
             page(o.getPage());
             availabilityDomain(o.getAvailabilityDomain());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

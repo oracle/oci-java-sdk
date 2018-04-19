@@ -55,6 +55,7 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest {
             limit(o.getLimit());
             page(o.getPage());
             backupId(o.getBackupId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

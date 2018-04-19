@@ -37,6 +37,7 @@ public class GetSubnetRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(GetSubnetRequest o) {
             subnetId(o.getSubnetId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

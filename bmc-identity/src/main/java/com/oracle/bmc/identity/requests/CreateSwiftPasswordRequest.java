@@ -54,6 +54,7 @@ public class CreateSwiftPasswordRequest extends com.oracle.bmc.requests.BmcReque
             createSwiftPasswordDetails(o.getCreateSwiftPasswordDetails());
             userId(o.getUserId());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

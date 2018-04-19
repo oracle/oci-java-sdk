@@ -51,6 +51,7 @@ public class ListIdpGroupMappingsRequest extends com.oracle.bmc.requests.BmcRequ
             identityProviderId(o.getIdentityProviderId());
             page(o.getPage());
             limit(o.getLimit());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

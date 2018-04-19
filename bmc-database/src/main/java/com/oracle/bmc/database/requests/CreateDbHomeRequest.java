@@ -48,6 +48,7 @@ public class CreateDbHomeRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(CreateDbHomeRequest o) {
             createDbHomeWithDbSystemIdDetails(o.getCreateDbHomeWithDbSystemIdDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -52,6 +52,7 @@ public class UpdateRouteTableRequest extends com.oracle.bmc.requests.BmcRequest 
             rtId(o.getRtId());
             updateRouteTableDetails(o.getUpdateRouteTableDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

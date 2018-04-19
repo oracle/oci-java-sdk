@@ -48,6 +48,7 @@ public class CreateLocalPeeringGatewayRequest extends com.oracle.bmc.requests.Bm
         public Builder copy(CreateLocalPeeringGatewayRequest o) {
             createLocalPeeringGatewayDetails(o.getCreateLocalPeeringGatewayDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

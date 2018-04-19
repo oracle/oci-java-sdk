@@ -48,6 +48,7 @@ public class CreateSecurityListRequest extends com.oracle.bmc.requests.BmcReques
         public Builder copy(CreateSecurityListRequest o) {
             createSecurityListDetails(o.getCreateSecurityListDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -48,6 +48,7 @@ public class CreateCompartmentRequest extends com.oracle.bmc.requests.BmcRequest
         public Builder copy(CreateCompartmentRequest o) {
             createCompartmentDetails(o.getCreateCompartmentDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

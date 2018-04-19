@@ -46,6 +46,7 @@ public class DeletePolicyRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(DeletePolicyRequest o) {
             policyId(o.getPolicyId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

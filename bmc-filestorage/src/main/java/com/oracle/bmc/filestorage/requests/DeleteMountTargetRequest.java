@@ -48,6 +48,7 @@ public class DeleteMountTargetRequest extends com.oracle.bmc.requests.BmcRequest
         public Builder copy(DeleteMountTargetRequest o) {
             mountTargetId(o.getMountTargetId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

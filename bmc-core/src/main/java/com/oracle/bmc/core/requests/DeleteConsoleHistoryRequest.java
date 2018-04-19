@@ -46,6 +46,7 @@ public class DeleteConsoleHistoryRequest extends com.oracle.bmc.requests.BmcRequ
         public Builder copy(DeleteConsoleHistoryRequest o) {
             instanceConsoleHistoryId(o.getInstanceConsoleHistoryId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

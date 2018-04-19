@@ -52,6 +52,7 @@ public class UpdateVcnRequest extends com.oracle.bmc.requests.BmcRequest {
             vcnId(o.getVcnId());
             updateVcnDetails(o.getUpdateVcnDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

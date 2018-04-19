@@ -55,6 +55,7 @@ public class CreateTagRequest extends com.oracle.bmc.requests.BmcRequest {
             tagNamespaceId(o.getTagNamespaceId());
             createTagDetails(o.getCreateTagDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

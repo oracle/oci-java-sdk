@@ -52,6 +52,7 @@ public class UpdateDbSystemRequest extends com.oracle.bmc.requests.BmcRequest {
             dbSystemId(o.getDbSystemId());
             updateDbSystemDetails(o.getUpdateDbSystemDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

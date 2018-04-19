@@ -65,6 +65,7 @@ public class AbortMultipartUploadRequest extends com.oracle.bmc.requests.BmcRequ
             objectName(o.getObjectName());
             uploadId(o.getUploadId());
             opcClientRequestId(o.getOpcClientRequestId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

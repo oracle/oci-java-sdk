@@ -158,6 +158,7 @@ public class GetZoneRecordsRequest extends com.oracle.bmc.requests.BmcRequest {
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             compartmentId(o.getCompartmentId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -45,6 +45,7 @@ public class GetLoadBalancerHealthRequest extends com.oracle.bmc.requests.BmcReq
         public Builder copy(GetLoadBalancerHealthRequest o) {
             loadBalancerId(o.getLoadBalancerId());
             opcRequestId(o.getOpcRequestId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

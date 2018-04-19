@@ -38,6 +38,7 @@ public class GetWindowsInstanceInitialCredentialsRequest
          */
         public Builder copy(GetWindowsInstanceInitialCredentialsRequest o) {
             instanceId(o.getInstanceId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

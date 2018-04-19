@@ -48,6 +48,7 @@ public class CreateBackupRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(CreateBackupRequest o) {
             createBackupDetails(o.getCreateBackupDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -52,6 +52,7 @@ public class UpdatePrivateIpRequest extends com.oracle.bmc.requests.BmcRequest {
             privateIpId(o.getPrivateIpId());
             updatePrivateIpDetails(o.getUpdatePrivateIpDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

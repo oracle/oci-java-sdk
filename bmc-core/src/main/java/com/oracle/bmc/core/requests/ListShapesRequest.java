@@ -68,6 +68,7 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest {
             limit(o.getLimit());
             page(o.getPage());
             imageId(o.getImageId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

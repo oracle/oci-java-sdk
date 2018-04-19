@@ -48,6 +48,7 @@ public class CreateCpeRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(CreateCpeRequest o) {
             createCpeDetails(o.getCreateCpeDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

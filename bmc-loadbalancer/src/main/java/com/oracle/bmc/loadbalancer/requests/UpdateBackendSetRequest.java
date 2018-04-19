@@ -71,6 +71,7 @@ public class UpdateBackendSetRequest extends com.oracle.bmc.requests.BmcRequest 
             backendSetName(o.getBackendSetName());
             opcRequestId(o.getOpcRequestId());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

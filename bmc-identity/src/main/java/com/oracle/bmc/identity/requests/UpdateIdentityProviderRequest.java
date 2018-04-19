@@ -52,6 +52,7 @@ public class UpdateIdentityProviderRequest extends com.oracle.bmc.requests.BmcRe
             identityProviderId(o.getIdentityProviderId());
             updateIdentityProviderDetails(o.getUpdateIdentityProviderDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

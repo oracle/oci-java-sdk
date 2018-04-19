@@ -37,6 +37,7 @@ public class GetExportSetRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(GetExportSetRequest o) {
             exportSetId(o.getExportSetId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

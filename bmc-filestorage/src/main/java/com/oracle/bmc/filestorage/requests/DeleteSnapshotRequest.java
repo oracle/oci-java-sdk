@@ -48,6 +48,7 @@ public class DeleteSnapshotRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(DeleteSnapshotRequest o) {
             snapshotId(o.getSnapshotId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

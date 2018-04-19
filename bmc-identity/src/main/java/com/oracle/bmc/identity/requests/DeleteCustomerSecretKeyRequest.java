@@ -52,6 +52,7 @@ public class DeleteCustomerSecretKeyRequest extends com.oracle.bmc.requests.BmcR
             userId(o.getUserId());
             customerSecretKeyId(o.getCustomerSecretKeyId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

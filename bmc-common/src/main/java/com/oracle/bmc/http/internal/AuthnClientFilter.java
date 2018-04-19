@@ -13,6 +13,7 @@ import javax.ws.rs.client.ClientRequestFilter;
 
 import com.oracle.bmc.http.signing.RequestSigner;
 
+import com.oracle.bmc.http.signing.SigningStrategy;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
@@ -22,12 +23,28 @@ import lombok.RequiredArgsConstructor;
 @Priority(Priorities.AUTHENTICATION)
 @RequiredArgsConstructor
 public class AuthnClientFilter implements ClientRequestFilter {
-    private final RequestSigner requestSigner;
+
+    public static final String SIGNING_STRATEGY_PROPERTY_NAME =
+            "x-obmcs-internal-signing-strategy-name";
+
+    private final RequestSigner defaultRequestSigner;
+    private final Map<SigningStrategy, RequestSigner> requestSigners;
 
     @Override
     public void filter(@NonNull ClientRequestContext clientRequestContext) throws IOException {
+        RequestSigner chosenRequestSigner = this.defaultRequestSigner;
+
+        SigningStrategy perOperationSigningStrategy =
+                (SigningStrategy) clientRequestContext.getProperty(SIGNING_STRATEGY_PROPERTY_NAME);
+        if (perOperationSigningStrategy != null
+                && requestSigners.containsKey(perOperationSigningStrategy)) {
+            chosenRequestSigner = requestSigners.get(perOperationSigningStrategy);
+            // removing this property from the context, now that we have processed it
+            clientRequestContext.setProperty(SIGNING_STRATEGY_PROPERTY_NAME, null);
+        }
+
         Map<String, String> authHeaders =
-                requestSigner.signRequest(
+                chosenRequestSigner.signRequest(
                         clientRequestContext.getUri(),
                         clientRequestContext.getMethod(),
                         clientRequestContext.getStringHeaders(),

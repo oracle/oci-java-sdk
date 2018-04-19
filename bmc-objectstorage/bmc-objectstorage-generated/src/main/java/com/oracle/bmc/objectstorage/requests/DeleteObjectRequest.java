@@ -67,6 +67,7 @@ public class DeleteObjectRequest extends com.oracle.bmc.requests.BmcRequest {
             objectName(o.getObjectName());
             ifMatch(o.getIfMatch());
             opcClientRequestId(o.getOpcClientRequestId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

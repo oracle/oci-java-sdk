@@ -171,6 +171,7 @@ public class ListCrossConnectGroupsRequest extends com.oracle.bmc.requests.BmcRe
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             lifecycleState(o.getLifecycleState());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

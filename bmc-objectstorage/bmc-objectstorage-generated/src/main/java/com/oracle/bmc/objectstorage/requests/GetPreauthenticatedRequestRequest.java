@@ -59,6 +59,7 @@ public class GetPreauthenticatedRequestRequest extends com.oracle.bmc.requests.B
             bucketName(o.getBucketName());
             parId(o.getParId());
             opcClientRequestId(o.getOpcClientRequestId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

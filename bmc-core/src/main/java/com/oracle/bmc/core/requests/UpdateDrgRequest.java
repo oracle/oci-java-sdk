@@ -52,6 +52,7 @@ public class UpdateDrgRequest extends com.oracle.bmc.requests.BmcRequest {
             drgId(o.getDrgId());
             updateDrgDetails(o.getUpdateDrgDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

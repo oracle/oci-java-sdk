@@ -37,6 +37,7 @@ public class GetMountTargetRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(GetMountTargetRequest o) {
             mountTargetId(o.getMountTargetId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

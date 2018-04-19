@@ -52,6 +52,7 @@ public class UpdateVirtualCircuitRequest extends com.oracle.bmc.requests.BmcRequ
             virtualCircuitId(o.getVirtualCircuitId());
             updateVirtualCircuitDetails(o.getUpdateVirtualCircuitDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

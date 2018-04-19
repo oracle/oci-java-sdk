@@ -58,6 +58,7 @@ public class SwitchoverDataGuardAssociationRequest extends com.oracle.bmc.reques
             dataGuardAssociationId(o.getDataGuardAssociationId());
             switchoverDataGuardAssociationDetails(o.getSwitchoverDataGuardAssociationDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -37,6 +37,7 @@ public class ListApiKeysRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(ListApiKeysRequest o) {
             userId(o.getUserId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

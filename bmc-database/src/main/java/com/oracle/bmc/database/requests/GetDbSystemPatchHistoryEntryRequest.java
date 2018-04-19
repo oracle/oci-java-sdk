@@ -43,6 +43,7 @@ public class GetDbSystemPatchHistoryEntryRequest extends com.oracle.bmc.requests
         public Builder copy(GetDbSystemPatchHistoryEntryRequest o) {
             dbSystemId(o.getDbSystemId());
             patchHistoryEntryId(o.getPatchHistoryEntryId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

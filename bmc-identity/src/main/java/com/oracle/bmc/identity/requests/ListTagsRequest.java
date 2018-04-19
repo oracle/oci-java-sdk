@@ -52,6 +52,7 @@ public class ListTagsRequest extends com.oracle.bmc.requests.BmcRequest {
             tagNamespaceId(o.getTagNamespaceId());
             page(o.getPage());
             limit(o.getLimit());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

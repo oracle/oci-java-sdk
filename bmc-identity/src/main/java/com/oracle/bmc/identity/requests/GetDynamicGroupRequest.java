@@ -37,6 +37,7 @@ public class GetDynamicGroupRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(GetDynamicGroupRequest o) {
             dynamicGroupId(o.getDynamicGroupId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

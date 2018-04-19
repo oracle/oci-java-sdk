@@ -43,6 +43,7 @@ public class ConnectLocalPeeringGatewaysRequest extends com.oracle.bmc.requests.
         public Builder copy(ConnectLocalPeeringGatewaysRequest o) {
             localPeeringGatewayId(o.getLocalPeeringGatewayId());
             connectLocalPeeringGatewaysDetails(o.getConnectLocalPeeringGatewaysDetails());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

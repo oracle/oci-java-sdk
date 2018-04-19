@@ -48,6 +48,7 @@ public class CreatePublicIpRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(CreatePublicIpRequest o) {
             createPublicIpDetails(o.getCreatePublicIpDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

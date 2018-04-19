@@ -30,6 +30,11 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest {
      */
     private String dbSystemShape;
 
+    /**
+     * The DB system OCID. If provided, filters the results to the set of database versions which are supported for the DB system.
+     */
+    private String dbSystemId;
+
     public static class Builder {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
@@ -55,6 +60,8 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest {
             limit(o.getLimit());
             page(o.getPage());
             dbSystemShape(o.getDbSystemShape());
+            dbSystemId(o.getDbSystemId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

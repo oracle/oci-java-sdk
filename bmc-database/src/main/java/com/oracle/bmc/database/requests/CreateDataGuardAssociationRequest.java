@@ -54,6 +54,7 @@ public class CreateDataGuardAssociationRequest extends com.oracle.bmc.requests.B
             databaseId(o.getDatabaseId());
             createDataGuardAssociationDetails(o.getCreateDataGuardAssociationDetails());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

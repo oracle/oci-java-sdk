@@ -54,6 +54,7 @@ public class DeletePathRouteSetRequest extends com.oracle.bmc.requests.BmcReques
             loadBalancerId(o.getLoadBalancerId());
             pathRouteSetName(o.getPathRouteSetName());
             opcRequestId(o.getOpcRequestId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

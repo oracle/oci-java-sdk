@@ -71,6 +71,7 @@ public class UpdateListenerRequest extends com.oracle.bmc.requests.BmcRequest {
             listenerName(o.getListenerName());
             opcRequestId(o.getOpcRequestId());
             opcRetryToken(o.getOpcRetryToken());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

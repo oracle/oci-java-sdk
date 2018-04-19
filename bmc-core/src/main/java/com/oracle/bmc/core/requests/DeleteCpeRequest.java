@@ -46,6 +46,7 @@ public class DeleteCpeRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(DeleteCpeRequest o) {
             cpeId(o.getCpeId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

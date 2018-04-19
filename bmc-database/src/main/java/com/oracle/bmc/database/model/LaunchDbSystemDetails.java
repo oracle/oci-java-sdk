@@ -95,6 +95,16 @@ public class LaunchDbSystemDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("diskRedundancy")
         private DiskRedundancy diskRedundancy;
 
@@ -119,6 +129,15 @@ public class LaunchDbSystemDetails {
         public Builder domain(String domain) {
             this.domain = domain;
             this.__explicitlySet__.add("domain");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
             return this;
         }
 
@@ -199,9 +218,11 @@ public class LaunchDbSystemDetails {
                             dataStoragePercentage,
                             databaseEdition,
                             dbHome,
+                            definedTags,
                             diskRedundancy,
                             displayName,
                             domain,
+                            freeformTags,
                             hostname,
                             initialDataStorageSizeInGB,
                             licenseModel,
@@ -224,9 +245,11 @@ public class LaunchDbSystemDetails {
                             .dataStoragePercentage(o.getDataStoragePercentage())
                             .databaseEdition(o.getDatabaseEdition())
                             .dbHome(o.getDbHome())
+                            .definedTags(o.getDefinedTags())
                             .diskRedundancy(o.getDiskRedundancy())
                             .displayName(o.getDisplayName())
                             .domain(o.getDomain())
+                            .freeformTags(o.getFreeformTags())
                             .hostname(o.getHostname())
                             .initialDataStorageSizeInGB(o.getInitialDataStorageSizeInGB())
                             .licenseModel(o.getLicenseModel())
@@ -349,6 +372,16 @@ public class LaunchDbSystemDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("dbHome")
     CreateDbHomeDetails dbHome;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
     /**
      * The type of redundancy configured for the DB System.
      * Normal is 2-way redundancy, recommended for test and development systems.
@@ -410,6 +443,16 @@ public class LaunchDbSystemDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("domain")
     String domain;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Department\": \"Finance\"}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    java.util.Map<String, String> freeformTags;
 
     /**
      * The host name for the DB System. The host name must begin with an alphabetic character and

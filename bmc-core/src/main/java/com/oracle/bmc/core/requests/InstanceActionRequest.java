@@ -63,6 +63,7 @@ public class InstanceActionRequest extends com.oracle.bmc.requests.BmcRequest {
             action(o.getAction());
             opcRetryToken(o.getOpcRetryToken());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

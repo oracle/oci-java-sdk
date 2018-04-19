@@ -37,6 +37,7 @@ public class GetNamespaceRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(GetNamespaceRequest o) {
             opcClientRequestId(o.getOpcClientRequestId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

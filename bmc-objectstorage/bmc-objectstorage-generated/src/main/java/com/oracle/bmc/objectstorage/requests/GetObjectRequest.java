@@ -83,6 +83,7 @@ public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest {
             ifNoneMatch(o.getIfNoneMatch());
             opcClientRequestId(o.getOpcClientRequestId());
             range(o.getRange());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

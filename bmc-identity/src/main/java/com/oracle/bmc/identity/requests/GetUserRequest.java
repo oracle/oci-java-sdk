@@ -37,6 +37,7 @@ public class GetUserRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(GetUserRequest o) {
             userId(o.getUserId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

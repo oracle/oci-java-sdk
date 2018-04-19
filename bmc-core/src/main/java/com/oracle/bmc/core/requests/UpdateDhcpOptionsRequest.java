@@ -52,6 +52,7 @@ public class UpdateDhcpOptionsRequest extends com.oracle.bmc.requests.BmcRequest
             dhcpId(o.getDhcpId());
             updateDhcpDetails(o.getUpdateDhcpDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

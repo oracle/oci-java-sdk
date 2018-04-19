@@ -52,6 +52,7 @@ public class UpdateLocalPeeringGatewayRequest extends com.oracle.bmc.requests.Bm
             localPeeringGatewayId(o.getLocalPeeringGatewayId());
             updateLocalPeeringGatewayDetails(o.getUpdateLocalPeeringGatewayDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

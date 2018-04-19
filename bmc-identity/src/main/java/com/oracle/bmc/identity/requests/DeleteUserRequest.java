@@ -46,6 +46,7 @@ public class DeleteUserRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(DeleteUserRequest o) {
             userId(o.getUserId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

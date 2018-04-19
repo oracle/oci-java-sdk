@@ -49,6 +49,7 @@ public class UpdateNamespaceMetadataRequest extends com.oracle.bmc.requests.BmcR
             namespaceName(o.getNamespaceName());
             updateNamespaceMetadataDetails(o.getUpdateNamespaceMetadataDetails());
             opcClientRequestId(o.getOpcClientRequestId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

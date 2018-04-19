@@ -37,6 +37,7 @@ public class GetVcnRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(GetVcnRequest o) {
             vcnId(o.getVcnId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

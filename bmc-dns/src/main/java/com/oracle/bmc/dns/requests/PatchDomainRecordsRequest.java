@@ -77,6 +77,7 @@ public class PatchDomainRecordsRequest extends com.oracle.bmc.requests.BmcReques
             ifMatch(o.getIfMatch());
             ifUnmodifiedSince(o.getIfUnmodifiedSince());
             compartmentId(o.getCompartmentId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -63,6 +63,7 @@ public class UpdateInstanceRequest extends com.oracle.bmc.requests.BmcRequest {
             updateInstanceDetails(o.getUpdateInstanceDetails());
             opcRetryToken(o.getOpcRetryToken());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

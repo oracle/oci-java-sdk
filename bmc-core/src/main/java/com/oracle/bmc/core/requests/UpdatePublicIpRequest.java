@@ -52,6 +52,7 @@ public class UpdatePublicIpRequest extends com.oracle.bmc.requests.BmcRequest {
             publicIpId(o.getPublicIpId());
             updatePublicIpDetails(o.getUpdatePublicIpDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

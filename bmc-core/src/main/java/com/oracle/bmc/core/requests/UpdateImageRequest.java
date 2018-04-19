@@ -63,6 +63,7 @@ public class UpdateImageRequest extends com.oracle.bmc.requests.BmcRequest {
             updateImageDetails(o.getUpdateImageDetails());
             opcRetryToken(o.getOpcRetryToken());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

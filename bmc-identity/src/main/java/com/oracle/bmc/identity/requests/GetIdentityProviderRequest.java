@@ -37,6 +37,7 @@ public class GetIdentityProviderRequest extends com.oracle.bmc.requests.BmcReque
          */
         public Builder copy(GetIdentityProviderRequest o) {
             identityProviderId(o.getIdentityProviderId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

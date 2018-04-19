@@ -46,6 +46,7 @@ public class DeleteVolumeRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(DeleteVolumeRequest o) {
             volumeId(o.getVolumeId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

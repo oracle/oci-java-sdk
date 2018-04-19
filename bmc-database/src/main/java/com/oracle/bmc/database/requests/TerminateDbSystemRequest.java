@@ -46,6 +46,7 @@ public class TerminateDbSystemRequest extends com.oracle.bmc.requests.BmcRequest
         public Builder copy(TerminateDbSystemRequest o) {
             dbSystemId(o.getDbSystemId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

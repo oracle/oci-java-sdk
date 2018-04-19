@@ -46,6 +46,7 @@ public class DeleteVolumeBackupRequest extends com.oracle.bmc.requests.BmcReques
         public Builder copy(DeleteVolumeBackupRequest o) {
             volumeBackupId(o.getVolumeBackupId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

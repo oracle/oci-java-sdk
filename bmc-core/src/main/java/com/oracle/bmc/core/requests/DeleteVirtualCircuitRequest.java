@@ -46,6 +46,7 @@ public class DeleteVirtualCircuitRequest extends com.oracle.bmc.requests.BmcRequ
         public Builder copy(DeleteVirtualCircuitRequest o) {
             virtualCircuitId(o.getVirtualCircuitId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

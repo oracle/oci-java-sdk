@@ -54,6 +54,7 @@ public class UpdateMountTargetRequest extends com.oracle.bmc.requests.BmcRequest
             mountTargetId(o.getMountTargetId());
             updateMountTargetDetails(o.getUpdateMountTargetDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

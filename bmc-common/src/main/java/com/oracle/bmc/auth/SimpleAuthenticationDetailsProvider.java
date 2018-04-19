@@ -30,8 +30,15 @@ public class SimpleAuthenticationDetailsProvider extends CustomerAuthenticationD
     @Getter(onMethod = @__({@Override}))
     private final char[] passphraseCharacters;
 
+    /**
+     * Supplier of the input stream with the private key. Note that this stream may be read multiple times.
+     */
     private final Supplier<InputStream> privateKeySupplier;
 
+    /**
+     * Get the input stream with the private key. Note that this stream may be read multiple times.
+     * @return input stream with private key
+     */
     @Override
     public InputStream getPrivateKey() {
         return privateKeySupplier.get();

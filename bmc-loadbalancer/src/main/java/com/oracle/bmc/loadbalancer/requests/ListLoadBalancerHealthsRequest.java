@@ -63,6 +63,7 @@ public class ListLoadBalancerHealthsRequest extends com.oracle.bmc.requests.BmcR
             opcRequestId(o.getOpcRequestId());
             limit(o.getLimit());
             page(o.getPage());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

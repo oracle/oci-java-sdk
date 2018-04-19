@@ -52,6 +52,7 @@ public class UpdateBootVolumeRequest extends com.oracle.bmc.requests.BmcRequest 
             bootVolumeId(o.getBootVolumeId());
             updateBootVolumeDetails(o.getUpdateBootVolumeDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

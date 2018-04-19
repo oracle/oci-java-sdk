@@ -58,6 +58,7 @@ public class ReinstateDataGuardAssociationRequest extends com.oracle.bmc.request
             dataGuardAssociationId(o.getDataGuardAssociationId());
             reinstateDataGuardAssociationDetails(o.getReinstateDataGuardAssociationDetails());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

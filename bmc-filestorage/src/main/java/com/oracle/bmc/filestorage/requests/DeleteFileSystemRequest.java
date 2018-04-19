@@ -48,6 +48,7 @@ public class DeleteFileSystemRequest extends com.oracle.bmc.requests.BmcRequest 
         public Builder copy(DeleteFileSystemRequest o) {
             fileSystemId(o.getFileSystemId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

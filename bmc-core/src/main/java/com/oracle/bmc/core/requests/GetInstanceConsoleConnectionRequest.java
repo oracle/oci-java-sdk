@@ -37,6 +37,7 @@ public class GetInstanceConsoleConnectionRequest extends com.oracle.bmc.requests
          */
         public Builder copy(GetInstanceConsoleConnectionRequest o) {
             instanceConsoleConnectionId(o.getInstanceConsoleConnectionId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

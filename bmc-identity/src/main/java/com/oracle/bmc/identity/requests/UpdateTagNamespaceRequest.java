@@ -44,6 +44,7 @@ public class UpdateTagNamespaceRequest extends com.oracle.bmc.requests.BmcReques
         public Builder copy(UpdateTagNamespaceRequest o) {
             tagNamespaceId(o.getTagNamespaceId());
             updateTagNamespaceDetails(o.getUpdateTagNamespaceDetails());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

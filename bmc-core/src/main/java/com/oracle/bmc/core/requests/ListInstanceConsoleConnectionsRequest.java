@@ -59,6 +59,7 @@ public class ListInstanceConsoleConnectionsRequest extends com.oracle.bmc.reques
             instanceId(o.getInstanceId());
             limit(o.getLimit());
             page(o.getPage());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

@@ -46,6 +46,7 @@ public class DetachVolumeRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(DetachVolumeRequest o) {
             volumeAttachmentId(o.getVolumeAttachmentId());
             ifMatch(o.getIfMatch());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 

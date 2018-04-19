@@ -37,6 +37,7 @@ public class GetVolumeBackupRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(GetVolumeBackupRequest o) {
             volumeBackupId(o.getVolumeBackupId());
+            invocationCallback(o.getInvocationCallback());
             return this;
         }
 
