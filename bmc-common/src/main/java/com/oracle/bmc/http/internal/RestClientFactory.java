@@ -17,10 +17,12 @@ import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.http.signing.SigningStrategy;
 import lombok.Getter;
 import org.glassfish.jersey.client.ClientProperties;
+import org.glassfish.jersey.client.JerseyClientBuilder;
 
 import javax.annotation.Nonnull;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
+import java.util.Collections;
 import java.util.Map;
 
 /**
@@ -70,6 +72,40 @@ public class RestClientFactory {
      * Creates a new client that will use the given
      * {@link AuthenticationDetailsProvider}.
      *
+     * @param requestSigner The strategy used to sign requests.
+     * @return A new RestClient instance.
+     *
+     * @deprecated use {@link RestClientFactory#create(RequestSigner, Map)} instead
+     */
+    @Deprecated
+    public RestClient create(RequestSigner requestSigner) {
+        return this.create(requestSigner, Collections.<SigningStrategy, RequestSigner>emptyMap());
+    }
+
+    /**
+     * Creates a new client that will use the given
+     * {@link AuthenticationDetailsProvider} and {@link ClientConfiguration}.
+     *
+     * @param requestSigner The strategy used to sign requests.
+     * @param configuration
+     *            The client configuration to use, or null for default
+     *            configuration.
+     * @return A new RestClient instance.
+     *
+     * @deprecated use {@link RestClientFactory#create(RequestSigner, Map, ClientConfiguration)} instead
+     */
+    @Deprecated
+    public RestClient create(RequestSigner requestSigner, ClientConfiguration configuration) {
+        return this.create(
+                requestSigner,
+                Collections.<SigningStrategy, RequestSigner>emptyMap(),
+                configuration);
+    }
+
+    /**
+     * Creates a new client that will use the given
+     * {@link AuthenticationDetailsProvider}.
+     *
      * @param defaultRequestSigner
      *            The default strategy used to sign requests.
      * @param requestSigners
@@ -81,6 +117,7 @@ public class RestClientFactory {
             Map<SigningStrategy, RequestSigner> requestSigners) {
         return this.create(defaultRequestSigner, requestSigners, null);
     }
+
     /**
      * Creates a new client that will use the given
      * {@link AuthenticationDetailsProvider} and {@link ClientConfiguration}.
@@ -114,7 +151,7 @@ public class RestClientFactory {
             Map<SigningStrategy, RequestSigner> requestSigners,
             ClientConfiguration configuration,
             ClientConfigurator clientConfigurator) {
-        ClientBuilder builder = ClientBuilder.newBuilder();
+        ClientBuilder builder = JerseyClientBuilder.newBuilder();
         clientConfigurator.customizeBuilder(builder);
 
         Client client =

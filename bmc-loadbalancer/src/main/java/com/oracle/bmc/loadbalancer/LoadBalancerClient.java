@@ -183,13 +183,16 @@ public class LoadBalancerClient implements LoadBalancer {
                         com.oracle.bmc.http.signing.SigningStrategy,
                         com.oracle.bmc.http.signing.RequestSigner>
                 requestSigners = new java.util.HashMap<>();
-        for (com.oracle.bmc.http.signing.SigningStrategy s :
-                com.oracle.bmc.http.signing.SigningStrategy.values()) {
-            requestSigners.put(
-                    s,
-                    signingStrategyRequestSignerFactories
-                            .get(s)
-                            .createRequestSigner(SERVICE, authenticationDetailsProvider));
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
+            }
         }
         this.client = restClientFactory.create(defaultRequestSigner, requestSigners, configuration);
         // up to 50 (core) threads, time out after 60s idle, all daemon
@@ -384,6 +387,32 @@ public class LoadBalancerClient implements LoadBalancer {
     }
 
     @Override
+    public CreateHostnameResponse createHostname(CreateHostnameRequest request) {
+        LOG.trace("Called createHostname");
+        request = CreateHostnameConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateHostnameConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateHostnameResponse>
+                transformer = CreateHostnameConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCreateHostnameDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public CreateListenerResponse createListener(CreateListenerRequest request) {
         LOG.trace("Called createListener");
         request = CreateListenerConverter.interceptRequest(request);
@@ -519,6 +548,31 @@ public class LoadBalancerClient implements LoadBalancer {
                 DeleteCertificateConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCertificateResponse>
                 transformer = DeleteCertificateConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public DeleteHostnameResponse deleteHostname(DeleteHostnameRequest request) {
+        LOG.trace("Called deleteHostname");
+        request = DeleteHostnameConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteHostnameConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteHostnameResponse>
+                transformer = DeleteHostnameConverter.fromResponse();
 
         int attempts = 0;
         while (true) {
@@ -737,6 +791,31 @@ public class LoadBalancerClient implements LoadBalancer {
     }
 
     @Override
+    public GetHostnameResponse getHostname(GetHostnameRequest request) {
+        LOG.trace("Called getHostname");
+        request = GetHostnameConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetHostnameConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetHostnameResponse>
+                transformer = GetHostnameConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public GetLoadBalancerResponse getLoadBalancer(GetLoadBalancerRequest request) {
         LOG.trace("Called getLoadBalancer");
         request = GetLoadBalancerConverter.interceptRequest(request);
@@ -895,6 +974,31 @@ public class LoadBalancerClient implements LoadBalancer {
                 ListCertificatesConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListCertificatesResponse>
                 transformer = ListCertificatesConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public ListHostnamesResponse listHostnames(ListHostnamesRequest request) {
+        LOG.trace("Called listHostnames");
+        request = ListHostnamesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListHostnamesConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListHostnamesResponse>
+                transformer = ListHostnamesConverter.fromResponse();
 
         int attempts = 0;
         while (true) {
@@ -1154,6 +1258,32 @@ public class LoadBalancerClient implements LoadBalancer {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getHealthChecker(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public UpdateHostnameResponse updateHostname(UpdateHostnameRequest request) {
+        LOG.trace("Called updateHostname");
+        request = UpdateHostnameConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateHostnameConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateHostnameResponse>
+                transformer = UpdateHostnameConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateHostnameDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS

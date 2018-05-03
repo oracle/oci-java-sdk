@@ -18,7 +18,7 @@ public class DeleteBackendSetRequest extends com.oracle.bmc.requests.BmcRequest 
     /**
      * The name of the backend set to delete.
      * <p>
-     * Example: `My_backend_set`
+     * Example: `example_backend_set`
      *
      */
     private String backendSetName;

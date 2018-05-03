@@ -11,7 +11,9 @@ import com.oracle.bmc.loadbalancer.model.*;
 public class ListCertificatesRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the load balancer associated with the certificates to be listed.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the load balancer associated with the certificate bundles
+     * to be listed.
+     *
      */
     private String loadBalancerId;
 

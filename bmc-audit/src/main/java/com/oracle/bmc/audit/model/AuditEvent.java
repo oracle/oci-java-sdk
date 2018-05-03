@@ -48,6 +48,15 @@ public class AuditEvent {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("eventName")
+        private String eventName;
+
+        public Builder eventName(String eventName) {
+            this.eventName = eventName;
+            this.__explicitlySet__.add("eventName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("eventSource")
         private String eventSource;
 
@@ -204,6 +213,7 @@ public class AuditEvent {
                             tenantId,
                             compartmentId,
                             eventId,
+                            eventName,
                             eventSource,
                             eventType,
                             eventTime,
@@ -230,6 +240,7 @@ public class AuditEvent {
                     tenantId(o.getTenantId())
                             .compartmentId(o.getCompartmentId())
                             .eventId(o.getEventId())
+                            .eventName(o.getEventName())
                             .eventSource(o.getEventSource())
                             .eventType(o.getEventType())
                             .eventTime(o.getEventTime())
@@ -276,6 +287,14 @@ public class AuditEvent {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("eventId")
     String eventId;
+
+    /**
+     * The name of the event.
+     * Example: `LaunchInstance`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("eventName")
+    String eventName;
 
     /**
      * The source of the event.

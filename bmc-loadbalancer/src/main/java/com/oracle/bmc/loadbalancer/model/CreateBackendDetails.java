@@ -116,7 +116,7 @@ public class CreateBackendDetails {
      * Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress
      * traffic to this backend server unless all other backend servers not marked as \"backup\" fail the health check policy.
      * <p>
-     * Example: `true`
+     * Example: `false`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backup")
@@ -126,7 +126,7 @@ public class CreateBackendDetails {
      * Whether the load balancer should drain this server. Servers marked \"drain\" receive no new
      * incoming traffic.
      * <p>
-     * Example: `true`
+     * Example: `false`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("drain")
@@ -135,7 +135,7 @@ public class CreateBackendDetails {
     /**
      * The IP address of the backend server.
      * <p>
-     * Example: `10.10.10.4`
+     * Example: `10.0.0.3`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
@@ -145,7 +145,7 @@ public class CreateBackendDetails {
      * Whether the load balancer should treat this server as offline. Offline servers receive no incoming
      * traffic.
      * <p>
-     * Example: `true`
+     * Example: `false`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("offline")

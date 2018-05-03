@@ -67,7 +67,7 @@ public interface LoadBalancerAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates an asynchronous request to add an SSL certificate.
+     * Creates an asynchronous request to add an SSL certificate bundle.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -80,6 +80,23 @@ public interface LoadBalancerAsync extends AutoCloseable {
             CreateCertificateRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CreateCertificateRequest, CreateCertificateResponse>
+                    handler);
+
+    /**
+     * Adds a hostname resource to the specified load balancer. For more information, see
+     * [Managing Request Routing](https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingrequest.htm).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateHostnameResponse> createHostname(
+            CreateHostnameRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateHostnameRequest, CreateHostnameResponse>
                     handler);
 
     /**
@@ -192,7 +209,7 @@ public interface LoadBalancerAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes an SSL certificate from a load balancer.
+     * Deletes an SSL certificate bundle from a load balancer.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -205,6 +222,22 @@ public interface LoadBalancerAsync extends AutoCloseable {
             DeleteCertificateRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteCertificateRequest, DeleteCertificateResponse>
+                    handler);
+
+    /**
+     * Deletes a hostname resource from the specified load balancer.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteHostnameResponse> deleteHostname(
+            DeleteHostnameRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteHostnameRequest, DeleteHostnameResponse>
                     handler);
 
     /**
@@ -334,6 +367,20 @@ public interface LoadBalancerAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the specified hostname resource's configuration information.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetHostnameResponse> getHostname(
+            GetHostnameRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetHostnameRequest, GetHostnameResponse> handler);
+
+    /**
      * Gets the specified load balancer's configuration information.
      *
      * @param request The request object containing the details to send
@@ -425,7 +472,7 @@ public interface LoadBalancerAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists all SSL certificates associated with a given load balancer.
+     * Lists all SSL certificates bundles associated with a given load balancer.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -437,6 +484,21 @@ public interface LoadBalancerAsync extends AutoCloseable {
     java.util.concurrent.Future<ListCertificatesResponse> listCertificates(
             ListCertificatesRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListCertificatesRequest, ListCertificatesResponse>
+                    handler);
+
+    /**
+     * Lists all hostname resources associated with the specified load balancer.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListHostnamesResponse> listHostnames(
+            ListHostnamesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListHostnamesRequest, ListHostnamesResponse>
                     handler);
 
     /**
@@ -590,6 +652,23 @@ public interface LoadBalancerAsync extends AutoCloseable {
             UpdateHealthCheckerRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateHealthCheckerRequest, UpdateHealthCheckerResponse>
+                    handler);
+
+    /**
+     * Overwrites an existing hostname resource on the specified load balancer. Use this operation to change a
+     * virtual hostname.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateHostnameResponse> updateHostname(
+            UpdateHostnameRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateHostnameRequest, UpdateHostnameResponse>
                     handler);
 
     /**

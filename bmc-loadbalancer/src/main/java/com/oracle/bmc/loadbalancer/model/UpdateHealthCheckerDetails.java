@@ -140,7 +140,7 @@ public class UpdateHealthCheckerDetails {
     /**
      * The interval between health checks, in milliseconds.
      * <p>
-     * Example: `30000`
+     * Example: `10000`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("intervalInMillis")
@@ -167,7 +167,7 @@ public class UpdateHealthCheckerDetails {
     /**
      * A regular expression for parsing the response body from the backend server.
      * <p>
-     * Example: `^(500|40[1348])$`
+     * Example: `^((?!false).|\\s)*$`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responseBodyRegex")
@@ -195,7 +195,7 @@ public class UpdateHealthCheckerDetails {
      * The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply
      * returns within this timeout period.
      * <p>
-     * Example: `6000`
+     * Example: `3000`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInMillis")

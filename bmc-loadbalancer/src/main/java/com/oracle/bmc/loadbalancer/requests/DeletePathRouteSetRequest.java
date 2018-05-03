@@ -18,7 +18,7 @@ public class DeletePathRouteSetRequest extends com.oracle.bmc.requests.BmcReques
     /**
      * The name of the path route set to delete.
      * <p>
-     * Example: `path-route-set-001`
+     * Example: `example_path_route_set`
      *
      */
     private String pathRouteSetName;

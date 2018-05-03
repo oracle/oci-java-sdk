@@ -67,7 +67,7 @@ public class IpAddress {
     /**
      * An IP address.
      * <p>
-     * Example: `128.148.10.20`
+     * Example: `192.168.0.3`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")

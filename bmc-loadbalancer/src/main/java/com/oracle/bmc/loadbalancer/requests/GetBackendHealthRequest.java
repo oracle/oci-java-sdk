@@ -18,7 +18,7 @@ public class GetBackendHealthRequest extends com.oracle.bmc.requests.BmcRequest 
     /**
      * The name of the backend set associated with the backend server to retrieve the health status for.
      * <p>
-     * Example: `My_backend_set`
+     * Example: `example_backend_set`
      *
      */
     private String backendSetName;
@@ -26,7 +26,7 @@ public class GetBackendHealthRequest extends com.oracle.bmc.requests.BmcRequest 
     /**
      * The IP address and port of the backend server to retrieve the health status for.
      * <p>
-     * Example: `1.1.1.7:42`
+     * Example: `10.0.0.3:8080`
      *
      */
     private String backendName;

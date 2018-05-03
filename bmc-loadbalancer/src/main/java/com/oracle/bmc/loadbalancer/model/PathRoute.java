@@ -82,7 +82,7 @@ public class PathRoute {
     /**
      * The name of the target backend set for requests where the incoming URI matches the specified path.
      * <p>
-     * Example: `My_backend_set`
+     * Example: `example_backend_set`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backendSetName")

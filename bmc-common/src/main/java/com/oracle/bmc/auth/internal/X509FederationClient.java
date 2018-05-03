@@ -3,8 +3,6 @@
  */
 package com.oracle.bmc.auth.internal;
 
-import javax.security.auth.RefreshFailedException;
-import javax.security.auth.Refreshable;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.Function;
@@ -14,7 +12,12 @@ import com.google.common.base.Supplier;
 import com.oracle.bmc.auth.SessionKeySupplier;
 import com.oracle.bmc.auth.X509CertificateSupplier;
 import com.oracle.bmc.http.ClientConfigurator;
-import com.oracle.bmc.http.internal.*;
+import com.oracle.bmc.http.internal.ResponseConversionFunctionFactory;
+import com.oracle.bmc.http.internal.RestClient;
+import com.oracle.bmc.http.internal.RestClientFactory;
+import com.oracle.bmc.http.internal.RestClientFactoryBuilder;
+import com.oracle.bmc.http.internal.WithHeaders;
+import com.oracle.bmc.http.internal.WrappedInvocationBuilder;
 import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.http.signing.internal.Constants;
 import com.oracle.bmc.http.signing.internal.KeySupplier;
@@ -27,6 +30,8 @@ import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.annotation.concurrent.Immutable;
+import javax.security.auth.RefreshFailedException;
+import javax.security.auth.Refreshable;
 import javax.ws.rs.client.Invocation.Builder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.Response;
@@ -34,7 +39,11 @@ import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * This class gets a security token from the auth service by signing the request with a PKI issued leaf certificate,
@@ -216,7 +225,7 @@ public class X509FederationClient implements FederationClient {
                 new RequestSignerImpl(keySupplier, signingConfiguration, keyIdSupplier);
 
         RestClientFactory restClientFactory = RestClientFactoryBuilder.builder().build();
-        RestClient restClient = restClientFactory.create(requestSigner, null);
+        RestClient restClient = restClientFactory.create(requestSigner);
         restClient.setEndpoint(endpoint);
         return restClient;
     }

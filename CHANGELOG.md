@@ -13,6 +13,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.2.37 - 2018-05-03
+
+### Fixed
+- `RestClientFactory` now uses the `JerseyClientBuilder` to create clients [issue#56](https://github.com/oracle/oci-java-sdk/issues/56)
+- Shaded artifact now includes pom.xml [issue#57](https://github.com/oracle/oci-java-sdk/issues/57)
+
+### Added
+- Support for returning names for events in the Audit service
+- Support for multiple hostnames per listener in the Load Balancing service
+
 ## 1.2.35 - 2018-04-19
 
 ### Fixed
@@ -22,6 +32,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - Support for tagging DbSystem and Database resources in the Database Service
 - Support for filtering by `dbSystemId` in `listDbVersions` operation in Database Service
+- Support waiting on multiple target states in `Waiter`
 
 ## 1.2.34 - 2018-04-05
 

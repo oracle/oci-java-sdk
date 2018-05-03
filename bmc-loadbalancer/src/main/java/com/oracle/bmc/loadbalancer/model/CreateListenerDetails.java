@@ -6,7 +6,7 @@ package com.oracle.bmc.loadbalancer.model;
 /**
  * The configuration details for adding a listener to a backend set.
  * For more information on listener configuration, see
- * [Managing Load Balancer Listeners](https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/tasks/managinglisteners.htm).
+ * [Managing Load Balancer Listeners](https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managinglisteners.htm).
  *
  * <br/>
  * Note: This model distinguishes fields that are {@code null} because they are unset from fields that are explicitly
@@ -41,6 +41,15 @@ public class CreateListenerDetails {
         public Builder defaultBackendSetName(String defaultBackendSetName) {
             this.defaultBackendSetName = defaultBackendSetName;
             this.__explicitlySet__.add("defaultBackendSetName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("hostnameNames")
+        private java.util.List<String> hostnameNames;
+
+        public Builder hostnameNames(java.util.List<String> hostnameNames) {
+            this.hostnameNames = hostnameNames;
+            this.__explicitlySet__.add("hostnameNames");
             return this;
         }
 
@@ -97,6 +106,7 @@ public class CreateListenerDetails {
                     new CreateListenerDetails(
                             connectionConfiguration,
                             defaultBackendSetName,
+                            hostnameNames,
                             name,
                             pathRouteSetName,
                             port,
@@ -111,6 +121,7 @@ public class CreateListenerDetails {
             Builder copiedBuilder =
                     connectionConfiguration(o.getConnectionConfiguration())
                             .defaultBackendSetName(o.getDefaultBackendSetName())
+                            .hostnameNames(o.getHostnameNames())
                             .name(o.getName())
                             .pathRouteSetName(o.getPathRouteSetName())
                             .port(o.getPort())
@@ -135,17 +146,23 @@ public class CreateListenerDetails {
     /**
      * The name of the associated backend set.
      * <p>
-     * Example: `My_backend_set`
+     * Example: `example_backend_set`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultBackendSetName")
     String defaultBackendSetName;
 
     /**
+     * An array of hostname resource names.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("hostnameNames")
+    java.util.List<String> hostnameNames;
+
+    /**
      * A friendly name for the listener. It must be unique and it cannot be changed.
      * Avoid entering confidential information.
      * <p>
-     * Example: `My listener`
+     * Example: `example_listener`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
@@ -155,7 +172,7 @@ public class CreateListenerDetails {
      * The name of the set of path-based routing rules, {@link PathRouteSet},
      * applied to this listener's traffic.
      * <p>
-     * Example: `path-route-set-001`
+     * Example: `example_path_route_set`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pathRouteSetName")

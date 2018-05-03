@@ -4,7 +4,7 @@
 package com.oracle.bmc.loadbalancer.model;
 
 /**
- * The configuration details of a listener certificate bundle.
+ * The configuration details of a certificate bundle.
  * For more information on SSL certficate configuration, see
  * [Managing SSL Certificates](https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingcertificates.htm).
  *
@@ -102,7 +102,7 @@ public class Certificate {
      * Valid certificate bundle names include only alphanumeric characters, dashes, and underscores.
      * Certificate bundle names cannot contain spaces. Avoid entering confidential information.
      * <p>
-     * Example: `My_certificate_bundle`
+     * Example: `example_certificate_bundle`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateName")

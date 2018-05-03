@@ -61,7 +61,7 @@ public class UpdateLoadBalancerDetails {
      * The user-friendly display name for the load balancer. It does not have to be unique, and it is changeable.
      * Avoid entering confidential information.
      * <p>
-     * Example: `My load balancer`
+     * Example: `example_load_balancer`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")

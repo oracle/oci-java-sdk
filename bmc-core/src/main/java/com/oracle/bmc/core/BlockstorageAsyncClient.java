@@ -178,13 +178,16 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                         com.oracle.bmc.http.signing.SigningStrategy,
                         com.oracle.bmc.http.signing.RequestSigner>
                 requestSigners = new java.util.HashMap<>();
-        for (com.oracle.bmc.http.signing.SigningStrategy s :
-                com.oracle.bmc.http.signing.SigningStrategy.values()) {
-            requestSigners.put(
-                    s,
-                    signingStrategyRequestSignerFactories
-                            .get(s)
-                            .createRequestSigner(SERVICE, authenticationDetailsProvider));
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
+            }
         }
         this.client = restClientFactory.create(defaultRequestSigner, requestSigners, configuration);
 

@@ -23,7 +23,7 @@ public class CreateBackendRequest extends com.oracle.bmc.requests.BmcRequest {
     /**
      * The name of the backend set to add the backend server to.
      * <p>
-     * Example: `My_backend_set`
+     * Example: `example_backend_set`
      *
      */
     private String backendSetName;

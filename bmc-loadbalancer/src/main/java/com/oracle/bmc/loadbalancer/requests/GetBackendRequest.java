@@ -18,7 +18,7 @@ public class GetBackendRequest extends com.oracle.bmc.requests.BmcRequest {
     /**
      * The name of the backend set that includes the backend server.
      * <p>
-     * Example: `My_backend_set`
+     * Example: `example_backend_set`
      *
      */
     private String backendSetName;
@@ -26,7 +26,7 @@ public class GetBackendRequest extends com.oracle.bmc.requests.BmcRequest {
     /**
      * The IP address and port of the backend server to retrieve.
      * <p>
-     * Example: `1.1.1.7:42`
+     * Example: `10.0.0.3:8080`
      *
      */
     private String backendName;

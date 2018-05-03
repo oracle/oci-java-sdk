@@ -4,7 +4,7 @@
 package com.oracle.bmc.loadbalancer.model;
 
 /**
- * The protocol that defines the type of traffic accepted by a listener.
+ * A protocol that defines the type of traffic accepted by a listener.
  * <br/>
  * Note: This model distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a set of all
@@ -58,7 +58,10 @@ public class LoadBalancerProtocol {
     }
 
     /**
-     * The name of the protocol.
+     * The name of a protocol.
+     * <p>
+     * Example: 'HTTP'
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;

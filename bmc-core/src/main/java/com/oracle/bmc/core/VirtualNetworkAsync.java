@@ -2086,7 +2086,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * * Move a reserved public IP to a different private IP.
      * * Unassign a reserved public IP from a private IP (which returns it to your pool
      * of reserved public IPs).
-     * * Change the display name for a public IP (either ephemeral or reserved).
+     * * Change the display name for a public IP.
      * <p>
      * Assigning, moving, and unassigning a reserved public IP are asynchronous
      * operations. Poll the public IP's `lifecycleState` to determine if the operation

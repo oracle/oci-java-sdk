@@ -294,8 +294,8 @@ public interface Compute extends AutoCloseable {
     GetVolumeAttachmentResponse getVolumeAttachment(GetVolumeAttachmentRequest request);
 
     /**
-     * Gets the generated credentials for the instance. Only works for Windows instances. The returned credentials
-     * are only valid for the initial login.
+     * Gets the generated credentials for the instance. Only works for instances that require password to log in (E.g. Windows).
+     * For certain OS'es, users will be forced to change the initial credentials.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -403,7 +403,7 @@ public interface Compute extends AutoCloseable {
     /**
      * Lists the console connections for the specified compartment or instance.
      * <p>
-     * For more information about console access, see [Accessing the Instance Console](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/serialconsole.htm).
+     * For more information about console access, see [Accessing the Console](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/serialconsole.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

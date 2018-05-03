@@ -22,16 +22,21 @@ public class ComputeWaiters {
      * Creates a new {@link Waiter} using default configuration.
      *
      * @param request the request to send
-     * @param targetState the desired state to wait for
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
                     GetBootVolumeAttachmentRequest, GetBootVolumeAttachmentResponse>
             forBootVolumeAttachment(
                     GetBootVolumeAttachmentRequest request,
-                    com.oracle.bmc.core.model.BootVolumeAttachment.LifecycleState targetState) {
+                    com.oracle.bmc.core.model.BootVolumeAttachment.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
         return forBootVolumeAttachment(
-                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
     }
 
     /**
@@ -50,10 +55,39 @@ public class ComputeWaiters {
                     com.oracle.bmc.core.model.BootVolumeAttachment.LifecycleState targetState,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
         return forBootVolumeAttachment(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
                 request,
                 targetState);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetBootVolumeAttachmentRequest, GetBootVolumeAttachmentResponse>
+            forBootVolumeAttachment(
+                    GetBootVolumeAttachmentRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.core.model.BootVolumeAttachment.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forBootVolumeAttachment(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
     }
 
     // Helper method to create a new Waiter for BootVolumeAttachment.
@@ -62,8 +96,11 @@ public class ComputeWaiters {
             forBootVolumeAttachment(
                     com.oracle.bmc.waiter.BmcGenericWaiter waiter,
                     final GetBootVolumeAttachmentRequest request,
-                    final com.oracle.bmc.core.model.BootVolumeAttachment.LifecycleState
-                            targetState) {
+                    final com.oracle.bmc.core.model.BootVolumeAttachment.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.core.model.BootVolumeAttachment.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
@@ -79,8 +116,8 @@ public class ComputeWaiters {
                         new com.google.common.base.Predicate<GetBootVolumeAttachmentResponse>() {
                             @Override
                             public boolean apply(GetBootVolumeAttachmentResponse response) {
-                                return response.getBootVolumeAttachment().getLifecycleState()
-                                        == targetState;
+                                return targetStatesSet.contains(
+                                        response.getBootVolumeAttachment().getLifecycleState());
                             }
                         },
                         false),
@@ -91,15 +128,20 @@ public class ComputeWaiters {
      * Creates a new {@link Waiter} using default configuration.
      *
      * @param request the request to send
-     * @param targetState the desired state to wait for
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetConsoleHistoryRequest, GetConsoleHistoryResponse>
             forConsoleHistory(
                     GetConsoleHistoryRequest request,
-                    com.oracle.bmc.core.model.ConsoleHistory.LifecycleState targetState) {
+                    com.oracle.bmc.core.model.ConsoleHistory.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
         return forConsoleHistory(
-                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
     }
 
     /**
@@ -117,10 +159,38 @@ public class ComputeWaiters {
                     com.oracle.bmc.core.model.ConsoleHistory.LifecycleState targetState,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
         return forConsoleHistory(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
                 request,
                 targetState);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetConsoleHistoryRequest, GetConsoleHistoryResponse>
+            forConsoleHistory(
+                    GetConsoleHistoryRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.core.model.ConsoleHistory.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forConsoleHistory(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
     }
 
     // Helper method to create a new Waiter for ConsoleHistory.
@@ -128,7 +198,10 @@ public class ComputeWaiters {
             forConsoleHistory(
                     com.oracle.bmc.waiter.BmcGenericWaiter waiter,
                     final GetConsoleHistoryRequest request,
-                    final com.oracle.bmc.core.model.ConsoleHistory.LifecycleState targetState) {
+                    final com.oracle.bmc.core.model.ConsoleHistory.LifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.core.model.ConsoleHistory.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
@@ -144,8 +217,8 @@ public class ComputeWaiters {
                         new com.google.common.base.Predicate<GetConsoleHistoryResponse>() {
                             @Override
                             public boolean apply(GetConsoleHistoryResponse response) {
-                                return response.getConsoleHistory().getLifecycleState()
-                                        == targetState;
+                                return targetStatesSet.contains(
+                                        response.getConsoleHistory().getLifecycleState());
                             }
                         },
                         false),
@@ -156,12 +229,19 @@ public class ComputeWaiters {
      * Creates a new {@link Waiter} using default configuration.
      *
      * @param request the request to send
-     * @param targetState the desired state to wait for
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetImageRequest, GetImageResponse> forImage(
-            GetImageRequest request, com.oracle.bmc.core.model.Image.LifecycleState targetState) {
-        return forImage(com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+            GetImageRequest request,
+            com.oracle.bmc.core.model.Image.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forImage(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
     }
 
     /**
@@ -178,17 +258,47 @@ public class ComputeWaiters {
             com.oracle.bmc.core.model.Image.LifecycleState targetState,
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
         return forImage(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
                 request,
                 targetState);
     }
 
+    /**
+     * Creates a new {@link Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetImageRequest, GetImageResponse> forImage(
+            GetImageRequest request,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+            com.oracle.bmc.core.model.Image.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forImage(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
     // Helper method to create a new Waiter for Image.
     private com.oracle.bmc.waiter.Waiter<GetImageRequest, GetImageResponse> forImage(
             com.oracle.bmc.waiter.BmcGenericWaiter waiter,
             final GetImageRequest request,
-            final com.oracle.bmc.core.model.Image.LifecycleState targetState) {
+            final com.oracle.bmc.core.model.Image.LifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.core.model.Image.LifecycleState> targetStatesSet =
+                new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
@@ -202,10 +312,12 @@ public class ComputeWaiters {
                         new com.google.common.base.Predicate<GetImageResponse>() {
                             @Override
                             public boolean apply(GetImageResponse response) {
-                                return response.getImage().getLifecycleState() == targetState;
+                                return targetStatesSet.contains(
+                                        response.getImage().getLifecycleState());
                             }
                         },
-                        targetState == com.oracle.bmc.core.model.Image.LifecycleState.Deleted),
+                        targetStatesSet.contains(
+                                com.oracle.bmc.core.model.Image.LifecycleState.Deleted)),
                 request);
     }
 
@@ -213,14 +325,19 @@ public class ComputeWaiters {
      * Creates a new {@link Waiter} using default configuration.
      *
      * @param request the request to send
-     * @param targetState the desired state to wait for
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetInstanceRequest, GetInstanceResponse> forInstance(
             GetInstanceRequest request,
-            com.oracle.bmc.core.model.Instance.LifecycleState targetState) {
+            com.oracle.bmc.core.model.Instance.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
         return forInstance(
-                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
     }
 
     /**
@@ -237,17 +354,47 @@ public class ComputeWaiters {
             com.oracle.bmc.core.model.Instance.LifecycleState targetState,
             com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
             com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
         return forInstance(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
                 request,
                 targetState);
     }
 
+    /**
+     * Creates a new {@link Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetInstanceRequest, GetInstanceResponse> forInstance(
+            GetInstanceRequest request,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+            com.oracle.bmc.core.model.Instance.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forInstance(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
     // Helper method to create a new Waiter for Instance.
     private com.oracle.bmc.waiter.Waiter<GetInstanceRequest, GetInstanceResponse> forInstance(
             com.oracle.bmc.waiter.BmcGenericWaiter waiter,
             final GetInstanceRequest request,
-            final com.oracle.bmc.core.model.Instance.LifecycleState targetState) {
+            final com.oracle.bmc.core.model.Instance.LifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.core.model.Instance.LifecycleState> targetStatesSet =
+                new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
@@ -262,11 +409,12 @@ public class ComputeWaiters {
                         new com.google.common.base.Predicate<GetInstanceResponse>() {
                             @Override
                             public boolean apply(GetInstanceResponse response) {
-                                return response.getInstance().getLifecycleState() == targetState;
+                                return targetStatesSet.contains(
+                                        response.getInstance().getLifecycleState());
                             }
                         },
-                        targetState
-                                == com.oracle.bmc.core.model.Instance.LifecycleState.Terminated),
+                        targetStatesSet.contains(
+                                com.oracle.bmc.core.model.Instance.LifecycleState.Terminated)),
                 request);
     }
 
@@ -274,17 +422,22 @@ public class ComputeWaiters {
      * Creates a new {@link Waiter} using default configuration.
      *
      * @param request the request to send
-     * @param targetState the desired state to wait for
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
                     GetInstanceConsoleConnectionRequest, GetInstanceConsoleConnectionResponse>
             forInstanceConsoleConnection(
                     GetInstanceConsoleConnectionRequest request,
-                    com.oracle.bmc.core.model.InstanceConsoleConnection.LifecycleState
-                            targetState) {
+                    com.oracle.bmc.core.model.InstanceConsoleConnection.LifecycleState...
+                            targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
         return forInstanceConsoleConnection(
-                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
     }
 
     /**
@@ -303,10 +456,40 @@ public class ComputeWaiters {
                     com.oracle.bmc.core.model.InstanceConsoleConnection.LifecycleState targetState,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
         return forInstanceConsoleConnection(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
                 request,
                 targetState);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetInstanceConsoleConnectionRequest, GetInstanceConsoleConnectionResponse>
+            forInstanceConsoleConnection(
+                    GetInstanceConsoleConnectionRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.core.model.InstanceConsoleConnection.LifecycleState...
+                            targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forInstanceConsoleConnection(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
     }
 
     // Helper method to create a new Waiter for InstanceConsoleConnection.
@@ -315,8 +498,11 @@ public class ComputeWaiters {
             forInstanceConsoleConnection(
                     com.oracle.bmc.waiter.BmcGenericWaiter waiter,
                     final GetInstanceConsoleConnectionRequest request,
-                    final com.oracle.bmc.core.model.InstanceConsoleConnection.LifecycleState
-                            targetState) {
+                    final com.oracle.bmc.core.model.InstanceConsoleConnection.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.core.model.InstanceConsoleConnection.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
@@ -334,13 +520,14 @@ public class ComputeWaiters {
                                 GetInstanceConsoleConnectionResponse>() {
                             @Override
                             public boolean apply(GetInstanceConsoleConnectionResponse response) {
-                                return response.getInstanceConsoleConnection().getLifecycleState()
-                                        == targetState;
+                                return targetStatesSet.contains(
+                                        response.getInstanceConsoleConnection()
+                                                .getLifecycleState());
                             }
                         },
-                        targetState
-                                == com.oracle.bmc.core.model.InstanceConsoleConnection
-                                        .LifecycleState.Deleted),
+                        targetStatesSet.contains(
+                                com.oracle.bmc.core.model.InstanceConsoleConnection.LifecycleState
+                                        .Deleted)),
                 request);
     }
 
@@ -348,15 +535,20 @@ public class ComputeWaiters {
      * Creates a new {@link Waiter} using default configuration.
      *
      * @param request the request to send
-     * @param targetState the desired state to wait for
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetVnicAttachmentRequest, GetVnicAttachmentResponse>
             forVnicAttachment(
                     GetVnicAttachmentRequest request,
-                    com.oracle.bmc.core.model.VnicAttachment.LifecycleState targetState) {
+                    com.oracle.bmc.core.model.VnicAttachment.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
         return forVnicAttachment(
-                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
     }
 
     /**
@@ -374,10 +566,38 @@ public class ComputeWaiters {
                     com.oracle.bmc.core.model.VnicAttachment.LifecycleState targetState,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
         return forVnicAttachment(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
                 request,
                 targetState);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetVnicAttachmentRequest, GetVnicAttachmentResponse>
+            forVnicAttachment(
+                    GetVnicAttachmentRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.core.model.VnicAttachment.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forVnicAttachment(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
     }
 
     // Helper method to create a new Waiter for VnicAttachment.
@@ -385,7 +605,10 @@ public class ComputeWaiters {
             forVnicAttachment(
                     com.oracle.bmc.waiter.BmcGenericWaiter waiter,
                     final GetVnicAttachmentRequest request,
-                    final com.oracle.bmc.core.model.VnicAttachment.LifecycleState targetState) {
+                    final com.oracle.bmc.core.model.VnicAttachment.LifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.core.model.VnicAttachment.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
@@ -401,8 +624,8 @@ public class ComputeWaiters {
                         new com.google.common.base.Predicate<GetVnicAttachmentResponse>() {
                             @Override
                             public boolean apply(GetVnicAttachmentResponse response) {
-                                return response.getVnicAttachment().getLifecycleState()
-                                        == targetState;
+                                return targetStatesSet.contains(
+                                        response.getVnicAttachment().getLifecycleState());
                             }
                         },
                         false),
@@ -413,15 +636,20 @@ public class ComputeWaiters {
      * Creates a new {@link Waiter} using default configuration.
      *
      * @param request the request to send
-     * @param targetState the desired state to wait for
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetVolumeAttachmentRequest, GetVolumeAttachmentResponse>
             forVolumeAttachment(
                     GetVolumeAttachmentRequest request,
-                    com.oracle.bmc.core.model.VolumeAttachment.LifecycleState targetState) {
+                    com.oracle.bmc.core.model.VolumeAttachment.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
         return forVolumeAttachment(
-                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
     }
 
     /**
@@ -439,10 +667,38 @@ public class ComputeWaiters {
                     com.oracle.bmc.core.model.VolumeAttachment.LifecycleState targetState,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
         return forVolumeAttachment(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
                 request,
                 targetState);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetVolumeAttachmentRequest, GetVolumeAttachmentResponse>
+            forVolumeAttachment(
+                    GetVolumeAttachmentRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.core.model.VolumeAttachment.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forVolumeAttachment(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
     }
 
     // Helper method to create a new Waiter for VolumeAttachment.
@@ -450,7 +706,11 @@ public class ComputeWaiters {
             forVolumeAttachment(
                     com.oracle.bmc.waiter.BmcGenericWaiter waiter,
                     final GetVolumeAttachmentRequest request,
-                    final com.oracle.bmc.core.model.VolumeAttachment.LifecycleState targetState) {
+                    final com.oracle.bmc.core.model.VolumeAttachment.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.core.model.VolumeAttachment.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
@@ -466,8 +726,8 @@ public class ComputeWaiters {
                         new com.google.common.base.Predicate<GetVolumeAttachmentResponse>() {
                             @Override
                             public boolean apply(GetVolumeAttachmentResponse response) {
-                                return response.getVolumeAttachment().getLifecycleState()
-                                        == targetState;
+                                return targetStatesSet.contains(
+                                        response.getVolumeAttachment().getLifecycleState());
                             }
                         },
                         false),

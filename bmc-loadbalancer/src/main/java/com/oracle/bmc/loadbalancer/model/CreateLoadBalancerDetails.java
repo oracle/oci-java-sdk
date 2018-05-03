@@ -59,6 +59,15 @@ public class CreateLoadBalancerDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("hostnames")
+        private java.util.Map<String, HostnameDetails> hostnames;
+
+        public Builder hostnames(java.util.Map<String, HostnameDetails> hostnames) {
+            this.hostnames = hostnames;
+            this.__explicitlySet__.add("hostnames");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
         private Boolean isPrivate;
 
@@ -114,6 +123,7 @@ public class CreateLoadBalancerDetails {
                             certificates,
                             compartmentId,
                             displayName,
+                            hostnames,
                             isPrivate,
                             listeners,
                             pathRouteSets,
@@ -130,6 +140,7 @@ public class CreateLoadBalancerDetails {
                             .certificates(o.getCertificates())
                             .compartmentId(o.getCompartmentId())
                             .displayName(o.getDisplayName())
+                            .hostnames(o.getHostnames())
                             .isPrivate(o.getIsPrivate())
                             .listeners(o.getListeners())
                             .pathRouteSets(o.getPathRouteSets())
@@ -164,11 +175,14 @@ public class CreateLoadBalancerDetails {
      * A user-friendly name. It does not have to be unique, and it is changeable.
      * Avoid entering confidential information.
      * <p>
-     * Example: `My load balancer`
+     * Example: `example_load_balancer`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("hostnames")
+    java.util.Map<String, HostnameDetails> hostnames;
 
     /**
      * Whether the load balancer has a VCN-local (private) IP address.
@@ -185,7 +199,7 @@ public class CreateLoadBalancerDetails {
      * hosts the secondary (standby) load balancer. A public load balancer is accessible from the internet, depending on your
      * VCN's [security list rules](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/securitylists.htm).
      * <p>
-     * Example: `false`
+     * Example: `true`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")

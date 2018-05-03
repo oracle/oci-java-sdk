@@ -64,6 +64,9 @@ public class LoadBalancerShape {
 
     /**
      * The name of the shape.
+     * <p>
+     * Example: `100Mbps`
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;

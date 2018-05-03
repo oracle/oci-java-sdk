@@ -23,7 +23,7 @@ public class UpdateListenerRequest extends com.oracle.bmc.requests.BmcRequest {
     /**
      * The name of the listener to update.
      * <p>
-     * Example: `My listener`
+     * Example: `example_listener`
      *
      */
     private String listenerName;

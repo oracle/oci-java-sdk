@@ -53,12 +53,22 @@ public interface LoadBalancer extends AutoCloseable {
     CreateBackendSetResponse createBackendSet(CreateBackendSetRequest request);
 
     /**
-     * Creates an asynchronous request to add an SSL certificate.
+     * Creates an asynchronous request to add an SSL certificate bundle.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      */
     CreateCertificateResponse createCertificate(CreateCertificateRequest request);
+
+    /**
+     * Adds a hostname resource to the specified load balancer. For more information, see
+     * [Managing Request Routing](https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingrequest.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateHostnameResponse createHostname(CreateHostnameRequest request);
 
     /**
      * Adds a listener to a load balancer.
@@ -133,12 +143,21 @@ public interface LoadBalancer extends AutoCloseable {
     DeleteBackendSetResponse deleteBackendSet(DeleteBackendSetRequest request);
 
     /**
-     * Deletes an SSL certificate from a load balancer.
+     * Deletes an SSL certificate bundle from a load balancer.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      */
     DeleteCertificateResponse deleteCertificate(DeleteCertificateRequest request);
+
+    /**
+     * Deletes a hostname resource from the specified load balancer.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteHostnameResponse deleteHostname(DeleteHostnameRequest request);
 
     /**
      * Deletes a listener from a load balancer.
@@ -209,6 +228,14 @@ public interface LoadBalancer extends AutoCloseable {
     GetHealthCheckerResponse getHealthChecker(GetHealthCheckerRequest request);
 
     /**
+     * Gets the specified hostname resource's configuration information.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetHostnameResponse getHostname(GetHostnameRequest request);
+
+    /**
      * Gets the specified load balancer's configuration information.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -257,12 +284,20 @@ public interface LoadBalancer extends AutoCloseable {
     ListBackendsResponse listBackends(ListBackendsRequest request);
 
     /**
-     * Lists all SSL certificates associated with a given load balancer.
+     * Lists all SSL certificates bundles associated with a given load balancer.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      */
     ListCertificatesResponse listCertificates(ListCertificatesRequest request);
+
+    /**
+     * Lists all hostname resources associated with the specified load balancer.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListHostnamesResponse listHostnames(ListHostnamesRequest request);
 
     /**
      * Lists the summary health statuses for all load balancers in the specified compartment.
@@ -343,6 +378,16 @@ public interface LoadBalancer extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateHealthCheckerResponse updateHealthChecker(UpdateHealthCheckerRequest request);
+
+    /**
+     * Overwrites an existing hostname resource on the specified load balancer. Use this operation to change a
+     * virtual hostname.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateHostnameResponse updateHostname(UpdateHostnameRequest request);
 
     /**
      * Updates a listener for a given load balancer.

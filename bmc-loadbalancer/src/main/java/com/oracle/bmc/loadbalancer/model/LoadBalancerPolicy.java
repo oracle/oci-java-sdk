@@ -61,7 +61,10 @@ public class LoadBalancerPolicy {
     }
 
     /**
-     * The name of the load balancing policy.
+     * The name of a load balancing policy.
+     * <p>
+     * Example: 'LEAST_CONNECTIONS'
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;

@@ -11,14 +11,16 @@ import com.oracle.bmc.loadbalancer.model.*;
 public class DeleteCertificateRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the load balancer associated with the certificate to be deleted.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the load balancer associated with the certificate bundle
+     * to be deleted.
+     *
      */
     private String loadBalancerId;
 
     /**
-     * The name of the certificate to delete.
+     * The name of the certificate bundle to delete.
      * <p>
-     * Example: `My_certificate_bundle`
+     * Example: `example_certificate_bundle`
      *
      */
     private String certificateName;
