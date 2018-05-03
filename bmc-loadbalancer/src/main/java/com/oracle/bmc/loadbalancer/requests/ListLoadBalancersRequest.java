@@ -136,12 +136,16 @@ public class ListLoadBalancersRequest extends com.oracle.bmc.requests.BmcRequest
 
     /**
      * A filter to return only resources that match the given display name exactly.
+     * <p>
+     * Example: `example_load_balancer`
      *
      */
     private String displayName;
 
     /**
      * A filter to return only resources that match the given lifecycle state.
+     * <p>
+     * Example: `SUCCEEDED`
      *
      */
     private LoadBalancer.LifecycleState lifecycleState;

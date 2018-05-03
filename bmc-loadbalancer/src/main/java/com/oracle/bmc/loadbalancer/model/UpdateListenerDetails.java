@@ -41,6 +41,15 @@ public class UpdateListenerDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("hostnameNames")
+        private java.util.List<String> hostnameNames;
+
+        public Builder hostnameNames(java.util.List<String> hostnameNames) {
+            this.hostnameNames = hostnameNames;
+            this.__explicitlySet__.add("hostnameNames");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("pathRouteSetName")
         private String pathRouteSetName;
 
@@ -85,6 +94,7 @@ public class UpdateListenerDetails {
                     new UpdateListenerDetails(
                             connectionConfiguration,
                             defaultBackendSetName,
+                            hostnameNames,
                             pathRouteSetName,
                             port,
                             protocol,
@@ -98,6 +108,7 @@ public class UpdateListenerDetails {
             Builder copiedBuilder =
                     connectionConfiguration(o.getConnectionConfiguration())
                             .defaultBackendSetName(o.getDefaultBackendSetName())
+                            .hostnameNames(o.getHostnameNames())
                             .pathRouteSetName(o.getPathRouteSetName())
                             .port(o.getPort())
                             .protocol(o.getProtocol())
@@ -121,17 +132,23 @@ public class UpdateListenerDetails {
     /**
      * The name of the associated backend set.
      * <p>
-     * Example: `My_backend_set`
+     * Example: `example_backend_set`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultBackendSetName")
     String defaultBackendSetName;
 
     /**
+     * An array of hostname resource names.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("hostnameNames")
+    java.util.List<String> hostnameNames;
+
+    /**
      * The name of the set of path-based routing rules, {@link PathRouteSet},
      * applied to this listener's traffic.
      * <p>
-     * Example: `path-route-set-001`
+     * Example: `example_path_route_set`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pathRouteSetName")

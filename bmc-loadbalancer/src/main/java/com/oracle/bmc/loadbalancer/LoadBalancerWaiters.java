@@ -22,15 +22,20 @@ public class LoadBalancerWaiters {
      * Creates a new {@link Waiter} using default configuration.
      *
      * @param request the request to send
-     * @param targetState the desired state to wait for
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetLoadBalancerRequest, GetLoadBalancerResponse>
             forLoadBalancer(
                     GetLoadBalancerRequest request,
-                    com.oracle.bmc.loadbalancer.model.LoadBalancer.LifecycleState targetState) {
+                    com.oracle.bmc.loadbalancer.model.LoadBalancer.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
         return forLoadBalancer(
-                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetState);
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
     }
 
     /**
@@ -48,10 +53,38 @@ public class LoadBalancerWaiters {
                     com.oracle.bmc.loadbalancer.model.LoadBalancer.LifecycleState targetState,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
         return forLoadBalancer(
                 com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
                 request,
                 targetState);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetLoadBalancerRequest, GetLoadBalancerResponse>
+            forLoadBalancer(
+                    GetLoadBalancerRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.loadbalancer.model.LoadBalancer.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forLoadBalancer(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
     }
 
     // Helper method to create a new Waiter for LoadBalancer.
@@ -59,8 +92,11 @@ public class LoadBalancerWaiters {
             forLoadBalancer(
                     com.oracle.bmc.waiter.BmcGenericWaiter waiter,
                     final GetLoadBalancerRequest request,
-                    final com.oracle.bmc.loadbalancer.model.LoadBalancer.LifecycleState
-                            targetState) {
+                    final com.oracle.bmc.loadbalancer.model.LoadBalancer.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.loadbalancer.model.LoadBalancer.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
         return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
                 executorService,
                 waiter.toCallable(
@@ -75,13 +111,13 @@ public class LoadBalancerWaiters {
                         new com.google.common.base.Predicate<GetLoadBalancerResponse>() {
                             @Override
                             public boolean apply(GetLoadBalancerResponse response) {
-                                return response.getLoadBalancer().getLifecycleState()
-                                        == targetState;
+                                return targetStatesSet.contains(
+                                        response.getLoadBalancer().getLifecycleState());
                             }
                         },
-                        targetState
-                                == com.oracle.bmc.loadbalancer.model.LoadBalancer.LifecycleState
-                                        .Deleted),
+                        targetStatesSet.contains(
+                                com.oracle.bmc.loadbalancer.model.LoadBalancer.LifecycleState
+                                        .Deleted)),
                 request);
     }
 

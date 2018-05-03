@@ -18,7 +18,7 @@ public class GetPathRouteSetRequest extends com.oracle.bmc.requests.BmcRequest {
     /**
      * The name of the path route set to retrieve.
      * <p>
-     * Example: `path-route-set-001`
+     * Example: `example_path_route_set`
      *
      */
     private String pathRouteSetName;

@@ -154,14 +154,14 @@ public class HealthCheckResult {
      * The IP address of the health check status report provider. This identifier helps you differentiate same-subnet
      * (private) load balancers that report health check status.
      * <p>
-     * Example: `10.2.0.1`
+     * Example: `10.0.0.7`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceIpAddress")
     String sourceIpAddress;
 
     /**
-     * The OCID of the subnet hosting the load balancer that reported this health check status.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the subnet hosting the load balancer that reported this health check status.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")

@@ -245,6 +245,8 @@ public class WorkRequest {
 
     /**
      * The type of action the work request represents.
+     * <p>
+     * Example: `CreateListener`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")

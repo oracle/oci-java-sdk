@@ -110,7 +110,7 @@ public class BackendSetHealth {
      * A list of backend servers that are currently in the `CRITICAL` health state. The list identifies each backend server by
      * IP address and port.
      * <p>
-     * Example: `1.1.1.1:80`
+     * Example: `10.0.0.4:8080`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("criticalStateBackendNames")
@@ -194,7 +194,7 @@ public class BackendSetHealth {
     /**
      * The total number of backend servers in this backend set.
      * <p>
-     * Example: `5`
+     * Example: `7`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalBackendCount")
@@ -204,7 +204,7 @@ public class BackendSetHealth {
      * A list of backend servers that are currently in the `UNKNOWN` health state. The list identifies each backend server by
      * IP address and port.
      * <p>
-     * Example: `1.1.1.5:80`
+     * Example: `10.0.0.5:8080`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unknownStateBackendNames")
@@ -214,7 +214,7 @@ public class BackendSetHealth {
      * A list of backend servers that are currently in the `WARNING` health state. The list identifies each backend server by
      * IP address and port.
      * <p>
-     * Example: `1.1.1.7:42`
+     * Example: `10.0.0.3:8080`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("warningStateBackendNames")

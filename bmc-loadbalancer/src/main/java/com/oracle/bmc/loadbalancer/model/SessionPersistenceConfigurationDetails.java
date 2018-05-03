@@ -81,7 +81,7 @@ public class SessionPersistenceConfigurationDetails {
      * The name of the cookie used to detect a session initiated by the backend server. Use '*' to specify
      * that any cookie set by the backend causes the session to persist.
      * <p>
-     * Example: `myCookieName`
+     * Example: `example_cookie`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cookieName")
@@ -91,7 +91,7 @@ public class SessionPersistenceConfigurationDetails {
      * Whether the load balancer is prevented from directing traffic from a persistent session client to
      * a different backend server if the original server is unavailable. Defaults to false.
      * <p>
-     * Example: `true`
+     * Example: `false`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("disableFallback")

@@ -67,6 +67,15 @@ public class LoadBalancer {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("hostnames")
+        private java.util.Map<String, Hostname> hostnames;
+
+        public Builder hostnames(java.util.Map<String, Hostname> hostnames) {
+            this.hostnames = hostnames;
+            this.__explicitlySet__.add("hostnames");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
@@ -158,6 +167,7 @@ public class LoadBalancer {
                             certificates,
                             compartmentId,
                             displayName,
+                            hostnames,
                             id,
                             ipAddresses,
                             isPrivate,
@@ -178,6 +188,7 @@ public class LoadBalancer {
                             .certificates(o.getCertificates())
                             .compartmentId(o.getCompartmentId())
                             .displayName(o.getDisplayName())
+                            .hostnames(o.getHostnames())
                             .id(o.getId())
                             .ipAddresses(o.getIpAddresses())
                             .isPrivate(o.getIsPrivate())
@@ -215,11 +226,14 @@ public class LoadBalancer {
     /**
      * A user-friendly name. It does not have to be unique, and it is changeable.
      * <p>
-     * Example: `My load balancer`
+     * Example: `example_load_balancer`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("hostnames")
+    java.util.Map<String, Hostname> hostnames;
 
     /**
      * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the load balancer.
@@ -248,6 +262,8 @@ public class LoadBalancer {
      * requires two subnets, each in a different Availability Domain. One subnet hosts the primary load balancer and the other
      * hosts the secondary (standby) load balancer. A public load balancer is accessible from the internet, depending on your
      * VCN's [security list rules](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/securitylists.htm).
+     * <p>
+     * Example: `true`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")

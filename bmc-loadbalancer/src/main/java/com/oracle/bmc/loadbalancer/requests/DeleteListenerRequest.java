@@ -18,7 +18,7 @@ public class DeleteListenerRequest extends com.oracle.bmc.requests.BmcRequest {
     /**
      * The name of the listener to delete.
      * <p>
-     * Example: `My listener`
+     * Example: `example_listener`
      *
      */
     private String listenerName;

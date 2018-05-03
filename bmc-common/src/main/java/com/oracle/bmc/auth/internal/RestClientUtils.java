@@ -118,7 +118,7 @@ public class RestClientUtils {
 
         RestClientFactory restClientFactory =
                 RestClientFactoryBuilder.builder().clientConfigurator(clientConfigurator).build();
-        RestClient restClient = restClientFactory.create(requestSigner, null);
+        RestClient restClient = restClientFactory.create(requestSigner);
         restClient.setEndpoint(endpoint);
         return restClient;
     }

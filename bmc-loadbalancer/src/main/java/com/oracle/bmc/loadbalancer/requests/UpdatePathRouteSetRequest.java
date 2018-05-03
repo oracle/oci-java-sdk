@@ -23,7 +23,7 @@ public class UpdatePathRouteSetRequest extends com.oracle.bmc.requests.BmcReques
     /**
      * The name of the path route set to update.
      * <p>
-     * Example: `path-route-set-001`
+     * Example: `example_path_route_set`
      *
      */
     private String pathRouteSetName;

@@ -23,7 +23,7 @@ public class UpdateBackendSetRequest extends com.oracle.bmc.requests.BmcRequest 
     /**
      * The name of the backend set to update.
      * <p>
-     * Example: `My_backend_set`
+     * Example: `example_backend_set`
      *
      */
     private String backendSetName;

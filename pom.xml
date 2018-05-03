@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>1.2.35</version>
+  <version>1.2.37</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -313,6 +313,11 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.19.1</version>
+          <configuration>
+            <excludes>
+              <exclude>bmc-integtests/**/*IntegrationAutoTest.java</exclude>
+            </excludes>
+          </configuration>
           <dependencies>
             <dependency>
               <groupId>org.apache.maven.surefire</groupId>
@@ -492,5 +497,6 @@
     <module>bmc-objectstorage/bmc-objectstorage-extensions</module>
     <module>bmc-objectstorage</module>
     <module>bmc-full</module>
+    <module>bmc-shaded</module>
   </modules>
 </project>

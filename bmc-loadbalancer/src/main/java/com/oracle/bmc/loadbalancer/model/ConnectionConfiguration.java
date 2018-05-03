@@ -63,34 +63,7 @@ public class ConnectionConfiguration {
      * between the client and backend servers. A send operation does not reset the timer for receive operations. A
      * receive operation does not reset the timer for send operations.
      * <p>
-     * The default values are:
-     * <p>
-     *  300 seconds for TCP
-     * <p>
-     *  60 seconds for HTTP and WebSocket protocols.
-     * <p>
-     * Note: The protocol is set at the listener.
-     * <p>
-     * Modify this parameter if the client or backend server stops transmitting data for more than the default time.
-     * Some examples include:
-     * <p>
-     *  The client sends a database query to the backend server and the database takes over 300 seconds to execute.
-     *    Therefore, the backend server does not transmit any data within 300 seconds.
-     * <p>
-     *  The client uploads data using the HTTP protocol. During the upload, the backend does not transmit any data
-     *    to the client for more than 60 seconds.
-     * <p>
-     *  The client downloads data using the HTTP protocol.  After the initial request, it stops transmitting data to
-     *    the backend server for more than 60 seconds.
-     * <p>
-     *  The client starts transmitting data after establishing a WebSocket connection, but the backend server does
-     *    not transmit data for more than 60 seconds.
-     * <p>
-     *  The backend server starts transmitting data after establishing a WebSocket connection, but the client does
-     *    not transmit data for more than 60 seconds.
-     * <p>
-     * The maximum value is 7200 seconds. Contact My Oracle Support to file a service request if you want to increase
-     * this limit for your tenancy. For more information, see [Service Limits](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/servicelimits.htm).
+     * For more information, see [Connection Configuration](https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration).
      * <p>
      * Example: `1200`
      *

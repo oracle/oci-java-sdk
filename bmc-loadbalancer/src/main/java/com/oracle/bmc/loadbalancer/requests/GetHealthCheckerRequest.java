@@ -18,7 +18,7 @@ public class GetHealthCheckerRequest extends com.oracle.bmc.requests.BmcRequest 
     /**
      * The name of the backend set associated with the health check policy to be retrieved.
      * <p>
-     * Example: `My_backend_set`
+     * Example: `example_backend_set`
      *
      */
     private String backendSetName;
