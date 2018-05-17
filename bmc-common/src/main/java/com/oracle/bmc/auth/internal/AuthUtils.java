@@ -18,6 +18,7 @@ import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 import java.security.spec.RSAPublicKeySpec;
 
+import com.oracle.bmc.auth.exception.InstancePrincipalUnavailableException;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang3.StringUtils;
 import org.bouncycastle.asn1.x500.AttributeTypeAndValue;
@@ -223,9 +224,11 @@ public class AuthUtils {
                 }
             }
         } catch (CertificateEncodingException ex) {
-            throw new IllegalArgumentException("The certificate is not valid one.", ex);
+            throw new InstancePrincipalUnavailableException(
+                    "The certificate is not valid one.", ex);
         }
 
-        throw new IllegalArgumentException("The certificate does not contain tenant id.");
+        throw new InstancePrincipalUnavailableException(
+                "The certificate does not contain tenant id.");
     }
 }

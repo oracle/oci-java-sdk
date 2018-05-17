@@ -82,6 +82,14 @@ public class ListVolumesConverter {
                                     request.getSortOrder().getValue()));
         }
 
+        if (request.getVolumeGroupId() != null) {
+            target =
+                    target.queryParam(
+                            "volumeGroupId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getVolumeGroupId()));
+        }
+
         if (request.getLifecycleState() != null) {
             target =
                     target.queryParam(

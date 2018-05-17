@@ -108,6 +108,15 @@ public class BootVolume {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("volumeGroupId")
+        private String volumeGroupId;
+
+        public Builder volumeGroupId(String volumeGroupId) {
+            this.volumeGroupId = volumeGroupId;
+            this.__explicitlySet__.add("volumeGroupId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -122,7 +131,8 @@ public class BootVolume {
                             lifecycleState,
                             sizeInGBs,
                             sizeInMBs,
-                            timeCreated);
+                            timeCreated,
+                            volumeGroupId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -138,7 +148,8 @@ public class BootVolume {
                             .lifecycleState(o.getLifecycleState())
                             .sizeInGBs(o.getSizeInGBs())
                             .sizeInMBs(o.getSizeInMBs())
-                            .timeCreated(o.getTimeCreated());
+                            .timeCreated(o.getTimeCreated())
+                            .volumeGroupId(o.getVolumeGroupId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -261,6 +272,12 @@ public class BootVolume {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
+
+    /**
+     * The OCID of the source volume group.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("volumeGroupId")
+    String volumeGroupId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -392,6 +392,59 @@ public class BlockstorageClient implements Blockstorage {
     }
 
     @Override
+    public CreateVolumeGroupResponse createVolumeGroup(CreateVolumeGroupRequest request) {
+        LOG.trace("Called createVolumeGroup");
+        request = CreateVolumeGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateVolumeGroupConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateVolumeGroupResponse>
+                transformer = CreateVolumeGroupConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCreateVolumeGroupDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public CreateVolumeGroupBackupResponse createVolumeGroupBackup(
+            CreateVolumeGroupBackupRequest request) {
+        LOG.trace("Called createVolumeGroupBackup");
+        request = CreateVolumeGroupBackupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateVolumeGroupBackupConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateVolumeGroupBackupResponse>
+                transformer = CreateVolumeGroupBackupConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCreateVolumeGroupBackupDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public DeleteBootVolumeResponse deleteBootVolume(DeleteBootVolumeRequest request) {
         LOG.trace("Called deleteBootVolume");
         request = DeleteBootVolumeConverter.interceptRequest(request);
@@ -476,6 +529,57 @@ public class BlockstorageClient implements Blockstorage {
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteVolumeBackupPolicyAssignmentResponse>
                 transformer = DeleteVolumeBackupPolicyAssignmentConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public DeleteVolumeGroupResponse deleteVolumeGroup(DeleteVolumeGroupRequest request) {
+        LOG.trace("Called deleteVolumeGroup");
+        request = DeleteVolumeGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteVolumeGroupConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVolumeGroupResponse>
+                transformer = DeleteVolumeGroupConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public DeleteVolumeGroupBackupResponse deleteVolumeGroupBackup(
+            DeleteVolumeGroupBackupRequest request) {
+        LOG.trace("Called deleteVolumeGroupBackup");
+        request = DeleteVolumeGroupBackupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteVolumeGroupBackupConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVolumeGroupBackupResponse>
+                transformer = DeleteVolumeGroupBackupConverter.fromResponse();
 
         int attempts = 0;
         while (true) {
@@ -649,6 +753,56 @@ public class BlockstorageClient implements Blockstorage {
     }
 
     @Override
+    public GetVolumeGroupResponse getVolumeGroup(GetVolumeGroupRequest request) {
+        LOG.trace("Called getVolumeGroup");
+        request = GetVolumeGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetVolumeGroupConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeGroupResponse>
+                transformer = GetVolumeGroupConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public GetVolumeGroupBackupResponse getVolumeGroupBackup(GetVolumeGroupBackupRequest request) {
+        LOG.trace("Called getVolumeGroupBackup");
+        request = GetVolumeGroupBackupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetVolumeGroupBackupConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeGroupBackupResponse>
+                transformer = GetVolumeGroupBackupConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public ListBootVolumesResponse listBootVolumes(ListBootVolumesRequest request) {
         LOG.trace("Called listBootVolumes");
         request = ListBootVolumesConverter.interceptRequest(request);
@@ -707,6 +861,57 @@ public class BlockstorageClient implements Blockstorage {
                 ListVolumeBackupsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumeBackupsResponse>
                 transformer = ListVolumeBackupsConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public ListVolumeGroupBackupsResponse listVolumeGroupBackups(
+            ListVolumeGroupBackupsRequest request) {
+        LOG.trace("Called listVolumeGroupBackups");
+        request = ListVolumeGroupBackupsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListVolumeGroupBackupsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumeGroupBackupsResponse>
+                transformer = ListVolumeGroupBackupsConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public ListVolumeGroupsResponse listVolumeGroups(ListVolumeGroupsRequest request) {
+        LOG.trace("Called listVolumeGroups");
+        request = ListVolumeGroupsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListVolumeGroupsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumeGroupsResponse>
+                transformer = ListVolumeGroupsConverter.fromResponse();
 
         int attempts = 0;
         while (true) {
@@ -815,6 +1020,59 @@ public class BlockstorageClient implements Blockstorage {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdateVolumeBackupDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public UpdateVolumeGroupResponse updateVolumeGroup(UpdateVolumeGroupRequest request) {
+        LOG.trace("Called updateVolumeGroup");
+        request = UpdateVolumeGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateVolumeGroupConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVolumeGroupResponse>
+                transformer = UpdateVolumeGroupConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateVolumeGroupDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public UpdateVolumeGroupBackupResponse updateVolumeGroupBackup(
+            UpdateVolumeGroupBackupRequest request) {
+        LOG.trace("Called updateVolumeGroupBackup");
+        request = UpdateVolumeGroupBackupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateVolumeGroupBackupConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVolumeGroupBackupResponse>
+                transformer = UpdateVolumeGroupBackupConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateVolumeGroupBackupDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS

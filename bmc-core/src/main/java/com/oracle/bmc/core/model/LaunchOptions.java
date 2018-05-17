@@ -96,6 +96,7 @@ public class LaunchOptions {
      * * `IDE` - Emulated IDE disk.
      * * `VFIO` - Direct attached Virtual Function storage.  This is the default option for Local data
      * volumes on Oracle provided images.
+     * * `PARAVIRTUALIZED` - Paravirtualized disk.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -104,6 +105,7 @@ public class LaunchOptions {
         Scsi("SCSI"),
         Ide("IDE"),
         Vfio("VFIO"),
+        Paravirtualized("PARAVIRTUALIZED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -151,6 +153,7 @@ public class LaunchOptions {
      * * `IDE` - Emulated IDE disk.
      * * `VFIO` - Direct attached Virtual Function storage.  This is the default option for Local data
      * volumes on Oracle provided images.
+     * * `PARAVIRTUALIZED` - Paravirtualized disk.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeType")
@@ -281,6 +284,7 @@ public class LaunchOptions {
      * * `IDE` - Emulated IDE disk.
      * * `VFIO` - Direct attached Virtual Function storage.  This is the default option for Local data
      * volumes on Oracle provided images.
+     * * `PARAVIRTUALIZED` - Paravirtualized disk.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -289,6 +293,7 @@ public class LaunchOptions {
         Scsi("SCSI"),
         Ide("IDE"),
         Vfio("VFIO"),
+        Paravirtualized("PARAVIRTUALIZED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -336,6 +341,7 @@ public class LaunchOptions {
      * * `IDE` - Emulated IDE disk.
      * * `VFIO` - Direct attached Virtual Function storage.  This is the default option for Local data
      * volumes on Oracle provided images.
+     * * `PARAVIRTUALIZED` - Paravirtualized disk.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("remoteDataVolumeType")

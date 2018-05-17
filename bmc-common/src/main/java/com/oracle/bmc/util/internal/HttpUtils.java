@@ -215,9 +215,9 @@ public class HttpUtils {
                                 queryParamName,
                                 attemptEncodeQueryParam(StringUtils.join(valuesToUse, '\t')));
             } else if (collectionFormatType == CollectionFormatType.Multi) {
-                final List<Object> encodedValuesToUse = new ArrayList<>();
-                for (Object v : valuesToUse) {
-                    encodedValuesToUse.add(attemptEncodeQueryParam(v));
+                final Object[] encodedValuesToUse = new Object[valuesToUse.size()];
+                for (int i = 0; i < valuesToUse.size(); i++) {
+                    encodedValuesToUse[i] = attemptEncodeQueryParam(valuesToUse.get(i));
                 }
                 target = target.queryParam(queryParamName, encodedValuesToUse);
             } else {

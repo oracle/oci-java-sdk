@@ -146,6 +146,11 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest {
     };
 
     /**
+     * The OCID of the volume group.
+     */
+    private String volumeGroupId;
+
+    /**
      * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      *
      */
@@ -179,6 +184,7 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest {
             displayName(o.getDisplayName());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
+            volumeGroupId(o.getVolumeGroupId());
             lifecycleState(o.getLifecycleState());
             invocationCallback(o.getInvocationCallback());
             return this;

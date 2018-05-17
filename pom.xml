@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>1.2.37</version>
+  <version>1.2.38</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -41,6 +41,7 @@
       a breaking change. http://bouncy-castle.1462172.n4.nabble.com/Issues-when-migrating-to-1-53-td4657955.html 
       https://github.com/box/box-java-sdk/issues/168 Has not been fixed as of 1.55. -->
     <bouncycastle.version>1.52</bouncycastle.version>
+    <excluded.testcases>**/*IntegrationAutoTest.java</excluded.testcases>
   </properties>
   <profiles>
     <profile>
@@ -315,7 +316,7 @@
           <version>2.19.1</version>
           <configuration>
             <excludes>
-              <exclude>bmc-integtests/**/*IntegrationAutoTest.java</exclude>
+              <exclude>${excluded.testcases}</exclude>
             </excludes>
           </configuration>
           <dependencies>

@@ -141,8 +141,7 @@ public class FileSystemSummary {
      * The number of bytes consumed by the file system, including
      * any snapshots. This number reflects the metered size of the file
      * system and is updated asynchronously with respect to
-     * updates to the file system. For details on file system
-     * metering see [File System Metering](https://docs.us-phoenix-1.oraclecloud.com/Content/File/Concepts/metering.htm).
+     * updates to the file system.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("meteredBytes")

@@ -23,16 +23,17 @@ public class ListExportsConverter {
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client, ListExportsRequest request) {
         Validate.notNull(request, "request instance is required");
-        Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget().path("/20171215").path("exports");
 
-        target =
-                target.queryParam(
-                        "compartmentId",
-                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                request.getCompartmentId()));
+        if (request.getCompartmentId() != null) {
+            target =
+                    target.queryParam(
+                            "compartmentId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCompartmentId()));
+        }
 
         if (request.getLimit() != null) {
             target =

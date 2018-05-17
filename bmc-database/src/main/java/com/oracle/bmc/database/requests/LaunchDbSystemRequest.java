@@ -13,7 +13,7 @@ public class LaunchDbSystemRequest extends com.oracle.bmc.requests.BmcRequest {
     /**
      * Request to launch a DB System.
      */
-    private LaunchDbSystemDetails launchDbSystemDetails;
+    private LaunchDbSystemBase launchDbSystemDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
