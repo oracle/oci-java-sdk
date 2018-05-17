@@ -85,6 +85,28 @@ public interface Blockstorage extends AutoCloseable {
             CreateVolumeBackupPolicyAssignmentRequest request);
 
     /**
+     * Creates a new volume group in the specified compartment. A volume group can have at most 20 block volumes.
+     * A volume group is a collection of volumes and may be created from a list of volumes, cloning an existing
+     * volume group or by restoring a volume group backup.
+     * You may optionally specify a *display name* for the volume group, which is simply a friendly name or
+     * description. It does not have to be unique, and you can change it. Avoid entering confidential information.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateVolumeGroupResponse createVolumeGroup(CreateVolumeGroupRequest request);
+
+    /**
+     * Creates a new group backup of the specified volume group.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateVolumeGroupBackupResponse createVolumeGroupBackup(CreateVolumeGroupBackupRequest request);
+
+    /**
      * Deletes the specified boot volume. The volume cannot have an active connection to an instance.
      * To disconnect the boot volume from a connected instance, see
      * [Disconnecting From a Boot Volume](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Tasks/deletingbootvolume.htm).
@@ -124,6 +146,23 @@ public interface Blockstorage extends AutoCloseable {
      */
     DeleteVolumeBackupPolicyAssignmentResponse deleteVolumeBackupPolicyAssignment(
             DeleteVolumeBackupPolicyAssignmentRequest request);
+
+    /**
+     * Deletes the specified volume group. This will NOT delete data volumes.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteVolumeGroupResponse deleteVolumeGroup(DeleteVolumeGroupRequest request);
+
+    /**
+     * Deletes a volume group backup. This will NOT delete backups within the volume group backup.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteVolumeGroupBackupResponse deleteVolumeGroupBackup(DeleteVolumeGroupBackupRequest request);
 
     /**
      * Gets information for the specified boot volume.
@@ -179,6 +218,22 @@ public interface Blockstorage extends AutoCloseable {
             GetVolumeBackupPolicyAssignmentRequest request);
 
     /**
+     * Gets information for the specified volume group.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetVolumeGroupResponse getVolumeGroup(GetVolumeGroupRequest request);
+
+    /**
+     * Gets information for the specified volume group backup.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetVolumeGroupBackupResponse getVolumeGroupBackup(GetVolumeGroupBackupRequest request);
+
+    /**
      * Lists the boot volumes in the specified compartment and Availability Domain.
      *
      * @param request The request object containing the details to send
@@ -204,6 +259,24 @@ public interface Blockstorage extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListVolumeBackupsResponse listVolumeBackups(ListVolumeBackupsRequest request);
+
+    /**
+     * Lists the backups for volume groups in the specified compartment. You can filter the results by volume group.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListVolumeGroupBackupsResponse listVolumeGroupBackups(ListVolumeGroupBackupsRequest request);
+
+    /**
+     * Lists the volume groups in the specified compartment and Availability Domain.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListVolumeGroupsResponse listVolumeGroups(ListVolumeGroupsRequest request);
 
     /**
      * Lists the volumes in the specified compartment and Availability Domain.
@@ -241,6 +314,25 @@ public interface Blockstorage extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateVolumeBackupResponse updateVolumeBackup(UpdateVolumeBackupRequest request);
+
+    /**
+     * Updates the set of volumes in a volume group along with (optionally) it's display name. This call can be used
+     * to add or remove volumes in a volume group. The entire list of volume ids must be specified.
+     * Avoid entering confidential information.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateVolumeGroupResponse updateVolumeGroup(UpdateVolumeGroupRequest request);
+
+    /**
+     * Updates the display name for the specified volume group backup.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateVolumeGroupBackupResponse updateVolumeGroupBackup(UpdateVolumeGroupBackupRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

@@ -228,13 +228,7 @@ public class HttpUtilsTest {
             WrappedWebTarget result =
                     HttpUtils.encodeCollectionFormatQueryParam(wrapped, "unitTest", values, cft);
 
-            if (cft == CollectionFormatType.Multi) {
-                final List<Object> expected = new ArrayList<>();
-                expected.add("single");
-                verify(target).queryParam("unitTest", expected);
-            } else {
-                verify(target).queryParam("unitTest", "single");
-            }
+            verify(target).queryParam("unitTest", "single");
         }
     }
 
@@ -260,10 +254,7 @@ public class HttpUtilsTest {
             } else if (cft == CollectionFormatType.TabSeparated) {
                 verify(target).queryParam("unitTest", "number1%09number2");
             } else if (cft == CollectionFormatType.Multi) {
-                final List<Object> expected = new ArrayList<>();
-                expected.add("number1");
-                expected.add("number2");
-                verify(target).queryParam("unitTest", expected);
+                verify(target).queryParam("unitTest", "number1", "number2");
             } else {
                 fail("Unrecognized CollectionFormatType: " + cft.toString());
             }
@@ -292,10 +283,7 @@ public class HttpUtilsTest {
             } else if (cft == CollectionFormatType.TabSeparated) {
                 verify(target).queryParam("unitTest", "PROVISIONING%09STOPPING");
             } else if (cft == CollectionFormatType.Multi) {
-                final List<Object> expected = new ArrayList<>();
-                expected.add("PROVISIONING");
-                expected.add("STOPPING");
-                verify(target).queryParam("unitTest", expected);
+                verify(target).queryParam("unitTest", "PROVISIONING", "STOPPING");
             } else {
                 fail("Unrecognized CollectionFormatType: " + cft.toString());
             }
@@ -324,9 +312,7 @@ public class HttpUtilsTest {
             } else if (cft == CollectionFormatType.TabSeparated) {
                 verify(target).queryParam("unitTest", "RUNNING");
             } else if (cft == CollectionFormatType.Multi) {
-                final List<Object> expected = new ArrayList<>();
-                expected.add("RUNNING");
-                verify(target).queryParam("unitTest", expected);
+                verify(target).queryParam("unitTest", "RUNNING");
             } else {
                 fail("Unrecognized CollectionFormatType: " + cft.toString());
             }

@@ -41,12 +41,30 @@ public class BackupSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
+        private String databaseEdition;
+
+        public Builder databaseEdition(String databaseEdition) {
+            this.databaseEdition = databaseEdition;
+            this.__explicitlySet__.add("databaseEdition");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
         public Builder databaseId(String databaseId) {
             this.databaseId = databaseId;
             this.__explicitlySet__.add("databaseId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dbDataSizeInMBs")
+        private Integer dbDataSizeInMBs;
+
+        public Builder dbDataSizeInMBs(Integer dbDataSizeInMBs) {
+            this.dbDataSizeInMBs = dbDataSizeInMBs;
+            this.__explicitlySet__.add("dbDataSizeInMBs");
             return this;
         }
 
@@ -121,7 +139,9 @@ public class BackupSummary {
                     new BackupSummary(
                             availabilityDomain,
                             compartmentId,
+                            databaseEdition,
                             databaseId,
+                            dbDataSizeInMBs,
                             displayName,
                             id,
                             lifecycleDetails,
@@ -138,7 +158,9 @@ public class BackupSummary {
             Builder copiedBuilder =
                     availabilityDomain(o.getAvailabilityDomain())
                             .compartmentId(o.getCompartmentId())
+                            .databaseEdition(o.getDatabaseEdition())
                             .databaseId(o.getDatabaseId())
+                            .dbDataSizeInMBs(o.getDbDataSizeInMBs())
                             .displayName(o.getDisplayName())
                             .id(o.getId())
                             .lifecycleDetails(o.getLifecycleDetails())
@@ -172,10 +194,24 @@ public class BackupSummary {
     String compartmentId;
 
     /**
+     * The Oracle Database Edition of the DbSystem on which the backup was taken.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
+    String databaseEdition;
+
+    /**
      * The OCID of the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     String databaseId;
+
+    /**
+     * Size of the database in mega-bytes at the time the backup was taken.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbDataSizeInMBs")
+    Integer dbDataSizeInMBs;
 
     /**
      * The user-friendly name for the backup. It does not have to be unique.

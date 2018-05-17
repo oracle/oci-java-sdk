@@ -37,6 +37,11 @@ public class ListBootVolumesRequest extends com.oracle.bmc.requests.BmcRequest {
      */
     private String page;
 
+    /**
+     * The OCID of the volume group.
+     */
+    private String volumeGroupId;
+
     public static class Builder {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
@@ -62,6 +67,7 @@ public class ListBootVolumesRequest extends com.oracle.bmc.requests.BmcRequest {
             compartmentId(o.getCompartmentId());
             limit(o.getLimit());
             page(o.getPage());
+            volumeGroupId(o.getVolumeGroupId());
             invocationCallback(o.getInvocationCallback());
             return this;
         }

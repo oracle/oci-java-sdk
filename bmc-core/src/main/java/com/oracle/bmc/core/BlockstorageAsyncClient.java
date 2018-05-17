@@ -548,6 +548,178 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateVolumeGroupResponse> createVolumeGroup(
+            final CreateVolumeGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateVolumeGroupRequest, CreateVolumeGroupResponse>
+                    handler) {
+        LOG.trace("Called async createVolumeGroup");
+        final CreateVolumeGroupRequest interceptedRequest =
+                CreateVolumeGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateVolumeGroupConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateVolumeGroupResponse>
+                transformer = CreateVolumeGroupConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<CreateVolumeGroupRequest, CreateVolumeGroupResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            CreateVolumeGroupRequest, CreateVolumeGroupResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.post(
+                                    ib,
+                                    interceptedRequest.getCreateVolumeGroupDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.post(
+                        ib,
+                        interceptedRequest.getCreateVolumeGroupDetails(),
+                        interceptedRequest,
+                        onSuccess,
+                        onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, CreateVolumeGroupResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.post(
+                                    ib,
+                                    interceptedRequest.getCreateVolumeGroupDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVolumeGroupBackupResponse> createVolumeGroupBackup(
+            final CreateVolumeGroupBackupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateVolumeGroupBackupRequest, CreateVolumeGroupBackupResponse>
+                    handler) {
+        LOG.trace("Called async createVolumeGroupBackup");
+        final CreateVolumeGroupBackupRequest interceptedRequest =
+                CreateVolumeGroupBackupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateVolumeGroupBackupConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateVolumeGroupBackupResponse>
+                transformer = CreateVolumeGroupBackupConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateVolumeGroupBackupRequest, CreateVolumeGroupBackupResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            CreateVolumeGroupBackupRequest, CreateVolumeGroupBackupResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.post(
+                                    ib,
+                                    interceptedRequest.getCreateVolumeGroupBackupDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.post(
+                        ib,
+                        interceptedRequest.getCreateVolumeGroupBackupDetails(),
+                        interceptedRequest,
+                        onSuccess,
+                        onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, CreateVolumeGroupBackupResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.post(
+                                    ib,
+                                    interceptedRequest.getCreateVolumeGroupBackupDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteBootVolumeResponse> deleteBootVolume(
             final DeleteBootVolumeRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -815,6 +987,148 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
             return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
                     javax.ws.rs.core.Response, DeleteVolumeBackupPolicyAssignmentResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.delete(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVolumeGroupResponse> deleteVolumeGroup(
+            final DeleteVolumeGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteVolumeGroupRequest, DeleteVolumeGroupResponse>
+                    handler) {
+        LOG.trace("Called async deleteVolumeGroup");
+        final DeleteVolumeGroupRequest interceptedRequest =
+                DeleteVolumeGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteVolumeGroupConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVolumeGroupResponse>
+                transformer = DeleteVolumeGroupConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<DeleteVolumeGroupRequest, DeleteVolumeGroupResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            DeleteVolumeGroupRequest, DeleteVolumeGroupResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.delete(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.delete(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, DeleteVolumeGroupResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.delete(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVolumeGroupBackupResponse> deleteVolumeGroupBackup(
+            final DeleteVolumeGroupBackupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteVolumeGroupBackupRequest, DeleteVolumeGroupBackupResponse>
+                    handler) {
+        LOG.trace("Called async deleteVolumeGroupBackup");
+        final DeleteVolumeGroupBackupRequest interceptedRequest =
+                DeleteVolumeGroupBackupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteVolumeGroupBackupConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteVolumeGroupBackupResponse>
+                transformer = DeleteVolumeGroupBackupConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteVolumeGroupBackupRequest, DeleteVolumeGroupBackupResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            DeleteVolumeGroupBackupRequest, DeleteVolumeGroupBackupResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.delete(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.delete(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, DeleteVolumeGroupBackupResponse>(
                     responseFuture,
                     transformer,
                     (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
@@ -1265,6 +1579,148 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetVolumeGroupResponse> getVolumeGroup(
+            final GetVolumeGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetVolumeGroupRequest, GetVolumeGroupResponse>
+                    handler) {
+        LOG.trace("Called async getVolumeGroup");
+        final GetVolumeGroupRequest interceptedRequest =
+                GetVolumeGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetVolumeGroupConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeGroupResponse>
+                transformer = GetVolumeGroupConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetVolumeGroupRequest, GetVolumeGroupResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            GetVolumeGroupRequest, GetVolumeGroupResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, GetVolumeGroupResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetVolumeGroupBackupResponse> getVolumeGroupBackup(
+            final GetVolumeGroupBackupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetVolumeGroupBackupRequest, GetVolumeGroupBackupResponse>
+                    handler) {
+        LOG.trace("Called async getVolumeGroupBackup");
+        final GetVolumeGroupBackupRequest interceptedRequest =
+                GetVolumeGroupBackupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetVolumeGroupBackupConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetVolumeGroupBackupResponse>
+                transformer = GetVolumeGroupBackupConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetVolumeGroupBackupRequest, GetVolumeGroupBackupResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            GetVolumeGroupBackupRequest, GetVolumeGroupBackupResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, GetVolumeGroupBackupResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListBootVolumesResponse> listBootVolumes(
             final ListBootVolumesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1459,6 +1915,148 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
             return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
                     javax.ws.rs.core.Response, ListVolumeBackupsResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVolumeGroupBackupsResponse> listVolumeGroupBackups(
+            final ListVolumeGroupBackupsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListVolumeGroupBackupsRequest, ListVolumeGroupBackupsResponse>
+                    handler) {
+        LOG.trace("Called async listVolumeGroupBackups");
+        final ListVolumeGroupBackupsRequest interceptedRequest =
+                ListVolumeGroupBackupsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListVolumeGroupBackupsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListVolumeGroupBackupsResponse>
+                transformer = ListVolumeGroupBackupsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListVolumeGroupBackupsRequest, ListVolumeGroupBackupsResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            ListVolumeGroupBackupsRequest, ListVolumeGroupBackupsResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, ListVolumeGroupBackupsResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVolumeGroupsResponse> listVolumeGroups(
+            final ListVolumeGroupsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListVolumeGroupsRequest, ListVolumeGroupsResponse>
+                    handler) {
+        LOG.trace("Called async listVolumeGroups");
+        final ListVolumeGroupsRequest interceptedRequest =
+                ListVolumeGroupsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListVolumeGroupsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumeGroupsResponse>
+                transformer = ListVolumeGroupsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListVolumeGroupsRequest, ListVolumeGroupsResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            ListVolumeGroupsRequest, ListVolumeGroupsResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, ListVolumeGroupsResponse>(
                     responseFuture,
                     transformer,
                     (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
@@ -1788,6 +2386,178 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                             return client.put(
                                     ib,
                                     interceptedRequest.getUpdateVolumeBackupDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVolumeGroupResponse> updateVolumeGroup(
+            final UpdateVolumeGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateVolumeGroupRequest, UpdateVolumeGroupResponse>
+                    handler) {
+        LOG.trace("Called async updateVolumeGroup");
+        final UpdateVolumeGroupRequest interceptedRequest =
+                UpdateVolumeGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateVolumeGroupConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVolumeGroupResponse>
+                transformer = UpdateVolumeGroupConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<UpdateVolumeGroupRequest, UpdateVolumeGroupResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            UpdateVolumeGroupRequest, UpdateVolumeGroupResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.put(
+                                    ib,
+                                    interceptedRequest.getUpdateVolumeGroupDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.put(
+                        ib,
+                        interceptedRequest.getUpdateVolumeGroupDetails(),
+                        interceptedRequest,
+                        onSuccess,
+                        onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, UpdateVolumeGroupResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.put(
+                                    ib,
+                                    interceptedRequest.getUpdateVolumeGroupDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVolumeGroupBackupResponse> updateVolumeGroupBackup(
+            final UpdateVolumeGroupBackupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateVolumeGroupBackupRequest, UpdateVolumeGroupBackupResponse>
+                    handler) {
+        LOG.trace("Called async updateVolumeGroupBackup");
+        final UpdateVolumeGroupBackupRequest interceptedRequest =
+                UpdateVolumeGroupBackupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateVolumeGroupBackupConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateVolumeGroupBackupResponse>
+                transformer = UpdateVolumeGroupBackupConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateVolumeGroupBackupRequest, UpdateVolumeGroupBackupResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof
+                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                            UpdateVolumeGroupBackupRequest, UpdateVolumeGroupBackupResponse>(
+                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.put(
+                                    ib,
+                                    interceptedRequest.getUpdateVolumeGroupBackupDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.put(
+                        ib,
+                        interceptedRequest.getUpdateVolumeGroupBackupDetails(),
+                        interceptedRequest,
+                        onSuccess,
+                        onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                    javax.ws.rs.core.Response, UpdateVolumeGroupBackupResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.put(
+                                    ib,
+                                    interceptedRequest.getUpdateVolumeGroupBackupDetails(),
                                     interceptedRequest,
                                     onSuccess,
                                     onError);

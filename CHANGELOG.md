@@ -13,6 +13,19 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.2.38 - 2018-05-17
+
+### Fixed
+- Allow deserializing multiple query params
+- Updated `GetInstancePublicIpExample` to now account for public IPs that may be associated with secondary private IP addresses
+
+### Added
+- Support for launching a database system from a backup in the Database service
+- Support for backup or clone of multiple volumes at once using volume groups in the Block Storage service
+- Support for the ability to optionally specify a compartment filter when listing exports in the File Storage service
+- Support for tagging virtual cloud network resources in the Networking service
+- Support for specifying the `PARAVIRTUALIZED` remote volume type when creating a virtual image or launching a new instance in the Compute service
+
 ## 1.2.37 - 2018-05-03
 
 ### Fixed
@@ -22,6 +35,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - Support for returning names for events in the Audit service
 - Support for multiple hostnames per listener in the Load Balancing service
+- Support waiting on multiple target states in `Waiter`
 
 ## 1.2.35 - 2018-04-19
 
@@ -32,7 +46,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - Support for tagging DbSystem and Database resources in the Database Service
 - Support for filtering by `dbSystemId` in `listDbVersions` operation in Database Service
-- Support waiting on multiple target states in `Waiter`
 
 ## 1.2.34 - 2018-04-05
 

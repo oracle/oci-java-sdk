@@ -317,8 +317,9 @@ public interface FileStorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the export resources in the specified compartment. You must
-     * also specify an export set, a file system, or both.
+     * Lists export resources by compartment, file system, or export
+     * set. You must specify an export set ID, a file system ID, and
+     * / or a compartment ID.
      *
      *
      * @param request The request object containing the details to send

@@ -316,11 +316,7 @@ public interface Compute extends AutoCloseable {
      * <p>
      **reset** - power off and power on
      * <p>
-     * Note that the **stop** state has no effect on the resources you consume.
-     * Billing continues for instances that you stop, and related resources continue
-     * to apply against any relevant quotas. You must terminate an instance
-     * ({@link #terminateInstance(TerminateInstanceRequest) terminateInstance})
-     * to remove its resources from billing and quotas.
+     * For more information see [Stopping and Starting an Instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/restartinginstance.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

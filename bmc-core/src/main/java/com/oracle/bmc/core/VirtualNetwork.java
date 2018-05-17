@@ -1243,7 +1243,7 @@ public interface VirtualNetwork extends AutoCloseable {
     ListVirtualCircuitsResponse listVirtualCircuits(ListVirtualCircuitsRequest request);
 
     /**
-     * Updates the specified CPE's display name.
+     * Updates the specified CPE's display name or tags.
      * Avoid entering confidential information.
      *
      * @param request The request object containing the details to send
@@ -1283,7 +1283,7 @@ public interface VirtualNetwork extends AutoCloseable {
     UpdateDhcpOptionsResponse updateDhcpOptions(UpdateDhcpOptionsRequest request);
 
     /**
-     * Updates the specified DRG's display name. Avoid entering confidential information.
+     * Updates the specified DRG's display name or tags. Avoid entering confidential information.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1302,7 +1302,7 @@ public interface VirtualNetwork extends AutoCloseable {
     UpdateDrgAttachmentResponse updateDrgAttachment(UpdateDrgAttachmentRequest request);
 
     /**
-     * Updates the display name for the specified IPSec connection.
+     * Updates the display name or tags for the specified IPSec connection.
      * Avoid entering confidential information.
      *
      * @param request The request object containing the details to send
@@ -1312,8 +1312,8 @@ public interface VirtualNetwork extends AutoCloseable {
     UpdateIPSecConnectionResponse updateIPSecConnection(UpdateIPSecConnectionRequest request);
 
     /**
-     * Updates the specified Internet Gateway. You can disable/enable it, or change its display name.
-     * Avoid entering confidential information.
+     * Updates the specified Internet Gateway. You can disable/enable it, or change its display name
+     * or tags. Avoid entering confidential information.
      * <p>
      * If the gateway is disabled, that means no traffic will flow to/from the internet even if there's
      * a route rule that enables that traffic.
@@ -1359,7 +1359,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * * Move a reserved public IP to a different private IP.
      * * Unassign a reserved public IP from a private IP (which returns it to your pool
      * of reserved public IPs).
-     * * Change the display name for a public IP.
+     * * Change the display name or tags for a public IP.
      * <p>
      * Assigning, moving, and unassigning a reserved public IP are asynchronous
      * operations. Poll the public IP's `lifecycleState` to determine if the operation
