@@ -56,6 +56,31 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new auth token for the specified user. For information about what auth tokens are for, see
+     * [Managing User Credentials](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingcredentials.htm).
+     * <p>
+     * You must specify a *description* for the auth token (although it can be an empty string). It does not
+     * have to be unique, and you can change it anytime with
+     * {@link #updateAuthToken(UpdateAuthTokenRequest, Consumer, Consumer) updateAuthToken}.
+     * <p>
+     * Every user has permission to create an auth token for *their own user ID*. An administrator in your organization
+     * does not need to write a policy to give users this ability. To compare, administrators who have permission to the
+     * tenancy can use this operation to create an auth token for any user, including themselves.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateAuthTokenResponse> createAuthToken(
+            CreateAuthTokenRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateAuthTokenRequest, CreateAuthTokenResponse>
+                    handler);
+
+    /**
      * Creates a new compartment in your tenancy.
      * <p>
      **Important:** Compartments cannot be deleted.
@@ -335,6 +360,8 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * **Deprecated. Use {@link #createAuthToken(CreateAuthTokenRequest, Consumer, Consumer) createAuthToken} instead.**
+     * <p>
      * Creates a new Swift password for the specified user. For information about what Swift passwords are for, see
      * [Managing User Credentials](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingcredentials.htm).
      * <p>
@@ -490,6 +517,22 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes the specified auth token for the specified user.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteAuthTokenResponse> deleteAuthToken(
+            DeleteAuthTokenRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteAuthTokenRequest, DeleteAuthTokenResponse>
+                    handler);
+
+    /**
      * Deletes the specified secret key for the specified user.
      *
      *
@@ -605,6 +648,8 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * **Deprecated. Use {@link #deleteAuthToken(DeleteAuthTokenRequest, Consumer, Consumer) deleteAuthToken} instead.**
+     * <p>
      * Deletes the specified Swift password for the specified user.
      *
      *
@@ -832,6 +877,23 @@ public interface IdentityAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListApiKeysRequest, ListApiKeysResponse> handler);
 
     /**
+     * Lists the auth tokens for the specified user. The returned object contains the token's OCID, but not
+     * the token itself. The actual token is returned only upon creation.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAuthTokensResponse> listAuthTokens(
+            ListAuthTokensRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListAuthTokensRequest, ListAuthTokensResponse>
+                    handler);
+
+    /**
      * Lists the Availability Domains in your tenancy. Specify the OCID of either the tenancy or another
      * of your compartments as the value for the compartment ID (remember that the tenancy is simply the root compartment).
      * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five).
@@ -1028,6 +1090,8 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * **Deprecated. Use {@link #listAuthTokens(ListAuthTokensRequest, Consumer, Consumer) listAuthTokens} instead.**
+     * <p>
      * Lists the Swift passwords for the specified user. The returned object contains the password's OCID, but not
      * the password itself. The actual password is returned only upon creation.
      *
@@ -1134,6 +1198,22 @@ public interface IdentityAsync extends AutoCloseable {
             RemoveUserFromGroupRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             RemoveUserFromGroupRequest, RemoveUserFromGroupResponse>
+                    handler);
+
+    /**
+     * Updates the specified auth token's description.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateAuthTokenResponse> updateAuthToken(
+            UpdateAuthTokenRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateAuthTokenRequest, UpdateAuthTokenResponse>
                     handler);
 
     /**
@@ -1267,6 +1347,8 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * **Deprecated. Use {@link #updateAuthToken(UpdateAuthTokenRequest, Consumer, Consumer) updateAuthToken} instead.**
+     * <p>
      * Updates the specified Swift password's description.
      *
      *

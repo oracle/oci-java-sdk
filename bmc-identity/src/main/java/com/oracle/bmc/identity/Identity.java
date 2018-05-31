@@ -49,6 +49,24 @@ public interface Identity extends AutoCloseable {
     AddUserToGroupResponse addUserToGroup(AddUserToGroupRequest request);
 
     /**
+     * Creates a new auth token for the specified user. For information about what auth tokens are for, see
+     * [Managing User Credentials](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingcredentials.htm).
+     * <p>
+     * You must specify a *description* for the auth token (although it can be an empty string). It does not
+     * have to be unique, and you can change it anytime with
+     * {@link #updateAuthToken(UpdateAuthTokenRequest) updateAuthToken}.
+     * <p>
+     * Every user has permission to create an auth token for *their own user ID*. An administrator in your organization
+     * does not need to write a policy to give users this ability. To compare, administrators who have permission to the
+     * tenancy can use this operation to create an auth token for any user, including themselves.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateAuthTokenResponse createAuthToken(CreateAuthTokenRequest request);
+
+    /**
      * Creates a new compartment in your tenancy.
      * <p>
      **Important:** Compartments cannot be deleted.
@@ -252,6 +270,8 @@ public interface Identity extends AutoCloseable {
     CreateSmtpCredentialResponse createSmtpCredential(CreateSmtpCredentialRequest request);
 
     /**
+     * **Deprecated. Use {@link #createAuthToken(CreateAuthTokenRequest) createAuthToken} instead.**
+     * <p>
      * Creates a new Swift password for the specified user. For information about what Swift passwords are for, see
      * [Managing User Credentials](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingcredentials.htm).
      * <p>
@@ -372,6 +392,15 @@ public interface Identity extends AutoCloseable {
     DeleteApiKeyResponse deleteApiKey(DeleteApiKeyRequest request);
 
     /**
+     * Deletes the specified auth token for the specified user.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteAuthTokenResponse deleteAuthToken(DeleteAuthTokenRequest request);
+
+    /**
      * Deletes the specified secret key for the specified user.
      *
      * @param request The request object containing the details to send
@@ -434,6 +463,8 @@ public interface Identity extends AutoCloseable {
     DeleteSmtpCredentialResponse deleteSmtpCredential(DeleteSmtpCredentialRequest request);
 
     /**
+     * **Deprecated. Use {@link #deleteAuthToken(DeleteAuthTokenRequest) deleteAuthToken} instead.**
+     * <p>
      * Deletes the specified Swift password for the specified user.
      *
      * @param request The request object containing the details to send
@@ -566,6 +597,16 @@ public interface Identity extends AutoCloseable {
     ListApiKeysResponse listApiKeys(ListApiKeysRequest request);
 
     /**
+     * Lists the auth tokens for the specified user. The returned object contains the token's OCID, but not
+     * the token itself. The actual token is returned only upon creation.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListAuthTokensResponse listAuthTokens(ListAuthTokensRequest request);
+
+    /**
      * Lists the Availability Domains in your tenancy. Specify the OCID of either the tenancy or another
      * of your compartments as the value for the compartment ID (remember that the tenancy is simply the root compartment).
      * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five).
@@ -680,6 +721,8 @@ public interface Identity extends AutoCloseable {
     ListSmtpCredentialsResponse listSmtpCredentials(ListSmtpCredentialsRequest request);
 
     /**
+     * **Deprecated. Use {@link #listAuthTokens(ListAuthTokensRequest) listAuthTokens} instead.**
+     * <p>
      * Lists the Swift passwords for the specified user. The returned object contains the password's OCID, but not
      * the password itself. The actual password is returned only upon creation.
      *
@@ -744,6 +787,15 @@ public interface Identity extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     RemoveUserFromGroupResponse removeUserFromGroup(RemoveUserFromGroupRequest request);
+
+    /**
+     * Updates the specified auth token's description.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateAuthTokenResponse updateAuthToken(UpdateAuthTokenRequest request);
 
     /**
      * Updates the specified compartment's description or name. You can't update the root compartment.
@@ -815,6 +867,8 @@ public interface Identity extends AutoCloseable {
     UpdateSmtpCredentialResponse updateSmtpCredential(UpdateSmtpCredentialRequest request);
 
     /**
+     * **Deprecated. Use {@link #updateAuthToken(UpdateAuthTokenRequest) updateAuthToken} instead.**
+     * <p>
      * Updates the specified Swift password's description.
      *
      * @param request The request object containing the details to send
