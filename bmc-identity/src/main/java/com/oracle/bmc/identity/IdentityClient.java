@@ -335,6 +335,32 @@ public class IdentityClient implements Identity {
     }
 
     @Override
+    public CreateAuthTokenResponse createAuthToken(CreateAuthTokenRequest request) {
+        LOG.trace("Called createAuthToken");
+        request = CreateAuthTokenConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateAuthTokenConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateAuthTokenResponse>
+                transformer = CreateAuthTokenConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCreateAuthTokenDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public CreateCompartmentResponse createCompartment(CreateCompartmentRequest request) {
         LOG.trace("Called createCompartment");
         request = CreateCompartmentConverter.interceptRequest(request);
@@ -710,6 +736,31 @@ public class IdentityClient implements Identity {
                 DeleteApiKeyConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteApiKeyResponse>
                 transformer = DeleteApiKeyConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public DeleteAuthTokenResponse deleteAuthToken(DeleteAuthTokenRequest request) {
+        LOG.trace("Called deleteAuthToken");
+        request = DeleteAuthTokenConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteAuthTokenConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAuthTokenResponse>
+                transformer = DeleteAuthTokenConverter.fromResponse();
 
         int attempts = 0;
         while (true) {
@@ -1257,6 +1308,31 @@ public class IdentityClient implements Identity {
     }
 
     @Override
+    public ListAuthTokensResponse listAuthTokens(ListAuthTokensRequest request) {
+        LOG.trace("Called listAuthTokens");
+        request = ListAuthTokensConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAuthTokensConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListAuthTokensResponse>
+                transformer = ListAuthTokensConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public ListAvailabilityDomainsResponse listAvailabilityDomains(
             ListAvailabilityDomainsRequest request) {
         LOG.trace("Called listAvailabilityDomains");
@@ -1674,6 +1750,32 @@ public class IdentityClient implements Identity {
         while (true) {
             try {
                 javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public UpdateAuthTokenResponse updateAuthToken(UpdateAuthTokenRequest request) {
+        LOG.trace("Called updateAuthToken");
+        request = UpdateAuthTokenConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateAuthTokenConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAuthTokenResponse>
+                transformer = UpdateAuthTokenConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateAuthTokenDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS

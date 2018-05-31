@@ -305,7 +305,7 @@ public interface Compute extends AutoCloseable {
             GetWindowsInstanceInitialCredentialsRequest request);
 
     /**
-     * Performs one of the power actions (start, stop, softreset, or reset)
+     * Performs one of the power actions (start, stop, softreset, softstop, or reset)
      * on the specified instance.
      * <p>
      **start** - power on
@@ -313,6 +313,8 @@ public interface Compute extends AutoCloseable {
      **stop** - power off
      * <p>
      **softreset** - ACPI shutdown and power on
+     * <p>
+     **softstop** - signal the instance operating system to shutdown gracefully
      * <p>
      **reset** - power off and power on
      * <p>

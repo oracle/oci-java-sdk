@@ -13,6 +13,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.2.39 - 2018-05-31
+### Added
+- Support for the "soft shutdown" instance action in the Compute service
+- Support for Auth Token management in the Identity service
+
 ## 1.2.38 - 2018-05-17
 
 ### Fixed
