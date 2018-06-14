@@ -13,6 +13,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.2.40 - 2018-06-14
+### Added
+- Support for the Container Engine service. A sample showing how to use this service from the SDK is available [here](https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ContainerEngineClusterExample.java)
+
 ## 1.2.39 - 2018-05-31
 ### Added
 - Support for the "soft shutdown" instance action in the Compute service

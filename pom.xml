@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>1.2.39</version>
+  <version>1.2.40</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -497,6 +497,7 @@
     <module>bmc-objectstorage/bmc-objectstorage-generated</module>
     <module>bmc-objectstorage/bmc-objectstorage-extensions</module>
     <module>bmc-objectstorage</module>
+    <module>bmc-containerengine</module>
     <module>bmc-full</module>
     <module>bmc-shaded</module>
   </modules>
