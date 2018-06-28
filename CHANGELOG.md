@@ -13,6 +13,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.2.41 - 2018-06-28
+### Added
+- Support for service gateway management in the Networking service
+- Support for backup and clone of boot volumes in the Block Storage service
+
 ## 1.2.40 - 2018-06-14
 ### Added
 - Support for the Container Engine service. A sample showing how to use this service from the SDK is available [here](https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ContainerEngineClusterExample.java)

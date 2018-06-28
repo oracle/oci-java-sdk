@@ -301,12 +301,11 @@ public class DnsAsyncClient implements DnsAsync {
                 handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             CreateZoneRequest, CreateZoneResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -343,12 +342,12 @@ public class DnsAsyncClient implements DnsAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, CreateZoneResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -388,12 +387,11 @@ public class DnsAsyncClient implements DnsAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             DeleteDomainRecordsRequest, DeleteDomainRecordsResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -420,12 +418,12 @@ public class DnsAsyncClient implements DnsAsync {
                 client.delete(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, DeleteDomainRecordsResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -457,12 +455,11 @@ public class DnsAsyncClient implements DnsAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             DeleteRRSetRequest, DeleteRRSetResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -489,12 +486,12 @@ public class DnsAsyncClient implements DnsAsync {
                 client.delete(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, DeleteRRSetResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -525,12 +522,11 @@ public class DnsAsyncClient implements DnsAsync {
                 handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             DeleteZoneRequest, DeleteZoneResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -557,12 +553,12 @@ public class DnsAsyncClient implements DnsAsync {
                 client.delete(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, DeleteZoneResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -595,12 +591,11 @@ public class DnsAsyncClient implements DnsAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             GetDomainRecordsRequest, GetDomainRecordsResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -627,12 +622,12 @@ public class DnsAsyncClient implements DnsAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, GetDomainRecordsResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -663,12 +658,11 @@ public class DnsAsyncClient implements DnsAsync {
                 handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             GetRRSetRequest, GetRRSetResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -695,12 +689,12 @@ public class DnsAsyncClient implements DnsAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, GetRRSetResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -730,12 +724,11 @@ public class DnsAsyncClient implements DnsAsync {
                 handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             GetZoneRequest, GetZoneResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -762,12 +755,12 @@ public class DnsAsyncClient implements DnsAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, GetZoneResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -800,12 +793,11 @@ public class DnsAsyncClient implements DnsAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             GetZoneRecordsRequest, GetZoneRecordsResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -832,12 +824,12 @@ public class DnsAsyncClient implements DnsAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, GetZoneRecordsResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -868,12 +860,11 @@ public class DnsAsyncClient implements DnsAsync {
                 handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             ListZonesRequest, ListZonesResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -900,12 +891,12 @@ public class DnsAsyncClient implements DnsAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, ListZonesResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -938,12 +929,11 @@ public class DnsAsyncClient implements DnsAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             PatchDomainRecordsRequest, PatchDomainRecordsResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -980,12 +970,12 @@ public class DnsAsyncClient implements DnsAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, PatchDomainRecordsResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -1021,12 +1011,11 @@ public class DnsAsyncClient implements DnsAsync {
                 handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             PatchRRSetRequest, PatchRRSetResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -1063,12 +1052,12 @@ public class DnsAsyncClient implements DnsAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, PatchRRSetResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -1106,12 +1095,11 @@ public class DnsAsyncClient implements DnsAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             PatchZoneRecordsRequest, PatchZoneRecordsResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -1148,12 +1136,12 @@ public class DnsAsyncClient implements DnsAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, PatchZoneRecordsResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -1193,12 +1181,11 @@ public class DnsAsyncClient implements DnsAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             UpdateDomainRecordsRequest, UpdateDomainRecordsResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -1235,12 +1222,12 @@ public class DnsAsyncClient implements DnsAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, UpdateDomainRecordsResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -1277,12 +1264,11 @@ public class DnsAsyncClient implements DnsAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             UpdateRRSetRequest, UpdateRRSetResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -1319,12 +1305,12 @@ public class DnsAsyncClient implements DnsAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, UpdateRRSetResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -1360,12 +1346,11 @@ public class DnsAsyncClient implements DnsAsync {
                 handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             UpdateZoneRequest, UpdateZoneResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -1402,12 +1387,12 @@ public class DnsAsyncClient implements DnsAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, UpdateZoneResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -1445,12 +1430,11 @@ public class DnsAsyncClient implements DnsAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             UpdateZoneRecordsRequest, UpdateZoneRecordsResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -1487,12 +1471,12 @@ public class DnsAsyncClient implements DnsAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, UpdateZoneRecordsResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {

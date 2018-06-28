@@ -156,6 +156,121 @@ public class BlockstoragePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listBootVolumeBackups operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListBootVolumeBackupsResponse> listBootVolumeBackupsResponseIterator(
+            final ListBootVolumeBackupsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListBootVolumeBackupsRequest.Builder, ListBootVolumeBackupsRequest,
+                ListBootVolumeBackupsResponse>(
+                new com.google.common.base.Supplier<ListBootVolumeBackupsRequest.Builder>() {
+                    @Override
+                    public ListBootVolumeBackupsRequest.Builder get() {
+                        return ListBootVolumeBackupsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListBootVolumeBackupsResponse, String>() {
+                    @Override
+                    public String apply(ListBootVolumeBackupsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBootVolumeBackupsRequest.Builder>,
+                        ListBootVolumeBackupsRequest>() {
+                    @Override
+                    public ListBootVolumeBackupsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBootVolumeBackupsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListBootVolumeBackupsRequest, ListBootVolumeBackupsResponse>() {
+                    @Override
+                    public ListBootVolumeBackupsResponse apply(
+                            ListBootVolumeBackupsRequest request) {
+                        return client.listBootVolumeBackups(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.BootVolumeBackup} objects
+     * contained in responses from the listBootVolumeBackups operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.BootVolumeBackup} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.BootVolumeBackup> listBootVolumeBackupsRecordIterator(
+            final ListBootVolumeBackupsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListBootVolumeBackupsRequest.Builder, ListBootVolumeBackupsRequest,
+                ListBootVolumeBackupsResponse, com.oracle.bmc.core.model.BootVolumeBackup>(
+                new com.google.common.base.Supplier<ListBootVolumeBackupsRequest.Builder>() {
+                    @Override
+                    public ListBootVolumeBackupsRequest.Builder get() {
+                        return ListBootVolumeBackupsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListBootVolumeBackupsResponse, String>() {
+                    @Override
+                    public String apply(ListBootVolumeBackupsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBootVolumeBackupsRequest.Builder>,
+                        ListBootVolumeBackupsRequest>() {
+                    @Override
+                    public ListBootVolumeBackupsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBootVolumeBackupsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListBootVolumeBackupsRequest, ListBootVolumeBackupsResponse>() {
+                    @Override
+                    public ListBootVolumeBackupsResponse apply(
+                            ListBootVolumeBackupsRequest request) {
+                        return client.listBootVolumeBackups(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListBootVolumeBackupsResponse,
+                        java.util.List<com.oracle.bmc.core.model.BootVolumeBackup>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.BootVolumeBackup> apply(
+                            ListBootVolumeBackupsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listBootVolumes operation. This iterable
      * will fetch more data from the server as needed.
      *

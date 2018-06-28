@@ -206,7 +206,11 @@ public class CreateInstanceExample {
             InternetGateway internetGateway) {
 
         List<RouteRule> routeRules = new ArrayList<RouteRule>();
-        RouteRule internetAccessRoute = new RouteRule("0.0.0.0/0", internetGateway.getId());
+        RouteRule internetAccessRoute =
+                RouteRule.builder()
+                        .cidrBlock("0.0.0.0/0")
+                        .destination(internetGateway.getId())
+                        .build();
         routeRules.add(internetAccessRoute);
 
         vcnClient.updateRouteTable(

@@ -4,8 +4,8 @@
 package com.oracle.bmc.core.model;
 
 /**
- * A point-in-time copy of a volume group that can then be used to create a new block volume group
- * or recover a block volume group.
+ * A point-in-time copy of a volume group that can then be used to create a new volume group
+ * or restore a volume group. For more information, see [Volume Groups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm).
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
@@ -93,6 +93,15 @@ public class VolumeGroupBackup {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
+        private Long sizeInGBs;
+
+        public Builder sizeInGBs(Long sizeInGBs) {
+            this.sizeInGBs = sizeInGBs;
+            this.__explicitlySet__.add("sizeInGBs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -129,6 +138,15 @@ public class VolumeGroupBackup {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("uniqueSizeInGbs")
+        private Long uniqueSizeInGbs;
+
+        public Builder uniqueSizeInGbs(Long uniqueSizeInGbs) {
+            this.uniqueSizeInGbs = uniqueSizeInGbs;
+            this.__explicitlySet__.add("uniqueSizeInGbs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("volumeBackupIds")
         private java.util.List<String> volumeBackupIds;
 
@@ -160,10 +178,12 @@ public class VolumeGroupBackup {
                             id,
                             lifecycleState,
                             sizeInMBs,
+                            sizeInGBs,
                             timeCreated,
                             timeRequestReceived,
                             type,
                             uniqueSizeInMbs,
+                            uniqueSizeInGbs,
                             volumeBackupIds,
                             volumeGroupId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -180,10 +200,12 @@ public class VolumeGroupBackup {
                             .id(o.getId())
                             .lifecycleState(o.getLifecycleState())
                             .sizeInMBs(o.getSizeInMBs())
+                            .sizeInGBs(o.getSizeInGBs())
                             .timeCreated(o.getTimeCreated())
                             .timeRequestReceived(o.getTimeRequestReceived())
                             .type(o.getType())
                             .uniqueSizeInMbs(o.getUniqueSizeInMbs())
+                            .uniqueSizeInGbs(o.getUniqueSizeInGbs())
                             .volumeBackupIds(o.getVolumeBackupIds())
                             .volumeGroupId(o.getVolumeGroupId());
 
@@ -216,7 +238,7 @@ public class VolumeGroupBackup {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * A user-friendly name for the volume group backup. Does not have to be unique and it's changeable.
+     * A user-friendly name for the volume group backup. Does not have to be unique and it's changeable. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
@@ -233,7 +255,7 @@ public class VolumeGroupBackup {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The OCID of the volume group backup (unique).
+     * The OCID of the volume group backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -300,6 +322,13 @@ public class VolumeGroupBackup {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInMBs")
     Long sizeInMBs;
+
+    /**
+     * The aggregate size of the volume group backup, in GBs.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
+    Long sizeInGBs;
 
     /**
      * The date and time the volume group backup was created. This is the time the actual point-in-time image
@@ -369,14 +398,23 @@ public class VolumeGroupBackup {
     /**
      * The aggregate size used by the volume group backup, in MBs.
      * It is typically smaller than sizeInMBs, depending on the space
-     * consumed on the volume group and whether the backup is full or incremental.
+     * consumed on the volume group and whether the volume backup is full or incremental.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("uniqueSizeInMbs")
     Long uniqueSizeInMbs;
 
     /**
-     * OCIDs for the backups in this volume group backup.
+     * The aggregate size used by the volume group backup, in GBs.
+     * It is typically smaller than sizeInGBs, depending on the space
+     * consumed on the volume group and whether the volume backup is full or incremental.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("uniqueSizeInGbs")
+    Long uniqueSizeInGbs;
+
+    /**
+     * OCIDs for the volume backups in this volume group backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("volumeBackupIds")
     java.util.List<String> volumeBackupIds;

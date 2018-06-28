@@ -2111,6 +2111,228 @@ public class VirtualNetworkPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listServiceGateways operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListServiceGatewaysResponse> listServiceGatewaysResponseIterator(
+            final ListServiceGatewaysRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListServiceGatewaysRequest.Builder, ListServiceGatewaysRequest,
+                ListServiceGatewaysResponse>(
+                new com.google.common.base.Supplier<ListServiceGatewaysRequest.Builder>() {
+                    @Override
+                    public ListServiceGatewaysRequest.Builder get() {
+                        return ListServiceGatewaysRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListServiceGatewaysResponse, String>() {
+                    @Override
+                    public String apply(ListServiceGatewaysResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListServiceGatewaysRequest.Builder>,
+                        ListServiceGatewaysRequest>() {
+                    @Override
+                    public ListServiceGatewaysRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListServiceGatewaysRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListServiceGatewaysRequest, ListServiceGatewaysResponse>() {
+                    @Override
+                    public ListServiceGatewaysResponse apply(ListServiceGatewaysRequest request) {
+                        return client.listServiceGateways(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ServiceGateway} objects
+     * contained in responses from the listServiceGateways operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ServiceGateway} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.ServiceGateway> listServiceGatewaysRecordIterator(
+            final ListServiceGatewaysRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListServiceGatewaysRequest.Builder, ListServiceGatewaysRequest,
+                ListServiceGatewaysResponse, com.oracle.bmc.core.model.ServiceGateway>(
+                new com.google.common.base.Supplier<ListServiceGatewaysRequest.Builder>() {
+                    @Override
+                    public ListServiceGatewaysRequest.Builder get() {
+                        return ListServiceGatewaysRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListServiceGatewaysResponse, String>() {
+                    @Override
+                    public String apply(ListServiceGatewaysResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListServiceGatewaysRequest.Builder>,
+                        ListServiceGatewaysRequest>() {
+                    @Override
+                    public ListServiceGatewaysRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListServiceGatewaysRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListServiceGatewaysRequest, ListServiceGatewaysResponse>() {
+                    @Override
+                    public ListServiceGatewaysResponse apply(ListServiceGatewaysRequest request) {
+                        return client.listServiceGateways(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListServiceGatewaysResponse,
+                        java.util.List<com.oracle.bmc.core.model.ServiceGateway>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.ServiceGateway> apply(
+                            ListServiceGatewaysResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listServices operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListServicesResponse> listServicesResponseIterator(
+            final ListServicesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListServicesRequest.Builder, ListServicesRequest, ListServicesResponse>(
+                new com.google.common.base.Supplier<ListServicesRequest.Builder>() {
+                    @Override
+                    public ListServicesRequest.Builder get() {
+                        return ListServicesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListServicesResponse, String>() {
+                    @Override
+                    public String apply(ListServicesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListServicesRequest.Builder>,
+                        ListServicesRequest>() {
+                    @Override
+                    public ListServicesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListServicesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListServicesRequest, ListServicesResponse>() {
+                    @Override
+                    public ListServicesResponse apply(ListServicesRequest request) {
+                        return client.listServices(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.Service} objects
+     * contained in responses from the listServices operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.Service} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.Service> listServicesRecordIterator(
+            final ListServicesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListServicesRequest.Builder, ListServicesRequest, ListServicesResponse,
+                com.oracle.bmc.core.model.Service>(
+                new com.google.common.base.Supplier<ListServicesRequest.Builder>() {
+                    @Override
+                    public ListServicesRequest.Builder get() {
+                        return ListServicesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListServicesResponse, String>() {
+                    @Override
+                    public String apply(ListServicesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListServicesRequest.Builder>,
+                        ListServicesRequest>() {
+                    @Override
+                    public ListServicesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListServicesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListServicesRequest, ListServicesResponse>() {
+                    @Override
+                    public ListServicesResponse apply(ListServicesRequest request) {
+                        return client.listServices(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListServicesResponse, java.util.List<com.oracle.bmc.core.model.Service>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.Service> apply(
+                            ListServicesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listSubnets operation. This iterable
      * will fetch more data from the server as needed.
      *

@@ -286,6 +286,176 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateBootVolumeResponse> createBootVolume(
+            final CreateBootVolumeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateBootVolumeRequest, CreateBootVolumeResponse>
+                    handler) {
+        LOG.trace("Called async createBootVolume");
+        final CreateBootVolumeRequest interceptedRequest =
+                CreateBootVolumeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateBootVolumeConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateBootVolumeResponse>
+                transformer = CreateBootVolumeConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<CreateBootVolumeRequest, CreateBootVolumeResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
+                            CreateBootVolumeRequest, CreateBootVolumeResponse>(
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.post(
+                                    ib,
+                                    interceptedRequest.getCreateBootVolumeDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.post(
+                        ib,
+                        interceptedRequest.getCreateBootVolumeDetails(),
+                        interceptedRequest,
+                        onSuccess,
+                        onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
+                    javax.ws.rs.core.Response, CreateBootVolumeResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.post(
+                                    ib,
+                                    interceptedRequest.getCreateBootVolumeDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateBootVolumeBackupResponse> createBootVolumeBackup(
+            final CreateBootVolumeBackupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateBootVolumeBackupRequest, CreateBootVolumeBackupResponse>
+                    handler) {
+        LOG.trace("Called async createBootVolumeBackup");
+        final CreateBootVolumeBackupRequest interceptedRequest =
+                CreateBootVolumeBackupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateBootVolumeBackupConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateBootVolumeBackupResponse>
+                transformer = CreateBootVolumeBackupConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateBootVolumeBackupRequest, CreateBootVolumeBackupResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
+                            CreateBootVolumeBackupRequest, CreateBootVolumeBackupResponse>(
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.post(
+                                    ib,
+                                    interceptedRequest.getCreateBootVolumeBackupDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.post(
+                        ib,
+                        interceptedRequest.getCreateBootVolumeBackupDetails(),
+                        interceptedRequest,
+                        onSuccess,
+                        onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
+                    javax.ws.rs.core.Response, CreateBootVolumeBackupResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.post(
+                                    ib,
+                                    interceptedRequest.getCreateBootVolumeBackupDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateVolumeResponse> createVolume(
             final CreateVolumeRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateVolumeRequest, CreateVolumeResponse>
@@ -302,12 +472,11 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             CreateVolumeRequest, CreateVolumeResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -344,12 +513,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, CreateVolumeResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -387,12 +556,11 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             CreateVolumeBackupRequest, CreateVolumeBackupResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -429,12 +597,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, CreateVolumeBackupResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -477,13 +645,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             CreateVolumeBackupPolicyAssignmentRequest,
                             CreateVolumeBackupPolicyAssignmentResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -521,12 +688,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, CreateVolumeBackupPolicyAssignmentResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -565,12 +732,11 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             CreateVolumeGroupRequest, CreateVolumeGroupResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -607,12 +773,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, CreateVolumeGroupResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -652,12 +818,11 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             CreateVolumeGroupBackupRequest, CreateVolumeGroupBackupResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -694,12 +859,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, CreateVolumeGroupBackupResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -737,12 +902,11 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             DeleteBootVolumeRequest, DeleteBootVolumeResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -769,12 +933,83 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 client.delete(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, DeleteBootVolumeResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.delete(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBootVolumeBackupResponse> deleteBootVolumeBackup(
+            final DeleteBootVolumeBackupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteBootVolumeBackupRequest, DeleteBootVolumeBackupResponse>
+                    handler) {
+        LOG.trace("Called async deleteBootVolumeBackup");
+        final DeleteBootVolumeBackupRequest interceptedRequest =
+                DeleteBootVolumeBackupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteBootVolumeBackupConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteBootVolumeBackupResponse>
+                transformer = DeleteBootVolumeBackupConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteBootVolumeBackupRequest, DeleteBootVolumeBackupResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
+                            DeleteBootVolumeBackupRequest, DeleteBootVolumeBackupResponse>(
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.delete(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.delete(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
+                    javax.ws.rs.core.Response, DeleteBootVolumeBackupResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -806,12 +1041,11 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             DeleteVolumeRequest, DeleteVolumeResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -838,12 +1072,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 client.delete(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, DeleteVolumeResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -876,12 +1110,11 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             DeleteVolumeBackupRequest, DeleteVolumeBackupResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -908,12 +1141,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 client.delete(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, DeleteVolumeBackupResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -951,13 +1184,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             DeleteVolumeBackupPolicyAssignmentRequest,
                             DeleteVolumeBackupPolicyAssignmentResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -984,12 +1216,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 client.delete(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, DeleteVolumeBackupPolicyAssignmentResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -1022,12 +1254,11 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             DeleteVolumeGroupRequest, DeleteVolumeGroupResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -1054,12 +1285,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 client.delete(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, DeleteVolumeGroupResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -1094,12 +1325,11 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             DeleteVolumeGroupBackupRequest, DeleteVolumeGroupBackupResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -1126,12 +1356,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 client.delete(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, DeleteVolumeGroupBackupResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -1163,12 +1393,11 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             GetBootVolumeRequest, GetBootVolumeResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -1195,12 +1424,83 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, GetBootVolumeResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBootVolumeBackupResponse> getBootVolumeBackup(
+            final GetBootVolumeBackupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetBootVolumeBackupRequest, GetBootVolumeBackupResponse>
+                    handler) {
+        LOG.trace("Called async getBootVolumeBackup");
+        final GetBootVolumeBackupRequest interceptedRequest =
+                GetBootVolumeBackupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetBootVolumeBackupConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetBootVolumeBackupResponse>
+                transformer = GetBootVolumeBackupConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetBootVolumeBackupRequest, GetBootVolumeBackupResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
+                            GetBootVolumeBackupRequest, GetBootVolumeBackupResponse>(
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
+                    javax.ws.rs.core.Response, GetBootVolumeBackupResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -1231,12 +1531,11 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             GetVolumeRequest, GetVolumeResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -1263,12 +1562,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, GetVolumeResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -1301,12 +1600,11 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             GetVolumeBackupRequest, GetVolumeBackupResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -1333,12 +1631,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, GetVolumeBackupResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -1373,12 +1671,11 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             GetVolumeBackupPolicyRequest, GetVolumeBackupPolicyResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -1405,12 +1702,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, GetVolumeBackupPolicyResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -1449,13 +1746,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             GetVolumeBackupPolicyAssetAssignmentRequest,
                             GetVolumeBackupPolicyAssetAssignmentResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -1482,12 +1778,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, GetVolumeBackupPolicyAssetAssignmentResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -1525,13 +1821,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             GetVolumeBackupPolicyAssignmentRequest,
                             GetVolumeBackupPolicyAssignmentResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -1558,12 +1853,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, GetVolumeBackupPolicyAssignmentResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -1596,12 +1891,11 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             GetVolumeGroupRequest, GetVolumeGroupResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -1628,12 +1922,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, GetVolumeGroupResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -1668,12 +1962,11 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             GetVolumeGroupBackupRequest, GetVolumeGroupBackupResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -1700,12 +1993,83 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, GetVolumeGroupBackupResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBootVolumeBackupsResponse> listBootVolumeBackups(
+            final ListBootVolumeBackupsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListBootVolumeBackupsRequest, ListBootVolumeBackupsResponse>
+                    handler) {
+        LOG.trace("Called async listBootVolumeBackups");
+        final ListBootVolumeBackupsRequest interceptedRequest =
+                ListBootVolumeBackupsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListBootVolumeBackupsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListBootVolumeBackupsResponse>
+                transformer = ListBootVolumeBackupsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListBootVolumeBackupsRequest, ListBootVolumeBackupsResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
+                            ListBootVolumeBackupsRequest, ListBootVolumeBackupsResponse>(
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
+                    javax.ws.rs.core.Response, ListBootVolumeBackupsResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -1738,12 +2102,11 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             ListBootVolumesRequest, ListBootVolumesResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -1770,12 +2133,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, ListBootVolumesResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -1810,12 +2173,11 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             ListVolumeBackupPoliciesRequest, ListVolumeBackupPoliciesResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -1842,12 +2204,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, ListVolumeBackupPoliciesResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -1880,12 +2242,11 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             ListVolumeBackupsRequest, ListVolumeBackupsResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -1912,12 +2273,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, ListVolumeBackupsResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -1952,12 +2313,11 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             ListVolumeGroupBackupsRequest, ListVolumeGroupBackupsResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -1984,12 +2344,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, ListVolumeGroupBackupsResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -2022,12 +2382,11 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             ListVolumeGroupsRequest, ListVolumeGroupsResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -2054,12 +2413,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, ListVolumeGroupsResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -2091,12 +2450,11 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             ListVolumesRequest, ListVolumesResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -2123,12 +2481,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, ListVolumesResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -2161,12 +2519,11 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             UpdateBootVolumeRequest, UpdateBootVolumeResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -2203,12 +2560,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, UpdateBootVolumeResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -2217,6 +2574,92 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                             return client.put(
                                     ib,
                                     interceptedRequest.getUpdateBootVolumeDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBootVolumeBackupResponse> updateBootVolumeBackup(
+            final UpdateBootVolumeBackupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateBootVolumeBackupRequest, UpdateBootVolumeBackupResponse>
+                    handler) {
+        LOG.trace("Called async updateBootVolumeBackup");
+        final UpdateBootVolumeBackupRequest interceptedRequest =
+                UpdateBootVolumeBackupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateBootVolumeBackupConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateBootVolumeBackupResponse>
+                transformer = UpdateBootVolumeBackupConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateBootVolumeBackupRequest, UpdateBootVolumeBackupResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
+                            UpdateBootVolumeBackupRequest, UpdateBootVolumeBackupResponse>(
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.put(
+                                    ib,
+                                    interceptedRequest.getUpdateBootVolumeBackupDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.put(
+                        ib,
+                        interceptedRequest.getUpdateBootVolumeBackupDetails(),
+                        interceptedRequest,
+                        onSuccess,
+                        onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
+                    javax.ws.rs.core.Response, UpdateBootVolumeBackupResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.put(
+                                    ib,
+                                    interceptedRequest.getUpdateBootVolumeBackupDetails(),
                                     interceptedRequest,
                                     onSuccess,
                                     onError);
@@ -2245,12 +2688,11 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             UpdateVolumeRequest, UpdateVolumeResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -2287,12 +2729,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, UpdateVolumeResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -2330,12 +2772,11 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             UpdateVolumeBackupRequest, UpdateVolumeBackupResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -2372,12 +2813,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, UpdateVolumeBackupResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -2415,12 +2856,11 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             UpdateVolumeGroupRequest, UpdateVolumeGroupResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -2457,12 +2897,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, UpdateVolumeGroupResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -2502,12 +2942,11 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             UpdateVolumeGroupBackupRequest, UpdateVolumeGroupBackupResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -2544,12 +2983,12 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, UpdateVolumeGroupBackupResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {

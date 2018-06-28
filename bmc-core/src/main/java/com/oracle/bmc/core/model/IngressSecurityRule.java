@@ -59,6 +59,15 @@ public class IngressSecurityRule {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+        private SourceType sourceType;
+
+        public Builder sourceType(SourceType sourceType) {
+            this.sourceType = sourceType;
+            this.__explicitlySet__.add("sourceType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("tcpOptions")
         private TcpOptions tcpOptions;
 
@@ -83,7 +92,13 @@ public class IngressSecurityRule {
         public IngressSecurityRule build() {
             IngressSecurityRule __instance__ =
                     new IngressSecurityRule(
-                            icmpOptions, isStateless, protocol, source, tcpOptions, udpOptions);
+                            icmpOptions,
+                            isStateless,
+                            protocol,
+                            source,
+                            sourceType,
+                            tcpOptions,
+                            udpOptions);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -95,6 +110,7 @@ public class IngressSecurityRule {
                             .isStateless(o.getIsStateless())
                             .protocol(o.getProtocol())
                             .source(o.getSource())
+                            .sourceType(o.getSourceType())
                             .tcpOptions(o.getTcpOptions())
                             .udpOptions(o.getUdpOptions());
 
@@ -146,12 +162,72 @@ public class IngressSecurityRule {
     String protocol;
 
     /**
-     * The source CIDR block for the ingress rule. This is the range of IP addresses that a
-     * packet coming into the instance can come from.
+     * The source service cidrBlock or source IP address range in CIDR notation for the ingress rule. This is the
+     * range of IP addresses that a packet coming into the instance can come from.
+     * <p>
+     * Examples: `10.12.0.0/16`
+     *           `oci-phx-objectstorage`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("source")
     String source;
+    /**
+     * Type of source for IngressSecurityRule. SERVICE_CIDR_BLOCK should be used if source is a service cidrBlock.
+     * CIDR_BLOCK should be used if source is IP address range in CIDR notation. It defaults to CIDR_BLOCK, if
+     * not specified.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum SourceType {
+        CidrBlock("CIDR_BLOCK"),
+        ServiceCidrBlock("SERVICE_CIDR_BLOCK"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, SourceType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SourceType v : SourceType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        SourceType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SourceType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'SourceType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Type of source for IngressSecurityRule. SERVICE_CIDR_BLOCK should be used if source is a service cidrBlock.
+     * CIDR_BLOCK should be used if source is IP address range in CIDR notation. It defaults to CIDR_BLOCK, if
+     * not specified.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
+    SourceType sourceType;
 
     /**
      * Optional and valid only for TCP. Use to specify particular destination ports for TCP rules.

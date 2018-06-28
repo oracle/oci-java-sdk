@@ -37,6 +37,24 @@ public interface VirtualNetwork extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Enables the specified service on the specified gateway. In other words, enables the service
+     * gateway to send traffic to the specified service. You must also set up a route rule with the
+     * service's `cidrBlock` as the rule's destination CIDR and the gateway as the rule's target.
+     * See {@link RouteTable}.
+     * <p>
+     **Note:** The `AttachServiceId` operation is an easy way to enable an individual service on
+     * the service gateway. Compare it with
+     * {@link #updateServiceGateway(UpdateServiceGatewayRequest) updateServiceGateway}, which also
+     * lets you enable an individual service. However, with `UpdateServiceGateway`, you must specify
+     * the *entire* list of services you want enabled on the service gateway.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    AttachServiceIdResponse attachServiceId(AttachServiceIdRequest request);
+
+    /**
      * Adds one or more customer public IP prefixes to the specified public virtual circuit.
      * Use this operation (and not {@link #updateVirtualCircuit(UpdateVirtualCircuitRequest) updateVirtualCircuit})
      * to add prefixes to the virtual circuit. Oracle must verify the customer's ownership
@@ -264,7 +282,7 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Creates a new Internet Gateway for the specified VCN. For more information, see
-     * [Connectivity to the Internet](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIGs.htm).
+     * [Access to the Internet](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIGs.htm).
      * <p>
      * For the purposes of access control, you must provide the OCID of the compartment where you want the Internet
      * Gateway to reside. Notice that the Internet Gateway doesn't have to be in the same compartment as the VCN or
@@ -394,6 +412,23 @@ public interface VirtualNetwork extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     CreateSecurityListResponse createSecurityList(CreateSecurityListRequest request);
+
+    /**
+     * Creates a new service gateway in the specified compartment.
+     * <p>
+     * For the purposes of access control, you must provide the OCID of the compartment where you want
+     * the service gateway to reside. For more information about compartments and access control, see
+     * [Overview of the IAM Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm).
+     * For information about OCIDs, see [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
+     * <p>
+     * You may optionally specify a *display name* for the service gateway, otherwise a default is provided.
+     * It does not have to be unique, and you can change it. Avoid entering confidential information.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateServiceGatewayResponse createServiceGateway(CreateServiceGatewayRequest request);
 
     /**
      * Creates a new subnet in the specified VCN. You can't change the size of the subnet after creation,
@@ -688,6 +723,16 @@ public interface VirtualNetwork extends AutoCloseable {
     DeleteSecurityListResponse deleteSecurityList(DeleteSecurityListRequest request);
 
     /**
+     * Deletes the specified service gateway. There must not be a route table that lists the service
+     * gateway as a target.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteServiceGatewayResponse deleteServiceGateway(DeleteServiceGatewayRequest request);
+
+    /**
      * Deletes the specified subnet, but only if there are no instances in the subnet. This is an asynchronous
      * operation. The subnet's `lifecycleState` will change to TERMINATING temporarily. If there are any
      * instances in the subnet, the state will instead change back to AVAILABLE.
@@ -721,6 +766,27 @@ public interface VirtualNetwork extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     DeleteVirtualCircuitResponse deleteVirtualCircuit(DeleteVirtualCircuitRequest request);
+
+    /**
+     * Disables the specified service on the specified gateway. In other words, stops the service
+     * gateway from sending traffic to the specified service. You do not need to remove any route
+     * rules that specify this service's `cidrBlock` as the destination CIDR. However, consider
+     * removing the rules if your intent is to permanently disable use of the service through this
+     * service gateway.
+     * <p>
+     **Note:** The `DetachServiceId` operation is an easy way to disable an individual service on
+     * the service gateway. Compare it with
+     * {@link #updateServiceGateway(UpdateServiceGatewayRequest) updateServiceGateway}, which also
+     * lets you disable an individual service. However, with `UpdateServiceGateway`, you must specify
+     * the *entire* list of services you want enabled on the service gateway. `UpdateServiceGateway`
+     * also lets you block all traffic through the service gateway without having to disable each of
+     * the individual services.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DetachServiceIdResponse detachServiceId(DetachServiceIdRequest request);
 
     /**
      * Gets the specified CPE's information.
@@ -936,6 +1002,23 @@ public interface VirtualNetwork extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     GetSecurityListResponse getSecurityList(GetSecurityListRequest request);
+
+    /**
+     * Gets the specified service's information.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetServiceResponse getService(GetServiceRequest request);
+
+    /**
+     * Gets the specified service gateway's information.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetServiceGatewayResponse getServiceGateway(GetServiceGatewayRequest request);
 
     /**
      * Gets the specified subnet's information.
@@ -1195,6 +1278,25 @@ public interface VirtualNetwork extends AutoCloseable {
     ListSecurityListsResponse listSecurityLists(ListSecurityListsRequest request);
 
     /**
+     * Lists the service gateways in the specified compartment. You may optionally specify a VCN OCID
+     * to filter the results by VCN.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListServiceGatewaysResponse listServiceGateways(ListServiceGatewaysRequest request);
+
+    /**
+     * Lists the available services that you can access through a service gateway in this region.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListServicesResponse listServices(ListServicesRequest request);
+
+    /**
      * Lists the subnets in the specified VCN and the specified compartment.
      *
      * @param request The request object containing the details to send
@@ -1433,6 +1535,16 @@ public interface VirtualNetwork extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateSecurityListResponse updateSecurityList(UpdateSecurityListRequest request);
+
+    /**
+     * Updates the specified service gateway. The information you provide overwrites the existing
+     * attributes of the gateway.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateServiceGatewayResponse updateServiceGateway(UpdateServiceGatewayRequest request);
 
     /**
      * Updates the specified subnet's display name. Avoid entering confidential information.

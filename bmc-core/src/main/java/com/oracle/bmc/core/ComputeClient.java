@@ -325,7 +325,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -351,7 +351,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -377,7 +377,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -404,7 +404,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -430,7 +430,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -459,7 +459,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -484,7 +484,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -509,7 +509,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -536,7 +536,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -561,7 +561,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -586,7 +586,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -611,7 +611,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -637,7 +637,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -663,7 +663,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -688,7 +688,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -714,7 +714,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -739,7 +739,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -764,7 +764,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -791,7 +791,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -816,7 +816,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -841,7 +841,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -868,7 +868,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -893,7 +893,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -919,7 +919,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -946,7 +946,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -971,7 +971,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -996,7 +996,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1023,7 +1023,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1048,7 +1048,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1073,7 +1073,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1098,7 +1098,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1124,7 +1124,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1149,7 +1149,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1175,7 +1175,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1201,7 +1201,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1227,7 +1227,7 @@ public class ComputeClient implements Compute {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1236,14 +1236,13 @@ public class ComputeClient implements Compute {
         }
     }
 
-    private boolean canRetryRequestIfInstancePrincipalsUsed(com.oracle.bmc.model.BmcException e) {
+    private boolean canRetryRequestIfRefreshableAuthTokenUsed(com.oracle.bmc.model.BmcException e) {
         if (e.getStatusCode() == 401
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            ((com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider)
-                    .refreshSecurityToken();
+                    .refresh();
             return true;
         }
         return false;
