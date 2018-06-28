@@ -303,12 +303,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             AddUserToGroupRequest, AddUserToGroupResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -345,12 +344,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, AddUserToGroupResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -388,12 +387,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             CreateAuthTokenRequest, CreateAuthTokenResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -430,12 +428,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, CreateAuthTokenResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -473,12 +471,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             CreateCompartmentRequest, CreateCompartmentResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -515,12 +512,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, CreateCompartmentResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -560,12 +557,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             CreateCustomerSecretKeyRequest, CreateCustomerSecretKeyResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -602,12 +598,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, CreateCustomerSecretKeyResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -645,12 +641,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             CreateDynamicGroupRequest, CreateDynamicGroupResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -687,12 +682,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, CreateDynamicGroupResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -729,12 +724,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             CreateGroupRequest, CreateGroupResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -771,12 +765,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, CreateGroupResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -816,12 +810,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             CreateIdentityProviderRequest, CreateIdentityProviderResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -858,12 +851,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, CreateIdentityProviderResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -903,12 +896,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             CreateIdpGroupMappingRequest, CreateIdpGroupMappingResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -945,12 +937,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, CreateIdpGroupMappingResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -990,12 +982,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             CreateOrResetUIPasswordRequest, CreateOrResetUIPasswordResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -1022,12 +1013,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.post(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, CreateOrResetUIPasswordResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -1059,12 +1050,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             CreatePolicyRequest, CreatePolicyResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -1101,12 +1091,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, CreatePolicyResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -1146,12 +1136,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             CreateRegionSubscriptionRequest, CreateRegionSubscriptionResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -1188,12 +1177,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, CreateRegionSubscriptionResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -1233,12 +1222,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             CreateSmtpCredentialRequest, CreateSmtpCredentialResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -1275,12 +1263,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, CreateSmtpCredentialResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -1320,12 +1308,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             CreateSwiftPasswordRequest, CreateSwiftPasswordResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -1362,12 +1349,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, CreateSwiftPasswordResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -1403,12 +1390,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             CreateTagRequest, CreateTagResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -1445,12 +1431,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, CreateTagResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -1488,12 +1474,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             CreateTagNamespaceRequest, CreateTagNamespaceResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -1530,12 +1515,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, CreateTagNamespaceResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -1571,12 +1556,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             CreateUserRequest, CreateUserResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -1613,12 +1597,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, CreateUserResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -1655,12 +1639,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             DeleteApiKeyRequest, DeleteApiKeyResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -1687,12 +1670,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.delete(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, DeleteApiKeyResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -1725,12 +1708,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             DeleteAuthTokenRequest, DeleteAuthTokenResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -1757,12 +1739,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.delete(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, DeleteAuthTokenResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -1797,12 +1779,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             DeleteCustomerSecretKeyRequest, DeleteCustomerSecretKeyResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -1829,12 +1810,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.delete(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, DeleteCustomerSecretKeyResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -1867,12 +1848,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             DeleteDynamicGroupRequest, DeleteDynamicGroupResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -1899,12 +1879,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.delete(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, DeleteDynamicGroupResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -1936,12 +1916,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             DeleteGroupRequest, DeleteGroupResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -1968,12 +1947,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.delete(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, DeleteGroupResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -2008,12 +1987,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             DeleteIdentityProviderRequest, DeleteIdentityProviderResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -2040,12 +2018,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.delete(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, DeleteIdentityProviderResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -2080,12 +2058,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             DeleteIdpGroupMappingRequest, DeleteIdpGroupMappingResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -2112,12 +2089,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.delete(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, DeleteIdpGroupMappingResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -2149,12 +2126,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             DeletePolicyRequest, DeletePolicyResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -2181,12 +2157,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.delete(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, DeletePolicyResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -2221,12 +2197,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             DeleteSmtpCredentialRequest, DeleteSmtpCredentialResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -2253,12 +2228,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.delete(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, DeleteSmtpCredentialResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -2293,12 +2268,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             DeleteSwiftPasswordRequest, DeleteSwiftPasswordResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -2325,12 +2299,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.delete(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, DeleteSwiftPasswordResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -2361,12 +2335,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             DeleteUserRequest, DeleteUserResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -2393,12 +2366,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.delete(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, DeleteUserResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -2431,12 +2404,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             GetCompartmentRequest, GetCompartmentResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -2463,12 +2435,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, GetCompartmentResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -2501,12 +2473,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             GetDynamicGroupRequest, GetDynamicGroupResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -2533,12 +2504,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, GetDynamicGroupResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -2569,12 +2540,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             GetGroupRequest, GetGroupResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -2601,12 +2571,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, GetGroupResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -2641,12 +2611,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             GetIdentityProviderRequest, GetIdentityProviderResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -2673,12 +2642,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, GetIdentityProviderResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -2711,12 +2680,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             GetIdpGroupMappingRequest, GetIdpGroupMappingResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -2743,12 +2711,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, GetIdpGroupMappingResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -2779,12 +2747,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             GetPolicyRequest, GetPolicyResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -2811,12 +2778,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, GetPolicyResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -2845,12 +2812,11 @@ public class IdentityAsyncClient implements IdentityAsync {
         com.oracle.bmc.responses.AsyncHandler<GetTagRequest, GetTagResponse> handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             GetTagRequest, GetTagResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -2877,12 +2843,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, GetTagResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -2915,12 +2881,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             GetTagNamespaceRequest, GetTagNamespaceResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -2947,12 +2912,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, GetTagNamespaceResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -2983,12 +2948,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             GetTenancyRequest, GetTenancyResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -3015,12 +2979,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, GetTenancyResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -3050,12 +3014,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             GetUserRequest, GetUserResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -3082,12 +3045,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, GetUserResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -3122,12 +3085,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             GetUserGroupMembershipRequest, GetUserGroupMembershipResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -3154,12 +3116,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, GetUserGroupMembershipResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -3191,12 +3153,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             ListApiKeysRequest, ListApiKeysResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -3223,12 +3184,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, ListApiKeysResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -3261,12 +3222,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             ListAuthTokensRequest, ListAuthTokensResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -3293,12 +3253,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, ListAuthTokensResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -3333,12 +3293,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             ListAvailabilityDomainsRequest, ListAvailabilityDomainsResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -3365,12 +3324,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, ListAvailabilityDomainsResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -3403,12 +3362,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             ListCompartmentsRequest, ListCompartmentsResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -3435,12 +3393,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, ListCompartmentsResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -3475,12 +3433,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             ListCustomerSecretKeysRequest, ListCustomerSecretKeysResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -3507,12 +3464,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, ListCustomerSecretKeysResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -3545,12 +3502,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             ListDynamicGroupsRequest, ListDynamicGroupsResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -3577,12 +3533,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, ListDynamicGroupsResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -3613,12 +3569,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             ListGroupsRequest, ListGroupsResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -3645,12 +3600,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, ListGroupsResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -3685,12 +3640,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             ListIdentityProvidersRequest, ListIdentityProvidersResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -3717,12 +3671,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, ListIdentityProvidersResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -3757,12 +3711,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             ListIdpGroupMappingsRequest, ListIdpGroupMappingsResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -3789,12 +3742,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, ListIdpGroupMappingsResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -3826,12 +3779,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             ListPoliciesRequest, ListPoliciesResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -3858,12 +3810,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, ListPoliciesResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -3898,12 +3850,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             ListRegionSubscriptionsRequest, ListRegionSubscriptionsResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -3930,12 +3881,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, ListRegionSubscriptionsResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -3967,12 +3918,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             ListRegionsRequest, ListRegionsResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -3999,12 +3949,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, ListRegionsResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -4039,12 +3989,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             ListSmtpCredentialsRequest, ListSmtpCredentialsResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -4071,12 +4020,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, ListSmtpCredentialsResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -4109,12 +4058,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             ListSwiftPasswordsRequest, ListSwiftPasswordsResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -4141,12 +4089,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, ListSwiftPasswordsResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -4179,12 +4127,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             ListTagNamespacesRequest, ListTagNamespacesResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -4211,12 +4158,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, ListTagNamespacesResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -4247,12 +4194,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             ListTagsRequest, ListTagsResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -4279,12 +4225,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, ListTagsResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -4319,12 +4265,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             ListUserGroupMembershipsRequest, ListUserGroupMembershipsResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -4351,12 +4296,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, ListUserGroupMembershipsResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -4387,12 +4332,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             ListUsersRequest, ListUsersResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -4419,12 +4363,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.get(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, ListUsersResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -4459,12 +4403,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             RemoveUserFromGroupRequest, RemoveUserFromGroupResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -4491,12 +4434,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                 client.delete(ib, interceptedRequest, onSuccess, onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, RemoveUserFromGroupResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -4529,12 +4472,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             UpdateAuthTokenRequest, UpdateAuthTokenResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -4571,12 +4513,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, UpdateAuthTokenResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -4614,12 +4556,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             UpdateCompartmentRequest, UpdateCompartmentResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -4656,12 +4597,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, UpdateCompartmentResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -4701,12 +4642,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             UpdateCustomerSecretKeyRequest, UpdateCustomerSecretKeyResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -4743,12 +4683,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, UpdateCustomerSecretKeyResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -4786,12 +4726,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             UpdateDynamicGroupRequest, UpdateDynamicGroupResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -4828,12 +4767,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, UpdateDynamicGroupResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -4870,12 +4809,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             UpdateGroupRequest, UpdateGroupResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -4912,12 +4850,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, UpdateGroupResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -4957,12 +4895,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             UpdateIdentityProviderRequest, UpdateIdentityProviderResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -4999,12 +4936,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, UpdateIdentityProviderResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -5044,12 +4981,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             UpdateIdpGroupMappingRequest, UpdateIdpGroupMappingResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -5086,12 +5022,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, UpdateIdpGroupMappingResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -5128,12 +5064,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             UpdatePolicyRequest, UpdatePolicyResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -5170,12 +5105,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, UpdatePolicyResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -5215,12 +5150,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             UpdateSmtpCredentialRequest, UpdateSmtpCredentialResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -5257,12 +5191,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, UpdateSmtpCredentialResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -5302,12 +5236,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             UpdateSwiftPasswordRequest, UpdateSwiftPasswordResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -5344,12 +5277,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, UpdateSwiftPasswordResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -5385,12 +5318,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             UpdateTagRequest, UpdateTagResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -5427,12 +5359,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, UpdateTagResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -5470,12 +5402,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             UpdateTagNamespaceRequest, UpdateTagNamespaceResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -5512,12 +5443,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, UpdateTagNamespaceResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -5553,12 +5484,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             UpdateUserRequest, UpdateUserResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -5595,12 +5525,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, UpdateUserResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -5638,12 +5568,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             UpdateUserStateRequest, UpdateUserStateResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -5680,12 +5609,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, UpdateUserStateResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
@@ -5722,12 +5651,11 @@ public class IdentityAsyncClient implements IdentityAsync {
                 handlerToUse = handler;
         if (handler != null
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             handlerToUse =
-                    new com.oracle.bmc.util.internal.InstancePrincipalsWrappingAsyncHandler<
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
                             UploadApiKeyRequest, UploadApiKeyResponse>(
-                            (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                                     this.authenticationDetailsProvider,
                             handler) {
                         @Override
@@ -5764,12 +5692,12 @@ public class IdentityAsyncClient implements IdentityAsync {
                         onError);
 
         if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            return new com.oracle.bmc.util.internal.InstancePrincipalsBasedTransformingFuture<
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
                     javax.ws.rs.core.Response, UploadApiKeyResponse>(
                     responseFuture,
                     transformer,
-                    (com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     new com.google.common.base.Supplier<
                             java.util.concurrent.Future<javax.ws.rs.core.Response>>() {

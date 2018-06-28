@@ -52,13 +52,21 @@ public class InstancePrincipalsAuthenticationDetailsProvider
         return new InstancePrincipalsAuthenticationDetailsProviderBuilder();
     }
 
+    /**
+     * Refreshes the authentication data used by the provider
+     *
+     * @return the refreshed authentication data
+     *
+     * @deprecated use {@link #refresh()} instead
+     */
+    @Deprecated
     public String refreshSecurityToken() {
         return this.federationClient.refreshAndGetSecurityToken();
     }
 
     @Override
     public String refresh() {
-        return refreshSecurityToken();
+        return this.federationClient.refreshAndGetSecurityToken();
     }
 
     /**

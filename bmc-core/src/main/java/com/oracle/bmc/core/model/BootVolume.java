@@ -45,12 +45,31 @@ public class BootVolume {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
             return this;
         }
 
@@ -69,6 +88,15 @@ public class BootVolume {
         public Builder imageId(String imageId) {
             this.imageId = imageId;
             this.__explicitlySet__.add("imageId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isHydrated")
+        private Boolean isHydrated;
+
+        public Builder isHydrated(Boolean isHydrated) {
+            this.isHydrated = isHydrated;
+            this.__explicitlySet__.add("isHydrated");
             return this;
         }
 
@@ -99,6 +127,15 @@ public class BootVolume {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
+        private BootVolumeSourceDetails sourceDetails;
+
+        public Builder sourceDetails(BootVolumeSourceDetails sourceDetails) {
+            this.sourceDetails = sourceDetails;
+            this.__explicitlySet__.add("sourceDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -125,12 +162,16 @@ public class BootVolume {
                     new BootVolume(
                             availabilityDomain,
                             compartmentId,
+                            definedTags,
                             displayName,
+                            freeformTags,
                             id,
                             imageId,
+                            isHydrated,
                             lifecycleState,
                             sizeInGBs,
                             sizeInMBs,
+                            sourceDetails,
                             timeCreated,
                             volumeGroupId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -142,12 +183,16 @@ public class BootVolume {
             Builder copiedBuilder =
                     availabilityDomain(o.getAvailabilityDomain())
                             .compartmentId(o.getCompartmentId())
+                            .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
+                            .freeformTags(o.getFreeformTags())
                             .id(o.getId())
                             .imageId(o.getImageId())
+                            .isHydrated(o.getIsHydrated())
                             .lifecycleState(o.getLifecycleState())
                             .sizeInGBs(o.getSizeInGBs())
                             .sizeInMBs(o.getSizeInMBs())
+                            .sourceDetails(o.getSourceDetails())
                             .timeCreated(o.getTimeCreated())
                             .volumeGroupId(o.getVolumeGroupId());
 
@@ -179,12 +224,33 @@ public class BootVolume {
     String compartmentId;
 
     /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see
+     * [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Department\": \"Finance\"}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    java.util.Map<String, String> freeformTags;
 
     /**
      * The boot volume's Oracle ID (OCID).
@@ -197,6 +263,12 @@ public class BootVolume {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
     String imageId;
+
+    /**
+     * Specifies whether the boot volume's data has finished copying from the source boot volume or boot volume backup.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isHydrated")
+    Boolean isHydrated;
     /**
      * The current state of a boot volume.
      **/
@@ -266,6 +338,14 @@ public class BootVolume {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInMBs")
     Long sizeInMBs;
+
+    /**
+     * The boot volume source, either an existing boot volume in the same Availability Domain or a boot volume backup.
+     * If null, this means that the boot volume was created from an image.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
+    BootVolumeSourceDetails sourceDetails;
 
     /**
      * The date and time the boot volume was created. Format defined by RFC3339.

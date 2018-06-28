@@ -309,6 +309,59 @@ public class BlockstorageClient implements Blockstorage {
     }
 
     @Override
+    public CreateBootVolumeResponse createBootVolume(CreateBootVolumeRequest request) {
+        LOG.trace("Called createBootVolume");
+        request = CreateBootVolumeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateBootVolumeConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateBootVolumeResponse>
+                transformer = CreateBootVolumeConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCreateBootVolumeDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public CreateBootVolumeBackupResponse createBootVolumeBackup(
+            CreateBootVolumeBackupRequest request) {
+        LOG.trace("Called createBootVolumeBackup");
+        request = CreateBootVolumeBackupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateBootVolumeBackupConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateBootVolumeBackupResponse>
+                transformer = CreateBootVolumeBackupConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCreateBootVolumeBackupDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public CreateVolumeResponse createVolume(CreateVolumeRequest request) {
         LOG.trace("Called createVolume");
         request = CreateVolumeConverter.interceptRequest(request);
@@ -325,7 +378,7 @@ public class BlockstorageClient implements Blockstorage {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -351,7 +404,7 @@ public class BlockstorageClient implements Blockstorage {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -382,7 +435,7 @@ public class BlockstorageClient implements Blockstorage {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -408,7 +461,7 @@ public class BlockstorageClient implements Blockstorage {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -435,7 +488,7 @@ public class BlockstorageClient implements Blockstorage {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -460,7 +513,33 @@ public class BlockstorageClient implements Blockstorage {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public DeleteBootVolumeBackupResponse deleteBootVolumeBackup(
+            DeleteBootVolumeBackupRequest request) {
+        LOG.trace("Called deleteBootVolumeBackup");
+        request = DeleteBootVolumeBackupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteBootVolumeBackupConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBootVolumeBackupResponse>
+                transformer = DeleteBootVolumeBackupConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -485,7 +564,7 @@ public class BlockstorageClient implements Blockstorage {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -510,7 +589,7 @@ public class BlockstorageClient implements Blockstorage {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -537,7 +616,7 @@ public class BlockstorageClient implements Blockstorage {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -562,7 +641,7 @@ public class BlockstorageClient implements Blockstorage {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -588,7 +667,7 @@ public class BlockstorageClient implements Blockstorage {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -613,7 +692,32 @@ public class BlockstorageClient implements Blockstorage {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public GetBootVolumeBackupResponse getBootVolumeBackup(GetBootVolumeBackupRequest request) {
+        LOG.trace("Called getBootVolumeBackup");
+        request = GetBootVolumeBackupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetBootVolumeBackupConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetBootVolumeBackupResponse>
+                transformer = GetBootVolumeBackupConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -638,7 +742,7 @@ public class BlockstorageClient implements Blockstorage {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -663,7 +767,7 @@ public class BlockstorageClient implements Blockstorage {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -689,7 +793,7 @@ public class BlockstorageClient implements Blockstorage {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -716,7 +820,7 @@ public class BlockstorageClient implements Blockstorage {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -743,7 +847,7 @@ public class BlockstorageClient implements Blockstorage {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -768,7 +872,7 @@ public class BlockstorageClient implements Blockstorage {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -793,7 +897,33 @@ public class BlockstorageClient implements Blockstorage {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public ListBootVolumeBackupsResponse listBootVolumeBackups(
+            ListBootVolumeBackupsRequest request) {
+        LOG.trace("Called listBootVolumeBackups");
+        request = ListBootVolumeBackupsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListBootVolumeBackupsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListBootVolumeBackupsResponse>
+                transformer = ListBootVolumeBackupsConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -818,7 +948,7 @@ public class BlockstorageClient implements Blockstorage {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -844,7 +974,7 @@ public class BlockstorageClient implements Blockstorage {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -869,7 +999,7 @@ public class BlockstorageClient implements Blockstorage {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -895,7 +1025,7 @@ public class BlockstorageClient implements Blockstorage {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -920,7 +1050,7 @@ public class BlockstorageClient implements Blockstorage {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -945,7 +1075,7 @@ public class BlockstorageClient implements Blockstorage {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -971,7 +1101,34 @@ public class BlockstorageClient implements Blockstorage {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public UpdateBootVolumeBackupResponse updateBootVolumeBackup(
+            UpdateBootVolumeBackupRequest request) {
+        LOG.trace("Called updateBootVolumeBackup");
+        request = UpdateBootVolumeBackupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateBootVolumeBackupConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBootVolumeBackupResponse>
+                transformer = UpdateBootVolumeBackupConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateBootVolumeBackupDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -997,7 +1154,7 @@ public class BlockstorageClient implements Blockstorage {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1023,7 +1180,7 @@ public class BlockstorageClient implements Blockstorage {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1049,7 +1206,7 @@ public class BlockstorageClient implements Blockstorage {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1076,7 +1233,7 @@ public class BlockstorageClient implements Blockstorage {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1085,14 +1242,13 @@ public class BlockstorageClient implements Blockstorage {
         }
     }
 
-    private boolean canRetryRequestIfInstancePrincipalsUsed(com.oracle.bmc.model.BmcException e) {
+    private boolean canRetryRequestIfRefreshableAuthTokenUsed(com.oracle.bmc.model.BmcException e) {
         if (e.getStatusCode() == 401
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            ((com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider)
-                    .refreshSecurityToken();
+                    .refresh();
             return true;
         }
         return false;

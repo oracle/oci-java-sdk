@@ -4,7 +4,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Specifies a volume group. A volume group is a collection of block volumes.
+ * Specifies a volume group which is a collection of volumes. For more information, see [Volume Groups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm).
  * <br/>
  * Note: This model distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a set of all
@@ -94,6 +94,15 @@ public class VolumeGroup {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
+        private Long sizeInGBs;
+
+        public Builder sizeInGBs(Long sizeInGBs) {
+            this.sizeInGBs = sizeInGBs;
+            this.__explicitlySet__.add("sizeInGBs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
         private VolumeGroupSourceDetails sourceDetails;
 
@@ -135,6 +144,7 @@ public class VolumeGroup {
                             id,
                             lifecycleState,
                             sizeInMBs,
+                            sizeInGBs,
                             sourceDetails,
                             timeCreated,
                             volumeIds);
@@ -153,6 +163,7 @@ public class VolumeGroup {
                             .id(o.getId())
                             .lifecycleState(o.getLifecycleState())
                             .sizeInMBs(o.getSizeInMBs())
+                            .sizeInGBs(o.getSizeInGBs())
                             .sourceDetails(o.getSourceDetails())
                             .timeCreated(o.getTimeCreated())
                             .volumeIds(o.getVolumeIds());
@@ -170,7 +181,7 @@ public class VolumeGroup {
     }
 
     /**
-     * The Availability Domain of the volume group.
+     * The availability domain of the volume group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     String availabilityDomain;
@@ -192,7 +203,7 @@ public class VolumeGroup {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * A user-friendly name for the volume group. Does not have to be unique, and it's changeable.
+     * A user-friendly name for the volume group. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
@@ -209,7 +220,7 @@ public class VolumeGroup {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The Oracle Cloud ID (OCID) that uniquely identifies the volume group.
+     * The OCID for the volume group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -275,8 +286,14 @@ public class VolumeGroup {
     Long sizeInMBs;
 
     /**
-     * The volume group source. The volume source is either another a list of
-     * volume ids in the same Availability Domain, another volume group or a volume group backup.
+     * The aggregate size of the volume group in GBs.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
+    Long sizeInGBs;
+
+    /**
+     * The volume group source. The source is either another a list of
+     * volume IDs in the same availability domain, another volume group, or a volume group backup.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")

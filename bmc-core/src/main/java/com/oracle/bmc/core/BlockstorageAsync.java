@@ -37,8 +37,49 @@ public interface BlockstorageAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Creates a new boot volume in the specified compartment from an existing boot volume or a boot volume backup.
+     * For general information about boot volumes, see [Boot Volumes](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/bootvolumes.htm).
+     * You may optionally specify a *display name* for the volume, which is simply a friendly name or
+     * description. It does not have to be unique, and you can change it. Avoid entering confidential information.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateBootVolumeResponse> createBootVolume(
+            CreateBootVolumeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateBootVolumeRequest, CreateBootVolumeResponse>
+                    handler);
+
+    /**
+     * Creates a new boot volume backup of the specified boot volume. For general information about boot volume backups,
+     * see [Overview of Boot Volume Backups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/bootvolumebackups.htm)
+     * <p>
+     * When the request is received, the backup object is in a REQUEST_RECEIVED state.
+     * When the data is imaged, it goes into a CREATING state.
+     * After the backup is fully uploaded to the cloud, it goes into an AVAILABLE state.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateBootVolumeBackupResponse> createBootVolumeBackup(
+            CreateBootVolumeBackupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateBootVolumeBackupRequest, CreateBootVolumeBackupResponse>
+                    handler);
+
+    /**
      * Creates a new volume in the specified compartment. Volumes can be created in sizes ranging from
-     * 50 GB (51200 MB) to 16 TB (16777216 MB), in 1 GB (1024 MB) increments. By default, volumes are 1 TB (1048576 MB).
+     * 50 GB (51200 MB) to 32 TB (33554432 MB), in 1 GB (1024 MB) increments. By default, volumes are 1 TB (1048576 MB).
      * For general information about block volumes, see
      * [Overview of Block Volume Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/overview.htm).
      * <p>
@@ -109,11 +150,13 @@ public interface BlockstorageAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Creates a new volume group in the specified compartment. A volume group can have at most 20 block volumes.
+     * Creates a new volume group in the specified compartment.
      * A volume group is a collection of volumes and may be created from a list of volumes, cloning an existing
-     * volume group or by restoring a volume group backup.
+     * volume group, or by restoring a volume group backup. A volume group can contain up to 64 volumes.
      * You may optionally specify a *display name* for the volume group, which is simply a friendly name or
      * description. It does not have to be unique, and you can change it. Avoid entering confidential information.
+     * <p>
+     * For more information, see [Volume Groups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -130,7 +173,8 @@ public interface BlockstorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new group backup of the specified volume group.
+     * Creates a new backup volume group of the specified volume group.
+     * For more information, see [Volume Groups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -163,6 +207,22 @@ public interface BlockstorageAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteBootVolumeResponse> deleteBootVolume(
             DeleteBootVolumeRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteBootVolumeRequest, DeleteBootVolumeResponse>
+                    handler);
+
+    /**
+     * Deletes a boot volume backup.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteBootVolumeBackupResponse> deleteBootVolumeBackup(
+            DeleteBootVolumeBackupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteBootVolumeBackupRequest, DeleteBootVolumeBackupResponse>
                     handler);
 
     /**
@@ -219,7 +279,8 @@ public interface BlockstorageAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Deletes the specified volume group. This will NOT delete data volumes.
+     * Deletes the specified volume group. Individual volumes are not deleted, only the volume group is deleted.
+     * For more information, see [Volume Groups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -236,7 +297,7 @@ public interface BlockstorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a volume group backup. This will NOT delete backups within the volume group backup.
+     * Deletes a volume group backup. This operation deletes all the backups in the volume group. For more information, see [Volume Groups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -264,6 +325,22 @@ public interface BlockstorageAsync extends AutoCloseable {
     java.util.concurrent.Future<GetBootVolumeResponse> getBootVolume(
             GetBootVolumeRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetBootVolumeRequest, GetBootVolumeResponse>
+                    handler);
+
+    /**
+     * Gets information for the specified boot volume backup.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetBootVolumeBackupResponse> getBootVolumeBackup(
+            GetBootVolumeBackupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetBootVolumeBackupRequest, GetBootVolumeBackupResponse>
                     handler);
 
     /**
@@ -351,7 +428,7 @@ public interface BlockstorageAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets information for the specified volume group.
+     * Gets information for the specified volume group. For more information, see [Volume Groups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -366,7 +443,7 @@ public interface BlockstorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information for the specified volume group backup.
+     * Gets information for the specified volume group backup. For more information, see [Volume Groups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -379,6 +456,23 @@ public interface BlockstorageAsync extends AutoCloseable {
             GetVolumeGroupBackupRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetVolumeGroupBackupRequest, GetVolumeGroupBackupResponse>
+                    handler);
+
+    /**
+     * Lists the boot volume backups in the specified compartment. You can filter the results by boot volume.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListBootVolumeBackupsResponse> listBootVolumeBackups(
+            ListBootVolumeBackupsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListBootVolumeBackupsRequest, ListBootVolumeBackupsResponse>
                     handler);
 
     /**
@@ -431,7 +525,8 @@ public interface BlockstorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the backups for volume groups in the specified compartment. You can filter the results by volume group.
+     * Lists the volume group backups in the specified compartment. You can filter the results by volume group.
+     * For more information, see [Volume Groups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -448,7 +543,8 @@ public interface BlockstorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the volume groups in the specified compartment and Availability Domain.
+     * Lists the volume groups in the specified compartment and availability domain.
+     * For more information, see [Volume Groups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -494,6 +590,24 @@ public interface BlockstorageAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Updates the display name for the specified boot volume backup.
+     * Avoid entering confidential information.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateBootVolumeBackupResponse> updateBootVolumeBackup(
+            UpdateBootVolumeBackupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateBootVolumeBackupRequest, UpdateBootVolumeBackupResponse>
+                    handler);
+
+    /**
      * Updates the specified volume's display name.
      * Avoid entering confidential information.
      *
@@ -529,9 +643,12 @@ public interface BlockstorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the set of volumes in a volume group along with (optionally) it's display name. This call can be used
-     * to add or remove volumes in a volume group. The entire list of volume ids must be specified.
+     * Updates the set of volumes in a volume group along with the display name. Use this operation
+     * to add or remove volumes in a volume group. Specify the full list of volume IDs to include in the
+     * volume group. If the volume ID is not specified in the call, it will be removed from the volume group.
      * Avoid entering confidential information.
+     * <p>
+     * For more information, see [Volume Groups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -548,7 +665,7 @@ public interface BlockstorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the display name for the specified volume group backup.
+     * Updates the display name for the specified volume group backup. For more information, see [Volume Groups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

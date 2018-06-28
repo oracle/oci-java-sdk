@@ -37,8 +37,34 @@ public interface Blockstorage extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Creates a new boot volume in the specified compartment from an existing boot volume or a boot volume backup.
+     * For general information about boot volumes, see [Boot Volumes](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/bootvolumes.htm).
+     * You may optionally specify a *display name* for the volume, which is simply a friendly name or
+     * description. It does not have to be unique, and you can change it. Avoid entering confidential information.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateBootVolumeResponse createBootVolume(CreateBootVolumeRequest request);
+
+    /**
+     * Creates a new boot volume backup of the specified boot volume. For general information about boot volume backups,
+     * see [Overview of Boot Volume Backups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/bootvolumebackups.htm)
+     * <p>
+     * When the request is received, the backup object is in a REQUEST_RECEIVED state.
+     * When the data is imaged, it goes into a CREATING state.
+     * After the backup is fully uploaded to the cloud, it goes into an AVAILABLE state.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateBootVolumeBackupResponse createBootVolumeBackup(CreateBootVolumeBackupRequest request);
+
+    /**
      * Creates a new volume in the specified compartment. Volumes can be created in sizes ranging from
-     * 50 GB (51200 MB) to 16 TB (16777216 MB), in 1 GB (1024 MB) increments. By default, volumes are 1 TB (1048576 MB).
+     * 50 GB (51200 MB) to 32 TB (33554432 MB), in 1 GB (1024 MB) increments. By default, volumes are 1 TB (1048576 MB).
      * For general information about block volumes, see
      * [Overview of Block Volume Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/overview.htm).
      * <p>
@@ -85,11 +111,13 @@ public interface Blockstorage extends AutoCloseable {
             CreateVolumeBackupPolicyAssignmentRequest request);
 
     /**
-     * Creates a new volume group in the specified compartment. A volume group can have at most 20 block volumes.
+     * Creates a new volume group in the specified compartment.
      * A volume group is a collection of volumes and may be created from a list of volumes, cloning an existing
-     * volume group or by restoring a volume group backup.
+     * volume group, or by restoring a volume group backup. A volume group can contain up to 64 volumes.
      * You may optionally specify a *display name* for the volume group, which is simply a friendly name or
      * description. It does not have to be unique, and you can change it. Avoid entering confidential information.
+     * <p>
+     * For more information, see [Volume Groups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -98,7 +126,8 @@ public interface Blockstorage extends AutoCloseable {
     CreateVolumeGroupResponse createVolumeGroup(CreateVolumeGroupRequest request);
 
     /**
-     * Creates a new group backup of the specified volume group.
+     * Creates a new backup volume group of the specified volume group.
+     * For more information, see [Volume Groups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -117,6 +146,14 @@ public interface Blockstorage extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     DeleteBootVolumeResponse deleteBootVolume(DeleteBootVolumeRequest request);
+
+    /**
+     * Deletes a boot volume backup.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteBootVolumeBackupResponse deleteBootVolumeBackup(DeleteBootVolumeBackupRequest request);
 
     /**
      * Deletes the specified volume. The volume cannot have an active connection to an instance.
@@ -148,7 +185,8 @@ public interface Blockstorage extends AutoCloseable {
             DeleteVolumeBackupPolicyAssignmentRequest request);
 
     /**
-     * Deletes the specified volume group. This will NOT delete data volumes.
+     * Deletes the specified volume group. Individual volumes are not deleted, only the volume group is deleted.
+     * For more information, see [Volume Groups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -157,7 +195,7 @@ public interface Blockstorage extends AutoCloseable {
     DeleteVolumeGroupResponse deleteVolumeGroup(DeleteVolumeGroupRequest request);
 
     /**
-     * Deletes a volume group backup. This will NOT delete backups within the volume group backup.
+     * Deletes a volume group backup. This operation deletes all the backups in the volume group. For more information, see [Volume Groups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm).
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -171,6 +209,14 @@ public interface Blockstorage extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     GetBootVolumeResponse getBootVolume(GetBootVolumeRequest request);
+
+    /**
+     * Gets information for the specified boot volume backup.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetBootVolumeBackupResponse getBootVolumeBackup(GetBootVolumeBackupRequest request);
 
     /**
      * Gets information for the specified volume.
@@ -218,7 +264,7 @@ public interface Blockstorage extends AutoCloseable {
             GetVolumeBackupPolicyAssignmentRequest request);
 
     /**
-     * Gets information for the specified volume group.
+     * Gets information for the specified volume group. For more information, see [Volume Groups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm).
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -226,12 +272,21 @@ public interface Blockstorage extends AutoCloseable {
     GetVolumeGroupResponse getVolumeGroup(GetVolumeGroupRequest request);
 
     /**
-     * Gets information for the specified volume group backup.
+     * Gets information for the specified volume group backup. For more information, see [Volume Groups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm).
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      */
     GetVolumeGroupBackupResponse getVolumeGroupBackup(GetVolumeGroupBackupRequest request);
+
+    /**
+     * Lists the boot volume backups in the specified compartment. You can filter the results by boot volume.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListBootVolumeBackupsResponse listBootVolumeBackups(ListBootVolumeBackupsRequest request);
 
     /**
      * Lists the boot volumes in the specified compartment and Availability Domain.
@@ -261,7 +316,8 @@ public interface Blockstorage extends AutoCloseable {
     ListVolumeBackupsResponse listVolumeBackups(ListVolumeBackupsRequest request);
 
     /**
-     * Lists the backups for volume groups in the specified compartment. You can filter the results by volume group.
+     * Lists the volume group backups in the specified compartment. You can filter the results by volume group.
+     * For more information, see [Volume Groups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -270,7 +326,8 @@ public interface Blockstorage extends AutoCloseable {
     ListVolumeGroupBackupsResponse listVolumeGroupBackups(ListVolumeGroupBackupsRequest request);
 
     /**
-     * Lists the volume groups in the specified compartment and Availability Domain.
+     * Lists the volume groups in the specified compartment and availability domain.
+     * For more information, see [Volume Groups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -296,6 +353,16 @@ public interface Blockstorage extends AutoCloseable {
     UpdateBootVolumeResponse updateBootVolume(UpdateBootVolumeRequest request);
 
     /**
+     * Updates the display name for the specified boot volume backup.
+     * Avoid entering confidential information.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateBootVolumeBackupResponse updateBootVolumeBackup(UpdateBootVolumeBackupRequest request);
+
+    /**
      * Updates the specified volume's display name.
      * Avoid entering confidential information.
      *
@@ -316,9 +383,12 @@ public interface Blockstorage extends AutoCloseable {
     UpdateVolumeBackupResponse updateVolumeBackup(UpdateVolumeBackupRequest request);
 
     /**
-     * Updates the set of volumes in a volume group along with (optionally) it's display name. This call can be used
-     * to add or remove volumes in a volume group. The entire list of volume ids must be specified.
+     * Updates the set of volumes in a volume group along with the display name. Use this operation
+     * to add or remove volumes in a volume group. Specify the full list of volume IDs to include in the
+     * volume group. If the volume ID is not specified in the call, it will be removed from the volume group.
      * Avoid entering confidential information.
+     * <p>
+     * For more information, see [Volume Groups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -327,7 +397,7 @@ public interface Blockstorage extends AutoCloseable {
     UpdateVolumeGroupResponse updateVolumeGroup(UpdateVolumeGroupRequest request);
 
     /**
-     * Updates the display name for the specified volume group backup.
+     * Updates the display name for the specified volume group backup. For more information, see [Volume Groups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm).
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.

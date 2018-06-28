@@ -37,6 +37,31 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Enables the specified service on the specified gateway. In other words, enables the service
+     * gateway to send traffic to the specified service. You must also set up a route rule with the
+     * service's `cidrBlock` as the rule's destination CIDR and the gateway as the rule's target.
+     * See {@link RouteTable}.
+     * <p>
+     **Note:** The `AttachServiceId` operation is an easy way to enable an individual service on
+     * the service gateway. Compare it with
+     * {@link #updateServiceGateway(UpdateServiceGatewayRequest, Consumer, Consumer) updateServiceGateway}, which also
+     * lets you enable an individual service. However, with `UpdateServiceGateway`, you must specify
+     * the *entire* list of services you want enabled on the service gateway.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AttachServiceIdResponse> attachServiceId(
+            AttachServiceIdRequest request,
+            com.oracle.bmc.responses.AsyncHandler<AttachServiceIdRequest, AttachServiceIdResponse>
+                    handler);
+
+    /**
      * Adds one or more customer public IP prefixes to the specified public virtual circuit.
      * Use this operation (and not {@link #updateVirtualCircuit(UpdateVirtualCircuitRequest, Consumer, Consumer) updateVirtualCircuit})
      * to add prefixes to the virtual circuit. Oracle must verify the customer's ownership
@@ -350,7 +375,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
 
     /**
      * Creates a new Internet Gateway for the specified VCN. For more information, see
-     * [Connectivity to the Internet](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIGs.htm).
+     * [Access to the Internet](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIGs.htm).
      * <p>
      * For the purposes of access control, you must provide the OCID of the compartment where you want the Internet
      * Gateway to reside. Notice that the Internet Gateway doesn't have to be in the same compartment as the VCN or
@@ -532,6 +557,31 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             CreateSecurityListRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CreateSecurityListRequest, CreateSecurityListResponse>
+                    handler);
+
+    /**
+     * Creates a new service gateway in the specified compartment.
+     * <p>
+     * For the purposes of access control, you must provide the OCID of the compartment where you want
+     * the service gateway to reside. For more information about compartments and access control, see
+     * [Overview of the IAM Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm).
+     * For information about OCIDs, see [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
+     * <p>
+     * You may optionally specify a *display name* for the service gateway, otherwise a default is provided.
+     * It does not have to be unique, and you can change it. Avoid entering confidential information.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateServiceGatewayResponse> createServiceGateway(
+            CreateServiceGatewayRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateServiceGatewayRequest, CreateServiceGatewayResponse>
                     handler);
 
     /**
@@ -953,6 +1003,24 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes the specified service gateway. There must not be a route table that lists the service
+     * gateway as a target.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteServiceGatewayResponse> deleteServiceGateway(
+            DeleteServiceGatewayRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteServiceGatewayRequest, DeleteServiceGatewayResponse>
+                    handler);
+
+    /**
      * Deletes the specified subnet, but only if there are no instances in the subnet. This is an asynchronous
      * operation. The subnet's `lifecycleState` will change to TERMINATING temporarily. If there are any
      * instances in the subnet, the state will instead change back to AVAILABLE.
@@ -1006,6 +1074,34 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             DeleteVirtualCircuitRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteVirtualCircuitRequest, DeleteVirtualCircuitResponse>
+                    handler);
+
+    /**
+     * Disables the specified service on the specified gateway. In other words, stops the service
+     * gateway from sending traffic to the specified service. You do not need to remove any route
+     * rules that specify this service's `cidrBlock` as the destination CIDR. However, consider
+     * removing the rules if your intent is to permanently disable use of the service through this
+     * service gateway.
+     * <p>
+     **Note:** The `DetachServiceId` operation is an easy way to disable an individual service on
+     * the service gateway. Compare it with
+     * {@link #updateServiceGateway(UpdateServiceGatewayRequest, Consumer, Consumer) updateServiceGateway}, which also
+     * lets you disable an individual service. However, with `UpdateServiceGateway`, you must specify
+     * the *entire* list of services you want enabled on the service gateway. `UpdateServiceGateway`
+     * also lets you block all traffic through the service gateway without having to disable each of
+     * the individual services.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DetachServiceIdResponse> detachServiceId(
+            DetachServiceIdRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DetachServiceIdRequest, DetachServiceIdResponse>
                     handler);
 
     /**
@@ -1379,6 +1475,37 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     java.util.concurrent.Future<GetSecurityListResponse> getSecurityList(
             GetSecurityListRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetSecurityListRequest, GetSecurityListResponse>
+                    handler);
+
+    /**
+     * Gets the specified service's information.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetServiceResponse> getService(
+            GetServiceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetServiceRequest, GetServiceResponse> handler);
+
+    /**
+     * Gets the specified service gateway's information.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetServiceGatewayResponse> getServiceGateway(
+            GetServiceGatewayRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetServiceGatewayRequest, GetServiceGatewayResponse>
                     handler);
 
     /**
@@ -1810,6 +1937,40 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists the service gateways in the specified compartment. You may optionally specify a VCN OCID
+     * to filter the results by VCN.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListServiceGatewaysResponse> listServiceGateways(
+            ListServiceGatewaysRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListServiceGatewaysRequest, ListServiceGatewaysResponse>
+                    handler);
+
+    /**
+     * Lists the available services that you can access through a service gateway in this region.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListServicesResponse> listServices(
+            ListServicesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListServicesRequest, ListServicesResponse>
+                    handler);
+
+    /**
      * Lists the subnets in the specified VCN and the specified compartment.
      *
      *
@@ -2190,6 +2351,24 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             UpdateSecurityListRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateSecurityListRequest, UpdateSecurityListResponse>
+                    handler);
+
+    /**
+     * Updates the specified service gateway. The information you provide overwrites the existing
+     * attributes of the gateway.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateServiceGatewayResponse> updateServiceGateway(
+            UpdateServiceGatewayRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateServiceGatewayRequest, UpdateServiceGatewayResponse>
                     handler);
 
     /**

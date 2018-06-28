@@ -122,6 +122,110 @@ public class BlockstorageWaiters {
      * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
+    public com.oracle.bmc.waiter.Waiter<GetBootVolumeBackupRequest, GetBootVolumeBackupResponse>
+            forBootVolumeBackup(
+                    GetBootVolumeBackupRequest request,
+                    com.oracle.bmc.core.model.BootVolumeBackup.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forBootVolumeBackup(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetBootVolumeBackupRequest, GetBootVolumeBackupResponse>
+            forBootVolumeBackup(
+                    GetBootVolumeBackupRequest request,
+                    com.oracle.bmc.core.model.BootVolumeBackup.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forBootVolumeBackup(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetBootVolumeBackupRequest, GetBootVolumeBackupResponse>
+            forBootVolumeBackup(
+                    GetBootVolumeBackupRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.core.model.BootVolumeBackup.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forBootVolumeBackup(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for BootVolumeBackup.
+    private com.oracle.bmc.waiter.Waiter<GetBootVolumeBackupRequest, GetBootVolumeBackupResponse>
+            forBootVolumeBackup(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetBootVolumeBackupRequest request,
+                    final com.oracle.bmc.core.model.BootVolumeBackup.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.core.model.BootVolumeBackup.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetBootVolumeBackupRequest, GetBootVolumeBackupResponse>() {
+                            @Override
+                            public GetBootVolumeBackupResponse apply(
+                                    GetBootVolumeBackupRequest request) {
+                                return client.getBootVolumeBackup(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetBootVolumeBackupResponse>() {
+                            @Override
+                            public boolean apply(GetBootVolumeBackupResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getBootVolumeBackup().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.core.model.BootVolumeBackup.LifecycleState
+                                        .Terminated)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
     public com.oracle.bmc.waiter.Waiter<GetVolumeRequest, GetVolumeResponse> forVolume(
             GetVolumeRequest request,
             com.oracle.bmc.core.model.Volume.LifecycleState... targetStates) {

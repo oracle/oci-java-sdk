@@ -32,6 +32,15 @@ public class EgressSecurityRule {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("destinationType")
+        private DestinationType destinationType;
+
+        public Builder destinationType(DestinationType destinationType) {
+            this.destinationType = destinationType;
+            this.__explicitlySet__.add("destinationType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("icmpOptions")
         private IcmpOptions icmpOptions;
 
@@ -84,6 +93,7 @@ public class EgressSecurityRule {
             EgressSecurityRule __instance__ =
                     new EgressSecurityRule(
                             destination,
+                            destinationType,
                             icmpOptions,
                             isStateless,
                             protocol,
@@ -97,6 +107,7 @@ public class EgressSecurityRule {
         public Builder copy(EgressSecurityRule o) {
             Builder copiedBuilder =
                     destination(o.getDestination())
+                            .destinationType(o.getDestinationType())
                             .icmpOptions(o.getIcmpOptions())
                             .isStateless(o.getIsStateless())
                             .protocol(o.getProtocol())
@@ -116,12 +127,69 @@ public class EgressSecurityRule {
     }
 
     /**
-     * The destination CIDR block for the egress rule. This is the range of IP addresses that a
-     * packet originating from the instance can go to.
+     * The destination service cidrBlock or destination IP address range in CIDR notation for the egress rule.
+     * This is the range of IP addresses that a packet originating from the instance can go to.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destination")
     String destination;
+    /**
+     * Type of destination for EgressSecurityRule. SERVICE_CIDR_BLOCK should be used if destination is a service
+     * cidrBlock. CIDR_BLOCK should be used if destination is IP address range in CIDR notation.
+     * It defaults to CIDR_BLOCK, if not specified.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum DestinationType {
+        CidrBlock("CIDR_BLOCK"),
+        ServiceCidrBlock("SERVICE_CIDR_BLOCK"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, DestinationType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DestinationType v : DestinationType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        DestinationType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DestinationType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DestinationType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Type of destination for EgressSecurityRule. SERVICE_CIDR_BLOCK should be used if destination is a service
+     * cidrBlock. CIDR_BLOCK should be used if destination is IP address range in CIDR notation.
+     * It defaults to CIDR_BLOCK, if not specified.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("destinationType")
+    DestinationType destinationType;
 
     /**
      * Optional and valid only for ICMP. Use to specify a particular ICMP type and code

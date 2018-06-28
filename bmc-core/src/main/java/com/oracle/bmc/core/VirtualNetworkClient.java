@@ -309,6 +309,32 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public AttachServiceIdResponse attachServiceId(AttachServiceIdRequest request) {
+        LOG.trace("Called attachServiceId");
+        request = AttachServiceIdConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AttachServiceIdConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, AttachServiceIdResponse>
+                transformer = AttachServiceIdConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getAttachServiceDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public BulkAddVirtualCircuitPublicPrefixesResponse bulkAddVirtualCircuitPublicPrefixes(
             BulkAddVirtualCircuitPublicPrefixesRequest request) {
         LOG.trace("Called bulkAddVirtualCircuitPublicPrefixes");
@@ -330,7 +356,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -361,7 +387,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -389,7 +415,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -418,7 +444,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -444,7 +470,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -470,7 +496,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -497,7 +523,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -523,7 +549,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -549,7 +575,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -575,7 +601,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -602,7 +628,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -629,7 +655,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -657,7 +683,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -683,7 +709,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -709,7 +735,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -737,7 +763,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -763,7 +789,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -789,7 +815,33 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public CreateServiceGatewayResponse createServiceGateway(CreateServiceGatewayRequest request) {
+        LOG.trace("Called createServiceGateway");
+        request = CreateServiceGatewayConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateServiceGatewayConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateServiceGatewayResponse>
+                transformer = CreateServiceGatewayConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCreateServiceGatewayDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -815,7 +867,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -841,7 +893,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -867,7 +919,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -892,7 +944,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -917,7 +969,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -943,7 +995,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -968,7 +1020,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -993,7 +1045,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1018,7 +1070,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1044,7 +1096,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1070,7 +1122,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1097,7 +1149,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1122,7 +1174,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1147,7 +1199,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1174,7 +1226,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1199,7 +1251,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1224,7 +1276,32 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public DeleteServiceGatewayResponse deleteServiceGateway(DeleteServiceGatewayRequest request) {
+        LOG.trace("Called deleteServiceGateway");
+        request = DeleteServiceGatewayConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteServiceGatewayConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteServiceGatewayResponse>
+                transformer = DeleteServiceGatewayConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1249,7 +1326,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1274,7 +1351,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1299,7 +1376,33 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public DetachServiceIdResponse detachServiceId(DetachServiceIdRequest request) {
+        LOG.trace("Called detachServiceId");
+        request = DetachServiceIdConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DetachServiceIdConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DetachServiceIdResponse>
+                transformer = DetachServiceIdConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getDetachServiceDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1324,7 +1427,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1349,7 +1452,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1374,7 +1477,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1401,7 +1504,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1427,7 +1530,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1452,7 +1555,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1477,7 +1580,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1502,7 +1605,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1529,7 +1632,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1554,7 +1657,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1581,7 +1684,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1608,7 +1711,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1633,7 +1736,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1659,7 +1762,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1684,7 +1787,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1709,7 +1812,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1736,7 +1839,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1763,7 +1866,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1790,7 +1893,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1815,7 +1918,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1840,7 +1943,57 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public GetServiceResponse getService(GetServiceRequest request) {
+        LOG.trace("Called getService");
+        request = GetServiceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetServiceConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetServiceResponse> transformer =
+                GetServiceConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public GetServiceGatewayResponse getServiceGateway(GetServiceGatewayRequest request) {
+        LOG.trace("Called getServiceGateway");
+        request = GetServiceGatewayConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetServiceGatewayConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetServiceGatewayResponse>
+                transformer = GetServiceGatewayConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1865,7 +2018,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1890,7 +2043,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1915,7 +2068,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1940,7 +2093,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1967,7 +2120,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -1992,7 +2145,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2018,7 +2171,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2045,7 +2198,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2070,7 +2223,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2097,7 +2250,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2122,7 +2275,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2147,7 +2300,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2172,7 +2325,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2199,7 +2352,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2233,7 +2386,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2258,7 +2411,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2283,7 +2436,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2309,7 +2462,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2334,7 +2487,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2359,7 +2512,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2386,7 +2539,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2411,7 +2564,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2436,7 +2589,57 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public ListServiceGatewaysResponse listServiceGateways(ListServiceGatewaysRequest request) {
+        LOG.trace("Called listServiceGateways");
+        request = ListServiceGatewaysConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListServiceGatewaysConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListServiceGatewaysResponse>
+                transformer = ListServiceGatewaysConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public ListServicesResponse listServices(ListServicesRequest request) {
+        LOG.trace("Called listServices");
+        request = ListServicesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListServicesConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListServicesResponse>
+                transformer = ListServicesConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2461,7 +2664,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2486,7 +2689,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2513,7 +2716,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2540,7 +2743,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2565,7 +2768,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2591,7 +2794,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2617,7 +2820,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2644,7 +2847,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2670,7 +2873,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2696,7 +2899,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2722,7 +2925,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2749,7 +2952,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2776,7 +2979,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2804,7 +3007,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2830,7 +3033,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2856,7 +3059,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2884,7 +3087,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2910,7 +3113,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2936,7 +3139,33 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public UpdateServiceGatewayResponse updateServiceGateway(UpdateServiceGatewayRequest request) {
+        LOG.trace("Called updateServiceGateway");
+        request = UpdateServiceGatewayConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateServiceGatewayConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateServiceGatewayResponse>
+                transformer = UpdateServiceGatewayConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateServiceGatewayDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2962,7 +3191,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -2988,7 +3217,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -3014,7 +3243,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -3040,7 +3269,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfInstancePrincipalsUsed(e)) {
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
                     continue;
                 } else {
                     throw e;
@@ -3049,14 +3278,13 @@ public class VirtualNetworkClient implements VirtualNetwork {
         }
     }
 
-    private boolean canRetryRequestIfInstancePrincipalsUsed(com.oracle.bmc.model.BmcException e) {
+    private boolean canRetryRequestIfRefreshableAuthTokenUsed(com.oracle.bmc.model.BmcException e) {
         if (e.getStatusCode() == 401
                 && this.authenticationDetailsProvider
-                        instanceof
-                        com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider) {
-            ((com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider)
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            ((com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider)
-                    .refreshSecurityToken();
+                    .refresh();
             return true;
         }
         return false;
