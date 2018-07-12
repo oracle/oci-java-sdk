@@ -5,6 +5,7 @@ package com.oracle.bmc.auth.internal;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Function;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
@@ -304,17 +305,14 @@ public class X509FederationClient implements FederationClient {
     }
 
     // really simple retry until the SDK supports internal retries
-    private Response makeCall(Builder ib, X509FederationRequest federationRequest) {
+    @VisibleForTesting
+    Response makeCall(Builder ib, X509FederationRequest federationRequest) {
         BmcException lastException = null;
+        // Keeping one instance of the WrappedInvocationBuilder in order to preserve the request ID on retries.
+        final WrappedInvocationBuilder wrappedIb = new WrappedInvocationBuilder(ib);
         for (int retry = 0; retry < 5; retry++) {
             try {
-                // we don't have a wrapper object for the request, just give a new object
-                Response response =
-                        federationHttpClient.post(
-                                new WrappedInvocationBuilder(ib),
-                                federationRequest,
-                                new BmcRequest());
-                return response;
+                return federationHttpClient.post(wrappedIb, federationRequest, new BmcRequest());
             } catch (BmcException e) {
                 // retry in all cases right now
                 lastException = e;

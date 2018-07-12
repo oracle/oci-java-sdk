@@ -21,6 +21,8 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
 
+import com.google.common.annotations.VisibleForTesting;
+import com.oracle.bmc.http.signing.RequestSignerException;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang3.StringUtils;
 
@@ -180,14 +182,14 @@ public class RequestSignerImpl implements RequestSigner {
         final Optional<SignedRequestVersion> oVersion = SignedRequestVersion.getVersion(version);
         if (!oVersion.isPresent()) {
             LOG.debug("Invalid version number '{}'", version);
-            throw new RuntimeException("Invalid version number");
+            throw new RequestSignerException("Invalid version number");
         }
         final Version srVersion = oVersion.get();
 
         final Optional<Version.Error> errorOpt = srVersion.validateAlgorithm(algorithm);
         if (errorOpt.isPresent()) {
             LOG.debug("Signature version rule validation failed '{}'", errorOpt.get());
-            throw new RuntimeException("Version validation fails " + errorOpt.get());
+            throw new RequestSignerException("Version validation fails " + errorOpt.get());
         }
         return srVersion;
     }
@@ -201,21 +203,39 @@ public class RequestSignerImpl implements RequestSigner {
         // having caller dealing with exception
         if (!keyOptional.isPresent()) {
             LOG.debug("Could not find private key associated with keyId '{}'", keyId);
-            throw new RuntimeException("Could not find private key");
+            throw new RequestSignerException("Could not find private key");
         }
         return keyOptional.get();
     }
 
-    private Map<String, String> ignoreCaseHeaders(final Map<String, List<String>> originalHeaders) {
+    @VisibleForTesting
+    static Map<String, String> ignoreCaseHeaders(Map<String, List<String>> originalHeaders) {
         Map<String, String> transformedMap = new HashMap<>();
         for (Entry<String, List<String>> entry : originalHeaders.entrySet()) {
             if (entry.getValue().size() != 1) {
-                throw new RuntimeException(
-                        "Expecting exactly one value for header " + entry.getKey());
+                final String headerKey = entry.getKey();
+                final RequestSignerException exception =
+                        new RequestSignerException(
+                                "Expecting exactly one value for header " + headerKey);
+                LOG.error(
+                        "More than one value for header [{}] found.  All headers: {}",
+                        headerKey,
+                        transformHeadersToJsonString(originalHeaders),
+                        exception);
+                throw exception;
             }
             transformedMap.put(entry.getKey().toLowerCase(Locale.ROOT), entry.getValue().get(0));
         }
         return transformedMap;
+    }
+
+    private static String transformHeadersToJsonString(Map<String, List<String>> headers) {
+        try {
+            return RestClientFactory.getObjectMapper().writeValueAsString(headers);
+        } catch (JsonProcessingException ex) {
+            LOG.debug("Unable to serialize headers to JSON string", ex);
+            return "UNABLE TO SERIALIZE";
+        }
     }
 
     private static String extractPath(URI uri) {
@@ -251,7 +271,7 @@ public class RequestSignerImpl implements RequestSigner {
         if (!(isPut || isPost || isPatch)) {
             // Asking to sign a body on GET/DELETE/HEAD is not allowed
             if (body != null) {
-                throw new RuntimeException("MUST NOT send body on non-POST/PUT request");
+                throw new RequestSignerException("MUST NOT send body on non-POST/PUT request");
             } else {
                 // nothing left to do
                 return missingHeaders;

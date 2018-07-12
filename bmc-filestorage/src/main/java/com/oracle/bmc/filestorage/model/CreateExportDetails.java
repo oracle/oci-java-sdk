@@ -23,6 +23,15 @@ public class CreateExportDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("exportOptions")
+        private java.util.List<ClientOptions> exportOptions;
+
+        public Builder exportOptions(java.util.List<ClientOptions> exportOptions) {
+            this.exportOptions = exportOptions;
+            this.__explicitlySet__.add("exportOptions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("exportSetId")
         private String exportSetId;
 
@@ -55,7 +64,7 @@ public class CreateExportDetails {
 
         public CreateExportDetails build() {
             CreateExportDetails __instance__ =
-                    new CreateExportDetails(exportSetId, fileSystemId, path);
+                    new CreateExportDetails(exportOptions, exportSetId, fileSystemId, path);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -63,7 +72,8 @@ public class CreateExportDetails {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateExportDetails o) {
             Builder copiedBuilder =
-                    exportSetId(o.getExportSetId())
+                    exportOptions(o.getExportOptions())
+                            .exportSetId(o.getExportSetId())
                             .fileSystemId(o.getFileSystemId())
                             .path(o.getPath());
 
@@ -78,6 +88,34 @@ public class CreateExportDetails {
     public static Builder builder() {
         return new Builder();
     }
+
+    /**
+     * Export options for the new export. If left unspecified,
+     * defaults to:
+     * <p>
+     * [
+     *          {
+     *             \"source\" : \"0.0.0.0/0\",
+     *             \"requirePrivilegedSourcePort\" : false,
+     *             \"access\" : \"READ_WRITE\",
+     *             \"identitySquash\" : \"NONE\"
+     *           }
+     *        ]
+     * <p>
+     **Note:** Mount targets do not have Internet-routable IP
+     *   addresses.  Therefore they will not be reachable from the
+     *   Internet, even if an associated `ClientOptions` item has
+     *   a source of `0.0.0.0/0`.
+     * <p>
+     **If set to the empty array then the export will not be
+     *   visible to any clients.**
+     * <p>
+     * The export's `exportOptions` can be changed after creation
+     *   using the `UpdateExport` operation.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("exportOptions")
+    java.util.List<ClientOptions> exportOptions;
 
     /**
      * The OCID of this export's export set.

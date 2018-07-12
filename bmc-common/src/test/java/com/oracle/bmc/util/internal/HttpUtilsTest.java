@@ -3,29 +3,28 @@
  */
 package com.oracle.bmc.util.internal;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
-import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.oracle.bmc.http.internal.WrappedWebTarget;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.mockito.ArgumentMatchers;
 import org.mockito.Mockito;
 
 import javax.ws.rs.client.WebTarget;
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import static org.mockito.Matchers.any;
+import static org.mockito.Matchers.anyString;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 public class HttpUtilsTest {
 
@@ -94,7 +93,7 @@ public class HttpUtilsTest {
 
         WebTarget target = mock(WebTarget.class);
 
-        when(target.queryParam(anyString(), ArgumentMatchers.any())).thenReturn(target);
+        when(target.queryParam(anyString(), any())).thenReturn(target);
 
         WrappedWebTarget wrapped = new WrappedWebTarget(target);
         WrappedWebTarget result = HttpUtils.encodeMapQueryParam(wrapped, prefix, definedTagsExists);
@@ -124,7 +123,7 @@ public class HttpUtilsTest {
 
         WebTarget target = mock(WebTarget.class);
 
-        when(target.queryParam(anyString(), ArgumentMatchers.any())).thenReturn(target);
+        when(target.queryParam(anyString(), any())).thenReturn(target);
 
         WrappedWebTarget wrapped = new WrappedWebTarget(target);
         WrappedWebTarget result = HttpUtils.encodeMapQueryParam(wrapped, prefix, definedTags);
@@ -161,7 +160,7 @@ public class HttpUtilsTest {
 
         WebTarget target = mock(WebTarget.class);
 
-        when(target.queryParam(anyString(), ArgumentMatchers.any())).thenReturn(target);
+        when(target.queryParam(anyString(), any())).thenReturn(target);
 
         WrappedWebTarget wrapped = new WrappedWebTarget(target);
         WrappedWebTarget result = HttpUtils.encodeMapQueryParam(wrapped, prefix, definedTagsExists);

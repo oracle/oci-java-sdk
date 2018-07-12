@@ -763,6 +763,32 @@ public class FileStorageClient implements FileStorage {
     }
 
     @Override
+    public UpdateExportResponse updateExport(UpdateExportRequest request) {
+        LOG.trace("Called updateExport");
+        request = UpdateExportConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateExportConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateExportResponse>
+                transformer = UpdateExportConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateExportDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public UpdateExportSetResponse updateExportSet(UpdateExportSetRequest request) {
         LOG.trace("Called updateExportSet");
         request = UpdateExportSetConverter.interceptRequest(request);

@@ -16,43 +16,34 @@ package com.oracle.bmc.filestorage.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateSnapshotDetails.Builder.class
+    builder = UpdateExportDetails.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class CreateSnapshotDetails {
+public class UpdateExportDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("fileSystemId")
-        private String fileSystemId;
+        @com.fasterxml.jackson.annotation.JsonProperty("exportOptions")
+        private java.util.List<ClientOptions> exportOptions;
 
-        public Builder fileSystemId(String fileSystemId) {
-            this.fileSystemId = fileSystemId;
-            this.__explicitlySet__.add("fileSystemId");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("name")
-        private String name;
-
-        public Builder name(String name) {
-            this.name = name;
-            this.__explicitlySet__.add("name");
+        public Builder exportOptions(java.util.List<ClientOptions> exportOptions) {
+            this.exportOptions = exportOptions;
+            this.__explicitlySet__.add("exportOptions");
             return this;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
-        public CreateSnapshotDetails build() {
-            CreateSnapshotDetails __instance__ = new CreateSnapshotDetails(fileSystemId, name);
+        public UpdateExportDetails build() {
+            UpdateExportDetails __instance__ = new UpdateExportDetails(exportOptions);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateSnapshotDetails o) {
-            Builder copiedBuilder = fileSystemId(o.getFileSystemId()).name(o.getName());
+        public Builder copy(UpdateExportDetails o) {
+            Builder copiedBuilder = exportOptions(o.getExportOptions());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -67,23 +58,15 @@ public class CreateSnapshotDetails {
     }
 
     /**
-     * The OCID of the file system to take a snapshot of.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("fileSystemId")
-    String fileSystemId;
-
-    /**
-     * Name of the snapshot. This value is immutable. It must also be unique with respect
-     * to all other non-DELETED snapshots on the associated file
-     * system.
+     * New export options for the export.
      * <p>
-     * Avoid entering confidential information.
+     **Setting to the empty array will make the export invisible to all clients.**
      * <p>
-     * Example: `Sunday`
+     * Leaving unset will leave the `exportOptions` unchanged.
      *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
+    @com.fasterxml.jackson.annotation.JsonProperty("exportOptions")
+    java.util.List<ClientOptions> exportOptions;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

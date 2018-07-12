@@ -78,6 +78,9 @@ public class UploadManager {
 
     private UploadResponse singleUpload(
             UploadRequest uploadDetails, InputStream stream, long contentLength) {
+        final ProgressTrackerFactory progressTrackerFactory =
+                ProgressTrackerFactory.createSingleUploadProgressTrackerFactory(
+                        uploadDetails.progressReporter, contentLength);
         PutObjectRequest putObjectRequest = uploadDetails.putObjectRequest;
         if (MultipartUtils.shouldCalculateMd5(uploadConfiguration, putObjectRequest)) {
             MD5Calculation md5Calculation =
@@ -88,7 +91,19 @@ public class UploadManager {
                     PutObjectRequest.builder()
                             .copy(putObjectRequest)
                             .contentMD5(md5Calculation.md5)
-                            .putObjectBody(md5Calculation.streamToUse)
+                            .putObjectBody(
+                                    ProgressTrackingInputStreamFactory.create(
+                                            md5Calculation.streamToUse,
+                                            progressTrackerFactory.getProgressTracker()))
+                            .build();
+        } else {
+            putObjectRequest =
+                    PutObjectRequest.builder()
+                            .copy(putObjectRequest)
+                            .putObjectBody(
+                                    ProgressTrackingInputStreamFactory.create(
+                                            putObjectRequest.getPutObjectBody(),
+                                            progressTrackerFactory.getProgressTracker()))
                             .build();
         }
 
@@ -104,6 +119,9 @@ public class UploadManager {
 
     private UploadResponse multipartUpload(UploadRequest uploadDetails) {
         PutObjectRequest request = uploadDetails.putObjectRequest;
+        ProgressTrackerFactory progressTrackerFactory =
+                ProgressTrackerFactory.createMultiPartUploadProgressTrackerFactory(
+                        uploadDetails.progressReporter, request.getContentLength());
 
         long sizePerPart =
                 MultipartUtils.calculatePartSize(uploadConfiguration, request.getContentLength());
@@ -144,9 +162,17 @@ public class UploadManager {
                 if (uploadConfiguration.isEnforceMd5BeforeMultipartUpload()) {
                     MD5Calculation md5Calculation = calculateMd5(chunk, chunk.length());
                     assembler.addPart(
-                            md5Calculation.streamToUse, chunk.length(), md5Calculation.md5);
+                            ProgressTrackingInputStreamFactory.create(
+                                    md5Calculation.streamToUse,
+                                    progressTrackerFactory.getProgressTracker()),
+                            chunk.length(),
+                            md5Calculation.md5);
                 } else {
-                    assembler.addPart(chunk, chunk.length(), null);
+                    assembler.addPart(
+                            ProgressTrackingInputStreamFactory.create(
+                                    chunk, progressTrackerFactory.getProgressTracker()),
+                            chunk.length(),
+                            null);
                 }
             }
             CommitMultipartUploadResponse response = assembler.commit();
@@ -287,6 +313,7 @@ public class UploadManager {
         private final PutObjectRequest putObjectRequest;
         private final ExecutorService parallelUploadExecutorService;
         private final boolean allowOverwrite;
+        private final ProgressReporter progressReporter;
 
         /**
          * Creates a new {@link UploadRequestBuilder} using the given stream and content length.  The stream and length will
@@ -328,6 +355,7 @@ public class UploadManager {
             // always allow objects to be overwritten unless explicitly disabled
             private boolean allowOverwrite = true;
             private ExecutorService parallelUploadExecutorService;
+            private ProgressReporter progressReporter;
 
             /**
              * Configures whether or not the if-none-match header will be used to prevent
@@ -360,6 +388,18 @@ public class UploadManager {
             }
 
             /**
+             * Sets the progress reporter that is used to notify of updates during the upload.
+             * If none is provided, then no progress updates shall be reported.
+             *
+             * @param progressReporter The progress reporter to use.
+             * @return This builder instance
+             */
+            public UploadRequestBuilder progressReporter(ProgressReporter progressReporter) {
+                this.progressReporter = progressReporter;
+                return this;
+            }
+
+            /**
              * Builds a new UploadRequest instance.  The body and content length will be set on the given
              * request based on the original values provided when creating the builder.
              *
@@ -376,7 +416,8 @@ public class UploadManager {
                                 .ifNoneMatch(ifNoneMatch)
                                 .build(),
                         parallelUploadExecutorService,
-                        allowOverwrite);
+                        allowOverwrite,
+                        progressReporter);
             }
         }
     }
