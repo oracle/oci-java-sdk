@@ -257,6 +257,14 @@ public interface FileStorage extends AutoCloseable {
     ListSnapshotsResponse listSnapshots(ListSnapshotsRequest request);
 
     /**
+     * Updates the specified export's information.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateExportResponse updateExport(UpdateExportRequest request);
+
+    /**
      * Updates the specified export set's information.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

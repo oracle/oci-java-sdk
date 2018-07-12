@@ -39,6 +39,15 @@ public class AuditEvent {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentName")
+        private String compartmentName;
+
+        public Builder compartmentName(String compartmentName) {
+            this.compartmentName = compartmentName;
+            this.__explicitlySet__.add("compartmentName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("eventId")
         private String eventId;
 
@@ -204,6 +213,15 @@ public class AuditEvent {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("userName")
+        private String userName;
+
+        public Builder userName(String userName) {
+            this.userName = userName;
+            this.__explicitlySet__.add("userName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -212,6 +230,7 @@ public class AuditEvent {
                     new AuditEvent(
                             tenantId,
                             compartmentId,
+                            compartmentName,
                             eventId,
                             eventName,
                             eventSource,
@@ -229,7 +248,8 @@ public class AuditEvent {
                             responseHeaders,
                             responseStatus,
                             responseTime,
-                            responsePayload);
+                            responsePayload,
+                            userName);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -239,6 +259,7 @@ public class AuditEvent {
             Builder copiedBuilder =
                     tenantId(o.getTenantId())
                             .compartmentId(o.getCompartmentId())
+                            .compartmentName(o.getCompartmentName())
                             .eventId(o.getEventId())
                             .eventName(o.getEventName())
                             .eventSource(o.getEventSource())
@@ -256,7 +277,8 @@ public class AuditEvent {
                             .responseHeaders(o.getResponseHeaders())
                             .responseStatus(o.getResponseStatus())
                             .responseTime(o.getResponseTime())
-                            .responsePayload(o.getResponsePayload());
+                            .responsePayload(o.getResponsePayload())
+                            .userName(o.getUserName());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -281,6 +303,14 @@ public class AuditEvent {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
+
+    /**
+     * The name of the compartment. This value is the friendly name associated with compartmentId.
+     * This value can change, but the service logs the value that appeared at the time of the audit event.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentName")
+    String compartmentName;
 
     /**
      * The GUID of the event.
@@ -391,6 +421,12 @@ public class AuditEvent {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("responsePayload")
     java.util.Map<String, Object> responsePayload;
+
+    /**
+     * The name of the user or service. This value is the friendly name associated with principalId.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("userName")
+    String userName;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

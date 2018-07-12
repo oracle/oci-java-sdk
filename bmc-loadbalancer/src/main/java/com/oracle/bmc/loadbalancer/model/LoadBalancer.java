@@ -58,12 +58,31 @@ public class LoadBalancer {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
             return this;
         }
 
@@ -166,7 +185,9 @@ public class LoadBalancer {
                             backendSets,
                             certificates,
                             compartmentId,
+                            definedTags,
                             displayName,
+                            freeformTags,
                             hostnames,
                             id,
                             ipAddresses,
@@ -187,7 +208,9 @@ public class LoadBalancer {
                     backendSets(o.getBackendSets())
                             .certificates(o.getCertificates())
                             .compartmentId(o.getCompartmentId())
+                            .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
+                            .freeformTags(o.getFreeformTags())
                             .hostnames(o.getHostnames())
                             .id(o.getId())
                             .ipAddresses(o.getIpAddresses())
@@ -224,6 +247,16 @@ public class LoadBalancer {
     String compartmentId;
 
     /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
      * A user-friendly name. It does not have to be unique, and it is changeable.
      * <p>
      * Example: `example_load_balancer`
@@ -231,6 +264,16 @@ public class LoadBalancer {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Department\": \"Finance\"}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    java.util.Map<String, String> freeformTags;
 
     @com.fasterxml.jackson.annotation.JsonProperty("hostnames")
     java.util.Map<String, Hostname> hostnames;

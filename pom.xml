@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>1.2.41</version>
+  <version>1.2.42</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -41,6 +41,8 @@
       a breaking change. http://bouncy-castle.1462172.n4.nabble.com/Issues-when-migrating-to-1-53-td4657955.html 
       https://github.com/box/box-java-sdk/issues/168 Has not been fixed as of 1.55. -->
     <bouncycastle.version>1.52</bouncycastle.version>
+    <mockito.version>1.10.19</mockito.version>
+    <powermock.version>1.7.4</powermock.version>
     <excluded.testcases>**/*IntegrationAutoTest.java</excluded.testcases>
   </properties>
   <profiles>
@@ -376,7 +378,19 @@
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
-      <version>2.15.0</version>
+      <version>${mockito.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.powermock</groupId>
+      <artifactId>powermock-module-junit4</artifactId>
+      <version>${powermock.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.powermock</groupId>
+      <artifactId>powermock-api-mockito</artifactId>
+      <version>${powermock.version}</version>
       <scope>test</scope>
     </dependency>
     <!-- Build only dependencies -->

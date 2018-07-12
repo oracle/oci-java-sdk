@@ -34,6 +34,9 @@ package com.oracle.bmc.filestorage.model;
  * <p>
  * No two non-'DELETED' export resources in the same export set can
  * reference the same file system.
+ * <p>
+ * Use `exportOptions` to control access to an export. For more information, see
+ * [Export Options](https://docs.us-phoenix-1.oraclecloud.com/Content/File/Tasks/exportoptions.htm).
  *
  * <br/>
  * Note: This model distinguishes fields that are {@code null} because they are unset from fields that are explicitly
@@ -51,6 +54,15 @@ public class Export {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("exportOptions")
+        private java.util.List<ClientOptions> exportOptions;
+
+        public Builder exportOptions(java.util.List<ClientOptions> exportOptions) {
+            this.exportOptions = exportOptions;
+            this.__explicitlySet__.add("exportOptions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("exportSetId")
         private String exportSetId;
 
@@ -110,7 +122,14 @@ public class Export {
 
         public Export build() {
             Export __instance__ =
-                    new Export(exportSetId, fileSystemId, id, lifecycleState, path, timeCreated);
+                    new Export(
+                            exportOptions,
+                            exportSetId,
+                            fileSystemId,
+                            id,
+                            lifecycleState,
+                            path,
+                            timeCreated);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -118,7 +137,8 @@ public class Export {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Export o) {
             Builder copiedBuilder =
-                    exportSetId(o.getExportSetId())
+                    exportOptions(o.getExportOptions())
+                            .exportSetId(o.getExportSetId())
                             .fileSystemId(o.getFileSystemId())
                             .id(o.getId())
                             .lifecycleState(o.getLifecycleState())
@@ -136,6 +156,37 @@ public class Export {
     public static Builder builder() {
         return new Builder();
     }
+
+    /**
+     * Policies that apply to NFS requests made through this
+     * export. `exportOptions` contains a sequential list of
+     * `ClientOptions`. Each `ClientOptions` item defines the
+     * export options that are applied to a specified
+     * set of clients.
+     * <p>
+     * For each NFS request, the first `ClientOptions` option
+     * in the list whose `source` attribute matches the source
+     * IP address of the request is applied.
+     * <p>
+     * If a client source IP address does not match the `source`
+     * property of any `ClientOptions` in the list, then the
+     * export will be invisible to that client. This export will
+     * not be returned by `MOUNTPROC_EXPORT` calls made by the client
+     * and any attempt to mount or access the file system through
+     * this export will result in an error.
+     * <p>
+     **Exports without defined `ClientOptions` are invisible to all clients.**
+     * <p>
+     * If one export is invisible to a particular client, associated file
+     * systems may still be accessible through other exports on the same
+     * or different mount targets.
+     * To completely deny client access to a file system, be sure that the client
+     * source IP address is not included in any export for any mount target
+     * associated with the file system.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("exportOptions")
+    java.util.List<ClientOptions> exportOptions;
 
     /**
      * The OCID of this export's export set.

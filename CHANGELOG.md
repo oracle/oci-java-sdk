@@ -13,6 +13,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.2.42 - 2018-07-12
+### Added
+- Support for tagging Load Balancers in the Load Balancing service
+- Support for export options in the File Storage service
+- Support for retrieving compartment name and user name as part of events in the Audit service
+
 ## 1.2.41 - 2018-06-28
 ### Added
 - Support for service gateway management in the Networking service

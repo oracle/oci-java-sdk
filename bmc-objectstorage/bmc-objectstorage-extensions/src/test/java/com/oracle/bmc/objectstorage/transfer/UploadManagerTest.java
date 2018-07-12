@@ -7,18 +7,35 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.AdditionalMatchers.and;
+import static org.mockito.AdditionalMatchers.gt;
+import static org.mockito.AdditionalMatchers.leq;
+import static org.mockito.Matchers.any;
+import static org.mockito.Matchers.anyLong;
+import static org.mockito.Matchers.anyString;
+import static org.mockito.Matchers.eq;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.atomic.AtomicInteger;
 
+import com.oracle.bmc.objectstorage.model.MultipartUpload;
+import com.oracle.bmc.objectstorage.requests.CommitMultipartUploadRequest;
+import com.oracle.bmc.objectstorage.requests.CreateMultipartUploadRequest;
+import com.oracle.bmc.objectstorage.requests.UploadPartRequest;
+import com.oracle.bmc.objectstorage.responses.CreateMultipartUploadResponse;
+import com.oracle.bmc.objectstorage.responses.UploadPartResponse;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
@@ -35,10 +52,13 @@ import com.oracle.bmc.objectstorage.transfer.UploadManager.UploadRequest;
 import com.oracle.bmc.objectstorage.transfer.UploadManager.UploadResponse;
 import com.oracle.bmc.objectstorage.transfer.internal.MultipartManifestImpl;
 import com.oracle.bmc.util.StreamUtils;
+import org.mockito.invocation.InvocationOnMock;
+import org.mockito.stubbing.Answer;
 
 public class UploadManagerTest {
     private static final String CONTENT = Strings.repeat("a", 2097152); // 2MiB
     private static final long CONTENT_LENGTH = CONTENT.length();
+    private static final int READ_BLOCK_SIZE = 8192; // 8KB
     private static final String CLIENT_REQ_ID = "clientReqId";
     private static final String REQ_ID = "reqId";
     private static final String CONTENT_TYPE = "application/text";
@@ -59,7 +79,7 @@ public class UploadManagerTest {
     }
 
     @Test
-    public void upload_singleUpload() {
+    public void upload_singleUpload() throws IOException {
         UploadConfiguration uploadConfiguration =
                 UploadConfiguration.builder().allowMultipartUploads(false).build();
         UploadManager uploadManager = new UploadManager(objectStorage, uploadConfiguration);
@@ -84,7 +104,9 @@ public class UploadManagerTest {
         assertNull(uploadResponse.getMultipartMd5());
         assertEquals(REQ_ID, uploadResponse.getOpcRequestId());
         assertEquals(CLIENT_REQ_ID, uploadResponse.getOpcClientRequestId());
-        assertSame(body, putRequestCaptor.getValue().getPutObjectBody());
+        byte[] buffer = new byte[(int) CONTENT_LENGTH];
+        putRequestCaptor.getValue().getPutObjectBody().read(buffer);
+        assertEquals(CONTENT, new String(buffer));
         assertEquals(CONTENT_LENGTH, putRequestCaptor.getValue().getContentLength().longValue());
         assertEquals(CLIENT_REQ_ID, putRequestCaptor.getValue().getOpcClientRequestId());
         assertSame(METADATA, putRequestCaptor.getValue().getOpcMeta());
@@ -105,7 +127,6 @@ public class UploadManagerTest {
 
         UploadResponse uploadResponse = uploadManager.upload(request);
         assertNotNull(uploadResponse);
-        assertSame(body, putRequestCaptor.getValue().getPutObjectBody());
         byte[] buffer = new byte[(int) CONTENT_LENGTH];
         putRequestCaptor.getValue().getPutObjectBody().read(buffer);
         assertEquals(CONTENT, new String(buffer));
@@ -313,7 +334,142 @@ public class UploadManagerTest {
         }
     }
 
-    private UploadRequest createUploadRequest() {
+    @Test
+    public void singleUpload_progressReporter() throws IOException {
+        final UploadConfiguration uploadConfiguration =
+                UploadConfiguration.builder().allowMultipartUploads(false).build();
+        final UploadManager uploadManager = new UploadManager(objectStorage, uploadConfiguration);
+
+        final AtomicInteger expectedProgressNotificationCount = new AtomicInteger();
+        when(objectStorage.putObject(any(PutObjectRequest.class)))
+                .then(
+                        new Answer<PutObjectResponse>() {
+                            @Override
+                            public PutObjectResponse answer(InvocationOnMock invocationOnMock)
+                                    throws Throwable {
+                                final PutObjectRequest putObjectRequest =
+                                        invocationOnMock.getArgumentAt(0, null);
+                                final InputStream inputStream = putObjectRequest.getPutObjectBody();
+                                byte[] buffer = new byte[READ_BLOCK_SIZE];
+                                while (inputStream.read(buffer) != -1) {
+                                    expectedProgressNotificationCount.getAndIncrement();
+                                }
+                                return PutObjectResponse.builder().build();
+                            }
+                        });
+
+        final ProgressReporter progressReporter = mock(ProgressReporter.class);
+        final UploadResponse uploadResponse =
+                uploadManager.upload(createUploadRequest(progressReporter));
+        assertNotNull(uploadResponse);
+        verify(progressReporter, times(expectedProgressNotificationCount.get()))
+                .onProgress(and(gt(0L), leq(CONTENT_LENGTH)), eq(CONTENT_LENGTH));
+    }
+
+    @Test
+    public void multipartUpload_progressReporter() {
+        final UploadManager uploadManager =
+                new UploadManager(objectStorage, getMultipartUploadConfiguration()) {
+                    @Override
+                    protected MultipartObjectAssembler createAssembler(
+                            PutObjectRequest request,
+                            UploadRequest uploadRequest,
+                            ExecutorService executorService) {
+                        return assembler;
+                    }
+                };
+
+        final AtomicInteger onProgressCallbackCount = new AtomicInteger();
+        when(assembler.addPart(any(InputStream.class), anyLong(), anyString()))
+                .thenAnswer(
+                        new Answer<Integer>() {
+                            @Override
+                            public Integer answer(InvocationOnMock invocationOnMock)
+                                    throws Throwable {
+                                final InputStream inputStream = invocationOnMock.getArgumentAt(0, null);
+                                final byte[] buffer = new byte[READ_BLOCK_SIZE];
+                                while (inputStream.read(buffer) != -1) {
+                                    onProgressCallbackCount.incrementAndGet();
+                                }
+                                return ThreadLocalRandom.current().nextInt();
+                            }
+                        });
+        when(assembler.commit()).thenReturn(CommitMultipartUploadResponse.builder().build());
+
+        final ProgressReporter progressReporter = mock(ProgressReporter.class);
+        final UploadResponse uploadResponse =
+                uploadManager.upload(createUploadRequest(progressReporter));
+        assertNotNull(uploadResponse);
+
+        verify(progressReporter, times(onProgressCallbackCount.get()))
+                .onProgress(and(gt(0L), leq(CONTENT_LENGTH)), eq(CONTENT_LENGTH));
+    }
+
+    @Test
+    public void multipartUpload_progressReporter_withRetries() {
+        final UploadManager uploadManager =
+                new UploadManager(objectStorage, getMultipartUploadConfiguration());
+
+        when(objectStorage.createMultipartUpload(any(CreateMultipartUploadRequest.class)))
+                .thenReturn(
+                        CreateMultipartUploadResponse.builder()
+                                .multipartUpload(MultipartUpload.builder().build())
+                                .build());
+        final AtomicInteger onProgressCallbackCount = new AtomicInteger();
+        final ConcurrentMap<Integer, Integer> retryCountMap = new ConcurrentHashMap<>();
+        when(objectStorage.uploadPart(any(UploadPartRequest.class)))
+                .thenAnswer(
+                        new Answer<UploadPartResponse>() {
+                            @Override
+                            public UploadPartResponse answer(InvocationOnMock invocationOnMock)
+                                    throws Throwable {
+                                final UploadPartRequest uploadPartRequest =
+                                        invocationOnMock.getArgumentAt(0, null);
+                                final int uploadPartNum = uploadPartRequest.getUploadPartNum();
+                                final InputStream inputStream =
+                                        uploadPartRequest.getUploadPartBody();
+                                final byte[] buffer = new byte[READ_BLOCK_SIZE];
+                                while (inputStream.read(buffer) != -1) {
+                                    onProgressCallbackCount.incrementAndGet();
+
+                                    if (!retryCountMap.containsKey(uploadPartNum)) {
+                                        retryCountMap.put(uploadPartNum, 0);
+                                    }
+                                    final int retryCount = retryCountMap.get(uploadPartNum);
+                                    final boolean shouldTriggerRetry =
+                                            ThreadLocalRandom.current().nextBoolean()
+                                                    && retryCount < 2
+                                                    && retryCountMap.replace(
+                                                            uploadPartNum,
+                                                            retryCount,
+                                                            retryCount + 1);
+                                    if (shouldTriggerRetry) {
+                                        throw new BmcException(-1, null, null, null);
+                                    }
+                                }
+                                return UploadPartResponse.builder().build();
+                            }
+                        });
+        when(objectStorage.commitMultipartUpload(any(CommitMultipartUploadRequest.class)))
+                .thenReturn(CommitMultipartUploadResponse.builder().build());
+
+        final ProgressReporter progressReporter = mock(ProgressReporter.class);
+        final UploadResponse uploadResponse =
+                uploadManager.upload(createUploadRequest(progressReporter));
+        assertNotNull(uploadResponse);
+
+        verify(progressReporter, times(onProgressCallbackCount.get()))
+                .onProgress(and(gt(0L), leq(CONTENT_LENGTH)), eq(CONTENT_LENGTH));
+    }
+
+    private static UploadConfiguration getMultipartUploadConfiguration() {
+        return UploadConfiguration.builder()
+                .minimumLengthForMultipartUpload(0)
+                .minimumLengthPerUploadPart(1)
+                .build();
+    }
+
+    private UploadRequest createUploadRequest(ProgressReporter progressReporter) {
         PutObjectRequest request =
                 PutObjectRequest.builder()
                         .opcMeta(METADATA)
@@ -322,6 +478,12 @@ public class UploadManagerTest {
                         .contentType(CONTENT_TYPE)
                         .contentEncoding(CONTENT_ENCODING)
                         .build();
-        return UploadRequest.builder(body, CONTENT_LENGTH).build(request);
+        return UploadRequest.builder(body, CONTENT_LENGTH)
+                .progressReporter(progressReporter)
+                .build(request);
+    }
+
+    private UploadRequest createUploadRequest() {
+        return createUploadRequest(null);
     }
 }

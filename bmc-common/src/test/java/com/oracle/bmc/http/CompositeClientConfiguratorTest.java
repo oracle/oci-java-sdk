@@ -13,7 +13,7 @@ import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import java.util.Arrays;
 
-import static org.mockito.ArgumentMatchers.argThat;
+import static org.mockito.Matchers.argThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
@@ -39,8 +39,8 @@ public class CompositeClientConfiguratorTest {
         verify(mockBuilder).register(argThat(new StringArgVerifier("B")));
 
         compositeConfigurator.customizeClient(mockClient);
-        verify(mockClient).target(argThat(new StringArgVerifier("A")));
-        verify(mockClient).target(argThat(new StringArgVerifier("B")));
+        verify(mockClient).target((String) argThat(new StringArgVerifier("A")));
+        verify(mockClient).target((String) argThat(new StringArgVerifier("B")));
     }
 
     //Below we have two sample configurators implemented. We call a methods with bogus values just so we can
@@ -72,11 +72,11 @@ public class CompositeClientConfiguratorTest {
 
     // We can't use lambdas, so we define Matchers here to verify what args a mock was called with.
     @AllArgsConstructor
-    private static final class StringArgVerifier implements ArgumentMatcher<String> {
+    private static final class StringArgVerifier extends ArgumentMatcher {
         @NonNull private final String expectedString;
 
         @Override
-        public boolean matches(String s) {
+        public boolean matches(Object s) {
             return expectedString.equals(s);
         }
     }
