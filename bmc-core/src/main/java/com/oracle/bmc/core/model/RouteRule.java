@@ -90,7 +90,9 @@ public class RouteRule {
     }
 
     /**
-     * Deprecated, Destination and DestinationType should be used instead; request including both fields will be rejected.
+     * Deprecated. Instead use `destination` and `destinationType`. Requests that include both
+     * `cidrBlock` and `destination` will be rejected.
+     * <p>
      * A destination IP address range in CIDR notation. Matching packets will
      * be routed to the indicated network entity (the target).
      * <p>
@@ -101,19 +103,28 @@ public class RouteRule {
     String cidrBlock;
 
     /**
-     * The destination service cidrBlock or destination IP address range in CIDR notation. Matching packets will
-     * be routed to the indicated network entity (the target).
+     * Conceptually, this is the range of IP addresses used for matching when routing
+     * traffic. Required if you provide a `destinationType`.
      * <p>
-     * Examples: `10.12.0.0/16`
-     *           `oci-phx-objectstorage`
+     * Allowed values:
+     * <p>
+     * IP address range in CIDR notation. For example: `192.168.1.0/24`
+     * <p>
+     * The `cidrBlock` value for a {@link Service}, if you're
+     *     setting up a route rule for traffic destined for a particular service through
+     *     a service gateway. For example: `oci-phx-objectstorage`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destination")
     String destination;
     /**
-     * Type of destination for the route rule. SERVICE_CIDR_BLOCK should be used if destination is a service
-     * cidrBlock. CIDR_BLOCK should be used if destination is IP address range in CIDR notation. It must be provided
-     * along with `destination`.
+     * Type of destination for the rule. Required if you provide a `destination`.
+     * <p>
+     * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+     * <p>
+     * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a
+     *     {@link Service} (the rule is for traffic destined for a
+     *     particular service through a service gateway).
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -160,9 +171,13 @@ public class RouteRule {
         }
     };
     /**
-     * Type of destination for the route rule. SERVICE_CIDR_BLOCK should be used if destination is a service
-     * cidrBlock. CIDR_BLOCK should be used if destination is IP address range in CIDR notation. It must be provided
-     * along with `destination`.
+     * Type of destination for the rule. Required if you provide a `destination`.
+     * <p>
+     * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+     * <p>
+     * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a
+     *     {@link Service} (the rule is for traffic destined for a
+     *     particular service through a service gateway).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationType")

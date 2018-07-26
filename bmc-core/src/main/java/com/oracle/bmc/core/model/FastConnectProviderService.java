@@ -156,7 +156,7 @@ public class FastConnectProviderService {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
     /**
-     * Private peering BGP management.
+     * Who is responsible for managing the private peering BGP information.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -204,7 +204,7 @@ public class FastConnectProviderService {
         }
     };
     /**
-     * Private peering BGP management.
+     * Who is responsible for managing the private peering BGP information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privatePeeringBgpManagement")
@@ -224,7 +224,7 @@ public class FastConnectProviderService {
     @com.fasterxml.jackson.annotation.JsonProperty("providerServiceName")
     String providerServiceName;
     /**
-     * Public peering BGP management.
+     * Who is responsible for managing the public peering BGP information.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -272,7 +272,7 @@ public class FastConnectProviderService {
         }
     };
     /**
-     * Public peering BGP management.
+     * Who is responsible for managing the public peering BGP information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicPeeringBgpManagement")

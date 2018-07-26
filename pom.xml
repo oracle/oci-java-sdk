@@ -1,9 +1,9 @@
-<?xml version="1.0"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>1.2.42</version>
+  <version>1.2.43</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -36,8 +36,9 @@
     <commons-codec.version>1.10</commons-codec.version>
     <commons-lang3.version>3.4</commons-lang3.version>
     <commons-io.version>2.5</commons-io.version>
+    <maven-shade-plugin.version>3.1.1</maven-shade-plugin.version>
 
-    <!-- To allow for encrypted PEM (PBKDF-OpenSSL), we need to use a version before 1.53. >= 1.53 introduced 
+    <!-- To allow for encrypted PEM (PBKDF-OpenSSL), we need to use a version before 1.53. >= 1.53 introduced
       a breaking change. http://bouncy-castle.1462172.n4.nabble.com/Issues-when-migrating-to-1-53-td4657955.html 
       https://github.com/box/box-java-sdk/issues/168 Has not been fixed as of 1.55. -->
     <bouncycastle.version>1.52</bouncycastle.version>
@@ -125,7 +126,7 @@
                 <phase>process-sources</phase>
                 <configuration>
                   <target>
-                    <replace dir="src/main/java" token="{{DOC_SERVER_URL}}" value="https://docs.us-phoenix-1.oraclecloud.com"/>
+                    <replace dir="src/main/java" token="{{DOC_SERVER_URL}}" value="https://docs.us-phoenix-1.oraclecloud.com" />
                   </target>
                   <failOnError>false</failOnError>
                 </configuration>
@@ -512,6 +513,7 @@
     <module>bmc-objectstorage/bmc-objectstorage-extensions</module>
     <module>bmc-objectstorage</module>
     <module>bmc-containerengine</module>
+    <module>bmc-resourcesearch</module>
     <module>bmc-full</module>
     <module>bmc-shaded</module>
   </modules>

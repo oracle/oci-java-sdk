@@ -1,11 +1,11 @@
-<?xml version="1.0"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <!-- http://howtodoinjava.com/maven/maven-bom-bill-of-materials-dependency/ -->
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>1.2.42</version>
+    <version>1.2.43</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <artifactId>oci-java-sdk-bom</artifactId>
@@ -19,70 +19,76 @@
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-common</artifactId>
-        <version>1.2.42</version>
+        <version>1.2.43</version>
         <optional>false</optional>
       </dependency>
       <!-- Service modules, alpha sorted -->
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-audit</artifactId>
-        <version>1.2.42</version>
+        <version>1.2.43</version>
         <optional>false</optional>
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-containerengine</artifactId>
-        <version>1.2.42</version>
+        <version>1.2.43</version>
         <optional>false</optional>
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-core</artifactId>
-        <version>1.2.42</version>
+        <version>1.2.43</version>
         <optional>false</optional>
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-database</artifactId>
-        <version>1.2.42</version>
+        <version>1.2.43</version>
         <optional>false</optional>
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-dns</artifactId>
-        <version>1.2.42</version>
+        <version>1.2.43</version>
         <optional>false</optional>
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-email</artifactId>
-        <version>1.2.42</version>
+        <version>1.2.43</version>
         <optional>false</optional>
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-filestorage</artifactId>
-        <version>1.2.42</version>
+        <version>1.2.43</version>
         <optional>false</optional>
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-identity</artifactId>
-        <version>1.2.42</version>
+        <version>1.2.43</version>
         <optional>false</optional>
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-loadbalancer</artifactId>
-        <version>1.2.42</version>
+        <version>1.2.43</version>
         <optional>false</optional>
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-objectstorage</artifactId>
-        <version>1.2.42</version>
+        <version>1.2.43</version>
         <optional>false</optional>
         <type>pom</type>
+      </dependency>
+      <dependency>
+        <groupId>com.oracle.oci.sdk</groupId>
+        <artifactId>oci-java-sdk-resourcesearch</artifactId>
+        <optional>false</optional>
+        <version>1.2.43</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

@@ -282,8 +282,6 @@ public class Instance {
      * Additional metadata key/value pairs that you provide.  They serve a similar purpose and functionality from fields in the 'metadata' object.
      * <p>
      * They are distinguished from 'metadata' fields in that these can be nested JSON objects (whereas 'metadata' fields are string/string maps only).
-     * <p>
-     * If you don't need nested metadata values, it is strongly advised to avoid using this object and use the Metadata object instead.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("extendedMetadata")

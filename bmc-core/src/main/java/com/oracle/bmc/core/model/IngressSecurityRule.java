@@ -162,19 +162,28 @@ public class IngressSecurityRule {
     String protocol;
 
     /**
-     * The source service cidrBlock or source IP address range in CIDR notation for the ingress rule. This is the
-     * range of IP addresses that a packet coming into the instance can come from.
+     * Conceptually, this is the range of IP addresses that a packet coming into the instance
+     * can come from.
      * <p>
-     * Examples: `10.12.0.0/16`
-     *           `oci-phx-objectstorage`
+     * Allowed values:
+     * <p>
+     * IP address range in CIDR notation. For example: `192.168.1.0/24`
+     * <p>
+     * The `cidrBlock` value for a {@link Service}, if you're
+     *     setting up a security list rule for traffic coming from a particular service through
+     *     a service gateway. For example: `oci-phx-objectstorage`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("source")
     String source;
     /**
-     * Type of source for IngressSecurityRule. SERVICE_CIDR_BLOCK should be used if source is a service cidrBlock.
-     * CIDR_BLOCK should be used if source is IP address range in CIDR notation. It defaults to CIDR_BLOCK, if
-     * not specified.
+     * Type of source for the rule. The default is `CIDR_BLOCK`.
+     * <p>
+     * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
+     * <p>
+     * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a
+     *     {@link Service} (the rule is for traffic coming from a
+     *     particular service through a service gateway).
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -221,9 +230,13 @@ public class IngressSecurityRule {
         }
     };
     /**
-     * Type of source for IngressSecurityRule. SERVICE_CIDR_BLOCK should be used if source is a service cidrBlock.
-     * CIDR_BLOCK should be used if source is IP address range in CIDR notation. It defaults to CIDR_BLOCK, if
-     * not specified.
+     * Type of source for the rule. The default is `CIDR_BLOCK`.
+     * <p>
+     * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
+     * <p>
+     * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a
+     *     {@link Service} (the rule is for traffic coming from a
+     *     particular service through a service gateway).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
