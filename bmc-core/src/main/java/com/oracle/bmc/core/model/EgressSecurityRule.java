@@ -127,16 +127,30 @@ public class EgressSecurityRule {
     }
 
     /**
-     * The destination service cidrBlock or destination IP address range in CIDR notation for the egress rule.
-     * This is the range of IP addresses that a packet originating from the instance can go to.
+     * Conceptually, this is the range of IP addresses that a packet originating from the instance
+     * can go to.
+     * <p>
+     * Allowed values:
+     * <p>
+     * IP address range in CIDR notation. For example: `192.168.1.0/24`
+     * <p>
+     * The `cidrBlock` value for a {@link Service}, if you're
+     *     setting up a security list rule for traffic destined for a particular service through
+     *     a service gateway. For example: `oci-phx-objectstorage`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destination")
     String destination;
     /**
-     * Type of destination for EgressSecurityRule. SERVICE_CIDR_BLOCK should be used if destination is a service
-     * cidrBlock. CIDR_BLOCK should be used if destination is IP address range in CIDR notation.
-     * It defaults to CIDR_BLOCK, if not specified.
+     * Type of destination for the rule. The default is `CIDR_BLOCK`.
+     * <p>
+     * Allowed values:
+     * <p>
+     * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+     * <p>
+     * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a
+     *     {@link Service} (the rule is for traffic destined for a
+     *     particular service through a service gateway).
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -183,9 +197,15 @@ public class EgressSecurityRule {
         }
     };
     /**
-     * Type of destination for EgressSecurityRule. SERVICE_CIDR_BLOCK should be used if destination is a service
-     * cidrBlock. CIDR_BLOCK should be used if destination is IP address range in CIDR notation.
-     * It defaults to CIDR_BLOCK, if not specified.
+     * Type of destination for the rule. The default is `CIDR_BLOCK`.
+     * <p>
+     * Allowed values:
+     * <p>
+     * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+     * <p>
+     * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a
+     *     {@link Service} (the rule is for traffic destined for a
+     *     particular service through a service gateway).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationType")

@@ -13,6 +13,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.2.43 - 2018-07-26
+### Added
+- Support for the OCI Search service. An example of how to call this service is available [here](https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResourceSearchExample.java)
+- Support for specifying a backup policy when creating a boot volume in the Block Storage service
+- Support for using the Java SDK in a FIPS compliant environment. Details available [here](https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm#download)
+
 ## 1.2.42 - 2018-07-12
 ### Added
 - Support for tagging Load Balancers in the Load Balancing service

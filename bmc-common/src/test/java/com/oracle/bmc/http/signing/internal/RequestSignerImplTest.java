@@ -4,9 +4,11 @@
 package com.oracle.bmc.http.signing.internal;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.oracle.bmc.http.internal.RestClientFactory;
 import com.oracle.bmc.http.signing.RequestSignerException;
+import com.oracle.bmc.http.signing.SigningStrategy;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,7 +19,12 @@ import org.powermock.modules.junit4.PowerMockRunner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.ws.rs.HttpMethod;
+import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.net.URI;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -37,6 +44,7 @@ import static org.powermock.api.mockito.PowerMockito.when;
 @PrepareForTest({LoggerFactory.class, RestClientFactory.class, RequestSignerImpl.class})
 public class RequestSignerImplTest {
     private static final String SERIALIZED_MAP_JSON_STRING = "{\"header\":[\"value1\",\"value2\"]}";
+    private static final byte[] BYTE_BUFFER = new byte[8196];
 
     @Mock private Logger mockLogger;
     @Mock private ObjectMapper mockObjectMapper;
@@ -111,5 +119,77 @@ public class RequestSignerImplTest {
                     "Logging messages should contain the base message",
                     actaulLogMessageValue.contains("More than one value for header [{}] found."));
         }
+    }
+
+    @Test
+    public void calculateMissingHeaders_postStringContentAsJson() throws IOException {
+        calculateAndVerifyMissingHeaders(
+                MediaType.APPLICATION_JSON,
+                SERIALIZED_MAP_JSON_STRING,
+                SERIALIZED_MAP_JSON_STRING.length());
+    }
+
+    @Test
+    public void calculateMissingHeaders_postStringContentAsPlainText() throws IOException {
+        calculateAndVerifyMissingHeaders(
+                MediaType.TEXT_PLAIN,
+                SERIALIZED_MAP_JSON_STRING,
+                SERIALIZED_MAP_JSON_STRING.length());
+    }
+
+    @Test
+    public void calculateMissingHeaders_postInputStreamAsOctetStream() throws IOException {
+        calculateAndVerifyMissingHeaders(
+                MediaType.APPLICATION_OCTET_STREAM,
+                new ByteArrayInputStream(BYTE_BUFFER),
+                BYTE_BUFFER.length);
+    }
+
+    @Test
+    public void calculateMissingHeaders_postInputStreamAsPlainText() throws IOException {
+        calculateAndVerifyMissingHeaders(
+                MediaType.TEXT_PLAIN, new ByteArrayInputStream(BYTE_BUFFER), BYTE_BUFFER.length);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void calculateMissingHeaders_invalidBody() throws IOException {
+        calculateAndVerifyMissingHeaders(MediaType.TEXT_PLAIN, BYTE_BUFFER, BYTE_BUFFER.length);
+    }
+
+    private void calculateAndVerifyMissingHeaders(
+            final String contentType, final Object body, final int contentLength)
+            throws IOException {
+        final URI uri = URI.create("https://identity.us-phoenix-1.oraclecloud.com/20160918/users");
+        final Map<String, String> existingHeaders =
+                ImmutableMap.of(
+                        HttpHeaders.CONTENT_TYPE.toLowerCase(),
+                        contentType,
+                        "opc-request-id",
+                        "2F9BA4A30BB3452397A5BC1BFE447C5D",
+                        HttpHeaders.ACCEPT.toLowerCase(),
+                        MediaType.APPLICATION_JSON);
+        final RequestSignerImpl.SigningConfiguration signingConfiguration =
+                new RequestSignerImpl.SigningConfiguration(
+                        SigningStrategy.STANDARD.getHeadersToSign(),
+                        SigningStrategy.STANDARD.isSkipContentHeadersForStreamingPutRequests());
+        final Map<String, String> missingHeaders =
+                RequestSignerImpl.calculateMissingHeaders(
+                        HttpMethod.POST.toLowerCase(),
+                        uri,
+                        existingHeaders,
+                        body,
+                        Constants.ALL_HEADERS,
+                        signingConfiguration);
+        assertNotNull(missingHeaders);
+        assertEquals(4, missingHeaders.size());
+        assertTrue(missingHeaders.containsKey(HttpHeaders.DATE.toLowerCase()));
+        assertTrue(missingHeaders.containsKey(HttpHeaders.CONTENT_LENGTH.toLowerCase()));
+        assertEquals(
+                Integer.toString(contentLength),
+                missingHeaders.get(HttpHeaders.CONTENT_LENGTH.toLowerCase()));
+        assertTrue(missingHeaders.containsKey("x-content-sha256"));
+        assertEquals(
+                "identity.us-phoenix-1.oraclecloud.com",
+                missingHeaders.get(HttpHeaders.HOST.toLowerCase()));
     }
 }

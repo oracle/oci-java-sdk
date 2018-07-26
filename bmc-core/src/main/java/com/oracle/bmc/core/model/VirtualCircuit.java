@@ -299,7 +299,12 @@ public class VirtualCircuit {
     }
 
     /**
-     * The provisioned data rate of the connection.
+     * The provisioned data rate of the connection.  To get a list of the
+     * available bandwidth levels (that is, shapes), see
+     * {@link #listFastConnectProviderVirtualCircuitBandwidthShapes(ListFastConnectProviderVirtualCircuitBandwidthShapesRequest) listFastConnectProviderVirtualCircuitBandwidthShapes}.
+     * <p>
+     * Example: `10 Gbps`
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bandwidthShapeName")
     String bandwidthShapeName;

@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc.http.signing.internal;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
@@ -22,6 +23,7 @@ import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
 
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.io.ByteStreams;
 import com.oracle.bmc.http.signing.RequestSignerException;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang3.StringUtils;
@@ -143,7 +145,12 @@ public class RequestSignerImpl implements RequestSigner {
             // 3) calculate any required headers that are missing
             final Map<String, String> missingHeaders =
                     calculateMissingHeaders(
-                            lowerHttpMethod, uri, existingHeaders, body, requiredHeaders);
+                            lowerHttpMethod,
+                            uri,
+                            existingHeaders,
+                            body,
+                            requiredHeaders,
+                            signingConfiguration);
 
             // 4) create a map containing both existing + missing headers
             final Map<String, String> allHeaders = new HashMap<>();
@@ -247,12 +254,14 @@ public class RequestSignerImpl implements RequestSigner {
         return path;
     }
 
-    private Map<String, String> calculateMissingHeaders(
+    static Map<String, String> calculateMissingHeaders(
             final String httpMethod,
             final URI uri,
             final Map<String, String> existingHeaders,
             final Object body,
-            final List<String> requiredHeaders) {
+            final List<String> requiredHeaders,
+            final SigningConfiguration signingConfiguration)
+            throws IOException {
         // all of the required headers that are currently missing
         Map<String, String> missingHeaders = new HashMap<>();
 
@@ -301,21 +310,10 @@ public class RequestSignerImpl implements RequestSigner {
             if (!existingHeaders.containsKey(Constants.CONTENT_TYPE)) {
                 LOG.warn("Missing 'content-type' header, defaulting to 'application/json'");
                 missingHeaders.put(Constants.CONTENT_TYPE, Constants.JSON_CONTENT_TYPE);
-            } else if (!existingHeaders
-                    .get(Constants.CONTENT_TYPE)
-                    .toLowerCase(Locale.ROOT)
-                    .equals(Constants.JSON_CONTENT_TYPE)) {
-                throw new IllegalArgumentException(
-                        "Only 'application/json' supported for content type");
             }
         }
-        byte[] bodyBytes;
-        try {
-            bodyBytes = getJsonBody(body);
-        } catch (JsonProcessingException e) {
-            throw new IllegalArgumentException("Unable to process JSON body", e);
-        }
 
+        final byte[] bodyBytes = readBodyBytes(body);
         if (isRequiredHeaderMissing(Constants.CONTENT_LENGTH, requiredHeaders, existingHeaders)) {
             missingHeaders.put(Constants.CONTENT_LENGTH, Integer.toString(bodyBytes.length));
         }
@@ -398,7 +396,7 @@ public class RequestSignerImpl implements RequestSigner {
 
     // JSON is the only accepted format for message bodies that need to be
     // signed.
-    private static byte[] getJsonBody(Object body) throws JsonProcessingException {
+    private static byte[] readBodyBytes(Object body) throws IOException {
         // empty body is OK
         if (body == null) {
             return "".getBytes(StandardCharsets.UTF_8);
@@ -406,9 +404,11 @@ public class RequestSignerImpl implements RequestSigner {
         // if already a string, just use it unchanged
         if (body instanceof String) {
             return ((String) body).getBytes(StandardCharsets.UTF_8);
+        } else if (body instanceof InputStream) {
+            return ByteStreams.toByteArray((InputStream) body);
         }
 
-        throw new IllegalArgumentException("body must be a String");
+        throw new IllegalArgumentException("Unexpected body type: " + body.getClass().getName());
     }
 
     private static String base64Encode(byte[] bytes) {

@@ -32,6 +32,15 @@ public class CreateBootVolumeDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("backupPolicyId")
+        private String backupPolicyId;
+
+        public Builder backupPolicyId(String backupPolicyId) {
+            this.backupPolicyId = backupPolicyId;
+            this.__explicitlySet__.add("backupPolicyId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -94,6 +103,7 @@ public class CreateBootVolumeDetails {
             CreateBootVolumeDetails __instance__ =
                     new CreateBootVolumeDetails(
                             availabilityDomain,
+                            backupPolicyId,
                             compartmentId,
                             definedTags,
                             displayName,
@@ -108,6 +118,7 @@ public class CreateBootVolumeDetails {
         public Builder copy(CreateBootVolumeDetails o) {
             Builder copiedBuilder =
                     availabilityDomain(o.getAvailabilityDomain())
+                            .backupPolicyId(o.getBackupPolicyId())
                             .compartmentId(o.getCompartmentId())
                             .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
@@ -135,6 +146,14 @@ public class CreateBootVolumeDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     String availabilityDomain;
+
+    /**
+     * If provided, specifies the ID of the boot volume backup policy to assign to the newly
+     * created boot volume. If omitted, no policy will be assigned.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("backupPolicyId")
+    String backupPolicyId;
 
     /**
      * The OCID of the compartment that contains the boot volume.

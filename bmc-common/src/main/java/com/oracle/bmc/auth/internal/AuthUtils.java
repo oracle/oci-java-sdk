@@ -25,7 +25,6 @@ import org.bouncycastle.asn1.x500.AttributeTypeAndValue;
 import org.bouncycastle.asn1.x500.RDN;
 import org.bouncycastle.asn1.x500.X500Name;
 import org.bouncycastle.asn1.x500.style.BCStyle;
-import org.bouncycastle.jce.PrincipalUtil;
 import org.bouncycastle.openssl.jcajce.JcaPEMWriter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -211,21 +210,15 @@ public class AuthUtils {
     public static String getTenantIdFromCertificate(X509Certificate certificate) {
         Preconditions.checkNotNull(certificate);
 
-        try {
-            X500Name name =
-                    X500Name.getInstance(PrincipalUtil.getSubjectX509Principal(certificate));
+        X500Name name = new X500Name(certificate.getSubjectX500Principal().getName());
 
-            for (RDN rdn : name.getRDNs(BCStyle.OU)) {
-                for (AttributeTypeAndValue typeAndValue : rdn.getTypesAndValues()) {
-                    String value = typeAndValue.getValue().toString();
-                    if (value.startsWith("opc-tenant:")) {
-                        return value.substring("opc-tenant:".length());
-                    }
+        for (RDN rdn : name.getRDNs(BCStyle.OU)) {
+            for (AttributeTypeAndValue typeAndValue : rdn.getTypesAndValues()) {
+                String value = typeAndValue.getValue().toString();
+                if (value.startsWith("opc-tenant:")) {
+                    return value.substring("opc-tenant:".length());
                 }
             }
-        } catch (CertificateEncodingException ex) {
-            throw new InstancePrincipalUnavailableException(
-                    "The certificate is not valid one.", ex);
         }
 
         throw new InstancePrincipalUnavailableException(
