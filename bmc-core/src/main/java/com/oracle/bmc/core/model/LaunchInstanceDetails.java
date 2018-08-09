@@ -80,6 +80,15 @@ public class LaunchInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
+        private String faultDomain;
+
+        public Builder faultDomain(String faultDomain) {
+            this.faultDomain = faultDomain;
+            this.__explicitlySet__.add("faultDomain");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -164,6 +173,7 @@ public class LaunchInstanceDetails {
                             definedTags,
                             displayName,
                             extendedMetadata,
+                            faultDomain,
                             freeformTags,
                             hostnameLabel,
                             imageId,
@@ -185,6 +195,7 @@ public class LaunchInstanceDetails {
                             .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .extendedMetadata(o.getExtendedMetadata())
+                            .faultDomain(o.getFaultDomain())
                             .freeformTags(o.getFreeformTags())
                             .hostnameLabel(o.getHostnameLabel())
                             .imageId(o.getImageId())
@@ -257,6 +268,18 @@ public class LaunchInstanceDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("extendedMetadata")
     java.util.Map<String, Object> extendedMetadata;
+
+    /**
+     * The name of the Fault Domain in which to launch an instance.
+     * <p>
+     * To get a list of Fault Domains, use the {@link #listFaultDomains(ListFaultDomainsRequest) listFaultDomains}
+     * operation in the Identity and Access Management Service API.
+     * <p>
+     * Example: `FAULT-DOMAIN-1`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
+    String faultDomain;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no

@@ -2,7 +2,6 @@
 /**
  * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
  */
-
 import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
@@ -62,7 +61,8 @@ public class ResourceSearchExample {
     }
 
     private static void getTypeDetails(ResourceSearch client, String typeName) {
-        GetResourceTypeRequest getTypeRequest = GetResourceTypeRequest.builder().name(typeName).build();
+        GetResourceTypeRequest getTypeRequest =
+                GetResourceTypeRequest.builder().name(typeName).build();
 
         GetResourceTypeResponse getTypeResp = client.getResourceType(getTypeRequest);
 
@@ -70,9 +70,10 @@ public class ResourceSearchExample {
     }
 
     private static void freetextSearch(ResourceSearch client, String text) {
-        SearchResourcesRequest req = SearchResourcesRequest.builder().searchDetails(
-                FreeTextSearchDetails.builder().text(text).build()
-        ).build();
+        SearchResourcesRequest req =
+                SearchResourcesRequest.builder()
+                        .searchDetails(FreeTextSearchDetails.builder().text(text).build())
+                        .build();
 
         SearchResourcesResponse resp = client.searchResources(req);
 
@@ -82,12 +83,15 @@ public class ResourceSearchExample {
     }
 
     private static void structuredQuerySearch(ResourceSearch client) {
-        SearchResourcesRequest req = SearchResourcesRequest.builder().searchDetails(
-                StructuredSearchDetails
-                        .builder()
-                        .matchingContextType(SearchDetails.MatchingContextType.Highlights)
-                        .query("query all resources").build()
-        ).build();
+        SearchResourcesRequest req =
+                SearchResourcesRequest.builder()
+                        .searchDetails(
+                                StructuredSearchDetails.builder()
+                                        .matchingContextType(
+                                                SearchDetails.MatchingContextType.Highlights)
+                                        .query("query all resources")
+                                        .build())
+                        .build();
 
         SearchResourcesResponse resp = client.searchResources(req);
 

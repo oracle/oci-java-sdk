@@ -25,6 +25,7 @@ import javax.annotation.concurrent.Immutable;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.io.ByteStreams;
 import com.oracle.bmc.http.signing.RequestSignerException;
+import com.oracle.bmc.io.DuplicatableInputStream;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang3.StringUtils;
 
@@ -287,18 +288,12 @@ public class RequestSignerImpl implements RequestSigner {
             }
         }
 
-        // the one exception for the below is when doing a PUT if the body is an InputStream
+        // the one exception for the below is when doing a PUT or PATCH if the body is an InputStream
         // and the configuration allows it to be skipped
-        if (isPut || isPatch) {
-            if (body instanceof InputStream) {
-                if (signingConfiguration.skipContentHeadersForStreamingPutRequests) {
-                    return missingHeaders;
-                } else {
-                    // TODO: support DuplicatableInputStream to be able to calculate length/sha-256
-                    throw new IllegalArgumentException(
-                            "Streaming body not supported for signing strategy");
-                }
-            }
+        if ((isPut || isPatch)
+                && body instanceof InputStream
+                && signingConfiguration.skipContentHeadersForStreamingPutRequests) {
+            return missingHeaders;
         }
 
         // supply content-type, content-length and x-content-sha256 if missing (PUT and POST only)
@@ -394,8 +389,6 @@ public class RequestSignerImpl implements RequestSigner {
         return requiredHeadersToSign;
     }
 
-    // JSON is the only accepted format for message bodies that need to be
-    // signed.
     private static byte[] readBodyBytes(Object body) throws IOException {
         // empty body is OK
         if (body == null) {
@@ -404,8 +397,13 @@ public class RequestSignerImpl implements RequestSigner {
         // if already a string, just use it unchanged
         if (body instanceof String) {
             return ((String) body).getBytes(StandardCharsets.UTF_8);
+        } else if (body instanceof DuplicatableInputStream) {
+            final InputStream duplicatedBody = ((DuplicatableInputStream) body).duplicate();
+            return ByteStreams.toByteArray(duplicatedBody);
         } else if (body instanceof InputStream) {
-            return ByteStreams.toByteArray((InputStream) body);
+            // TODO: Allow input streams to be signed, but for now restrict to DIS until we can refactor
+            throw new IllegalArgumentException(
+                    "Only DuplicatableInputStream supported for body that needs signing.");
         }
 
         throw new IllegalArgumentException("Unexpected body type: " + body.getClass().getName());

@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.oracle.oci.sdk</groupId>
+    <artifactId>oci-java-sdk-addons</artifactId>
+    <version>1.2.44</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+
+  <artifactId>oci-java-sdk-addons-apache</artifactId>
+  <name>Oracle Cloud Infrastructure SDK - ApacheHttpConenctorProvider</name>
+  <description>This project adds support for the ApacheHttpConnectorProvider for the Java SDK</description>
+  <url>https://docs.us-phoenix-1.oraclecloud.com/Content/API/SDKDocs/javasdk.htm</url>
+
+
+  <dependencies>
+    <dependency>
+      <groupId>org.glassfish.jersey.core</groupId>
+      <artifactId>jersey-client</artifactId>
+      <version>${jersey.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.glassfish.jersey.connectors</groupId>
+      <artifactId>jersey-apache-connector</artifactId>
+      <version>${jersey.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>${commons-lang3.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-common</artifactId>
+      <version>1.2.44</version>
+    </dependency>
+  </dependencies>
+</project>
