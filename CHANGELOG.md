@@ -13,6 +13,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.2.44 - 2018-08-09
+### Added
+- Support for fault domains in the Compute service
+- Support for configuring a connection pool and an HTTP(S) proxy with the apache connector add-on.  More information is available [here](http://github.com/oracle/oci-java-sdk/blob/master/bmc-addons/bmc-apache-connector-provider/README.md)
+
 ## 1.2.43 - 2018-07-26
 ### Added
 - Support for the OCI Search service. An example of how to call this service is available [here](https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResourceSearchExample.java)

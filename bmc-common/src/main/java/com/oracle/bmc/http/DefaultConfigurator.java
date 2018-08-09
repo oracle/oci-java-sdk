@@ -3,20 +3,22 @@
  */
 package com.oracle.bmc.http;
 
-import javax.net.ssl.SSLContext;
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
-
+import com.oracle.bmc.util.JavaRuntimeUtils;
+import com.oracle.bmc.util.JavaRuntimeUtils.JreVersion;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.Validate;
 import org.glassfish.jersey.SslConfigurator;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.client.ClientProperties;
 import org.glassfish.jersey.client.HttpUrlConnectorProvider;
-
-import com.oracle.bmc.util.JavaRuntimeUtils;
-import com.oracle.bmc.util.JavaRuntimeUtils.JreVersion;
-
-import lombok.extern.slf4j.Slf4j;
 import org.glassfish.jersey.client.RequestEntityProcessing;
+import org.glassfish.jersey.client.spi.ConnectorProvider;
+
+import javax.net.ssl.SSLContext;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * DefaultConfigurator handles basic configuration of clients under different
@@ -42,6 +44,21 @@ public class DefaultConfigurator implements ClientConfigurator {
     static {
         setAllowRestrictedHeadersProperty(
                 System.getProperty(SUN_NET_HTTP_ALLOW_RESTRICTED_HEADERS));
+    }
+
+    /** The list of {@code ClientConfigDecorator}s to support the ability to decorate {@code ClientConfig} */
+    protected final List<ClientConfigDecorator> clientConfigDecorators = new LinkedList<>();
+
+    /** Creates a new {@code DefaultConfigurator} object. */
+    public DefaultConfigurator() {}
+
+    /**
+     * Creates a new {@code DefaultConfigurator} object.
+     *
+     * @param clientConfigDecorators a list of client config decorators
+     */
+    public DefaultConfigurator(List<ClientConfigDecorator> clientConfigDecorators) {
+        this.clientConfigDecorators.addAll(clientConfigDecorators);
     }
 
     static void setAllowRestrictedHeadersProperty(String previousValue) {
@@ -101,10 +118,13 @@ public class DefaultConfigurator implements ClientConfigurator {
         LOG.info("Setting connector provider to HttpUrlConnectorProvider");
 
         ClientConfig clientConfig = new ClientConfig();
+
         // 1) enable workaround for 'patch' requests
         HttpUrlConnectorProvider provider = new HttpUrlConnectorProvider().useSetMethodWorkaround();
-
         clientConfig.connectorProvider(provider);
+        for (ClientConfigDecorator clientConfigDecorator : clientConfigDecorators) {
+            clientConfigDecorator.customizeClientConfig(clientConfig);
+        }
 
         builder.withConfig(clientConfig);
     }
@@ -124,6 +144,12 @@ public class DefaultConfigurator implements ClientConfigurator {
      * Note: for PUT and POST requests, this will result in less accurate error messages
      */
     public static class NonBuffering extends DefaultConfigurator {
+
+        public NonBuffering() {
+            super();
+            clientConfigDecorators.add(new NonBufferingClientConfigDecorator());
+        }
+
         @Override
         public void customizeClient(Client client) {
             super.customizeClient(client);
@@ -132,19 +158,25 @@ public class DefaultConfigurator implements ClientConfigurator {
 
         @Override
         protected void setConnectorProvider(ClientBuilder builder) {
-            LOG.info("Setting non-buffering connector provider to HttpUrlConnectorProvider");
+            super.setConnectorProvider(builder);
+        }
+    }
 
-            ClientConfig clientConfig = new ClientConfig();
-            // 1) use fixed length streaming when possible to allow large uploads without
-            // buffering.
-            // 2) enable workaround for 'patch' requests
-            HttpUrlConnectorProvider provider =
-                    new HttpUrlConnectorProvider()
-                            .useFixedLengthStreaming()
-                            .useSetMethodWorkaround();
+    private static class NonBufferingClientConfigDecorator implements ClientConfigDecorator {
+        @Override
+        public void customizeClientConfig(ClientConfig clientConfig) {
+            Validate.notNull(clientConfig, "ClientConfig must not be null");
 
-            clientConfig.connectorProvider(provider);
-            builder.withConfig(clientConfig);
+            final ConnectorProvider provider = clientConfig.getConnectorProvider();
+            // Only configure HttpUrlConnectorProvider types
+            if (!(provider instanceof HttpUrlConnectorProvider)) {
+                return;
+            }
+
+            final HttpUrlConnectorProvider httpProvider = (HttpUrlConnectorProvider) provider;
+            LOG.info("Configuring non-buffering for HttpUrlConnectorProvider");
+            // Use fixed length streaming when possible to allow large uploads without buffering.
+            httpProvider.useFixedLengthStreaming();
         }
     }
 }

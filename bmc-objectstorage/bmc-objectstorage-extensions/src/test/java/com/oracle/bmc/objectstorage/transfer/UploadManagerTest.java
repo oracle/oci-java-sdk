@@ -386,7 +386,8 @@ public class UploadManagerTest {
                             @Override
                             public Integer answer(InvocationOnMock invocationOnMock)
                                     throws Throwable {
-                                final InputStream inputStream = invocationOnMock.getArgumentAt(0, null);
+                                final InputStream inputStream =
+                                        invocationOnMock.getArgumentAt(0, null);
                                 final byte[] buffer = new byte[READ_BLOCK_SIZE];
                                 while (inputStream.read(buffer) != -1) {
                                     onProgressCallbackCount.incrementAndGet();

@@ -268,6 +268,7 @@ public class CreateInstanceExample {
                                                 .availabilityDomain(availabilityDomain.getName())
                                                 .compartmentId(compartmentId)
                                                 .displayName(instanceName)
+                                                .faultDomain("FAULT-DOMAIN-1") // optional parameter
                                                 .metadata(metadata)
                                                 .shape(shape.getShape())
                                                 .sourceDetails(

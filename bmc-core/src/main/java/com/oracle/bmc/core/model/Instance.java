@@ -75,6 +75,15 @@ public class Instance {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
+        private String faultDomain;
+
+        public Builder faultDomain(String faultDomain) {
+            this.faultDomain = faultDomain;
+            this.__explicitlySet__.add("faultDomain");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -194,6 +203,7 @@ public class Instance {
                             definedTags,
                             displayName,
                             extendedMetadata,
+                            faultDomain,
                             freeformTags,
                             id,
                             imageId,
@@ -218,6 +228,7 @@ public class Instance {
                             .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .extendedMetadata(o.getExtendedMetadata())
+                            .faultDomain(o.getFaultDomain())
                             .freeformTags(o.getFreeformTags())
                             .id(o.getId())
                             .imageId(o.getImageId())
@@ -286,6 +297,19 @@ public class Instance {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("extendedMetadata")
     java.util.Map<String, Object> extendedMetadata;
+
+    /**
+     * The name of the Fault Domain the instance is running in.
+     * <p>
+     * A Fault Domain is a logical grouping of hardware and infrastructure within an Availability Domain that can become
+     * unavailable in its entirety either due to hardware failure such as Top-of-rack (TOR) switch failure or due to
+     * planned software maintenance such as security updates that reboot your instances.
+     * <p>
+     * Example: `FAULT-DOMAIN-1`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
+    String faultDomain;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no

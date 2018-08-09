@@ -6,9 +6,11 @@ package com.oracle.bmc.http.signing.internal;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
+import com.google.common.io.ByteStreams;
 import com.oracle.bmc.http.internal.RestClientFactory;
 import com.oracle.bmc.http.signing.RequestSignerException;
 import com.oracle.bmc.http.signing.SigningStrategy;
+import com.oracle.bmc.util.StreamUtils;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,11 +26,14 @@ import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URI;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ThreadLocalRandom;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -51,6 +56,8 @@ public class RequestSignerImplTest {
 
     @Before
     public void setUp() throws Exception {
+        ThreadLocalRandom.current().nextBytes(BYTE_BUFFER);
+
         mockStatic(LoggerFactory.class);
         when(LoggerFactory.getLogger(any(Class.class))).thenReturn(mockLogger);
 
@@ -138,22 +145,35 @@ public class RequestSignerImplTest {
     }
 
     @Test
-    public void calculateMissingHeaders_postInputStreamAsOctetStream() throws IOException {
+    public void calculateMissingHeaders_postDuplicatableInputStreamAsOctetStream()
+            throws IOException {
+        final InputStream body = StreamUtils.createByteArrayInputStream(BYTE_BUFFER);
         calculateAndVerifyMissingHeaders(
-                MediaType.APPLICATION_OCTET_STREAM,
-                new ByteArrayInputStream(BYTE_BUFFER),
-                BYTE_BUFFER.length);
+                MediaType.APPLICATION_OCTET_STREAM, body, BYTE_BUFFER.length);
+
+        // Read the stream one more time to verify it wasn't consumed already and verify content matches source
+        assertTrue(Arrays.equals(BYTE_BUFFER, ByteStreams.toByteArray(body)));
     }
 
     @Test
-    public void calculateMissingHeaders_postInputStreamAsPlainText() throws IOException {
-        calculateAndVerifyMissingHeaders(
-                MediaType.TEXT_PLAIN, new ByteArrayInputStream(BYTE_BUFFER), BYTE_BUFFER.length);
+    public void calculateMissingHeaders_postDuplicatableInputStreamAsPlainText()
+            throws IOException {
+        final InputStream body = StreamUtils.createByteArrayInputStream(BYTE_BUFFER);
+        calculateAndVerifyMissingHeaders(MediaType.TEXT_PLAIN, body, BYTE_BUFFER.length);
+
+        // Read the stream one more time to verify it wasn't consumed already and verify content matches source
+        assertTrue(Arrays.equals(BYTE_BUFFER, ByteStreams.toByteArray(body)));
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void calculateMissingHeaders_invalidBody() throws IOException {
+    public void calculateMissingHeaders_postByteArrayBody() throws IOException {
         calculateAndVerifyMissingHeaders(MediaType.TEXT_PLAIN, BYTE_BUFFER, BYTE_BUFFER.length);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void calculateMissingHeaders_postInputStreamBody() throws IOException {
+        calculateAndVerifyMissingHeaders(
+                MediaType.TEXT_PLAIN, new ByteArrayInputStream(BYTE_BUFFER), BYTE_BUFFER.length);
     }
 
     private void calculateAndVerifyMissingHeaders(

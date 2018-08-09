@@ -9,17 +9,14 @@
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <artifactId>oci-java-sdk-email</artifactId>
-  <name>Oracle Cloud Infrastructure SDK - Email</name>
-  <description>This project contains the SDK used for Oracle Cloud Infrastructure Email</description>
+  <artifactId>oci-java-sdk-addons</artifactId>
+  <packaging>pom</packaging>
+  <name>Oracle Cloud Infrastructure SDK - Addons</name>
+  <description>This project contains add-on modules for Oracle Cloud Infrastructure</description>
   <url>https://docs.us-phoenix-1.oraclecloud.com/Content/API/SDKDocs/javasdk.htm</url>
 
-  <dependencies>
-    <dependency>
-      <groupId>com.oracle.oci.sdk</groupId>
-      <artifactId>oci-java-sdk-common</artifactId>
-      <version>1.2.44</version>
-    </dependency>
-  </dependencies>
+  <modules>
+    <module>bmc-apache-connector-provider</module>
+  </modules>
 
 </project>
