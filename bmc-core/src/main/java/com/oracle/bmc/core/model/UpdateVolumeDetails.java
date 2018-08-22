@@ -51,12 +51,21 @@ public class UpdateVolumeDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
+        private Long sizeInGBs;
+
+        public Builder sizeInGBs(Long sizeInGBs) {
+            this.sizeInGBs = sizeInGBs;
+            this.__explicitlySet__.add("sizeInGBs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateVolumeDetails build() {
             UpdateVolumeDetails __instance__ =
-                    new UpdateVolumeDetails(definedTags, displayName, freeformTags);
+                    new UpdateVolumeDetails(definedTags, displayName, freeformTags, sizeInGBs);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -66,7 +75,8 @@ public class UpdateVolumeDetails {
             Builder copiedBuilder =
                     definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags());
+                            .freeformTags(o.getFreeformTags())
+                            .sizeInGBs(o.getSizeInGBs());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -108,6 +118,12 @@ public class UpdateVolumeDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
+
+    /**
+     * The size to resize the volume to in GBs. Has to be larger than the current size.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
+    Long sizeInGBs;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

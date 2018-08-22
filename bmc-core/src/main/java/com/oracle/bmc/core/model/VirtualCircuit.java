@@ -615,7 +615,7 @@ public class VirtualCircuit {
 
     /**
      * For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to
-     * advertise across the connection. Each prefix must be /24 or less specific.
+     * advertise across the connection. Each prefix must be /31 or less specific.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicPrefixes")

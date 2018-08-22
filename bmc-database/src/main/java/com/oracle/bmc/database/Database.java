@@ -37,6 +37,46 @@ public interface Database extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Creates a new Autonomous Data Warehouse.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateAutonomousDataWarehouseResponse createAutonomousDataWarehouse(
+            CreateAutonomousDataWarehouseRequest request);
+
+    /**
+     * Creates a new Autonomous Data Warehouse backup for the specified database based on the provided request parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateAutonomousDataWarehouseBackupResponse createAutonomousDataWarehouseBackup(
+            CreateAutonomousDataWarehouseBackupRequest request);
+
+    /**
+     * Creates a new Autonomous Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateAutonomousDatabaseResponse createAutonomousDatabase(
+            CreateAutonomousDatabaseRequest request);
+
+    /**
+     * Creates a new Autonomous Database backup for the specified database based on the provided request parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateAutonomousDatabaseBackupResponse createAutonomousDatabaseBackup(
+            CreateAutonomousDatabaseBackupRequest request);
+
+    /**
      * Creates a new backup in the specified database based on the request parameters you provide. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
      *
      * @param request The request object containing the details to send
@@ -95,6 +135,26 @@ public interface Database extends AutoCloseable {
     DbNodeActionResponse dbNodeAction(DbNodeActionRequest request);
 
     /**
+     * Deletes the specified Autonomous Data Warehouse.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteAutonomousDataWarehouseResponse deleteAutonomousDataWarehouse(
+            DeleteAutonomousDataWarehouseRequest request);
+
+    /**
+     * Deletes the specified Autonomous Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteAutonomousDatabaseResponse deleteAutonomousDatabase(
+            DeleteAutonomousDatabaseRequest request);
+
+    /**
      * Deletes a full backup. You cannot delete automatic backups using this API.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -124,6 +184,43 @@ public interface Database extends AutoCloseable {
      */
     FailoverDataGuardAssociationResponse failoverDataGuardAssociation(
             FailoverDataGuardAssociationRequest request);
+
+    /**
+     * Gets the details of the specified Autonomous Data Warehouse.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetAutonomousDataWarehouseResponse getAutonomousDataWarehouse(
+            GetAutonomousDataWarehouseRequest request);
+
+    /**
+     * Gets information about the specified Autonomous Data Warehouse backup.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetAutonomousDataWarehouseBackupResponse getAutonomousDataWarehouseBackup(
+            GetAutonomousDataWarehouseBackupRequest request);
+
+    /**
+     * Gets the details of the specified Autonomous Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetAutonomousDatabaseResponse getAutonomousDatabase(GetAutonomousDatabaseRequest request);
+
+    /**
+     * Gets information about the specified Autonomous Database backup.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetAutonomousDatabaseBackupResponse getAutonomousDatabaseBackup(
+            GetAutonomousDatabaseBackupRequest request);
 
     /**
      * Gets information about the specified backup.
@@ -229,6 +326,45 @@ public interface Database extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     LaunchDbSystemResponse launchDbSystem(LaunchDbSystemRequest request);
+
+    /**
+     * Gets a list of Autonomous Data Warehouse backups based on either the `autonomousDataWarehouseId` or `compartmentId` specified as a query parameter.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListAutonomousDataWarehouseBackupsResponse listAutonomousDataWarehouseBackups(
+            ListAutonomousDataWarehouseBackupsRequest request);
+
+    /**
+     * Gets a list of Autonomous Data Warehouses.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListAutonomousDataWarehousesResponse listAutonomousDataWarehouses(
+            ListAutonomousDataWarehousesRequest request);
+
+    /**
+     * Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListAutonomousDatabaseBackupsResponse listAutonomousDatabaseBackups(
+            ListAutonomousDatabaseBackupsRequest request);
+
+    /**
+     * Gets a list of Autonomous Databases.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListAutonomousDatabasesResponse listAutonomousDatabases(ListAutonomousDatabasesRequest request);
 
     /**
      * Gets a list of backups based on the databaseId or compartmentId specified. Either one of the query parameters must be provided.
@@ -351,6 +487,26 @@ public interface Database extends AutoCloseable {
             ReinstateDataGuardAssociationRequest request);
 
     /**
+     * Restores an Autonomous Data Warehouse based on the provided request parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    RestoreAutonomousDataWarehouseResponse restoreAutonomousDataWarehouse(
+            RestoreAutonomousDataWarehouseRequest request);
+
+    /**
+     * Restores an Autonomous Database based on the provided request parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    RestoreAutonomousDatabaseResponse restoreAutonomousDatabase(
+            RestoreAutonomousDatabaseRequest request);
+
+    /**
      * Restore a Database based on the request parameters you provide.
      *
      * @param request The request object containing the details to send
@@ -358,6 +514,44 @@ public interface Database extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     RestoreDatabaseResponse restoreDatabase(RestoreDatabaseRequest request);
+
+    /**
+     * Starts the specified autonomous Data Warehouse.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    StartAutonomousDataWarehouseResponse startAutonomousDataWarehouse(
+            StartAutonomousDataWarehouseRequest request);
+
+    /**
+     * Starts the specified Autonomous Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    StartAutonomousDatabaseResponse startAutonomousDatabase(StartAutonomousDatabaseRequest request);
+
+    /**
+     * Stops the specified Autonomous Data Warehouse.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    StopAutonomousDataWarehouseResponse stopAutonomousDataWarehouse(
+            StopAutonomousDataWarehouseRequest request);
+
+    /**
+     * Stops the specified Autonomous Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    StopAutonomousDatabaseResponse stopAutonomousDatabase(StopAutonomousDatabaseRequest request);
 
     /**
      * Performs a switchover to transition the primary database of a Data Guard association into a standby role. The
@@ -379,6 +573,26 @@ public interface Database extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     TerminateDbSystemResponse terminateDbSystem(TerminateDbSystemRequest request);
+
+    /**
+     * Updates the specified Autonomous Data Warehouse with a new CPU core count and size.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateAutonomousDataWarehouseResponse updateAutonomousDataWarehouse(
+            UpdateAutonomousDataWarehouseRequest request);
+
+    /**
+     * Updates the specified Autonomous Database with a new CPU core count and size.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateAutonomousDatabaseResponse updateAutonomousDatabase(
+            UpdateAutonomousDatabaseRequest request);
 
     /**
      * Update a Database based on the request parameters you provide.

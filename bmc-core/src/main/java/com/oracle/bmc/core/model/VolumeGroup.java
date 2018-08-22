@@ -130,6 +130,15 @@ public class VolumeGroup {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isHydrated")
+        private Boolean isHydrated;
+
+        public Builder isHydrated(Boolean isHydrated) {
+            this.isHydrated = isHydrated;
+            this.__explicitlySet__.add("isHydrated");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -147,7 +156,8 @@ public class VolumeGroup {
                             sizeInGBs,
                             sourceDetails,
                             timeCreated,
-                            volumeIds);
+                            volumeIds,
+                            isHydrated);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -166,7 +176,8 @@ public class VolumeGroup {
                             .sizeInGBs(o.getSizeInGBs())
                             .sourceDetails(o.getSourceDetails())
                             .timeCreated(o.getTimeCreated())
-                            .volumeIds(o.getVolumeIds());
+                            .volumeIds(o.getVolumeIds())
+                            .isHydrated(o.getIsHydrated());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -310,6 +321,12 @@ public class VolumeGroup {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("volumeIds")
     java.util.List<String> volumeIds;
+
+    /**
+     * Specifies whether the newly created cloned volume group's data has finished copying from the source volume group or backup.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isHydrated")
+    Boolean isHydrated;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

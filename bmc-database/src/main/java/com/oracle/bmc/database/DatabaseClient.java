@@ -309,6 +309,121 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public CreateAutonomousDataWarehouseResponse createAutonomousDataWarehouse(
+            CreateAutonomousDataWarehouseRequest request) {
+        LOG.trace("Called createAutonomousDataWarehouse");
+        request = CreateAutonomousDataWarehouseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateAutonomousDataWarehouseConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateAutonomousDataWarehouseResponse>
+                transformer = CreateAutonomousDataWarehouseConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCreateAutonomousDataWarehouseDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public CreateAutonomousDataWarehouseBackupResponse createAutonomousDataWarehouseBackup(
+            CreateAutonomousDataWarehouseBackupRequest request) {
+        LOG.trace("Called createAutonomousDataWarehouseBackup");
+        request = CreateAutonomousDataWarehouseBackupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateAutonomousDataWarehouseBackupConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateAutonomousDataWarehouseBackupResponse>
+                transformer = CreateAutonomousDataWarehouseBackupConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(
+                                ib,
+                                request.getCreateAutonomousDataWarehouseBackupDetails(),
+                                request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public CreateAutonomousDatabaseResponse createAutonomousDatabase(
+            CreateAutonomousDatabaseRequest request) {
+        LOG.trace("Called createAutonomousDatabase");
+        request = CreateAutonomousDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateAutonomousDatabaseConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateAutonomousDatabaseResponse>
+                transformer = CreateAutonomousDatabaseConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCreateAutonomousDatabaseDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public CreateAutonomousDatabaseBackupResponse createAutonomousDatabaseBackup(
+            CreateAutonomousDatabaseBackupRequest request) {
+        LOG.trace("Called createAutonomousDatabaseBackup");
+        request = CreateAutonomousDatabaseBackupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateAutonomousDatabaseBackupConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateAutonomousDatabaseBackupResponse>
+                transformer = CreateAutonomousDatabaseBackupConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(
+                                ib, request.getCreateAutonomousDatabaseBackupDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public CreateBackupResponse createBackup(CreateBackupRequest request) {
         LOG.trace("Called createBackup");
         request = CreateBackupConverter.interceptRequest(request);
@@ -414,6 +529,59 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public DeleteAutonomousDataWarehouseResponse deleteAutonomousDataWarehouse(
+            DeleteAutonomousDataWarehouseRequest request) {
+        LOG.trace("Called deleteAutonomousDataWarehouse");
+        request = DeleteAutonomousDataWarehouseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteAutonomousDataWarehouseConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteAutonomousDataWarehouseResponse>
+                transformer = DeleteAutonomousDataWarehouseConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public DeleteAutonomousDatabaseResponse deleteAutonomousDatabase(
+            DeleteAutonomousDatabaseRequest request) {
+        LOG.trace("Called deleteAutonomousDatabase");
+        request = DeleteAutonomousDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteAutonomousDatabaseConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAutonomousDatabaseResponse>
+                transformer = DeleteAutonomousDatabaseConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public DeleteBackupResponse deleteBackup(DeleteBackupRequest request) {
         LOG.trace("Called deleteBackup");
         request = DeleteBackupConverter.interceptRequest(request);
@@ -479,6 +647,113 @@ public class DatabaseClient implements Database {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getFailoverDataGuardAssociationDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public GetAutonomousDataWarehouseResponse getAutonomousDataWarehouse(
+            GetAutonomousDataWarehouseRequest request) {
+        LOG.trace("Called getAutonomousDataWarehouse");
+        request = GetAutonomousDataWarehouseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAutonomousDataWarehouseConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetAutonomousDataWarehouseResponse>
+                transformer = GetAutonomousDataWarehouseConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public GetAutonomousDataWarehouseBackupResponse getAutonomousDataWarehouseBackup(
+            GetAutonomousDataWarehouseBackupRequest request) {
+        LOG.trace("Called getAutonomousDataWarehouseBackup");
+        request = GetAutonomousDataWarehouseBackupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAutonomousDataWarehouseBackupConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetAutonomousDataWarehouseBackupResponse>
+                transformer = GetAutonomousDataWarehouseBackupConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public GetAutonomousDatabaseResponse getAutonomousDatabase(
+            GetAutonomousDatabaseRequest request) {
+        LOG.trace("Called getAutonomousDatabase");
+        request = GetAutonomousDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAutonomousDatabaseConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetAutonomousDatabaseResponse>
+                transformer = GetAutonomousDatabaseConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public GetAutonomousDatabaseBackupResponse getAutonomousDatabaseBackup(
+            GetAutonomousDatabaseBackupRequest request) {
+        LOG.trace("Called getAutonomousDatabaseBackup");
+        request = GetAutonomousDatabaseBackupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAutonomousDatabaseBackupConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetAutonomousDatabaseBackupResponse>
+                transformer = GetAutonomousDatabaseBackupConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
@@ -760,6 +1035,113 @@ public class DatabaseClient implements Database {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getLaunchDbSystemDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public ListAutonomousDataWarehouseBackupsResponse listAutonomousDataWarehouseBackups(
+            ListAutonomousDataWarehouseBackupsRequest request) {
+        LOG.trace("Called listAutonomousDataWarehouseBackups");
+        request = ListAutonomousDataWarehouseBackupsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAutonomousDataWarehouseBackupsConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListAutonomousDataWarehouseBackupsResponse>
+                transformer = ListAutonomousDataWarehouseBackupsConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public ListAutonomousDataWarehousesResponse listAutonomousDataWarehouses(
+            ListAutonomousDataWarehousesRequest request) {
+        LOG.trace("Called listAutonomousDataWarehouses");
+        request = ListAutonomousDataWarehousesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAutonomousDataWarehousesConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListAutonomousDataWarehousesResponse>
+                transformer = ListAutonomousDataWarehousesConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public ListAutonomousDatabaseBackupsResponse listAutonomousDatabaseBackups(
+            ListAutonomousDatabaseBackupsRequest request) {
+        LOG.trace("Called listAutonomousDatabaseBackups");
+        request = ListAutonomousDatabaseBackupsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAutonomousDatabaseBackupsConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListAutonomousDatabaseBackupsResponse>
+                transformer = ListAutonomousDatabaseBackupsConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public ListAutonomousDatabasesResponse listAutonomousDatabases(
+            ListAutonomousDatabasesRequest request) {
+        LOG.trace("Called listAutonomousDatabases");
+        request = ListAutonomousDatabasesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAutonomousDatabasesConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListAutonomousDatabasesResponse>
+                transformer = ListAutonomousDatabasesConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
@@ -1107,6 +1489,63 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public RestoreAutonomousDataWarehouseResponse restoreAutonomousDataWarehouse(
+            RestoreAutonomousDataWarehouseRequest request) {
+        LOG.trace("Called restoreAutonomousDataWarehouse");
+        request = RestoreAutonomousDataWarehouseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RestoreAutonomousDataWarehouseConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RestoreAutonomousDataWarehouseResponse>
+                transformer = RestoreAutonomousDataWarehouseConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(
+                                ib, request.getRestoreAutonomousDataWarehouseDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public RestoreAutonomousDatabaseResponse restoreAutonomousDatabase(
+            RestoreAutonomousDatabaseRequest request) {
+        LOG.trace("Called restoreAutonomousDatabase");
+        request = RestoreAutonomousDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RestoreAutonomousDatabaseConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RestoreAutonomousDatabaseResponse>
+                transformer = RestoreAutonomousDatabaseConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getRestoreAutonomousDatabaseDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public RestoreDatabaseResponse restoreDatabase(RestoreDatabaseRequest request) {
         LOG.trace("Called restoreDatabase");
         request = RestoreDatabaseConverter.interceptRequest(request);
@@ -1120,6 +1559,112 @@ public class DatabaseClient implements Database {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getRestoreDatabaseDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public StartAutonomousDataWarehouseResponse startAutonomousDataWarehouse(
+            StartAutonomousDataWarehouseRequest request) {
+        LOG.trace("Called startAutonomousDataWarehouse");
+        request = StartAutonomousDataWarehouseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StartAutonomousDataWarehouseConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, StartAutonomousDataWarehouseResponse>
+                transformer = StartAutonomousDataWarehouseConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.post(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public StartAutonomousDatabaseResponse startAutonomousDatabase(
+            StartAutonomousDatabaseRequest request) {
+        LOG.trace("Called startAutonomousDatabase");
+        request = StartAutonomousDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StartAutonomousDatabaseConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, StartAutonomousDatabaseResponse>
+                transformer = StartAutonomousDatabaseConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.post(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public StopAutonomousDataWarehouseResponse stopAutonomousDataWarehouse(
+            StopAutonomousDataWarehouseRequest request) {
+        LOG.trace("Called stopAutonomousDataWarehouse");
+        request = StopAutonomousDataWarehouseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StopAutonomousDataWarehouseConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, StopAutonomousDataWarehouseResponse>
+                transformer = StopAutonomousDataWarehouseConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.post(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public StopAutonomousDatabaseResponse stopAutonomousDatabase(
+            StopAutonomousDatabaseRequest request) {
+        LOG.trace("Called stopAutonomousDatabase");
+        request = StopAutonomousDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StopAutonomousDatabaseConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, StopAutonomousDatabaseResponse>
+                transformer = StopAutonomousDatabaseConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.post(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
@@ -1174,6 +1719,61 @@ public class DatabaseClient implements Database {
         while (true) {
             try {
                 javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public UpdateAutonomousDataWarehouseResponse updateAutonomousDataWarehouse(
+            UpdateAutonomousDataWarehouseRequest request) {
+        LOG.trace("Called updateAutonomousDataWarehouse");
+        request = UpdateAutonomousDataWarehouseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateAutonomousDataWarehouseConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateAutonomousDataWarehouseResponse>
+                transformer = UpdateAutonomousDataWarehouseConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateAutonomousDataWarehouseDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public UpdateAutonomousDatabaseResponse updateAutonomousDatabase(
+            UpdateAutonomousDatabaseRequest request) {
+        LOG.trace("Called updateAutonomousDatabase");
+        request = UpdateAutonomousDatabaseConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateAutonomousDatabaseConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAutonomousDatabaseResponse>
+                transformer = UpdateAutonomousDatabaseConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateAutonomousDatabaseDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS

@@ -1435,6 +1435,31 @@ public class IdentityClient implements Identity {
     }
 
     @Override
+    public ListFaultDomainsResponse listFaultDomains(ListFaultDomainsRequest request) {
+        LOG.trace("Called listFaultDomains");
+        request = ListFaultDomainsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListFaultDomainsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListFaultDomainsResponse>
+                transformer = ListFaultDomainsConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public ListGroupsResponse listGroups(ListGroupsRequest request) {
         LOG.trace("Called listGroups");
         request = ListGroupsConverter.interceptRequest(request);

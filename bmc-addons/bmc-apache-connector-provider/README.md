@@ -6,10 +6,10 @@ The oci-java-sdk-addons-apache is an optional add-on to the OCI Java SDK.  It le
 
 The add-on provides two features:
 
-* **Connection pooling**. A detailed explantation can be found [here](https://hc.apache.org/httpcomponents-client-ga/tutorial/html/connmgmt.html)
+* **Connection pooling**. A detailed explanation can be found [here](https://hc.apache.org/httpcomponents-client-ga/tutorial/html/connmgmt.html)
 * **HTTP(S) proxy support**.
 
-Note: The `ApacheConnectorProvider` buffers requests into memory and can impact memory utilization of your application.  This increased use of memory is especially relavent when using`ObjectStorageClient` to upload large objects to the Object Storage service.
+Note: The `ApacheConnectorProvider` buffers requests into memory and can impact memory utilization of your application.  This increased use of memory is especially relevant when using`ObjectStorageClient` to upload large objects to the Object Storage service.
 
 ## Installation
 1. The OCI Java SDK must be installed and configured before installing the add-on.  See [the documentation](https://docs.us-phoenix-1.oraclecloud.com/Content/API/SDKDocs/javasdk.htm) for details.

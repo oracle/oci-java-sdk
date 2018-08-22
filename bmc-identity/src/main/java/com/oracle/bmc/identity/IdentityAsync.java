@@ -894,9 +894,11 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the Availability Domains in your tenancy. Specify the OCID of either the tenancy or another
+     * Lists the availability domains in your tenancy. Specify the OCID of either the tenancy or another
      * of your compartments as the value for the compartment ID (remember that the tenancy is simply the root compartment).
      * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five).
+     * Note that the order of the results returned can change if availability domains are added or removed; therefore, do not
+     * create a dependency on the list order.
      *
      *
      * @param request The request object containing the details to send
@@ -965,6 +967,24 @@ public interface IdentityAsync extends AutoCloseable {
             ListDynamicGroupsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListDynamicGroupsRequest, ListDynamicGroupsResponse>
+                    handler);
+
+    /**
+     * Lists the Fault Domains in your tenancy. Specify the OCID of either the tenancy or another
+     * of your compartments as the value for the compartment ID (remember that the tenancy is simply the root compartment).
+     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListFaultDomainsResponse> listFaultDomains(
+            ListFaultDomainsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListFaultDomainsRequest, ListFaultDomainsResponse>
                     handler);
 
     /**

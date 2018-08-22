@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>1.2.44</version>
+  <version>1.2.45</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -23,25 +23,23 @@
   </licenses>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <jackson.version>2.9.5</jackson.version>
+    <jackson.version>2.9.6</jackson.version>
     <jersey.version>2.24.1</jersey.version>
-    <guava.version>19.0</guava.version>
-    <junit.version>4.11</junit.version>
+    <!-- As per https://github.com/google/guava/blob/master/README.md#guava-google-core-libraries-for-java, using
+      the Android flavor of guava to support JDK 1.7 -->
+    <guava.version>25.0-android</guava.version>
+    <junit.version>4.12</junit.version>
     <lombok.version>1.16.16</lombok.version>
     <lombok.maven.version>1.16.16.0</lombok.maven.version>
     <jsr305.version>3.0.2</jsr305.version>
-    <slf4j.version>1.7.23</slf4j.version>
+    <slf4j.version>1.7.25</slf4j.version>
     <validation-api.version>1.1.0.Final</validation-api.version>
     <javax.ws.rs-api.version>2.0.1</javax.ws.rs-api.version>
     <commons-codec.version>1.10</commons-codec.version>
     <commons-lang3.version>3.4</commons-lang3.version>
     <commons-io.version>2.5</commons-io.version>
     <maven-shade-plugin.version>3.1.1</maven-shade-plugin.version>
-
-    <!-- To allow for encrypted PEM (PBKDF-OpenSSL), we need to use a version before 1.53. >= 1.53 introduced
-      a breaking change. http://bouncy-castle.1462172.n4.nabble.com/Issues-when-migrating-to-1-53-td4657955.html 
-      https://github.com/box/box-java-sdk/issues/168 Has not been fixed as of 1.55. -->
-    <bouncycastle.version>1.52</bouncycastle.version>
+    <bouncycastle.version>1.60</bouncycastle.version>
     <mockito.version>1.10.19</mockito.version>
     <powermock.version>1.7.4</powermock.version>
     <excluded.testcases>**/*IntegrationAutoTest.java</excluded.testcases>
