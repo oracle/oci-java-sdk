@@ -607,9 +607,11 @@ public interface Identity extends AutoCloseable {
     ListAuthTokensResponse listAuthTokens(ListAuthTokensRequest request);
 
     /**
-     * Lists the Availability Domains in your tenancy. Specify the OCID of either the tenancy or another
+     * Lists the availability domains in your tenancy. Specify the OCID of either the tenancy or another
      * of your compartments as the value for the compartment ID (remember that the tenancy is simply the root compartment).
      * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five).
+     * Note that the order of the results returned can change if availability domains are added or removed; therefore, do not
+     * create a dependency on the list order.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -648,6 +650,17 @@ public interface Identity extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListDynamicGroupsResponse listDynamicGroups(ListDynamicGroupsRequest request);
+
+    /**
+     * Lists the Fault Domains in your tenancy. Specify the OCID of either the tenancy or another
+     * of your compartments as the value for the compartment ID (remember that the tenancy is simply the root compartment).
+     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListFaultDomainsResponse listFaultDomains(ListFaultDomainsRequest request);
 
     /**
      * Lists the groups in your tenancy. You must specify your tenancy's OCID as the value for

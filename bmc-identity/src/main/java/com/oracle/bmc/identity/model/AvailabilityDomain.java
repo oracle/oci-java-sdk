@@ -35,6 +35,15 @@ public class AvailabilityDomain {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
+        private String id;
+
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -48,14 +57,15 @@ public class AvailabilityDomain {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AvailabilityDomain build() {
-            AvailabilityDomain __instance__ = new AvailabilityDomain(name, compartmentId);
+            AvailabilityDomain __instance__ = new AvailabilityDomain(name, id, compartmentId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(AvailabilityDomain o) {
-            Builder copiedBuilder = name(o.getName()).compartmentId(o.getCompartmentId());
+            Builder copiedBuilder =
+                    name(o.getName()).id(o.getId()).compartmentId(o.getCompartmentId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -74,6 +84,12 @@ public class AvailabilityDomain {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
+
+    /**
+     * The OCID of the Availability Domain.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    String id;
 
     /**
      * The OCID of the tenancy.

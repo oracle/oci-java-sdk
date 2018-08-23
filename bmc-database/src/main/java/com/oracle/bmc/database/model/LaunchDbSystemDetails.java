@@ -417,7 +417,7 @@ public class LaunchDbSystemDetails extends LaunchDbSystemBase {
     @com.fasterxml.jackson.annotation.JsonProperty("diskRedundancy")
     DiskRedundancy diskRedundancy;
     /**
-     * The Oracle license model that applies to all the databases on the DB System. The default is LICENSE_INCLUDED.
+     * The Oracle license model that applies to all the databases on the DB System. The default is BRING_YOUR_OWN_LICENSE.
      *
      **/
     public enum LicenseModel {
@@ -453,7 +453,7 @@ public class LaunchDbSystemDetails extends LaunchDbSystemBase {
         }
     };
     /**
-     * The Oracle license model that applies to all the databases on the DB System. The default is LICENSE_INCLUDED.
+     * The Oracle license model that applies to all the databases on the DB System. The default is BRING_YOUR_OWN_LICENSE.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")

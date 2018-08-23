@@ -12,6 +12,7 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 
 import javax.annotation.Nullable;
 import javax.ws.rs.ProcessingException;
@@ -151,7 +152,9 @@ public class RestClient implements AutoCloseable {
         try {
             return (body instanceof String || body instanceof InputStream)
                     ? body
-                    : RestClientFactory.getObjectMapper().writeValueAsString(body);
+                    : (body != null)
+                            ? RestClientFactory.getObjectMapper().writeValueAsString(body)
+                            : StringUtils.EMPTY;
         } catch (JsonProcessingException e) {
             throw new IllegalArgumentException("Unable to process JSON body", e);
         }

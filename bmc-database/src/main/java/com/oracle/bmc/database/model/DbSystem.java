@@ -605,7 +605,7 @@ public class DbSystem {
     @com.fasterxml.jackson.annotation.JsonProperty("lastPatchHistoryEntryId")
     String lastPatchHistoryEntryId;
     /**
-     * The Oracle license model that applies to all the databases on the DB System. The default is LICENSE_INCLUDED.
+     * The Oracle license model that applies to all the databases on the DB System. The default is BRING_YOUR_OWN_LICENSE.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -652,7 +652,7 @@ public class DbSystem {
         }
     };
     /**
-     * The Oracle license model that applies to all the databases on the DB System. The default is LICENSE_INCLUDED.
+     * The Oracle license model that applies to all the databases on the DB System. The default is BRING_YOUR_OWN_LICENSE.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")

@@ -6,6 +6,8 @@ package com.oracle.bmc.http.signing.internal;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.security.Provider;
+import java.security.Security;
 import java.security.interfaces.RSAPrivateKey;
 
 import javax.annotation.Nonnull;
@@ -72,8 +74,22 @@ public class PEMFileRSAPrivateKeySupplier implements KeySupplier<RSAPrivateKey> 
                     Preconditions.checkNotNull(
                             passphraseCharacters, "The provided private key requires a passphrase");
 
+                    JcePEMDecryptorProviderBuilder decryptorProviderBuilder =
+                            new JcePEMDecryptorProviderBuilder();
+
+                    // If either of BouncyCastle or BouncyCastleFIPS provider is installed, then irrespective of the
+                    // version of the library used, decryption of passphrase protected PEM files are supported. Else,
+                    // for versions of BouncyCastle > 1.52 (or BC-FIPS), need to add the provider to be able to read
+                    // passphrase protected PEM files. Adding the provider to the PEMDecryptorProvider instead of
+                    // modifying the application's security environment (by calling Security.addProvider) to maintain
+                    // backward compatibility. Details at https://github.com/bcgit/bc-java/issues/156
+                    if (!BouncyCastleHelper.getInstance().isProviderInstalled()) {
+                        decryptorProviderBuilder.setProvider(
+                                BouncyCastleHelper.getInstance().getBouncyCastleProvider());
+                    }
+
                     PEMDecryptorProvider decProv =
-                            new JcePEMDecryptorProviderBuilder().build(passphraseCharacters);
+                            decryptorProviderBuilder.build(passphraseCharacters);
                     try {
                         keyInfo =
                                 ((PEMEncryptedKeyPair) object)
