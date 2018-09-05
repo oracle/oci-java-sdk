@@ -11,12 +11,12 @@ import com.oracle.bmc.database.model.*;
 public class ListDbSystemPatchHistoryEntriesRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The DB System [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
+     * The DB system [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      */
     private String dbSystemId;
 
     /**
-     * The maximum number of items to return.
+     * The maximum number of items to return per page.
      */
     private Integer limit;
 

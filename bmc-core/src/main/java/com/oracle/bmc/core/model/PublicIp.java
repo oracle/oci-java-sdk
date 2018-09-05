@@ -13,16 +13,20 @@ package com.oracle.bmc.core.model;
  * <p>
  * For more information and comparison of the two types,
  * see [Public IP Addresses](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingpublicIPs.htm).
+ * <p>
+ **Warning:** Oracle recommends that you avoid using any confidential information when you
+ * supply string values using the API.
  *
  * <br/>
- * Note: This model distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a set of all
- * explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods
- * are implemented to take {@link #__explicitlySet__} into account. The constructor, on the other hand, does not
- * set {@link #__explicitlySet__} (since the constructor cannot distinguish explicit {@code null} from unset
- * {@code null}). As a consequence, objects should always be created or deserialized using the {@link Builder}.
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PublicIp.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -190,9 +194,9 @@ public class PublicIp {
     }
 
     /**
-     * The public IP's Availability Domain. This property is set only for ephemeral public IPs
+     * The public IP's availability domain. This property is set only for ephemeral public IPs
      * (that is, when the `scope` of the public IP is set to AVAILABILITY_DOMAIN). The value
-     * is the Availability Domain of the assigned private IP.
+     * is the availability domain of the assigned private IP.
      * <p>
      * Example: `Uocm:PHX-AD-1`
      *
@@ -393,12 +397,12 @@ public class PublicIp {
     @com.fasterxml.jackson.annotation.JsonProperty("privateIpId")
     String privateIpId;
     /**
-     * Whether the public IP is regional or specific to a particular Availability Domain.
+     * Whether the public IP is regional or specific to a particular availability domain.
      * <p>
      * `REGION`: The public IP exists within a region and can be assigned to a private IP
-     * in any Availability Domain in the region. Reserved public IPs have `scope` = `REGION`.
+     * in any availability domain in the region. Reserved public IPs have `scope` = `REGION`.
      * <p>
-     * `AVAILABILITY_DOMAIN`: The public IP exists within the Availability Domain of the private IP
+     * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the private IP
      * it's assigned to, which is specified by the `availabilityDomain` property of the public IP object.
      * Ephemeral public IPs have `scope` = `AVAILABILITY_DOMAIN`.
      *
@@ -447,12 +451,12 @@ public class PublicIp {
         }
     };
     /**
-     * Whether the public IP is regional or specific to a particular Availability Domain.
+     * Whether the public IP is regional or specific to a particular availability domain.
      * <p>
      * `REGION`: The public IP exists within a region and can be assigned to a private IP
-     * in any Availability Domain in the region. Reserved public IPs have `scope` = `REGION`.
+     * in any availability domain in the region. Reserved public IPs have `scope` = `REGION`.
      * <p>
-     * `AVAILABILITY_DOMAIN`: The public IP exists within the Availability Domain of the private IP
+     * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the private IP
      * it's assigned to, which is specified by the `availabilityDomain` property of the public IP object.
      * Ephemeral public IPs have `scope` = `AVAILABILITY_DOMAIN`.
      *

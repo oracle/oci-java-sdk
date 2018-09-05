@@ -16,7 +16,7 @@ public class DetachServiceIdRequest extends com.oracle.bmc.requests.BmcRequest {
     private String serviceGatewayId;
 
     /**
-     * ServiceId of Service to be detached from a Service Gateway.
+     * ServiceId of Service to be detached from a service gateway.
      */
     private ServiceIdRequestDetails detachServiceDetails;
 

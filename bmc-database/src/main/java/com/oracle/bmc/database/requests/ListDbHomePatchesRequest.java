@@ -16,7 +16,7 @@ public class ListDbHomePatchesRequest extends com.oracle.bmc.requests.BmcRequest
     private String dbHomeId;
 
     /**
-     * The maximum number of items to return.
+     * The maximum number of items to return per page.
      */
     private Integer limit;
 

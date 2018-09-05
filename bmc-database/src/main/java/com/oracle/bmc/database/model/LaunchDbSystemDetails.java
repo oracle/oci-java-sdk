@@ -6,12 +6,12 @@ package com.oracle.bmc.database.model;
 /**
  *
  * <br/>
- * Note: This model distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a set of all
- * explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods
- * are implemented to take {@link #__explicitlySet__} into account. The constructor, on the other hand, does not
- * set {@link #__explicitlySet__} (since the constructor cannot distinguish explicit {@code null} from unset
- * {@code null}). As a consequence, objects should always be created or deserialized using the {@link Builder}.
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Value
@@ -277,6 +277,7 @@ public class LaunchDbSystemDetails extends LaunchDbSystemBase {
         return new Builder();
     }
 
+    @Deprecated
     public LaunchDbSystemDetails(
             String availabilityDomain,
             String backupSubnetId,
@@ -322,15 +323,15 @@ public class LaunchDbSystemDetails extends LaunchDbSystemBase {
     }
 
     /**
-     * The Oracle Database Edition that applies to all the databases on the DB System.
-     * Exadata DB Systems and 2-node RAC DB Systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
+     * The Oracle Database Edition that applies to all the databases on the DB system.
+     * Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      *
      **/
     public enum DatabaseEdition {
         StandardEdition("STANDARD_EDITION"),
         EnterpriseEdition("ENTERPRISE_EDITION"),
-        EnterpriseEditionExtremePerformance("ENTERPRISE_EDITION_EXTREME_PERFORMANCE"),
         EnterpriseEditionHighPerformance("ENTERPRISE_EDITION_HIGH_PERFORMANCE"),
+        EnterpriseEditionExtremePerformance("ENTERPRISE_EDITION_EXTREME_PERFORMANCE"),
         ;
 
         private final String value;
@@ -361,8 +362,8 @@ public class LaunchDbSystemDetails extends LaunchDbSystemBase {
         }
     };
     /**
-     * The Oracle Database Edition that applies to all the databases on the DB System.
-     * Exadata DB Systems and 2-node RAC DB Systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
+     * The Oracle Database Edition that applies to all the databases on the DB system.
+     * Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
@@ -371,7 +372,7 @@ public class LaunchDbSystemDetails extends LaunchDbSystemBase {
     @com.fasterxml.jackson.annotation.JsonProperty("dbHome")
     CreateDbHomeDetails dbHome;
     /**
-     * The type of redundancy configured for the DB System.
+     * The type of redundancy configured for the DB system.
      * Normal is 2-way redundancy, recommended for test and development systems.
      * High is 3-way redundancy, recommended for production systems.
      *
@@ -409,7 +410,7 @@ public class LaunchDbSystemDetails extends LaunchDbSystemBase {
         }
     };
     /**
-     * The type of redundancy configured for the DB System.
+     * The type of redundancy configured for the DB system.
      * Normal is 2-way redundancy, recommended for test and development systems.
      * High is 3-way redundancy, recommended for production systems.
      *
@@ -417,7 +418,7 @@ public class LaunchDbSystemDetails extends LaunchDbSystemBase {
     @com.fasterxml.jackson.annotation.JsonProperty("diskRedundancy")
     DiskRedundancy diskRedundancy;
     /**
-     * The Oracle license model that applies to all the databases on the DB System. The default is BRING_YOUR_OWN_LICENSE.
+     * The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
      *
      **/
     public enum LicenseModel {
@@ -453,7 +454,7 @@ public class LaunchDbSystemDetails extends LaunchDbSystemBase {
         }
     };
     /**
-     * The Oracle license model that applies to all the databases on the DB System. The default is BRING_YOUR_OWN_LICENSE.
+     * The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")

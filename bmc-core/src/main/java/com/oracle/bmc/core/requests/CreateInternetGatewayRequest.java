@@ -11,7 +11,7 @@ import com.oracle.bmc.core.model.*;
 public class CreateInternetGatewayRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * Details for creating a new Internet Gateway.
+     * Details for creating a new internet gateway.
      */
     private CreateInternetGatewayDetails createInternetGatewayDetails;
 

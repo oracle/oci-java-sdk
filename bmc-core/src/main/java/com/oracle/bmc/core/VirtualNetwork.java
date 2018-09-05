@@ -115,7 +115,7 @@ public interface VirtualNetwork extends AutoCloseable {
             ConnectRemotePeeringConnectionsRequest request);
 
     /**
-     * Creates a new virtual Customer-Premises Equipment (CPE) object in the specified compartment. For
+     * Creates a new virtual customer-premises equipment (CPE) object in the specified compartment. For
      * more information, see [IPSec VPNs](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPsec.htm).
      * <p>
      * For the purposes of access control, you must provide the OCID of the compartment where you want
@@ -208,7 +208,7 @@ public interface VirtualNetwork extends AutoCloseable {
     CreateDhcpOptionsResponse createDhcpOptions(CreateDhcpOptionsRequest request);
 
     /**
-     * Creates a new Dynamic Routing Gateway (DRG) in the specified compartment. For more information,
+     * Creates a new dynamic routing gateway (DRG) in the specified compartment. For more information,
      * see [Dynamic Routing Gateways (DRGs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingDRGs.htm).
      * <p>
      * For the purposes of access control, you must provide the OCID of the compartment where you want
@@ -281,24 +281,24 @@ public interface VirtualNetwork extends AutoCloseable {
     CreateIPSecConnectionResponse createIPSecConnection(CreateIPSecConnectionRequest request);
 
     /**
-     * Creates a new Internet Gateway for the specified VCN. For more information, see
+     * Creates a new internet gateway for the specified VCN. For more information, see
      * [Access to the Internet](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIGs.htm).
      * <p>
      * For the purposes of access control, you must provide the OCID of the compartment where you want the Internet
-     * Gateway to reside. Notice that the Internet Gateway doesn't have to be in the same compartment as the VCN or
+     * Gateway to reside. Notice that the internet gateway doesn't have to be in the same compartment as the VCN or
      * other Networking Service components. If you're not sure which compartment to use, put the Internet
      * Gateway in the same compartment with the VCN. For more information about compartments and access control, see
      * [Overview of the IAM Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm). For information about OCIDs, see
      * [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      * <p>
-     * You may optionally specify a *display name* for the Internet Gateway, otherwise a default is provided. It
+     * You may optionally specify a *display name* for the internet gateway, otherwise a default is provided. It
      * does not have to be unique, and you can change it. Avoid entering confidential information.
      * <p>
-     * For traffic to flow between a subnet and an Internet Gateway, you must create a route rule accordingly in
-     * the subnet's route table (for example, 0.0.0.0/0 > Internet Gateway). See
+     * For traffic to flow between a subnet and an internet gateway, you must create a route rule accordingly in
+     * the subnet's route table (for example, 0.0.0.0/0 > internet gateway). See
      * {@link #updateRouteTable(UpdateRouteTableRequest) updateRouteTable}.
      * <p>
-     * You must specify whether the Internet Gateway is enabled when you create it. If it's disabled, that means no
+     * You must specify whether the internet gateway is enabled when you create it. If it's disabled, that means no
      * traffic will flow to/from the internet even if there's a route rule that enables that traffic. You can later
      * use {@link #updateInternetGateway(UpdateInternetGatewayRequest) updateInternetGateway} to easily disable/enable
      * the gateway without changing the route rule.
@@ -337,7 +337,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * <p>
      * **For an ephemeral public IP:** You must also specify a `privateIpId` with the OCID of
      * the primary private IP you want to assign the public IP to. The public IP is created in
-     * the same Availability Domain as the private IP. An ephemeral public IP must always be
+     * the same availability domain as the private IP. An ephemeral public IP must always be
      * assigned to a private IP, and only to the *primary* private IP on a VNIC, not a secondary
      * private IP.
      * <p>
@@ -470,7 +470,7 @@ public interface VirtualNetwork extends AutoCloseable {
     CreateSubnetResponse createSubnet(CreateSubnetRequest request);
 
     /**
-     * Creates a new Virtual Cloud Network (VCN). For more information, see
+     * Creates a new virtual cloud network (VCN). For more information, see
      * [VCNs and Subnets](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVCNs.htm).
      * <p>
      * For the VCN you must specify a single, contiguous IPv4 CIDR block. Oracle recommends using one of the
@@ -496,7 +496,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * The OCID for each is returned in the response. You can't delete these default objects, but you can change their
      * contents (that is, change the route rules, security list rules, and so on).
      * <p>
-     * The VCN and subnets you create are not accessible until you attach an Internet Gateway or set up an IPSec VPN
+     * The VCN and subnets you create are not accessible until you attach an internet gateway or set up an IPSec VPN
      * or FastConnect. For more information, see
      * [Overview of the Networking Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm).
      *
@@ -620,7 +620,7 @@ public interface VirtualNetwork extends AutoCloseable {
     DeleteIPSecConnectionResponse deleteIPSecConnection(DeleteIPSecConnectionRequest request);
 
     /**
-     * Deletes the specified Internet Gateway. The Internet Gateway does not have to be disabled, but
+     * Deletes the specified internet gateway. The internet gateway does not have to be disabled, but
      * there must not be a route table that lists it as a target.
      * <p>
      * This is an asynchronous operation. The gateway's `lifecycleState` will change to TERMINATING temporarily
@@ -898,7 +898,7 @@ public interface VirtualNetwork extends AutoCloseable {
             GetIPSecConnectionDeviceStatusRequest request);
 
     /**
-     * Gets the specified Internet Gateway's information.
+     * Gets the specified internet gateway's information.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -1068,7 +1068,7 @@ public interface VirtualNetwork extends AutoCloseable {
             ListAllowedPeerRegionsForRemotePeeringRequest request);
 
     /**
-     * Lists the Customer-Premises Equipment objects (CPEs) in the specified compartment.
+     * Lists the customer-premises equipment objects (CPEs) in the specified compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1189,7 +1189,7 @@ public interface VirtualNetwork extends AutoCloseable {
     ListIPSecConnectionsResponse listIPSecConnections(ListIPSecConnectionsRequest request);
 
     /**
-     * Lists the Internet Gateways in the specified VCN and the specified compartment.
+     * Lists the internet gateways in the specified VCN and the specified compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1237,8 +1237,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * `availabilityDomain` parameter empty.
      * <p>
      * To list your ephemeral public IPs, set `scope` = `AVAILABILITY_DOMAIN`, and set the
-     * `availabilityDomain` parameter to the desired Availability Domain. An ephemeral public IP
-     * is always in the same Availability Domain and compartment as the private IP it's assigned to.
+     * `availabilityDomain` parameter to the desired availability domain. An ephemeral public IP
+     * is always in the same availability domain and compartment as the private IP it's assigned to.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1306,7 +1306,7 @@ public interface VirtualNetwork extends AutoCloseable {
     ListSubnetsResponse listSubnets(ListSubnetsRequest request);
 
     /**
-     * Lists the Virtual Cloud Networks (VCNs) in the specified compartment.
+     * Lists the virtual cloud networks (VCNs) in the specified compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1414,7 +1414,7 @@ public interface VirtualNetwork extends AutoCloseable {
     UpdateIPSecConnectionResponse updateIPSecConnection(UpdateIPSecConnectionRequest request);
 
     /**
-     * Updates the specified Internet Gateway. You can disable/enable it, or change its display name
+     * Updates the specified internet gateway. You can disable/enable it, or change its display name
      * or tags. Avoid entering confidential information.
      * <p>
      * If the gateway is disabled, that means no traffic will flow to/from the internet even if there's

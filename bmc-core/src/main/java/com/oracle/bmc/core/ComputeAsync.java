@@ -493,16 +493,16 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new instance in the specified compartment and the specified Availability Domain.
+     * Creates a new instance in the specified compartment and the specified availability domain.
      * For general information about instances, see
      * [Overview of the Compute Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Concepts/computeoverview.htm).
      * <p>
      * For information about access control and compartments, see
      * [Overview of the IAM Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm).
      * <p>
-     * For information about Availability Domains, see
+     * For information about availability domains, see
      * [Regions and Availability Domains](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/regions.htm).
-     * To get a list of Availability Domains, use the `ListAvailabilityDomains` operation
+     * To get a list of availability domains, use the `ListAvailabilityDomains` operation
      * in the Identity and Access Management Service API.
      * <p>
      * All Oracle Cloud Infrastructure resources, including instances, get an Oracle-assigned,
@@ -616,7 +616,7 @@ public interface ComputeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Lists the instances in the specified compartment and the specified Availability Domain.
+     * Lists the instances in the specified compartment and the specified availability domain.
      * You can filter the results by specifying an instance name (the list will include all the identically-named
      * instances in the compartment).
      *
@@ -652,7 +652,7 @@ public interface ComputeAsync extends AutoCloseable {
     /**
      * Lists the VNIC attachments in the specified compartment. A VNIC attachment
      * resides in the same compartment as the attached instance. The list can be
-     * filtered by instance, VNIC, or Availability Domain.
+     * filtered by instance, VNIC, or availability domain.
      *
      *
      * @param request The request object containing the details to send
@@ -744,7 +744,12 @@ public interface ComputeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<UpdateImageRequest, UpdateImageResponse> handler);
 
     /**
-     * Updates the display name of the specified instance. Avoid entering confidential information.
+     * Updates certain fields on the specified instance. Fields that are not provided in the
+     * request will not be updated. Avoid entering confidential information.
+     * <p>
+     * Changes to metadata fields will be reflected in the instance metadata service (this may take
+     * up to a minute).
+     * <p>
      * The OCID of the instance remains the same.
      *
      *

@@ -103,7 +103,7 @@ public interface Database extends AutoCloseable {
             CreateDataGuardAssociationRequest request);
 
     /**
-     * Creates a new DB Home in the specified DB System based on the request parameters you provide.
+     * Creates a new database home in the specified DB system based on the request parameters you provide.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -124,7 +124,7 @@ public interface Database extends AutoCloseable {
      * <p>
      * Note that the **stop** state has no effect on the resources you consume.
      * Billing continues for DB Nodes that you stop, and related resources continue
-     * to apply against any relevant quotas. You must terminate the DB System
+     * to apply against any relevant quotas. You must terminate the DB system
      * ({@link #terminateDbSystem(TerminateDbSystemRequest) terminateDbSystem})
      * to remove its resources from billing and quotas.
      *
@@ -163,7 +163,7 @@ public interface Database extends AutoCloseable {
     DeleteBackupResponse deleteBackup(DeleteBackupRequest request);
 
     /**
-     * Deletes a DB Home. The DB Home and its database data are local to the DB System and will be lost when it is deleted. Oracle recommends that you back up any data in the DB System prior to deleting it.
+     * Deletes a DB Home. The DB Home and its database data are local to the DB system and will be lost when it is deleted. Oracle recommends that you back up any data in the DB system prior to deleting it.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -283,7 +283,7 @@ public interface Database extends AutoCloseable {
     GetDbNodeResponse getDbNode(GetDbNodeRequest request);
 
     /**
-     * Gets information about the specified DB System.
+     * Gets information about the specified DB system.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -310,16 +310,12 @@ public interface Database extends AutoCloseable {
             GetDbSystemPatchHistoryEntryRequest request);
 
     /**
-     * Launches a new DB System in the specified compartment and Availability Domain. You'll specify a single Oracle
-     * Database Edition that applies to all the databases on that DB System. The selected edition cannot be changed.
+     * Launches a new DB system in the specified compartment and availability domain. The Oracle
+     * Database edition that you specify applies to all the databases on that DB system. The selected edition cannot be changed.
      * <p>
-     * An initial database is created on the DB System based on the request parameters you provide and some default
+     * An initial database is created on the DB system based on the request parameters you provide and some default
      * options. For more information,
-     * see [Default Options for the Initial Database](https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Tasks/launchingDB.htm#Default_Options_for_the_Initial_Database).
-     * <p>
-     * The DB System will include a command line interface (CLI) that you can use to create additional databases and
-     * manage existing databases. For more information, see the
-     * [Oracle Database CLI Reference](https://docs.us-phoenix-1.oraclecloud.com/Content/Database/References/odacli.htm#Oracle_Database_CLI_Reference).
+     * see [Default Options for the Initial Database](https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Tasks/launchingDB.htm#DefaultOptionsfortheInitialDatabase).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -414,7 +410,7 @@ public interface Database extends AutoCloseable {
     ListDbHomePatchesResponse listDbHomePatches(ListDbHomePatchesRequest request);
 
     /**
-     * Gets a list of database homes in the specified DB System and compartment. A database home is a directory where Oracle database software is installed.
+     * Gets a list of database homes in the specified DB system and compartment. A database home is a directory where Oracle database software is installed.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -423,7 +419,7 @@ public interface Database extends AutoCloseable {
     ListDbHomesResponse listDbHomes(ListDbHomesRequest request);
 
     /**
-     * Gets a list of database nodes in the specified DB System and compartment. A database node is a server running database software.
+     * Gets a list of database nodes in the specified DB system and compartment. A database node is a server running database software.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -432,7 +428,7 @@ public interface Database extends AutoCloseable {
     ListDbNodesResponse listDbNodes(ListDbNodesRequest request);
 
     /**
-     * Gets the history of the patch actions performed on the specified DB System.
+     * Gets the history of the patch actions performed on the specified DB system.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -442,7 +438,7 @@ public interface Database extends AutoCloseable {
             ListDbSystemPatchHistoryEntriesRequest request);
 
     /**
-     * Lists the patches applicable to the requested DB System.
+     * Lists the patches applicable to the requested DB system.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -451,7 +447,7 @@ public interface Database extends AutoCloseable {
     ListDbSystemPatchesResponse listDbSystemPatches(ListDbSystemPatchesRequest request);
 
     /**
-     * Gets a list of the shapes that can be used to launch a new DB System. The shape determines resources to allocate to the DB system - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes.
+     * Gets a list of the shapes that can be used to launch a new DB system. The shape determines resources to allocate to the DB system - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -459,7 +455,7 @@ public interface Database extends AutoCloseable {
     ListDbSystemShapesResponse listDbSystemShapes(ListDbSystemShapesRequest request);
 
     /**
-     * Gets a list of the DB Systems in the specified compartment. You can specify a backupId to list only the DB Systems that support creating a database using this backup in this compartment.
+     * Gets a list of the DB systems in the specified compartment. You can specify a backupId to list only the DB systems that support creating a database using this backup in this compartment.
      *
      *
      * @param request The request object containing the details to send
@@ -567,7 +563,7 @@ public interface Database extends AutoCloseable {
             SwitchoverDataGuardAssociationRequest request);
 
     /**
-     * Terminates a DB System and permanently deletes it and any databases running on it, and any storage volumes attached to it. The database data is local to the DB System and will be lost when the system is terminated. Oracle recommends that you back up any data in the DB System prior to terminating it.
+     * Terminates a DB system and permanently deletes it and any databases running on it, and any storage volumes attached to it. The database data is local to the DB system and will be lost when the system is terminated. Oracle recommends that you back up any data in the DB system prior to terminating it.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -612,7 +608,7 @@ public interface Database extends AutoCloseable {
     UpdateDbHomeResponse updateDbHome(UpdateDbHomeRequest request);
 
     /**
-     * Updates the properties of a DB System, such as the CPU core count.
+     * Updates the properties of a DB system, such as the CPU core count.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.

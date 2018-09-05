@@ -4,31 +4,34 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The Database Service supports several types of DB Systems, ranging in size, price, and performance. For details about each type of system, see:
+ * The Database Service supports several types of DB systems, ranging in size, price, and performance. For details about each type of system, see:
  * <p>
  * - [Exadata DB Systems](https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Concepts/exaoverview.htm)
  * - [Bare Metal and Virtual Machine DB Systems](https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Concepts/overview.htm)
  * <p>
- * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
+ * To use any of the API operations, you must be authorized in an IAM policy. If you are not authorized, talk to an administrator. If you are an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
  *
  * For information about access control and compartments, see
  * [Overview of the Identity Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm).
  * <p>
- * For information about Availability Domains, see
+ * For information about availability domains, see
  * [Regions and Availability Domains](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/regions.htm).
  * <p>
- * To get a list of Availability Domains, use the `ListAvailabilityDomains` operation
+ * To get a list of availability domains, use the `ListAvailabilityDomains` operation
  * in the Identity Service API.
+ * <p>
+ **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
  * <br/>
- * Note: This model distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a set of all
- * explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods
- * are implemented to take {@link #__explicitlySet__} into account. The constructor, on the other hand, does not
- * set {@link #__explicitlySet__} (since the constructor cannot distinguish explicit {@code null} from unset
- * {@code null}). As a consequence, objects should always be created or deserialized using the {@link Builder}.
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DbSystemSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -394,64 +397,63 @@ public class DbSystemSummary {
     }
 
     /**
-     * The name of the Availability Domain that the DB System is located in.
+     * The name of the availability domain that the DB system is located in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     String availabilityDomain;
 
     /**
-     * The OCID of the backup network subnet the DB System is associated with. Applicable only to Exadata.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
      * <p>
-     **Subnet Restriction:** See above subnetId's 'Subnet Restriction'.
-     * to malfunction.
+     **Subnet Restriction:** See the subnet restrictions information for **subnetId**.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupSubnetId")
     String backupSubnetId;
 
     /**
-     * Cluster name for Exadata and 2-node RAC DB Systems. The cluster name must begin with an an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
+     * The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterName")
     String clusterName;
 
     /**
-     * The OCID of the compartment.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The number of CPU cores enabled on the DB System.
+     * The number of CPU cores enabled on the DB system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     Integer cpuCoreCount;
 
     /**
      * The percentage assigned to DATA storage (user data and database files).
-     * The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 40 and 80.
+     * The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 40 and 80. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStoragePercentage")
     Integer dataStoragePercentage;
 
     /**
-     * Data storage size, in GBs, that is currently available to the DB system. This is applicable only for VM-based DBs.
+     * The data storage size, in gigabytes, that is currently available to the DB system. Applies only for virtual machine DB systems.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
     Integer dataStorageSizeInGBs;
     /**
-     * The Oracle Database Edition that applies to all the databases on the DB System.
+     * The Oracle Database edition that applies to all the databases on the DB system.
      *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum DatabaseEdition {
         StandardEdition("STANDARD_EDITION"),
         EnterpriseEdition("ENTERPRISE_EDITION"),
-        EnterpriseEditionExtremePerformance("ENTERPRISE_EDITION_EXTREME_PERFORMANCE"),
         EnterpriseEditionHighPerformance("ENTERPRISE_EDITION_HIGH_PERFORMANCE"),
+        EnterpriseEditionExtremePerformance("ENTERPRISE_EDITION_EXTREME_PERFORMANCE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -492,7 +494,7 @@ public class DbSystemSummary {
         }
     };
     /**
-     * The Oracle Database Edition that applies to all the databases on the DB System.
+     * The Oracle Database edition that applies to all the databases on the DB system.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
@@ -508,9 +510,9 @@ public class DbSystemSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
     /**
-     * The type of redundancy configured for the DB System.
-     * Normal is 2-way redundancy.
-     * High is 3-way redundancy.
+     * The type of redundancy configured for the DB system.
+     * NORMAL is 2-way redundancy.
+     * HIGH is 3-way redundancy.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -557,22 +559,22 @@ public class DbSystemSummary {
         }
     };
     /**
-     * The type of redundancy configured for the DB System.
-     * Normal is 2-way redundancy.
-     * High is 3-way redundancy.
+     * The type of redundancy configured for the DB system.
+     * NORMAL is 2-way redundancy.
+     * HIGH is 3-way redundancy.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("diskRedundancy")
     DiskRedundancy diskRedundancy;
 
     /**
-     * The user-friendly name for the DB System. It does not have to be unique.
+     * The user-friendly name for the DB system. The name does not have to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * The domain name for the DB System.
+     * The domain name for the DB system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("domain")
     String domain;
@@ -588,24 +590,24 @@ public class DbSystemSummary {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The host name for the DB Node.
+     * The hostname for the DB system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     String hostname;
 
     /**
-     * The OCID of the DB System.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the DB system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The OCID of the last patch history. This is updated as soon as a patch operation is started.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastPatchHistoryEntryId")
     String lastPatchHistoryEntryId;
     /**
-     * The Oracle license model that applies to all the databases on the DB System. The default is BRING_YOUR_OWN_LICENSE.
+     * The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -652,7 +654,7 @@ public class DbSystemSummary {
         }
     };
     /**
-     * The Oracle license model that applies to all the databases on the DB System. The default is BRING_YOUR_OWN_LICENSE.
+     * The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
@@ -664,7 +666,7 @@ public class DbSystemSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     String lifecycleDetails;
     /**
-     * The current state of the DB System.
+     * The current state of the DB system.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
@@ -714,67 +716,70 @@ public class DbSystemSummary {
         }
     };
     /**
-     * The current state of the DB System.
+     * The current state of the DB system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
 
     /**
-     * The port number configured for the listener on the DB System.
+     * The port number configured for the listener on the DB system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("listenerPort")
     Integer listenerPort;
 
     /**
-     * Number of nodes in this DB system. For RAC DBs, this will be greater than 1.
+     * The number of nodes in the DB system. For RAC DB systems, the value is greater than 1.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
     Integer nodeCount;
 
     /**
-     * RECO/REDO storage size, in GBs, that is currently allocated to the DB system. This is applicable only for VM-based DBs.
+     * The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("recoStorageSizeInGB")
     Integer recoStorageSizeInGB;
 
     /**
-     * The OCID of the DNS record for the SCAN IP addresses that are associated with the DB System.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scanDnsRecordId")
     String scanDnsRecordId;
 
     /**
-     * The OCID of the Single Client Access Name (SCAN) IP addresses associated with the DB System.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system.
      * SCAN IP addresses are typically used for load balancing and are not assigned to any interface.
-     * Clusterware directs the requests to the appropriate nodes in the cluster.
+     * Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      * <p>
-     * - For a single-node DB System, this list is empty.
+     **Note:** For a single-node DB system, this list is empty.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scanIpIds")
     java.util.List<String> scanIpIds;
 
     /**
-     * The shape of the DB System. The shape determines resources to allocate to the DB system - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes.
+     * The shape of the DB system. The shape determines resources to allocate to the DB system.
+     * - For virtual machine shapes, the number of CPU cores and memory
+     * - For bare metal and Exadata shapes, the number of CPU cores, storage, and memory
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     String shape;
 
     /**
-     * The public key portion of one or more key pairs used for SSH access to the DB System.
+     * The public key portion of one or more key pairs used for SSH access to the DB system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKeys")
     java.util.List<String> sshPublicKeys;
 
     /**
-     * The OCID of the subnet the DB System is associated with.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
      * <p>
      **Subnet Restrictions:**
-     * - For single node and 2-node (RAC) DB Systems, do not use a subnet that overlaps with 192.168.16.16/28
-     * - For Exadata and VM-based RAC DB Systems, do not use a subnet that overlaps with 192.168.128.0/20
+     * - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
+     * - For Exadata and virtual machine 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.128.0/20.
      * <p>
      * These subnets are used by the Oracle Clusterware private interconnect on the database instance.
      * Specifying an overlapping subnet will cause the private interconnect to malfunction.
@@ -785,23 +790,23 @@ public class DbSystemSummary {
     String subnetId;
 
     /**
-     * The date and time the DB System was created.
+     * The date and time the DB system was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * The version of the DB System.
+     * The Oracle Database version of the DB system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     String version;
 
     /**
-     * The OCID of the virtual IP (VIP) addresses associated with the DB System.
-     * The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB System to
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system.
+     * The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to
      * enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
      * <p>
-     * - For a single-node DB System, this list is empty.
+     **Note:** For a single-node DB system, this list is empty.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vipIds")

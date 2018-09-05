@@ -9,12 +9,12 @@ package com.oracle.bmc.core.model;
  * [DNS in Your Virtual Cloud Network](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm).
  *
  * <br/>
- * Note: This model distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a set of all
- * explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods
- * are implemented to take {@link #__explicitlySet__} into account. The constructor, on the other hand, does not
- * set {@link #__explicitlySet__} (since the constructor cannot distinguish explicit {@code null} from unset
- * {@code null}). As a consequence, objects should always be created or deserialized using the {@link Builder}.
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Value
@@ -75,6 +75,7 @@ public class DhcpDnsOption extends DhcpOption {
         return new Builder();
     }
 
+    @Deprecated
     public DhcpDnsOption(java.util.List<String> customDnsServers, ServerType serverType) {
         super();
         this.customDnsServers = customDnsServers;
@@ -82,17 +83,17 @@ public class DhcpDnsOption extends DhcpOption {
     }
 
     /**
-     * If you set `serverType` to `CustomDnsServer`, specify the IP address
-     * of at least one DNS server of your choice (three maximum).
+     * If you set `serverType` to `CustomDnsServer`, specify the
+     * IP address of at least one DNS server of your choice (three maximum). gd
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customDnsServers")
     java.util.List<String> customDnsServers;
     /**
-     * - **VcnLocal:** Reserved for future use.
+     * * **VcnLocal:** Reserved for future use.
      * <p>
-     * - **VcnLocalPlusInternet:** Also referred to as \"Internet and VCN Resolver\".
-     * Instances can resolve internet hostnames (no Internet Gateway is required),
+     * **VcnLocalPlusInternet:** Also referred to as \"Internet and VCN Resolver\".
+     * Instances can resolve internet hostnames (no internet gateway is required),
      * and can resolve hostnames of instances in the VCN. This is the default
      * value in the default set of DHCP options in the VCN. For the Internet and
      * VCN Resolver to work across the VCN, there must also be a DNS label set for
@@ -102,7 +103,8 @@ public class DhcpDnsOption extends DhcpOption {
      * information, see
      * [DNS in Your Virtual Cloud Network](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm).
      * <p>
-     * - **CustomDnsServer:** Instances use a DNS server of your choice (three maximum).
+     * **CustomDnsServer:** Instances use a DNS server of your choice (three
+     * maximum).
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -150,10 +152,10 @@ public class DhcpDnsOption extends DhcpOption {
         }
     };
     /**
-     * - **VcnLocal:** Reserved for future use.
+     * * **VcnLocal:** Reserved for future use.
      * <p>
-     * - **VcnLocalPlusInternet:** Also referred to as \"Internet and VCN Resolver\".
-     * Instances can resolve internet hostnames (no Internet Gateway is required),
+     * **VcnLocalPlusInternet:** Also referred to as \"Internet and VCN Resolver\".
+     * Instances can resolve internet hostnames (no internet gateway is required),
      * and can resolve hostnames of instances in the VCN. This is the default
      * value in the default set of DHCP options in the VCN. For the Internet and
      * VCN Resolver to work across the VCN, there must also be a DNS label set for
@@ -163,7 +165,8 @@ public class DhcpDnsOption extends DhcpOption {
      * information, see
      * [DNS in Your Virtual Cloud Network](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm).
      * <p>
-     * - **CustomDnsServer:** Instances use a DNS server of your choice (three maximum).
+     * **CustomDnsServer:** Instances use a DNS server of your choice (three
+     * maximum).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serverType")

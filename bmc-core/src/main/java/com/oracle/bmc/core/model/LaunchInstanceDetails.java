@@ -8,14 +8,15 @@ package com.oracle.bmc.core.model;
  * Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
  *
  * <br/>
- * Note: This model distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a set of all
- * explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods
- * are implemented to take {@link #__explicitlySet__} into account. The constructor, on the other hand, does not
- * set {@link #__explicitlySet__} (since the constructor cannot distinguish explicit {@code null} from unset
- * {@code null}). As a consequence, objects should always be created or deserialized using the {@link Builder}.
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = LaunchInstanceDetails.Builder.class
@@ -218,7 +219,7 @@ public class LaunchInstanceDetails {
     }
 
     /**
-     * The Availability Domain of the instance.
+     * The availability domain of the instance.
      * <p>
      * Example: `Uocm:PHX-AD-1`
      *
@@ -261,7 +262,7 @@ public class LaunchInstanceDetails {
     String displayName;
 
     /**
-     * Additional metadata key/value pairs that you provide.  They serve a similar purpose and functionality from fields in the 'metadata' object.
+     * Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the 'metadata' object.
      * <p>
      * They are distinguished from 'metadata' fields in that these can be nested JSON objects (whereas 'metadata' fields are string/string maps only).
      *
@@ -270,10 +271,14 @@ public class LaunchInstanceDetails {
     java.util.Map<String, Object> extendedMetadata;
 
     /**
-     * The name of the Fault Domain in which to launch an instance.
+     * A fault domain is a grouping of hardware and infrastructure within an availability domain.
+     * Each availability domain contains three fault domains. Fault domains let you distribute your
+     * instances so that they are not on the same physical hardware within a single availability domain.
+     * A hardware failure or Compute hardware maintenance that affects one fault domain does not affect
+     * instances in other fault domains.
      * <p>
-     * To get a list of Fault Domains, use the {@link #listFaultDomains(ListFaultDomainsRequest) listFaultDomains}
-     * operation in the Identity and Access Management Service API.
+     * If you do not specify the fault domain, the system selects one for you. To change the fault
+     * domain for an instance, terminate it and launch a new instance in the preferred fault domain.
      * <p>
      * Example: `FAULT-DOMAIN-1`
      *

@@ -11,7 +11,7 @@ import com.oracle.bmc.core.model.*;
 public class ListBootVolumesRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The name of the Availability Domain.
+     * The name of the availability domain.
      * <p>
      * Example: `Uocm:PHX-AD-1`
      *

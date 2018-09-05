@@ -11,7 +11,7 @@ import com.oracle.bmc.database.model.*;
 public class LaunchDbSystemRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * Request to launch a DB System.
+     * Request to launch a DB system.
      */
     private LaunchDbSystemBase launchDbSystemDetails;
 

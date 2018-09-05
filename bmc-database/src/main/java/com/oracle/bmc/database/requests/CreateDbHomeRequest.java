@@ -11,7 +11,7 @@ import com.oracle.bmc.database.model.*;
 public class CreateDbHomeRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * Request to create a new DB Home.
+     * Request to create a new database home.
      */
     private CreateDbHomeWithDbSystemIdBase createDbHomeWithDbSystemIdDetails;
 

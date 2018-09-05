@@ -11,12 +11,12 @@ import com.oracle.bmc.core.model.*;
 public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * Whether the public IP is regional or specific to a particular Availability Domain.
+     * Whether the public IP is regional or specific to a particular availability domain.
      * <p>
      * `REGION`: The public IP exists within a region and can be assigned to a private IP
-     * in any Availability Domain in the region. Reserved public IPs have `scope` = `REGION`.
+     * in any availability domain in the region. Reserved public IPs have `scope` = `REGION`.
      * <p>
-     * `AVAILABILITY_DOMAIN`: The public IP exists within the Availability Domain of the private IP
+     * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the private IP
      * it's assigned to, which is specified by the `availabilityDomain` property of the public IP object.
      * Ephemeral public IPs have `scope` = `AVAILABILITY_DOMAIN`.
      *
@@ -24,12 +24,12 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest {
     private Scope scope;
 
     /**
-     * Whether the public IP is regional or specific to a particular Availability Domain.
+     * Whether the public IP is regional or specific to a particular availability domain.
      * <p>
      * `REGION`: The public IP exists within a region and can be assigned to a private IP
-     * in any Availability Domain in the region. Reserved public IPs have `scope` = `REGION`.
+     * in any availability domain in the region. Reserved public IPs have `scope` = `REGION`.
      * <p>
-     * `AVAILABILITY_DOMAIN`: The public IP exists within the Availability Domain of the private IP
+     * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the private IP
      * it's assigned to, which is specified by the `availabilityDomain` property of the public IP object.
      * Ephemeral public IPs have `scope` = `AVAILABILITY_DOMAIN`.
      *
@@ -87,7 +87,7 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest {
     private String page;
 
     /**
-     * The name of the Availability Domain.
+     * The name of the availability domain.
      * <p>
      * Example: `Uocm:PHX-AD-1`
      *

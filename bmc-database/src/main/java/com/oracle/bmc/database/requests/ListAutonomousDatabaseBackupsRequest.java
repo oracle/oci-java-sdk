@@ -16,12 +16,12 @@ public class ListAutonomousDatabaseBackupsRequest extends com.oracle.bmc.request
     private String autonomousDatabaseId;
 
     /**
-     * The compartment OCID.
+     * The compartment [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      */
     private String compartmentId;
 
     /**
-     * The maximum number of items to return.
+     * The maximum number of items to return per page.
      */
     private Integer limit;
 

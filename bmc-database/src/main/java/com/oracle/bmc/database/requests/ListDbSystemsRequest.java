@@ -16,7 +16,7 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest {
     private String compartmentId;
 
     /**
-     * The maximum number of items to return.
+     * The maximum number of items to return per page.
      */
     private Integer limit;
 
@@ -26,7 +26,7 @@ public class ListDbSystemsRequest extends com.oracle.bmc.requests.BmcRequest {
     private String page;
 
     /**
-     * The OCID of the backup. Specify a backupId to list only the DB Systems that support creating a database using this backup in this compartment.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the backup. Specify a backupId to list only the DB systems that support creating a database using this backup in this compartment.
      */
     private String backupId;
 

@@ -11,7 +11,7 @@ import com.oracle.bmc.database.model.*;
 public class GetBackupRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The backup OCID.
+     * The backup [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      */
     private String backupId;
 
