@@ -6,14 +6,15 @@ package com.oracle.bmc.core.model;
 /**
  *
  * <br/>
- * Note: This model distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a set of all
- * explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods
- * are implemented to take {@link #__explicitlySet__} into account. The constructor, on the other hand, does not
- * set {@link #__explicitlySet__} (since the constructor cannot distinguish explicit {@code null} from unset
- * {@code null}). As a consequence, objects should always be created or deserialized using the {@link Builder}.
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateVolumeDetails.Builder.class
@@ -161,7 +162,7 @@ public class CreateVolumeDetails {
     }
 
     /**
-     * The Availability Domain of the volume.
+     * The availability domain of the volume.
      * <p>
      * Example: `Uocm:PHX-AD-1`
      *
@@ -227,7 +228,7 @@ public class CreateVolumeDetails {
     Long sizeInMBs;
 
     /**
-     * Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup.
+     * Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same availability domain or a Block volume backup.
      * This is an optional field. If not specified or set to null, the new Block volume will be empty.
      * When specified, the new Block volume will contain data from the source volume or backup.
      *

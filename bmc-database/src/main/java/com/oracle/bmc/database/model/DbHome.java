@@ -4,24 +4,26 @@
 package com.oracle.bmc.database.model;
 
 /**
- * A directory where Oracle database software is installed. Each DB System can have multiple database homes,
- * and each database home can have multiple databases within it. All the databases within a single database home
- * must be the same database version, but different database homes can run different versions. For more information,
- * see [Managing Oracle Databases](https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Concepts/overview.htm).
+ * A directory where Oracle Database software is installed. A bare metal DB system can have multiple database homes
+ * and each database home can run a different supported version of Oracle Database. A virtual machine DB system can have only one database home.
+ * For more information, see [Bare Metal and Virtual Machine DB Systems](https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Concepts/overview.htm).
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an
  * administrator. If you're an administrator who needs to write policies to give users access,
  * see [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
+ * <p>
+ **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
  * <br/>
- * Note: This model distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a set of all
- * explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods
- * are implemented to take {@link #__explicitlySet__} into account. The constructor, on the other hand, does not
- * set {@link #__explicitlySet__} (since the constructor cannot distinguish explicit {@code null} from unset
- * {@code null}). As a consequence, objects should always be created or deserialized using the {@link Builder}.
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DbHome.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -144,37 +146,37 @@ public class DbHome {
     }
 
     /**
-     * The OCID of the compartment.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The OCID of the DB System.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the DB system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
     String dbSystemId;
 
     /**
-     * The Oracle database version.
+     * The Oracle Database version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     String dbVersion;
 
     /**
-     * The user-provided name for the database home. It does not need to be unique.
+     * The user-provided name for the database home. The name does not need to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * The OCID of the database home.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the database home.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The OCID of the last patch history. This is updated as soon as a patch operation is started.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation is started.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastPatchHistoryEntryId")
     String lastPatchHistoryEntryId;

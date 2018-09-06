@@ -4,19 +4,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * A server where Oracle database software is running.
+ * A server where Oracle Database software is running.
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
+ * <p>
+ **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
  * <br/>
- * Note: This model distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a set of all
- * explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods
- * are implemented to take {@link #__explicitlySet__} into account. The constructor, on the other hand, does not
- * set {@link #__explicitlySet__} (since the constructor cannot distinguish explicit {@code null} from unset
- * {@code null}). As a consequence, objects should always be created or deserialized using the {@link Builder}.
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DbNode.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -139,25 +142,25 @@ public class DbNode {
     }
 
     /**
-     * The OCID of the backup VNIC.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the backup VNIC.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupVnicId")
     String backupVnicId;
 
     /**
-     * The OCID of the DB System.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the DB system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
     String dbSystemId;
 
     /**
-     * The host name for the DB Node.
+     * The host name for the database node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     String hostname;
 
     /**
-     * The OCID of the DB Node.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the database node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -221,20 +224,20 @@ public class DbNode {
     LifecycleState lifecycleState;
 
     /**
-     * Storage size, in GBs, of the software volume that is allocated to the DB system. This is applicable only for VM-based DBs.
+     * The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareStorageSizeInGB")
     Integer softwareStorageSizeInGB;
 
     /**
-     * The date and time that the DB Node was created.
+     * The date and time that the database node was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * The OCID of the VNIC.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the VNIC.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
     String vnicId;

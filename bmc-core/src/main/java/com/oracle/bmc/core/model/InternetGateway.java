@@ -5,22 +5,26 @@ package com.oracle.bmc.core.model;
 
 /**
  * Represents a router that connects the edge of a VCN with the Internet. For an example scenario
- * that uses an Internet Gateway, see
+ * that uses an internet gateway, see
  * [Typical Networking Service Scenarios](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/overview.htm#scenarios).
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
  * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
+ * <p>
+ **Warning:** Oracle recommends that you avoid using any confidential information when you
+ * supply string values using the API.
  *
  * <br/>
- * Note: This model distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a set of all
- * explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods
- * are implemented to take {@link #__explicitlySet__} into account. The constructor, on the other hand, does not
- * set {@link #__explicitlySet__} (since the constructor cannot distinguish explicit {@code null} from unset
- * {@code null}). As a consequence, objects should always be created or deserialized using the {@link Builder}.
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = InternetGateway.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -155,7 +159,7 @@ public class InternetGateway {
     }
 
     /**
-     * The OCID of the compartment containing the Internet Gateway.
+     * The OCID of the compartment containing the internet gateway.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -190,7 +194,7 @@ public class InternetGateway {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The Internet Gateway's Oracle ID (OCID).
+     * The internet gateway's Oracle ID (OCID).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -203,7 +207,7 @@ public class InternetGateway {
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     Boolean isEnabled;
     /**
-     * The Internet Gateway's current state.
+     * The internet gateway's current state.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
@@ -251,13 +255,13 @@ public class InternetGateway {
         }
     };
     /**
-     * The Internet Gateway's current state.
+     * The internet gateway's current state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
 
     /**
-     * The date and time the Internet Gateway was created, in the format defined by RFC3339.
+     * The date and time the internet gateway was created, in the format defined by RFC3339.
      * <p>
      * Example: `2016-08-25T21:10:29.600Z`
      *
@@ -266,7 +270,7 @@ public class InternetGateway {
     java.util.Date timeCreated;
 
     /**
-     * The OCID of the VCN the Internet Gateway belongs to.
+     * The OCID of the VCN the internet gateway belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     String vcnId;

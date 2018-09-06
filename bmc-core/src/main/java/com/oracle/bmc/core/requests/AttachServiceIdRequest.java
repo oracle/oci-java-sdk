@@ -16,7 +16,7 @@ public class AttachServiceIdRequest extends com.oracle.bmc.requests.BmcRequest {
     private String serviceGatewayId;
 
     /**
-     * ServiceId of Service to be attached to a Service Gateway.
+     * ServiceId of Service to be attached to a service gateway.
      */
     private ServiceIdRequestDetails attachServiceDetails;
 

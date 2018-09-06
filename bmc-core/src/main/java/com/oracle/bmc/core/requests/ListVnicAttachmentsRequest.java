@@ -16,7 +16,7 @@ public class ListVnicAttachmentsRequest extends com.oracle.bmc.requests.BmcReque
     private String compartmentId;
 
     /**
-     * The name of the Availability Domain.
+     * The name of the availability domain.
      * <p>
      * Example: `Uocm:PHX-AD-1`
      *

@@ -16,7 +16,7 @@ public class GetDbHomePatchHistoryEntryRequest extends com.oracle.bmc.requests.B
     private String dbHomeId;
 
     /**
-     * The OCID of the patch history entry.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the patch history entry.
      */
     private String patchHistoryEntryId;
 

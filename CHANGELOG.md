@@ -13,6 +13,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.2.46 - 2018-09-06
+### Added
+- Support for updating metadata fields on an instance in the Compute service
+
 ## 1.2.45 - 2018-08-23
 ### Added
 - Support for fault domains in the Identity service

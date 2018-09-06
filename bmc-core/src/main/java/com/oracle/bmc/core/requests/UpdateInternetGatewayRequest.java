@@ -11,12 +11,12 @@ import com.oracle.bmc.core.model.*;
 public class UpdateInternetGatewayRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The OCID of the Internet Gateway.
+     * The OCID of the internet gateway.
      */
     private String igId;
 
     /**
-     * Details for updating the Internet Gateway.
+     * Details for updating the internet gateway.
      */
     private UpdateInternetGatewayDetails updateInternetGatewayDetails;
 

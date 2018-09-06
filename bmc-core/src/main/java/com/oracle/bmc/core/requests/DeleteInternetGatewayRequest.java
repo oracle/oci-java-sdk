@@ -11,7 +11,7 @@ import com.oracle.bmc.core.model.*;
 public class DeleteInternetGatewayRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The OCID of the Internet Gateway.
+     * The OCID of the internet gateway.
      */
     private String igId;
 

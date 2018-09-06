@@ -16,7 +16,7 @@ public class ListAutonomousDatabasesRequest extends com.oracle.bmc.requests.BmcR
     private String compartmentId;
 
     /**
-     * The maximum number of items to return.
+     * The maximum number of items to return per page.
      */
     private Integer limit;
 

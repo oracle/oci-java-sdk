@@ -5,16 +5,19 @@ package com.oracle.bmc.database.model;
 
 /**
  * Details to create an Oracle Autonomous Database.
+ * <p>
+ **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
  * <br/>
- * Note: This model distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a set of all
- * explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods
- * are implemented to take {@link #__explicitlySet__} into account. The constructor, on the other hand, does not
- * set {@link #__explicitlySet__} (since the constructor cannot distinguish explicit {@code null} from unset
- * {@code null}). As a consequence, objects should always be created or deserialized using the {@link Builder}.
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateAutonomousDatabaseDetails.Builder.class
@@ -157,7 +160,7 @@ public class CreateAutonomousDatabaseDetails {
     String adminPassword;
 
     /**
-     * The Oracle Cloud ID (OCID) of the compartment of the DB system.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the compartment of the autonomous database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -169,7 +172,7 @@ public class CreateAutonomousDatabaseDetails {
     Integer cpuCoreCount;
 
     /**
-     * Size, in terabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed.
+     * The size, in terabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")

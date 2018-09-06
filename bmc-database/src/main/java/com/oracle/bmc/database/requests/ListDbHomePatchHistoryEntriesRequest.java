@@ -16,7 +16,7 @@ public class ListDbHomePatchHistoryEntriesRequest extends com.oracle.bmc.request
     private String dbHomeId;
 
     /**
-     * The maximum number of items to return.
+     * The maximum number of items to return per page.
      */
     private Integer limit;
 

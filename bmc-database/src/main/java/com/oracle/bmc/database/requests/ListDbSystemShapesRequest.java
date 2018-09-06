@@ -21,7 +21,7 @@ public class ListDbSystemShapesRequest extends com.oracle.bmc.requests.BmcReques
     private String compartmentId;
 
     /**
-     * The maximum number of items to return.
+     * The maximum number of items to return per page.
      */
     private Integer limit;
 

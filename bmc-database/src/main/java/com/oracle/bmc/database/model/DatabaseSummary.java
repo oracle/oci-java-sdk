@@ -4,19 +4,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * An Oracle database on a DB System. For more information, see [Managing Oracle Databases](https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Concepts/overview.htm).
+ * An Oracle database on a bare metal or virtual machine DB system. For more information, see [Bare Metal and Virtual Machine DB Systems](https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Concepts/overview.htm).
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
+ * <p>
+ **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
  * <br/>
- * Note: This model distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a set of all
- * explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods
- * are implemented to take {@link #__explicitlySet__} into account. The constructor, on the other hand, does not
- * set {@link #__explicitlySet__} (since the constructor cannot distinguish explicit {@code null} from unset
- * {@code null}). As a consequence, objects should always be created or deserialized using the {@link Builder}.
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DatabaseSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -223,7 +226,7 @@ public class DatabaseSummary {
     String characterSet;
 
     /**
-     * The OCID of the compartment.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -232,7 +235,7 @@ public class DatabaseSummary {
     DbBackupConfig dbBackupConfig;
 
     /**
-     * The OCID of the database home.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the database home.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbHomeId")
     String dbHomeId;
@@ -251,7 +254,7 @@ public class DatabaseSummary {
     String dbUniqueName;
 
     /**
-     * Database workload type.
+     * The database workload type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
     String dbWorkload;
@@ -277,7 +280,7 @@ public class DatabaseSummary {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The OCID of the database.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -352,7 +355,7 @@ public class DatabaseSummary {
     String ncharacterSet;
 
     /**
-     * Pluggable database name. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
+     * The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pdbName")
     String pdbName;

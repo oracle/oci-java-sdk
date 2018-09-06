@@ -40,9 +40,9 @@ public class ListServiceGatewaysRequest extends com.oracle.bmc.requests.BmcReque
      * sort order is case sensitive.
      * <p>
      **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
-     * optionally filter by Availability Domain if the scope of the resource type is within a
-     * single Availability Domain. If you call one of these \"List\" operations without specifying
-     * an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+     * optionally filter by availability domain if the scope of the resource type is within a
+     * single availability domain. If you call one of these \"List\" operations without specifying
+     * an availability domain, the resources are grouped by availability domain, then sorted.
      *
      */
     private SortBy sortBy;
@@ -53,9 +53,9 @@ public class ListServiceGatewaysRequest extends com.oracle.bmc.requests.BmcReque
      * sort order is case sensitive.
      * <p>
      **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
-     * optionally filter by Availability Domain if the scope of the resource type is within a
-     * single Availability Domain. If you call one of these \"List\" operations without specifying
-     * an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+     * optionally filter by availability domain if the scope of the resource type is within a
+     * single availability domain. If you call one of these \"List\" operations without specifying
+     * an availability domain, the resources are grouped by availability domain, then sorted.
      *
      **/
     public enum SortBy {

@@ -6,14 +6,15 @@ package com.oracle.bmc.core.model;
 /**
  *
  * <br/>
- * Note: This model distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a set of all
- * explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods
- * are implemented to take {@link #__explicitlySet__} into account. The constructor, on the other hand, does not
- * set {@link #__explicitlySet__} (since the constructor cannot distinguish explicit {@code null} from unset
- * {@code null}). As a consequence, objects should always be created or deserialized using the {@link Builder}.
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateServiceGatewayDetails.Builder.class
@@ -112,7 +113,7 @@ public class CreateServiceGatewayDetails {
     }
 
     /**
-     * The [OCID] (https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm)  of the compartment to contain the Service Gateway.
+     * The [OCID] (https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm)  of the compartment to contain the service gateway.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -148,7 +149,7 @@ public class CreateServiceGatewayDetails {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * List of the Service OCIDs. These are the Services which will be enabled on the Service Gateway. This list can be empty.
+     * List of the service OCIDs. These are the services that will be enabled on the service gateway. This list can be empty.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("services")
     java.util.List<ServiceIdRequestDetails> services;

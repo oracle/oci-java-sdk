@@ -6,14 +6,15 @@ package com.oracle.bmc.core.model;
 /**
  *
  * <br/>
- * Note: This model distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a set of all
- * explicitly set fields called {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods
- * are implemented to take {@link #__explicitlySet__} into account. The constructor, on the other hand, does not
- * set {@link #__explicitlySet__} (since the constructor cannot distinguish explicit {@code null} from unset
- * {@code null}). As a consequence, objects should always be created or deserialized using the {@link Builder}.
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = CreateVolumeGroupDetails.Builder.class
@@ -117,7 +118,7 @@ public class CreateVolumeGroupDetails {
     }
 
     /**
-     * The Availability Domain of the volume group.
+     * The availability domain of the volume group.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     String availabilityDomain;
@@ -157,7 +158,7 @@ public class CreateVolumeGroupDetails {
 
     /**
      * Specifies the volume group source details for a new volume group. The volume source is either another a list of
-     * volume ids in the same Availability Domain, another volume group or a volume group backup.
+     * volume ids in the same availability domain, another volume group or a volume group backup.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
