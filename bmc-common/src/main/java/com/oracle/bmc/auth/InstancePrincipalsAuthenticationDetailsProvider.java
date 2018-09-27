@@ -78,7 +78,10 @@ public class InstancePrincipalsAuthenticationDetailsProvider
          * Service instance for auth.
          */
         private static final com.oracle.bmc.Service SERVICE =
-                com.oracle.bmc.Services.create("AUTH", "auth");
+                com.oracle.bmc.Services.serviceBuilder()
+                        .serviceName("AUTH")
+                        .serviceEndpointPrefix("auth")
+                        .build();
 
         /**
          * Base url of metadata service.

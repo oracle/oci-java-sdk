@@ -15,7 +15,10 @@ public class IdentityAsyncClient implements IdentityAsync {
      * Service instance for Identity.
      */
     public static final com.oracle.bmc.Service SERVICE =
-            com.oracle.bmc.Services.create("IDENTITY", "identity");
+            com.oracle.bmc.Services.serviceBuilder()
+                    .serviceName("IDENTITY")
+                    .serviceEndpointPrefix("identity")
+                    .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
     private final com.oracle.bmc.http.internal.RestClient client;

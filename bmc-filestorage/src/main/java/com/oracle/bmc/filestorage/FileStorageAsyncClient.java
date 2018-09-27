@@ -15,7 +15,10 @@ public class FileStorageAsyncClient implements FileStorageAsync {
      * Service instance for FileStorage.
      */
     public static final com.oracle.bmc.Service SERVICE =
-            com.oracle.bmc.Services.create("FILESTORAGE", "filestorage");
+            com.oracle.bmc.Services.serviceBuilder()
+                    .serviceName("FILESTORAGE")
+                    .serviceEndpointPrefix("filestorage")
+                    .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
     private final com.oracle.bmc.http.internal.RestClient client;

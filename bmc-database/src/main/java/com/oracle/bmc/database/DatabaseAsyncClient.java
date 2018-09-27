@@ -15,7 +15,10 @@ public class DatabaseAsyncClient implements DatabaseAsync {
      * Service instance for Database.
      */
     public static final com.oracle.bmc.Service SERVICE =
-            com.oracle.bmc.Services.create("DATABASE", "database");
+            com.oracle.bmc.Services.serviceBuilder()
+                    .serviceName("DATABASE")
+                    .serviceEndpointPrefix("database")
+                    .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
     private final com.oracle.bmc.http.internal.RestClient client;

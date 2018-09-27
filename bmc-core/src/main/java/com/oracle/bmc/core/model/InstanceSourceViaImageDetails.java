@@ -48,12 +48,21 @@ public class InstanceSourceViaImageDetails extends InstanceSourceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstanceSourceViaImageDetails build() {
             InstanceSourceViaImageDetails __instance__ =
-                    new InstanceSourceViaImageDetails(bootVolumeSizeInGBs, imageId);
+                    new InstanceSourceViaImageDetails(bootVolumeSizeInGBs, imageId, kmsKeyId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -61,7 +70,9 @@ public class InstanceSourceViaImageDetails extends InstanceSourceDetails {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(InstanceSourceViaImageDetails o) {
             Builder copiedBuilder =
-                    bootVolumeSizeInGBs(o.getBootVolumeSizeInGBs()).imageId(o.getImageId());
+                    bootVolumeSizeInGBs(o.getBootVolumeSizeInGBs())
+                            .imageId(o.getImageId())
+                            .kmsKeyId(o.getKmsKeyId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -76,10 +87,12 @@ public class InstanceSourceViaImageDetails extends InstanceSourceDetails {
     }
 
     @Deprecated
-    public InstanceSourceViaImageDetails(Long bootVolumeSizeInGBs, String imageId) {
+    public InstanceSourceViaImageDetails(
+            Long bootVolumeSizeInGBs, String imageId, String kmsKeyId) {
         super();
         this.bootVolumeSizeInGBs = bootVolumeSizeInGBs;
         this.imageId = imageId;
+        this.kmsKeyId = kmsKeyId;
     }
 
     /**
@@ -93,6 +106,12 @@ public class InstanceSourceViaImageDetails extends InstanceSourceDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
     String imageId;
+
+    /**
+     * The OCID of the KMS key to be used as the master encryption key for the boot volume.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    String kmsKeyId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

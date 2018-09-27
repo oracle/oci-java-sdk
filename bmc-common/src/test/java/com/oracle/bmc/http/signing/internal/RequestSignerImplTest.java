@@ -4,6 +4,7 @@
 package com.oracle.bmc.http.signing.internal;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.google.common.io.ByteStreams;
@@ -14,7 +15,6 @@ import com.oracle.bmc.util.StreamUtils;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
@@ -40,8 +40,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import static org.mockito.Matchers.any;
-import static org.mockito.Matchers.eq;
-import static org.mockito.Mockito.verify;
 import static org.powermock.api.mockito.PowerMockito.mockStatic;
 import static org.powermock.api.mockito.PowerMockito.when;
 
@@ -77,18 +75,18 @@ public class RequestSignerImplTest {
         headers.put("Content-Type", Collections.singletonList(MediaType.APPLICATION_JSON));
         headers.put("OPC-REQUEST-ID", Collections.singletonList("RequestID"));
 
-        final Map<String, String> actual = RequestSignerImpl.ignoreCaseHeaders(headers);
+        final Map<String, List<String>> actual = RequestSignerImpl.ignoreCaseHeaders(headers);
 
         assertNotNull("Map should not be null", actual);
         assertEquals("Map should contain 3 entries", 3, actual.size());
         for (Map.Entry<String, List<String>> expectedEntry : headers.entrySet()) {
             final String expectedKey = expectedEntry.getKey();
-            final String expectedValue = expectedEntry.getValue().get(0);
+            final List<String> expectedValue = expectedEntry.getValue();
 
             assertTrue(
                     "Actual map should contain matching key for lower case value",
                     actual.containsKey(expectedKey.toLowerCase()));
-            final String actualValue = actual.get(expectedKey.toLowerCase());
+            final List<String> actualValue = actual.get(expectedKey.toLowerCase());
             assertEquals(
                     "Values should be equal for key: " + expectedKey, expectedValue, actualValue);
         }
@@ -97,34 +95,42 @@ public class RequestSignerImplTest {
     // Reload the classes so PowerMockito can inject the static mocks.
     @PrepareForTest({LoggerFactory.class, RestClientFactory.class, RequestSignerImpl.class})
     @Test
-    public void ignoreCaseHeaders_shouldThrowRequestSignerException_whenDuplicateHeaderKeysExists()
-            throws Exception {
+    public void ignoreCaseHeaders_whenDuplicateHeaderKeysExists() throws Exception {
+        final Map<String, List<String>> headers = new HashMap<>();
+        headers.put("content-length", Collections.singletonList("238"));
+        headers.put("opc-request-id", Lists.newArrayList("ID1", "ID2"));
+
+        final Map<String, List<String>> actual = RequestSignerImpl.ignoreCaseHeaders(headers);
+
+        assertNotNull("Map should not be null", actual);
+        assertEquals("Map should contain 2 entries", 2, actual.size());
+        for (Map.Entry<String, List<String>> expectedEntry : headers.entrySet()) {
+            final String expectedKey = expectedEntry.getKey();
+            final List<String> expectedValue = expectedEntry.getValue();
+
+            assertTrue(
+                    "Actual map should contain matching key for lower case value",
+                    actual.containsKey(expectedKey.toLowerCase()));
+            final List<String> actualValue = actual.get(expectedKey.toLowerCase());
+            assertEquals(
+                    "Values should be equal for key: " + expectedKey, expectedValue, actualValue);
+        }
+    }
+
+    // Reload the classes so PowerMockito can inject the static mocks.
+    @PrepareForTest({LoggerFactory.class, RestClientFactory.class, RequestSignerImpl.class})
+    @Test
+    public void calculateStringToSign_whenDuplicateHeaderKeysExists() {
         final Map<String, List<String>> headers = new HashMap<>();
         headers.put("content-length", Collections.singletonList("238"));
         headers.put("opc-request-id", Lists.newArrayList("ID1", "ID2"));
 
         try {
-            RequestSignerImpl.ignoreCaseHeaders(headers);
-            fail("RequestSignerException should have been thrown");
-        } catch (RequestSignerException ex) {
-            assertTrue(
-                    "Exception message should contain key with duplicate entries",
-                    ex.getMessage()
-                            .contains("Expecting exactly one value for header opc-request-id"));
-            verify(mockObjectMapper).writeValueAsString(eq(headers));
-
-            final ArgumentCaptor<String> logMessageCaptor = ArgumentCaptor.forClass(String.class);
-            verify(mockLogger)
-                    .error(
-                            logMessageCaptor.capture(),
-                            eq("opc-request-id"),
-                            eq(SERIALIZED_MAP_JSON_STRING),
-                            eq(ex));
-
-            final String actaulLogMessageValue = logMessageCaptor.getValue();
-            assertTrue(
-                    "Logging messages should contain the base message",
-                    actaulLogMessageValue.contains("More than one value for header [{}] found."));
+            RequestSignerImpl.calculateStringToSign(
+                    "get", "/path", headers, ImmutableList.of("opc-request-id"), headers);
+            fail("Should have thrown");
+        } catch (RequestSignerException e) {
+            assertEquals("Expecting exactly one value for header opc-request-id", e.getMessage());
         }
     }
 
@@ -180,14 +186,14 @@ public class RequestSignerImplTest {
             final String contentType, final Object body, final int contentLength)
             throws IOException {
         final URI uri = URI.create("https://identity.us-phoenix-1.oraclecloud.com/20160918/users");
-        final Map<String, String> existingHeaders =
-                ImmutableMap.of(
+        final Map<String, List<String>> existingHeaders =
+                ImmutableMap.<String, List<String>>of(
                         HttpHeaders.CONTENT_TYPE.toLowerCase(),
-                        contentType,
+                        ImmutableList.of(contentType),
                         "opc-request-id",
-                        "2F9BA4A30BB3452397A5BC1BFE447C5D",
+                        ImmutableList.of("2F9BA4A30BB3452397A5BC1BFE447C5D"),
                         HttpHeaders.ACCEPT.toLowerCase(),
-                        MediaType.APPLICATION_JSON);
+                        ImmutableList.of(MediaType.APPLICATION_JSON));
         final RequestSignerImpl.SigningConfiguration signingConfiguration =
                 new RequestSignerImpl.SigningConfiguration(
                         SigningStrategy.STANDARD.getHeadersToSign(),

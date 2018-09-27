@@ -79,6 +79,15 @@ public class CreateBootVolumeDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
         private Long sizeInGBs;
 
@@ -109,6 +118,7 @@ public class CreateBootVolumeDetails {
                             definedTags,
                             displayName,
                             freeformTags,
+                            kmsKeyId,
                             sizeInGBs,
                             sourceDetails);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -124,6 +134,7 @@ public class CreateBootVolumeDetails {
                             .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
+                            .kmsKeyId(o.getKmsKeyId())
                             .sizeInGBs(o.getSizeInGBs())
                             .sourceDetails(o.getSourceDetails());
 
@@ -190,6 +201,12 @@ public class CreateBootVolumeDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
+
+    /**
+     * The OCID of the KMS key to be used as the master encryption key for the boot volume.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    String kmsKeyId;
 
     /**
      * The size of the volume in GBs.

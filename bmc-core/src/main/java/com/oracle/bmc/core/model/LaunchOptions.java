@@ -224,12 +224,14 @@ public class LaunchOptions {
      * Emulation type for NIC.
      * * `E1000` - Emulated Gigabit ethernet controller.  Compatible with Linux e1000 network driver.
      * * `VFIO` - Direct attached Virtual Function network controller.  Default for Oracle provided images.
+     * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using virtio drivers.
      *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum NetworkType {
         E1000("E1000"),
         Vfio("VFIO"),
+        Paravirtualized("PARAVIRTUALIZED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -273,6 +275,7 @@ public class LaunchOptions {
      * Emulation type for NIC.
      * * `E1000` - Emulated Gigabit ethernet controller.  Compatible with Linux e1000 network driver.
      * * `VFIO` - Direct attached Virtual Function network controller.  Default for Oracle provided images.
+     * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using virtio drivers.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkType")

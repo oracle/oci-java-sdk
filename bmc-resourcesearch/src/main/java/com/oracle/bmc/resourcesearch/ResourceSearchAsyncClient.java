@@ -15,7 +15,10 @@ public class ResourceSearchAsyncClient implements ResourceSearchAsync {
      * Service instance for ResourceSearch.
      */
     public static final com.oracle.bmc.Service SERVICE =
-            com.oracle.bmc.Services.create("RESOURCESEARCH", "query");
+            com.oracle.bmc.Services.serviceBuilder()
+                    .serviceName("RESOURCESEARCH")
+                    .serviceEndpointPrefix("query")
+                    .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
     private final com.oracle.bmc.http.internal.RestClient client;

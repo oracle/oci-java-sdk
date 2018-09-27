@@ -3,6 +3,27 @@
  */
 package com.oracle.bmc.http.signing.internal;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Optional;
+import com.google.common.base.Preconditions;
+import com.google.common.base.Supplier;
+import com.google.common.collect.ImmutableList;
+import com.google.common.hash.Hashing;
+import com.google.common.io.ByteStreams;
+import com.oracle.bmc.http.internal.RestClientFactory;
+import com.oracle.bmc.http.signing.RequestSigner;
+import com.oracle.bmc.http.signing.RequestSignerException;
+import com.oracle.bmc.http.signing.SigningStrategy;
+import com.oracle.bmc.io.DuplicatableInputStream;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.lang3.StringUtils;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import javax.annotation.concurrent.Immutable;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
@@ -17,29 +38,6 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.TimeZone;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import javax.annotation.concurrent.Immutable;
-
-import com.google.common.annotations.VisibleForTesting;
-import com.google.common.io.ByteStreams;
-import com.oracle.bmc.http.signing.RequestSignerException;
-import com.oracle.bmc.io.DuplicatableInputStream;
-import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.lang3.StringUtils;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.google.common.base.Optional;
-import com.google.common.base.Preconditions;
-import com.google.common.base.Supplier;
-import com.google.common.hash.Hashing;
-import com.oracle.bmc.http.internal.RestClientFactory;
-import com.oracle.bmc.http.signing.RequestSigner;
-import com.oracle.bmc.http.signing.SigningStrategy;
-
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * Implementation of the {@linkplain RequestSigner} interface
@@ -141,7 +139,7 @@ public class RequestSignerImpl implements RequestSigner {
             final List<String> requiredHeaders = getRequiredSigningHeaders(lowerHttpMethod);
 
             // 2) copy of original headers as case-insensitive, do not modify input map
-            final Map<String, String> existingHeaders = ignoreCaseHeaders(headers);
+            final Map<String, List<String>> existingHeaders = ignoreCaseHeaders(headers);
 
             // 3) calculate any required headers that are missing
             final Map<String, String> missingHeaders =
@@ -154,13 +152,16 @@ public class RequestSignerImpl implements RequestSigner {
                             signingConfiguration);
 
             // 4) create a map containing both existing + missing headers
-            final Map<String, String> allHeaders = new HashMap<>();
+            final Map<String, List<String>> allHeaders = new HashMap<>();
             allHeaders.putAll(existingHeaders);
-            allHeaders.putAll(missingHeaders);
+            for (Map.Entry<String, String> e : missingHeaders.entrySet()) {
+                allHeaders.put(e.getKey(), ImmutableList.of(e.getValue()));
+            }
 
             // 5) calculate the signature
             final String stringToSign =
-                    calculateStringToSign(lowerHttpMethod, path, allHeaders, requiredHeaders);
+                    calculateStringToSign(
+                            lowerHttpMethod, path, allHeaders, requiredHeaders, headers);
             final String signature = sign(key, algorithm, stringToSign);
 
             // 6) calculate the auth header and add to all the missing headers that should be added
@@ -217,22 +218,11 @@ public class RequestSignerImpl implements RequestSigner {
     }
 
     @VisibleForTesting
-    static Map<String, String> ignoreCaseHeaders(Map<String, List<String>> originalHeaders) {
-        Map<String, String> transformedMap = new HashMap<>();
+    static Map<String, List<String>> ignoreCaseHeaders(
+            final Map<String, List<String>> originalHeaders) {
+        Map<String, List<String>> transformedMap = new HashMap<>();
         for (Entry<String, List<String>> entry : originalHeaders.entrySet()) {
-            if (entry.getValue().size() != 1) {
-                final String headerKey = entry.getKey();
-                final RequestSignerException exception =
-                        new RequestSignerException(
-                                "Expecting exactly one value for header " + headerKey);
-                LOG.error(
-                        "More than one value for header [{}] found.  All headers: {}",
-                        headerKey,
-                        transformHeadersToJsonString(originalHeaders),
-                        exception);
-                throw exception;
-            }
-            transformedMap.put(entry.getKey().toLowerCase(Locale.ROOT), entry.getValue().get(0));
+            transformedMap.put(entry.getKey().toLowerCase(), entry.getValue());
         }
         return transformedMap;
     }
@@ -258,7 +248,7 @@ public class RequestSignerImpl implements RequestSigner {
     static Map<String, String> calculateMissingHeaders(
             final String httpMethod,
             final URI uri,
-            final Map<String, String> existingHeaders,
+            final Map<String, List<String>> existingHeaders,
             final Object body,
             final List<String> requiredHeaders,
             final SigningConfiguration signingConfiguration)
@@ -305,6 +295,16 @@ public class RequestSignerImpl implements RequestSigner {
             if (!existingHeaders.containsKey(Constants.CONTENT_TYPE)) {
                 LOG.warn("Missing 'content-type' header, defaulting to 'application/json'");
                 missingHeaders.put(Constants.CONTENT_TYPE, Constants.JSON_CONTENT_TYPE);
+            } else {
+                List<String> contentTypes = existingHeaders.get(Constants.CONTENT_TYPE);
+                if (contentTypes.size() != 1) {
+                    throw new IllegalArgumentException(
+                            "Expected exactly one '"
+                                    + Constants.CONTENT_TYPE
+                                    + " header (received "
+                                    + contentTypes.size()
+                                    + ")");
+                }
             }
         }
 
@@ -320,7 +320,7 @@ public class RequestSignerImpl implements RequestSigner {
     }
 
     private static boolean isRequiredHeaderMissing(
-            String headerName, List<String> requiredHeaders, Map<String, String> existingHeaders) {
+            String headerName, List<String> requiredHeaders, Map<String, ?> existingHeaders) {
         return requiredHeaders.contains(headerName) && !existingHeaders.containsKey(headerName);
     }
 
@@ -329,11 +329,13 @@ public class RequestSignerImpl implements RequestSigner {
         return base64Encode(hash);
     }
 
-    private String calculateStringToSign(
+    @VisibleForTesting
+    static String calculateStringToSign(
             String httpMethod,
             String path,
-            Map<String, String> allHeaders,
-            List<String> requiredHeaders) {
+            Map<String, List<String>> allHeaders,
+            List<String> requiredHeaders,
+            Map<String, List<String>> originalHeaders) {
 
         // Header name and value are separated with ": " and each (name, value)
         // pair is separated with "\n"
@@ -342,13 +344,38 @@ public class RequestSignerImpl implements RequestSigner {
         // Use the order from requiredHeaders, which must match the order
         // when creating the authorization header
         for (String headerName : requiredHeaders) {
-            String headerValue = allHeaders.get(headerName);
+            List<String> headerValues = allHeaders.get(headerName);
+            if (headerValues != null && headerValues.size() != 1) {
+                final RequestSignerException exception =
+                        new RequestSignerException(
+                                "Expecting exactly one value for header " + headerName);
+                LOG.error(
+                        "More than one value for header [{}] to be signed found.  All headers: {}",
+                        headerName,
+                        transformHeadersToJsonString(originalHeaders),
+                        exception);
+                throw exception;
+            }
 
+            String headerValue = (headerValues != null) ? headerValues.get(0) : null;
             if (headerName.equals(Constants.REQUEST_TARGET)) {
                 // Manually compute pseudo-header (request-target), since it
                 // won't be in headers
                 headerValue = httpMethod + " " + path;
             }
+
+            if (headerValue == null) {
+                final RequestSignerException exception =
+                        new RequestSignerException(
+                                "Expecting exactly one value for header " + headerName);
+                LOG.error(
+                        "No header value for header [{}] to be signed found.  All headers: {}",
+                        headerName,
+                        transformHeadersToJsonString(originalHeaders),
+                        exception);
+                throw exception;
+            }
+
             signatureParts.add(String.format("%s: %s", headerName, headerValue));
         }
 

@@ -96,6 +96,15 @@ public class Volume {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -163,6 +172,7 @@ public class Volume {
                             freeformTags,
                             id,
                             isHydrated,
+                            kmsKeyId,
                             lifecycleState,
                             sizeInGBs,
                             sizeInMBs,
@@ -183,6 +193,7 @@ public class Volume {
                             .freeformTags(o.getFreeformTags())
                             .id(o.getId())
                             .isHydrated(o.getIsHydrated())
+                            .kmsKeyId(o.getKmsKeyId())
                             .lifecycleState(o.getLifecycleState())
                             .sizeInGBs(o.getSizeInGBs())
                             .sizeInMBs(o.getSizeInMBs())
@@ -257,6 +268,12 @@ public class Volume {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHydrated")
     Boolean isHydrated;
+
+    /**
+     * The OCID of the KMS key which is the master encryption key for the volume.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    String kmsKeyId;
     /**
      * The current state of a volume.
      **/

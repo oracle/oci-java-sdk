@@ -156,6 +156,15 @@ public interface Blockstorage extends AutoCloseable {
     DeleteBootVolumeBackupResponse deleteBootVolumeBackup(DeleteBootVolumeBackupRequest request);
 
     /**
+     * Remove kms for the specific boot volume. If the volume doesn't use KMS, then do nothing.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteBootVolumeKmsKeyResponse deleteBootVolumeKmsKey(DeleteBootVolumeKmsKeyRequest request);
+
+    /**
      * Deletes the specified volume. The volume cannot have an active connection to an instance.
      * To disconnect the volume from a connected instance, see
      * [Disconnecting From a Volume](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Tasks/disconnectingfromavolume.htm).
@@ -203,6 +212,15 @@ public interface Blockstorage extends AutoCloseable {
     DeleteVolumeGroupBackupResponse deleteVolumeGroupBackup(DeleteVolumeGroupBackupRequest request);
 
     /**
+     * Remove kms for the specific volume. If the volume doesn't use KMS, then do nothing.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteVolumeKmsKeyResponse deleteVolumeKmsKey(DeleteVolumeKmsKeyRequest request);
+
+    /**
      * Gets information for the specified boot volume.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -217,6 +235,15 @@ public interface Blockstorage extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     GetBootVolumeBackupResponse getBootVolumeBackup(GetBootVolumeBackupRequest request);
+
+    /**
+     * Gets kms key id for the specified boot volume.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetBootVolumeKmsKeyResponse getBootVolumeKmsKey(GetBootVolumeKmsKeyRequest request);
 
     /**
      * Gets information for the specified volume.
@@ -278,6 +305,15 @@ public interface Blockstorage extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     GetVolumeGroupBackupResponse getVolumeGroupBackup(GetVolumeGroupBackupRequest request);
+
+    /**
+     * Gets kms key id for the specified volume.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetVolumeKmsKeyResponse getVolumeKmsKey(GetVolumeKmsKeyRequest request);
 
     /**
      * Lists the boot volume backups in the specified compartment. You can filter the results by boot volume.
@@ -363,6 +399,15 @@ public interface Blockstorage extends AutoCloseable {
     UpdateBootVolumeBackupResponse updateBootVolumeBackup(UpdateBootVolumeBackupRequest request);
 
     /**
+     * Update kms key id for the specific volume.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateBootVolumeKmsKeyResponse updateBootVolumeKmsKey(UpdateBootVolumeKmsKeyRequest request);
+
+    /**
      * Updates the specified volume's display name.
      * Avoid entering confidential information.
      *
@@ -403,6 +448,15 @@ public interface Blockstorage extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateVolumeGroupBackupResponse updateVolumeGroupBackup(UpdateVolumeGroupBackupRequest request);
+
+    /**
+     * Update kms key id for the specific volume.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateVolumeKmsKeyResponse updateVolumeKmsKey(UpdateVolumeKmsKeyRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

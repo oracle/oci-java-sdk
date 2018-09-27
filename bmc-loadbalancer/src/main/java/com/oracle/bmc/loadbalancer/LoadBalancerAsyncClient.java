@@ -15,7 +15,10 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
      * Service instance for LoadBalancer.
      */
     public static final com.oracle.bmc.Service SERVICE =
-            com.oracle.bmc.Services.create("LOADBALANCER", "iaas");
+            com.oracle.bmc.Services.serviceBuilder()
+                    .serviceName("LOADBALANCER")
+                    .serviceEndpointPrefix("iaas")
+                    .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
     private final com.oracle.bmc.http.internal.RestClient client;

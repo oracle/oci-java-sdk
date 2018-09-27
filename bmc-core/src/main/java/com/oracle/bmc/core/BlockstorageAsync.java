@@ -226,6 +226,23 @@ public interface BlockstorageAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Remove kms for the specific boot volume. If the volume doesn't use KMS, then do nothing.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteBootVolumeKmsKeyResponse> deleteBootVolumeKmsKey(
+            DeleteBootVolumeKmsKeyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteBootVolumeKmsKeyRequest, DeleteBootVolumeKmsKeyResponse>
+                    handler);
+
+    /**
      * Deletes the specified volume. The volume cannot have an active connection to an instance.
      * To disconnect the volume from a connected instance, see
      * [Disconnecting From a Volume](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Tasks/disconnectingfromavolume.htm).
@@ -313,6 +330,23 @@ public interface BlockstorageAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Remove kms for the specific volume. If the volume doesn't use KMS, then do nothing.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteVolumeKmsKeyResponse> deleteVolumeKmsKey(
+            DeleteVolumeKmsKeyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteVolumeKmsKeyRequest, DeleteVolumeKmsKeyResponse>
+                    handler);
+
+    /**
      * Gets information for the specified boot volume.
      *
      * @param request The request object containing the details to send
@@ -341,6 +375,23 @@ public interface BlockstorageAsync extends AutoCloseable {
             GetBootVolumeBackupRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetBootVolumeBackupRequest, GetBootVolumeBackupResponse>
+                    handler);
+
+    /**
+     * Gets kms key id for the specified boot volume.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetBootVolumeKmsKeyResponse> getBootVolumeKmsKey(
+            GetBootVolumeKmsKeyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetBootVolumeKmsKeyRequest, GetBootVolumeKmsKeyResponse>
                     handler);
 
     /**
@@ -456,6 +507,22 @@ public interface BlockstorageAsync extends AutoCloseable {
             GetVolumeGroupBackupRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetVolumeGroupBackupRequest, GetVolumeGroupBackupResponse>
+                    handler);
+
+    /**
+     * Gets kms key id for the specified volume.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetVolumeKmsKeyResponse> getVolumeKmsKey(
+            GetVolumeKmsKeyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetVolumeKmsKeyRequest, GetVolumeKmsKeyResponse>
                     handler);
 
     /**
@@ -608,6 +675,23 @@ public interface BlockstorageAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Update kms key id for the specific volume.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateBootVolumeKmsKeyResponse> updateBootVolumeKmsKey(
+            UpdateBootVolumeKmsKeyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateBootVolumeKmsKeyRequest, UpdateBootVolumeKmsKeyResponse>
+                    handler);
+
+    /**
      * Updates the specified volume's display name.
      * Avoid entering confidential information.
      *
@@ -678,5 +762,22 @@ public interface BlockstorageAsync extends AutoCloseable {
             UpdateVolumeGroupBackupRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateVolumeGroupBackupRequest, UpdateVolumeGroupBackupResponse>
+                    handler);
+
+    /**
+     * Update kms key id for the specific volume.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateVolumeKmsKeyResponse> updateVolumeKmsKey(
+            UpdateVolumeKmsKeyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateVolumeKmsKeyRequest, UpdateVolumeKmsKeyResponse>
                     handler);
 }

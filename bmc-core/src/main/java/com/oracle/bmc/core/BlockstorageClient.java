@@ -15,7 +15,10 @@ public class BlockstorageClient implements Blockstorage {
      * Service instance for Blockstorage.
      */
     public static final com.oracle.bmc.Service SERVICE =
-            com.oracle.bmc.Services.create("BLOCKSTORAGE", "iaas");
+            com.oracle.bmc.Services.serviceBuilder()
+                    .serviceName("BLOCKSTORAGE")
+                    .serviceEndpointPrefix("iaas")
+                    .build();
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
@@ -549,6 +552,32 @@ public class BlockstorageClient implements Blockstorage {
     }
 
     @Override
+    public DeleteBootVolumeKmsKeyResponse deleteBootVolumeKmsKey(
+            DeleteBootVolumeKmsKeyRequest request) {
+        LOG.trace("Called deleteBootVolumeKmsKey");
+        request = DeleteBootVolumeKmsKeyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteBootVolumeKmsKeyConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBootVolumeKmsKeyResponse>
+                transformer = DeleteBootVolumeKmsKeyConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public DeleteVolumeResponse deleteVolume(DeleteVolumeRequest request) {
         LOG.trace("Called deleteVolume");
         request = DeleteVolumeConverter.interceptRequest(request);
@@ -677,6 +706,31 @@ public class BlockstorageClient implements Blockstorage {
     }
 
     @Override
+    public DeleteVolumeKmsKeyResponse deleteVolumeKmsKey(DeleteVolumeKmsKeyRequest request) {
+        LOG.trace("Called deleteVolumeKmsKey");
+        request = DeleteVolumeKmsKeyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteVolumeKmsKeyConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVolumeKmsKeyResponse>
+                transformer = DeleteVolumeKmsKeyConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public GetBootVolumeResponse getBootVolume(GetBootVolumeRequest request) {
         LOG.trace("Called getBootVolume");
         request = GetBootVolumeConverter.interceptRequest(request);
@@ -709,6 +763,31 @@ public class BlockstorageClient implements Blockstorage {
                 GetBootVolumeBackupConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetBootVolumeBackupResponse>
                 transformer = GetBootVolumeBackupConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public GetBootVolumeKmsKeyResponse getBootVolumeKmsKey(GetBootVolumeKmsKeyRequest request) {
+        LOG.trace("Called getBootVolumeKmsKey");
+        request = GetBootVolumeKmsKeyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetBootVolumeKmsKeyConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetBootVolumeKmsKeyResponse>
+                transformer = GetBootVolumeKmsKeyConverter.fromResponse();
 
         int attempts = 0;
         while (true) {
@@ -889,6 +968,31 @@ public class BlockstorageClient implements Blockstorage {
                 GetVolumeGroupBackupConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeGroupBackupResponse>
                 transformer = GetVolumeGroupBackupConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public GetVolumeKmsKeyResponse getVolumeKmsKey(GetVolumeKmsKeyRequest request) {
+        LOG.trace("Called getVolumeKmsKey");
+        request = GetVolumeKmsKeyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetVolumeKmsKeyConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeKmsKeyResponse>
+                transformer = GetVolumeKmsKeyConverter.fromResponse();
 
         int attempts = 0;
         while (true) {
@@ -1138,6 +1242,33 @@ public class BlockstorageClient implements Blockstorage {
     }
 
     @Override
+    public UpdateBootVolumeKmsKeyResponse updateBootVolumeKmsKey(
+            UpdateBootVolumeKmsKeyRequest request) {
+        LOG.trace("Called updateBootVolumeKmsKey");
+        request = UpdateBootVolumeKmsKeyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateBootVolumeKmsKeyConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBootVolumeKmsKeyResponse>
+                transformer = UpdateBootVolumeKmsKeyConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateBootVolumeKmsKeyDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public UpdateVolumeResponse updateVolume(UpdateVolumeRequest request) {
         LOG.trace("Called updateVolume");
         request = UpdateVolumeConverter.interceptRequest(request);
@@ -1230,6 +1361,32 @@ public class BlockstorageClient implements Blockstorage {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdateVolumeGroupBackupDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public UpdateVolumeKmsKeyResponse updateVolumeKmsKey(UpdateVolumeKmsKeyRequest request) {
+        LOG.trace("Called updateVolumeKmsKey");
+        request = UpdateVolumeKmsKeyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateVolumeKmsKeyConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVolumeKmsKeyResponse>
+                transformer = UpdateVolumeKmsKeyConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateVolumeKmsKeyDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS

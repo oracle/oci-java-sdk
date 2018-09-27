@@ -15,7 +15,10 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
      * Service instance for ContainerEngine.
      */
     public static final com.oracle.bmc.Service SERVICE =
-            com.oracle.bmc.Services.create("CONTAINERENGINE", "containerengine");
+            com.oracle.bmc.Services.serviceBuilder()
+                    .serviceName("CONTAINERENGINE")
+                    .serviceEndpointPrefix("containerengine")
+                    .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
     private final com.oracle.bmc.http.internal.RestClient client;

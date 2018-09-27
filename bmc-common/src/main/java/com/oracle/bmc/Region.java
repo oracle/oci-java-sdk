@@ -13,6 +13,7 @@ import com.google.common.base.Optional;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * Enumeration of all of the known Regions that can be contacted.
@@ -98,6 +99,9 @@ public enum Region {
      * @return The endpoint.
      */
     public static String formatDefaultRegionEndpoint(Service service, String regionId) {
+        if (StringUtils.isNotBlank(service.getServiceEndpointTemplate())) {
+            return service.getServiceEndpointTemplate().replace("{region}", regionId);
+        }
         return String.format(DEFAULT_ENDPOINT_FORMAT, service.getServiceEndpointPrefix(), regionId);
     }
 

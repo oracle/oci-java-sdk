@@ -6,9 +6,9 @@ package com.oracle.bmc;
 import java.util.HashMap;
 import java.util.Map;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.ToString;
+import lombok.Builder;
+import lombok.Value;
+import org.apache.commons.lang3.Validate;
 
 /**
  * Factory class to create new {@link Service} instances.
@@ -28,31 +28,44 @@ public class Services {
      * @param serviceName The unique service name.
      * @param serviceEndpointPrefix The endpoint prefix.
      * @return A Service instance.
+     * @deprecated Use {@link #serviceBuilder()} instead
      */
-    public static synchronized Service create(
-            final String serviceName, final String serviceEndpointPrefix) {
+    @Deprecated
+    public static Service create(final String serviceName, final String serviceEndpointPrefix) {
+        return serviceBuilder()
+                .serviceName(serviceName)
+                .serviceEndpointPrefix(serviceEndpointPrefix)
+                .build();
+    }
+
+    @Builder(builderClassName = "ServiceBuilder", builderMethodName = "serviceBuilder")
+    private static synchronized Service create(
+            final String serviceName,
+            final String serviceEndpointPrefix,
+            final String serviceEndpointTemplate) {
+        Validate.notBlank(serviceName);
+        final Service newInstance =
+                new BasicService(serviceName, serviceEndpointPrefix, serviceEndpointTemplate);
         if (SERVICE_CACHE.containsKey(serviceName)) {
             Service existing = SERVICE_CACHE.get(serviceName);
-            if (existing.getServiceEndpointPrefix().equals(serviceEndpointPrefix)) {
+            if (existing.equals(newInstance)) {
                 return existing;
             }
             throw new IllegalArgumentException(
                     String.format(
-                            "Cannot redefine service '%s' with with new endpoint prefix '%s', already set to '%s'",
+                            "Cannot redefine service '%s'. Existing: '%s', New: '%s'",
                             serviceName,
-                            serviceEndpointPrefix,
-                            existing.getServiceEndpointPrefix()));
+                            existing,
+                            newInstance));
         }
-        Service newInstance = new BasicService(serviceName, serviceEndpointPrefix);
         SERVICE_CACHE.put(serviceName, newInstance);
         return newInstance;
     }
 
-    @RequiredArgsConstructor
-    @Getter
-    @ToString
+    @Value
     private static final class BasicService implements Service {
         private final String serviceName;
         private final String serviceEndpointPrefix;
+        private final String serviceEndpointTemplate;
     }
 }

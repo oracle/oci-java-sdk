@@ -15,7 +15,10 @@ public class EmailClient implements Email {
      * Service instance for Email.
      */
     public static final com.oracle.bmc.Service SERVICE =
-            com.oracle.bmc.Services.create("EMAIL", "email");
+            com.oracle.bmc.Services.serviceBuilder()
+                    .serviceName("EMAIL")
+                    .serviceEndpointPrefix("email")
+                    .build();
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 

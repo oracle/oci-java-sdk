@@ -15,9 +15,14 @@ public class ResourceSearchClient implements ResourceSearch {
      * Service instance for ResourceSearch.
      */
     public static final com.oracle.bmc.Service SERVICE =
-            com.oracle.bmc.Services.create("RESOURCESEARCH", "query");
+            com.oracle.bmc.Services.serviceBuilder()
+                    .serviceName("RESOURCESEARCH")
+                    .serviceEndpointPrefix("query")
+                    .build();
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
+
+    private final ResourceSearchPaginators paginators;
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
     private final com.oracle.bmc.http.internal.RestClient client;
@@ -192,6 +197,8 @@ public class ResourceSearchClient implements ResourceSearch {
             }
         }
         this.client = restClientFactory.create(defaultRequestSigner, requestSigners, configuration);
+
+        this.paginators = new ResourceSearchPaginators(this);
 
         if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
             com.oracle.bmc.auth.RegionProvider provider =
@@ -374,5 +381,10 @@ public class ResourceSearchClient implements ResourceSearch {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public ResourceSearchPaginators getPaginators() {
+        return paginators;
     }
 }

@@ -15,7 +15,10 @@ public class ComputeAsyncClient implements ComputeAsync {
      * Service instance for Compute.
      */
     public static final com.oracle.bmc.Service SERVICE =
-            com.oracle.bmc.Services.create("COMPUTE", "iaas");
+            com.oracle.bmc.Services.serviceBuilder()
+                    .serviceName("COMPUTE")
+                    .serviceEndpointPrefix("iaas")
+                    .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
     private final com.oracle.bmc.http.internal.RestClient client;

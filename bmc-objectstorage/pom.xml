@@ -5,32 +5,20 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>1.2.46</version>
+    <version>1.2.47</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <artifactId>oci-java-sdk-objectstorage</artifactId>
+  <artifactId>oci-java-sdk-objectstorage-parent</artifactId>
   <packaging>pom</packaging>
-  <name>Oracle Cloud Infrastructure SDK - Object Storage</name>
+  <name>Oracle Cloud Infrastructure SDK - Object Storage Parent</name>
   <description>This project contains add-on modules for Oracle Cloud Infrastructure</description>
   <url>https://docs.us-phoenix-1.oraclecloud.com/Content/API/SDKDocs/javasdk.htm</url>
 
-  <dependencies>
-    <dependency>
-      <groupId>com.oracle.oci.sdk</groupId>
-      <artifactId>oci-java-sdk-common</artifactId>
-      <version>1.2.46</version>
-    </dependency>
-    <dependency>
-      <groupId>com.oracle.oci.sdk</groupId>
-      <artifactId>oci-java-sdk-objectstorage-generated</artifactId>
-      <version>1.2.46</version>
-    </dependency>
-    <dependency>
-      <groupId>com.oracle.oci.sdk</groupId>
-      <artifactId>oci-java-sdk-objectstorage-extensions</artifactId>
-      <version>1.2.46</version>
-    </dependency>
-  </dependencies>
+  <modules>
+    <module>bmc-objectstorage-combined</module>
+    <module>bmc-objectstorage-extensions</module>
+    <module>bmc-objectstorage-generated</module>
+  </modules>
 
 </project>
