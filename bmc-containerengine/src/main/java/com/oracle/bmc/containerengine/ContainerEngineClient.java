@@ -15,7 +15,10 @@ public class ContainerEngineClient implements ContainerEngine {
      * Service instance for ContainerEngine.
      */
     public static final com.oracle.bmc.Service SERVICE =
-            com.oracle.bmc.Services.create("CONTAINERENGINE", "containerengine");
+            com.oracle.bmc.Services.serviceBuilder()
+                    .serviceName("CONTAINERENGINE")
+                    .serviceEndpointPrefix("containerengine")
+                    .build();
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 

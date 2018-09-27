@@ -15,7 +15,10 @@ public class LoadBalancerClient implements LoadBalancer {
      * Service instance for LoadBalancer.
      */
     public static final com.oracle.bmc.Service SERVICE =
-            com.oracle.bmc.Services.create("LOADBALANCER", "iaas");
+            com.oracle.bmc.Services.serviceBuilder()
+                    .serviceName("LOADBALANCER")
+                    .serviceEndpointPrefix("iaas")
+                    .build();
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 

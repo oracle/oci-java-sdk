@@ -15,7 +15,10 @@ public class AuditAsyncClient implements AuditAsync {
      * Service instance for Audit.
      */
     public static final com.oracle.bmc.Service SERVICE =
-            com.oracle.bmc.Services.create("AUDIT", "audit");
+            com.oracle.bmc.Services.serviceBuilder()
+                    .serviceName("AUDIT")
+                    .serviceEndpointPrefix("audit")
+                    .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
     private final com.oracle.bmc.http.internal.RestClient client;

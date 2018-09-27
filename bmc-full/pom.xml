@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>1.2.46</version>
+    <version>1.2.47</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <artifactId>oci-java-sdk-full</artifactId>
@@ -16,7 +16,7 @@
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-bom</artifactId>
-        <version>1.2.46</version>
+        <version>1.2.47</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -62,7 +62,6 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-objectstorage</artifactId>
-      <type>pom</type>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
@@ -71,6 +70,10 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-resourcesearch</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-keymanagement</artifactId>
     </dependency>
   </dependencies>
 </project>

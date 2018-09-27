@@ -15,7 +15,10 @@ public class FileStorageClient implements FileStorage {
      * Service instance for FileStorage.
      */
     public static final com.oracle.bmc.Service SERVICE =
-            com.oracle.bmc.Services.create("FILESTORAGE", "filestorage");
+            com.oracle.bmc.Services.serviceBuilder()
+                    .serviceName("FILESTORAGE")
+                    .serviceEndpointPrefix("filestorage")
+                    .build();
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 

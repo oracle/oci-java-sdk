@@ -15,7 +15,10 @@ public class IdentityClient implements Identity {
      * Service instance for Identity.
      */
     public static final com.oracle.bmc.Service SERVICE =
-            com.oracle.bmc.Services.create("IDENTITY", "identity");
+            com.oracle.bmc.Services.serviceBuilder()
+                    .serviceName("IDENTITY")
+                    .serviceEndpointPrefix("identity")
+                    .build();
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 

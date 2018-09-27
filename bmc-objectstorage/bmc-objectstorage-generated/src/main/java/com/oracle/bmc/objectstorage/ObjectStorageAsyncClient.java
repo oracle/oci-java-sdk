@@ -15,7 +15,10 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
      * Service instance for ObjectStorage.
      */
     public static final com.oracle.bmc.Service SERVICE =
-            com.oracle.bmc.Services.create("OBJECTSTORAGE", "objectstorage");
+            com.oracle.bmc.Services.serviceBuilder()
+                    .serviceName("OBJECTSTORAGE")
+                    .serviceEndpointPrefix("objectstorage")
+                    .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
     private final com.oracle.bmc.http.internal.RestClient client;

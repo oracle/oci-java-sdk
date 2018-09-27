@@ -15,7 +15,10 @@ public class DnsAsyncClient implements DnsAsync {
      * Service instance for Dns.
      */
     public static final com.oracle.bmc.Service SERVICE =
-            com.oracle.bmc.Services.create("DNS", "dns");
+            com.oracle.bmc.Services.serviceBuilder()
+                    .serviceName("DNS")
+                    .serviceEndpointPrefix("dns")
+                    .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
     private final com.oracle.bmc.http.internal.RestClient client;

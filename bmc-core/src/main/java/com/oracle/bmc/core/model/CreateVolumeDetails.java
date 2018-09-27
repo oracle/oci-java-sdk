@@ -79,6 +79,15 @@ public class CreateVolumeDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
         private Long sizeInGBs;
 
@@ -127,6 +136,7 @@ public class CreateVolumeDetails {
                             definedTags,
                             displayName,
                             freeformTags,
+                            kmsKeyId,
                             sizeInGBs,
                             sizeInMBs,
                             sourceDetails,
@@ -144,6 +154,7 @@ public class CreateVolumeDetails {
                             .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
+                            .kmsKeyId(o.getKmsKeyId())
                             .sizeInGBs(o.getSizeInGBs())
                             .sizeInMBs(o.getSizeInMBs())
                             .sourceDetails(o.getSourceDetails())
@@ -212,6 +223,12 @@ public class CreateVolumeDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
+
+    /**
+     * The OCID of the KMS key to be used as the master encryption key for the volume.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    String kmsKeyId;
 
     /**
      * The size of the volume in GBs.

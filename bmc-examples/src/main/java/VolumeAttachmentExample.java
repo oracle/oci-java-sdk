@@ -93,7 +93,7 @@ public class VolumeAttachmentExample {
 
     private static final String INSTANCE_SHAPE = "VM.Standard1.1";
     private static final String INSTANCE_OS = "Oracle Linux";
-    private static final String INSTANCE_OS_VERSION = "7.4";
+    private static final String INSTANCE_OS_VERSION = "7.5";
     private static final String INSTANCE_DISPLAY_NAME = "VolAttachExampleInstance";
 
     /**
@@ -102,6 +102,7 @@ public class VolumeAttachmentExample {
      * @param args Arguments to provide to the example. The following arguments are expected:
      * <ul>
      *   <li>The OCID of the compartment where the volumes and associated resources will be created</li>
+     *   <li>Optional. The OCID of the KMS key used to generated volume's data encryption key. </li>
      * </ul>
      */
     public static void main(String[] args) throws Exception {
@@ -111,7 +112,7 @@ public class VolumeAttachmentExample {
         }
 
         final String compartmentId = args[0];
-
+        final String kmsKeyId = args.length == 1 ? null : args[2];
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(CONFIG_LOCATION, CONFIG_PROFILE);
         final BlockstorageClient blockStorageClient = new BlockstorageClient(provider);
@@ -145,9 +146,19 @@ public class VolumeAttachmentExample {
             System.out.println();
 
             volumeOne =
-                    createVolume(blockStorageClient, compartmentId, adToUse, VOL_ONE_DISPLAY_NAME);
+                    createVolume(
+                            blockStorageClient,
+                            compartmentId,
+                            adToUse,
+                            kmsKeyId,
+                            VOL_ONE_DISPLAY_NAME);
             volumeTwo =
-                    createVolume(blockStorageClient, compartmentId, adToUse, VOL_TWO_DISPLAY_NAME);
+                    createVolume(
+                            blockStorageClient,
+                            compartmentId,
+                            adToUse,
+                            kmsKeyId,
+                            VOL_TWO_DISPLAY_NAME);
 
             final VolumeAttachment iscsiAttachment =
                     attachIscsiVolume(computeClient, volumeOne, instance);
@@ -214,6 +225,7 @@ public class VolumeAttachmentExample {
             final BlockstorageClient blockStorageClient,
             final String compartmentId,
             final AvailabilityDomain availabilityDomain,
+            final String kmsKeyId,
             final String displayName)
             throws Exception {
 
@@ -224,11 +236,11 @@ public class VolumeAttachmentExample {
                 blockStorageClient.createVolume(
                         CreateVolumeRequest.builder()
                                 .createVolumeDetails(
-                                        CreateVolumeDetails.builder()
-                                                .availabilityDomain(availabilityDomain.getName())
-                                                .compartmentId(compartmentId)
-                                                .displayName(displayName)
-                                                .build())
+                                        getCreateVolumeDetails(
+                                                compartmentId,
+                                                availabilityDomain,
+                                                displayName,
+                                                kmsKeyId))
                                 .build());
         System.out.println("Created volume: " + createResponse.getVolume().toString());
 
@@ -245,6 +257,27 @@ public class VolumeAttachmentExample {
                 "Waited for volume to be available: " + getResponse.getVolume().toString());
 
         return getResponse.getVolume();
+    }
+
+    private static CreateVolumeDetails getCreateVolumeDetails(
+            final String compartmentId,
+            final AvailabilityDomain availabilityDomain,
+            final String displayName,
+            final String kmsKeyId) {
+        if (kmsKeyId == null) {
+            return CreateVolumeDetails.builder()
+                    .availabilityDomain(availabilityDomain.getName())
+                    .compartmentId(compartmentId)
+                    .displayName(displayName)
+                    .build();
+        }
+
+        return CreateVolumeDetails.builder()
+                .availabilityDomain(availabilityDomain.getName())
+                .compartmentId(compartmentId)
+                .kmsKeyId(kmsKeyId)
+                .displayName(displayName)
+                .build();
     }
 
     /**

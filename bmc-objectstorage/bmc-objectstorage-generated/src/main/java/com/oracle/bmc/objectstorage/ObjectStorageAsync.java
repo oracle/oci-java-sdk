@@ -71,7 +71,8 @@ public interface ObjectStorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a bucket in the given namespace with a bucket name and optional user-defined metadata.
+     * Creates a bucket in the given namespace with a bucket name and optional user-defined metadata. Avoid entering confidential
+     * information in bucket names.
      *
      *
      * @param request The request object containing the details to send
@@ -377,7 +378,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new object or overwrites an existing one.
+     * Creates a new object or overwrites an existing one. See [Special Instructions for Object Storage PUT](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/signingrequests.htm#ObjectStoragePut) for request signature requirements.
      *
      *
      * @param request The request object containing the details to send
@@ -461,7 +462,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Uploads a single part of a multipart upload.
+     * Uploads a single part of a multipart upload. See [Special Instructions for Object Storage PUT](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/signingrequests.htm#ObjectStoragePut) for request signature requirements.
      *
      *
      * @param request The request object containing the details to send

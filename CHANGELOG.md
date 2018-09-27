@@ -13,6 +13,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.2.47 - 2018-09-27
+### Added
+- Support for `paravirtualized` launch mode when importing images in the Compute service
+- Support for Key Management service
+- Support for encrypting the contents of an Object Storage bucket using a Key Management service key
+- Support for specifying a Key Management service key when launching a compute instance in the Compute service
+- Support for specifying a Key Management service key when backing up or restoring a block storage volume in the Block Volume service
+
 ## 1.2.46 - 2018-09-06
 ### Added
 - Support for updating metadata fields on an instance in the Compute service

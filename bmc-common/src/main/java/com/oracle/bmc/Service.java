@@ -21,4 +21,10 @@ public interface Service {
      * "https://iaas.us-phoenix-1.oraclecloud.com".
      */
     String getServiceEndpointPrefix();
+
+    /**
+     * The service endpoint template that will be used, ex
+     * "{region}.service.oci.oraclecloud.com"
+     */
+    String getServiceEndpointTemplate();
 }
