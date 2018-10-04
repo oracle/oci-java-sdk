@@ -26,9 +26,13 @@ public class ConfigFileReaderTest {
         ConfigFileReader.parse("src/test/resources/does_not_exist");
     }
 
-    @Test(expected = IllegalStateException.class)
+    @Test
     public void noDefaultProfile() throws IOException {
-        ConfigFileReader.parse("src/test/resources/unit_test_no_default_config");
+        final ConfigFile configFile =
+                ConfigFileReader.parse("src/test/resources/unit_test_no_default_config", "USER");
+        assertEquals("default_user", configFile.get("user"));
+        assertEquals("default_tenancy", configFile.get("tenancy"));
+        assertNull(configFile.get("region"));
     }
 
     @Test(expected = IllegalStateException.class)

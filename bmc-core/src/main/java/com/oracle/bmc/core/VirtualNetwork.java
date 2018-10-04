@@ -320,6 +320,16 @@ public interface VirtualNetwork extends AutoCloseable {
             CreateLocalPeeringGatewayRequest request);
 
     /**
+     * Creates a new NAT gateway for the specified VCN. You must also set up a route rule with the
+     * NAT gateway as the rule's target. See {@link RouteTable}.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateNatGatewayResponse createNatGateway(CreateNatGatewayRequest request);
+
+    /**
      * Creates a secondary private IP for the specified VNIC.
      * For more information about secondary private IPs, see
      * [IP Addresses](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPaddresses.htm).
@@ -335,11 +345,12 @@ public interface VirtualNetwork extends AutoCloseable {
      * reserved public IP. For information about limits on how many you can create, see
      * [Public IP Addresses](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingpublicIPs.htm).
      * <p>
-     * **For an ephemeral public IP:** You must also specify a `privateIpId` with the OCID of
-     * the primary private IP you want to assign the public IP to. The public IP is created in
-     * the same availability domain as the private IP. An ephemeral public IP must always be
+     * **For an ephemeral public IP assigned to a private IP:** You must also specify a `privateIpId`
+     * with the OCID of the primary private IP you want to assign the public IP to. The public IP is
+     * created in the same availability domain as the private IP. An ephemeral public IP must always be
      * assigned to a private IP, and only to the *primary* private IP on a VNIC, not a secondary
-     * private IP.
+     * private IP. Exception: If you create a {@link NatGateway}, Oracle
+     * automatically assigns the NAT gateway a regional ephemeral public IP that you cannot remove.
      * <p>
      * **For a reserved public IP:** You may also optionally assign the public IP to a private
      * IP by specifying `privateIpId`. Or you can later assign the public IP with
@@ -646,6 +657,19 @@ public interface VirtualNetwork extends AutoCloseable {
             DeleteLocalPeeringGatewayRequest request);
 
     /**
+     * Deletes the specified NAT gateway. The NAT gateway does not have to be disabled, but there
+     * must not be a route rule that lists the NAT gateway as a target.
+     * <p>
+     * This is an asynchronous operation. The NAT gateway's `lifecycleState` will change to
+     * TERMINATING temporarily until the NAT gateway is completely removed.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteNatGatewayResponse deleteNatGateway(DeleteNatGatewayRequest request);
+
+    /**
      * Unassigns and deletes the specified private IP. You must
      * specify the object's OCID. The private IP address is returned to
      * the subnet's pool of available addresses.
@@ -668,6 +692,10 @@ public interface VirtualNetwork extends AutoCloseable {
      * Unassigns and deletes the specified public IP (either ephemeral or reserved).
      * You must specify the object's OCID. The public IP address is returned to the
      * Oracle Cloud Infrastructure public IP pool.
+     * <p>
+     **Note:** You cannot update, unassign, or delete the public IP that Oracle automatically
+     * assigned to an entity for you (such as a load balancer or NAT gateway). The public IP is
+     * automatically deleted if the assigned entity is terminated.
      * <p>
      * For an assigned reserved public IP, the initial unassignment portion of this operation
      * is asynchronous. Poll the public IP's `lifecycleState` to determine
@@ -914,6 +942,14 @@ public interface VirtualNetwork extends AutoCloseable {
     GetLocalPeeringGatewayResponse getLocalPeeringGateway(GetLocalPeeringGatewayRequest request);
 
     /**
+     * Gets the specified NAT gateway's information.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetNatGatewayResponse getNatGateway(GetNatGatewayRequest request);
+
+    /**
      * Gets the specified private IP. You must specify the object's OCID.
      * Alternatively, you can get the object by using
      * {@link #listPrivateIps(ListPrivateIpsRequest) listPrivateIps}
@@ -936,7 +972,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * <p>
      **Note:** If you're fetching a reserved public IP that is in the process of being
      * moved to a different private IP, the service returns the public IP object with
-     * `lifecycleState` = ASSIGNING and `privateIpId` = OCID of the target private IP.
+     * `lifecycleState` = ASSIGNING and `assignedEntityId` = OCID of the target private IP.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -949,7 +985,7 @@ public interface VirtualNetwork extends AutoCloseable {
      * <p>
      **Note:** If you're fetching a reserved public IP that is in the process of being
      * moved to a different private IP, the service returns the public IP object with
-     * `lifecycleState` = ASSIGNING and `privateIpId` = OCID of the target private IP.
+     * `lifecycleState` = ASSIGNING and `assignedEntityId` = OCID of the target private IP.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -967,8 +1003,8 @@ public interface VirtualNetwork extends AutoCloseable {
      * private IP, or if you instead call
      * {@link #getPublicIp(GetPublicIpRequest) getPublicIp} or
      * {@link #getPublicIpByIpAddress(GetPublicIpByIpAddressRequest) getPublicIpByIpAddress}, the
-     * service returns the public IP object with `lifecycleState` = ASSIGNING and `privateIpId` = OCID
-     * of the target private IP.
+     * service returns the public IP object with `lifecycleState` = ASSIGNING and
+     * `assignedEntityId` = OCID of the target private IP.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1209,6 +1245,16 @@ public interface VirtualNetwork extends AutoCloseable {
             ListLocalPeeringGatewaysRequest request);
 
     /**
+     * Lists the NAT gateways in the specified compartment. You may optionally specify a VCN OCID
+     * to filter the results by VCN.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListNatGatewaysResponse listNatGateways(ListNatGatewaysRequest request);
+
+    /**
      * Lists the {@link PrivateIp} objects based
      * on one of these filters:
      * <p>
@@ -1230,15 +1276,26 @@ public interface VirtualNetwork extends AutoCloseable {
     ListPrivateIpsResponse listPrivateIps(ListPrivateIpsRequest request);
 
     /**
-     * Lists either the ephemeral or reserved {@link PublicIp} objects
-     * in the specified compartment.
+     * Lists the {@link PublicIp} objects
+     * in the specified compartment. You can filter the list by using query parameters.
      * <p>
-     * To list your reserved public IPs, set `scope` = `REGION`, and leave the
-     * `availabilityDomain` parameter empty.
+     * To list your reserved public IPs:
+     *   * Set `scope` = `REGION`  (required)
+     *   * Leave the `availabilityDomain` parameter empty
+     *   * Set `lifetime` = `RESERVED`
      * <p>
-     * To list your ephemeral public IPs, set `scope` = `AVAILABILITY_DOMAIN`, and set the
-     * `availabilityDomain` parameter to the desired availability domain. An ephemeral public IP
-     * is always in the same availability domain and compartment as the private IP it's assigned to.
+     * To list the ephemeral public IPs assigned to a regional entity such as a NAT gateway:
+     *   * Set `scope` = `REGION`  (required)
+     *   * Leave the `availabilityDomain` parameter empty
+     *   * Set `lifetime` = `EPHEMERAL`
+     * <p>
+     * To list the ephemeral public IPs assigned to private IPs:
+     *   * Set `scope` = `AVAILABILITY_DOMAIN` (required)
+     *   * Set the `availabilityDomain` parameter to the desired availability domain (required)
+     *   * Set `lifetime` = `EPHEMERAL`
+     * <p>
+     **Note:** An ephemeral public IP assigned to a private IP
+     * is always in the same availability domain and compartment as the private IP.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1435,6 +1492,15 @@ public interface VirtualNetwork extends AutoCloseable {
      */
     UpdateLocalPeeringGatewayResponse updateLocalPeeringGateway(
             UpdateLocalPeeringGatewayRequest request);
+
+    /**
+     * Updates the specified NAT gateway.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateNatGatewayResponse updateNatGateway(UpdateNatGatewayRequest request);
 
     /**
      * Updates the specified private IP. You must specify the object's OCID.

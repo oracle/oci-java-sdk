@@ -1542,6 +1542,118 @@ public class VirtualNetworkPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listNatGateways operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListNatGatewaysResponse> listNatGatewaysResponseIterator(
+            final ListNatGatewaysRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListNatGatewaysRequest.Builder, ListNatGatewaysRequest, ListNatGatewaysResponse>(
+                new com.google.common.base.Supplier<ListNatGatewaysRequest.Builder>() {
+                    @Override
+                    public ListNatGatewaysRequest.Builder get() {
+                        return ListNatGatewaysRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListNatGatewaysResponse, String>() {
+                    @Override
+                    public String apply(ListNatGatewaysResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListNatGatewaysRequest.Builder>,
+                        ListNatGatewaysRequest>() {
+                    @Override
+                    public ListNatGatewaysRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListNatGatewaysRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListNatGatewaysRequest, ListNatGatewaysResponse>() {
+                    @Override
+                    public ListNatGatewaysResponse apply(ListNatGatewaysRequest request) {
+                        return client.listNatGateways(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.NatGateway} objects
+     * contained in responses from the listNatGateways operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.NatGateway} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.NatGateway> listNatGatewaysRecordIterator(
+            final ListNatGatewaysRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListNatGatewaysRequest.Builder, ListNatGatewaysRequest, ListNatGatewaysResponse,
+                com.oracle.bmc.core.model.NatGateway>(
+                new com.google.common.base.Supplier<ListNatGatewaysRequest.Builder>() {
+                    @Override
+                    public ListNatGatewaysRequest.Builder get() {
+                        return ListNatGatewaysRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListNatGatewaysResponse, String>() {
+                    @Override
+                    public String apply(ListNatGatewaysResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListNatGatewaysRequest.Builder>,
+                        ListNatGatewaysRequest>() {
+                    @Override
+                    public ListNatGatewaysRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListNatGatewaysRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListNatGatewaysRequest, ListNatGatewaysResponse>() {
+                    @Override
+                    public ListNatGatewaysResponse apply(ListNatGatewaysRequest request) {
+                        return client.listNatGateways(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListNatGatewaysResponse,
+                        java.util.List<com.oracle.bmc.core.model.NatGateway>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.NatGateway> apply(
+                            ListNatGatewaysResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listPrivateIps operation. This iterable
      * will fetch more data from the server as needed.
      *

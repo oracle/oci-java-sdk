@@ -280,6 +280,10 @@ public class LaunchInstanceDetails {
      * If you do not specify the fault domain, the system selects one for you. To change the fault
      * domain for an instance, terminate it and launch a new instance in the preferred fault domain.
      * <p>
+     * To get a list of fault domains, use the
+     * {@link #listFaultDomains(ListFaultDomainsRequest) listFaultDomains} operation in the
+     * Identity and Access Management Service API.
+     * <p>
      * Example: `FAULT-DOMAIN-1`
      *
      **/

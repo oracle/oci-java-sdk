@@ -13,12 +13,14 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest {
     /**
      * Whether the public IP is regional or specific to a particular availability domain.
      * <p>
-     * `REGION`: The public IP exists within a region and can be assigned to a private IP
-     * in any availability domain in the region. Reserved public IPs have `scope` = `REGION`.
+     * `REGION`: The public IP exists within a region and is assigned to a regional entity
+     * (such as a {@link NatGateway}), or can be assigned to a private IP
+     * in any availability domain in the region. Reserved public IPs have `scope` = `REGION`, as do
+     * ephemeral public IPs assigned to a regional entity.
      * <p>
-     * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the private IP
+     * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the entity
      * it's assigned to, which is specified by the `availabilityDomain` property of the public IP object.
-     * Ephemeral public IPs have `scope` = `AVAILABILITY_DOMAIN`.
+     * Ephemeral public IPs that are assigned to private IPs have `scope` = `AVAILABILITY_DOMAIN`.
      *
      */
     private Scope scope;
@@ -26,12 +28,14 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest {
     /**
      * Whether the public IP is regional or specific to a particular availability domain.
      * <p>
-     * `REGION`: The public IP exists within a region and can be assigned to a private IP
-     * in any availability domain in the region. Reserved public IPs have `scope` = `REGION`.
+     * `REGION`: The public IP exists within a region and is assigned to a regional entity
+     * (such as a {@link NatGateway}), or can be assigned to a private IP
+     * in any availability domain in the region. Reserved public IPs have `scope` = `REGION`, as do
+     * ephemeral public IPs assigned to a regional entity.
      * <p>
-     * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the private IP
+     * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the entity
      * it's assigned to, which is specified by the `availabilityDomain` property of the public IP object.
-     * Ephemeral public IPs have `scope` = `AVAILABILITY_DOMAIN`.
+     * Ephemeral public IPs that are assigned to private IPs have `scope` = `AVAILABILITY_DOMAIN`.
      *
      **/
     public enum Scope {
@@ -73,15 +77,19 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest {
     private String compartmentId;
 
     /**
-     * The maximum number of items to return in a paginated \"List\" call.
+     * For list pagination. The maximum number of results per page, or items to return in a paginated
+     * \"List\" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      * <p>
-     * Example: `500`
+     * Example: `50`
      *
      */
     private Integer limit;
 
     /**
-     * The value of the `opc-next-page` response header from the previous \"List\" call.
+     * For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+     * call. For important details about how pagination works, see
+     * [List Pagination](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private String page;
@@ -93,6 +101,49 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest {
      *
      */
     private String availabilityDomain;
+
+    /**
+     * A filter to return only public IPs that match given lifetime.
+     *
+     */
+    private Lifetime lifetime;
+
+    /**
+     * A filter to return only public IPs that match given lifetime.
+     *
+     **/
+    public enum Lifetime {
+        Ephemeral("EPHEMERAL"),
+        Reserved("RESERVED"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Lifetime> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Lifetime v : Lifetime.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Lifetime(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Lifetime create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new RuntimeException("Invalid Lifetime: " + key);
+        }
+    };
 
     public static class Builder {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
@@ -120,6 +171,7 @@ public class ListPublicIpsRequest extends com.oracle.bmc.requests.BmcRequest {
             limit(o.getLimit());
             page(o.getPage());
             availabilityDomain(o.getAvailabilityDomain());
+            lifetime(o.getLifetime());
             invocationCallback(o.getInvocationCallback());
             return this;
         }

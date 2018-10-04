@@ -696,6 +696,32 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public CreateNatGatewayResponse createNatGateway(CreateNatGatewayRequest request) {
+        LOG.trace("Called createNatGateway");
+        request = CreateNatGatewayConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateNatGatewayConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateNatGatewayResponse>
+                transformer = CreateNatGatewayConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCreateNatGatewayDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public CreatePrivateIpResponse createPrivateIp(CreatePrivateIpRequest request) {
         LOG.trace("Called createPrivateIp");
         request = CreatePrivateIpConverter.interceptRequest(request);
@@ -1144,6 +1170,31 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteLocalPeeringGatewayResponse>
                 transformer = DeleteLocalPeeringGatewayConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public DeleteNatGatewayResponse deleteNatGateway(DeleteNatGatewayRequest request) {
+        LOG.trace("Called deleteNatGateway");
+        request = DeleteNatGatewayConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteNatGatewayConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteNatGatewayResponse>
+                transformer = DeleteNatGatewayConverter.fromResponse();
 
         int attempts = 0;
         while (true) {
@@ -1757,6 +1808,31 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 GetLocalPeeringGatewayConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetLocalPeeringGatewayResponse>
                 transformer = GetLocalPeeringGatewayConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public GetNatGatewayResponse getNatGateway(GetNatGatewayRequest request) {
+        LOG.trace("Called getNatGateway");
+        request = GetNatGatewayConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetNatGatewayConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetNatGatewayResponse>
+                transformer = GetNatGatewayConverter.fromResponse();
 
         int attempts = 0;
         while (true) {
@@ -2475,6 +2551,31 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public ListNatGatewaysResponse listNatGateways(ListNatGatewaysRequest request) {
+        LOG.trace("Called listNatGateways");
+        request = ListNatGatewaysConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListNatGatewaysConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListNatGatewaysResponse>
+                transformer = ListNatGatewaysConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public ListPrivateIpsResponse listPrivateIps(ListPrivateIpsRequest request) {
         LOG.trace("Called listPrivateIps");
         request = ListPrivateIpsConverter.interceptRequest(request);
@@ -3007,6 +3108,32 @@ public class VirtualNetworkClient implements VirtualNetwork {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdateLocalPeeringGatewayDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public UpdateNatGatewayResponse updateNatGateway(UpdateNatGatewayRequest request) {
+        LOG.trace("Called updateNatGateway");
+        request = UpdateNatGatewayConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateNatGatewayConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateNatGatewayResponse>
+                transformer = UpdateNatGatewayConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateNatGatewayDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS

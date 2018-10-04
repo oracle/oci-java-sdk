@@ -30,6 +30,369 @@ public class ComputePaginators {
     private final Compute client;
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listAppCatalogListingResourceVersions operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListAppCatalogListingResourceVersionsResponse>
+            listAppCatalogListingResourceVersionsResponseIterator(
+                    final ListAppCatalogListingResourceVersionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAppCatalogListingResourceVersionsRequest.Builder,
+                ListAppCatalogListingResourceVersionsRequest,
+                ListAppCatalogListingResourceVersionsResponse>(
+                new com.google.common.base.Supplier<
+                        ListAppCatalogListingResourceVersionsRequest.Builder>() {
+                    @Override
+                    public ListAppCatalogListingResourceVersionsRequest.Builder get() {
+                        return ListAppCatalogListingResourceVersionsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAppCatalogListingResourceVersionsResponse, String>() {
+                    @Override
+                    public String apply(ListAppCatalogListingResourceVersionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAppCatalogListingResourceVersionsRequest.Builder>,
+                        ListAppCatalogListingResourceVersionsRequest>() {
+                    @Override
+                    public ListAppCatalogListingResourceVersionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAppCatalogListingResourceVersionsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAppCatalogListingResourceVersionsRequest,
+                        ListAppCatalogListingResourceVersionsResponse>() {
+                    @Override
+                    public ListAppCatalogListingResourceVersionsResponse apply(
+                            ListAppCatalogListingResourceVersionsRequest request) {
+                        return client.listAppCatalogListingResourceVersions(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.AppCatalogListingResourceVersionSummary} objects
+     * contained in responses from the listAppCatalogListingResourceVersions operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.AppCatalogListingResourceVersionSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.AppCatalogListingResourceVersionSummary>
+            listAppCatalogListingResourceVersionsRecordIterator(
+                    final ListAppCatalogListingResourceVersionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAppCatalogListingResourceVersionsRequest.Builder,
+                ListAppCatalogListingResourceVersionsRequest,
+                ListAppCatalogListingResourceVersionsResponse,
+                com.oracle.bmc.core.model.AppCatalogListingResourceVersionSummary>(
+                new com.google.common.base.Supplier<
+                        ListAppCatalogListingResourceVersionsRequest.Builder>() {
+                    @Override
+                    public ListAppCatalogListingResourceVersionsRequest.Builder get() {
+                        return ListAppCatalogListingResourceVersionsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAppCatalogListingResourceVersionsResponse, String>() {
+                    @Override
+                    public String apply(ListAppCatalogListingResourceVersionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAppCatalogListingResourceVersionsRequest.Builder>,
+                        ListAppCatalogListingResourceVersionsRequest>() {
+                    @Override
+                    public ListAppCatalogListingResourceVersionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAppCatalogListingResourceVersionsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAppCatalogListingResourceVersionsRequest,
+                        ListAppCatalogListingResourceVersionsResponse>() {
+                    @Override
+                    public ListAppCatalogListingResourceVersionsResponse apply(
+                            ListAppCatalogListingResourceVersionsRequest request) {
+                        return client.listAppCatalogListingResourceVersions(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAppCatalogListingResourceVersionsResponse,
+                        java.util.List<
+                                com.oracle.bmc.core.model
+                                        .AppCatalogListingResourceVersionSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.core.model
+                                            .AppCatalogListingResourceVersionSummary>
+                            apply(ListAppCatalogListingResourceVersionsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listAppCatalogListings operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListAppCatalogListingsResponse> listAppCatalogListingsResponseIterator(
+            final ListAppCatalogListingsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAppCatalogListingsRequest.Builder, ListAppCatalogListingsRequest,
+                ListAppCatalogListingsResponse>(
+                new com.google.common.base.Supplier<ListAppCatalogListingsRequest.Builder>() {
+                    @Override
+                    public ListAppCatalogListingsRequest.Builder get() {
+                        return ListAppCatalogListingsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListAppCatalogListingsResponse, String>() {
+                    @Override
+                    public String apply(ListAppCatalogListingsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAppCatalogListingsRequest.Builder>,
+                        ListAppCatalogListingsRequest>() {
+                    @Override
+                    public ListAppCatalogListingsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAppCatalogListingsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAppCatalogListingsRequest, ListAppCatalogListingsResponse>() {
+                    @Override
+                    public ListAppCatalogListingsResponse apply(
+                            ListAppCatalogListingsRequest request) {
+                        return client.listAppCatalogListings(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.AppCatalogListingSummary} objects
+     * contained in responses from the listAppCatalogListings operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.AppCatalogListingSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.AppCatalogListingSummary>
+            listAppCatalogListingsRecordIterator(final ListAppCatalogListingsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAppCatalogListingsRequest.Builder, ListAppCatalogListingsRequest,
+                ListAppCatalogListingsResponse, com.oracle.bmc.core.model.AppCatalogListingSummary>(
+                new com.google.common.base.Supplier<ListAppCatalogListingsRequest.Builder>() {
+                    @Override
+                    public ListAppCatalogListingsRequest.Builder get() {
+                        return ListAppCatalogListingsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListAppCatalogListingsResponse, String>() {
+                    @Override
+                    public String apply(ListAppCatalogListingsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAppCatalogListingsRequest.Builder>,
+                        ListAppCatalogListingsRequest>() {
+                    @Override
+                    public ListAppCatalogListingsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAppCatalogListingsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAppCatalogListingsRequest, ListAppCatalogListingsResponse>() {
+                    @Override
+                    public ListAppCatalogListingsResponse apply(
+                            ListAppCatalogListingsRequest request) {
+                        return client.listAppCatalogListings(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAppCatalogListingsResponse,
+                        java.util.List<com.oracle.bmc.core.model.AppCatalogListingSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.AppCatalogListingSummary> apply(
+                            ListAppCatalogListingsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listAppCatalogSubscriptions operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListAppCatalogSubscriptionsResponse>
+            listAppCatalogSubscriptionsResponseIterator(
+                    final ListAppCatalogSubscriptionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAppCatalogSubscriptionsRequest.Builder, ListAppCatalogSubscriptionsRequest,
+                ListAppCatalogSubscriptionsResponse>(
+                new com.google.common.base.Supplier<ListAppCatalogSubscriptionsRequest.Builder>() {
+                    @Override
+                    public ListAppCatalogSubscriptionsRequest.Builder get() {
+                        return ListAppCatalogSubscriptionsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListAppCatalogSubscriptionsResponse, String>() {
+                    @Override
+                    public String apply(ListAppCatalogSubscriptionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAppCatalogSubscriptionsRequest.Builder>,
+                        ListAppCatalogSubscriptionsRequest>() {
+                    @Override
+                    public ListAppCatalogSubscriptionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAppCatalogSubscriptionsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAppCatalogSubscriptionsRequest, ListAppCatalogSubscriptionsResponse>() {
+                    @Override
+                    public ListAppCatalogSubscriptionsResponse apply(
+                            ListAppCatalogSubscriptionsRequest request) {
+                        return client.listAppCatalogSubscriptions(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.AppCatalogSubscriptionSummary} objects
+     * contained in responses from the listAppCatalogSubscriptions operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.AppCatalogSubscriptionSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.AppCatalogSubscriptionSummary>
+            listAppCatalogSubscriptionsRecordIterator(
+                    final ListAppCatalogSubscriptionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAppCatalogSubscriptionsRequest.Builder, ListAppCatalogSubscriptionsRequest,
+                ListAppCatalogSubscriptionsResponse,
+                com.oracle.bmc.core.model.AppCatalogSubscriptionSummary>(
+                new com.google.common.base.Supplier<ListAppCatalogSubscriptionsRequest.Builder>() {
+                    @Override
+                    public ListAppCatalogSubscriptionsRequest.Builder get() {
+                        return ListAppCatalogSubscriptionsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListAppCatalogSubscriptionsResponse, String>() {
+                    @Override
+                    public String apply(ListAppCatalogSubscriptionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAppCatalogSubscriptionsRequest.Builder>,
+                        ListAppCatalogSubscriptionsRequest>() {
+                    @Override
+                    public ListAppCatalogSubscriptionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAppCatalogSubscriptionsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAppCatalogSubscriptionsRequest, ListAppCatalogSubscriptionsResponse>() {
+                    @Override
+                    public ListAppCatalogSubscriptionsResponse apply(
+                            ListAppCatalogSubscriptionsRequest request) {
+                        return client.listAppCatalogSubscriptions(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAppCatalogSubscriptionsResponse,
+                        java.util.List<com.oracle.bmc.core.model.AppCatalogSubscriptionSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.AppCatalogSubscriptionSummary>
+                            apply(ListAppCatalogSubscriptionsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listBootVolumeAttachments operation. This iterable
      * will fetch more data from the server as needed.
      *

@@ -11,7 +11,10 @@ import com.oracle.bmc.core.model.*;
 public class ListRemotePeeringConnectionsResponse {
 
     /**
-     * A pagination token to the start of the next page, if one exist.
+     * For list pagination. When this header appears in the response, additional pages of
+     * results remain. For important details about how pagination works, see
+     * [List Pagination](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String opcNextPage;
 

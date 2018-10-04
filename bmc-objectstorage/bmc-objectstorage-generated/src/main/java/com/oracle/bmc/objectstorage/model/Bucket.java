@@ -138,6 +138,15 @@ public class Bucket {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("objectLifecyclePolicyEtag")
+        private String objectLifecyclePolicyEtag;
+
+        public Builder objectLifecyclePolicyEtag(String objectLifecyclePolicyEtag) {
+            this.objectLifecyclePolicyEtag = objectLifecyclePolicyEtag;
+            this.__explicitlySet__.add("objectLifecyclePolicyEtag");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -155,7 +164,8 @@ public class Bucket {
                             storageTier,
                             freeformTags,
                             definedTags,
-                            kmsKeyId);
+                            kmsKeyId,
+                            objectLifecyclePolicyEtag);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -174,7 +184,8 @@ public class Bucket {
                             .storageTier(o.getStorageTier())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
-                            .kmsKeyId(o.getKmsKeyId());
+                            .kmsKeyId(o.getKmsKeyId())
+                            .objectLifecyclePolicyEtag(o.getObjectLifecyclePolicyEtag());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -376,6 +387,12 @@ public class Bucket {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     String kmsKeyId;
+
+    /**
+     * The entity tag for the live object lifecycle policy on the bucket.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("objectLifecyclePolicyEtag")
+    String objectLifecyclePolicyEtag;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

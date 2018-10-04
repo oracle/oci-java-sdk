@@ -417,6 +417,34 @@ public class ComputeClient implements Compute {
     }
 
     @Override
+    public CreateAppCatalogSubscriptionResponse createAppCatalogSubscription(
+            CreateAppCatalogSubscriptionRequest request) {
+        LOG.trace("Called createAppCatalogSubscription");
+        request = CreateAppCatalogSubscriptionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateAppCatalogSubscriptionConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateAppCatalogSubscriptionResponse>
+                transformer = CreateAppCatalogSubscriptionConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCreateAppCatalogSubscriptionDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public CreateImageResponse createImage(CreateImageRequest request) {
         LOG.trace("Called createImage");
         request = CreateImageConverter.interceptRequest(request);
@@ -459,6 +487,33 @@ public class ComputeClient implements Compute {
                 javax.ws.rs.core.Response response =
                         client.post(
                                 ib, request.getCreateInstanceConsoleConnectionDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public DeleteAppCatalogSubscriptionResponse deleteAppCatalogSubscription(
+            DeleteAppCatalogSubscriptionRequest request) {
+        LOG.trace("Called deleteAppCatalogSubscription");
+        request = DeleteAppCatalogSubscriptionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteAppCatalogSubscriptionConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteAppCatalogSubscriptionResponse>
+                transformer = DeleteAppCatalogSubscriptionConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
@@ -637,6 +692,85 @@ public class ComputeClient implements Compute {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getExportImageDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public GetAppCatalogListingResponse getAppCatalogListing(GetAppCatalogListingRequest request) {
+        LOG.trace("Called getAppCatalogListing");
+        request = GetAppCatalogListingConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAppCatalogListingConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetAppCatalogListingResponse>
+                transformer = GetAppCatalogListingConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public GetAppCatalogListingAgreementsResponse getAppCatalogListingAgreements(
+            GetAppCatalogListingAgreementsRequest request) {
+        LOG.trace("Called getAppCatalogListingAgreements");
+        request = GetAppCatalogListingAgreementsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAppCatalogListingAgreementsConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetAppCatalogListingAgreementsResponse>
+                transformer = GetAppCatalogListingAgreementsConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public GetAppCatalogListingResourceVersionResponse getAppCatalogListingResourceVersion(
+            GetAppCatalogListingResourceVersionRequest request) {
+        LOG.trace("Called getAppCatalogListingResourceVersion");
+        request = GetAppCatalogListingResourceVersionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAppCatalogListingResourceVersionConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetAppCatalogListingResourceVersionResponse>
+                transformer = GetAppCatalogListingResourceVersionConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
@@ -919,6 +1053,86 @@ public class ComputeClient implements Compute {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getLaunchInstanceDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public ListAppCatalogListingResourceVersionsResponse listAppCatalogListingResourceVersions(
+            ListAppCatalogListingResourceVersionsRequest request) {
+        LOG.trace("Called listAppCatalogListingResourceVersions");
+        request = ListAppCatalogListingResourceVersionsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAppCatalogListingResourceVersionsConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListAppCatalogListingResourceVersionsResponse>
+                transformer = ListAppCatalogListingResourceVersionsConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public ListAppCatalogListingsResponse listAppCatalogListings(
+            ListAppCatalogListingsRequest request) {
+        LOG.trace("Called listAppCatalogListings");
+        request = ListAppCatalogListingsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAppCatalogListingsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListAppCatalogListingsResponse>
+                transformer = ListAppCatalogListingsConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public ListAppCatalogSubscriptionsResponse listAppCatalogSubscriptions(
+            ListAppCatalogSubscriptionsRequest request) {
+        LOG.trace("Called listAppCatalogSubscriptions");
+        request = ListAppCatalogSubscriptionsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAppCatalogSubscriptionsConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListAppCatalogSubscriptionsResponse>
+                transformer = ListAppCatalogSubscriptionsConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
