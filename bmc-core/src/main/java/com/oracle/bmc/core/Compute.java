@@ -91,6 +91,16 @@ public interface Compute extends AutoCloseable {
     CaptureConsoleHistoryResponse captureConsoleHistory(CaptureConsoleHistoryRequest request);
 
     /**
+     * Create a subscription for listing resource version for a compartment. It will take some time to propagate to all regions.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateAppCatalogSubscriptionResponse createAppCatalogSubscription(
+            CreateAppCatalogSubscriptionRequest request);
+
+    /**
      * Creates a boot disk image for the specified instance or imports an exported image from the Oracle Cloud Infrastructure Object Storage service.
      * <p>
      * When creating a new image, you must provide the OCID of the instance you want to use as the basis for the image, and
@@ -134,6 +144,15 @@ public interface Compute extends AutoCloseable {
      */
     CreateInstanceConsoleConnectionResponse createInstanceConsoleConnection(
             CreateInstanceConsoleConnectionRequest request);
+
+    /**
+     * Delete a subscription for a listing resource version for a compartment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteAppCatalogSubscriptionResponse deleteAppCatalogSubscription(
+            DeleteAppCatalogSubscriptionRequest request);
 
     /**
      * Deletes the specified console history metadata and the console history data.
@@ -219,6 +238,32 @@ public interface Compute extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ExportImageResponse exportImage(ExportImageRequest request);
+
+    /**
+     * Gets the specified listing.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetAppCatalogListingResponse getAppCatalogListing(GetAppCatalogListingRequest request);
+
+    /**
+     * Retrieves the agreements for a particular resource version of a listing.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetAppCatalogListingAgreementsResponse getAppCatalogListingAgreements(
+            GetAppCatalogListingAgreementsRequest request);
+
+    /**
+     * Gets the specified listing resource version.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetAppCatalogListingResourceVersionResponse getAppCatalogListingResourceVersion(
+            GetAppCatalogListingResourceVersionRequest request);
 
     /**
      * Gets information about the specified boot volume attachment.
@@ -363,6 +408,32 @@ public interface Compute extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     LaunchInstanceResponse launchInstance(LaunchInstanceRequest request);
+
+    /**
+     * Gets all resource versions for a particular listing.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListAppCatalogListingResourceVersionsResponse listAppCatalogListingResourceVersions(
+            ListAppCatalogListingResourceVersionsRequest request);
+
+    /**
+     * Lists the published listings.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListAppCatalogListingsResponse listAppCatalogListings(ListAppCatalogListingsRequest request);
+
+    /**
+     * Lists subscriptions for a compartment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListAppCatalogSubscriptionsResponse listAppCatalogSubscriptions(
+            ListAppCatalogSubscriptionsRequest request);
 
     /**
      * Lists the boot volume attachments in the specified compartment. You can filter the

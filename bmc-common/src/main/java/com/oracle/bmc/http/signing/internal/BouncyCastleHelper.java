@@ -18,7 +18,9 @@ class BouncyCastleHelper {
         isProviderInstalled =
                 Security.getProvider("BC") != null || Security.getProvider("BCFIPS") != null;
         try {
-            bouncyCastleProvider = (Provider) getBouncyCastleProviderClass().newInstance();
+            final Class bouncyCastleProviderClass = getBouncyCastleProviderClass();
+            bouncyCastleProvider = (Provider) bouncyCastleProviderClass.newInstance();
+            LOG.info("Instantiated provider: " + bouncyCastleProviderClass.getName());
         } catch (InstantiationException | IllegalAccessException ex) {
             LOG.error("Failed to instantiate provider", ex);
             throw Throwables.propagate(ex);

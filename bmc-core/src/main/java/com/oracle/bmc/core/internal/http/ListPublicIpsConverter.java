@@ -59,6 +59,14 @@ public class ListPublicIpsConverter {
                                     request.getAvailabilityDomain()));
         }
 
+        if (request.getLifetime() != null) {
+            target =
+                    target.queryParam(
+                            "lifetime",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getLifetime().getValue()));
+        }
+
         target =
                 target.queryParam(
                         "compartmentId",

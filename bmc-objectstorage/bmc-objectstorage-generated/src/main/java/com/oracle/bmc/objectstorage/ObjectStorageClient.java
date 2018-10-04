@@ -22,6 +22,7 @@ public class ObjectStorageClient implements ObjectStorage {
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
+    private final ObjectStorageWaiters waiters;
     private final ObjectStoragePaginators paginators;
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
@@ -199,6 +200,21 @@ public class ObjectStorageClient implements ObjectStorage {
             }
         }
         this.client = restClientFactory.create(defaultRequestSigner, requestSigners, configuration);
+        // up to 50 (core) threads, time out after 60s idle, all daemon
+        java.util.concurrent.ThreadPoolExecutor executorService =
+                new java.util.concurrent.ThreadPoolExecutor(
+                        50,
+                        50,
+                        60L,
+                        java.util.concurrent.TimeUnit.SECONDS,
+                        new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
+                        new com.google.common.util.concurrent.ThreadFactoryBuilder()
+                                .setDaemon(false)
+                                .setNameFormat("ObjectStorage-waiters-%d")
+                                .build());
+        executorService.allowCoreThreadTimeOut(true);
+
+        this.waiters = new ObjectStorageWaiters(executorService, this);
 
         this.paginators = new ObjectStoragePaginators(this);
 
@@ -323,6 +339,31 @@ public class ObjectStorageClient implements ObjectStorage {
     }
 
     @Override
+    public CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request) {
+        LOG.trace("Called cancelWorkRequest");
+        request = CancelWorkRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelWorkRequestConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
+                transformer = CancelWorkRequestConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public CommitMultipartUploadResponse commitMultipartUpload(
             CommitMultipartUploadRequest request) {
         LOG.trace("Called commitMultipartUpload");
@@ -337,6 +378,32 @@ public class ObjectStorageClient implements ObjectStorage {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getCommitMultipartUploadDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public CopyObjectResponse copyObject(CopyObjectRequest request) {
+        LOG.trace("Called copyObject");
+        request = CopyObjectConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CopyObjectConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CopyObjectResponse> transformer =
+                CopyObjectConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCopyObjectDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
@@ -463,6 +530,33 @@ public class ObjectStorageClient implements ObjectStorage {
                 DeleteObjectConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteObjectResponse>
                 transformer = DeleteObjectConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public DeleteObjectLifecyclePolicyResponse deleteObjectLifecyclePolicy(
+            DeleteObjectLifecyclePolicyRequest request) {
+        LOG.trace("Called deleteObjectLifecyclePolicy");
+        request = DeleteObjectLifecyclePolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteObjectLifecyclePolicyConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteObjectLifecyclePolicyResponse>
+                transformer = DeleteObjectLifecyclePolicyConverter.fromResponse();
 
         int attempts = 0;
         while (true) {
@@ -608,6 +702,32 @@ public class ObjectStorageClient implements ObjectStorage {
     }
 
     @Override
+    public GetObjectLifecyclePolicyResponse getObjectLifecyclePolicy(
+            GetObjectLifecyclePolicyRequest request) {
+        LOG.trace("Called getObjectLifecyclePolicy");
+        request = GetObjectLifecyclePolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetObjectLifecyclePolicyConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetObjectLifecyclePolicyResponse>
+                transformer = GetObjectLifecyclePolicyConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public GetPreauthenticatedRequestResponse getPreauthenticatedRequest(
             GetPreauthenticatedRequestRequest request) {
         LOG.trace("Called getPreauthenticatedRequest");
@@ -617,6 +737,31 @@ public class ObjectStorageClient implements ObjectStorage {
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetPreauthenticatedRequestResponse>
                 transformer = GetPreauthenticatedRequestConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request) {
+        LOG.trace("Called getWorkRequest");
+        request = GetWorkRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetWorkRequestConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
+                transformer = GetWorkRequestConverter.fromResponse();
 
         int attempts = 0;
         while (true) {
@@ -813,6 +958,82 @@ public class ObjectStorageClient implements ObjectStorage {
     }
 
     @Override
+    public ListWorkRequestErrorsResponse listWorkRequestErrors(
+            ListWorkRequestErrorsRequest request) {
+        LOG.trace("Called listWorkRequestErrors");
+        request = ListWorkRequestErrorsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestErrorsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+                transformer = ListWorkRequestErrorsConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request) {
+        LOG.trace("Called listWorkRequestLogs");
+        request = ListWorkRequestLogsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestLogsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+                transformer = ListWorkRequestLogsConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request) {
+        LOG.trace("Called listWorkRequests");
+        request = ListWorkRequestsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+                transformer = ListWorkRequestsConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public PutObjectResponse putObject(PutObjectRequest request) {
         LOG.trace("Called putObject");
         request = PutObjectConverter.interceptRequest(request);
@@ -830,6 +1051,33 @@ public class ObjectStorageClient implements ObjectStorage {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getPutObjectBody(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public PutObjectLifecyclePolicyResponse putObjectLifecyclePolicy(
+            PutObjectLifecyclePolicyRequest request) {
+        LOG.trace("Called putObjectLifecyclePolicy");
+        request = PutObjectLifecyclePolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PutObjectLifecyclePolicyConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, PutObjectLifecyclePolicyResponse>
+                transformer = PutObjectLifecyclePolicyConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getPutObjectLifecyclePolicyDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
@@ -987,6 +1235,11 @@ public class ObjectStorageClient implements ObjectStorage {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public ObjectStorageWaiters getWaiters() {
+        return waiters;
     }
 
     @Override

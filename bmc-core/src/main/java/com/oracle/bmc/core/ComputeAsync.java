@@ -119,6 +119,24 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Create a subscription for listing resource version for a compartment. It will take some time to propagate to all regions.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateAppCatalogSubscriptionResponse> createAppCatalogSubscription(
+            CreateAppCatalogSubscriptionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateAppCatalogSubscriptionRequest,
+                            CreateAppCatalogSubscriptionResponse>
+                    handler);
+
+    /**
      * Creates a boot disk image for the specified instance or imports an exported image from the Oracle Cloud Infrastructure Object Storage service.
      * <p>
      * When creating a new image, you must provide the OCID of the instance you want to use as the basis for the image, and
@@ -177,6 +195,23 @@ public interface ComputeAsync extends AutoCloseable {
                                     CreateInstanceConsoleConnectionRequest,
                                     CreateInstanceConsoleConnectionResponse>
                             handler);
+
+    /**
+     * Delete a subscription for a listing resource version for a compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteAppCatalogSubscriptionResponse> deleteAppCatalogSubscription(
+            DeleteAppCatalogSubscriptionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteAppCatalogSubscriptionRequest,
+                            DeleteAppCatalogSubscriptionResponse>
+                    handler);
 
     /**
      * Deletes the specified console history metadata and the console history data.
@@ -311,6 +346,58 @@ public interface ComputeAsync extends AutoCloseable {
     java.util.concurrent.Future<ExportImageResponse> exportImage(
             ExportImageRequest request,
             com.oracle.bmc.responses.AsyncHandler<ExportImageRequest, ExportImageResponse> handler);
+
+    /**
+     * Gets the specified listing.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAppCatalogListingResponse> getAppCatalogListing(
+            GetAppCatalogListingRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetAppCatalogListingRequest, GetAppCatalogListingResponse>
+                    handler);
+
+    /**
+     * Retrieves the agreements for a particular resource version of a listing.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAppCatalogListingAgreementsResponse>
+            getAppCatalogListingAgreements(
+                    GetAppCatalogListingAgreementsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetAppCatalogListingAgreementsRequest,
+                                    GetAppCatalogListingAgreementsResponse>
+                            handler);
+
+    /**
+     * Gets the specified listing resource version.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAppCatalogListingResourceVersionResponse>
+            getAppCatalogListingResourceVersion(
+                    GetAppCatalogListingResourceVersionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetAppCatalogListingResourceVersionRequest,
+                                    GetAppCatalogListingResourceVersionResponse>
+                            handler);
 
     /**
      * Gets information about the specified boot volume attachment.
@@ -536,6 +623,56 @@ public interface ComputeAsync extends AutoCloseable {
     java.util.concurrent.Future<LaunchInstanceResponse> launchInstance(
             LaunchInstanceRequest request,
             com.oracle.bmc.responses.AsyncHandler<LaunchInstanceRequest, LaunchInstanceResponse>
+                    handler);
+
+    /**
+     * Gets all resource versions for a particular listing.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAppCatalogListingResourceVersionsResponse>
+            listAppCatalogListingResourceVersions(
+                    ListAppCatalogListingResourceVersionsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListAppCatalogListingResourceVersionsRequest,
+                                    ListAppCatalogListingResourceVersionsResponse>
+                            handler);
+
+    /**
+     * Lists the published listings.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAppCatalogListingsResponse> listAppCatalogListings(
+            ListAppCatalogListingsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListAppCatalogListingsRequest, ListAppCatalogListingsResponse>
+                    handler);
+
+    /**
+     * Lists subscriptions for a compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAppCatalogSubscriptionsResponse> listAppCatalogSubscriptions(
+            ListAppCatalogSubscriptionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListAppCatalogSubscriptionsRequest, ListAppCatalogSubscriptionsResponse>
                     handler);
 
     /**

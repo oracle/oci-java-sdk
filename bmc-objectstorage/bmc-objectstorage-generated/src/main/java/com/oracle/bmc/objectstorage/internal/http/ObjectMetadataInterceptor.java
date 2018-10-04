@@ -6,7 +6,9 @@ package com.oracle.bmc.objectstorage.internal.http;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.oracle.bmc.objectstorage.model.CopyObjectDetails;
 import com.oracle.bmc.objectstorage.model.CreateMultipartUploadDetails;
+import com.oracle.bmc.objectstorage.requests.CopyObjectRequest;
 import com.oracle.bmc.objectstorage.requests.CreateMultipartUploadRequest;
 import com.oracle.bmc.objectstorage.requests.PutObjectRequest;
 import com.oracle.bmc.objectstorage.responses.GetObjectResponse;
@@ -31,6 +33,17 @@ public class ObjectMetadataInterceptor {
                 .copy(request)
                 .createMultipartUploadDetails(newDetails)
                 .build();
+    }
+
+    public static CopyObjectRequest intercept(CopyObjectRequest request) {
+        Map<String, String> newMetadata =
+            toServiceMeta(request.getCopyObjectDetails().getDestinationObjectMetadata());
+        CopyObjectDetails newDetails =
+            CopyObjectDetails.builder()
+                .copy(request.getCopyObjectDetails())
+                .destinationObjectMetadata(newMetadata)
+                .build();
+        return CopyObjectRequest.builder().copy(request).copyObjectDetails(newDetails).build();
     }
 
     public static PutObjectRequest intercept(PutObjectRequest request) {

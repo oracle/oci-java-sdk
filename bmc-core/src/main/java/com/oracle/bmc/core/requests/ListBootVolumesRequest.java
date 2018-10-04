@@ -24,15 +24,19 @@ public class ListBootVolumesRequest extends com.oracle.bmc.requests.BmcRequest {
     private String compartmentId;
 
     /**
-     * The maximum number of items to return in a paginated \"List\" call.
+     * For list pagination. The maximum number of results per page, or items to return in a paginated
+     * \"List\" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      * <p>
-     * Example: `500`
+     * Example: `50`
      *
      */
     private Integer limit;
 
     /**
-     * The value of the `opc-next-page` response header from the previous \"List\" call.
+     * For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+     * call. For important details about how pagination works, see
+     * [List Pagination](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private String page;

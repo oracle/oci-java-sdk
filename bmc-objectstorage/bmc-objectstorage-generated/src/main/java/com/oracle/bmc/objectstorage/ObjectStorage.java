@@ -46,6 +46,15 @@ public interface ObjectStorage extends AutoCloseable {
     AbortMultipartUploadResponse abortMultipartUpload(AbortMultipartUploadRequest request);
 
     /**
+     * Cancel a work request.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request);
+
+    /**
      * Commits a multipart upload, which involves checking part numbers and ETags of the parts, to create an aggregate object.
      *
      * @param request The request object containing the details to send
@@ -55,8 +64,15 @@ public interface ObjectStorage extends AutoCloseable {
     CommitMultipartUploadResponse commitMultipartUpload(CommitMultipartUploadRequest request);
 
     /**
-     * Creates a bucket in the given namespace with a bucket name and optional user-defined metadata. Avoid entering confidential
-     * information in bucket names.
+     * Create a request for copy object within or cross region
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CopyObjectResponse copyObject(CopyObjectRequest request);
+
+    /**
+     * Creates a bucket in the given namespace with a bucket name and optional user-defined metadata.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -102,6 +118,16 @@ public interface ObjectStorage extends AutoCloseable {
     DeleteObjectResponse deleteObject(DeleteObjectRequest request);
 
     /**
+     * Deletes the object lifecycle policy for the bucket.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteObjectLifecyclePolicyResponse deleteObjectLifecyclePolicy(
+            DeleteObjectLifecyclePolicyRequest request);
+
+    /**
      * Deletes the pre-authenticated request for the bucket.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -120,8 +146,7 @@ public interface ObjectStorage extends AutoCloseable {
     GetBucketResponse getBucket(GetBucketRequest request);
 
     /**
-     * Namespaces are unique. Namespaces are either the tenancy name or a random string automatically generated during
-     * account creation. You cannot edit a namespace.
+     * Gets the name of the namespace for the user making the request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -151,6 +176,16 @@ public interface ObjectStorage extends AutoCloseable {
     GetObjectResponse getObject(GetObjectRequest request);
 
     /**
+     * Gets the object lifecycle policy for the bucket.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetObjectLifecyclePolicyResponse getObjectLifecyclePolicy(
+            GetObjectLifecyclePolicyRequest request);
+
+    /**
      * Gets the pre-authenticated request for the bucket.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -158,6 +193,14 @@ public interface ObjectStorage extends AutoCloseable {
      */
     GetPreauthenticatedRequestResponse getPreauthenticatedRequest(
             GetPreauthenticatedRequestRequest request);
+
+    /**
+     * Gets the status of the work request with the given ID.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
      * Efficiently checks to see if a bucket exists and gets the current ETag for the bucket.
@@ -234,13 +277,48 @@ public interface ObjectStorage extends AutoCloseable {
             ListPreauthenticatedRequestsRequest request);
 
     /**
-     * Creates a new object or overwrites an existing one. See [Special Instructions for Object Storage PUT](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/signingrequests.htm#ObjectStoragePut) for request signature requirements.
+     * Lists the errors of the work request with the given ID.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
+
+    /**
+     * Lists the logs of the work request with the given ID.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
+
+    /**
+     * Lists the work requests in a compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
+
+    /**
+     * Creates a new object or overwrites an existing one.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      */
     PutObjectResponse putObject(PutObjectRequest request);
+
+    /**
+     * Creates or replaces the object lifecycle policy for the bucket.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    PutObjectLifecyclePolicyResponse putObjectLifecyclePolicy(
+            PutObjectLifecyclePolicyRequest request);
 
     /**
      * Rename an object from source key to target key in the given namespace.
@@ -252,8 +330,8 @@ public interface ObjectStorage extends AutoCloseable {
     RenameObjectResponse renameObject(RenameObjectRequest request);
 
     /**
-     * Restore one or more objects specified by objectName parameter.
-     * By default object will be restored for 24 hours.Duration can be configured using hours parameter.
+     * Restore one or more objects specified by the objectName parameter.
+     * By default objects will be restored for 24 hours. Duration can be configured using the hours parameter.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -283,13 +361,20 @@ public interface ObjectStorage extends AutoCloseable {
     UpdateNamespaceMetadataResponse updateNamespaceMetadata(UpdateNamespaceMetadataRequest request);
 
     /**
-     * Uploads a single part of a multipart upload. See [Special Instructions for Object Storage PUT](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/signingrequests.htm#ObjectStoragePut) for request signature requirements.
+     * Uploads a single part of a multipart upload.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      */
     UploadPartResponse uploadPart(UploadPartRequest request);
+
+    /**
+     * Gets the pre-configured waiters available for resources for this service.
+     *
+     * @return The service waiters.
+     */
+    ObjectStorageWaiters getWaiters();
 
     /**
      * Gets the pre-configured paginators available for list operations in this service which may return multiple

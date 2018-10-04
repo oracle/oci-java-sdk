@@ -34,6 +34,24 @@ public class PublicIp {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("assignedEntityId")
+        private String assignedEntityId;
+
+        public Builder assignedEntityId(String assignedEntityId) {
+            this.assignedEntityId = assignedEntityId;
+            this.__explicitlySet__.add("assignedEntityId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("assignedEntityType")
+        private AssignedEntityType assignedEntityType;
+
+        public Builder assignedEntityType(AssignedEntityType assignedEntityType) {
+            this.assignedEntityType = assignedEntityType;
+            this.__explicitlySet__.add("assignedEntityType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
@@ -149,6 +167,8 @@ public class PublicIp {
         public PublicIp build() {
             PublicIp __instance__ =
                     new PublicIp(
+                            assignedEntityId,
+                            assignedEntityType,
                             availabilityDomain,
                             compartmentId,
                             definedTags,
@@ -168,7 +188,9 @@ public class PublicIp {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(PublicIp o) {
             Builder copiedBuilder =
-                    availabilityDomain(o.getAvailabilityDomain())
+                    assignedEntityId(o.getAssignedEntityId())
+                            .assignedEntityType(o.getAssignedEntityType())
+                            .availabilityDomain(o.getAvailabilityDomain())
                             .compartmentId(o.getCompartmentId())
                             .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
@@ -194,9 +216,72 @@ public class PublicIp {
     }
 
     /**
+     * The OCID of the entity the public IP is assigned to, or in the process of
+     * being assigned to.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("assignedEntityId")
+    String assignedEntityId;
+    /**
+     * The type of entity the public IP is assigned to, or in the process of being
+     * assigned to.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum AssignedEntityType {
+        PrivateIp("PRIVATE_IP"),
+        NatGateway("NAT_GATEWAY"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, AssignedEntityType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AssignedEntityType v : AssignedEntityType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        AssignedEntityType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AssignedEntityType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'AssignedEntityType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The type of entity the public IP is assigned to, or in the process of being
+     * assigned to.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("assignedEntityType")
+    AssignedEntityType assignedEntityType;
+
+    /**
      * The public IP's availability domain. This property is set only for ephemeral public IPs
-     * (that is, when the `scope` of the public IP is set to AVAILABILITY_DOMAIN). The value
-     * is the availability domain of the assigned private IP.
+     * that are assigned to a private IP (that is, when the `scope` of the public IP is set to
+     * AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private IP.
      * <p>
      * Example: `Uocm:PHX-AD-1`
      *
@@ -206,8 +291,9 @@ public class PublicIp {
 
     /**
      * The OCID of the compartment containing the public IP. For an ephemeral public IP, this is
-     * the same compartment as the private IP's. For a reserved public IP that is currently assigned,
-     * this can be a different compartment than the assigned private IP's.
+     * the compartment of its assigned entity (which can be a private IP or a regional entity such
+     * as a NAT gateway). For a reserved public IP that is currently assigned,
+     * its compartment can be different from the assigned private IP's.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -316,10 +402,12 @@ public class PublicIp {
     /**
      * Defines when the public IP is deleted and released back to Oracle's public IP pool.
      * <p>
-     * `EPHEMERAL`: The lifetime is tied to the lifetime of its assigned private IP. The
-     * ephemeral public IP is automatically deleted when its private IP is deleted, when
-     * the VNIC is terminated, or when the instance is terminated. An ephemeral
-     * public IP must always be assigned to a private IP.
+     * `EPHEMERAL`: The lifetime is tied to the lifetime of its assigned entity. An ephemeral
+     * public IP must always be assigned to an entity. If the assigned entity is a private IP,
+     * the ephemeral public IP is automatically deleted when the private IP is deleted, when
+     * the VNIC is terminated, or when the instance is terminated. If the assigned entity is a
+     * {@link NatGateway}, the ephemeral public IP is automatically
+     * deleted when the NAT gateway is terminated.
      * <p>
      * `RESERVED`: You control the public IP's lifetime. You can delete a reserved public IP
      * whenever you like. It does not need to be assigned to a private IP at all times.
@@ -374,10 +462,12 @@ public class PublicIp {
     /**
      * Defines when the public IP is deleted and released back to Oracle's public IP pool.
      * <p>
-     * `EPHEMERAL`: The lifetime is tied to the lifetime of its assigned private IP. The
-     * ephemeral public IP is automatically deleted when its private IP is deleted, when
-     * the VNIC is terminated, or when the instance is terminated. An ephemeral
-     * public IP must always be assigned to a private IP.
+     * `EPHEMERAL`: The lifetime is tied to the lifetime of its assigned entity. An ephemeral
+     * public IP must always be assigned to an entity. If the assigned entity is a private IP,
+     * the ephemeral public IP is automatically deleted when the private IP is deleted, when
+     * the VNIC is terminated, or when the instance is terminated. If the assigned entity is a
+     * {@link NatGateway}, the ephemeral public IP is automatically
+     * deleted when the NAT gateway is terminated.
      * <p>
      * `RESERVED`: You control the public IP's lifetime. You can delete a reserved public IP
      * whenever you like. It does not need to be assigned to a private IP at all times.
@@ -390,8 +480,13 @@ public class PublicIp {
     Lifetime lifetime;
 
     /**
+     * Deprecated. Use `assignedEntityId` instead.
+     * <p>
      * The OCID of the private IP that the public IP is currently assigned to, or in the
      * process of being assigned to.
+     * <p>
+     **Note:** This is `null` if the public IP is not assigned to a private IP, or is
+     * in the process of being assigned to one.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateIpId")
@@ -399,12 +494,14 @@ public class PublicIp {
     /**
      * Whether the public IP is regional or specific to a particular availability domain.
      * <p>
-     * `REGION`: The public IP exists within a region and can be assigned to a private IP
-     * in any availability domain in the region. Reserved public IPs have `scope` = `REGION`.
+     * `REGION`: The public IP exists within a region and is assigned to a regional entity
+     * (such as a {@link NatGateway}), or can be assigned to a private
+     * IP in any availability domain in the region. Reserved public IPs and ephemeral public IPs
+     * assigned to a regional entity have `scope` = `REGION`.
      * <p>
-     * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the private IP
+     * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the entity
      * it's assigned to, which is specified by the `availabilityDomain` property of the public IP object.
-     * Ephemeral public IPs have `scope` = `AVAILABILITY_DOMAIN`.
+     * Ephemeral public IPs that are assigned to private IPs have `scope` = `AVAILABILITY_DOMAIN`.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -453,12 +550,14 @@ public class PublicIp {
     /**
      * Whether the public IP is regional or specific to a particular availability domain.
      * <p>
-     * `REGION`: The public IP exists within a region and can be assigned to a private IP
-     * in any availability domain in the region. Reserved public IPs have `scope` = `REGION`.
+     * `REGION`: The public IP exists within a region and is assigned to a regional entity
+     * (such as a {@link NatGateway}), or can be assigned to a private
+     * IP in any availability domain in the region. Reserved public IPs and ephemeral public IPs
+     * assigned to a regional entity have `scope` = `REGION`.
      * <p>
-     * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the private IP
+     * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the entity
      * it's assigned to, which is specified by the `availabilityDomain` property of the public IP object.
-     * Ephemeral public IPs have `scope` = `AVAILABILITY_DOMAIN`.
+     * Ephemeral public IPs that are assigned to private IPs have `scope` = `AVAILABILITY_DOMAIN`.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scope")

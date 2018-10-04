@@ -4,7 +4,7 @@
 package com.oracle.bmc.objectstorage.model;
 
 /**
- * A NamespaceMetadta is a map for storing namespace and defaultS3CompartmentId, defaultSwiftCompartmentId.
+ * A NamespaceMetadata is a map for storing namespace and defaultS3CompartmentId, defaultSwiftCompartmentId.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

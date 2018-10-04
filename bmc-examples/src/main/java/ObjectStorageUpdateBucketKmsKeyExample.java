@@ -26,9 +26,9 @@ public class ObjectStorageUpdateBucketKmsKeyExample {
      * @param args Arguments to provide to the example. The following arguments are expected:
      * <ul>
      *   <li>The first argument is the OCID of the compartment where we'll create a bucket</li>
-     *   <li>The second is the name of bucket to create</li>
-     *   <li>The third is the kmsKey OCID used to create bucket</li>
-     *   <li>The forth is the kmsKey OCID used to update bucket kmsKeyId</li>
+     *   <li>The second is the name of the bucket to create</li>
+     *   <li>The third is the kmsKey OCID used to create the bucket</li>
+     *   <li>The forth is the kmsKey OCID used to update the bucket kmsKeyId</li>
      * </ul>
      */
     public static void main(String[] args) throws Exception {

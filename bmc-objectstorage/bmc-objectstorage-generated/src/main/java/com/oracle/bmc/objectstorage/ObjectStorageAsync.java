@@ -54,6 +54,23 @@ public interface ObjectStorageAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Cancel a work request.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CancelWorkRequestResponse> cancelWorkRequest(
+            CancelWorkRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CancelWorkRequestRequest, CancelWorkRequestResponse>
+                    handler);
+
+    /**
      * Commits a multipart upload, which involves checking part numbers and ETags of the parts, to create an aggregate object.
      *
      *
@@ -71,8 +88,21 @@ public interface ObjectStorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a bucket in the given namespace with a bucket name and optional user-defined metadata. Avoid entering confidential
-     * information in bucket names.
+     * Create a request for copy object within or cross region
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CopyObjectResponse> copyObject(
+            CopyObjectRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CopyObjectRequest, CopyObjectResponse> handler);
+
+    /**
+     * Creates a bucket in the given namespace with a bucket name and optional user-defined metadata.
      *
      *
      * @param request The request object containing the details to send
@@ -156,6 +186,23 @@ public interface ObjectStorageAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes the object lifecycle policy for the bucket.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteObjectLifecyclePolicyResponse> deleteObjectLifecyclePolicy(
+            DeleteObjectLifecyclePolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteObjectLifecyclePolicyRequest, DeleteObjectLifecyclePolicyResponse>
+                    handler);
+
+    /**
      * Deletes the pre-authenticated request for the bucket.
      *
      * @param request The request object containing the details to send
@@ -189,8 +236,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetBucketRequest, GetBucketResponse> handler);
 
     /**
-     * Namespaces are unique. Namespaces are either the tenancy name or a random string automatically generated during
-     * account creation. You cannot edit a namespace.
+     * Gets the name of the namespace for the user making the request.
      *
      *
      * @param request The request object containing the details to send
@@ -241,6 +287,23 @@ public interface ObjectStorageAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetObjectRequest, GetObjectResponse> handler);
 
     /**
+     * Gets the object lifecycle policy for the bucket.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetObjectLifecyclePolicyResponse> getObjectLifecyclePolicy(
+            GetObjectLifecyclePolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetObjectLifecyclePolicyRequest, GetObjectLifecyclePolicyResponse>
+                    handler);
+
+    /**
      * Gets the pre-authenticated request for the bucket.
      *
      * @param request The request object containing the details to send
@@ -254,6 +317,21 @@ public interface ObjectStorageAsync extends AutoCloseable {
             GetPreauthenticatedRequestRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetPreauthenticatedRequestRequest, GetPreauthenticatedRequestResponse>
+                    handler);
+
+    /**
+     * Gets the status of the work request with the given ID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
+            GetWorkRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                     handler);
 
     /**
@@ -378,7 +456,55 @@ public interface ObjectStorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new object or overwrites an existing one. See [Special Instructions for Object Storage PUT](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/signingrequests.htm#ObjectStoragePut) for request signature requirements.
+     * Lists the errors of the work request with the given ID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListWorkRequestErrorsResponse> listWorkRequestErrors(
+            ListWorkRequestErrorsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
+                    handler);
+
+    /**
+     * Lists the logs of the work request with the given ID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListWorkRequestLogsResponse> listWorkRequestLogs(
+            ListWorkRequestLogsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
+                    handler);
+
+    /**
+     * Lists the work requests in a compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
+            ListWorkRequestsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
+                    handler);
+
+    /**
+     * Creates a new object or overwrites an existing one.
      *
      *
      * @param request The request object containing the details to send
@@ -391,6 +517,23 @@ public interface ObjectStorageAsync extends AutoCloseable {
     java.util.concurrent.Future<PutObjectResponse> putObject(
             PutObjectRequest request,
             com.oracle.bmc.responses.AsyncHandler<PutObjectRequest, PutObjectResponse> handler);
+
+    /**
+     * Creates or replaces the object lifecycle policy for the bucket.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<PutObjectLifecyclePolicyResponse> putObjectLifecyclePolicy(
+            PutObjectLifecyclePolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            PutObjectLifecyclePolicyRequest, PutObjectLifecyclePolicyResponse>
+                    handler);
 
     /**
      * Rename an object from source key to target key in the given namespace.
@@ -409,8 +552,8 @@ public interface ObjectStorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Restore one or more objects specified by objectName parameter.
-     * By default object will be restored for 24 hours.Duration can be configured using hours parameter.
+     * Restore one or more objects specified by the objectName parameter.
+     * By default objects will be restored for 24 hours. Duration can be configured using the hours parameter.
      *
      *
      * @param request The request object containing the details to send
@@ -462,7 +605,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Uploads a single part of a multipart upload. See [Special Instructions for Object Storage PUT](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/signingrequests.htm#ObjectStoragePut) for request signature requirements.
+     * Uploads a single part of a multipart upload.
      *
      *
      * @param request The request object containing the details to send

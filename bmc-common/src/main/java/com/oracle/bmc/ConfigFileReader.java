@@ -163,8 +163,7 @@ public final class ConfigFileReader {
             }
         }
         if (!accumulator.foundDefaultProfile) {
-            throw new IllegalStateException(
-                    "No DEFAULT profile was specified in the configuration");
+            LOG.info("No DEFAULT profile was specified in the configuration");
         }
         if (profile != null && !accumulator.configurationsByProfile.containsKey(profile)) {
             throw new IllegalArgumentException(
@@ -198,7 +197,9 @@ public final class ConfigFileReader {
                     && (accumulator.configurationsByProfile.get(profile).containsKey(key))) {
                 return accumulator.configurationsByProfile.get(profile).get(key);
             }
-            return accumulator.configurationsByProfile.get(DEFAULT_PROFILE_NAME).get(key);
+            return accumulator.foundDefaultProfile
+                    ? accumulator.configurationsByProfile.get(DEFAULT_PROFILE_NAME).get(key)
+                    : null;
         }
     }
 
