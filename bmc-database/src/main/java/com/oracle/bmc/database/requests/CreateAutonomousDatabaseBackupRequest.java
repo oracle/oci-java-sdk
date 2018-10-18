@@ -25,6 +25,12 @@ public class CreateAutonomousDatabaseBackupRequest extends com.oracle.bmc.reques
      */
     private String opcRetryToken;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
+    private String opcRequestId;
+
     public static class Builder {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
@@ -48,6 +54,7 @@ public class CreateAutonomousDatabaseBackupRequest extends com.oracle.bmc.reques
         public Builder copy(CreateAutonomousDatabaseBackupRequest o) {
             createAutonomousDatabaseBackupDetails(o.getCreateAutonomousDatabaseBackupDetails());
             opcRetryToken(o.getOpcRetryToken());
+            opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             return this;
         }

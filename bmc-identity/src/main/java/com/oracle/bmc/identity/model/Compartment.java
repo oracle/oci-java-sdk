@@ -101,6 +101,15 @@ public class Compartment {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isAccessible")
+        private Boolean isAccessible;
+
+        public Builder isAccessible(Boolean isAccessible) {
+            this.isAccessible = isAccessible;
+            this.__explicitlySet__.add("isAccessible");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -133,6 +142,7 @@ public class Compartment {
                             timeCreated,
                             lifecycleState,
                             inactiveStatus,
+                            isAccessible,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -149,6 +159,7 @@ public class Compartment {
                             .timeCreated(o.getTimeCreated())
                             .lifecycleState(o.getLifecycleState())
                             .inactiveStatus(o.getInactiveStatus())
+                            .isAccessible(o.getIsAccessible())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -171,14 +182,14 @@ public class Compartment {
     String id;
 
     /**
-     * The OCID of the tenancy containing the compartment.
+     * The OCID of the parent compartment containing the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
      * The name you assign to the compartment during creation. The name must be unique across all
-     * compartments in the tenancy. Avoid entering confidential information.
+     * compartments in the parent. Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
@@ -262,6 +273,15 @@ public class Compartment {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
     Long inactiveStatus;
+
+    /**
+     * Indicates whether or not the compartment is accessible for the user making the request.
+     * Returns true when the user has INSPECT permissions directly on a resource in the
+     * compartment or indirectly (permissions can be on a resource in a subcompartment).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAccessible")
+    Boolean isAccessible;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.

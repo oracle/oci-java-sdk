@@ -36,11 +36,12 @@ import com.oracle.bmc.objectstorage.requests.CreateMultipartUploadRequest;
 import com.oracle.bmc.objectstorage.requests.UploadPartRequest;
 import com.oracle.bmc.objectstorage.responses.CreateMultipartUploadResponse;
 import com.oracle.bmc.objectstorage.responses.UploadPartResponse;
+import com.oracle.bmc.objectstorage.transfer.internal.MultipartUtils;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 
 import com.google.common.base.Strings;
 import com.oracle.bmc.model.BmcException;
@@ -53,10 +54,13 @@ import com.oracle.bmc.objectstorage.transfer.UploadManager.UploadResponse;
 import com.oracle.bmc.objectstorage.transfer.internal.MultipartManifestImpl;
 import com.oracle.bmc.util.StreamUtils;
 import org.mockito.invocation.InvocationOnMock;
+import org.mockito.runners.MockitoJUnitRunner;
 import org.mockito.stubbing.Answer;
 
+@RunWith(MockitoJUnitRunner.class)
 public class UploadManagerTest {
-    private static final String CONTENT = Strings.repeat("a", 2097152); // 2MiB
+    private static final String CONTENT =
+            Strings.repeat("a", (int) (20 * MultipartUtils.MiB)); // 20 MiB
     private static final long CONTENT_LENGTH = CONTENT.length();
     private static final int READ_BLOCK_SIZE = 8192; // 8KB
     private static final String CLIENT_REQ_ID = "clientReqId";
@@ -74,7 +78,6 @@ public class UploadManagerTest {
 
     @Before
     public void setUp() {
-        MockitoAnnotations.initMocks(this);
         body = StreamUtils.createByteArrayInputStream(CONTENT.getBytes());
     }
 
@@ -98,6 +101,7 @@ public class UploadManagerTest {
         when(objectStorage.putObject(putRequestCaptor.capture())).thenReturn(putResponse);
 
         UploadResponse uploadResponse = uploadManager.upload(request);
+
         assertNotNull(uploadResponse);
         assertEquals("etag", uploadResponse.getETag());
         assertEquals("md5", uploadResponse.getContentMd5());
@@ -132,12 +136,12 @@ public class UploadManagerTest {
         assertEquals(CONTENT, new String(buffer));
         assertEquals(CONTENT_LENGTH, putRequestCaptor.getValue().getContentLength().longValue());
         assertEquals(
-                "3olGG2RwGViYTJXRv7AGWg==",
-                putRequestCaptor.getValue().getContentMD5()); // 'a' 2097152 times
+                "U2yw5mJhFHg/U4cBMrrFyw==",
+                putRequestCaptor.getValue().getContentMD5()); // 'a' times content-length
     }
 
     @Test(expected = BmcException.class)
-    public void upload_singleUpload_enforceMd5_streamTooLargeToBuffer() throws Exception {
+    public void upload_singleUpload_enforceMd5_streamTooLargeToBuffer() {
         UploadConfiguration uploadConfiguration =
                 UploadConfiguration.builder().allowMultipartUploads(false).enforceMd5(true).build();
         UploadManager uploadManager = new UploadManager(objectStorage, uploadConfiguration);
@@ -153,8 +157,8 @@ public class UploadManagerTest {
         // results in 2 parts
         UploadConfiguration uploadConfiguration =
                 UploadConfiguration.builder()
-                        .minimumLengthForMultipartUpload(1)
-                        .minimumLengthPerUploadPart(1)
+                        .minimumLengthForMultipartUpload(10)
+                        .lengthPerUploadPart(10)
                         .build();
         UploadManager uploadManager =
                 new UploadManager(objectStorage, uploadConfiguration) {
@@ -187,7 +191,7 @@ public class UploadManagerTest {
 
         verify(assembler).newRequest(CONTENT_TYPE, CONTENT_LANG, CONTENT_ENCODING, METADATA);
         verify(assembler, times(2))
-                .addPart(any(InputStream.class), eq(1048576L), eq((String) null));
+                .addPart(any(InputStream.class), eq(CONTENT_LENGTH / 2), eq((String) null));
     }
 
     @Test
@@ -195,8 +199,8 @@ public class UploadManagerTest {
         // results in 2 parts
         UploadConfiguration uploadConfiguration =
                 UploadConfiguration.builder()
-                        .minimumLengthForMultipartUpload(1)
-                        .minimumLengthPerUploadPart(1)
+                        .minimumLengthForMultipartUpload(10)
+                        .lengthPerUploadPart(10)
                         .enforceMd5(true)
                         .build();
         UploadManager uploadManager =
@@ -226,8 +230,8 @@ public class UploadManagerTest {
         verify(assembler, times(2))
                 .addPart(
                         any(InputStream.class),
-                        eq(1048576L),
-                        eq("cgKCaneRBz/ieH8MlGAyeA==")); // 'a' repeated 1048576 times
+                        eq(CONTENT_LENGTH / 2), // 10 MiB
+                        eq("5W4QR5ShjfX0H20th7TMZw==")); // 'a' times content-length
     }
 
     @Test
@@ -235,8 +239,8 @@ public class UploadManagerTest {
         // results in 2 parts
         UploadConfiguration uploadConfiguration =
                 UploadConfiguration.builder()
-                        .minimumLengthForMultipartUpload(1)
-                        .minimumLengthPerUploadPart(1)
+                        .minimumLengthForMultipartUpload(10)
+                        .lengthPerUploadPart(10)
                         .allowParallelUploads(false)
                         .build();
         UploadManager uploadManager =
@@ -264,7 +268,7 @@ public class UploadManagerTest {
 
         verify(assembler).newRequest(CONTENT_TYPE, CONTENT_LANG, CONTENT_ENCODING, METADATA);
         verify(assembler, times(2))
-                .addPart(any(InputStream.class), eq(1048576L), eq((String) null));
+                .addPart(any(InputStream.class), eq(CONTENT_LENGTH / 2), eq((String) null));
     }
 
     @Test(expected = BmcException.class)
@@ -272,8 +276,8 @@ public class UploadManagerTest {
         // results in 2 parts
         UploadConfiguration uploadConfiguration =
                 UploadConfiguration.builder()
-                        .minimumLengthForMultipartUpload(1)
-                        .minimumLengthPerUploadPart(1)
+                        .minimumLengthForMultipartUpload(10)
+                        .lengthPerUploadPart(10)
                         .allowParallelUploads(false)
                         .build();
         UploadManager uploadManager =
@@ -305,8 +309,8 @@ public class UploadManagerTest {
         // results in 2 parts
         UploadConfiguration uploadConfiguration =
                 UploadConfiguration.builder()
-                        .minimumLengthForMultipartUpload(1)
-                        .minimumLengthPerUploadPart(1)
+                        .minimumLengthForMultipartUpload(10)
+                        .lengthPerUploadPart(10)
                         .allowParallelUploads(false)
                         .disableAutoAbort(true)
                         .build();
@@ -335,7 +339,7 @@ public class UploadManagerTest {
     }
 
     @Test
-    public void singleUpload_progressReporter() throws IOException {
+    public void singleUpload_progressReporter() {
         final UploadConfiguration uploadConfiguration =
                 UploadConfiguration.builder().allowMultipartUploads(false).build();
         final UploadManager uploadManager = new UploadManager(objectStorage, uploadConfiguration);
@@ -465,8 +469,8 @@ public class UploadManagerTest {
 
     private static UploadConfiguration getMultipartUploadConfiguration() {
         return UploadConfiguration.builder()
-                .minimumLengthForMultipartUpload(0)
-                .minimumLengthPerUploadPart(1)
+                .minimumLengthForMultipartUpload(10)
+                .lengthPerUploadPart(10)
                 .build();
     }
 

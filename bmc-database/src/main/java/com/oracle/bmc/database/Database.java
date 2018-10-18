@@ -37,6 +37,18 @@ public interface Database extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Changes the status of the standalone backup resource to `ACTIVE` after the backup is created from the on-premises database and placed in Oracle Cloud Infrastructure Object Storage.
+     * <p>
+     **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud](https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Tasks/mig-onprembackup.htm) for more information.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CompleteExternalBackupJobResponse completeExternalBackupJob(
+            CompleteExternalBackupJobRequest request);
+
+    /**
      * Creates a new Autonomous Data Warehouse.
      *
      * @param request The request object containing the details to send
@@ -112,6 +124,17 @@ public interface Database extends AutoCloseable {
     CreateDbHomeResponse createDbHome(CreateDbHomeRequest request);
 
     /**
+     * Creates a new backup resource and returns the information the caller needs to back up an on-premises Oracle Database to Oracle Cloud Infrastructure.
+     * <p>
+     **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud](https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Tasks/mig-onprembackup.htm) for more information.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateExternalBackupJobResponse createExternalBackupJob(CreateExternalBackupJobRequest request);
+
+    /**
      * Performs an action, such as one of the power actions (start, stop, softreset, or reset), on the specified DB Node.
      * <p>
      **start** - power on
@@ -184,6 +207,26 @@ public interface Database extends AutoCloseable {
      */
     FailoverDataGuardAssociationResponse failoverDataGuardAssociation(
             FailoverDataGuardAssociationRequest request);
+
+    /**
+     * Creates and downloads a wallet for the specified Autonomous Data Warehouse.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GenerateAutonomousDataWarehouseWalletResponse generateAutonomousDataWarehouseWallet(
+            GenerateAutonomousDataWarehouseWalletRequest request);
+
+    /**
+     * Creates and downloads a wallet for the specified Autonomous Transaction Processing database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GenerateAutonomousDatabaseWalletResponse generateAutonomousDatabaseWallet(
+            GenerateAutonomousDatabaseWalletRequest request);
 
     /**
      * Gets the details of the specified Autonomous Data Warehouse.
@@ -308,6 +351,17 @@ public interface Database extends AutoCloseable {
      */
     GetDbSystemPatchHistoryEntryResponse getDbSystemPatchHistoryEntry(
             GetDbSystemPatchHistoryEntryRequest request);
+
+    /**
+     * Gets information about the specified external backup job.
+     * <p>
+     **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud](https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Tasks/mig-onprembackup.htm) for more information.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetExternalBackupJobResponse getExternalBackupJob(GetExternalBackupJobRequest request);
 
     /**
      * Launches a new DB system in the specified compartment and availability domain. The Oracle

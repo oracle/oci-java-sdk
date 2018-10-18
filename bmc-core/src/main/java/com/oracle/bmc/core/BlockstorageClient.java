@@ -312,6 +312,32 @@ public class BlockstorageClient implements Blockstorage {
     }
 
     @Override
+    public CopyVolumeBackupResponse copyVolumeBackup(CopyVolumeBackupRequest request) {
+        LOG.trace("Called copyVolumeBackup");
+        request = CopyVolumeBackupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CopyVolumeBackupConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CopyVolumeBackupResponse>
+                transformer = CopyVolumeBackupConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCopyVolumeBackupDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public CreateBootVolumeResponse createBootVolume(CreateBootVolumeRequest request) {
         LOG.trace("Called createBootVolume");
         request = CreateBootVolumeConverter.interceptRequest(request);

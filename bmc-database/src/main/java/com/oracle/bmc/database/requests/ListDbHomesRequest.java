@@ -30,6 +30,98 @@ public class ListDbHomesRequest extends com.oracle.bmc.requests.BmcRequest {
      */
     private String page;
 
+    /**
+     * The field to sort by.  You can provide one sort order (`sortOrder`).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
+     */
+    private SortBy sortBy;
+
+    /**
+     * The field to sort by.  You can provide one sort order (`sortOrder`).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
+     **/
+    public enum SortBy {
+        Timecreated("TIMECREATED"),
+        Displayname("DISPLAYNAME"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, SortBy> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SortBy v : SortBy.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        SortBy(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SortBy create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new RuntimeException("Invalid SortBy: " + key);
+        }
+    };
+
+    /**
+     * The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+     */
+    private SortOrder sortOrder;
+
+    /**
+     * The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+     **/
+    public enum SortOrder {
+        Asc("ASC"),
+        Desc("DESC"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, SortOrder> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SortOrder v : SortOrder.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        SortOrder(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SortOrder create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new RuntimeException("Invalid SortOrder: " + key);
+        }
+    };
+
+    /**
+     * A filter to return only resources that match the given lifecycle state exactly.
+     */
+    private DbHomeSummary.LifecycleState lifecycleState;
+
+    /**
+     * A filter to return only resources that match the entire display name given. The match is not case sensitive.
+     */
+    private String displayName;
+
     public static class Builder {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
@@ -55,6 +147,10 @@ public class ListDbHomesRequest extends com.oracle.bmc.requests.BmcRequest {
             dbSystemId(o.getDbSystemId());
             limit(o.getLimit());
             page(o.getPage());
+            sortBy(o.getSortBy());
+            sortOrder(o.getSortOrder());
+            lifecycleState(o.getLifecycleState());
+            displayName(o.getDisplayName());
             invocationCallback(o.getInvocationCallback());
             return this;
         }

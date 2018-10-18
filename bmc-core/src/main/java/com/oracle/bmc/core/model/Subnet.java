@@ -294,7 +294,7 @@ public class Subnet {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * The OCID of the set of DHCP options associated with the subnet.
+     * The OCID of the set of DHCP options that the subnet uses.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dhcpOptionsId")
@@ -415,13 +415,16 @@ public class Subnet {
     Boolean prohibitPublicIpOnVnic;
 
     /**
-     * The OCID of the route table the subnet is using.
+     * The OCID of the route table that the subnet uses.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
     String routeTableId;
 
     /**
-     * OCIDs for the security lists to use for VNICs in this subnet.
+     * The OCIDs of the security list or lists that the subnet uses. Remember
+     * that security lists are associated *with the subnet*, but the
+     * rules are applied to the individual VNICs in the subnet.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityListIds")
     java.util.List<String> securityListIds;

@@ -25,6 +25,15 @@ public class AutonomousDatabaseConnectionStrings {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("allConnectionStrings")
+        private java.util.Map<String, String> allConnectionStrings;
+
+        public Builder allConnectionStrings(java.util.Map<String, String> allConnectionStrings) {
+            this.allConnectionStrings = allConnectionStrings;
+            this.__explicitlySet__.add("allConnectionStrings");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("high")
         private String high;
 
@@ -57,14 +66,19 @@ public class AutonomousDatabaseConnectionStrings {
 
         public AutonomousDatabaseConnectionStrings build() {
             AutonomousDatabaseConnectionStrings __instance__ =
-                    new AutonomousDatabaseConnectionStrings(high, low, medium);
+                    new AutonomousDatabaseConnectionStrings(
+                            allConnectionStrings, high, low, medium);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(AutonomousDatabaseConnectionStrings o) {
-            Builder copiedBuilder = high(o.getHigh()).low(o.getLow()).medium(o.getMedium());
+            Builder copiedBuilder =
+                    allConnectionStrings(o.getAllConnectionStrings())
+                            .high(o.getHigh())
+                            .low(o.getLow())
+                            .medium(o.getMedium());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -77,6 +91,12 @@ public class AutonomousDatabaseConnectionStrings {
     public static Builder builder() {
         return new Builder();
     }
+
+    /**
+     * All connection strings to use to connect to the Autonomous Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("allConnectionStrings")
+    java.util.Map<String, String> allConnectionStrings;
 
     /**
      * The High database service provides the highest level of resources to each SQL statement resulting in the highest performance, but supports the fewest number of concurrent SQL statements.

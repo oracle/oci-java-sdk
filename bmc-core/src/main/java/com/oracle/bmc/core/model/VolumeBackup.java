@@ -123,6 +123,15 @@ public class VolumeBackup {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceVolumeBackupId")
+        private String sourceVolumeBackupId;
+
+        public Builder sourceVolumeBackupId(String sourceVolumeBackupId) {
+            this.sourceVolumeBackupId = sourceVolumeBackupId;
+            this.__explicitlySet__.add("sourceVolumeBackupId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -193,6 +202,7 @@ public class VolumeBackup {
                             sizeInGBs,
                             sizeInMBs,
                             sourceType,
+                            sourceVolumeBackupId,
                             timeCreated,
                             timeRequestReceived,
                             type,
@@ -216,6 +226,7 @@ public class VolumeBackup {
                             .sizeInGBs(o.getSizeInGBs())
                             .sizeInMBs(o.getSizeInMBs())
                             .sourceType(o.getSourceType())
+                            .sourceVolumeBackupId(o.getSourceVolumeBackupId())
                             .timeCreated(o.getTimeCreated())
                             .timeRequestReceived(o.getTimeRequestReceived())
                             .type(o.getType())
@@ -407,6 +418,12 @@ public class VolumeBackup {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
     SourceType sourceType;
+
+    /**
+     * The OCID of the source volume backup.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceVolumeBackupId")
+    String sourceVolumeBackupId;
 
     /**
      * The date and time the volume backup was created. This is the time the actual point-in-time image

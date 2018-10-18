@@ -37,6 +37,23 @@ public interface BlockstorageAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Creates a volume backup copy in specified region. For general information about volume backups,
+     * see [Overview of Block Volume Service Backups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/blockvolumebackups.htm)
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CopyVolumeBackupResponse> copyVolumeBackup(
+            CopyVolumeBackupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CopyVolumeBackupRequest, CopyVolumeBackupResponse>
+                    handler);
+
+    /**
      * Creates a new boot volume in the specified compartment from an existing boot volume or a boot volume backup.
      * For general information about boot volumes, see [Boot Volumes](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/bootvolumes.htm).
      * You may optionally specify a *display name* for the volume, which is simply a friendly name or
@@ -642,7 +659,7 @@ public interface BlockstorageAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListVolumesRequest, ListVolumesResponse> handler);
 
     /**
-     * Updates the specified boot volume's display name.
+     * Updates the specified boot volume's display name, defined tags, and free-form tags.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

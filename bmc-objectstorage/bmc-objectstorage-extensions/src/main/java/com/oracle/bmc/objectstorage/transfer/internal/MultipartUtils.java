@@ -3,15 +3,25 @@
  */
 package com.oracle.bmc.objectstorage.transfer.internal;
 
+import com.google.common.annotations.VisibleForTesting;
 import com.oracle.bmc.objectstorage.requests.PutObjectRequest;
 import com.oracle.bmc.objectstorage.transfer.UploadConfiguration;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.Validate;
 
+@Slf4j
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class MultipartUtils {
-    static final int MiB = 1024 * 1024;
+public final class MultipartUtils {
+    @VisibleForTesting public static final long MiB = 1024L * 1024L;
+    /*
+     * Max supported sizes are specified @
+     * https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingmultipartuploads.htm
+     */
+    static final long MAX_SUPPORTED_CONTENT_LENGTH = 10L * MiB * MiB; // 10 TiB
 
     /**
      * Test whether an object of a given size is large enough to warrant using multi-part uploads.
@@ -20,7 +30,8 @@ public class MultipartUtils {
      * @param contentLength The length of the object in bytes.
      * @return true if multi-part uploads should be used, false if not.
      */
-    public static boolean shouldUseMultipart(UploadConfiguration config, long contentLength) {
+    public static boolean shouldUseMultipart(
+            @NonNull UploadConfiguration config, long contentLength) {
         return config.isAllowMultipartUploads() && meetsMinimumSize(config, contentLength);
     }
 
@@ -31,13 +42,18 @@ public class MultipartUtils {
      * @param contentLength The length of the object in bytes.
      * @return The part size to use.
      */
-    public static long calculatePartSize(UploadConfiguration config, long contentLength) {
-        // use ceil so the number of parts needed does not exceed the max number configured
-        double equalPartSize =
-                Math.ceil((double) contentLength / config.getMaxPartsForMultipartUpload());
-        long sizePerPart =
-                (long) Math.max(equalPartSize, (config.getMinimumLengthPerUploadPart() * MiB));
-        return sizePerPart;
+    public static long calculatePartSize(@NonNull UploadConfiguration config, long contentLength) {
+        Validate.isTrue(
+                contentLength <= MAX_SUPPORTED_CONTENT_LENGTH,
+                String.format(
+                        "Content length [%s] exceeds max supported by ObjectStorage [%s]",
+                        contentLength,
+                        MAX_SUPPORTED_CONTENT_LENGTH));
+
+        final long configuredSizePerPart = config.getMinimumLengthPerUploadPart() * MiB;
+        return isCalculatedPartsLessThanOrEqualToMaxParts(configuredSizePerPart, contentLength)
+                ? configuredSizePerPart
+                : fetchSizePerPartBasedOnMaxAllowed(contentLength, configuredSizePerPart);
     }
 
     /**
@@ -48,12 +64,65 @@ public class MultipartUtils {
      * @param request The request being sent.
      * @return true to calculate MD5, false if it's not necessary.
      */
-    public static boolean shouldCalculateMd5(UploadConfiguration config, PutObjectRequest request) {
+    public static boolean shouldCalculateMd5(
+            @NonNull UploadConfiguration config, @NonNull PutObjectRequest request) {
         return config.isEnforceMd5BeforeUpload() && request.getContentMD5() == null;
     }
 
     private static boolean meetsMinimumSize(UploadConfiguration config, long contentLength) {
         long min = (config.getMinimumLengthForMultipartUpload() * MiB);
         return contentLength >= min;
+    }
+
+    private static boolean isCalculatedPartsLessThanOrEqualToMaxParts(
+            long configuredLengthPerPart, long contentLength) {
+        final long calculatedNumParts =
+                (long) Math.ceil((double) contentLength / configuredLengthPerPart);
+        if (calculatedNumParts <= UploadConfiguration.MAXIMUM_NUM_ALLOWED_PARTS) {
+            return true;
+        }
+
+        LOG.warn(
+                "Number of parts to upload [%s] is greater than the maximum number of parts allowed [%s] for given "
+                        + "content length [%s]. Consider increasing the MinimumLengthPerUploadPart configuration option",
+                calculatedNumParts,
+                contentLength);
+        return false;
+    }
+
+    /**
+     * Fetches the size per part based on {@link UploadConfiguration#MAXIMUM_NUM_ALLOWED_PARTS}.
+     * @param contentLength the length in bytes of the object to upload
+     * @param configuredSizePerPart the configured size per part in bytes
+     * @return the size per part in bytes
+     */
+    private static long fetchSizePerPartBasedOnMaxAllowed(
+            long contentLength, long configuredSizePerPart) {
+        final double calculatedSizePerPart =
+                (double) contentLength / UploadConfiguration.MAXIMUM_NUM_ALLOWED_PARTS;
+        final long sizePerPart = (long) Math.ceil(calculatedSizePerPart);
+
+        /*
+         * At this point, the enforcement of the configured part size is relaxed in order to try and upload the
+         * object for the customer.
+         *
+         * This means that there are over 10,000 calculated parts based on MinimumLengthPerUploadPart.
+         * Given that the max supported content-length for a single file is 10 TiB:
+         * 10 TiB / 10,000 parts * 1024 (GiB/TiB) = 1.024 (GiB/part).
+         * 1.024 (GiB/part) < max size allowed per part of 50 (GiB/part).
+         *
+         * If the length per part is configured at the smallest allowed value of 10 MiB, then the configured
+         * size per part is ignored and recalculated based on the the maximum number of allowed parts (10,000).
+         *
+         * So this assertion should never be tripped.
+         */
+        assert sizePerPart <= (UploadConfiguration.MAXIMUM_ALLOWED_LENGTH_PER_PART_MB * MiB);
+
+        LOG.info(
+                "Ignoring MinimumLengthPerUploadPart [{} bytes] and using {} bytes per part for upload",
+                configuredSizePerPart,
+                sizePerPart);
+
+        return sizePerPart;
     }
 }

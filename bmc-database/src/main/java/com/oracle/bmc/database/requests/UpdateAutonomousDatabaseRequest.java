@@ -28,6 +28,12 @@ public class UpdateAutonomousDatabaseRequest extends com.oracle.bmc.requests.Bmc
      */
     private String ifMatch;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
+    private String opcRequestId;
+
     public static class Builder {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
@@ -52,6 +58,7 @@ public class UpdateAutonomousDatabaseRequest extends com.oracle.bmc.requests.Bmc
             autonomousDatabaseId(o.getAutonomousDatabaseId());
             updateAutonomousDatabaseDetails(o.getUpdateAutonomousDatabaseDetails());
             ifMatch(o.getIfMatch());
+            opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             return this;
         }

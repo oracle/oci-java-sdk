@@ -45,6 +45,12 @@ public class ListVolumeBackupsRequest extends com.oracle.bmc.requests.BmcRequest
     private String displayName;
 
     /**
+     * A filter to return only resources that originated from the given source volume backup.
+     *
+     */
+    private String sourceVolumeBackupId;
+
+    /**
      * The field to sort by. You can provide one sort order (`sortOrder`). Default order for
      * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
      * sort order is case sensitive.
@@ -178,6 +184,7 @@ public class ListVolumeBackupsRequest extends com.oracle.bmc.requests.BmcRequest
             limit(o.getLimit());
             page(o.getPage());
             displayName(o.getDisplayName());
+            sourceVolumeBackupId(o.getSourceVolumeBackupId());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             lifecycleState(o.getLifecycleState());

@@ -1,7 +1,6 @@
 /**
  * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
  */
-
 import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
@@ -52,7 +51,9 @@ public class CatalogImageListingResourceVersionsExample {
                 computeClient.listAppCatalogListings(
                         ListAppCatalogListingsRequest.builder()
                                 .limit(1)
-                                .sortOrder(ListAppCatalogListingsRequest.SortOrder.Asc) //sort by displayname
+                                .sortOrder(
+                                        ListAppCatalogListingsRequest.SortOrder
+                                                .Asc) //sort by displayname
                                 .build());
 
         if (!listImagesResponse.getItems().isEmpty()) {
@@ -81,13 +82,18 @@ public class CatalogImageListingResourceVersionsExample {
         List<String> resourceVersions = new ArrayList<>();
 
         for (ListAppCatalogListingResourceVersionsResponse responseListingResourceVersion :
-                computeClient.getPaginators().listAppCatalogListingResourceVersionsResponseIterator(
-                ListAppCatalogListingResourceVersionsRequest.builder()
-                        .listingId(listingId)
-                        .limit(10)
-                        .sortOrder(ListAppCatalogListingResourceVersionsRequest.SortOrder.Asc)
-                        .build())) {
-            for (AppCatalogListingResourceVersionSummary item : responseListingResourceVersion.getItems()) {
+                computeClient
+                        .getPaginators()
+                        .listAppCatalogListingResourceVersionsResponseIterator(
+                                ListAppCatalogListingResourceVersionsRequest.builder()
+                                        .listingId(listingId)
+                                        .limit(10)
+                                        .sortOrder(
+                                                ListAppCatalogListingResourceVersionsRequest
+                                                        .SortOrder.Asc)
+                                        .build())) {
+            for (AppCatalogListingResourceVersionSummary item :
+                    responseListingResourceVersion.getItems()) {
                 resourceVersions.add(item.getListingResourceVersion());
             }
         }

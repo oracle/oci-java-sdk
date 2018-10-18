@@ -45,9 +45,9 @@ public class Backup {
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
-        private String databaseEdition;
+        private DatabaseEdition databaseEdition;
 
-        public Builder databaseEdition(String databaseEdition) {
+        public Builder databaseEdition(DatabaseEdition databaseEdition) {
             this.databaseEdition = databaseEdition;
             this.__explicitlySet__.add("databaseEdition");
             return this;
@@ -62,12 +62,12 @@ public class Backup {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("dbDataSizeInMBs")
-        private Integer dbDataSizeInMBs;
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseSizeInGBs")
+        private Double databaseSizeInGBs;
 
-        public Builder dbDataSizeInMBs(Integer dbDataSizeInMBs) {
-            this.dbDataSizeInMBs = dbDataSizeInMBs;
-            this.__explicitlySet__.add("dbDataSizeInMBs");
+        public Builder databaseSizeInGBs(Double databaseSizeInGBs) {
+            this.databaseSizeInGBs = databaseSizeInGBs;
+            this.__explicitlySet__.add("databaseSizeInGBs");
             return this;
         }
 
@@ -144,7 +144,7 @@ public class Backup {
                             compartmentId,
                             databaseEdition,
                             databaseId,
-                            dbDataSizeInMBs,
+                            databaseSizeInGBs,
                             displayName,
                             id,
                             lifecycleDetails,
@@ -163,7 +163,7 @@ public class Backup {
                             .compartmentId(o.getCompartmentId())
                             .databaseEdition(o.getDatabaseEdition())
                             .databaseId(o.getDatabaseId())
-                            .dbDataSizeInMBs(o.getDbDataSizeInMBs())
+                            .databaseSizeInGBs(o.getDatabaseSizeInGBs())
                             .displayName(o.getDisplayName())
                             .id(o.getId())
                             .lifecycleDetails(o.getLifecycleDetails())
@@ -195,13 +195,61 @@ public class Backup {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
+    /**
+     * The Oracle Database edition of the DB system from which the database backup was taken.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum DatabaseEdition {
+        StandardEdition("STANDARD_EDITION"),
+        EnterpriseEdition("ENTERPRISE_EDITION"),
+        EnterpriseEditionHighPerformance("ENTERPRISE_EDITION_HIGH_PERFORMANCE"),
+        EnterpriseEditionExtremePerformance("ENTERPRISE_EDITION_EXTREME_PERFORMANCE"),
 
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, DatabaseEdition> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DatabaseEdition v : DatabaseEdition.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        DatabaseEdition(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DatabaseEdition create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DatabaseEdition', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
     /**
      * The Oracle Database edition of the DB system from which the database backup was taken.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
-    String databaseEdition;
+    DatabaseEdition databaseEdition;
 
     /**
      * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the database.
@@ -210,11 +258,11 @@ public class Backup {
     String databaseId;
 
     /**
-     * Size of the database in megabytes (MB) at the time the backup was taken.
+     * The size of the database in gigabytes at the time the backup was taken.
      *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("dbDataSizeInMBs")
-    Integer dbDataSizeInMBs;
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseSizeInGBs")
+    Double databaseSizeInGBs;
 
     /**
      * The user-friendly name for the backup. The name does not have to be unique.

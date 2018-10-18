@@ -57,6 +57,30 @@ public class ListDbNodesConverter {
                                     request.getPage()));
         }
 
+        if (request.getSortBy() != null) {
+            target =
+                    target.queryParam(
+                            "sortBy",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getSortBy().getValue()));
+        }
+
+        if (request.getSortOrder() != null) {
+            target =
+                    target.queryParam(
+                            "sortOrder",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getSortOrder().getValue()));
+        }
+
+        if (request.getLifecycleState() != null) {
+            target =
+                    target.queryParam(
+                            "lifecycleState",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getLifecycleState().getValue()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

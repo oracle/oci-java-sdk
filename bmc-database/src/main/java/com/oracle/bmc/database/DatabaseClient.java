@@ -312,6 +312,34 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public CompleteExternalBackupJobResponse completeExternalBackupJob(
+            CompleteExternalBackupJobRequest request) {
+        LOG.trace("Called completeExternalBackupJob");
+        request = CompleteExternalBackupJobConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CompleteExternalBackupJobConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CompleteExternalBackupJobResponse>
+                transformer = CompleteExternalBackupJobConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCompleteExternalBackupJobDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public CreateAutonomousDataWarehouseResponse createAutonomousDataWarehouse(
             CreateAutonomousDataWarehouseRequest request) {
         LOG.trace("Called createAutonomousDataWarehouse");
@@ -507,6 +535,33 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public CreateExternalBackupJobResponse createExternalBackupJob(
+            CreateExternalBackupJobRequest request) {
+        LOG.trace("Called createExternalBackupJob");
+        request = CreateExternalBackupJobConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateExternalBackupJobConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateExternalBackupJobResponse>
+                transformer = CreateExternalBackupJobConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCreateExternalBackupJobDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public DbNodeActionResponse dbNodeAction(DbNodeActionRequest request) {
         LOG.trace("Called dbNodeAction");
         request = DbNodeActionConverter.interceptRequest(request);
@@ -650,6 +705,66 @@ public class DatabaseClient implements Database {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getFailoverDataGuardAssociationDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public GenerateAutonomousDataWarehouseWalletResponse generateAutonomousDataWarehouseWallet(
+            GenerateAutonomousDataWarehouseWalletRequest request) {
+        LOG.trace("Called generateAutonomousDataWarehouseWallet");
+        request = GenerateAutonomousDataWarehouseWalletConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GenerateAutonomousDataWarehouseWalletConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GenerateAutonomousDataWarehouseWalletResponse>
+                transformer = GenerateAutonomousDataWarehouseWalletConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(
+                                ib,
+                                request.getGenerateAutonomousDataWarehouseWalletDetails(),
+                                request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public GenerateAutonomousDatabaseWalletResponse generateAutonomousDatabaseWallet(
+            GenerateAutonomousDatabaseWalletRequest request) {
+        LOG.trace("Called generateAutonomousDatabaseWallet");
+        request = GenerateAutonomousDatabaseWalletConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GenerateAutonomousDatabaseWalletConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GenerateAutonomousDatabaseWalletResponse>
+                transformer = GenerateAutonomousDatabaseWalletConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(
+                                ib, request.getGenerateAutonomousDatabaseWalletDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
@@ -1007,6 +1122,31 @@ public class DatabaseClient implements Database {
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetDbSystemPatchHistoryEntryResponse>
                 transformer = GetDbSystemPatchHistoryEntryConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public GetExternalBackupJobResponse getExternalBackupJob(GetExternalBackupJobRequest request) {
+        LOG.trace("Called getExternalBackupJob");
+        request = GetExternalBackupJobConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetExternalBackupJobConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetExternalBackupJobResponse>
+                transformer = GetExternalBackupJobConverter.fromResponse();
 
         int attempts = 0;
         while (true) {

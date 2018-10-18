@@ -11,7 +11,7 @@ import com.oracle.bmc.identity.model.*;
 public class ListCompartmentsRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The OCID of the compartment (remember that the tenancy is simply the root compartment).
+     * The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
      *
      */
     private String compartmentId;
@@ -27,6 +27,71 @@ public class ListCompartmentsRequest extends com.oracle.bmc.requests.BmcRequest 
      *
      */
     private Integer limit;
+
+    /**
+     * Valid values are `ANY` and `ACCESSIBLE`. Default is `ANY`.
+     * Setting this to `ACCESSIBLE` returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). For the compartments on which the user indirectly has
+     * INSPECT permissions, a restricted set of fields is returned.
+     * <p>
+     * When set to `ANY` permissions are not checked.
+     *
+     */
+    private AccessLevel accessLevel;
+
+    /**
+     * Valid values are `ANY` and `ACCESSIBLE`. Default is `ANY`.
+     * Setting this to `ACCESSIBLE` returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). For the compartments on which the user indirectly has
+     * INSPECT permissions, a restricted set of fields is returned.
+     * <p>
+     * When set to `ANY` permissions are not checked.
+     *
+     **/
+    public enum AccessLevel {
+        Any("ANY"),
+        Accessible("ACCESSIBLE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, AccessLevel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AccessLevel v : AccessLevel.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        AccessLevel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AccessLevel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new RuntimeException("Invalid AccessLevel: " + key);
+        }
+    };
+
+    /**
+     * Default is false. Can only be set to true when performing
+     * ListCompartments on the tenancy (root compartment).
+     * When set to true, the hierarchy of compartments is traversed
+     * and all compartments and subcompartments in the tenancy are
+     * returned depending on the the setting of `accessLevel`.
+     *
+     */
+    private Boolean compartmentIdInSubtree;
 
     public static class Builder {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
@@ -52,6 +117,8 @@ public class ListCompartmentsRequest extends com.oracle.bmc.requests.BmcRequest 
             compartmentId(o.getCompartmentId());
             page(o.getPage());
             limit(o.getLimit());
+            accessLevel(o.getAccessLevel());
+            compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             invocationCallback(o.getInvocationCallback());
             return this;
         }

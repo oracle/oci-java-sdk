@@ -37,6 +37,25 @@ public interface DatabaseAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Changes the status of the standalone backup resource to `ACTIVE` after the backup is created from the on-premises database and placed in Oracle Cloud Infrastructure Object Storage.
+     * <p>
+     **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud](https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Tasks/mig-onprembackup.htm) for more information.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CompleteExternalBackupJobResponse> completeExternalBackupJob(
+            CompleteExternalBackupJobRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CompleteExternalBackupJobRequest, CompleteExternalBackupJobResponse>
+                    handler);
+
+    /**
      * Creates a new Autonomous Data Warehouse.
      *
      *
@@ -167,6 +186,25 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new backup resource and returns the information the caller needs to back up an on-premises Oracle Database to Oracle Cloud Infrastructure.
+     * <p>
+     **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud](https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Tasks/mig-onprembackup.htm) for more information.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateExternalBackupJobResponse> createExternalBackupJob(
+            CreateExternalBackupJobRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateExternalBackupJobRequest, CreateExternalBackupJobResponse>
+                    handler);
+
+    /**
      * Performs an action, such as one of the power actions (start, stop, softreset, or reset), on the specified DB Node.
      * <p>
      **start** - power on
@@ -284,6 +322,44 @@ public interface DatabaseAsync extends AutoCloseable {
                             FailoverDataGuardAssociationRequest,
                             FailoverDataGuardAssociationResponse>
                     handler);
+
+    /**
+     * Creates and downloads a wallet for the specified Autonomous Data Warehouse.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GenerateAutonomousDataWarehouseWalletResponse>
+            generateAutonomousDataWarehouseWallet(
+                    GenerateAutonomousDataWarehouseWalletRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GenerateAutonomousDataWarehouseWalletRequest,
+                                    GenerateAutonomousDataWarehouseWalletResponse>
+                            handler);
+
+    /**
+     * Creates and downloads a wallet for the specified Autonomous Transaction Processing database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GenerateAutonomousDatabaseWalletResponse>
+            generateAutonomousDatabaseWallet(
+                    GenerateAutonomousDatabaseWalletRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GenerateAutonomousDatabaseWalletRequest,
+                                    GenerateAutonomousDatabaseWalletResponse>
+                            handler);
 
     /**
      * Gets the details of the specified Autonomous Data Warehouse.
@@ -505,6 +581,25 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             GetDbSystemPatchHistoryEntryRequest,
                             GetDbSystemPatchHistoryEntryResponse>
+                    handler);
+
+    /**
+     * Gets information about the specified external backup job.
+     * <p>
+     **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud](https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Tasks/mig-onprembackup.htm) for more information.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExternalBackupJobResponse> getExternalBackupJob(
+            GetExternalBackupJobRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetExternalBackupJobRequest, GetExternalBackupJobResponse>
                     handler);
 
     /**

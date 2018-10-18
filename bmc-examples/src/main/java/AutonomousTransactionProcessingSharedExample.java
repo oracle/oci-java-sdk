@@ -18,8 +18,14 @@ import com.oracle.bmc.database.requests.UpdateAutonomousDatabaseRequest;
 import com.oracle.bmc.database.responses.CreateAutonomousDatabaseResponse;
 import com.oracle.bmc.database.responses.GetAutonomousDatabaseResponse;
 import com.oracle.bmc.database.responses.UpdateAutonomousDatabaseResponse;
+import com.oracle.bmc.database.responses.GenerateAutonomousDatabaseWalletResponse;
+import com.oracle.bmc.database.requests.GenerateAutonomousDatabaseWalletRequest;
+import com.oracle.bmc.database.model.GenerateAutonomousDatabaseWalletDetails;
 
+
+import java.io.InputStream;
 import java.util.Random;
+import java.util.zip.ZipInputStream;
 
 public class AutonomousTransactionProcessingSharedExample {
 
@@ -28,8 +34,9 @@ public class AutonomousTransactionProcessingSharedExample {
         String profile = "DEFAULT";
 
         // TODO: Fill in these values
-        String compartmentId = args[0];
 
+        String compartmentId = args[0];
+        String password = args[1];
         AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configurationFilePath, profile);
 
@@ -99,6 +106,12 @@ public class AutonomousTransactionProcessingSharedExample {
                         .getAutonomousDatabase();
         atpShared = waitForInstanceToBecomeAvailable(dbClient, atpShared.getId());
         System.out.println("Started Autonomous Transaction Processing Shared : " + atpShared);
+
+        System.out.println("Downloading wallet for  : " + atpShared);
+        GenerateAutonomousDatabaseWalletDetails atpWalletDetails = createAtpWalletDetails(password);
+        GenerateAutonomousDatabaseWalletResponse atpWalletResponse = generateATPWallet(dbClient, atpWalletDetails , atpShared.getId());
+        System.out.println("Autonomous database downloaded wallet content length is : " + atpWalletResponse.getContentLength());
+        ZipInputStream zin = new ZipInputStream(atpWalletResponse.getInputStream());
 
         // Delete
         System.out.println("Deleting Autonomous Transaction Processing Shared : " + atpShared);
@@ -188,6 +201,19 @@ public class AutonomousTransactionProcessingSharedExample {
         return UpdateAutonomousDatabaseDetails.builder()
                 .cpuCoreCount(2)
                 .dataStorageSizeInTBs(2)
+                .build();
+    }
+
+    private static GenerateAutonomousDatabaseWalletResponse generateATPWallet(
+            DatabaseClient dbClient, GenerateAutonomousDatabaseWalletDetails atpWalletDetails,
+            String atpId) {
+        return dbClient.generateAutonomousDatabaseWallet(
+                GenerateAutonomousDatabaseWalletRequest.builder().generateAutonomousDatabaseWalletDetails(atpWalletDetails).autonomousDatabaseId(atpId).build());
+    }
+
+    private static GenerateAutonomousDatabaseWalletDetails createAtpWalletDetails(String password) {
+        return GenerateAutonomousDatabaseWalletDetails.builder()
+                .password(password)
                 .build();
     }
 

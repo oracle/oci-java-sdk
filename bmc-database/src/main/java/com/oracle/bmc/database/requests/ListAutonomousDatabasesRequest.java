@@ -123,6 +123,12 @@ public class ListAutonomousDatabasesRequest extends com.oracle.bmc.requests.BmcR
      */
     private String displayName;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
+    private String opcRequestId;
+
     public static class Builder {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
@@ -151,6 +157,7 @@ public class ListAutonomousDatabasesRequest extends com.oracle.bmc.requests.BmcR
             sortOrder(o.getSortOrder());
             lifecycleState(o.getLifecycleState());
             displayName(o.getDisplayName());
+            opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             return this;
         }
