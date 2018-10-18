@@ -116,6 +116,15 @@ public class Tag {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isCostTracking")
+        private Boolean isCostTracking;
+
+        public Builder isCostTracking(Boolean isCostTracking) {
+            this.isCostTracking = isCostTracking;
+            this.__explicitlySet__.add("isCostTracking");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -131,7 +140,8 @@ public class Tag {
                             freeformTags,
                             definedTags,
                             isRetired,
-                            timeCreated);
+                            timeCreated,
+                            isCostTracking);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -148,7 +158,8 @@ public class Tag {
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .isRetired(o.getIsRetired())
-                            .timeCreated(o.getTimeCreated());
+                            .timeCreated(o.getTimeCreated())
+                            .isCostTracking(o.getIsCostTracking());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -233,6 +244,13 @@ public class Tag {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
+
+    /**
+     * Indicates whether the tag is enabled for cost tracking.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isCostTracking")
+    Boolean isCostTracking;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

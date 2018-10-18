@@ -196,6 +196,15 @@ public class Instance {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceRebootDue")
+        private java.util.Date timeMaintenanceRebootDue;
+
+        public Builder timeMaintenanceRebootDue(java.util.Date timeMaintenanceRebootDue) {
+            this.timeMaintenanceRebootDue = timeMaintenanceRebootDue;
+            this.__explicitlySet__.add("timeMaintenanceRebootDue");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -219,7 +228,8 @@ public class Instance {
                             region,
                             shape,
                             sourceDetails,
-                            timeCreated);
+                            timeCreated,
+                            timeMaintenanceRebootDue);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -244,7 +254,8 @@ public class Instance {
                             .region(o.getRegion())
                             .shape(o.getShape())
                             .sourceDetails(o.getSourceDetails())
-                            .timeCreated(o.getTimeCreated());
+                            .timeCreated(o.getTimeCreated())
+                            .timeMaintenanceRebootDue(o.getTimeMaintenanceRebootDue());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -533,6 +544,16 @@ public class Instance {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
+
+    /**
+     * The date and time the instance is expected to be stopped / started,  in the format defined by RFC3339.
+     * After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time.
+     * Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state.
+     * Example: `2018-05-25T21:10:29.600Z`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceRebootDue")
+    java.util.Date timeMaintenanceRebootDue;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

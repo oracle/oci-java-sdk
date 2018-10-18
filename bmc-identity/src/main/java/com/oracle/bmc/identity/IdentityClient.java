@@ -782,6 +782,31 @@ public class IdentityClient implements Identity {
     }
 
     @Override
+    public DeleteCompartmentResponse deleteCompartment(DeleteCompartmentRequest request) {
+        LOG.trace("Called deleteCompartment");
+        request = DeleteCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteCompartmentConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCompartmentResponse>
+                transformer = DeleteCompartmentConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public DeleteCustomerSecretKeyResponse deleteCustomerSecretKey(
             DeleteCustomerSecretKeyRequest request) {
         LOG.trace("Called deleteCustomerSecretKey");
@@ -1286,6 +1311,31 @@ public class IdentityClient implements Identity {
     }
 
     @Override
+    public GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request) {
+        LOG.trace("Called getWorkRequest");
+        request = GetWorkRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetWorkRequestConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
+                transformer = GetWorkRequestConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public ListApiKeysResponse listApiKeys(ListApiKeysRequest request) {
         LOG.trace("Called listApiKeys");
         request = ListApiKeysConverter.interceptRequest(request);
@@ -1369,6 +1419,31 @@ public class IdentityClient implements Identity {
                 ListCompartmentsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListCompartmentsResponse>
                 transformer = ListCompartmentsConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public ListCostTrackingTagsResponse listCostTrackingTags(ListCostTrackingTagsRequest request) {
+        LOG.trace("Called listCostTrackingTags");
+        request = ListCostTrackingTagsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCostTrackingTagsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListCostTrackingTagsResponse>
+                transformer = ListCostTrackingTagsConverter.fromResponse();
 
         int attempts = 0;
         while (true) {
@@ -1748,6 +1823,31 @@ public class IdentityClient implements Identity {
                 ListUsersConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListUsersResponse> transformer =
                 ListUsersConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request) {
+        LOG.trace("Called listWorkRequests");
+        request = ListWorkRequestsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+                transformer = ListWorkRequestsConverter.fromResponse();
 
         int attempts = 0;
         while (true) {

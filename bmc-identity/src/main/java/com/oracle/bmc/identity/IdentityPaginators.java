@@ -1146,4 +1146,116 @@ public class IdentityPaginators {
                     }
                 });
     }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequests operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListWorkRequestsResponse> listWorkRequestsResponseIterator(
+            final ListWorkRequestsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse>(
+                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                    @Override
+                    public ListWorkRequestsRequest.Builder get() {
+                        return ListWorkRequestsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                    @Override
+                    public String apply(ListWorkRequestsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWorkRequestsRequest.Builder>,
+                        ListWorkRequestsRequest>() {
+                    @Override
+                    public ListWorkRequestsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWorkRequestsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWorkRequestsRequest, ListWorkRequestsResponse>() {
+                    @Override
+                    public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
+                        return client.listWorkRequests(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.WorkRequestSummary} objects
+     * contained in responses from the listWorkRequests operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.WorkRequestSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.identity.model.WorkRequestSummary>
+            listWorkRequestsRecordIterator(final ListWorkRequestsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
+                com.oracle.bmc.identity.model.WorkRequestSummary>(
+                new com.google.common.base.Supplier<ListWorkRequestsRequest.Builder>() {
+                    @Override
+                    public ListWorkRequestsRequest.Builder get() {
+                        return ListWorkRequestsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListWorkRequestsResponse, String>() {
+                    @Override
+                    public String apply(ListWorkRequestsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWorkRequestsRequest.Builder>,
+                        ListWorkRequestsRequest>() {
+                    @Override
+                    public ListWorkRequestsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWorkRequestsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWorkRequestsRequest, ListWorkRequestsResponse>() {
+                    @Override
+                    public ListWorkRequestsResponse apply(ListWorkRequestsRequest request) {
+                        return client.listWorkRequests(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWorkRequestsResponse,
+                        java.util.List<com.oracle.bmc.identity.model.WorkRequestSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.identity.model.WorkRequestSummary> apply(
+                            ListWorkRequestsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
 }

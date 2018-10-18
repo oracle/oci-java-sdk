@@ -8,6 +8,7 @@ import com.oracle.bmc.database.DatabaseClient;
 import com.oracle.bmc.database.DatabaseWaiters;
 import com.oracle.bmc.database.model.AutonomousDataWarehouse;
 import com.oracle.bmc.database.model.CreateAutonomousDataWarehouseDetails;
+import com.oracle.bmc.database.model.GenerateAutonomousDataWarehouseWalletDetails;
 import com.oracle.bmc.database.model.UpdateAutonomousDataWarehouseDetails;
 import com.oracle.bmc.database.requests.CreateAutonomousDataWarehouseRequest;
 import com.oracle.bmc.database.requests.DeleteAutonomousDataWarehouseRequest;
@@ -18,7 +19,12 @@ import com.oracle.bmc.database.requests.UpdateAutonomousDataWarehouseRequest;
 import com.oracle.bmc.database.responses.CreateAutonomousDataWarehouseResponse;
 import com.oracle.bmc.database.responses.GetAutonomousDataWarehouseResponse;
 import com.oracle.bmc.database.responses.UpdateAutonomousDataWarehouseResponse;
+import com.oracle.bmc.database.responses.GenerateAutonomousDataWarehouseWalletResponse;
+import com.oracle.bmc.database.requests.GenerateAutonomousDataWarehouseWalletRequest;
 
+
+import java.util.zip.ZipInputStream;
+import java.io.InputStream;
 import java.util.Random;
 
 public class AutonomousDatawarehouseExample {
@@ -29,6 +35,7 @@ public class AutonomousDatawarehouseExample {
 
         // TODO: Fill in these values
         String compartmentId = args[0];
+        String password = args[1];
 
         AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configurationFilePath, profile);
@@ -92,6 +99,13 @@ public class AutonomousDatawarehouseExample {
         adw = waitForInstanceToBecomeAvailable(dbClient, adw.getId());
         System.out.println("Started Autonomous Datawarehouse Shared : " + adw);
 
+        //download wallet
+
+        System.out.println("Downloading wallet for  : " + adw);
+        GenerateAutonomousDataWarehouseWalletDetails adwWalletDetails = createAdwWalletDetails(password);
+        GenerateAutonomousDataWarehouseWalletResponse adwWalletResponse = generateADWWallet(dbClient, adwWalletDetails , adw.getId());
+        System.out.println("Autonomous data warehouse downloaded wallet content length is : " + adwWalletResponse.getContentLength());
+        ZipInputStream zin = new ZipInputStream(adwWalletResponse.getInputStream());
         // Delete
         System.out.println("Deleting Autonomous Datawarehouse Shared : " + adw);
         dbClient.deleteAutonomousDataWarehouse(
@@ -150,6 +164,24 @@ public class AutonomousDatawarehouseExample {
                                 .build());
 
         return response.getAutonomousDataWarehouse();
+    }
+
+
+    
+    private static GenerateAutonomousDataWarehouseWalletResponse generateADWWallet(
+            DatabaseClient dbClient, GenerateAutonomousDataWarehouseWalletDetails adwWalletDetails,
+            String adwId) {
+        GenerateAutonomousDataWarehouseWalletResponse response = dbClient.generateAutonomousDataWarehouseWallet(
+                GenerateAutonomousDataWarehouseWalletRequest.builder().generateAutonomousDataWarehouseWalletDetails(adwWalletDetails).autonomousDataWarehouseId(adwId).build());
+
+        return response;
+    }
+
+
+    private static GenerateAutonomousDataWarehouseWalletDetails createAdwWalletDetails(String password) {
+        return GenerateAutonomousDataWarehouseWalletDetails.builder()
+                .password(password)
+                .build();
     }
 
     private static AutonomousDataWarehouse waitForInstanceToBeStopped(

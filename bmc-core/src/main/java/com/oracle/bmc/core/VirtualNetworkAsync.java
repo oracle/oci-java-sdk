@@ -2473,7 +2473,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the specified subnet's display name. Avoid entering confidential information.
+     * Updates the specified subnet.
      *
      *
      * @param request The request object containing the details to send
@@ -2489,8 +2489,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the specified VCN's display name.
-     * Avoid entering confidential information.
+     * Updates the specified VCN.
      *
      *
      * @param request The request object containing the details to send

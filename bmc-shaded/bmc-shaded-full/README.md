@@ -2,7 +2,7 @@
 
 ## About
 
-This directory contains a Maven `pom.xml` file that allows you to use the shaded full jar (which contains most of the OCI Java SDK's dependencies) in Maven, while automatically pulling in the dependencies that are not already contained in the shaded full jar.
+This directory contains a Maven `pom.xml` file that allows you to use the shaded full jar (which contains most of the Oracle Cloud Infrastructure Java SDK's dependencies) in Maven, while automatically pulling in the dependencies that are not already contained in the shaded full jar.
 
 ## Usage
 
@@ -14,7 +14,7 @@ Those will have to be installed in your Maven repository first:
     mvn install:install-file -Dfile=pom.xml -Dpackaging=pom -DpomFile=pom.xml
     mvn install:install-file -Dfile=bmc-shaded/pom.xml -Dpackaging=pom -DpomFile=bmc-shaded/pom.xml
 
-Download the latest release of the OCI Java SDK from Github: https://github.com/oracle/oci-java-sdk/releases
+Download the latest release of the Java SDK from Github: https://github.com/oracle/oci-java-sdk/releases
 
 Extract the `shaded/lib/oci-java-sdk-full-shaded-*.jar` file from the downloaded zip file.
 

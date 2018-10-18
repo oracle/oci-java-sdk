@@ -98,7 +98,7 @@ public class UpdateCompartmentDetails {
     String description;
 
     /**
-     * The new name you assign to the compartment. The name must be unique across all compartments in the tenancy.
+     * The new name you assign to the compartment. The name must be unique across all compartments in the parent compartment.
      * Avoid entering confidential information.
      *
      **/

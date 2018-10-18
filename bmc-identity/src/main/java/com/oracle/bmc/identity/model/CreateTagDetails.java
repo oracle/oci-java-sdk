@@ -59,12 +59,22 @@ public class CreateTagDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isCostTracking")
+        private Boolean isCostTracking;
+
+        public Builder isCostTracking(Boolean isCostTracking) {
+            this.isCostTracking = isCostTracking;
+            this.__explicitlySet__.add("isCostTracking");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateTagDetails build() {
             CreateTagDetails __instance__ =
-                    new CreateTagDetails(name, description, freeformTags, definedTags);
+                    new CreateTagDetails(
+                            name, description, freeformTags, definedTags, isCostTracking);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -75,7 +85,8 @@ public class CreateTagDetails {
                     name(o.getName())
                             .description(o.getDescription())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .isCostTracking(o.getIsCostTracking());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -119,6 +130,13 @@ public class CreateTagDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Indicates whether the tag is enabled for cost tracking.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isCostTracking")
+    Boolean isCostTracking;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

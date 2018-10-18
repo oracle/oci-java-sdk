@@ -37,6 +37,16 @@ public interface Blockstorage extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Creates a volume backup copy in specified region. For general information about volume backups,
+     * see [Overview of Block Volume Service Backups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/blockvolumebackups.htm)
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CopyVolumeBackupResponse copyVolumeBackup(CopyVolumeBackupRequest request);
+
+    /**
      * Creates a new boot volume in the specified compartment from an existing boot volume or a boot volume backup.
      * For general information about boot volumes, see [Boot Volumes](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/bootvolumes.htm).
      * You may optionally specify a *display name* for the volume, which is simply a friendly name or
@@ -381,7 +391,7 @@ public interface Blockstorage extends AutoCloseable {
     ListVolumesResponse listVolumes(ListVolumesRequest request);
 
     /**
-     * Updates the specified boot volume's display name.
+     * Updates the specified boot volume's display name, defined tags, and free-form tags.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.

@@ -23,6 +23,12 @@ public class StopAutonomousDatabaseRequest extends com.oracle.bmc.requests.BmcRe
      */
     private String ifMatch;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
+    private String opcRequestId;
+
     public static class Builder {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
@@ -46,6 +52,7 @@ public class StopAutonomousDatabaseRequest extends com.oracle.bmc.requests.BmcRe
         public Builder copy(StopAutonomousDatabaseRequest o) {
             autonomousDatabaseId(o.getAutonomousDatabaseId());
             ifMatch(o.getIfMatch());
+            opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             return this;
         }

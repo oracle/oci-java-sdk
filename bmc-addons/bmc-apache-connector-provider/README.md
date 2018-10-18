@@ -1,8 +1,8 @@
-# OCI Java SDK Apache Connector Add-On
+# Oracle Cloud Infrastructure Java SDK Apache Connector Add-On
 
 ## About
 
-The oci-java-sdk-addons-apache is an optional add-on to the OCI Java SDK.  It leverages the Jersey `ApacheConnectorProvider` instead of the OCI Java SDK's default `HttpUrlConnectorProvider` when making service calls.
+The oci-java-sdk-addons-apache is an optional add-on to the Oracle Cloud Infrastructure Java SDK.  It leverages the Jersey `ApacheConnectorProvider` instead of the Java SDK's default `HttpUrlConnectorProvider` when making service calls.
 
 The add-on provides two features:
 
@@ -12,7 +12,7 @@ The add-on provides two features:
 Note: The `ApacheConnectorProvider` buffers requests into memory and can impact memory utilization of your application.  This increased use of memory is especially relevant when using`ObjectStorageClient` to upload large objects to the Object Storage service.
 
 ## Installation
-1. The OCI Java SDK must be installed and configured before installing the add-on.  See [the documentation](https://docs.us-phoenix-1.oraclecloud.com/Content/API/SDKDocs/javasdk.htm) for details.
+1. The Java SDK must be installed and configured before installing the add-on.  See [Apache Connector Add-On](https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/javasdkconfig.htm#apache) for details.
 2. Copy the supplied oci-java-sdk-addons-apache and third-party jar files to your application's classpath.
 
 ## Configuration

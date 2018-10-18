@@ -58,6 +58,46 @@ public class ListDbSystemsConverter {
                                     request.getBackupId()));
         }
 
+        if (request.getSortBy() != null) {
+            target =
+                    target.queryParam(
+                            "sortBy",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getSortBy().getValue()));
+        }
+
+        if (request.getSortOrder() != null) {
+            target =
+                    target.queryParam(
+                            "sortOrder",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getSortOrder().getValue()));
+        }
+
+        if (request.getLifecycleState() != null) {
+            target =
+                    target.queryParam(
+                            "lifecycleState",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getLifecycleState().getValue()));
+        }
+
+        if (request.getAvailabilityDomain() != null) {
+            target =
+                    target.queryParam(
+                            "availabilityDomain",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getAvailabilityDomain()));
+        }
+
+        if (request.getDisplayName() != null) {
+            target =
+                    target.queryParam(
+                            "displayName",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getDisplayName()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

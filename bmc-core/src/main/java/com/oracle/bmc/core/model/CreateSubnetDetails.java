@@ -219,7 +219,7 @@ public class CreateSubnetDetails {
 
     /**
      * The OCID of the set of DHCP options the subnet will use. If you don't
-     * provide a value, the subnet will use the VCN's default set of DHCP options.
+     * provide a value, the subnet uses the VCN's default set of DHCP options.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dhcpOptionsId")
@@ -280,17 +280,17 @@ public class CreateSubnetDetails {
 
     /**
      * The OCID of the route table the subnet will use. If you don't provide a value,
-     * the subnet will use the VCN's default route table.
+     * the subnet uses the VCN's default route table.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
     String routeTableId;
 
     /**
-     * OCIDs for the security lists to associate with the subnet. If you don't
-     * provide a value, the VCN's default security list will be associated with
-     * the subnet. Remember that security lists are associated at the subnet
-     * level, but the rules are applied to the individual VNICs in the subnet.
+     * The OCIDs of the security list or lists the subnet will use. If you don't
+     * provide a value, the subnet uses the VCN's default security list.
+     * Remember that security lists are associated *with the subnet*, but the
+     * rules are applied to the individual VNICs in the subnet.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityListIds")

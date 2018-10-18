@@ -103,14 +103,14 @@ public class CreateCompartmentDetails {
     }
 
     /**
-     * The OCID of the tenancy containing the compartment.
+     * The OCID of the parent compartment containing the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
      * The name you assign to the compartment during creation. The name must be unique across all compartments
-     * in the tenancy. Avoid entering confidential information.
+     * in the parent compartment. Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")

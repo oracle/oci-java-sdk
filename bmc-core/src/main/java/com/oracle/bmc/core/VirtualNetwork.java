@@ -1613,7 +1613,7 @@ public interface VirtualNetwork extends AutoCloseable {
     UpdateServiceGatewayResponse updateServiceGateway(UpdateServiceGatewayRequest request);
 
     /**
-     * Updates the specified subnet's display name. Avoid entering confidential information.
+     * Updates the specified subnet.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1622,8 +1622,7 @@ public interface VirtualNetwork extends AutoCloseable {
     UpdateSubnetResponse updateSubnet(UpdateSubnetRequest request);
 
     /**
-     * Updates the specified VCN's display name.
-     * Avoid entering confidential information.
+     * Updates the specified VCN.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

@@ -59,12 +59,22 @@ public class UpdateTagDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isCostTracking")
+        private Boolean isCostTracking;
+
+        public Builder isCostTracking(Boolean isCostTracking) {
+            this.isCostTracking = isCostTracking;
+            this.__explicitlySet__.add("isCostTracking");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateTagDetails build() {
             UpdateTagDetails __instance__ =
-                    new UpdateTagDetails(description, isRetired, freeformTags, definedTags);
+                    new UpdateTagDetails(
+                            description, isRetired, freeformTags, definedTags, isCostTracking);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -75,7 +85,8 @@ public class UpdateTagDetails {
                     description(o.getDescription())
                             .isRetired(o.getIsRetired())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .isCostTracking(o.getIsCostTracking());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -120,6 +131,13 @@ public class UpdateTagDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Indicates whether the tag is enabled for cost tracking.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isCostTracking")
+    Boolean isCostTracking;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

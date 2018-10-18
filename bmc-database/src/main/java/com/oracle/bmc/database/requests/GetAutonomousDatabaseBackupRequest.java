@@ -15,6 +15,12 @@ public class GetAutonomousDatabaseBackupRequest extends com.oracle.bmc.requests.
      */
     private String autonomousDatabaseBackupId;
 
+    /**
+     * Unique identifier for the request.
+     *
+     */
+    private String opcRequestId;
+
     public static class Builder {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
@@ -37,6 +43,7 @@ public class GetAutonomousDatabaseBackupRequest extends com.oracle.bmc.requests.
          */
         public Builder copy(GetAutonomousDatabaseBackupRequest o) {
             autonomousDatabaseBackupId(o.getAutonomousDatabaseBackupId());
+            opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             return this;
         }

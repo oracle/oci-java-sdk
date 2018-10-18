@@ -72,6 +72,15 @@ public class AutonomousDatabase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
+        private String dbVersion;
+
+        public Builder dbVersion(String dbVersion) {
+            this.dbVersion = dbVersion;
+            this.__explicitlySet__.add("dbVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -165,6 +174,7 @@ public class AutonomousDatabase {
                             cpuCoreCount,
                             dataStorageSizeInTBs,
                             dbName,
+                            dbVersion,
                             definedTags,
                             displayName,
                             freeformTags,
@@ -186,6 +196,7 @@ public class AutonomousDatabase {
                             .cpuCoreCount(o.getCpuCoreCount())
                             .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
                             .dbName(o.getDbName())
+                            .dbVersion(o.getDbVersion())
                             .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
@@ -237,6 +248,12 @@ public class AutonomousDatabase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbName")
     String dbName;
+
+    /**
+     * A valid Oracle Database version for Autonomous Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
+    String dbVersion;
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
@@ -324,7 +341,7 @@ public class AutonomousDatabase {
     LicenseModel licenseModel;
 
     /**
-     * Additional information about the current lifecycle state.
+     * Information about the current lifecycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     String lifecycleDetails;
@@ -342,6 +359,7 @@ public class AutonomousDatabase {
         Terminated("TERMINATED"),
         Unavailable("UNAVAILABLE"),
         RestoreInProgress("RESTORE_IN_PROGRESS"),
+        RestoreFailed("RESTORE_FAILED"),
         BackupInProgress("BACKUP_IN_PROGRESS"),
         ScaleInProgress("SCALE_IN_PROGRESS"),
         AvailableNeedsAttention("AVAILABLE_NEEDS_ATTENTION"),

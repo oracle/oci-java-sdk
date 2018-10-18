@@ -67,11 +67,11 @@ public interface Identity extends AutoCloseable {
     CreateAuthTokenResponse createAuthToken(CreateAuthTokenRequest request);
 
     /**
-     * Creates a new compartment in your tenancy.
+     * Creates a new compartment in the specified compartment.
      * <p>
      **Important:** Compartments cannot be deleted.
      * <p>
-     * You must specify your tenancy's OCID as the compartment ID in the request object. Remember that the tenancy
+     * Specify the parent compartment's OCID as the compartment ID in the request object. Remember that the tenancy
      * is simply the root compartment. For information about OCIDs, see
      * [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      * <p>
@@ -401,6 +401,15 @@ public interface Identity extends AutoCloseable {
     DeleteAuthTokenResponse deleteAuthToken(DeleteAuthTokenRequest request);
 
     /**
+     * Deletes the specified compartment. The compartment must be empty.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteCompartmentResponse deleteCompartment(DeleteCompartmentRequest request);
+
+    /**
      * Deletes the specified secret key for the specified user.
      *
      * @param request The request object containing the details to send
@@ -585,6 +594,16 @@ public interface Identity extends AutoCloseable {
     GetUserGroupMembershipResponse getUserGroupMembership(GetUserGroupMembershipRequest request);
 
     /**
+     * Gets details on a specified work request. The workRequestID is returned in the opc-workrequest-id header
+     * for any asynchronous operation in the Identity and Access Management service.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
+
+    /**
      * Lists the API signing keys for the specified user. A user can have a maximum of three keys.
      * <p>
      * Every user has permission to use this API call for *their own user ID*.  An administrator in your
@@ -620,8 +639,23 @@ public interface Identity extends AutoCloseable {
     ListAvailabilityDomainsResponse listAvailabilityDomains(ListAvailabilityDomainsRequest request);
 
     /**
-     * Lists the compartments in your tenancy. You must specify your tenancy's OCID as the value
-     * for the compartment ID (remember that the tenancy is simply the root compartment).
+     * Lists the compartments in a specified compartment. The members of the list
+     * returned depends on the values set for several parameters.
+     * <p>
+     * With the exception of the tenancy (root compartment), the ListCompartments operation
+     * returns only the first-level child compartments in the parent compartment specified in
+     * `compartmentId`. The list does not include any subcompartments of the child
+     * compartments (grandchildren).
+     * <p>
+     * The parameter `accessLevel` specifies whether to return only those compartments for which the
+     * requestor has INSPECT permissions on at least one resource directly
+     * or indirectly (the resource can be in a subcompartment).
+     * <p>
+     * The parameter `compartmentIdInSubtree` applies only when you perform ListCompartments on the
+     * tenancy (root compartment). When set to true, the entire hierarchy of compartments can be returned.
+     * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+     * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ANY.
+     * <p>
      * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five).
      *
      * @param request The request object containing the details to send
@@ -629,6 +663,16 @@ public interface Identity extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListCompartmentsResponse listCompartments(ListCompartmentsRequest request);
+
+    /**
+     * Lists all the tags enabled for cost-tracking in the specified tenancy. For information about
+     * cost-tracking tags, see [Using Cost-tracking Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#costs).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListCostTrackingTagsResponse listCostTrackingTags(ListCostTrackingTagsRequest request);
 
     /**
      * Lists the secret keys for the specified user. The returned object contains the secret key's OCID, but not
@@ -792,6 +836,15 @@ public interface Identity extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListUsersResponse listUsers(ListUsersRequest request);
+
+    /**
+     * Lists the work requests in compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
      * Removes a user from a group by deleting the corresponding `UserGroupMembership`.

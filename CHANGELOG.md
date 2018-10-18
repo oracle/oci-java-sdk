@@ -13,6 +13,22 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.2.49 - 2018-10-18
+### Added
+- Support for cost tracking tags in the Identity service
+- Support for generating and downloading wallets in the Database service
+- Support for creating a standalone backup from an on-premises database in the Database service
+- Support for db version and additional connection strings in the Autonomous Transaction Processing and Autonomous Data Warehouse resources of the Database service
+- Support for copying volume backups across regions in the Block Storage service
+- Support for deleting compartments in the Identity service
+- Support for reboot migration for virtual machines in the Compute service
+- Support for Instance Pools and Instance Configurations in the Compute service
+- `lengthPerUploadPart` provides a simpler way to control the size of parts when using Upload Manager
+
+### Deprecated
+- `UploadConfiguration.maxPartsForMultipartUpload` and `UploadConfiguration.minimumLengthPerUploadPart` in Upload Manager are now deprecated; use `UploadConfiguration.lengthPerUploadPart` instead
+
+
 ## 1.2.48 - 2018-10-04
 ### Added
 - Support for trusted partner images through application listings and subscriptions in the Compute service
@@ -45,9 +61,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## 1.2.43 - 2018-07-26
 ### Added
-- Support for the OCI Search service. An example of how to call this service is available [here](https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResourceSearchExample.java)
+- Support for the Search service. An example of how to call this service is available [here](https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResourceSearchExample.java)
 - Support for specifying a backup policy when creating a boot volume in the Block Storage service
-- Support for using the Java SDK in a FIPS compliant environment. Details available [here](https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm#download)
+- Support for using the Java SDK in a FIPS compliant environment. Details available [here](https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/javasdkgettingstarted.htm#download)
 
 ## 1.2.42 - 2018-07-12
 ### Added
@@ -163,7 +179,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for VNC console connections in Compute Service
 - Support for using the `ObjectReadWithoutList` public access type when creating and updating buckets
 - Support for dynamic groups in Identity Service
-- Support for instance principals authentication when calling OCI services, an example can be found on [GitHub](https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/InstancePrincipalsAuthenticationDetailsProviderExample.java)
+- Support for instance principals authentication when calling Oracle Cloud Infrastructure services, an example can be found on [GitHub](https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/InstancePrincipalsAuthenticationDetailsProviderExample.java)
 - Support for configuring idle timeout for listeners in Load Balancer Service
 - Better documentation on every model class on how the change in version [1.2.16 - 2017-10-12](#1216---2017-10-12) to only serialize and transmit fields that were explicitly set to null affects the `equals(Object)` and `hashCode()` methods
 

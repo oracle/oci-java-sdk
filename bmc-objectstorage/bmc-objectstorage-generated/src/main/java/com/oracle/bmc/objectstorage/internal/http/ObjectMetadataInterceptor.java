@@ -37,12 +37,12 @@ public class ObjectMetadataInterceptor {
 
     public static CopyObjectRequest intercept(CopyObjectRequest request) {
         Map<String, String> newMetadata =
-            toServiceMeta(request.getCopyObjectDetails().getDestinationObjectMetadata());
+                toServiceMeta(request.getCopyObjectDetails().getDestinationObjectMetadata());
         CopyObjectDetails newDetails =
-            CopyObjectDetails.builder()
-                .copy(request.getCopyObjectDetails())
-                .destinationObjectMetadata(newMetadata)
-                .build();
+                CopyObjectDetails.builder()
+                        .copy(request.getCopyObjectDetails())
+                        .destinationObjectMetadata(newMetadata)
+                        .build();
         return CopyObjectRequest.builder().copy(request).copyObjectDetails(newDetails).build();
     }
 
