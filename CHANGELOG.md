@@ -29,7 +29,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Block Storage service for copying volume backups across regions is not yet enabled
 
 ### Breaking change
-- The `dbDataSizeInMBs` field in the `com.oracle.bmc.database.model.Backup` class was renamed to `databaseSizeInGBs`, and its type was changed from `Integer` to `Double`
+- The `dbDataSizeInMBs` field in the `com.oracle.bmc.database.model.Backup` and `com.oracle.bmc.database.model.BackupSummary` classes was renamed to `databaseSizeInGBs`, and its type was changed from `Integer` to `Double`
     - Before
     ```java
     private Integer dbDataSizeInMBs;
@@ -38,7 +38,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
     ```java
     private Double databaseSizeInGBs;
     ```
-- The data type of `databaseEdition` in the `com.oracle.bmc.database.model.Backup` class was changed from `String` to `com.oracle.bmc.database.model.Backup.DatabaseEdition`
+- The data type of `databaseEdition` in the `com.oracle.bmc.database.model.Backup` and `com.oracle.bmc.database.model.Backup` classes was changed from `String` to `com.oracle.bmc.database.model.Backup.DatabaseEdition`
     - Before
     ```java
     private String databaseEdition;
