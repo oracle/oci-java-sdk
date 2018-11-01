@@ -1,3 +1,6 @@
+/**
+ * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ */
 import com.google.common.collect.ImmutableList;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
@@ -34,100 +37,106 @@ import com.oracle.bmc.core.responses.LaunchInstanceConfigurationResponse;
 public class InstanceConfigurationExample {
 
     public static CreateInstanceConfigurationDetails createInstanceConfigurationWithBlockVolume(
-            String availabilityDomain,
-            String subnetId,
-            String imageId,
-            String compartmentId) {
-        InstanceConfigurationCreateVnicDetails vnicDetails = InstanceConfigurationCreateVnicDetails.builder()
-                .subnetId(subnetId)
-                .build();
+            String availabilityDomain, String subnetId, String imageId, String compartmentId) {
+        InstanceConfigurationCreateVnicDetails vnicDetails =
+                InstanceConfigurationCreateVnicDetails.builder().subnetId(subnetId).build();
 
         InstanceConfigurationInstanceSourceViaImageDetails sourceDetails =
                 InstanceConfigurationInstanceSourceViaImageDetails.builder()
                         .imageId(imageId)
                         .build();
 
-        InstanceConfigurationLaunchInstanceDetails launchDetails = InstanceConfigurationLaunchInstanceDetails.builder()
-                .compartmentId(compartmentId)
-                .availabilityDomain(availabilityDomain)
-                .displayName("Instance Configuration Example")
-                .createVnicDetails(vnicDetails)
-                .shape("VM.Standard2.1")
-                .sourceDetails(sourceDetails)
-                .build();
+        InstanceConfigurationLaunchInstanceDetails launchDetails =
+                InstanceConfigurationLaunchInstanceDetails.builder()
+                        .compartmentId(compartmentId)
+                        .availabilityDomain(availabilityDomain)
+                        .displayName("Instance Configuration Example")
+                        .createVnicDetails(vnicDetails)
+                        .shape("VM.Standard2.1")
+                        .sourceDetails(sourceDetails)
+                        .build();
 
         //Create a block volume
-        InstanceConfigurationBlockVolumeDetails volumeDetails = InstanceConfigurationBlockVolumeDetails.builder()
-                .createDetails(InstanceConfigurationCreateVolumeDetails.builder()
-                        .availabilityDomain(availabilityDomain)
+        InstanceConfigurationBlockVolumeDetails volumeDetails =
+                InstanceConfigurationBlockVolumeDetails.builder()
+                        .createDetails(
+                                InstanceConfigurationCreateVolumeDetails.builder()
+                                        .availabilityDomain(availabilityDomain)
+                                        .compartmentId(compartmentId)
+                                        .build())
+                        .attachDetails(
+                                InstanceConfigurationIscsiAttachVolumeDetails.builder().build())
+                        .build();
+
+        ComputeInstanceDetails instanceDetails =
+                ComputeInstanceDetails.builder()
+                        .launchDetails(launchDetails)
+                        .blockVolumes(ImmutableList.of(volumeDetails))
+                        .build();
+
+        CreateInstanceConfigurationDetails configurationDetails =
+                CreateInstanceConfigurationDetails.builder()
+                        .displayName("Instance Configuration Example")
                         .compartmentId(compartmentId)
-                        .build())
-                .attachDetails(InstanceConfigurationIscsiAttachVolumeDetails.builder().build())
-                .build();
-
-
-        ComputeInstanceDetails instanceDetails = ComputeInstanceDetails.builder()
-                .launchDetails(launchDetails)
-                .blockVolumes(ImmutableList.of(volumeDetails))
-                .build();
-
-        CreateInstanceConfigurationDetails configurationDetails = CreateInstanceConfigurationDetails.builder()
-                .displayName("Instance Configuration Example")
-                .compartmentId(compartmentId)
-                .instanceDetails(instanceDetails)
-                .build();
+                        .instanceDetails(instanceDetails)
+                        .build();
         return configurationDetails;
     }
 
-    public static CreateInstanceConfigurationDetails createPartiallyDefinedInstanceConfiguration(String imageId,
-            String compartmentId) {
+    public static CreateInstanceConfigurationDetails createPartiallyDefinedInstanceConfiguration(
+            String imageId, String compartmentId) {
         InstanceConfigurationInstanceSourceViaImageDetails sourceDetails =
                 InstanceConfigurationInstanceSourceViaImageDetails.builder()
                         .imageId(imageId)
                         .build();
 
         //Leave out subnetId and AvailabilityDomain
-        InstanceConfigurationLaunchInstanceDetails launchDetails = InstanceConfigurationLaunchInstanceDetails.builder()
-                .compartmentId(compartmentId)
-                .displayName("Instance Configuration Partially Defined Example")
-                .shape("VM.Standard2.1")
-                .sourceDetails(sourceDetails)
-                .createVnicDetails(InstanceConfigurationCreateVnicDetails.builder().build())
-                .build();
+        InstanceConfigurationLaunchInstanceDetails launchDetails =
+                InstanceConfigurationLaunchInstanceDetails.builder()
+                        .compartmentId(compartmentId)
+                        .displayName("Instance Configuration Partially Defined Example")
+                        .shape("VM.Standard2.1")
+                        .sourceDetails(sourceDetails)
+                        .createVnicDetails(InstanceConfigurationCreateVnicDetails.builder().build())
+                        .build();
 
-        ComputeInstanceDetails instanceDetails = ComputeInstanceDetails.builder()
-                .launchDetails(launchDetails)
-                .build();
-        CreateInstanceConfigurationDetails configurationDetails = CreateInstanceConfigurationDetails.builder()
-                .displayName("Instance Configuration Partially Defined Example")
-                .compartmentId(compartmentId)
-                .instanceDetails(instanceDetails)
-                .build();
+        ComputeInstanceDetails instanceDetails =
+                ComputeInstanceDetails.builder().launchDetails(launchDetails).build();
+        CreateInstanceConfigurationDetails configurationDetails =
+                CreateInstanceConfigurationDetails.builder()
+                        .displayName("Instance Configuration Partially Defined Example")
+                        .compartmentId(compartmentId)
+                        .instanceDetails(instanceDetails)
+                        .build();
         return configurationDetails;
     }
 
-    public static LaunchInstanceConfigurationRequest createLaunchRequest(String instanceConfigurationId) {
+    public static LaunchInstanceConfigurationRequest createLaunchRequest(
+            String instanceConfigurationId) {
         return LaunchInstanceConfigurationRequest.builder()
                 .instanceConfigurationId(instanceConfigurationId)
                 .instanceConfiguration(ComputeInstanceDetails.builder().build())
                 .build();
-
     }
 
-    public static LaunchInstanceConfigurationRequest createPartialLaunchRequest(String instanceConfigurationId,
-            String availabilityDomain, String subnetId) {
+    public static LaunchInstanceConfigurationRequest createPartialLaunchRequest(
+            String instanceConfigurationId, String availabilityDomain, String subnetId) {
 
         //Provide availabilityDomain and subnetId during launch
         return LaunchInstanceConfigurationRequest.builder()
                 .instanceConfigurationId(instanceConfigurationId)
-                .instanceConfiguration(ComputeInstanceDetails.builder()
-                        .launchDetails(InstanceConfigurationLaunchInstanceDetails.builder()
-                                .availabilityDomain(availabilityDomain)
-                                .createVnicDetails(InstanceConfigurationCreateVnicDetails.builder()
-                                        .subnetId(subnetId)
-                                        .build())
+                .instanceConfiguration(
+                        ComputeInstanceDetails.builder()
+                                .launchDetails(
+                                        InstanceConfigurationLaunchInstanceDetails.builder()
+                                                .availabilityDomain(availabilityDomain)
+                                                .createVnicDetails(
+                                                        InstanceConfigurationCreateVnicDetails
+                                                                .builder()
+                                                                .subnetId(subnetId)
+                                                                .build())
+                                                .build())
                                 .build())
-                        .build())
                 .build();
     }
 
@@ -147,7 +156,8 @@ public class InstanceConfigurationExample {
 
         if (args.length != 4) {
             throw new IllegalArgumentException(
-                    String.format("Unexpected number of arguments.  Expected 4, got %s", args.length));
+                    String.format(
+                            "Unexpected number of arguments.  Expected 4, got %s", args.length));
         }
 
         final String compartmentId = args[0];
@@ -164,42 +174,55 @@ public class InstanceConfigurationExample {
         ComputeWaiters waiters = computeClient.getWaiters();
 
         CreateInstanceConfigurationDetails configurationDetails =
-                createInstanceConfigurationWithBlockVolume(availabilityDomain, subnetId, imageId, compartmentId);
+                createInstanceConfigurationWithBlockVolume(
+                        availabilityDomain, subnetId, imageId, compartmentId);
 
-        CreateInstanceConfigurationRequest req = CreateInstanceConfigurationRequest.builder()
-                .createInstanceConfiguration(configurationDetails)
-                .build();
+        CreateInstanceConfigurationRequest req =
+                CreateInstanceConfigurationRequest.builder()
+                        .createInstanceConfiguration(configurationDetails)
+                        .build();
 
-        CreateInstanceConfigurationResponse response = computeManagementClient.createInstanceConfiguration(req);
+        CreateInstanceConfigurationResponse response =
+                computeManagementClient.createInstanceConfiguration(req);
         InstanceConfiguration instanceConfiguration = response.getInstanceConfiguration();
 
         System.out.printf("Created instance configuration:%s%n", instanceConfiguration.getId());
         LaunchInstanceConfigurationResponse launchResponse =
-                computeManagementClient.launchInstanceConfiguration(createLaunchRequest(instanceConfiguration.getId()));
+                computeManagementClient.launchInstanceConfiguration(
+                        createLaunchRequest(instanceConfiguration.getId()));
 
         Instance instance = launchResponse.getInstance();
         System.out.printf("Created instance:%s%n", instance.getId());
 
-        GetInstanceRequest instanceRequest = GetInstanceRequest.builder().instanceId(instance.getId()).build();
+        GetInstanceRequest instanceRequest =
+                GetInstanceRequest.builder().instanceId(instance.getId()).build();
 
         System.out.printf("Waiting for instance:%s to transition to running%n", instance.getId());
-        GetInstanceResponse instanceResponse = waiters.forInstance(instanceRequest, Instance.LifecycleState.Running).execute();
+        GetInstanceResponse instanceResponse =
+                waiters.forInstance(instanceRequest, Instance.LifecycleState.Running).execute();
 
-        System.out.printf("Instance:%s is in state running%n", instanceResponse.getInstance().getId());
+        System.out.printf(
+                "Instance:%s is in state running%n", instanceResponse.getInstance().getId());
 
         //Create an instance from a partially defined instance config
-        CreateInstanceConfigurationRequest partialCreateRequest = CreateInstanceConfigurationRequest.builder()
-                .createInstanceConfiguration(createPartiallyDefinedInstanceConfiguration(imageId, compartmentId))
-                .build();
+        CreateInstanceConfigurationRequest partialCreateRequest =
+                CreateInstanceConfigurationRequest.builder()
+                        .createInstanceConfiguration(
+                                createPartiallyDefinedInstanceConfiguration(imageId, compartmentId))
+                        .build();
 
         CreateInstanceConfigurationResponse partialCreateResponse =
                 computeManagementClient.createInstanceConfiguration(partialCreateRequest);
 
-        System.out.printf("%nCreated partially defined instanceConfiguration:%s%n",
+        System.out.printf(
+                "%nCreated partially defined instanceConfiguration:%s%n",
                 partialCreateResponse.getInstanceConfiguration().getId());
 
         LaunchInstanceConfigurationRequest partialLaunchRequest =
-                createPartialLaunchRequest(partialCreateResponse.getInstanceConfiguration().getId(), availabilityDomain, subnetId);
+                createPartialLaunchRequest(
+                        partialCreateResponse.getInstanceConfiguration().getId(),
+                        availabilityDomain,
+                        subnetId);
 
         LaunchInstanceConfigurationResponse partialLaunchResponse =
                 computeManagementClient.launchInstanceConfiguration(partialLaunchRequest);
@@ -211,11 +234,15 @@ public class InstanceConfigurationExample {
         GetInstanceRequest partialInstanceRequest =
                 GetInstanceRequest.builder().instanceId(partialInstance.getId()).build();
 
-        System.out.printf("Waiting for instance:%s to transition to running%n", partialInstance.getId());
+        System.out.printf(
+                "Waiting for instance:%s to transition to running%n", partialInstance.getId());
         GetInstanceResponse partialInstanceResponse =
-                waiters.forInstance(partialInstanceRequest, Instance.LifecycleState.Running).execute();
+                waiters.forInstance(partialInstanceRequest, Instance.LifecycleState.Running)
+                        .execute();
 
-        System.out.printf("Partially defined instance:%s is running%n", partialInstanceResponse.getInstance().getId());
+        System.out.printf(
+                "Partially defined instance:%s is running%n",
+                partialInstanceResponse.getInstance().getId());
 
         computeClient.close();
         computeManagementClient.close();

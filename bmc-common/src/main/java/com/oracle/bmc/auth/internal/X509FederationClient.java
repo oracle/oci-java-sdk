@@ -189,48 +189,6 @@ public class X509FederationClient implements FederationClient {
         }
     }
 
-    private RestClient createRestClient(String endpoint) {
-        // load the leaf certificate details dynamically on each invocation in case it has changed, ex, rotated
-        KeySupplier<RSAPrivateKey> keySupplier =
-                new KeySupplier<RSAPrivateKey>() {
-                    @Override
-                    public Optional<RSAPrivateKey> getKey(String keyId) {
-                        return Optional.of(leafCertificateSupplier.getPrivateKey());
-                    }
-                };
-        Supplier<String> keyIdSupplier =
-                new Supplier<String>() {
-                    @Override
-                    public String get() {
-                        return keyIdForX509Request(
-                                tenancyId, leafCertificateSupplier.getCertificate());
-                    }
-                };
-
-        // for the federation endpoint, do not sign the HOST header right now
-        List<String> genericHeaders = removeHostHeader(Constants.GENERIC_HEADERS);
-        List<String> allHeaders = removeHostHeader(Constants.ALL_HEADERS);
-        Map<String, List<String>> headersToSign =
-                Constants.createHeadersToSignMap(
-                        genericHeaders,
-                        genericHeaders,
-                        genericHeaders,
-                        allHeaders,
-                        allHeaders,
-                        allHeaders);
-
-        RequestSignerImpl.SigningConfiguration signingConfiguration =
-                new RequestSignerImpl.SigningConfiguration(headersToSign, false);
-
-        RequestSigner requestSigner =
-                new RequestSignerImpl(keySupplier, signingConfiguration, keyIdSupplier);
-
-        RestClientFactory restClientFactory = RestClientFactoryBuilder.builder().build();
-        RestClient restClient = restClientFactory.create(requestSigner);
-        restClient.setEndpoint(endpoint);
-        return restClient;
-    }
-
     private static List<String> removeHostHeader(List<String> headers) {
         List<String> copy = new ArrayList<>();
         for (String header : headers) {

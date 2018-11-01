@@ -9,16 +9,20 @@ import java.io.InputStream;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Supplier;
 import com.oracle.bmc.ConfigFileReader;
+import com.oracle.bmc.Region;
 import com.oracle.bmc.ConfigFileReader.ConfigFile;
 
 import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Implementation of {@link AuthenticationDetailsProvider} that uses a standard
  * OCI configuration file as an input.
  */
 @ToString
-public class ConfigFileAuthenticationDetailsProvider implements AuthenticationDetailsProvider {
+@Slf4j
+public class ConfigFileAuthenticationDetailsProvider
+        implements AuthenticationDetailsProvider, RegionProvider {
 
     private final SimpleAuthenticationDetailsProvider delegate;
 
@@ -72,12 +76,29 @@ public class ConfigFileAuthenticationDetailsProvider implements AuthenticationDe
 
         Supplier<InputStream> privateKeySupplier = new SimplePrivateKeySupplier(pemFilePath);
 
+        // region is optional, for backwards compatibility, if region is not known, log an error and continue.
+        // the same file may be used by other tools, where the region can be a newly launched region value
+        // that is not supported by the SDK yet.
+        Region region = null;
+        String regionId = configFile.get("region");
+        if (regionId != null) {
+            try {
+                region = Region.fromRegionId(regionId);
+            } catch (IllegalArgumentException e) {
+                LOG.warn(
+                        "Found regionId '{}' in config file, but not supported by this version of the SDK, continuing without region",
+                        regionId,
+                        e);
+            }
+        }
+
         SimpleAuthenticationDetailsProvider.SimpleAuthenticationDetailsProviderBuilder builder =
                 SimpleAuthenticationDetailsProvider.builder()
                         .fingerprint(fingerprint)
                         .privateKeySupplier(privateKeySupplier)
                         .tenantId(tenantId)
-                        .userId(userId);
+                        .userId(userId)
+                        .region(region);
         if (passPhrase != null) {
             builder = builder.passphraseCharacters(passPhrase.toCharArray());
         }
@@ -118,5 +139,10 @@ public class ConfigFileAuthenticationDetailsProvider implements AuthenticationDe
     @Override
     public String getKeyId() {
         return this.delegate.getKeyId();
+    }
+
+    @Override
+    public Region getRegion() {
+        return this.delegate.getRegion();
     }
 }

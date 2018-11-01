@@ -7,10 +7,7 @@ import com.google.common.base.Optional;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.internal.FederationClient;
 import com.oracle.bmc.auth.internal.X509FederationClient;
-import com.oracle.bmc.http.ClientConfigurator;
-import lombok.AccessLevel;
 import lombok.Getter;
-import lombok.Setter;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -19,11 +16,10 @@ import javax.ws.rs.core.MediaType;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Implementation of {@link BasicAuthenticationDetailsProvider} that integrates
- * with service-to-service authentication endpoints to generate service tokens
+ * with instance principal authentication endpoints to generate service tokens
  * used for actual signing.
  * <p>
  * Also uses {@link AuthCachingPolicy} to disable caching (as the values for signing requests
@@ -45,7 +41,7 @@ public class InstancePrincipalsAuthenticationDetailsProvider
     }
 
     /**
-     * Creates a new S2SAuthenticationDetailsProviderBuilder.
+     * Creates a new InstancePrincipalsAuthenticationDetailsProviderBuilder.
      * @return A new builder instance.
      */
     public static InstancePrincipalsAuthenticationDetailsProviderBuilder builder() {
@@ -88,7 +84,14 @@ public class InstancePrincipalsAuthenticationDetailsProvider
          */
         private static final String METADATA_SERVICE_BASE_URL = "http://169.254.169.254/opc/v1/";
 
+        /**
+         * The federation endpoint url.
+         */
         private String federationEndpoint;
+
+        /**
+         * The leaf certificate.
+         */
         private X509CertificateSupplier leafCertificateSupplier;
 
         /**
@@ -142,7 +145,7 @@ public class InstancePrincipalsAuthenticationDetailsProvider
                             new URLBasedX509CertificateSupplier(
                                     new URL(METADATA_SERVICE_BASE_URL + "identity/cert.pem"),
                                     new URL(METADATA_SERVICE_BASE_URL + "identity/key.pem"),
-                                    null);
+                                    (char[]) null);
                 }
 
                 if (intermediateCertificateSuppliers == null) {
@@ -154,7 +157,7 @@ public class InstancePrincipalsAuthenticationDetailsProvider
                                             METADATA_SERVICE_BASE_URL
                                                     + "identity/intermediate.pem"),
                                     null,
-                                    null));
+                                    (char[]) null));
                 }
 
                 SessionKeySupplier sessionKeySupplierToUse =

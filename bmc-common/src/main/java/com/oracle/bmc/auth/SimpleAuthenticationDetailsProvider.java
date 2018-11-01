@@ -7,6 +7,7 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
 import com.google.common.base.Supplier;
+import com.oracle.bmc.Region;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -17,7 +18,7 @@ import lombok.Getter;
  */
 @Builder
 public class SimpleAuthenticationDetailsProvider extends CustomerAuthenticationDetailsProvider
-        implements AuthenticationDetailsProvider {
+        implements AuthenticationDetailsProvider, RegionProvider {
     @Getter(onMethod = @__({@Override}))
     private final String tenantId;
 
@@ -34,6 +35,9 @@ public class SimpleAuthenticationDetailsProvider extends CustomerAuthenticationD
      * Supplier of the input stream with the private key. Note that this stream may be read multiple times.
      */
     private final Supplier<InputStream> privateKeySupplier;
+
+    @Getter(onMethod = @__({@Override}))
+    private final Region region;
 
     /**
      * Get the input stream with the private key. Note that this stream may be read multiple times.

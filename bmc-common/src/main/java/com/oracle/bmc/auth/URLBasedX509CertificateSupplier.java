@@ -40,19 +40,38 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
     /**
      * The passphrase of private key.
      */
-    private final String privateKeyPassphrase;
+    private final char[] privateKeyPassphraseCharacters;
 
     /**
-     * ctor
+     * Constructor.
+     * @param certificateUrl The certificate url
+     * @param privateKeyUrl The private key url, may be null for intermediate certificates
+     * @param privateKeyPassphraseCharacters The private key passphrase, may be null for unencrypted private keys
+     */
+    public URLBasedX509CertificateSupplier(
+            URL certificateUrl, URL privateKeyUrl, char[] privateKeyPassphraseCharacters) {
+        this.certificateUrl = certificateUrl;
+        this.privateKeyUrl = privateKeyUrl;
+        this.privateKeyPassphraseCharacters = privateKeyPassphraseCharacters;
+
+        refresh();
+    }
+
+    /**
+     * Constructor.
      * @param certificateUrl The certificate url
      * @param privateKeyUrl The private key url, may be null for intermediate certificates
      * @param privateKeyPassphrase The private key passphrase, may be null for unencrypted private keys
+     *
+     * @deprecated use {@link URLBasedX509CertificateSupplier#URLBasedX509CertificateSupplier(URL, URL, char[])} instead
      */
+    @Deprecated
     public URLBasedX509CertificateSupplier(
             URL certificateUrl, URL privateKeyUrl, String privateKeyPassphrase) {
         this.certificateUrl = certificateUrl;
         this.privateKeyUrl = privateKeyUrl;
-        this.privateKeyPassphrase = privateKeyPassphrase;
+        this.privateKeyPassphraseCharacters =
+                privateKeyPassphrase != null ? privateKeyPassphrase.toCharArray() : null;
 
         refresh();
     }
@@ -74,7 +93,7 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
     @Override
     public void refresh() {
         X509Certificate certificate = readCertificate(certificateUrl);
-        RSAPrivateKey privateKey = readPrivateKey(privateKeyUrl, privateKeyPassphrase);
+        RSAPrivateKey privateKey = readPrivateKey(privateKeyUrl, privateKeyPassphraseCharacters);
 
         this.certificateAndKeyPair.set(new CertificateAndPrivateKeyPair(certificate, privateKey));
     }
@@ -114,17 +133,14 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
      * @param privateKeyPassphrase the private key passhprase
      * @return the private key
      */
-    private static RSAPrivateKey readPrivateKey(URL privateKeyUrl, String privateKeyPassphrase) {
+    private static RSAPrivateKey readPrivateKey(URL privateKeyUrl, char[] privateKeyPassphrase) {
         if (privateKeyUrl == null) {
             return null;
         }
 
         try {
             return new PEMFileRSAPrivateKeySupplier(
-                            privateKeyUrl.openStream(),
-                            privateKeyPassphrase != null
-                                    ? privateKeyPassphrase.toCharArray()
-                                    : null)
+                            privateKeyUrl.openStream(), privateKeyPassphrase)
                     .getKey(null)
                     .orNull();
         } catch (IOException e) {

@@ -11,11 +11,11 @@ import com.oracle.bmc.filestorage.model.*;
 public class ListExportsResponse {
 
     /**
-     * For pagination of a list of items. When paging through
-     * a list, if this header appears in the response, then a
-     * partial list might have been returned. Include this
-     * value as the `page` parameter for the subsequent GET
-     * request to get the next batch of items.
+     * For list pagination. When this header appears in the response,
+     * additional pages of results remain.
+     * <p>
+     * For important details about how pagination works,
+     * see [List Pagination](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private String opcNextPage;

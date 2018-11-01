@@ -30,7 +30,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
      * {@link #setRegion(Region) setRegion}.
      * <p>
      * If no known Region could be determined, it will create an endpoint based on the
-     * default endpoint format ({@link Region#formatDefaultRegionEndpoint(Service, String)}
+     * default endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
      * and then call {@link #setEndpoint(String) setEndpoint}.
      * @param regionId The public region ID.
      */

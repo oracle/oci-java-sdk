@@ -30,7 +30,7 @@ public interface FileStorage extends AutoCloseable {
      * {@link #setRegion(Region) setRegion}.
      * <p>
      * If no known Region could be determined, it will create an endpoint based on the
-     * default endpoint format ({@link Region#formatDefaultRegionEndpoint(Service, String)}
+     * default endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
      * and then call {@link #setEndpoint(String) setEndpoint}.
      * @param regionId The public region ID.
      */
@@ -289,6 +289,14 @@ public interface FileStorage extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateMountTargetResponse updateMountTarget(UpdateMountTargetRequest request);
+
+    /**
+     * Updates the specified snapshot's information.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateSnapshotResponse updateSnapshot(UpdateSnapshotRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

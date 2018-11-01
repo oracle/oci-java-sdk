@@ -10,6 +10,7 @@ import javax.annotation.Priority;
 import javax.ws.rs.Priorities;
 import javax.ws.rs.client.ClientRequestContext;
 import javax.ws.rs.client.ClientRequestFilter;
+import javax.ws.rs.core.MultivaluedMap;
 
 import com.oracle.bmc.http.signing.RequestSigner;
 
@@ -43,15 +44,19 @@ public class AuthnClientFilter implements ClientRequestFilter {
             clientRequestContext.setProperty(SIGNING_STRATEGY_PROPERTY_NAME, null);
         }
 
+        MultivaluedMap<String, String> stringHeaders = clientRequestContext.getStringHeaders();
         Map<String, String> authHeaders =
                 chosenRequestSigner.signRequest(
                         clientRequestContext.getUri(),
                         clientRequestContext.getMethod(),
-                        clientRequestContext.getStringHeaders(),
+                        stringHeaders,
                         clientRequestContext.getEntity());
 
+        MultivaluedMap<String, Object> headers = clientRequestContext.getHeaders();
         for (Map.Entry<String, String> e : authHeaders.entrySet()) {
-            clientRequestContext.getHeaders().putSingle(e.getKey(), e.getValue());
+            if (!headers.keySet().contains(e.getKey())) {
+                headers.putSingle(e.getKey(), e.getValue());
+            }
         }
     }
 }

@@ -4,8 +4,10 @@
 package com.oracle.bmc.http.signing.internal;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.common.io.ByteStreams;
 import com.oracle.bmc.http.internal.RestClientFactory;
@@ -27,19 +29,26 @@ import javax.ws.rs.core.MediaType;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Field;
 import java.net.URI;
+import java.security.interfaces.RSAPrivateKey;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import static org.mockito.Matchers.any;
+import static org.powermock.api.mockito.PowerMockito.mock;
 import static org.powermock.api.mockito.PowerMockito.mockStatic;
 import static org.powermock.api.mockito.PowerMockito.when;
 
@@ -197,6 +206,7 @@ public class RequestSignerImplTest {
         final RequestSignerImpl.SigningConfiguration signingConfiguration =
                 new RequestSignerImpl.SigningConfiguration(
                         SigningStrategy.STANDARD.getHeadersToSign(),
+                        SigningStrategy.STANDARD.getOptionalHeadersToSign(),
                         SigningStrategy.STANDARD.isSkipContentHeadersForStreamingPutRequests());
         final Map<String, String> missingHeaders =
                 RequestSignerImpl.calculateMissingHeaders(
@@ -217,5 +227,101 @@ public class RequestSignerImplTest {
         assertEquals(
                 "identity.us-phoenix-1.oraclecloud.com",
                 missingHeaders.get(HttpHeaders.HOST.toLowerCase()));
+    }
+
+    // Reload the classes so PowerMockito can inject the static mocks.
+    @PrepareForTest({LoggerFactory.class, RestClientFactory.class, RequestSignerImpl.class})
+    @Test
+    public void signRequest_withOptionallySignedHeader()
+            throws IllegalAccessException, NoSuchFieldException {
+        final Map<String, List<String>> headers = new HashMap<>();
+        headers.put("content-length", Collections.singletonList("238"));
+        headers.put("opc-request-id", Lists.newArrayList("ID1", "ID2"));
+        headers.put(Constants.CROSS_TENANCY_REQUEST_HEADER_NAME, Collections.singletonList("foo"));
+
+        URI uri = URI.create("https://test.us-phoenix-1.oraclecloud.com/20181016/paths");
+        String keyId = "keyId";
+
+        KeySupplier<RSAPrivateKey> keySupplier =
+                (KeySupplier<RSAPrivateKey>) mock(KeySupplier.class);
+
+        RSAPrivateKey privateKey = mock(RSAPrivateKey.class);
+        when(keySupplier.getKey(keyId)).thenReturn(Optional.of(privateKey));
+
+        SignatureSigner signer = mock(SignatureSigner.class);
+
+        Field signerField = RequestSignerImpl.class.getDeclaredField("SIGNER");
+        boolean wasAccessible = signerField.isAccessible();
+        signerField.setAccessible(true);
+        signerField.set(null, signer);
+        if (!wasAccessible) {
+            signerField.setAccessible(false);
+        }
+
+        byte[] signature = new byte[] {1, 2, 3, 4, 5};
+        when(signer.sign(any(RSAPrivateKey.class), any(byte[].class), any(String.class)))
+                .thenReturn(signature);
+
+        RequestSignerImpl.SigningConfiguration signingConfiguration =
+                new RequestSignerImpl.SigningConfiguration(
+                        SigningStrategy.STANDARD.getHeadersToSign(),
+                        SigningStrategy.STANDARD.getOptionalHeadersToSign(),
+                        SigningStrategy.STANDARD.isSkipContentHeadersForStreamingPutRequests());
+        String verb = "get";
+        Map<String, String> authHeaders =
+                RequestSignerImpl.signRequest(
+                        Algorithm.RSAPSS256,
+                        uri,
+                        verb,
+                        headers,
+                        null,
+                        SignedRequestVersion.getLatestVersion().getVersionName(),
+                        keyId,
+                        keySupplier,
+                        signingConfiguration);
+
+        String authorization = authHeaders.get(Constants.AUTHORIZATION_HEADER);
+
+        Pattern headersPattern = Pattern.compile("headers=\"([^\"]*)\"");
+        Matcher matcher = headersPattern.matcher(authorization);
+        assertTrue(matcher.find());
+        Set<String> authorizationHeaders = ImmutableSet.copyOf(matcher.group(1).split(" "));
+
+        // all required headers are there
+        for (String requiredHeader : SigningStrategy.STANDARD.getHeadersToSign().get(verb)) {
+            // needs to be in the signature
+            assertTrue(authorizationHeaders.contains(requiredHeader));
+            if (requiredHeader.equals(Constants.REQUEST_TARGET)) {
+                // this is only signed, not passed as header
+                assertFalse(authHeaders.containsKey(requiredHeader));
+            } else {
+                assertTrue(authHeaders.containsKey(requiredHeader));
+                if (headers.containsKey(requiredHeader)) {
+                    // if it exists, it should have the same value
+                    assertEquals(
+                            headers.get(requiredHeader).get(0), authHeaders.get(requiredHeader));
+                }
+            }
+        }
+
+        // the optionally signed header, CROSS_TENANCY_REQUEST_HEADER_NAME, is there
+        for (String optionalHeader :
+                SigningStrategy.STANDARD.getOptionalHeadersToSign().get(verb)) {
+            if (!headers.containsKey(optionalHeader)) {
+                // wasn't passed, shouldn't be there
+                assertFalse(authHeaders.containsKey(optionalHeader));
+                // should not be in the signature
+                assertFalse(authorizationHeaders.contains(optionalHeader));
+            } else {
+                assertTrue(authHeaders.containsKey(optionalHeader));
+                if (headers.containsKey(optionalHeader)) {
+                    // if it exists, it should have the same value
+                    assertEquals(
+                            headers.get(optionalHeader).get(0), authHeaders.get(optionalHeader));
+                }
+                // needs to be in the signature
+                assertTrue(authorizationHeaders.contains(optionalHeader));
+            }
+        }
     }
 }

@@ -13,6 +13,24 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.3.0 - 2018-11-01
+### Added
+- Support for modifying the route table, DHCP options, and security lists associated with a subnet in the Networking service.
+- Support for tagging of File Systems, Mount Targets, and Snapshots in the File Storage service.
+- Support for nested compartments in the Identity service
+- The region can be passed in via `SimpleAuthenticationDetailsProvider` and from config file using `ConfigFileAuthenticationDetailsProvider`
+
+### Changed
+- Passphrases are now passed as `char[]` instead of as `String`
+- Optional headers that, when present, have to be signed are now included in the signature
+- Attempts to parse the body only for responses that have Content-Type set to application/json; otherwise, it bails out and raises a generic `BmcException`
+
+### Deprecated
+- Methods accepting passphrases as `String` are deprecated; use `char[]` instead
+
+### Notes
+- The version is bumped to 1.3.0 due to breaking changes in previous release.
+
 ## 1.2.49 - 2018-10-18
 ### Added
 - Support for cost tracking tags in the Identity service
