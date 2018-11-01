@@ -94,6 +94,7 @@ public class RequestSignerImpl implements RequestSigner {
     private static SigningConfiguration toSigningConfiguration(SigningStrategy signingStrategy) {
         return new SigningConfiguration(
                 signingStrategy.getHeadersToSign(),
+                signingStrategy.getOptionalHeadersToSign(),
                 signingStrategy.isSkipContentHeadersForStreamingPutRequests());
     }
 
@@ -120,6 +121,28 @@ public class RequestSignerImpl implements RequestSigner {
             final Map<String, List<String>> headers,
             final Object body,
             final String versionName) {
+        return signRequest(
+                algorithm,
+                uri,
+                httpMethod,
+                headers,
+                body,
+                versionName,
+                keyIdSupplier.get(),
+                keySupplier,
+                signingConfiguration);
+    }
+
+    public static Map<String, String> signRequest(
+            final Algorithm algorithm,
+            final URI uri,
+            final String httpMethod,
+            final Map<String, List<String>> headers,
+            final Object body,
+            final String versionName,
+            final String keyId,
+            final KeySupplier<RSAPrivateKey> keySupplier,
+            final SigningConfiguration signingConfiguration) {
         Preconditions.checkArgument(null != algorithm, "algorithm must not be null");
         Preconditions.checkArgument(null != uri, "uri must not be null");
         Preconditions.checkArgument(
@@ -129,14 +152,21 @@ public class RequestSignerImpl implements RequestSigner {
                 !StringUtils.isBlank(versionName), "versionName must not be null or empty");
 
         try {
-            String keyId = keyIdSupplier.get();
             Version version = validateVersion(versionName, algorithm);
-            final RSAPrivateKey key = getPrivateKey(keyId);
-            final String lowerHttpMethod = httpMethod.toLowerCase(Locale.ENGLISH);
+            final RSAPrivateKey key = getPrivateKey(keyId, keySupplier);
+            final String lowerHttpMethod = httpMethod.toLowerCase();
             final String path = extractPath(uri);
 
-            // 1) get the required headers that must be signed
-            final List<String> requiredHeaders = getRequiredSigningHeaders(lowerHttpMethod);
+            // 1) get the required headers that must be signed, and the ones that should be signed if present
+            final List<String> requiredHeaders =
+                    getRequiredSigningHeaders(lowerHttpMethod, signingConfiguration);
+            final List<String> optionalHeaders =
+                    getOptionalSigningHeaders(lowerHttpMethod, signingConfiguration);
+            for (String optionalHeaderName : optionalHeaders) {
+                if (headers.get(optionalHeaderName) != null) {
+                    requiredHeaders.add(optionalHeaderName);
+                }
+            }
 
             // 2) copy of original headers as case-insensitive, do not modify input map
             final Map<String, List<String>> existingHeaders = ignoreCaseHeaders(headers);
@@ -162,6 +192,7 @@ public class RequestSignerImpl implements RequestSigner {
             final String stringToSign =
                     calculateStringToSign(
                             lowerHttpMethod, path, allHeaders, requiredHeaders, headers);
+
             final String signature = sign(key, algorithm, stringToSign);
 
             // 6) calculate the auth header and add to all the missing headers that should be added
@@ -172,9 +203,20 @@ public class RequestSignerImpl implements RequestSigner {
                             signature,
                             algorithm,
                             version.getVersionName(),
-                            requiredHeaders);
+                            requiredHeaders,
+                            optionalHeaders);
             missingHeaders.put(Constants.AUTHORIZATION_HEADER, authorizationHeader);
 
+            // 7) add any auth headers that were passed in as part of the original headers to the headers being returned
+            for (String headerName : requiredHeaders) {
+                if (!missingHeaders.containsKey(headerName)
+                        && existingHeaders.containsKey(headerName)
+                        && !existingHeaders.get(headerName).isEmpty()) {
+                    // get the first entry; this will be the only entry, because otherwise calculateStringToSign would
+                    // have thrown an exception
+                    missingHeaders.put(headerName, existingHeaders.get(headerName).get(0));
+                }
+            }
             return missingHeaders;
         } catch (final Exception ex) {
             LOG.debug("Could not sign request", ex);
@@ -182,7 +224,7 @@ public class RequestSignerImpl implements RequestSigner {
         }
     }
 
-    private Version validateVersion(String version, Algorithm algorithm) {
+    private static Version validateVersion(String version, Algorithm algorithm) {
         // TODO: throw exception for now so it's re-thrown as
         // SignedRequestException
         // revisit to return signing result with error info without having
@@ -203,7 +245,8 @@ public class RequestSignerImpl implements RequestSigner {
         return srVersion;
     }
 
-    private RSAPrivateKey getPrivateKey(String keyId) {
+    private static RSAPrivateKey getPrivateKey(
+            String keyId, KeySupplier<RSAPrivateKey> keySupplier) {
         Optional<RSAPrivateKey> keyOptional = keySupplier.getKey(keyId);
 
         // TODO: throw exception for now so it's re-thrown as
@@ -227,7 +270,7 @@ public class RequestSignerImpl implements RequestSigner {
         return transformedMap;
     }
 
-    private static String transformHeadersToJsonString(Map<String, List<String>> headers) {
+    private static String transformHeadersToJsonString(final Map<String, List<String>> headers) {
         try {
             return RestClientFactory.getObjectMapper().writeValueAsString(headers);
         } catch (JsonProcessingException ex) {
@@ -278,12 +321,18 @@ public class RequestSignerImpl implements RequestSigner {
             }
         }
 
-        // the one exception for the below is when doing a PUT or PATCH if the body is an InputStream
+        // the one exception for the below is when doing a PUT if the body is an InputStream
         // and the configuration allows it to be skipped
-        if ((isPut || isPatch)
-                && body instanceof InputStream
-                && signingConfiguration.skipContentHeadersForStreamingPutRequests) {
-            return missingHeaders;
+        if (isPut || isPatch) {
+            if (body instanceof InputStream) {
+                if (signingConfiguration.skipContentHeadersForStreamingPutRequests) {
+                    return missingHeaders;
+                } else {
+                    // TODO: support DuplicatableInputStream to be able to calculate length/sha-256
+                    throw new IllegalArgumentException(
+                            "Streaming body not supported for signing strategy");
+                }
+            }
         }
 
         // supply content-type, content-length and x-content-sha256 if missing (PUT and POST only)
@@ -309,6 +358,7 @@ public class RequestSignerImpl implements RequestSigner {
         }
 
         final byte[] bodyBytes = readBodyBytes(body);
+
         if (isRequiredHeaderMissing(Constants.CONTENT_LENGTH, requiredHeaders, existingHeaders)) {
             missingHeaders.put(Constants.CONTENT_LENGTH, Integer.toString(bodyBytes.length));
         }
@@ -382,20 +432,21 @@ public class RequestSignerImpl implements RequestSigner {
         return StringUtils.join(signatureParts, "\n");
     }
 
-    private String sign(RSAPrivateKey key, Algorithm algorithm, String stringToSign) {
+    private static String sign(RSAPrivateKey key, Algorithm algorithm, String stringToSign) {
         byte[] signature =
                 SIGNER.sign(
                         key, stringToSign.getBytes(StandardCharsets.UTF_8), algorithm.getJvmName());
         return base64Encode(signature);
     }
 
-    private String calculateAuthorizationHeader(
+    private static String calculateAuthorizationHeader(
             final String keyId,
             final String httpMethod,
             final String signature,
             final Algorithm algorithm,
             final String version,
-            final List<String> requiredHeaders) {
+            final List<String> requiredHeaders,
+            final List<String> optionalHeaders) {
         final String authorizationHeader =
                 "Signature headers=\"%s\",keyId=\"%s\","
                         + "algorithm=\"%s\",signature=\"%s\",version=\"%s\"";
@@ -407,13 +458,27 @@ public class RequestSignerImpl implements RequestSigner {
                 authorizationHeader, headers, keyId, algorithmName, signature, version);
     }
 
-    private List<String> getRequiredSigningHeaders(final String httpMethod) {
-        List<String> requiredHeadersToSign =
-                this.signingConfiguration.headersToSign.get(httpMethod);
-        if (requiredHeadersToSign == null) {
-            return new ArrayList<String>(0);
+    private static List<String> getRequiredSigningHeaders(
+            final String httpMethod, final SigningConfiguration signingConfiguration) {
+        List<String> headerNames = signingConfiguration.headersToSign.get(httpMethod);
+        return getIgnoreCaseHeaders(headerNames);
+    }
+
+    private static List<String> getIgnoreCaseHeaders(List<String> headerNames) {
+        if (headerNames == null) {
+            return new ArrayList<>(0);
         }
-        return requiredHeadersToSign;
+        ArrayList<String> result = new ArrayList<>();
+        for (String headerName : headerNames) {
+            result.add(headerName.toLowerCase());
+        }
+        return result;
+    }
+
+    private static List<String> getOptionalSigningHeaders(
+            final String httpMethod, final SigningConfiguration signingConfiguration) {
+        List<String> headerNames = signingConfiguration.optionalHeadersToSign.get(httpMethod);
+        return getIgnoreCaseHeaders(headerNames);
     }
 
     private static byte[] readBodyBytes(Object body) throws IOException {
@@ -458,6 +523,10 @@ public class RequestSignerImpl implements RequestSigner {
          * Map of HTTP method to list of headers to sign.
          */
         private final Map<String, List<String>> headersToSign;
+        /**
+         * Map of HTTP method to list of headers to sign, if they are present.
+         */
+        private final Map<String, List<String>> optionalHeadersToSign;
         /**
          * Flag indicating whether InputStreams in PUT requests are allowed to skip content headers.
          */

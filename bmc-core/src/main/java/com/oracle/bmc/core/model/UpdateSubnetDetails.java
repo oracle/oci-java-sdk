@@ -34,6 +34,15 @@ public class UpdateSubnetDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dhcpOptionsId")
+        private String dhcpOptionsId;
+
+        public Builder dhcpOptionsId(String dhcpOptionsId) {
+            this.dhcpOptionsId = dhcpOptionsId;
+            this.__explicitlySet__.add("dhcpOptionsId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -52,12 +61,36 @@ public class UpdateSubnetDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+        private String routeTableId;
+
+        public Builder routeTableId(String routeTableId) {
+            this.routeTableId = routeTableId;
+            this.__explicitlySet__.add("routeTableId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("securityListIds")
+        private java.util.List<String> securityListIds;
+
+        public Builder securityListIds(java.util.List<String> securityListIds) {
+            this.securityListIds = securityListIds;
+            this.__explicitlySet__.add("securityListIds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateSubnetDetails build() {
             UpdateSubnetDetails __instance__ =
-                    new UpdateSubnetDetails(definedTags, displayName, freeformTags);
+                    new UpdateSubnetDetails(
+                            definedTags,
+                            dhcpOptionsId,
+                            displayName,
+                            freeformTags,
+                            routeTableId,
+                            securityListIds);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -66,8 +99,11 @@ public class UpdateSubnetDetails {
         public Builder copy(UpdateSubnetDetails o) {
             Builder copiedBuilder =
                     definedTags(o.getDefinedTags())
+                            .dhcpOptionsId(o.getDhcpOptionsId())
                             .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags());
+                            .freeformTags(o.getFreeformTags())
+                            .routeTableId(o.getRouteTableId())
+                            .securityListIds(o.getSecurityListIds());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -92,6 +128,13 @@ public class UpdateSubnetDetails {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
+     * The OCID of the set of DHCP options the subnet will use.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dhcpOptionsId")
+    String dhcpOptionsId;
+
+    /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
      *
@@ -109,6 +152,23 @@ public class UpdateSubnetDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
+
+    /**
+     * The OCID of the route table the subnet will use.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+    String routeTableId;
+
+    /**
+     * The OCIDs of the security list or lists the subnet will use. This
+     * replaces the entire current set of security lists. Remember that
+     * security lists are associated *with the subnet*, but the rules are
+     * applied to the individual VNICs in the subnet.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityListIds")
+    java.util.List<String> securityListIds;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

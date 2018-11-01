@@ -45,12 +45,15 @@ public class CopyVolumeBackupExample {
         String profile = "DEFAULT";
 
         AuthenticationDetailsProvider srcRegionProvider =
-                new ConfigFileAuthenticationDetailsProvider(srcRegionConfigurationFilePath, profile);
+                new ConfigFileAuthenticationDetailsProvider(
+                        srcRegionConfigurationFilePath, profile);
         AuthenticationDetailsProvider destRegionProvider =
-                new ConfigFileAuthenticationDetailsProvider(destRegionConfigurationFilePath, profile);
+                new ConfigFileAuthenticationDetailsProvider(
+                        destRegionConfigurationFilePath, profile);
 
         BlockstorageClient srcRegionBlockstorageClient = new BlockstorageClient(srcRegionProvider);
-        BlockstorageClient destRegionBlockstorageClient = new BlockstorageClient(destRegionProvider);
+        BlockstorageClient destRegionBlockstorageClient =
+                new BlockstorageClient(destRegionProvider);
 
         srcRegionBlockstorageClient.setRegion(Region.US_PHOENIX_1);
         destRegionBlockstorageClient.setRegion(Region.US_ASHBURN_1);
@@ -61,7 +64,12 @@ public class CopyVolumeBackupExample {
                 getAvailabilityDomains(srcRegionProvider, compartmentId, Region.US_PHOENIX_1);
         AvailabilityDomain adToUse = availabilityDomains.get(0);
 
-        Volume volume = createVolume(srcRegionBlockstorageClient, compartmentId, volumeDisplayName, adToUse.getName());
+        Volume volume =
+                createVolume(
+                        srcRegionBlockstorageClient,
+                        compartmentId,
+                        volumeDisplayName,
+                        adToUse.getName());
 
         System.out.println("Volume is provisioning...");
 
@@ -76,19 +84,24 @@ public class CopyVolumeBackupExample {
 
         System.out.println("VolumeBackup is being created...");
 
-        volumeBackup = waitForVolumeBackupToComplete(srcRegionBlockstorageClient, volumeBackup.getId());
+        volumeBackup =
+                waitForVolumeBackupToComplete(srcRegionBlockstorageClient, volumeBackup.getId());
 
         System.out.println("volumeBackup is created.");
         System.out.println(volumeBackup);
 
         System.out.println("Copying backup to the destination region...");
 
-        VolumeBackup copiedBackup = copyVolumeBackup(srcRegionBlockstorageClient, volumeBackup.getId(),
-                Region.US_ASHBURN_1.getRegionId());
+        VolumeBackup copiedBackup =
+                copyVolumeBackup(
+                        srcRegionBlockstorageClient,
+                        volumeBackup.getId(),
+                        Region.US_ASHBURN_1.getRegionId());
 
         System.out.println("VolumeBackup is being copied...");
 
-        volumeBackup = waitForVolumeBackupToComplete(destRegionBlockstorageClient, copiedBackup.getId());
+        volumeBackup =
+                waitForVolumeBackupToComplete(destRegionBlockstorageClient, copiedBackup.getId());
 
         System.out.println("volumeBackup is copied.");
         System.out.println(copiedBackup);
@@ -123,16 +136,15 @@ public class CopyVolumeBackupExample {
         BlockstorageWaiters waiter = blockstorageClient.getWaiters();
         GetVolumeResponse response =
                 waiter.forVolume(
-                        GetVolumeRequest.builder().volumeId(volumeId).build(),
-                        Volume.LifecycleState.Available)
+                                GetVolumeRequest.builder().volumeId(volumeId).build(),
+                                Volume.LifecycleState.Available)
                         .execute();
 
         return response.getVolume();
     }
 
     public static VolumeBackup createVolumeBackup(
-            BlockstorageClient blockstorageClient,
-            String volumeId) {
+            BlockstorageClient blockstorageClient, String volumeId) {
 
         CreateVolumeBackupResponse response =
                 blockstorageClient.createVolumeBackup(
@@ -152,8 +164,10 @@ public class CopyVolumeBackupExample {
         BlockstorageWaiters waiter = blockstorageClient.getWaiters();
         GetVolumeBackupResponse response =
                 waiter.forVolumeBackup(
-                        GetVolumeBackupRequest.builder().volumeBackupId(volumeBackupId).build(),
-                        VolumeBackup.LifecycleState.Available)
+                                GetVolumeBackupRequest.builder()
+                                        .volumeBackupId(volumeBackupId)
+                                        .build(),
+                                VolumeBackup.LifecycleState.Available)
                         .execute();
 
         return response.getVolumeBackup();
@@ -178,7 +192,8 @@ public class CopyVolumeBackupExample {
     }
 
     public static List<AvailabilityDomain> getAvailabilityDomains(
-            AuthenticationDetailsProvider provider, String compartmentId, Region region) throws Exception {
+            AuthenticationDetailsProvider provider, String compartmentId, Region region)
+            throws Exception {
 
         Identity identityClient = new IdentityClient(provider);
         identityClient.setRegion(region);

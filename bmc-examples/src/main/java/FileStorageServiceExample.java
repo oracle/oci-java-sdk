@@ -246,6 +246,7 @@ public class FileStorageServiceExample {
 
         final String retryToken = getRetryToken(RETRY_TOKEN_LENGTH);
 
+        /* supports freefromTags and definedTags */
         final CreateFileSystemDetails createDetails =
                 CreateFileSystemDetails.builder()
                         .displayName(displayName)
@@ -336,6 +337,7 @@ public class FileStorageServiceExample {
 
         final String retryToken = getRetryToken(RETRY_TOKEN_LENGTH);
 
+        /* supports freefromTags and definedTags */
         final CreateMountTargetDetails createDetails =
                 CreateMountTargetDetails.builder()
                         .availabilityDomain(availabilityDomain.getName())
@@ -527,6 +529,7 @@ public class FileStorageServiceExample {
 
         final String retryToken = getRetryToken(RETRY_TOKEN_LENGTH);
 
+        /* supports freefromTags and definedTags */
         final CreateSnapshotDetails createDetails =
                 CreateSnapshotDetails.builder()
                         .fileSystemId(fileSystem.getId())

@@ -24,7 +24,12 @@ public class ListFileSystemsRequest extends com.oracle.bmc.requests.BmcRequest {
     private String availabilityDomain;
 
     /**
-     * The maximum number of items to return in a paginated \"List\" call.
+     * For list pagination. The maximum number of results per page,
+     * or items to return in a paginated \"List\" call.
+     * 1 is the minimum, 1000 is the maximum.
+     * <p>
+     * For important details about how pagination works,
+     * see [List Pagination](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      * <p>
      * Example: `500`
      *
@@ -32,7 +37,11 @@ public class ListFileSystemsRequest extends com.oracle.bmc.requests.BmcRequest {
     private Integer limit;
 
     /**
-     * The value of the `opc-next-page` response header from the previous \"List\" call.
+     * For list pagination. The value of the `opc-next-page` response
+     * header from the previous \"List\" call.
+     * <p>
+     * For important details about how pagination works,
+     * see [List Pagination](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private String page;

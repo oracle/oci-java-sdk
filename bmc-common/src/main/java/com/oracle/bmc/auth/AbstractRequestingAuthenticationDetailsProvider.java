@@ -97,8 +97,8 @@ public class AbstractRequestingAuthenticationDetailsProvider
         return new ByteArrayInputStream(sessionKeySupplier.getPrivateKeyBytes());
     }
 
-    @Override
     @Deprecated
+    @Override
     public String getPassPhrase() {
         return null;
     }

@@ -22,7 +22,6 @@ import com.oracle.bmc.database.responses.GenerateAutonomousDatabaseWalletRespons
 import com.oracle.bmc.database.requests.GenerateAutonomousDatabaseWalletRequest;
 import com.oracle.bmc.database.model.GenerateAutonomousDatabaseWalletDetails;
 
-
 import java.io.InputStream;
 import java.util.Random;
 import java.util.zip.ZipInputStream;
@@ -109,8 +108,11 @@ public class AutonomousTransactionProcessingSharedExample {
 
         System.out.println("Downloading wallet for  : " + atpShared);
         GenerateAutonomousDatabaseWalletDetails atpWalletDetails = createAtpWalletDetails(password);
-        GenerateAutonomousDatabaseWalletResponse atpWalletResponse = generateATPWallet(dbClient, atpWalletDetails , atpShared.getId());
-        System.out.println("Autonomous database downloaded wallet content length is : " + atpWalletResponse.getContentLength());
+        GenerateAutonomousDatabaseWalletResponse atpWalletResponse =
+                generateATPWallet(dbClient, atpWalletDetails, atpShared.getId());
+        System.out.println(
+                "Autonomous database downloaded wallet content length is : "
+                        + atpWalletResponse.getContentLength());
         ZipInputStream zin = new ZipInputStream(atpWalletResponse.getInputStream());
 
         // Delete
@@ -205,16 +207,18 @@ public class AutonomousTransactionProcessingSharedExample {
     }
 
     private static GenerateAutonomousDatabaseWalletResponse generateATPWallet(
-            DatabaseClient dbClient, GenerateAutonomousDatabaseWalletDetails atpWalletDetails,
+            DatabaseClient dbClient,
+            GenerateAutonomousDatabaseWalletDetails atpWalletDetails,
             String atpId) {
         return dbClient.generateAutonomousDatabaseWallet(
-                GenerateAutonomousDatabaseWalletRequest.builder().generateAutonomousDatabaseWalletDetails(atpWalletDetails).autonomousDatabaseId(atpId).build());
+                GenerateAutonomousDatabaseWalletRequest.builder()
+                        .generateAutonomousDatabaseWalletDetails(atpWalletDetails)
+                        .autonomousDatabaseId(atpId)
+                        .build());
     }
 
     private static GenerateAutonomousDatabaseWalletDetails createAtpWalletDetails(String password) {
-        return GenerateAutonomousDatabaseWalletDetails.builder()
-                .password(password)
-                .build();
+        return GenerateAutonomousDatabaseWalletDetails.builder().password(password).build();
     }
 
     private static UpdateAutonomousDatabaseDetails updateDisplayNameAtpRequest() {

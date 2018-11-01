@@ -1,3 +1,6 @@
+/**
+ * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ */
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.core.ComputeManagementClient;
@@ -40,68 +43,79 @@ import java.util.List;
  */
 public class InstancePoolsExample {
 
-    public static InstanceConfiguration createInstanceConfiguration(ComputeManagementClient client, String imageId,
-            String compartmentId) {
-        InstanceConfigurationCreateVnicDetails vnicDetails = InstanceConfigurationCreateVnicDetails.builder()
-                .build();
+    public static InstanceConfiguration createInstanceConfiguration(
+            ComputeManagementClient client, String imageId, String compartmentId) {
+        InstanceConfigurationCreateVnicDetails vnicDetails =
+                InstanceConfigurationCreateVnicDetails.builder().build();
 
         InstanceConfigurationInstanceSourceViaImageDetails sourceDetails =
                 InstanceConfigurationInstanceSourceViaImageDetails.builder()
                         .imageId(imageId)
                         .build();
 
-        InstanceConfigurationLaunchInstanceDetails launchDetails = InstanceConfigurationLaunchInstanceDetails.builder()
-                .compartmentId(compartmentId)
-                .displayName("Instance Configuration Example")
-                .createVnicDetails(vnicDetails)
-                .shape("VM.Standard2.1")
-                .sourceDetails(sourceDetails)
-                .build();
+        InstanceConfigurationLaunchInstanceDetails launchDetails =
+                InstanceConfigurationLaunchInstanceDetails.builder()
+                        .compartmentId(compartmentId)
+                        .displayName("Instance Configuration Example")
+                        .createVnicDetails(vnicDetails)
+                        .shape("VM.Standard2.1")
+                        .sourceDetails(sourceDetails)
+                        .build();
 
-        ComputeInstanceDetails instanceDetails = ComputeInstanceDetails.builder()
-                .launchDetails(launchDetails)
-                .secondaryVnics(Collections.EMPTY_LIST)
-                .blockVolumes(Collections.EMPTY_LIST)
-                .build();
+        ComputeInstanceDetails instanceDetails =
+                ComputeInstanceDetails.builder()
+                        .launchDetails(launchDetails)
+                        .secondaryVnics(Collections.EMPTY_LIST)
+                        .blockVolumes(Collections.EMPTY_LIST)
+                        .build();
 
-        CreateInstanceConfigurationDetails configurationDetails = CreateInstanceConfigurationDetails.builder()
-                .displayName("Instance Configuration Example")
-                .compartmentId(compartmentId)
-                .instanceDetails(instanceDetails)
-                .build();
+        CreateInstanceConfigurationDetails configurationDetails =
+                CreateInstanceConfigurationDetails.builder()
+                        .displayName("Instance Configuration Example")
+                        .compartmentId(compartmentId)
+                        .instanceDetails(instanceDetails)
+                        .build();
 
-        CreateInstanceConfigurationRequest req = CreateInstanceConfigurationRequest.builder()
-                .createInstanceConfiguration(configurationDetails)
-                .build();
+        CreateInstanceConfigurationRequest req =
+                CreateInstanceConfigurationRequest.builder()
+                        .createInstanceConfiguration(configurationDetails)
+                        .build();
 
         CreateInstanceConfigurationResponse response = client.createInstanceConfiguration(req);
         return response.getInstanceConfiguration();
     }
 
-    public static InstancePool createAndStartInstancePool(ComputeManagementClient client,
-            InstanceConfiguration instanceConfiguration, String subnetId, String availabilityDomain, String
-            compartmentId) {
+    public static InstancePool createAndStartInstancePool(
+            ComputeManagementClient client,
+            InstanceConfiguration instanceConfiguration,
+            String subnetId,
+            String availabilityDomain,
+            String compartmentId) {
 
-        CreateInstancePoolPlacementConfigurationDetails placementDetails = CreateInstancePoolPlacementConfigurationDetails.builder()
-                .primarySubnetId(subnetId)
-                .availabilityDomain(availabilityDomain)
-                .secondaryVnicSubnets(Collections.EMPTY_LIST)
-                .build();
+        CreateInstancePoolPlacementConfigurationDetails placementDetails =
+                CreateInstancePoolPlacementConfigurationDetails.builder()
+                        .primarySubnetId(subnetId)
+                        .availabilityDomain(availabilityDomain)
+                        .secondaryVnicSubnets(Collections.EMPTY_LIST)
+                        .build();
 
-        List<CreateInstancePoolPlacementConfigurationDetails> placementConfigurationList = new ArrayList<>();
+        List<CreateInstancePoolPlacementConfigurationDetails> placementConfigurationList =
+                new ArrayList<>();
         placementConfigurationList.add(placementDetails);
 
-        CreateInstancePoolDetails createInstancePoolDetails = CreateInstancePoolDetails.builder()
-                .displayName("Instance Pool Example")
-                .compartmentId(compartmentId)
-                .instanceConfigurationId(instanceConfiguration.getId())
-                .size(1)
-                .placementConfigurations(placementConfigurationList)
-                .build();
+        CreateInstancePoolDetails createInstancePoolDetails =
+                CreateInstancePoolDetails.builder()
+                        .displayName("Instance Pool Example")
+                        .compartmentId(compartmentId)
+                        .instanceConfigurationId(instanceConfiguration.getId())
+                        .size(1)
+                        .placementConfigurations(placementConfigurationList)
+                        .build();
 
-        CreateInstancePoolRequest request = CreateInstancePoolRequest.builder()
-                .createInstancePoolDetails(createInstancePoolDetails)
-                .build();
+        CreateInstancePoolRequest request =
+                CreateInstancePoolRequest.builder()
+                        .createInstancePoolDetails(createInstancePoolDetails)
+                        .build();
 
         CreateInstancePoolResponse response = client.createInstancePool(request);
         return response.getInstancePool();
@@ -123,7 +137,8 @@ public class InstancePoolsExample {
 
         if (args.length != 4) {
             throw new IllegalArgumentException(
-                    String.format("Unexpected number of arguments.  Expected 4, got %s", args.length));
+                    String.format(
+                            "Unexpected number of arguments.  Expected 4, got %s", args.length));
         }
 
         final String compartmentId = args[0];
@@ -136,43 +151,46 @@ public class InstancePoolsExample {
 
         ComputeManagementClient client = new ComputeManagementClient(provider);
 
-        InstanceConfiguration instanceConfiguration = createInstanceConfiguration(client, imageId, compartmentId);
-        InstancePool instancePool = createAndStartInstancePool(client, instanceConfiguration, subnetId,
-                availabilityDomain, compartmentId);
+        InstanceConfiguration instanceConfiguration =
+                createInstanceConfiguration(client, imageId, compartmentId);
+        InstancePool instancePool =
+                createAndStartInstancePool(
+                        client, instanceConfiguration, subnetId, availabilityDomain, compartmentId);
 
         // Wait for the pool to scale out and enter a running state.  (This will leave one instance running)
         ComputeManagementWaiters waiter = client.getWaiters();
-        GetInstancePoolRequest getInstancePoolRequest = GetInstancePoolRequest.builder()
-                .instancePoolId(instancePool.getId())
-                .build();
+        GetInstancePoolRequest getInstancePoolRequest =
+                GetInstancePoolRequest.builder().instancePoolId(instancePool.getId()).build();
 
         // Pool will go from Scaling --> Running.
-        waiter.forInstancePool(getInstancePoolRequest, InstancePool.LifecycleState.Running).execute();
+        waiter.forInstancePool(getInstancePoolRequest, InstancePool.LifecycleState.Running)
+                .execute();
 
         // Update the size to 2.  This will make the number of instances go to two.
-        UpdateInstancePoolDetails updateInstancePoolDetails = UpdateInstancePoolDetails.builder()
-                .size(2)
-                .build();
+        UpdateInstancePoolDetails updateInstancePoolDetails =
+                UpdateInstancePoolDetails.builder().size(2).build();
 
-        UpdateInstancePoolRequest updateRequest = UpdateInstancePoolRequest.builder()
-                .instancePoolId(instancePool.getId())
-                .updateInstancePoolDetails(updateInstancePoolDetails)
-                .build();
+        UpdateInstancePoolRequest updateRequest =
+                UpdateInstancePoolRequest.builder()
+                        .instancePoolId(instancePool.getId())
+                        .updateInstancePoolDetails(updateInstancePoolDetails)
+                        .build();
 
         UpdateInstancePoolResponse updateResponse = client.updateInstancePool(updateRequest);
         instancePool = updateResponse.getInstancePool();
-        waiter.forInstancePool(getInstancePoolRequest, InstancePool.LifecycleState.Running).execute();
+        waiter.forInstancePool(getInstancePoolRequest, InstancePool.LifecycleState.Running)
+                .execute();
 
         // Terminate the Pool
-        TerminateInstancePoolRequest terminatePoolRequest = TerminateInstancePoolRequest.builder()
-                .instancePoolId(instancePool.getId())
-                .build();
+        TerminateInstancePoolRequest terminatePoolRequest =
+                TerminateInstancePoolRequest.builder().instancePoolId(instancePool.getId()).build();
         client.terminateInstancePool(terminatePoolRequest);
 
         // Delete the InstanceConfiguration
-        DeleteInstanceConfigurationRequest deleteInstanceConfigurationRequest = DeleteInstanceConfigurationRequest.builder()
-                .instanceConfigurationId(instanceConfiguration.getId())
-                .build();
+        DeleteInstanceConfigurationRequest deleteInstanceConfigurationRequest =
+                DeleteInstanceConfigurationRequest.builder()
+                        .instanceConfigurationId(instanceConfiguration.getId())
+                        .build();
         client.deleteInstanceConfiguration(deleteInstanceConfigurationRequest);
     }
 }

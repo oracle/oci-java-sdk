@@ -21,6 +21,10 @@ public class Constants {
     static final String X_CONTENT_SHA256 = "x-content-sha256";
     public static final String HOST = "host";
 
+    // Optional
+    static final String CROSS_TENANCY_REQUEST_HEADER_NAME = "x-cross-tenancy-request";
+    static final String X_SUBSCRIPTION = "x-subscription";
+
     static final String JSON_CONTENT_TYPE = "application/json";
 
     public static final ImmutableList<String> GENERIC_HEADERS =
@@ -64,6 +68,22 @@ public class Constants {
                     GENERIC_HEADERS,
                     GENERIC_HEADERS,
                     GENERIC_HEADERS);
+
+    /**
+     * Headers included in the signature if they are set.
+     */
+    public static final ImmutableList<String> OPTIONAL_HEADERS_NAMES =
+            ImmutableList.of(CROSS_TENANCY_REQUEST_HEADER_NAME, X_SUBSCRIPTION);
+
+    public static final ImmutableMap<String, List<String>> OPTIONAL_SIGNING_HEADERS =
+            createHeadersToSignMap(
+                    OPTIONAL_HEADERS_NAMES,
+                    OPTIONAL_HEADERS_NAMES,
+                    OPTIONAL_HEADERS_NAMES,
+                    OPTIONAL_HEADERS_NAMES,
+                    OPTIONAL_HEADERS_NAMES,
+                    OPTIONAL_HEADERS_NAMES);
+
     /**
      * Creates a map of headers to sign for each HTTP method.
      * @param getHeaders headers for GET requests

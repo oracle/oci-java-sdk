@@ -111,7 +111,8 @@ public class RestClientUtils {
                         allHeaders);
 
         RequestSignerImpl.SigningConfiguration signingConfiguration =
-                new RequestSignerImpl.SigningConfiguration(headersToSign, false);
+                new RequestSignerImpl.SigningConfiguration(
+                        headersToSign, Constants.OPTIONAL_SIGNING_HEADERS, false);
 
         RequestSigner requestSigner =
                 new RequestSignerImpl(keySupplier, signingConfiguration, keyIdSupplier);

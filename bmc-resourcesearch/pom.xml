@@ -4,18 +4,20 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>1.2.49</version>
+    <version>1.3.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <artifactId>oci-java-sdk-resourcesearch</artifactId>
   <name>Oracle Cloud Infrastructure SDK - Resource Search</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure Resource Search</description>
   <url>https://docs.us-phoenix-1.oraclecloud.com/Content/API/SDKDocs/javasdk.htm</url>
+
+
   <dependencies>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common</artifactId>
-      <version>1.2.49</version>
+      <version>1.3.0</version>
     </dependency>
   </dependencies>
 </project>

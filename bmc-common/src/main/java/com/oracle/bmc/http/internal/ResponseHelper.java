@@ -10,6 +10,7 @@ import java.util.Locale;
 
 import javax.ws.rs.ProcessingException;
 import javax.ws.rs.core.GenericType;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
@@ -21,6 +22,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Value;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * A {@code BmcException} exception is thrown in response to failures from a
@@ -28,6 +30,7 @@ import lombok.Value;
  * application code and message describing the problem.
  */
 @Getter
+@Slf4j
 public class ResponseHelper {
     private static final int MAX_RESPONSE_BUFFER_BYTES = 4096;
     private static final String OPC_REQUEST_ID_HEADER = "opc-request-id";
@@ -62,6 +65,28 @@ public class ResponseHelper {
         // synchronized for async handlers where both an AsyncHandler and a Future might try to
         // handle the response
         synchronized (response) {
+
+            // If the response Content-Type is not application/json, then don't bother parsing the response body.
+            if (!MediaType.APPLICATION_JSON_TYPE.equals(response.getMediaType())) {
+                String responseBody = "Cannot read response body!";
+                try {
+                    responseBody = response.readEntity(String.class);
+                } catch (ProcessingException e) {
+                    // Unable to read the response body. This is non-fatal so swallow the error and proceed.
+                    LOG.warn("Unable to read response body", e);
+                }
+
+                throw new BmcException(
+                        response.getStatus(),
+                        "Unknown",
+                        String.format(
+                                "Unexpected Content-Type: %s instead of %s. Response body: %s",
+                                response.getMediaType(),
+                                MediaType.APPLICATION_JSON_TYPE,
+                                responseBody),
+                        opcRequestId);
+            }
+
             boolean isBuffered = false;
             try {
                 /*
@@ -159,9 +184,7 @@ public class ResponseHelper {
                 }
 
                 T entity = response.readEntity(entityType);
-                String contentType = response.getHeaderString("content-type");
-                if (contentType != null
-                        && contentType.toLowerCase(Locale.ROOT).equals("application/json")) {
+                if (MediaType.APPLICATION_JSON_TYPE.equals(response.getMediaType())) {
                     // HACK alert, if the entry is a string, and it's mime was
                     // application/json, jackson's provider won't deserialize it since
                     // the default provider takes presidence. Need to explicitly remove
