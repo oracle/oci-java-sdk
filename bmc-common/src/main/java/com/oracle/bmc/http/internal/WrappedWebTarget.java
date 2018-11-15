@@ -5,7 +5,6 @@ package com.oracle.bmc.http.internal;
 
 import lombok.AllArgsConstructor;
 
-import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.Configuration;
 import javax.ws.rs.core.MediaType;
@@ -15,7 +14,7 @@ import java.util.Map;
 
 /**
  * A {@link WebTarget} that delegates to another {@link WebTarget}, but creates {@link WrappedInvocationBuilder}
- * instances instead of plain {@link Invocation.Builder} instances.
+ * instances instead of plain {@link javax.ws.rs.client.Invocation.Builder} instances.
  */
 @AllArgsConstructor
 public class WrappedWebTarget implements WebTarget {

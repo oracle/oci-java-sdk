@@ -16,7 +16,12 @@ import org.apache.commons.lang3.StringUtils;
 
 import javax.annotation.Nullable;
 import javax.ws.rs.ProcessingException;
-import javax.ws.rs.client.*;
+import javax.ws.rs.client.AsyncInvoker;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.Entity;
+import javax.ws.rs.client.Invocation;
+import javax.ws.rs.client.InvocationCallback;
+import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;

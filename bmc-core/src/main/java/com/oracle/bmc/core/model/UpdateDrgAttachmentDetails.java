@@ -33,18 +33,29 @@ public class UpdateDrgAttachmentDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+        private String routeTableId;
+
+        public Builder routeTableId(String routeTableId) {
+            this.routeTableId = routeTableId;
+            this.__explicitlySet__.add("routeTableId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateDrgAttachmentDetails build() {
-            UpdateDrgAttachmentDetails __instance__ = new UpdateDrgAttachmentDetails(displayName);
+            UpdateDrgAttachmentDetails __instance__ =
+                    new UpdateDrgAttachmentDetails(displayName, routeTableId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateDrgAttachmentDetails o) {
-            Builder copiedBuilder = displayName(o.getDisplayName());
+            Builder copiedBuilder =
+                    displayName(o.getDisplayName()).routeTableId(o.getRouteTableId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -65,6 +76,12 @@ public class UpdateDrgAttachmentDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * The OCID of the route table the DRG attachment will use.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+    String routeTableId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

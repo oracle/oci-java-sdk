@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc.auth;
 
+import java.security.KeyPair;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 
@@ -15,15 +16,25 @@ import java.security.interfaces.RSAPublicKey;
 public interface SessionKeySupplier {
 
     /**
+     * Returns the current RSA key pair.
+     * @return The RSA key pair.
+     */
+    KeyPair getKeyPair();
+
+    /**
      * Gets the public key
      * @return the public key, not null
+     * @deprecated use getKeyPair instead
      */
+    @Deprecated
     RSAPublicKey getPublicKey();
 
     /**
      * Gets the private key
      * @return the private key, not null
+     * @deprecated use getKeyPair instead
      */
+    @Deprecated
     RSAPrivateKey getPrivateKey();
 
     /**

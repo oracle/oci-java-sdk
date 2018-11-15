@@ -3,24 +3,17 @@
  */
 package com.oracle.bmc.util.internal;
 
-import com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider;
+import com.google.common.base.Function;
+import com.google.common.base.Supplier;
 import com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider;
-import com.oracle.bmc.http.internal.WrappedInvocationBuilder;
 import com.oracle.bmc.model.BmcException;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-
-import javax.ws.rs.core.Response;
-
-import com.google.common.base.Function;
-import com.google.common.base.Supplier;
-
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
 
 /**
  * Future that both delegates to another one and provides the ability to transform

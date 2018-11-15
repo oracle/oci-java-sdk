@@ -4,7 +4,6 @@
 package com.oracle.bmc.auth;
 
 import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
 
 import com.google.common.base.Supplier;
 import com.oracle.bmc.Region;

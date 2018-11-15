@@ -52,12 +52,22 @@ public class UpdateLocalPeeringGatewayDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+        private String routeTableId;
+
+        public Builder routeTableId(String routeTableId) {
+            this.routeTableId = routeTableId;
+            this.__explicitlySet__.add("routeTableId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateLocalPeeringGatewayDetails build() {
             UpdateLocalPeeringGatewayDetails __instance__ =
-                    new UpdateLocalPeeringGatewayDetails(definedTags, displayName, freeformTags);
+                    new UpdateLocalPeeringGatewayDetails(
+                            definedTags, displayName, freeformTags, routeTableId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -67,7 +77,8 @@ public class UpdateLocalPeeringGatewayDetails {
             Builder copiedBuilder =
                     definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags());
+                            .freeformTags(o.getFreeformTags())
+                            .routeTableId(o.getRouteTableId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -109,6 +120,12 @@ public class UpdateLocalPeeringGatewayDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
+
+    /**
+     * The OCID of the route table the LPG will use.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+    String routeTableId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

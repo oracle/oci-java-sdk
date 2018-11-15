@@ -11,6 +11,7 @@ import com.oracle.bmc.http.internal.RestClient;
 import com.oracle.bmc.http.internal.RestClientFactory;
 import com.oracle.bmc.http.internal.RestClientFactoryBuilder;
 import com.oracle.bmc.http.signing.RequestSigner;
+import com.oracle.bmc.http.signing.SigningStrategy;
 import com.oracle.bmc.http.signing.internal.Constants;
 import com.oracle.bmc.http.signing.internal.KeySupplier;
 import com.oracle.bmc.http.signing.internal.RequestSignerImpl;
@@ -18,6 +19,7 @@ import com.oracle.bmc.http.signing.internal.RequestSignerImpl;
 import java.security.cert.X509Certificate;
 import java.security.interfaces.RSAPrivateKey;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -119,7 +121,9 @@ public class RestClientUtils {
 
         RestClientFactory restClientFactory =
                 RestClientFactoryBuilder.builder().clientConfigurator(clientConfigurator).build();
-        RestClient restClient = restClientFactory.create(requestSigner);
+        RestClient restClient =
+                restClientFactory.create(
+                        requestSigner, Collections.<SigningStrategy, RequestSigner>emptyMap());
         restClient.setEndpoint(endpoint);
         return restClient;
     }

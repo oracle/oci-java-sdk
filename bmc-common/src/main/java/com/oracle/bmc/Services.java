@@ -38,6 +38,16 @@ public class Services {
                 .build();
     }
 
+    /**
+     * Get Service instance based on service name.
+     *
+     * @param serviceName service name should be UPPER CASE.
+     * @return service instance
+     */
+    public static Service getServiceByName(final String serviceName) {
+        return SERVICE_CACHE.get(serviceName);
+    }
+
     @Builder(builderClassName = "ServiceBuilder", builderMethodName = "serviceBuilder")
     private static synchronized Service create(
             final String serviceName,

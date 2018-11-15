@@ -61,6 +61,15 @@ public class CreateLocalPeeringGatewayDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+        private String routeTableId;
+
+        public Builder routeTableId(String routeTableId) {
+            this.routeTableId = routeTableId;
+            this.__explicitlySet__.add("routeTableId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
@@ -76,7 +85,12 @@ public class CreateLocalPeeringGatewayDetails {
         public CreateLocalPeeringGatewayDetails build() {
             CreateLocalPeeringGatewayDetails __instance__ =
                     new CreateLocalPeeringGatewayDetails(
-                            compartmentId, definedTags, displayName, freeformTags, vcnId);
+                            compartmentId,
+                            definedTags,
+                            displayName,
+                            freeformTags,
+                            routeTableId,
+                            vcnId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -88,6 +102,7 @@ public class CreateLocalPeeringGatewayDetails {
                             .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
+                            .routeTableId(o.getRouteTableId())
                             .vcnId(o.getVcnId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -136,6 +151,17 @@ public class CreateLocalPeeringGatewayDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
+
+    /**
+     * The OCID of the route table the LPG will use.
+     * <p>
+     * If you don't specify a route table here, the LPG is created without an associated route
+     * table. The Networking service does NOT automatically associate the attached VCN's default route table
+     * with the LPG.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+    String routeTableId;
 
     /**
      * The OCID of the VCN the LPG belongs to.

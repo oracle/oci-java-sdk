@@ -38,6 +38,10 @@ public class RawRestCallExample {
         String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
+        // Pre-Requirement: Allow setting of restricted headers. This is required to allow the SigningFilter
+        // to set the host header that gets computed during signing of the request.
+        System.setProperty("sun.net.http.allowRestrictedHeaders", "true");
+
         // 1) Create your auth provider and request signer
         AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configurationFilePath, profile);

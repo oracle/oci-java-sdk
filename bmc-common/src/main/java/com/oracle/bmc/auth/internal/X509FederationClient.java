@@ -7,22 +7,15 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Function;
-import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
-import com.google.common.base.Supplier;
 import com.oracle.bmc.auth.SessionKeySupplier;
 import com.oracle.bmc.auth.X509CertificateSupplier;
 import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.http.internal.ResponseConversionFunctionFactory;
 import com.oracle.bmc.http.internal.RestClient;
-import com.oracle.bmc.http.internal.RestClientFactory;
-import com.oracle.bmc.http.internal.RestClientFactoryBuilder;
 import com.oracle.bmc.http.internal.WithHeaders;
 import com.oracle.bmc.http.internal.WrappedInvocationBuilder;
-import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.http.signing.internal.Constants;
-import com.oracle.bmc.http.signing.internal.KeySupplier;
-import com.oracle.bmc.http.signing.internal.RequestSignerImpl;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.requests.BmcRequest;
 import lombok.AllArgsConstructor;
@@ -36,14 +29,13 @@ import javax.security.auth.Refreshable;
 import javax.ws.rs.client.Invocation.Builder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.Response;
+import java.security.KeyPair;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
-import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 /**
@@ -62,7 +54,9 @@ public class X509FederationClient implements FederationClient {
 
     private final RestClient federationHttpClient;
 
-    private SecurityTokenAdapter securityTokenAdapter = null;
+    // needs to be volatile to make double-checked locking work
+    // see https://www.cs.umd.edu/~pugh/java/memoryModel/DoubleCheckedLocking.html
+    private volatile SecurityTokenAdapter securityTokenAdapter = null;
 
     /**
      * The constructor.
@@ -210,17 +204,28 @@ public class X509FederationClient implements FederationClient {
     private SecurityTokenAdapter getSecurityTokenFromServer() {
         LOG.info("Getting security token from the auth server");
 
-        RSAPublicKey publicKey = sessionKeySupplier.getPublicKey();
+        KeyPair keyPair = sessionKeySupplier.getKeyPair();
+        if (keyPair == null) {
+            throw new IllegalStateException("Keypair for session was not provided");
+        }
+
+        RSAPublicKey publicKey = (RSAPublicKey) keyPair.getPublic();
         if (publicKey == null) {
             throw new IllegalArgumentException("Public key is not present");
         }
 
-        X509Certificate leafCertificate = leafCertificateSupplier.getCertificate();
+        X509CertificateSupplier.CertificateAndPrivateKeyPair certificateAndKeyPair =
+                leafCertificateSupplier.getCertificateAndKeyPair();
+        if (certificateAndKeyPair == null) {
+            throw new IllegalArgumentException("Certificate and key pair are not present");
+        }
+
+        X509Certificate leafCertificate = certificateAndKeyPair.getCertificate();
         if (leafCertificate == null) {
             throw new IllegalArgumentException("Leaf certificate is not present");
         }
 
-        if (leafCertificateSupplier.getPrivateKey() == null) {
+        if (certificateAndKeyPair.getPrivateKey() == null) {
             throw new IllegalArgumentException("Leaf certificate's private key is not present");
         }
 
@@ -233,9 +238,13 @@ public class X509FederationClient implements FederationClient {
 
                 intermediateStrings = new HashSet<>();
                 for (X509CertificateSupplier supplier : intermediateCertificateSuppliers) {
-                    if (supplier.getCertificate() != null) {
+                    X509CertificateSupplier.CertificateAndPrivateKeyPair
+                            supplierCertificateAndKeyPair = supplier.getCertificateAndKeyPair();
+                    if (supplierCertificateAndKeyPair != null
+                            && supplierCertificateAndKeyPair.getCertificate() != null) {
                         intermediateStrings.add(
-                                AuthUtils.base64EncodeNoChunking(supplier.getCertificate()));
+                                AuthUtils.base64EncodeNoChunking(
+                                        supplierCertificateAndKeyPair.getCertificate()));
                     }
                 }
             }

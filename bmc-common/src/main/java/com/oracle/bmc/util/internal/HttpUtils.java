@@ -13,10 +13,8 @@ import java.util.Map;
 import java.util.UUID;
 
 import javax.annotation.Nonnull;
-import javax.ws.rs.client.WebTarget;
 
 import com.oracle.bmc.http.internal.HttpDateUtils;
-import com.oracle.bmc.http.internal.WrappedInvocationBuilder;
 import com.oracle.bmc.http.internal.WrappedWebTarget;
 
 import org.apache.commons.lang3.StringUtils;
