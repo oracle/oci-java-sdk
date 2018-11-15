@@ -13,6 +13,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.3.1 - 2018-11-15
+### Added
+- Support for VCN transit routing in the Networking service
+
+### Changed
+- Bouncy Castle jar is no longer bundled within the shaded distribution `oci-java-sdk-shaded-full` and now must be included in the CLASSPATH.
+
 ## 1.3.0 - 2018-11-01
 ### Added
 - Support for modifying the route table, DHCP options, and security lists associated with a subnet in the Networking service.

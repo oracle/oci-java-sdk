@@ -6,8 +6,6 @@ package com.oracle.bmc.http.internal;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.ser.PropertyWriter;
-import com.oracle.bmc.ClientConfiguration;
-import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.requests.BmcRequest;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -15,7 +13,6 @@ import org.mockito.ArgumentCaptor;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.Invocation;
-import javax.ws.rs.core.Response;
 import java.io.IOException;
 
 import static org.junit.Assert.assertEquals;
@@ -121,22 +118,8 @@ public class ExplicitlySetFilterTest {
     @Test
     public void deserializeNoDiscriminator() throws IOException {
         Subclass sub = Subclass.builder().baseVal(1).subVal("two").build();
+        String serialized = serializeForPost(sub);
 
-        RequestSigner signer = mock(RequestSigner.class);
-
-        Client client = mock(Client.class);
-        EntityFactory ef = mock(EntityFactory.class);
-        RestClient rc = new RestClient(client, ef);
-
-        Invocation.Builder ib = mock(Invocation.Builder.class);
-        rc.post(new WrappedInvocationBuilder(ib), sub, new BmcRequest());
-
-        ArgumentCaptor<Object> bodyCaptor = ArgumentCaptor.forClass(Object.class);
-        verify(ef).forPost(any(), bodyCaptor.capture());
-
-        Object value = bodyCaptor.getValue();
-
-        String serialized = value.toString();
         assertTrue(serialized.contains("\"type\":\"sub\""));
         String replaced = serialized.replace("sub", "unknown");
         assertTrue(replaced.contains("\"type\":\"unknown\""));
@@ -147,6 +130,29 @@ public class ExplicitlySetFilterTest {
         Baseclass parsedUnknown =
                 RestClientFactory.getObjectMapper().readValue(replaced, Baseclass.class);
         assertEquals(Baseclass.class, parsedUnknown.getClass());
+    }
+
+    @Test
+    public void serializeSnakeCasedParameter() {
+        Subclass sub = Subclass.builder().baseVal(1).subVal("two").majorVersion("1.0").build();
+        String serializedBody = serializeForPost(sub);
+
+        assertTrue(serializedBody.contains("\"major_version\":\"1.0\""));
+    }
+
+    private static String serializeForPost(Object o) {
+        Client client = mock(Client.class);
+        EntityFactory ef = mock(EntityFactory.class);
+        try (RestClient rc = new RestClient(client, ef)) {
+
+            Invocation.Builder ib = mock(Invocation.Builder.class);
+            rc.post(new WrappedInvocationBuilder(ib), o, new BmcRequest());
+
+            ArgumentCaptor<Object> bodyCaptor = ArgumentCaptor.forClass(Object.class);
+            verify(ef).forPost(any(), bodyCaptor.capture());
+
+            return bodyCaptor.getValue().toString();
+        }
     }
 
     @lombok.Value
@@ -166,6 +172,9 @@ public class ExplicitlySetFilterTest {
     static class Baseclass {
         @com.fasterxml.jackson.annotation.JsonProperty("baseVal")
         Integer baseVal;
+
+        @com.fasterxml.jackson.annotation.JsonProperty("major_version")
+        String majorVersion;
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -195,6 +204,15 @@ public class ExplicitlySetFilterTest {
                 return this;
             }
 
+            @com.fasterxml.jackson.annotation.JsonProperty("major_version")
+            private String majorVersion;
+
+            public Builder majorVersion(String majorVersion) {
+                this.majorVersion = majorVersion;
+                this.__explicitlySet__.add("majorVersion");
+                return this;
+            }
+
             @com.fasterxml.jackson.annotation.JsonProperty("subVal")
             private String subVal;
 
@@ -208,7 +226,7 @@ public class ExplicitlySetFilterTest {
             private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
             public Subclass build() {
-                Subclass __instance__ = new Subclass(baseVal, subVal);
+                Subclass __instance__ = new Subclass(baseVal, majorVersion, subVal);
                 __instance__.__explicitlySet__.addAll(__explicitlySet__);
                 return __instance__;
             }
@@ -226,8 +244,8 @@ public class ExplicitlySetFilterTest {
             return new Builder();
         }
 
-        public Subclass(Integer baseVal, String subVal) {
-            super(baseVal);
+        public Subclass(Integer baseVal, String majorVersion, String subVal) {
+            super(baseVal, majorVersion);
             this.subVal = subVal;
         }
 

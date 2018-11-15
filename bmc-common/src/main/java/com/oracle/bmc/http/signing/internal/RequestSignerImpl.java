@@ -323,15 +323,13 @@ public class RequestSignerImpl implements RequestSigner {
 
         // the one exception for the below is when doing a PUT if the body is an InputStream
         // and the configuration allows it to be skipped
-        if (isPut || isPatch) {
-            if (body instanceof InputStream) {
-                if (signingConfiguration.skipContentHeadersForStreamingPutRequests) {
-                    return missingHeaders;
-                } else {
-                    // TODO: support DuplicatableInputStream to be able to calculate length/sha-256
-                    throw new IllegalArgumentException(
-                            "Streaming body not supported for signing strategy");
-                }
+        if ((isPut || isPatch) && (body instanceof InputStream)) {
+            if (signingConfiguration.skipContentHeadersForStreamingPutRequests) {
+                return missingHeaders;
+            } else {
+                // TODO: support DuplicatableInputStream to be able to calculate length/sha-256
+                throw new IllegalArgumentException(
+                        "Streaming body not supported for signing strategy");
             }
         }
 
@@ -468,7 +466,7 @@ public class RequestSignerImpl implements RequestSigner {
         if (headerNames == null) {
             return new ArrayList<>(0);
         }
-        ArrayList<String> result = new ArrayList<>();
+        ArrayList<String> result = new ArrayList<>(headerNames.size());
         for (String headerName : headerNames) {
             result.add(headerName.toLowerCase());
         }

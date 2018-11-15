@@ -6,11 +6,9 @@ package com.oracle.bmc.http.internal;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
-import javax.ws.rs.client.AsyncInvoker;
-import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.Invocation;
-import javax.ws.rs.core.*;
-import java.util.Locale;
+import javax.ws.rs.core.MultivaluedHashMap;
+import javax.ws.rs.core.MultivaluedMap;
 
 /**
  * An {@link Invocation.Builder} that stores the headers being set, allowing access to them.

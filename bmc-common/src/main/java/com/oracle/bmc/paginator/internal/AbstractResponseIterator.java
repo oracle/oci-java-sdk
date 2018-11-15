@@ -6,9 +6,6 @@ package com.oracle.bmc.paginator.internal;
 import com.google.common.base.Function;
 import com.google.common.base.Optional;
 
-import java.util.Iterator;
-import java.util.NoSuchElementException;
-
 /**
  * Contains common functionality for classes which will iterate over the results of paginated
  * list operations in a service.

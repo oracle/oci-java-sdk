@@ -72,7 +72,9 @@ class SecurityTokenAdapter {
                         Optional<RSAPublicKey> jwkRsa = AuthUtils.toPublicKeyFromJson(jwk);
                         if (jwkRsa.isPresent()
                                 && isEqualPublicKey(
-                                        jwkRsa.get(), sessionKeySupplier.getPublicKey())) {
+                                        jwkRsa.get(),
+                                        (RSAPublicKey)
+                                                sessionKeySupplier.getKeyPair().getPublic())) {
 
                             LOG.debug(
                                     "Security token is still valid. Public key matches with the JWK.");

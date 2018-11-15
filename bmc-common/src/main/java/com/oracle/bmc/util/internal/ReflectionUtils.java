@@ -28,7 +28,7 @@ public class ReflectionUtils {
     public static Object invokeGetter(Object instance, String methodName) {
         try {
             Method method = instance.getClass().getMethod(methodName, NO_ARGS);
-            return method.invoke(instance, NO_ARGS);
+            return method.invoke(instance, (Object[]) NO_ARGS);
         } catch (Exception e) {
             return null;
         }

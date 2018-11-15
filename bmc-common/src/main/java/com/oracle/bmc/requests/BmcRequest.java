@@ -4,7 +4,6 @@
 package com.oracle.bmc.requests;
 
 import javax.ws.rs.client.Invocation;
-import javax.ws.rs.core.MultivaluedMap;
 
 import com.oracle.bmc.util.internal.Consumer;
 
@@ -18,7 +17,7 @@ public class BmcRequest {
      * configurable otherwise.  Attempting to invoke or build the builder in any
      * way will result in an exception.
      *
-     * For the {@link Invocation.Builder#headers(MultivaluedMap)} method, note that
+     * For the {@link Invocation.Builder#headers(javax.ws.rs.core.MultivaluedMap)} method, note that
      * modifying the passed in {@code headers} map after the call does not have any
      * effect on headers set.
      */

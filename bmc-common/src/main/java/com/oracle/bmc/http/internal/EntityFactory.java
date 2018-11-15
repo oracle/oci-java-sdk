@@ -11,7 +11,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Variant;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import org.glassfish.jersey.client.ClientRequest;
 
 import com.oracle.bmc.util.internal.ReflectionUtils;
 
@@ -98,7 +97,7 @@ class EntityFactory {
 
     /**
      * Need to preserve the content headers that get overridden by the Variant provided
-     * by the Entity. See {@link ClientRequest#variant(javax.ws.rs.core.Variant)}.
+     * by the Entity. See {@link org.glassfish.jersey.client.ClientRequest#variant(javax.ws.rs.core.Variant)}.
      * <p>
      * NOTE: this should ideally only be inspecting the headers (in case there were query
      * params with the same names, for example), but we don't have access to just the headers

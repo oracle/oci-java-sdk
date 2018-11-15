@@ -3,7 +3,6 @@
  */
 package com.oracle.bmc.util.internal;
 
-import com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.responses.AsyncHandler;

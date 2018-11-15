@@ -72,6 +72,15 @@ public class DrgAttachment {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+        private String routeTableId;
+
+        public Builder routeTableId(String routeTableId) {
+            this.routeTableId = routeTableId;
+            this.__explicitlySet__.add("routeTableId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -101,6 +110,7 @@ public class DrgAttachment {
                             drgId,
                             id,
                             lifecycleState,
+                            routeTableId,
                             timeCreated,
                             vcnId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -115,6 +125,7 @@ public class DrgAttachment {
                             .drgId(o.getDrgId())
                             .id(o.getId())
                             .lifecycleState(o.getLifecycleState())
+                            .routeTableId(o.getRouteTableId())
                             .timeCreated(o.getTimeCreated())
                             .vcnId(o.getVcnId());
 
@@ -208,6 +219,12 @@ public class DrgAttachment {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
+
+    /**
+     * The OCID of the route table the DRG attachment is using.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+    String routeTableId;
 
     /**
      * The date and time the DRG attachment was created, in the format defined by RFC3339.

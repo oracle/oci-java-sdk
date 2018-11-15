@@ -7,7 +7,8 @@ import com.oracle.bmc.http.signing.internal.PEMFileRSAPrivateKeySupplier;
 import com.oracle.bmc.util.StreamUtils;
 
 import javax.security.auth.Refreshable;
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;

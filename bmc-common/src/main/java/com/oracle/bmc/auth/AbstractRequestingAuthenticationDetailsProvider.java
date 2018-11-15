@@ -15,7 +15,6 @@ import java.security.KeyPairGenerator;
 import java.security.NoSuchAlgorithmException;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
-import java.util.Arrays;
 import java.util.Set;
 
 /**
@@ -125,15 +124,22 @@ public class AbstractRequestingAuthenticationDetailsProvider
 
         protected CachingSessionKeySupplier(final SessionKeySupplier delegate) {
             this.delegate = delegate;
-            this.setPrivateKeyBytes(delegate.getPrivateKey());
+            this.setPrivateKeyBytes((RSAPrivateKey) delegate.getKeyPair().getPrivate());
         }
 
         @Override
+        public KeyPair getKeyPair() {
+            return delegate.getKeyPair();
+        }
+
+        @Override
+        @Deprecated
         public synchronized RSAPublicKey getPublicKey() {
             return delegate.getPublicKey();
         }
 
         @Override
+        @Deprecated
         public synchronized RSAPrivateKey getPrivateKey() {
             return delegate.getPrivateKey();
         }
@@ -145,7 +151,7 @@ public class AbstractRequestingAuthenticationDetailsProvider
 
         // private keys can be refreshed asynchronously, always update first
         protected synchronized byte[] getPrivateKeyBytes() {
-            setPrivateKeyBytes(this.getPrivateKey());
+            setPrivateKeyBytes((RSAPrivateKey) this.getKeyPair().getPrivate());
             return this.privateKeyBytes;
         }
 
@@ -181,11 +187,18 @@ public class AbstractRequestingAuthenticationDetailsProvider
             this.keyPair = GENERATOR.generateKeyPair();
         }
 
+        @Override
+        public KeyPair getKeyPair() {
+            return keyPair;
+        }
+
         /**
          * Gets the public key
          * @return the public key, not null
+         * @deprecated use getKeyPair() instead
          */
         @Override
+        @Deprecated
         public RSAPublicKey getPublicKey() {
             return (RSAPublicKey) keyPair.getPublic();
         }
@@ -193,8 +206,10 @@ public class AbstractRequestingAuthenticationDetailsProvider
         /**
          * Gets the private key
          * @return the private key, not null
+         * @deprecated use getKeyPair() instead
          */
         @Override
+        @Deprecated
         public RSAPrivateKey getPrivateKey() {
             return (RSAPrivateKey) keyPair.getPrivate();
         }

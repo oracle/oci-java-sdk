@@ -6,7 +6,6 @@ package com.oracle.bmc.http.internal;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Locale;
 
 import javax.ws.rs.ProcessingException;
 import javax.ws.rs.core.GenericType;

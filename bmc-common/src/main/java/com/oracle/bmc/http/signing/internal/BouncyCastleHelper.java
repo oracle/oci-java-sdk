@@ -23,7 +23,7 @@ class BouncyCastleHelper {
             LOG.info("Instantiated provider: " + bouncyCastleProviderClass.getName());
         } catch (InstantiationException | IllegalAccessException ex) {
             LOG.error("Failed to instantiate provider", ex);
-            throw Throwables.propagate(ex);
+            throw new BouncyCastleHelperException(ex);
         }
     }
 
@@ -59,5 +59,18 @@ class BouncyCastleHelper {
         }
 
         throw new IllegalStateException("No matching BouncyCastle provider found.");
+    }
+
+    /**
+     * An exception in the {@link BouncyCastleHelper}.
+     */
+    public static class BouncyCastleHelperException extends RuntimeException {
+        public BouncyCastleHelperException(String message, Throwable cause) {
+            super(message, cause);
+        }
+
+        public BouncyCastleHelperException(Throwable cause) {
+            super(cause);
+        }
     }
 }

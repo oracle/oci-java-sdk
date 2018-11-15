@@ -11,7 +11,6 @@ import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 import com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider;
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 import com.oracle.bmc.ClientConfiguration;
-import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.http.signing.SigningStrategy;
@@ -70,7 +69,7 @@ public class RestClientFactory {
 
     /**
      * Creates a new client that will use the given
-     * {@link AuthenticationDetailsProvider}.
+     * {@link com.oracle.bmc.auth.AuthenticationDetailsProvider}.
      *
      * @param requestSigner The strategy used to sign requests.
      * @return A new RestClient instance.
@@ -84,7 +83,7 @@ public class RestClientFactory {
 
     /**
      * Creates a new client that will use the given
-     * {@link AuthenticationDetailsProvider} and {@link ClientConfiguration}.
+     * {@link com.oracle.bmc.auth.AuthenticationDetailsProvider} and {@link ClientConfiguration}.
      *
      * @param requestSigner The strategy used to sign requests.
      * @param configuration
@@ -104,7 +103,7 @@ public class RestClientFactory {
 
     /**
      * Creates a new client that will use the given
-     * {@link AuthenticationDetailsProvider}.
+     * {@link com.oracle.bmc.auth.AuthenticationDetailsProvider}.
      *
      * @param defaultRequestSigner
      *            The default strategy used to sign requests.
@@ -120,7 +119,7 @@ public class RestClientFactory {
 
     /**
      * Creates a new client that will use the given
-     * {@link AuthenticationDetailsProvider} and {@link ClientConfiguration}.
+     * {@link com.oracle.bmc.auth.AuthenticationDetailsProvider} and {@link ClientConfiguration}.
      *
      * @param defaultRequestSigner
      *            The default strategy used to sign requests.

@@ -6,8 +6,6 @@ package com.oracle.bmc.http.signing.internal;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.security.Provider;
-import java.security.Security;
 import java.security.interfaces.RSAPrivateKey;
 
 import javax.annotation.Nonnull;
@@ -119,7 +117,7 @@ public class PEMFileRSAPrivateKeySupplier implements KeySupplier<RSAPrivateKey> 
             }
         } catch (IOException ex) {
             LOG.debug("Failed to read RSA private key from file", ex);
-            throw Throwables.propagate(ex);
+            throw new PEMFileRSAPrivateKeySupplierException(ex);
         }
     }
 
@@ -143,5 +141,18 @@ public class PEMFileRSAPrivateKeySupplier implements KeySupplier<RSAPrivateKey> 
     @Nonnull
     public Optional<RSAPrivateKey> getKey() {
         return Optional.of(key);
+    }
+
+    /**
+     * An exception in the {@link PEMFileRSAPrivateKeySupplier}.
+     */
+    public static class PEMFileRSAPrivateKeySupplierException extends RuntimeException {
+        public PEMFileRSAPrivateKeySupplierException(String message, Throwable cause) {
+            super(message, cause);
+        }
+
+        public PEMFileRSAPrivateKeySupplierException(Throwable cause) {
+            super(cause);
+        }
     }
 }

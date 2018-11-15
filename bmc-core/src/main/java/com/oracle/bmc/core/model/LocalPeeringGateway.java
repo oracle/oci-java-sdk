@@ -109,6 +109,15 @@ public class LocalPeeringGateway {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("peerAdvertisedCidrDetails")
+        private java.util.List<String> peerAdvertisedCidrDetails;
+
+        public Builder peerAdvertisedCidrDetails(java.util.List<String> peerAdvertisedCidrDetails) {
+            this.peerAdvertisedCidrDetails = peerAdvertisedCidrDetails;
+            this.__explicitlySet__.add("peerAdvertisedCidrDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("peeringStatus")
         private PeeringStatus peeringStatus;
 
@@ -124,6 +133,15 @@ public class LocalPeeringGateway {
         public Builder peeringStatusDetails(String peeringStatusDetails) {
             this.peeringStatusDetails = peeringStatusDetails;
             this.__explicitlySet__.add("peeringStatusDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+        private String routeTableId;
+
+        public Builder routeTableId(String routeTableId) {
+            this.routeTableId = routeTableId;
+            this.__explicitlySet__.add("routeTableId");
             return this;
         }
 
@@ -159,8 +177,10 @@ public class LocalPeeringGateway {
                             isCrossTenancyPeering,
                             lifecycleState,
                             peerAdvertisedCidr,
+                            peerAdvertisedCidrDetails,
                             peeringStatus,
                             peeringStatusDetails,
+                            routeTableId,
                             timeCreated,
                             vcnId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -178,8 +198,10 @@ public class LocalPeeringGateway {
                             .isCrossTenancyPeering(o.getIsCrossTenancyPeering())
                             .lifecycleState(o.getLifecycleState())
                             .peerAdvertisedCidr(o.getPeerAdvertisedCidr())
+                            .peerAdvertisedCidrDetails(o.getPeerAdvertisedCidrDetails())
                             .peeringStatus(o.getPeeringStatus())
                             .peeringStatusDetails(o.getPeeringStatusDetails())
+                            .routeTableId(o.getRouteTableId())
                             .timeCreated(o.getTimeCreated())
                             .vcnId(o.getVcnId());
 
@@ -299,16 +321,27 @@ public class LocalPeeringGateway {
     LifecycleState lifecycleState;
 
     /**
-     * The range of IP addresses available on the VCN at the other
-     * end of the peering from this LPG. The value is `null` if the LPG is not peered.
-     * You can use this as the destination CIDR for a route rule to route a subnet's
-     * traffic to this LPG.
+     * The smallest aggregate CIDR that contains all the CIDR routes advertised by the VCN
+     * at the other end of the peering from this LPG. See `peerAdvertisedCidrDetails` for
+     * the individual CIDRs. The value is `null` if the LPG is not peered.
      * <p>
-     * Example: `192.168.0.0/16`
+     * Example: `192.168.0.0/16`, or if aggregated with `172.16.0.0/24` then `128.0.0.0/1`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerAdvertisedCidr")
     String peerAdvertisedCidr;
+
+    /**
+     * The specific ranges of IP addresses available on or via the VCN at the other
+     * end of the peering from this LPG. The value is `null` if the LPG is not peered.
+     * You can use these as destination CIDRs for route rules to route a subnet's
+     * traffic to this LPG.
+     * <p>
+     * Example: [`192.168.0.0/16`, `172.16.0.0/24`]
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("peerAdvertisedCidrDetails")
+    java.util.List<String> peerAdvertisedCidrDetails;
     /**
      * Whether the LPG is peered with another LPG. `NEW` means the LPG has not yet been
      * peered. `PENDING` means the peering is being established. `REVOKED` means the
@@ -375,6 +408,12 @@ public class LocalPeeringGateway {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peeringStatusDetails")
     String peeringStatusDetails;
+
+    /**
+     * The OCID of the route table the LPG is using.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+    String routeTableId;
 
     /**
      * The date and time the LPG was created, in the format defined by RFC3339.

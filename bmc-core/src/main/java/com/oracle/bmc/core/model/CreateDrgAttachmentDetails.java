@@ -42,6 +42,15 @@ public class CreateDrgAttachmentDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+        private String routeTableId;
+
+        public Builder routeTableId(String routeTableId) {
+            this.routeTableId = routeTableId;
+            this.__explicitlySet__.add("routeTableId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
@@ -56,7 +65,7 @@ public class CreateDrgAttachmentDetails {
 
         public CreateDrgAttachmentDetails build() {
             CreateDrgAttachmentDetails __instance__ =
-                    new CreateDrgAttachmentDetails(displayName, drgId, vcnId);
+                    new CreateDrgAttachmentDetails(displayName, drgId, routeTableId, vcnId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -64,7 +73,10 @@ public class CreateDrgAttachmentDetails {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateDrgAttachmentDetails o) {
             Builder copiedBuilder =
-                    displayName(o.getDisplayName()).drgId(o.getDrgId()).vcnId(o.getVcnId());
+                    displayName(o.getDisplayName())
+                            .drgId(o.getDrgId())
+                            .routeTableId(o.getRouteTableId())
+                            .vcnId(o.getVcnId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -89,6 +101,17 @@ public class CreateDrgAttachmentDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("drgId")
     String drgId;
+
+    /**
+     * The OCID of the route table the DRG attachment will use.
+     * <p>
+     * If you don't specify a route table here, the DRG attachment is created without an associated route
+     * table. The Networking service does NOT automatically associate the attached VCN's default route table
+     * with the DRG attachment.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+    String routeTableId;
 
     /**
      * The OCID of the VCN.

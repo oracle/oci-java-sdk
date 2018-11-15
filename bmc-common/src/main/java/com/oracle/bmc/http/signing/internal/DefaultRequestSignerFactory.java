@@ -4,7 +4,6 @@
 package com.oracle.bmc.http.signing.internal;
 
 import java.security.interfaces.RSAPrivateKey;
-import java.util.HashMap;
 import java.util.Map;
 
 import com.google.common.base.Optional;
