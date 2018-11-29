@@ -24,8 +24,6 @@ public class ResponseIterator<REQUESTBUILDER, REQUEST, RESPONSE>
         extends AbstractResponseIterator<REQUESTBUILDER, REQUEST, RESPONSE>
         implements Iterator<RESPONSE> {
 
-    private boolean anyFetchPerformed;
-
     /**
      * Constructs a new ResponseIterator.
      *

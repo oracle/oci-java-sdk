@@ -13,6 +13,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.3.2 - 2018-11-29
+### Added
+- Support for getting bucket statistics in the Object Storage service
+
+### Fixed
+- Storage service for copying volume backups across regions is now enabled
+- Objects can now be retrieved from Object Storage even if their content type is invalid
+
 ## 1.3.1 - 2018-11-15
 ### Added
 - Support for VCN transit routing in the Networking service
@@ -44,14 +52,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for generating and downloading wallets in the Database service
 - Support for creating a standalone backup from an on-premises database in the Database service
 - Support for db version and additional connection strings in the Autonomous Transaction Processing and Autonomous Data Warehouse resources of the Database service
-- Support for copying volume backups across regions in the Block Storage service (please see Known issue)
+- Support for copying volume backups across regions in the Block Storage service
 - Support for deleting compartments in the Identity service
 - Support for reboot migration for virtual machines in the Compute service
 - Support for Instance Pools and Instance Configurations in the Compute service
 - `lengthPerUploadPart` provides a simpler way to control the size of parts when using Upload Manager
-
-### Known issue
-- Block Storage service for copying volume backups across regions is not yet enabled
 
 ### Breaking change
 - The `dbDataSizeInMBs` field in the `com.oracle.bmc.database.model.Backup` and `com.oracle.bmc.database.model.BackupSummary` classes was renamed to `databaseSizeInGBs`, and its type was changed from `Integer` to `Double`

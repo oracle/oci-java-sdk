@@ -83,7 +83,7 @@ public abstract class AbstractResponseIterator<REQUESTBUILDER, REQUEST, RESPONSE
      */
     protected REQUEST getNextRequest() {
         final RequestBuilderAndToken<REQUESTBUILDER> requestBuilderAndToken =
-                new RequestBuilderAndToken(requestBuilder, getNextPageToken());
+                new RequestBuilderAndToken<>(requestBuilder, getNextPageToken());
 
         return requestBuilderFunction.apply(requestBuilderAndToken);
     }

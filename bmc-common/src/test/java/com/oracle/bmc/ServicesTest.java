@@ -10,45 +10,40 @@ public class ServicesTest {
 
     @BeforeClass
     public static void setup() {
-        final Service fooService =
-                Services.serviceBuilder().serviceName("FOO").serviceEndpointPrefix("foo").build();
+        Services.serviceBuilder().serviceName("FOO").serviceEndpointPrefix("foo").build();
     }
 
     @Test
     public void addNewService() {
-        final Service newService =
-                Services.serviceBuilder().serviceName("NEW").serviceEndpointPrefix("new").build();
+        Services.serviceBuilder().serviceName("NEW").serviceEndpointPrefix("new").build();
     }
 
     @Test
-    public void addExistingService() {
-        final Service fooService =
-                Services.serviceBuilder().serviceName("FOO").serviceEndpointPrefix("foo").build();
+    public void addExistingService_sameDefinition() {
+        Services.serviceBuilder().serviceName("FOO").serviceEndpointPrefix("foo").build();
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void addExistingService_ConflictingEndpointPrefix() {
-        final Service fooService =
-                Services.serviceBuilder().serviceName("FOO").serviceEndpointPrefix("bar").build();
+    public void addExistingService_conflictingEndpointPrefix() {
+        Services.serviceBuilder().serviceName("FOO").serviceEndpointPrefix("bar").build();
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void addExistingService_ConflictingEndpointTemplate() {
-        final Service fooService =
-                Services.serviceBuilder()
-                        .serviceName("FOO")
-                        .serviceEndpointPrefix("foo")
-                        .serviceEndpointTemplate("{region}.foo.oci.oraclecloud.com")
-                        .build();
+    public void addExistingService_conflictingEndpointTemplate() {
+        Services.serviceBuilder()
+                .serviceName("FOO")
+                .serviceEndpointPrefix("foo")
+                .serviceEndpointTemplate("{region}.foo.oci.oraclecloud.com")
+                .build();
     }
 
     @Test(expected = NullPointerException.class)
-    public void addService_NoName() {
-        final Service noNameService = Services.serviceBuilder().build();
+    public void addService_noName() {
+        Services.serviceBuilder().build();
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void addService_BlankName() {
-        final Service blankNameService = Services.serviceBuilder().serviceName("").build();
+    public void addService_blankServiceName() {
+        Services.serviceBuilder().serviceName("").build();
     }
 }

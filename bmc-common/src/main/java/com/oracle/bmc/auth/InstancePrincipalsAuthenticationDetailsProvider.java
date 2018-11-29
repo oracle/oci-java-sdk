@@ -127,6 +127,8 @@ public class InstancePrincipalsAuthenticationDetailsProvider
                 String regionStr =
                         base.path("region").request(MediaType.TEXT_PLAIN).get(String.class);
 
+                // TODO: we should start using 'canonicalRegionName' instead of 'region' and call
+                // Region.fromRegionId, and fall back to 'region' only for backwards compat.
                 region = Region.fromRegionCodeOrId(regionStr);
 
                 Optional<String> endpoint = region.getEndpoint(SERVICE);

@@ -24,7 +24,6 @@ import org.bouncycastle.openssl.jcajce.JcePEMDecryptorProviderBuilder;
 import com.google.common.base.Charsets;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
-import com.google.common.base.Throwables;
 import com.oracle.bmc.util.StreamUtils;
 
 import lombok.extern.slf4j.Slf4j;

@@ -93,8 +93,11 @@ public class RawRestCallExample {
                             clientRequestContext.getStringHeaders(),
                             clientRequestContext.getEntity());
 
+            final MultivaluedMap<String, Object> headers = clientRequestContext.getHeaders();
             for (Map.Entry<String, String> e : authHeaders.entrySet()) {
-                clientRequestContext.getHeaders().putSingle(e.getKey(), e.getValue());
+                if (!headers.keySet().contains(e.getKey())) {
+                    headers.putSingle(e.getKey(), e.getValue());
+                }
             }
         }
     }

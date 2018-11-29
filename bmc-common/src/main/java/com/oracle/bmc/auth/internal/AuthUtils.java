@@ -41,7 +41,6 @@ import lombok.extern.slf4j.Slf4j;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class AuthUtils {
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
-
     private static final char[] HEX_ARRAY = "0123456789ABCDEF".toCharArray();
 
     /**
@@ -54,8 +53,9 @@ public class AuthUtils {
     public static String getFingerPrint(X509Certificate certificate) {
         Preconditions.checkNotNull(certificate);
         try {
+            final byte[] encodedCertificate = getEncodedCertificate(certificate);
             MessageDigest md = MessageDigest.getInstance("SHA-1");
-            md.update(certificate.getEncoded());
+            md.update(encodedCertificate);
             String fingerprint = getHex(md.digest());
 
             return formatStringWithSeparator(fingerprint);
@@ -198,7 +198,26 @@ public class AuthUtils {
     public static String base64EncodeNoChunking(X509Certificate certificate)
             throws CertificateEncodingException {
         return new String(
-                Base64.encodeBase64(certificate.getEncoded(), false), StandardCharsets.UTF_8);
+                Base64.encodeBase64(getEncodedCertificate(certificate), false),
+                StandardCharsets.UTF_8);
+    }
+
+    private static byte[] getEncodedCertificate(X509Certificate certificate)
+            throws CertificateEncodingException {
+        if (certificate instanceof X509CertificateWithOriginalPem) {
+            return getEncodedCertificateFromPem(
+                    ((X509CertificateWithOriginalPem) certificate).getPemEncodedCertificate());
+        } else {
+            return certificate.getEncoded();
+        }
+    }
+
+    private static byte[] getEncodedCertificateFromPem(String pemEncodedCertificate) {
+        // strip out header and footer
+        return Base64.decodeBase64(
+                pemEncodedCertificate
+                        .replace("-----BEGIN CERTIFICATE-----", "")
+                        .replace("-----END CERTIFICATE-----", ""));
     }
 
     /**

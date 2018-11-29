@@ -119,7 +119,7 @@ public class ResponseRecordIterator<REQUESTBUILDER, REQUEST, RESPONSE, ITEMTYPE>
 
     private void getFirstPage() {
         final RequestBuilderAndToken<REQUESTBUILDER> requestBuilderAndToken =
-                new RequestBuilderAndToken(requestBuilder, null);
+                new RequestBuilderAndToken<>(requestBuilder, null);
 
         currentResponse =
                 pageRetrievalFunction.apply(requestBuilderFunction.apply(requestBuilderAndToken));

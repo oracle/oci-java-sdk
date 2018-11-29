@@ -3,7 +3,6 @@
  */
 package com.oracle.bmc.http.signing.internal;
 
-import com.google.common.base.Throwables;
 import lombok.extern.slf4j.Slf4j;
 
 import java.security.Provider;
@@ -18,11 +17,11 @@ class BouncyCastleHelper {
         isProviderInstalled =
                 Security.getProvider("BC") != null || Security.getProvider("BCFIPS") != null;
         try {
-            final Class bouncyCastleProviderClass = getBouncyCastleProviderClass();
+            final Class<?> bouncyCastleProviderClass = getBouncyCastleProviderClass();
             bouncyCastleProvider = (Provider) bouncyCastleProviderClass.newInstance();
             LOG.info("Instantiated provider: " + bouncyCastleProviderClass.getName());
         } catch (InstantiationException | IllegalAccessException ex) {
-            LOG.error("Failed to instantiate provider", ex);
+            LOG.error("Failed to instantiate any BouncyCastle provider", ex);
             throw new BouncyCastleHelperException(ex);
         }
     }
@@ -43,7 +42,7 @@ class BouncyCastleHelper {
         return bouncyCastleProvider;
     }
 
-    private static Class getBouncyCastleProviderClass() {
+    private static Class<?> getBouncyCastleProviderClass() {
         LOG.debug("Trying to get BouncyCastleProvider");
         try {
             return Class.forName("org.bouncycastle.jce.provider.BouncyCastleProvider");

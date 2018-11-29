@@ -147,6 +147,24 @@ public class Bucket {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("approximateCount")
+        private Long approximateCount;
+
+        public Builder approximateCount(Long approximateCount) {
+            this.approximateCount = approximateCount;
+            this.__explicitlySet__.add("approximateCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("approximateSize")
+        private Long approximateSize;
+
+        public Builder approximateSize(Long approximateSize) {
+            this.approximateSize = approximateSize;
+            this.__explicitlySet__.add("approximateSize");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -165,7 +183,9 @@ public class Bucket {
                             freeformTags,
                             definedTags,
                             kmsKeyId,
-                            objectLifecyclePolicyEtag);
+                            objectLifecyclePolicyEtag,
+                            approximateCount,
+                            approximateSize);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -185,7 +205,9 @@ public class Bucket {
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .kmsKeyId(o.getKmsKeyId())
-                            .objectLifecyclePolicyEtag(o.getObjectLifecyclePolicyEtag());
+                            .objectLifecyclePolicyEtag(o.getObjectLifecyclePolicyEtag())
+                            .approximateCount(o.getApproximateCount())
+                            .approximateSize(o.getApproximateSize());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -393,6 +415,22 @@ public class Bucket {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectLifecyclePolicyEtag")
     String objectLifecyclePolicyEtag;
+
+    /**
+     * The approximate number of objects in the bucket. Count statistics are reported periodically. You will see a
+     * lag between what is displayed and the actual object count.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("approximateCount")
+    Long approximateCount;
+
+    /**
+     * The approximate total size of all objects in the bucket. Size statistics are reported periodically. You will
+     * see a lag between what is displayed and the actual size of the bucket.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("approximateSize")
+    Long approximateSize;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

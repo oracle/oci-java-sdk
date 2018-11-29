@@ -3,13 +3,13 @@
  */
 package com.oracle.bmc.auth;
 
-import com.google.common.base.Charsets;
 import com.google.common.base.Supplier;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 import org.apache.commons.io.IOUtils;
 
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 
 /**
  * Supplier for private key in String format
@@ -22,6 +22,6 @@ public class StringPrivateKeySupplier implements Supplier<InputStream> {
 
     @Override
     public InputStream get() {
-        return IOUtils.toInputStream(privateKey, Charsets.UTF_8);
+        return IOUtils.toInputStream(privateKey, StandardCharsets.UTF_8);
     }
 }
