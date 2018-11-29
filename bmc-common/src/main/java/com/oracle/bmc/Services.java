@@ -8,6 +8,8 @@ import java.util.Map;
 
 import lombok.Builder;
 import lombok.Value;
+import lombok.extern.slf4j.Slf4j;
+
 import org.apache.commons.lang3.Validate;
 
 /**
@@ -16,8 +18,8 @@ import org.apache.commons.lang3.Validate;
  * This serves to ensure conflicting definitions of services
  * don't get created.
  */
+@Slf4j
 public class Services {
-
     private static final Map<String, Service> SERVICE_CACHE = new HashMap<>();
 
     /**
@@ -54,6 +56,7 @@ public class Services {
             final String serviceEndpointPrefix,
             final String serviceEndpointTemplate) {
         Validate.notBlank(serviceName);
+
         final Service newInstance =
                 new BasicService(serviceName, serviceEndpointPrefix, serviceEndpointTemplate);
         if (SERVICE_CACHE.containsKey(serviceName)) {
@@ -68,6 +71,7 @@ public class Services {
                             existing,
                             newInstance));
         }
+        LOG.info("Registering new service: {}", newInstance);
         SERVICE_CACHE.put(serviceName, newInstance);
         return newInstance;
     }

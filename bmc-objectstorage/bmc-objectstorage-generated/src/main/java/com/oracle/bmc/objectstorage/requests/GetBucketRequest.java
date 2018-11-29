@@ -41,6 +41,53 @@ public class GetBucketRequest extends com.oracle.bmc.requests.BmcRequest {
      */
     private String opcClientRequestId;
 
+    /**
+     * Bucket summary includes the 'namespace', 'name', 'compartmentId', 'createdBy', 'timeCreated',
+     * and 'etag' fields. This parameter can also include 'approximateCount' (Approximate number of objects) and 'approximateSize'
+     * (total approximate size in bytes of all objects). For example 'approximateCount,approximateSize'
+     *
+     */
+    private java.util.List<Fields> fields;
+
+    /**
+     * Bucket summary includes the 'namespace', 'name', 'compartmentId', 'createdBy', 'timeCreated',
+     * and 'etag' fields. This parameter can also include 'approximateCount' (Approximate number of objects) and 'approximateSize'
+     * (total approximate size in bytes of all objects). For example 'approximateCount,approximateSize'
+     *
+     **/
+    public enum Fields {
+        ApproximateCount("approximateCount"),
+        ApproximateSize("approximateSize"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Fields> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Fields v : Fields.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Fields(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Fields create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new RuntimeException("Invalid Fields: " + key);
+        }
+    };
+
     public static class Builder {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
@@ -67,6 +114,7 @@ public class GetBucketRequest extends com.oracle.bmc.requests.BmcRequest {
             ifMatch(o.getIfMatch());
             ifNoneMatch(o.getIfNoneMatch());
             opcClientRequestId(o.getOpcClientRequestId());
+            fields(o.getFields());
             invocationCallback(o.getInvocationCallback());
             return this;
         }

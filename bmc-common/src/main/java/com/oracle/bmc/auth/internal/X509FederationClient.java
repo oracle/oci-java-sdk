@@ -183,20 +183,6 @@ public class X509FederationClient implements FederationClient {
         }
     }
 
-    private static List<String> removeHostHeader(List<String> headers) {
-        List<String> copy = new ArrayList<>();
-        for (String header : headers) {
-            if (!header.equals(Constants.HOST)) {
-                copy.add(header);
-            }
-        }
-        return copy;
-    }
-
-    private static String keyIdForX509Request(String tenantId, X509Certificate certificate) {
-        return String.format("%s/fed-x509/%s", tenantId, AuthUtils.getFingerPrint(certificate));
-    }
-
     /**
      * Gets a security token from the federation server
      * @return the security token, which is basically a JWT token string

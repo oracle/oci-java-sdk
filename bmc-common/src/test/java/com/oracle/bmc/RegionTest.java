@@ -9,17 +9,62 @@ import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertNotNull;
 import static junit.framework.TestCase.assertTrue;
 import static junit.framework.TestCase.fail;
+import static org.junit.Assert.assertFalse;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public class RegionTest {
+
+    private static final Service TEST_SERVICE =
+            Services.serviceBuilder()
+                    .serviceEndpointPrefix("foobar")
+                    .serviceName("RegionTest")
+                    .build();
+
     @Test
     public void validRegion() {
-        assertEquals(Region.US_PHOENIX_1, Region.fromRegionCodeOrId("phx"));
+        for (Region region : Region.values()) {
+            assertEquals(region, Region.fromRegionId(region.getRegionId()));
+            assertEquals(region, Region.fromRegionCode(region.getRegionCode()));
+            assertEquals(region, Region.fromRegionCodeOrId(region.getRegionId()));
+            assertEquals(region, Region.fromRegionCodeOrId(region.getRegionCode()));
+        }
+    }
 
-        assertEquals(Region.US_ASHBURN_1, Region.fromRegionCodeOrId("iad"));
-        assertEquals(Region.EU_FRANKFURT_1, Region.fromRegionCodeOrId("fra"));
-        assertEquals(Region.EU_FRANKFURT_1, Region.fromRegionCodeOrId("eu-frankfurt-1"));
-        assertEquals(Region.UK_LONDON_1, Region.fromRegionCodeOrId("lhr"));
-        assertEquals(Region.UK_LONDON_1, Region.fromRegionCodeOrId("uk-london-1"));
+    @Test
+    public void regionalEndpoint_withRegionEnum_andRegionString_oc1() {
+        String expectedEndpoint = "https://foobar.us-phoenix-1.oraclecloud.com";
+        Region oc1Region = Region.US_PHOENIX_1;
+        assertEquals(expectedEndpoint, Region.formatDefaultRegionEndpoint(TEST_SERVICE, oc1Region));
+        assertEquals(
+                expectedEndpoint,
+                Region.formatDefaultRegionEndpoint(TEST_SERVICE, oc1Region.getRegionId()));
+    }
+
+    @Test
+    public void regionalEndpoint_withUnknownRegionString_defaultsToOc1() {
+        assertEquals(
+                "https://foobar.us-foobar-1.oraclecloud.com",
+                Region.formatDefaultRegionEndpoint(TEST_SERVICE, "us-foobar-1"));
+    }
+
+    @Test
+    public void noDuplicateRegionId() {
+        Set<String> regionIds = new HashSet<>();
+        for (Region region : Region.values()) {
+            assertFalse(regionIds.contains(region.getRegionId()));
+            regionIds.add(region.getRegionId());
+        }
+    }
+
+    @Test
+    public void noDuplicateRegionCode() {
+        Set<String> regionCodes = new HashSet<>();
+        for (Region region : Region.values()) {
+            assertFalse(regionCodes.contains(region.getRegionCode()));
+            regionCodes.add(region.getRegionCode());
+        }
     }
 
     @Test

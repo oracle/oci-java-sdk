@@ -118,18 +118,30 @@ public class ExplicitlySetFilterTest {
     @Test
     public void deserializeNoDiscriminator() throws IOException {
         Subclass sub = Subclass.builder().baseVal(1).subVal("two").build();
-        String serialized = serializeForPost(sub);
 
-        assertTrue(serialized.contains("\"type\":\"sub\""));
-        String replaced = serialized.replace("sub", "unknown");
-        assertTrue(replaced.contains("\"type\":\"unknown\""));
+        Client client = mock(Client.class);
+        EntityFactory ef = mock(EntityFactory.class);
+        try (RestClient rc = new RestClient(client, ef)) {
+            Invocation.Builder ib = mock(Invocation.Builder.class);
+            rc.post(new WrappedInvocationBuilder(ib), sub, new BmcRequest());
 
-        Baseclass parsedSub =
-                RestClientFactory.getObjectMapper().readValue(serialized, Baseclass.class);
-        assertEquals(Subclass.class, parsedSub.getClass());
-        Baseclass parsedUnknown =
-                RestClientFactory.getObjectMapper().readValue(replaced, Baseclass.class);
-        assertEquals(Baseclass.class, parsedUnknown.getClass());
+            ArgumentCaptor<Object> bodyCaptor = ArgumentCaptor.forClass(Object.class);
+            verify(ef).forPost(any(), bodyCaptor.capture());
+
+            Object value = bodyCaptor.getValue();
+
+            String serialized = value.toString();
+            assertTrue(serialized.contains("\"type\":\"sub\""));
+            String replaced = serialized.replace("sub", "unknown");
+            assertTrue(replaced.contains("\"type\":\"unknown\""));
+
+            Baseclass parsedSub =
+                    RestClientFactory.getObjectMapper().readValue(serialized, Baseclass.class);
+            assertEquals(Subclass.class, parsedSub.getClass());
+            Baseclass parsedUnknown =
+                    RestClientFactory.getObjectMapper().readValue(replaced, Baseclass.class);
+            assertEquals(Baseclass.class, parsedUnknown.getClass());
+        }
     }
 
     @Test

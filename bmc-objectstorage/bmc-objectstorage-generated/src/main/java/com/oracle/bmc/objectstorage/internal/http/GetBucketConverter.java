@@ -38,6 +38,15 @@ public class GetBucketConverter {
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
                                         request.getBucketName()));
 
+        if (request.getFields() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "fields",
+                            request.getFields(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.CommaSeparated);
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

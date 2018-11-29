@@ -3,25 +3,45 @@
  */
 package com.oracle.bmc.auth;
 
-import com.oracle.bmc.http.signing.internal.PEMFileRSAPrivateKeySupplier;
-import com.oracle.bmc.util.StreamUtils;
-
-import javax.security.auth.Refreshable;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.security.interfaces.RSAPrivateKey;
 import java.util.concurrent.atomic.AtomicReference;
 
+import javax.security.auth.Refreshable;
+
+import org.apache.commons.io.IOUtils;
+
+import com.oracle.bmc.auth.internal.X509CertificateWithOriginalPem;
+import com.oracle.bmc.http.signing.internal.PEMFileRSAPrivateKeySupplier;
+
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * {@link X509CertificateSupplier} implementation that reads both certificate and private key
  * off of URL.  This class also provides a way to manually refresh the certificate and
  * private key at any point.
  */
+@Slf4j
 public class URLBasedX509CertificateSupplier implements X509CertificateSupplier, Refreshable {
+    /**
+     * Provide a way for the application environment to disable the X509 workaround by setting
+     * a system property to "true". On the command line, this can be done using
+     * `-Doci.sdk.experimental.suppressX509Workaround=true`
+     */
+    private static final boolean EXPERIMENTAL_SUPPRESS_X509_WORKAROUND =
+            Boolean.getBoolean("oci.sdk.experimental.suppressX509Workaround");
+
+    static {
+        LOG.info("suppressX509Workaround flag set to {}", EXPERIMENTAL_SUPPRESS_X509_WORKAROUND);
+    }
+
     /**
      * The certificate and the private key of certificate.
      */
@@ -93,10 +113,18 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
      */
     @Override
     public void refresh() {
-        X509Certificate certificate = readCertificate(certificateUrl);
+        String rawCertificate = readRawCertificate(certificateUrl);
+        X509Certificate certificate = readCertificate(rawCertificate);
         RSAPrivateKey privateKey = readPrivateKey(privateKeyUrl, privateKeyPassphraseCharacters);
-
-        this.certificateAndKeyPair.set(new CertificateAndPrivateKeyPair(certificate, privateKey));
+        if (EXPERIMENTAL_SUPPRESS_X509_WORKAROUND) {
+            this.certificateAndKeyPair.set(
+                    new CertificateAndPrivateKeyPair(certificate, privateKey));
+        } else {
+            X509CertificateWithOriginalPem wrappedCertificate =
+                    new X509CertificateWithOriginalPem(certificate, rawCertificate);
+            this.certificateAndKeyPair.set(
+                    new CertificateAndPrivateKeyPair(wrappedCertificate, privateKey));
+        }
     }
 
     /**
@@ -113,18 +141,21 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
      * @param certificateUrl the certificate url
      * @return the certificate
      */
-    private static X509Certificate readCertificate(URL certificateUrl) {
-        InputStream is = null;
+    private static X509Certificate readCertificate(String certificate) {
         try {
-            is = certificateUrl.openStream();
             CertificateFactory factory = CertificateFactory.getInstance("X.509");
-            return (X509Certificate) factory.generateCertificate(is);
+            return (X509Certificate)
+                    factory.generateCertificate(new ByteArrayInputStream(certificate.getBytes()));
         } catch (CertificateException e) {
             throw new IllegalArgumentException("Invalid certificate.", e);
+        }
+    }
+
+    private static String readRawCertificate(URL certificateUrl) {
+        try (InputStream is = certificateUrl.openStream()) {
+            return IOUtils.toString(is, StandardCharsets.UTF_8);
         } catch (IOException e) {
             throw new IllegalArgumentException("Open stream of certificate failed.", e);
-        } finally {
-            StreamUtils.closeQuietly(is);
         }
     }
 

@@ -17,6 +17,7 @@ import java.util.Map;
 import java.util.UUID;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
@@ -97,6 +98,7 @@ public class HttpUtilsTest {
 
         WrappedWebTarget wrapped = new WrappedWebTarget(target);
         WrappedWebTarget result = HttpUtils.encodeMapQueryParam(wrapped, prefix, definedTagsExists);
+        assertNotNull(result);
 
         String prefixEncoded = "definedTags%20Exists.";
         String keyName2Encoded = "tagMust%20NotExist";
@@ -127,6 +129,7 @@ public class HttpUtilsTest {
 
         WrappedWebTarget wrapped = new WrappedWebTarget(target);
         WrappedWebTarget result = HttpUtils.encodeMapQueryParam(wrapped, prefix, definedTags);
+        assertNotNull(result);
 
         String prefixEncoded = "defined%20Tags.";
         String keyName2Encoded = "tag%202";
@@ -164,6 +167,7 @@ public class HttpUtilsTest {
 
         WrappedWebTarget wrapped = new WrappedWebTarget(target);
         WrappedWebTarget result = HttpUtils.encodeMapQueryParam(wrapped, prefix, definedTagsExists);
+        assertNotNull(result);
 
         String prefixEncoded = "";
         String keyName2Encoded = "tagMust%20NotExist";
@@ -226,6 +230,7 @@ public class HttpUtilsTest {
             WrappedWebTarget wrapped = new WrappedWebTarget(target);
             WrappedWebTarget result =
                     HttpUtils.encodeCollectionFormatQueryParam(wrapped, "unitTest", values, cft);
+            assertNotNull(result);
 
             verify(target).queryParam("unitTest", "single");
         }
@@ -243,6 +248,7 @@ public class HttpUtilsTest {
             WrappedWebTarget wrapped = new WrappedWebTarget(target);
             WrappedWebTarget result =
                     HttpUtils.encodeCollectionFormatQueryParam(wrapped, "unitTest", values, cft);
+            assertNotNull(result);
 
             if (cft == CollectionFormatType.CommaSeparated) {
                 verify(target).queryParam("unitTest", "number1,number2");
@@ -272,6 +278,7 @@ public class HttpUtilsTest {
             WrappedWebTarget wrapped = new WrappedWebTarget(target);
             WrappedWebTarget result =
                     HttpUtils.encodeCollectionFormatQueryParam(wrapped, "unitTest", values, cft);
+            assertNotNull(result);
 
             if (cft == CollectionFormatType.CommaSeparated) {
                 verify(target).queryParam("unitTest", "PROVISIONING,STOPPING");
@@ -301,6 +308,7 @@ public class HttpUtilsTest {
             WrappedWebTarget wrapped = new WrappedWebTarget(target);
             WrappedWebTarget result =
                     HttpUtils.encodeCollectionFormatQueryParam(wrapped, "unitTest", values, cft);
+            assertNotNull(result);
 
             if (cft == CollectionFormatType.CommaSeparated) {
                 verify(target).queryParam("unitTest", "RUNNING");

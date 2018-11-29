@@ -3,12 +3,15 @@
  */
 package com.oracle.bmc.http.internal;
 
+import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.ws.rs.ProcessingException;
 import javax.ws.rs.core.GenericType;
+import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
@@ -175,23 +178,35 @@ public class ResponseHelper {
         // handle the response
         synchronized (response) {
             if (response.getStatusInfo().getFamily().equals(Status.Family.SUCCESSFUL)) {
-                if (entityType != InputStream.class) {
-                    // buffer entity so it can be reread during client parsing (ex, async requests reading
-                    // through both an AsyncHandler and through the returned Future)
-                    // NOTE: do not buffer InputStreams (namely object storage) as those might be very large
-                    response.bufferEntity();
+                if (entityType == InputStream.class) {
+                    // If we want an InputStream, then we don't care about the content type.
+                    // This will also allow us to process invalid content types like "text" (instead of "text/plain").
+                    List<Object> contentType =
+                            response.getHeaders().remove(HttpHeaders.CONTENT_TYPE);
+                    LOG.debug(
+                            "Entity type is InputStream, ignoring contentType {} and processing as stream",
+                            contentType);
+                    try {
+                        // NOTE: do not buffer InputStreams (namely object storage) as those might be very large
+                        return response.readEntity(entityType);
+                    } finally {
+                        response.getHeaders().addAll(HttpHeaders.CONTENT_TYPE, contentType);
+                    }
                 }
 
+                // buffer entity so it can be reread during client parsing (ex, async requests reading
+                // through both an AsyncHandler and through the returned Future)
+                response.bufferEntity();
+
                 T entity = response.readEntity(entityType);
-                if (MediaType.APPLICATION_JSON_TYPE.equals(response.getMediaType())) {
+                if (MediaType.APPLICATION_JSON_TYPE.equals(response.getMediaType())
+                        && entityType == String.class) {
                     // HACK alert, if the entry is a string, and it's mime was
                     // application/json, jackson's provider won't deserialize it since
-                    // the default provider takes presidence. Need to explicitly remove
+                    // the default provider takes precedence. Need to explicitly remove
                     // outer quotes.
                     // TODO: figure out how to do this through providers
-                    if (entityType == String.class) {
-                        return (T) ((String) entity).replaceAll("\"", "");
-                    }
+                    return (T) ((String) entity).replaceAll("\"", "");
                 }
                 return entity;
             }

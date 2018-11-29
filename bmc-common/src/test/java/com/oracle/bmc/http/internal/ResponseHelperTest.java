@@ -3,16 +3,27 @@
  */
 package com.oracle.bmc.http.internal;
 
+import com.google.common.collect.ImmutableList;
 import com.oracle.bmc.model.BmcException;
 import org.junit.Test;
 
+import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
+
+import java.io.InputStream;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
+import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
 
 public class ResponseHelperTest {
@@ -66,6 +77,35 @@ public class ResponseHelperTest {
             validateExceptionFields(
                     exception, OPC_REQUEST_ID, BAD_GATEWAY_STATUS, dummyServiceCode, dummyMessage);
         }
+    }
+
+    @Test
+    public void testReadEntity_streamWithConentType() {
+        Response response = mock(Response.class);
+        Response.StatusType statusInfo = mock(Response.StatusType.class);
+        MultivaluedMap<String, Object> headers = mock(MultivaluedMap.class);
+        List<Object> contentType = ImmutableList.<Object>of("text");
+        InputStream mockStream = mock(InputStream.class);
+
+        Class<?> entityType = InputStream.class;
+
+        when(response.getStatusInfo()).thenReturn(statusInfo);
+        when(statusInfo.getFamily()).thenReturn(Response.Status.Family.SUCCESSFUL);
+        when(response.getHeaders()).thenReturn(headers);
+        when(headers.remove(HttpHeaders.CONTENT_TYPE)).thenReturn(contentType);
+        when(response.readEntity(entityType)).thenReturn(mockStream);
+
+        InputStream inputStream = (InputStream) ResponseHelper.readEntity(response, entityType);
+
+        assertTrue(inputStream == mockStream);
+        verify(response).getStatusInfo();
+        verify(statusInfo).getFamily();
+        verify(response, atLeastOnce()).getHeaders();
+        verify(headers).remove(HttpHeaders.CONTENT_TYPE);
+        verify(response).readEntity(entityType);
+        verify(headers).addAll(HttpHeaders.CONTENT_TYPE, contentType);
+        verify(response, never()).bufferEntity();
+        verifyNoMoreInteractions(response, statusInfo, headers, mockStream);
     }
 
     private static Response buildMockResponse(
