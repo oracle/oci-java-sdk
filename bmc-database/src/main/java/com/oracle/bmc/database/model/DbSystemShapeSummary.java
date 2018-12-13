@@ -29,51 +29,6 @@ public class DbSystemShapeSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("availableCoreCount")
-        private Integer availableCoreCount;
-
-        public Builder availableCoreCount(Integer availableCoreCount) {
-            this.availableCoreCount = availableCoreCount;
-            this.__explicitlySet__.add("availableCoreCount");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("coreCountIncrement")
-        private Integer coreCountIncrement;
-
-        public Builder coreCountIncrement(Integer coreCountIncrement) {
-            this.coreCountIncrement = coreCountIncrement;
-            this.__explicitlySet__.add("coreCountIncrement");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("maximumNodeCount")
-        private Integer maximumNodeCount;
-
-        public Builder maximumNodeCount(Integer maximumNodeCount) {
-            this.maximumNodeCount = maximumNodeCount;
-            this.__explicitlySet__.add("maximumNodeCount");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("minimumCoreCount")
-        private Integer minimumCoreCount;
-
-        public Builder minimumCoreCount(Integer minimumCoreCount) {
-            this.minimumCoreCount = minimumCoreCount;
-            this.__explicitlySet__.add("minimumCoreCount");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("minimumNodeCount")
-        private Integer minimumNodeCount;
-
-        public Builder minimumNodeCount(Integer minimumNodeCount) {
-            this.minimumNodeCount = minimumNodeCount;
-            this.__explicitlySet__.add("minimumNodeCount");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
@@ -92,19 +47,64 @@ public class DbSystemShapeSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("availableCoreCount")
+        private Integer availableCoreCount;
+
+        public Builder availableCoreCount(Integer availableCoreCount) {
+            this.availableCoreCount = availableCoreCount;
+            this.__explicitlySet__.add("availableCoreCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("minimumCoreCount")
+        private Integer minimumCoreCount;
+
+        public Builder minimumCoreCount(Integer minimumCoreCount) {
+            this.minimumCoreCount = minimumCoreCount;
+            this.__explicitlySet__.add("minimumCoreCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("coreCountIncrement")
+        private Integer coreCountIncrement;
+
+        public Builder coreCountIncrement(Integer coreCountIncrement) {
+            this.coreCountIncrement = coreCountIncrement;
+            this.__explicitlySet__.add("coreCountIncrement");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("minimumNodeCount")
+        private Integer minimumNodeCount;
+
+        public Builder minimumNodeCount(Integer minimumNodeCount) {
+            this.minimumNodeCount = minimumNodeCount;
+            this.__explicitlySet__.add("minimumNodeCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("maximumNodeCount")
+        private Integer maximumNodeCount;
+
+        public Builder maximumNodeCount(Integer maximumNodeCount) {
+            this.maximumNodeCount = maximumNodeCount;
+            this.__explicitlySet__.add("maximumNodeCount");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DbSystemShapeSummary build() {
             DbSystemShapeSummary __instance__ =
                     new DbSystemShapeSummary(
-                            availableCoreCount,
-                            coreCountIncrement,
-                            maximumNodeCount,
-                            minimumCoreCount,
-                            minimumNodeCount,
                             name,
-                            shape);
+                            shape,
+                            availableCoreCount,
+                            minimumCoreCount,
+                            coreCountIncrement,
+                            minimumNodeCount,
+                            maximumNodeCount);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -112,13 +112,13 @@ public class DbSystemShapeSummary {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DbSystemShapeSummary o) {
             Builder copiedBuilder =
-                    availableCoreCount(o.getAvailableCoreCount())
-                            .coreCountIncrement(o.getCoreCountIncrement())
-                            .maximumNodeCount(o.getMaximumNodeCount())
+                    name(o.getName())
+                            .shape(o.getShape())
+                            .availableCoreCount(o.getAvailableCoreCount())
                             .minimumCoreCount(o.getMinimumCoreCount())
+                            .coreCountIncrement(o.getCoreCountIncrement())
                             .minimumNodeCount(o.getMinimumNodeCount())
-                            .name(o.getName())
-                            .shape(o.getShape());
+                            .maximumNodeCount(o.getMaximumNodeCount());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -133,36 +133,6 @@ public class DbSystemShapeSummary {
     }
 
     /**
-     * The maximum number of CPU cores that can be enabled on the DB system for this shape.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("availableCoreCount")
-    Integer availableCoreCount;
-
-    /**
-     * The discrete number by which the CPU core count for this shape can be increased or decreased.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("coreCountIncrement")
-    Integer coreCountIncrement;
-
-    /**
-     * The maximum number of database nodes available for this shape.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("maximumNodeCount")
-    Integer maximumNodeCount;
-
-    /**
-     * The minimum number of CPU cores that can be enabled on the DB system for this shape.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("minimumCoreCount")
-    Integer minimumCoreCount;
-
-    /**
-     * The minimum number of database nodes available for this shape.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("minimumNodeCount")
-    Integer minimumNodeCount;
-
-    /**
      * The name of the shape used for the DB system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
@@ -173,6 +143,36 @@ public class DbSystemShapeSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     String shape;
+
+    /**
+     * The maximum number of CPU cores that can be enabled on the DB system for this shape.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("availableCoreCount")
+    Integer availableCoreCount;
+
+    /**
+     * The minimum number of CPU cores that can be enabled on the DB system for this shape.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("minimumCoreCount")
+    Integer minimumCoreCount;
+
+    /**
+     * The discrete number by which the CPU core count for this shape can be increased or decreased.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("coreCountIncrement")
+    Integer coreCountIncrement;
+
+    /**
+     * The minimum number of database nodes available for this shape.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("minimumNodeCount")
+    Integer minimumNodeCount;
+
+    /**
+     * The maximum number of database nodes available for this shape.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("maximumNodeCount")
+    Integer maximumNodeCount;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

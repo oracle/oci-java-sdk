@@ -27,15 +27,6 @@ public class CreateDbHomeFromBackupDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("database")
-        private CreateDatabaseFromBackupDetails database;
-
-        public Builder database(CreateDatabaseFromBackupDetails database) {
-            this.database = database;
-            this.__explicitlySet__.add("database");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -45,19 +36,28 @@ public class CreateDbHomeFromBackupDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("database")
+        private CreateDatabaseFromBackupDetails database;
+
+        public Builder database(CreateDatabaseFromBackupDetails database) {
+            this.database = database;
+            this.__explicitlySet__.add("database");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateDbHomeFromBackupDetails build() {
             CreateDbHomeFromBackupDetails __instance__ =
-                    new CreateDbHomeFromBackupDetails(database, displayName);
+                    new CreateDbHomeFromBackupDetails(displayName, database);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateDbHomeFromBackupDetails o) {
-            Builder copiedBuilder = database(o.getDatabase()).displayName(o.getDisplayName());
+            Builder copiedBuilder = displayName(o.getDisplayName()).database(o.getDatabase());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -71,14 +71,14 @@ public class CreateDbHomeFromBackupDetails {
         return new Builder();
     }
 
-    @com.fasterxml.jackson.annotation.JsonProperty("database")
-    CreateDatabaseFromBackupDetails database;
-
     /**
      * The user-provided name of the database home.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("database")
+    CreateDatabaseFromBackupDetails database;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

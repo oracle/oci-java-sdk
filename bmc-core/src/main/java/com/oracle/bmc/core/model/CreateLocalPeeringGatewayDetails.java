@@ -158,6 +158,9 @@ public class CreateLocalPeeringGatewayDetails {
      * If you don't specify a route table here, the LPG is created without an associated route
      * table. The Networking service does NOT automatically associate the attached VCN's default route table
      * with the LPG.
+     * <p>
+     * For information about why you would associate a route table with an LPG, see
+     * [Advanced Scenario: Transit Routing](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/transitrouting.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")

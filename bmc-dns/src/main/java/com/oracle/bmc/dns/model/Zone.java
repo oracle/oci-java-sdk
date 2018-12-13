@@ -5,6 +5,9 @@ package com.oracle.bmc.dns.model;
 
 /**
  * A DNS zone.
+ * <p>
+ *Warning:* Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -46,6 +49,25 @@ public class Zone {
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
             return this;
         }
 
@@ -112,6 +134,15 @@ public class Zone {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nameservers")
+        private java.util.List<Nameserver> nameservers;
+
+        public Builder nameservers(java.util.List<Nameserver> nameservers) {
+            this.nameservers = nameservers;
+            this.__explicitlySet__.add("nameservers");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -121,13 +152,16 @@ public class Zone {
                             name,
                             zoneType,
                             compartmentId,
+                            freeformTags,
+                            definedTags,
                             externalMasters,
                             self,
                             id,
                             timeCreated,
                             version,
                             serial,
-                            lifecycleState);
+                            lifecycleState,
+                            nameservers);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -138,13 +172,16 @@ public class Zone {
                     name(o.getName())
                             .zoneType(o.getZoneType())
                             .compartmentId(o.getCompartmentId())
+                            .freeformTags(o.getFreeformTags())
+                            .definedTags(o.getDefinedTags())
                             .externalMasters(o.getExternalMasters())
                             .self(o.getSelf())
                             .id(o.getId())
                             .timeCreated(o.getTimeCreated())
                             .version(o.getVersion())
                             .serial(o.getSerial())
-                            .lifecycleState(o.getLifecycleState());
+                            .lifecycleState(o.getLifecycleState())
+                            .nameservers(o.getNameservers());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -224,7 +261,26 @@ public class Zone {
     String compartmentId;
 
     /**
-     * External master servers for the zone.
+     * Simple key-value pair that is applied without any predefined name, type, or scope.
+     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * Example: `{\"bar-key\": \"value\"}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    java.util.Map<String, String> freeformTags;
+
+    /**
+     * Usage of predefined tag keys. These predefined keys are scoped to a namespace.
+     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * External master servers for the zone. `externalMasters` becomes a
+     * required parameter when the `zoneType` value is `SECONDARY`.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalMasters")
     java.util.List<ExternalMaster> externalMasters;
@@ -242,7 +298,7 @@ public class Zone {
     String id;
 
     /**
-     * The date and time the image was created in \"YYYY-MM-ddThh:mmZ\" format
+     * The date and time the resource was created in \"YYYY-MM-ddThh:mmZ\" format
      * with a Z offset, as defined by RFC 3339.
      * <p>
      **Example:** `2016-07-22T17:23:59:60Z`
@@ -320,6 +376,12 @@ public class Zone {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
+
+    /**
+     * The authoritative nameservers for the zone.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nameservers")
+    java.util.List<Nameserver> nameservers;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

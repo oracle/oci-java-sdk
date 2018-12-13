@@ -3,7 +3,6 @@
  */
 package com.oracle.bmc.http.internal;
 
-import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
@@ -18,6 +17,8 @@ import javax.ws.rs.core.Response.Status;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
+import com.google.common.base.Optional;
+import com.oracle.bmc.io.internal.ContentLengthVerifyingInputStream;
 import com.oracle.bmc.model.BmcException;
 
 import lombok.Builder;
@@ -188,7 +189,25 @@ public class ResponseHelper {
                             contentType);
                     try {
                         // NOTE: do not buffer InputStreams (namely object storage) as those might be very large
-                        return response.readEntity(entityType);
+                        final InputStream rawInputStream = response.readEntity(InputStream.class);
+                        InputStream inputStream = rawInputStream;
+
+                        Optional<List<String>> contentLengthHeader =
+                                HeaderUtils.get(
+                                        response.getStringHeaders(), HttpHeaders.CONTENT_LENGTH);
+                        // If the Content-Length header is present, verify that the length of the input stream matches it
+                        if (contentLengthHeader.isPresent()) {
+                            long contentLength =
+                                    HeaderUtils.toValue(
+                                            HttpHeaders.CONTENT_LENGTH,
+                                            contentLengthHeader.get().get(0),
+                                            Long.class);
+
+                            inputStream =
+                                    new ContentLengthVerifyingInputStream(
+                                            rawInputStream, contentLength);
+                        }
+                        return (T) inputStream;
                     } finally {
                         response.getHeaders().addAll(HttpHeaders.CONTENT_TYPE, contentType);
                     }

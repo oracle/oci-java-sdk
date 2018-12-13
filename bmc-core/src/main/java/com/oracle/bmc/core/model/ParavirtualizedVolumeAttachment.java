@@ -111,6 +111,15 @@ public class ParavirtualizedVolumeAttachment extends VolumeAttachment {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
+        private Boolean isPvEncryptionInTransitEnabled;
+
+        public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
+            this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+            this.__explicitlySet__.add("isPvEncryptionInTransitEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -125,7 +134,8 @@ public class ParavirtualizedVolumeAttachment extends VolumeAttachment {
                             isReadOnly,
                             lifecycleState,
                             timeCreated,
-                            volumeId);
+                            volumeId,
+                            isPvEncryptionInTransitEnabled);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -141,7 +151,8 @@ public class ParavirtualizedVolumeAttachment extends VolumeAttachment {
                             .isReadOnly(o.getIsReadOnly())
                             .lifecycleState(o.getLifecycleState())
                             .timeCreated(o.getTimeCreated())
-                            .volumeId(o.getVolumeId());
+                            .volumeId(o.getVolumeId())
+                            .isPvEncryptionInTransitEnabled(o.getIsPvEncryptionInTransitEnabled());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -165,7 +176,8 @@ public class ParavirtualizedVolumeAttachment extends VolumeAttachment {
             Boolean isReadOnly,
             LifecycleState lifecycleState,
             java.util.Date timeCreated,
-            String volumeId) {
+            String volumeId,
+            Boolean isPvEncryptionInTransitEnabled) {
         super(
                 availabilityDomain,
                 compartmentId,
@@ -175,7 +187,8 @@ public class ParavirtualizedVolumeAttachment extends VolumeAttachment {
                 isReadOnly,
                 lifecycleState,
                 timeCreated,
-                volumeId);
+                volumeId,
+                isPvEncryptionInTransitEnabled);
     }
 
     @com.fasterxml.jackson.annotation.JsonIgnore

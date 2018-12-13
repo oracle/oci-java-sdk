@@ -85,16 +85,16 @@ public class VolumeAttachmentExample {
     private static final String SUBNET_DISPLAY_NAME = "java_sdk_vol_example_subnet";
     private static final String CIDR_BLOCK = "10.0.0.0/16";
 
-    private static final String CONFIG_LOCATION = "~/.oci/config";
-    private static final String CONFIG_PROFILE = "DEFAULT";
+    protected static final String CONFIG_LOCATION = "~/.oci/config";
+    protected static final String CONFIG_PROFILE = "DEFAULT";
 
     private static final String VOL_ONE_DISPLAY_NAME = "VolumeAttachExample1";
     private static final String VOL_TWO_DISPLAY_NAME = "VolumeAttachExample2";
 
-    private static final String INSTANCE_SHAPE = "VM.Standard1.1";
-    private static final String INSTANCE_OS = "Oracle Linux";
-    private static final String INSTANCE_OS_VERSION = "7.5";
-    private static final String INSTANCE_DISPLAY_NAME = "VolAttachExampleInstance";
+    protected static final String INSTANCE_SHAPE = "VM.Standard1.1";
+    protected static final String INSTANCE_OS = "Oracle Linux";
+    protected static final String INSTANCE_OS_VERSION = "7.5";
+    protected static final String INSTANCE_DISPLAY_NAME = "VolAttachExampleInstance";
 
     /**
      * The entry point for the example.
@@ -221,7 +221,7 @@ public class VolumeAttachmentExample {
      *
      * @throws Exception if there is an error waiting on the volume to become available
      */
-    private static Volume createVolume(
+    protected static Volume createVolume(
             final BlockstorageClient blockStorageClient,
             final String compartmentId,
             final AvailabilityDomain availabilityDomain,
@@ -259,7 +259,7 @@ public class VolumeAttachmentExample {
         return getResponse.getVolume();
     }
 
-    private static CreateVolumeDetails getCreateVolumeDetails(
+    protected static CreateVolumeDetails getCreateVolumeDetails(
             final String compartmentId,
             final AvailabilityDomain availabilityDomain,
             final String displayName,
@@ -288,7 +288,7 @@ public class VolumeAttachmentExample {
      *
      * @throws Exception if there was an error waiting for the volume to be deleted
      */
-    private static void deleteVolume(
+    protected static void deleteVolume(
             final BlockstorageClient blockStorageClient, final Volume volume) throws Exception {
 
         blockStorageClient.deleteVolume(
@@ -314,7 +314,7 @@ public class VolumeAttachmentExample {
      *
      * @throws Exception if there was an error waiting for the volume attachment
      */
-    private static VolumeAttachment attachIscsiVolume(
+    protected static VolumeAttachment attachIscsiVolume(
             final ComputeClient computeClient, final Volume volume, final Instance instance)
             throws Exception {
 
@@ -342,7 +342,7 @@ public class VolumeAttachmentExample {
      *
      * @throws Exception if there was an error waiting for the volume attachment
      */
-    private static VolumeAttachment attachParavirtualizedVolume(
+    protected static VolumeAttachment attachParavirtualizedVolume(
             final ComputeClient computeClient, final Volume volume, final Instance instance)
             throws Exception {
 
@@ -368,7 +368,7 @@ public class VolumeAttachmentExample {
      *
      * @throws Exception if there was an error waiting for the volume attachment
      */
-    private static VolumeAttachment attachVolume(
+    protected static VolumeAttachment attachVolume(
             final ComputeClient computeClient, final AttachVolumeDetails attachVolumeDetails)
             throws Exception {
 
@@ -408,7 +408,7 @@ public class VolumeAttachmentExample {
      *
      * @throws Exception if there was an error waiting for the volume to detach
      */
-    private static void detachVolume(
+    protected static void detachVolume(
             final ComputeClient computeClient, final VolumeAttachment volumeAttachment)
             throws Exception {
 
@@ -431,7 +431,7 @@ public class VolumeAttachmentExample {
      * @param computeClient the client used to communicate with the service
      * @param instance the instance we'll list volume attachments for
      */
-    private static void listVolumeAttachmentsOnInstance(
+    protected static void listVolumeAttachmentsOnInstance(
             final ComputeClient computeClient, final Instance instance) {
         System.out.println("Listing volume attachments for instance");
         System.out.println("========================================");
@@ -466,7 +466,7 @@ public class VolumeAttachmentExample {
      *
      * @throws Exception if there is an error waiting on the VCN to become available to use
      */
-    private static Vcn createVcn(final VirtualNetworkClient vcnClient, final String compartmentId)
+    protected static Vcn createVcn(final VirtualNetworkClient vcnClient, final String compartmentId)
             throws Exception {
         final CreateVcnResponse createVcnResponse =
                 vcnClient.createVcn(
@@ -500,7 +500,7 @@ public class VolumeAttachmentExample {
      *
      * @throws Exception if there is an error waiting on the VCN to be deleted
      */
-    private static void deleteVcn(final VirtualNetworkClient vcnClient, final Vcn vcn)
+    protected static void deleteVcn(final VirtualNetworkClient vcnClient, final Vcn vcn)
             throws Exception {
 
         vcnClient.deleteVcn(DeleteVcnRequest.builder().vcnId(vcn.getId()).build());
@@ -525,7 +525,7 @@ public class VolumeAttachmentExample {
      *
      * @throws Exception if there is an error waiting on the subnet to become available to use
      */
-    private static Subnet createSubnet(
+    protected static Subnet createSubnet(
             final VirtualNetworkClient vcnClient,
             final String compartmentId,
             final AvailabilityDomain availabilityDomain,
@@ -566,7 +566,7 @@ public class VolumeAttachmentExample {
      *
      * @throws Exception if there is an error waiting on the subnet to be deleted
      */
-    private static void deleteSubnet(final VirtualNetworkClient vcnClient, final Subnet subnet)
+    protected static void deleteSubnet(final VirtualNetworkClient vcnClient, final Subnet subnet)
             throws Exception {
 
         vcnClient.deleteSubnet(DeleteSubnetRequest.builder().subnetId(subnet.getId()).build());
@@ -587,7 +587,7 @@ public class VolumeAttachmentExample {
      *
      * @return a list of all availability domains in a compartment
      */
-    private static List<AvailabilityDomain> getAvailabilityDomains(
+    protected static List<AvailabilityDomain> getAvailabilityDomains(
             final IdentityClient identityClient, final String compartmentId) {
 
         ListAvailabilityDomainsResponse listAvailabilityDomainsResponse =
@@ -611,7 +611,7 @@ public class VolumeAttachmentExample {
      * @return an Image which is can be used to launch an instance with the specified operating system, version
      * and shape
      */
-    private static Image getImageForOsAndShape(
+    protected static Image getImageForOsAndShape(
             final ComputeClient computeClient,
             final String compartmentId,
             final String operatingSystem,
@@ -659,7 +659,7 @@ public class VolumeAttachmentExample {
      *
      * @throws Exception if an error was encountered while waiting for the instance to become running/available
      */
-    private static Instance launchInstance(
+    protected static Instance launchInstance(
             final ComputeClient computeClient,
             final Subnet subnet,
             final String compartmentId,
@@ -708,7 +708,7 @@ public class VolumeAttachmentExample {
      *
      * @throws Exception if an error occurred while waiting for the instance to be terminated
      */
-    private static void terminateInstance(
+    protected static void terminateInstance(
             final ComputeClient computeClient, final Instance instance) throws Exception {
 
         computeClient.terminateInstance(

@@ -36,6 +36,10 @@ package com.oracle.bmc.database.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateDataGuardAssociationWithNewDbSystemDetails.class,
+        name = "NewDbSystem"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateDataGuardAssociationToExistingDbSystemDetails.class,
         name = "ExistingDbSystem"
     )
@@ -66,7 +70,7 @@ public class CreateDataGuardAssociationDetails {
      * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
      * in the Oracle Data Guard documentation.
      * <p>
-     **IMPORTANT** - The only protection mode currently supported by the Database Service is MAXIMUM_PERFORMANCE.
+     **IMPORTANT** - The only protection mode currently supported by the Database service is MAXIMUM_PERFORMANCE.
      *
      **/
     public enum ProtectionMode {
@@ -107,7 +111,7 @@ public class CreateDataGuardAssociationDetails {
      * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
      * in the Oracle Data Guard documentation.
      * <p>
-     **IMPORTANT** - The only protection mode currently supported by the Database Service is MAXIMUM_PERFORMANCE.
+     **IMPORTANT** - The only protection mode currently supported by the Database service is MAXIMUM_PERFORMANCE.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
@@ -123,7 +127,7 @@ public class CreateDataGuardAssociationDetails {
      * [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400)
      * in the Oracle Data Guard documentation.
      * <p>
-     **IMPORTANT** - The only transport type currently supported by the Database Service is ASYNC.
+     **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
      *
      **/
     public enum TransportType {
@@ -170,7 +174,7 @@ public class CreateDataGuardAssociationDetails {
      * [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400)
      * in the Oracle Data Guard documentation.
      * <p>
-     **IMPORTANT** - The only transport type currently supported by the Database Service is ASYNC.
+     **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("transportType")

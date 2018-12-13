@@ -50,6 +50,22 @@ public class ListUsersConverter {
                                     request.getLimit()));
         }
 
+        if (request.getIdentityProviderId() != null) {
+            target =
+                    target.queryParam(
+                            "identityProviderId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIdentityProviderId()));
+        }
+
+        if (request.getExternalIdentifier() != null) {
+            target =
+                    target.queryParam(
+                            "externalIdentifier",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getExternalIdentifier()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

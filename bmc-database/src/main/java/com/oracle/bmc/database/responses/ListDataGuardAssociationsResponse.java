@@ -11,6 +11,13 @@ import com.oracle.bmc.database.model.*;
 public class ListDataGuardAssociationsResponse {
 
     /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     */
+    private String opcRequestId;
+
+    /**
      * For pagination of a list of items. When paging through a list, if this header appears in the response,
      * then there are additional items still to get. Include this value as the `page` parameter for the
      * subsequent GET request. For information about pagination, see
@@ -18,13 +25,6 @@ public class ListDataGuardAssociationsResponse {
      *
      */
     private String opcNextPage;
-
-    /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
-     *
-     */
-    private String opcRequestId;
 
     /**
      * A list of DataGuardAssociationSummary instances.
@@ -37,8 +37,8 @@ public class ListDataGuardAssociationsResponse {
          * @return this builder instance
          */
         public Builder copy(ListDataGuardAssociationsResponse o) {
-            opcNextPage(o.getOpcNextPage());
             opcRequestId(o.getOpcRequestId());
+            opcNextPage(o.getOpcNextPage());
             items(o.getItems());
 
             return this;

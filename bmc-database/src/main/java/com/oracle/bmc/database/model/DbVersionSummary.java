@@ -25,15 +25,6 @@ public class DbVersionSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("supportsPdb")
-        private Boolean supportsPdb;
-
-        public Builder supportsPdb(Boolean supportsPdb) {
-            this.supportsPdb = supportsPdb;
-            this.__explicitlySet__.add("supportsPdb");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
@@ -43,18 +34,40 @@ public class DbVersionSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isLatestForMajorVersion")
+        private Boolean isLatestForMajorVersion;
+
+        public Builder isLatestForMajorVersion(Boolean isLatestForMajorVersion) {
+            this.isLatestForMajorVersion = isLatestForMajorVersion;
+            this.__explicitlySet__.add("isLatestForMajorVersion");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("supportsPdb")
+        private Boolean supportsPdb;
+
+        public Builder supportsPdb(Boolean supportsPdb) {
+            this.supportsPdb = supportsPdb;
+            this.__explicitlySet__.add("supportsPdb");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DbVersionSummary build() {
-            DbVersionSummary __instance__ = new DbVersionSummary(supportsPdb, version);
+            DbVersionSummary __instance__ =
+                    new DbVersionSummary(version, isLatestForMajorVersion, supportsPdb);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DbVersionSummary o) {
-            Builder copiedBuilder = supportsPdb(o.getSupportsPdb()).version(o.getVersion());
+            Builder copiedBuilder =
+                    version(o.getVersion())
+                            .isLatestForMajorVersion(o.getIsLatestForMajorVersion())
+                            .supportsPdb(o.getSupportsPdb());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -69,16 +82,22 @@ public class DbVersionSummary {
     }
 
     /**
-     * True if this version of the Oracle Database software supports pluggable databases.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("supportsPdb")
-    Boolean supportsPdb;
-
-    /**
      * A valid Oracle Database version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     String version;
+
+    /**
+     * True if this version of the Oracle Database software is the latest version for a release.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isLatestForMajorVersion")
+    Boolean isLatestForMajorVersion;
+
+    /**
+     * True if this version of the Oracle Database software supports pluggable databases.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("supportsPdb")
+    Boolean supportsPdb;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

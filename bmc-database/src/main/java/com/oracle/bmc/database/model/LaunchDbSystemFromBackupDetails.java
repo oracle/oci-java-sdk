@@ -30,67 +30,12 @@ public class LaunchDbSystemFromBackupDetails extends LaunchDbSystemBase {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-        private String availabilityDomain;
-
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = availabilityDomain;
-            this.__explicitlySet__.add("availabilityDomain");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("backupSubnetId")
-        private String backupSubnetId;
-
-        public Builder backupSubnetId(String backupSubnetId) {
-            this.backupSubnetId = backupSubnetId;
-            this.__explicitlySet__.add("backupSubnetId");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("clusterName")
-        private String clusterName;
-
-        public Builder clusterName(String clusterName) {
-            this.clusterName = clusterName;
-            this.__explicitlySet__.add("clusterName");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
-        private Integer cpuCoreCount;
-
-        public Builder cpuCoreCount(Integer cpuCoreCount) {
-            this.cpuCoreCount = cpuCoreCount;
-            this.__explicitlySet__.add("cpuCoreCount");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("dataStoragePercentage")
-        private Integer dataStoragePercentage;
-
-        public Builder dataStoragePercentage(Integer dataStoragePercentage) {
-            this.dataStoragePercentage = dataStoragePercentage;
-            this.__explicitlySet__.add("dataStoragePercentage");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
-
-        public Builder definedTags(
-                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
-            this.definedTags = definedTags;
-            this.__explicitlySet__.add("definedTags");
             return this;
         }
 
@@ -103,21 +48,57 @@ public class LaunchDbSystemFromBackupDetails extends LaunchDbSystemBase {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("domain")
-        private String domain;
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+        private String availabilityDomain;
 
-        public Builder domain(String domain) {
-            this.domain = domain;
-            this.__explicitlySet__.add("domain");
+        public Builder availabilityDomain(String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
+            this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-        private java.util.Map<String, String> freeformTags;
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
 
-        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
-            this.freeformTags = freeformTags;
-            this.__explicitlySet__.add("freeformTags");
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("backupSubnetId")
+        private String backupSubnetId;
+
+        public Builder backupSubnetId(String backupSubnetId) {
+            this.backupSubnetId = backupSubnetId;
+            this.__explicitlySet__.add("backupSubnetId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("shape")
+        private String shape;
+
+        public Builder shape(String shape) {
+            this.shape = shape;
+            this.__explicitlySet__.add("shape");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("sparseDiskgroup")
+        private Boolean sparseDiskgroup;
+
+        public Builder sparseDiskgroup(Boolean sparseDiskgroup) {
+            this.sparseDiskgroup = sparseDiskgroup;
+            this.__explicitlySet__.add("sparseDiskgroup");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKeys")
+        private java.util.List<String> sshPublicKeys;
+
+        public Builder sshPublicKeys(java.util.List<String> sshPublicKeys) {
+            this.sshPublicKeys = sshPublicKeys;
+            this.__explicitlySet__.add("sshPublicKeys");
             return this;
         }
 
@@ -127,6 +108,42 @@ public class LaunchDbSystemFromBackupDetails extends LaunchDbSystemBase {
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("domain")
+        private String domain;
+
+        public Builder domain(String domain) {
+            this.domain = domain;
+            this.__explicitlySet__.add("domain");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
+        private Integer cpuCoreCount;
+
+        public Builder cpuCoreCount(Integer cpuCoreCount) {
+            this.cpuCoreCount = cpuCoreCount;
+            this.__explicitlySet__.add("cpuCoreCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterName")
+        private String clusterName;
+
+        public Builder clusterName(String clusterName) {
+            this.clusterName = clusterName;
+            this.__explicitlySet__.add("clusterName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dataStoragePercentage")
+        private Integer dataStoragePercentage;
+
+        public Builder dataStoragePercentage(Integer dataStoragePercentage) {
+            this.dataStoragePercentage = dataStoragePercentage;
+            this.__explicitlySet__.add("dataStoragePercentage");
             return this;
         }
 
@@ -148,39 +165,22 @@ public class LaunchDbSystemFromBackupDetails extends LaunchDbSystemBase {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("shape")
-        private String shape;
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
 
-        public Builder shape(String shape) {
-            this.shape = shape;
-            this.__explicitlySet__.add("shape");
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKeys")
-        private java.util.List<String> sshPublicKeys;
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
-        public Builder sshPublicKeys(java.util.List<String> sshPublicKeys) {
-            this.sshPublicKeys = sshPublicKeys;
-            this.__explicitlySet__.add("sshPublicKeys");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-        private String subnetId;
-
-        public Builder subnetId(String subnetId) {
-            this.subnetId = subnetId;
-            this.__explicitlySet__.add("subnetId");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
-        private DatabaseEdition databaseEdition;
-
-        public Builder databaseEdition(DatabaseEdition databaseEdition) {
-            this.databaseEdition = databaseEdition;
-            this.__explicitlySet__.add("databaseEdition");
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
             return this;
         }
 
@@ -190,6 +190,15 @@ public class LaunchDbSystemFromBackupDetails extends LaunchDbSystemBase {
         public Builder dbHome(CreateDbHomeFromBackupDetails dbHome) {
             this.dbHome = dbHome;
             this.__explicitlySet__.add("dbHome");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
+        private DatabaseEdition databaseEdition;
+
+        public Builder databaseEdition(DatabaseEdition databaseEdition) {
+            this.databaseEdition = databaseEdition;
+            this.__explicitlySet__.add("databaseEdition");
             return this;
         }
 
@@ -217,24 +226,25 @@ public class LaunchDbSystemFromBackupDetails extends LaunchDbSystemBase {
         public LaunchDbSystemFromBackupDetails build() {
             LaunchDbSystemFromBackupDetails __instance__ =
                     new LaunchDbSystemFromBackupDetails(
-                            availabilityDomain,
-                            backupSubnetId,
-                            clusterName,
                             compartmentId,
-                            cpuCoreCount,
-                            dataStoragePercentage,
-                            definedTags,
                             displayName,
-                            domain,
-                            freeformTags,
+                            availabilityDomain,
+                            subnetId,
+                            backupSubnetId,
+                            shape,
+                            sparseDiskgroup,
+                            sshPublicKeys,
                             hostname,
+                            domain,
+                            cpuCoreCount,
+                            clusterName,
+                            dataStoragePercentage,
                             initialDataStorageSizeInGB,
                             nodeCount,
-                            shape,
-                            sshPublicKeys,
-                            subnetId,
-                            databaseEdition,
+                            freeformTags,
+                            definedTags,
                             dbHome,
+                            databaseEdition,
                             diskRedundancy,
                             licenseModel);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -244,24 +254,25 @@ public class LaunchDbSystemFromBackupDetails extends LaunchDbSystemBase {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(LaunchDbSystemFromBackupDetails o) {
             Builder copiedBuilder =
-                    availabilityDomain(o.getAvailabilityDomain())
-                            .backupSubnetId(o.getBackupSubnetId())
-                            .clusterName(o.getClusterName())
-                            .compartmentId(o.getCompartmentId())
-                            .cpuCoreCount(o.getCpuCoreCount())
-                            .dataStoragePercentage(o.getDataStoragePercentage())
-                            .definedTags(o.getDefinedTags())
+                    compartmentId(o.getCompartmentId())
                             .displayName(o.getDisplayName())
-                            .domain(o.getDomain())
-                            .freeformTags(o.getFreeformTags())
+                            .availabilityDomain(o.getAvailabilityDomain())
+                            .subnetId(o.getSubnetId())
+                            .backupSubnetId(o.getBackupSubnetId())
+                            .shape(o.getShape())
+                            .sparseDiskgroup(o.getSparseDiskgroup())
+                            .sshPublicKeys(o.getSshPublicKeys())
                             .hostname(o.getHostname())
+                            .domain(o.getDomain())
+                            .cpuCoreCount(o.getCpuCoreCount())
+                            .clusterName(o.getClusterName())
+                            .dataStoragePercentage(o.getDataStoragePercentage())
                             .initialDataStorageSizeInGB(o.getInitialDataStorageSizeInGB())
                             .nodeCount(o.getNodeCount())
-                            .shape(o.getShape())
-                            .sshPublicKeys(o.getSshPublicKeys())
-                            .subnetId(o.getSubnetId())
-                            .databaseEdition(o.getDatabaseEdition())
+                            .freeformTags(o.getFreeformTags())
+                            .definedTags(o.getDefinedTags())
                             .dbHome(o.getDbHome())
+                            .databaseEdition(o.getDatabaseEdition())
                             .diskRedundancy(o.getDiskRedundancy())
                             .licenseModel(o.getLicenseModel());
 
@@ -279,49 +290,53 @@ public class LaunchDbSystemFromBackupDetails extends LaunchDbSystemBase {
 
     @Deprecated
     public LaunchDbSystemFromBackupDetails(
-            String availabilityDomain,
-            String backupSubnetId,
-            String clusterName,
             String compartmentId,
-            Integer cpuCoreCount,
-            Integer dataStoragePercentage,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
-            String domain,
-            java.util.Map<String, String> freeformTags,
+            String availabilityDomain,
+            String subnetId,
+            String backupSubnetId,
+            String shape,
+            Boolean sparseDiskgroup,
+            java.util.List<String> sshPublicKeys,
             String hostname,
+            String domain,
+            Integer cpuCoreCount,
+            String clusterName,
+            Integer dataStoragePercentage,
             Integer initialDataStorageSizeInGB,
             Integer nodeCount,
-            String shape,
-            java.util.List<String> sshPublicKeys,
-            String subnetId,
-            DatabaseEdition databaseEdition,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
             CreateDbHomeFromBackupDetails dbHome,
+            DatabaseEdition databaseEdition,
             DiskRedundancy diskRedundancy,
             LicenseModel licenseModel) {
         super(
-                availabilityDomain,
-                backupSubnetId,
-                clusterName,
                 compartmentId,
-                cpuCoreCount,
-                dataStoragePercentage,
-                definedTags,
                 displayName,
-                domain,
-                freeformTags,
+                availabilityDomain,
+                subnetId,
+                backupSubnetId,
+                shape,
+                sparseDiskgroup,
+                sshPublicKeys,
                 hostname,
+                domain,
+                cpuCoreCount,
+                clusterName,
+                dataStoragePercentage,
                 initialDataStorageSizeInGB,
                 nodeCount,
-                shape,
-                sshPublicKeys,
-                subnetId);
-        this.databaseEdition = databaseEdition;
+                freeformTags,
+                definedTags);
         this.dbHome = dbHome;
+        this.databaseEdition = databaseEdition;
         this.diskRedundancy = diskRedundancy;
         this.licenseModel = licenseModel;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("dbHome")
+    CreateDbHomeFromBackupDetails dbHome;
     /**
      * The Oracle Database Edition that applies to all the databases on the DB system.
      * Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
@@ -368,9 +383,6 @@ public class LaunchDbSystemFromBackupDetails extends LaunchDbSystemBase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
     DatabaseEdition databaseEdition;
-
-    @com.fasterxml.jackson.annotation.JsonProperty("dbHome")
-    CreateDbHomeFromBackupDetails dbHome;
     /**
      * The type of redundancy configured for the DB system.
      * NORMAL 2-way redundancy, recommended for test and development systems.

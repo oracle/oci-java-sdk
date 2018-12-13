@@ -5,9 +5,6 @@ package com.oracle.bmc.database.model;
 
 /**
  * An Autonomous Database backup.
- * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
- * <p>
- **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -28,12 +25,12 @@ public class AutonomousDatabaseBackup {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
-        private String autonomousDatabaseId;
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
+        private String id;
 
-        public Builder autonomousDatabaseId(String autonomousDatabaseId) {
-            this.autonomousDatabaseId = autonomousDatabaseId;
-            this.__explicitlySet__.add("autonomousDatabaseId");
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
             return this;
         }
 
@@ -46,6 +43,15 @@ public class AutonomousDatabaseBackup {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
+        private String autonomousDatabaseId;
+
+        public Builder autonomousDatabaseId(String autonomousDatabaseId) {
+            this.autonomousDatabaseId = autonomousDatabaseId;
+            this.__explicitlySet__.add("autonomousDatabaseId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -55,12 +61,12 @@ public class AutonomousDatabaseBackup {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("id")
-        private String id;
+        @com.fasterxml.jackson.annotation.JsonProperty("type")
+        private Type type;
 
-        public Builder id(String id) {
-            this.id = id;
-            this.__explicitlySet__.add("id");
+        public Builder type(Type type) {
+            this.type = type;
+            this.__explicitlySet__.add("type");
             return this;
         }
 
@@ -70,6 +76,24 @@ public class AutonomousDatabaseBackup {
         public Builder isAutomatic(Boolean isAutomatic) {
             this.isAutomatic = isAutomatic;
             this.__explicitlySet__.add("isAutomatic");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
+        private java.util.Date timeStarted;
+
+        public Builder timeStarted(java.util.Date timeStarted) {
+            this.timeStarted = timeStarted;
+            this.__explicitlySet__.add("timeStarted");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
+        private java.util.Date timeEnded;
+
+        public Builder timeEnded(java.util.Date timeEnded) {
+            this.timeEnded = timeEnded;
+            this.__explicitlySet__.add("timeEnded");
             return this;
         }
 
@@ -91,49 +115,22 @@ public class AutonomousDatabaseBackup {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
-        private java.util.Date timeEnded;
-
-        public Builder timeEnded(java.util.Date timeEnded) {
-            this.timeEnded = timeEnded;
-            this.__explicitlySet__.add("timeEnded");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
-        private java.util.Date timeStarted;
-
-        public Builder timeStarted(java.util.Date timeStarted) {
-            this.timeStarted = timeStarted;
-            this.__explicitlySet__.add("timeStarted");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("type")
-        private Type type;
-
-        public Builder type(Type type) {
-            this.type = type;
-            this.__explicitlySet__.add("type");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AutonomousDatabaseBackup build() {
             AutonomousDatabaseBackup __instance__ =
                     new AutonomousDatabaseBackup(
-                            autonomousDatabaseId,
-                            compartmentId,
-                            displayName,
                             id,
+                            compartmentId,
+                            autonomousDatabaseId,
+                            displayName,
+                            type,
                             isAutomatic,
-                            lifecycleDetails,
-                            lifecycleState,
-                            timeEnded,
                             timeStarted,
-                            type);
+                            timeEnded,
+                            lifecycleDetails,
+                            lifecycleState);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -141,16 +138,16 @@ public class AutonomousDatabaseBackup {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(AutonomousDatabaseBackup o) {
             Builder copiedBuilder =
-                    autonomousDatabaseId(o.getAutonomousDatabaseId())
+                    id(o.getId())
                             .compartmentId(o.getCompartmentId())
+                            .autonomousDatabaseId(o.getAutonomousDatabaseId())
                             .displayName(o.getDisplayName())
-                            .id(o.getId())
+                            .type(o.getType())
                             .isAutomatic(o.getIsAutomatic())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeEnded(o.getTimeEnded())
                             .timeStarted(o.getTimeStarted())
-                            .type(o.getType());
+                            .timeEnded(o.getTimeEnded())
+                            .lifecycleDetails(o.getLifecycleDetails())
+                            .lifecycleState(o.getLifecycleState());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -165,10 +162,10 @@ public class AutonomousDatabaseBackup {
     }
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
-    String autonomousDatabaseId;
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    String id;
 
     /**
      * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -177,22 +174,84 @@ public class AutonomousDatabaseBackup {
     String compartmentId;
 
     /**
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
+    String autonomousDatabaseId;
+
+    /**
      * The user-friendly name for the backup. The name does not have to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
-
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+     * The type of backup.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    @lombok.extern.slf4j.Slf4j
+    public enum Type {
+        Incremental("INCREMENTAL"),
+        Full("FULL"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, Type> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Type v : Type.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        Type(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Type create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Type', returning UnknownEnumValue", key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The type of backup.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
+    Type type;
 
     /**
      * Indicates whether the backup is user-initiated or automatic.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutomatic")
     Boolean isAutomatic;
+
+    /**
+     * The date and time the backup started.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
+    java.util.Date timeStarted;
+
+    /**
+     * The date and time the backup completed.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
+    java.util.Date timeEnded;
 
     /**
      * Additional information about the current lifecycle state.
@@ -253,68 +312,6 @@ public class AutonomousDatabaseBackup {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
-
-    /**
-     * The date and time the backup completed.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
-    java.util.Date timeEnded;
-
-    /**
-     * The date and time the backup started.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
-    java.util.Date timeStarted;
-    /**
-     * The type of backup.
-     **/
-    @lombok.extern.slf4j.Slf4j
-    public enum Type {
-        Incremental("INCREMENTAL"),
-        Full("FULL"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private final String value;
-        private static java.util.Map<String, Type> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (Type v : Type.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        Type(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static Type create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'Type', returning UnknownEnumValue", key);
-            return UnknownEnumValue;
-        }
-    };
-    /**
-     * The type of backup.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Type type;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

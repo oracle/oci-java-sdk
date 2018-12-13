@@ -39,30 +39,12 @@ public class DbSystemSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-        private String availabilityDomain;
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
+        private String id;
 
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = availabilityDomain;
-            this.__explicitlySet__.add("availabilityDomain");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("backupSubnetId")
-        private String backupSubnetId;
-
-        public Builder backupSubnetId(String backupSubnetId) {
-            this.backupSubnetId = backupSubnetId;
-            this.__explicitlySet__.add("backupSubnetId");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("clusterName")
-        private String clusterName;
-
-        public Builder clusterName(String clusterName) {
-            this.clusterName = clusterName;
-            this.__explicitlySet__.add("clusterName");
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
             return this;
         }
 
@@ -75,61 +57,6 @@ public class DbSystemSummary {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
-        private Integer cpuCoreCount;
-
-        public Builder cpuCoreCount(Integer cpuCoreCount) {
-            this.cpuCoreCount = cpuCoreCount;
-            this.__explicitlySet__.add("cpuCoreCount");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("dataStoragePercentage")
-        private Integer dataStoragePercentage;
-
-        public Builder dataStoragePercentage(Integer dataStoragePercentage) {
-            this.dataStoragePercentage = dataStoragePercentage;
-            this.__explicitlySet__.add("dataStoragePercentage");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
-        private Integer dataStorageSizeInGBs;
-
-        public Builder dataStorageSizeInGBs(Integer dataStorageSizeInGBs) {
-            this.dataStorageSizeInGBs = dataStorageSizeInGBs;
-            this.__explicitlySet__.add("dataStorageSizeInGBs");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
-        private DatabaseEdition databaseEdition;
-
-        public Builder databaseEdition(DatabaseEdition databaseEdition) {
-            this.databaseEdition = databaseEdition;
-            this.__explicitlySet__.add("databaseEdition");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
-
-        public Builder definedTags(
-                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
-            this.definedTags = definedTags;
-            this.__explicitlySet__.add("definedTags");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("diskRedundancy")
-        private DiskRedundancy diskRedundancy;
-
-        public Builder diskRedundancy(DiskRedundancy diskRedundancy) {
-            this.diskRedundancy = diskRedundancy;
-            this.__explicitlySet__.add("diskRedundancy");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -139,120 +66,30 @@ public class DbSystemSummary {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("domain")
-        private String domain;
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+        private String availabilityDomain;
 
-        public Builder domain(String domain) {
-            this.domain = domain;
-            this.__explicitlySet__.add("domain");
+        public Builder availabilityDomain(String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
+            this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-        private java.util.Map<String, String> freeformTags;
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
 
-        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
-            this.freeformTags = freeformTags;
-            this.__explicitlySet__.add("freeformTags");
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("hostname")
-        private String hostname;
+        @com.fasterxml.jackson.annotation.JsonProperty("backupSubnetId")
+        private String backupSubnetId;
 
-        public Builder hostname(String hostname) {
-            this.hostname = hostname;
-            this.__explicitlySet__.add("hostname");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("id")
-        private String id;
-
-        public Builder id(String id) {
-            this.id = id;
-            this.__explicitlySet__.add("id");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("lastPatchHistoryEntryId")
-        private String lastPatchHistoryEntryId;
-
-        public Builder lastPatchHistoryEntryId(String lastPatchHistoryEntryId) {
-            this.lastPatchHistoryEntryId = lastPatchHistoryEntryId;
-            this.__explicitlySet__.add("lastPatchHistoryEntryId");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
-        private LicenseModel licenseModel;
-
-        public Builder licenseModel(LicenseModel licenseModel) {
-            this.licenseModel = licenseModel;
-            this.__explicitlySet__.add("licenseModel");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-        private String lifecycleDetails;
-
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = lifecycleDetails;
-            this.__explicitlySet__.add("lifecycleDetails");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-        private LifecycleState lifecycleState;
-
-        public Builder lifecycleState(LifecycleState lifecycleState) {
-            this.lifecycleState = lifecycleState;
-            this.__explicitlySet__.add("lifecycleState");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("listenerPort")
-        private Integer listenerPort;
-
-        public Builder listenerPort(Integer listenerPort) {
-            this.listenerPort = listenerPort;
-            this.__explicitlySet__.add("listenerPort");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
-        private Integer nodeCount;
-
-        public Builder nodeCount(Integer nodeCount) {
-            this.nodeCount = nodeCount;
-            this.__explicitlySet__.add("nodeCount");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("recoStorageSizeInGB")
-        private Integer recoStorageSizeInGB;
-
-        public Builder recoStorageSizeInGB(Integer recoStorageSizeInGB) {
-            this.recoStorageSizeInGB = recoStorageSizeInGB;
-            this.__explicitlySet__.add("recoStorageSizeInGB");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("scanDnsRecordId")
-        private String scanDnsRecordId;
-
-        public Builder scanDnsRecordId(String scanDnsRecordId) {
-            this.scanDnsRecordId = scanDnsRecordId;
-            this.__explicitlySet__.add("scanDnsRecordId");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("scanIpIds")
-        private java.util.List<String> scanIpIds;
-
-        public Builder scanIpIds(java.util.List<String> scanIpIds) {
-            this.scanIpIds = scanIpIds;
-            this.__explicitlySet__.add("scanIpIds");
+        public Builder backupSubnetId(String backupSubnetId) {
+            this.backupSubnetId = backupSubnetId;
+            this.__explicitlySet__.add("backupSubnetId");
             return this;
         }
 
@@ -274,21 +111,21 @@ public class DbSystemSummary {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-        private String subnetId;
+        @com.fasterxml.jackson.annotation.JsonProperty("hostname")
+        private String hostname;
 
-        public Builder subnetId(String subnetId) {
-            this.subnetId = subnetId;
-            this.__explicitlySet__.add("subnetId");
+        public Builder hostname(String hostname) {
+            this.hostname = hostname;
+            this.__explicitlySet__.add("hostname");
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-        private java.util.Date timeCreated;
+        @com.fasterxml.jackson.annotation.JsonProperty("domain")
+        private String domain;
 
-        public Builder timeCreated(java.util.Date timeCreated) {
-            this.timeCreated = timeCreated;
-            this.__explicitlySet__.add("timeCreated");
+        public Builder domain(String domain) {
+            this.domain = domain;
+            this.__explicitlySet__.add("domain");
             return this;
         }
 
@@ -301,6 +138,114 @@ public class DbSystemSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
+        private Integer cpuCoreCount;
+
+        public Builder cpuCoreCount(Integer cpuCoreCount) {
+            this.cpuCoreCount = cpuCoreCount;
+            this.__explicitlySet__.add("cpuCoreCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterName")
+        private String clusterName;
+
+        public Builder clusterName(String clusterName) {
+            this.clusterName = clusterName;
+            this.__explicitlySet__.add("clusterName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dataStoragePercentage")
+        private Integer dataStoragePercentage;
+
+        public Builder dataStoragePercentage(Integer dataStoragePercentage) {
+            this.dataStoragePercentage = dataStoragePercentage;
+            this.__explicitlySet__.add("dataStoragePercentage");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
+        private DatabaseEdition databaseEdition;
+
+        public Builder databaseEdition(DatabaseEdition databaseEdition) {
+            this.databaseEdition = databaseEdition;
+            this.__explicitlySet__.add("databaseEdition");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("lastPatchHistoryEntryId")
+        private String lastPatchHistoryEntryId;
+
+        public Builder lastPatchHistoryEntryId(String lastPatchHistoryEntryId) {
+            this.lastPatchHistoryEntryId = lastPatchHistoryEntryId;
+            this.__explicitlySet__.add("lastPatchHistoryEntryId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("listenerPort")
+        private Integer listenerPort;
+
+        public Builder listenerPort(Integer listenerPort) {
+            this.listenerPort = listenerPort;
+            this.__explicitlySet__.add("listenerPort");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+        private LifecycleState lifecycleState;
+
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+        private java.util.Date timeCreated;
+
+        public Builder timeCreated(java.util.Date timeCreated) {
+            this.timeCreated = timeCreated;
+            this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("diskRedundancy")
+        private DiskRedundancy diskRedundancy;
+
+        public Builder diskRedundancy(DiskRedundancy diskRedundancy) {
+            this.diskRedundancy = diskRedundancy;
+            this.__explicitlySet__.add("diskRedundancy");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("sparseDiskgroup")
+        private Boolean sparseDiskgroup;
+
+        public Builder sparseDiskgroup(Boolean sparseDiskgroup) {
+            this.sparseDiskgroup = sparseDiskgroup;
+            this.__explicitlySet__.add("sparseDiskgroup");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("scanIpIds")
+        private java.util.List<String> scanIpIds;
+
+        public Builder scanIpIds(java.util.List<String> scanIpIds) {
+            this.scanIpIds = scanIpIds;
+            this.__explicitlySet__.add("scanIpIds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("vipIds")
         private java.util.List<String> vipIds;
 
@@ -310,42 +255,107 @@ public class DbSystemSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("scanDnsRecordId")
+        private String scanDnsRecordId;
+
+        public Builder scanDnsRecordId(String scanDnsRecordId) {
+            this.scanDnsRecordId = scanDnsRecordId;
+            this.__explicitlySet__.add("scanDnsRecordId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
+        private Integer dataStorageSizeInGBs;
+
+        public Builder dataStorageSizeInGBs(Integer dataStorageSizeInGBs) {
+            this.dataStorageSizeInGBs = dataStorageSizeInGBs;
+            this.__explicitlySet__.add("dataStorageSizeInGBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("recoStorageSizeInGB")
+        private Integer recoStorageSizeInGB;
+
+        public Builder recoStorageSizeInGB(Integer recoStorageSizeInGB) {
+            this.recoStorageSizeInGB = recoStorageSizeInGB;
+            this.__explicitlySet__.add("recoStorageSizeInGB");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
+        private Integer nodeCount;
+
+        public Builder nodeCount(Integer nodeCount) {
+            this.nodeCount = nodeCount;
+            this.__explicitlySet__.add("nodeCount");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
+        private LicenseModel licenseModel;
+
+        public Builder licenseModel(LicenseModel licenseModel) {
+            this.licenseModel = licenseModel;
+            this.__explicitlySet__.add("licenseModel");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DbSystemSummary build() {
             DbSystemSummary __instance__ =
                     new DbSystemSummary(
-                            availabilityDomain,
-                            backupSubnetId,
-                            clusterName,
-                            compartmentId,
-                            cpuCoreCount,
-                            dataStoragePercentage,
-                            dataStorageSizeInGBs,
-                            databaseEdition,
-                            definedTags,
-                            diskRedundancy,
-                            displayName,
-                            domain,
-                            freeformTags,
-                            hostname,
                             id,
-                            lastPatchHistoryEntryId,
-                            licenseModel,
-                            lifecycleDetails,
-                            lifecycleState,
-                            listenerPort,
-                            nodeCount,
-                            recoStorageSizeInGB,
-                            scanDnsRecordId,
-                            scanIpIds,
+                            compartmentId,
+                            displayName,
+                            availabilityDomain,
+                            subnetId,
+                            backupSubnetId,
                             shape,
                             sshPublicKeys,
-                            subnetId,
-                            timeCreated,
+                            hostname,
+                            domain,
                             version,
-                            vipIds);
+                            cpuCoreCount,
+                            clusterName,
+                            dataStoragePercentage,
+                            databaseEdition,
+                            lastPatchHistoryEntryId,
+                            listenerPort,
+                            lifecycleState,
+                            timeCreated,
+                            lifecycleDetails,
+                            diskRedundancy,
+                            sparseDiskgroup,
+                            scanIpIds,
+                            vipIds,
+                            scanDnsRecordId,
+                            dataStorageSizeInGBs,
+                            recoStorageSizeInGB,
+                            nodeCount,
+                            licenseModel,
+                            freeformTags,
+                            definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -353,36 +363,37 @@ public class DbSystemSummary {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DbSystemSummary o) {
             Builder copiedBuilder =
-                    availabilityDomain(o.getAvailabilityDomain())
-                            .backupSubnetId(o.getBackupSubnetId())
-                            .clusterName(o.getClusterName())
+                    id(o.getId())
                             .compartmentId(o.getCompartmentId())
-                            .cpuCoreCount(o.getCpuCoreCount())
-                            .dataStoragePercentage(o.getDataStoragePercentage())
-                            .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
-                            .databaseEdition(o.getDatabaseEdition())
-                            .definedTags(o.getDefinedTags())
-                            .diskRedundancy(o.getDiskRedundancy())
                             .displayName(o.getDisplayName())
-                            .domain(o.getDomain())
-                            .freeformTags(o.getFreeformTags())
-                            .hostname(o.getHostname())
-                            .id(o.getId())
-                            .lastPatchHistoryEntryId(o.getLastPatchHistoryEntryId())
-                            .licenseModel(o.getLicenseModel())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .lifecycleState(o.getLifecycleState())
-                            .listenerPort(o.getListenerPort())
-                            .nodeCount(o.getNodeCount())
-                            .recoStorageSizeInGB(o.getRecoStorageSizeInGB())
-                            .scanDnsRecordId(o.getScanDnsRecordId())
-                            .scanIpIds(o.getScanIpIds())
+                            .availabilityDomain(o.getAvailabilityDomain())
+                            .subnetId(o.getSubnetId())
+                            .backupSubnetId(o.getBackupSubnetId())
                             .shape(o.getShape())
                             .sshPublicKeys(o.getSshPublicKeys())
-                            .subnetId(o.getSubnetId())
-                            .timeCreated(o.getTimeCreated())
+                            .hostname(o.getHostname())
+                            .domain(o.getDomain())
                             .version(o.getVersion())
-                            .vipIds(o.getVipIds());
+                            .cpuCoreCount(o.getCpuCoreCount())
+                            .clusterName(o.getClusterName())
+                            .dataStoragePercentage(o.getDataStoragePercentage())
+                            .databaseEdition(o.getDatabaseEdition())
+                            .lastPatchHistoryEntryId(o.getLastPatchHistoryEntryId())
+                            .listenerPort(o.getListenerPort())
+                            .lifecycleState(o.getLifecycleState())
+                            .timeCreated(o.getTimeCreated())
+                            .lifecycleDetails(o.getLifecycleDetails())
+                            .diskRedundancy(o.getDiskRedundancy())
+                            .sparseDiskgroup(o.getSparseDiskgroup())
+                            .scanIpIds(o.getScanIpIds())
+                            .vipIds(o.getVipIds())
+                            .scanDnsRecordId(o.getScanDnsRecordId())
+                            .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
+                            .recoStorageSizeInGB(o.getRecoStorageSizeInGB())
+                            .nodeCount(o.getNodeCount())
+                            .licenseModel(o.getLicenseModel())
+                            .freeformTags(o.getFreeformTags())
+                            .definedTags(o.getDefinedTags());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -397,10 +408,43 @@ public class DbSystemSummary {
     }
 
     /**
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the DB system.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    String id;
+
+    /**
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    String compartmentId;
+
+    /**
+     * The user-friendly name for the DB system. The name does not have to be unique.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    String displayName;
+
+    /**
      * The name of the availability domain that the DB system is located in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     String availabilityDomain;
+
+    /**
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
+     * <p>
+     **Subnet Restrictions:**
+     * - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
+     * - For Exadata and virtual machine 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.128.0/20.
+     * <p>
+     * These subnets are used by the Oracle Clusterware private interconnect on the database instance.
+     * Specifying an overlapping subnet will cause the private interconnect to malfunction.
+     * This restriction applies to both the client subnet and backup subnet.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+    String subnetId;
 
     /**
      * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
@@ -412,17 +456,37 @@ public class DbSystemSummary {
     String backupSubnetId;
 
     /**
-     * The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
+     * The shape of the DB system. The shape determines resources to allocate to the DB system.
+     * - For virtual machine shapes, the number of CPU cores and memory
+     * - For bare metal and Exadata shapes, the number of CPU cores, storage, and memory
      *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("clusterName")
-    String clusterName;
+    @com.fasterxml.jackson.annotation.JsonProperty("shape")
+    String shape;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The public key portion of one or more key pairs used for SSH access to the DB system.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKeys")
+    java.util.List<String> sshPublicKeys;
+
+    /**
+     * The hostname for the DB system.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("hostname")
+    String hostname;
+
+    /**
+     * The domain name for the DB system.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("domain")
+    String domain;
+
+    /**
+     * The Oracle Database version of the DB system.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("version")
+    String version;
 
     /**
      * The number of CPU cores enabled on the DB system.
@@ -431,19 +495,19 @@ public class DbSystemSummary {
     Integer cpuCoreCount;
 
     /**
+     * The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterName")
+    String clusterName;
+
+    /**
      * The percentage assigned to DATA storage (user data and database files).
      * The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 40 and 80. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStoragePercentage")
     Integer dataStoragePercentage;
-
-    /**
-     * The data storage size, in gigabytes, that is currently available to the DB system. Applies only for virtual machine DB systems.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
-    Integer dataStorageSizeInGBs;
     /**
      * The Oracle Database edition that applies to all the databases on the DB system.
      *
@@ -501,14 +565,83 @@ public class DbSystemSummary {
     DatabaseEdition databaseEdition;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
-     *
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    @com.fasterxml.jackson.annotation.JsonProperty("lastPatchHistoryEntryId")
+    String lastPatchHistoryEntryId;
+
+    /**
+     * The port number configured for the listener on the DB system.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("listenerPort")
+    Integer listenerPort;
+    /**
+     * The current state of the DB system.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum LifecycleState {
+        Provisioning("PROVISIONING"),
+        Available("AVAILABLE"),
+        Updating("UPDATING"),
+        Terminating("TERMINATING"),
+        Terminated("TERMINATED"),
+        Failed("FAILED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, LifecycleState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (LifecycleState v : LifecycleState.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        LifecycleState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static LifecycleState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The current state of the DB system.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    LifecycleState lifecycleState;
+
+    /**
+     * The date and time the DB system was created.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    java.util.Date timeCreated;
+
+    /**
+     * Additional information about the current lifecycleState.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    String lifecycleDetails;
     /**
      * The type of redundancy configured for the DB system.
      * NORMAL is 2-way redundancy.
@@ -568,44 +701,61 @@ public class DbSystemSummary {
     DiskRedundancy diskRedundancy;
 
     /**
-     * The user-friendly name for the DB system. The name does not have to be unique.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
-
-    /**
-     * The domain name for the DB system.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("domain")
-    String domain;
-
-    /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: `{\"Department\": \"Finance\"}`
+     * True, if Sparse Diskgroup is configured for Exadata dbsystem, False, if Sparse diskgroup was not configured.
      *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
+    @com.fasterxml.jackson.annotation.JsonProperty("sparseDiskgroup")
+    Boolean sparseDiskgroup;
 
     /**
-     * The hostname for the DB system.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system.
+     * SCAN IP addresses are typically used for load balancing and are not assigned to any interface.
+     * Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+     * <p>
+     **Note:** For a single-node DB system, this list is empty.
+     *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("hostname")
-    String hostname;
+    @com.fasterxml.jackson.annotation.JsonProperty("scanIpIds")
+    java.util.List<String> scanIpIds;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the DB system.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system.
+     * The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to
+     * enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+     * <p>
+     **Note:** For a single-node DB system, this list is empty.
+     *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    @com.fasterxml.jackson.annotation.JsonProperty("vipIds")
+    java.util.List<String> vipIds;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
+     *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("lastPatchHistoryEntryId")
-    String lastPatchHistoryEntryId;
+    @com.fasterxml.jackson.annotation.JsonProperty("scanDnsRecordId")
+    String scanDnsRecordId;
+
+    /**
+     * The data storage size, in gigabytes, that is currently available to the DB system. Applies only for virtual machine DB systems.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
+    Integer dataStorageSizeInGBs;
+
+    /**
+     * The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("recoStorageSizeInGB")
+    Integer recoStorageSizeInGB;
+
+    /**
+     * The number of nodes in the DB system. For RAC DB systems, the value is greater than 1.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
+    Integer nodeCount;
     /**
      * The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
      *
@@ -661,156 +811,24 @@ public class DbSystemSummary {
     LicenseModel licenseModel;
 
     /**
-     * Additional information about the current lifecycleState.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
-    /**
-     * The current state of the DB system.
-     **/
-    @lombok.extern.slf4j.Slf4j
-    public enum LifecycleState {
-        Provisioning("PROVISIONING"),
-        Available("AVAILABLE"),
-        Updating("UPDATING"),
-        Terminating("TERMINATING"),
-        Terminated("TERMINATED"),
-        Failed("FAILED"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private final String value;
-        private static java.util.Map<String, LifecycleState> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (LifecycleState v : LifecycleState.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        LifecycleState(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static LifecycleState create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
-        }
-    };
-    /**
-     * The current state of the DB system.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
-
-    /**
-     * The port number configured for the listener on the DB system.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("listenerPort")
-    Integer listenerPort;
-
-    /**
-     * The number of nodes in the DB system. For RAC DB systems, the value is greater than 1.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
-    Integer nodeCount;
-
-    /**
-     * The RECO/REDO storage size, in gigabytes, that is currently allocated to the DB system. Applies only for virtual machine DB systems.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("recoStorageSizeInGB")
-    Integer recoStorageSizeInGB;
-
-    /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("scanDnsRecordId")
-    String scanDnsRecordId;
-
-    /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system.
-     * SCAN IP addresses are typically used for load balancing and are not assigned to any interface.
-     * Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     **Note:** For a single-node DB system, this list is empty.
+     * Example: `{\"Department\": \"Finance\"}`
      *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("scanIpIds")
-    java.util.List<String> scanIpIds;
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    java.util.Map<String, String> freeformTags;
 
     /**
-     * The shape of the DB system. The shape determines resources to allocate to the DB system.
-     * - For virtual machine shapes, the number of CPU cores and memory
-     * - For bare metal and Exadata shapes, the number of CPU cores, storage, and memory
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("shape")
-    String shape;
-
-    /**
-     * The public key portion of one or more key pairs used for SSH access to the DB system.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKeys")
-    java.util.List<String> sshPublicKeys;
-
-    /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     **Subnet Restrictions:**
-     * - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
-     * - For Exadata and virtual machine 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.128.0/20.
-     * <p>
-     * These subnets are used by the Oracle Clusterware private interconnect on the database instance.
-     * Specifying an overlapping subnet will cause the private interconnect to malfunction.
-     * This restriction applies to both the client subnet and backup subnet.
+     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-    String subnetId;
-
-    /**
-     * The date and time the DB system was created.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
-
-    /**
-     * The Oracle Database version of the DB system.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("version")
-    String version;
-
-    /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system.
-     * The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to
-     * enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
-     * <p>
-     **Note:** For a single-node DB system, this list is empty.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("vipIds")
-    java.util.List<String> vipIds;
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

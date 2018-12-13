@@ -33,6 +33,96 @@ public class DataGuardAssociationSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
+        private String id;
+
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
+        private String databaseId;
+
+        public Builder databaseId(String databaseId) {
+            this.databaseId = databaseId;
+            this.__explicitlySet__.add("databaseId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("role")
+        private Role role;
+
+        public Builder role(Role role) {
+            this.role = role;
+            this.__explicitlySet__.add("role");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+        private LifecycleState lifecycleState;
+
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("peerDbSystemId")
+        private String peerDbSystemId;
+
+        public Builder peerDbSystemId(String peerDbSystemId) {
+            this.peerDbSystemId = peerDbSystemId;
+            this.__explicitlySet__.add("peerDbSystemId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("peerDbHomeId")
+        private String peerDbHomeId;
+
+        public Builder peerDbHomeId(String peerDbHomeId) {
+            this.peerDbHomeId = peerDbHomeId;
+            this.__explicitlySet__.add("peerDbHomeId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("peerDatabaseId")
+        private String peerDatabaseId;
+
+        public Builder peerDatabaseId(String peerDatabaseId) {
+            this.peerDatabaseId = peerDatabaseId;
+            this.__explicitlySet__.add("peerDatabaseId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("peerDataGuardAssociationId")
+        private String peerDataGuardAssociationId;
+
+        public Builder peerDataGuardAssociationId(String peerDataGuardAssociationId) {
+            this.peerDataGuardAssociationId = peerDataGuardAssociationId;
+            this.__explicitlySet__.add("peerDataGuardAssociationId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("peerRole")
+        private PeerRole peerRole;
+
+        public Builder peerRole(PeerRole peerRole) {
+            this.peerRole = peerRole;
+            this.__explicitlySet__.add("peerRole");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("applyLag")
         private String applyLag;
 
@@ -51,111 +141,12 @@ public class DataGuardAssociationSummary {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
-        private String databaseId;
-
-        public Builder databaseId(String databaseId) {
-            this.databaseId = databaseId;
-            this.__explicitlySet__.add("databaseId");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("id")
-        private String id;
-
-        public Builder id(String id) {
-            this.id = id;
-            this.__explicitlySet__.add("id");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-        private String lifecycleDetails;
-
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = lifecycleDetails;
-            this.__explicitlySet__.add("lifecycleDetails");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-        private LifecycleState lifecycleState;
-
-        public Builder lifecycleState(LifecycleState lifecycleState) {
-            this.lifecycleState = lifecycleState;
-            this.__explicitlySet__.add("lifecycleState");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("peerDataGuardAssociationId")
-        private String peerDataGuardAssociationId;
-
-        public Builder peerDataGuardAssociationId(String peerDataGuardAssociationId) {
-            this.peerDataGuardAssociationId = peerDataGuardAssociationId;
-            this.__explicitlySet__.add("peerDataGuardAssociationId");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("peerDatabaseId")
-        private String peerDatabaseId;
-
-        public Builder peerDatabaseId(String peerDatabaseId) {
-            this.peerDatabaseId = peerDatabaseId;
-            this.__explicitlySet__.add("peerDatabaseId");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("peerDbHomeId")
-        private String peerDbHomeId;
-
-        public Builder peerDbHomeId(String peerDbHomeId) {
-            this.peerDbHomeId = peerDbHomeId;
-            this.__explicitlySet__.add("peerDbHomeId");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("peerDbSystemId")
-        private String peerDbSystemId;
-
-        public Builder peerDbSystemId(String peerDbSystemId) {
-            this.peerDbSystemId = peerDbSystemId;
-            this.__explicitlySet__.add("peerDbSystemId");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("peerRole")
-        private PeerRole peerRole;
-
-        public Builder peerRole(PeerRole peerRole) {
-            this.peerRole = peerRole;
-            this.__explicitlySet__.add("peerRole");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
         private ProtectionMode protectionMode;
 
         public Builder protectionMode(ProtectionMode protectionMode) {
             this.protectionMode = protectionMode;
             this.__explicitlySet__.add("protectionMode");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("role")
-        private Role role;
-
-        public Builder role(Role role) {
-            this.role = role;
-            this.__explicitlySet__.add("role");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-        private java.util.Date timeCreated;
-
-        public Builder timeCreated(java.util.Date timeCreated) {
-            this.timeCreated = timeCreated;
-            this.__explicitlySet__.add("timeCreated");
             return this;
         }
 
@@ -168,27 +159,36 @@ public class DataGuardAssociationSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+        private java.util.Date timeCreated;
+
+        public Builder timeCreated(java.util.Date timeCreated) {
+            this.timeCreated = timeCreated;
+            this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DataGuardAssociationSummary build() {
             DataGuardAssociationSummary __instance__ =
                     new DataGuardAssociationSummary(
+                            id,
+                            databaseId,
+                            role,
+                            lifecycleState,
+                            lifecycleDetails,
+                            peerDbSystemId,
+                            peerDbHomeId,
+                            peerDatabaseId,
+                            peerDataGuardAssociationId,
+                            peerRole,
                             applyLag,
                             applyRate,
-                            databaseId,
-                            id,
-                            lifecycleDetails,
-                            lifecycleState,
-                            peerDataGuardAssociationId,
-                            peerDatabaseId,
-                            peerDbHomeId,
-                            peerDbSystemId,
-                            peerRole,
                             protectionMode,
-                            role,
-                            timeCreated,
-                            transportType);
+                            transportType,
+                            timeCreated);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -196,21 +196,21 @@ public class DataGuardAssociationSummary {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DataGuardAssociationSummary o) {
             Builder copiedBuilder =
-                    applyLag(o.getApplyLag())
-                            .applyRate(o.getApplyRate())
+                    id(o.getId())
                             .databaseId(o.getDatabaseId())
-                            .id(o.getId())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .lifecycleState(o.getLifecycleState())
-                            .peerDataGuardAssociationId(o.getPeerDataGuardAssociationId())
-                            .peerDatabaseId(o.getPeerDatabaseId())
-                            .peerDbHomeId(o.getPeerDbHomeId())
-                            .peerDbSystemId(o.getPeerDbSystemId())
-                            .peerRole(o.getPeerRole())
-                            .protectionMode(o.getProtectionMode())
                             .role(o.getRole())
-                            .timeCreated(o.getTimeCreated())
-                            .transportType(o.getTransportType());
+                            .lifecycleState(o.getLifecycleState())
+                            .lifecycleDetails(o.getLifecycleDetails())
+                            .peerDbSystemId(o.getPeerDbSystemId())
+                            .peerDbHomeId(o.getPeerDbHomeId())
+                            .peerDatabaseId(o.getPeerDatabaseId())
+                            .peerDataGuardAssociationId(o.getPeerDataGuardAssociationId())
+                            .peerRole(o.getPeerRole())
+                            .applyLag(o.getApplyLag())
+                            .applyRate(o.getApplyRate())
+                            .protectionMode(o.getProtectionMode())
+                            .transportType(o.getTransportType())
+                            .timeCreated(o.getTimeCreated());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -225,42 +225,67 @@ public class DataGuardAssociationSummary {
     }
 
     /**
-     * The lag time between updates to the primary database and application of the redo data on the standby database,
-     * as computed by the reporting database.
-     * <p>
-     * Example: `9 seconds`
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("applyLag")
-    String applyLag;
-
-    /**
-     * The rate at which redo logs are synced between the associated databases.
-     * <p>
-     * Example: `180 Mb per second`
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("applyRate")
-    String applyRate;
-
-    /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the reporting database.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
-    String databaseId;
-
-    /**
      * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the Data Guard association.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * Additional information about the current lifecycleState, if available.
-     *
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the reporting database.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
+    String databaseId;
+    /**
+     * The role of the reporting database in this Data Guard association.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum Role {
+        Primary("PRIMARY"),
+        Standby("STANDBY"),
+        DisabledStandby("DISABLED_STANDBY"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, Role> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Role v : Role.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        Role(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Role create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Role', returning UnknownEnumValue", key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The role of the reporting database in this Data Guard association.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("role")
+    Role role;
     /**
      * The current state of the Data Guard association.
      **/
@@ -318,16 +343,19 @@ public class DataGuardAssociationSummary {
     LifecycleState lifecycleState;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
+     * Additional information about the current lifecycleState, if available.
+     *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("peerDataGuardAssociationId")
-    String peerDataGuardAssociationId;
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    String lifecycleDetails;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the associated peer database.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the DB system containing the associated
+     * peer database.
+     *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("peerDatabaseId")
-    String peerDatabaseId;
+    @com.fasterxml.jackson.annotation.JsonProperty("peerDbSystemId")
+    String peerDbSystemId;
 
     /**
      * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the database home containing the associated peer database.
@@ -337,12 +365,16 @@ public class DataGuardAssociationSummary {
     String peerDbHomeId;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the DB system containing the associated
-     * peer database.
-     *
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the associated peer database.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("peerDbSystemId")
-    String peerDbSystemId;
+    @com.fasterxml.jackson.annotation.JsonProperty("peerDatabaseId")
+    String peerDatabaseId;
+
+    /**
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("peerDataGuardAssociationId")
+    String peerDataGuardAssociationId;
     /**
      * The role of the peer database in this Data Guard association.
      **/
@@ -395,6 +427,25 @@ public class DataGuardAssociationSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerRole")
     PeerRole peerRole;
+
+    /**
+     * The lag time between updates to the primary database and application of the redo data on the standby database,
+     * as computed by the reporting database.
+     * <p>
+     * Example: `9 seconds`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("applyLag")
+    String applyLag;
+
+    /**
+     * The rate at which redo logs are synced between the associated databases.
+     * <p>
+     * Example: `180 Mb per second`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("applyRate")
+    String applyRate;
     /**
      * The protection mode of this Data Guard association. For more information, see
      * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
@@ -454,63 +505,6 @@ public class DataGuardAssociationSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
     ProtectionMode protectionMode;
     /**
-     * The role of the reporting database in this Data Guard association.
-     **/
-    @lombok.extern.slf4j.Slf4j
-    public enum Role {
-        Primary("PRIMARY"),
-        Standby("STANDBY"),
-        DisabledStandby("DISABLED_STANDBY"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private final String value;
-        private static java.util.Map<String, Role> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (Role v : Role.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        Role(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static Role create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'Role', returning UnknownEnumValue", key);
-            return UnknownEnumValue;
-        }
-    };
-    /**
-     * The role of the reporting database in this Data Guard association.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("role")
-    Role role;
-
-    /**
-     * The date and time the Data Guard Association was created.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    java.util.Date timeCreated;
-    /**
      * The redo transport type used by this Data Guard association.  For more information, see
      * [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400)
      * in the Oracle Data Guard documentation.
@@ -568,6 +562,12 @@ public class DataGuardAssociationSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("transportType")
     TransportType transportType;
+
+    /**
+     * The date and time the Data Guard association was created.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    java.util.Date timeCreated;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -4,11 +4,6 @@
 package com.oracle.bmc.database.model;
 
 /**
- * A Patch for a DB system or DB Home.
- * <p>
- * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
- * talk to an administrator. If you're an administrator who needs to write policies to give users access,
- * see [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -27,12 +22,12 @@ public class Patch {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("availableActions")
-        private java.util.List<AvailableActions> availableActions;
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
+        private String id;
 
-        public Builder availableActions(java.util.List<AvailableActions> availableActions) {
-            this.availableActions = availableActions;
-            this.__explicitlySet__.add("availableActions");
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
             return this;
         }
 
@@ -45,21 +40,21 @@ public class Patch {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("id")
-        private String id;
-
-        public Builder id(String id) {
-            this.id = id;
-            this.__explicitlySet__.add("id");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("lastAction")
         private LastAction lastAction;
 
         public Builder lastAction(LastAction lastAction) {
             this.lastAction = lastAction;
             this.__explicitlySet__.add("lastAction");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("availableActions")
+        private java.util.List<AvailableActions> availableActions;
+
+        public Builder availableActions(java.util.List<AvailableActions> availableActions) {
+            this.availableActions = availableActions;
+            this.__explicitlySet__.add("availableActions");
             return this;
         }
 
@@ -105,10 +100,10 @@ public class Patch {
         public Patch build() {
             Patch __instance__ =
                     new Patch(
-                            availableActions,
-                            description,
                             id,
+                            description,
                             lastAction,
+                            availableActions,
                             lifecycleDetails,
                             lifecycleState,
                             timeReleased,
@@ -120,10 +115,10 @@ public class Patch {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Patch o) {
             Builder copiedBuilder =
-                    availableActions(o.getAvailableActions())
+                    id(o.getId())
                             .description(o.getDescription())
-                            .id(o.getId())
                             .lastAction(o.getLastAction())
+                            .availableActions(o.getAvailableActions())
                             .lifecycleDetails(o.getLifecycleDetails())
                             .lifecycleState(o.getLifecycleState())
                             .timeReleased(o.getTimeReleased())
@@ -142,67 +137,16 @@ public class Patch {
     }
 
     /**
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the patch.
      **/
-    @lombok.extern.slf4j.Slf4j
-    public enum AvailableActions {
-        Apply("APPLY"),
-        Precheck("PRECHECK"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private final String value;
-        private static java.util.Map<String, AvailableActions> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (AvailableActions v : AvailableActions.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        AvailableActions(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static AvailableActions create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'AvailableActions', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
-        }
-    };
-    /**
-     * Actions that can possibly be performed using this patch.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("availableActions")
-    java.util.List<AvailableActions> availableActions;
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    String id;
 
     /**
      * The text describing this patch package.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
-
-    /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the patch.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
     /**
      * Action that is currently being performed or was completed last.
      **/
@@ -254,6 +198,56 @@ public class Patch {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastAction")
     LastAction lastAction;
+    /**
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum AvailableActions {
+        Apply("APPLY"),
+        Precheck("PRECHECK"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, AvailableActions> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AvailableActions v : AvailableActions.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        AvailableActions(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AvailableActions create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'AvailableActions', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Actions that can possibly be performed using this patch.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("availableActions")
+    java.util.List<AvailableActions> availableActions;
 
     /**
      * A descriptive text associated with the lifecycleState.

@@ -89,18 +89,6 @@ public class GenerateAutonomousDataWarehouseWalletConverter {
 
                                 builder.inputStream(response.getItem());
 
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        contentLengthHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "content-length");
-                                if (contentLengthHeader.isPresent()) {
-                                    builder.contentLength(
-                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
-                                                    "content-length",
-                                                    contentLengthHeader.get().get(0),
-                                                    Long.class));
-                                }
-
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
                                                 headers, "etag");
@@ -108,18 +96,6 @@ public class GenerateAutonomousDataWarehouseWalletConverter {
                                     builder.etag(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
                                                     "etag", etagHeader.get().get(0), String.class));
-                                }
-
-                                com.google.common.base.Optional<java.util.List<String>>
-                                        lastModifiedHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "last-modified");
-                                if (lastModifiedHeader.isPresent()) {
-                                    builder.lastModified(
-                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
-                                                    "last-modified",
-                                                    lastModifiedHeader.get().get(0),
-                                                    java.util.Date.class));
                                 }
 
                                 com.google.common.base.Optional<java.util.List<String>>
@@ -132,6 +108,30 @@ public class GenerateAutonomousDataWarehouseWalletConverter {
                                                     "opc-request-id",
                                                     opcRequestIdHeader.get().get(0),
                                                     String.class));
+                                }
+
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        contentLengthHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "content-length");
+                                if (contentLengthHeader.isPresent()) {
+                                    builder.contentLength(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "content-length",
+                                                    contentLengthHeader.get().get(0),
+                                                    Long.class));
+                                }
+
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        lastModifiedHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "last-modified");
+                                if (lastModifiedHeader.isPresent()) {
+                                    builder.lastModified(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "last-modified",
+                                                    lastModifiedHeader.get().get(0),
+                                                    java.util.Date.class));
                                 }
 
                                 GenerateAutonomousDataWarehouseWalletResponse responseWrapper =

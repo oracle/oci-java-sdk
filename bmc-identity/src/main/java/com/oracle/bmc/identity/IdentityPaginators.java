@@ -364,6 +364,125 @@ public class IdentityPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listIdentityProviderGroups operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListIdentityProviderGroupsResponse> listIdentityProviderGroupsResponseIterator(
+            final ListIdentityProviderGroupsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListIdentityProviderGroupsRequest.Builder, ListIdentityProviderGroupsRequest,
+                ListIdentityProviderGroupsResponse>(
+                new com.google.common.base.Supplier<ListIdentityProviderGroupsRequest.Builder>() {
+                    @Override
+                    public ListIdentityProviderGroupsRequest.Builder get() {
+                        return ListIdentityProviderGroupsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListIdentityProviderGroupsResponse, String>() {
+                    @Override
+                    public String apply(ListIdentityProviderGroupsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListIdentityProviderGroupsRequest.Builder>,
+                        ListIdentityProviderGroupsRequest>() {
+                    @Override
+                    public ListIdentityProviderGroupsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListIdentityProviderGroupsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListIdentityProviderGroupsRequest, ListIdentityProviderGroupsResponse>() {
+                    @Override
+                    public ListIdentityProviderGroupsResponse apply(
+                            ListIdentityProviderGroupsRequest request) {
+                        return client.listIdentityProviderGroups(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.IdentityProviderGroupSummary} objects
+     * contained in responses from the listIdentityProviderGroups operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.IdentityProviderGroupSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.identity.model.IdentityProviderGroupSummary>
+            listIdentityProviderGroupsRecordIterator(
+                    final ListIdentityProviderGroupsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListIdentityProviderGroupsRequest.Builder, ListIdentityProviderGroupsRequest,
+                ListIdentityProviderGroupsResponse,
+                com.oracle.bmc.identity.model.IdentityProviderGroupSummary>(
+                new com.google.common.base.Supplier<ListIdentityProviderGroupsRequest.Builder>() {
+                    @Override
+                    public ListIdentityProviderGroupsRequest.Builder get() {
+                        return ListIdentityProviderGroupsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListIdentityProviderGroupsResponse, String>() {
+                    @Override
+                    public String apply(ListIdentityProviderGroupsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListIdentityProviderGroupsRequest.Builder>,
+                        ListIdentityProviderGroupsRequest>() {
+                    @Override
+                    public ListIdentityProviderGroupsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListIdentityProviderGroupsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListIdentityProviderGroupsRequest, ListIdentityProviderGroupsResponse>() {
+                    @Override
+                    public ListIdentityProviderGroupsResponse apply(
+                            ListIdentityProviderGroupsRequest request) {
+                        return client.listIdentityProviderGroups(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListIdentityProviderGroupsResponse,
+                        java.util.List<
+                                com.oracle.bmc.identity.model.IdentityProviderGroupSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.identity.model.IdentityProviderGroupSummary>
+                            apply(ListIdentityProviderGroupsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listIdentityProviders operation. This iterable
      * will fetch more data from the server as needed.
      *

@@ -27,12 +27,12 @@ public class CreateDbHomeDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("database")
-        private CreateDatabaseDetails database;
+        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+        private String displayName;
 
-        public Builder database(CreateDatabaseDetails database) {
-            this.database = database;
-            this.__explicitlySet__.add("database");
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            this.__explicitlySet__.add("displayName");
             return this;
         }
 
@@ -45,12 +45,12 @@ public class CreateDbHomeDetails {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-        private String displayName;
+        @com.fasterxml.jackson.annotation.JsonProperty("database")
+        private CreateDatabaseDetails database;
 
-        public Builder displayName(String displayName) {
-            this.displayName = displayName;
-            this.__explicitlySet__.add("displayName");
+        public Builder database(CreateDatabaseDetails database) {
+            this.database = database;
+            this.__explicitlySet__.add("database");
             return this;
         }
 
@@ -59,7 +59,7 @@ public class CreateDbHomeDetails {
 
         public CreateDbHomeDetails build() {
             CreateDbHomeDetails __instance__ =
-                    new CreateDbHomeDetails(database, dbVersion, displayName);
+                    new CreateDbHomeDetails(displayName, dbVersion, database);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -67,9 +67,9 @@ public class CreateDbHomeDetails {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateDbHomeDetails o) {
             Builder copiedBuilder =
-                    database(o.getDatabase())
+                    displayName(o.getDisplayName())
                             .dbVersion(o.getDbVersion())
-                            .displayName(o.getDisplayName());
+                            .database(o.getDatabase());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -83,8 +83,11 @@ public class CreateDbHomeDetails {
         return new Builder();
     }
 
-    @com.fasterxml.jackson.annotation.JsonProperty("database")
-    CreateDatabaseDetails database;
+    /**
+     * The user-provided name of the database home.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    String displayName;
 
     /**
      * A valid Oracle Database version. To get a list of supported versions, use the {@link #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
@@ -92,11 +95,8 @@ public class CreateDbHomeDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     String dbVersion;
 
-    /**
-     * The user-provided name of the database home.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
+    @com.fasterxml.jackson.annotation.JsonProperty("database")
+    CreateDatabaseDetails database;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

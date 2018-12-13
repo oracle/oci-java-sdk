@@ -28,12 +28,12 @@ public class AutonomousDataWarehouseBackupSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataWarehouseId")
-        private String autonomousDataWarehouseId;
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
+        private String id;
 
-        public Builder autonomousDataWarehouseId(String autonomousDataWarehouseId) {
-            this.autonomousDataWarehouseId = autonomousDataWarehouseId;
-            this.__explicitlySet__.add("autonomousDataWarehouseId");
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
             return this;
         }
 
@@ -46,6 +46,15 @@ public class AutonomousDataWarehouseBackupSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataWarehouseId")
+        private String autonomousDataWarehouseId;
+
+        public Builder autonomousDataWarehouseId(String autonomousDataWarehouseId) {
+            this.autonomousDataWarehouseId = autonomousDataWarehouseId;
+            this.__explicitlySet__.add("autonomousDataWarehouseId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -55,12 +64,12 @@ public class AutonomousDataWarehouseBackupSummary {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("id")
-        private String id;
+        @com.fasterxml.jackson.annotation.JsonProperty("type")
+        private Type type;
 
-        public Builder id(String id) {
-            this.id = id;
-            this.__explicitlySet__.add("id");
+        public Builder type(Type type) {
+            this.type = type;
+            this.__explicitlySet__.add("type");
             return this;
         }
 
@@ -70,6 +79,24 @@ public class AutonomousDataWarehouseBackupSummary {
         public Builder isAutomatic(Boolean isAutomatic) {
             this.isAutomatic = isAutomatic;
             this.__explicitlySet__.add("isAutomatic");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
+        private java.util.Date timeStarted;
+
+        public Builder timeStarted(java.util.Date timeStarted) {
+            this.timeStarted = timeStarted;
+            this.__explicitlySet__.add("timeStarted");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
+        private java.util.Date timeEnded;
+
+        public Builder timeEnded(java.util.Date timeEnded) {
+            this.timeEnded = timeEnded;
+            this.__explicitlySet__.add("timeEnded");
             return this;
         }
 
@@ -91,49 +118,22 @@ public class AutonomousDataWarehouseBackupSummary {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
-        private java.util.Date timeEnded;
-
-        public Builder timeEnded(java.util.Date timeEnded) {
-            this.timeEnded = timeEnded;
-            this.__explicitlySet__.add("timeEnded");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
-        private java.util.Date timeStarted;
-
-        public Builder timeStarted(java.util.Date timeStarted) {
-            this.timeStarted = timeStarted;
-            this.__explicitlySet__.add("timeStarted");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("type")
-        private Type type;
-
-        public Builder type(Type type) {
-            this.type = type;
-            this.__explicitlySet__.add("type");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AutonomousDataWarehouseBackupSummary build() {
             AutonomousDataWarehouseBackupSummary __instance__ =
                     new AutonomousDataWarehouseBackupSummary(
-                            autonomousDataWarehouseId,
-                            compartmentId,
-                            displayName,
                             id,
+                            compartmentId,
+                            autonomousDataWarehouseId,
+                            displayName,
+                            type,
                             isAutomatic,
-                            lifecycleDetails,
-                            lifecycleState,
-                            timeEnded,
                             timeStarted,
-                            type);
+                            timeEnded,
+                            lifecycleDetails,
+                            lifecycleState);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -141,16 +141,16 @@ public class AutonomousDataWarehouseBackupSummary {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(AutonomousDataWarehouseBackupSummary o) {
             Builder copiedBuilder =
-                    autonomousDataWarehouseId(o.getAutonomousDataWarehouseId())
+                    id(o.getId())
                             .compartmentId(o.getCompartmentId())
+                            .autonomousDataWarehouseId(o.getAutonomousDataWarehouseId())
                             .displayName(o.getDisplayName())
-                            .id(o.getId())
+                            .type(o.getType())
                             .isAutomatic(o.getIsAutomatic())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeEnded(o.getTimeEnded())
                             .timeStarted(o.getTimeStarted())
-                            .type(o.getType());
+                            .timeEnded(o.getTimeEnded())
+                            .lifecycleDetails(o.getLifecycleDetails())
+                            .lifecycleState(o.getLifecycleState());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -165,10 +165,10 @@ public class AutonomousDataWarehouseBackupSummary {
     }
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the Autonomous Data Warehouse.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the Autonomous Data Warehouse backup.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataWarehouseId")
-    String autonomousDataWarehouseId;
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    String id;
 
     /**
      * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -177,22 +177,84 @@ public class AutonomousDataWarehouseBackupSummary {
     String compartmentId;
 
     /**
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the Autonomous Data Warehouse.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataWarehouseId")
+    String autonomousDataWarehouseId;
+
+    /**
      * The user-friendly name for the backup. The name does not have to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
-
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the Autonomous Data Warehouse backup.
+     * The type of backup.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    @lombok.extern.slf4j.Slf4j
+    public enum Type {
+        Incremental("INCREMENTAL"),
+        Full("FULL"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, Type> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Type v : Type.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        Type(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Type create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Type', returning UnknownEnumValue", key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The type of backup.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
+    Type type;
 
     /**
      * Indicates whether the backup is user-initiated or automatic.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutomatic")
     Boolean isAutomatic;
+
+    /**
+     * The date and time the backup started.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
+    java.util.Date timeStarted;
+
+    /**
+     * The date and time the backup completed.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
+    java.util.Date timeEnded;
 
     /**
      * Additional information about the current lifecycle state.
@@ -253,68 +315,6 @@ public class AutonomousDataWarehouseBackupSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
-
-    /**
-     * The date and time the backup completed.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
-    java.util.Date timeEnded;
-
-    /**
-     * The date and time the backup started.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
-    java.util.Date timeStarted;
-    /**
-     * The type of backup.
-     **/
-    @lombok.extern.slf4j.Slf4j
-    public enum Type {
-        Incremental("INCREMENTAL"),
-        Full("FULL"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private final String value;
-        private static java.util.Map<String, Type> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (Type v : Type.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        Type(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static Type create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'Type', returning UnknownEnumValue", key);
-            return UnknownEnumValue;
-        }
-    };
-    /**
-     * The type of backup.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Type type;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

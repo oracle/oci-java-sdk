@@ -111,7 +111,7 @@ public class Service {
     String id;
 
     /**
-     * Name of the service.
+     * Name of the service. This name can change and is not guaranteed to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;

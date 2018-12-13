@@ -90,6 +90,14 @@ public class ListZonesConverter {
                                     request.getTimeCreatedLessThan()));
         }
 
+        if (request.getLifecycleState() != null) {
+            target =
+                    target.queryParam(
+                            "lifecycleState",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getLifecycleState().getValue()));
+        }
+
         if (request.getSortBy() != null) {
             target =
                     target.queryParam(
@@ -104,14 +112,6 @@ public class ListZonesConverter {
                             "sortOrder",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getSortOrder().getValue()));
-        }
-
-        if (request.getLifecycleState() != null) {
-            target =
-                    target.queryParam(
-                            "lifecycleState",
-                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getLifecycleState().getValue()));
         }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();

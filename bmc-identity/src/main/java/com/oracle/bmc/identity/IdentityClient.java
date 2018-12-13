@@ -1563,6 +1563,33 @@ public class IdentityClient implements Identity {
     }
 
     @Override
+    public ListIdentityProviderGroupsResponse listIdentityProviderGroups(
+            ListIdentityProviderGroupsRequest request) {
+        LOG.trace("Called listIdentityProviderGroups");
+        request = ListIdentityProviderGroupsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListIdentityProviderGroupsConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListIdentityProviderGroupsResponse>
+                transformer = ListIdentityProviderGroupsConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public ListIdentityProvidersResponse listIdentityProviders(
             ListIdentityProvidersRequest request) {
         LOG.trace("Called listIdentityProviders");
@@ -1878,6 +1905,31 @@ public class IdentityClient implements Identity {
         while (true) {
             try {
                 javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public ResetIdpScimClientResponse resetIdpScimClient(ResetIdpScimClientRequest request) {
+        LOG.trace("Called resetIdpScimClient");
+        request = ResetIdpScimClientConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ResetIdpScimClientConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ResetIdpScimClientResponse>
+                transformer = ResetIdpScimClientConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.post(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
@@ -2219,6 +2271,33 @@ public class IdentityClient implements Identity {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdateUserDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public UpdateUserCapabilitiesResponse updateUserCapabilities(
+            UpdateUserCapabilitiesRequest request) {
+        LOG.trace("Called updateUserCapabilities");
+        request = UpdateUserCapabilitiesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateUserCapabilitiesConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateUserCapabilitiesResponse>
+                transformer = UpdateUserCapabilitiesConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateUserCapabilitiesDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS

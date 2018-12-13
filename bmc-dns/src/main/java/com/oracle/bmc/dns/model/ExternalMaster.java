@@ -81,7 +81,9 @@ public class ExternalMaster {
     String address;
 
     /**
-     * The server's port.
+     * The server's port. Port value must be a value of 53, otherwise omit
+     * the port value.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     Integer port;

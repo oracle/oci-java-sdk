@@ -111,6 +111,15 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
+        private Boolean isPvEncryptionInTransitEnabled;
+
+        public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
+            this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+            this.__explicitlySet__.add("isPvEncryptionInTransitEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("chapSecret")
         private String chapSecret;
 
@@ -171,6 +180,7 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
                             lifecycleState,
                             timeCreated,
                             volumeId,
+                            isPvEncryptionInTransitEnabled,
                             chapSecret,
                             chapUsername,
                             ipv4,
@@ -192,6 +202,7 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
                             .lifecycleState(o.getLifecycleState())
                             .timeCreated(o.getTimeCreated())
                             .volumeId(o.getVolumeId())
+                            .isPvEncryptionInTransitEnabled(o.getIsPvEncryptionInTransitEnabled())
                             .chapSecret(o.getChapSecret())
                             .chapUsername(o.getChapUsername())
                             .ipv4(o.getIpv4())
@@ -221,6 +232,7 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
             LifecycleState lifecycleState,
             java.util.Date timeCreated,
             String volumeId,
+            Boolean isPvEncryptionInTransitEnabled,
             String chapSecret,
             String chapUsername,
             String ipv4,
@@ -235,7 +247,8 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
                 isReadOnly,
                 lifecycleState,
                 timeCreated,
-                volumeId);
+                volumeId,
+                isPvEncryptionInTransitEnabled);
         this.chapSecret = chapSecret;
         this.chapUsername = chapUsername;
         this.ipv4 = ipv4;

@@ -27,6 +27,24 @@ public class CreateDatabaseDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("dbName")
+        private String dbName;
+
+        public Builder dbName(String dbName) {
+            this.dbName = dbName;
+            this.__explicitlySet__.add("dbName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("pdbName")
+        private String pdbName;
+
+        public Builder pdbName(String pdbName) {
+            this.pdbName = pdbName;
+            this.__explicitlySet__.add("pdbName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
         private String adminPassword;
 
@@ -45,21 +63,12 @@ public class CreateDatabaseDetails {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("dbBackupConfig")
-        private DbBackupConfig dbBackupConfig;
+        @com.fasterxml.jackson.annotation.JsonProperty("ncharacterSet")
+        private String ncharacterSet;
 
-        public Builder dbBackupConfig(DbBackupConfig dbBackupConfig) {
-            this.dbBackupConfig = dbBackupConfig;
-            this.__explicitlySet__.add("dbBackupConfig");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("dbName")
-        private String dbName;
-
-        public Builder dbName(String dbName) {
-            this.dbName = dbName;
-            this.__explicitlySet__.add("dbName");
+        public Builder ncharacterSet(String ncharacterSet) {
+            this.ncharacterSet = ncharacterSet;
+            this.__explicitlySet__.add("ncharacterSet");
             return this;
         }
 
@@ -69,6 +78,24 @@ public class CreateDatabaseDetails {
         public Builder dbWorkload(DbWorkload dbWorkload) {
             this.dbWorkload = dbWorkload;
             this.__explicitlySet__.add("dbWorkload");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dbBackupConfig")
+        private DbBackupConfig dbBackupConfig;
+
+        public Builder dbBackupConfig(DbBackupConfig dbBackupConfig) {
+            this.dbBackupConfig = dbBackupConfig;
+            this.__explicitlySet__.add("dbBackupConfig");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
             return this;
         }
 
@@ -82,48 +109,21 @@ public class CreateDatabaseDetails {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-        private java.util.Map<String, String> freeformTags;
-
-        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
-            this.freeformTags = freeformTags;
-            this.__explicitlySet__.add("freeformTags");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("ncharacterSet")
-        private String ncharacterSet;
-
-        public Builder ncharacterSet(String ncharacterSet) {
-            this.ncharacterSet = ncharacterSet;
-            this.__explicitlySet__.add("ncharacterSet");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("pdbName")
-        private String pdbName;
-
-        public Builder pdbName(String pdbName) {
-            this.pdbName = pdbName;
-            this.__explicitlySet__.add("pdbName");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateDatabaseDetails build() {
             CreateDatabaseDetails __instance__ =
                     new CreateDatabaseDetails(
+                            dbName,
+                            pdbName,
                             adminPassword,
                             characterSet,
-                            dbBackupConfig,
-                            dbName,
-                            dbWorkload,
-                            definedTags,
-                            freeformTags,
                             ncharacterSet,
-                            pdbName);
+                            dbWorkload,
+                            dbBackupConfig,
+                            freeformTags,
+                            definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -131,15 +131,15 @@ public class CreateDatabaseDetails {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateDatabaseDetails o) {
             Builder copiedBuilder =
-                    adminPassword(o.getAdminPassword())
+                    dbName(o.getDbName())
+                            .pdbName(o.getPdbName())
+                            .adminPassword(o.getAdminPassword())
                             .characterSet(o.getCharacterSet())
-                            .dbBackupConfig(o.getDbBackupConfig())
-                            .dbName(o.getDbName())
-                            .dbWorkload(o.getDbWorkload())
-                            .definedTags(o.getDefinedTags())
-                            .freeformTags(o.getFreeformTags())
                             .ncharacterSet(o.getNcharacterSet())
-                            .pdbName(o.getPdbName());
+                            .dbWorkload(o.getDbWorkload())
+                            .dbBackupConfig(o.getDbBackupConfig())
+                            .freeformTags(o.getFreeformTags())
+                            .definedTags(o.getDefinedTags());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -152,6 +152,18 @@ public class CreateDatabaseDetails {
     public static Builder builder() {
         return new Builder();
     }
+
+    /**
+     * The database name. The name must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbName")
+    String dbName;
+
+    /**
+     * The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("pdbName")
+    String pdbName;
 
     /**
      * A strong password for SYS, SYSTEM, and PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
@@ -168,14 +180,13 @@ public class CreateDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("characterSet")
     String characterSet;
 
-    @com.fasterxml.jackson.annotation.JsonProperty("dbBackupConfig")
-    DbBackupConfig dbBackupConfig;
-
     /**
-     * The database name. The name must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+     * The national character set for the database.  The default is AL16UTF16. Allowed values are:
+     * AL16UTF16 or UTF8.
+     *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("dbName")
-    String dbName;
+    @com.fasterxml.jackson.annotation.JsonProperty("ncharacterSet")
+    String ncharacterSet;
     /**
      * The database workload type.
      **/
@@ -217,15 +228,8 @@ public class CreateDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
     DbWorkload dbWorkload;
 
-    /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    @com.fasterxml.jackson.annotation.JsonProperty("dbBackupConfig")
+    DbBackupConfig dbBackupConfig;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -238,18 +242,14 @@ public class CreateDatabaseDetails {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The national character set for the database.  The default is AL16UTF16. Allowed values are:
-     * AL16UTF16 or UTF8.
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("ncharacterSet")
-    String ncharacterSet;
-
-    /**
-     * The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("pdbName")
-    String pdbName;
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

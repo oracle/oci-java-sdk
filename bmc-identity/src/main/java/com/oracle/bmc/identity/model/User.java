@@ -75,6 +75,24 @@ public class User {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("identityProviderId")
+        private String identityProviderId;
+
+        public Builder identityProviderId(String identityProviderId) {
+            this.identityProviderId = identityProviderId;
+            this.__explicitlySet__.add("identityProviderId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("externalIdentifier")
+        private String externalIdentifier;
+
+        public Builder externalIdentifier(String externalIdentifier) {
+            this.externalIdentifier = externalIdentifier;
+            this.__explicitlySet__.add("externalIdentifier");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -121,6 +139,15 @@ public class User {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("capabilities")
+        private UserCapabilities capabilities;
+
+        public Builder capabilities(UserCapabilities capabilities) {
+            this.capabilities = capabilities;
+            this.__explicitlySet__.add("capabilities");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -131,11 +158,14 @@ public class User {
                             compartmentId,
                             name,
                             description,
+                            identityProviderId,
+                            externalIdentifier,
                             timeCreated,
                             lifecycleState,
                             inactiveStatus,
                             freeformTags,
-                            definedTags);
+                            definedTags,
+                            capabilities);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -147,11 +177,14 @@ public class User {
                             .compartmentId(o.getCompartmentId())
                             .name(o.getName())
                             .description(o.getDescription())
+                            .identityProviderId(o.getIdentityProviderId())
+                            .externalIdentifier(o.getExternalIdentifier())
                             .timeCreated(o.getTimeCreated())
                             .lifecycleState(o.getLifecycleState())
                             .inactiveStatus(o.getInactiveStatus())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .capabilities(o.getCapabilities());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -190,6 +223,18 @@ public class User {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
+
+    /**
+     * The OCID of the `IdentityProvider` this user belongs to.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("identityProviderId")
+    String identityProviderId;
+
+    /**
+     * Identifier of the user in the identity provider
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("externalIdentifier")
+    String externalIdentifier;
 
     /**
      * Date and time the user was created, in the format defined by RFC3339.
@@ -287,6 +332,12 @@ public class User {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Properties indicating how the user is allowed to authenticate.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("capabilities")
+    UserCapabilities capabilities;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
