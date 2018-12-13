@@ -158,4 +158,10 @@ public class VolumeAttachment {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("volumeId")
     String volumeId;
+
+    /**
+     * Whether the enable encryption in transit for the PV volume attachment is on or not.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
+    Boolean isPvEncryptionInTransitEnabled;
 }

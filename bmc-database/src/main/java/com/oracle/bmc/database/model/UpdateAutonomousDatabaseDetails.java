@@ -27,15 +27,6 @@ public class UpdateAutonomousDatabaseDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
-        private String adminPassword;
-
-        public Builder adminPassword(String adminPassword) {
-            this.adminPassword = adminPassword;
-            this.__explicitlySet__.add("adminPassword");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
         private Integer cpuCoreCount;
 
@@ -54,22 +45,21 @@ public class UpdateAutonomousDatabaseDetails {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
-
-        public Builder definedTags(
-                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
-            this.definedTags = definedTags;
-            this.__explicitlySet__.add("definedTags");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
+        private String adminPassword;
+
+        public Builder adminPassword(String adminPassword) {
+            this.adminPassword = adminPassword;
+            this.__explicitlySet__.add("adminPassword");
             return this;
         }
 
@@ -82,18 +72,28 @@ public class UpdateAutonomousDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateAutonomousDatabaseDetails build() {
             UpdateAutonomousDatabaseDetails __instance__ =
                     new UpdateAutonomousDatabaseDetails(
-                            adminPassword,
                             cpuCoreCount,
                             dataStorageSizeInTBs,
-                            definedTags,
                             displayName,
-                            freeformTags);
+                            adminPassword,
+                            freeformTags,
+                            definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -101,12 +101,12 @@ public class UpdateAutonomousDatabaseDetails {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateAutonomousDatabaseDetails o) {
             Builder copiedBuilder =
-                    adminPassword(o.getAdminPassword())
-                            .cpuCoreCount(o.getCpuCoreCount())
+                    cpuCoreCount(o.getCpuCoreCount())
                             .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
-                            .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags());
+                            .adminPassword(o.getAdminPassword())
+                            .freeformTags(o.getFreeformTags())
+                            .definedTags(o.getDefinedTags());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -119,12 +119,6 @@ public class UpdateAutonomousDatabaseDetails {
     public static Builder builder() {
         return new Builder();
     }
-
-    /**
-     * A strong password for Admin. The password must be between 12 and 60 characters long, and must contain at least 1 uppercase, 1 lowercase and 2 numeric characters. It cannot contain the double quote symbol (\"). It must be different than the last 4 passwords.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
-    String adminPassword;
 
     /**
      * The number of CPU cores to be made available to the database.
@@ -140,20 +134,16 @@ public class UpdateAutonomousDatabaseDetails {
     Integer dataStorageSizeInTBs;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
-
-    /**
      * The user-friendly name for the Autonomous Database. The name does not have to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (\") or the username \"admin\", regardless of casing. It must be different from the last four passwords and it must not be a password used within the last 24 hours.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
+    String adminPassword;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
@@ -164,6 +154,16 @@ public class UpdateAutonomousDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

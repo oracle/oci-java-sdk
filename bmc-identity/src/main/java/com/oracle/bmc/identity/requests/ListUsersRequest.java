@@ -28,6 +28,18 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest {
      */
     private Integer limit;
 
+    /**
+     * The id of the identity provider.
+     *
+     */
+    private String identityProviderId;
+
+    /**
+     * The id of a user in the identity provider.
+     *
+     */
+    private String externalIdentifier;
+
     public static class Builder {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
@@ -52,6 +64,8 @@ public class ListUsersRequest extends com.oracle.bmc.requests.BmcRequest {
             compartmentId(o.getCompartmentId());
             page(o.getPage());
             limit(o.getLimit());
+            identityProviderId(o.getIdentityProviderId());
+            externalIdentifier(o.getExternalIdentifier());
             invocationCallback(o.getInvocationCallback());
             return this;
         }

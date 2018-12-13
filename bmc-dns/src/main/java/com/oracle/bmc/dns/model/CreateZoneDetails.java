@@ -5,6 +5,8 @@ package com.oracle.bmc.dns.model;
 
 /**
  * The body for defining a new zone.
+ * <p>
+ *Warning:* Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -52,6 +54,25 @@ public class CreateZoneDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("externalMasters")
         private java.util.List<ExternalMaster> externalMasters;
 
@@ -66,7 +87,13 @@ public class CreateZoneDetails {
 
         public CreateZoneDetails build() {
             CreateZoneDetails __instance__ =
-                    new CreateZoneDetails(name, zoneType, compartmentId, externalMasters);
+                    new CreateZoneDetails(
+                            name,
+                            zoneType,
+                            compartmentId,
+                            freeformTags,
+                            definedTags,
+                            externalMasters);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -77,6 +104,8 @@ public class CreateZoneDetails {
                     name(o.getName())
                             .zoneType(o.getZoneType())
                             .compartmentId(o.getCompartmentId())
+                            .freeformTags(o.getFreeformTags())
+                            .definedTags(o.getDefinedTags())
                             .externalMasters(o.getExternalMasters());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -146,7 +175,26 @@ public class CreateZoneDetails {
     String compartmentId;
 
     /**
-     * External master servers for the zone.
+     * Simple key-value pair that is applied without any predefined name, type, or scope.
+     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * Example: `{\"bar-key\": \"value\"}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    java.util.Map<String, String> freeformTags;
+
+    /**
+     * Usage of predefined tag keys. These predefined keys are scoped to a namespace.
+     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * External master servers for the zone. `externalMasters` becomes a
+     * required parameter when the `zoneType` value is `SECONDARY`.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalMasters")
     java.util.List<ExternalMaster> externalMasters;

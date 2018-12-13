@@ -105,6 +105,7 @@ public class ResponseHelperTest {
         verify(response).readEntity(entityType);
         verify(headers).addAll(HttpHeaders.CONTENT_TYPE, contentType);
         verify(response, never()).bufferEntity();
+        verify(response).getStringHeaders();
         verifyNoMoreInteractions(response, statusInfo, headers, mockStream);
     }
 

@@ -100,6 +100,15 @@ public class BootVolumeAttachment {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
+        private Boolean isPvEncryptionInTransitEnabled;
+
+        public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
+            this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+            this.__explicitlySet__.add("isPvEncryptionInTransitEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -113,7 +122,8 @@ public class BootVolumeAttachment {
                             id,
                             instanceId,
                             lifecycleState,
-                            timeCreated);
+                            timeCreated,
+                            isPvEncryptionInTransitEnabled);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -128,7 +138,8 @@ public class BootVolumeAttachment {
                             .id(o.getId())
                             .instanceId(o.getInstanceId())
                             .lifecycleState(o.getLifecycleState())
-                            .timeCreated(o.getTimeCreated());
+                            .timeCreated(o.getTimeCreated())
+                            .isPvEncryptionInTransitEnabled(o.getIsPvEncryptionInTransitEnabled());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -246,6 +257,12 @@ public class BootVolumeAttachment {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
+
+    /**
+     * Whether the enable encryption in transit for the PV volume attachment is on or not.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
+    Boolean isPvEncryptionInTransitEnabled;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

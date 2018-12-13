@@ -33,15 +33,6 @@ public class RestoreDatabaseDetails {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("latest")
-        private Boolean latest;
-
-        public Builder latest(Boolean latest) {
-            this.latest = latest;
-            this.__explicitlySet__.add("latest");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
@@ -51,12 +42,21 @@ public class RestoreDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("latest")
+        private Boolean latest;
+
+        public Builder latest(Boolean latest) {
+            this.latest = latest;
+            this.__explicitlySet__.add("latest");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RestoreDatabaseDetails build() {
             RestoreDatabaseDetails __instance__ =
-                    new RestoreDatabaseDetails(databaseSCN, latest, timestamp);
+                    new RestoreDatabaseDetails(databaseSCN, timestamp, latest);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -65,8 +65,8 @@ public class RestoreDatabaseDetails {
         public Builder copy(RestoreDatabaseDetails o) {
             Builder copiedBuilder =
                     databaseSCN(o.getDatabaseSCN())
-                            .latest(o.getLatest())
-                            .timestamp(o.getTimestamp());
+                            .timestamp(o.getTimestamp())
+                            .latest(o.getLatest());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -88,18 +88,18 @@ public class RestoreDatabaseDetails {
     String databaseSCN;
 
     /**
-     * Restores to the last known good state with the least possible data loss.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("latest")
-    Boolean latest;
-
-    /**
      * Restores to the timestamp specified.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     java.util.Date timestamp;
+
+    /**
+     * Restores to the last known good state with the least possible data loss.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("latest")
+    Boolean latest;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

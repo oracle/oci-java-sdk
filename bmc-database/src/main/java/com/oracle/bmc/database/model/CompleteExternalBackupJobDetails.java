@@ -24,30 +24,21 @@ public class CompleteExternalBackupJobDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPath")
+        private String tdeWalletPath;
+
+        public Builder tdeWalletPath(String tdeWalletPath) {
+            this.tdeWalletPath = tdeWalletPath;
+            this.__explicitlySet__.add("tdeWalletPath");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("cfBackupHandle")
         private String cfBackupHandle;
 
         public Builder cfBackupHandle(String cfBackupHandle) {
             this.cfBackupHandle = cfBackupHandle;
             this.__explicitlySet__.add("cfBackupHandle");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("dataSize")
-        private Long dataSize;
-
-        public Builder dataSize(Long dataSize) {
-            this.dataSize = dataSize;
-            this.__explicitlySet__.add("dataSize");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("redoSize")
-        private Long redoSize;
-
-        public Builder redoSize(Long redoSize) {
-            this.redoSize = redoSize;
-            this.__explicitlySet__.add("redoSize");
             return this;
         }
 
@@ -69,12 +60,21 @@ public class CompleteExternalBackupJobDetails {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPath")
-        private String tdeWalletPath;
+        @com.fasterxml.jackson.annotation.JsonProperty("dataSize")
+        private Long dataSize;
 
-        public Builder tdeWalletPath(String tdeWalletPath) {
-            this.tdeWalletPath = tdeWalletPath;
-            this.__explicitlySet__.add("tdeWalletPath");
+        public Builder dataSize(Long dataSize) {
+            this.dataSize = dataSize;
+            this.__explicitlySet__.add("dataSize");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("redoSize")
+        private Long redoSize;
+
+        public Builder redoSize(Long redoSize) {
+            this.redoSize = redoSize;
+            this.__explicitlySet__.add("redoSize");
             return this;
         }
 
@@ -84,12 +84,12 @@ public class CompleteExternalBackupJobDetails {
         public CompleteExternalBackupJobDetails build() {
             CompleteExternalBackupJobDetails __instance__ =
                     new CompleteExternalBackupJobDetails(
+                            tdeWalletPath,
                             cfBackupHandle,
-                            dataSize,
-                            redoSize,
                             spfBackupHandle,
                             sqlPatches,
-                            tdeWalletPath);
+                            dataSize,
+                            redoSize);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -97,12 +97,12 @@ public class CompleteExternalBackupJobDetails {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CompleteExternalBackupJobDetails o) {
             Builder copiedBuilder =
-                    cfBackupHandle(o.getCfBackupHandle())
-                            .dataSize(o.getDataSize())
-                            .redoSize(o.getRedoSize())
+                    tdeWalletPath(o.getTdeWalletPath())
+                            .cfBackupHandle(o.getCfBackupHandle())
                             .spfBackupHandle(o.getSpfBackupHandle())
                             .sqlPatches(o.getSqlPatches())
-                            .tdeWalletPath(o.getTdeWalletPath());
+                            .dataSize(o.getDataSize())
+                            .redoSize(o.getRedoSize());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -117,22 +117,16 @@ public class CompleteExternalBackupJobDetails {
     }
 
     /**
+     * If the database being backed up is TDE enabled, this will be the path to the associated TDE wallet in Object Storage.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPath")
+    String tdeWalletPath;
+
+    /**
      * The handle of the control file backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cfBackupHandle")
     String cfBackupHandle;
-
-    /**
-     * The size of the data in the database, in megabytes.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("dataSize")
-    Long dataSize;
-
-    /**
-     * The size of the redo in the database, in megabytes.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("redoSize")
-    Long redoSize;
 
     /**
      * The handle of the spfile backup.
@@ -147,10 +141,16 @@ public class CompleteExternalBackupJobDetails {
     java.util.List<String> sqlPatches;
 
     /**
-     * If the database being backed up is TDE enabled, this will be the path to the associated TDE wallet in Object Storage.
+     * The size of the data in the database, in megabytes.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("tdeWalletPath")
-    String tdeWalletPath;
+    @com.fasterxml.jackson.annotation.JsonProperty("dataSize")
+    Long dataSize;
+
+    /**
+     * The size of the redo in the database, in megabytes.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("redoSize")
+    Long redoSize;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

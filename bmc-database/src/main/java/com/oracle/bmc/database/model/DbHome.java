@@ -4,15 +4,6 @@
 package com.oracle.bmc.database.model;
 
 /**
- * A directory where Oracle Database software is installed. A bare metal DB system can have multiple database homes
- * and each database home can run a different supported version of Oracle Database. A virtual machine DB system can have only one database home.
- * For more information, see [Bare Metal and Virtual Machine DB Systems](https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Concepts/overview.htm).
- * <p>
- * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an
- * administrator. If you're an administrator who needs to write policies to give users access,
- * see [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
- * <p>
- **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -31,6 +22,15 @@ public class DbHome {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
+        private String id;
+
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -40,39 +40,12 @@ public class DbHome {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
-        private String dbSystemId;
-
-        public Builder dbSystemId(String dbSystemId) {
-            this.dbSystemId = dbSystemId;
-            this.__explicitlySet__.add("dbSystemId");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
-        private String dbVersion;
-
-        public Builder dbVersion(String dbVersion) {
-            this.dbVersion = dbVersion;
-            this.__explicitlySet__.add("dbVersion");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("id")
-        private String id;
-
-        public Builder id(String id) {
-            this.id = id;
-            this.__explicitlySet__.add("id");
             return this;
         }
 
@@ -94,6 +67,24 @@ public class DbHome {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
+        private String dbSystemId;
+
+        public Builder dbSystemId(String dbSystemId) {
+            this.dbSystemId = dbSystemId;
+            this.__explicitlySet__.add("dbSystemId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
+        private String dbVersion;
+
+        public Builder dbVersion(String dbVersion) {
+            this.dbVersion = dbVersion;
+            this.__explicitlySet__.add("dbVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -109,13 +100,13 @@ public class DbHome {
         public DbHome build() {
             DbHome __instance__ =
                     new DbHome(
-                            compartmentId,
-                            dbSystemId,
-                            dbVersion,
-                            displayName,
                             id,
+                            compartmentId,
+                            displayName,
                             lastPatchHistoryEntryId,
                             lifecycleState,
+                            dbSystemId,
+                            dbVersion,
                             timeCreated);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -124,13 +115,13 @@ public class DbHome {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DbHome o) {
             Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .dbSystemId(o.getDbSystemId())
-                            .dbVersion(o.getDbVersion())
+                    id(o.getId())
+                            .compartmentId(o.getCompartmentId())
                             .displayName(o.getDisplayName())
-                            .id(o.getId())
                             .lastPatchHistoryEntryId(o.getLastPatchHistoryEntryId())
                             .lifecycleState(o.getLifecycleState())
+                            .dbSystemId(o.getDbSystemId())
+                            .dbVersion(o.getDbVersion())
                             .timeCreated(o.getTimeCreated());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -146,34 +137,22 @@ public class DbHome {
     }
 
     /**
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the database home.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    String id;
+
+    /**
      * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the DB system.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
-    String dbSystemId;
-
-    /**
-     * The Oracle Database version.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
-    String dbVersion;
-
-    /**
      * The user-provided name for the database home. The name does not need to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
-
-    /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the database home.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
 
     /**
      * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation is started.
@@ -235,6 +214,18 @@ public class DbHome {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
+
+    /**
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the DB system.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
+    String dbSystemId;
+
+    /**
+     * The Oracle Database version.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
+    String dbVersion;
 
     /**
      * The date and time the database home was created.

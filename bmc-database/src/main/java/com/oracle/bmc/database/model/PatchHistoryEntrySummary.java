@@ -24,39 +24,12 @@ public class PatchHistoryEntrySummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("action")
-        private Action action;
-
-        public Builder action(Action action) {
-            this.action = action;
-            this.__explicitlySet__.add("action");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-        private String lifecycleDetails;
-
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = lifecycleDetails;
-            this.__explicitlySet__.add("lifecycleDetails");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-        private LifecycleState lifecycleState;
-
-        public Builder lifecycleState(LifecycleState lifecycleState) {
-            this.lifecycleState = lifecycleState;
-            this.__explicitlySet__.add("lifecycleState");
             return this;
         }
 
@@ -69,12 +42,30 @@ public class PatchHistoryEntrySummary {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
-        private java.util.Date timeEnded;
+        @com.fasterxml.jackson.annotation.JsonProperty("action")
+        private Action action;
 
-        public Builder timeEnded(java.util.Date timeEnded) {
-            this.timeEnded = timeEnded;
-            this.__explicitlySet__.add("timeEnded");
+        public Builder action(Action action) {
+            this.action = action;
+            this.__explicitlySet__.add("action");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+        private LifecycleState lifecycleState;
+
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
 
@@ -87,19 +78,28 @@ public class PatchHistoryEntrySummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
+        private java.util.Date timeEnded;
+
+        public Builder timeEnded(java.util.Date timeEnded) {
+            this.timeEnded = timeEnded;
+            this.__explicitlySet__.add("timeEnded");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PatchHistoryEntrySummary build() {
             PatchHistoryEntrySummary __instance__ =
                     new PatchHistoryEntrySummary(
-                            action,
                             id,
-                            lifecycleDetails,
-                            lifecycleState,
                             patchId,
-                            timeEnded,
-                            timeStarted);
+                            action,
+                            lifecycleState,
+                            lifecycleDetails,
+                            timeStarted,
+                            timeEnded);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -107,13 +107,13 @@ public class PatchHistoryEntrySummary {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(PatchHistoryEntrySummary o) {
             Builder copiedBuilder =
-                    action(o.getAction())
-                            .id(o.getId())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .lifecycleState(o.getLifecycleState())
+                    id(o.getId())
                             .patchId(o.getPatchId())
-                            .timeEnded(o.getTimeEnded())
-                            .timeStarted(o.getTimeStarted());
+                            .action(o.getAction())
+                            .lifecycleState(o.getLifecycleState())
+                            .lifecycleDetails(o.getLifecycleDetails())
+                            .timeStarted(o.getTimeStarted())
+                            .timeEnded(o.getTimeEnded());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -127,6 +127,17 @@ public class PatchHistoryEntrySummary {
         return new Builder();
     }
 
+    /**
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the patch history entry.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    String id;
+
+    /**
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the patch.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("patchId")
+    String patchId;
     /**
      * The action being performed or was completed.
      **/
@@ -178,20 +189,6 @@ public class PatchHistoryEntrySummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     Action action;
-
-    /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the patch history entry.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
-
-    /**
-     * A descriptive text associated with the lifecycleState.
-     * Typically contains additional displayable text.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
     /**
      * The current state of the action.
      **/
@@ -246,22 +243,24 @@ public class PatchHistoryEntrySummary {
     LifecycleState lifecycleState;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the patch.
+     * A descriptive text associated with the lifecycleState.
+     * Typically contains additional displayable text.
+     *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("patchId")
-    String patchId;
-
-    /**
-     * The date and time when the patch action completed.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
-    java.util.Date timeEnded;
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    String lifecycleDetails;
 
     /**
      * The date and time when the patch action started.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     java.util.Date timeStarted;
+
+    /**
+     * The date and time when the patch action completed.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
+    java.util.Date timeEnded;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

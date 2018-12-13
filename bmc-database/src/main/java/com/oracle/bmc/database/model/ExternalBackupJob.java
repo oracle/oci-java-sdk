@@ -34,15 +34,6 @@ public class ExternalBackupJob {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
-        private String bucketName;
-
-        public Builder bucketName(String bucketName) {
-            this.bucketName = bucketName;
-            this.__explicitlySet__.add("bucketName");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("provisioning")
         private Boolean provisioning;
 
@@ -52,21 +43,21 @@ public class ExternalBackupJob {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("swiftPassword")
-        private String swiftPassword;
-
-        public Builder swiftPassword(String swiftPassword) {
-            this.swiftPassword = swiftPassword;
-            this.__explicitlySet__.add("swiftPassword");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("swiftPath")
         private String swiftPath;
 
         public Builder swiftPath(String swiftPath) {
             this.swiftPath = swiftPath;
             this.__explicitlySet__.add("swiftPath");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
+        private String bucketName;
+
+        public Builder bucketName(String bucketName) {
+            this.bucketName = bucketName;
+            this.__explicitlySet__.add("bucketName");
             return this;
         }
 
@@ -88,6 +79,15 @@ public class ExternalBackupJob {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("swiftPassword")
+        private String swiftPassword;
+
+        public Builder swiftPassword(String swiftPassword) {
+            this.swiftPassword = swiftPassword;
+            this.__explicitlySet__.add("swiftPassword");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -95,12 +95,12 @@ public class ExternalBackupJob {
             ExternalBackupJob __instance__ =
                     new ExternalBackupJob(
                             backupId,
-                            bucketName,
                             provisioning,
-                            swiftPassword,
                             swiftPath,
+                            bucketName,
                             tag,
-                            userName);
+                            userName,
+                            swiftPassword);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -109,12 +109,12 @@ public class ExternalBackupJob {
         public Builder copy(ExternalBackupJob o) {
             Builder copiedBuilder =
                     backupId(o.getBackupId())
-                            .bucketName(o.getBucketName())
                             .provisioning(o.getProvisioning())
-                            .swiftPassword(o.getSwiftPassword())
                             .swiftPath(o.getSwiftPath())
+                            .bucketName(o.getBucketName())
                             .tag(o.getTag())
-                            .userName(o.getUserName());
+                            .userName(o.getUserName())
+                            .swiftPassword(o.getSwiftPassword());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -135,30 +135,22 @@ public class ExternalBackupJob {
     String backupId;
 
     /**
-     * The name of the Swift compartment bucket where the backup should be stored.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
-    String bucketName;
-
-    /**
      * An indicator for the provisioning state of the resource. If `TRUE`, the resource is still being provisioned.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("provisioning")
     Boolean provisioning;
 
     /**
-     * The auth token to use for access to the Swift compartment bucket that will store the standalone backup.
-     * For information about auth tokens, see [Working with Auth Tokens](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingcredentials.htm#two).
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("swiftPassword")
-    String swiftPassword;
-
-    /**
      * The Swift path to use as a destination for the standalone backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("swiftPath")
     String swiftPath;
+
+    /**
+     * The name of the Swift compartment bucket where the backup should be stored.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
+    String bucketName;
 
     /**
      * The tag for RMAN to apply to the backup.
@@ -171,6 +163,14 @@ public class ExternalBackupJob {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
     String userName;
+
+    /**
+     * The auth token to use for access to the Swift compartment bucket that will store the standalone backup.
+     * For information about auth tokens, see [Working with Auth Tokens](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingcredentials.htm#two).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("swiftPassword")
+    String swiftPassword;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

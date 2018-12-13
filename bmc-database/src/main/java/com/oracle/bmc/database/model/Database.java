@@ -4,11 +4,6 @@
 package com.oracle.bmc.database.model;
 
 /**
- * An Oracle database on a bare metal or virtual machine DB system. For more information, see [Bare Metal and Virtual Machine DB Systems](https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Concepts/overview.htm).
- * <p>
- * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
- * <p>
- **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -27,12 +22,12 @@ public class Database {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("characterSet")
-        private String characterSet;
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
+        private String id;
 
-        public Builder characterSet(String characterSet) {
-            this.characterSet = characterSet;
-            this.__explicitlySet__.add("characterSet");
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
             return this;
         }
 
@@ -45,12 +40,21 @@ public class Database {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("dbBackupConfig")
-        private DbBackupConfig dbBackupConfig;
+        @com.fasterxml.jackson.annotation.JsonProperty("characterSet")
+        private String characterSet;
 
-        public Builder dbBackupConfig(DbBackupConfig dbBackupConfig) {
-            this.dbBackupConfig = dbBackupConfig;
-            this.__explicitlySet__.add("dbBackupConfig");
+        public Builder characterSet(String characterSet) {
+            this.characterSet = characterSet;
+            this.__explicitlySet__.add("characterSet");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("ncharacterSet")
+        private String ncharacterSet;
+
+        public Builder ncharacterSet(String ncharacterSet) {
+            this.ncharacterSet = ncharacterSet;
+            this.__explicitlySet__.add("ncharacterSet");
             return this;
         }
 
@@ -72,12 +76,12 @@ public class Database {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
-        private String dbUniqueName;
+        @com.fasterxml.jackson.annotation.JsonProperty("pdbName")
+        private String pdbName;
 
-        public Builder dbUniqueName(String dbUniqueName) {
-            this.dbUniqueName = dbUniqueName;
-            this.__explicitlySet__.add("dbUniqueName");
+        public Builder pdbName(String pdbName) {
+            this.pdbName = pdbName;
+            this.__explicitlySet__.add("pdbName");
             return this;
         }
 
@@ -90,31 +94,12 @@ public class Database {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+        @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
+        private String dbUniqueName;
 
-        public Builder definedTags(
-                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
-            this.definedTags = definedTags;
-            this.__explicitlySet__.add("definedTags");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-        private java.util.Map<String, String> freeformTags;
-
-        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
-            this.freeformTags = freeformTags;
-            this.__explicitlySet__.add("freeformTags");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("id")
-        private String id;
-
-        public Builder id(String id) {
-            this.id = id;
-            this.__explicitlySet__.add("id");
+        public Builder dbUniqueName(String dbUniqueName) {
+            this.dbUniqueName = dbUniqueName;
+            this.__explicitlySet__.add("dbUniqueName");
             return this;
         }
 
@@ -136,24 +121,6 @@ public class Database {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("ncharacterSet")
-        private String ncharacterSet;
-
-        public Builder ncharacterSet(String ncharacterSet) {
-            this.ncharacterSet = ncharacterSet;
-            this.__explicitlySet__.add("ncharacterSet");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("pdbName")
-        private String pdbName;
-
-        public Builder pdbName(String pdbName) {
-            this.pdbName = pdbName;
-            this.__explicitlySet__.add("pdbName");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -163,27 +130,55 @@ public class Database {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dbBackupConfig")
+        private DbBackupConfig dbBackupConfig;
+
+        public Builder dbBackupConfig(DbBackupConfig dbBackupConfig) {
+            this.dbBackupConfig = dbBackupConfig;
+            this.__explicitlySet__.add("dbBackupConfig");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Database build() {
             Database __instance__ =
                     new Database(
-                            characterSet,
+                            id,
                             compartmentId,
-                            dbBackupConfig,
+                            characterSet,
+                            ncharacterSet,
                             dbHomeId,
                             dbName,
-                            dbUniqueName,
+                            pdbName,
                             dbWorkload,
-                            definedTags,
-                            freeformTags,
-                            id,
+                            dbUniqueName,
                             lifecycleDetails,
                             lifecycleState,
-                            ncharacterSet,
-                            pdbName,
-                            timeCreated);
+                            timeCreated,
+                            dbBackupConfig,
+                            freeformTags,
+                            definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -191,21 +186,21 @@ public class Database {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Database o) {
             Builder copiedBuilder =
-                    characterSet(o.getCharacterSet())
+                    id(o.getId())
                             .compartmentId(o.getCompartmentId())
-                            .dbBackupConfig(o.getDbBackupConfig())
+                            .characterSet(o.getCharacterSet())
+                            .ncharacterSet(o.getNcharacterSet())
                             .dbHomeId(o.getDbHomeId())
                             .dbName(o.getDbName())
-                            .dbUniqueName(o.getDbUniqueName())
+                            .pdbName(o.getPdbName())
                             .dbWorkload(o.getDbWorkload())
-                            .definedTags(o.getDefinedTags())
-                            .freeformTags(o.getFreeformTags())
-                            .id(o.getId())
+                            .dbUniqueName(o.getDbUniqueName())
                             .lifecycleDetails(o.getLifecycleDetails())
                             .lifecycleState(o.getLifecycleState())
-                            .ncharacterSet(o.getNcharacterSet())
-                            .pdbName(o.getPdbName())
-                            .timeCreated(o.getTimeCreated());
+                            .timeCreated(o.getTimeCreated())
+                            .dbBackupConfig(o.getDbBackupConfig())
+                            .freeformTags(o.getFreeformTags())
+                            .definedTags(o.getDefinedTags());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -220,10 +215,10 @@ public class Database {
     }
 
     /**
-     * The character set for the database.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the database.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("characterSet")
-    String characterSet;
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    String id;
 
     /**
      * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -231,8 +226,17 @@ public class Database {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
-    @com.fasterxml.jackson.annotation.JsonProperty("dbBackupConfig")
-    DbBackupConfig dbBackupConfig;
+    /**
+     * The character set for the database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("characterSet")
+    String characterSet;
+
+    /**
+     * The national character set for the database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ncharacterSet")
+    String ncharacterSet;
 
     /**
      * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the database home.
@@ -247,11 +251,10 @@ public class Database {
     String dbName;
 
     /**
-     * A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
-     *
+     * The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
-    String dbUniqueName;
+    @com.fasterxml.jackson.annotation.JsonProperty("pdbName")
+    String pdbName;
 
     /**
      * The database workload type.
@@ -260,30 +263,11 @@ public class Database {
     String dbWorkload;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     * A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
      *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
-
-    /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: `{\"Department\": \"Finance\"}`
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
-
-    /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the database.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
+    String dbUniqueName;
 
     /**
      * Additional information about the current lifecycleState.
@@ -349,22 +333,33 @@ public class Database {
     LifecycleState lifecycleState;
 
     /**
-     * The national character set for the database.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("ncharacterSet")
-    String ncharacterSet;
-
-    /**
-     * The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("pdbName")
-    String pdbName;
-
-    /**
      * The date and time the database was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("dbBackupConfig")
+    DbBackupConfig dbBackupConfig;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Department\": \"Finance\"}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    java.util.Map<String, String> freeformTags;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -26,12 +26,12 @@ public class BackupSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-        private String availabilityDomain;
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
+        private String id;
 
-        public Builder availabilityDomain(String availabilityDomain) {
-            this.availabilityDomain = availabilityDomain;
-            this.__explicitlySet__.add("availabilityDomain");
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
             return this;
         }
 
@@ -44,30 +44,12 @@ public class BackupSummary {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
-        private DatabaseEdition databaseEdition;
-
-        public Builder databaseEdition(DatabaseEdition databaseEdition) {
-            this.databaseEdition = databaseEdition;
-            this.__explicitlySet__.add("databaseEdition");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
         public Builder databaseId(String databaseId) {
             this.databaseId = databaseId;
             this.__explicitlySet__.add("databaseId");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("databaseSizeInGBs")
-        private Double databaseSizeInGBs;
-
-        public Builder databaseSizeInGBs(Double databaseSizeInGBs) {
-            this.databaseSizeInGBs = databaseSizeInGBs;
-            this.__explicitlySet__.add("databaseSizeInGBs");
             return this;
         }
 
@@ -80,39 +62,12 @@ public class BackupSummary {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("id")
-        private String id;
+        @com.fasterxml.jackson.annotation.JsonProperty("type")
+        private Type type;
 
-        public Builder id(String id) {
-            this.id = id;
-            this.__explicitlySet__.add("id");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-        private String lifecycleDetails;
-
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = lifecycleDetails;
-            this.__explicitlySet__.add("lifecycleDetails");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-        private LifecycleState lifecycleState;
-
-        public Builder lifecycleState(LifecycleState lifecycleState) {
-            this.lifecycleState = lifecycleState;
-            this.__explicitlySet__.add("lifecycleState");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
-        private java.util.Date timeEnded;
-
-        public Builder timeEnded(java.util.Date timeEnded) {
-            this.timeEnded = timeEnded;
-            this.__explicitlySet__.add("timeEnded");
+        public Builder type(Type type) {
+            this.type = type;
+            this.__explicitlySet__.add("type");
             return this;
         }
 
@@ -125,12 +80,57 @@ public class BackupSummary {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("type")
-        private Type type;
+        @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
+        private java.util.Date timeEnded;
 
-        public Builder type(Type type) {
-            this.type = type;
-            this.__explicitlySet__.add("type");
+        public Builder timeEnded(java.util.Date timeEnded) {
+            this.timeEnded = timeEnded;
+            this.__explicitlySet__.add("timeEnded");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+        private String availabilityDomain;
+
+        public Builder availabilityDomain(String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
+            this.__explicitlySet__.add("availabilityDomain");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+        private LifecycleState lifecycleState;
+
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseEdition")
+        private DatabaseEdition databaseEdition;
+
+        public Builder databaseEdition(DatabaseEdition databaseEdition) {
+            this.databaseEdition = databaseEdition;
+            this.__explicitlySet__.add("databaseEdition");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseSizeInGBs")
+        private Double databaseSizeInGBs;
+
+        public Builder databaseSizeInGBs(Double databaseSizeInGBs) {
+            this.databaseSizeInGBs = databaseSizeInGBs;
+            this.__explicitlySet__.add("databaseSizeInGBs");
             return this;
         }
 
@@ -140,18 +140,18 @@ public class BackupSummary {
         public BackupSummary build() {
             BackupSummary __instance__ =
                     new BackupSummary(
-                            availabilityDomain,
-                            compartmentId,
-                            databaseEdition,
-                            databaseId,
-                            databaseSizeInGBs,
-                            displayName,
                             id,
-                            lifecycleDetails,
-                            lifecycleState,
-                            timeEnded,
+                            compartmentId,
+                            databaseId,
+                            displayName,
+                            type,
                             timeStarted,
-                            type);
+                            timeEnded,
+                            lifecycleDetails,
+                            availabilityDomain,
+                            lifecycleState,
+                            databaseEdition,
+                            databaseSizeInGBs);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -159,18 +159,18 @@ public class BackupSummary {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(BackupSummary o) {
             Builder copiedBuilder =
-                    availabilityDomain(o.getAvailabilityDomain())
+                    id(o.getId())
                             .compartmentId(o.getCompartmentId())
-                            .databaseEdition(o.getDatabaseEdition())
                             .databaseId(o.getDatabaseId())
-                            .databaseSizeInGBs(o.getDatabaseSizeInGBs())
                             .displayName(o.getDisplayName())
-                            .id(o.getId())
-                            .lifecycleDetails(o.getLifecycleDetails())
-                            .lifecycleState(o.getLifecycleState())
-                            .timeEnded(o.getTimeEnded())
+                            .type(o.getType())
                             .timeStarted(o.getTimeStarted())
-                            .type(o.getType());
+                            .timeEnded(o.getTimeEnded())
+                            .lifecycleDetails(o.getLifecycleDetails())
+                            .availabilityDomain(o.getAvailabilityDomain())
+                            .lifecycleState(o.getLifecycleState())
+                            .databaseEdition(o.getDatabaseEdition())
+                            .databaseSizeInGBs(o.getDatabaseSizeInGBs());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -185,16 +185,157 @@ public class BackupSummary {
     }
 
     /**
-     * The name of the availability domain where the database backup is stored.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the backup.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
-    String availabilityDomain;
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    String id;
 
     /**
      * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
+
+    /**
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
+    String databaseId;
+
+    /**
+     * The user-friendly name for the backup. The name does not have to be unique.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    String displayName;
+    /**
+     * The type of backup.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum Type {
+        Incremental("INCREMENTAL"),
+        Full("FULL"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, Type> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Type v : Type.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        Type(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Type create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Type', returning UnknownEnumValue", key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The type of backup.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
+    Type type;
+
+    /**
+     * The date and time the backup started.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
+    java.util.Date timeStarted;
+
+    /**
+     * The date and time the backup was completed.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
+    java.util.Date timeEnded;
+
+    /**
+     * Additional information about the current lifecycleState.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    String lifecycleDetails;
+
+    /**
+     * The name of the availability domain where the database backup is stored.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+    String availabilityDomain;
+    /**
+     * The current state of the backup.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum LifecycleState {
+        Creating("CREATING"),
+        Active("ACTIVE"),
+        Deleting("DELETING"),
+        Deleted("DELETED"),
+        Failed("FAILED"),
+        Restoring("RESTORING"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, LifecycleState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (LifecycleState v : LifecycleState.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        LifecycleState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static LifecycleState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The current state of the backup.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    LifecycleState lifecycleState;
     /**
      * The Oracle Database edition of the DB system from which the database backup was taken.
      *
@@ -252,152 +393,11 @@ public class BackupSummary {
     DatabaseEdition databaseEdition;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the database.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
-    String databaseId;
-
-    /**
      * The size of the database in gigabytes at the time the backup was taken.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSizeInGBs")
     Double databaseSizeInGBs;
-
-    /**
-     * The user-friendly name for the backup. The name does not have to be unique.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
-
-    /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the backup.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
-
-    /**
-     * Additional information about the current lifecycleState.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    String lifecycleDetails;
-    /**
-     * The current state of the backup.
-     **/
-    @lombok.extern.slf4j.Slf4j
-    public enum LifecycleState {
-        Creating("CREATING"),
-        Active("ACTIVE"),
-        Deleting("DELETING"),
-        Deleted("DELETED"),
-        Failed("FAILED"),
-        Restoring("RESTORING"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private final String value;
-        private static java.util.Map<String, LifecycleState> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (LifecycleState v : LifecycleState.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        LifecycleState(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static LifecycleState create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
-        }
-    };
-    /**
-     * The current state of the backup.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    LifecycleState lifecycleState;
-
-    /**
-     * The date and time the backup was completed.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
-    java.util.Date timeEnded;
-
-    /**
-     * The date and time the backup started.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
-    java.util.Date timeStarted;
-    /**
-     * The type of backup.
-     **/
-    @lombok.extern.slf4j.Slf4j
-    public enum Type {
-        Incremental("INCREMENTAL"),
-        Full("FULL"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private final String value;
-        private static java.util.Map<String, Type> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (Type v : Type.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        Type(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static Type create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'Type', returning UnknownEnumValue", key);
-            return UnknownEnumValue;
-        }
-    };
-    /**
-     * The type of backup.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
-    Type type;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

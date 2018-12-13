@@ -137,18 +137,6 @@ public class ListDbSystemsConverter {
                                 builder.items(response.getItem());
 
                                 com.google.common.base.Optional<java.util.List<String>>
-                                        opcNextPageHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-next-page");
-                                if (opcNextPageHeader.isPresent()) {
-                                    builder.opcNextPage(
-                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
-                                                    "opc-next-page",
-                                                    opcNextPageHeader.get().get(0),
-                                                    String.class));
-                                }
-
-                                com.google.common.base.Optional<java.util.List<String>>
                                         opcRequestIdHeader =
                                                 com.oracle.bmc.http.internal.HeaderUtils.get(
                                                         headers, "opc-request-id");
@@ -157,6 +145,18 @@ public class ListDbSystemsConverter {
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
                                                     "opc-request-id",
                                                     opcRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
+
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcNextPageHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-next-page");
+                                if (opcNextPageHeader.isPresent()) {
+                                    builder.opcNextPage(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-next-page",
+                                                    opcNextPageHeader.get().get(0),
                                                     String.class));
                                 }
 

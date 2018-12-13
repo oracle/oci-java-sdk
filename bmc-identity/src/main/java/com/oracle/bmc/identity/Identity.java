@@ -718,6 +718,15 @@ public interface Identity extends AutoCloseable {
     ListGroupsResponse listGroups(ListGroupsRequest request);
 
     /**
+     * Lists the identity provider groups.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListIdentityProviderGroupsResponse listIdentityProviderGroups(
+            ListIdentityProviderGroupsRequest request);
+
+    /**
      * Lists all the identity providers in your tenancy. You must specify the identity provider type (e.g., `SAML2` for
      * identity providers using the SAML2.0 protocol). You must specify your tenancy's OCID as the value for the
      * compartment ID (remember that the tenancy is simply the root compartment).
@@ -855,6 +864,15 @@ public interface Identity extends AutoCloseable {
     RemoveUserFromGroupResponse removeUserFromGroup(RemoveUserFromGroupRequest request);
 
     /**
+     * Resets the OAuth2 client credentials for the SCIM client associated with this identity provider.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ResetIdpScimClientResponse resetIdpScimClient(ResetIdpScimClientRequest request);
+
+    /**
      * Updates the specified auth token's description.
      *
      * @param request The request object containing the details to send
@@ -976,6 +994,15 @@ public interface Identity extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateUserResponse updateUser(UpdateUserRequest request);
+
+    /**
+     * Updates the capabilities of the specified user.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateUserCapabilitiesResponse updateUserCapabilities(UpdateUserCapabilitiesRequest request);
 
     /**
      * Updates the state of the specified user.

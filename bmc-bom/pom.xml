@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>1.3.2</version>
+    <version>1.3.3</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <artifactId>oci-java-sdk-bom</artifactId>
@@ -19,86 +19,86 @@
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-common</artifactId>
-        <version>1.3.2</version>
+        <version>1.3.3</version>
         <optional>false</optional>
       </dependency>
       <!-- Service modules, alpha sorted -->
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-audit</artifactId>
-        <version>1.3.2</version>
+        <version>1.3.3</version>
         <optional>false</optional>
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-containerengine</artifactId>
-        <version>1.3.2</version>
+        <version>1.3.3</version>
         <optional>false</optional>
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-core</artifactId>
-        <version>1.3.2</version>
+        <version>1.3.3</version>
         <optional>false</optional>
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-database</artifactId>
-        <version>1.3.2</version>
+        <version>1.3.3</version>
         <optional>false</optional>
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-dns</artifactId>
-        <version>1.3.2</version>
+        <version>1.3.3</version>
         <optional>false</optional>
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-email</artifactId>
-        <version>1.3.2</version>
+        <version>1.3.3</version>
         <optional>false</optional>
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-filestorage</artifactId>
-        <version>1.3.2</version>
+        <version>1.3.3</version>
         <optional>false</optional>
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-identity</artifactId>
-        <version>1.3.2</version>
+        <version>1.3.3</version>
         <optional>false</optional>
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-loadbalancer</artifactId>
-        <version>1.3.2</version>
+        <version>1.3.3</version>
         <optional>false</optional>
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-objectstorage</artifactId>
-        <version>1.3.2</version>
+        <version>1.3.3</version>
         <optional>false</optional>
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-resourcesearch</artifactId>
         <optional>false</optional>
-        <version>1.3.2</version>
+        <version>1.3.3</version>
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <optional>false</optional>
         <artifactId>oci-java-sdk-addons-apache</artifactId>
-        <version>1.3.2</version>
+        <version>1.3.3</version>
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-keymanagement</artifactId>
-        <version>1.3.2</version>
+        <version>1.3.3</version>
         <optional>false</optional>
       </dependency>
     </dependencies>

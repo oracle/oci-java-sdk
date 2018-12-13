@@ -25,30 +25,12 @@ public class AutonomousDatabaseConnectionStrings {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("allConnectionStrings")
-        private java.util.Map<String, String> allConnectionStrings;
-
-        public Builder allConnectionStrings(java.util.Map<String, String> allConnectionStrings) {
-            this.allConnectionStrings = allConnectionStrings;
-            this.__explicitlySet__.add("allConnectionStrings");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("high")
         private String high;
 
         public Builder high(String high) {
             this.high = high;
             this.__explicitlySet__.add("high");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("low")
-        private String low;
-
-        public Builder low(String low) {
-            this.low = low;
-            this.__explicitlySet__.add("low");
             return this;
         }
 
@@ -61,13 +43,31 @@ public class AutonomousDatabaseConnectionStrings {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("low")
+        private String low;
+
+        public Builder low(String low) {
+            this.low = low;
+            this.__explicitlySet__.add("low");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("allConnectionStrings")
+        private java.util.Map<String, String> allConnectionStrings;
+
+        public Builder allConnectionStrings(java.util.Map<String, String> allConnectionStrings) {
+            this.allConnectionStrings = allConnectionStrings;
+            this.__explicitlySet__.add("allConnectionStrings");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AutonomousDatabaseConnectionStrings build() {
             AutonomousDatabaseConnectionStrings __instance__ =
                     new AutonomousDatabaseConnectionStrings(
-                            allConnectionStrings, high, low, medium);
+                            high, medium, low, allConnectionStrings);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -75,10 +75,10 @@ public class AutonomousDatabaseConnectionStrings {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(AutonomousDatabaseConnectionStrings o) {
             Builder copiedBuilder =
-                    allConnectionStrings(o.getAllConnectionStrings())
-                            .high(o.getHigh())
+                    high(o.getHigh())
+                            .medium(o.getMedium())
                             .low(o.getLow())
-                            .medium(o.getMedium());
+                            .allConnectionStrings(o.getAllConnectionStrings());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -93,16 +93,16 @@ public class AutonomousDatabaseConnectionStrings {
     }
 
     /**
-     * All connection strings to use to connect to the Autonomous Database.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("allConnectionStrings")
-    java.util.Map<String, String> allConnectionStrings;
-
-    /**
      * The High database service provides the highest level of resources to each SQL statement resulting in the highest performance, but supports the fewest number of concurrent SQL statements.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("high")
     String high;
+
+    /**
+     * The Medium database service provides a lower level of resources to each SQL statement potentially resulting a lower level of performance, but supports more concurrent SQL statements.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("medium")
+    String medium;
 
     /**
      * The Low database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
@@ -111,10 +111,10 @@ public class AutonomousDatabaseConnectionStrings {
     String low;
 
     /**
-     * The Medium database service provides a lower level of resources to each SQL statement potentially resulting a lower level of performance, but supports more concurrent SQL statements.
+     * All connection strings to use to connect to the Autonomous Database.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("medium")
-    String medium;
+    @com.fasterxml.jackson.annotation.JsonProperty("allConnectionStrings")
+    java.util.Map<String, String> allConnectionStrings;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

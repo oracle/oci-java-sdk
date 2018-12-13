@@ -76,13 +76,27 @@ public class UpdateSaml2IdentityProviderDetails extends UpdateIdentityProviderDe
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformAttributes")
+        private java.util.Map<String, String> freeformAttributes;
+
+        public Builder freeformAttributes(java.util.Map<String, String> freeformAttributes) {
+            this.freeformAttributes = freeformAttributes;
+            this.__explicitlySet__.add("freeformAttributes");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateSaml2IdentityProviderDetails build() {
             UpdateSaml2IdentityProviderDetails __instance__ =
                     new UpdateSaml2IdentityProviderDetails(
-                            description, freeformTags, definedTags, metadataUrl, metadata);
+                            description,
+                            freeformTags,
+                            definedTags,
+                            metadataUrl,
+                            metadata,
+                            freeformAttributes);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -94,7 +108,8 @@ public class UpdateSaml2IdentityProviderDetails extends UpdateIdentityProviderDe
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .metadataUrl(o.getMetadataUrl())
-                            .metadata(o.getMetadata());
+                            .metadata(o.getMetadata())
+                            .freeformAttributes(o.getFreeformAttributes());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -114,10 +129,12 @@ public class UpdateSaml2IdentityProviderDetails extends UpdateIdentityProviderDe
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String metadataUrl,
-            String metadata) {
+            String metadata,
+            java.util.Map<String, String> freeformAttributes) {
         super(description, freeformTags, definedTags);
         this.metadataUrl = metadataUrl;
         this.metadata = metadata;
+        this.freeformAttributes = freeformAttributes;
     }
 
     /**
@@ -134,6 +151,14 @@ public class UpdateSaml2IdentityProviderDetails extends UpdateIdentityProviderDe
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     String metadata;
+
+    /**
+     * Extra name value pairs associated with this identity provider.
+     * Example: `{\"clientId\": \"app_sf3kdjf3\"}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformAttributes")
+    java.util.Map<String, String> freeformAttributes;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

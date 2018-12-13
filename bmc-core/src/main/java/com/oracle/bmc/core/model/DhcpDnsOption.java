@@ -84,7 +84,7 @@ public class DhcpDnsOption extends DhcpOption {
 
     /**
      * If you set `serverType` to `CustomDnsServer`, specify the
-     * IP address of at least one DNS server of your choice (three maximum). gd
+     * IP address of at least one DNS server of your choice (three maximum).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customDnsServers")

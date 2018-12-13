@@ -31,6 +31,15 @@ public class DbHomeSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
+        private String id;
+
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -40,39 +49,12 @@ public class DbHomeSummary {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
-        private String dbSystemId;
-
-        public Builder dbSystemId(String dbSystemId) {
-            this.dbSystemId = dbSystemId;
-            this.__explicitlySet__.add("dbSystemId");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
-        private String dbVersion;
-
-        public Builder dbVersion(String dbVersion) {
-            this.dbVersion = dbVersion;
-            this.__explicitlySet__.add("dbVersion");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("id")
-        private String id;
-
-        public Builder id(String id) {
-            this.id = id;
-            this.__explicitlySet__.add("id");
             return this;
         }
 
@@ -94,6 +76,24 @@ public class DbHomeSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
+        private String dbSystemId;
+
+        public Builder dbSystemId(String dbSystemId) {
+            this.dbSystemId = dbSystemId;
+            this.__explicitlySet__.add("dbSystemId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
+        private String dbVersion;
+
+        public Builder dbVersion(String dbVersion) {
+            this.dbVersion = dbVersion;
+            this.__explicitlySet__.add("dbVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -109,13 +109,13 @@ public class DbHomeSummary {
         public DbHomeSummary build() {
             DbHomeSummary __instance__ =
                     new DbHomeSummary(
-                            compartmentId,
-                            dbSystemId,
-                            dbVersion,
-                            displayName,
                             id,
+                            compartmentId,
+                            displayName,
                             lastPatchHistoryEntryId,
                             lifecycleState,
+                            dbSystemId,
+                            dbVersion,
                             timeCreated);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -124,13 +124,13 @@ public class DbHomeSummary {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DbHomeSummary o) {
             Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId())
-                            .dbSystemId(o.getDbSystemId())
-                            .dbVersion(o.getDbVersion())
+                    id(o.getId())
+                            .compartmentId(o.getCompartmentId())
                             .displayName(o.getDisplayName())
-                            .id(o.getId())
                             .lastPatchHistoryEntryId(o.getLastPatchHistoryEntryId())
                             .lifecycleState(o.getLifecycleState())
+                            .dbSystemId(o.getDbSystemId())
+                            .dbVersion(o.getDbVersion())
                             .timeCreated(o.getTimeCreated());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -146,34 +146,22 @@ public class DbHomeSummary {
     }
 
     /**
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the database home.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    String id;
+
+    /**
      * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the DB system.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
-    String dbSystemId;
-
-    /**
-     * The Oracle Database version.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
-    String dbVersion;
-
-    /**
      * The user-provided name for the database home. The name does not need to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
-
-    /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the database home.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
 
     /**
      * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation is started.
@@ -235,6 +223,18 @@ public class DbHomeSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
+
+    /**
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the DB system.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
+    String dbSystemId;
+
+    /**
+     * The Oracle Database version.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
+    String dbVersion;
 
     /**
      * The date and time the database home was created.

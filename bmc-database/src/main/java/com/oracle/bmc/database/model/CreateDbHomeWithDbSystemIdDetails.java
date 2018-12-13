@@ -48,15 +48,6 @@ public class CreateDbHomeWithDbSystemIdDetails extends CreateDbHomeWithDbSystemI
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("database")
-        private CreateDatabaseDetails database;
-
-        public Builder database(CreateDatabaseDetails database) {
-            this.database = database;
-            this.__explicitlySet__.add("database");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
         private String dbVersion;
 
@@ -66,13 +57,22 @@ public class CreateDbHomeWithDbSystemIdDetails extends CreateDbHomeWithDbSystemI
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("database")
+        private CreateDatabaseDetails database;
+
+        public Builder database(CreateDatabaseDetails database) {
+            this.database = database;
+            this.__explicitlySet__.add("database");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateDbHomeWithDbSystemIdDetails build() {
             CreateDbHomeWithDbSystemIdDetails __instance__ =
                     new CreateDbHomeWithDbSystemIdDetails(
-                            dbSystemId, displayName, database, dbVersion);
+                            dbSystemId, displayName, dbVersion, database);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -82,8 +82,8 @@ public class CreateDbHomeWithDbSystemIdDetails extends CreateDbHomeWithDbSystemI
             Builder copiedBuilder =
                     dbSystemId(o.getDbSystemId())
                             .displayName(o.getDisplayName())
-                            .database(o.getDatabase())
-                            .dbVersion(o.getDbVersion());
+                            .dbVersion(o.getDbVersion())
+                            .database(o.getDatabase());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -101,21 +101,21 @@ public class CreateDbHomeWithDbSystemIdDetails extends CreateDbHomeWithDbSystemI
     public CreateDbHomeWithDbSystemIdDetails(
             String dbSystemId,
             String displayName,
-            CreateDatabaseDetails database,
-            String dbVersion) {
+            String dbVersion,
+            CreateDatabaseDetails database) {
         super(dbSystemId, displayName);
-        this.database = database;
         this.dbVersion = dbVersion;
+        this.database = database;
     }
-
-    @com.fasterxml.jackson.annotation.JsonProperty("database")
-    CreateDatabaseDetails database;
 
     /**
      * A valid Oracle Database version. To get a list of supported versions, use the {@link #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     String dbVersion;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("database")
+    CreateDatabaseDetails database;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

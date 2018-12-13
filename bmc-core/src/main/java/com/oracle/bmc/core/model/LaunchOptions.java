@@ -59,12 +59,26 @@ public class LaunchOptions {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
+        private Boolean isPvEncryptionInTransitEnabled;
+
+        public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
+            this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+            this.__explicitlySet__.add("isPvEncryptionInTransitEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public LaunchOptions build() {
             LaunchOptions __instance__ =
-                    new LaunchOptions(bootVolumeType, firmware, networkType, remoteDataVolumeType);
+                    new LaunchOptions(
+                            bootVolumeType,
+                            firmware,
+                            networkType,
+                            remoteDataVolumeType,
+                            isPvEncryptionInTransitEnabled);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -75,7 +89,8 @@ public class LaunchOptions {
                     bootVolumeType(o.getBootVolumeType())
                             .firmware(o.getFirmware())
                             .networkType(o.getNetworkType())
-                            .remoteDataVolumeType(o.getRemoteDataVolumeType());
+                            .remoteDataVolumeType(o.getRemoteDataVolumeType())
+                            .isPvEncryptionInTransitEnabled(o.getIsPvEncryptionInTransitEnabled());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -350,6 +365,12 @@ public class LaunchOptions {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("remoteDataVolumeType")
     RemoteDataVolumeType remoteDataVolumeType;
+
+    /**
+     * Whether to enable encryption in transit for the PV boot volume attachment. Defaults to false.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
+    Boolean isPvEncryptionInTransitEnabled;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

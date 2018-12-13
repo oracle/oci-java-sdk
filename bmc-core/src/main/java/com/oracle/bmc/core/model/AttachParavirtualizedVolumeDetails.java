@@ -66,13 +66,26 @@ public class AttachParavirtualizedVolumeDetails extends AttachVolumeDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
+        private Boolean isPvEncryptionInTransitEnabled;
+
+        public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
+            this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+            this.__explicitlySet__.add("isPvEncryptionInTransitEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AttachParavirtualizedVolumeDetails build() {
             AttachParavirtualizedVolumeDetails __instance__ =
                     new AttachParavirtualizedVolumeDetails(
-                            displayName, instanceId, isReadOnly, volumeId);
+                            displayName,
+                            instanceId,
+                            isReadOnly,
+                            volumeId,
+                            isPvEncryptionInTransitEnabled);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -83,7 +96,8 @@ public class AttachParavirtualizedVolumeDetails extends AttachVolumeDetails {
                     displayName(o.getDisplayName())
                             .instanceId(o.getInstanceId())
                             .isReadOnly(o.getIsReadOnly())
-                            .volumeId(o.getVolumeId());
+                            .volumeId(o.getVolumeId())
+                            .isPvEncryptionInTransitEnabled(o.getIsPvEncryptionInTransitEnabled());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -99,9 +113,20 @@ public class AttachParavirtualizedVolumeDetails extends AttachVolumeDetails {
 
     @Deprecated
     public AttachParavirtualizedVolumeDetails(
-            String displayName, String instanceId, Boolean isReadOnly, String volumeId) {
+            String displayName,
+            String instanceId,
+            Boolean isReadOnly,
+            String volumeId,
+            Boolean isPvEncryptionInTransitEnabled) {
         super(displayName, instanceId, isReadOnly, volumeId);
+        this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
     }
+
+    /**
+     * Whether to enable encryption in transit for the PV data volume attachment. Defaults to false.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
+    Boolean isPvEncryptionInTransitEnabled;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

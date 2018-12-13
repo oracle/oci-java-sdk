@@ -43,10 +43,37 @@ package com.oracle.bmc.database.model;
 public class LaunchDbSystemBase {
 
     /**
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    String compartmentId;
+
+    /**
+     * The user-friendly name for the DB system. The name does not have to be unique.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    String displayName;
+
+    /**
      * The availability domain where the DB system is located.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     String availabilityDomain;
+
+    /**
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
+     * <p>
+     **Subnet Restrictions:**
+     * - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
+     * - For Exadata and virtual machine 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.128.0/20.
+     * <p>
+     * These subnets are used by the Oracle Clusterware private interconnect on the database instance.
+     * Specifying an overlapping subnet will cause the private interconnect to malfunction.
+     * This restriction applies to both the client subnet and the backup subnet.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+    String subnetId;
 
     /**
      * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
@@ -58,17 +85,50 @@ public class LaunchDbSystemBase {
     String backupSubnetId;
 
     /**
-     * The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
+     * The shape of the DB system. The shape determines resources allocated to the DB system.
+     * - For virtual machine shapes, the number of CPU cores and memory
+     * - For bare metal and Exadata shapes, the number of CPU cores, memory, and storage
+     * <p>
+     * To get a list of shapes, use the {@link #listDbSystemShapes(ListDbSystemShapesRequest) listDbSystemShapes} operation.
      *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("clusterName")
-    String clusterName;
+    @com.fasterxml.jackson.annotation.JsonProperty("shape")
+    String shape;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
+     * If true, Sparse Diskgroup is configured for Exadata dbsystem. If False, Sparse diskgroup is not configured.
+     *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
+    @com.fasterxml.jackson.annotation.JsonProperty("sparseDiskgroup")
+    Boolean sparseDiskgroup;
+
+    /**
+     * The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 10,000 characters.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKeys")
+    java.util.List<String> sshPublicKeys;
+
+    /**
+     * The hostname for the DB system. The hostname must begin with an alphabetic character and
+     * can contain a maximum of 30 alphanumeric characters, including hyphens (-).
+     * <p>
+     * The maximum length of the combined hostname and domain is 63 characters.
+     * <p>
+     **Note:** The hostname must be unique within the subnet. If it is not unique,
+     * the DB system will fail to provision.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("hostname")
+    String hostname;
+
+    /**
+     * A domain name used for the DB system. If the Oracle-provided Internet and VCN
+     * Resolver is enabled for the specified subnet, the domain name for the subnet is used
+     * (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("domain")
+    String domain;
 
     /**
      * The number of CPU cores to enable for a bare metal or Exadata DB system. The valid values depend on the specified shape:
@@ -90,6 +150,13 @@ public class LaunchDbSystemBase {
     Integer cpuCoreCount;
 
     /**
+     * The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterName")
+    String clusterName;
+
+    /**
      * The percentage assigned to DATA storage (user data and database files).
      * The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups).
      * Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems.
@@ -97,54 +164,6 @@ public class LaunchDbSystemBase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStoragePercentage")
     Integer dataStoragePercentage;
-
-    /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-    java.util.Map<String, java.util.Map<String, Object>> definedTags;
-
-    /**
-     * The user-friendly name for the DB system. The name does not have to be unique.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-    String displayName;
-
-    /**
-     * A domain name used for the DB system. If the Oracle-provided Internet and VCN
-     * Resolver is enabled for the specified subnet, the domain name for the subnet is used
-     * (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("domain")
-    String domain;
-
-    /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: `{\"Department\": \"Finance\"}`
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-    java.util.Map<String, String> freeformTags;
-
-    /**
-     * The hostname for the DB system. The hostname must begin with an alphabetic character and
-     * can contain a maximum of 30 alphanumeric characters, including hyphens (-).
-     * <p>
-     * The maximum length of the combined hostname and domain is 63 characters.
-     * <p>
-     **Note:** The hostname must be unique within the subnet. If it is not unique,
-     * the DB system will fail to provision.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("hostname")
-    String hostname;
 
     /**
      * Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume.
@@ -161,34 +180,22 @@ public class LaunchDbSystemBase {
     Integer nodeCount;
 
     /**
-     * The shape of the DB system. The shape determines resources allocated to the DB system.
-     * - For virtual machine shapes, the number of CPU cores and memory
-     * - For bare metal and Exadata shapes, the number of CPU cores, memory, and storage
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     * To get a list of shapes, use the {@link #listDbSystemShapes(ListDbSystemShapesRequest) listDbSystemShapes} operation.
+     * Example: `{\"Department\": \"Finance\"}`
      *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("shape")
-    String shape;
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    java.util.Map<String, String> freeformTags;
 
     /**
-     * The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 10,000 characters.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKeys")
-    java.util.List<String> sshPublicKeys;
-
-    /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
      * <p>
-     **Subnet Restrictions:**
-     * - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
-     * - For Exadata and virtual machine 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.128.0/20.
-     * <p>
-     * These subnets are used by the Oracle Clusterware private interconnect on the database instance.
-     * Specifying an overlapping subnet will cause the private interconnect to malfunction.
-     * This restriction applies to both the client subnet and the backup subnet.
+     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-    String subnetId;
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
 }

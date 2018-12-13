@@ -24,15 +24,6 @@ public class CreateDatabaseFromBackupDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
-        private String adminPassword;
-
-        public Builder adminPassword(String adminPassword) {
-            this.adminPassword = adminPassword;
-            this.__explicitlySet__.add("adminPassword");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("backupId")
         private String backupId;
 
@@ -51,12 +42,21 @@ public class CreateDatabaseFromBackupDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
+        private String adminPassword;
+
+        public Builder adminPassword(String adminPassword) {
+            this.adminPassword = adminPassword;
+            this.__explicitlySet__.add("adminPassword");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateDatabaseFromBackupDetails build() {
             CreateDatabaseFromBackupDetails __instance__ =
-                    new CreateDatabaseFromBackupDetails(adminPassword, backupId, backupTDEPassword);
+                    new CreateDatabaseFromBackupDetails(backupId, backupTDEPassword, adminPassword);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -64,9 +64,9 @@ public class CreateDatabaseFromBackupDetails {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateDatabaseFromBackupDetails o) {
             Builder copiedBuilder =
-                    adminPassword(o.getAdminPassword())
-                            .backupId(o.getBackupId())
-                            .backupTDEPassword(o.getBackupTDEPassword());
+                    backupId(o.getBackupId())
+                            .backupTDEPassword(o.getBackupTDEPassword())
+                            .adminPassword(o.getAdminPassword());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -81,12 +81,6 @@ public class CreateDatabaseFromBackupDetails {
     }
 
     /**
-     * A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
-    String adminPassword;
-
-    /**
      * The backup [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupId")
@@ -97,6 +91,12 @@ public class CreateDatabaseFromBackupDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupTDEPassword")
     String backupTDEPassword;
+
+    /**
+     * A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
+    String adminPassword;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

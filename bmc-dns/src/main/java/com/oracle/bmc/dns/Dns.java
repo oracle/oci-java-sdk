@@ -65,8 +65,8 @@ public interface Dns extends AutoCloseable {
     DeleteRRSetResponse deleteRRSet(DeleteRRSetRequest request);
 
     /**
-     * Deletes the specified zone. A `204` response indicates that zone has been
-     * successfully deleted.
+     * Deletes the specified zone. A `204` response indicates that zone has been successfully
+     * deleted.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -108,7 +108,7 @@ public interface Dns extends AutoCloseable {
     /**
      * Gets all records in the specified zone. The results are
      * sorted by `domain` in alphabetical order by default. For more
-     * information about records, please see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+     * information about records, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -127,7 +127,7 @@ public interface Dns extends AutoCloseable {
     ListZonesResponse listZones(ListZonesRequest request);
 
     /**
-     * Replaces records in the specified zone at a domain. You can update one record or all records for the specified zone depending on the changes provided in the request body. You can also add or remove records using this function.
+     * Updates records in the specified zone at a domain. You can update one record or all records for the specified zone depending on the changes provided in the request body. You can also add or remove records using this function.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -179,7 +179,7 @@ public interface Dns extends AutoCloseable {
     /**
      * Updates the specified secondary zone with your new external master
      * server information. For more information about secondary zone, see
-     * [Manage DNS Service Zone](https://docs.us-phoenix-1.oraclecloud.com/Content/DNS/Tasks/managingdnszones.htm).
+     * [Manage DNS Service Zone](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/DNS/Tasks/managingdnszones.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

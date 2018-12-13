@@ -27,12 +27,12 @@ public class DbNodeSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("backupVnicId")
-        private String backupVnicId;
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
+        private String id;
 
-        public Builder backupVnicId(String backupVnicId) {
-            this.backupVnicId = backupVnicId;
-            this.__explicitlySet__.add("backupVnicId");
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
             return this;
         }
 
@@ -45,21 +45,21 @@ public class DbNodeSummary {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("hostname")
-        private String hostname;
+        @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
+        private String vnicId;
 
-        public Builder hostname(String hostname) {
-            this.hostname = hostname;
-            this.__explicitlySet__.add("hostname");
+        public Builder vnicId(String vnicId) {
+            this.vnicId = vnicId;
+            this.__explicitlySet__.add("vnicId");
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("id")
-        private String id;
+        @com.fasterxml.jackson.annotation.JsonProperty("backupVnicId")
+        private String backupVnicId;
 
-        public Builder id(String id) {
-            this.id = id;
-            this.__explicitlySet__.add("id");
+        public Builder backupVnicId(String backupVnicId) {
+            this.backupVnicId = backupVnicId;
+            this.__explicitlySet__.add("backupVnicId");
             return this;
         }
 
@@ -72,12 +72,12 @@ public class DbNodeSummary {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("softwareStorageSizeInGB")
-        private Integer softwareStorageSizeInGB;
+        @com.fasterxml.jackson.annotation.JsonProperty("hostname")
+        private String hostname;
 
-        public Builder softwareStorageSizeInGB(Integer softwareStorageSizeInGB) {
-            this.softwareStorageSizeInGB = softwareStorageSizeInGB;
-            this.__explicitlySet__.add("softwareStorageSizeInGB");
+        public Builder hostname(String hostname) {
+            this.hostname = hostname;
+            this.__explicitlySet__.add("hostname");
             return this;
         }
 
@@ -90,12 +90,12 @@ public class DbNodeSummary {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
-        private String vnicId;
+        @com.fasterxml.jackson.annotation.JsonProperty("softwareStorageSizeInGB")
+        private Integer softwareStorageSizeInGB;
 
-        public Builder vnicId(String vnicId) {
-            this.vnicId = vnicId;
-            this.__explicitlySet__.add("vnicId");
+        public Builder softwareStorageSizeInGB(Integer softwareStorageSizeInGB) {
+            this.softwareStorageSizeInGB = softwareStorageSizeInGB;
+            this.__explicitlySet__.add("softwareStorageSizeInGB");
             return this;
         }
 
@@ -105,14 +105,14 @@ public class DbNodeSummary {
         public DbNodeSummary build() {
             DbNodeSummary __instance__ =
                     new DbNodeSummary(
-                            backupVnicId,
-                            dbSystemId,
-                            hostname,
                             id,
+                            dbSystemId,
+                            vnicId,
+                            backupVnicId,
                             lifecycleState,
-                            softwareStorageSizeInGB,
+                            hostname,
                             timeCreated,
-                            vnicId);
+                            softwareStorageSizeInGB);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -120,14 +120,14 @@ public class DbNodeSummary {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DbNodeSummary o) {
             Builder copiedBuilder =
-                    backupVnicId(o.getBackupVnicId())
+                    id(o.getId())
                             .dbSystemId(o.getDbSystemId())
-                            .hostname(o.getHostname())
-                            .id(o.getId())
+                            .vnicId(o.getVnicId())
+                            .backupVnicId(o.getBackupVnicId())
                             .lifecycleState(o.getLifecycleState())
-                            .softwareStorageSizeInGB(o.getSoftwareStorageSizeInGB())
+                            .hostname(o.getHostname())
                             .timeCreated(o.getTimeCreated())
-                            .vnicId(o.getVnicId());
+                            .softwareStorageSizeInGB(o.getSoftwareStorageSizeInGB());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -142,10 +142,10 @@ public class DbNodeSummary {
     }
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the backup VNIC.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the database node.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("backupVnicId")
-    String backupVnicId;
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    String id;
 
     /**
      * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the DB system.
@@ -154,16 +154,16 @@ public class DbNodeSummary {
     String dbSystemId;
 
     /**
-     * The host name for the database node.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the VNIC.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("hostname")
-    String hostname;
+    @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
+    String vnicId;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the database node.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the backup VNIC.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("id")
-    String id;
+    @com.fasterxml.jackson.annotation.JsonProperty("backupVnicId")
+    String backupVnicId;
     /**
      * The current state of the database node.
      **/
@@ -224,11 +224,10 @@ public class DbNodeSummary {
     LifecycleState lifecycleState;
 
     /**
-     * The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
-     *
+     * The host name for the database node.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("softwareStorageSizeInGB")
-    Integer softwareStorageSizeInGB;
+    @com.fasterxml.jackson.annotation.JsonProperty("hostname")
+    String hostname;
 
     /**
      * The date and time that the database node was created.
@@ -237,10 +236,11 @@ public class DbNodeSummary {
     java.util.Date timeCreated;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the VNIC.
+     * The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
+     *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
-    String vnicId;
+    @com.fasterxml.jackson.annotation.JsonProperty("softwareStorageSizeInGB")
+    Integer softwareStorageSizeInGB;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

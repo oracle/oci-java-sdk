@@ -25,15 +25,6 @@ public class PatchDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("action")
-        private Action action;
-
-        public Builder action(Action action) {
-            this.action = action;
-            this.__explicitlySet__.add("action");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("patchId")
         private String patchId;
 
@@ -43,18 +34,27 @@ public class PatchDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("action")
+        private Action action;
+
+        public Builder action(Action action) {
+            this.action = action;
+            this.__explicitlySet__.add("action");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PatchDetails build() {
-            PatchDetails __instance__ = new PatchDetails(action, patchId);
+            PatchDetails __instance__ = new PatchDetails(patchId, action);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(PatchDetails o) {
-            Builder copiedBuilder = action(o.getAction()).patchId(o.getPatchId());
+            Builder copiedBuilder = patchId(o.getPatchId()).action(o.getAction());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -68,6 +68,11 @@ public class PatchDetails {
         return new Builder();
     }
 
+    /**
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the patch.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("patchId")
+    String patchId;
     /**
      * The action to perform on the patch.
      **/
@@ -108,12 +113,6 @@ public class PatchDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     Action action;
-
-    /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the patch.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("patchId")
-    String patchId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -109,7 +109,7 @@ public class CreateDataGuardAssociationToExistingDbSystemDetails
     }
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the DB system to create the standby database on.
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the DB system in which to create the standby database.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerDbSystemId")

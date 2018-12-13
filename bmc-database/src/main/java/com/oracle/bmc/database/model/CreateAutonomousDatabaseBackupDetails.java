@@ -27,15 +27,6 @@ public class CreateAutonomousDatabaseBackupDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
-        private String autonomousDatabaseId;
-
-        public Builder autonomousDatabaseId(String autonomousDatabaseId) {
-            this.autonomousDatabaseId = autonomousDatabaseId;
-            this.__explicitlySet__.add("autonomousDatabaseId");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -45,12 +36,21 @@ public class CreateAutonomousDatabaseBackupDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
+        private String autonomousDatabaseId;
+
+        public Builder autonomousDatabaseId(String autonomousDatabaseId) {
+            this.autonomousDatabaseId = autonomousDatabaseId;
+            this.__explicitlySet__.add("autonomousDatabaseId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateAutonomousDatabaseBackupDetails build() {
             CreateAutonomousDatabaseBackupDetails __instance__ =
-                    new CreateAutonomousDatabaseBackupDetails(autonomousDatabaseId, displayName);
+                    new CreateAutonomousDatabaseBackupDetails(displayName, autonomousDatabaseId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -58,8 +58,8 @@ public class CreateAutonomousDatabaseBackupDetails {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateAutonomousDatabaseBackupDetails o) {
             Builder copiedBuilder =
-                    autonomousDatabaseId(o.getAutonomousDatabaseId())
-                            .displayName(o.getDisplayName());
+                    displayName(o.getDisplayName())
+                            .autonomousDatabaseId(o.getAutonomousDatabaseId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -74,16 +74,16 @@ public class CreateAutonomousDatabaseBackupDetails {
     }
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
-    String autonomousDatabaseId;
-
-    /**
      * The user-friendly name for the backup. The name does not have to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
+    String autonomousDatabaseId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
