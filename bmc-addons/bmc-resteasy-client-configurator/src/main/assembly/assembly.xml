@@ -1,0 +1,61 @@
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3 http://maven.apache.org/xsd/assembly-1.1.3.xsd">
+
+    <id>release</id>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <fileSets>
+        <!-- Include the README.md -->
+        <fileSet>
+            <directory>${project.basedir}</directory>
+            <outputDirectory></outputDirectory>
+            <includes>
+                <include>README.md</include>
+            </includes>
+        </fileSet>
+        <!-- Include all of the Javadocs -->
+        <fileSet>
+            <directory>${project.build.directory}/apidocs</directory>
+            <outputDirectory>apidocs</outputDirectory>
+        </fileSet>
+        <!-- Include the sources and javadoc jars for developers -->
+        <fileSet>
+            <directory>${project.build.directory}</directory>
+            <includes>
+                <include>oci-java-sdk-addons-resteasy-client-configurator-${project.version}-*.jar</include>
+            </includes>
+            <outputDirectory>lib</outputDirectory>
+        </fileSet>
+    </fileSets>
+    <files>
+        <!-- Explicitly copy the signed/unsigned jar and rename it in the release zip file.
+             If this is for a "signed" release, then the signed jar should be defined; else, the unsigned if the
+             build profile is "ziponly" -->
+        <file>
+            <source>${source.jar.for.zip}</source>
+            <outputDirectory>lib</outputDirectory>
+            <destName>oci-java-sdk-addons-resteasy-client-configurator-${project.version}.jar</destName>
+        </file>
+    </files>
+    <dependencySets>
+        <!-- 3P dependencies only that's exclusive to this add-on, exclude OCI and its related third-party dependencies -->
+        <dependencySet>
+            <includes>
+                <include>javax.activation:activation</include>
+                <include>commons-logging:commons-logging</include>
+                <include>org.jboss.resteasy:*</include>
+                <include>org.apache.httpcomponents:*</include>
+                <include>org.jboss.spec.javax.annotation:*</include>
+                <include>org.jboss.logging:*</include>
+                <include>org.jboss.spec.javax.ws.rs:*</include>
+            </includes>
+            <outputDirectory>third-party/lib</outputDirectory>
+            <useProjectArtifact>true</useProjectArtifact>
+            <useProjectAttachments>true</useProjectAttachments>
+            <scope>runtime</scope>
+        </dependencySet>
+    </dependencySets>
+</assembly>

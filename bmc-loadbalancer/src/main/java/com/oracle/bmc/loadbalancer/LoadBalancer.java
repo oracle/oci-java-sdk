@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.loadbalancer;
 
@@ -124,6 +124,15 @@ public interface LoadBalancer extends AutoCloseable {
     CreatePathRouteSetResponse createPathRouteSet(CreatePathRouteSetRequest request);
 
     /**
+     * Creates a new rule set associated with the specified load balancer.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateRuleSetResponse createRuleSet(CreateRuleSetRequest request);
+
+    /**
      * Removes a backend server from a given load balancer and backend set.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -186,6 +195,18 @@ public interface LoadBalancer extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     DeletePathRouteSetResponse deletePathRouteSet(DeletePathRouteSetRequest request);
+
+    /**
+     * Deletes a rule set from the specified load balancer.
+     * <p>
+     * To delete a rule from a rule set, use the
+     * {@link #updateRuleSet(UpdateRuleSetRequest) updateRuleSet} operation.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteRuleSetResponse deleteRuleSet(DeleteRuleSetRequest request);
 
     /**
      * Gets the specified backend server's configuration information.
@@ -258,6 +279,14 @@ public interface LoadBalancer extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     GetPathRouteSetResponse getPathRouteSet(GetPathRouteSetRequest request);
+
+    /**
+     * Gets the specified set of rules.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetRuleSetResponse getRuleSet(GetRuleSetRequest request);
 
     /**
      * Gets the details of a work request.
@@ -340,6 +369,14 @@ public interface LoadBalancer extends AutoCloseable {
     ListProtocolsResponse listProtocols(ListProtocolsRequest request);
 
     /**
+     * Lists all rule sets associated with the specified load balancer.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListRuleSetsResponse listRuleSets(ListRuleSetsRequest request);
+
+    /**
      * Lists the valid load balancer shapes.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -418,6 +455,18 @@ public interface LoadBalancer extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdatePathRouteSetResponse updatePathRouteSet(UpdatePathRouteSetRequest request);
+
+    /**
+     * Overwrites an existing set of rules on the specified load balancer. Use this operation to add or alter
+     * the rules in a rule set.
+     * <p>
+     * To add a new rule to a set, the body must include both the new rule to add and the existing rules to retain.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateRuleSetResponse updateRuleSet(UpdateRuleSetRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

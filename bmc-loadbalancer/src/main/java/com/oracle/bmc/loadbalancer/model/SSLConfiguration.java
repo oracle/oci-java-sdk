@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.loadbalancer.model;
 
@@ -7,6 +7,8 @@ package com.oracle.bmc.loadbalancer.model;
  * A listener's SSL handling configuration.
  * <p>
  * To use SSL, a listener must be associated with a {@link Certificate}.
+ * <p>
+ **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -34,15 +36,6 @@ public class SSLConfiguration {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("verifyDepth")
-        private Integer verifyDepth;
-
-        public Builder verifyDepth(Integer verifyDepth) {
-            this.verifyDepth = verifyDepth;
-            this.__explicitlySet__.add("verifyDepth");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("verifyPeerCertificate")
         private Boolean verifyPeerCertificate;
 
@@ -52,12 +45,21 @@ public class SSLConfiguration {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("verifyDepth")
+        private Integer verifyDepth;
+
+        public Builder verifyDepth(Integer verifyDepth) {
+            this.verifyDepth = verifyDepth;
+            this.__explicitlySet__.add("verifyDepth");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public SSLConfiguration build() {
             SSLConfiguration __instance__ =
-                    new SSLConfiguration(certificateName, verifyDepth, verifyPeerCertificate);
+                    new SSLConfiguration(certificateName, verifyPeerCertificate, verifyDepth);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -66,8 +68,8 @@ public class SSLConfiguration {
         public Builder copy(SSLConfiguration o) {
             Builder copiedBuilder =
                     certificateName(o.getCertificateName())
-                            .verifyDepth(o.getVerifyDepth())
-                            .verifyPeerCertificate(o.getVerifyPeerCertificate());
+                            .verifyPeerCertificate(o.getVerifyPeerCertificate())
+                            .verifyDepth(o.getVerifyDepth());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -93,15 +95,6 @@ public class SSLConfiguration {
     String certificateName;
 
     /**
-     * The maximum depth for peer certificate chain verification.
-     * <p>
-     * Example: `3`
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("verifyDepth")
-    Integer verifyDepth;
-
-    /**
      * Whether the load balancer listener should verify peer certificates.
      * <p>
      * Example: `true`
@@ -109,6 +102,15 @@ public class SSLConfiguration {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("verifyPeerCertificate")
     Boolean verifyPeerCertificate;
+
+    /**
+     * The maximum depth for peer certificate chain verification.
+     * <p>
+     * Example: `3`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("verifyDepth")
+    Integer verifyDepth;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

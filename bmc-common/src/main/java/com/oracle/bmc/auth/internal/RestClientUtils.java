@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.auth.internal;
 
@@ -30,6 +30,7 @@ public class RestClientUtils {
     static RestClient createRestClient(
             String endpoint,
             ClientConfigurator clientConfigurator,
+            List<ClientConfigurator> additionalClientConfigurators,
             final String tenancyId,
             final X509CertificateSupplier leafCertificateSupplier) {
         // load the leaf certificate details dynamically on each invocation in case it has changed, ex, rotated.
@@ -56,12 +57,18 @@ public class RestClientUtils {
                     }
                 };
 
-        return createRestClient(endpoint, clientConfigurator, keySupplier, keyIdSupplier);
+        return createRestClient(
+                endpoint,
+                clientConfigurator,
+                additionalClientConfigurators,
+                keySupplier,
+                keyIdSupplier);
     }
 
     static RestClient createRestClient(
             String endpoint,
             ClientConfigurator clientConfigurator,
+            List<ClientConfigurator> additionalClientConfigurators,
             final X509FederationClient federationClient) {
         // load the leaf certificate details dynamically on each invocation in case it has changed, ex, rotated.
         // NOTE: because the signer calls both of these independently, there is an edge case where the certificate
@@ -91,12 +98,18 @@ public class RestClientUtils {
                     }
                 };
 
-        return createRestClient(endpoint, clientConfigurator, keySupplier, keyIdSupplier);
+        return createRestClient(
+                endpoint,
+                clientConfigurator,
+                additionalClientConfigurators,
+                keySupplier,
+                keyIdSupplier);
     }
 
     private static RestClient createRestClient(
             String endpoint,
             ClientConfigurator clientConfigurator,
+            List<ClientConfigurator> additionalClientConfigurators,
             KeySupplier<RSAPrivateKey> keySupplier,
             Supplier<String> keyIdSupplier) {
 
@@ -120,7 +133,10 @@ public class RestClientUtils {
                 new RequestSignerImpl(keySupplier, signingConfiguration, keyIdSupplier);
 
         RestClientFactory restClientFactory =
-                RestClientFactoryBuilder.builder().clientConfigurator(clientConfigurator).build();
+                RestClientFactoryBuilder.builder()
+                        .clientConfigurator(clientConfigurator)
+                        .additionalClientConfigurators(additionalClientConfigurators)
+                        .build();
         RestClient restClient =
                 restClientFactory.create(
                         requestSigner, Collections.<SigningStrategy, RequestSigner>emptyMap());

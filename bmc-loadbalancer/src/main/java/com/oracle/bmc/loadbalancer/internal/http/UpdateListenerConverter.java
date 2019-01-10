@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.loadbalancer.internal.http;
 
@@ -78,18 +78,6 @@ public class UpdateListenerConverter {
                                         UpdateListenerResponse.builder();
 
                                 com.google.common.base.Optional<java.util.List<String>>
-                                        opcRequestIdHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-request-id");
-                                if (opcRequestIdHeader.isPresent()) {
-                                    builder.opcRequestId(
-                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
-                                                    "opc-request-id",
-                                                    opcRequestIdHeader.get().get(0),
-                                                    String.class));
-                                }
-
-                                com.google.common.base.Optional<java.util.List<String>>
                                         opcWorkRequestIdHeader =
                                                 com.oracle.bmc.http.internal.HeaderUtils.get(
                                                         headers, "opc-work-request-id");
@@ -98,6 +86,18 @@ public class UpdateListenerConverter {
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
                                                     "opc-work-request-id",
                                                     opcWorkRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
+
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcRequestIdHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-request-id");
+                                if (opcRequestIdHeader.isPresent()) {
+                                    builder.opcRequestId(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-request-id",
+                                                    opcRequestIdHeader.get().get(0),
                                                     String.class));
                                 }
 

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.model;
 
@@ -30,6 +30,15 @@ public class AttachParavirtualizedVolumeDetails extends AttachVolumeDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("device")
+        private String device;
+
+        public Builder device(String device) {
+            this.device = device;
+            this.__explicitlySet__.add("device");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -81,6 +90,7 @@ public class AttachParavirtualizedVolumeDetails extends AttachVolumeDetails {
         public AttachParavirtualizedVolumeDetails build() {
             AttachParavirtualizedVolumeDetails __instance__ =
                     new AttachParavirtualizedVolumeDetails(
+                            device,
                             displayName,
                             instanceId,
                             isReadOnly,
@@ -93,7 +103,8 @@ public class AttachParavirtualizedVolumeDetails extends AttachVolumeDetails {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(AttachParavirtualizedVolumeDetails o) {
             Builder copiedBuilder =
-                    displayName(o.getDisplayName())
+                    device(o.getDevice())
+                            .displayName(o.getDisplayName())
                             .instanceId(o.getInstanceId())
                             .isReadOnly(o.getIsReadOnly())
                             .volumeId(o.getVolumeId())
@@ -113,12 +124,13 @@ public class AttachParavirtualizedVolumeDetails extends AttachVolumeDetails {
 
     @Deprecated
     public AttachParavirtualizedVolumeDetails(
+            String device,
             String displayName,
             String instanceId,
             Boolean isReadOnly,
             String volumeId,
             Boolean isPvEncryptionInTransitEnabled) {
-        super(displayName, instanceId, isReadOnly, volumeId);
+        super(device, displayName, instanceId, isReadOnly, volumeId);
         this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
     }
 

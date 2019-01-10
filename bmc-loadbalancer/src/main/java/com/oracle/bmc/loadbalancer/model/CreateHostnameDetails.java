@@ -1,10 +1,13 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.loadbalancer.model;
 
 /**
  * The details of the hostname resource to add to a load balancer.
+ * <p>
+ **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -24,15 +27,6 @@ public class CreateHostnameDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("hostname")
-        private String hostname;
-
-        public Builder hostname(String hostname) {
-            this.hostname = hostname;
-            this.__explicitlySet__.add("hostname");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
@@ -42,18 +36,27 @@ public class CreateHostnameDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("hostname")
+        private String hostname;
+
+        public Builder hostname(String hostname) {
+            this.hostname = hostname;
+            this.__explicitlySet__.add("hostname");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateHostnameDetails build() {
-            CreateHostnameDetails __instance__ = new CreateHostnameDetails(hostname, name);
+            CreateHostnameDetails __instance__ = new CreateHostnameDetails(name, hostname);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateHostnameDetails o) {
-            Builder copiedBuilder = hostname(o.getHostname()).name(o.getName());
+            Builder copiedBuilder = name(o.getName()).hostname(o.getHostname());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -68,16 +71,6 @@ public class CreateHostnameDetails {
     }
 
     /**
-     * A virtual hostname. For more information about virtual hostname string construction, see
-     * [Managing Request Routing](https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingrequest.htm#routing).
-     * <p>
-     * Example: `app.example.com`
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("hostname")
-    String hostname;
-
-    /**
      * A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential
      * information.
      * <p>
@@ -86,6 +79,16 @@ public class CreateHostnameDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
+
+    /**
+     * A virtual hostname. For more information about virtual hostname string construction, see
+     * [Managing Request Routing](https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingrequest.htm#routing).
+     * <p>
+     * Example: `app.example.com`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("hostname")
+    String hostname;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.loadbalancer.responses;
 
@@ -11,9 +11,8 @@ import com.oracle.bmc.loadbalancer.model.*;
 public class ListLoadBalancerHealthsResponse {
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then a partial list might have been returned. Include this value as the `page` parameter for the
-     * subsequent GET request to get the next batch of items.
+     * For list pagination. When this header appears in the response, additional pages of results remain.
+     * For important details about how pagination works, see [List Pagination](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private String opcNextPage;

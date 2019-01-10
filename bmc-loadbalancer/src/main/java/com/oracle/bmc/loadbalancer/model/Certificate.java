@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.loadbalancer.model;
 
@@ -7,6 +7,8 @@ package com.oracle.bmc.loadbalancer.model;
  * The configuration details of a certificate bundle.
  * For more information on SSL certficate configuration, see
  * [Managing SSL Certificates](https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingcertificates.htm).
+ * <p>
+ **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -25,15 +27,6 @@ public class Certificate {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("caCertificate")
-        private String caCertificate;
-
-        public Builder caCertificate(String caCertificate) {
-            this.caCertificate = caCertificate;
-            this.__explicitlySet__.add("caCertificate");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("certificateName")
         private String certificateName;
 
@@ -52,12 +45,21 @@ public class Certificate {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("caCertificate")
+        private String caCertificate;
+
+        public Builder caCertificate(String caCertificate) {
+            this.caCertificate = caCertificate;
+            this.__explicitlySet__.add("caCertificate");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Certificate build() {
             Certificate __instance__ =
-                    new Certificate(caCertificate, certificateName, publicCertificate);
+                    new Certificate(certificateName, publicCertificate, caCertificate);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -65,9 +67,9 @@ public class Certificate {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Certificate o) {
             Builder copiedBuilder =
-                    caCertificate(o.getCaCertificate())
-                            .certificateName(o.getCertificateName())
-                            .publicCertificate(o.getPublicCertificate());
+                    certificateName(o.getCertificateName())
+                            .publicCertificate(o.getPublicCertificate())
+                            .caCertificate(o.getCaCertificate());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -80,23 +82,6 @@ public class Certificate {
     public static Builder builder() {
         return new Builder();
     }
-
-    /**
-     * The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
-     * <p>
-     * Example:
-     * <p>
-     * -----BEGIN CERTIFICATE-----
-     *     MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
-     *     EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
-     *     VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
-     *     aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
-     *     ...
-     *     -----END CERTIFICATE-----
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("caCertificate")
-    String caCertificate;
 
     /**
      * A friendly name for the certificate bundle. It must be unique and it cannot be changed.
@@ -125,6 +110,23 @@ public class Certificate {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicCertificate")
     String publicCertificate;
+
+    /**
+     * The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
+     * <p>
+     * Example:
+     * <p>
+     * -----BEGIN CERTIFICATE-----
+     *     MIIEczCCA1ugAwIBAgIBADANBgkqhkiG9w0BAQQFAD..AkGA1UEBhMCR0Ix
+     *     EzARBgNVBAgTClNvbWUtU3RhdGUxFDASBgNVBAoTC0..0EgTHRkMTcwNQYD
+     *     VQQLEy5DbGFzcyAxIFB1YmxpYyBQcmltYXJ5IENlcn..XRpb24gQXV0aG9y
+     *     aXR5MRQwEgYDVQQDEwtCZXN0IENBIEx0ZDAeFw0wMD..TUwMTZaFw0wMTAy
+     *     ...
+     *     -----END CERTIFICATE-----
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("caCertificate")
+    String caCertificate;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

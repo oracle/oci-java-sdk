@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.model;
 
@@ -45,6 +45,15 @@ public class ParavirtualizedVolumeAttachment extends VolumeAttachment {
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("device")
+        private String device;
+
+        public Builder device(String device) {
+            this.device = device;
+            this.__explicitlySet__.add("device");
             return this;
         }
 
@@ -128,6 +137,7 @@ public class ParavirtualizedVolumeAttachment extends VolumeAttachment {
                     new ParavirtualizedVolumeAttachment(
                             availabilityDomain,
                             compartmentId,
+                            device,
                             displayName,
                             id,
                             instanceId,
@@ -145,6 +155,7 @@ public class ParavirtualizedVolumeAttachment extends VolumeAttachment {
             Builder copiedBuilder =
                     availabilityDomain(o.getAvailabilityDomain())
                             .compartmentId(o.getCompartmentId())
+                            .device(o.getDevice())
                             .displayName(o.getDisplayName())
                             .id(o.getId())
                             .instanceId(o.getInstanceId())
@@ -170,6 +181,7 @@ public class ParavirtualizedVolumeAttachment extends VolumeAttachment {
     public ParavirtualizedVolumeAttachment(
             String availabilityDomain,
             String compartmentId,
+            String device,
             String displayName,
             String id,
             String instanceId,
@@ -181,6 +193,7 @@ public class ParavirtualizedVolumeAttachment extends VolumeAttachment {
         super(
                 availabilityDomain,
                 compartmentId,
+                device,
                 displayName,
                 id,
                 instanceId,

@@ -1,14 +1,16 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.http.internal;
 
 import com.google.common.collect.ImmutableList;
 import com.oracle.bmc.model.BmcException;
+import org.glassfish.jersey.internal.util.collection.MultivaluedStringMap;
 import org.junit.Test;
 
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.MultivaluedHashMap;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
 
@@ -83,7 +85,7 @@ public class ResponseHelperTest {
     public void testReadEntity_streamWithConentType() {
         Response response = mock(Response.class);
         Response.StatusType statusInfo = mock(Response.StatusType.class);
-        MultivaluedMap<String, Object> headers = mock(MultivaluedMap.class);
+        MultivaluedMap<String, Object> headers = new MultivaluedHashMap<>();
         List<Object> contentType = ImmutableList.<Object>of("text");
         InputStream mockStream = mock(InputStream.class);
 
@@ -92,7 +94,7 @@ public class ResponseHelperTest {
         when(response.getStatusInfo()).thenReturn(statusInfo);
         when(statusInfo.getFamily()).thenReturn(Response.Status.Family.SUCCESSFUL);
         when(response.getHeaders()).thenReturn(headers);
-        when(headers.remove(HttpHeaders.CONTENT_TYPE)).thenReturn(contentType);
+        headers.add(HttpHeaders.CONTENT_TYPE, contentType);
         when(response.readEntity(entityType)).thenReturn(mockStream);
 
         InputStream inputStream = (InputStream) ResponseHelper.readEntity(response, entityType);
@@ -101,12 +103,37 @@ public class ResponseHelperTest {
         verify(response).getStatusInfo();
         verify(statusInfo).getFamily();
         verify(response, atLeastOnce()).getHeaders();
-        verify(headers).remove(HttpHeaders.CONTENT_TYPE);
         verify(response).readEntity(entityType);
-        verify(headers).addAll(HttpHeaders.CONTENT_TYPE, contentType);
         verify(response, never()).bufferEntity();
         verify(response).getStringHeaders();
-        verifyNoMoreInteractions(response, statusInfo, headers, mockStream);
+        verifyNoMoreInteractions(response, statusInfo, mockStream);
+        assertEquals(ImmutableList.of(contentType), headers.get(HttpHeaders.CONTENT_TYPE));
+    }
+
+    @Test
+    public void testReadEntity_streamWithoutConentType() {
+        Response response = mock(Response.class);
+        Response.StatusType statusInfo = mock(Response.StatusType.class);
+        MultivaluedMap<String, Object> headers = new MultivaluedHashMap<>();
+        InputStream mockStream = mock(InputStream.class);
+
+        Class<?> entityType = InputStream.class;
+
+        when(response.getStatusInfo()).thenReturn(statusInfo);
+        when(statusInfo.getFamily()).thenReturn(Response.Status.Family.SUCCESSFUL);
+        when(response.getHeaders()).thenReturn(headers);
+        when(response.readEntity(entityType)).thenReturn(mockStream);
+
+        InputStream inputStream = (InputStream) ResponseHelper.readEntity(response, entityType);
+
+        assertTrue(inputStream == mockStream);
+        verify(response).getStatusInfo();
+        verify(statusInfo).getFamily();
+        verify(response, atLeastOnce()).getHeaders();
+        verify(response).readEntity(entityType);
+        verify(response, never()).bufferEntity();
+        verify(response).getStringHeaders();
+        verifyNoMoreInteractions(response, statusInfo, mockStream);
     }
 
     private static Response buildMockResponse(

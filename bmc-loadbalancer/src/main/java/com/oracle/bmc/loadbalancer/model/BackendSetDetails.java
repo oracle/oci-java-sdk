@@ -1,12 +1,12 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.loadbalancer.model;
 
 /**
  * The configuration details for a load balancer backend set.
  * For more information on backend set configuration, see
- * [Managing Backend Sets](https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/tasks/managingbackendsets.htm).
+ * [Managing Backend Sets](https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingbackendsets.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -27,6 +27,15 @@ public class BackendSetDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("policy")
+        private String policy;
+
+        public Builder policy(String policy) {
+            this.policy = policy;
+            this.__explicitlySet__.add("policy");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("backends")
         private java.util.List<BackendDetails> backends;
 
@@ -45,12 +54,12 @@ public class BackendSetDetails {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("policy")
-        private String policy;
+        @com.fasterxml.jackson.annotation.JsonProperty("sslConfiguration")
+        private SSLConfigurationDetails sslConfiguration;
 
-        public Builder policy(String policy) {
-            this.policy = policy;
-            this.__explicitlySet__.add("policy");
+        public Builder sslConfiguration(SSLConfigurationDetails sslConfiguration) {
+            this.sslConfiguration = sslConfiguration;
+            this.__explicitlySet__.add("sslConfiguration");
             return this;
         }
 
@@ -64,26 +73,17 @@ public class BackendSetDetails {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("sslConfiguration")
-        private SSLConfigurationDetails sslConfiguration;
-
-        public Builder sslConfiguration(SSLConfigurationDetails sslConfiguration) {
-            this.sslConfiguration = sslConfiguration;
-            this.__explicitlySet__.add("sslConfiguration");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BackendSetDetails build() {
             BackendSetDetails __instance__ =
                     new BackendSetDetails(
+                            policy,
                             backends,
                             healthChecker,
-                            policy,
-                            sessionPersistenceConfiguration,
-                            sslConfiguration);
+                            sslConfiguration,
+                            sessionPersistenceConfiguration);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -91,11 +91,12 @@ public class BackendSetDetails {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(BackendSetDetails o) {
             Builder copiedBuilder =
-                    backends(o.getBackends())
+                    policy(o.getPolicy())
+                            .backends(o.getBackends())
                             .healthChecker(o.getHealthChecker())
-                            .policy(o.getPolicy())
-                            .sessionPersistenceConfiguration(o.getSessionPersistenceConfiguration())
-                            .sslConfiguration(o.getSslConfiguration());
+                            .sslConfiguration(o.getSslConfiguration())
+                            .sessionPersistenceConfiguration(
+                                    o.getSessionPersistenceConfiguration());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -109,12 +110,6 @@ public class BackendSetDetails {
         return new Builder();
     }
 
-    @com.fasterxml.jackson.annotation.JsonProperty("backends")
-    java.util.List<BackendDetails> backends;
-
-    @com.fasterxml.jackson.annotation.JsonProperty("healthChecker")
-    HealthCheckerDetails healthChecker;
-
     /**
      * The load balancer policy for the backend set. To get a list of available policies, use the
      * {@link #listPolicies(ListPoliciesRequest) listPolicies} operation.
@@ -125,11 +120,17 @@ public class BackendSetDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("policy")
     String policy;
 
-    @com.fasterxml.jackson.annotation.JsonProperty("sessionPersistenceConfiguration")
-    SessionPersistenceConfigurationDetails sessionPersistenceConfiguration;
+    @com.fasterxml.jackson.annotation.JsonProperty("backends")
+    java.util.List<BackendDetails> backends;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("healthChecker")
+    HealthCheckerDetails healthChecker;
 
     @com.fasterxml.jackson.annotation.JsonProperty("sslConfiguration")
     SSLConfigurationDetails sslConfiguration;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("sessionPersistenceConfiguration")
+    SessionPersistenceConfigurationDetails sessionPersistenceConfiguration;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

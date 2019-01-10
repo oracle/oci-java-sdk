@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.http.internal;
 
@@ -209,7 +209,9 @@ public class ResponseHelper {
                         }
                         return (T) inputStream;
                     } finally {
-                        response.getHeaders().addAll(HttpHeaders.CONTENT_TYPE, contentType);
+                        if (contentType != null) {
+                            response.getHeaders().addAll(HttpHeaders.CONTENT_TYPE, contentType);
+                        }
                     }
                 }
 

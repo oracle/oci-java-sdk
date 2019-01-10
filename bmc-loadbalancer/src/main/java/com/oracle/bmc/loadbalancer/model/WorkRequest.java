@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.loadbalancer.model;
 
@@ -26,15 +26,6 @@ public class WorkRequest {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("errorDetails")
-        private java.util.List<WorkRequestError> errorDetails;
-
-        public Builder errorDetails(java.util.List<WorkRequestError> errorDetails) {
-            this.errorDetails = errorDetails;
-            this.__explicitlySet__.add("errorDetails");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
@@ -44,21 +35,30 @@ public class WorkRequest {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-        private LifecycleState lifecycleState;
-
-        public Builder lifecycleState(LifecycleState lifecycleState) {
-            this.lifecycleState = lifecycleState;
-            this.__explicitlySet__.add("lifecycleState");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
         private String loadBalancerId;
 
         public Builder loadBalancerId(String loadBalancerId) {
             this.loadBalancerId = loadBalancerId;
             this.__explicitlySet__.add("loadBalancerId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("type")
+        private String type;
+
+        public Builder type(String type) {
+            this.type = type;
+            this.__explicitlySet__.add("type");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+        private LifecycleState lifecycleState;
+
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
             return this;
         }
 
@@ -89,12 +89,12 @@ public class WorkRequest {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("type")
-        private String type;
+        @com.fasterxml.jackson.annotation.JsonProperty("errorDetails")
+        private java.util.List<WorkRequestError> errorDetails;
 
-        public Builder type(String type) {
-            this.type = type;
-            this.__explicitlySet__.add("type");
+        public Builder errorDetails(java.util.List<WorkRequestError> errorDetails) {
+            this.errorDetails = errorDetails;
+            this.__explicitlySet__.add("errorDetails");
             return this;
         }
 
@@ -104,14 +104,14 @@ public class WorkRequest {
         public WorkRequest build() {
             WorkRequest __instance__ =
                     new WorkRequest(
-                            errorDetails,
                             id,
-                            lifecycleState,
                             loadBalancerId,
+                            type,
+                            lifecycleState,
                             message,
                             timeAccepted,
                             timeFinished,
-                            type);
+                            errorDetails);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -119,14 +119,14 @@ public class WorkRequest {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(WorkRequest o) {
             Builder copiedBuilder =
-                    errorDetails(o.getErrorDetails())
-                            .id(o.getId())
-                            .lifecycleState(o.getLifecycleState())
+                    id(o.getId())
                             .loadBalancerId(o.getLoadBalancerId())
+                            .type(o.getType())
+                            .lifecycleState(o.getLifecycleState())
                             .message(o.getMessage())
                             .timeAccepted(o.getTimeAccepted())
                             .timeFinished(o.getTimeFinished())
-                            .type(o.getType());
+                            .errorDetails(o.getErrorDetails());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -140,14 +140,28 @@ public class WorkRequest {
         return new Builder();
     }
 
-    @com.fasterxml.jackson.annotation.JsonProperty("errorDetails")
-    java.util.List<WorkRequestError> errorDetails;
-
     /**
      * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
+
+    /**
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the load balancer with which the work request
+     * is associated.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
+    String loadBalancerId;
+
+    /**
+     * The type of action the work request represents.
+     * <p>
+     * Example: `CreateListener`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("type")
+    String type;
     /**
      * The current state of the work request.
      *
@@ -205,14 +219,6 @@ public class WorkRequest {
     LifecycleState lifecycleState;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the load balancer with which the work request
-     * is associated.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
-    String loadBalancerId;
-
-    /**
      * A collection of data, related to the load balancer provisioning process, that helps with debugging in the event of failure.
      * Possible data elements include:
      * <p>
@@ -244,14 +250,8 @@ public class WorkRequest {
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     java.util.Date timeFinished;
 
-    /**
-     * The type of action the work request represents.
-     * <p>
-     * Example: `CreateListener`
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("type")
-    String type;
+    @com.fasterxml.jackson.annotation.JsonProperty("errorDetails")
+    java.util.List<WorkRequestError> errorDetails;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

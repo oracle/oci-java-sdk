@@ -1,8 +1,9 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.auth.internal;
 
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.annotations.VisibleForTesting;
@@ -66,6 +67,7 @@ public class X509FederationClient implements FederationClient {
      * @param sessionKeySupplier the temporary public key, whose corresponding private key will be used to sign actual API calls
      * @param intermediateCertificateSuppliers intermediate certificates, if there is any
      * @param clientConfigurator client configurator used to configure the federation rest client, if any (else null)
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      */
     public X509FederationClient(
             String federationEndpoint,
@@ -73,14 +75,18 @@ public class X509FederationClient implements FederationClient {
             X509CertificateSupplier leafCertificateSupplier,
             SessionKeySupplier sessionKeySupplier,
             Set<X509CertificateSupplier> intermediateCertificateSuppliers,
-            ClientConfigurator clientConfigurator) {
-
+            ClientConfigurator clientConfigurator,
+            List<ClientConfigurator> additionalClientConfigurators) {
         this.leafCertificateSupplier = Preconditions.checkNotNull(leafCertificateSupplier);
         this.sessionKeySupplier = Preconditions.checkNotNull(sessionKeySupplier);
         this.intermediateCertificateSuppliers = intermediateCertificateSuppliers;
         this.tenancyId = Preconditions.checkNotNull(tenancyId);
         this.federationHttpClient =
-                RestClientUtils.createRestClient(federationEndpoint, clientConfigurator, this);
+                RestClientUtils.createRestClient(
+                        federationEndpoint,
+                        clientConfigurator,
+                        additionalClientConfigurators,
+                        this);
         this.securityTokenAdapter = new SecurityTokenAdapter(null, sessionKeySupplier);
     }
 
@@ -91,13 +97,15 @@ public class X509FederationClient implements FederationClient {
      * @param sessionKeySupplier the temporary public key, whose corresponding private key will be used to sign actual API calls
      * @param intermediateCertificateSuppliers intermediate certificates, if there are any (else null)
      * @param clientConfigurator client configurator used to configure the federation rest client, if any (else null)
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      */
     public X509FederationClient(
             String federationEndpoint,
             X509CertificateSupplier leafCertificateSupplier,
             SessionKeySupplier sessionKeySupplier,
             Set<X509CertificateSupplier> intermediateCertificateSuppliers,
-            ClientConfigurator clientConfigurator) {
+            ClientConfigurator clientConfigurator,
+            List<ClientConfigurator> additionalClientConfigurators) {
         this(
                 federationEndpoint,
                 AuthUtils.getTenantIdFromCertificate(
@@ -105,7 +113,8 @@ public class X509FederationClient implements FederationClient {
                 leafCertificateSupplier,
                 sessionKeySupplier,
                 intermediateCertificateSuppliers,
-                clientConfigurator);
+                clientConfigurator,
+                additionalClientConfigurators);
     }
 
     /**

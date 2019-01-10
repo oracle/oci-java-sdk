@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.loadbalancer.model;
 
@@ -25,12 +25,12 @@ public class HealthCheckResult {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("healthCheckStatus")
-        private HealthCheckStatus healthCheckStatus;
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
 
-        public Builder healthCheckStatus(HealthCheckStatus healthCheckStatus) {
-            this.healthCheckStatus = healthCheckStatus;
-            this.__explicitlySet__.add("healthCheckStatus");
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
             return this;
         }
 
@@ -43,15 +43,6 @@ public class HealthCheckResult {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-        private String subnetId;
-
-        public Builder subnetId(String subnetId) {
-            this.subnetId = subnetId;
-            this.__explicitlySet__.add("subnetId");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
@@ -61,12 +52,21 @@ public class HealthCheckResult {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("healthCheckStatus")
+        private HealthCheckStatus healthCheckStatus;
+
+        public Builder healthCheckStatus(HealthCheckStatus healthCheckStatus) {
+            this.healthCheckStatus = healthCheckStatus;
+            this.__explicitlySet__.add("healthCheckStatus");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HealthCheckResult build() {
             HealthCheckResult __instance__ =
-                    new HealthCheckResult(healthCheckStatus, sourceIpAddress, subnetId, timestamp);
+                    new HealthCheckResult(subnetId, sourceIpAddress, timestamp, healthCheckStatus);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -74,10 +74,10 @@ public class HealthCheckResult {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(HealthCheckResult o) {
             Builder copiedBuilder =
-                    healthCheckStatus(o.getHealthCheckStatus())
+                    subnetId(o.getSubnetId())
                             .sourceIpAddress(o.getSourceIpAddress())
-                            .subnetId(o.getSubnetId())
-                            .timestamp(o.getTimestamp());
+                            .timestamp(o.getTimestamp())
+                            .healthCheckStatus(o.getHealthCheckStatus());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -91,6 +91,31 @@ public class HealthCheckResult {
         return new Builder();
     }
 
+    /**
+     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the subnet hosting the load balancer that reported this health check status.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+    String subnetId;
+
+    /**
+     * The IP address of the health check status report provider. This identifier helps you differentiate same-subnet
+     * (private) load balancers that report health check status.
+     * <p>
+     * Example: `10.0.0.7`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceIpAddress")
+    String sourceIpAddress;
+
+    /**
+     * The date and time the data was retrieved, in the format defined by RFC3339.
+     * <p>
+     * Example: `2017-06-02T18:28:11+00:00`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
+    java.util.Date timestamp;
     /**
      * The result of the most recent health check.
      *
@@ -150,32 +175,6 @@ public class HealthCheckResult {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("healthCheckStatus")
     HealthCheckStatus healthCheckStatus;
-
-    /**
-     * The IP address of the health check status report provider. This identifier helps you differentiate same-subnet
-     * (private) load balancers that report health check status.
-     * <p>
-     * Example: `10.0.0.7`
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("sourceIpAddress")
-    String sourceIpAddress;
-
-    /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the subnet hosting the load balancer that reported this health check status.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
-    String subnetId;
-
-    /**
-     * The date and time the data was retrieved, in the format defined by RFC3339.
-     * <p>
-     * Example: `2017-06-02T18:28:11+00:00`
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
-    java.util.Date timestamp;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

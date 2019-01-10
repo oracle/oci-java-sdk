@@ -1,12 +1,12 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.loadbalancer.model;
 
 /**
  * The configuration details for creating a backend server in a backend set.
  * For more information on backend server configuration, see
- * [Managing Backend Servers](https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/tasks/managingbackendservers.htm).
+ * [Managing Backend Servers](https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingbackendservers.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -27,39 +27,12 @@ public class CreateBackendDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("backup")
-        private Boolean backup;
-
-        public Builder backup(Boolean backup) {
-            this.backup = backup;
-            this.__explicitlySet__.add("backup");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("drain")
-        private Boolean drain;
-
-        public Builder drain(Boolean drain) {
-            this.drain = drain;
-            this.__explicitlySet__.add("drain");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("offline")
-        private Boolean offline;
-
-        public Builder offline(Boolean offline) {
-            this.offline = offline;
-            this.__explicitlySet__.add("offline");
             return this;
         }
 
@@ -81,12 +54,39 @@ public class CreateBackendDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("backup")
+        private Boolean backup;
+
+        public Builder backup(Boolean backup) {
+            this.backup = backup;
+            this.__explicitlySet__.add("backup");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("drain")
+        private Boolean drain;
+
+        public Builder drain(Boolean drain) {
+            this.drain = drain;
+            this.__explicitlySet__.add("drain");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("offline")
+        private Boolean offline;
+
+        public Builder offline(Boolean offline) {
+            this.offline = offline;
+            this.__explicitlySet__.add("offline");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateBackendDetails build() {
             CreateBackendDetails __instance__ =
-                    new CreateBackendDetails(backup, drain, ipAddress, offline, port, weight);
+                    new CreateBackendDetails(ipAddress, port, weight, backup, drain, offline);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -94,12 +94,12 @@ public class CreateBackendDetails {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateBackendDetails o) {
             Builder copiedBuilder =
-                    backup(o.getBackup())
-                            .drain(o.getDrain())
-                            .ipAddress(o.getIpAddress())
-                            .offline(o.getOffline())
+                    ipAddress(o.getIpAddress())
                             .port(o.getPort())
-                            .weight(o.getWeight());
+                            .weight(o.getWeight())
+                            .backup(o.getBackup())
+                            .drain(o.getDrain())
+                            .offline(o.getOffline());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -114,26 +114,6 @@ public class CreateBackendDetails {
     }
 
     /**
-     * Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress
-     * traffic to this backend server unless all other backend servers not marked as \"backup\" fail the health check policy.
-     * <p>
-     * Example: `false`
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("backup")
-    Boolean backup;
-
-    /**
-     * Whether the load balancer should drain this server. Servers marked \"drain\" receive no new
-     * incoming traffic.
-     * <p>
-     * Example: `false`
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("drain")
-    Boolean drain;
-
-    /**
      * The IP address of the backend server.
      * <p>
      * Example: `10.0.0.3`
@@ -141,16 +121,6 @@ public class CreateBackendDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     String ipAddress;
-
-    /**
-     * Whether the load balancer should treat this server as offline. Offline servers receive no incoming
-     * traffic.
-     * <p>
-     * Example: `false`
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("offline")
-    Boolean offline;
 
     /**
      * The communication port for the backend server.
@@ -173,6 +143,36 @@ public class CreateBackendDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("weight")
     Integer weight;
+
+    /**
+     * Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress
+     * traffic to this backend server unless all other backend servers not marked as \"backup\" fail the health check policy.
+     * <p>
+     * Example: `false`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("backup")
+    Boolean backup;
+
+    /**
+     * Whether the load balancer should drain this server. Servers marked \"drain\" receive no new
+     * incoming traffic.
+     * <p>
+     * Example: `false`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("drain")
+    Boolean drain;
+
+    /**
+     * Whether the load balancer should treat this server as offline. Offline servers receive no incoming
+     * traffic.
+     * <p>
+     * Example: `false`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("offline")
+    Boolean offline;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.loadbalancer;
 
@@ -8,6 +8,19 @@ import com.oracle.bmc.loadbalancer.internal.http.*;
 import com.oracle.bmc.loadbalancer.requests.*;
 import com.oracle.bmc.loadbalancer.responses.*;
 
+/**
+ * Async client implementation for LoadBalancer service. <br/>
+ * There are two ways to use async client:
+ * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
+ * getObject Api in object storage service, developers need to process the stream in AsyncHandler not anywhere else
+ * because the stream will be closed right after the AsyncHandler is invoked. <br/>
+ * 2. Use Java Future: using Java Future, develpers need to close the stream after done with Java Furture.<br/>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
+ * but not both.  If the Future will be used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
+ * is used, it is still safe to use the Future to determine whether or not the request as completed via
+ * Future.isDone/isCancelled.<br/>
+ * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @lombok.extern.slf4j.Slf4j
 public class LoadBalancerAsyncClient implements LoadBalancerAsync {
@@ -18,6 +31,7 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("LOADBALANCER")
                     .serviceEndpointPrefix("iaas")
+                    .serviceEndpointTemplate("https://iaas.{region}.oraclecloud.com")
                     .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
@@ -332,10 +346,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.post(
@@ -416,10 +435,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.post(
@@ -500,10 +524,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.post(
@@ -584,10 +613,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.post(
@@ -668,10 +702,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.post(
@@ -752,10 +791,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.post(
@@ -836,10 +880,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.post(
@@ -864,6 +913,89 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                             return client.post(
                                     ib,
                                     interceptedRequest.getCreatePathRouteSetDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRuleSetResponse> createRuleSet(
+            final CreateRuleSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CreateRuleSetRequest, CreateRuleSetResponse>
+                    handler) {
+        LOG.trace("Called async createRuleSet");
+        final CreateRuleSetRequest interceptedRequest =
+                CreateRuleSetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateRuleSetConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, CreateRuleSetResponse>
+                transformer = CreateRuleSetConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<CreateRuleSetRequest, CreateRuleSetResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
+                            CreateRuleSetRequest, CreateRuleSetResponse>(
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.post(
+                                    ib,
+                                    interceptedRequest.getCreateRuleSetDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.post(
+                        ib,
+                        interceptedRequest.getCreateRuleSetDetails(),
+                        interceptedRequest,
+                        onSuccess,
+                        onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
+                    javax.ws.rs.core.Response, CreateRuleSetResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.post(
+                                    ib,
+                                    interceptedRequest.getCreateRuleSetDetails(),
                                     interceptedRequest,
                                     onSuccess,
                                     onError);
@@ -914,10 +1046,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.delete(ib, interceptedRequest, onSuccess, onError);
@@ -983,10 +1120,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.delete(ib, interceptedRequest, onSuccess, onError);
@@ -1052,10 +1194,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.delete(ib, interceptedRequest, onSuccess, onError);
@@ -1121,10 +1268,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.delete(ib, interceptedRequest, onSuccess, onError);
@@ -1190,10 +1342,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.delete(ib, interceptedRequest, onSuccess, onError);
@@ -1259,10 +1416,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.delete(ib, interceptedRequest, onSuccess, onError);
@@ -1328,6 +1490,79 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.delete(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
+                    javax.ws.rs.core.Response, DeletePathRouteSetResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.delete(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRuleSetResponse> deleteRuleSet(
+            final DeleteRuleSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeleteRuleSetRequest, DeleteRuleSetResponse>
+                    handler) {
+        LOG.trace("Called async deleteRuleSet");
+        final DeleteRuleSetRequest interceptedRequest =
+                DeleteRuleSetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteRuleSetConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRuleSetResponse>
+                transformer = DeleteRuleSetConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<DeleteRuleSetRequest, DeleteRuleSetResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
+                            DeleteRuleSetRequest, DeleteRuleSetResponse>(
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.delete(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
                 new com.oracle.bmc.http.internal.SuccessConsumer<>(
                         handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
@@ -1339,7 +1574,7 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
-                    javax.ws.rs.core.Response, DeletePathRouteSetResponse>(
+                    javax.ws.rs.core.Response, DeleteRuleSetResponse>(
                     responseFuture,
                     transformer,
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
@@ -1395,10 +1630,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.get(ib, interceptedRequest, onSuccess, onError);
@@ -1464,10 +1704,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.get(ib, interceptedRequest, onSuccess, onError);
@@ -1532,10 +1777,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.get(ib, interceptedRequest, onSuccess, onError);
@@ -1603,10 +1853,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.get(ib, interceptedRequest, onSuccess, onError);
@@ -1672,10 +1927,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.get(ib, interceptedRequest, onSuccess, onError);
@@ -1740,10 +2000,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.get(ib, interceptedRequest, onSuccess, onError);
@@ -1809,10 +2074,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.get(ib, interceptedRequest, onSuccess, onError);
@@ -1880,10 +2150,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.get(ib, interceptedRequest, onSuccess, onError);
@@ -1949,6 +2224,78 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
+                    javax.ws.rs.core.Response, GetPathRouteSetResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRuleSetResponse> getRuleSet(
+            final GetRuleSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetRuleSetRequest, GetRuleSetResponse>
+                    handler) {
+        LOG.trace("Called async getRuleSet");
+        final GetRuleSetRequest interceptedRequest = GetRuleSetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRuleSetConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, GetRuleSetResponse>
+                transformer = GetRuleSetConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<GetRuleSetRequest, GetRuleSetResponse> handlerToUse =
+                handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
+                            GetRuleSetRequest, GetRuleSetResponse>(
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
                 new com.oracle.bmc.http.internal.SuccessConsumer<>(
                         handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
@@ -1960,7 +2307,7 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
-                    javax.ws.rs.core.Response, GetPathRouteSetResponse>(
+                    javax.ws.rs.core.Response, GetRuleSetResponse>(
                     responseFuture,
                     transformer,
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
@@ -2018,10 +2365,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.get(ib, interceptedRequest, onSuccess, onError);
@@ -2087,10 +2439,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.get(ib, interceptedRequest, onSuccess, onError);
@@ -2155,10 +2512,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.get(ib, interceptedRequest, onSuccess, onError);
@@ -2224,10 +2586,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.get(ib, interceptedRequest, onSuccess, onError);
@@ -2292,10 +2659,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.get(ib, interceptedRequest, onSuccess, onError);
@@ -2363,10 +2735,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.get(ib, interceptedRequest, onSuccess, onError);
@@ -2432,10 +2809,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.get(ib, interceptedRequest, onSuccess, onError);
@@ -2501,10 +2883,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.get(ib, interceptedRequest, onSuccess, onError);
@@ -2569,10 +2956,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.get(ib, interceptedRequest, onSuccess, onError);
@@ -2637,6 +3029,79 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.get(ib, interceptedRequest, onSuccess, onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
+                    javax.ws.rs.core.Response, ListProtocolsResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRuleSetsResponse> listRuleSets(
+            final ListRuleSetsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListRuleSetsRequest, ListRuleSetsResponse>
+                    handler) {
+        LOG.trace("Called async listRuleSets");
+        final ListRuleSetsRequest interceptedRequest =
+                ListRuleSetsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRuleSetsConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, ListRuleSetsResponse>
+                transformer = ListRuleSetsConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<ListRuleSetsRequest, ListRuleSetsResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
+                            ListRuleSetsRequest, ListRuleSetsResponse>(
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.get(ib, interceptedRequest, onSuccess, onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
                 new com.oracle.bmc.http.internal.SuccessConsumer<>(
                         handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
@@ -2648,7 +3113,7 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         if (this.authenticationDetailsProvider
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
-                    javax.ws.rs.core.Response, ListProtocolsResponse>(
+                    javax.ws.rs.core.Response, ListRuleSetsResponse>(
                     responseFuture,
                     transformer,
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
@@ -2704,10 +3169,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.get(ib, interceptedRequest, onSuccess, onError);
@@ -2773,10 +3243,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.get(ib, interceptedRequest, onSuccess, onError);
@@ -2846,10 +3321,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.put(
@@ -2930,10 +3410,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.put(
@@ -3016,10 +3501,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.put(
@@ -3100,10 +3590,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.put(
@@ -3184,10 +3679,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.put(
@@ -3268,10 +3768,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.put(
@@ -3352,10 +3857,15 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
         }
 
         final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
-                new com.oracle.bmc.http.internal.SuccessConsumer<>(
-                        handlerToUse, transformer, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                handlerToUse, transformer, interceptedRequest);
         final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
-                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+                (handler == null)
+                        ? null
+                        : new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                handlerToUse, interceptedRequest);
 
         java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
                 client.put(
@@ -3380,6 +3890,89 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
                             return client.put(
                                     ib,
                                     interceptedRequest.getUpdatePathRouteSetDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    });
+        } else {
+            return new com.oracle.bmc.util.internal.TransformingFuture<>(
+                    responseFuture, transformer);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRuleSetResponse> updateRuleSet(
+            final UpdateRuleSetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateRuleSetRequest, UpdateRuleSetResponse>
+                    handler) {
+        LOG.trace("Called async updateRuleSet");
+        final UpdateRuleSetRequest interceptedRequest =
+                UpdateRuleSetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateRuleSetConverter.fromRequest(client, interceptedRequest);
+        final com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRuleSetResponse>
+                transformer = UpdateRuleSetConverter.fromResponse();
+
+        com.oracle.bmc.responses.AsyncHandler<UpdateRuleSetRequest, UpdateRuleSetResponse>
+                handlerToUse = handler;
+        if (handler != null
+                && this.authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            handlerToUse =
+                    new com.oracle.bmc.util.internal.RefreshAuthTokenWrappingAsyncHandler<
+                            UpdateRuleSetRequest, UpdateRuleSetResponse>(
+                            (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                                    this.authenticationDetailsProvider,
+                            handler) {
+                        @Override
+                        public void retryCall() {
+                            final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response>
+                                    onSuccess =
+                                            new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                                                    this, transformer, interceptedRequest);
+                            final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                                    new com.oracle.bmc.http.internal.ErrorConsumer<>(
+                                            this, interceptedRequest);
+                            client.put(
+                                    ib,
+                                    interceptedRequest.getUpdateRuleSetDetails(),
+                                    interceptedRequest,
+                                    onSuccess,
+                                    onError);
+                        }
+                    };
+        }
+
+        final com.oracle.bmc.util.internal.Consumer<javax.ws.rs.core.Response> onSuccess =
+                new com.oracle.bmc.http.internal.SuccessConsumer<>(
+                        handlerToUse, transformer, interceptedRequest);
+        final com.oracle.bmc.util.internal.Consumer<Throwable> onError =
+                new com.oracle.bmc.http.internal.ErrorConsumer<>(handlerToUse, interceptedRequest);
+
+        java.util.concurrent.Future<javax.ws.rs.core.Response> responseFuture =
+                client.put(
+                        ib,
+                        interceptedRequest.getUpdateRuleSetDetails(),
+                        interceptedRequest,
+                        onSuccess,
+                        onError);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenTransformingFuture<
+                    javax.ws.rs.core.Response, UpdateRuleSetResponse>(
+                    responseFuture,
+                    transformer,
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    new com.google.common.base.Supplier<
+                            java.util.concurrent.Future<javax.ws.rs.core.Response>>() {
+                        @Override
+                        public java.util.concurrent.Future<javax.ws.rs.core.Response> get() {
+                            return client.put(
+                                    ib,
+                                    interceptedRequest.getUpdateRuleSetDetails(),
                                     interceptedRequest,
                                     onSuccess,
                                     onError);

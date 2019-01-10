@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.model;
 
@@ -38,6 +38,12 @@ package com.oracle.bmc.core.model;
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class AttachVolumeDetails {
+
+    /**
+     * The device name.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("device")
+    String device;
 
     /**
      * A user-friendly name. Does not have to be unique, and it cannot be changed. Avoid entering confidential information.

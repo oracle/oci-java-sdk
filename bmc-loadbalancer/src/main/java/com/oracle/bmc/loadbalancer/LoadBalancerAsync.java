@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.loadbalancer;
 
@@ -176,6 +176,22 @@ public interface LoadBalancerAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new rule set associated with the specified load balancer.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateRuleSetResponse> createRuleSet(
+            CreateRuleSetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateRuleSetRequest, CreateRuleSetResponse>
+                    handler);
+
+    /**
      * Removes a backend server from a given load balancer and backend set.
      *
      * @param request The request object containing the details to send
@@ -289,6 +305,25 @@ public interface LoadBalancerAsync extends AutoCloseable {
             DeletePathRouteSetRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeletePathRouteSetRequest, DeletePathRouteSetResponse>
+                    handler);
+
+    /**
+     * Deletes a rule set from the specified load balancer.
+     * <p>
+     * To delete a rule from a rule set, use the
+     * {@link #updateRuleSet(UpdateRuleSetRequest, Consumer, Consumer) updateRuleSet} operation.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteRuleSetResponse> deleteRuleSet(
+            DeleteRuleSetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteRuleSetRequest, DeleteRuleSetResponse>
                     handler);
 
     /**
@@ -425,6 +460,20 @@ public interface LoadBalancerAsync extends AutoCloseable {
             GetPathRouteSetRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetPathRouteSetRequest, GetPathRouteSetResponse>
                     handler);
+
+    /**
+     * Gets the specified set of rules.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetRuleSetResponse> getRuleSet(
+            GetRuleSetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetRuleSetRequest, GetRuleSetResponse> handler);
 
     /**
      * Gets the details of a work request.
@@ -580,6 +629,21 @@ public interface LoadBalancerAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists all rule sets associated with the specified load balancer.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListRuleSetsResponse> listRuleSets(
+            ListRuleSetsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListRuleSetsRequest, ListRuleSetsResponse>
+                    handler);
+
+    /**
      * Lists the valid load balancer shapes.
      *
      * @param request The request object containing the details to send
@@ -722,5 +786,24 @@ public interface LoadBalancerAsync extends AutoCloseable {
             UpdatePathRouteSetRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdatePathRouteSetRequest, UpdatePathRouteSetResponse>
+                    handler);
+
+    /**
+     * Overwrites an existing set of rules on the specified load balancer. Use this operation to add or alter
+     * the rules in a rule set.
+     * <p>
+     * To add a new rule to a set, the body must include both the new rule to add and the existing rules to retain.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateRuleSetResponse> updateRuleSet(
+            UpdateRuleSetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateRuleSetRequest, UpdateRuleSetResponse>
                     handler);
 }

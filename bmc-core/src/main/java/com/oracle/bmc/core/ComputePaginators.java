@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core;
 
@@ -849,6 +849,119 @@ public class ComputePaginators {
                     @Override
                     public java.util.List<com.oracle.bmc.core.model.InstanceConsoleConnection>
                             apply(ListInstanceConsoleConnectionsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listInstanceDevices operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListInstanceDevicesResponse> listInstanceDevicesResponseIterator(
+            final ListInstanceDevicesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListInstanceDevicesRequest.Builder, ListInstanceDevicesRequest,
+                ListInstanceDevicesResponse>(
+                new com.google.common.base.Supplier<ListInstanceDevicesRequest.Builder>() {
+                    @Override
+                    public ListInstanceDevicesRequest.Builder get() {
+                        return ListInstanceDevicesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListInstanceDevicesResponse, String>() {
+                    @Override
+                    public String apply(ListInstanceDevicesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListInstanceDevicesRequest.Builder>,
+                        ListInstanceDevicesRequest>() {
+                    @Override
+                    public ListInstanceDevicesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListInstanceDevicesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListInstanceDevicesRequest, ListInstanceDevicesResponse>() {
+                    @Override
+                    public ListInstanceDevicesResponse apply(ListInstanceDevicesRequest request) {
+                        return client.listInstanceDevices(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.Device} objects
+     * contained in responses from the listInstanceDevices operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.Device} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.Device> listInstanceDevicesRecordIterator(
+            final ListInstanceDevicesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListInstanceDevicesRequest.Builder, ListInstanceDevicesRequest,
+                ListInstanceDevicesResponse, com.oracle.bmc.core.model.Device>(
+                new com.google.common.base.Supplier<ListInstanceDevicesRequest.Builder>() {
+                    @Override
+                    public ListInstanceDevicesRequest.Builder get() {
+                        return ListInstanceDevicesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListInstanceDevicesResponse, String>() {
+                    @Override
+                    public String apply(ListInstanceDevicesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListInstanceDevicesRequest.Builder>,
+                        ListInstanceDevicesRequest>() {
+                    @Override
+                    public ListInstanceDevicesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListInstanceDevicesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListInstanceDevicesRequest, ListInstanceDevicesResponse>() {
+                    @Override
+                    public ListInstanceDevicesResponse apply(ListInstanceDevicesRequest request) {
+                        return client.listInstanceDevices(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListInstanceDevicesResponse,
+                        java.util.List<com.oracle.bmc.core.model.Device>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.Device> apply(
+                            ListInstanceDevicesResponse response) {
                         return response.getItems();
                     }
                 });

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.model;
 
@@ -62,6 +62,12 @@ public class VolumeAttachment {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
+
+    /**
+     * The device name.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("device")
+    String device;
 
     /**
      * A user-friendly name. Does not have to be unique, and it cannot be changed.
