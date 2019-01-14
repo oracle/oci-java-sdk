@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core;
 
@@ -481,6 +481,14 @@ public interface Compute extends AutoCloseable {
      */
     ListInstanceConsoleConnectionsResponse listInstanceConsoleConnections(
             ListInstanceConsoleConnectionsRequest request);
+
+    /**
+     * Gets a list of all the devices for given instance. You can optionally filter results by device availability.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListInstanceDevicesResponse listInstanceDevices(ListInstanceDevicesRequest request);
 
     /**
      * Lists the instances in the specified compartment and the specified availability domain.

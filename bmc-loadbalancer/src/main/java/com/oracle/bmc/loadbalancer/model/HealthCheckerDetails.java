@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.loadbalancer.model;
 
@@ -24,66 +24,12 @@ public class HealthCheckerDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("intervalInMillis")
-        private Integer intervalInMillis;
-
-        public Builder intervalInMillis(Integer intervalInMillis) {
-            this.intervalInMillis = intervalInMillis;
-            this.__explicitlySet__.add("intervalInMillis");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("port")
-        private Integer port;
-
-        public Builder port(Integer port) {
-            this.port = port;
-            this.__explicitlySet__.add("port");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private String protocol;
 
         public Builder protocol(String protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("responseBodyRegex")
-        private String responseBodyRegex;
-
-        public Builder responseBodyRegex(String responseBodyRegex) {
-            this.responseBodyRegex = responseBodyRegex;
-            this.__explicitlySet__.add("responseBodyRegex");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("retries")
-        private Integer retries;
-
-        public Builder retries(Integer retries) {
-            this.retries = retries;
-            this.__explicitlySet__.add("retries");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("returnCode")
-        private Integer returnCode;
-
-        public Builder returnCode(Integer returnCode) {
-            this.returnCode = returnCode;
-            this.__explicitlySet__.add("returnCode");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("timeoutInMillis")
-        private Integer timeoutInMillis;
-
-        public Builder timeoutInMillis(Integer timeoutInMillis) {
-            this.timeoutInMillis = timeoutInMillis;
-            this.__explicitlySet__.add("timeoutInMillis");
             return this;
         }
 
@@ -96,20 +42,74 @@ public class HealthCheckerDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("port")
+        private Integer port;
+
+        public Builder port(Integer port) {
+            this.port = port;
+            this.__explicitlySet__.add("port");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("returnCode")
+        private Integer returnCode;
+
+        public Builder returnCode(Integer returnCode) {
+            this.returnCode = returnCode;
+            this.__explicitlySet__.add("returnCode");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("retries")
+        private Integer retries;
+
+        public Builder retries(Integer retries) {
+            this.retries = retries;
+            this.__explicitlySet__.add("retries");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeoutInMillis")
+        private Integer timeoutInMillis;
+
+        public Builder timeoutInMillis(Integer timeoutInMillis) {
+            this.timeoutInMillis = timeoutInMillis;
+            this.__explicitlySet__.add("timeoutInMillis");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("intervalInMillis")
+        private Integer intervalInMillis;
+
+        public Builder intervalInMillis(Integer intervalInMillis) {
+            this.intervalInMillis = intervalInMillis;
+            this.__explicitlySet__.add("intervalInMillis");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("responseBodyRegex")
+        private String responseBodyRegex;
+
+        public Builder responseBodyRegex(String responseBodyRegex) {
+            this.responseBodyRegex = responseBodyRegex;
+            this.__explicitlySet__.add("responseBodyRegex");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HealthCheckerDetails build() {
             HealthCheckerDetails __instance__ =
                     new HealthCheckerDetails(
-                            intervalInMillis,
-                            port,
                             protocol,
-                            responseBodyRegex,
-                            retries,
+                            urlPath,
+                            port,
                             returnCode,
+                            retries,
                             timeoutInMillis,
-                            urlPath);
+                            intervalInMillis,
+                            responseBodyRegex);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -117,14 +117,14 @@ public class HealthCheckerDetails {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(HealthCheckerDetails o) {
             Builder copiedBuilder =
-                    intervalInMillis(o.getIntervalInMillis())
+                    protocol(o.getProtocol())
+                            .urlPath(o.getUrlPath())
                             .port(o.getPort())
-                            .protocol(o.getProtocol())
-                            .responseBodyRegex(o.getResponseBodyRegex())
-                            .retries(o.getRetries())
                             .returnCode(o.getReturnCode())
+                            .retries(o.getRetries())
                             .timeoutInMillis(o.getTimeoutInMillis())
-                            .urlPath(o.getUrlPath());
+                            .intervalInMillis(o.getIntervalInMillis())
+                            .responseBodyRegex(o.getResponseBodyRegex());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -139,13 +139,22 @@ public class HealthCheckerDetails {
     }
 
     /**
-     * The interval between health checks, in milliseconds.
+     * The protocol the health check must use; either HTTP or TCP.
      * <p>
-     * Example: `10000`
+     * Example: `HTTP`
      *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("intervalInMillis")
-    Integer intervalInMillis;
+    @com.fasterxml.jackson.annotation.JsonProperty("protocol")
+    String protocol;
+
+    /**
+     * The path against which to run the health check.
+     * <p>
+     * Example: `/healthcheck`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("urlPath")
+    String urlPath;
 
     /**
      * The backend server port against which to run the health check. If the port is not specified, the load balancer uses the
@@ -158,22 +167,13 @@ public class HealthCheckerDetails {
     Integer port;
 
     /**
-     * The protocol the health check must use; either HTTP or TCP.
+     * The status code a healthy backend server should return.
      * <p>
-     * Example: `HTTP`
+     * Example: `200`
      *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("protocol")
-    String protocol;
-
-    /**
-     * A regular expression for parsing the response body from the backend server.
-     * <p>
-     * Example: `^((?!false).|\\s)*$`
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("responseBodyRegex")
-    String responseBodyRegex;
+    @com.fasterxml.jackson.annotation.JsonProperty("returnCode")
+    Integer returnCode;
 
     /**
      * The number of retries to attempt before a backend server is considered \"unhealthy\".
@@ -183,15 +183,6 @@ public class HealthCheckerDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("retries")
     Integer retries;
-
-    /**
-     * The status code a healthy backend server should return.
-     * <p>
-     * Example: `200`
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("returnCode")
-    Integer returnCode;
 
     /**
      * The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply
@@ -204,13 +195,22 @@ public class HealthCheckerDetails {
     Integer timeoutInMillis;
 
     /**
-     * The path against which to run the health check.
+     * The interval between health checks, in milliseconds.
      * <p>
-     * Example: `/healthcheck`
+     * Example: `10000`
      *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("urlPath")
-    String urlPath;
+    @com.fasterxml.jackson.annotation.JsonProperty("intervalInMillis")
+    Integer intervalInMillis;
+
+    /**
+     * A regular expression for parsing the response body from the backend server.
+     * <p>
+     * Example: `^((?!false).|\\s)*$`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("responseBodyRegex")
+    String responseBodyRegex;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

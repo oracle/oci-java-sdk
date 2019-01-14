@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.objectstorage.transfer;
 
@@ -24,7 +24,7 @@ public class UploadConfiguration {
      * https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingmultipartuploads.htm
      */
     public static final int MAXIMUM_NUM_ALLOWED_PARTS = 10000;
-    public static final long MINIMUM_ALLOWED_LENGTH_PER_PART_MB = 10L; // 10 MiB
+    public static final long MINIMUM_ALLOWED_LENGTH_PER_PART_MB = 1L; // 1 MiB
     public static final long MAXIMUM_ALLOWED_LENGTH_PER_PART_MB = 50L * 1024L; // 50 GiB
 
     private static final int DEFAULT_MIN_LENGTH_FOR_MULTI_PART_UPLOAD = 128;
@@ -33,13 +33,13 @@ public class UploadConfiguration {
     /**
      * Minimum length in MiB before an upload is performed using multi-part upload, default 128.
      * <p>
-     * Note: Accepted values: 10 - 51200.  Using a large value is not recommended.
+     * Note: Accepted values: 0 - 51200.  Using a large value is not recommended.
      */
     private final long minimumLengthForMultipartUpload;
     /**
      * Length in MiB for each part of a multi-part upload (except the last), default 128.
      * <p>
-     * Accepted values: 10 - 51200 (not recommended)
+     * Accepted values: 1 - 51200.  Using a large value is not recommended.
      */
     private final long lengthPerUploadPart;
     /**
@@ -108,16 +108,17 @@ public class UploadConfiguration {
         this.disableAutoAbort = getOrDefault(disableAutoAbort, false);
 
         Validate.isTrue(
-                this.minimumLengthForMultipartUpload >= MINIMUM_ALLOWED_LENGTH_PER_PART_MB,
+                this.minimumLengthForMultipartUpload >= 0L,
                 String.format(
                         "minimumLengthForMultipartUpload [%s] must be greater than or equal to %s",
                         this.minimumLengthForMultipartUpload,
-                        MINIMUM_ALLOWED_LENGTH_PER_PART_MB));
-        Validate.isTrue(
-                this.lengthPerUploadPart >= MINIMUM_ALLOWED_LENGTH_PER_PART_MB
-                        && this.lengthPerUploadPart <= MAXIMUM_ALLOWED_LENGTH_PER_PART_MB,
+                        0L));
+        Validate.inclusiveBetween(
+                MINIMUM_ALLOWED_LENGTH_PER_PART_MB,
+                MAXIMUM_ALLOWED_LENGTH_PER_PART_MB,
+                this.lengthPerUploadPart,
                 String.format(
-                        "minimumLengthPerUploadPart [%s] must be between %s-%s (inclusive)",
+                        "lengthPerUploadPart [%s] must be between %s-%s (inclusive)",
                         this.lengthPerUploadPart,
                         MINIMUM_ALLOWED_LENGTH_PER_PART_MB,
                         MAXIMUM_ALLOWED_LENGTH_PER_PART_MB));

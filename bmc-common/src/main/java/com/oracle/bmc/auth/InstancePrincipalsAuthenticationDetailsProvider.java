@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.auth;
 
@@ -30,7 +30,8 @@ public class InstancePrincipalsAuthenticationDetailsProvider
         extends AbstractRequestingAuthenticationDetailsProvider
         implements RegionProvider, RefreshableOnNotAuthenticatedProvider<String> {
 
-    @Getter private final Region region;
+    @Getter(onMethod = @__({@Override}))
+    private final Region region;
 
     private InstancePrincipalsAuthenticationDetailsProvider(
             FederationClient federationClient,
@@ -69,118 +70,34 @@ public class InstancePrincipalsAuthenticationDetailsProvider
      * Builder for InstancePrincipalsAuthenticationDetailsProviderBuilder.
      */
     public static class InstancePrincipalsAuthenticationDetailsProviderBuilder
-            extends Builder<InstancePrincipalsAuthenticationDetailsProviderBuilder> {
-        /**
-         * Service instance for auth.
-         */
-        private static final com.oracle.bmc.Service SERVICE =
-                com.oracle.bmc.Services.serviceBuilder()
-                        .serviceName("AUTH")
-                        .serviceEndpointPrefix("auth")
-                        .build();
+            extends AbstractFederationClientAuthenticationDetailsProviderBuilder<
+                    InstancePrincipalsAuthenticationDetailsProviderBuilder,
+                    InstancePrincipalsAuthenticationDetailsProvider> {
 
-        /**
-         * Base url of metadata service.
-         */
-        private static final String METADATA_SERVICE_BASE_URL = "http://169.254.169.254/opc/v1/";
+        @Override
+        protected InstancePrincipalsAuthenticationDetailsProvider buildProvider(
+                SessionKeySupplier sessionKeySupplierToUse) {
+            return new InstancePrincipalsAuthenticationDetailsProvider(
+                    federationClient, sessionKeySupplierToUse, region);
+        }
 
-        /**
-         * The federation endpoint url.
-         */
-        private String federationEndpoint;
+        @Override
+        public InstancePrincipalsAuthenticationDetailsProvider build() {
+            autoDetectUsingMetadataUrl();
 
-        /**
-         * The leaf certificate.
-         */
-        private X509CertificateSupplier leafCertificateSupplier;
+            return super.build();
+        }
 
-        /**
-         * Configures the custom federationEndpoint to use.
-         */
+        @Override
         public InstancePrincipalsAuthenticationDetailsProviderBuilder federationEndpoint(
                 String federationEndpoint) {
-            this.federationEndpoint = federationEndpoint;
-            return this;
+            return super.federationEndpoint(federationEndpoint);
         }
 
-        /**
-         * Configures the custom leafCertificateSupplier to use.
-         */
+        @Override
         public InstancePrincipalsAuthenticationDetailsProviderBuilder leafCertificateSupplier(
                 X509CertificateSupplier leafCertificateSupplier) {
-            this.leafCertificateSupplier = leafCertificateSupplier;
-            return this;
-        }
-
-        /**
-         * Build a new InstancePrincipalsAuthenticationDetailsProvider.
-         *
-         * @return A new provider instance.
-         */
-        public InstancePrincipalsAuthenticationDetailsProvider build() {
-
-            Region region = null;
-
-            if (federationEndpoint == null) {
-                Client client = ClientBuilder.newClient();
-                WebTarget base = client.target(METADATA_SERVICE_BASE_URL + "instance/");
-                String regionStr =
-                        base.path("region").request(MediaType.TEXT_PLAIN).get(String.class);
-
-                // TODO: we should start using 'canonicalRegionName' instead of 'region' and call
-                // Region.fromRegionId, and fall back to 'region' only for backwards compat.
-                region = Region.fromRegionCodeOrId(regionStr);
-
-                Optional<String> endpoint = region.getEndpoint(SERVICE);
-
-                if (!endpoint.isPresent()) {
-                    throw new IllegalArgumentException(
-                            "Endpoint for " + SERVICE + " is not known in region " + region);
-                } else {
-                    federationEndpoint = endpoint.get();
-                }
-            }
-
-            try {
-                if (leafCertificateSupplier == null) {
-                    leafCertificateSupplier =
-                            new URLBasedX509CertificateSupplier(
-                                    new URL(METADATA_SERVICE_BASE_URL + "identity/cert.pem"),
-                                    new URL(METADATA_SERVICE_BASE_URL + "identity/key.pem"),
-                                    (char[]) null);
-                }
-
-                if (intermediateCertificateSuppliers == null) {
-                    intermediateCertificateSuppliers = new HashSet<>();
-
-                    intermediateCertificateSuppliers.add(
-                            new URLBasedX509CertificateSupplier(
-                                    new URL(
-                                            METADATA_SERVICE_BASE_URL
-                                                    + "identity/intermediate.pem"),
-                                    null,
-                                    (char[]) null));
-                }
-
-                SessionKeySupplier sessionKeySupplierToUse =
-                        sessionKeySupplier != null
-                                ? sessionKeySupplier
-                                : new SessionKeySupplierImpl();
-
-                this.federationClient =
-                        new X509FederationClient(
-                                federationEndpoint,
-                                leafCertificateSupplier,
-                                sessionKeySupplierToUse,
-                                intermediateCertificateSuppliers,
-                                federationClientConfigurator);
-
-                return new InstancePrincipalsAuthenticationDetailsProvider(
-                        federationClient, sessionKeySupplierToUse, region);
-
-            } catch (MalformedURLException ex) {
-                throw new IllegalArgumentException("The metadata service url is invalid.", ex);
-            }
+            return super.leafCertificateSupplier(leafCertificateSupplier);
         }
     }
 }

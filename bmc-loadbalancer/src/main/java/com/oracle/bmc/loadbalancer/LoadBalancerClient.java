@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.loadbalancer;
 
@@ -18,6 +18,7 @@ public class LoadBalancerClient implements LoadBalancer {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("LOADBALANCER")
                     .serviceEndpointPrefix("iaas")
+                    .serviceEndpointTemplate("https://iaas.{region}.oraclecloud.com")
                     .build();
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
@@ -494,6 +495,32 @@ public class LoadBalancerClient implements LoadBalancer {
     }
 
     @Override
+    public CreateRuleSetResponse createRuleSet(CreateRuleSetRequest request) {
+        LOG.trace("Called createRuleSet");
+        request = CreateRuleSetConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateRuleSetConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateRuleSetResponse>
+                transformer = CreateRuleSetConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCreateRuleSetDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public DeleteBackendResponse deleteBackend(DeleteBackendRequest request) {
         LOG.trace("Called deleteBackend");
         request = DeleteBackendConverter.interceptRequest(request);
@@ -651,6 +678,31 @@ public class LoadBalancerClient implements LoadBalancer {
                 DeletePathRouteSetConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeletePathRouteSetResponse>
                 transformer = DeletePathRouteSetConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public DeleteRuleSetResponse deleteRuleSet(DeleteRuleSetRequest request) {
+        LOG.trace("Called deleteRuleSet");
+        request = DeleteRuleSetConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteRuleSetConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRuleSetResponse>
+                transformer = DeleteRuleSetConverter.fromResponse();
 
         int attempts = 0;
         while (true) {
@@ -877,6 +929,31 @@ public class LoadBalancerClient implements LoadBalancer {
                 GetPathRouteSetConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetPathRouteSetResponse>
                 transformer = GetPathRouteSetConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public GetRuleSetResponse getRuleSet(GetRuleSetRequest request) {
+        LOG.trace("Called getRuleSet");
+        request = GetRuleSetConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetRuleSetConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetRuleSetResponse> transformer =
+                GetRuleSetConverter.fromResponse();
 
         int attempts = 0;
         while (true) {
@@ -1146,6 +1223,31 @@ public class LoadBalancerClient implements LoadBalancer {
     }
 
     @Override
+    public ListRuleSetsResponse listRuleSets(ListRuleSetsRequest request) {
+        LOG.trace("Called listRuleSets");
+        request = ListRuleSetsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListRuleSetsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListRuleSetsResponse>
+                transformer = ListRuleSetsConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public ListShapesResponse listShapes(ListShapesRequest request) {
         LOG.trace("Called listShapes");
         request = ListShapesConverter.interceptRequest(request);
@@ -1365,6 +1467,32 @@ public class LoadBalancerClient implements LoadBalancer {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdatePathRouteSetDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public UpdateRuleSetResponse updateRuleSet(UpdateRuleSetRequest request) {
+        LOG.trace("Called updateRuleSet");
+        request = UpdateRuleSetConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateRuleSetConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateRuleSetResponse>
+                transformer = UpdateRuleSetConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateRuleSetDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS

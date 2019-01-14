@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.auth.internal;
 
@@ -59,6 +59,7 @@ public class X509FederationClientTest {
                         RestClientUtils.createRestClient(
                                 anyString(),
                                 any(ClientConfigurator.class),
+                                any(List.class),
                                 any(X509FederationClient.class)))
                 .thenReturn(mockFederationClient);
 
@@ -71,7 +72,8 @@ public class X509FederationClientTest {
                         mock(X509CertificateSupplier.class),
                         mock(SessionKeySupplier.class),
                         intermediateCertificateSuppliers,
-                        mock(ClientConfigurator.class));
+                        mock(ClientConfigurator.class),
+                        mock(List.class));
 
         // Speed up the tests to mock out the sleep call between retries
         mockStatic(Thread.class);

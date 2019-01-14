@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.loadbalancer.model;
 
@@ -23,15 +23,6 @@ public class BackendHealth {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("healthCheckResults")
-        private java.util.List<HealthCheckResult> healthCheckResults;
-
-        public Builder healthCheckResults(java.util.List<HealthCheckResult> healthCheckResults) {
-            this.healthCheckResults = healthCheckResults;
-            this.__explicitlySet__.add("healthCheckResults");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
@@ -41,11 +32,20 @@ public class BackendHealth {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("healthCheckResults")
+        private java.util.List<HealthCheckResult> healthCheckResults;
+
+        public Builder healthCheckResults(java.util.List<HealthCheckResult> healthCheckResults) {
+            this.healthCheckResults = healthCheckResults;
+            this.__explicitlySet__.add("healthCheckResults");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BackendHealth build() {
-            BackendHealth __instance__ = new BackendHealth(healthCheckResults, status);
+            BackendHealth __instance__ = new BackendHealth(status, healthCheckResults);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -53,7 +53,7 @@ public class BackendHealth {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(BackendHealth o) {
             Builder copiedBuilder =
-                    healthCheckResults(o.getHealthCheckResults()).status(o.getStatus());
+                    status(o.getStatus()).healthCheckResults(o.getHealthCheckResults());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -67,12 +67,6 @@ public class BackendHealth {
         return new Builder();
     }
 
-    /**
-     * A list of the most recent health check results returned for the specified backend server.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("healthCheckResults")
-    java.util.List<HealthCheckResult> healthCheckResults;
     /**
      * The general health status of the specified backend server as reported by the primary and standby load balancers.
      * <p>
@@ -144,6 +138,13 @@ public class BackendHealth {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     Status status;
+
+    /**
+     * A list of the most recent health check results returned for the specified backend server.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("healthCheckResults")
+    java.util.List<HealthCheckResult> healthCheckResults;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

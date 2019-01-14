@@ -1,10 +1,10 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.http;
 
+import com.oracle.bmc.http.internal.ContentLengthFilter;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 import org.glassfish.jersey.apache.connector.ApacheConnectorProvider;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.client.ClientProperties;
@@ -12,8 +12,6 @@ import org.glassfish.jersey.client.RequestEntityProcessing;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.ClientRequestContext;
-import javax.ws.rs.client.ClientRequestFilter;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -71,31 +69,5 @@ public class ApacheConfigurator implements ClientConfigurator {
         }
 
         builder.withConfig(clientConfig);
-    }
-
-    private static class ContentLengthFilter implements ClientRequestFilter {
-        @Override
-        public void filter(ClientRequestContext requestContext) {
-            String contentLengthHeader = null;
-            for (String key : requestContext.getHeaders().keySet()) {
-                if (StringUtils.equalsIgnoreCase("content-length", key)) {
-                    contentLengthHeader = key;
-                }
-            }
-
-            final String method = requestContext.getMethod();
-            final String uri = requestContext.getUri().toString();
-            final Object existingContentLengthValue =
-                    requestContext.getHeaders().remove(contentLengthHeader);
-            if (existingContentLengthValue != null) {
-                LOG.debug(
-                        "Removed existing content-length header for Method [{}], URI [{}], Existing Value [{}]",
-                        method,
-                        uri,
-                        existingContentLengthValue);
-            } else {
-                LOG.debug("content-length not found for Method [{}], URI [{}]", method, uri);
-            }
-        }
     }
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.loadbalancer.model;
 
@@ -24,6 +24,15 @@ public class UpdateBackendDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("weight")
+        private Integer weight;
+
+        public Builder weight(Integer weight) {
+            this.weight = weight;
+            this.__explicitlySet__.add("weight");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("backup")
         private Boolean backup;
 
@@ -51,21 +60,12 @@ public class UpdateBackendDetails {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("weight")
-        private Integer weight;
-
-        public Builder weight(Integer weight) {
-            this.weight = weight;
-            this.__explicitlySet__.add("weight");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateBackendDetails build() {
             UpdateBackendDetails __instance__ =
-                    new UpdateBackendDetails(backup, drain, offline, weight);
+                    new UpdateBackendDetails(weight, backup, drain, offline);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -73,10 +73,10 @@ public class UpdateBackendDetails {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateBackendDetails o) {
             Builder copiedBuilder =
-                    backup(o.getBackup())
+                    weight(o.getWeight())
+                            .backup(o.getBackup())
                             .drain(o.getDrain())
-                            .offline(o.getOffline())
-                            .weight(o.getWeight());
+                            .offline(o.getOffline());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -89,6 +89,19 @@ public class UpdateBackendDetails {
     public static Builder builder() {
         return new Builder();
     }
+
+    /**
+     * The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger
+     * proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections
+     * as a server weighted '1'.
+     * For more information on load balancing policies, see
+     * [How Load Balancing Policies Work](https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Reference/lbpolicies.htm).
+     * <p>
+     * Example: `3`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("weight")
+    Integer weight;
 
     /**
      * Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress
@@ -119,19 +132,6 @@ public class UpdateBackendDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("offline")
     Boolean offline;
-
-    /**
-     * The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger
-     * proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections
-     * as a server weighted '1'.
-     * For more information on load balancing policies, see
-     * [How Load Balancing Policies Work](https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Reference/lbpolicies.htm).
-     * <p>
-     * Example: `3`
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("weight")
-    Integer weight;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

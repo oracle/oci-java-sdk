@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.loadbalancer.model;
 
@@ -25,15 +25,6 @@ public class PathRoute {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("backendSetName")
-        private String backendSetName;
-
-        public Builder backendSetName(String backendSetName) {
-            this.backendSetName = backendSetName;
-            this.__explicitlySet__.add("backendSetName");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
@@ -52,11 +43,20 @@ public class PathRoute {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("backendSetName")
+        private String backendSetName;
+
+        public Builder backendSetName(String backendSetName) {
+            this.backendSetName = backendSetName;
+            this.__explicitlySet__.add("backendSetName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PathRoute build() {
-            PathRoute __instance__ = new PathRoute(backendSetName, path, pathMatchType);
+            PathRoute __instance__ = new PathRoute(path, pathMatchType, backendSetName);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -64,9 +64,9 @@ public class PathRoute {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(PathRoute o) {
             Builder copiedBuilder =
-                    backendSetName(o.getBackendSetName())
-                            .path(o.getPath())
-                            .pathMatchType(o.getPathMatchType());
+                    path(o.getPath())
+                            .pathMatchType(o.getPathMatchType())
+                            .backendSetName(o.getBackendSetName());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -79,15 +79,6 @@ public class PathRoute {
     public static Builder builder() {
         return new Builder();
     }
-
-    /**
-     * The name of the target backend set for requests where the incoming URI matches the specified path.
-     * <p>
-     * Example: `example_backend_set`
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("backendSetName")
-    String backendSetName;
 
     /**
      * The path string to match against the incoming URI path.
@@ -109,6 +100,15 @@ public class PathRoute {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pathMatchType")
     PathMatchType pathMatchType;
+
+    /**
+     * The name of the target backend set for requests where the incoming URI matches the specified path.
+     * <p>
+     * Example: `example_backend_set`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("backendSetName")
+    String backendSetName;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -13,6 +13,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.3.4 - 2019-01-10
+### Added
+- Support for device attributes on volume attachments in the Compute service
+- Support for custom header rulesets in the Load Balancing service
+- Add support to use RESTEasy with Java SDK. Examples can be found at [ResteasyClientWithObjectStorageExample](https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java) and [InstancePrincipalsAuthenticationDetailsProviderWithResteasyClientExample](https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/InstancePrincipalsAuthenticationDetailsProviderWithResteasyClientExample.java) 
+
+### Fixed
+- Reading entities from HTTP response without a Content-Type header no longer throws a NullPointerException
+
 ## 1.3.3 - 2018-12-13
 ### Added
 - Support for Data Guard for VM shapes in the Database service

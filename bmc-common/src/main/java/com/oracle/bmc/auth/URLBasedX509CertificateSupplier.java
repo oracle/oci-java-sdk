@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.auth;
 
@@ -137,8 +137,8 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
     }
 
     /**
-     * Read the certificate from url.
-     * @param certificateUrl the certificate url
+     * Read the certificate from a raw string.
+     * @param certificate the certificate
      * @return the certificate
      */
     private static X509Certificate readCertificate(String certificate) {

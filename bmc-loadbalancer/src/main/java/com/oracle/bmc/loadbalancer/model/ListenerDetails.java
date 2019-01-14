@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.loadbalancer.model;
 
@@ -22,39 +22,12 @@ public class ListenerDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("connectionConfiguration")
-        private ConnectionConfiguration connectionConfiguration;
-
-        public Builder connectionConfiguration(ConnectionConfiguration connectionConfiguration) {
-            this.connectionConfiguration = connectionConfiguration;
-            this.__explicitlySet__.add("connectionConfiguration");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("defaultBackendSetName")
         private String defaultBackendSetName;
 
         public Builder defaultBackendSetName(String defaultBackendSetName) {
             this.defaultBackendSetName = defaultBackendSetName;
             this.__explicitlySet__.add("defaultBackendSetName");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("hostnameNames")
-        private java.util.List<String> hostnameNames;
-
-        public Builder hostnameNames(java.util.List<String> hostnameNames) {
-            this.hostnameNames = hostnameNames;
-            this.__explicitlySet__.add("hostnameNames");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("pathRouteSetName")
-        private String pathRouteSetName;
-
-        public Builder pathRouteSetName(String pathRouteSetName) {
-            this.pathRouteSetName = pathRouteSetName;
-            this.__explicitlySet__.add("pathRouteSetName");
             return this;
         }
 
@@ -76,6 +49,24 @@ public class ListenerDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("hostnameNames")
+        private java.util.List<String> hostnameNames;
+
+        public Builder hostnameNames(java.util.List<String> hostnameNames) {
+            this.hostnameNames = hostnameNames;
+            this.__explicitlySet__.add("hostnameNames");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("pathRouteSetName")
+        private String pathRouteSetName;
+
+        public Builder pathRouteSetName(String pathRouteSetName) {
+            this.pathRouteSetName = pathRouteSetName;
+            this.__explicitlySet__.add("pathRouteSetName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sslConfiguration")
         private SSLConfigurationDetails sslConfiguration;
 
@@ -85,19 +76,38 @@ public class ListenerDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("connectionConfiguration")
+        private ConnectionConfiguration connectionConfiguration;
+
+        public Builder connectionConfiguration(ConnectionConfiguration connectionConfiguration) {
+            this.connectionConfiguration = connectionConfiguration;
+            this.__explicitlySet__.add("connectionConfiguration");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("ruleSetNames")
+        private java.util.List<String> ruleSetNames;
+
+        public Builder ruleSetNames(java.util.List<String> ruleSetNames) {
+            this.ruleSetNames = ruleSetNames;
+            this.__explicitlySet__.add("ruleSetNames");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ListenerDetails build() {
             ListenerDetails __instance__ =
                     new ListenerDetails(
-                            connectionConfiguration,
                             defaultBackendSetName,
-                            hostnameNames,
-                            pathRouteSetName,
                             port,
                             protocol,
-                            sslConfiguration);
+                            hostnameNames,
+                            pathRouteSetName,
+                            sslConfiguration,
+                            connectionConfiguration,
+                            ruleSetNames);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -105,13 +115,14 @@ public class ListenerDetails {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ListenerDetails o) {
             Builder copiedBuilder =
-                    connectionConfiguration(o.getConnectionConfiguration())
-                            .defaultBackendSetName(o.getDefaultBackendSetName())
-                            .hostnameNames(o.getHostnameNames())
-                            .pathRouteSetName(o.getPathRouteSetName())
+                    defaultBackendSetName(o.getDefaultBackendSetName())
                             .port(o.getPort())
                             .protocol(o.getProtocol())
-                            .sslConfiguration(o.getSslConfiguration());
+                            .hostnameNames(o.getHostnameNames())
+                            .pathRouteSetName(o.getPathRouteSetName())
+                            .sslConfiguration(o.getSslConfiguration())
+                            .connectionConfiguration(o.getConnectionConfiguration())
+                            .ruleSetNames(o.getRuleSetNames());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -125,9 +136,6 @@ public class ListenerDetails {
         return new Builder();
     }
 
-    @com.fasterxml.jackson.annotation.JsonProperty("connectionConfiguration")
-    ConnectionConfiguration connectionConfiguration;
-
     /**
      * The name of the associated backend set.
      * <p>
@@ -136,22 +144,6 @@ public class ListenerDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultBackendSetName")
     String defaultBackendSetName;
-
-    /**
-     * An array of hostname resource names.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("hostnameNames")
-    java.util.List<String> hostnameNames;
-
-    /**
-     * The name of the set of path-based routing rules, {@link PathRouteSet},
-     * applied to this listener's traffic.
-     * <p>
-     * Example: `example_path_route_set`
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("pathRouteSetName")
-    String pathRouteSetName;
 
     /**
      * The communication port for the listener.
@@ -173,8 +165,36 @@ public class ListenerDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     String protocol;
 
+    /**
+     * An array of hostname resource names.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("hostnameNames")
+    java.util.List<String> hostnameNames;
+
+    /**
+     * The name of the set of path-based routing rules, {@link PathRouteSet},
+     * applied to this listener's traffic.
+     * <p>
+     * Example: `example_path_route_set`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("pathRouteSetName")
+    String pathRouteSetName;
+
     @com.fasterxml.jackson.annotation.JsonProperty("sslConfiguration")
     SSLConfigurationDetails sslConfiguration;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("connectionConfiguration")
+    ConnectionConfiguration connectionConfiguration;
+
+    /**
+     * The names of the {@link RuleSet} to apply to the listener.
+     * <p>
+     * Example: [\"example_rule_set\"]
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ruleSetNames")
+    java.util.List<String> ruleSetNames;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

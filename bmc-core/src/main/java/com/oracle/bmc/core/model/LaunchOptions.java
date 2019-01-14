@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.core.model;
 
@@ -68,6 +68,15 @@ public class LaunchOptions {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isConsistentVolumeNamingEnabled")
+        private Boolean isConsistentVolumeNamingEnabled;
+
+        public Builder isConsistentVolumeNamingEnabled(Boolean isConsistentVolumeNamingEnabled) {
+            this.isConsistentVolumeNamingEnabled = isConsistentVolumeNamingEnabled;
+            this.__explicitlySet__.add("isConsistentVolumeNamingEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -78,7 +87,8 @@ public class LaunchOptions {
                             firmware,
                             networkType,
                             remoteDataVolumeType,
-                            isPvEncryptionInTransitEnabled);
+                            isPvEncryptionInTransitEnabled,
+                            isConsistentVolumeNamingEnabled);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -90,7 +100,9 @@ public class LaunchOptions {
                             .firmware(o.getFirmware())
                             .networkType(o.getNetworkType())
                             .remoteDataVolumeType(o.getRemoteDataVolumeType())
-                            .isPvEncryptionInTransitEnabled(o.getIsPvEncryptionInTransitEnabled());
+                            .isPvEncryptionInTransitEnabled(o.getIsPvEncryptionInTransitEnabled())
+                            .isConsistentVolumeNamingEnabled(
+                                    o.getIsConsistentVolumeNamingEnabled());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -371,6 +383,12 @@ public class LaunchOptions {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
     Boolean isPvEncryptionInTransitEnabled;
+
+    /**
+     * Whether to enable consistent volume naming feature. Defaults to false.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isConsistentVolumeNamingEnabled")
+    Boolean isConsistentVolumeNamingEnabled;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

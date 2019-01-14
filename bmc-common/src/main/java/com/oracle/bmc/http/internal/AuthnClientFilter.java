@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.http.internal;
 
@@ -41,7 +41,7 @@ public class AuthnClientFilter implements ClientRequestFilter {
                 && requestSigners.containsKey(perOperationSigningStrategy)) {
             chosenRequestSigner = requestSigners.get(perOperationSigningStrategy);
             // removing this property from the context, now that we have processed it
-            clientRequestContext.setProperty(SIGNING_STRATEGY_PROPERTY_NAME, null);
+            clientRequestContext.removeProperty(SIGNING_STRATEGY_PROPERTY_NAME);
         }
 
         MultivaluedMap<String, String> stringHeaders = clientRequestContext.getStringHeaders();

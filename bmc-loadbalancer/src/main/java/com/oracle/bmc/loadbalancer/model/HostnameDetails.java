@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.loadbalancer.model;
 
@@ -22,15 +22,6 @@ public class HostnameDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("hostname")
-        private String hostname;
-
-        public Builder hostname(String hostname) {
-            this.hostname = hostname;
-            this.__explicitlySet__.add("hostname");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
@@ -40,18 +31,27 @@ public class HostnameDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("hostname")
+        private String hostname;
+
+        public Builder hostname(String hostname) {
+            this.hostname = hostname;
+            this.__explicitlySet__.add("hostname");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HostnameDetails build() {
-            HostnameDetails __instance__ = new HostnameDetails(hostname, name);
+            HostnameDetails __instance__ = new HostnameDetails(name, hostname);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(HostnameDetails o) {
-            Builder copiedBuilder = hostname(o.getHostname()).name(o.getName());
+            Builder copiedBuilder = name(o.getName()).hostname(o.getHostname());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -66,6 +66,15 @@ public class HostnameDetails {
     }
 
     /**
+     * The name of the hostname resource.
+     * <p>
+     * Example: `example_hostname_001`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
+    String name;
+
+    /**
      * A virtual hostname. For more information about virtual hostname string construction, see
      * [Managing Request Routing](https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingrequest.htm#routing).
      * <p>
@@ -74,15 +83,6 @@ public class HostnameDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     String hostname;
-
-    /**
-     * The name of the hostname resource.
-     * <p>
-     * Example: `example_hostname_001`
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("name")
-    String name;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

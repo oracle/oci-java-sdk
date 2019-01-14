@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.auth;
 
@@ -15,6 +15,8 @@ import java.security.KeyPairGenerator;
 import java.security.NoSuchAlgorithmException;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -40,6 +42,8 @@ public class AbstractRequestingAuthenticationDetailsProvider
         protected SessionKeySupplier sessionKeySupplier;
         protected ClientConfigurator federationClientConfigurator;
         protected FederationClient federationClient;
+        protected List<ClientConfigurator> additionalFederationClientConfigurators =
+                new ArrayList<>();
 
         /**
          * Configures the custom SessionKeySupplier to use.
@@ -67,6 +71,17 @@ public class AbstractRequestingAuthenticationDetailsProvider
             return (B) this;
         }
 
+        /**
+         * Add an additional client configurator to be run after the primary configurator.
+         * @param additionalClientConfigurator the additional client configurator
+         * @return this builder
+         */
+        public B additionalFederationClientConfigurator(
+                @lombok.NonNull ClientConfigurator additionalClientConfigurator) {
+            this.additionalFederationClientConfigurators.add(additionalClientConfigurator);
+            return (B) this;
+        }
+
         protected SessionKeySupplier getSessionKeySupplier() {
             return sessionKeySupplier != null ? sessionKeySupplier : new SessionKeySupplierImpl();
         }
@@ -82,7 +97,8 @@ public class AbstractRequestingAuthenticationDetailsProvider
                             leafCertificateSupplier,
                             getSessionKeySupplier(),
                             intermediateCertificateSuppliers,
-                            federationClientConfigurator);
+                            federationClientConfigurator,
+                            additionalFederationClientConfigurators);
         }
     }
 

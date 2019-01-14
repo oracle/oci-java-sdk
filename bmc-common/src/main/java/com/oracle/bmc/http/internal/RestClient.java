@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.http.internal;
 
@@ -31,7 +31,9 @@ import java.util.UUID;
 import java.util.concurrent.Future;
 
 /**
- * A REST client that can make synchronous and asynchronous calls.
+ * A REST client that can make synchronous and asynchronous calls.<br/>
+ * For asynchronous call, please refer to https://dennis-xlc.gitbooks.io/restful-java-with-jax-rs-2-0-2rd-edition/en/part1/chapter13/async_invoker_client_api.html
+ * to understand why we'd better not mix to using callback or Java Future.
  */
 @Slf4j
 public class RestClient implements AutoCloseable {
@@ -121,7 +123,12 @@ public class RestClient implements AutoCloseable {
             @Nullable Consumer<Response> onSuccess,
             @Nullable Consumer<Throwable> onError) {
         InvocationInformation info = preprocessRequest(ib, request);
-        return ib.async().get(new Callback(baseTarget, info, onSuccess, onError));
+
+        if (onSuccess == null && onError == null) {
+            return ib.async().get();
+        } else {
+            return ib.async().get(new Callback(baseTarget, info, onSuccess, onError));
+        }
     }
 
     /**
@@ -188,7 +195,12 @@ public class RestClient implements AutoCloseable {
             @Nullable Consumer<Throwable> onError) {
         InvocationInformation info = preprocessRequest(ib, request);
         Entity<?> requestBody = this.entityFactory.forPost(request, attemptToSerialize(body));
-        return ib.async().post(requestBody, new Callback(baseTarget, info, onSuccess, onError));
+
+        if (onSuccess == null && onError == null) {
+            return ib.async().post(requestBody);
+        } else {
+            return ib.async().post(requestBody, new Callback(baseTarget, info, onSuccess, onError));
+        }
     }
 
     /**
@@ -313,11 +325,15 @@ public class RestClient implements AutoCloseable {
         InvocationInformation info = preprocessRequest(ib, request);
         Entity<?> requestBody = this.entityFactory.forPatch(request, attemptToSerialize(body));
 
-        return ib.async()
-                .method(
-                        PATCH_VERB,
-                        requestBody,
-                        new Callback(baseTarget, info, onSuccess, onError));
+        if (onSuccess == null && onError == null) {
+            return ib.async().method(PATCH_VERB, requestBody);
+        } else {
+            return ib.async()
+                    .method(
+                            PATCH_VERB,
+                            requestBody,
+                            new Callback(baseTarget, info, onSuccess, onError));
+        }
     }
 
     /**
@@ -417,7 +433,12 @@ public class RestClient implements AutoCloseable {
             @Nullable Consumer<Throwable> onError) {
         InvocationInformation info = preprocessRequest(ib, request);
         Entity<?> requestBody = this.entityFactory.forPut(request, attemptToSerialize(body));
-        return ib.async().put(requestBody, new Callback(baseTarget, info, onSuccess, onError));
+
+        if (onSuccess == null && onError == null) {
+            return ib.async().put(requestBody);
+        } else {
+            return ib.async().put(requestBody, new Callback(baseTarget, info, onSuccess, onError));
+        }
     }
 
     /**
@@ -466,7 +487,12 @@ public class RestClient implements AutoCloseable {
             @Nullable Consumer<Response> onSuccess,
             @Nullable Consumer<Throwable> onError) {
         InvocationInformation info = preprocessRequest(ib, request);
-        return ib.async().delete(new Callback(baseTarget, info, onSuccess, onError));
+
+        if (onSuccess == null && onError == null) {
+            return ib.async().delete();
+        } else {
+            return ib.async().delete(new Callback(baseTarget, info, onSuccess, onError));
+        }
     }
 
     /**
@@ -516,7 +542,12 @@ public class RestClient implements AutoCloseable {
             @Nullable Consumer<Response> onSuccess,
             @Nullable Consumer<Throwable> onError) {
         InvocationInformation info = preprocessRequest(ib, request);
-        return ib.async().head(new Callback(baseTarget, info, onSuccess, onError));
+
+        if (onSuccess == null && onError == null) {
+            return ib.async().head();
+        } else {
+            return ib.async().head(new Callback(baseTarget, info, onSuccess, onError));
+        }
     }
 
     /**

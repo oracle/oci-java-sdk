@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.objectstorage.transfer;
 
@@ -182,12 +182,7 @@ public class UploadManagerTest {
                                 .build());
 
         UploadResponse uploadResponse = uploadManager.upload(request);
-        assertNotNull(uploadResponse);
-        assertNull(uploadResponse.getContentMd5());
-        assertEquals("multipartMd5", uploadResponse.getMultipartMd5());
-        assertEquals("finalEtag", uploadResponse.getETag());
-        assertEquals(CLIENT_REQ_ID, uploadResponse.getOpcClientRequestId());
-        assertEquals(REQ_ID, uploadResponse.getOpcRequestId());
+        validateUploadResponseForMultipart(uploadResponse);
 
         verify(assembler).newRequest(CONTENT_TYPE, CONTENT_LANG, CONTENT_ENCODING, METADATA);
         verify(assembler, times(2))
@@ -467,6 +462,44 @@ public class UploadManagerTest {
                 .onProgress(and(gt(0L), leq(CONTENT_LENGTH)), eq(CONTENT_LENGTH));
     }
 
+    @Test
+    public void upload_multipartUpload_with_minConfiguration() {
+        // results in 20 parts
+        final UploadConfiguration uploadConfiguration =
+                UploadConfiguration.builder()
+                        .minimumLengthForMultipartUpload(0)
+                        .lengthPerUploadPart(1)
+                        .build();
+
+        final UploadManager uploadManager =
+                new UploadManager(objectStorage, uploadConfiguration) {
+                    @Override
+                    protected MultipartObjectAssembler createAssembler(
+                            PutObjectRequest request,
+                            UploadRequest uploadRequest,
+                            ExecutorService executorService) {
+                        return assembler;
+                    }
+                };
+
+        final UploadRequest request = createUploadRequest();
+        when(assembler.commit())
+                .thenReturn(
+                        CommitMultipartUploadResponse.builder()
+                                .eTag("finalEtag")
+                                .opcRequestId(REQ_ID)
+                                .opcClientRequestId(CLIENT_REQ_ID)
+                                .opcMultipartMd5("multipartMd5")
+                                .build());
+
+        final UploadResponse uploadResponse = uploadManager.upload(request);
+        validateUploadResponseForMultipart(uploadResponse);
+
+        verify(assembler).newRequest(CONTENT_TYPE, CONTENT_LANG, CONTENT_ENCODING, METADATA);
+        verify(assembler, times(20))
+                .addPart(any(InputStream.class), eq(CONTENT_LENGTH / 20), eq((String) null));
+    }
+
     private static UploadConfiguration getMultipartUploadConfiguration() {
         return UploadConfiguration.builder()
                 .minimumLengthForMultipartUpload(10)
@@ -490,5 +523,14 @@ public class UploadManagerTest {
 
     private UploadRequest createUploadRequest() {
         return createUploadRequest(null);
+    }
+
+    private static void validateUploadResponseForMultipart(final UploadResponse response) {
+        assertNotNull(response);
+        assertNull(response.getContentMd5());
+        assertEquals("multipartMd5", response.getMultipartMd5());
+        assertEquals("finalEtag", response.getETag());
+        assertEquals(CLIENT_REQ_ID, response.getOpcClientRequestId());
+        assertEquals(REQ_ID, response.getOpcRequestId());
     }
 }
