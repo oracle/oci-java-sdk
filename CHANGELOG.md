@@ -13,6 +13,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.3.5 - 2018-01-24
+### Added
+- Support for renaming databases during restore-from-backup operations in the Database service
+- Support for calling Oracle Cloud Infrastructure services in the ca-toronto-1 region
+
+### Changed
+- Upgraded to Jersey version 2.27 and JAX-RS version 2.1
+
 ## 1.3.4 - 2019-01-10
 ### Added
 - Support for device attributes on volume attachments in the Compute service

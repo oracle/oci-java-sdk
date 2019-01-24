@@ -120,11 +120,11 @@ public class CreateMultipartUploadConverter {
                                 com.google.common.base.Optional<java.util.List<String>>
                                         locationHeader =
                                                 com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "location");
+                                                        headers, "Location");
                                 if (locationHeader.isPresent()) {
                                     builder.location(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
-                                                    "location",
+                                                    "Location",
                                                     locationHeader.get().get(0),
                                                     String.class));
                                 }

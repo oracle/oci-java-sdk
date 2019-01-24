@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc.auth.internal;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.oracle.bmc.auth.SessionKeySupplier;
 import com.oracle.bmc.auth.X509CertificateSupplier;
 import com.oracle.bmc.http.ClientConfigurator;
@@ -16,19 +17,20 @@ import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
 import javax.ws.rs.client.Invocation;
 import javax.ws.rs.core.Response;
 
+import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Matchers.eq;
 import static org.mockito.Matchers.isA;
@@ -49,6 +51,7 @@ import static org.powermock.api.mockito.PowerMockito.whenNew;
 public class X509FederationClientTest {
 
     @Mock private RestClient mockFederationClient;
+    @Mock private List<ClientConfigurator> mockAddlConfigurators;
     @Captor private ArgumentCaptor<WrappedInvocationBuilder> wrappedIbCaptor;
     private X509FederationClient clientUnderTest;
 
@@ -58,9 +61,9 @@ public class X509FederationClientTest {
         when(
                         RestClientUtils.createRestClient(
                                 anyString(),
-                                any(ClientConfigurator.class),
-                                any(List.class),
-                                any(X509FederationClient.class)))
+                                Mockito.<ClientConfigurator>any(),
+                                Mockito.<List<ClientConfigurator>>any(),
+                                Mockito.<X509FederationClient>any()))
                 .thenReturn(mockFederationClient);
 
         final Set<X509CertificateSupplier> intermediateCertificateSuppliers =
@@ -73,7 +76,7 @@ public class X509FederationClientTest {
                         mock(SessionKeySupplier.class),
                         intermediateCertificateSuppliers,
                         mock(ClientConfigurator.class),
-                        mock(List.class));
+                        mockAddlConfigurators);
 
         // Speed up the tests to mock out the sleep call between retries
         mockStatic(Thread.class);
@@ -91,9 +94,9 @@ public class X509FederationClientTest {
         // Stub exceptions thrown by the client 3 consecutive times then a successful
         when(
                         mockFederationClient.post(
-                                any(WrappedInvocationBuilder.class),
-                                any(X509FederationClient.X509FederationRequest.class),
-                                any(BmcRequest.class)))
+                                Mockito.<WrappedInvocationBuilder>any(),
+                                Mockito.<X509FederationClient.X509FederationRequest>any(),
+                                Mockito.<BmcRequest>any()))
                 .thenThrow(new BmcException(409, "ServiceCode", "Exception 1", "RequestId"))
                 .thenThrow(new BmcException(409, "ServiceCode", "Exception 2", "RequestId"))
                 .thenThrow(new BmcException(409, "ServiceCode", "Exception 3", "RequestId"))
@@ -122,5 +125,23 @@ public class X509FederationClientTest {
         for (WrappedInvocationBuilder actualWib : wrappedIbsFromInvocation) {
             assertEquals("Captured WIB should be the same", expectedWIb, actualWib);
         }
+    }
+
+    @Test
+    public void jacksonCanDeserializeSecurityToken() throws IOException {
+        final String strToken = "{\"token\" : \"abcdef\"}";
+        // this line will fail on original code if Lombok and Jackson are not at exactly the right versions
+        new ObjectMapper().readValue(strToken, X509FederationClient.SecurityToken.class);
+    }
+
+    @Test
+    public void jacksonCanRoundTripSecurityToken() throws IOException {
+        final X509FederationClient.SecurityToken secToken =
+                new X509FederationClient.SecurityToken("abcdef");
+        final ObjectMapper mapper = new ObjectMapper();
+        assertEquals(
+                secToken.getToken(),
+                mapper.readValue(mapper.writeValueAsString(secToken), secToken.getClass())
+                        .getToken());
     }
 }

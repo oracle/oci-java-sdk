@@ -169,7 +169,6 @@ public class ExplicitlySetFilterTest {
 
     @lombok.Value
     @lombok.experimental.NonFinal
-    @lombok.AllArgsConstructor(access = lombok.AccessLevel.PROTECTED)
     @com.fasterxml.jackson.annotation.JsonTypeInfo(
         use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
         include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -187,6 +186,14 @@ public class ExplicitlySetFilterTest {
 
         @com.fasterxml.jackson.annotation.JsonProperty("major_version")
         String majorVersion;
+
+        protected Baseclass(
+                @com.fasterxml.jackson.annotation.JsonProperty("baseVal") Integer baseVal,
+                @com.fasterxml.jackson.annotation.JsonProperty("major_version")
+                String majorVersion) {
+            this.baseVal = baseVal;
+            this.majorVersion = majorVersion;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

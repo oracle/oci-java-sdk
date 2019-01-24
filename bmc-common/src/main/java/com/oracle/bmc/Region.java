@@ -22,6 +22,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public enum Region {
     // OC1
+    CA_TORONTO_1("ca-toronto-1", Realm.OC1),
     // regionCode for FRA shouldn't be needed, but left for backwards compat
     EU_FRANKFURT_1("eu-frankfurt-1", "fra", Realm.OC1),
     // regionCode for LHR shouldn't be needed, but left for backwards compat
