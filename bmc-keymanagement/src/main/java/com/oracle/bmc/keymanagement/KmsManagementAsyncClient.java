@@ -12,12 +12,12 @@ import com.oracle.bmc.keymanagement.responses.*;
  * Async client implementation for KmsManagement service. <br/>
  * There are two ways to use async client:
  * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
- * getObject Api in object storage service, developers need to process the stream in AsyncHandler not anywhere else
+ * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
  * because the stream will be closed right after the AsyncHandler is invoked. <br/>
- * 2. Use Java Future: using Java Future, develpers need to close the stream after done with Java Furture.<br/>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
  * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
- * but not both.  If the Future will be used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
- * is used, it is still safe to use the Future to determine whether or not the request as completed via
+ * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
+ * is used, it is still safe to use the Future to determine whether or not the request was completed via
  * Future.isDone/isCancelled.<br/>
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */

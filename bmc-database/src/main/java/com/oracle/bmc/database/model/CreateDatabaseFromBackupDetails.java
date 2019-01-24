@@ -51,12 +51,22 @@ public class CreateDatabaseFromBackupDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dbName")
+        private String dbName;
+
+        public Builder dbName(String dbName) {
+            this.dbName = dbName;
+            this.__explicitlySet__.add("dbName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateDatabaseFromBackupDetails build() {
             CreateDatabaseFromBackupDetails __instance__ =
-                    new CreateDatabaseFromBackupDetails(backupId, backupTDEPassword, adminPassword);
+                    new CreateDatabaseFromBackupDetails(
+                            backupId, backupTDEPassword, adminPassword, dbName);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -66,7 +76,8 @@ public class CreateDatabaseFromBackupDetails {
             Builder copiedBuilder =
                     backupId(o.getBackupId())
                             .backupTDEPassword(o.getBackupTDEPassword())
-                            .adminPassword(o.getAdminPassword());
+                            .adminPassword(o.getAdminPassword())
+                            .dbName(o.getDbName());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -97,6 +108,12 @@ public class CreateDatabaseFromBackupDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
     String adminPassword;
+
+    /**
+     * The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbName")
+    String dbName;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

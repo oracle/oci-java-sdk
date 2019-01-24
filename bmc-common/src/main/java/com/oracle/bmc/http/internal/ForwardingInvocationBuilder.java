@@ -4,6 +4,7 @@
 package com.oracle.bmc.http.internal;
 
 import javax.ws.rs.client.AsyncInvoker;
+import javax.ws.rs.client.CompletionStageRxInvoker;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.Invocation;
 import javax.ws.rs.core.CacheControl;
@@ -12,6 +13,7 @@ import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.client.RxInvoker;
 import java.util.Locale;
 
 public abstract class ForwardingInvocationBuilder implements Invocation.Builder {
@@ -242,5 +244,15 @@ public abstract class ForwardingInvocationBuilder implements Invocation.Builder 
     @Override
     public <T> T method(String name, Entity<?> entity, GenericType<T> responseType) {
         return delegate().method(name, entity, responseType);
+    }
+
+    @Override
+    public CompletionStageRxInvoker rx() {
+        return delegate().rx();
+    }
+
+    @Override
+    public <T extends RxInvoker> T rx(Class<T> aClass) {
+        return delegate().rx(aClass);
     }
 }

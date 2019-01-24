@@ -19,7 +19,7 @@ import com.oracle.bmc.http.internal.WrappedInvocationBuilder;
 import com.oracle.bmc.http.signing.internal.Constants;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.requests.BmcRequest;
-import lombok.AllArgsConstructor;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
@@ -309,10 +309,15 @@ public class X509FederationClient implements FederationClient {
         }
     }
 
-    @Getter
-    @AllArgsConstructor
     public static class SecurityToken {
-        @JsonProperty("token")
+        public SecurityToken(@JsonProperty("token") String token) {
+            this.token = token;
+        }
+
         private String token;
+
+        public String getToken() {
+            return token;
+        }
     }
 }

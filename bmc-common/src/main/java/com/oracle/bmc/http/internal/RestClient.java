@@ -18,9 +18,11 @@ import javax.annotation.Nullable;
 import javax.ws.rs.ProcessingException;
 import javax.ws.rs.client.AsyncInvoker;
 import javax.ws.rs.client.Client;
+import javax.ws.rs.client.CompletionStageRxInvoker;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.InvocationCallback;
+import javax.ws.rs.client.RxInvoker;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MultivaluedMap;
@@ -771,6 +773,16 @@ public class RestClient implements AutoCloseable {
 
         @Override
         public AsyncInvoker async() {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
+
+        @Override
+        public CompletionStageRxInvoker rx() {
+            throw new UnsupportedOperationException("Cannot issue request directly");
+        }
+
+        @Override
+        public <T extends RxInvoker> T rx(Class<T> aClass) {
             throw new UnsupportedOperationException("Cannot issue request directly");
         }
     }

@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc;
 
+import com.google.common.base.Optional;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
@@ -40,6 +41,18 @@ public class RegionTest {
         assertEquals(
                 expectedEndpoint,
                 Region.formatDefaultRegionEndpoint(TEST_SERVICE, oc1Region.getRegionId()));
+    }
+
+    @Test
+    public void regionalEndpoint_withTorontoRegionEnum_andRegionString() {
+        final String expectedEndpoint = "https://foobar.ca-toronto-1.oraclecloud.com";
+        final Region region = Region.CA_TORONTO_1;
+        final Optional<String> actualEndpoint = region.getEndpoint(TEST_SERVICE);
+        assertTrue(actualEndpoint.isPresent());
+        assertEquals(expectedEndpoint, actualEndpoint.get());
+        assertEquals(
+                expectedEndpoint,
+                Region.formatDefaultRegionEndpoint(TEST_SERVICE, region.getRegionId()));
     }
 
     @Test

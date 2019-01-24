@@ -5,7 +5,6 @@ package com.oracle.bmc.http.internal;
 
 import com.google.common.collect.ImmutableList;
 import com.oracle.bmc.model.BmcException;
-import org.glassfish.jersey.internal.util.collection.MultivaluedStringMap;
 import org.junit.Test;
 
 import javax.ws.rs.core.HttpHeaders;
@@ -23,7 +22,6 @@ import static org.junit.Assert.fail;
 import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
-import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
@@ -89,7 +87,7 @@ public class ResponseHelperTest {
         List<Object> contentType = ImmutableList.<Object>of("text");
         InputStream mockStream = mock(InputStream.class);
 
-        Class<?> entityType = InputStream.class;
+        Class<InputStream> entityType = InputStream.class;
 
         when(response.getStatusInfo()).thenReturn(statusInfo);
         when(statusInfo.getFamily()).thenReturn(Response.Status.Family.SUCCESSFUL);
@@ -117,7 +115,7 @@ public class ResponseHelperTest {
         MultivaluedMap<String, Object> headers = new MultivaluedHashMap<>();
         InputStream mockStream = mock(InputStream.class);
 
-        Class<?> entityType = InputStream.class;
+        Class<InputStream> entityType = InputStream.class;
 
         when(response.getStatusInfo()).thenReturn(statusInfo);
         when(statusInfo.getFamily()).thenReturn(Response.Status.Family.SUCCESSFUL);

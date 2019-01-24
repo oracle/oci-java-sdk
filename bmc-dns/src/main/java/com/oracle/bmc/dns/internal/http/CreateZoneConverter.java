@@ -80,11 +80,11 @@ public class CreateZoneConverter {
 
                                 com.google.common.base.Optional<java.util.List<String>> eTagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                headers, "eTag");
+                                                headers, "ETag");
                                 if (eTagHeader.isPresent()) {
                                     builder.eTag(
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
-                                                    "eTag", eTagHeader.get().get(0), String.class));
+                                                    "ETag", eTagHeader.get().get(0), String.class));
                                 }
 
                                 CreateZoneResponse responseWrapper = builder.build();
