@@ -11,74 +11,7 @@
   <name>Oracle Cloud Infrastructure SDK - Announcements Service</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure Announcements Service</description>
   <url>https://docs.us-phoenix-1.oraclecloud.com/Content/API/SDKDocs/javasdk.htm</url>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>clirr-maven-plugin</artifactId>
-        <version>2.9.1-oracle-SNAPSHOT</version>
-        <executions>
-          <execution>
-            <id>clirr</id>
-            <phase>verify</phase>
-            <goals>
-              <goal>check</goal>
-            </goals>
-            <configuration>
-              <failOnError>${clirr.fail.on.error}</failOnError>
-              <textOutputFile>${project.build.directory}/clirr-audit.txt</textOutputFile>
-              <logResults>true</logResults>
-              <excludeVersionRegexes>
-                <param>.*preview.*</param>
-              </excludeVersionRegexes>
-              <comparisonVersion>${clirr.comparison.version}</comparisonVersion>
-              <ignored>
-                <difference>
-                  <className>**/internal/**/*</className>
-                  <field>*</field>
-                  <method>*</method>
-                </difference>
-                <difference>
-                  <className>com/oracle/bmc/announcementsservice/*Async*</className>
-                  <field>*</field>
-                  <method>*</method>
-                </difference>
-                <difference>
-                  <className>com/oracle/bmc/announcementsservice/*Client</className>
-                  <field>*</field>
-                  <method>*</method>
-                </difference>
-                <difference>
-                  <className>com/oracle/bmc/announcementsservice/*</className>
-                  <field>*</field>
-                  <method>*</method>
-                  <differenceType>7012</differenceType>
-                </difference>
-                <difference>
-                  <className>com/oracle/bmc/announcementsservice/*/*</className>
-                  <field>*</field>
-                  <method>*</method>
-                  <differenceType>7004</differenceType>
-                </difference>
-                <difference>
-                  <className>com/oracle/bmc/announcementsservice/*/*</className>
-                  <field>*</field>
-                  <method>*</method>
-                  <differenceType>7005</differenceType>
-                  <to>*</to>
-                </difference>
-                <difference>
-                  <className>com/oracle/bmc/announcementsservice/*/*Builder</className>
-                  <field>*</field>
-                  <method>*</method>
-                </difference>
-              </ignored>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
+
   <dependencies>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
