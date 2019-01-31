@@ -13,6 +13,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.3.6 - 2018-01-31
+### Added
+- Support for the Announcements service
+
 ## 1.3.5 - 2018-01-24
 ### Added
 - Support for renaming databases during restore-from-backup operations in the Database service
