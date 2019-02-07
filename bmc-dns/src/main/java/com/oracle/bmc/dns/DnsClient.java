@@ -312,6 +312,61 @@ public class DnsClient implements Dns {
     }
 
     @Override
+    public CreateSteeringPolicyResponse createSteeringPolicy(CreateSteeringPolicyRequest request) {
+        LOG.trace("Called createSteeringPolicy");
+        request = CreateSteeringPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateSteeringPolicyConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateSteeringPolicyResponse>
+                transformer = CreateSteeringPolicyConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCreateSteeringPolicyDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public CreateSteeringPolicyAttachmentResponse createSteeringPolicyAttachment(
+            CreateSteeringPolicyAttachmentRequest request) {
+        LOG.trace("Called createSteeringPolicyAttachment");
+        request = CreateSteeringPolicyAttachmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateSteeringPolicyAttachmentConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateSteeringPolicyAttachmentResponse>
+                transformer = CreateSteeringPolicyAttachmentConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(
+                                ib, request.getCreateSteeringPolicyAttachmentDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public CreateZoneResponse createZone(CreateZoneRequest request) {
         LOG.trace("Called createZone");
         request = CreateZoneConverter.interceptRequest(request);
@@ -370,6 +425,58 @@ public class DnsClient implements Dns {
                 DeleteRRSetConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteRRSetResponse>
                 transformer = DeleteRRSetConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public DeleteSteeringPolicyResponse deleteSteeringPolicy(DeleteSteeringPolicyRequest request) {
+        LOG.trace("Called deleteSteeringPolicy");
+        request = DeleteSteeringPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteSteeringPolicyConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteSteeringPolicyResponse>
+                transformer = DeleteSteeringPolicyConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public DeleteSteeringPolicyAttachmentResponse deleteSteeringPolicyAttachment(
+            DeleteSteeringPolicyAttachmentRequest request) {
+        LOG.trace("Called deleteSteeringPolicyAttachment");
+        request = DeleteSteeringPolicyAttachmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteSteeringPolicyAttachmentConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteSteeringPolicyAttachmentResponse>
+                transformer = DeleteSteeringPolicyAttachmentConverter.fromResponse();
 
         int attempts = 0;
         while (true) {
@@ -463,6 +570,58 @@ public class DnsClient implements Dns {
     }
 
     @Override
+    public GetSteeringPolicyResponse getSteeringPolicy(GetSteeringPolicyRequest request) {
+        LOG.trace("Called getSteeringPolicy");
+        request = GetSteeringPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSteeringPolicyConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetSteeringPolicyResponse>
+                transformer = GetSteeringPolicyConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public GetSteeringPolicyAttachmentResponse getSteeringPolicyAttachment(
+            GetSteeringPolicyAttachmentRequest request) {
+        LOG.trace("Called getSteeringPolicyAttachment");
+        request = GetSteeringPolicyAttachmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSteeringPolicyAttachmentConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetSteeringPolicyAttachmentResponse>
+                transformer = GetSteeringPolicyAttachmentConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public GetZoneResponse getZone(GetZoneRequest request) {
         LOG.trace("Called getZone");
         request = GetZoneConverter.interceptRequest(request);
@@ -495,6 +654,58 @@ public class DnsClient implements Dns {
                 GetZoneRecordsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetZoneRecordsResponse>
                 transformer = GetZoneRecordsConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public ListSteeringPoliciesResponse listSteeringPolicies(ListSteeringPoliciesRequest request) {
+        LOG.trace("Called listSteeringPolicies");
+        request = ListSteeringPoliciesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSteeringPoliciesConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListSteeringPoliciesResponse>
+                transformer = ListSteeringPoliciesConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public ListSteeringPolicyAttachmentsResponse listSteeringPolicyAttachments(
+            ListSteeringPolicyAttachmentsRequest request) {
+        LOG.trace("Called listSteeringPolicyAttachments");
+        request = ListSteeringPolicyAttachmentsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSteeringPolicyAttachmentsConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListSteeringPolicyAttachmentsResponse>
+                transformer = ListSteeringPolicyAttachmentsConverter.fromResponse();
 
         int attempts = 0;
         while (true) {
@@ -655,6 +866,60 @@ public class DnsClient implements Dns {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdateRRSetDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public UpdateSteeringPolicyResponse updateSteeringPolicy(UpdateSteeringPolicyRequest request) {
+        LOG.trace("Called updateSteeringPolicy");
+        request = UpdateSteeringPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateSteeringPolicyConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateSteeringPolicyResponse>
+                transformer = UpdateSteeringPolicyConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateSteeringPolicyDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public UpdateSteeringPolicyAttachmentResponse updateSteeringPolicyAttachment(
+            UpdateSteeringPolicyAttachmentRequest request) {
+        LOG.trace("Called updateSteeringPolicyAttachment");
+        request = UpdateSteeringPolicyAttachmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateSteeringPolicyAttachmentConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateSteeringPolicyAttachmentResponse>
+                transformer = UpdateSteeringPolicyAttachmentConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateSteeringPolicyAttachmentDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS

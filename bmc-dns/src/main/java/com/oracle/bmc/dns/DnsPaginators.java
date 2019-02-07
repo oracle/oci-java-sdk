@@ -361,6 +361,244 @@ public class DnsPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listSteeringPolicies operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListSteeringPoliciesResponse> listSteeringPoliciesResponseIterator(
+            final ListSteeringPoliciesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSteeringPoliciesRequest.Builder, ListSteeringPoliciesRequest,
+                ListSteeringPoliciesResponse>(
+                new com.google.common.base.Supplier<ListSteeringPoliciesRequest.Builder>() {
+                    @Override
+                    public ListSteeringPoliciesRequest.Builder get() {
+                        return ListSteeringPoliciesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListSteeringPoliciesResponse, String>() {
+                    @Override
+                    public String apply(ListSteeringPoliciesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSteeringPoliciesRequest.Builder>,
+                        ListSteeringPoliciesRequest>() {
+                    @Override
+                    public ListSteeringPoliciesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSteeringPoliciesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSteeringPoliciesRequest, ListSteeringPoliciesResponse>() {
+                    @Override
+                    public ListSteeringPoliciesResponse apply(ListSteeringPoliciesRequest request) {
+                        return client.listSteeringPolicies(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dns.model.SteeringPolicySummary} objects
+     * contained in responses from the listSteeringPolicies operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dns.model.SteeringPolicySummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.dns.model.SteeringPolicySummary>
+            listSteeringPoliciesRecordIterator(final ListSteeringPoliciesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSteeringPoliciesRequest.Builder, ListSteeringPoliciesRequest,
+                ListSteeringPoliciesResponse, com.oracle.bmc.dns.model.SteeringPolicySummary>(
+                new com.google.common.base.Supplier<ListSteeringPoliciesRequest.Builder>() {
+                    @Override
+                    public ListSteeringPoliciesRequest.Builder get() {
+                        return ListSteeringPoliciesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListSteeringPoliciesResponse, String>() {
+                    @Override
+                    public String apply(ListSteeringPoliciesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSteeringPoliciesRequest.Builder>,
+                        ListSteeringPoliciesRequest>() {
+                    @Override
+                    public ListSteeringPoliciesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSteeringPoliciesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSteeringPoliciesRequest, ListSteeringPoliciesResponse>() {
+                    @Override
+                    public ListSteeringPoliciesResponse apply(ListSteeringPoliciesRequest request) {
+                        return client.listSteeringPolicies(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSteeringPoliciesResponse,
+                        java.util.List<com.oracle.bmc.dns.model.SteeringPolicySummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.dns.model.SteeringPolicySummary> apply(
+                            ListSteeringPoliciesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listSteeringPolicyAttachments operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListSteeringPolicyAttachmentsResponse>
+            listSteeringPolicyAttachmentsResponseIterator(
+                    final ListSteeringPolicyAttachmentsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSteeringPolicyAttachmentsRequest.Builder, ListSteeringPolicyAttachmentsRequest,
+                ListSteeringPolicyAttachmentsResponse>(
+                new com.google.common.base.Supplier<
+                        ListSteeringPolicyAttachmentsRequest.Builder>() {
+                    @Override
+                    public ListSteeringPolicyAttachmentsRequest.Builder get() {
+                        return ListSteeringPolicyAttachmentsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSteeringPolicyAttachmentsResponse, String>() {
+                    @Override
+                    public String apply(ListSteeringPolicyAttachmentsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSteeringPolicyAttachmentsRequest.Builder>,
+                        ListSteeringPolicyAttachmentsRequest>() {
+                    @Override
+                    public ListSteeringPolicyAttachmentsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSteeringPolicyAttachmentsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSteeringPolicyAttachmentsRequest,
+                        ListSteeringPolicyAttachmentsResponse>() {
+                    @Override
+                    public ListSteeringPolicyAttachmentsResponse apply(
+                            ListSteeringPolicyAttachmentsRequest request) {
+                        return client.listSteeringPolicyAttachments(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dns.model.SteeringPolicyAttachmentSummary} objects
+     * contained in responses from the listSteeringPolicyAttachments operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dns.model.SteeringPolicyAttachmentSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.dns.model.SteeringPolicyAttachmentSummary>
+            listSteeringPolicyAttachmentsRecordIterator(
+                    final ListSteeringPolicyAttachmentsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSteeringPolicyAttachmentsRequest.Builder, ListSteeringPolicyAttachmentsRequest,
+                ListSteeringPolicyAttachmentsResponse,
+                com.oracle.bmc.dns.model.SteeringPolicyAttachmentSummary>(
+                new com.google.common.base.Supplier<
+                        ListSteeringPolicyAttachmentsRequest.Builder>() {
+                    @Override
+                    public ListSteeringPolicyAttachmentsRequest.Builder get() {
+                        return ListSteeringPolicyAttachmentsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSteeringPolicyAttachmentsResponse, String>() {
+                    @Override
+                    public String apply(ListSteeringPolicyAttachmentsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSteeringPolicyAttachmentsRequest.Builder>,
+                        ListSteeringPolicyAttachmentsRequest>() {
+                    @Override
+                    public ListSteeringPolicyAttachmentsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSteeringPolicyAttachmentsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSteeringPolicyAttachmentsRequest,
+                        ListSteeringPolicyAttachmentsResponse>() {
+                    @Override
+                    public ListSteeringPolicyAttachmentsResponse apply(
+                            ListSteeringPolicyAttachmentsRequest request) {
+                        return client.listSteeringPolicyAttachments(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListSteeringPolicyAttachmentsResponse,
+                        java.util.List<
+                                com.oracle.bmc.dns.model.SteeringPolicyAttachmentSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.dns.model.SteeringPolicyAttachmentSummary>
+                            apply(ListSteeringPolicyAttachmentsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listZones operation. This iterable
      * will fetch more data from the server as needed.
      *

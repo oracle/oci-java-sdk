@@ -32,6 +32,10 @@ public class CreateSenderConverter {
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
 
+        if (request.getOpcRequestId() != null) {
+            ib.header("opc-request-id", request.getOpcRequestId());
+        }
+
         return ib;
     }
 

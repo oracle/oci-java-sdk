@@ -13,6 +13,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.3.7 - 2018-02-07 
+### Added
+- Support for the Web Application Acceleration and Security (WAAS) service
+- Support for the Health Checks service
+- Support for connection strings on Database resources in the Database service
+- Support for traffic management in the DNS service
+- Support for tagging in the Email service
+
 ## 1.3.6 - 2018-01-31
 ### Added
 - Support for the Announcements service

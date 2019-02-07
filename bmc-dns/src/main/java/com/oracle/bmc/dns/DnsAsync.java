@@ -37,6 +37,44 @@ public interface DnsAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Creates a new steering policy in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateSteeringPolicyResponse> createSteeringPolicy(
+            CreateSteeringPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateSteeringPolicyRequest, CreateSteeringPolicyResponse>
+                    handler);
+
+    /**
+     * Creates a new attachment between a steering policy and a domain.
+     * For the purposes of access control, the attachment is automatically placed
+     * into the same compartment as the containing zone of the domain.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateSteeringPolicyAttachmentResponse>
+            createSteeringPolicyAttachment(
+                    CreateSteeringPolicyAttachmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateSteeringPolicyAttachmentRequest,
+                                    CreateSteeringPolicyAttachmentResponse>
+                            handler);
+
+    /**
      * Creates a new zone in the specified compartment. The `compartmentId`
      * query parameter is required if the `Content-Type` header for the
      * request is `text/dns`.
@@ -85,8 +123,47 @@ public interface DnsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<DeleteRRSetRequest, DeleteRRSetResponse> handler);
 
     /**
-     * Deletes the specified zone. A `204` response indicates that zone has been successfully
-     * deleted.
+     * Deletes the specified steering policy.
+     * A `204` response indicates that the delete has been successful.
+     * Deletion will fail if the policy is attached to any zones.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSteeringPolicyResponse> deleteSteeringPolicy(
+            DeleteSteeringPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSteeringPolicyRequest, DeleteSteeringPolicyResponse>
+                    handler);
+
+    /**
+     * Deletes the specified steering policy attachment.
+     * A `204` response indicates that the delete has been successful.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSteeringPolicyAttachmentResponse>
+            deleteSteeringPolicyAttachment(
+                    DeleteSteeringPolicyAttachmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteSteeringPolicyAttachmentRequest,
+                                    DeleteSteeringPolicyAttachmentResponse>
+                            handler);
+
+    /**
+     * Deletes the specified zone and all its steering policy attachments.
+     * A `204` response indicates that zone has been successfully deleted.
      *
      *
      * @param request The request object containing the details to send
@@ -135,6 +212,40 @@ public interface DnsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetRRSetRequest, GetRRSetResponse> handler);
 
     /**
+     * Gets information about the specified steering policy.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSteeringPolicyResponse> getSteeringPolicy(
+            GetSteeringPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSteeringPolicyRequest, GetSteeringPolicyResponse>
+                    handler);
+
+    /**
+     * Gets information about the specified steering policy attachment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSteeringPolicyAttachmentResponse> getSteeringPolicyAttachment(
+            GetSteeringPolicyAttachmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSteeringPolicyAttachmentRequest, GetSteeringPolicyAttachmentResponse>
+                    handler);
+
+    /**
      * Gets information about the specified zone, including its creation date,
      * zone type, and serial.
      *
@@ -167,6 +278,42 @@ public interface DnsAsync extends AutoCloseable {
             GetZoneRecordsRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetZoneRecordsRequest, GetZoneRecordsResponse>
                     handler);
+
+    /**
+     * Gets a list of all steering policies in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSteeringPoliciesResponse> listSteeringPolicies(
+            ListSteeringPoliciesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSteeringPoliciesRequest, ListSteeringPoliciesResponse>
+                    handler);
+
+    /**
+     * Lists the steering policy attachments in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSteeringPolicyAttachmentsResponse>
+            listSteeringPolicyAttachments(
+                    ListSteeringPolicyAttachmentsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListSteeringPolicyAttachmentsRequest,
+                                    ListSteeringPolicyAttachmentsResponse>
+                            handler);
 
     /**
      * Gets a list of all zones in the specified compartment. The collection
@@ -268,6 +415,42 @@ public interface DnsAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateRRSetResponse> updateRRSet(
             UpdateRRSetRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateRRSetRequest, UpdateRRSetResponse> handler);
+
+    /**
+     * Updates the specified steering policy with your new information.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateSteeringPolicyResponse> updateSteeringPolicy(
+            UpdateSteeringPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSteeringPolicyRequest, UpdateSteeringPolicyResponse>
+                    handler);
+
+    /**
+     * Updates the specified steering policy attachment with your new information.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateSteeringPolicyAttachmentResponse>
+            updateSteeringPolicyAttachment(
+                    UpdateSteeringPolicyAttachmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateSteeringPolicyAttachmentRequest,
+                                    UpdateSteeringPolicyAttachmentResponse>
+                            handler);
 
     /**
      * Updates the specified secondary zone with your new external master

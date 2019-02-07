@@ -53,6 +53,9 @@ public interface EmailAsync extends AutoCloseable {
 
     /**
      * Adds recipient email addresses to the suppression list for a tenancy.
+     * Addresses added to the suppression list via the API are denoted as
+     * \"MANUAL\" in the `reason` field. *Note:* All email addresses added to the
+     * suppression list are normalized to include only lowercase letters.
      *
      *
      * @param request The request object containing the details to send
@@ -165,5 +168,24 @@ public interface EmailAsync extends AutoCloseable {
     java.util.concurrent.Future<ListSuppressionsResponse> listSuppressions(
             ListSuppressionsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListSuppressionsRequest, ListSuppressionsResponse>
+                    handler);
+
+    /**
+     * Replaces the set of tags for a sender with the tags provided. If either freeform
+     * or defined tags are omitted, the tags for that set remain the same. Each set must
+     * include the full set of tags for the sender, partial updates are not permitted.
+     * For more information about tagging, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateSenderResponse> updateSender(
+            UpdateSenderRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateSenderRequest, UpdateSenderResponse>
                     handler);
 }
