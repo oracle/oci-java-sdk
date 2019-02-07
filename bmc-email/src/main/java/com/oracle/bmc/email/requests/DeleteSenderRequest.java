@@ -15,6 +15,11 @@ public class DeleteSenderRequest extends com.oracle.bmc.requests.BmcRequest {
      */
     private String senderId;
 
+    /**
+     * The request ID for tracing from the system
+     */
+    private String opcRequestId;
+
     public static class Builder {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
@@ -37,6 +42,7 @@ public class DeleteSenderRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(DeleteSenderRequest o) {
             senderId(o.getSenderId());
+            opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             return this;
         }

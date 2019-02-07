@@ -22,6 +22,15 @@ public class Suppression {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("emailAddress")
         private String emailAddress;
 
@@ -62,7 +71,8 @@ public class Suppression {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Suppression build() {
-            Suppression __instance__ = new Suppression(emailAddress, id, reason, timeCreated);
+            Suppression __instance__ =
+                    new Suppression(compartmentId, emailAddress, id, reason, timeCreated);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -70,7 +80,8 @@ public class Suppression {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Suppression o) {
             Builder copiedBuilder =
-                    emailAddress(o.getEmailAddress())
+                    compartmentId(o.getCompartmentId())
+                            .emailAddress(o.getEmailAddress())
                             .id(o.getId())
                             .reason(o.getReason())
                             .timeCreated(o.getTimeCreated());
@@ -88,6 +99,15 @@ public class Suppression {
     }
 
     /**
+     * The OCID of the compartment to contain the suppression. Since
+     * suppressions are at the customer level, this must be the tenancy
+     * OCID.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    String compartmentId;
+
+    /**
      * Email address of the suppression.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("emailAddress")
@@ -99,7 +119,7 @@ public class Suppression {
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
     /**
-     * The reason that the email address was suppressed. For more information on the types of bounces, see [Suppresion List](https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Concepts/emaildeliveryoverview.htm#suppressionlist).
+     * The reason that the email address was suppressed. For more information on the types of bounces, see [Suppression List](https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Concepts/overview.htm#components).
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Reason {
@@ -149,13 +169,13 @@ public class Suppression {
         }
     };
     /**
-     * The reason that the email address was suppressed. For more information on the types of bounces, see [Suppresion List](https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Concepts/emaildeliveryoverview.htm#suppressionlist).
+     * The reason that the email address was suppressed. For more information on the types of bounces, see [Suppression List](https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Concepts/overview.htm#components).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("reason")
     Reason reason;
 
     /**
-     * The date and time the approved sender was added in \"YYYY-MM-ddThh:mmZ\"
+     * The date and time the suppression was added in \"YYYY-MM-ddThh:mmZ\"
      * format with a Z offset, as defined by RFC 3339.
      *
      **/

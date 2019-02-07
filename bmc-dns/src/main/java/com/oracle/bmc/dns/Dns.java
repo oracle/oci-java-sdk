@@ -37,6 +37,27 @@ public interface Dns extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Creates a new steering policy in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateSteeringPolicyResponse createSteeringPolicy(CreateSteeringPolicyRequest request);
+
+    /**
+     * Creates a new attachment between a steering policy and a domain.
+     * For the purposes of access control, the attachment is automatically placed
+     * into the same compartment as the containing zone of the domain.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateSteeringPolicyAttachmentResponse createSteeringPolicyAttachment(
+            CreateSteeringPolicyAttachmentRequest request);
+
+    /**
      * Creates a new zone in the specified compartment. The `compartmentId`
      * query parameter is required if the `Content-Type` header for the
      * request is `text/dns`.
@@ -65,8 +86,30 @@ public interface Dns extends AutoCloseable {
     DeleteRRSetResponse deleteRRSet(DeleteRRSetRequest request);
 
     /**
-     * Deletes the specified zone. A `204` response indicates that zone has been successfully
-     * deleted.
+     * Deletes the specified steering policy.
+     * A `204` response indicates that the delete has been successful.
+     * Deletion will fail if the policy is attached to any zones.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteSteeringPolicyResponse deleteSteeringPolicy(DeleteSteeringPolicyRequest request);
+
+    /**
+     * Deletes the specified steering policy attachment.
+     * A `204` response indicates that the delete has been successful.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteSteeringPolicyAttachmentResponse deleteSteeringPolicyAttachment(
+            DeleteSteeringPolicyAttachmentRequest request);
+
+    /**
+     * Deletes the specified zone and all its steering policy attachments.
+     * A `204` response indicates that zone has been successfully deleted.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -96,6 +139,25 @@ public interface Dns extends AutoCloseable {
     GetRRSetResponse getRRSet(GetRRSetRequest request);
 
     /**
+     * Gets information about the specified steering policy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetSteeringPolicyResponse getSteeringPolicy(GetSteeringPolicyRequest request);
+
+    /**
+     * Gets information about the specified steering policy attachment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetSteeringPolicyAttachmentResponse getSteeringPolicyAttachment(
+            GetSteeringPolicyAttachmentRequest request);
+
+    /**
      * Gets information about the specified zone, including its creation date,
      * zone type, and serial.
      *
@@ -115,6 +177,25 @@ public interface Dns extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     GetZoneRecordsResponse getZoneRecords(GetZoneRecordsRequest request);
+
+    /**
+     * Gets a list of all steering policies in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListSteeringPoliciesResponse listSteeringPolicies(ListSteeringPoliciesRequest request);
+
+    /**
+     * Lists the steering policy attachments in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListSteeringPolicyAttachmentsResponse listSteeringPolicyAttachments(
+            ListSteeringPolicyAttachmentsRequest request);
 
     /**
      * Gets a list of all zones in the specified compartment. The collection
@@ -175,6 +256,25 @@ public interface Dns extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateRRSetResponse updateRRSet(UpdateRRSetRequest request);
+
+    /**
+     * Updates the specified steering policy with your new information.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateSteeringPolicyResponse updateSteeringPolicy(UpdateSteeringPolicyRequest request);
+
+    /**
+     * Updates the specified steering policy attachment with your new information.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateSteeringPolicyAttachmentResponse updateSteeringPolicyAttachment(
+            UpdateSteeringPolicyAttachmentRequest request);
 
     /**
      * Updates the specified secondary zone with your new external master

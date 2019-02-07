@@ -158,6 +158,15 @@ public class Database {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("connectionStrings")
+        private DatabaseConnectionStrings connectionStrings;
+
+        public Builder connectionStrings(DatabaseConnectionStrings connectionStrings) {
+            this.connectionStrings = connectionStrings;
+            this.__explicitlySet__.add("connectionStrings");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -178,7 +187,8 @@ public class Database {
                             timeCreated,
                             dbBackupConfig,
                             freeformTags,
-                            definedTags);
+                            definedTags,
+                            connectionStrings);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -200,7 +210,8 @@ public class Database {
                             .timeCreated(o.getTimeCreated())
                             .dbBackupConfig(o.getDbBackupConfig())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .connectionStrings(o.getConnectionStrings());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -360,6 +371,12 @@ public class Database {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * The Connection strings used to connect to the Oracle Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("connectionStrings")
+    DatabaseConnectionStrings connectionStrings;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

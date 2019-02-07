@@ -16,6 +16,11 @@ public class ListSendersRequest extends com.oracle.bmc.requests.BmcRequest {
     private String compartmentId;
 
     /**
+     * The request ID for tracing from the system
+     */
+    private String opcRequestId;
+
+    /**
      * The current state of a sender.
      */
     private Sender.LifecycleState lifecycleState;
@@ -33,7 +38,9 @@ public class ListSendersRequest extends com.oracle.bmc.requests.BmcRequest {
     private String page;
 
     /**
-     * The maximum number of items to return in a paginated GET request.
+     * For list pagination. The maximum number of results per page, or items to return in a
+     * paginated \"List\" call. `1` is the minimum, `1000` is the maximum. For important details about
+     * how pagination works, see [List Pagination](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private Integer limit;
@@ -152,6 +159,7 @@ public class ListSendersRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(ListSendersRequest o) {
             compartmentId(o.getCompartmentId());
+            opcRequestId(o.getOpcRequestId());
             lifecycleState(o.getLifecycleState());
             emailAddress(o.getEmailAddress());
             page(o.getPage());

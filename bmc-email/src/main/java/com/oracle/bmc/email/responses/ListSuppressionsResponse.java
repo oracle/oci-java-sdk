@@ -19,10 +19,9 @@ public class ListSuppressionsResponse {
     private String opcRequestId;
 
     /**
-     * For pagination of a list of items. If this header appears in the
-     * response, then a partial list might have been returned. Include
-     * this value for the `page` parameter in subsequent GET
-     * requests to return the next batch of items.
+     * For list pagination. When this header appears in the response, additional
+     * pages of results remain. For important details about how pagination works,
+     * see [List Pagination](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private String opcNextPage;

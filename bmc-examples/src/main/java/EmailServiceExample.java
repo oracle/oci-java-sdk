@@ -1,18 +1,20 @@
 /**
  * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
+import com.oracle.bmc.Region;
 import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.ConfigFileReader.ConfigFile;
-import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.email.EmailClient;
+import com.oracle.bmc.email.EmailPaginators;
 import com.oracle.bmc.email.model.CreateSenderDetails;
 import com.oracle.bmc.email.model.CreateSuppressionDetails;
 import com.oracle.bmc.email.model.Sender;
 import com.oracle.bmc.email.model.SenderSummary;
 import com.oracle.bmc.email.model.Suppression;
 import com.oracle.bmc.email.model.SuppressionSummary;
+import com.oracle.bmc.email.model.UpdateSenderDetails;
 import com.oracle.bmc.email.requests.CreateSenderRequest;
 import com.oracle.bmc.email.requests.CreateSuppressionRequest;
 import com.oracle.bmc.email.requests.DeleteSenderRequest;
@@ -21,34 +23,40 @@ import com.oracle.bmc.email.requests.GetSenderRequest;
 import com.oracle.bmc.email.requests.GetSuppressionRequest;
 import com.oracle.bmc.email.requests.ListSendersRequest;
 import com.oracle.bmc.email.requests.ListSuppressionsRequest;
+import com.oracle.bmc.email.requests.UpdateSenderRequest;
+import com.oracle.bmc.email.responses.UpdateSenderResponse;
 import com.oracle.bmc.email.responses.CreateSenderResponse;
 import com.oracle.bmc.email.responses.CreateSuppressionResponse;
 import com.oracle.bmc.email.responses.DeleteSenderResponse;
 import com.oracle.bmc.email.responses.GetSenderResponse;
 import com.oracle.bmc.email.responses.GetSuppressionResponse;
 import com.oracle.bmc.identity.IdentityClient;
-import com.oracle.bmc.identity.model.CreateSmtpCredentialDetails;
 import com.oracle.bmc.identity.model.SmtpCredential;
 import com.oracle.bmc.identity.model.SmtpCredentialSummary;
+import com.oracle.bmc.identity.model.CreateSmtpCredentialDetails;
 import com.oracle.bmc.identity.model.UpdateSmtpCredentialDetails;
 import com.oracle.bmc.identity.requests.CreateSmtpCredentialRequest;
 import com.oracle.bmc.identity.requests.DeleteSmtpCredentialRequest;
 import com.oracle.bmc.identity.requests.ListSmtpCredentialsRequest;
 import com.oracle.bmc.identity.requests.UpdateSmtpCredentialRequest;
 import com.oracle.bmc.identity.responses.CreateSmtpCredentialResponse;
+import com.oracle.bmc.identity.responses.DeleteSmtpCredentialResponse;
 import com.oracle.bmc.identity.responses.ListSmtpCredentialsResponse;
 import com.oracle.bmc.identity.responses.UpdateSmtpCredentialResponse;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This class demonstrates how to use the Email Service in the Java SDK. This will cover:
  *
  * <ul>
- *   <li>Creating, retrieving, listing and deleting email senders</li>
- *   <li>Creating, retrieving, listing and deleting email suppressions</li>
+ *   <li>Creating, retrieving, updating, listing, and deleting approved senders</li>
+ *   <li>Creating, retrieving, listing, and deleting email suppressions</li>
  *   <li>
- *       Obtaining SMTP credentials for your IAM user so that you can send emails.
- *       See <a href="https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Tasks/configuresmtpconnection.htm">here</a> for more
- *       information on sending emails
+ *       Creating, updating, listing, and deleting SMTP credentials
+ *       See <a href="https://docs.cloud.oracle.com/iaas/Content/Email/Tasks/configuresmtpconnection.htm">here</a> for more
+ *       information on sending emails with your IAM user
  *   </li>
  * </ul>
  *
@@ -59,11 +67,13 @@ import com.oracle.bmc.identity.responses.UpdateSmtpCredentialResponse;
  *      location (~/.oci/config) and the DEFAULT profile will be used
  *   </li>
  *   <li>Resources will be created in us-phoenix-1</li>
+ *   <li>An approved sender with the given email address does not already exist</li>
  *   <li>An SMTP credential will be created for user defined in the configuration file</li>
  *   <li>
  *      You have the appropriate permissions to create email senders in the compartment you've specified
  *      and can also create email suppressions at the tenancy level
  *   </li>
+ *   <li>Your user does not already have the maximum number of smtp credentials [2]</li>
  * <ul>
  */
 public class EmailServiceExample {
@@ -111,15 +121,24 @@ public class EmailServiceExample {
         SmtpCredential smtpCredential = null;
         try {
             sender = createEmailSender(emailClient, compartmentId, senderEmailAddress);
-            listSenders(emailClient, compartmentId, senderEmailAddress);
+            getEmailSender(emailClient, sender);
+            updateSender(emailClient, sender);
+            listAllSenders(emailClient, compartmentId);
+            listSendersFilteredByAddress(emailClient, compartmentId, senderEmailAddress);
+            System.out.println();
 
-            suppression =
-                    createSuppression(
-                            emailClient, configFile.get("tenancy"), suppressionEmailAddress);
-            listSuppressions(emailClient, configFile.get("tenancy"), suppressionEmailAddress);
+            final String tenancy = configFile.get("tenancy");
+            suppression = createSuppression(emailClient, tenancy, suppressionEmailAddress);
+            getSuppression(emailClient, suppression);
+            listAllSuppressions(emailClient, tenancy);
+            listSuppressionsFilteredByAddress(emailClient, tenancy, suppressionEmailAddress);
+            System.out.println();
 
-            smtpCredential = createSmtpCredential(identityClient, configFile.get("user"));
-            listSmtpCredentials(identityClient, configFile.get("user"));
+            final String userId = configFile.get("user");
+            smtpCredential = createSmtpCredential(identityClient, userId);
+            updateSmtpCredential(identityClient, userId, smtpCredential);
+            listSmtpCredentials(identityClient, userId);
+            System.out.println();
         } finally {
             if (sender != null) {
                 deleteSender(emailClient, sender);
@@ -139,11 +158,11 @@ public class EmailServiceExample {
     }
 
     /**
-     * Creates a sender and waits for it to become available
+     * Create an approved sender
      *
      * @param emailClient the client used to communicate with the Email Service
-     * @param compartmentId the OCID of the compartment where the email sender will be created
-     * @param senderEmailAddress the email address of the sender
+     * @param compartmentId the OCID of the compartment where the sender will be created
+     * @param senderEmailAddress the email address of the approved sender
      *
      * @return the created Sender
      */
@@ -152,108 +171,146 @@ public class EmailServiceExample {
             final String compartmentId,
             final String senderEmailAddress)
             throws Exception {
-
-        System.out.println("Creating email sender");
+        System.out.println("Creating email sender " + senderEmailAddress);
         System.out.println("=======================");
 
-        final CreateSenderResponse createResponse =
-                emailClient.createSender(
-                        CreateSenderRequest.builder()
-                                .createSenderDetails(
-                                        CreateSenderDetails.builder()
-                                                .compartmentId(compartmentId)
-                                                .emailAddress(senderEmailAddress)
-                                                .build())
-                                .build());
-        System.out.println("Created sender: " + createResponse.getSender().toString());
+        final CreateSenderDetails details =
+                CreateSenderDetails.builder()
+                        .compartmentId(compartmentId)
+                        .emailAddress(senderEmailAddress)
+                        .freeformTags(getFreeformTagData())
+                        .build();
+        final CreateSenderRequest request =
+                CreateSenderRequest.builder().createSenderDetails(details).build();
+        final CreateSenderResponse response = emailClient.createSender(request);
+
+        System.out.println("Created sender: " + response.getSender().toString());
         System.out.println();
 
+        return response.getSender();
+    }
+
+    /**
+     * Retrieve email sender
+     *
+     * @param emailClient the client used to communicate with the Email Service
+     * @param sender the sender to retrieve
+     */
+    private static void getEmailSender(final EmailClient emailClient, final Sender sender)
+            throws Exception {
+        System.out.println("Retrieving email sender after state becomes active");
+        System.out.println("=======================");
+
+        final GetSenderRequest request =
+                GetSenderRequest.builder().senderId(sender.getId()).build();
         final GetSenderResponse getSenderResponse =
-                emailClient
-                        .getWaiters()
-                        .forSender(
-                                GetSenderRequest.builder()
-                                        .senderId(createResponse.getSender().getId())
-                                        .build(),
-                                Sender.LifecycleState.Active)
-                        .execute();
+                emailClient.getWaiters().forSender(request, Sender.LifecycleState.Active).execute();
         System.out.println(
                 "Waited for sender to become available: "
                         + getSenderResponse.getSender().toString());
         System.out.println();
-
-        return getSenderResponse.getSender();
     }
 
     /**
-     * Lists email senders. This method will first list all email senders in a compartment and then will
-     * list them filtered by a (fake) email address, which should return no results
+     * Update email sender
+     *
+     * @param emailClient the client used to communicate with the Email Service
+     * @param sender the sender to update
+     */
+    private static void updateSender(final EmailClient emailClient, final Sender sender) {
+        System.out.println("Updating email sender");
+        System.out.println("=======================");
+
+        final UpdateSenderDetails details =
+                UpdateSenderDetails.builder().freeformTags(Collections.EMPTY_MAP).build();
+        final UpdateSenderRequest request =
+                UpdateSenderRequest.builder()
+                        .senderId(sender.getId())
+                        .updateSenderDetails(details)
+                        .build();
+        final UpdateSenderResponse response = emailClient.updateSender(request);
+
+        System.out.println("Updated sender: " + response.getSender().toString());
+        System.out.println();
+    }
+
+    /**
+     * List email senders in the provided compartment
+     *
+     * @param emailClient the client used to communicate with the Email Service
+     * @param compartmentId the OCID of the compartment to list resources in
+     */
+    private static void listAllSenders(final EmailClient emailClient, final String compartmentId) {
+        System.out.println("Listing all senders");
+        System.out.println("=======================");
+
+        final EmailPaginators paginators = emailClient.getPaginators();
+        final ListSendersRequest request =
+                ListSendersRequest.builder().compartmentId(compartmentId).build();
+        final Iterable<SenderSummary> senderIterator =
+                paginators.listSendersRecordIterator(request);
+
+        for (SenderSummary senderSummary : senderIterator) {
+            System.out.println(senderSummary);
+        }
+        System.out.println();
+    }
+
+    /**
+     * List email senders in the provided compartment that match an email address
      *
      * @param emailClient the client used to communicate with the Email Service
      * @param compartmentId the OCID of the compartment to list resources in
      * @param senderEmailAddress the email address to filter by in list calls
      */
-    private static void listSenders(
+    private static void listSendersFilteredByAddress(
             final EmailClient emailClient,
             final String compartmentId,
             final String senderEmailAddress) {
-
-        System.out.println("Listing Senders");
+        System.out.println("Listing senders filtered by email address");
         System.out.println("=======================");
 
-        ListSendersRequest listSendersRequest =
-                ListSendersRequest.builder().compartmentId(compartmentId).build();
-        Iterable<SenderSummary> senderRecordIterator =
-                emailClient.getPaginators().listSendersRecordIterator(listSendersRequest);
-        for (SenderSummary ss : senderRecordIterator) {
-            System.out.println(ss);
-        }
-
-        System.out.println();
-        System.out.println();
-
-        System.out.println("Listing Senders Filtered By Email");
-        System.out.println("===================================");
-        listSendersRequest =
+        final EmailPaginators paginators = emailClient.getPaginators();
+        final ListSendersRequest request =
                 ListSendersRequest.builder()
                         .compartmentId(compartmentId)
-                        .emailAddress("fake-" + senderEmailAddress)
+                        .emailAddress(senderEmailAddress)
                         .build();
-        senderRecordIterator =
-                emailClient.getPaginators().listSendersRecordIterator(listSendersRequest);
-        for (SenderSummary ss : senderRecordIterator) {
-            System.out.println(ss);
-        }
+        final Iterable<SenderSummary> senderIterator =
+                paginators.listSendersRecordIterator(request);
 
+        for (SenderSummary senderSummary : senderIterator) {
+            System.out.println(senderSummary);
+        }
         System.out.println();
     }
 
     /**
-     * Deletes an email sender and waits for it to be deleted
+     * Delete an approved sender and wait for it to be deleted
      *
      * @param emailClient the client used to communicate with the Email Service
      * @param sender the sender to delete
      */
     private static void deleteSender(final EmailClient emailClient, final Sender sender)
             throws Exception {
+        System.out.println("Deleting sender");
+        System.out.println("=======================");
 
-        final DeleteSenderResponse deleteResponse =
-                emailClient.deleteSender(
-                        DeleteSenderRequest.builder().senderId(sender.getId()).build());
+        final DeleteSenderRequest request =
+                DeleteSenderRequest.builder().senderId(sender.getId()).build();
+        emailClient.deleteSender(request);
 
-        emailClient
-                .getWaiters()
-                .forSender(
-                        GetSenderRequest.builder().senderId(sender.getId()).build(),
-                        Sender.LifecycleState.Deleted)
-                .execute();
+        final GetSenderRequest getRequest =
+                GetSenderRequest.builder().senderId(sender.getId()).build();
+        emailClient.getWaiters().forSender(getRequest, Sender.LifecycleState.Deleted).execute();
 
-        System.out.println("Deleted sender");
+        System.out.println("Deleted sender " + sender.getId());
         System.out.println();
     }
 
     /**
-     * Creates a suppression record
+     * Create suppression record.
+     * For informational purposes only, as suppression records are not normally created directly.
      *
      * @param emailClient the client used to communicate with the Email Service
      * @param compartmentId the OCID of the <b>TENANCY</b> where the suppression will be created
@@ -265,96 +322,119 @@ public class EmailServiceExample {
             final EmailClient emailClient,
             final String compartmentId,
             final String suppressionEmailAddress) {
-
-        System.out.println("Creating email suppression");
+        System.out.println("Creating suppression " + suppressionEmailAddress);
         System.out.println("=======================");
 
-        final CreateSuppressionResponse createResponse =
-                emailClient.createSuppression(
-                        CreateSuppressionRequest.builder()
-                                .createSuppressionDetails(
-                                        CreateSuppressionDetails.builder()
-                                                .compartmentId(compartmentId)
-                                                .emailAddress(suppressionEmailAddress)
-                                                .build())
-                                .build());
-        System.out.println("Created suppression: " + createResponse.getSuppression().toString());
-        System.out.println();
+        final CreateSuppressionDetails details =
+                CreateSuppressionDetails.builder()
+                        .compartmentId(compartmentId)
+                        .emailAddress(suppressionEmailAddress)
+                        .build();
+        final CreateSuppressionRequest request =
+                CreateSuppressionRequest.builder().createSuppressionDetails(details).build();
+        final CreateSuppressionResponse response = emailClient.createSuppression(request);
+
+        System.out.println("Created suppression: " + response.getSuppression().toString());
         System.out.println();
 
-        final GetSuppressionResponse getSuppressionResponse =
-                emailClient.getSuppression(
-                        GetSuppressionRequest.builder()
-                                .suppressionId(createResponse.getSuppression().getId())
-                                .build());
-
-        return getSuppressionResponse.getSuppression();
+        return response.getSuppression();
     }
 
     /**
-     * Lists email suppressions. This method will first list all suppressions in a
-     * tenancy and then will list them filtered by a (fake) email address, which
-     * should return no results
+     * Retrieve suppression record
+     *
+     * @param emailClient the client used to communicate with the Email Service
+     * @param suppression the suppression to retrieve
+     */
+    private static Suppression getSuppression(
+            final EmailClient emailClient, final Suppression suppression) {
+        System.out.println("Retrieving suppression");
+        System.out.println("=======================");
+
+        final GetSuppressionRequest request =
+                GetSuppressionRequest.builder().suppressionId(suppression.getId()).build();
+        final GetSuppressionResponse response = emailClient.getSuppression(request);
+
+        System.out.println("Retrieved suppression: " + response.getSuppression().toString());
+        System.out.println();
+
+        return response.getSuppression();
+    }
+
+    /**
+     * List suppression records in the provided ocid
+     *
+     * @param emailClient the client used to communicate with the Email Service
+     * @param compartmentId the OCID of the <b>TENANCY</b> to list suppressions for
+     */
+    private static void listAllSuppressions(
+            final EmailClient emailClient, final String compartmentId) {
+        System.out.println("Listing suppressions");
+        System.out.println("=======================");
+
+        final EmailPaginators paginators = emailClient.getPaginators();
+        final ListSuppressionsRequest request =
+                ListSuppressionsRequest.builder().compartmentId(compartmentId).build();
+        final Iterable<SuppressionSummary> suppressionRecordIterator =
+                paginators.listSuppressionsRecordIterator(request);
+
+        for (SuppressionSummary suppressionSummary : suppressionRecordIterator) {
+            System.out.println(suppressionSummary);
+        }
+        System.out.println();
+    }
+
+    /**
+     * List suppression records filtered by the email address
      *
      * @param emailClient the client used to communicate with the Email Service
      * @param compartmentId the OCID of the <b>TENANCY</b> to list suppressions for
      * @param suppressionEmailAddress the email address to filter by in list calls
      */
-    private static void listSuppressions(
+    private static void listSuppressionsFilteredByAddress(
             final EmailClient emailClient,
             final String compartmentId,
             final String suppressionEmailAddress) {
-
-        System.out.println("Listing Suppressions");
+        System.out.println("Listing suppressions filtered by address");
         System.out.println("=======================");
 
-        ListSuppressionsRequest listSuppressionsRequest =
-                ListSuppressionsRequest.builder().compartmentId(compartmentId).build();
-        Iterable<SuppressionSummary> suppressionRecordIterator =
-                emailClient.getPaginators().listSuppressionsRecordIterator(listSuppressionsRequest);
-        for (SuppressionSummary ss : suppressionRecordIterator) {
-            System.out.println(ss);
-        }
-
-        System.out.println();
-        System.out.println();
-
-        System.out.println("Listing Suppressions Filtered By Email");
-        System.out.println("===================================");
-        listSuppressionsRequest =
+        final EmailPaginators paginators = emailClient.getPaginators();
+        final ListSuppressionsRequest request =
                 ListSuppressionsRequest.builder()
                         .compartmentId(compartmentId)
-                        .emailAddress("fake-" + suppressionEmailAddress)
+                        .emailAddress(suppressionEmailAddress)
                         .build();
-        suppressionRecordIterator =
-                emailClient.getPaginators().listSuppressionsRecordIterator(listSuppressionsRequest);
-        for (SuppressionSummary ss : suppressionRecordIterator) {
-            System.out.println(ss);
-        }
+        final Iterable<SuppressionSummary> suppressionRecordIterator =
+                paginators.listSuppressionsRecordIterator(request);
 
+        for (SuppressionSummary suppressionSummary : suppressionRecordIterator) {
+            System.out.println(suppressionSummary);
+        }
         System.out.println();
     }
 
     /**
-     * Deletes a suppression
+     * Delete suppression
      *
      * @param emailClient the client used to communicate with the Email Service
      * @param suppression the suppression to delete
      */
     private static void deleteSuppression(
             final EmailClient emailClient, final Suppression suppression) {
+        System.out.println("Deleting suppression");
+        System.out.println("=======================");
 
-        emailClient.deleteSuppression(
-                DeleteSuppressionRequest.builder().suppressionId(suppression.getId()).build());
+        final DeleteSuppressionRequest request =
+                DeleteSuppressionRequest.builder().suppressionId(suppression.getId()).build();
+        emailClient.deleteSuppression(request);
 
-        System.out.println("Deleted suppression");
+        System.out.println("Deleted suppression " + suppression.getEmailAddress());
         System.out.println();
     }
 
     /**
-     * Creates a SMTP credential so that you can send emails. See
-     * <a href="https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Tasks/configuresmtpconnection.htm">here</a> for
-     * more information on sending emails.
+     * Create an SMTP credential.
+     * Be sure to retrieve the password from the response as it is the only time it is available.
      *
      * @param identityClient the client used to communicate with the Identity Service
      * @param userId the OCID of the user to create the SMTP credential for
@@ -363,81 +443,115 @@ public class EmailServiceExample {
      */
     private static SmtpCredential createSmtpCredential(
             final IdentityClient identityClient, final String userId) {
-
-        System.out.println("Creating SMTP Credential");
+        System.out.println("Creating SMTP credential");
         System.out.println("=======================");
 
+        final CreateSmtpCredentialDetails details =
+                CreateSmtpCredentialDetails.builder().description("Original description").build();
+        final CreateSmtpCredentialRequest request =
+                CreateSmtpCredentialRequest.builder()
+                        .userId(userId)
+                        .createSmtpCredentialDetails(details)
+                        .build();
         /*
          * Note that when a SMTP credential is created that the password is ONLY available from the
          * create response and it cannot subsequently be retrieved
          */
-        final CreateSmtpCredentialResponse createResponse =
-                identityClient.createSmtpCredential(
-                        CreateSmtpCredentialRequest.builder()
-                                .userId(userId)
-                                .createSmtpCredentialDetails(
-                                        CreateSmtpCredentialDetails.builder()
-                                                .description("Original description")
-                                                .build())
-                                .build());
-        System.out.println("Created credential: " + createResponse.getSmtpCredential().toString());
+        final CreateSmtpCredentialResponse response = identityClient.createSmtpCredential(request);
+
+        System.out.println("Created credential: " + response.getSmtpCredential().toString());
         System.out.println();
 
-        // We can update the description for the credential, but not anything else
-        final UpdateSmtpCredentialResponse updateResponse =
-                identityClient.updateSmtpCredential(
-                        UpdateSmtpCredentialRequest.builder()
-                                .userId(userId)
-                                .smtpCredentialId(createResponse.getSmtpCredential().getId())
-                                .updateSmtpCredentialDetails(
-                                        UpdateSmtpCredentialDetails.builder()
-                                                .description("Updated description")
-                                                .build())
-                                .build());
-        System.out.println(
-                "Updated credential: " + updateResponse.getSmtpCredentialSummary().toString());
-        System.out.println();
-
-        return createResponse.getSmtpCredential();
+        return response.getSmtpCredential();
     }
 
     /**
-     * Lists SMTP credentials for a user. A user can only have two active SMTP credentials
+     * Update an SMTP credential.
+     * We can update the description for the credential, but not anything else
+     *
+     * @param identityClient the client used to communicate with the Identity Service
+     * @param userId the OCID of the user to create the SMTP credential for
+     * @param smtpCredential the credential to update
+     *
+     * @return SmtpCredentialSummary a summary of the updated credential
+     */
+    private static SmtpCredentialSummary updateSmtpCredential(
+            final IdentityClient identityClient,
+            final String userId,
+            final SmtpCredential smtpCredential) {
+        System.out.println("Updating SMTP credential");
+        System.out.println("=======================");
+
+        // We can update the description for the credential, but not anything else
+        final UpdateSmtpCredentialDetails details =
+                UpdateSmtpCredentialDetails.builder().description("Updated description").build();
+        final UpdateSmtpCredentialRequest request =
+                UpdateSmtpCredentialRequest.builder()
+                        .userId(userId)
+                        .smtpCredentialId(smtpCredential.getId())
+                        .updateSmtpCredentialDetails(details)
+                        .build();
+        final UpdateSmtpCredentialResponse response = identityClient.updateSmtpCredential(request);
+
+        System.out.println("Updated credential: " + response.getSmtpCredentialSummary().toString());
+        System.out.println();
+
+        return response.getSmtpCredentialSummary();
+    }
+
+    /**
+     * List SMTP credentials for a user.
+     * A user can only have two active SMTP credentials
      *
      * @param identityClient the client used to communicate with the Identity Service
      * @param userId the OCID of the user to retrieve credentials for
      */
     private static void listSmtpCredentials(
             final IdentityClient identityClient, final String userId) {
-        System.out.println("Listing Suppressions");
+        System.out.println("Listing SMTP credentials");
         System.out.println("=======================");
 
-        final ListSmtpCredentialsResponse listResponse =
-                identityClient.listSmtpCredentials(
-                        ListSmtpCredentialsRequest.builder().userId(userId).build());
-        for (SmtpCredentialSummary scs : listResponse.getItems()) {
+        final ListSmtpCredentialsRequest request =
+                ListSmtpCredentialsRequest.builder().userId(userId).build();
+        final ListSmtpCredentialsResponse response = identityClient.listSmtpCredentials(request);
+
+        for (SmtpCredentialSummary scs : response.getItems()) {
             System.out.println(scs);
         }
-
         System.out.println();
     }
 
     /**
-     * Deletes a SMTP credential
+     * Delete an SMTP credential
      *
      * @param identityClient the client used to communicate with the Identity Service
      * @param smtpCredential the SMTP credential to delete
      */
     private static void deleteSmtpCredential(
             final IdentityClient identityClient, final SmtpCredential smtpCredential) {
+        System.out.println("Deleting SMTP credential");
+        System.out.println("=======================");
 
-        identityClient.deleteSmtpCredential(
+        final DeleteSmtpCredentialRequest request =
                 DeleteSmtpCredentialRequest.builder()
                         .userId(smtpCredential.getUserId())
                         .smtpCredentialId(smtpCredential.getId())
-                        .build());
+                        .build();
+        final DeleteSmtpCredentialResponse response = identityClient.deleteSmtpCredential(request);
 
-        System.out.println("Deleted SMTP credential");
+        System.out.println("Deleted SMTP credential " + response.toString());
         System.out.println();
+    }
+
+    /**
+     * Provide sample tag data
+     *
+     * @return Map data that can be used for freeform tags
+     */
+    private static Map<String, String> getFreeformTagData() {
+        final Map<String, String> freeformTags = new HashMap<String, String>();
+        freeformTags.put("freeform_name1", "freeform_value1");
+        freeformTags.put("freeform_name2", "freeform_value2");
+        return freeformTags;
     }
 }

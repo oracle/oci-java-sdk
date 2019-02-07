@@ -46,6 +46,9 @@ public interface Email extends AutoCloseable {
 
     /**
      * Adds recipient email addresses to the suppression list for a tenancy.
+     * Addresses added to the suppression list via the API are denoted as
+     * \"MANUAL\" in the `reason` field. *Note:* All email addresses added to the
+     * suppression list are normalized to include only lowercase letters.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -110,6 +113,18 @@ public interface Email extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListSuppressionsResponse listSuppressions(ListSuppressionsRequest request);
+
+    /**
+     * Replaces the set of tags for a sender with the tags provided. If either freeform
+     * or defined tags are omitted, the tags for that set remain the same. Each set must
+     * include the full set of tags for the sender, partial updates are not permitted.
+     * For more information about tagging, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateSenderResponse updateSender(UpdateSenderRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.
