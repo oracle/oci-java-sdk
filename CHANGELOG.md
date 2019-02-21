@@ -13,6 +13,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - N/A
 
+## 1.4.0 - 2018-02-21
+### Added
+- Support for government-realm regions
+- Support for the Streaming service
+- Support for tags in the Key Management service
+- Support for regional subnets in the Virtual Networking service
+
+### Fixed
+- Removed unused Announcements service `NotificationFollowupDetails` model and `getFollowups` operation
+
 ## 1.3.7 - 2018-02-07 
 ### Added
 - Support for the Web Application Acceleration and Security (WAAS) service

@@ -4,7 +4,7 @@
 package com.oracle.bmc.announcementsservice.model;
 
 /**
- * An announcement object which represents a message targetted to a specific tenant
+ * A message about an impactful operational event.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -173,15 +173,6 @@ public class Announcement extends BaseAnnouncement {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("followups")
-        private java.util.List<NotificationFollowupDetails> followups;
-
-        public Builder followups(java.util.List<NotificationFollowupDetails> followups) {
-            this.followups = followups;
-            this.__explicitlySet__.add("followups");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("affectedResources")
         private java.util.List<AffectedResource> affectedResources;
 
@@ -213,7 +204,6 @@ public class Announcement extends BaseAnnouncement {
                             timeUpdated,
                             description,
                             additionalInformation,
-                            followups,
                             affectedResources);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -238,7 +228,6 @@ public class Announcement extends BaseAnnouncement {
                             .timeUpdated(o.getTimeUpdated())
                             .description(o.getDescription())
                             .additionalInformation(o.getAdditionalInformation())
-                            .followups(o.getFollowups())
                             .affectedResources(o.getAffectedResources());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -271,7 +260,6 @@ public class Announcement extends BaseAnnouncement {
             java.util.Date timeUpdated,
             String description,
             String additionalInformation,
-            java.util.List<NotificationFollowupDetails> followups,
             java.util.List<AffectedResource> affectedResources) {
         super(
                 id,
@@ -290,27 +278,28 @@ public class Announcement extends BaseAnnouncement {
                 timeUpdated);
         this.description = description;
         this.additionalInformation = additionalInformation;
-        this.followups = followups;
         this.affectedResources = affectedResources;
     }
 
     /**
-     * A more detailed explanation of the notification. A markdown format input
+     * A detailed explanation of the event, expressed by using Markdown language. Avoid entering
+     * confidential information.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
 
     /**
-     * A markdown format input that forms e.g. the FAQ section of a notification
+     * Additional information about the event, expressed by using Markdown language and included in the
+     * details view of an announcement. Additional information might include remediation steps or
+     * answers to frequently asked questions. Avoid entering confidential information.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalInformation")
     String additionalInformation;
 
-    @com.fasterxml.jackson.annotation.JsonProperty("followups")
-    java.util.List<NotificationFollowupDetails> followups;
-
     /**
-     * List of resources (possibly empty) affected by this announcement
+     * The list of resources, if any, affected by the event described in the announcement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("affectedResources")
     java.util.List<AffectedResource> affectedResources;

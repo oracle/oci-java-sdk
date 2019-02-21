@@ -11,23 +11,23 @@ import com.oracle.bmc.announcementsservice.model.*;
 public class UpdateAnnouncementUserStatusRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The OCID of the announcement
+     * The OCID of the announcement.
      */
     private String announcementId;
 
     /**
-     * Object for updating a user's status of announcement.
+     * The information to use to update the announcement's read status.
      */
     private AnnouncementUserStatusDetails statusDetails;
 
     /**
-     * Optimistic locking version
+     * The locking version, used for optimistic concurrency control.
      */
     private String ifMatch;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the complete request ID.
      *
      */
     private String opcRequestId;

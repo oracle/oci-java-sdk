@@ -4,7 +4,7 @@
 package com.oracle.bmc.announcementsservice.model;
 
 /**
- * Results of annoucements search. Contains both announcements, and user specific status of the announcments
+ * A list of announcements that match filter criteria, if any. Results contain both the announcements and the user-specific status of the announcements.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -69,13 +69,13 @@ public class AnnouncementsCollection {
     }
 
     /**
-     * collection of announcements
+     * A collection of announcements.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<AnnouncementSummary> items;
 
     /**
-     * user specific status of found announcements
+     * The user-specific status for found announcements.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userStatuses")
     java.util.List<AnnouncementUserStatusDetails> userStatuses;

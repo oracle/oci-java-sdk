@@ -119,7 +119,7 @@ public class KeyVersion {
     /**
      * The date and time this key version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * <p>
-     * Example: `2018-04-03T21:10:29.600Z`
+     * Example: \"2018-04-03T21:10:29.600Z\"
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")

@@ -57,6 +57,10 @@ import com.oracle.bmc.keymanagement.responses.UpdateVaultResponse;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * This class contains examples which cover basic KMS usage.
  *
@@ -116,6 +120,7 @@ public class KmsExample {
         kmsCryptoClient.setEndpoint(vault.getCryptoEndpoint());
 
         // Vault Operations
+        updateVaultResetTagsTest(kmsVaultClient, vault.getId());
         updateVaultTest(kmsVaultClient, vault.getId());
         listVaultsTest(kmsVaultClient, compartmentId);
         scheduleVaultDeletionTest(kmsVaultClient, vault.getId());
@@ -138,6 +143,7 @@ public class KmsExample {
         Thread.sleep(TRANSIENT_STATE_WAIT_TIME_MS);
 
         getKeyTest(kmsManagementClient, keyId);
+        updateKeyResetTagsTest(kmsManagementClient, keyId);
         updateKeyTest(kmsManagementClient, keyId);
         listKeysTest(kmsManagementClient, compartmentId);
         disableKeyTest(kmsManagementClient, keyId);
@@ -168,6 +174,7 @@ public class KmsExample {
                         .compartmentId(compartmentId)
                         .displayName("Test-Vault-V1")
                         .vaultType(CreateVaultDetails.VaultType.VirtualPrivate)
+                        .freeformTags(getSampleFreeformTagData())
                         .build();
 
         CreateVaultRequest request =
@@ -201,10 +208,33 @@ public class KmsExample {
         System.out.println();
     }
 
+    public static void updateVaultResetTagsTest(KmsVaultClient kmsVaultClient, String vaultId) {
+        System.out.println("UpdateVault Test: ");
+        Map<String, String> newEmptyFreeformTag = Collections.emptyMap();
+
+        UpdateVaultDetails updateVaultDetails =
+                UpdateVaultDetails.builder().freeformTags(newEmptyFreeformTag).build();
+        UpdateVaultRequest updateVaultRequest =
+                UpdateVaultRequest.builder()
+                        .updateVaultDetails(updateVaultDetails)
+                        .vaultId(vaultId)
+                        .build();
+        UpdateVaultResponse response = kmsVaultClient.updateVault(updateVaultRequest);
+        System.out.println("Updated Vault: ");
+        System.out.println(response.getVault());
+        System.out.println();
+    }
+
     public static void updateVaultTest(KmsVaultClient kmsVaultClient, String vaultId) {
         System.out.println("UpdateVault Test: ");
+        Map<String, String> newFreeformTag = getSampleFreeformTagData();
+        newFreeformTag.put("dummyfreeformkey3", "dummyfreeformvalue3");
+
         UpdateVaultDetails updateVaultDetails =
-                UpdateVaultDetails.builder().displayName("Test-Vault-V2").build();
+                UpdateVaultDetails.builder()
+                        .displayName("Test-Vault-V2")
+                        .freeformTags(newFreeformTag)
+                        .build();
         UpdateVaultRequest updateVaultRequest =
                 UpdateVaultRequest.builder()
                         .updateVaultDetails(updateVaultDetails)
@@ -251,6 +281,7 @@ public class KmsExample {
                         .keyShape(TEST_KEY_SHAPE)
                         .compartmentId(compartmentId)
                         .displayName("Test_Key_V1")
+                        .freeformTags(getSampleFreeformTagData())
                         .build();
         CreateKeyRequest createKeyRequest =
                 CreateKeyRequest.builder().createKeyDetails(createKeyDetails).build();
@@ -282,10 +313,33 @@ public class KmsExample {
         System.out.println();
     }
 
+    public static void updateKeyResetTagsTest(
+            KmsManagementClient kmsManagementClient, String keyId) {
+        System.out.println("UpdateKey Test: ");
+        Map<String, String> newEmptyFreeformTag = Collections.emptyMap();
+
+        UpdateKeyDetails updateKeyDetails =
+                UpdateKeyDetails.builder()
+                        .displayName("Test_Key_V2")
+                        .freeformTags(newEmptyFreeformTag)
+                        .build();
+        UpdateKeyRequest updateKeyRequest =
+                UpdateKeyRequest.builder().updateKeyDetails(updateKeyDetails).keyId(keyId).build();
+        UpdateKeyResponse response = kmsManagementClient.updateKey(updateKeyRequest);
+        System.out.println("Updated Key: ");
+        System.out.println(response.getKey());
+        System.out.println();
+    }
+
     public static void updateKeyTest(KmsManagementClient kmsManagementClient, String keyId) {
         System.out.println("UpdateKey Test: ");
+        Map<String, String> newFreeformTag = getSampleFreeformTagData();
+        newFreeformTag.put("dummyfreeformkey3", "dummyfreeformvalue3");
         UpdateKeyDetails updateKeyDetails =
-                UpdateKeyDetails.builder().displayName("Test_Key_V2").build();
+                UpdateKeyDetails.builder()
+                        .displayName("Test_Key_V2")
+                        .freeformTags(newFreeformTag)
+                        .build();
         UpdateKeyRequest updateKeyRequest =
                 UpdateKeyRequest.builder().updateKeyDetails(updateKeyDetails).keyId(keyId).build();
         UpdateKeyResponse response = kmsManagementClient.updateKey(updateKeyRequest);
@@ -384,5 +438,12 @@ public class KmsExample {
         System.out.println("GenerateDataEncryptionKey Response: ");
         System.out.println(response.getGeneratedKey());
         System.out.println();
+    }
+
+    private static Map<String, String> getSampleFreeformTagData() {
+        Map<String, String> freeformTags = new HashMap<String, String>();
+        freeformTags.put("dummyfreeformkey1", "dummyfreeformvalue1");
+        freeformTags.put("dummyfreeformkey2", "dummyfreeformvalue2");
+        return freeformTags;
     }
 }

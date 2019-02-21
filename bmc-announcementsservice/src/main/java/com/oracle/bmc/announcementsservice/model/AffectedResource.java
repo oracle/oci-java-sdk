@@ -4,7 +4,7 @@
 package com.oracle.bmc.announcementsservice.model;
 
 /**
- * Descrption of a resource affected by the announcement
+ * The resource affected by the event described in the announcement.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -79,19 +79,19 @@ public class AffectedResource {
     }
 
     /**
-     * The OCID of the resource
+     * The OCID of the affected resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     String resourceId;
 
     /**
-     * User-friendly name of the resource
+     * The friendly name of the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     String resourceName;
 
     /**
-     * Region where this resource belongs to
+     * The region where the affected resource exists.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     String region;

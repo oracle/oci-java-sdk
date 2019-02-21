@@ -26,7 +26,8 @@ public class EndpointBuilder {
 
     @RequiredArgsConstructor
     private enum SecondLevelDomainNames {
-        ORACLECLOUD_COM("oraclecloud.com");
+        ORACLECLOUD_COM("oraclecloud.com"),
+        ORACLEGOVCLOUD_COM("oraclegovcloud.com");
 
         /**
          * The default second level domain for all regions in this realm.
@@ -37,7 +38,10 @@ public class EndpointBuilder {
 
     @Getter(value = AccessLevel.PACKAGE)
     private final static ImmutableMap<Realm, String> realmToSecondLevelDomainName =
-            ImmutableMap.of(Realm.OC1, SecondLevelDomainNames.ORACLECLOUD_COM.secondLevelDomain);
+            ImmutableMap.of(
+                    Realm.OC1, SecondLevelDomainNames.ORACLECLOUD_COM.secondLevelDomain,
+                    Realm.OC2, SecondLevelDomainNames.ORACLEGOVCLOUD_COM.secondLevelDomain,
+                    Realm.OC3, SecondLevelDomainNames.ORACLEGOVCLOUD_COM.secondLevelDomain);
 
     /**
      * Creates the service endpoint using the {@link DefaultEndpointConfiguration}

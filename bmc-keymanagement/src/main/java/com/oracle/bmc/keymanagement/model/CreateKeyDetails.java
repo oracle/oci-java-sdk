@@ -31,12 +31,31 @@ public class CreateKeyDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
             return this;
         }
 
@@ -54,7 +73,8 @@ public class CreateKeyDetails {
 
         public CreateKeyDetails build() {
             CreateKeyDetails __instance__ =
-                    new CreateKeyDetails(compartmentId, displayName, keyShape);
+                    new CreateKeyDetails(
+                            compartmentId, definedTags, displayName, freeformTags, keyShape);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -63,7 +83,9 @@ public class CreateKeyDetails {
         public Builder copy(CreateKeyDetails o) {
             Builder copiedBuilder =
                     compartmentId(o.getCompartmentId())
+                            .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
+                            .freeformTags(o.getFreeformTags())
                             .keyShape(o.getKeyShape());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -85,12 +107,29 @@ public class CreateKeyDetails {
     String compartmentId;
 
     /**
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+     * Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
      * A user-friendly name for the key. It does not have to be unique, and it is changeable.
      * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * Simple key-value pair that is applied without any predefined name, type, or scope.
+     * Exists for cross-compatibility only.
+     * Example: `{\"bar-key\": \"value\"}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    java.util.Map<String, String> freeformTags;
 
     @com.fasterxml.jackson.annotation.JsonProperty("keyShape")
     KeyShape keyShape;
