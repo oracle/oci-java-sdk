@@ -37,7 +37,7 @@ public interface AnnouncementAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Gets details about single `Announcement` object
+     * Gets the details of a specific announcement.
      *
      *
      * @param request The request object containing the details to send
@@ -53,7 +53,7 @@ public interface AnnouncementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Get user status of specified announcement
+     * Gets information about whether a specific announcement was acknowledged by a user.
      *
      *
      * @param request The request object containing the details to send
@@ -70,7 +70,7 @@ public interface AnnouncementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of `Announcement` objects for the current tenancy
+     * Gets a list of announcements for the current tenancy.
      *
      *
      * @param request The request object containing the details to send
@@ -87,7 +87,7 @@ public interface AnnouncementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Update `Announcement` status with whether user has seen or supressed the announcement
+     * Updates the status of the specified announcement with regard to whether it has been marked as read.
      *
      *
      * @param request The request object containing the details to send

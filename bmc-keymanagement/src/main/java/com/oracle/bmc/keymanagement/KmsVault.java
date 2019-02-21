@@ -88,9 +88,9 @@ public interface KmsVault extends AutoCloseable {
     ScheduleVaultDeletionResponse scheduleVaultDeletion(ScheduleVaultDeletionRequest request);
 
     /**
-     * Updates the properties of a vault. Specifically, you can
-     * only update the `displayName` property. Furthermore, the vault
-     * must be in an `ACTIVE` or `CREATING` state.
+     * Updates the properties of a vault. Specifically, you can update the
+     * `displayName` , `freeformTags`, and `definedTags` properties. Furthermore,
+     * the vault must be in an `ACTIVE` or `CREATING` state.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

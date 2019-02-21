@@ -34,13 +34,41 @@ public class RegionTest {
     }
 
     @Test
-    public void regionalEndpoint_withRegionEnum_andRegionString_oc1() {
-        String expectedEndpoint = "https://foobar.us-phoenix-1.oraclecloud.com";
-        Region oc1Region = Region.US_PHOENIX_1;
+    public void regionalEndpoint_withOc1RegionEnumAndId_endpointsShouldBeEqual() {
+        final String expectedEndpoint = "https://foobar.us-phoenix-1.oraclecloud.com";
+        final Region oc1Region = Region.US_PHOENIX_1;
         assertEquals(expectedEndpoint, Region.formatDefaultRegionEndpoint(TEST_SERVICE, oc1Region));
         assertEquals(
                 expectedEndpoint,
                 Region.formatDefaultRegionEndpoint(TEST_SERVICE, oc1Region.getRegionId()));
+    }
+
+    @Test
+    public void regionalEndpoint_withOc2RegionEnumId_endpointsShouldBeEqual() {
+        final String expectedEndpoint = "https://foobar.us-luke-1.oraclegovcloud.com";
+        final Region oc2Region = Region.US_LUKE_1;
+        assertEquals(
+                "Endpoint from OC2 Region enum should be equal",
+                expectedEndpoint,
+                Region.formatDefaultRegionEndpoint(TEST_SERVICE, oc2Region));
+        assertEquals(
+                "Endpoint from OC2 Region ID should be equal",
+                expectedEndpoint,
+                Region.formatDefaultRegionEndpoint(TEST_SERVICE, oc2Region.getRegionId()));
+    }
+
+    @Test
+    public void regionalEndpoint_withOc3RegionEnumAndId_endpointsShouldBeEqual() {
+        final String expectedEndpoint = "https://foobar.us-gov-chicago-1.oraclegovcloud.com";
+        final Region oc3Region = Region.US_GOV_CHICAGO_1;
+        assertEquals(
+                "Endpoint from OC3 Region enum should be equal",
+                expectedEndpoint,
+                Region.formatDefaultRegionEndpoint(TEST_SERVICE, oc3Region));
+        assertEquals(
+                "Endpoint from OC3 Region ID should be equal",
+                expectedEndpoint,
+                Region.formatDefaultRegionEndpoint(TEST_SERVICE, oc3Region.getRegionId()));
     }
 
     @Test

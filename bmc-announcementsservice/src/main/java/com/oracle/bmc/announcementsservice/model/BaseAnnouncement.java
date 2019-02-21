@@ -4,7 +4,7 @@
 package com.oracle.bmc.announcementsservice.model;
 
 /**
- * Base for announcements and incidents
+ * Incident information that forms the basis of an announcement. Avoid entering confidential information.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -40,60 +40,70 @@ package com.oracle.bmc.announcementsservice.model;
 public class BaseAnnouncement {
 
     /**
-     * The OCID of the announcement
+     * The OCID of the announcement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The reference JIRA ticket number
+     * The reference Jira ticket number.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("referenceTicketNumber")
     String referenceTicketNumber;
 
     /**
-     * Forms part of the email subject and/or the console representation (a banner or alike)
+     * A summary of the issue. A summary might appear in the console banner view of the announcement or in
+     * an email subject line. Avoid entering confidential information.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("summary")
     String summary;
 
     /**
-     * The title of the first time value, e.g. Time Started
+     * The label associated with an initial time value.
+     * Example: `Time Started`
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOneTitle")
     String timeOneTitle;
 
     /**
-     * The first time value, actual meaning depending on notification type
+     * The actual value of the first time value for the event. Typically, this is the time an event started, but the meaning
+     * can vary, depending on the announcement type.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOneValue")
     java.util.Date timeOneValue;
 
     /**
-     * The title of the second time value, e.g. Time Ended
+     * The label associated with a second time value.
+     * Example: `Time Ended`
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeTwoTitle")
     String timeTwoTitle;
 
     /**
-     * The second time value, actual meaning depending on notification type
+     * The actual value of the second time value. Typically, this is the time an event ended, but the meaning
+     * can vary, depending on the announcement type.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeTwoValue")
     java.util.Date timeTwoValue;
 
     /**
-     * Impacted services
+     * Impacted Oracle Cloud Infrastructure services.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("services")
     java.util.List<String> services;
 
     /**
-     * Impacted regions
+     * Impacted regions.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("affectedRegions")
     java.util.List<String> affectedRegions;
     /**
-     * The detailed description of an announcement
+     * The type of announcement. An announcement's type signals its severity.
      **/
     public enum AnnouncementType {
         ActionRecommended("ACTION_RECOMMENDED"),
@@ -140,12 +150,12 @@ public class BaseAnnouncement {
         }
     };
     /**
-     * The detailed description of an announcement
+     * The type of announcement. An announcement's type signals its severity.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("announcementType")
     AnnouncementType announcementType;
     /**
-     * Lifecycle states of announcement
+     * The current lifecycle state of the announcement.
      **/
     public enum LifecycleState {
         Active("ACTIVE"),
@@ -180,28 +190,28 @@ public class BaseAnnouncement {
         }
     };
     /**
-     * Lifecycle states of announcement
+     * The current lifecycle state of the announcement.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
 
     /**
-     * Show announcement as a banner
+     * Whether the announcement is displayed as a banner in the console.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBanner")
     Boolean isBanner;
 
     /**
-     * The date and time the announcement was created, in the format defined by RFC3339
-     * Example: `2016-07-22T17:43:01.389+0000`
+     * The date and time the announcement was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: `2019-01-01T17:43:01.389+0000`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
 
     /**
-     * The date and time the announcement was last updated, in the format defined by RFC3339
-     * Example: `2016-07-22T17:43:01.389+0000`
+     * The date and time the announcement was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: `2019-01-01T17:43:01.389+0000`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")

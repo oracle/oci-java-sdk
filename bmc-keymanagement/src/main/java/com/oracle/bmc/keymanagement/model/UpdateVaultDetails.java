@@ -24,6 +24,16 @@ public class UpdateVaultDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -33,18 +43,31 @@ public class UpdateVaultDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateVaultDetails build() {
-            UpdateVaultDetails __instance__ = new UpdateVaultDetails(displayName);
+            UpdateVaultDetails __instance__ =
+                    new UpdateVaultDetails(definedTags, displayName, freeformTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateVaultDetails o) {
-            Builder copiedBuilder = displayName(o.getDisplayName());
+            Builder copiedBuilder =
+                    definedTags(o.getDefinedTags())
+                            .displayName(o.getDisplayName())
+                            .freeformTags(o.getFreeformTags());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -59,12 +82,29 @@ public class UpdateVaultDetails {
     }
 
     /**
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+     * Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
      * A user-friendly name for the vault. It does not have to be unique, and it is changeable.
      * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * Simple key-value pair that is applied without any predefined name, type, or scope.
+     * Exists for cross-compatibility only.
+     * Example: `{\"bar-key\": \"value\"}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    java.util.Map<String, String> freeformTags;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

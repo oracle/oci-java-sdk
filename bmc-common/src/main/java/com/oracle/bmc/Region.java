@@ -23,12 +23,21 @@ import lombok.extern.slf4j.Slf4j;
 public enum Region {
     // OC1
     CA_TORONTO_1("ca-toronto-1", Realm.OC1),
-    // regionCode for FRA shouldn't be needed, but left for backwards compat
+    // regionCode for FRA shouldn't be needed, but left for backwards compatibility
     EU_FRANKFURT_1("eu-frankfurt-1", "fra", Realm.OC1),
-    // regionCode for LHR shouldn't be needed, but left for backwards compat
+    // regionCode for LHR shouldn't be needed, but left for backwards compatibility
     UK_LONDON_1("uk-london-1", "lhr", Realm.OC1),
     US_ASHBURN_1("us-ashburn-1", "iad", Realm.OC1),
-    US_PHOENIX_1("us-phoenix-1", "phx", Realm.OC1);
+    US_PHOENIX_1("us-phoenix-1", "phx", Realm.OC1),
+
+    // OC2
+    US_LANGLEY_1("us-langley-1", Realm.OC2),
+    US_LUKE_1("us-luke-1", Realm.OC2),
+
+    // OC3
+    US_GOV_ASHBURN_1("us-gov-ashburn-1", Realm.OC3),
+    US_GOV_CHICAGO_1("us-gov-chicago-1", Realm.OC3),
+    US_GOV_PHOENIX_1("us-gov-phoenix-1", Realm.OC3);
 
     private static final Map<String, Map<Region, String>> SERVICE_TO_REGION_ENDPOINTS =
             new HashMap<>();
@@ -76,22 +85,24 @@ public enum Region {
      * @return The endpoint for the given service, or empty if the service
      *         endpoint is not known.
      */
-    public synchronized Optional<String> getEndpoint(Service service) {
-        if (!SERVICE_TO_REGION_ENDPOINTS.containsKey(service.getServiceName())) {
-            HashMap<Region, String> endpoints = new HashMap<>();
-            for (Region region : Region.values()) {
-                String endpoint = formatDefaultRegionEndpoint(service, region);
-                endpoints.put(region, endpoint);
+    public Optional<String> getEndpoint(Service service) {
+        synchronized (SERVICE_TO_REGION_ENDPOINTS) {
+            if (!SERVICE_TO_REGION_ENDPOINTS.containsKey(service.getServiceName())) {
+                HashMap<Region, String> endpoints = new HashMap<>();
+                for (Region region : Region.values()) {
+                    String endpoint = formatDefaultRegionEndpoint(service, region);
+                    endpoints.put(region, endpoint);
+                }
+                SERVICE_TO_REGION_ENDPOINTS.put(service.getServiceName(), endpoints);
+                LOG.info(
+                        "Loaded service '{}' endpoint mappings: {}",
+                        service.getServiceName(),
+                        endpoints);
             }
-            SERVICE_TO_REGION_ENDPOINTS.put(service.getServiceName(), endpoints);
-            LOG.info(
-                    "Loaded service '{}' endpoint mappings: {}",
-                    service.getServiceName(),
-                    endpoints);
-        }
 
-        String endpoint = SERVICE_TO_REGION_ENDPOINTS.get(service.getServiceName()).get(this);
-        return Optional.fromNullable(endpoint);
+            String endpoint = SERVICE_TO_REGION_ENDPOINTS.get(service.getServiceName()).get(this);
+            return Optional.fromNullable(endpoint);
+        }
     }
 
     /**

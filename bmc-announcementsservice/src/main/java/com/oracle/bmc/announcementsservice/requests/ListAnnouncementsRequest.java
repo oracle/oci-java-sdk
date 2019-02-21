@@ -11,7 +11,9 @@ import com.oracle.bmc.announcementsservice.model.*;
 public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * OCID of the compartment where search is performed. Announcements are specific to tenancy, so this should an ID of the root compartment
+     * The OCID of the compartment. Because announcements are specific to a tenancy, this is the
+     * OCID of the root compartment.
+     *
      */
     private String compartmentId;
 
@@ -26,17 +28,17 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
     private String page;
 
     /**
-     * Type of the announcements to show
+     * The type of announcement.
      */
     private String announcementType;
 
     /**
-     * Filters returned announcements basing on whether they are active now
+     * The announcement's current lifecycle state.
      */
     private LifecycleState lifecycleState;
 
     /**
-     * Filters returned announcements basing on whether they are active now
+     * The announcement's current lifecycle state.
      **/
     public enum LifecycleState {
         Active("ACTIVE"),
@@ -72,17 +74,19 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
     };
 
     /**
-     * Filters returned announcements basing on whether they should be shown as a banner
+     * Whether the announcement is displayed as a console banner.
      */
     private Boolean isBanner;
 
     /**
-     * announcements sort order
+     * The criteria to sort by. You can specify only one sort order.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * announcements sort order
+     * The criteria to sort by. You can specify only one sort order.
+     *
      **/
     public enum SortBy {
         TimeOneValue("timeOneValue"),
@@ -122,12 +126,14 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
     };
 
     /**
-     * sort order
+     * The sort order to use. (Sorting by `announcementType` orders the announcements list according to importance.)
+     *
      */
     private SortOrder sortOrder;
 
     /**
-     * sort order
+     * The sort order to use. (Sorting by `announcementType` orders the announcements list according to importance.)
+     *
      **/
     public enum SortOrder {
         Asc("ASC"),
@@ -163,18 +169,18 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
     };
 
     /**
-     * The earliest timeOneValue to include
+     * The boundary for the earliest `timeOneValue` date on announcements that you want to see.
      */
     private java.util.Date timeOneEarliestTime;
 
     /**
-     * The latest timeOneValue to include
+     * The boundary for the latest `timeOneValue` date on announcements that you want to see.
      */
     private java.util.Date timeOneLatestTime;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-     * a particular request, please provide the request ID.
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the complete request ID.
      *
      */
     private String opcRequestId;

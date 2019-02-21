@@ -145,6 +145,7 @@ public class CreateInstanceExample {
         addInternetGatewayToRouteTable(
                 vcnClient, compartmentId, vcn.getDefaultRouteTableId(), internetGateway);
 
+        // TODO: To launch instances in a regional subnet, replace "adToUse" with null.
         Subnet subnet =
                 createSubnet(
                         vcnClient,

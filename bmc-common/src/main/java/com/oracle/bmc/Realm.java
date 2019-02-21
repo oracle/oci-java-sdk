@@ -13,7 +13,9 @@ import lombok.RequiredArgsConstructor;
  */
 @RequiredArgsConstructor
 public enum Realm {
-    OC1("oc1");
+    OC1("oc1"),
+    OC2("oc2"),
+    OC3("oc3");
 
     @Getter
     /**

@@ -33,12 +33,31 @@ public class CreateVaultDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
             return this;
         }
 
@@ -56,7 +75,8 @@ public class CreateVaultDetails {
 
         public CreateVaultDetails build() {
             CreateVaultDetails __instance__ =
-                    new CreateVaultDetails(compartmentId, displayName, vaultType);
+                    new CreateVaultDetails(
+                            compartmentId, definedTags, displayName, freeformTags, vaultType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -65,7 +85,9 @@ public class CreateVaultDetails {
         public Builder copy(CreateVaultDetails o) {
             Builder copiedBuilder =
                     compartmentId(o.getCompartmentId())
+                            .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
+                            .freeformTags(o.getFreeformTags())
                             .vaultType(o.getVaultType());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -87,12 +109,29 @@ public class CreateVaultDetails {
     String compartmentId;
 
     /**
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+     * Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
      * A user-friendly name for the vault. It does not have to be unique, and it is changeable.
      * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * Simple key-value pair that is applied without any predefined name, type, or scope.
+     * Exists for cross-compatibility only.
+     * Example: `{\"bar-key\": \"value\"}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    java.util.Map<String, String> freeformTags;
     /**
      * The type of vault to create. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
      *
