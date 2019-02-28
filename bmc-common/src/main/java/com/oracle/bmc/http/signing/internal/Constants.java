@@ -22,8 +22,9 @@ public class Constants {
     public static final String HOST = "host";
 
     // Optional
-    static final String X_SUBSCRIPTION = "x-subscription";
     public static final String CROSS_TENANCY_REQUEST_HEADER_NAME = "x-cross-tenancy-request";
+    static final String X_SUBSCRIPTION = "x-subscription";
+    public static final String OPC_OBO_TOKEN = "opc-obo-token";
 
     static final String JSON_CONTENT_TYPE = "application/json";
 

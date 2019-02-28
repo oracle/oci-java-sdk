@@ -31,6 +31,7 @@ public class DatabaseAsyncClient implements DatabaseAsync {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("DATABASE")
                     .serviceEndpointPrefix("database")
+                    .serviceEndpointTemplate("https://database.{region}.{secondLevelDomain}")
                     .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)

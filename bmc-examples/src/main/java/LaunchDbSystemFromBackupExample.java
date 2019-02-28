@@ -142,6 +142,7 @@ public class LaunchDbSystemFromBackupExample {
                 .nodeCount(1)
                 .initialDataStorageSizeInGB(256)
                 .availabilityDomain(availabilityDomain)
+                .faultDomains(Arrays.asList("FAULT-DOMAIN-1"))
                 .compartmentId(compartmentId)
                 .databaseEdition(
                         LaunchDbSystemFromBackupDetails.DatabaseEdition

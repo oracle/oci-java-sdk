@@ -31,6 +31,7 @@ public class BlockstorageAsyncClient implements BlockstorageAsync {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("BLOCKSTORAGE")
                     .serviceEndpointPrefix("iaas")
+                    .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
                     .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)

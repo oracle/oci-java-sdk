@@ -140,6 +140,15 @@ public class Image {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("agentFeatures")
+        private InstanceAgentFeatures agentFeatures;
+
+        public Builder agentFeatures(InstanceAgentFeatures agentFeatures) {
+            this.agentFeatures = agentFeatures;
+            this.__explicitlySet__.add("agentFeatures");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInMBs")
         private Long sizeInMBs;
 
@@ -176,6 +185,7 @@ public class Image {
                             lifecycleState,
                             operatingSystem,
                             operatingSystemVersion,
+                            agentFeatures,
                             sizeInMBs,
                             timeCreated);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -197,6 +207,7 @@ public class Image {
                             .lifecycleState(o.getLifecycleState())
                             .operatingSystem(o.getOperatingSystem())
                             .operatingSystemVersion(o.getOperatingSystemVersion())
+                            .agentFeatures(o.getAgentFeatures())
                             .sizeInMBs(o.getSizeInMBs())
                             .timeCreated(o.getTimeCreated());
 
@@ -407,6 +418,9 @@ public class Image {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operatingSystemVersion")
     String operatingSystemVersion;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("agentFeatures")
+    InstanceAgentFeatures agentFeatures;
 
     /**
      * Image size (1 MB = 1048576 bytes)

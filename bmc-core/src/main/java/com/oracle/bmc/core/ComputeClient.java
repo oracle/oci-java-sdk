@@ -18,6 +18,7 @@ public class ComputeClient implements Compute {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("COMPUTE")
                     .serviceEndpointPrefix("iaas")
+                    .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
                     .build();
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;

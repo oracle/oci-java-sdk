@@ -3,19 +3,9 @@
  */
 package com.oracle.bmc.auth;
 
-import com.google.common.base.Optional;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.internal.FederationClient;
-import com.oracle.bmc.auth.internal.X509FederationClient;
 import lombok.Getter;
-
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.MediaType;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.HashSet;
 
 /**
  * Implementation of {@link BasicAuthenticationDetailsProvider} that integrates
@@ -86,18 +76,6 @@ public class InstancePrincipalsAuthenticationDetailsProvider
             autoDetectUsingMetadataUrl();
 
             return super.build();
-        }
-
-        @Override
-        public InstancePrincipalsAuthenticationDetailsProviderBuilder federationEndpoint(
-                String federationEndpoint) {
-            return super.federationEndpoint(federationEndpoint);
-        }
-
-        @Override
-        public InstancePrincipalsAuthenticationDetailsProviderBuilder leafCertificateSupplier(
-                X509CertificateSupplier leafCertificateSupplier) {
-            return super.leafCertificateSupplier(leafCertificateSupplier);
         }
     }
 }

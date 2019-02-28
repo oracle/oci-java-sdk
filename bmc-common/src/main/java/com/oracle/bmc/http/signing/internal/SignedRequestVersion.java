@@ -17,7 +17,7 @@ import com.google.common.collect.ImmutableSet;
 /**
  * List of supported signed request versions with associated version rules.
  */
-enum SignedRequestVersion implements Version {
+public enum SignedRequestVersion implements Version {
     ONE(1, ImmutableSet.of(Algorithm.RSAPSS256), ImmutableSet.of(KeyIdType.REF), 2048);
 
     private static final Optional<Error> ABSENT = Optional.absent();
@@ -95,7 +95,7 @@ enum SignedRequestVersion implements Version {
     /**
      * Get the latest signed request version.
      */
-    static SignedRequestVersion getLatestVersion() {
+    public static SignedRequestVersion getLatestVersion() {
         return ONE;
     }
 

@@ -11,7 +11,7 @@ import com.oracle.bmc.identity.model.*;
 public class ListCompartmentsRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+     * The OCID of the compartment (remember that the tenancy is simply the root compartment).
      *
      */
     private String compartmentId;

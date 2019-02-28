@@ -39,6 +39,15 @@ public class LaunchDbSystemDetails extends LaunchDbSystemBase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("faultDomains")
+        private java.util.List<String> faultDomains;
+
+        public Builder faultDomains(java.util.List<String> faultDomains) {
+            this.faultDomains = faultDomains;
+            this.__explicitlySet__.add("faultDomains");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -227,6 +236,7 @@ public class LaunchDbSystemDetails extends LaunchDbSystemBase {
             LaunchDbSystemDetails __instance__ =
                     new LaunchDbSystemDetails(
                             compartmentId,
+                            faultDomains,
                             displayName,
                             availabilityDomain,
                             subnetId,
@@ -255,6 +265,7 @@ public class LaunchDbSystemDetails extends LaunchDbSystemBase {
         public Builder copy(LaunchDbSystemDetails o) {
             Builder copiedBuilder =
                     compartmentId(o.getCompartmentId())
+                            .faultDomains(o.getFaultDomains())
                             .displayName(o.getDisplayName())
                             .availabilityDomain(o.getAvailabilityDomain())
                             .subnetId(o.getSubnetId())
@@ -291,6 +302,7 @@ public class LaunchDbSystemDetails extends LaunchDbSystemBase {
     @Deprecated
     public LaunchDbSystemDetails(
             String compartmentId,
+            java.util.List<String> faultDomains,
             String displayName,
             String availabilityDomain,
             String subnetId,
@@ -313,6 +325,7 @@ public class LaunchDbSystemDetails extends LaunchDbSystemBase {
             LicenseModel licenseModel) {
         super(
                 compartmentId,
+                faultDomains,
                 displayName,
                 availabilityDomain,
                 subnetId,

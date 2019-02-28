@@ -29,6 +29,7 @@ import com.oracle.bmc.core.model.InstanceSourceViaBootVolumeDetails;
 import com.oracle.bmc.core.model.InstanceSourceViaImageDetails;
 import com.oracle.bmc.core.model.InternetGateway;
 import com.oracle.bmc.core.model.LaunchInstanceDetails;
+import com.oracle.bmc.core.model.LaunchInstanceAgentConfigDetails;
 import com.oracle.bmc.core.model.RouteRule;
 import com.oracle.bmc.core.model.Shape;
 import com.oracle.bmc.core.model.Subnet;
@@ -184,6 +185,8 @@ public class CreateInstanceExample {
 
         System.out.println("Instance is provisioned.");
 
+        printMonitoringStatus(instance);
+
         InstanceSourceViaImageDetails sourceDetails =
                 (InstanceSourceViaImageDetails) instance.getSourceDetails();
 
@@ -216,9 +219,22 @@ public class CreateInstanceExample {
                         sshPublicKey);
 
         System.out.println("Instance 2 is provisioned.");
+        printMonitoringStatus(instance2);
+
         blockstorageClient.close();
         computeClient.close();
         vcnClient.close();
+    }
+
+    private static void printMonitoringStatus(Instance instance) {
+        boolean monitoringEnabled =
+                instance.getAgentConfig() != null
+                        && !instance.getAgentConfig().getIsMonitoringDisabled();
+        if (monitoringEnabled) {
+            System.out.println("Instance " + instance.getId() + " has Monitoring Enabled");
+        } else {
+            System.out.println("Instance " + instance.getId() + " has Monitoring Disabled");
+        }
     }
 
     public static Vcn createVcn(
@@ -347,6 +363,11 @@ public class CreateInstanceExample {
                                                 .createVnicDetails(
                                                         CreateVnicDetails.builder()
                                                                 .subnetId(subnet.getId())
+                                                                .build())
+                                                // agentConfig is an optional parameter
+                                                .agentConfig(
+                                                        LaunchInstanceAgentConfigDetails.builder()
+                                                                .isMonitoringDisabled(false)
                                                                 .build())
                                                 .build())
                                 .build());
@@ -494,6 +515,10 @@ public class CreateInstanceExample {
                                                 .metadata(metadata)
                                                 .shape(shape.getShape())
                                                 .subnetId(subnet.getId())
+                                                .agentConfig(
+                                                        LaunchInstanceAgentConfigDetails.builder()
+                                                                .isMonitoringDisabled(true)
+                                                                .build())
                                                 .build())
                                 .build());
 

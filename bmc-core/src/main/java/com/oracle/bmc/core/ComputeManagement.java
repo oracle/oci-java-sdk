@@ -37,6 +37,15 @@ public interface ComputeManagement extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Attach load balancer to the instance pool.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    AttachLoadBalancerResponse attachLoadBalancer(AttachLoadBalancerRequest request);
+
+    /**
      * Creates an instance configuration
      *
      * @param request The request object containing the details to send
@@ -62,6 +71,15 @@ public interface ComputeManagement extends AutoCloseable {
      */
     DeleteInstanceConfigurationResponse deleteInstanceConfiguration(
             DeleteInstanceConfigurationRequest request);
+
+    /**
+     * Detach a load balancer from the instance pool.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DetachLoadBalancerResponse detachLoadBalancer(DetachLoadBalancerRequest request);
 
     /**
      * Gets the specified instance configuration

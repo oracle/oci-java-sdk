@@ -91,6 +91,15 @@ public class CreateInstancePoolDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("loadBalancers")
+        private java.util.List<AttachLoadBalancerDetails> loadBalancers;
+
+        public Builder loadBalancers(java.util.List<AttachLoadBalancerDetails> loadBalancers) {
+            this.loadBalancers = loadBalancers;
+            this.__explicitlySet__.add("loadBalancers");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -103,7 +112,8 @@ public class CreateInstancePoolDetails {
                             freeformTags,
                             instanceConfigurationId,
                             placementConfigurations,
-                            size);
+                            size,
+                            loadBalancers);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -117,7 +127,8 @@ public class CreateInstancePoolDetails {
                             .freeformTags(o.getFreeformTags())
                             .instanceConfigurationId(o.getInstanceConfigurationId())
                             .placementConfigurations(o.getPlacementConfigurations())
-                            .size(o.getSize());
+                            .size(o.getSize())
+                            .loadBalancers(o.getLoadBalancers());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -183,6 +194,13 @@ public class CreateInstancePoolDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("size")
     Integer size;
+
+    /**
+     * The load balancers to attach to the instance pool.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("loadBalancers")
+    java.util.List<AttachLoadBalancerDetails> loadBalancers;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -5,6 +5,7 @@ import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.core.ComputeManagementClient;
 import com.oracle.bmc.core.ComputeManagementWaiters;
+import com.oracle.bmc.core.model.AttachLoadBalancerDetails;
 import com.oracle.bmc.core.model.ComputeInstanceDetails;
 import com.oracle.bmc.core.model.CreateInstanceConfigurationDetails;
 import com.oracle.bmc.core.model.CreateInstancePoolDetails;
@@ -14,7 +15,9 @@ import com.oracle.bmc.core.model.InstanceConfigurationCreateVnicDetails;
 import com.oracle.bmc.core.model.InstanceConfigurationInstanceSourceViaImageDetails;
 import com.oracle.bmc.core.model.InstanceConfigurationLaunchInstanceDetails;
 import com.oracle.bmc.core.model.InstancePool;
+import com.oracle.bmc.core.model.InstancePoolLoadBalancerAttachment;
 import com.oracle.bmc.core.model.UpdateInstancePoolDetails;
+import com.oracle.bmc.core.requests.AttachLoadBalancerRequest;
 import com.oracle.bmc.core.requests.CreateInstanceConfigurationRequest;
 import com.oracle.bmc.core.requests.CreateInstancePoolRequest;
 import com.oracle.bmc.core.requests.DeleteInstanceConfigurationRequest;
@@ -23,11 +26,13 @@ import com.oracle.bmc.core.requests.TerminateInstancePoolRequest;
 import com.oracle.bmc.core.requests.UpdateInstancePoolRequest;
 import com.oracle.bmc.core.responses.CreateInstanceConfigurationResponse;
 import com.oracle.bmc.core.responses.CreateInstancePoolResponse;
+import com.oracle.bmc.core.responses.GetInstancePoolResponse;
 import com.oracle.bmc.core.responses.UpdateInstancePoolResponse;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * This class provides an example of how you can create an InstanceConfiguration and use that configuration with a
@@ -128,6 +133,8 @@ public class InstancePoolsExample {
      *   <li>The second is the availability domain to launch the instance.</li>
      *   <li>Third parameter is the subnet for the launched instances.</li>
      *   <li>The fourth parameter is the ocid for the image source for the instance.</li>
+     *   <li>The fifth parameter is the Load Balancer ocid.</li>
+     *   <li>The sixth parameter is the load balancer backend set name.</li>
      * </ul>
      * @throws Exception
      */
@@ -135,7 +142,7 @@ public class InstancePoolsExample {
         final String CONFIG_LOCATION = "~/.oci/config";
         final String CONFIG_PROFILE = "DEFAULT";
 
-        if (args.length != 4) {
+        if (args.length != 6) {
             throw new IllegalArgumentException(
                     String.format(
                             "Unexpected number of arguments.  Expected 4, got %s", args.length));
@@ -145,6 +152,8 @@ public class InstancePoolsExample {
         final String availabilityDomain = args[1];
         final String subnetId = args[2];
         final String imageId = args[3];
+        final String loadBalancerId = args[4];
+        final String loadBalancerBackendSetName = args[5];
 
         AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(CONFIG_LOCATION, CONFIG_PROFILE);
@@ -180,6 +189,43 @@ public class InstancePoolsExample {
         instancePool = updateResponse.getInstancePool();
         waiter.forInstancePool(getInstancePoolRequest, InstancePool.LifecycleState.Running)
                 .execute();
+
+        // Attach the LB to the pool.
+        AttachLoadBalancerRequest attachLbRequest =
+                AttachLoadBalancerRequest.builder()
+                        .instancePoolId(instancePool.getId())
+                        .attachLoadBalancerDetails(
+                                AttachLoadBalancerDetails.builder()
+                                        .backendSetName(loadBalancerBackendSetName)
+                                        .loadBalancerId(loadBalancerId)
+                                        .port(80)
+                                        .vnicSelection("PrimaryVnic")
+                                        .build())
+                        .build();
+
+        client.attachLoadBalancer(attachLbRequest);
+
+        // Poll for LB attachment manually. TODO: remove this once we have lb attachment waiters
+        boolean isLbAttached = false;
+        for (int waitAttempt = 0; waitAttempt < 10; waitAttempt++) {
+            GetInstancePoolResponse response = client.getInstancePool(getInstancePoolRequest);
+            List<InstancePoolLoadBalancerAttachment> poolLoadBalancerAttachments =
+                    response.getInstancePool().getLoadBalancers();
+
+            for (InstancePoolLoadBalancerAttachment lbAttachment : poolLoadBalancerAttachments) {
+                if (lbAttachment.getLifecycleState()
+                        == InstancePoolLoadBalancerAttachment.LifecycleState.Attached) {
+                    isLbAttached = true;
+                    break;
+                }
+            }
+
+            TimeUnit.SECONDS.sleep(30);
+        }
+
+        if (!isLbAttached) {
+            throw new Exception("LoadBalancer did not become attached!");
+        }
 
         // Terminate the Pool
         TerminateInstancePoolRequest terminatePoolRequest =

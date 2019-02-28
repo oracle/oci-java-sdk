@@ -75,6 +75,15 @@ public class DbSystemSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("faultDomains")
+        private java.util.List<String> faultDomains;
+
+        public Builder faultDomains(java.util.List<String> faultDomains) {
+            this.faultDomains = faultDomains;
+            this.__explicitlySet__.add("faultDomains");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
@@ -329,6 +338,7 @@ public class DbSystemSummary {
                             compartmentId,
                             displayName,
                             availabilityDomain,
+                            faultDomains,
                             subnetId,
                             backupSubnetId,
                             shape,
@@ -367,6 +377,7 @@ public class DbSystemSummary {
                             .compartmentId(o.getCompartmentId())
                             .displayName(o.getDisplayName())
                             .availabilityDomain(o.getAvailabilityDomain())
+                            .faultDomains(o.getFaultDomains())
                             .subnetId(o.getSubnetId())
                             .backupSubnetId(o.getBackupSubnetId())
                             .shape(o.getShape())
@@ -430,6 +441,12 @@ public class DbSystemSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     String availabilityDomain;
+
+    /**
+     * List of the fault domains in which this DB system is provisioned.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("faultDomains")
+    java.util.List<String> faultDomains;
 
     /**
      * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.

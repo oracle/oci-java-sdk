@@ -130,7 +130,7 @@ public class UpdateDbSystemDetails {
     PatchDetails version;
 
     /**
-     * The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 10,000 characters.
+     * The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 40,000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKeys")
     java.util.List<String> sshPublicKeys;

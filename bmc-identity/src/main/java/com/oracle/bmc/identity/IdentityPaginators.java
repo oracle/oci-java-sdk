@@ -711,6 +711,119 @@ public class IdentityPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listMfaTotpDevices operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListMfaTotpDevicesResponse> listMfaTotpDevicesResponseIterator(
+            final ListMfaTotpDevicesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListMfaTotpDevicesRequest.Builder, ListMfaTotpDevicesRequest,
+                ListMfaTotpDevicesResponse>(
+                new com.google.common.base.Supplier<ListMfaTotpDevicesRequest.Builder>() {
+                    @Override
+                    public ListMfaTotpDevicesRequest.Builder get() {
+                        return ListMfaTotpDevicesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListMfaTotpDevicesResponse, String>() {
+                    @Override
+                    public String apply(ListMfaTotpDevicesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMfaTotpDevicesRequest.Builder>,
+                        ListMfaTotpDevicesRequest>() {
+                    @Override
+                    public ListMfaTotpDevicesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMfaTotpDevicesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListMfaTotpDevicesRequest, ListMfaTotpDevicesResponse>() {
+                    @Override
+                    public ListMfaTotpDevicesResponse apply(ListMfaTotpDevicesRequest request) {
+                        return client.listMfaTotpDevices(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.MfaTotpDeviceSummary} objects
+     * contained in responses from the listMfaTotpDevices operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.MfaTotpDeviceSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.identity.model.MfaTotpDeviceSummary>
+            listMfaTotpDevicesRecordIterator(final ListMfaTotpDevicesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListMfaTotpDevicesRequest.Builder, ListMfaTotpDevicesRequest,
+                ListMfaTotpDevicesResponse, com.oracle.bmc.identity.model.MfaTotpDeviceSummary>(
+                new com.google.common.base.Supplier<ListMfaTotpDevicesRequest.Builder>() {
+                    @Override
+                    public ListMfaTotpDevicesRequest.Builder get() {
+                        return ListMfaTotpDevicesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListMfaTotpDevicesResponse, String>() {
+                    @Override
+                    public String apply(ListMfaTotpDevicesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMfaTotpDevicesRequest.Builder>,
+                        ListMfaTotpDevicesRequest>() {
+                    @Override
+                    public ListMfaTotpDevicesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMfaTotpDevicesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListMfaTotpDevicesRequest, ListMfaTotpDevicesResponse>() {
+                    @Override
+                    public ListMfaTotpDevicesResponse apply(ListMfaTotpDevicesRequest request) {
+                        return client.listMfaTotpDevices(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListMfaTotpDevicesResponse,
+                        java.util.List<com.oracle.bmc.identity.model.MfaTotpDeviceSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.identity.model.MfaTotpDeviceSummary> apply(
+                            ListMfaTotpDevicesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listPolicies operation. This iterable
      * will fetch more data from the server as needed.
      *

@@ -148,6 +148,15 @@ public class User {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isMfaActivated")
+        private Boolean isMfaActivated;
+
+        public Builder isMfaActivated(Boolean isMfaActivated) {
+            this.isMfaActivated = isMfaActivated;
+            this.__explicitlySet__.add("isMfaActivated");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -165,7 +174,8 @@ public class User {
                             inactiveStatus,
                             freeformTags,
                             definedTags,
-                            capabilities);
+                            capabilities,
+                            isMfaActivated);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -184,7 +194,8 @@ public class User {
                             .inactiveStatus(o.getInactiveStatus())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
-                            .capabilities(o.getCapabilities());
+                            .capabilities(o.getCapabilities())
+                            .isMfaActivated(o.getIsMfaActivated());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -338,6 +349,12 @@ public class User {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("capabilities")
     UserCapabilities capabilities;
+
+    /**
+     * Flag indicates if MFA has been activated for the user.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isMfaActivated")
+    Boolean isMfaActivated;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

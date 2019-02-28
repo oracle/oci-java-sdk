@@ -31,6 +31,7 @@ public class ComputeAsyncClient implements ComputeAsync {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("COMPUTE")
                     .serviceEndpointPrefix("iaas")
+                    .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
                     .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
