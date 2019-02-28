@@ -135,6 +135,15 @@ public class LaunchInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("agentConfig")
+        private LaunchInstanceAgentConfigDetails agentConfig;
+
+        public Builder agentConfig(LaunchInstanceAgentConfigDetails agentConfig) {
+            this.agentConfig = agentConfig;
+            this.__explicitlySet__.add("agentConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
@@ -189,6 +198,7 @@ public class LaunchInstanceDetails {
                             imageId,
                             ipxeScript,
                             metadata,
+                            agentConfig,
                             shape,
                             sourceDetails,
                             subnetId,
@@ -212,6 +222,7 @@ public class LaunchInstanceDetails {
                             .imageId(o.getImageId())
                             .ipxeScript(o.getIpxeScript())
                             .metadata(o.getMetadata())
+                            .agentConfig(o.getAgentConfig())
                             .shape(o.getShape())
                             .sourceDetails(o.getSourceDetails())
                             .subnetId(o.getSubnetId())
@@ -422,6 +433,9 @@ public class LaunchInstanceDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     java.util.Map<String, String> metadata;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("agentConfig")
+    LaunchInstanceAgentConfigDetails agentConfig;
 
     /**
      * The shape of an instance. The shape determines the number of CPUs, amount of memory,

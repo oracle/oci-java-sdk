@@ -112,6 +112,16 @@ public class InstanceSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerBackends")
+        private java.util.List<InstancePoolInstanceLoadBalancerBackend> loadBalancerBackends;
+
+        public Builder loadBalancerBackends(
+                java.util.List<InstancePoolInstanceLoadBalancerBackend> loadBalancerBackends) {
+            this.loadBalancerBackends = loadBalancerBackends;
+            this.__explicitlySet__.add("loadBalancerBackends");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -127,7 +137,8 @@ public class InstanceSummary {
                             region,
                             shape,
                             state,
-                            timeCreated);
+                            timeCreated,
+                            loadBalancerBackends);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -144,7 +155,8 @@ public class InstanceSummary {
                             .region(o.getRegion())
                             .shape(o.getShape())
                             .state(o.getState())
-                            .timeCreated(o.getTimeCreated());
+                            .timeCreated(o.getTimeCreated())
+                            .loadBalancerBackends(o.getLoadBalancerBackends());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -223,6 +235,13 @@ public class InstanceSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
+
+    /**
+     * The load balancer backends configured for the instance pool instance.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerBackends")
+    java.util.List<InstancePoolInstanceLoadBalancerBackend> loadBalancerBackends;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

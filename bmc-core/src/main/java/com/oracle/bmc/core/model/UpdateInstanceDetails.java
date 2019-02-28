@@ -52,6 +52,15 @@ public class UpdateInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("agentConfig")
+        private UpdateInstanceAgentConfigDetails agentConfig;
+
+        public Builder agentConfig(UpdateInstanceAgentConfigDetails agentConfig) {
+            this.agentConfig = agentConfig;
+            this.__explicitlySet__.add("agentConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private java.util.Map<String, String> metadata;
 
@@ -76,7 +85,12 @@ public class UpdateInstanceDetails {
         public UpdateInstanceDetails build() {
             UpdateInstanceDetails __instance__ =
                     new UpdateInstanceDetails(
-                            definedTags, displayName, freeformTags, metadata, extendedMetadata);
+                            definedTags,
+                            displayName,
+                            freeformTags,
+                            agentConfig,
+                            metadata,
+                            extendedMetadata);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -87,6 +101,7 @@ public class UpdateInstanceDetails {
                     definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
+                            .agentConfig(o.getAgentConfig())
                             .metadata(o.getMetadata())
                             .extendedMetadata(o.getExtendedMetadata());
 
@@ -132,6 +147,13 @@ public class UpdateInstanceDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
+
+    /**
+     * Instance agent configuration options to choose for updating the instance
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("agentConfig")
+    UpdateInstanceAgentConfigDetails agentConfig;
 
     /**
      * Custom metadata key/value string pairs that you provide. Any set of key/value pairs

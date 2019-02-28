@@ -8,6 +8,7 @@ import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.core.ComputeClient;
 import com.oracle.bmc.core.model.Instance;
 import com.oracle.bmc.core.model.UpdateInstanceDetails;
+import com.oracle.bmc.core.model.UpdateInstanceAgentConfigDetails;
 import com.oracle.bmc.core.requests.GetInstanceRequest;
 import com.oracle.bmc.core.requests.UpdateInstanceRequest;
 import java.util.HashMap;
@@ -55,6 +56,17 @@ public class UpdateInstanceExample {
 
         String newDisplayName = "server";
 
+        boolean isMonitoringDisabled = false;
+        if (instance.getAgentConfig() != null
+                && !instance.getAgentConfig().getIsMonitoringDisabled()) {
+            isMonitoringDisabled = true;
+        }
+
+        UpdateInstanceAgentConfigDetails updateInstanceAgentConfigDetails =
+                UpdateInstanceAgentConfigDetails.builder()
+                        .isMonitoringDisabled(isMonitoringDisabled)
+                        .build();
+
         compute.updateInstance(
                 UpdateInstanceRequest.builder()
                         .instanceId(instanceId)
@@ -63,6 +75,8 @@ public class UpdateInstanceExample {
                                         .displayName(newDisplayName)
                                         .metadata(metadata)
                                         .extendedMetadata(extendedMetadata)
+                                        // agentConfig is an optional parameter
+                                        .agentConfig(updateInstanceAgentConfigDetails)
                                         .build())
                         .build());
 

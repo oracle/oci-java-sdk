@@ -312,6 +312,33 @@ public class IdentityClient implements Identity {
     }
 
     @Override
+    public ActivateMfaTotpDeviceResponse activateMfaTotpDevice(
+            ActivateMfaTotpDeviceRequest request) {
+        LOG.trace("Called activateMfaTotpDevice");
+        request = ActivateMfaTotpDeviceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ActivateMfaTotpDeviceConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ActivateMfaTotpDeviceResponse>
+                transformer = ActivateMfaTotpDeviceConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getMfaTotpToken(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public AddUserToGroupResponse addUserToGroup(AddUserToGroupRequest request) {
         LOG.trace("Called addUserToGroup");
         request = AddUserToGroupConverter.interceptRequest(request);
@@ -325,6 +352,34 @@ public class IdentityClient implements Identity {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getAddUserToGroupDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public ChangeTagNamespaceCompartmentResponse changeTagNamespaceCompartment(
+            ChangeTagNamespaceCompartmentRequest request) {
+        LOG.trace("Called changeTagNamespaceCompartment");
+        request = ChangeTagNamespaceCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeTagNamespaceCompartmentConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeTagNamespaceCompartmentResponse>
+                transformer = ChangeTagNamespaceCompartmentConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getChangeTagNamespaceCompartmentDetail(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
@@ -510,6 +565,31 @@ public class IdentityClient implements Identity {
             try {
                 javax.ws.rs.core.Response response =
                         client.post(ib, request.getCreateIdpGroupMappingDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public CreateMfaTotpDeviceResponse createMfaTotpDevice(CreateMfaTotpDeviceRequest request) {
+        LOG.trace("Called createMfaTotpDevice");
+        request = CreateMfaTotpDeviceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateMfaTotpDeviceConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateMfaTotpDeviceResponse>
+                transformer = CreateMfaTotpDeviceConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.post(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
@@ -935,6 +1015,31 @@ public class IdentityClient implements Identity {
     }
 
     @Override
+    public DeleteMfaTotpDeviceResponse deleteMfaTotpDevice(DeleteMfaTotpDeviceRequest request) {
+        LOG.trace("Called deleteMfaTotpDevice");
+        request = DeleteMfaTotpDeviceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteMfaTotpDeviceConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteMfaTotpDeviceResponse>
+                transformer = DeleteMfaTotpDeviceConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public DeletePolicyResponse deletePolicy(DeletePolicyRequest request) {
         LOG.trace("Called deletePolicy");
         request = DeletePolicyConverter.interceptRequest(request);
@@ -1022,6 +1127,31 @@ public class IdentityClient implements Identity {
         while (true) {
             try {
                 javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public GenerateTotpSeedResponse generateTotpSeed(GenerateTotpSeedRequest request) {
+        LOG.trace("Called generateTotpSeed");
+        request = GenerateTotpSeedConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GenerateTotpSeedConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GenerateTotpSeedResponse>
+                transformer = GenerateTotpSeedConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.post(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
@@ -1142,6 +1272,31 @@ public class IdentityClient implements Identity {
                 GetIdpGroupMappingConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetIdpGroupMappingResponse>
                 transformer = GetIdpGroupMappingConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public GetMfaTotpDeviceResponse getMfaTotpDevice(GetMfaTotpDeviceRequest request) {
+        LOG.trace("Called getMfaTotpDevice");
+        request = GetMfaTotpDeviceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMfaTotpDeviceConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetMfaTotpDeviceResponse>
+                transformer = GetMfaTotpDeviceConverter.fromResponse();
 
         int attempts = 0;
         while (true) {
@@ -1623,6 +1778,31 @@ public class IdentityClient implements Identity {
                 ListIdpGroupMappingsConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListIdpGroupMappingsResponse>
                 transformer = ListIdpGroupMappingsConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public ListMfaTotpDevicesResponse listMfaTotpDevices(ListMfaTotpDevicesRequest request) {
+        LOG.trace("Called listMfaTotpDevices");
+        request = ListMfaTotpDevicesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMfaTotpDevicesConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListMfaTotpDevicesResponse>
+                transformer = ListMfaTotpDevicesConverter.fromResponse();
 
         int attempts = 0;
         while (true) {

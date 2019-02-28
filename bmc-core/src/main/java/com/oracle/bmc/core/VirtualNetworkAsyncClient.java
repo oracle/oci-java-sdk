@@ -31,6 +31,7 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("VIRTUALNETWORK")
                     .serviceEndpointPrefix("iaas")
+                    .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
                     .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)

@@ -81,6 +81,15 @@ public class DbNodeSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
+        private String faultDomain;
+
+        public Builder faultDomain(String faultDomain) {
+            this.faultDomain = faultDomain;
+            this.__explicitlySet__.add("faultDomain");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -111,6 +120,7 @@ public class DbNodeSummary {
                             backupVnicId,
                             lifecycleState,
                             hostname,
+                            faultDomain,
                             timeCreated,
                             softwareStorageSizeInGB);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -126,6 +136,7 @@ public class DbNodeSummary {
                             .backupVnicId(o.getBackupVnicId())
                             .lifecycleState(o.getLifecycleState())
                             .hostname(o.getHostname())
+                            .faultDomain(o.getFaultDomain())
                             .timeCreated(o.getTimeCreated())
                             .softwareStorageSizeInGB(o.getSoftwareStorageSizeInGB());
 
@@ -228,6 +239,12 @@ public class DbNodeSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     String hostname;
+
+    /**
+     * The name of the fault domain the instance is contained in.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
+    String faultDomain;
 
     /**
      * The date and time that the database node was created.

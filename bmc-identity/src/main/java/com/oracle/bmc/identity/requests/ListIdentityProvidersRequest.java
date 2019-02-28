@@ -16,7 +16,7 @@ public class ListIdentityProvidersRequest extends com.oracle.bmc.requests.BmcReq
     private String protocol;
 
     /**
-     * The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+     * The OCID of the compartment (remember that the tenancy is simply the root compartment).
      *
      */
     private String compartmentId;

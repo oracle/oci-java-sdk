@@ -47,17 +47,42 @@ import java.util.Set;
 public class X509FederationClient implements FederationClient {
     private static final Function<Response, WithHeaders<SecurityToken>> SECURITY_TOKEN_FN =
             new ResponseConversionFunctionFactory().create(SecurityToken.class);
+    private static final String DEFAULT_PURPOSE = "DEFAULT";
 
     @Getter private final X509CertificateSupplier leafCertificateSupplier;
     @Getter private String tenancyId;
     private final Set<X509CertificateSupplier> intermediateCertificateSuppliers;
     private final SessionKeySupplier sessionKeySupplier;
+    private final String purpose;
 
     private final RestClient federationHttpClient;
 
     // needs to be volatile to make double-checked locking work
     // see https://www.cs.umd.edu/~pugh/java/memoryModel/DoubleCheckedLocking.html
     private volatile SecurityTokenAdapter securityTokenAdapter = null;
+
+    /**
+     * Same as {@link #X509FederationClient(String, String, X509CertificateSupplier, SessionKeySupplier, Set, ClientConfigurator, List, String)}
+     * but with 'purpose' set to {@link #DEFAULT_PURPOSE}.
+     */
+    public X509FederationClient(
+            String federationEndpoint,
+            String tenancyId,
+            X509CertificateSupplier leafCertificateSupplier,
+            SessionKeySupplier sessionKeySupplier,
+            Set<X509CertificateSupplier> intermediateCertificateSuppliers,
+            ClientConfigurator clientConfigurator,
+            List<ClientConfigurator> additionalClientConfigurators) {
+        this(
+                federationEndpoint,
+                tenancyId,
+                leafCertificateSupplier,
+                sessionKeySupplier,
+                intermediateCertificateSuppliers,
+                clientConfigurator,
+                additionalClientConfigurators,
+                DEFAULT_PURPOSE);
+    }
 
     /**
      * The constructor.
@@ -68,6 +93,7 @@ public class X509FederationClient implements FederationClient {
      * @param intermediateCertificateSuppliers intermediate certificates, if there is any
      * @param clientConfigurator client configurator used to configure the federation rest client, if any (else null)
      * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param purpose The purpose that will be configured for each request.
      */
     public X509FederationClient(
             String federationEndpoint,
@@ -76,7 +102,8 @@ public class X509FederationClient implements FederationClient {
             SessionKeySupplier sessionKeySupplier,
             Set<X509CertificateSupplier> intermediateCertificateSuppliers,
             ClientConfigurator clientConfigurator,
-            List<ClientConfigurator> additionalClientConfigurators) {
+            List<ClientConfigurator> additionalClientConfigurators,
+            String purpose) {
         this.leafCertificateSupplier = Preconditions.checkNotNull(leafCertificateSupplier);
         this.sessionKeySupplier = Preconditions.checkNotNull(sessionKeySupplier);
         this.intermediateCertificateSuppliers = intermediateCertificateSuppliers;
@@ -88,33 +115,7 @@ public class X509FederationClient implements FederationClient {
                         additionalClientConfigurators,
                         this);
         this.securityTokenAdapter = new SecurityTokenAdapter(null, sessionKeySupplier);
-    }
-
-    /**
-     * The constructor.
-     * @param federationEndpoint the auth service endpoint (i.e., https://auth.r2.oracleiaas.com)
-     * @param leafCertificateSupplier the leaf certificate, used to identify the caller
-     * @param sessionKeySupplier the temporary public key, whose corresponding private key will be used to sign actual API calls
-     * @param intermediateCertificateSuppliers intermediate certificates, if there are any (else null)
-     * @param clientConfigurator client configurator used to configure the federation rest client, if any (else null)
-     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
-     */
-    public X509FederationClient(
-            String federationEndpoint,
-            X509CertificateSupplier leafCertificateSupplier,
-            SessionKeySupplier sessionKeySupplier,
-            Set<X509CertificateSupplier> intermediateCertificateSuppliers,
-            ClientConfigurator clientConfigurator,
-            List<ClientConfigurator> additionalClientConfigurators) {
-        this(
-                federationEndpoint,
-                AuthUtils.getTenantIdFromCertificate(
-                        leafCertificateSupplier.getCertificateAndKeyPair().getCertificate()),
-                leafCertificateSupplier,
-                sessionKeySupplier,
-                intermediateCertificateSuppliers,
-                clientConfigurator,
-                additionalClientConfigurators);
+        this.purpose = Preconditions.checkNotNull(purpose);
     }
 
     /**
@@ -249,7 +250,8 @@ public class X509FederationClient implements FederationClient {
                     new X509FederationRequest(
                             AuthUtils.base64EncodeNoChunking(publicKey),
                             AuthUtils.base64EncodeNoChunking(leafCertificate),
-                            intermediateStrings);
+                            intermediateStrings,
+                            purpose);
 
             WebTarget target = federationHttpClient.getBaseTarget().path("v1").path("x509");
             Builder ib = target.request();
@@ -300,12 +302,17 @@ public class X509FederationClient implements FederationClient {
         private final Set<String> intermediateCertificates;
         private final String certificate;
         private final String publicKey;
+        private final String purpose;
 
         public X509FederationRequest(
-                String publicKey, String certificate, Set<String> intermediateCertificates) {
+                String publicKey,
+                String certificate,
+                Set<String> intermediateCertificates,
+                String purpose) {
             this.certificate = Preconditions.checkNotNull(certificate);
             this.publicKey = Preconditions.checkNotNull(publicKey);
             this.intermediateCertificates = intermediateCertificates;
+            this.purpose = purpose;
         }
     }
 

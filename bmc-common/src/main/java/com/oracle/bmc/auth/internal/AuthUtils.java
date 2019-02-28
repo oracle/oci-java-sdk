@@ -20,6 +20,7 @@ import java.security.spec.RSAPublicKeySpec;
 import com.oracle.bmc.auth.exception.InstancePrincipalUnavailableException;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang3.StringUtils;
+import org.bouncycastle.asn1.ASN1ObjectIdentifier;
 import org.bouncycastle.asn1.x500.AttributeTypeAndValue;
 import org.bouncycastle.asn1.x500.RDN;
 import org.bouncycastle.asn1.x500.X500Name;
@@ -230,16 +231,26 @@ public class AuthUtils {
 
         X500Name name = new X500Name(certificate.getSubjectX500Principal().getName());
 
-        for (RDN rdn : name.getRDNs(BCStyle.OU)) {
+        Optional<String> tenancyId =
+                getValue(name, BCStyle.OU, "opc-tenant") // IP
+                        .or(getValue(name, BCStyle.O, "opc-identity")); // SP
+        if (tenancyId.isPresent()) {
+            return tenancyId.get();
+        }
+        throw new InstancePrincipalUnavailableException(
+                "The certificate does not contain tenant id.");
+    }
+
+    private static Optional<String> getValue(X500Name name, ASN1ObjectIdentifier id, String key) {
+        String prefix = key + ":";
+        for (RDN rdn : name.getRDNs(id)) {
             for (AttributeTypeAndValue typeAndValue : rdn.getTypesAndValues()) {
                 String value = typeAndValue.getValue().toString();
-                if (value.startsWith("opc-tenant:")) {
-                    return value.substring("opc-tenant:".length());
+                if (value.startsWith(prefix)) {
+                    return Optional.of(value.substring(prefix.length()));
                 }
             }
         }
-
-        throw new InstancePrincipalUnavailableException(
-                "The certificate does not contain tenant id.");
+        return Optional.absent();
     }
 }

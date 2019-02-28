@@ -3,15 +3,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
-## Unreleased
-### Fixed
-- N/A
-
-### Changed
-- N/A
-
+## 1.4.1 - 2018-02-28
 ### Added
-- N/A
+- Support for the Monitoring service
+- Support for the Notification service
+- Support for the Resource Manager service
+- Support for the Compute Autoscaling service
+- Support for changing the compartment of a tag namespace in the Identity service
+- Support for specifying fault domains in the Database service
+- Support for managing instance monitoring in the Compute service
+- Support for attaching/detaching load balancers to instance pools in the Compute service
 
 ## 1.4.0 - 2018-02-21
 ### Added

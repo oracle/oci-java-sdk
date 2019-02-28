@@ -37,6 +37,23 @@ public interface IdentityAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Activate the specified MFA TOTP device for the user.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ActivateMfaTotpDeviceResponse> activateMfaTotpDevice(
+            ActivateMfaTotpDeviceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ActivateMfaTotpDeviceRequest, ActivateMfaTotpDeviceResponse>
+                    handler);
+
+    /**
      * Adds the specified user to the specified group and returns a `UserGroupMembership` object with its own OCID.
      * <p>
      * After you send your request, the new object's `lifecycleState` will temporarily be CREATING. Before using the
@@ -54,6 +71,30 @@ public interface IdentityAsync extends AutoCloseable {
             AddUserToGroupRequest request,
             com.oracle.bmc.responses.AsyncHandler<AddUserToGroupRequest, AddUserToGroupResponse>
                     handler);
+
+    /**
+     * Moves the specified tag namespace to the specified compartment within the same tenancy.
+     * <p>
+     * To move the tag namespace, you must have the manage tag-namespaces permission on both compartments.
+     * For more information about IAM policies, see [Details for IAM](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Reference/iampolicyreference.htm).
+     * <p>
+     * Moving a tag namespace moves all the tag key definitions contained in the tag namespace.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeTagNamespaceCompartmentResponse>
+            changeTagNamespaceCompartment(
+                    ChangeTagNamespaceCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeTagNamespaceCompartmentRequest,
+                                    ChangeTagNamespaceCompartmentResponse>
+                            handler);
 
     /**
      * Creates a new auth token for the specified user. For information about what auth tokens are for, see
@@ -261,6 +302,23 @@ public interface IdentityAsync extends AutoCloseable {
             CreateIdpGroupMappingRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CreateIdpGroupMappingRequest, CreateIdpGroupMappingResponse>
+                    handler);
+
+    /**
+     * Create a new MFA TOTP device for the user. A user can only create one MFA TOTP device.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateMfaTotpDeviceResponse> createMfaTotpDevice(
+            CreateMfaTotpDeviceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateMfaTotpDeviceRequest, CreateMfaTotpDeviceResponse>
                     handler);
 
     /**
@@ -633,6 +691,23 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Delete the specified MFA TOTP device for the specified user.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteMfaTotpDeviceResponse> deleteMfaTotpDevice(
+            DeleteMfaTotpDeviceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteMfaTotpDeviceRequest, DeleteMfaTotpDeviceResponse>
+                    handler);
+
+    /**
      * Deletes the specified policy. The deletion takes effect typically within 10 seconds.
      *
      * @param request The request object containing the details to send
@@ -696,6 +771,22 @@ public interface IdentityAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteUserResponse> deleteUser(
             DeleteUserRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteUserRequest, DeleteUserResponse> handler);
+
+    /**
+     * Generate seed for the MFA TOTP device
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GenerateTotpSeedResponse> generateTotpSeed(
+            GenerateTotpSeedRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GenerateTotpSeedRequest, GenerateTotpSeedResponse>
+                    handler);
 
     /**
      * Gets the specified compartment's information.
@@ -785,6 +876,22 @@ public interface IdentityAsync extends AutoCloseable {
             GetIdpGroupMappingRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetIdpGroupMappingRequest, GetIdpGroupMappingResponse>
+                    handler);
+
+    /**
+     * Get the specified MFA TOTP device for the specified user.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetMfaTotpDeviceResponse> getMfaTotpDevice(
+            GetMfaTotpDeviceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetMfaTotpDeviceRequest, GetMfaTotpDeviceResponse>
                     handler);
 
     /**
@@ -1122,6 +1229,24 @@ public interface IdentityAsync extends AutoCloseable {
             ListIdpGroupMappingsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListIdpGroupMappingsRequest, ListIdpGroupMappingsResponse>
+                    handler);
+
+    /**
+     * Lists the MFA TOTP devices for the specified user. The returned object contains the device's OCID, but not
+     * the seed. The seed is returned only upon creation or when we regenerate MFA seed for the device.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListMfaTotpDevicesResponse> listMfaTotpDevices(
+            ListMfaTotpDevicesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListMfaTotpDevicesRequest, ListMfaTotpDevicesResponse>
                     handler);
 
     /**

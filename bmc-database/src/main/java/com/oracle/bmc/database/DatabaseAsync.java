@@ -205,21 +205,19 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Performs an action, such as one of the power actions (start, stop, softreset, or reset), on the specified DB Node.
+     * Performs one of the following power actions on the specified DB node:
+     * - start - power on
+     * - stop - power off
+     * - softreset - ACPI shutdown and power on
+     * - reset - power off and power on
      * <p>
-     **start** - power on
-     * <p>
-     **stop** - power off
-     * <p>
-     **softreset** - ACPI shutdown and power on
-     * <p>
-     **reset** - power off and power on
-     * <p>
-     * Note that the **stop** state has no effect on the resources you consume.
-     * Billing continues for DB Nodes that you stop, and related resources continue
+     **Note:** Stopping a node affects billing differently, depending on the type of DB system:
+     * *Bare metal and Exadata DB systems* - The _stop_ state has no effect on the resources you consume.
+     * Billing continues for DB nodes that you stop, and related resources continue
      * to apply against any relevant quotas. You must terminate the DB system
      * ({@link #terminateDbSystem(TerminateDbSystemRequest, Consumer, Consumer) terminateDbSystem})
      * to remove its resources from billing and quotas.
+     * *Virtual machine DB systems* - Stopping a node stops billing for all OCPUs associated with that node, and billing resumes when you restart the node.
      *
      *
      * @param request The request object containing the details to send
@@ -781,7 +779,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of database homes in the specified DB system and compartment. A database home is a directory where Oracle database software is installed.
+     * Gets a list of database homes in the specified DB system and compartment. A database home is a directory where Oracle Database software is installed.
      *
      *
      * @param request The request object containing the details to send
@@ -880,7 +878,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of supported Oracle database versions.
+     * Gets a list of supported Oracle Database versions.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

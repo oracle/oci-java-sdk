@@ -6,12 +6,7 @@ package com.oracle.bmc.database.model;
 /**
  * The configuration details for creating a Data Guard association between databases.
  * <p>
- **NOTE:**
- * \"ExistingDbSystem\" is the only supported `creationType` value. Therefore, all
- * {@link #createDataGuardAssociation(CreateDataGuardAssociationRequest) createDataGuardAssociation}
- * requests must include the `peerDbSystemId` parameter found in the
- * {@link #createDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssociationToExistingDbSystemDetailsRequest) createDataGuardAssociationToExistingDbSystemDetails}
- * object.
+ **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

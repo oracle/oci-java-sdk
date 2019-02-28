@@ -49,6 +49,29 @@ public class LaunchDbSystemBase {
     String compartmentId;
 
     /**
+     * A fault domain is a grouping of hardware and infrastructure within an availability domain.
+     * fault domains let you distribute your instances so that they are not on the same physical
+     * hardware within a single availability domain. A hardware failure or maintenance
+     * that affects one fault domain does not affect DB systems in other fault domains.
+     * <p>
+     * If you do not specify the fault domain, the system selects one for you. To change the fault
+     * domain for a DB system, terminate it and launch a new DB system in the preferred fault domain.
+     * <p>
+     * If the node count is greater than 1, you can specify which fault domains these nodes will be distributed into.
+     * The system assigns your nodes automatically to the fault domains you specify so that
+     * no fault domain contains more than one node.
+     * <p>
+     * To get a list of fault domains, use the
+     * {@link #listFaultDomains(ListFaultDomainsRequest) listFaultDomains} operation in the
+     * Identity and Access Management Service API.
+     * <p>
+     * Example: `FAULT-DOMAIN-1`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("faultDomains")
+    java.util.List<String> faultDomains;
+
+    /**
      * The user-friendly name for the DB system. The name does not have to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -103,7 +126,7 @@ public class LaunchDbSystemBase {
     Boolean sparseDiskgroup;
 
     /**
-     * The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 10,000 characters.
+     * The public key portion of the key pair to use for SSH access to the DB system. Multiple public keys can be provided. The length of the combined keys cannot exceed 40,000 characters.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKeys")
     java.util.List<String> sshPublicKeys;

@@ -37,6 +37,23 @@ public interface ComputeManagementAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Attach load balancer to the instance pool.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AttachLoadBalancerResponse> attachLoadBalancer(
+            AttachLoadBalancerRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AttachLoadBalancerRequest, AttachLoadBalancerResponse>
+                    handler);
+
+    /**
      * Creates an instance configuration
      *
      *
@@ -83,6 +100,23 @@ public interface ComputeManagementAsync extends AutoCloseable {
             DeleteInstanceConfigurationRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteInstanceConfigurationRequest, DeleteInstanceConfigurationResponse>
+                    handler);
+
+    /**
+     * Detach a load balancer from the instance pool.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DetachLoadBalancerResponse> detachLoadBalancer(
+            DetachLoadBalancerRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DetachLoadBalancerRequest, DetachLoadBalancerResponse>
                     handler);
 
     /**

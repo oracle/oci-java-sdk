@@ -18,6 +18,7 @@ public class ComputeManagementClient implements ComputeManagement {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("COMPUTEMANAGEMENT")
                     .serviceEndpointPrefix("iaas")
+                    .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
                     .build();
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
@@ -312,6 +313,32 @@ public class ComputeManagementClient implements ComputeManagement {
     }
 
     @Override
+    public AttachLoadBalancerResponse attachLoadBalancer(AttachLoadBalancerRequest request) {
+        LOG.trace("Called attachLoadBalancer");
+        request = AttachLoadBalancerConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AttachLoadBalancerConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, AttachLoadBalancerResponse>
+                transformer = AttachLoadBalancerConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getAttachLoadBalancerDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public CreateInstanceConfigurationResponse createInstanceConfiguration(
             CreateInstanceConfigurationRequest request) {
         LOG.trace("Called createInstanceConfiguration");
@@ -380,6 +407,32 @@ public class ComputeManagementClient implements ComputeManagement {
         while (true) {
             try {
                 javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public DetachLoadBalancerResponse detachLoadBalancer(DetachLoadBalancerRequest request) {
+        LOG.trace("Called detachLoadBalancer");
+        request = DetachLoadBalancerConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DetachLoadBalancerConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DetachLoadBalancerResponse>
+                transformer = DetachLoadBalancerConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getDetachLoadBalancerDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS

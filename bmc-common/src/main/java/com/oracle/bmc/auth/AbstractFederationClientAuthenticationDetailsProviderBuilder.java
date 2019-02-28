@@ -4,6 +4,8 @@
 package com.oracle.bmc.auth;
 
 import com.google.common.base.Optional;
+import com.oracle.bmc.InternalSdk;
+import com.oracle.bmc.Realm;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.internal.AuthUtils;
 import com.oracle.bmc.auth.internal.X509FederationClient;
@@ -23,6 +25,7 @@ import java.util.HashSet;
  * @param <B> builder class
  * @param <P> provider class
  */
+@InternalSdk
 public abstract class AbstractFederationClientAuthenticationDetailsProviderBuilder<
                 B extends AbstractFederationClientAuthenticationDetailsProviderBuilder<B, P>,
                 P extends AbstractAuthenticationDetailsProvider>
@@ -48,14 +51,16 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
     @Getter protected String federationEndpoint;
 
     /**
-     * The leaf certificate.
+     * The leaf certificate, or null if detecting from instance metadata.
      */
     @Getter protected X509CertificateSupplier leafCertificateSupplier;
 
     /**
-     * Tenancy OCI, or null to detect from
+     * Tenancy OCI, or null if detecting from instance metadata.
      */
     @Getter protected String tenancyId;
+
+    private String purpose = null;
 
     /**
      * Detected region.
@@ -83,6 +88,11 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
         return (B) this;
     }
 
+    protected B purpose(String purpose) {
+        this.purpose = purpose;
+        return (B) this;
+    }
+
     /**
      * Build a new AuthenticationDetailsProvider that uses the FederationCLient.
      *
@@ -95,20 +105,46 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
                         : new AbstractRequestingAuthenticationDetailsProvider
                                 .SessionKeySupplierImpl();
 
-        this.federationClient =
-                new X509FederationClient(
-                        federationEndpoint,
-                        tenancyId,
-                        leafCertificateSupplier,
-                        sessionKeySupplierToUse,
-                        intermediateCertificateSuppliers,
-                        federationClientConfigurator,
-                        additionalFederationClientConfigurators);
+        if (purpose != null) {
+            this.federationClient =
+                    new X509FederationClient(
+                            federationEndpoint,
+                            tenancyId,
+                            leafCertificateSupplier,
+                            sessionKeySupplierToUse,
+                            intermediateCertificateSuppliers,
+                            federationClientConfigurator,
+                            additionalFederationClientConfigurators,
+                            purpose);
+        } else {
+            this.federationClient =
+                    new X509FederationClient(
+                            federationEndpoint,
+                            tenancyId,
+                            leafCertificateSupplier,
+                            sessionKeySupplierToUse,
+                            intermediateCertificateSuppliers,
+                            federationClientConfigurator,
+                            additionalFederationClientConfigurators);
+        }
 
         return buildProvider(sessionKeySupplierToUse);
     }
 
+    /**
+     * Auto-detect endpoint and certificate information using Instance metadata.
+     */
     protected void autoDetectUsingMetadataUrl() {
+        autoDetectEndpointUsingMetadataUrl();
+        autoDetectCertificatesUsingMetadataUrl();
+    }
+
+    /**
+     * Auto detects the endpoint that should be used when talking to OCI Auth, if no endpoint
+     * has been configured already.
+     * @return The auto-detected, or currently set, auth endpoint.
+     */
+    protected String autoDetectEndpointUsingMetadataUrl() {
         if (federationEndpoint == null) {
             Client client = ClientBuilder.newClient();
             WebTarget base = client.target(METADATA_SERVICE_BASE_URL + "instance/");
@@ -127,7 +163,14 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
                 federationEndpoint = endpoint.get();
             }
         }
+        return federationEndpoint;
+    }
 
+    /**
+     * Auto detects and configures the certificates needed using Instance metadata.
+     *
+     */
+    protected void autoDetectCertificatesUsingMetadataUrl() {
         try {
             if (leafCertificateSupplier == null) {
                 leafCertificateSupplier =

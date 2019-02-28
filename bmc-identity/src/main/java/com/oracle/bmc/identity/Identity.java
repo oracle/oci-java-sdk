@@ -37,6 +37,15 @@ public interface Identity extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Activate the specified MFA TOTP device for the user.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ActivateMfaTotpDeviceResponse activateMfaTotpDevice(ActivateMfaTotpDeviceRequest request);
+
+    /**
      * Adds the specified user to the specified group and returns a `UserGroupMembership` object with its own OCID.
      * <p>
      * After you send your request, the new object's `lifecycleState` will temporarily be CREATING. Before using the
@@ -47,6 +56,21 @@ public interface Identity extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     AddUserToGroupResponse addUserToGroup(AddUserToGroupRequest request);
+
+    /**
+     * Moves the specified tag namespace to the specified compartment within the same tenancy.
+     * <p>
+     * To move the tag namespace, you must have the manage tag-namespaces permission on both compartments.
+     * For more information about IAM policies, see [Details for IAM](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Reference/iampolicyreference.htm).
+     * <p>
+     * Moving a tag namespace moves all the tag key definitions contained in the tag namespace.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeTagNamespaceCompartmentResponse changeTagNamespaceCompartment(
+            ChangeTagNamespaceCompartmentRequest request);
 
     /**
      * Creates a new auth token for the specified user. For information about what auth tokens are for, see
@@ -202,6 +226,15 @@ public interface Identity extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     CreateIdpGroupMappingResponse createIdpGroupMapping(CreateIdpGroupMappingRequest request);
+
+    /**
+     * Create a new MFA TOTP device for the user. A user can only create one MFA TOTP device.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateMfaTotpDeviceResponse createMfaTotpDevice(CreateMfaTotpDeviceRequest request);
 
     /**
      * Creates a new Console one-time password for the specified user. For more information about user
@@ -455,6 +488,15 @@ public interface Identity extends AutoCloseable {
     DeleteIdpGroupMappingResponse deleteIdpGroupMapping(DeleteIdpGroupMappingRequest request);
 
     /**
+     * Delete the specified MFA TOTP device for the specified user.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteMfaTotpDeviceResponse deleteMfaTotpDevice(DeleteMfaTotpDeviceRequest request);
+
+    /**
      * Deletes the specified policy. The deletion takes effect typically within 10 seconds.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -489,6 +531,15 @@ public interface Identity extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     DeleteUserResponse deleteUser(DeleteUserRequest request);
+
+    /**
+     * Generate seed for the MFA TOTP device
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GenerateTotpSeedResponse generateTotpSeed(GenerateTotpSeedRequest request);
 
     /**
      * Gets the specified compartment's information.
@@ -543,6 +594,15 @@ public interface Identity extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     GetIdpGroupMappingResponse getIdpGroupMapping(GetIdpGroupMappingRequest request);
+
+    /**
+     * Get the specified MFA TOTP device for the specified user.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetMfaTotpDeviceResponse getMfaTotpDevice(GetMfaTotpDeviceRequest request);
 
     /**
      * Gets the specified policy's information.
@@ -746,6 +806,16 @@ public interface Identity extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListIdpGroupMappingsResponse listIdpGroupMappings(ListIdpGroupMappingsRequest request);
+
+    /**
+     * Lists the MFA TOTP devices for the specified user. The returned object contains the device's OCID, but not
+     * the seed. The seed is returned only upon creation or when we regenerate MFA seed for the device.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListMfaTotpDevicesResponse listMfaTotpDevices(ListMfaTotpDevicesRequest request);
 
     /**
      * Lists the policies in the specified compartment (either the tenancy or another of your compartments).

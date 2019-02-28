@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc.auth;
 
+import com.oracle.bmc.InternalSdk;
 import com.oracle.bmc.auth.internal.AuthUtils;
 import com.oracle.bmc.auth.internal.FederationClient;
 import com.oracle.bmc.auth.internal.X509FederationClient;
@@ -22,6 +23,7 @@ import java.util.Set;
 /**
  * Base class for authentication details providers that make remote requests.
  */
+@InternalSdk
 public class AbstractRequestingAuthenticationDetailsProvider
         implements BasicAuthenticationDetailsProvider {
     protected final FederationClient federationClient;

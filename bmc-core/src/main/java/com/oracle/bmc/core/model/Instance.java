@@ -196,6 +196,15 @@ public class Instance {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("agentConfig")
+        private InstanceAgentConfig agentConfig;
+
+        public Builder agentConfig(InstanceAgentConfig agentConfig) {
+            this.agentConfig = agentConfig;
+            this.__explicitlySet__.add("agentConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceRebootDue")
         private java.util.Date timeMaintenanceRebootDue;
 
@@ -229,6 +238,7 @@ public class Instance {
                             shape,
                             sourceDetails,
                             timeCreated,
+                            agentConfig,
                             timeMaintenanceRebootDue);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -255,6 +265,7 @@ public class Instance {
                             .shape(o.getShape())
                             .sourceDetails(o.getSourceDetails())
                             .timeCreated(o.getTimeCreated())
+                            .agentConfig(o.getAgentConfig())
                             .timeMaintenanceRebootDue(o.getTimeMaintenanceRebootDue());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -515,7 +526,10 @@ public class Instance {
     /**
      * The region that contains the availability domain the instance is running in.
      * <p>
-     * Example: `phx`
+     * For the us-phoenix-1 and us-ashburn-1 regions, `phx` and `iad` are returned, respectively.
+     * For all other regions, the full region name is returned.
+     * <p>
+     * Examples: `phx`, `eu-frankfurt-1`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
@@ -544,6 +558,9 @@ public class Instance {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("agentConfig")
+    InstanceAgentConfig agentConfig;
 
     /**
      * The date and time the instance is expected to be stopped / started,  in the format defined by RFC3339.
