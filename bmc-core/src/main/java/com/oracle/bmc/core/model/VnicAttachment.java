@@ -5,7 +5,7 @@ package com.oracle.bmc.core.model;
 
 /**
  * Represents an attachment between a VNIC and an instance. For more information, see
- * [Virtual Network Interface Cards (VNICs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm).
+ * [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/Content/Network/Tasks/managingVNICs.htm).
  * <p>
  **Warning:** Oracle recommends that you avoid using any confidential information when you
  * supply string values using the API.
@@ -269,7 +269,7 @@ public class VnicAttachment {
      * Certain bare metal instance shapes have two active physical NICs (0 and 1). If
      * you add a secondary VNIC to one of these instances, you can specify which NIC
      * the VNIC will use. For more information, see
-     * [Virtual Network Interface Cards (VNICs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm).
+     * [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/Content/Network/Tasks/managingVNICs.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nicIndex")

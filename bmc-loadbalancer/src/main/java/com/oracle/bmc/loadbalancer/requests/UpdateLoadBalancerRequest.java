@@ -16,7 +16,7 @@ public class UpdateLoadBalancerRequest extends com.oracle.bmc.requests.BmcReques
     private UpdateLoadBalancerDetails updateLoadBalancerDetails;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the load balancer to update.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer to update.
      */
     private String loadBalancerId;
 

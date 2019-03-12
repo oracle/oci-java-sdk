@@ -38,7 +38,7 @@ public interface BlockstorageAsync extends AutoCloseable {
 
     /**
      * Creates a volume backup copy in specified region. For general information about volume backups,
-     * see [Overview of Block Volume Service Backups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/blockvolumebackups.htm)
+     * see [Overview of Block Volume Service Backups](https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumebackups.htm)
      *
      *
      * @param request The request object containing the details to send
@@ -55,7 +55,7 @@ public interface BlockstorageAsync extends AutoCloseable {
 
     /**
      * Creates a new boot volume in the specified compartment from an existing boot volume or a boot volume backup.
-     * For general information about boot volumes, see [Boot Volumes](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/bootvolumes.htm).
+     * For general information about boot volumes, see [Boot Volumes](https://docs.cloud.oracle.com/Content/Block/Concepts/bootvolumes.htm).
      * You may optionally specify a *display name* for the volume, which is simply a friendly name or
      * description. It does not have to be unique, and you can change it. Avoid entering confidential information.
      *
@@ -74,7 +74,7 @@ public interface BlockstorageAsync extends AutoCloseable {
 
     /**
      * Creates a new boot volume backup of the specified boot volume. For general information about boot volume backups,
-     * see [Overview of Boot Volume Backups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/bootvolumebackups.htm)
+     * see [Overview of Boot Volume Backups](https://docs.cloud.oracle.com/Content/Block/Concepts/bootvolumebackups.htm)
      * <p>
      * When the request is received, the backup object is in a REQUEST_RECEIVED state.
      * When the data is imaged, it goes into a CREATING state.
@@ -98,12 +98,12 @@ public interface BlockstorageAsync extends AutoCloseable {
      * Creates a new volume in the specified compartment. Volumes can be created in sizes ranging from
      * 50 GB (51200 MB) to 32 TB (33554432 MB), in 1 GB (1024 MB) increments. By default, volumes are 1 TB (1048576 MB).
      * For general information about block volumes, see
-     * [Overview of Block Volume Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/overview.htm).
+     * [Overview of Block Volume Service](https://docs.cloud.oracle.com/Content/Block/Concepts/overview.htm).
      * <p>
      * A volume and instance can be in separate compartments but must be in the same availability domain.
      * For information about access control and compartments, see
-     * [Overview of the IAM Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm). For information about
-     * availability domains, see [Regions and Availability Domains](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/regions.htm).
+     * [Overview of the IAM Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm). For information about
+     * availability domains, see [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm).
      * To get a list of availability domains, use the `ListAvailabilityDomains` operation
      * in the Identity and Access Management Service API.
      * <p>
@@ -125,7 +125,7 @@ public interface BlockstorageAsync extends AutoCloseable {
 
     /**
      * Creates a new backup of the specified volume. For general information about volume backups,
-     * see [Overview of Block Volume Service Backups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/blockvolumebackups.htm)
+     * see [Overview of Block Volume Service Backups](https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumebackups.htm)
      * <p>
      * When the request is received, the backup object is in a REQUEST_RECEIVED state.
      * When the data is imaged, it goes into a CREATING state.
@@ -173,7 +173,7 @@ public interface BlockstorageAsync extends AutoCloseable {
      * You may optionally specify a *display name* for the volume group, which is simply a friendly name or
      * description. It does not have to be unique, and you can change it. Avoid entering confidential information.
      * <p>
-     * For more information, see [Volume Groups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm).
+     * For more information, see [Volume Groups](https://docs.cloud.oracle.com/Content/Block/Concepts/volumegroups.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -191,7 +191,7 @@ public interface BlockstorageAsync extends AutoCloseable {
 
     /**
      * Creates a new backup volume group of the specified volume group.
-     * For more information, see [Volume Groups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm).
+     * For more information, see [Volume Groups](https://docs.cloud.oracle.com/Content/Block/Concepts/volumegroups.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -210,7 +210,7 @@ public interface BlockstorageAsync extends AutoCloseable {
     /**
      * Deletes the specified boot volume. The volume cannot have an active connection to an instance.
      * To disconnect the boot volume from a connected instance, see
-     * [Disconnecting From a Boot Volume](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Tasks/deletingbootvolume.htm).
+     * [Disconnecting From a Boot Volume](https://docs.cloud.oracle.com/Content/Block/Tasks/deletingbootvolume.htm).
      * **Warning:** All data on the boot volume will be permanently lost when the boot volume is deleted.
      *
      *
@@ -262,7 +262,7 @@ public interface BlockstorageAsync extends AutoCloseable {
     /**
      * Deletes the specified volume. The volume cannot have an active connection to an instance.
      * To disconnect the volume from a connected instance, see
-     * [Disconnecting From a Volume](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Tasks/disconnectingfromavolume.htm).
+     * [Disconnecting From a Volume](https://docs.cloud.oracle.com/Content/Block/Tasks/disconnectingfromavolume.htm).
      * **Warning:** All data on the volume will be permanently lost when the volume is deleted.
      *
      *
@@ -314,7 +314,7 @@ public interface BlockstorageAsync extends AutoCloseable {
 
     /**
      * Deletes the specified volume group. Individual volumes are not deleted, only the volume group is deleted.
-     * For more information, see [Volume Groups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm).
+     * For more information, see [Volume Groups](https://docs.cloud.oracle.com/Content/Block/Concepts/volumegroups.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -331,7 +331,7 @@ public interface BlockstorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a volume group backup. This operation deletes all the backups in the volume group. For more information, see [Volume Groups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm).
+     * Deletes a volume group backup. This operation deletes all the backups in the volume group. For more information, see [Volume Groups](https://docs.cloud.oracle.com/Content/Block/Concepts/volumegroups.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -496,7 +496,7 @@ public interface BlockstorageAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets information for the specified volume group. For more information, see [Volume Groups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm).
+     * Gets information for the specified volume group. For more information, see [Volume Groups](https://docs.cloud.oracle.com/Content/Block/Concepts/volumegroups.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -511,7 +511,7 @@ public interface BlockstorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information for the specified volume group backup. For more information, see [Volume Groups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm).
+     * Gets information for the specified volume group backup. For more information, see [Volume Groups](https://docs.cloud.oracle.com/Content/Block/Concepts/volumegroups.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -610,7 +610,7 @@ public interface BlockstorageAsync extends AutoCloseable {
 
     /**
      * Lists the volume group backups in the specified compartment. You can filter the results by volume group.
-     * For more information, see [Volume Groups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm).
+     * For more information, see [Volume Groups](https://docs.cloud.oracle.com/Content/Block/Concepts/volumegroups.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -628,7 +628,7 @@ public interface BlockstorageAsync extends AutoCloseable {
 
     /**
      * Lists the volume groups in the specified compartment and availability domain.
-     * For more information, see [Volume Groups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm).
+     * For more information, see [Volume Groups](https://docs.cloud.oracle.com/Content/Block/Concepts/volumegroups.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -749,7 +749,7 @@ public interface BlockstorageAsync extends AutoCloseable {
      * volume group. If the volume ID is not specified in the call, it will be removed from the volume group.
      * Avoid entering confidential information.
      * <p>
-     * For more information, see [Volume Groups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm).
+     * For more information, see [Volume Groups](https://docs.cloud.oracle.com/Content/Block/Concepts/volumegroups.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -766,7 +766,7 @@ public interface BlockstorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the display name for the specified volume group backup. For more information, see [Volume Groups](https://docs.us-phoenix-1.oraclecloud.com/Content/Block/Concepts/volumegroups.htm).
+     * Updates the display name for the specified volume group backup. For more information, see [Volume Groups](https://docs.cloud.oracle.com/Content/Block/Concepts/volumegroups.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

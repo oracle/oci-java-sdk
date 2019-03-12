@@ -5,7 +5,7 @@ package com.oracle.bmc.identity.model;
 
 /**
  * A managed container for defined tags. A tag namespace is unique in a tenancy. A tag namespace can't be deleted.
- * For more information, see [Managing Tags and Tag Namespaces](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm).
+ * For more information, see [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/Content/Identity/Concepts/taggingoverview.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -166,7 +166,7 @@ public class TagNamespace {
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * Example: `{\"Department\": \"Finance\"}`
      *
      **/
@@ -175,7 +175,7 @@ public class TagNamespace {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
      **/
@@ -184,7 +184,7 @@ public class TagNamespace {
 
     /**
      * Whether the tag namespace is retired.
-     * See [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
+     * See [Retiring Key Definitions and Namespace Definitions](https://docs.cloud.oracle.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRetired")

@@ -125,7 +125,7 @@ public class MetricDataDetails {
     String namespace;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to use for metrics.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to use for metrics.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")

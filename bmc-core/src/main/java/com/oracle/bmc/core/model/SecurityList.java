@@ -7,7 +7,7 @@ package com.oracle.bmc.core.model;
  * A set of virtual firewall rules for your VCN. Security lists are configured at the subnet
  * level, but the rules are applied to the ingress and egress traffic for the individual instances
  * in the subnet. The rules can be stateful or stateless. For more information, see
- * [Security Lists](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/securitylists.htm).
+ * [Security Lists](https://docs.cloud.oracle.com/Content/Network/Concepts/securitylists.htm).
  * <p>
  **Important:** Oracle Cloud Infrastructure Compute service images automatically include firewall rules (for example,
  * Linux iptables, Windows firewall). If there are issues with some type of access to an instance,
@@ -16,7 +16,7 @@ package com.oracle.bmc.core.model;
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
- * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
+ * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
  * <p>
  **Warning:** Oracle recommends that you avoid using any confidential information when you
  * supply string values using the API.
@@ -184,7 +184,7 @@ public class SecurityList {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
@@ -209,7 +209,7 @@ public class SecurityList {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see
-     * [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: `{\"Department\": \"Finance\"}`
      *

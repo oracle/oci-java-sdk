@@ -48,7 +48,7 @@ public interface Compute extends AutoCloseable {
     /**
      * Creates a secondary VNIC and attaches it to the specified instance.
      * For more information about secondary VNICs, see
-     * [Virtual Network Interface Cards (VNICs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm).
+     * [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/Content/Network/Tasks/managingVNICs.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -105,7 +105,7 @@ public interface Compute extends AutoCloseable {
      * <p>
      * When creating a new image, you must provide the OCID of the instance you want to use as the basis for the image, and
      * the OCID of the compartment containing that instance. For more information about images,
-     * see [Managing Custom Images](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/managingcustomimages.htm).
+     * see [Managing Custom Images](https://docs.cloud.oracle.com/Content/Compute/Tasks/managingcustomimages.htm).
      * <p>
      * When importing an exported image from Object Storage, you specify the source information
      * in {@link #imageSourceDetails(ImageSourceDetailsRequest) imageSourceDetails}.
@@ -115,11 +115,11 @@ public interface Compute extends AutoCloseable {
      * <p>
      * When importing an image based on the Object Storage URL, use
      * {@link #imageSourceViaObjectStorageUriDetails(ImageSourceViaObjectStorageUriDetailsRequest) imageSourceViaObjectStorageUriDetails}.
-     * See [Object Storage URLs](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/imageimportexport.htm#URLs) and [pre-authenticated requests](https://docs.us-phoenix-1.oraclecloud.com/Content/Object/Tasks/managingaccess.htm#pre-auth)
+     * See [Object Storage URLs](https://docs.cloud.oracle.com/Content/Compute/Tasks/imageimportexport.htm#URLs) and [pre-authenticated requests](https://docs.cloud.oracle.com/Content/Object/Tasks/managingaccess.htm#pre-auth)
      * for constructing URLs for image import/export.
      * <p>
      * For more information about importing exported images, see
-     * [Image Import/Export](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/imageimportexport.htm).
+     * [Image Import/Export](https://docs.cloud.oracle.com/Content/Compute/Tasks/imageimportexport.htm).
      * <p>
      * You may optionally specify a *display name* for the image, which is simply a friendly name or description.
      * It does not have to be unique, and you can change it. See {@link #updateImage(UpdateImageRequest) updateImage}.
@@ -136,7 +136,7 @@ public interface Compute extends AutoCloseable {
      * Once the console connection has been created and is available,
      * you connect to the console using SSH.
      * <p>
-     * For more information about console access, see [Accessing the Console](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/serialconsole.htm).
+     * For more information about console access, see [Accessing the Console](https://docs.cloud.oracle.com/Content/Compute/References/serialconsole.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -199,7 +199,7 @@ public interface Compute extends AutoCloseable {
      * <p>
      **Important:** If the VNIC has a
      * {@link PrivateIp} that is the
-     * [target of a route rule](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm#privateip),
+     * [target of a route rule](https://docs.cloud.oracle.com/Content/Network/Tasks/managingroutetables.htm#privateip),
      * deleting the VNIC causes that route rule to blackhole and the traffic
      * will be dropped.
      *
@@ -225,12 +225,12 @@ public interface Compute extends AutoCloseable {
      * Exports the specified image to the Oracle Cloud Infrastructure Object Storage service. You can use the Object Storage URL,
      * or the namespace, bucket name, and object name when specifying the location to export to.
      * <p>
-     * For more information about exporting images, see [Image Import/Export](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/imageimportexport.htm).
+     * For more information about exporting images, see [Image Import/Export](https://docs.cloud.oracle.com/Content/Compute/Tasks/imageimportexport.htm).
      * <p>
      * To perform an image export, you need write access to the Object Storage bucket for the image,
-     * see [Let Users Write Objects to Object Storage Buckets](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/commonpolicies.htm#Let4).
+     * see [Let Users Write Objects to Object Storage Buckets](https://docs.cloud.oracle.com/Content/Identity/Concepts/commonpolicies.htm#Let4).
      * <p>
-     * See [Object Storage URLs](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/imageimportexport.htm#URLs) and [pre-authenticated requests](https://docs.us-phoenix-1.oraclecloud.com/Content/Object/Tasks/managingaccess.htm#pre-auth)
+     * See [Object Storage URLs](https://docs.cloud.oracle.com/Content/Compute/Tasks/imageimportexport.htm#URLs) and [pre-authenticated requests](https://docs.cloud.oracle.com/Content/Object/Tasks/managingaccess.htm#pre-auth)
      * for constructing URLs for image import/export.
      *
      * @param request The request object containing the details to send
@@ -362,7 +362,7 @@ public interface Compute extends AutoCloseable {
      * <p>
      * - **RESET** - Powers off the instance and then powers it back on.
      * <p>
-     * For more information see [Stopping and Starting an Instance](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/restartinginstance.htm).
+     * For more information see [Stopping and Starting an Instance](https://docs.cloud.oracle.com/Content/Compute/Tasks/restartinginstance.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -373,13 +373,13 @@ public interface Compute extends AutoCloseable {
     /**
      * Creates a new instance in the specified compartment and the specified availability domain.
      * For general information about instances, see
-     * [Overview of the Compute Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Concepts/computeoverview.htm).
+     * [Overview of the Compute Service](https://docs.cloud.oracle.com/Content/Compute/Concepts/computeoverview.htm).
      * <p>
      * For information about access control and compartments, see
-     * [Overview of the IAM Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm).
+     * [Overview of the IAM Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
      * <p>
      * For information about availability domains, see
-     * [Regions and Availability Domains](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/regions.htm).
+     * [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm).
      * To get a list of availability domains, use the `ListAvailabilityDomains` operation
      * in the Identity and Access Management Service API.
      * <p>
@@ -401,7 +401,7 @@ public interface Compute extends AutoCloseable {
      * {@link #getVnic(GetVnicRequest) getVnic} with the VNIC ID.
      * <p>
      * You can later add secondary VNICs to an instance. For more information, see
-     * [Virtual Network Interface Cards (VNICs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm).
+     * [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/Content/Network/Tasks/managingVNICs.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -457,8 +457,8 @@ public interface Compute extends AutoCloseable {
 
     /**
      * Lists the available images in the specified compartment, including both
-     * [Oracle-provided images](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/images.htm) and
-     * [custom images](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/Tasks/managingcustomimages.htm) that have
+     * [Oracle-provided images](https://docs.cloud.oracle.com/Content/Compute/References/images.htm) and
+     * [custom images](https://docs.cloud.oracle.com/Content/Compute/Tasks/managingcustomimages.htm) that have
      * been created. The list of images returned is ordered to first show all
      * Oracle-provided images, then all custom images.
      * <p>
@@ -473,7 +473,7 @@ public interface Compute extends AutoCloseable {
     /**
      * Lists the console connections for the specified compartment or instance.
      * <p>
-     * For more information about console access, see [Accessing the Console](https://docs.us-phoenix-1.oraclecloud.com/Content/Compute/References/serialconsole.htm).
+     * For more information about console access, see [Accessing the Console](https://docs.cloud.oracle.com/Content/Compute/References/serialconsole.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

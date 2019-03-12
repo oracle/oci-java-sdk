@@ -11,7 +11,7 @@ import com.oracle.bmc.monitoring.model.*;
 public class SummarizeMetricsDataRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
      * resources monitored by the metric that you are searching for. Use tenancyId to search in
      * the root compartment.
      *

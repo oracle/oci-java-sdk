@@ -6,16 +6,16 @@ package com.oracle.bmc.database.model;
 /**
  * The Database Service supports several types of DB systems, ranging in size, price, and performance. For details about each type of system, see:
  * <p>
- * - [Exadata DB Systems](https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Concepts/exaoverview.htm)
- * - [Bare Metal and Virtual Machine DB Systems](https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Concepts/overview.htm)
+ * - [Exadata DB Systems](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm)
+ * - [Bare Metal and Virtual Machine DB Systems](https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm)
  * <p>
- * To use any of the API operations, you must be authorized in an IAM policy. If you are not authorized, talk to an administrator. If you are an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
+ * To use any of the API operations, you must be authorized in an IAM policy. If you are not authorized, talk to an administrator. If you are an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
  *
  * For information about access control and compartments, see
- * [Overview of the Identity Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm).
+ * [Overview of the Identity Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
  * <p>
  * For information about availability domains, see
- * [Regions and Availability Domains](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/regions.htm).
+ * [Regions and Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm).
  * <p>
  * To get a list of availability domains, use the `ListAvailabilityDomains` operation
  * in the Identity Service API.
@@ -117,6 +117,15 @@ public class DbSystemSummary {
         public Builder sshPublicKeys(java.util.List<String> sshPublicKeys) {
             this.sshPublicKeys = sshPublicKeys;
             this.__explicitlySet__.add("sshPublicKeys");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
+        private String timeZone;
+
+        public Builder timeZone(String timeZone) {
+            this.timeZone = timeZone;
+            this.__explicitlySet__.add("timeZone");
             return this;
         }
 
@@ -343,6 +352,7 @@ public class DbSystemSummary {
                             backupSubnetId,
                             shape,
                             sshPublicKeys,
+                            timeZone,
                             hostname,
                             domain,
                             version,
@@ -382,6 +392,7 @@ public class DbSystemSummary {
                             .backupSubnetId(o.getBackupSubnetId())
                             .shape(o.getShape())
                             .sshPublicKeys(o.getSshPublicKeys())
+                            .timeZone(o.getTimeZone())
                             .hostname(o.getHostname())
                             .domain(o.getDomain())
                             .version(o.getVersion())
@@ -419,13 +430,13 @@ public class DbSystemSummary {
     }
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the DB system.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -449,7 +460,7 @@ public class DbSystemSummary {
     java.util.List<String> faultDomains;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
      * <p>
      **Subnet Restrictions:**
      * - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
@@ -464,7 +475,7 @@ public class DbSystemSummary {
     String subnetId;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
      * <p>
      **Subnet Restriction:** See the subnet restrictions information for **subnetId**.
      *
@@ -486,6 +497,12 @@ public class DbSystemSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKeys")
     java.util.List<String> sshPublicKeys;
+
+    /**
+     * The time zone of the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
+    String timeZone;
 
     /**
      * The hostname for the DB system.
@@ -582,7 +599,7 @@ public class DbSystemSummary {
     DatabaseEdition databaseEdition;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastPatchHistoryEntryId")
     String lastPatchHistoryEntryId;
@@ -725,7 +742,7 @@ public class DbSystemSummary {
     Boolean sparseDiskgroup;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system.
      * SCAN IP addresses are typically used for load balancing and are not assigned to any interface.
      * Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      * <p>
@@ -736,7 +753,7 @@ public class DbSystemSummary {
     java.util.List<String> scanIpIds;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system.
      * The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to
      * enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
      * <p>
@@ -747,7 +764,7 @@ public class DbSystemSummary {
     java.util.List<String> vipIds;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scanDnsRecordId")
@@ -829,7 +846,7 @@ public class DbSystemSummary {
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: `{\"Department\": \"Finance\"}`
      *
@@ -839,7 +856,7 @@ public class DbSystemSummary {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *

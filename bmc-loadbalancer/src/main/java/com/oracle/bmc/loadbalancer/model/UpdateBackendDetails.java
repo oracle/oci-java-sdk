@@ -95,7 +95,7 @@ public class UpdateBackendDetails {
      * proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections
      * as a server weighted '1'.
      * For more information on load balancing policies, see
-     * [How Load Balancing Policies Work](https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Reference/lbpolicies.htm).
+     * [How Load Balancing Policies Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
      * <p>
      * Example: `3`
      *

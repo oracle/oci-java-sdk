@@ -54,7 +54,9 @@ public class MultipartTransferManager {
                                             simpleRetry.createUploadPartFunction().apply(request);
                                     manifest.registerSuccess(request.getUploadPartNum(), response);
                                 } catch (Exception e) {
-                                    LOG.debug("Failed to upload part", e);
+                                    LOG.error(
+                                            "Failed to upload part " + request.getUploadPartNum(),
+                                            e);
                                     manifest.registerFailure(request.getUploadPartNum());
                                 }
                                 return null;

@@ -69,7 +69,7 @@ public class LoadBalancerHealthSummary {
     }
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the load balancer the health status is associated with.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer the health status is associated with.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")

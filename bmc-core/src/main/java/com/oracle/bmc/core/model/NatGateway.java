@@ -7,13 +7,13 @@ package com.oracle.bmc.core.model;
  * A NAT (Network Address Translation) gateway, which represents a router that lets instances
  * without public IPs contact the public internet without exposing the instance to inbound
  * internet traffic. For more information, see
- * [NAT Gateway](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/NATgateway.htm).
+ * [NAT Gateway](https://docs.cloud.oracle.com/Content/Network/Tasks/NATgateway.htm).
  * <p>
  * To use any of the API operations, you must be authorized in an
  * IAM policy. If you are not authorized, talk to an
  * administrator. If you are an administrator who needs to write
  * policies to give users access, see [Getting Started with
- * Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
+ * Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
  * <p>
  **Warning:** Oracle recommends that you avoid using any confidential information when you
  * supply string values using the API.
@@ -173,7 +173,7 @@ public class NatGateway {
     }
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the compartment that contains
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment that contains
      * the NAT gateway.
      *
      **/
@@ -182,7 +182,7 @@ public class NatGateway {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
@@ -201,7 +201,7 @@ public class NatGateway {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see
-     * [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: `{\"Department\": \"Finance\"}`
      *
@@ -210,7 +210,7 @@ public class NatGateway {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the NAT gateway.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the NAT gateway.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -294,7 +294,7 @@ public class NatGateway {
     java.util.Date timeCreated;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the VCN the NAT gateway
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VCN the NAT gateway
      * belongs to.
      *
      **/

@@ -11,7 +11,7 @@ import com.oracle.bmc.database.model.*;
 public class ListAutonomousDatabasesRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The compartment [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
+     * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     private String compartmentId;
 
@@ -119,6 +119,11 @@ public class ListAutonomousDatabasesRequest extends com.oracle.bmc.requests.BmcR
     private AutonomousDatabaseSummary.LifecycleState lifecycleState;
 
     /**
+     * A filter to return only autonomous database resources that match the specified workload type.
+     */
+    private AutonomousDatabaseSummary.DbWorkload dbWorkload;
+
+    /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
     private String displayName;
@@ -156,6 +161,7 @@ public class ListAutonomousDatabasesRequest extends com.oracle.bmc.requests.BmcR
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             lifecycleState(o.getLifecycleState());
+            dbWorkload(o.getDbWorkload());
             displayName(o.getDisplayName());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());

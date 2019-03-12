@@ -11,7 +11,7 @@ import com.oracle.bmc.database.model.*;
 public class GetDbHomeRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The database home [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
+     * The database home [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     private String dbHomeId;
 

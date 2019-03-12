@@ -19,6 +19,6 @@ public class MaxAttemptsTerminationStrategy implements TerminationStrategy {
 
     @Override
     public boolean shouldTerminate(WaitContext context) {
-        return context.getAttemptsMade() < maxAttempts;
+        return context.getAttemptsMade() >= maxAttempts;
     }
 }

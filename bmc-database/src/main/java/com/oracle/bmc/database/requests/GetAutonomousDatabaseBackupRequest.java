@@ -11,7 +11,7 @@ import com.oracle.bmc.database.model.*;
 public class GetAutonomousDatabaseBackupRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
      */
     private String autonomousDatabaseBackupId;
 

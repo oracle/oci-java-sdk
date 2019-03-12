@@ -22,6 +22,15 @@ public class DbSystem {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("iormConfigCache")
+        private ExadataIormConfig iormConfigCache;
+
+        public Builder iormConfigCache(ExadataIormConfig iormConfigCache) {
+            this.iormConfigCache = iormConfigCache;
+            this.__explicitlySet__.add("iormConfigCache");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
@@ -100,6 +109,15 @@ public class DbSystem {
         public Builder sshPublicKeys(java.util.List<String> sshPublicKeys) {
             this.sshPublicKeys = sshPublicKeys;
             this.__explicitlySet__.add("sshPublicKeys");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
+        private String timeZone;
+
+        public Builder timeZone(String timeZone) {
+            this.timeZone = timeZone;
+            this.__explicitlySet__.add("timeZone");
             return this;
         }
 
@@ -317,6 +335,7 @@ public class DbSystem {
         public DbSystem build() {
             DbSystem __instance__ =
                     new DbSystem(
+                            iormConfigCache,
                             id,
                             compartmentId,
                             displayName,
@@ -326,6 +345,7 @@ public class DbSystem {
                             backupSubnetId,
                             shape,
                             sshPublicKeys,
+                            timeZone,
                             hostname,
                             domain,
                             version,
@@ -356,7 +376,8 @@ public class DbSystem {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DbSystem o) {
             Builder copiedBuilder =
-                    id(o.getId())
+                    iormConfigCache(o.getIormConfigCache())
+                            .id(o.getId())
                             .compartmentId(o.getCompartmentId())
                             .displayName(o.getDisplayName())
                             .availabilityDomain(o.getAvailabilityDomain())
@@ -365,6 +386,7 @@ public class DbSystem {
                             .backupSubnetId(o.getBackupSubnetId())
                             .shape(o.getShape())
                             .sshPublicKeys(o.getSshPublicKeys())
+                            .timeZone(o.getTimeZone())
                             .hostname(o.getHostname())
                             .domain(o.getDomain())
                             .version(o.getVersion())
@@ -401,14 +423,17 @@ public class DbSystem {
         return new Builder();
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("iormConfigCache")
+    ExadataIormConfig iormConfigCache;
+
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the DB system.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -432,7 +457,7 @@ public class DbSystem {
     java.util.List<String> faultDomains;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
      * <p>
      **Subnet Restrictions:**
      * - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
@@ -447,7 +472,7 @@ public class DbSystem {
     String subnetId;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
      * <p>
      **Subnet Restriction:** See the subnet restrictions information for **subnetId**.
      *
@@ -469,6 +494,12 @@ public class DbSystem {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKeys")
     java.util.List<String> sshPublicKeys;
+
+    /**
+     * The time zone of the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
+    String timeZone;
 
     /**
      * The hostname for the DB system.
@@ -565,7 +596,7 @@ public class DbSystem {
     DatabaseEdition databaseEdition;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastPatchHistoryEntryId")
     String lastPatchHistoryEntryId;
@@ -708,7 +739,7 @@ public class DbSystem {
     Boolean sparseDiskgroup;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the DB system.
      * SCAN IP addresses are typically used for load balancing and are not assigned to any interface.
      * Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
      * <p>
@@ -719,7 +750,7 @@ public class DbSystem {
     java.util.List<String> scanIpIds;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system.
      * The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to
      * enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
      * <p>
@@ -730,7 +761,7 @@ public class DbSystem {
     java.util.List<String> vipIds;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the DB system.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scanDnsRecordId")
@@ -812,7 +843,7 @@ public class DbSystem {
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: `{\"Department\": \"Finance\"}`
      *
@@ -822,7 +853,7 @@ public class DbSystem {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *

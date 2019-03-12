@@ -54,6 +54,15 @@ public class CreateAutonomousDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
+        private DbWorkload dbWorkload;
+
+        public Builder dbWorkload(DbWorkload dbWorkload) {
+            this.dbWorkload = dbWorkload;
+            this.__explicitlySet__.add("dbWorkload");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
         private Integer dataStorageSizeInTBs;
 
@@ -118,6 +127,7 @@ public class CreateAutonomousDatabaseDetails {
                             compartmentId,
                             dbName,
                             cpuCoreCount,
+                            dbWorkload,
                             dataStorageSizeInTBs,
                             adminPassword,
                             displayName,
@@ -134,6 +144,7 @@ public class CreateAutonomousDatabaseDetails {
                     compartmentId(o.getCompartmentId())
                             .dbName(o.getDbName())
                             .cpuCoreCount(o.getCpuCoreCount())
+                            .dbWorkload(o.getDbWorkload())
                             .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
                             .adminPassword(o.getAdminPassword())
                             .displayName(o.getDisplayName())
@@ -154,7 +165,7 @@ public class CreateAutonomousDatabaseDetails {
     }
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the compartment of the autonomous database.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment of the autonomous database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -170,6 +181,46 @@ public class CreateAutonomousDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     Integer cpuCoreCount;
+    /**
+     * The autonomous database workload type.
+     **/
+    public enum DbWorkload {
+        Oltp("OLTP"),
+        Dw("DW"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, DbWorkload> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DbWorkload v : DbWorkload.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        DbWorkload(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DbWorkload create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new RuntimeException("Invalid DbWorkload: " + key);
+        }
+    };
+    /**
+     * The autonomous database workload type.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
+    DbWorkload dbWorkload;
 
     /**
      * The size, in terabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed.
@@ -234,7 +285,7 @@ public class CreateAutonomousDatabaseDetails {
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: `{\"Department\": \"Finance\"}`
      *
@@ -244,7 +295,7 @@ public class CreateAutonomousDatabaseDetails {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *

@@ -81,7 +81,7 @@ public class CreateAutonomousDataWarehouseBackupDetails {
     String displayName;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the Autonomous Data Warehouse backup.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Autonomous Data Warehouse backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataWarehouseId")
     String autonomousDataWarehouseId;

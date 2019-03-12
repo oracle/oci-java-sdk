@@ -16,7 +16,7 @@ public class CreateBackendSetRequest extends com.oracle.bmc.requests.BmcRequest 
     private CreateBackendSetDetails createBackendSetDetails;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a backend set.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a backend set.
      */
     private String loadBalancerId;
 

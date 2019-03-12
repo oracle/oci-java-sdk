@@ -168,7 +168,7 @@ public class AppCatalogListingResourceVersion {
      * List of regions that this listing resource version is available.
      * <p>
      * For information about Regions, see
-     * [Regions](https://docs.us-phoenix-1.oraclecloud.com/#General/Concepts/regions.htm).
+     * [Regions](https://docs.cloud.oracle.com/#General/Concepts/regions.htm).
      * <p>
      * Example: `[\"us-ashburn-1\", \"us-phoenix-1\"]`
      *

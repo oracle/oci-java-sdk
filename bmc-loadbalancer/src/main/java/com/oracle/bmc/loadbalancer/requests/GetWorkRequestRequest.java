@@ -11,7 +11,7 @@ import com.oracle.bmc.loadbalancer.model.*;
 public class GetWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the work request to retrieve.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request to retrieve.
      */
     private String workRequestId;
 

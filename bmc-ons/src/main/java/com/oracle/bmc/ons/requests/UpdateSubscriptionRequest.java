@@ -11,7 +11,7 @@ import com.oracle.bmc.ons.model.*;
 public class UpdateSubscriptionRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription to update.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription to update.
      *
      */
     private String subscriptionId;

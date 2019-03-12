@@ -79,14 +79,14 @@ public class GetJobLogsRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
      * The number of items returned in a paginated `List` call. For information about pagination, see
-     * [List Pagination](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private Integer limit;
 
     /**
      * The value of the `opc-next-page` response header from the preceding `List` call.
-     * For information about pagination, see [List Pagination](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For information about pagination, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private String page;

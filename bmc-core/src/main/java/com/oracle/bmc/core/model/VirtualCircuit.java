@@ -10,7 +10,7 @@ package com.oracle.bmc.core.model;
  * network connections to provide a single, logical connection between the edge router
  * on the customer's existing network and Oracle Cloud Infrastructure. *Private*
  * virtual circuits support private peering, and *public* virtual circuits support
- * public peering. For more information, see [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
+ * public peering. For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm).
  * <p>
  * Each virtual circuit is made up of information shared between a customer, Oracle,
  * and a provider (if the customer is using FastConnect via a provider). Who fills in
@@ -22,7 +22,7 @@ package com.oracle.bmc.core.model;
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
- * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
+ * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
  * <p>
  **Warning:** Oracle recommends that you avoid using any confidential information when you
  * supply string values using the API.
@@ -468,7 +468,7 @@ public class VirtualCircuit {
     /**
      * The virtual circuit's current state. For information about
      * the different states, see
-     * [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
+     * [FastConnect Overview](https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm).
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -523,7 +523,7 @@ public class VirtualCircuit {
     /**
      * The virtual circuit's current state. For information about
      * the different states, see
-     * [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
+     * [FastConnect Overview](https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
@@ -706,7 +706,7 @@ public class VirtualCircuit {
     java.util.Date timeCreated;
     /**
      * Whether the virtual circuit supports private or public peering. For more information,
-     * see [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
+     * see [FastConnect Overview](https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm).
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -753,7 +753,7 @@ public class VirtualCircuit {
     };
     /**
      * Whether the virtual circuit supports private or public peering. For more information,
-     * see [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
+     * see [FastConnect Overview](https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")

@@ -173,6 +173,43 @@ public class IdentityClient implements Identity {
                     signingStrategyRequestSignerFactories,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
+     */
+    public IdentityClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService) {
         this.authenticationDetailsProvider = authenticationDetailsProvider;
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
@@ -198,19 +235,23 @@ public class IdentityClient implements Identity {
             }
         }
         this.client = restClientFactory.create(defaultRequestSigner, requestSigners, configuration);
-        // up to 50 (core) threads, time out after 60s idle, all daemon
-        java.util.concurrent.ThreadPoolExecutor executorService =
-                new java.util.concurrent.ThreadPoolExecutor(
-                        50,
-                        50,
-                        60L,
-                        java.util.concurrent.TimeUnit.SECONDS,
-                        new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                        new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                .setDaemon(false)
-                                .setNameFormat("Identity-waiters-%d")
-                                .build());
-        executorService.allowCoreThreadTimeOut(true);
+        if (executorService == null) {
+            // up to 50 (core) threads, time out after 60s idle, all daemon
+            java.util.concurrent.ThreadPoolExecutor threadPoolExecutor =
+                    new java.util.concurrent.ThreadPoolExecutor(
+                            50,
+                            50,
+                            60L,
+                            java.util.concurrent.TimeUnit.SECONDS,
+                            new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
+                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
+                                    .setDaemon(true)
+                                    .setNameFormat("Identity-waiters-%d")
+                                    .build());
+            threadPoolExecutor.allowCoreThreadTimeOut(true);
+
+            executorService = threadPoolExecutor;
+        }
 
         this.waiters = new IdentityWaiters(executorService, this);
 
@@ -249,11 +290,23 @@ public class IdentityClient implements Identity {
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, IdentityClient> {
+        private java.util.concurrent.ExecutorService executorService;
+
         private Builder(com.oracle.bmc.Service service) {
             super(service);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Set the ExecutorService for the client to be created.
+         * @param executorService executorService
+         * @return this builder
+         */
+        public Builder executorService(java.util.concurrent.ExecutorService executorService) {
+            this.executorService = executorService;
+            return this;
         }
 
         /**
@@ -272,7 +325,8 @@ public class IdentityClient implements Identity {
                     requestSignerFactory,
                     signingStrategyRequestSignerFactories,
                     additionalClientConfigurators,
-                    endpoint);
+                    endpoint,
+                    executorService);
         }
     }
 
@@ -760,6 +814,32 @@ public class IdentityClient implements Identity {
     }
 
     @Override
+    public CreateTagDefaultResponse createTagDefault(CreateTagDefaultRequest request) {
+        LOG.trace("Called createTagDefault");
+        request = CreateTagDefaultConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateTagDefaultConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateTagDefaultResponse>
+                transformer = CreateTagDefaultConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getCreateTagDefaultDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public CreateTagNamespaceResponse createTagNamespace(CreateTagNamespaceRequest request) {
         LOG.trace("Called createTagNamespace");
         request = CreateTagNamespaceConverter.interceptRequest(request);
@@ -1115,6 +1195,31 @@ public class IdentityClient implements Identity {
     }
 
     @Override
+    public DeleteTagDefaultResponse deleteTagDefault(DeleteTagDefaultRequest request) {
+        LOG.trace("Called deleteTagDefault");
+        request = DeleteTagDefaultConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteTagDefaultConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTagDefaultResponse>
+                transformer = DeleteTagDefaultConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public DeleteUserResponse deleteUser(DeleteUserRequest request) {
         LOG.trace("Called deleteUser");
         request = DeleteUserConverter.interceptRequest(request);
@@ -1152,6 +1257,32 @@ public class IdentityClient implements Identity {
         while (true) {
             try {
                 javax.ws.rs.core.Response response = client.post(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public GetAuthenticationPolicyResponse getAuthenticationPolicy(
+            GetAuthenticationPolicyRequest request) {
+        LOG.trace("Called getAuthenticationPolicy");
+        request = GetAuthenticationPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAuthenticationPolicyConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetAuthenticationPolicyResponse>
+                transformer = GetAuthenticationPolicyConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
@@ -1347,6 +1478,31 @@ public class IdentityClient implements Identity {
                 GetTagConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetTagResponse> transformer =
                 GetTagConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public GetTagDefaultResponse getTagDefault(GetTagDefaultRequest request) {
+        LOG.trace("Called getTagDefault");
+        request = GetTagDefaultConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetTagDefaultConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetTagDefaultResponse>
+                transformer = GetTagDefaultConverter.fromResponse();
 
         int attempts = 0;
         while (true) {
@@ -1947,6 +2103,31 @@ public class IdentityClient implements Identity {
     }
 
     @Override
+    public ListTagDefaultsResponse listTagDefaults(ListTagDefaultsRequest request) {
+        LOG.trace("Called listTagDefaults");
+        request = ListTagDefaultsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTagDefaultsConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListTagDefaultsResponse>
+                transformer = ListTagDefaultsConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public ListTagNamespacesResponse listTagNamespaces(ListTagNamespacesRequest request) {
         LOG.trace("Called listTagNamespaces");
         request = ListTagNamespacesConverter.interceptRequest(request);
@@ -2136,6 +2317,34 @@ public class IdentityClient implements Identity {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdateAuthTokenDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public UpdateAuthenticationPolicyResponse updateAuthenticationPolicy(
+            UpdateAuthenticationPolicyRequest request) {
+        LOG.trace("Called updateAuthenticationPolicy");
+        request = UpdateAuthenticationPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateAuthenticationPolicyConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateAuthenticationPolicyResponse>
+                transformer = UpdateAuthenticationPolicyConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateAuthenticationPolicyDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
@@ -2399,6 +2608,32 @@ public class IdentityClient implements Identity {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdateTagDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public UpdateTagDefaultResponse updateTagDefault(UpdateTagDefaultRequest request) {
+        LOG.trace("Called updateTagDefault");
+        request = UpdateTagDefaultConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateTagDefaultConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTagDefaultResponse>
+                transformer = UpdateTagDefaultConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateTagDefaultDetails(), request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS

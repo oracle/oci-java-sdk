@@ -11,7 +11,7 @@ import com.oracle.bmc.database.model.*;
 public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The compartment [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
+     * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     private String compartmentId;
 
@@ -31,7 +31,7 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest {
     private String dbSystemShape;
 
     /**
-     * The DB system [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
+     * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
      */
     private String dbSystemId;
 

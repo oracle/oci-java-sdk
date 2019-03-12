@@ -92,7 +92,7 @@ public interface Monitoring extends AutoCloseable {
 
     /**
      * Returns metric definitions that match the criteria specified in the request. Compartment OCID required.
-     * For information about metrics, see [Metrics Overview](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
+     * For information about metrics, see [Metrics Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -102,7 +102,7 @@ public interface Monitoring extends AutoCloseable {
 
     /**
      * Publishes raw metric data points to the Monitoring service.
-     * For more information about publishing metrics, see [Publishing Custom Metrics](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/Monitoring/Tasks/publishingcustommetrics.htm).
+     * For more information about publishing metrics, see [Publishing Custom Metrics](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/publishingcustommetrics.htm).
      * <p>
      * The endpoints for this operation differ from other Monitoring operations. Replace the string `telemetry` with `telemetry-ingestion` in the endpoint, as in the following example:
      * <p>
@@ -125,7 +125,7 @@ public interface Monitoring extends AutoCloseable {
 
     /**
      * Returns aggregated data that match the criteria specified in the request. Compartment OCID required.
-     * For information on metric queries, see [Building Metric Queries](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/Monitoring/Tasks/buildingqueries.htm).
+     * For information on metric queries, see [Building Metric Queries](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/buildingqueries.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

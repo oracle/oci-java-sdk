@@ -11,7 +11,7 @@ import com.oracle.bmc.core.model.*;
 public class DeleteNatGatewayRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The NAT gateway's [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
+     * The NAT gateway's [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     private String natGatewayId;
 

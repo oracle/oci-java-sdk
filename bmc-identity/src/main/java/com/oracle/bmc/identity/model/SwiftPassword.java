@@ -12,7 +12,7 @@ package com.oracle.bmc.identity.model;
  * <p>
  **Note:** The password is always an Oracle-generated string; you can't change it to a string of your choice.
  * <p>
- * For more information, see [Managing User Credentials](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingcredentials.htm).
+ * For more information, see [Managing User Credentials](https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcredentials.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

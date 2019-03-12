@@ -11,7 +11,7 @@ import com.oracle.bmc.database.model.*;
 public class DbNodeActionRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The database node [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
+     * The database node [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     private String dbNodeId;
 

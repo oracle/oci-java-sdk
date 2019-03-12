@@ -92,7 +92,7 @@ public class HealthCheckResult {
     }
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the subnet hosting the load balancer that reported this health check status.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet hosting the load balancer that reported this health check status.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")

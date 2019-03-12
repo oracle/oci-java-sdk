@@ -43,14 +43,14 @@ package com.oracle.bmc.database.model;
 public class LaunchDbSystemBase {
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
      * A fault domain is a grouping of hardware and infrastructure within an availability domain.
-     * fault domains let you distribute your instances so that they are not on the same physical
+     * Fault domains let you distribute your instances so that they are not on the same physical
      * hardware within a single availability domain. A hardware failure or maintenance
      * that affects one fault domain does not affect DB systems in other fault domains.
      * <p>
@@ -84,7 +84,7 @@ public class LaunchDbSystemBase {
     String availabilityDomain;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
      * <p>
      **Subnet Restrictions:**
      * - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
@@ -99,7 +99,7 @@ public class LaunchDbSystemBase {
     String subnetId;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
      * <p>
      **Subnet Restrictions:** See the subnet restrictions information for **subnetId**.
      *
@@ -119,6 +119,12 @@ public class LaunchDbSystemBase {
     String shape;
 
     /**
+     * The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
+    String timeZone;
+
+    /**
      * If true, Sparse Diskgroup is configured for Exadata dbsystem. If False, Sparse diskgroup is not configured.
      *
      **/
@@ -132,8 +138,8 @@ public class LaunchDbSystemBase {
     java.util.List<String> sshPublicKeys;
 
     /**
-     * The hostname for the DB system. The hostname must begin with an alphabetic character and
-     * can contain a maximum of 30 alphanumeric characters, including hyphens (-).
+     * The hostname for the DB system. The hostname must begin with an alphabetic character, and
+     * can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata DB systems.
      * <p>
      * The maximum length of the combined hostname and domain is 63 characters.
      * <p>
@@ -166,7 +172,7 @@ public class LaunchDbSystemBase {
      * - Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
      * <p>
      * This parameter is not used for virtual machine DB systems because virtual machine DB systems have a set number of cores for each shape.
-     * For information about the number of cores for a virtual machine DB system shape, see [Virtual Machine DB Systems](https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Concepts/overview.htm#virtualmachine)
+     * For information about the number of cores for a virtual machine DB system shape, see [Virtual Machine DB Systems](https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm#virtualmachine)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
@@ -204,7 +210,7 @@ public class LaunchDbSystemBase {
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: `{\"Department\": \"Finance\"}`
      *
@@ -214,7 +220,7 @@ public class LaunchDbSystemBase {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *

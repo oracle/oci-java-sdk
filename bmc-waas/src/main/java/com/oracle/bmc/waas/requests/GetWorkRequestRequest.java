@@ -11,7 +11,7 @@ import com.oracle.bmc.waas.model.*;
 public class GetWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the work request. This number is generated when work request is created.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request. This number is generated when work request is created.
      */
     private String workRequestId;
 

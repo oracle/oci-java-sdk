@@ -184,7 +184,7 @@ public class UploadManager {
                     response.getOpcClientRequestId());
         } catch (Exception e) {
             if (manifest != null) {
-                LOG.debug(
+                LOG.error(
                         "Failed to upload object using multi-part uploads.  Failed part numbers = '{}'.  Successful parts = '{}'",
                         manifest.listFailedParts(),
                         manifest.listCompletedParts());

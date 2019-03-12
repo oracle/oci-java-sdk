@@ -6,7 +6,7 @@ package com.oracle.bmc.identity.model;
 /**
  * As the name suggests, an `SmtpCredentialSummary` object contains information about an `SmtpCredential`.
  * The SMTP credential is used for SMTP authentication with
- * the [Email Delivery Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Email/Concepts/overview.htm).
+ * the [Email Delivery Service](https://docs.cloud.oracle.com/Content/Email/Concepts/overview.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

@@ -174,7 +174,7 @@ public interface EmailAsync extends AutoCloseable {
      * Replaces the set of tags for a sender with the tags provided. If either freeform
      * or defined tags are omitted, the tags for that set remain the same. Each set must
      * include the full set of tags for the sender, partial updates are not permitted.
-     * For more information about tagging, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * For more information about tagging, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      *
      *
      * @param request The request object containing the details to send

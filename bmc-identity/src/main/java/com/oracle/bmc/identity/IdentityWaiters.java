@@ -629,6 +629,102 @@ public class IdentityWaiters {
      * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
+    public com.oracle.bmc.waiter.Waiter<GetTagDefaultRequest, GetTagDefaultResponse> forTagDefault(
+            GetTagDefaultRequest request,
+            com.oracle.bmc.identity.model.TagDefault.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forTagDefault(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetTagDefaultRequest, GetTagDefaultResponse> forTagDefault(
+            GetTagDefaultRequest request,
+            com.oracle.bmc.identity.model.TagDefault.LifecycleState targetState,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forTagDefault(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetTagDefaultRequest, GetTagDefaultResponse> forTagDefault(
+            GetTagDefaultRequest request,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+            com.oracle.bmc.identity.model.TagDefault.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forTagDefault(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for TagDefault.
+    private com.oracle.bmc.waiter.Waiter<GetTagDefaultRequest, GetTagDefaultResponse> forTagDefault(
+            com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+            final GetTagDefaultRequest request,
+            final com.oracle.bmc.identity.model.TagDefault.LifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.identity.model.TagDefault.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetTagDefaultRequest, GetTagDefaultResponse>() {
+                            @Override
+                            public GetTagDefaultResponse apply(GetTagDefaultRequest request) {
+                                return client.getTagDefault(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetTagDefaultResponse>() {
+                            @Override
+                            public boolean apply(GetTagDefaultResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getTagDefault().getLifecycleState());
+                            }
+                        },
+                        false),
+                request);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
     public com.oracle.bmc.waiter.Waiter<GetUserRequest, GetUserResponse> forUser(
             GetUserRequest request,
             com.oracle.bmc.identity.model.User.LifecycleState... targetStates) {

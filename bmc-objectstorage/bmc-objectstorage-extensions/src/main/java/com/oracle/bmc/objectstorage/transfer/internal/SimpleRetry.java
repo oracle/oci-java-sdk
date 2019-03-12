@@ -15,8 +15,10 @@ import com.oracle.bmc.objectstorage.responses.PutObjectResponse;
 import com.oracle.bmc.objectstorage.responses.UploadPartResponse;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 // Really basic retry, replace with SDK retry strategy when that's available
+@Slf4j
 @RequiredArgsConstructor
 public class SimpleRetry {
     private static final int MAX_RETRIES = 3;
@@ -33,8 +35,10 @@ public class SimpleRetry {
                     try {
                         return service.putObject(request);
                     } catch (BmcException e) {
+                        LOG.warn("PutObject failed on attempt " + i, e);
                         ex = e;
                         if (canRetry(stream, e, i)) {
+                            LOG.info("Retrying upload");
                             request =
                                     PutObjectRequest.builder()
                                             .copy(request)
@@ -62,8 +66,15 @@ public class SimpleRetry {
                     try {
                         return service.uploadPart(request);
                     } catch (BmcException e) {
+                        LOG.warn(
+                                "UploadPart for part "
+                                        + request.getUploadPartNum()
+                                        + " failed on attempt "
+                                        + i,
+                                e);
                         ex = e;
                         if (canRetry(stream, e, i)) {
+                            LOG.info("Retrying upload of part " + request.getUploadPartNum());
                             request =
                                     UploadPartRequest.builder()
                                             .copy(request)

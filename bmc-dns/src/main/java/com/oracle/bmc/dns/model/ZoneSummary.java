@@ -240,7 +240,7 @@ public class ZoneSummary {
 
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope.
-     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * Example: `{\"bar-key\": \"value\"}`
      *
      **/

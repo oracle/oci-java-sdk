@@ -6,7 +6,7 @@ package com.oracle.bmc.core.model;
 /**
  * DHCP option for specifying how DNS (hostname resolution) is handled in the subnets in the VCN.
  * For more information, see
- * [DNS in Your Virtual Cloud Network](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm).
+ * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -101,7 +101,7 @@ public class DhcpDnsOption extends DhcpOption {
      * The Internet and VCN Resolver also enables reverse DNS lookup, which lets
      * you determine the hostname corresponding to the private IP address. For more
      * information, see
-     * [DNS in Your Virtual Cloud Network](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm).
+     * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm).
      * <p>
      * **CustomDnsServer:** Instances use a DNS server of your choice (three
      * maximum).
@@ -163,7 +163,7 @@ public class DhcpDnsOption extends DhcpOption {
      * The Internet and VCN Resolver also enables reverse DNS lookup, which lets
      * you determine the hostname corresponding to the private IP address. For more
      * information, see
-     * [DNS in Your Virtual Cloud Network](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm).
+     * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm).
      * <p>
      * **CustomDnsServer:** Instances use a DNS server of your choice (three
      * maximum).

@@ -7,7 +7,7 @@ package com.oracle.bmc.core.model;
  * Contains properties for a VNIC. You use this object when creating the
  * primary VNIC during instance launch or when creating a secondary VNIC.
  * For more information about VNICs, see
- * [Virtual Network Interface Cards (VNICs)](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingVNICs.htm).
+ * [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/Content/Network/Tasks/managingVNICs.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -154,14 +154,14 @@ public class CreateVnicDetails {
      * <p>
      **Note:** This public IP address is associated with the primary private IP
      * on the VNIC. For more information, see
-     * [IP Addresses](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingIPaddresses.htm).
+     * [IP Addresses](https://docs.cloud.oracle.com/Content/Network/Tasks/managingIPaddresses.htm).
      * <p>
      **Note:** There's a limit to the number of {@link PublicIp}
      * a VNIC or instance can have. If you try to create a secondary VNIC
      * with an assigned public IP for an instance that has already
      * reached its public IP limit, an error is returned. For information
      * about the public IP limits, see
-     * [Public IP Addresses](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingpublicIPs.htm).
+     * [Public IP Addresses](https://docs.cloud.oracle.com/Content/Network/Tasks/managingpublicIPs.htm).
      * <p>
      * Example: `false`
      *
@@ -171,7 +171,7 @@ public class CreateVnicDetails {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
@@ -190,7 +190,7 @@ public class CreateVnicDetails {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see
-     * [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: `{\"Department\": \"Finance\"}`
      *
@@ -211,7 +211,7 @@ public class CreateVnicDetails {
      * {@link #getPrivateIp(GetPrivateIpRequest) getPrivateIp}.
      * <p>
      * For more information, see
-     * [DNS in Your Virtual Cloud Network](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm).
+     * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm).
      * <p>
      * When launching an instance, use this `hostnameLabel` instead
      * of the deprecated `hostnameLabel` in
@@ -244,7 +244,7 @@ public class CreateVnicDetails {
      * Whether the source/destination check is disabled on the VNIC.
      * Defaults to `false`, which means the check is performed. For information
      * about why you would skip the source/destination check, see
-     * [Using a Private IP as a Route Target](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingroutetables.htm#privateip).
+     * [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/Content/Network/Tasks/managingroutetables.htm#privateip).
      * <p>
      * Example: `true`
      *

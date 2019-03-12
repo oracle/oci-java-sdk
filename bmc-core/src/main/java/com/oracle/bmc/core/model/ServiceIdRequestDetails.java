@@ -59,7 +59,7 @@ public class ServiceIdRequestDetails {
     }
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the service.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the service.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceId")

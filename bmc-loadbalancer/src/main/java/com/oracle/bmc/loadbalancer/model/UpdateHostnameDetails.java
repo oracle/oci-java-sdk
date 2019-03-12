@@ -6,7 +6,7 @@ package com.oracle.bmc.loadbalancer.model;
 /**
  * The configuration details for updating a virtual hostname.
  * For more information on virtual hostnames, see
- * [Managing Request Routing](https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingrequest.htm).
+ * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -63,7 +63,7 @@ public class UpdateHostnameDetails {
 
     /**
      * The virtual hostname to update. For more information about virtual hostname string construction, see
-     * [Managing Request Routing](https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingrequest.htm#routing).
+     * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm#routing).
      * <p>
      * Example: `app.example.com`
      *

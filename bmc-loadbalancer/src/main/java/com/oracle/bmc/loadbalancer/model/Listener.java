@@ -6,7 +6,7 @@ package com.oracle.bmc.loadbalancer.model;
 /**
  * The listener's configuration.
  * For more information on backend set configuration, see
- * [Managing Load Balancer Listeners](https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managinglisteners.htm).
+ * [Managing Load Balancer Listeners](https://docs.cloud.oracle.com/Content/Balance/Tasks/managinglisteners.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

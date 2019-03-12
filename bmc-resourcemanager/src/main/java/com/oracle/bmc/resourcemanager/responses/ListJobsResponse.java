@@ -21,7 +21,7 @@ public class ListJobsResponse {
      * To receive the next page, include the header value in the `page` param.
      * If the `opc-next-page` header does not appear in the response, there
      * are no more list items to get. For more information about list pagination,
-     * see [List Pagination](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private String opcNextPage;
