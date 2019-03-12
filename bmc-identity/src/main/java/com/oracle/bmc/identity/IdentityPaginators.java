@@ -934,6 +934,118 @@ public class IdentityPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listTagDefaults operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListTagDefaultsResponse> listTagDefaultsResponseIterator(
+            final ListTagDefaultsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListTagDefaultsRequest.Builder, ListTagDefaultsRequest, ListTagDefaultsResponse>(
+                new com.google.common.base.Supplier<ListTagDefaultsRequest.Builder>() {
+                    @Override
+                    public ListTagDefaultsRequest.Builder get() {
+                        return ListTagDefaultsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListTagDefaultsResponse, String>() {
+                    @Override
+                    public String apply(ListTagDefaultsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTagDefaultsRequest.Builder>,
+                        ListTagDefaultsRequest>() {
+                    @Override
+                    public ListTagDefaultsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTagDefaultsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListTagDefaultsRequest, ListTagDefaultsResponse>() {
+                    @Override
+                    public ListTagDefaultsResponse apply(ListTagDefaultsRequest request) {
+                        return client.listTagDefaults(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.TagDefaultSummary} objects
+     * contained in responses from the listTagDefaults operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.TagDefaultSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.identity.model.TagDefaultSummary> listTagDefaultsRecordIterator(
+            final ListTagDefaultsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListTagDefaultsRequest.Builder, ListTagDefaultsRequest, ListTagDefaultsResponse,
+                com.oracle.bmc.identity.model.TagDefaultSummary>(
+                new com.google.common.base.Supplier<ListTagDefaultsRequest.Builder>() {
+                    @Override
+                    public ListTagDefaultsRequest.Builder get() {
+                        return ListTagDefaultsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListTagDefaultsResponse, String>() {
+                    @Override
+                    public String apply(ListTagDefaultsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTagDefaultsRequest.Builder>,
+                        ListTagDefaultsRequest>() {
+                    @Override
+                    public ListTagDefaultsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTagDefaultsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListTagDefaultsRequest, ListTagDefaultsResponse>() {
+                    @Override
+                    public ListTagDefaultsResponse apply(ListTagDefaultsRequest request) {
+                        return client.listTagDefaults(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListTagDefaultsResponse,
+                        java.util.List<com.oracle.bmc.identity.model.TagDefaultSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.identity.model.TagDefaultSummary> apply(
+                            ListTagDefaultsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listTagNamespaces operation. This iterable
      * will fetch more data from the server as needed.
      *

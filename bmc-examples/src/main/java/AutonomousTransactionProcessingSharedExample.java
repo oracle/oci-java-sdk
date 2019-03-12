@@ -195,6 +195,7 @@ public class AutonomousTransactionProcessingSharedExample {
                 .adminPassword("DBaaS12345_#")
                 .dbName("javaSdkExam" + rand.nextInt(500))
                 .compartmentId(compartmentId)
+                .dbWorkload(CreateAutonomousDatabaseDetails.DbWorkload.Oltp)
                 .licenseModel(CreateAutonomousDatabaseDetails.LicenseModel.LicenseIncluded)
                 .build();
     }

@@ -91,7 +91,7 @@ public interface NotificationDataPlane extends AutoCloseable {
     ListSubscriptionsResponse listSubscriptions(ListSubscriptionsRequest request);
 
     /**
-     * Publishes a message to the specified topic. For more information about publishing messages, see [Publishing Messages](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/Notification/Tasks/publishingmessages.htm).
+     * Publishes a message to the specified topic. For more information about publishing messages, see [Publishing Messages](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/publishingmessages.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

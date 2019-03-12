@@ -158,7 +158,7 @@ public interface ObjectStorage extends AutoCloseable {
      * Get the metadata for the namespace, which contains defaultS3CompartmentId and defaultSwiftCompartmentId.
      * Any user with the NAMESPACE_READ permission will be able to see the current metadata. If you're not authorized,
      * talk to an administrator. If you're an administrator who needs to write
-     * policies to give users access, see [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
+     * policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -226,7 +226,7 @@ public interface ObjectStorage extends AutoCloseable {
      * <p>
      * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
      * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
+     * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -258,7 +258,7 @@ public interface ObjectStorage extends AutoCloseable {
      * <p>
      * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
      * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
+     * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

@@ -16,7 +16,7 @@ public class ListDbSystemShapesRequest extends com.oracle.bmc.requests.BmcReques
     private String availabilityDomain;
 
     /**
-     * The compartment [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
+     * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     private String compartmentId;
 

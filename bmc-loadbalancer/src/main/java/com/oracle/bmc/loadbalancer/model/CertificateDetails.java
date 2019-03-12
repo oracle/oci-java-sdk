@@ -6,7 +6,7 @@ package com.oracle.bmc.loadbalancer.model;
 /**
  * The configuration details for a certificate bundle.
  * For more information on SSL certficate configuration, see
- * [Managing SSL Certificates](https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingcertificates.htm).
+ * [Managing SSL Certificates](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingcertificates.htm).
  * <p>
  **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *

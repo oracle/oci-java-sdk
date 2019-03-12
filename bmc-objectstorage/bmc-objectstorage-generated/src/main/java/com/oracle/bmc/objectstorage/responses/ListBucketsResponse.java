@@ -26,7 +26,7 @@ public class ListBucketsResponse {
      * For pagination of a list of `Bucket`s. If this header appears in the response, then this
      * is a partial list of buckets. Include this value as the `page` parameter in a subsequent
      * GET request to get the next batch of buckets. For information about pagination, see
-     * [List Pagination](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/usingapi.htm#nine).
+     * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private String opcNextPage;

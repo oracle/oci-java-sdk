@@ -64,7 +64,7 @@ public class ConnectionConfiguration {
      * between the client and backend servers. A send operation does not reset the timer for receive operations. A
      * receive operation does not reset the timer for send operations.
      * <p>
-     * For more information, see [Connection Configuration](https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration).
+     * For more information, see [Connection Configuration](https://docs.cloud.oracle.com/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration).
      * <p>
      * Example: `1200`
      *

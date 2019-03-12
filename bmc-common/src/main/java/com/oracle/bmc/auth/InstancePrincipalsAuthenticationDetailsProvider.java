@@ -77,5 +77,21 @@ public class InstancePrincipalsAuthenticationDetailsProvider
 
             return super.build();
         }
+
+        @Override
+        public InstancePrincipalsAuthenticationDetailsProviderBuilder federationEndpoint(
+                String federationEndpoint) {
+            // do not remove this method.  due to compile time resolution, older generated
+            // clients will bind to this, not the one in the superclass
+            return super.federationEndpoint(federationEndpoint);
+        }
+
+        @Override
+        public InstancePrincipalsAuthenticationDetailsProviderBuilder leafCertificateSupplier(
+                X509CertificateSupplier leafCertificateSupplier) {
+            // do not remove this method.  due to compile time resolution, older generated
+            // clients will bind to this, not the one in the superclass
+            return super.leafCertificateSupplier(leafCertificateSupplier);
+        }
     }
 }

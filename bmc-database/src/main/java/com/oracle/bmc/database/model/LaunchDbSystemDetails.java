@@ -93,6 +93,15 @@ public class LaunchDbSystemDetails extends LaunchDbSystemBase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
+        private String timeZone;
+
+        public Builder timeZone(String timeZone) {
+            this.timeZone = timeZone;
+            this.__explicitlySet__.add("timeZone");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sparseDiskgroup")
         private Boolean sparseDiskgroup;
 
@@ -242,6 +251,7 @@ public class LaunchDbSystemDetails extends LaunchDbSystemBase {
                             subnetId,
                             backupSubnetId,
                             shape,
+                            timeZone,
                             sparseDiskgroup,
                             sshPublicKeys,
                             hostname,
@@ -271,6 +281,7 @@ public class LaunchDbSystemDetails extends LaunchDbSystemBase {
                             .subnetId(o.getSubnetId())
                             .backupSubnetId(o.getBackupSubnetId())
                             .shape(o.getShape())
+                            .timeZone(o.getTimeZone())
                             .sparseDiskgroup(o.getSparseDiskgroup())
                             .sshPublicKeys(o.getSshPublicKeys())
                             .hostname(o.getHostname())
@@ -308,6 +319,7 @@ public class LaunchDbSystemDetails extends LaunchDbSystemBase {
             String subnetId,
             String backupSubnetId,
             String shape,
+            String timeZone,
             Boolean sparseDiskgroup,
             java.util.List<String> sshPublicKeys,
             String hostname,
@@ -331,6 +343,7 @@ public class LaunchDbSystemDetails extends LaunchDbSystemBase {
                 subnetId,
                 backupSubnetId,
                 shape,
+                timeZone,
                 sparseDiskgroup,
                 sshPublicKeys,
                 hostname,

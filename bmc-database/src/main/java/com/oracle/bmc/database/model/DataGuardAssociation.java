@@ -216,13 +216,13 @@ public class DataGuardAssociation {
     }
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the Data Guard association.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Data Guard association.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the reporting database.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the reporting database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     String databaseId;
@@ -341,7 +341,7 @@ public class DataGuardAssociation {
     String lifecycleDetails;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the DB system containing the associated
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system containing the associated
      * peer database.
      *
      **/
@@ -349,20 +349,20 @@ public class DataGuardAssociation {
     String peerDbSystemId;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the database home containing the associated peer database.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database home containing the associated peer database.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerDbHomeId")
     String peerDbHomeId;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the associated peer database.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated peer database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerDatabaseId")
     String peerDatabaseId;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerDataGuardAssociationId")
     String peerDataGuardAssociationId;

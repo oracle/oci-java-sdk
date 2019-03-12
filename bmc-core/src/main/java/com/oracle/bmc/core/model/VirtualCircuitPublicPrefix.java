@@ -6,7 +6,7 @@ package com.oracle.bmc.core.model;
 /**
  * A public IP prefix and its details. With a public virtual circuit, the customer
  * specifies the customer-owned public IP prefixes to advertise across the connection.
- * For more information, see [FastConnect Overview](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/fastconnect.htm).
+ * For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

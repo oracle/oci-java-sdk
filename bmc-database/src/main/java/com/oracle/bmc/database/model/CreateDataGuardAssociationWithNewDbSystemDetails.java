@@ -179,7 +179,7 @@ public class CreateDataGuardAssociationWithNewDbSystemDetails
     String subnetId;
 
     /**
-     * The host name for the DB Node.
+     * The hostname for the DB node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     String hostname;

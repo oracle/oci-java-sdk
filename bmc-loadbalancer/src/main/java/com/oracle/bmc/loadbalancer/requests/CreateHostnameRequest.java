@@ -16,7 +16,7 @@ public class CreateHostnameRequest extends com.oracle.bmc.requests.BmcRequest {
     private CreateHostnameDetails createHostnameDetails;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the load balancer to add the hostname to.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer to add the hostname to.
      */
     private String loadBalancerId;
 

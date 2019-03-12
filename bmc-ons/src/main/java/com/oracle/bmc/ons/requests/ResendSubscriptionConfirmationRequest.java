@@ -11,7 +11,7 @@ import com.oracle.bmc.ons.model.*;
 public class ResendSubscriptionConfirmationRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription to resend the confirmation for.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription to resend the confirmation for.
      *
      */
     private String id;

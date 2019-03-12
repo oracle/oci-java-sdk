@@ -279,7 +279,7 @@ public interface Dns extends AutoCloseable {
     /**
      * Updates the specified secondary zone with your new external master
      * server information. For more information about secondary zone, see
-     * [Manage DNS Service Zone](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/DNS/Tasks/managingdnszones.htm).
+     * [Manage DNS Service Zone](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/managingdnszones.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

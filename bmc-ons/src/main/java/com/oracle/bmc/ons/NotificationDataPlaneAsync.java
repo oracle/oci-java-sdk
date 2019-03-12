@@ -138,7 +138,7 @@ public interface NotificationDataPlaneAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Publishes a message to the specified topic. For more information about publishing messages, see [Publishing Messages](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/Notification/Tasks/publishingmessages.htm).
+     * Publishes a message to the specified topic. For more information about publishing messages, see [Publishing Messages](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/publishingmessages.htm).
      *
      *
      * @param request The request object containing the details to send

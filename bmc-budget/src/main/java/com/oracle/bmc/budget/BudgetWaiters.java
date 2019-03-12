@@ -1,0 +1,210 @@
+/**
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+ */
+package com.oracle.bmc.budget;
+
+import com.oracle.bmc.budget.requests.*;
+import com.oracle.bmc.budget.responses.*;
+
+/**
+ * Collection of helper methods to produce {@link Waiter}s for different
+ * resources of Budget.
+ * <p>
+ * The default configuration used is defined by {@link Waiters#DEFAULT_POLLING_WAITER}.
+ */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+@lombok.RequiredArgsConstructor
+public class BudgetWaiters {
+    private final java.util.concurrent.ExecutorService executorService;
+    private final Budget client;
+
+    /**
+     * Creates a new {@link Waiter} using default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetAlertRuleRequest, GetAlertRuleResponse> forAlertRule(
+            GetAlertRuleRequest request,
+            com.oracle.bmc.budget.model.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forAlertRule(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetAlertRuleRequest, GetAlertRuleResponse> forAlertRule(
+            GetAlertRuleRequest request,
+            com.oracle.bmc.budget.model.LifecycleState targetState,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forAlertRule(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetAlertRuleRequest, GetAlertRuleResponse> forAlertRule(
+            GetAlertRuleRequest request,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+            com.oracle.bmc.budget.model.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forAlertRule(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for AlertRule.
+    private com.oracle.bmc.waiter.Waiter<GetAlertRuleRequest, GetAlertRuleResponse> forAlertRule(
+            com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+            final GetAlertRuleRequest request,
+            final com.oracle.bmc.budget.model.LifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.budget.model.LifecycleState> targetStatesSet =
+                new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetAlertRuleRequest, GetAlertRuleResponse>() {
+                            @Override
+                            public GetAlertRuleResponse apply(GetAlertRuleRequest request) {
+                                return client.getAlertRule(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetAlertRuleResponse>() {
+                            @Override
+                            public boolean apply(GetAlertRuleResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getAlertRule().getLifecycleState());
+                            }
+                        },
+                        false),
+                request);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetBudgetRequest, GetBudgetResponse> forBudget(
+            GetBudgetRequest request, com.oracle.bmc.budget.model.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forBudget(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetBudgetRequest, GetBudgetResponse> forBudget(
+            GetBudgetRequest request,
+            com.oracle.bmc.budget.model.LifecycleState targetState,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forBudget(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetBudgetRequest, GetBudgetResponse> forBudget(
+            GetBudgetRequest request,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+            com.oracle.bmc.budget.model.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forBudget(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for Budget.
+    private com.oracle.bmc.waiter.Waiter<GetBudgetRequest, GetBudgetResponse> forBudget(
+            com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+            final GetBudgetRequest request,
+            final com.oracle.bmc.budget.model.LifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.budget.model.LifecycleState> targetStatesSet =
+                new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<GetBudgetRequest, GetBudgetResponse>() {
+                            @Override
+                            public GetBudgetResponse apply(GetBudgetRequest request) {
+                                return client.getBudget(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetBudgetResponse>() {
+                            @Override
+                            public boolean apply(GetBudgetResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getBudget().getLifecycleState());
+                            }
+                        },
+                        false),
+                request);
+    }
+}

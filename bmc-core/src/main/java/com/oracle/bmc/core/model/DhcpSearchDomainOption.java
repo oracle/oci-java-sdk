@@ -5,7 +5,7 @@ package com.oracle.bmc.core.model;
 
 /**
  * DHCP option for specifying a search domain name for DNS queries. For more information, see
- * [DNS in Your Virtual Cloud Network](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Concepts/dns.htm).
+ * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

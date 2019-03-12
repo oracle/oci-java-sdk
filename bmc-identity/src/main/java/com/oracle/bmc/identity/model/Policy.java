@@ -6,8 +6,8 @@ package com.oracle.bmc.identity.model;
 /**
  * A document that specifies the type of access a group has to the resources in a compartment. For information about
  * policies and other IAM Service components, see
- * [Overview of the IAM Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm). If you're new to policies, see
- * [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
+ * [Overview of the IAM Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm). If you're new to policies, see
+ * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
  * <p>
  * The word \"policy\" is used by people in different ways:
  * <p>
@@ -300,7 +300,7 @@ public class Policy {
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * Example: `{\"Department\": \"Finance\"}`
      *
      **/
@@ -309,7 +309,7 @@ public class Policy {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
      **/

@@ -16,7 +16,7 @@ public class CreatePathRouteSetRequest extends com.oracle.bmc.requests.BmcReques
     private CreatePathRouteSetDetails createPathRouteSetDetails;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the load balancer to add the path route set to.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer to add the path route set to.
      */
     private String loadBalancerId;
 

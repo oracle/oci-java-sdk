@@ -39,7 +39,7 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Changes the status of the standalone backup resource to `ACTIVE` after the backup is created from the on-premises database and placed in Oracle Cloud Infrastructure Object Storage.
      * <p>
-     **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud](https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Tasks/mig-onprembackup.htm) for more information.
+     **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud](https://docs.cloud.oracle.com/Content/Database/Tasks/mig-onprembackup.htm) for more information.
      *
      *
      * @param request The request object containing the details to send
@@ -147,13 +147,13 @@ public interface DatabaseAsync extends AutoCloseable {
 
     /**
      * Creates a new Data Guard association.  A Data Guard association represents the replication relationship between the
-     * specified database and a peer database. For more information, see [Using Oracle Data Guard](https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Tasks/usingdataguard.htm).
+     * specified database and a peer database. For more information, see [Using Oracle Data Guard](https://docs.cloud.oracle.com/Content/Database/Tasks/usingdataguard.htm).
      * <p>
      * All Oracle Cloud Infrastructure resources, including Data Guard associations, get an Oracle-assigned, unique ID
      * called an Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID in the response.
      * You can also retrieve a resource's OCID by using a List API operation on that resource type, or by viewing the
      * resource in the Console. For more information, see
-     * [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
+     * [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -188,7 +188,7 @@ public interface DatabaseAsync extends AutoCloseable {
     /**
      * Creates a new backup resource and returns the information the caller needs to back up an on-premises Oracle Database to Oracle Cloud Infrastructure.
      * <p>
-     **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud](https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Tasks/mig-onprembackup.htm) for more information.
+     **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud](https://docs.cloud.oracle.com/Content/Database/Tasks/mig-onprembackup.htm) for more information.
      *
      *
      * @param request The request object containing the details to send
@@ -582,9 +582,27 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets `IORM` Setting for the requested Exadata DB System.
+     * The default IORM Settings is pre-created in all the Exadata DB System.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExadataIormConfigResponse> getExadataIormConfig(
+            GetExadataIormConfigRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetExadataIormConfigRequest, GetExadataIormConfigResponse>
+                    handler);
+
+    /**
      * Gets information about the specified external backup job.
      * <p>
-     **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud](https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Tasks/mig-onprembackup.htm) for more information.
+     **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud](https://docs.cloud.oracle.com/Content/Database/Tasks/mig-onprembackup.htm) for more information.
      *
      *
      * @param request The request object containing the details to send
@@ -606,7 +624,7 @@ public interface DatabaseAsync extends AutoCloseable {
      * <p>
      * An initial database is created on the DB system based on the request parameters you provide and some default
      * options. For more information,
-     * see [Default Options for the Initial Database](https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Tasks/launchingDB.htm#DefaultOptionsfortheInitialDatabase).
+     * see [Default Options for the Initial Database](https://docs.cloud.oracle.com/Content/Database/Tasks/launchingDB.htm#DefaultOptionsfortheInitialDatabase).
      *
      *
      * @param request The request object containing the details to send
@@ -1150,5 +1168,22 @@ public interface DatabaseAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateDbSystemResponse> updateDbSystem(
             UpdateDbSystemRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateDbSystemRequest, UpdateDbSystemResponse>
+                    handler);
+
+    /**
+     * Update `IORM` Settings for the requested Exadata DB System.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateExadataIormConfigResponse> updateExadataIormConfig(
+            UpdateExadataIormConfigRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateExadataIormConfigRequest, UpdateExadataIormConfigResponse>
                     handler);
 }

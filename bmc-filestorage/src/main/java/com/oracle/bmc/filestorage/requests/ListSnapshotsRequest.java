@@ -21,7 +21,7 @@ public class ListSnapshotsRequest extends com.oracle.bmc.requests.BmcRequest {
      * 1 is the minimum, 1000 is the maximum.
      * <p>
      * For important details about how pagination works,
-     * see [List Pagination](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      * <p>
      * Example: `500`
      *
@@ -33,7 +33,7 @@ public class ListSnapshotsRequest extends com.oracle.bmc.requests.BmcRequest {
      * header from the previous \"List\" call.
      * <p>
      * For important details about how pagination works,
-     * see [List Pagination](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private String page;

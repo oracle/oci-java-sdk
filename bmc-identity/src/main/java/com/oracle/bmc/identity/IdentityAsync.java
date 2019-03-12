@@ -37,7 +37,7 @@ public interface IdentityAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Activate the specified MFA TOTP device for the user.
+     * Activates the specified MFA TOTP device for the user. Activation requires manual interaction with the Console.
      *
      *
      * @param request The request object containing the details to send
@@ -76,7 +76,7 @@ public interface IdentityAsync extends AutoCloseable {
      * Moves the specified tag namespace to the specified compartment within the same tenancy.
      * <p>
      * To move the tag namespace, you must have the manage tag-namespaces permission on both compartments.
-     * For more information about IAM policies, see [Details for IAM](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Reference/iampolicyreference.htm).
+     * For more information about IAM policies, see [Details for IAM](https://docs.cloud.oracle.com/Content/Identity/Reference/iampolicyreference.htm).
      * <p>
      * Moving a tag namespace moves all the tag key definitions contained in the tag namespace.
      *
@@ -98,7 +98,7 @@ public interface IdentityAsync extends AutoCloseable {
 
     /**
      * Creates a new auth token for the specified user. For information about what auth tokens are for, see
-     * [Managing User Credentials](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingcredentials.htm).
+     * [Managing User Credentials](https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcredentials.htm).
      * <p>
      * You must specify a *description* for the auth token (although it can be an empty string). It does not
      * have to be unique, and you can change it anytime with
@@ -128,12 +128,12 @@ public interface IdentityAsync extends AutoCloseable {
      * <p>
      * Specify the parent compartment's OCID as the compartment ID in the request object. Remember that the tenancy
      * is simply the root compartment. For information about OCIDs, see
-     * [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
+     * [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      * <p>
      * You must also specify a *name* for the compartment, which must be unique across all compartments in
      * your tenancy. You can use this name or the OCID when writing policies that apply
      * to the compartment. For more information about policies, see
-     * [How Policies Work](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policies.htm).
+     * [How Policies Work](https://docs.cloud.oracle.com/Content/Identity/Concepts/policies.htm).
      * <p>
      * You must also specify a *description* for the compartment (although it can be an empty string). It does
      * not have to be unique, and you can change it anytime with
@@ -159,7 +159,7 @@ public interface IdentityAsync extends AutoCloseable {
     /**
      * Creates a new secret key for the specified user. Secret keys are used for authentication with the Object Storage Service's Amazon S3
      * compatible API. For information, see
-     * [Managing User Credentials](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingcredentials.htm).
+     * [Managing User Credentials](https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcredentials.htm).
      * <p>
      * You must specify a *description* for the secret key (although it can be an empty string). It does not
      * have to be unique, and you can change it anytime with
@@ -190,12 +190,12 @@ public interface IdentityAsync extends AutoCloseable {
      * is simply the root compartment). Notice that IAM resources (users, groups, compartments, and some policies)
      * reside within the tenancy itself, unlike cloud resources such as compute instances, which typically
      * reside within compartments inside the tenancy. For information about OCIDs, see
-     * [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
+     * [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      * <p>
      * You must also specify a *name* for the dynamic group, which must be unique across all dynamic groups in your
      * tenancy, and cannot be changed. Note that this name has to be also unique accross all groups in your tenancy.
      * You can use this name or the OCID when writing policies that apply to the dynamic group. For more information
-     * about policies, see [How Policies Work](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policies.htm).
+     * about policies, see [How Policies Work](https://docs.cloud.oracle.com/Content/Identity/Concepts/policies.htm).
      * <p>
      * You must also specify a *description* for the dynamic group (although it can be an empty string). It does not
      * have to be unique, and you can change it anytime with {@link #updateDynamicGroup(UpdateDynamicGroupRequest, Consumer, Consumer) updateDynamicGroup}.
@@ -224,11 +224,11 @@ public interface IdentityAsync extends AutoCloseable {
      * is simply the root compartment). Notice that IAM resources (users, groups, compartments, and some policies)
      * reside within the tenancy itself, unlike cloud resources such as compute instances, which typically
      * reside within compartments inside the tenancy. For information about OCIDs, see
-     * [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
+     * [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      * <p>
      * You must also specify a *name* for the group, which must be unique across all groups in your tenancy and
      * cannot be changed. You can use this name or the OCID when writing policies that apply to the group. For more
-     * information about policies, see [How Policies Work](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policies.htm).
+     * information about policies, see [How Policies Work](https://docs.cloud.oracle.com/Content/Identity/Concepts/policies.htm).
      * <p>
      * You must also specify a *description* for the group (although it can be an empty string). It does not
      * have to be unique, and you can change it anytime with {@link #updateGroup(UpdateGroupRequest, Consumer, Consumer) updateGroup}.
@@ -254,11 +254,11 @@ public interface IdentityAsync extends AutoCloseable {
 
     /**
      * Creates a new identity provider in your tenancy. For more information, see
-     * [Identity Providers and Federation](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/federation.htm).
+     * [Identity Providers and Federation](https://docs.cloud.oracle.com/Content/Identity/Concepts/federation.htm).
      * <p>
      * You must specify your tenancy's OCID as the compartment ID in the request object.
      * Remember that the tenancy is simply the root compartment. For information about
-     * OCIDs, see [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
+     * OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      * <p>
      * You must also specify a *name* for the `IdentityProvider`, which must be unique
      * across all `IdentityProvider` objects in your tenancy and cannot be changed.
@@ -305,7 +305,7 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Create a new MFA TOTP device for the user. A user can only create one MFA TOTP device.
+     * Creates a new MFA TOTP device for the user. A user can have one MFA TOTP device.
      *
      *
      * @param request The request object containing the details to send
@@ -323,7 +323,7 @@ public interface IdentityAsync extends AutoCloseable {
 
     /**
      * Creates a new Console one-time password for the specified user. For more information about user
-     * credentials, see [User Credentials](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/usercredentials.htm).
+     * credentials, see [User Credentials](https://docs.cloud.oracle.com/Content/Identity/Concepts/usercredentials.htm).
      * <p>
      * Use this operation after creating a new user, or if a user forgets their password. The new one-time
      * password is returned to you in the response, and you must securely deliver it to the user. They'll
@@ -350,7 +350,7 @@ public interface IdentityAsync extends AutoCloseable {
 
     /**
      * Creates a new policy in the specified compartment (either the tenancy or another of your compartments).
-     * If you're new to policies, see [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
+     * If you're new to policies, see [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
      * <p>
      * You must specify a *name* for the policy, which must be unique across all policies in your tenancy
      * and cannot be changed.
@@ -359,8 +359,8 @@ public interface IdentityAsync extends AutoCloseable {
      * have to be unique, and you can change it anytime with {@link #updatePolicy(UpdatePolicyRequest, Consumer, Consumer) updatePolicy}.
      * <p>
      * You must specify one or more policy statements in the statements array. For information about writing
-     * policies, see [How Policies Work](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policies.htm) and
-     * [Common Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/commonpolicies.htm).
+     * policies, see [How Policies Work](https://docs.cloud.oracle.com/Content/Identity/Concepts/policies.htm) and
+     * [Common Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/commonpolicies.htm).
      * <p>
      * After you send your request, the new object's `lifecycleState` will temporarily be CREATING. Before using the
      * object, first make sure its `lifecycleState` has changed to ACTIVE.
@@ -421,7 +421,7 @@ public interface IdentityAsync extends AutoCloseable {
      * **Deprecated. Use {@link #createAuthToken(CreateAuthTokenRequest, Consumer, Consumer) createAuthToken} instead.**
      * <p>
      * Creates a new Swift password for the specified user. For information about what Swift passwords are for, see
-     * [Managing User Credentials](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingcredentials.htm).
+     * [Managing User Credentials](https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcredentials.htm).
      * <p>
      * You must specify a *description* for the Swift password (although it can be an empty string). It does not
      * have to be unique, and you can change it anytime with
@@ -472,6 +472,22 @@ public interface IdentityAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CreateTagRequest, CreateTagResponse> handler);
 
     /**
+     * Creates a new Tag Default in the specified Compartment for the specified Tag Definition.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateTagDefaultResponse> createTagDefault(
+            CreateTagDefaultRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateTagDefaultRequest, CreateTagDefaultResponse>
+                    handler);
+
+    /**
      * Creates a new tag namespace in the specified compartment.
      * <p>
      * You must specify the compartment ID in the request object (remember that the tenancy is simply the root
@@ -488,7 +504,7 @@ public interface IdentityAsync extends AutoCloseable {
      * {@link #updateTagNamespace(UpdateTagNamespaceRequest, Consumer, Consumer) updateTagNamespace}.
      * <p>
      * Tag namespaces cannot be deleted, but they can be retired.
-     * See [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring) for more information.
+     * See [Retiring Key Definitions and Namespace Definitions](https://docs.cloud.oracle.com/Content/Identity/Concepts/taggingoverview.htm#Retiring) for more information.
      *
      *
      * @param request The request object containing the details to send
@@ -506,13 +522,13 @@ public interface IdentityAsync extends AutoCloseable {
 
     /**
      * Creates a new user in your tenancy. For conceptual information about users, your tenancy, and other
-     * IAM Service components, see [Overview of the IAM Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm).
+     * IAM Service components, see [Overview of the IAM Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
      * <p>
      * You must specify your tenancy's OCID as the compartment ID in the request object (remember that the
      * tenancy is simply the root compartment). Notice that IAM resources (users, groups, compartments, and
      * some policies) reside within the tenancy itself, unlike cloud resources such as compute instances,
      * which typically reside within compartments inside the tenancy. For information about OCIDs, see
-     * [Resource Identifiers](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm).
+     * [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      * <p>
      * You must also specify a *name* for the user, which must be unique across all users in your tenancy
      * and cannot be changed. Allowed characters: No spaces. Only letters, numerals, hyphens, periods,
@@ -536,7 +552,7 @@ public interface IdentityAsync extends AutoCloseable {
      * {@link #createOrResetUIPassword(CreateOrResetUIPasswordRequest, Consumer, Consumer) createOrResetUIPassword}).
      * If the user needs to access the Oracle Cloud Infrastructure REST API, you need to upload a
      * public API signing key for that user (see
-     * [Required Keys and OCIDs](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm) and also
+     * [Required Keys and OCIDs](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm) and also
      * {@link #uploadApiKey(UploadApiKeyRequest, Consumer, Consumer) uploadApiKey}).
      * <p>
      **Important:** Make sure to inform the new user which compartment(s) they have access to.
@@ -691,7 +707,7 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Delete the specified MFA TOTP device for the specified user.
+     * Deletes the specified MFA TOTP device for the specified user.
      *
      *
      * @param request The request object containing the details to send
@@ -759,6 +775,22 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes the the specified Tag Default.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteTagDefaultResponse> deleteTagDefault(
+            DeleteTagDefaultRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteTagDefaultRequest, DeleteTagDefaultResponse>
+                    handler);
+
+    /**
      * Deletes the specified user. The user must not be in any groups.
      *
      * @param request The request object containing the details to send
@@ -773,7 +805,7 @@ public interface IdentityAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<DeleteUserRequest, DeleteUserResponse> handler);
 
     /**
-     * Generate seed for the MFA TOTP device
+     * Generate seed for the MFA TOTP device.
      *
      *
      * @param request The request object containing the details to send
@@ -786,6 +818,24 @@ public interface IdentityAsync extends AutoCloseable {
     java.util.concurrent.Future<GenerateTotpSeedResponse> generateTotpSeed(
             GenerateTotpSeedRequest request,
             com.oracle.bmc.responses.AsyncHandler<GenerateTotpSeedRequest, GenerateTotpSeedResponse>
+                    handler);
+
+    /**
+     * Gets the authentication policy for the given tenancy. You must specify your tenant\u2019s OCID as the value for
+     * the compartment ID (remember that the tenancy is simply the root compartment).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAuthenticationPolicyResponse> getAuthenticationPolicy(
+            GetAuthenticationPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetAuthenticationPolicyRequest, GetAuthenticationPolicyResponse>
                     handler);
 
     /**
@@ -923,6 +973,22 @@ public interface IdentityAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetTagRequest, GetTagResponse> handler);
 
     /**
+     * Retrieves the specified Tag Default.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetTagDefaultResponse> getTagDefault(
+            GetTagDefaultRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetTagDefaultRequest, GetTagDefaultResponse>
+                    handler);
+
+    /**
      * Gets the specified tag namespace's information.
      *
      *
@@ -1037,7 +1103,7 @@ public interface IdentityAsync extends AutoCloseable {
     /**
      * Lists the availability domains in your tenancy. Specify the OCID of either the tenancy or another
      * of your compartments as the value for the compartment ID (remember that the tenancy is simply the root compartment).
-     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five).
+     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five).
      * Note that the order of the results returned can change if availability domains are added or removed; therefore, do not
      * create a dependency on the list order.
      *
@@ -1073,7 +1139,7 @@ public interface IdentityAsync extends AutoCloseable {
      * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ANY.
      * <p>
-     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five).
+     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five).
      *
      *
      * @param request The request object containing the details to send
@@ -1090,7 +1156,7 @@ public interface IdentityAsync extends AutoCloseable {
 
     /**
      * Lists all the tags enabled for cost-tracking in the specified tenancy. For information about
-     * cost-tracking tags, see [Using Cost-tracking Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#costs).
+     * cost-tracking tags, see [Using Cost-tracking Tags](https://docs.cloud.oracle.com/Content/Identity/Concepts/taggingoverview.htm#costs).
      *
      *
      * @param request The request object containing the details to send
@@ -1127,7 +1193,7 @@ public interface IdentityAsync extends AutoCloseable {
     /**
      * Lists the dynamic groups in your tenancy. You must specify your tenancy's OCID as the value for
      * the compartment ID (remember that the tenancy is simply the root compartment).
-     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five).
+     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five).
      *
      *
      * @param request The request object containing the details to send
@@ -1146,7 +1212,7 @@ public interface IdentityAsync extends AutoCloseable {
     /**
      * Lists the Fault Domains in your tenancy. Specify the OCID of either the tenancy or another
      * of your compartments as the value for the compartment ID (remember that the tenancy is simply the root compartment).
-     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five).
+     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five).
      *
      *
      * @param request The request object containing the details to send
@@ -1164,7 +1230,7 @@ public interface IdentityAsync extends AutoCloseable {
     /**
      * Lists the groups in your tenancy. You must specify your tenancy's OCID as the value for
      * the compartment ID (remember that the tenancy is simply the root compartment).
-     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five).
+     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five).
      *
      *
      * @param request The request object containing the details to send
@@ -1198,7 +1264,7 @@ public interface IdentityAsync extends AutoCloseable {
      * Lists all the identity providers in your tenancy. You must specify the identity provider type (e.g., `SAML2` for
      * identity providers using the SAML2.0 protocol). You must specify your tenancy's OCID as the value for the
      * compartment ID (remember that the tenancy is simply the root compartment).
-     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five).
+     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five).
      *
      *
      * @param request The request object containing the details to send
@@ -1233,7 +1299,7 @@ public interface IdentityAsync extends AutoCloseable {
 
     /**
      * Lists the MFA TOTP devices for the specified user. The returned object contains the device's OCID, but not
-     * the seed. The seed is returned only upon creation or when we regenerate MFA seed for the device.
+     * the seed. The seed is returned only upon creation or when the IAM service regenerates the MFA seed for the device.
      *
      *
      * @param request The request object containing the details to send
@@ -1251,7 +1317,7 @@ public interface IdentityAsync extends AutoCloseable {
 
     /**
      * Lists the policies in the specified compartment (either the tenancy or another of your compartments).
-     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five).
+     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five).
      * <p>
      * To determine which policies apply to a particular group or compartment, you must view the individual
      * statements inside all your policies. There isn't a way to automatically obtain that information via the API.
@@ -1338,6 +1404,22 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists the Tag Defaults for Tag Definitions in the specified Compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListTagDefaultsResponse> listTagDefaults(
+            ListTagDefaultsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListTagDefaultsRequest, ListTagDefaultsResponse>
+                    handler);
+
+    /**
      * Lists the tag namespaces in the specified compartment.
      *
      *
@@ -1372,7 +1454,7 @@ public interface IdentityAsync extends AutoCloseable {
     /**
      * Lists the `UserGroupMembership` objects in your tenancy. You must specify your tenancy's OCID
      * as the value for the compartment ID
-     * (see [Where to Get the Tenancy's OCID and User's OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five)).
+     * (see [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five)).
      * You must also then filter the list in one of these ways:
      * <p>
      * - You can limit the results to just the memberships for a given user by specifying a `userId`.
@@ -1398,7 +1480,7 @@ public interface IdentityAsync extends AutoCloseable {
     /**
      * Lists the users in your tenancy. You must specify your tenancy's OCID as the value for the
      * compartment ID (remember that the tenancy is simply the root compartment).
-     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#five).
+     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five).
      *
      *
      * @param request The request object containing the details to send
@@ -1475,6 +1557,23 @@ public interface IdentityAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateAuthTokenResponse> updateAuthToken(
             UpdateAuthTokenRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateAuthTokenRequest, UpdateAuthTokenResponse>
+                    handler);
+
+    /**
+     * Updates authentication policy for the specified tenancy
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateAuthenticationPolicyResponse> updateAuthenticationPolicy(
+            UpdateAuthenticationPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateAuthenticationPolicyRequest, UpdateAuthenticationPolicyResponse>
                     handler);
 
     /**
@@ -1642,13 +1741,29 @@ public interface IdentityAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<UpdateTagRequest, UpdateTagResponse> handler);
 
     /**
+     * Updates the the specified Tag Default. You can presently update the following fields: `value`.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateTagDefaultResponse> updateTagDefault(
+            UpdateTagDefaultRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateTagDefaultRequest, UpdateTagDefaultResponse>
+                    handler);
+
+    /**
      * Updates the the specified tag namespace. You can't update the namespace name.
      * <p>
      * Updating `isRetired` to 'true' retires the namespace and all the tag definitions in the namespace. Reactivating a
      * namespace (changing `isRetired` from 'true' to 'false') does not reactivate tag definitions.
      * To reactivate the tag definitions, you must reactivate each one indvidually *after* you reactivate the namespace,
      * using {@link #updateTag(UpdateTagRequest, Consumer, Consumer) updateTag}. For more information about retiring tag namespaces, see
-     * [Retiring Key Definitions and Namespace Definitions](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
+     * [Retiring Key Definitions and Namespace Definitions](https://docs.cloud.oracle.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
      * <p>
      * You can't add a namespace with the same name as a retired namespace in the same tenancy.
      *

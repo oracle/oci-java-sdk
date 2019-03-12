@@ -12,7 +12,7 @@ package com.oracle.bmc.core.model;
  * 2. Reserved
  * <p>
  * For more information and comparison of the two types,
- * see [Public IP Addresses](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingpublicIPs.htm).
+ * see [Public IP Addresses](https://docs.cloud.oracle.com/Content/Network/Tasks/managingpublicIPs.htm).
  * <p>
  **Warning:** Oracle recommends that you avoid using any confidential information when you
  * supply string values using the API.
@@ -301,7 +301,7 @@ public class PublicIp {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
@@ -320,7 +320,7 @@ public class PublicIp {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
      * predefined name, type, or namespace. For more information, see
-     * [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: `{\"Department\": \"Finance\"}`
      *
@@ -413,7 +413,7 @@ public class PublicIp {
      * whenever you like. It does not need to be assigned to a private IP at all times.
      * <p>
      * For more information and comparison of the two types,
-     * see [Public IP Addresses](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingpublicIPs.htm).
+     * see [Public IP Addresses](https://docs.cloud.oracle.com/Content/Network/Tasks/managingpublicIPs.htm).
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -473,7 +473,7 @@ public class PublicIp {
      * whenever you like. It does not need to be assigned to a private IP at all times.
      * <p>
      * For more information and comparison of the two types,
-     * see [Public IP Addresses](https://docs.us-phoenix-1.oraclecloud.com/Content/Network/Tasks/managingpublicIPs.htm).
+     * see [Public IP Addresses](https://docs.cloud.oracle.com/Content/Network/Tasks/managingpublicIPs.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifetime")

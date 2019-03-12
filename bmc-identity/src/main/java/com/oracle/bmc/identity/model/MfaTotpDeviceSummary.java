@@ -216,7 +216,13 @@ public class MfaTotpDeviceSummary {
     LifecycleState lifecycleState;
 
     /**
-     * The detailed status of INACTIVE lifecycleState. Possible values are 1(SUSPENDED), 2(DISABLED), 4(BLOCKED) and 8(LOCKED).
+     * The detailed status of INACTIVE lifecycleState.
+     * Allowed values are:
+     *  - 1 - SUSPENDED
+     *  - 2 - DISABLED
+     *  - 4 - BLOCKED
+     *  - 8 - LOCKED
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
     Long inactiveStatus;

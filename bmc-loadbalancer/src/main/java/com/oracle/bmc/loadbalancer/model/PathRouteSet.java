@@ -5,7 +5,7 @@ package com.oracle.bmc.loadbalancer.model;
 
 /**
  * A named set of path route rules. For more information, see
- * [Managing Request Routing](https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingrequest.htm).
+ * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm).
  * <p>
  **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *

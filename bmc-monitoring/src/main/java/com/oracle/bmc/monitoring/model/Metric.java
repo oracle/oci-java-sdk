@@ -5,7 +5,7 @@ package com.oracle.bmc.monitoring.model;
 
 /**
  * The properties that define a metric.
- * For information about metrics, see [Metrics Overview](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
+ * For information about metrics, see [Metrics Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -108,7 +108,7 @@ public class Metric {
     String namespace;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing
      * the resources monitored by the metric.
      *
      **/

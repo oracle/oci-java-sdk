@@ -80,7 +80,7 @@ public class AlarmHistoryCollection {
     }
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm for which to retrieve history.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm for which to retrieve history.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("alarmId")

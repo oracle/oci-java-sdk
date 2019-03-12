@@ -24,7 +24,7 @@ public class ListPingProbeResultsResponse {
      * additional items still to get. Include this value as the `page`
      * parameter for the subsequent GET request. For information about
      * pagination, see
-     * [List Pagination](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/usingapi.htm#List_Pagination).
+     * [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#List_Pagination).
      *
      */
     private String opcNextPage;

@@ -16,7 +16,7 @@ public class UpdateHealthCheckerRequest extends com.oracle.bmc.requests.BmcReque
     private UpdateHealthCheckerDetails healthChecker;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the load balancer associated with the health check policy to be updated.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer associated with the health check policy to be updated.
      */
     private String loadBalancerId;
 

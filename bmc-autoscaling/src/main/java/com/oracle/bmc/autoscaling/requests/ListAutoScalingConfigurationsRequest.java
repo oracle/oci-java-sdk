@@ -11,7 +11,7 @@ import com.oracle.bmc.autoscaling.model.*;
 public class ListAutoScalingConfigurationsRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the compartment containing the
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the
      * resources monitored by the metric that you are searching for. Use tenancyId to search in
      * the root compartment.
      *
@@ -31,14 +31,14 @@ public class ListAutoScalingConfigurationsRequest extends com.oracle.bmc.request
 
     /**
      * The maximum number of items to return in a paginated \"List\" call. For information about pagination, see
-     * [List Pagination](https://docs.us-phoenix-1.oraclecloud.com/#API/Concepts/usingapi.htm#List_Pagination).
+     * [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
      *
      */
     private Integer limit;
 
     /**
      * The value of the `opc-next-page` response header from the previous \"List\" call. For information about
-     * pagination, see [List Pagination](https://docs.us-phoenix-1.oraclecloud.com/#API/Concepts/usingapi.htm#List_Pagination).
+     * pagination, see [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
      *
      */
     private String page;

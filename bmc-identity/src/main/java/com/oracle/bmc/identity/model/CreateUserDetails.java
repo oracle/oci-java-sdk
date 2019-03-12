@@ -51,6 +51,15 @@ public class CreateUserDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("email")
+        private String email;
+
+        public Builder email(String email) {
+            this.email = email;
+            this.__explicitlySet__.add("email");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -76,7 +85,7 @@ public class CreateUserDetails {
         public CreateUserDetails build() {
             CreateUserDetails __instance__ =
                     new CreateUserDetails(
-                            compartmentId, name, description, freeformTags, definedTags);
+                            compartmentId, name, description, email, freeformTags, definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -87,6 +96,7 @@ public class CreateUserDetails {
                     compartmentId(o.getCompartmentId())
                             .name(o.getName())
                             .description(o.getDescription())
+                            .email(o.getEmail())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -123,8 +133,14 @@ public class CreateUserDetails {
     String description;
 
     /**
+     * The email you assign to the user. Has to be unique across the tenancy.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("email")
+    String email;
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * Example: `{\"Department\": \"Finance\"}`
      *
      **/
@@ -133,7 +149,7 @@ public class CreateUserDetails {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
      **/

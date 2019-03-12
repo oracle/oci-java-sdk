@@ -11,7 +11,7 @@ import com.oracle.bmc.monitoring.model.*;
 public class DeleteAlarmRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.
      *
      */
     private String alarmId;

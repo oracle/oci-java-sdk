@@ -11,7 +11,7 @@ package com.oracle.bmc.identity.model;
  **Note:** The credential set is always an Oracle-generated SMTP user name and password pair;
  * you cannot designate the SMTP user name or the SMTP password.
  * <p>
- * For more information, see [Managing User Credentials](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingcredentials.htm#SMTP).
+ * For more information, see [Managing User Credentials](https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcredentials.htm#SMTP).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

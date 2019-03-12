@@ -11,7 +11,7 @@ import com.oracle.bmc.waas.model.*;
 public class DeleteCertificateRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the SSL certificate used in the WAAS policy. This number is generated when the certificate is added to the policy.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the SSL certificate used in the WAAS policy. This number is generated when the certificate is added to the policy.
      */
     private String certificateId;
 

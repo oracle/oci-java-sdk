@@ -11,7 +11,7 @@ import com.oracle.bmc.loadbalancer.model.*;
 public class GetRuleSetRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the specified load balancer.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the specified load balancer.
      */
     private String loadBalancerId;
 

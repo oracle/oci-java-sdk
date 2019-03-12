@@ -5,7 +5,7 @@ package com.oracle.bmc.loadbalancer.model;
 
 /**
  * The configuration of a backend server that is a member of a load balancer backend set.
- * For more information, see [Managing Backend Servers](https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingbackendservers.htm).
+ * For more information, see [Managing Backend Servers](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingbackendservers.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -152,7 +152,7 @@ public class Backend {
      * proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections
      * as a server weighted '1'.
      * For more information on load balancing policies, see
-     * [How Load Balancing Policies Work](https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Reference/lbpolicies.htm).
+     * [How Load Balancing Policies Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
      * <p>
      * Example: `3`
      *

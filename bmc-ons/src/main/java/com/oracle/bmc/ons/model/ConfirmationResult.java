@@ -120,7 +120,7 @@ public class ConfirmationResult {
     String topicName;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to delete.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to delete.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("topicId")
@@ -148,7 +148,7 @@ public class ConfirmationResult {
     String message;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
     String subscriptionId;

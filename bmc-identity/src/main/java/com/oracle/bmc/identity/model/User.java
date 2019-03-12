@@ -9,18 +9,18 @@ package com.oracle.bmc.identity.model;
  * have one or more IAM Service credentials ({@link ApiKey},
  * {@link UIPassword}, {@link SwiftPassword} and
  * {@link AuthToken}).
- * For more information, see [User Credentials](https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/usercredentials.htm)). End users of your
+ * For more information, see [User Credentials](https://docs.cloud.oracle.com/Content/API/Concepts/usercredentials.htm)). End users of your
  * application are not typically IAM Service users. For conceptual information about users and other IAM Service
- * components, see [Overview of the IAM Service](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/overview.htm).
+ * components, see [Overview of the IAM Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
  * <p>
  * These users are created directly within the Oracle Cloud Infrastructure system, via the IAM service.
  * They are different from *federated users*, who authenticate themselves to the Oracle Cloud Infrastructure
  * Console via an identity provider. For more information, see
- * [Identity Providers and Federation](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/federation.htm).
+ * [Identity Providers and Federation](https://docs.cloud.oracle.com/Content/Identity/Concepts/federation.htm).
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access,
- * see [Getting Started with Policies](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/policygetstarted.htm).
+ * see [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -72,6 +72,15 @@ public class User {
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("email")
+        private String email;
+
+        public Builder email(String email) {
+            this.email = email;
+            this.__explicitlySet__.add("email");
             return this;
         }
 
@@ -167,6 +176,7 @@ public class User {
                             compartmentId,
                             name,
                             description,
+                            email,
                             identityProviderId,
                             externalIdentifier,
                             timeCreated,
@@ -187,6 +197,7 @@ public class User {
                             .compartmentId(o.getCompartmentId())
                             .name(o.getName())
                             .description(o.getDescription())
+                            .email(o.getEmail())
                             .identityProviderId(o.getIdentityProviderId())
                             .externalIdentifier(o.getExternalIdentifier())
                             .timeCreated(o.getTimeCreated())
@@ -234,6 +245,14 @@ public class User {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
+
+    /**
+     * The email you assign to the user during creation.
+     * The name must be unique across all users in the tenancy.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("email")
+    String email;
 
     /**
      * The OCID of the `IdentityProvider` this user belongs to.
@@ -328,7 +347,7 @@ public class User {
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * Example: `{\"Department\": \"Finance\"}`
      *
      **/
@@ -337,7 +356,7 @@ public class User {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
      **/

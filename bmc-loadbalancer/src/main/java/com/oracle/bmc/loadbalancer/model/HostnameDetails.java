@@ -76,7 +76,7 @@ public class HostnameDetails {
 
     /**
      * A virtual hostname. For more information about virtual hostname string construction, see
-     * [Managing Request Routing](https://docs.us-phoenix-1.oraclecloud.com/Content/Balance/Tasks/managingrequest.htm#routing).
+     * [Managing Request Routing](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrequest.htm#routing).
      * <p>
      * Example: `app.example.com`
      *

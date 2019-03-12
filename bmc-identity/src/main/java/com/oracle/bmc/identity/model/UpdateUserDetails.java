@@ -33,6 +33,15 @@ public class UpdateUserDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("email")
+        private String email;
+
+        public Builder email(String email) {
+            this.email = email;
+            this.__explicitlySet__.add("email");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -57,7 +66,7 @@ public class UpdateUserDetails {
 
         public UpdateUserDetails build() {
             UpdateUserDetails __instance__ =
-                    new UpdateUserDetails(description, freeformTags, definedTags);
+                    new UpdateUserDetails(description, email, freeformTags, definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -66,6 +75,7 @@ public class UpdateUserDetails {
         public Builder copy(UpdateUserDetails o) {
             Builder copiedBuilder =
                     description(o.getDescription())
+                            .email(o.getEmail())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -88,8 +98,14 @@ public class UpdateUserDetails {
     String description;
 
     /**
+     * The email you assign to the user. Has to be unique across the tenancy.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("email")
+    String email;
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * Example: `{\"Department\": \"Finance\"}`
      *
      **/
@@ -98,7 +114,7 @@ public class UpdateUserDetails {
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
      **/

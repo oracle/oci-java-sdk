@@ -243,14 +243,14 @@ public class UpdateAlarmDetails {
     String displayName;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric
      * being evaluated by the alarm.
      *
      **/
@@ -286,9 +286,9 @@ public class UpdateAlarmDetails {
      * rule condition has been met. The query must specify a metric, statistic, interval, and trigger
      * rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally
      * specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
-     * For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/Monitoring/Reference/mql.htm).
+     * For details about Monitoring Query Language (MQL), see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm).
      * For available dimensions, review the metric definition for the supported service.
-     * See [Supported Services](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+     * See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
      * <p>
      * Example of threshold alarm:
      * <p>
@@ -358,7 +358,7 @@ public class UpdateAlarmDetails {
     String body;
 
     /**
-     * An array of [OCIDs](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/General/Concepts/identifiers.htm) to which the notifications for
+     * An array of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to which the notifications for
      * this alarm will be delivered. An example destination is an OCID for a topic managed by the
      * Oracle Cloud Infrastructure Notification service.
      *

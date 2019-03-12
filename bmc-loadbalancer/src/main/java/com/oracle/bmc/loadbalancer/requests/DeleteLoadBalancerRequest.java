@@ -11,7 +11,7 @@ import com.oracle.bmc.loadbalancer.model.*;
 public class DeleteLoadBalancerRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the load balancer to delete.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer to delete.
      */
     private String loadBalancerId;
 

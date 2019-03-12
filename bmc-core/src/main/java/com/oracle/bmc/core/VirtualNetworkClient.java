@@ -174,6 +174,43 @@ public class VirtualNetworkClient implements VirtualNetwork {
                     signingStrategyRequestSignerFactories,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
+     */
+    public VirtualNetworkClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService) {
         this.authenticationDetailsProvider = authenticationDetailsProvider;
         com.oracle.bmc.http.internal.RestClientFactory restClientFactory =
                 com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder()
@@ -199,19 +236,23 @@ public class VirtualNetworkClient implements VirtualNetwork {
             }
         }
         this.client = restClientFactory.create(defaultRequestSigner, requestSigners, configuration);
-        // up to 50 (core) threads, time out after 60s idle, all daemon
-        java.util.concurrent.ThreadPoolExecutor executorService =
-                new java.util.concurrent.ThreadPoolExecutor(
-                        50,
-                        50,
-                        60L,
-                        java.util.concurrent.TimeUnit.SECONDS,
-                        new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
-                        new com.google.common.util.concurrent.ThreadFactoryBuilder()
-                                .setDaemon(false)
-                                .setNameFormat("VirtualNetwork-waiters-%d")
-                                .build());
-        executorService.allowCoreThreadTimeOut(true);
+        if (executorService == null) {
+            // up to 50 (core) threads, time out after 60s idle, all daemon
+            java.util.concurrent.ThreadPoolExecutor threadPoolExecutor =
+                    new java.util.concurrent.ThreadPoolExecutor(
+                            50,
+                            50,
+                            60L,
+                            java.util.concurrent.TimeUnit.SECONDS,
+                            new java.util.concurrent.LinkedBlockingQueue<Runnable>(),
+                            new com.google.common.util.concurrent.ThreadFactoryBuilder()
+                                    .setDaemon(true)
+                                    .setNameFormat("VirtualNetwork-waiters-%d")
+                                    .build());
+            threadPoolExecutor.allowCoreThreadTimeOut(true);
+
+            executorService = threadPoolExecutor;
+        }
 
         this.waiters = new VirtualNetworkWaiters(executorService, this);
 
@@ -250,11 +291,23 @@ public class VirtualNetworkClient implements VirtualNetwork {
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, VirtualNetworkClient> {
+        private java.util.concurrent.ExecutorService executorService;
+
         private Builder(com.oracle.bmc.Service service) {
             super(service);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Set the ExecutorService for the client to be created.
+         * @param executorService executorService
+         * @return this builder
+         */
+        public Builder executorService(java.util.concurrent.ExecutorService executorService) {
+            this.executorService = executorService;
+            return this;
         }
 
         /**
@@ -273,7 +326,8 @@ public class VirtualNetworkClient implements VirtualNetwork {
                     requestSignerFactory,
                     signingStrategyRequestSignerFactories,
                     additionalClientConfigurators,
-                    endpoint);
+                    endpoint,
+                    executorService);
         }
     }
 

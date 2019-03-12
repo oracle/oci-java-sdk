@@ -129,7 +129,7 @@ public class ExternalBackupJob {
     }
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the associated backup resource.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated backup resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupId")
     String backupId;
@@ -166,7 +166,7 @@ public class ExternalBackupJob {
 
     /**
      * The auth token to use for access to the Swift compartment bucket that will store the standalone backup.
-     * For information about auth tokens, see [Working with Auth Tokens](https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingcredentials.htm#two).
+     * For information about auth tokens, see [Working with Auth Tokens](https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcredentials.htm#two).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("swiftPassword")

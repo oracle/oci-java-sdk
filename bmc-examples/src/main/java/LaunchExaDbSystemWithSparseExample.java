@@ -117,6 +117,7 @@ public class LaunchExaDbSystemWithSparseExample {
                             .hostname("javasdk-host")
                             .shape(DB_SYSTEM_SHAPE)
                             .cpuCoreCount(2)
+                            .timeZone("US/Pacific")
                             .dbHome(
                                     CreateDbHomeDetails.builder()
                                             .dbVersion(DB_VERSION)

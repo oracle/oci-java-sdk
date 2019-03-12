@@ -153,7 +153,7 @@ public class WorkRequestResource {
     String entityType;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the resource that the work request affects.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the resource that the work request affects.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     String identifier;

@@ -16,7 +16,7 @@ public class UpdatePathRouteSetRequest extends com.oracle.bmc.requests.BmcReques
     private UpdatePathRouteSetDetails updatePathRouteSetDetails;
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the load balancer associated with the path route set to update.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer associated with the path route set to update.
      */
     private String loadBalancerId;
 

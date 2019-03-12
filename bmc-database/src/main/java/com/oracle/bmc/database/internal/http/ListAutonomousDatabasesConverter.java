@@ -76,6 +76,14 @@ public class ListAutonomousDatabasesConverter {
                                     request.getLifecycleState().getValue()));
         }
 
+        if (request.getDbWorkload() != null) {
+            target =
+                    target.queryParam(
+                            "dbWorkload",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getDbWorkload().getValue()));
+        }
+
         if (request.getDisplayName() != null) {
             target =
                     target.queryParam(

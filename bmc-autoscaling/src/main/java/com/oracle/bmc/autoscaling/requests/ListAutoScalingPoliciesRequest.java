@@ -28,14 +28,14 @@ public class ListAutoScalingPoliciesRequest extends com.oracle.bmc.requests.BmcR
 
     /**
      * The maximum number of items to return in a paginated \"List\" call. For information about pagination, see
-     * [List Pagination](https://docs.us-phoenix-1.oraclecloud.com/#API/Concepts/usingapi.htm#List_Pagination).
+     * [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
      *
      */
     private Integer limit;
 
     /**
      * The value of the `opc-next-page` response header from the previous \"List\" call. For information about
-     * pagination, see [List Pagination](https://docs.us-phoenix-1.oraclecloud.com/#API/Concepts/usingapi.htm#List_Pagination).
+     * pagination, see [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
      *
      */
     private String page;

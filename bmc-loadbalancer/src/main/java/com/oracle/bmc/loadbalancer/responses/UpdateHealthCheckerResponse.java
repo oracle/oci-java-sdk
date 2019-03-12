@@ -11,7 +11,7 @@ import com.oracle.bmc.loadbalancer.model.*;
 public class UpdateHealthCheckerResponse {
 
     /**
-     * The [OCID](https://docs.us-phoenix-1.oraclecloud.com/Content/General/Concepts/identifiers.htm) of the work request.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request.
      */
     private String opcWorkRequestId;
 

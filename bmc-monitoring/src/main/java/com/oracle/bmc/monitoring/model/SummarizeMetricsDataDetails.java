@@ -118,9 +118,9 @@ public class SummarizeMetricsDataDetails {
      * interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions.
      * Supported grouping functions: `grouping()`, `groupBy()`.
      * For details about Monitoring Query Language (MQL), see
-     * [Monitoring Query Language (MQL) Reference](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/Monitoring/Reference/mql.htm).
+     * [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm).
      * For available dimensions, review the metric definition for the supported service.
-     * See [Supported Services](https://docs.us-phoenix-1.oraclecloud.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+     * See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
      * <p>
      * Example: `CpuUtilization[1m].sum()`
      *

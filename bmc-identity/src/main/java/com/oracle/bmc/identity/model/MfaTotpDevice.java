@@ -4,7 +4,12 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * A `MfaTotpDevice` is an Mfa Totp device that the user can use to authenticate with OCI (Leslie will add more details here)
+ * Users can enable multi-factor authentication (MFA) for their own user accounts. After MFA is enabled, the
+ * user is prompted for a time-based one-time password (TOTP) to authenticate before they can sign in to the
+ * Console. To enable multi-factor authentication, the user must register a mobile device with a TOTP authenticator app
+ * installed. The registration process creates the `MfaTotpDevice` object. The registration process requires
+ * interaction with the Console and cannot be completed programmatically. For more information, see
+ * [Managing Multi-Factor Authentication](https://docs.cloud.oracle.com/Content/Identity/Tasks/usingmfa.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -138,26 +143,26 @@ public class MfaTotpDevice {
     }
 
     /**
-     * The OCID of the Mfa Totp Device.
+     * The OCID of the MFA TOTP device.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The seed for the Mfa Totp device (Base32 encoded)
+     * The seed for the MFA TOTP device (Base32 encoded).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("seed")
     String seed;
 
     /**
-     * The OCID of the user the Mfa Totp Device belongs to.
+     * The OCID of the user the MFA TOTP device belongs to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
     String userId;
 
     /**
-     * Date and time the `Mfa Totp Device` object was created, in the format defined by RFC3339.
+     * Date and time the `MfaTotpDevice` object was created, in the format defined by RFC3339.
      * <p>
      * Example: `2016-08-25T21:10:29.600Z`
      *
@@ -166,7 +171,7 @@ public class MfaTotpDevice {
     java.util.Date timeCreated;
 
     /**
-     * Date and time when this Mfa Totp device will expire, in the format defined by RFC3339.
+     * Date and time when this MFA TOTP device will expire, in the format defined by RFC3339.
      * Null if it never expires.
      * <p>
      * Example: `2016-08-25T21:10:29.600Z`
@@ -175,7 +180,7 @@ public class MfaTotpDevice {
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
     java.util.Date timeExpires;
     /**
-     * The Mfa Totp Device's current state. After creating a Mfa Totp Device, make sure its `lifecycleState` changes from
+     * The MFA TOTP device's current state. After creating the MFA TOTP device, make sure its `lifecycleState` changes from
      * CREATING to ACTIVE before using it.
      *
      **/
@@ -226,7 +231,7 @@ public class MfaTotpDevice {
         }
     };
     /**
-     * The Mfa Totp Device's current state. After creating a Mfa Totp Device, make sure its `lifecycleState` changes from
+     * The MFA TOTP device's current state. After creating the MFA TOTP device, make sure its `lifecycleState` changes from
      * CREATING to ACTIVE before using it.
      *
      **/
@@ -234,13 +239,19 @@ public class MfaTotpDevice {
     LifecycleState lifecycleState;
 
     /**
-     * The detailed status of INACTIVE lifecycleState. Possible values are 1(SUSPENDED), 2(DISABLED), 4(BLOCKED) and 8(LOCKED).
+     * The detailed status of INACTIVE lifecycleState.
+     * Allowed values are:
+     *  - 1 - SUSPENDED
+     *  - 2 - DISABLED
+     *  - 4 - BLOCKED
+     *  - 8 - LOCKED
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("inactiveStatus")
     Long inactiveStatus;
 
     /**
-     * Flag to indicate if the Mfa Totp Device has been isActivated
+     * Flag to indicate if the MFA TOTP device has been activated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isActivated")
     Boolean isActivated;
