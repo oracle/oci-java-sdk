@@ -54,7 +54,9 @@ import com.oracle.bmc.identity.responses.ListAvailabilityDomainsResponse;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * This class provides an example of how to create a Container Engine node pool in the Java SDK.
@@ -69,8 +71,8 @@ import java.util.List;
  *   <li>The subnet created by this example will have a display name of: java_sdk_oke_example_subnet_3</li>
  *   <li>The VCN will have a private IP CIDR block of 10.0.0.0/16</li>
  *   <li>The subnets will have private IP CIDR blocks of 10.0.0.0/24, 10.0.1.0/24 and 10.0.2.0/24</li>
- *   <li>The cluster created will have hardcoded display names of ContanerEngineExampleCluster</li>
- *   <li>The node pool created will have hardcoded display names of ContanerEngineNodePoolExample</li>
+ *   <li>The cluster created will have hardcoded display names of ContainerEngineExampleCluster</li>
+ *   <li>The node pool created will have hardcoded display names of ContainerEngineNodePoolExample</li>
  *   <li>The first two subnets are used for creating cluster</li>
  *   <li>The third subnet is used for creating node pool</li>
  *   <li>
@@ -96,11 +98,12 @@ public class ContainerEngineNodePoolExample {
     private static final String CONFIG_LOCATION = "~/.oci/config";
     private static final String CONFIG_PROFILE = "DEFAULT";
 
-    private static final String CLUSTER_DISPLAY_NAME = "ContanerEngineExampleCluster";
-    private static final String NODE_POOL_DISPLAY_NAME = "ContanerEngineExampleNodePool";
-    private static final String NEW_NODE_POOL_DISPLAY_NAME = "ContanerEngineExampleNodePoolNew";
+    private static final String CLUSTER_DISPLAY_NAME = "ContainerEngineCluster";
+    private static final String NODE_POOL_DISPLAY_NAME = "ContainerEngineNodePool";
+    private static final String NEW_NODE_POOL_DISPLAY_NAME = "ContainerEngineNodePoolNew";
     private static final String NODE_IMAGE_NAME = "Oracle-Linux-7.4";
     private static final String NODE_SHAPE = "VM.Standard1.1";
+    private static final Map<String, String> NODE_METADATA = createNodeMetadata();
 
     private static String clusterId = null;
     private static String nodePoolId = null;
@@ -198,6 +201,7 @@ public class ContainerEngineNodePoolExample {
                             kubernetesVersion,
                             NODE_IMAGE_NAME,
                             NODE_SHAPE,
+                            NODE_METADATA,
                             initialNodeLabels,
                             quantityPerSubnet,
                             pool_subnetIds);
@@ -510,6 +514,7 @@ public class ContainerEngineNodePoolExample {
             final String kubernetesVersion,
             final String nodeImageName,
             final String nodeShape,
+            final Map<String, String> nodeMetadata,
             final List<KeyValue> initialNodeLabels,
             final Integer quantityPerSubnet,
             final List<String> subnetIds)
@@ -528,6 +533,7 @@ public class ContainerEngineNodePoolExample {
                                                 .kubernetesVersion(kubernetesVersion)
                                                 .nodeImageName(nodeImageName)
                                                 .nodeShape(nodeShape)
+                                                .nodeMetadata(nodeMetadata)
                                                 .initialNodeLabels(initialNodeLabels)
                                                 .quantityPerSubnet(quantityPerSubnet)
                                                 .subnetIds(subnetIds)
@@ -632,7 +638,7 @@ public class ContainerEngineNodePoolExample {
     /**
      * Get the first work request resource ID that match the entity type
      *
-     * @param GetWorkRequestResponse The work request response for getting work request resource ID
+     * @param getWorkRequestResponse The work request response for getting work request resource ID
      * @param entityType resource entity type
      *
      * @return work request resource ID
@@ -676,7 +682,7 @@ public class ContainerEngineNodePoolExample {
 
     /**
      * Check work request in Success state
-     * @param containerEngineClient the service client to use to get work request
+     * @param workRequestResponse work request response to check
      * @return boolean
      * @throws Exception If there is error
      */
@@ -691,5 +697,12 @@ public class ContainerEngineNodePoolExample {
             inSuccessState = true;
         }
         return inSuccessState;
+    }
+
+    private static Map<String, String> createNodeMetadata() {
+        Map<String, String> result = new HashMap<String, String>();
+        result.put("key1", "value1");
+        result.put("key2", "value2");
+        return result;
     }
 }

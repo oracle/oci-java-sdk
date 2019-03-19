@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.4.3 - 2019-03-19
+### Added
+- Support for specifying metadata on node pools in the Container Engine for Kubernetes service
+- Support for provisioning a new autonomous database or autonomous data warehouse as a clone of another in the Database service
+
+### Changed
+- Most third-party dependencies are now shaded into the single shaded fat jar. Contrary to previous releases, this also includes Jersey; however, the shaded fat jar specifically excludes SLF4J along with BouncyCastle dependencies to allow customers to choose cryptography libraries based on their requirements (e.g., FIPS compliance).
+
 ## 1.4.2 - 2019-03-12
 ### Added
 - Support for the Budgets service

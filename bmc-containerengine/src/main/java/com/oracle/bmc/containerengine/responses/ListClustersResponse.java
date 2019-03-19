@@ -11,9 +11,8 @@ import com.oracle.bmc.containerengine.model.*;
 public class ListClustersResponse {
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then there might be additional items still to get. Include this value as the `page` parameter for the
-     * subsequent GET request.
+     * For list pagination. When this header appears in the response, additional pages of results remain.
+     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private String opcNextPage;

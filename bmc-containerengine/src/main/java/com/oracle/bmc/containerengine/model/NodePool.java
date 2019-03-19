@@ -4,7 +4,7 @@
 package com.oracle.bmc.containerengine.model;
 
 /**
- * A pool of compute nodes attached to a cluster.
+ * A pool of compute nodes attached to a cluster. Avoid entering confidential information.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -64,6 +64,15 @@ public class NodePool {
         public Builder kubernetesVersion(String kubernetesVersion) {
             this.kubernetesVersion = kubernetesVersion;
             this.__explicitlySet__.add("kubernetesVersion");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("nodeMetadata")
+        private java.util.Map<String, String> nodeMetadata;
+
+        public Builder nodeMetadata(java.util.Map<String, String> nodeMetadata) {
+            this.nodeMetadata = nodeMetadata;
+            this.__explicitlySet__.add("nodeMetadata");
             return this;
         }
 
@@ -150,6 +159,7 @@ public class NodePool {
                             clusterId,
                             name,
                             kubernetesVersion,
+                            nodeMetadata,
                             nodeImageId,
                             nodeImageName,
                             nodeShape,
@@ -170,6 +180,7 @@ public class NodePool {
                             .clusterId(o.getClusterId())
                             .name(o.getName())
                             .kubernetesVersion(o.getKubernetesVersion())
+                            .nodeMetadata(o.getNodeMetadata())
                             .nodeImageId(o.getNodeImageId())
                             .nodeImageName(o.getNodeImageName())
                             .nodeShape(o.getNodeShape())
@@ -220,6 +231,12 @@ public class NodePool {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kubernetesVersion")
     String kubernetesVersion;
+
+    /**
+     * A list of key/value pairs to add to each underlying OCI instance in the node pool.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nodeMetadata")
+    java.util.Map<String, String> nodeMetadata;
 
     /**
      * The OCID of the image running on the nodes in the node pool.

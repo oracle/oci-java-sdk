@@ -4,7 +4,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details to create an Oracle Autonomous Database.
+ * Details to create an Oracle Autonomous Database by cloning an existing Autonomous Database.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -17,7 +17,7 @@ package com.oracle.bmc.database.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = CreateAutonomousDatabaseDetails.Builder.class
+    builder = CreateAutonomousDatabaseCloneDetails.Builder.class
 )
 @lombok.ToString(callSuper = true)
 @lombok.EqualsAndHashCode(callSuper = true)
@@ -27,7 +27,7 @@ package com.oracle.bmc.database.model;
     property = "source"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBase {
+public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDatabaseBase {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
@@ -122,12 +122,30 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
+        private String sourceId;
+
+        public Builder sourceId(String sourceId) {
+            this.sourceId = sourceId;
+            this.__explicitlySet__.add("sourceId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("cloneType")
+        private CloneType cloneType;
+
+        public Builder cloneType(CloneType cloneType) {
+            this.cloneType = cloneType;
+            this.__explicitlySet__.add("cloneType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
-        public CreateAutonomousDatabaseDetails build() {
-            CreateAutonomousDatabaseDetails __instance__ =
-                    new CreateAutonomousDatabaseDetails(
+        public CreateAutonomousDatabaseCloneDetails build() {
+            CreateAutonomousDatabaseCloneDetails __instance__ =
+                    new CreateAutonomousDatabaseCloneDetails(
                             compartmentId,
                             dbName,
                             cpuCoreCount,
@@ -137,13 +155,15 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                             displayName,
                             licenseModel,
                             freeformTags,
-                            definedTags);
+                            definedTags,
+                            sourceId,
+                            cloneType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateAutonomousDatabaseDetails o) {
+        public Builder copy(CreateAutonomousDatabaseCloneDetails o) {
             Builder copiedBuilder =
                     compartmentId(o.getCompartmentId())
                             .dbName(o.getDbName())
@@ -154,7 +174,9 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                             .displayName(o.getDisplayName())
                             .licenseModel(o.getLicenseModel())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .sourceId(o.getSourceId())
+                            .cloneType(o.getCloneType());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -169,7 +191,7 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
     }
 
     @Deprecated
-    public CreateAutonomousDatabaseDetails(
+    public CreateAutonomousDatabaseCloneDetails(
             String compartmentId,
             String dbName,
             Integer cpuCoreCount,
@@ -179,7 +201,9 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
             String displayName,
             LicenseModel licenseModel,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String sourceId,
+            CloneType cloneType) {
         super(
                 compartmentId,
                 dbName,
@@ -191,7 +215,55 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                 licenseModel,
                 freeformTags,
                 definedTags);
+        this.sourceId = sourceId;
+        this.cloneType = cloneType;
     }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that you will clone to create a new Autonomous Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
+    String sourceId;
+    /**
+     * The clone type.
+     **/
+    public enum CloneType {
+        Full("FULL"),
+        Metadata("METADATA"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, CloneType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (CloneType v : CloneType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        CloneType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static CloneType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new RuntimeException("Invalid CloneType: " + key);
+        }
+    };
+    /**
+     * The clone type.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cloneType")
+    CloneType cloneType;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

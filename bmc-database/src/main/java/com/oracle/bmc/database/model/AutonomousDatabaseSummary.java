@@ -135,6 +135,15 @@ public class AutonomousDatabaseSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("usedDataStorageSizeInTBs")
+        private Integer usedDataStorageSizeInTBs;
+
+        public Builder usedDataStorageSizeInTBs(Integer usedDataStorageSizeInTBs) {
+            this.usedDataStorageSizeInTBs = usedDataStorageSizeInTBs;
+            this.__explicitlySet__.add("usedDataStorageSizeInTBs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -190,6 +199,7 @@ public class AutonomousDatabaseSummary {
                             serviceConsoleUrl,
                             connectionStrings,
                             licenseModel,
+                            usedDataStorageSizeInTBs,
                             freeformTags,
                             definedTags,
                             dbVersion,
@@ -213,6 +223,7 @@ public class AutonomousDatabaseSummary {
                             .serviceConsoleUrl(o.getServiceConsoleUrl())
                             .connectionStrings(o.getConnectionStrings())
                             .licenseModel(o.getLicenseModel())
+                            .usedDataStorageSizeInTBs(o.getUsedDataStorageSizeInTBs())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .dbVersion(o.getDbVersion())
@@ -404,6 +415,12 @@ public class AutonomousDatabaseSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     LicenseModel licenseModel;
+
+    /**
+     * The amount of storage that has been used, in terabytes.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("usedDataStorageSizeInTBs")
+    Integer usedDataStorageSizeInTBs;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
