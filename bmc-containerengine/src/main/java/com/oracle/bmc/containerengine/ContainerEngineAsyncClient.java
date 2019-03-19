@@ -31,6 +31,7 @@ public class ContainerEngineAsyncClient implements ContainerEngineAsync {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("CONTAINERENGINE")
                     .serviceEndpointPrefix("containerengine")
+                    .serviceEndpointTemplate("https://containerengine.{region}.{secondLevelDomain}")
                     .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)

@@ -13,7 +13,7 @@ public class CreateAutonomousDatabaseRequest extends com.oracle.bmc.requests.Bmc
     /**
      * Request to create a new Autonomous Database.
      */
-    private CreateAutonomousDatabaseDetails createAutonomousDatabaseDetails;
+    private CreateAutonomousDatabaseBase createAutonomousDatabaseDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or

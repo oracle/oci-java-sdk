@@ -60,6 +60,15 @@ public class CreateNodePoolDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nodeMetadata")
+        private java.util.Map<String, String> nodeMetadata;
+
+        public Builder nodeMetadata(java.util.Map<String, String> nodeMetadata) {
+            this.nodeMetadata = nodeMetadata;
+            this.__explicitlySet__.add("nodeMetadata");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("nodeImageName")
         private String nodeImageName;
 
@@ -124,6 +133,7 @@ public class CreateNodePoolDetails {
                             clusterId,
                             name,
                             kubernetesVersion,
+                            nodeMetadata,
                             nodeImageName,
                             nodeShape,
                             initialNodeLabels,
@@ -141,6 +151,7 @@ public class CreateNodePoolDetails {
                             .clusterId(o.getClusterId())
                             .name(o.getName())
                             .kubernetesVersion(o.getKubernetesVersion())
+                            .nodeMetadata(o.getNodeMetadata())
                             .nodeImageName(o.getNodeImageName())
                             .nodeShape(o.getNodeShape())
                             .initialNodeLabels(o.getInitialNodeLabels())
@@ -183,6 +194,12 @@ public class CreateNodePoolDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kubernetesVersion")
     String kubernetesVersion;
+
+    /**
+     * A list of key/value pairs to add to each underlying OCI instance in the node pool.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nodeMetadata")
+    java.util.Map<String, String> nodeMetadata;
 
     /**
      * The name of the image running on the nodes in the node pool.

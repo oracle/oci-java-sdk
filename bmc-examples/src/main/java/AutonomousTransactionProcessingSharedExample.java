@@ -7,6 +7,8 @@ import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.database.DatabaseClient;
 import com.oracle.bmc.database.DatabaseWaiters;
 import com.oracle.bmc.database.model.AutonomousDatabase;
+import com.oracle.bmc.database.model.CreateAutonomousDatabaseBase;
+import com.oracle.bmc.database.model.CreateAutonomousDatabaseCloneDetails;
 import com.oracle.bmc.database.model.CreateAutonomousDatabaseDetails;
 import com.oracle.bmc.database.model.UpdateAutonomousDatabaseDetails;
 import com.oracle.bmc.database.requests.CreateAutonomousDatabaseRequest;
@@ -53,6 +55,16 @@ public class AutonomousTransactionProcessingSharedExample {
 
         atpShared = waitForInstanceToBecomeAvailable(dbClient, atpShared.getId());
         System.out.println("Instance is provisioned:" + atpShared);
+
+        //Clone
+        CreateAutonomousDatabaseCloneDetails createAutonomousDatabaseCloneDetails =
+                createAtpCloneRequest(compartmentId, atpShared.getId());
+        System.out.println(
+                "Creating Autonomous Transaction Processing Clone with request : "
+                        + createAutonomousDatabaseCloneDetails);
+        AutonomousDatabase clonedAtp = createATP(dbClient, createAutonomousDatabaseCloneDetails);
+        atpShared = waitForInstanceToBecomeAvailable(dbClient, clonedAtp.getId());
+        System.out.println("Instance is provisioned:" + clonedAtp);
 
         // Get
         atpShared =
@@ -134,7 +146,7 @@ public class AutonomousTransactionProcessingSharedExample {
     }
 
     public static AutonomousDatabase createATP(
-            DatabaseClient dbClient, CreateAutonomousDatabaseDetails request) {
+            DatabaseClient dbClient, CreateAutonomousDatabaseBase request) {
 
         CreateAutonomousDatabaseResponse response =
                 dbClient.createAutonomousDatabase(
@@ -197,6 +209,23 @@ public class AutonomousTransactionProcessingSharedExample {
                 .compartmentId(compartmentId)
                 .dbWorkload(CreateAutonomousDatabaseDetails.DbWorkload.Oltp)
                 .licenseModel(CreateAutonomousDatabaseDetails.LicenseModel.LicenseIncluded)
+                .build();
+    }
+
+    private static CreateAutonomousDatabaseCloneDetails createAtpCloneRequest(
+            String compartmentId, String sourceId) {
+        Random rand = new Random();
+        return CreateAutonomousDatabaseCloneDetails.builder()
+                .cpuCoreCount(1)
+                .dataStorageSizeInTBs(1)
+                .displayName("javaSdkExample")
+                .adminPassword("DBaaS12345_#")
+                .dbName("javaSdkExam" + rand.nextInt(500))
+                .compartmentId(compartmentId)
+                .dbWorkload(CreateAutonomousDatabaseDetails.DbWorkload.Oltp)
+                .licenseModel(CreateAutonomousDatabaseDetails.LicenseModel.LicenseIncluded)
+                .sourceId(sourceId)
+                .cloneType(CreateAutonomousDatabaseCloneDetails.CloneType.Metadata)
                 .build();
     }
 
