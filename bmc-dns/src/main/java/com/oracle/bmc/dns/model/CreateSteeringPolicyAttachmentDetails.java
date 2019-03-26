@@ -5,12 +5,9 @@ package com.oracle.bmc.dns.model;
 
 /**
  * The body for defining an attachment between a steering policy and a domain.
- * An attachment occludes all records at its domain that are of a covered rtype, constructing
- * DNS responses from its steering policy rather than from those domain records.
- * The attachment will cover every rtype that matches the rtype of an answer in its policy, and
- * will cover all address rtypes (e.g., A and AAAA) if the policy includes at least one CNAME
- * answer.
- * A domain can have at most one attachment covering any given rtype.
+ * <p>
+ *
+ * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -118,7 +115,7 @@ public class CreateSteeringPolicyAttachmentDetails {
 
     /**
      * A user-friendly name for the steering policy attachment.
-     * Does not have to be unique, and it's changeable.
+     * Does not have to be unique and can be changed.
      * Avoid entering confidential information.
      *
      **/

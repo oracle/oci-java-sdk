@@ -23,7 +23,7 @@ public class UpdateBucketResponse {
     private String opcRequestId;
 
     /**
-     * The entity tag for the updated bucket.
+     * The entity tag (ETag) for the updated bucket.
      */
     private String eTag;
 

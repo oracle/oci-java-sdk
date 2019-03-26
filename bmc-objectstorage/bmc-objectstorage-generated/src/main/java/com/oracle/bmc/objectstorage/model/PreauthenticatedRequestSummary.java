@@ -125,7 +125,9 @@ public class PreauthenticatedRequestSummary {
     String name;
 
     /**
-     * The name of object that is being granted access to by the pre-authenticated request. This can be null and if it is, the pre-authenticated request grants access to the entire bucket.
+     * The name of object that is being granted access to by the pre-authenticated request. This can be null and if it is,
+     * the pre-authenticated request grants access to the entire bucket.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     String objectName;

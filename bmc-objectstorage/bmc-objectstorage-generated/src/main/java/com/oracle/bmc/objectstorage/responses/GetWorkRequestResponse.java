@@ -12,6 +12,8 @@ public class GetWorkRequestResponse {
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+     * request, provide this request ID.
+     *
      */
     private String opcRequestId;
 
@@ -21,7 +23,7 @@ public class GetWorkRequestResponse {
     private String opcClientRequestId;
 
     /**
-     * some decimal number representing the number of seconds the client should wait before polling this endpoint again
+     * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
      */
     private Float retryAfter;
 

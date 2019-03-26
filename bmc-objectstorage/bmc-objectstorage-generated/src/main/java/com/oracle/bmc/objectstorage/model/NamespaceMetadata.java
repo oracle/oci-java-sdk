@@ -4,7 +4,7 @@
 package com.oracle.bmc.objectstorage.model;
 
 /**
- * A NamespaceMetadata is a map for storing namespace and defaultS3CompartmentId, defaultSwiftCompartmentId.
+ * NamespaceMetadata maps a namespace string to defaultS3CompartmentId and defaultSwiftCompartmentId values.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -83,19 +83,19 @@ public class NamespaceMetadata {
     }
 
     /**
-     * The namespace to which the metadata belongs.
+     * The Object Storage namespace to which the metadata belongs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     String namespace;
 
     /**
-     * The default compartment ID for an S3 client.
+     * If the field is set, specifies the default compartment assignment for the Amazon S3 Compatibility API.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultS3CompartmentId")
     String defaultS3CompartmentId;
 
     /**
-     * The default compartment ID for a Swift client.
+     * If the field is set, specifies the default compartment assignment for the Swift API.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultSwiftCompartmentId")
     String defaultSwiftCompartmentId;

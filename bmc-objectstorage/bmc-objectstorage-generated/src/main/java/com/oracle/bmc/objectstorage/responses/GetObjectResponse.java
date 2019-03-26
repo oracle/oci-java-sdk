@@ -23,7 +23,7 @@ public class GetObjectResponse {
     private String opcRequestId;
 
     /**
-     * The entity tag for the object.
+     * The entity tag (ETag) for the object.
      */
     private String eTag;
 

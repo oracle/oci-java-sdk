@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.4.4 - 2019-03-26
+### Added
+- Support for glob patterns and exclusions for object lifecycle management in the Object Storage service
+- Documentation enhancements and corrections for traffic management in the DNS service
+
 ## 1.4.3 - 2019-03-19
 ### Added
 - Support for specifying metadata on node pools in the Container Engine for Kubernetes service

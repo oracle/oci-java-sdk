@@ -23,7 +23,7 @@ public class CreateBucketResponse {
     private String opcRequestId;
 
     /**
-     * The entity tag for the bucket that was created.
+     * The entity tag (ETag) for the bucket that was created.
      */
     private String eTag;
 

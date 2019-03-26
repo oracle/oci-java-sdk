@@ -11,15 +11,19 @@ import com.oracle.bmc.objectstorage.model.*;
 public class ListWorkRequestsResponse {
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+     * request, provide this request ID.
      *
      */
     private String opcRequestId;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the response,
-     * then a partial list might have been returned. Include this value as the `page` parameter for the
-     * subsequent GET request to get the next batch of items.
+     * Paginating a list of work requests.
+     * In the GET request, set the limit to the number of compartment work requests that you want returned in the
+     * response. If the opc-next-page header appears in the response, then this is a partial list and there are
+     * additional work requests to get. Include the header's value as the `page` parameter in the subsequent
+     * GET request to get the next batch of work requests. Repeat this process to retrieve the entire list of work
+     * requests.
      *
      */
     private String opcNextPage;

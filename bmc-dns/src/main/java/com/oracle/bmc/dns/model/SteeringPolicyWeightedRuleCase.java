@@ -69,9 +69,21 @@ public class SteeringPolicyWeightedRuleCase {
         return new Builder();
     }
 
+    /**
+     * An expression that uses conditions at the time of a DNS query to indicate
+     * whether a case matches. Conditions may include the geographical location, IP
+     * subnet, or ASN the DNS query originated. **Example:** If you have an
+     * office that uses the subnet `192.0.2.0/24` you could use a `caseCondition`
+     * expression `query.client.subnet in ('192.0.2.0/24')` to define a case that
+     * matches queries from that office.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("caseCondition")
     String caseCondition;
 
+    /**
+     * An array of `SteeringPolicyWeightedAnswerData` objects.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("answerData")
     java.util.List<SteeringPolicyWeightedAnswerData> answerData;
 

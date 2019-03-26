@@ -4,10 +4,7 @@
 package com.oracle.bmc.objectstorage.model;
 
 /**
- * A filter that compares object names to a set of prefixes or patterns to determine if a rule applies to a
- * given object. The filter can contain include glob patterns, exclude glob patterns and inclusion prefixes.
- * The inclusion prefixes property is kept for backward compatibility. It is recommended to use inclusion patterns
- * instead of prefixes. Exclusions take precedence over inclusions.
+ * Specifying inclusion and exclusion patterns.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -20,21 +17,12 @@ package com.oracle.bmc.objectstorage.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ObjectNameFilter.Builder.class)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PatternDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class ObjectNameFilter {
+public class PatternDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("inclusionPrefixes")
-        private java.util.List<String> inclusionPrefixes;
-
-        public Builder inclusionPrefixes(java.util.List<String> inclusionPrefixes) {
-            this.inclusionPrefixes = inclusionPrefixes;
-            this.__explicitlySet__.add("inclusionPrefixes");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("inclusionPatterns")
         private java.util.List<String> inclusionPatterns;
 
@@ -56,18 +44,16 @@ public class ObjectNameFilter {
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
-        public ObjectNameFilter build() {
-            ObjectNameFilter __instance__ =
-                    new ObjectNameFilter(inclusionPrefixes, inclusionPatterns, exclusionPatterns);
+        public PatternDetails build() {
+            PatternDetails __instance__ = new PatternDetails(inclusionPatterns, exclusionPatterns);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ObjectNameFilter o) {
+        public Builder copy(PatternDetails o) {
             Builder copiedBuilder =
-                    inclusionPrefixes(o.getInclusionPrefixes())
-                            .inclusionPatterns(o.getInclusionPatterns())
+                    inclusionPatterns(o.getInclusionPatterns())
                             .exclusionPatterns(o.getExclusionPatterns());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -81,13 +67,6 @@ public class ObjectNameFilter {
     public static Builder builder() {
         return new Builder();
     }
-
-    /**
-     * An array of object name prefixes that the rule will apply to. An empty array means to include all objects.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("inclusionPrefixes")
-    java.util.List<String> inclusionPrefixes;
 
     /**
      * An array of glob patterns to match the object names to include. An empty array includes all objects in the

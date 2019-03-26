@@ -37,7 +37,8 @@ public interface DnsAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Creates a new steering policy in the specified compartment.
+     * Creates a new steering policy in the specified compartment. For more information on
+     * creating policies with templates, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -54,9 +55,12 @@ public interface DnsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new attachment between a steering policy and a domain.
+     * Creates a new attachment between a steering policy and a domain, giving the
+     * policy permission to answer queries for the specified domain. A steering policy must
+     * be attached to a domain for the policy to answer DNS queries for that domain.
+     * <p>
      * For the purposes of access control, the attachment is automatically placed
-     * into the same compartment as the containing zone of the domain.
+     * into the same compartment as the domain's zone.
      *
      *
      * @param request The request object containing the details to send
@@ -125,7 +129,8 @@ public interface DnsAsync extends AutoCloseable {
     /**
      * Deletes the specified steering policy.
      * A `204` response indicates that the delete has been successful.
-     * Deletion will fail if the policy is attached to any zones.
+     * Deletion will fail if the policy is attached to any zones. To detach a
+     * policy from a zone, see `DeleteSteeringPolicyAttachment`.
      *
      *
      * @param request The request object containing the details to send
@@ -332,7 +337,11 @@ public interface DnsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListZonesRequest, ListZonesResponse> handler);
 
     /**
-     * Updates records in the specified zone at a domain. You can update one record or all records for the specified zone depending on the changes provided in the request body. You can also add or remove records using this function.
+     * Updates records in the specified zone at a domain. You can update
+     * one record or all records for the specified zone depending on the changes
+     * provided in the request body. You can also add or remove records using this
+     * function.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -417,7 +426,7 @@ public interface DnsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<UpdateRRSetRequest, UpdateRRSetResponse> handler);
 
     /**
-     * Updates the specified steering policy with your new information.
+     * Updates the configuration of the specified steering policy.
      *
      *
      * @param request The request object containing the details to send

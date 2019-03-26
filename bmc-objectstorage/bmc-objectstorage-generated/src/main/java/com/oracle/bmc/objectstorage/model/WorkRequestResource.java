@@ -102,7 +102,7 @@ public class WorkRequestResource {
     }
 
     /**
-     * The status that a work request can present
+     * The status of the work request.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum ActionType {
@@ -153,25 +153,25 @@ public class WorkRequestResource {
         }
     };
     /**
-     * The status that a work request can present
+     * The status of the work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionType")
     ActionType actionType;
 
     /**
-     * The resource type the work request is affects.
+     * The resource type the work request affects.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     String entityType;
 
     /**
-     * The identifier of the resource the work request affects.
+     * The resource type identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     String identifier;
 
     /**
-     * The URI path that the user can do a GET on to access the resource metadata
+     * The URI path that you can use for a GET request to access the resource metadata.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityUri")
     String entityUri;

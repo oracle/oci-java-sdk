@@ -6,10 +6,12 @@ package com.oracle.bmc.objectstorage.model;
 /**
  * Pre-authenticated requests provide a way to let users access a bucket or an object without having their own credentials.
  * When you create a pre-authenticated request, a unique URL is generated. Users in your organization, partners, or third
- * parties can use this URL to access the targets identified in the pre-authenticated request. See [Managing Access to Buckets and Objects](https://docs.cloud.oracle.com/Content/Object/Tasks/managingaccess.htm).
+ * parties can use this URL to access the targets identified in the pre-authenticated request.
+ * See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/Content/Object/Tasks/usingpreauthenticatedrequests.htm).
  * <p>
- * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator.
- * If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+ * To use any of the API operations, you must be authorized in an IAM policy. If you are not authorized, talk to an
+ * administrator. If you are an administrator who needs to write policies to give users access, see
+ * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -146,9 +148,8 @@ public class PreauthenticatedRequest {
     String accessUri;
 
     /**
-     * The name of the object that is being granted access to by the pre-authenticated request. This can be null and
-     * if so, the pre-authenticated request grants access to the entire bucket. Avoid entering confidential information.
-     * Example: test/object1.log
+     * The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential
+     * information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
@@ -208,7 +209,8 @@ public class PreauthenticatedRequest {
     AccessType accessType;
 
     /**
-     * The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/rfc/rfc3339). After this date the pre-authenticated request will no longer be valid.
+     * The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/rfc/rfc3339). After
+     * this date the pre-authenticated request will no longer be valid.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")

@@ -6,7 +6,7 @@ package com.oracle.bmc.dns.model;
 /**
  * A DNS steering policy.
  * <p>
- *Warning:* Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+ **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -202,8 +202,7 @@ public class SteeringPolicy {
     String compartmentId;
 
     /**
-     * A user-friendly name for the steering policy.
-     * Does not have to be unique, and it's changeable.
+     * A user-friendly name for the steering policy. Does not have to be unique and can be changed.
      * Avoid entering confidential information.
      *
      **/
@@ -211,7 +210,7 @@ public class SteeringPolicy {
     String displayName;
 
     /**
-     * The Time To Live for responses from the steering policy, in seconds.
+     * The Time To Live (TTL) for responses from the steering policy, in seconds.
      * If not specified during creation, a value of 30 seconds will be used.
      *
      **/
@@ -220,54 +219,60 @@ public class SteeringPolicy {
 
     /**
      * The OCID of the health check monitor providing health data about the answers of the
-     * steering policy.
-     * A steering policy answer with `rdata` matching a monitored endpoint will use the health
-     * data of that endpoint.
-     * A steering policy answer with `rdata` not matching any monitored endpoint will be assumed
-     * healthy.
+     * steering policy. A steering policy answer with `rdata` matching a monitored endpoint
+     * will use the health data of that endpoint. A steering policy answer with `rdata` not
+     * matching any monitored endpoint will be assumed healthy.
+     * <p>
+     *
+     * **Note:** To use the Health Check monitoring feature in a steering policy, a monitor
+     * must be created using the Health Checks service first. For more information on how to
+     * create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("healthCheckMonitorId")
     String healthCheckMonitorId;
     /**
-     * The common pattern (or lack thereof) to which the steering policy adheres. This
-     * value restricts the possible configurations of rules, but thereby supports
-     * specifically tailored interfaces. Values other than \"CUSTOM\" require the rules to
-     * begin with an unconditional FILTER that keeps answers contingent upon
-     * `answer.isDisabled != true`, followed
-     * _if and only if the policy references a health check monitor_ by an unconditional
-     * HEALTH rule, and require the last rule to be an unconditional LIMIT.
-     * What must precede the LIMIT rule is determined by the template value:
-     * - FAILOVER requires exactly an unconditional PRIORITY rule that ranks answers by pool.
-     *   Each answer pool must have a unique priority value assigned to it. Answer data must
-     *   be defined in the `defaultAnswerData` property for the rule and the `cases` property
-     *   must not be defined.
-     * - LOAD_BALANCE requires exactly an unconditional WEIGHTED rule that shuffles answers
-     *   by name. Answer data must be defined in the `defaultAnswerData` property for the
-     *   rule and the `cases` property must not be defined.
-     * - ROUTE_BY_GEO requires exactly one PRIORITY rule that ranks answers by pool using the
-     *   geographical location of the client as a condition. Within that rule you may only
-     *   use `query.client.geoKey` in the `caseCondition` expressions for defining the cases.
-     *   For each case in the PRIORITY rule each answer pool must have a unique priority
-     *   value assigned to it. Answer data can only be defined within cases and
-     *   `defaultAnswerData` cannot be used in the PRIORITY rule.
-     * - ROUTE_BY_ASN requires exactly one PRIORITY rule that ranks answers by pool using the
-     *   ASN of the client as a condition. Within that rule you may only use
-     *   `query.client.asn` in the `caseCondition` expressions for defining the cases.
-     *   For each case in the PRIORITY rule each answer pool must have a unique priority
-     *   value assigned to it. Answer data can only be defined within cases and
-     *   `defaultAnswerData` cannot be used in the PRIORITY rule.
-     * - ROUTE_BY_IP requires exactly one PRIORITY rule that ranks answers by pool using the
-     *   IP subnet of the client as a condition. Within that rule you may only use
-     *   `query.client.address` in the `caseCondition` expressions for defining the cases.
-     *   For each case in the PRIORITY rule each answer pool must have a unique priority
-     *   value assigned to it. Answer data can only be defined within cases and
-     *   `defaultAnswerData` cannot be used in the PRIORITY rule.
-     * - CUSTOM allows an arbitrary configuration of rules.
+     * A set of predefined rules based on the desired purpose of the steering policy. Each
+     * template utilizes Traffic Management's rules in a different order to produce the desired
+     * results when answering DNS queries.
      * <p>
-     * For an existing steering policy, the template value may be changed to any of the
-     * supported options but the resulting policy must conform to the requirements for the
-     * new template type or else a Bad Request error will be returned.
+     *
+     * **Example:** The `FAILOVER` template determines answers by filtering the policy's answers
+     * using the `FILTER` rule first, then the following rules in succession: `HEALTH`, `PRIORITY`,
+     * and `LIMIT`. This gives the domain dynamic failover capability.
+     * <p>
+     *
+     * It is **strongly recommended** to use a template other than `CUSTOM` when creating
+     * a steering policy.
+     * <p>
+     *
+     * All templates require the rule order to begin with an unconditional `FILTER` rule that keeps
+     * answers contingent upon `answer.isDisabled != true`, except for `CUSTOM`. A defined
+     * `HEALTH` rule must follow the `FILTER` rule if the policy references a `healthCheckMonitorId`.
+     * The last rule of a template must must be a `LIMIT` rule. For more information about templates
+     * and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
+     * <p>
+     **Template Types**
+     * <p>
+     * `FAILOVER` - Uses health check information on your endpoints to determine which DNS answers
+     * to serve. If an endpoint fails a health check, the answer for that endpoint will be removed
+     * from the list of available answers until the endpoint is detected as healthy.
+     * <p>
+     *
+     * * `LOAD_BALANCE` - Distributes web traffic to specified endpoints based on defined weights.
+     * <p>
+     *
+     * * `ROUTE_BY_GEO` - Answers DNS queries based on the query's geographic location. For a list of geographic
+     * locations to route by, see [Traffic Management Geographic Locations](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Reference/trafficmanagementgeo.htm).
+     * <p>
+     *
+     * * `ROUTE_BY_ASN` - Answers DNS queries based on the query's originating ASN.
+     * <p>
+     *
+     * * `ROUTE_BY_IP` - Answers DNS queries based on the query's IP address.
+     * <p>
+     *
+     * * `CUSTOM` - Allows a customized configuration of rules.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -318,61 +323,69 @@ public class SteeringPolicy {
         }
     };
     /**
-     * The common pattern (or lack thereof) to which the steering policy adheres. This
-     * value restricts the possible configurations of rules, but thereby supports
-     * specifically tailored interfaces. Values other than \"CUSTOM\" require the rules to
-     * begin with an unconditional FILTER that keeps answers contingent upon
-     * `answer.isDisabled != true`, followed
-     * _if and only if the policy references a health check monitor_ by an unconditional
-     * HEALTH rule, and require the last rule to be an unconditional LIMIT.
-     * What must precede the LIMIT rule is determined by the template value:
-     * - FAILOVER requires exactly an unconditional PRIORITY rule that ranks answers by pool.
-     *   Each answer pool must have a unique priority value assigned to it. Answer data must
-     *   be defined in the `defaultAnswerData` property for the rule and the `cases` property
-     *   must not be defined.
-     * - LOAD_BALANCE requires exactly an unconditional WEIGHTED rule that shuffles answers
-     *   by name. Answer data must be defined in the `defaultAnswerData` property for the
-     *   rule and the `cases` property must not be defined.
-     * - ROUTE_BY_GEO requires exactly one PRIORITY rule that ranks answers by pool using the
-     *   geographical location of the client as a condition. Within that rule you may only
-     *   use `query.client.geoKey` in the `caseCondition` expressions for defining the cases.
-     *   For each case in the PRIORITY rule each answer pool must have a unique priority
-     *   value assigned to it. Answer data can only be defined within cases and
-     *   `defaultAnswerData` cannot be used in the PRIORITY rule.
-     * - ROUTE_BY_ASN requires exactly one PRIORITY rule that ranks answers by pool using the
-     *   ASN of the client as a condition. Within that rule you may only use
-     *   `query.client.asn` in the `caseCondition` expressions for defining the cases.
-     *   For each case in the PRIORITY rule each answer pool must have a unique priority
-     *   value assigned to it. Answer data can only be defined within cases and
-     *   `defaultAnswerData` cannot be used in the PRIORITY rule.
-     * - ROUTE_BY_IP requires exactly one PRIORITY rule that ranks answers by pool using the
-     *   IP subnet of the client as a condition. Within that rule you may only use
-     *   `query.client.address` in the `caseCondition` expressions for defining the cases.
-     *   For each case in the PRIORITY rule each answer pool must have a unique priority
-     *   value assigned to it. Answer data can only be defined within cases and
-     *   `defaultAnswerData` cannot be used in the PRIORITY rule.
-     * - CUSTOM allows an arbitrary configuration of rules.
+     * A set of predefined rules based on the desired purpose of the steering policy. Each
+     * template utilizes Traffic Management's rules in a different order to produce the desired
+     * results when answering DNS queries.
      * <p>
-     * For an existing steering policy, the template value may be changed to any of the
-     * supported options but the resulting policy must conform to the requirements for the
-     * new template type or else a Bad Request error will be returned.
+     *
+     * **Example:** The `FAILOVER` template determines answers by filtering the policy's answers
+     * using the `FILTER` rule first, then the following rules in succession: `HEALTH`, `PRIORITY`,
+     * and `LIMIT`. This gives the domain dynamic failover capability.
+     * <p>
+     *
+     * It is **strongly recommended** to use a template other than `CUSTOM` when creating
+     * a steering policy.
+     * <p>
+     *
+     * All templates require the rule order to begin with an unconditional `FILTER` rule that keeps
+     * answers contingent upon `answer.isDisabled != true`, except for `CUSTOM`. A defined
+     * `HEALTH` rule must follow the `FILTER` rule if the policy references a `healthCheckMonitorId`.
+     * The last rule of a template must must be a `LIMIT` rule. For more information about templates
+     * and code examples, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
+     * <p>
+     **Template Types**
+     * <p>
+     * `FAILOVER` - Uses health check information on your endpoints to determine which DNS answers
+     * to serve. If an endpoint fails a health check, the answer for that endpoint will be removed
+     * from the list of available answers until the endpoint is detected as healthy.
+     * <p>
+     *
+     * * `LOAD_BALANCE` - Distributes web traffic to specified endpoints based on defined weights.
+     * <p>
+     *
+     * * `ROUTE_BY_GEO` - Answers DNS queries based on the query's geographic location. For a list of geographic
+     * locations to route by, see [Traffic Management Geographic Locations](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Reference/trafficmanagementgeo.htm).
+     * <p>
+     *
+     * * `ROUTE_BY_ASN` - Answers DNS queries based on the query's originating ASN.
+     * <p>
+     *
+     * * `ROUTE_BY_IP` - Answers DNS queries based on the query's IP address.
+     * <p>
+     *
+     * * `CUSTOM` - Allows a customized configuration of rules.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("template")
     Template template;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type, or scope.
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"bar-key\": \"value\"}`
+     * <p>
+     *
+     * **Example:** `{\"Department\": \"Finance\"}`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to a namespace.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     *
+     * **Example:** `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -386,9 +399,10 @@ public class SteeringPolicy {
     java.util.List<SteeringPolicyAnswer> answers;
 
     /**
-     * The pipeline of rules that will be processed in sequence to reduce the pool of answers
+     * The series of rules that will be processed in sequence to reduce the pool of answers
      * to a response for any given request.
      * <p>
+     *
      * The first rule receives a shuffled list of all answers, and every other rule receives
      * the list of answers emitted by the one preceding it. The last rule populates the
      * response.
@@ -410,8 +424,7 @@ public class SteeringPolicy {
     String id;
 
     /**
-     * The date and time the resource was created in \"YYYY-MM-ddThh:mmZ\" format
-     * with a Z offset, as defined by RFC 3339.
+     * The date and time the resource was created, expressed in RFC 3339 timestamp format.
      * <p>
      **Example:** `2016-07-22T17:23:59:60Z`
      *

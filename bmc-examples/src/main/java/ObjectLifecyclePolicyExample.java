@@ -9,6 +9,7 @@ import com.oracle.bmc.objectstorage.ObjectStorage;
 import com.oracle.bmc.objectstorage.ObjectStorageClient;
 import com.oracle.bmc.objectstorage.model.CreateBucketDetails;
 import com.oracle.bmc.objectstorage.model.ObjectLifecycleRule;
+import com.oracle.bmc.objectstorage.model.ObjectNameFilter;
 import com.oracle.bmc.objectstorage.model.PutObjectLifecyclePolicyDetails;
 import com.oracle.bmc.objectstorage.requests.CreateBucketRequest;
 import com.oracle.bmc.objectstorage.requests.DeleteBucketRequest;
@@ -19,6 +20,7 @@ import com.oracle.bmc.objectstorage.requests.PutObjectLifecyclePolicyRequest;
 import com.oracle.bmc.objectstorage.responses.GetNamespaceResponse;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * This class provides an example of using object lifecycle policies in the Java SDK.
@@ -110,8 +112,13 @@ public class ObjectLifecyclePolicyExample {
                         .timeUnit(ObjectLifecycleRule.TimeUnit.Years)
                         .isEnabled(true)
                         // Use an ObjectNameFilter to filter objects by name before applying the rule.  For example,
-                        // this ObjectNameFilter would only archive objects whose names start with "/tmp/":
-                        // .objectNameFilter(ObjectNameFilter.builder().inclusionPrefixes(Arrays.asList("/tmp/")).build())
+                        // this ObjectNameFilter would exclude all objects ending with .log
+                        // and only archive objects whose names start with "/data/".
+                        .objectNameFilter(
+                                ObjectNameFilter.builder()
+                                        .exclusionPatterns(Collections.singletonList("*.log"))
+                                        .inclusionPatterns(Collections.singletonList("/data/*"))
+                                        .build())
                         .build();
         final PutObjectLifecyclePolicyDetails objectLifecyclePolicyDetails =
                 PutObjectLifecyclePolicyDetails.builder()
