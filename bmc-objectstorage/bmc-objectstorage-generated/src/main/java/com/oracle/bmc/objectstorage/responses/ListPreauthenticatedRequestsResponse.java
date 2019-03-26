@@ -23,10 +23,12 @@ public class ListPreauthenticatedRequestsResponse {
     private String opcRequestId;
 
     /**
-     * For pagination of a list of pre-authenticated requests, if this header appears in the response,
-     * then this is a partial list. Include this value as the `page` parameter in a subsequent
-     * GET request to get the next batch of pre-authenticated requests.
-     * For information about pagination, see [List Pagination](https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine).
+     * Paginating a list of pre-authenticated requests.
+     * In the GET request, set the limit to the number of pre-authenticated requests that you want returned in
+     * the response. If the opc-next-page header appears in the response, then this is a partial list and there
+     * are additional pre-authenticated requests to get. Include the header's value as the `page` parameter in
+     * the subsequent GET request to get the next batch of pre-authenticated requests. Repeat this process to
+     * retrieve the entire list of pre-authenticated requests.
      *
      */
     private String opcNextPage;

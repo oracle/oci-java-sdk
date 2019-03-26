@@ -195,19 +195,23 @@ public class RecordOperation {
     /**
      * A description of how a record relates to a PATCH operation.
      * <p>
+     *
      * - `REQUIRE` indicates a precondition that record data **must** already exist.
      * - `PROHIBIT` indicates a precondition that record data **must not** already exist.
      * - `ADD` indicates that record data **must** exist after successful application.
      * - `REMOVE` indicates that record data **must not** exist after successful application.
      * <p>
-     **Note:** `ADD` and `REMOVE` operations can succeed even if
+     *
+     *   **Note:** `ADD` and `REMOVE` operations can succeed even if
      *   they require no changes when applied, such as when the described
      *   records are already present or absent.
      * <p>
-     **Note:** `ADD` and `REMOVE` operations can describe changes for
+     *
+     *   **Note:** `ADD` and `REMOVE` operations can describe changes for
      *   more than one record.
      * <p>
-     **Example:** `{ \"domain\": \"www.example.com\", \"rtype\": \"AAAA\", \"ttl\": 60 }`
+     *
+     *   **Example:** `{ \"domain\": \"www.example.com\", \"rtype\": \"AAAA\", \"ttl\": 60 }`
      *   specifies a new TTL for every record in the www.example.com AAAA RRSet.
      *
      **/
@@ -248,19 +252,23 @@ public class RecordOperation {
     /**
      * A description of how a record relates to a PATCH operation.
      * <p>
+     *
      * - `REQUIRE` indicates a precondition that record data **must** already exist.
      * - `PROHIBIT` indicates a precondition that record data **must not** already exist.
      * - `ADD` indicates that record data **must** exist after successful application.
      * - `REMOVE` indicates that record data **must not** exist after successful application.
      * <p>
-     **Note:** `ADD` and `REMOVE` operations can succeed even if
+     *
+     *   **Note:** `ADD` and `REMOVE` operations can succeed even if
      *   they require no changes when applied, such as when the described
      *   records are already present or absent.
      * <p>
-     **Note:** `ADD` and `REMOVE` operations can describe changes for
+     *
+     *   **Note:** `ADD` and `REMOVE` operations can describe changes for
      *   more than one record.
      * <p>
-     **Example:** `{ \"domain\": \"www.example.com\", \"rtype\": \"AAAA\", \"ttl\": 60 }`
+     *
+     *   **Example:** `{ \"domain\": \"www.example.com\", \"rtype\": \"AAAA\", \"ttl\": 60 }`
      *   specifies a new TTL for every record in the www.example.com AAAA RRSet.
      *
      **/

@@ -11,7 +11,7 @@ import com.oracle.bmc.objectstorage.model.*;
 public class CopyObjectRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The top-level namespace used for the request.
+     * The Object Storage namespace used for the request.
      */
     private String namespaceName;
 
@@ -23,7 +23,7 @@ public class CopyObjectRequest extends com.oracle.bmc.requests.BmcRequest {
     private String bucketName;
 
     /**
-     * The source and destination for object to be copied.
+     * The source and destination of the object to be copied.
      */
     private CopyObjectDetails copyObjectDetails;
 

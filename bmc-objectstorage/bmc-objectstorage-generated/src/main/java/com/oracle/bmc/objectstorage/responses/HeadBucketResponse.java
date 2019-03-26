@@ -23,7 +23,7 @@ public class HeadBucketResponse {
     private String opcRequestId;
 
     /**
-     * The current entity tag for the bucket.
+     * The current entity tag (ETag) for the bucket.
      */
     private String eTag;
 

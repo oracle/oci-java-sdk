@@ -4,7 +4,9 @@
 package com.oracle.bmc.dns.model;
 
 /**
- * A DNS resource record. For more information about DNS records, see [RFC 1034](https://tools.ietf.org/html/rfc1034#section-3.6).
+ * A DNS resource record. For more information, see
+ * [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in

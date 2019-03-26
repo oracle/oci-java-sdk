@@ -11,7 +11,7 @@ import com.oracle.bmc.objectstorage.model.*;
 public class ListObjectsRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The top-level namespace used for the request.
+     * The Object Storage namespace used for the request.
      */
     private String namespaceName;
 

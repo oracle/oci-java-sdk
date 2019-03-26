@@ -5,6 +5,10 @@ package com.oracle.bmc.dns.model;
 
 /**
  * The body for updating a steering policy attachment.
+ * <p>
+ *
+ * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -61,7 +65,7 @@ public class UpdateSteeringPolicyAttachmentDetails {
 
     /**
      * A user-friendly name for the steering policy attachment.
-     * Does not have to be unique, and it's changeable.
+     * Does not have to be unique and can be changed.
      * Avoid entering confidential information.
      *
      **/

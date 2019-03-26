@@ -39,14 +39,14 @@ public class ListSteeringPolicyAttachmentsRequest extends com.oracle.bmc.request
 
     /**
      * Search by steering policy OCID.
-     * Will match any resource whose steering policy id matches the provided value.
+     * Will match any resource whose steering policy ID matches the provided value.
      *
      */
     private String steeringPolicyId;
 
     /**
      * Search by zone OCID.
-     * Will match any resource whose zone id matches the provided value.
+     * Will match any resource whose zone ID matches the provided value.
      *
      */
     private String zoneId;
@@ -85,12 +85,12 @@ public class ListSteeringPolicyAttachmentsRequest extends com.oracle.bmc.request
     private SteeringPolicyAttachmentSummary.LifecycleState lifecycleState;
 
     /**
-     * The field by which to sort steering policy attachments.
+     * The field by which to sort steering policy attachments. If unspecified, defaults to `timeCreated`.
      */
     private SortBy sortBy;
 
     /**
-     * The field by which to sort steering policy attachments.
+     * The field by which to sort steering policy attachments. If unspecified, defaults to `timeCreated`.
      **/
     public enum SortBy {
         DisplayName("displayName"),

@@ -4,8 +4,10 @@
 package com.oracle.bmc.objectstorage.model;
 
 /**
- * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
- * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+ * The parameters required by Object Storage to process a request to copy an object to another bucket.
+ * <p>
+ * To use any of the API operations, you must be authorized in an IAM policy. If you are not authorized,
+ * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
  * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
  *
  * <br/>
@@ -155,58 +157,65 @@ public class CopyObjectDetails {
     }
 
     /**
-     * The name of the object to be copied
+     * The name of the object to be copied.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceObjectName")
     String sourceObjectName;
 
     /**
-     * The entity tag to match the target object.
+     * The entity tag (ETag) to match against that of the source object. Used to confirm that the source object
+     * with a given name is the version of that object storing a specified ETag.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceObjectIfMatchETag")
     String sourceObjectIfMatchETag;
 
     /**
-     * The destination region object will be copied to. Please specify name of the region, for example \"us-ashburn-1\".
+     * The destination region the object will be copied to, for example \"us-ashburn-1\".
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationRegion")
     String destinationRegion;
 
     /**
-     * The destination namespace object will be copied to.
+     * The destination Object Storage namespace the object will be copied to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationNamespace")
     String destinationNamespace;
 
     /**
-     * The destination bucket object will be copied to.
+     * The destination bucket the object will be copied to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationBucket")
     String destinationBucket;
 
     /**
-     * The destination name for the copy object.
+     * The name of the destination object resulting from the copy operation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationObjectName")
     String destinationObjectName;
 
     /**
-     * The entity tag to match the target object.
+     * The entity tag (ETag) to match against that of the destination object (an object intended to be overwritten).
+     * Used to confirm that the destination object stored under a given name is the version of that object
+     * storing a specified entity tag.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationObjectIfMatchETag")
     String destinationObjectIfMatchETag;
 
     /**
-     * The entity tag to not match the target object.
+     * The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should fail
+     * if the object already exists in the destination bucket.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationObjectIfNoneMatchETag")
     String destinationObjectIfNoneMatchETag;
 
     /**
      * Arbitrary string keys and values for the user-defined metadata for the object. Keys must be in
-     * \"opc-meta-*\" format. Avoid entering confidential information. If user enter value in this field, the value
-     * will become the object metadata for destination Object. If no value pass in, the destination object will have
-     * the exact object metadata as source object.
+     * \"opc-meta-*\" format. Avoid entering confidential information. Metadata key-value pairs entered
+     * in this field are assigned to the destination object. If you enter no metadata values, the destination
+     * object will inherit any existing metadata values associated with the source object.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationObjectMetadata")

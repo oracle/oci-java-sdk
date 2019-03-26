@@ -8,8 +8,8 @@ package com.oracle.bmc.objectstorage.model;
  * The compartment has policies that indicate what actions a user can perform on a bucket and all the objects in the bucket. For more
  * information, see [Managing Buckets](https://docs.cloud.oracle.com/Content/Object/Tasks/managingbuckets.htm).
  * <p>
- * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
- * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+ * To use any of the API operations, you must be authorized in an IAM policy. If you are not authorized,
+ * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
  * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
  *
  * <br/>
@@ -222,7 +222,7 @@ public class Bucket {
     }
 
     /**
-     * The namespace in which the bucket lives.
+     * The Object Storage namespace in which the bucket lives.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     String namespace;
@@ -260,7 +260,7 @@ public class Bucket {
     java.util.Date timeCreated;
 
     /**
-     * The entity tag for the bucket.
+     * The entity tag (ETag) for the bucket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("etag")
     String etag;
@@ -327,10 +327,10 @@ public class Bucket {
     @com.fasterxml.jackson.annotation.JsonProperty("publicAccessType")
     PublicAccessType publicAccessType;
     /**
-     * The type of storage tier of this bucket.
-     * A bucket is set to 'Standard' tier by default, which means the bucket will be put in the standard storage tier.
-     * When 'Archive' tier type is set explicitly, the bucket is put in the archive storage tier. The 'storageTier'
-     * property is immutable after bucket is created.
+     * The storage tier type assigned to the bucket. A bucket is set to 'Standard' tier by default, which means
+     * objects uploaded or copied to the bucket will be in the standard storage tier. When the 'Archive' tier type
+     * is set explicitly for a bucket, objects uploaded or copied to the bucket will be stored in archive storage.
+     * The 'storageTier' property is immutable after bucket is created.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -377,10 +377,10 @@ public class Bucket {
         }
     };
     /**
-     * The type of storage tier of this bucket.
-     * A bucket is set to 'Standard' tier by default, which means the bucket will be put in the standard storage tier.
-     * When 'Archive' tier type is set explicitly, the bucket is put in the archive storage tier. The 'storageTier'
-     * property is immutable after bucket is created.
+     * The storage tier type assigned to the bucket. A bucket is set to 'Standard' tier by default, which means
+     * objects uploaded or copied to the bucket will be in the standard storage tier. When the 'Archive' tier type
+     * is set explicitly for a bucket, objects uploaded or copied to the bucket will be stored in archive storage.
+     * The 'storageTier' property is immutable after bucket is created.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageTier")
@@ -405,13 +405,14 @@ public class Bucket {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * The OCID of a KMS key id used to call KMS to generate data key, decrypt the encrypted data key
+     * The OCID of a KMS key id used to call KMS to generate data key or decrypt the encrypted data key.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     String kmsKeyId;
 
     /**
-     * The entity tag for the live object lifecycle policy on the bucket.
+     * The entity tag (ETag) for the live object lifecycle policy on the bucket.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectLifecyclePolicyEtag")
     String objectLifecyclePolicyEtag;
@@ -425,7 +426,7 @@ public class Bucket {
     Long approximateCount;
 
     /**
-     * The approximate total size of all objects in the bucket. Size statistics are reported periodically. You will
+     * The approximate total size in bytes of all objects in the bucket. Size statistics are reported periodically. You will
      * see a lag between what is displayed and the actual size of the bucket.
      *
      **/

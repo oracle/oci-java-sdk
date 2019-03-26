@@ -69,11 +69,15 @@ public class SteeringPolicyFilterAnswerData {
         return new Builder();
     }
 
+    /**
+     * An expression that is used to select a set of answers that match a condition. For example, answers with matching pool properties.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("answerCondition")
     String answerCondition;
 
     /**
-     * Keep the answer if the value is `true`.
+     * Keeps the answer only if the value is `true`.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldKeep")
     Boolean shouldKeep;

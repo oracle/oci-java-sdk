@@ -4,23 +4,17 @@
 package com.oracle.bmc.dns.model;
 
 /**
- * Configuration for sorting and/or filtering the list of remaining candidate answers, subject to
- * rule type and the values of type-specific parameters and/or data associated with answers.
+ * The configuration of the sorting and filtering behaviors in a steering policy. Rules can
+ * filter and sort answers based on weight, priority, endpoint health, and other data.
  * <p>
+ *
  * A rule may optionally include a sequence of cases, each with an optional `caseCondition`
- * expression.  If it does, the first case with a matching `caseCondition` or with no
- * `caseCondition` at all is used to set rule parameter values and/or answer-associated data,
- * and the rule will be ignored during processing of any request that does not match any case.
- * Rules without a sequence of cases are processed unconditionally, and rules with an _empty_
- * sequence of cases are **ignored** unconditionally.
+ * expression. Cases allow a sequence of conditions to be defined that will apply different
+ * parameters to the rule when the conditions are met. For more information about cases,
+ * see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
  * <p>
- * Data is associated with answers one-by-one in a similar fashion\u2014for each answer, the first
- * answerData item with a matching `answerCondition` or with no `answerCondition` at all is used
- * to associate data with the answer, and the absence of any such item associates with the answer
- * a default value.  Rule-level default answer data is always processed, but case-level answer
- * data will override it on a per-answer basis.
- * <p>
- * To prevent empty responses, any attempt to filter away all answers is suppressed at runtime.
+ *
+ * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -69,7 +63,7 @@ package com.oracle.bmc.dns.model;
 public class SteeringPolicyRule {
 
     /**
-     * Your description of the rule's purpose and/or behavior.
+     * A user-defined description of the rule's purpose or behavior.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;

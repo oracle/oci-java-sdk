@@ -46,7 +46,7 @@ public class ListSteeringPoliciesRequest extends com.oracle.bmc.requests.BmcRequ
 
     /**
      * Search by health check monitor OCID.
-     * Will match any resource whose health check monitor id matches the provided value.
+     * Will match any resource whose health check monitor ID matches the provided value.
      *
      */
     private String healthCheckMonitorId;
@@ -66,7 +66,7 @@ public class ListSteeringPoliciesRequest extends com.oracle.bmc.requests.BmcRequ
     private java.util.Date timeCreatedLessThan;
 
     /**
-     * Search by template type.
+     * Search by steering template type.
      * Will match any resource whose template type matches the provided value.
      *
      */
@@ -78,12 +78,12 @@ public class ListSteeringPoliciesRequest extends com.oracle.bmc.requests.BmcRequ
     private SteeringPolicySummary.LifecycleState lifecycleState;
 
     /**
-     * The field by which to sort steering policies.
+     * The field by which to sort steering policies. If unspecified, defaults to `timeCreated`.
      */
     private SortBy sortBy;
 
     /**
-     * The field by which to sort steering policies.
+     * The field by which to sort steering policies. If unspecified, defaults to `timeCreated`.
      **/
     public enum SortBy {
         DisplayName("displayName"),

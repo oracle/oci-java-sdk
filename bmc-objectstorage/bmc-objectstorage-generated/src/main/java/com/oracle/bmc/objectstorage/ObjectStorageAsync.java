@@ -54,7 +54,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Cancel a work request.
+     * Cancels a work request.
      *
      *
      * @param request The request object containing the details to send
@@ -71,7 +71,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Commits a multipart upload, which involves checking part numbers and ETags of the parts, to create an aggregate object.
+     * Commits a multipart upload, which involves checking part numbers and entity tags (ETags) of the parts, to create an aggregate object.
      *
      *
      * @param request The request object containing the details to send
@@ -88,7 +88,8 @@ public interface ObjectStorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Create a request for copy object within or cross region
+     * Creates a request to copy an object within a region or to another region.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -102,7 +103,8 @@ public interface ObjectStorageAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CopyObjectRequest, CopyObjectResponse> handler);
 
     /**
-     * Creates a bucket in the given namespace with a bucket name and optional user-defined metadata.
+     * Creates a bucket in the given namespace with a bucket name and optional user-defined metadata. Avoid entering
+     * confidential information in bucket names.
      *
      *
      * @param request The request object containing the details to send
@@ -154,7 +156,9 @@ public interface ObjectStorageAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Deletes a bucket if it is already empty. If the bucket is not empty, use {@link #deleteObject(DeleteObjectRequest, Consumer, Consumer) deleteObject} first.
+     * Deletes a bucket if the bucket is already empty. If the bucket is not empty, use
+     * {@link #deleteObject(DeleteObjectRequest, Consumer, Consumer) deleteObject} first. You also cannot
+     * delete a bucket that has a pre-authenticated request associated with that bucket.
      *
      *
      * @param request The request object containing the details to send
@@ -221,7 +225,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets the current representation of the given bucket in the given namespace.
+     * Gets the current representation of the given bucket in the given Object Storage namespace.
      *
      *
      * @param request The request object containing the details to send
@@ -236,7 +240,11 @@ public interface ObjectStorageAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetBucketRequest, GetBucketResponse> handler);
 
     /**
-     * Gets the name of the namespace for the user making the request.
+     * Each Oracle Cloud Infrastructure tenant is assigned one unique and uneditable Object Storage namespace. The namespace
+     * is a system-generated string assigned during account creation. For some older tenancies, the namespace string may be
+     * the tenancy name in all lower-case letters. You cannot edit a namespace.
+     * <p>
+     * GetNamespace returns the name of the Object Storage namespace for the user making the request.
      *
      *
      * @param request The request object containing the details to send
@@ -252,10 +260,13 @@ public interface ObjectStorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Get the metadata for the namespace, which contains defaultS3CompartmentId and defaultSwiftCompartmentId.
-     * Any user with the NAMESPACE_READ permission will be able to see the current metadata. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write
-     * policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+     * Gets the metadata for the Object Storage namespace, which contains defaultS3CompartmentId and
+     * defaultSwiftCompartmentId.
+     * <p>
+     * Any user with the NAMESPACE_READ permission will be able to see the current metadata. If you are
+     * not authorized, talk to an administrator. If you are an administrator who needs to write policies
+     * to give users access, see
+     * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -320,7 +331,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the status of the work request with the given ID.
+     * Gets the status of the work request for the given ID.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -335,7 +346,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Efficiently checks to see if a bucket exists and gets the current ETag for the bucket.
+     * Efficiently checks to see if a bucket exists and gets the current entity tag (ETag) for the bucket.
      *
      *
      * @param request The request object containing the details to send
@@ -350,7 +361,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<HeadBucketRequest, HeadBucketResponse> handler);
 
     /**
-     * Gets the user-defined metadata and entity tag for an object.
+     * Gets the user-defined metadata and entity tag (ETag) for an object.
      *
      *
      * @param request The request object containing the details to send
@@ -365,11 +376,11 @@ public interface ObjectStorageAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<HeadObjectRequest, HeadObjectResponse> handler);
 
     /**
-     * Gets a list of all `BucketSummary`s in a compartment. A `BucketSummary` contains only summary fields for the bucket
+     * Gets a list of all BucketSummary items in a compartment. A BucketSummary contains only summary fields for the bucket
      * and does not contain fields like the user-defined metadata.
      * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+     * To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
+     * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
      * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      *
@@ -402,7 +413,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists all in-progress multipart uploads for the given bucket in the given namespace.
+     * Lists all of the in-progress multipart uploads for the given bucket in the given Object Storage namespace.
      *
      *
      * @param request The request object containing the details to send
@@ -421,8 +432,8 @@ public interface ObjectStorageAsync extends AutoCloseable {
     /**
      * Lists the objects in a bucket.
      * <p>
-     * To use this and other API operations, you must be authorized in an IAM policy. If you're not authorized,
-     * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+     * To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
+     * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
      * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
      *
      *
@@ -504,7 +515,8 @@ public interface ObjectStorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new object or overwrites an existing one.
+     * Creates a new object or overwrites an existing one. See [Special Instructions for Object Storage
+     * PUT](https://docs.cloud.oracle.com/Content/API/Concepts/signingrequests.htm#ObjectStoragePut) for request signature requirements.
      *
      *
      * @param request The request object containing the details to send
@@ -536,7 +548,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Rename an object from source key to target key in the given namespace.
+     * Rename an object in the given Object Storage namespace.
      *
      *
      * @param request The request object containing the details to send
@@ -552,7 +564,7 @@ public interface ObjectStorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Restore one or more objects specified by the objectName parameter.
+     * Restores one or more objects specified by the objectName parameter.
      * By default objects will be restored for 24 hours. Duration can be configured using the hours parameter.
      *
      *
@@ -585,10 +597,13 @@ public interface ObjectStorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Change the default Swift/S3 compartmentId of user's namespace into the user-defined compartmentId. Upon doing
-     * this, all subsequent bucket creations will use the new default compartment, but no previously created
-     * buckets will be modified. A user must have the NAMESPACE_UPDATE permission to make changes to the default
-     * compartments for S3 and Swift.
+     * By default, buckets created using the Amazon S3 Compatibility API or the Swift API are created in the root
+     * compartment of the Oracle Cloud Infrastructure tenancy.
+     * <p>
+     * You can change the default Swift/Amazon S3 compartmentId designation to a different compartmentId. All
+     * subsequent bucket creations will use the new default compartment, but no previously created
+     * buckets will be modified. A user must have NAMESPACE_UPDATE permission to make changes to the default
+     * compartments for Amazon S3 and Swift.
      *
      *
      * @param request The request object containing the details to send

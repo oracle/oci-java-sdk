@@ -4,8 +4,8 @@
 package com.oracle.bmc.objectstorage.model;
 
 /**
- * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
- * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+ * To use any of the API operations, you must be authorized in an IAM policy. If you are not authorized,
+ * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
  * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
  *
  * <br/>
@@ -143,8 +143,8 @@ public class CreateBucketDetails {
     }
 
     /**
-     * The name of the bucket. Valid characters are uppercase or lowercase letters,
-     * numbers, and dashes. Bucket names must be unique within the namespace. Avoid entering confidential information.
+     * The name of the bucket. Valid characters are uppercase or lowercase letters, numbers, and dashes.
+     * Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information.
      * example: Example: my-new-bucket1
      *
      **/
@@ -281,7 +281,7 @@ public class CreateBucketDetails {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * The OCID of a KMS key id used to call KMS to generate data key, decrypt the encrypted data key
+     * The OCID of a KMS key id used to call KMS to generate the data key or decrypt the encrypted data key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     String kmsKeyId;

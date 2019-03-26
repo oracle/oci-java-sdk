@@ -28,7 +28,7 @@ public class PutObjectResponse {
     private String opcContentMd5;
 
     /**
-     * The entity tag for the object.
+     * The entity tag (ETag) for the object.
      */
     private String eTag;
 

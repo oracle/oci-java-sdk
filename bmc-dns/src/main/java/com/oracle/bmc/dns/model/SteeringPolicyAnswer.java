@@ -6,7 +6,8 @@ package com.oracle.bmc.dns.model;
 /**
  * DNS record data with metadata for processing in a steering policy.
  * <p>
- *Warning:* Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+ *
+ * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -105,13 +106,30 @@ public class SteeringPolicyAnswer {
 
     /**
      * A user-friendly name for the answer, unique within the steering policy.
+     * An answer's `name` property can be referenced in `answerCondition` properties
+     * of rules using `answer.name`.
+     * <p>
+     **Example:**
+     * <p>
+     * \"rules\": [
+     *     {
+     *       \"ruleType\": \"FILTER\",
+     *       \"defaultAnswerData\":  [
+     *         {
+     *           \"answerCondition\": \"answer.name == 'server 1'\",
+     *           \"shouldKeep\": true
+     *         }
+     *       ]
+     *     }
+     *   ]
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
     /**
      * The canonical name for the record's type. Only A, AAAA, and CNAME are supported. For more
-     * information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+     * information, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rtype")
@@ -119,24 +137,53 @@ public class SteeringPolicyAnswer {
 
     /**
      * The record's data, as whitespace-delimited tokens in
-     * type-specific presentation format.
+     * type-specific presentation format. All RDATA is normalized and the
+     * returned presentation of your RDATA may differ from its initial input.
+     * For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rdata")
     String rdata;
 
     /**
-     * The freeform name of a group of one or more records (e.g., a data center or a geographic
-     * region) in which this one is included.
+     * The freeform name of a group of one or more records in which this record is included,
+     * such as \"LAX data center\". An answer's `pool` property can be referenced in `answerCondition`
+     * properties of rules using `answer.pool`.
+     * <p>
+     **Example:**
+     * <p>
+     * \"rules\": [
+     *     {
+     *       \"ruleType\": \"FILTER\",
+     *       \"defaultAnswerData\":  [
+     *         {
+     *           \"answerCondition\": \"answer.pool == 'US East Servers'\",
+     *           \"shouldKeep\": true
+     *         }
+     *       ]
+     *     }
+     *   ]
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pool")
     String pool;
 
     /**
-     * Whether or not an answer should be excluded from responses, e.g. because the corresponding
-     * server is down for maintenance. Note, however, that such filtering is not automatic and
-     * will only take place if a rule implements it.
+     * Set this property to `true` to indicate that the answer is administratively disabled,
+     * such as when the corresponding server is down for maintenance. An answer's `isDisabled`
+     * property can be referenced in `answerCondition` properties in rules using `answer.isDisabled`.
+     * <p>
+     **Example:**
+     *   \"rules\": [
+     *     {
+     *       \"ruleType\": \"FILTER\",
+     *       \"defaultAnswerData\": [
+     *         {
+     *           \"answerCondition\": \"answer.isDisabled != true\",
+     *           \"shouldKeep\": true
+     *         }
+     *       ]
+     *     },
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDisabled")

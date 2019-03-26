@@ -4,8 +4,8 @@
 package com.oracle.bmc.objectstorage.model;
 
 /**
- * An UpdateNamespaceMetadataDetails is used for update NamespaceMetadata. To be able to upate the NamespaceMetadata, a user
- *  must have NAMESPACE_UPDATE permission.
+ * UpdateNamespaceMetadataDetails is used to update the NamespaceMetadata. To update NamespaceMetadata, a user
+ * must have NAMESPACE_UPDATE permission.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -74,13 +74,13 @@ public class UpdateNamespaceMetadataDetails {
     }
 
     /**
-     * The update compartment id for an S3 client if this field is set.
+     * The updated compartment id for use by an S3 client, if this field is set.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultS3CompartmentId")
     String defaultS3CompartmentId;
 
     /**
-     * The update compartment id for a Swift client if this field is set.
+     * The updated compartment id for use by a Swift client, if this field is set.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultSwiftCompartmentId")
     String defaultSwiftCompartmentId;

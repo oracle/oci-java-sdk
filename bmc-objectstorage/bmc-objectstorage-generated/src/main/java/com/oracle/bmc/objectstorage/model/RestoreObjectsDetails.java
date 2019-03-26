@@ -68,14 +68,14 @@ public class RestoreObjectsDetails {
     }
 
     /**
-     * An object which is in archive-tier storage and needs to be restored.
+     * An object that is in an archive storage tier and needs to be restored.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     String objectName;
 
     /**
      * The number of hours for which this object will be restored.
-     * By default objects will be restored for 24 hours. Duration can be configured using the hours parameter.
+     * By default objects will be restored for 24 hours. You can instead configure the duration using the hours parameter.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hours")

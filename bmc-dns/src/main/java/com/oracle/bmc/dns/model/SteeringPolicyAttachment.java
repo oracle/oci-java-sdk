@@ -4,10 +4,12 @@
 package com.oracle.bmc.dns.model;
 
 /**
- * An attachment between a steering policy and a domain.
- * An attachment occludes all records at its domain that are of a covered rtype, constructing
- * DNS responses from its steering policy rather than from those domain records.
- * A domain can have at most one attachment covering any given rtype.
+ * An attachment between a steering policy and a domain. An attachment constructs
+ * DNS responses using its steering policy instead of the records at its defined domain.
+ * Only records of the policy's covered rtype are blocked at the domain.
+ * A domain can have a maximum of one attachment covering any given rtype.
+ * <p>
+ **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -184,7 +186,7 @@ public class SteeringPolicyAttachment {
 
     /**
      * A user-friendly name for the steering policy attachment.
-     * Does not have to be unique, and it's changeable.
+     * Does not have to be unique and can be changed.
      * Avoid entering confidential information.
      *
      **/
@@ -219,8 +221,7 @@ public class SteeringPolicyAttachment {
     String id;
 
     /**
-     * The date and time the resource was created in \"YYYY-MM-ddThh:mmZ\" format
-     * with a Z offset, as defined by RFC 3339.
+     * The date and time the resource was created, expressed in RFC 3339 timestamp format.
      * <p>
      **Example:** `2016-07-22T17:23:59:60Z`
      *

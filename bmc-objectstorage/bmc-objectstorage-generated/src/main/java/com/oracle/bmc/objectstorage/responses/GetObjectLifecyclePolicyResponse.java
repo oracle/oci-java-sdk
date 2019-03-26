@@ -23,7 +23,7 @@ public class GetObjectLifecyclePolicyResponse {
     private String opcClientRequestId;
 
     /**
-     * The entity tag for the object lifecycle policy.
+     * The entity tag (ETag) for the object lifecycle policy.
      */
     private String eTag;
 
