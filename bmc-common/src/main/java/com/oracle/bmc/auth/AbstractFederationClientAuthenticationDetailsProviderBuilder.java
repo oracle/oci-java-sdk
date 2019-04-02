@@ -10,6 +10,7 @@ import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.internal.AuthUtils;
 import com.oracle.bmc.auth.internal.X509FederationClient;
 import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -26,6 +27,7 @@ import java.util.HashSet;
  * @param <P> provider class
  */
 @InternalSdk
+@Slf4j
 public abstract class AbstractFederationClientAuthenticationDetailsProviderBuilder<
                 B extends AbstractFederationClientAuthenticationDetailsProviderBuilder<B, P>,
                 P extends AbstractAuthenticationDetailsProvider>
@@ -149,10 +151,18 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
             Client client = ClientBuilder.newClient();
             WebTarget base = client.target(METADATA_SERVICE_BASE_URL + "instance/");
             String regionStr = base.path("region").request(MediaType.TEXT_PLAIN).get(String.class);
+            LOG.info("Looking up region for {}", regionStr);
 
-            // TODO: we should start using 'canonicalRegionName' instead of 'region' and call
-            // Region.fromRegionId, and fall back to 'region' only for backwards compat.
-            region = Region.fromRegionCodeOrId(regionStr);
+            try {
+                // TODO: we should start using 'canonicalRegionName' instead of 'region' and call
+                // Region.fromRegionId, and fall back to 'region' only for backwards compat.
+                region = Region.fromRegionCodeOrId(regionStr);
+                LOG.info("Using region {}", region.getRegionId());
+            } catch (IllegalArgumentException e) {
+                LOG.warn("Region not supported by this version of the SDK", e);
+                // Proceed by assuming the region id belongs to the OC1 realm.
+                region = Region.register(regionStr, Realm.OC1);
+            }
 
             Optional<String> endpoint = region.getEndpoint(SERVICE);
 

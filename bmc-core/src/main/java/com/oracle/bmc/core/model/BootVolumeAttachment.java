@@ -259,7 +259,7 @@ public class BootVolumeAttachment {
     java.util.Date timeCreated;
 
     /**
-     * Whether the enable encryption in transit for the PV volume attachment is on or not.
+     * Whether in-transit encryption for the boot volume's paravirtualized attachment is enabled or not.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
     Boolean isPvEncryptionInTransitEnabled;

@@ -76,6 +76,15 @@ public class CrossConnectGroup {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customerReferenceName")
+        private String customerReferenceName;
+
+        public Builder customerReferenceName(String customerReferenceName) {
+            this.customerReferenceName = customerReferenceName;
+            this.__explicitlySet__.add("customerReferenceName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -91,7 +100,12 @@ public class CrossConnectGroup {
         public CrossConnectGroup build() {
             CrossConnectGroup __instance__ =
                     new CrossConnectGroup(
-                            compartmentId, displayName, id, lifecycleState, timeCreated);
+                            compartmentId,
+                            displayName,
+                            id,
+                            lifecycleState,
+                            customerReferenceName,
+                            timeCreated);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -103,6 +117,7 @@ public class CrossConnectGroup {
                             .displayName(o.getDisplayName())
                             .id(o.getId())
                             .lifecycleState(o.getLifecycleState())
+                            .customerReferenceName(o.getCustomerReferenceName())
                             .timeCreated(o.getTimeCreated());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -190,6 +205,14 @@ public class CrossConnectGroup {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
+
+    /**
+     * A reference name or identifier for the physical fiber connection that this cross-connect
+     * group uses.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customerReferenceName")
+    String customerReferenceName;
 
     /**
      * The date and time the cross-connect group was created, in the format defined by RFC3339.

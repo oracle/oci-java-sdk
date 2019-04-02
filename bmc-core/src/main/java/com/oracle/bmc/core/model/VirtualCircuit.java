@@ -162,6 +162,15 @@ public class VirtualCircuit {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("providerServiceKeyName")
+        private String providerServiceKeyName;
+
+        public Builder providerServiceKeyName(String providerServiceKeyName) {
+            this.providerServiceKeyName = providerServiceKeyName;
+            this.__explicitlySet__.add("providerServiceKeyName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("providerServiceName")
         private String providerServiceName;
 
@@ -253,6 +262,7 @@ public class VirtualCircuit {
                             oracleBgpAsn,
                             providerName,
                             providerServiceId,
+                            providerServiceKeyName,
                             providerServiceName,
                             providerState,
                             publicPrefixes,
@@ -281,6 +291,7 @@ public class VirtualCircuit {
                             .oracleBgpAsn(o.getOracleBgpAsn())
                             .providerName(o.getProviderName())
                             .providerServiceId(o.getProviderServiceId())
+                            .providerServiceKeyName(o.getProviderServiceKeyName())
                             .providerServiceName(o.getProviderServiceName())
                             .providerState(o.getProviderState())
                             .publicPrefixes(o.getPublicPrefixes())
@@ -313,7 +324,8 @@ public class VirtualCircuit {
     @com.fasterxml.jackson.annotation.JsonProperty("bandwidthShapeName")
     String bandwidthShapeName;
     /**
-     * BGP management option.
+     * Deprecated. Instead use the information in
+     * {@link FastConnectProviderService}.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -361,7 +373,8 @@ public class VirtualCircuit {
         }
     };
     /**
-     * BGP management option.
+     * Deprecated. Instead use the information in
+     * {@link FastConnectProviderService}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bgpManagement")
@@ -548,6 +561,13 @@ public class VirtualCircuit {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerServiceId")
     String providerServiceId;
+
+    /**
+     * The service key name offered by the provider (if the customer is connecting via a provider).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("providerServiceKeyName")
+    String providerServiceKeyName;
 
     /**
      * Deprecated. Instead use `providerServiceId`.

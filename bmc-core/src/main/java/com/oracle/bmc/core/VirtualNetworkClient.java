@@ -1751,6 +1751,33 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public GetFastConnectProviderServiceKeyResponse getFastConnectProviderServiceKey(
+            GetFastConnectProviderServiceKeyRequest request) {
+        LOG.trace("Called getFastConnectProviderServiceKey");
+        request = GetFastConnectProviderServiceKeyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetFastConnectProviderServiceKeyConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetFastConnectProviderServiceKeyResponse>
+                transformer = GetFastConnectProviderServiceKeyConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public GetIPSecConnectionResponse getIPSecConnection(GetIPSecConnectionRequest request) {
         LOG.trace("Called getIPSecConnection");
         request = GetIPSecConnectionConverter.interceptRequest(request);

@@ -13,7 +13,7 @@ package com.oracle.bmc.keymanagement.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Key.Builder.class)
@@ -166,9 +166,9 @@ public class Key {
     String compartmentId;
 
     /**
-     * The OCID of the KeyVersion resource used in cryptographic operations. During key rotation, service may be in transitional state
-     * where this or a newer KeyVersion are used intermittently, and currentKeyVersion field is updated once service is guaranteed to
-     * use new KeyVersion for all consequent encrypt operations.
+     * The OCID of the KeyVersion resource used in cryptographic operations. During key rotation, service might be in a transitional state
+     * where this or a newer KeyVersion are used intermittently. The currentKeyVersion field is updated when the service is guaranteed to
+     * use the new KeyVersion for all subsequent encryption operations.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentKeyVersion")

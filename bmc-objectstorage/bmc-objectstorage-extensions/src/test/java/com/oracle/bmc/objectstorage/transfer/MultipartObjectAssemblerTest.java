@@ -23,12 +23,15 @@ import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import com.oracle.bmc.util.internal.Consumer;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 
 import com.oracle.bmc.objectstorage.ObjectStorage;
 import com.oracle.bmc.objectstorage.model.MultipartUpload;
@@ -46,7 +49,11 @@ import com.oracle.bmc.objectstorage.responses.ListMultipartUploadPartsResponse;
 import com.oracle.bmc.objectstorage.responses.ListMultipartUploadsResponse;
 import com.oracle.bmc.objectstorage.responses.UploadPartResponse;
 import com.oracle.bmc.util.StreamUtils;
+import org.mockito.runners.MockitoJUnitRunner;
 
+import javax.ws.rs.client.Invocation;
+
+@RunWith(MockitoJUnitRunner.class)
 public class MultipartObjectAssemblerTest {
     private static final String NAMESPACE = "namespace";
     private static final String BUCKET = "bucket";
@@ -60,15 +67,25 @@ public class MultipartObjectAssemblerTest {
     private ExecutorService executorService;
     private MultipartObjectAssembler assembler;
 
+    @Mock private Consumer<Invocation.Builder> mockInvocationCallback;
+
     @Mock private ObjectStorage service;
+
+    @Rule public ExpectedException thrown = ExpectedException.none();
 
     @Before
     public void setUp() {
-        MockitoAnnotations.initMocks(this);
         executorService = Executors.newSingleThreadExecutor();
         assembler =
-                new MultipartObjectAssembler(
-                        service, NAMESPACE, BUCKET, OBJECT, ALLOW_OVERWRITE, executorService);
+                MultipartObjectAssembler.builder()
+                        .allowOverwrite(ALLOW_OVERWRITE)
+                        .bucketName(BUCKET)
+                        .executorService(executorService)
+                        .invocationCallback(mockInvocationCallback)
+                        .namespaceName(NAMESPACE)
+                        .objectName(OBJECT)
+                        .service(service)
+                        .build();
     }
 
     @After
@@ -77,7 +94,7 @@ public class MultipartObjectAssemblerTest {
     }
 
     @Test
-    public void newRequest() {
+    public void newRequest_andVerifyManifest() {
         String uploadId = "uploadId";
 
         initializeCreateMultipartUpload(uploadId);
@@ -101,17 +118,23 @@ public class MultipartObjectAssemblerTest {
         assertEquals(
                 CONTENT_ENCODING, request.getCreateMultipartUploadDetails().getContentEncoding());
         assertEquals(OPC_META, request.getCreateMultipartUploadDetails().getMetadata());
-
-        // test trying reuse the assembler
-        try {
-            assembler.newRequest(CONTENT_TYPE, CONTENT_LANGUAGE, CONTENT_ENCODING, OPC_META);
-            fail("Should have thrown IllegalStateException");
-        } catch (IllegalStateException e) {
-        }
+        assertEquals(mockInvocationCallback, request.getInvocationCallback());
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void resumeUpload_noMatchingUploadId() {
+    @Test
+    public void newRequest_withAlreadyInitializedAssembler_shouldThrowIllegalStateException() {
+        thrown.expect(IllegalStateException.class);
+        thrown.expectMessage("Assembler has already been initialized");
+
+        newRequest_andVerifyManifest();
+        newRequest_andVerifyManifest();
+    }
+
+    @Test
+    public void resumeUpload_noMatchingUploadId_shouldThrowIllegalArgumentException() {
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("Could not find existing upload with ID doesNotExist");
+
         ArrayList<MultipartUpload> existingUploads = new ArrayList<>();
         existingUploads.add(MultipartUpload.builder().uploadId("foobar").build());
         ListMultipartUploadsResponse listResponse1 =
@@ -131,7 +154,7 @@ public class MultipartObjectAssemblerTest {
     }
 
     @Test
-    public void resumeUpload() {
+    public void resumeUpload_andVerifyListMultipartUploadPartsResponse() {
         String pageToken = "nextPage";
         String uploadId = "exists";
 
@@ -177,12 +200,14 @@ public class MultipartObjectAssemblerTest {
         assertEquals(NAMESPACE, listUploadsRequest1.getNamespaceName());
         assertEquals(BUCKET, listUploadsRequest1.getBucketName());
         assertEquals(100, listUploadsRequest1.getLimit().intValue());
+        assertEquals(mockInvocationCallback, listUploadsRequest1.getInvocationCallback());
         assertNull(listUploadsRequest1.getPage());
         ListMultipartUploadsRequest listUploadsRequest2 = listUploadsCaptor.getAllValues().get(1);
         assertEquals(NAMESPACE, listUploadsRequest2.getNamespaceName());
         assertEquals(BUCKET, listUploadsRequest2.getBucketName());
         assertEquals(100, listUploadsRequest2.getLimit().intValue());
         assertEquals(pageToken, listUploadsRequest2.getPage());
+        assertEquals(mockInvocationCallback, listUploadsRequest2.getInvocationCallback());
 
         ArgumentCaptor<ListMultipartUploadPartsRequest> listPartsCaptor =
                 ArgumentCaptor.forClass(ListMultipartUploadPartsRequest.class);
@@ -192,6 +217,7 @@ public class MultipartObjectAssemblerTest {
         assertEquals(BUCKET, listPartsRequest1.getBucketName());
         assertEquals(uploadId, listPartsRequest1.getUploadId());
         assertEquals(100, listPartsRequest1.getLimit().intValue());
+        assertEquals(mockInvocationCallback, listPartsRequest1.getInvocationCallback());
         assertNull(listPartsRequest1.getPage());
         ListMultipartUploadPartsRequest listPartsRequest2 = listPartsCaptor.getAllValues().get(1);
         assertEquals(NAMESPACE, listPartsRequest2.getNamespaceName());
@@ -199,13 +225,16 @@ public class MultipartObjectAssemblerTest {
         assertEquals(uploadId, listPartsRequest2.getUploadId());
         assertEquals(100, listPartsRequest2.getLimit().intValue());
         assertEquals(pageToken, listPartsRequest2.getPage());
+        assertEquals(mockInvocationCallback, listPartsRequest2.getInvocationCallback());
+    }
 
-        // test trying reuse the assembler
-        try {
-            assembler.resumeRequest(uploadId);
-            fail("Should have thrown IllegalStateException");
-        } catch (IllegalStateException e) {
-        }
+    @Test
+    public void resumeUpload_alreadyInitialized_shouldThrowIllegalStateException() {
+        thrown.expect(IllegalStateException.class);
+        thrown.expectMessage("Assembler has already been initialized");
+
+        resumeUpload_andVerifyListMultipartUploadPartsResponse();
+        resumeUpload_andVerifyListMultipartUploadPartsResponse();
     }
 
     @Test
@@ -244,6 +273,16 @@ public class MultipartObjectAssemblerTest {
 
         CommitMultipartUploadResponse commitResponse = assembler.commit();
         assertSame(finalCommitResponse, commitResponse);
+
+        ArgumentCaptor<CommitMultipartUploadRequest> commitCaptor =
+                ArgumentCaptor.forClass(CommitMultipartUploadRequest.class);
+        verify(service).commitMultipartUpload(commitCaptor.capture());
+        CommitMultipartUploadRequest actualCommitRequest = commitCaptor.getValue();
+        assertEquals(NAMESPACE, actualCommitRequest.getNamespaceName());
+        assertEquals(BUCKET, actualCommitRequest.getBucketName());
+        assertEquals(OBJECT, actualCommitRequest.getObjectName());
+        assertEquals(uploadId, actualCommitRequest.getUploadId());
+        assertEquals(mockInvocationCallback, actualCommitRequest.getInvocationCallback());
 
         assertTrue(manifest.isUploadComplete());
         assertTrue(manifest.isUploadSuccessful());
@@ -339,6 +378,7 @@ public class MultipartObjectAssemblerTest {
         assertEquals(partNum, request.getUploadPartNum().intValue());
         assertEquals(md5, request.getContentMD5());
         assertEquals("*", request.getIfNoneMatch());
+        assertEquals(mockInvocationCallback, request.getInvocationCallback());
         assertNotNull(request.getUploadPartBody());
     }
 
@@ -364,6 +404,7 @@ public class MultipartObjectAssemblerTest {
         assertEquals(NAMESPACE, request.getNamespaceName());
         assertEquals(BUCKET, request.getBucketName());
         assertEquals(uploadId, request.getUploadId());
+        assertEquals(mockInvocationCallback, request.getInvocationCallback());
     }
 
     private void initializeCreateMultipartUpload(String uploadId) {

@@ -8,7 +8,7 @@ import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
 import org.apache.commons.lang3.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @lombok.extern.slf4j.Slf4j
 public class CreateKeyConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
@@ -26,7 +26,7 @@ public class CreateKeyConverter {
         Validate.notNull(request.getCreateKeyDetails(), "createKeyDetails is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20180608").path("keys");
+                client.getBaseTarget().path("/").path("20180608").path("keys");
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 

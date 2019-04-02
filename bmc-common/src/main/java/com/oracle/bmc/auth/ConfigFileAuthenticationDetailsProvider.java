@@ -9,6 +9,7 @@ import java.io.InputStream;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Supplier;
 import com.oracle.bmc.ConfigFileReader;
+import com.oracle.bmc.Realm;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.ConfigFileReader.ConfigFile;
 
@@ -86,10 +87,14 @@ public class ConfigFileAuthenticationDetailsProvider
                 region = Region.fromRegionId(regionId);
             } catch (IllegalArgumentException e) {
                 LOG.warn(
-                        "Found regionId '{}' in config file, but not supported by this version of the SDK, continuing without region",
+                        "Found regionId '{}' in config file, but not supported by this version of the SDK",
                         regionId,
                         e);
+                // Proceed by assuming the region id in the config file belongs to OC1 realm.
+                region = Region.register(regionId, Realm.OC1);
             }
+        } else {
+            LOG.info("Region not specified in Config file. Proceeding without setting a region.");
         }
 
         SimpleAuthenticationDetailsProvider.SimpleAuthenticationDetailsProviderBuilder builder =

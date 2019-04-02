@@ -6,7 +6,7 @@ package com.oracle.bmc.keymanagement;
 import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 public interface KmsManagement extends AutoCloseable {
 
     /**
@@ -24,7 +24,7 @@ public interface KmsManagement extends AutoCloseable {
     CreateKeyResponse createKey(CreateKeyRequest request);
 
     /**
-     * Generates new cryptographic material for a key. Key must be in an `ENABLED` state to be
+     * Generates new cryptographic material for a key. The key must be in an `ENABLED` state to be
      * rotated.
      *
      * @param request The request object containing the details to send
@@ -91,8 +91,8 @@ public interface KmsManagement extends AutoCloseable {
 
     /**
      * Updates the properties of a key. Specifically, you can update the
-     * `displayName` , `freeformTags`, and `definedTags` properties. Furthermore,
-     * the key must in an `ACTIVE` or `CREATING` state.
+     * `displayName`, `freeformTags`, and `definedTags` properties. Furthermore,
+     * the key must in an `ACTIVE` or `CREATING` state to be updated.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

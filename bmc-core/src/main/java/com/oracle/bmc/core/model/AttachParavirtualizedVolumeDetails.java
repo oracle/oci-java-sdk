@@ -135,7 +135,7 @@ public class AttachParavirtualizedVolumeDetails extends AttachVolumeDetails {
     }
 
     /**
-     * Whether to enable encryption in transit for the PV data volume attachment. Defaults to false.
+     * Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
     Boolean isPvEncryptionInTransitEnabled;

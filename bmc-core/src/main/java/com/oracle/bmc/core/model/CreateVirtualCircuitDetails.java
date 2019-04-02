@@ -97,6 +97,15 @@ public class CreateVirtualCircuitDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("providerServiceKeyName")
+        private String providerServiceKeyName;
+
+        public Builder providerServiceKeyName(String providerServiceKeyName) {
+            this.providerServiceKeyName = providerServiceKeyName;
+            this.__explicitlySet__.add("providerServiceKeyName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("providerServiceName")
         private String providerServiceName;
 
@@ -148,6 +157,7 @@ public class CreateVirtualCircuitDetails {
                             gatewayId,
                             providerName,
                             providerServiceId,
+                            providerServiceKeyName,
                             providerServiceName,
                             publicPrefixes,
                             region,
@@ -167,6 +177,7 @@ public class CreateVirtualCircuitDetails {
                             .gatewayId(o.getGatewayId())
                             .providerName(o.getProviderName())
                             .providerServiceId(o.getProviderServiceId())
+                            .providerServiceKeyName(o.getProviderServiceKeyName())
                             .providerServiceName(o.getProviderServiceName())
                             .publicPrefixes(o.getPublicPrefixes())
                             .region(o.getRegion())
@@ -251,6 +262,13 @@ public class CreateVirtualCircuitDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerServiceId")
     String providerServiceId;
+
+    /**
+     * The service key name offered by the provider (if the customer is connecting via a provider).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("providerServiceKeyName")
+    String providerServiceKeyName;
 
     /**
      * Deprecated. Instead use `providerServiceId`.

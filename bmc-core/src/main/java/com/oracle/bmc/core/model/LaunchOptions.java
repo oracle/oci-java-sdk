@@ -379,7 +379,7 @@ public class LaunchOptions {
     RemoteDataVolumeType remoteDataVolumeType;
 
     /**
-     * Whether to enable encryption in transit for the PV boot volume attachment. Defaults to false.
+     * Whether to enable in-transit encryption for the boot volume's paravirtualized attachment. The default value is false.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
     Boolean isPvEncryptionInTransitEnabled;

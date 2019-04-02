@@ -16,13 +16,6 @@ import com.oracle.bmc.Services;
 public class EndpointBuilderTest {
 
     @Test
-    public void allRealmsHaveSecondLevelDomainsConfigured() {
-        for (Realm realm : Realm.values()) {
-            assertNotNull(EndpointBuilder.getRealmToSecondLevelDomainName().get(realm));
-        }
-    }
-
-    @Test
     public void createEndpoint_useDefaultTemplate() {
         Service testService =
                 Services.serviceBuilder()

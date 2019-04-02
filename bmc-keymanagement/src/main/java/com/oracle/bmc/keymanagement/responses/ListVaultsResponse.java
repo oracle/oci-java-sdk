@@ -5,7 +5,7 @@ package com.oracle.bmc.keymanagement.responses;
 
 import com.oracle.bmc.keymanagement.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListVaultsResponse {
