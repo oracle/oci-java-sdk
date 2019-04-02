@@ -33,19 +33,30 @@ public class UpdateCrossConnectGroupDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customerReferenceName")
+        private String customerReferenceName;
+
+        public Builder customerReferenceName(String customerReferenceName) {
+            this.customerReferenceName = customerReferenceName;
+            this.__explicitlySet__.add("customerReferenceName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateCrossConnectGroupDetails build() {
             UpdateCrossConnectGroupDetails __instance__ =
-                    new UpdateCrossConnectGroupDetails(displayName);
+                    new UpdateCrossConnectGroupDetails(displayName, customerReferenceName);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateCrossConnectGroupDetails o) {
-            Builder copiedBuilder = displayName(o.getDisplayName());
+            Builder copiedBuilder =
+                    displayName(o.getDisplayName())
+                            .customerReferenceName(o.getCustomerReferenceName());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -66,6 +77,14 @@ public class UpdateCrossConnectGroupDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * A reference name or identifier for the physical fiber connection that this cross-connect
+     * group uses.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customerReferenceName")
+    String customerReferenceName;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

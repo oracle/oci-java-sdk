@@ -8,7 +8,7 @@ import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
 import org.apache.commons.lang3.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @lombok.extern.slf4j.Slf4j
 public class CreateKeyVersionConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
@@ -27,7 +27,8 @@ public class CreateKeyVersionConverter {
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
-                        .path("/20180608")
+                        .path("/")
+                        .path("20180608")
                         .path("keys")
                         .path(
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(

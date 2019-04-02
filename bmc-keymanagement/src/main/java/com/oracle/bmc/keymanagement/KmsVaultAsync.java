@@ -6,7 +6,7 @@ package com.oracle.bmc.keymanagement;
 import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 public interface KmsVaultAsync extends AutoCloseable {
 
     /**
@@ -37,8 +37,8 @@ public interface KmsVaultAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Cancels the scheduled deletion of the specified Vault, which must be in PendingDeletion
-     * state. The Vault and all Keys in it will be moved back to their previous states before
+     * Cancels the scheduled deletion of the specified vault. Canceling a scheduled deletion
+     * restores the vault and all keys in it to the respective states they were in before
      * the deletion was scheduled.
      *
      *
@@ -59,7 +59,7 @@ public interface KmsVaultAsync extends AutoCloseable {
      * Creates a new vault. The type of vault you create determines key
      * placement, pricing, and available options. Options include storage
      * isolation, a dedicated service endpoint instead of a shared service
-     * endpoint for API calls, and a dedicated HSM or a multitenant HSM.
+     * endpoint for API calls, and a dedicated hardware security module (HSM) or a multitenant HSM.
      *
      *
      * @param request The request object containing the details to send
@@ -89,7 +89,7 @@ public interface KmsVaultAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetVaultRequest, GetVaultResponse> handler);
 
     /**
-     * Lists vaults in the specified compartment.
+     * Lists the vaults in the specified compartment.
      *
      *
      * @param request The request object containing the details to send
@@ -104,8 +104,8 @@ public interface KmsVaultAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListVaultsRequest, ListVaultsResponse> handler);
 
     /**
-     * Schedules the deletion of the specified Vault. The Vault and all Keys in it
-     * will be moved to PendingDeletion state and deleted after the retention period.
+     * Schedules the deletion of the specified vault. This sets the state of the vault and all keys in it
+     * to `PENDING_DELETION` and then deletes them after the retention period ends.
      *
      *
      * @param request The request object containing the details to send
@@ -123,8 +123,8 @@ public interface KmsVaultAsync extends AutoCloseable {
 
     /**
      * Updates the properties of a vault. Specifically, you can update the
-     * `displayName` , `freeformTags`, and `definedTags` properties. Furthermore,
-     * the vault must be in an `ACTIVE` or `CREATING` state.
+     * `displayName`, `freeformTags`, and `definedTags` properties. Furthermore,
+     * the vault must be in an `ACTIVE` or `CREATING` state to be updated.
      *
      *
      * @param request The request object containing the details to send

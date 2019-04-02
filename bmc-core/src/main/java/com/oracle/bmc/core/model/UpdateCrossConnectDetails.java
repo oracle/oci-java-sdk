@@ -43,19 +43,31 @@ public class UpdateCrossConnectDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customerReferenceName")
+        private String customerReferenceName;
+
+        public Builder customerReferenceName(String customerReferenceName) {
+            this.customerReferenceName = customerReferenceName;
+            this.__explicitlySet__.add("customerReferenceName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateCrossConnectDetails build() {
             UpdateCrossConnectDetails __instance__ =
-                    new UpdateCrossConnectDetails(displayName, isActive);
+                    new UpdateCrossConnectDetails(displayName, isActive, customerReferenceName);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateCrossConnectDetails o) {
-            Builder copiedBuilder = displayName(o.getDisplayName()).isActive(o.getIsActive());
+            Builder copiedBuilder =
+                    displayName(o.getDisplayName())
+                            .isActive(o.getIsActive())
+                            .customerReferenceName(o.getCustomerReferenceName());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -87,6 +99,14 @@ public class UpdateCrossConnectDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isActive")
     Boolean isActive;
+
+    /**
+     * A reference name or identifier for the physical fiber connection that this cross-connect
+     * uses.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customerReferenceName")
+    String customerReferenceName;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

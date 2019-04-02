@@ -92,6 +92,43 @@ public class FastConnectProviderService {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customerAsnManagement")
+        private CustomerAsnManagement customerAsnManagement;
+
+        public Builder customerAsnManagement(CustomerAsnManagement customerAsnManagement) {
+            this.customerAsnManagement = customerAsnManagement;
+            this.__explicitlySet__.add("customerAsnManagement");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("providerServiceKeyManagement")
+        private ProviderServiceKeyManagement providerServiceKeyManagement;
+
+        public Builder providerServiceKeyManagement(
+                ProviderServiceKeyManagement providerServiceKeyManagement) {
+            this.providerServiceKeyManagement = providerServiceKeyManagement;
+            this.__explicitlySet__.add("providerServiceKeyManagement");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("bandwithShapeManagement")
+        private BandwithShapeManagement bandwithShapeManagement;
+
+        public Builder bandwithShapeManagement(BandwithShapeManagement bandwithShapeManagement) {
+            this.bandwithShapeManagement = bandwithShapeManagement;
+            this.__explicitlySet__.add("bandwithShapeManagement");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("requiredTotalCrossConnects")
+        private Integer requiredTotalCrossConnects;
+
+        public Builder requiredTotalCrossConnects(Integer requiredTotalCrossConnects) {
+            this.requiredTotalCrossConnects = requiredTotalCrossConnects;
+            this.__explicitlySet__.add("requiredTotalCrossConnects");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
@@ -114,6 +151,10 @@ public class FastConnectProviderService {
                             providerServiceName,
                             publicPeeringBgpManagement,
                             supportedVirtualCircuitTypes,
+                            customerAsnManagement,
+                            providerServiceKeyManagement,
+                            bandwithShapeManagement,
+                            requiredTotalCrossConnects,
                             type);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -129,6 +170,10 @@ public class FastConnectProviderService {
                             .providerServiceName(o.getProviderServiceName())
                             .publicPeeringBgpManagement(o.getPublicPeeringBgpManagement())
                             .supportedVirtualCircuitTypes(o.getSupportedVirtualCircuitTypes())
+                            .customerAsnManagement(o.getCustomerAsnManagement())
+                            .providerServiceKeyManagement(o.getProviderServiceKeyManagement())
+                            .bandwithShapeManagement(o.getBandwithShapeManagement())
+                            .requiredTotalCrossConnects(o.getRequiredTotalCrossConnects())
                             .type(o.getType());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -329,6 +374,177 @@ public class FastConnectProviderService {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedVirtualCircuitTypes")
     java.util.List<SupportedVirtualCircuitTypes> supportedVirtualCircuitTypes;
+    /**
+     * Who is responsible for managing the ASN information for the network at the other end
+     * of the connection from Oracle.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum CustomerAsnManagement {
+        CustomerManaged("CUSTOMER_MANAGED"),
+        ProviderManaged("PROVIDER_MANAGED"),
+        OracleManaged("ORACLE_MANAGED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, CustomerAsnManagement> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (CustomerAsnManagement v : CustomerAsnManagement.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        CustomerAsnManagement(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static CustomerAsnManagement create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'CustomerAsnManagement', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Who is responsible for managing the ASN information for the network at the other end
+     * of the connection from Oracle.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customerAsnManagement")
+    CustomerAsnManagement customerAsnManagement;
+    /**
+     * Who is responsible for managing the provider service key.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum ProviderServiceKeyManagement {
+        CustomerManaged("CUSTOMER_MANAGED"),
+        ProviderManaged("PROVIDER_MANAGED"),
+        OracleManaged("ORACLE_MANAGED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, ProviderServiceKeyManagement> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ProviderServiceKeyManagement v : ProviderServiceKeyManagement.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ProviderServiceKeyManagement(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ProviderServiceKeyManagement create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ProviderServiceKeyManagement', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Who is responsible for managing the provider service key.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("providerServiceKeyManagement")
+    ProviderServiceKeyManagement providerServiceKeyManagement;
+    /**
+     * Who is responsible for managing the virtual circuit bandwidth.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum BandwithShapeManagement {
+        CustomerManaged("CUSTOMER_MANAGED"),
+        ProviderManaged("PROVIDER_MANAGED"),
+        OracleManaged("ORACLE_MANAGED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, BandwithShapeManagement> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (BandwithShapeManagement v : BandwithShapeManagement.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        BandwithShapeManagement(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static BandwithShapeManagement create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'BandwithShapeManagement', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Who is responsible for managing the virtual circuit bandwidth.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("bandwithShapeManagement")
+    BandwithShapeManagement bandwithShapeManagement;
+
+    /**
+     * Total number of cross-connect or cross-connect groups required for the virtual circuit.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("requiredTotalCrossConnects")
+    Integer requiredTotalCrossConnects;
     /**
      * Provider service type.
      *

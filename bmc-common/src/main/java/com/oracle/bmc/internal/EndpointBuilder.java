@@ -24,25 +24,6 @@ public class EndpointBuilder {
     public static final String DEFAULT_ENDPOINT_TEMPLATE =
             "https://{serviceEndpointPrefix}.{region}.{secondLevelDomain}";
 
-    @RequiredArgsConstructor
-    private enum SecondLevelDomainNames {
-        ORACLECLOUD_COM("oraclecloud.com"),
-        ORACLEGOVCLOUD_COM("oraclegovcloud.com");
-
-        /**
-         * The default second level domain for all regions in this realm.
-         * Does not start with '.'.
-         */
-        private final String secondLevelDomain;
-    }
-
-    @Getter(value = AccessLevel.PACKAGE)
-    private final static ImmutableMap<Realm, String> realmToSecondLevelDomainName =
-            ImmutableMap.of(
-                    Realm.OC1, SecondLevelDomainNames.ORACLECLOUD_COM.secondLevelDomain,
-                    Realm.OC2, SecondLevelDomainNames.ORACLEGOVCLOUD_COM.secondLevelDomain,
-                    Realm.OC3, SecondLevelDomainNames.ORACLEGOVCLOUD_COM.secondLevelDomain);
-
     /**
      * Creates the service endpoint using the {@link DefaultEndpointConfiguration}
      * method.
@@ -63,7 +44,7 @@ public class EndpointBuilder {
         return DefaultEndpointConfiguration.builder(endpointTemplateToUse)
                 .regionId(regionId)
                 .serviceEndpointPrefix(service.getServiceEndpointPrefix())
-                .secondLevelDomain(realmToSecondLevelDomainName.get(realm))
+                .secondLevelDomain(realm.getSecondLevelDomain())
                 .build();
     }
 

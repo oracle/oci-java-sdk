@@ -42,12 +42,22 @@ public class CreateCrossConnectGroupDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customerReferenceName")
+        private String customerReferenceName;
+
+        public Builder customerReferenceName(String customerReferenceName) {
+            this.customerReferenceName = customerReferenceName;
+            this.__explicitlySet__.add("customerReferenceName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateCrossConnectGroupDetails build() {
             CreateCrossConnectGroupDetails __instance__ =
-                    new CreateCrossConnectGroupDetails(compartmentId, displayName);
+                    new CreateCrossConnectGroupDetails(
+                            compartmentId, displayName, customerReferenceName);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -55,7 +65,9 @@ public class CreateCrossConnectGroupDetails {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateCrossConnectGroupDetails o) {
             Builder copiedBuilder =
-                    compartmentId(o.getCompartmentId()).displayName(o.getDisplayName());
+                    compartmentId(o.getCompartmentId())
+                            .displayName(o.getDisplayName())
+                            .customerReferenceName(o.getCustomerReferenceName());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -82,6 +94,14 @@ public class CreateCrossConnectGroupDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * A reference name or identifier for the physical fiber connection that this cross-connect
+     * group uses.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customerReferenceName")
+    String customerReferenceName;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

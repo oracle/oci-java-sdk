@@ -12,6 +12,7 @@ import java.security.DigestOutputStream;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.oracle.bmc.io.DuplicatableInputStream;
 import com.oracle.bmc.model.BmcException;
@@ -26,10 +27,13 @@ import com.oracle.bmc.objectstorage.transfer.internal.StreamChunkCreator;
 import com.oracle.bmc.objectstorage.transfer.internal.StreamHelper;
 import com.oracle.bmc.util.StreamUtils;
 
+import com.oracle.bmc.util.internal.Consumer;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
+
+import javax.ws.rs.client.Invocation;
 
 /**
  * UploadManager simplifies interaction with the Object Storage service by abstracting away the method used
@@ -221,21 +225,21 @@ public class UploadManager {
         }
     }
 
-    // exposed for unit tests
+    @VisibleForTesting
     protected MultipartObjectAssembler createAssembler(
             PutObjectRequest request,
             UploadRequest uploadRequest,
             ExecutorService executorService) {
-        MultipartObjectAssembler assembler =
-                new MultipartObjectAssembler(
-                        objectStorage,
-                        request.getNamespaceName(),
-                        request.getBucketName(),
-                        request.getObjectName(),
-                        uploadRequest.allowOverwrite,
-                        executorService);
-        assembler.setOpcClientRequestId(request.getOpcClientRequestId());
-        return assembler;
+        return MultipartObjectAssembler.builder()
+                .allowOverwrite(uploadRequest.allowOverwrite)
+                .bucketName(request.getBucketName())
+                .executorService(executorService)
+                .invocationCallback(request.getInvocationCallback())
+                .namespaceName(request.getNamespaceName())
+                .objectName(request.getObjectName())
+                .opcClientRequestId(request.getOpcClientRequestId())
+                .service(objectStorage)
+                .build();
     }
 
     private static ExecutorService buildDefaultParallelExecutor() {

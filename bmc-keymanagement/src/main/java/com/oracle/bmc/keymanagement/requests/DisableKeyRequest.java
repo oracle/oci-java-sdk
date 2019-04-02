@@ -5,7 +5,7 @@ package com.oracle.bmc.keymanagement.requests;
 
 import com.oracle.bmc.keymanagement.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
 public class DisableKeyRequest extends com.oracle.bmc.requests.BmcRequest {

@@ -894,6 +894,16 @@ public interface VirtualNetwork extends AutoCloseable {
             GetFastConnectProviderServiceRequest request);
 
     /**
+     * Gets the specified provider service key's information.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetFastConnectProviderServiceKeyResponse getFastConnectProviderServiceKey(
+            GetFastConnectProviderServiceKeyRequest request);
+
+    /**
      * Gets the specified IPSec connection's basic information, including the static routes for the
      * on-premises router. If you want the status of the connection (whether it's up or down), use
      * {@link #getIPSecConnectionDeviceStatus(GetIPSecConnectionDeviceStatusRequest) getIPSecConnectionDeviceStatus}.

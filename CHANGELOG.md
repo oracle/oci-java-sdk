@@ -2,6 +2,17 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
+## 1.5.0 - 2019-04-02
+### Added
+- Support for provider service key names on virtual circuits in the FastConnect service
+- Support for customer reference names on cross connects and cross connect groups in the FastConnect service
+
+### Changed
+- Use of the SDK with Java 7 is no longer supported
+- `com.oracle.bmc.Region` and `com.oracle.bmc.Realm` enumerations have been converted to classes to allow using the SDK with new unreleased regions and realms. An example of how to do this is available [here](https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/NewRegionAndRealmSupportWithoutSDKUpdate.java)
+
+### Security
+- Due to a security vulnerability in a dependency of older versions of the Java SDK, **it is important that you upgrade to this or a later version of the Java SDK**. Jackson-databind version 2.9.6, used by prior versions of the SDK, has known security vulnerabilities. The SDK now uses Jackson-databind version 2.9.8 which fixes these vulnerabilities.
 
 ## 1.4.4 - 2019-03-26
 ### Added
@@ -48,7 +59,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Fixed
 - Removed unused Announcements service `NotificationFollowupDetails` model and `getFollowups` operation
 
-## 1.3.7 - 2018-02-07 
+## 1.3.7 - 2018-02-07
 ### Added
 - Support for the Web Application Acceleration and Security (WAAS) service
 - Support for the Health Checks service
@@ -72,7 +83,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - Support for device attributes on volume attachments in the Compute service
 - Support for custom header rulesets in the Load Balancing service
-- Add support to use RESTEasy with Java SDK. Examples can be found at [ResteasyClientWithObjectStorageExample](https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java) and [InstancePrincipalsAuthenticationDetailsProviderWithResteasyClientExample](https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/InstancePrincipalsAuthenticationDetailsProviderWithResteasyClientExample.java) 
+- Add support to use RESTEasy with Java SDK. Examples can be found at [ResteasyClientWithObjectStorageExample](https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java) and [InstancePrincipalsAuthenticationDetailsProviderWithResteasyClientExample](https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/InstancePrincipalsAuthenticationDetailsProviderWithResteasyClientExample.java)
 
 ### Fixed
 - Reading entities from HTTP response without a Content-Type header no longer throws a NullPointerException

@@ -31,8 +31,12 @@ import com.oracle.bmc.objectstorage.transfer.internal.MultipartTransferManager;
 import com.oracle.bmc.objectstorage.transfer.internal.SimpleRetry;
 import com.oracle.bmc.util.StreamUtils;
 
+import com.oracle.bmc.util.internal.Consumer;
+import lombok.Builder;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+
+import javax.ws.rs.client.Invocation;
 
 /**
  * MultiPartObjectAssembler provides a simplified interaction with uploading large
@@ -54,6 +58,7 @@ public class MultipartObjectAssembler {
     private final String namespaceName;
     private final String bucketName;
     private final String objectName;
+    private final Consumer<Invocation.Builder> invocationCallback;
     private final boolean allowOverwrite;
     private final ExecutorService executorService;
 
@@ -75,7 +80,9 @@ public class MultipartObjectAssembler {
      * @param objectName The final object name.
      * @param allowOverwrite Allow uploads to overwrite existing parts with the same part number
      * @param executorService The executor service to use
+     * @deprecated use {@link #builder()} instead
      */
+    @Deprecated
     public MultipartObjectAssembler(
             ObjectStorage service,
             String namespaceName,
@@ -83,12 +90,35 @@ public class MultipartObjectAssembler {
             String objectName,
             boolean allowOverwrite,
             ExecutorService executorService) {
+        this(
+                service,
+                namespaceName,
+                bucketName,
+                objectName,
+                allowOverwrite,
+                executorService,
+                null /* opcClientRequestId */,
+                null /* invocationCallback */);
+    }
+
+    @Builder
+    private MultipartObjectAssembler(
+            ObjectStorage service,
+            String namespaceName,
+            String bucketName,
+            String objectName,
+            boolean allowOverwrite,
+            ExecutorService executorService,
+            String opcClientRequestId,
+            Consumer<Invocation.Builder> invocationCallback) {
         this.service = service;
         this.namespaceName = namespaceName;
         this.bucketName = bucketName;
         this.objectName = objectName;
         this.allowOverwrite = allowOverwrite;
         this.executorService = executorService;
+        this.opcClientRequestId = opcClientRequestId;
+        this.invocationCallback = invocationCallback;
     }
 
     /**
@@ -110,6 +140,7 @@ public class MultipartObjectAssembler {
         CreateMultipartUploadResponse createUploadResponse =
                 service.createMultipartUpload(
                         CreateMultipartUploadRequest.builder()
+                                .invocationCallback(invocationCallback)
                                 .bucketName(bucketName)
                                 .ifNoneMatch(ifNoneMatch)
                                 .namespaceName(namespaceName)
@@ -160,6 +191,7 @@ public class MultipartObjectAssembler {
             ListMultipartUploadPartsResponse parts =
                     service.listMultipartUploadParts(
                             ListMultipartUploadPartsRequest.builder()
+                                    .invocationCallback(invocationCallback)
                                     .namespaceName(namespaceName)
                                     .bucketName(bucketName)
                                     .objectName(objectName)
@@ -265,6 +297,7 @@ public class MultipartObjectAssembler {
         String ifNoneMatch = ObjectStorageUtils.getIfNoneMatchHeader(allowPartOverwrite);
         UploadPartRequest request =
                 UploadPartRequest.builder()
+                        .invocationCallback(invocationCallback)
                         .namespaceName(namespaceName)
                         .bucketName(bucketName)
                         .objectName(objectName)
@@ -295,6 +328,7 @@ public class MultipartObjectAssembler {
         manifest.markUploadAborted();
         return service.abortMultipartUpload(
                 AbortMultipartUploadRequest.builder()
+                        .invocationCallback(invocationCallback)
                         .namespaceName(namespaceName)
                         .bucketName(bucketName)
                         .objectName(objectName)
@@ -322,6 +356,7 @@ public class MultipartObjectAssembler {
 
         return service.commitMultipartUpload(
                 CommitMultipartUploadRequest.builder()
+                        .invocationCallback(invocationCallback)
                         .namespaceName(namespaceName)
                         .bucketName(bucketName)
                         .objectName(objectName)
@@ -342,6 +377,7 @@ public class MultipartObjectAssembler {
             ListMultipartUploadsResponse uploads =
                     service.listMultipartUploads(
                             ListMultipartUploadsRequest.builder()
+                                    .invocationCallback(invocationCallback)
                                     .namespaceName(namespaceName)
                                     .bucketName(bucketName)
                                     .limit(100)

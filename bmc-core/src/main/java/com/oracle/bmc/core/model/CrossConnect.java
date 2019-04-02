@@ -113,6 +113,15 @@ public class CrossConnect {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customerReferenceName")
+        private String customerReferenceName;
+
+        public Builder customerReferenceName(String customerReferenceName) {
+            this.customerReferenceName = customerReferenceName;
+            this.__explicitlySet__.add("customerReferenceName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -136,6 +145,7 @@ public class CrossConnect {
                             locationName,
                             portName,
                             portSpeedShapeName,
+                            customerReferenceName,
                             timeCreated);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -152,6 +162,7 @@ public class CrossConnect {
                             .locationName(o.getLocationName())
                             .portName(o.getPortName())
                             .portSpeedShapeName(o.getPortSpeedShapeName())
+                            .customerReferenceName(o.getCustomerReferenceName())
                             .timeCreated(o.getTimeCreated());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -267,6 +278,14 @@ public class CrossConnect {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("portSpeedShapeName")
     String portSpeedShapeName;
+
+    /**
+     * A reference name or identifier for the physical fiber connection that this cross-connect
+     * uses.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customerReferenceName")
+    String customerReferenceName;
 
     /**
      * The date and time the cross-connect was created, in the format defined by RFC3339.

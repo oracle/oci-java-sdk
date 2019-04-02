@@ -40,8 +40,8 @@ package com.oracle.bmc.core.model;
 public class ImageSourceDetails {
 
     /**
-     * The format of the image to be imported.  Exported Oracle images are QCOW2.  Only monolithic
-     * images are supported.
+     * The format of the image to be imported.  Only monolithic
+     * images are supported. This attribute is not used for exported Oracle images with the OCI image format.
      *
      **/
     public enum SourceImageType {
@@ -77,8 +77,8 @@ public class ImageSourceDetails {
         }
     };
     /**
-     * The format of the image to be imported.  Exported Oracle images are QCOW2.  Only monolithic
-     * images are supported.
+     * The format of the image to be imported.  Only monolithic
+     * images are supported. This attribute is not used for exported Oracle images with the OCI image format.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceImageType")

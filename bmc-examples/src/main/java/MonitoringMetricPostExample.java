@@ -102,7 +102,7 @@ public class MonitoringMetricPostExample {
                                                                         makeMap(
                                                                                 "region",
                                                                                 Region.US_PHOENIX_1
-                                                                                        .name(),
+                                                                                        .getRegionId(),
                                                                                 "host",
                                                                                 "some-host"))
                                                                 .build()))

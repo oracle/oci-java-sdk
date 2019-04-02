@@ -79,6 +79,15 @@ public class UpdateVirtualCircuitDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("providerServiceKeyName")
+        private String providerServiceKeyName;
+
+        public Builder providerServiceKeyName(String providerServiceKeyName) {
+            this.providerServiceKeyName = providerServiceKeyName;
+            this.__explicitlySet__.add("providerServiceKeyName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("referenceComment")
         private String referenceComment;
 
@@ -100,6 +109,7 @@ public class UpdateVirtualCircuitDetails {
                             displayName,
                             gatewayId,
                             providerState,
+                            providerServiceKeyName,
                             referenceComment);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -114,6 +124,7 @@ public class UpdateVirtualCircuitDetails {
                             .displayName(o.getDisplayName())
                             .gatewayId(o.getGatewayId())
                             .providerState(o.getProviderState())
+                            .providerServiceKeyName(o.getProviderServiceKeyName())
                             .referenceComment(o.getReferenceComment());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -239,6 +250,13 @@ public class UpdateVirtualCircuitDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("providerState")
     ProviderState providerState;
+
+    /**
+     * The service key name offered by the provider (if the customer is connecting via a provider).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("providerServiceKeyName")
+    String providerServiceKeyName;
 
     /**
      * Provider-supplied reference information about this virtual circuit.
