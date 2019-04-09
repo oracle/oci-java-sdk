@@ -21,6 +21,14 @@ public class UpdateSenderRequest extends com.oracle.bmc.requests.BmcRequest {
     private UpdateSenderDetails updateSenderDetails;
 
     /**
+     * Used for optimistic concurrency control. In the update or delete call for a resource, set the `if-match`
+     * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
+    private String ifMatch;
+
+    /**
      * The request ID for tracing from the system
      */
     private String opcRequestId;
@@ -48,6 +56,7 @@ public class UpdateSenderRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(UpdateSenderRequest o) {
             senderId(o.getSenderId());
             updateSenderDetails(o.getUpdateSenderDetails());
+            ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             return this;

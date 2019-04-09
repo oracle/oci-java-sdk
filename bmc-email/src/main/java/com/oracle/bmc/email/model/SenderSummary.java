@@ -22,6 +22,15 @@ public class SenderSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("emailAddress")
         private String emailAddress;
 
@@ -83,6 +92,7 @@ public class SenderSummary {
         public SenderSummary build() {
             SenderSummary __instance__ =
                     new SenderSummary(
+                            compartmentId,
                             emailAddress,
                             id,
                             lifecycleState,
@@ -96,7 +106,8 @@ public class SenderSummary {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(SenderSummary o) {
             Builder copiedBuilder =
-                    emailAddress(o.getEmailAddress())
+                    compartmentId(o.getCompartmentId())
+                            .emailAddress(o.getEmailAddress())
                             .id(o.getId())
                             .lifecycleState(o.getLifecycleState())
                             .timeCreated(o.getTimeCreated())
@@ -114,6 +125,12 @@ public class SenderSummary {
     public static Builder builder() {
         return new Builder();
     }
+
+    /**
+     * The OCID for the compartment.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    String compartmentId;
 
     /**
      * The email address of the sender.
