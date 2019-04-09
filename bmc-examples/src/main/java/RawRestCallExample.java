@@ -2,18 +2,12 @@
  * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
-import java.util.Map;
 
-import javax.annotation.Priority;
-import javax.ws.rs.Priorities;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.ClientRequestContext;
-import javax.ws.rs.client.ClientRequestFilter;
 import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
@@ -21,13 +15,8 @@ import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
 
 import com.google.common.net.UrlEscapers;
-import com.oracle.bmc.auth.AuthenticationDetailsProvider;
-import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
-import com.oracle.bmc.http.signing.DefaultRequestSigner;
-import com.oracle.bmc.http.signing.RequestSigner;
 
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import com.oracle.bmc.http.signing.RequestSigningFilter;
 
 public class RawRestCallExample {
 
@@ -42,14 +31,12 @@ public class RawRestCallExample {
         // to set the host header that gets computed during signing of the request.
         System.setProperty("sun.net.http.allowRestrictedHeaders", "true");
 
-        // 1) Create your auth provider and request signer
-        AuthenticationDetailsProvider provider =
-                new ConfigFileAuthenticationDetailsProvider(configurationFilePath, profile);
-        RequestSigner requestSigner = DefaultRequestSigner.createRequestSigner(provider);
+        // 1) Create a request signing filter instance
+        RequestSigningFilter requestSigningFilter =
+                RequestSigningFilter.fromConfigFile(configurationFilePath, profile);
 
-        // 2) Create a Jersey client
-        Client client =
-                ClientBuilder.newBuilder().build().register(new SigningFilter(requestSigner));
+        // 2) Create a Jersey client and register the request signing filter
+        Client client = ClientBuilder.newBuilder().build().register(requestSigningFilter);
 
         // 3) Target an endpoint. You must ensure that path arguments and query
         // params are escaped correctly yourself
@@ -76,29 +63,6 @@ public class RawRestCallExample {
                 jsonBody.append(line);
             }
             System.out.println(jsonBody.toString());
-        }
-    }
-
-    @Priority(Priorities.AUTHENTICATION)
-    @RequiredArgsConstructor
-    private static class SigningFilter implements ClientRequestFilter {
-        private final RequestSigner requestSigner;
-
-        @Override
-        public void filter(@NonNull ClientRequestContext clientRequestContext) throws IOException {
-            Map<String, String> authHeaders =
-                    requestSigner.signRequest(
-                            clientRequestContext.getUri(),
-                            clientRequestContext.getMethod(),
-                            clientRequestContext.getStringHeaders(),
-                            clientRequestContext.getEntity());
-
-            final MultivaluedMap<String, Object> headers = clientRequestContext.getHeaders();
-            for (Map.Entry<String, String> e : authHeaders.entrySet()) {
-                if (!headers.keySet().contains(e.getKey())) {
-                    headers.putSingle(e.getKey(), e.getValue());
-                }
-            }
         }
     }
 }

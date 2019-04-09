@@ -24,6 +24,15 @@ public class SuppressionSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("emailAddress")
         private String emailAddress;
 
@@ -65,7 +74,7 @@ public class SuppressionSummary {
 
         public SuppressionSummary build() {
             SuppressionSummary __instance__ =
-                    new SuppressionSummary(emailAddress, id, reason, timeCreated);
+                    new SuppressionSummary(compartmentId, emailAddress, id, reason, timeCreated);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -73,7 +82,8 @@ public class SuppressionSummary {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(SuppressionSummary o) {
             Builder copiedBuilder =
-                    emailAddress(o.getEmailAddress())
+                    compartmentId(o.getCompartmentId())
+                            .emailAddress(o.getEmailAddress())
                             .id(o.getId())
                             .reason(o.getReason())
                             .timeCreated(o.getTimeCreated());
@@ -89,6 +99,12 @@ public class SuppressionSummary {
     public static Builder builder() {
         return new Builder();
     }
+
+    /**
+     * The OCID for the compartment.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    String compartmentId;
 
     /**
      * The email address of the suppression.

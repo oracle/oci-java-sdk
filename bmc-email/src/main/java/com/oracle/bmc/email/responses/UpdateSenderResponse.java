@@ -19,6 +19,12 @@ public class UpdateSenderResponse {
     private String opcRequestId;
 
     /**
+     * For optimistic concurrency control. See `if-match`.
+     *
+     */
+    private String etag;
+
+    /**
      * The returned Sender instance.
      */
     private Sender sender;
@@ -30,6 +36,7 @@ public class UpdateSenderResponse {
          */
         public Builder copy(UpdateSenderResponse o) {
             opcRequestId(o.getOpcRequestId());
+            etag(o.getEtag());
             sender(o.getSender());
 
             return this;
