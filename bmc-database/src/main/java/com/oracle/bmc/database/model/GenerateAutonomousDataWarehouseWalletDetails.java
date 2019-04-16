@@ -4,7 +4,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details to create and download a wallet for an Oracle Autonomous Data Warehouse.
+ * **Deprecated.** See {@link #generateAutonomousDatabaseWalletDetails(GenerateAutonomousDatabaseWalletDetailsRequest) generateAutonomousDatabaseWalletDetails} for reference information about creating and downloading a wallet for an Oracle Autonomous Data Warehouse.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

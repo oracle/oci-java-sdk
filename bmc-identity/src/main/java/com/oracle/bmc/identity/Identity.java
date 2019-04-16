@@ -146,7 +146,7 @@ public interface Identity extends AutoCloseable {
      * [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      * <p>
      * You must also specify a *name* for the dynamic group, which must be unique across all dynamic groups in your
-     * tenancy, and cannot be changed. Note that this name has to be also unique accross all groups in your tenancy.
+     * tenancy, and cannot be changed. Note that this name has to be also unique across all groups in your tenancy.
      * You can use this name or the OCID when writing policies that apply to the dynamic group. For more information
      * about policies, see [How Policies Work](https://docs.cloud.oracle.com/Content/Identity/Concepts/policies.htm).
      * <p>
@@ -343,7 +343,7 @@ public interface Identity extends AutoCloseable {
     CreateTagResponse createTag(CreateTagRequest request);
 
     /**
-     * Creates a new Tag Default in the specified Compartment for the specified Tag Definition.
+     * Creates a new tag default in the specified compartment for the specified tag definition.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -534,7 +534,7 @@ public interface Identity extends AutoCloseable {
     DeleteSwiftPasswordResponse deleteSwiftPassword(DeleteSwiftPasswordRequest request);
 
     /**
-     * Deletes the the specified Tag Default.
+     * Deletes the the specified tag default.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -649,7 +649,7 @@ public interface Identity extends AutoCloseable {
     GetTagResponse getTag(GetTagRequest request);
 
     /**
-     * Retrieves the specified Tag Default.
+     * Retrieves the specified tag default.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -906,7 +906,7 @@ public interface Identity extends AutoCloseable {
     ListSwiftPasswordsResponse listSwiftPasswords(ListSwiftPasswordsRequest request);
 
     /**
-     * Lists the Tag Defaults for Tag Definitions in the specified Compartment.
+     * Lists the tag defaults for tag definitions in the specified compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1097,7 +1097,7 @@ public interface Identity extends AutoCloseable {
     UpdateTagResponse updateTag(UpdateTagRequest request);
 
     /**
-     * Updates the the specified Tag Default. You can presently update the following fields: `value`.
+     * Updates the the specified tag default. You can update the following field: `value`.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

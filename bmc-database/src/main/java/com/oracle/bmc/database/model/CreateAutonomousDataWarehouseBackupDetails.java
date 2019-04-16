@@ -4,7 +4,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details to create an Oracle Autonomous Data Warehouse backup.
+ * **Deprecated.** See {@link #createAutonomousDatabaseBackupDetails(CreateAutonomousDatabaseBackupDetailsRequest) createAutonomousDatabaseBackupDetails} for reference information about creating Autonomous Data Warehouse backups.
  * <p>
  **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *

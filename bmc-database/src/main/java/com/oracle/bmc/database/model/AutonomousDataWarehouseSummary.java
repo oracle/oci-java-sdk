@@ -4,7 +4,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * An Oracle Autonomous Data Warehouse.
+ * **Deprecated.** See {@link #autonomousDatabase(AutonomousDatabaseRequest) autonomousDatabase} for reference information about Autonomous Databases with the warehouse workload type.
  * <p>
  **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *

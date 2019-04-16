@@ -11,7 +11,7 @@ import com.oracle.bmc.identity.model.*;
 public class CreateTagDefaultRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * Request object for creating a new Tag Default.
+     * Request object for creating a new tag default.
      */
     private CreateTagDefaultDetails createTagDefaultDetails;
 

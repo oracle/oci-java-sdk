@@ -11,7 +11,7 @@ import com.oracle.bmc.core.model.*;
 public class DeleteInstanceConsoleConnectionRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The OCID of the intance console connection
+     * The OCID of the instance console connection.
      */
     private String instanceConsoleConnectionId;
 

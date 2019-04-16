@@ -27,6 +27,7 @@ import com.oracle.bmc.database.model.GenerateAutonomousDatabaseWalletDetails;
 import java.io.InputStream;
 import java.util.Random;
 import java.util.zip.ZipInputStream;
+import java.util.Arrays;
 
 public class AutonomousTransactionProcessingSharedExample {
 
@@ -93,6 +94,30 @@ public class AutonomousTransactionProcessingSharedExample {
                         + updateRequest);
         updatedAtpShared = updateATP(dbClient, updateRequest, updatedAtpShared.getId());
 
+        System.out.println("Instance is updated:" + updatedAtpShared);
+
+        // Update WhitelistIps
+        updateRequest = whiteListIpChangeAtpRequest();
+        System.out.println(
+                "Updating Autonomous Transaction Processing Shared with request : "
+                        + updateRequest);
+        updatedAtpShared = updateATP(dbClient, updateRequest, atpShared.getId());
+        System.out.println(
+                "ATP Shared instance whiteListIp is being changed : " + updatedAtpShared);
+
+        updatedAtpShared = waitForInstanceToBecomeAvailable(dbClient, atpShared.getId());
+        System.out.println("Instance is updated:" + updatedAtpShared);
+
+        // Update LicenseType Change
+        updateRequest = licenseTypeChangeAtpRequest();
+        System.out.println(
+                "Updating Autonomous Transaction Processing Shared with request : "
+                        + updateRequest);
+        updatedAtpShared = updateATP(dbClient, updateRequest, atpShared.getId());
+        System.out.println(
+                "ATP Shared instance LicenseType is being changed : " + updatedAtpShared);
+
+        updatedAtpShared = waitForInstanceToBecomeAvailable(dbClient, atpShared.getId());
         System.out.println("Instance is updated:" + updatedAtpShared);
 
         // Stop
@@ -233,6 +258,18 @@ public class AutonomousTransactionProcessingSharedExample {
         return UpdateAutonomousDatabaseDetails.builder()
                 .cpuCoreCount(2)
                 .dataStorageSizeInTBs(2)
+                .build();
+    }
+
+    private static UpdateAutonomousDatabaseDetails whiteListIpChangeAtpRequest() {
+        return UpdateAutonomousDatabaseDetails.builder()
+                .whitelistedIps(Arrays.asList("1.1.1.1/28", "3.3.3.3"))
+                .build();
+    }
+
+    private static UpdateAutonomousDatabaseDetails licenseTypeChangeAtpRequest() {
+        return UpdateAutonomousDatabaseDetails.builder()
+                .licenseModel(UpdateAutonomousDatabaseDetails.LicenseModel.LicenseIncluded)
                 .build();
     }
 

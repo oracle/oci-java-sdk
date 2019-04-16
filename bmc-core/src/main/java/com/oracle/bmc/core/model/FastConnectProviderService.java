@@ -189,7 +189,11 @@ public class FastConnectProviderService {
     }
 
     /**
-     * A description of the service offered by the provider.
+     * The location of the provider's website or portal. This portal is where you can get information
+     * about the provider service, create a virtual circuit connection from the provider to Oracle
+     * Cloud Infrastructure, and retrieve your provider service key for that virtual circuit connection.
+     * <p>
+     * Example: `https://example.com`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")

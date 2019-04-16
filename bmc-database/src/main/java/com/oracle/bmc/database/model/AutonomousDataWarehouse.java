@@ -4,7 +4,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * An Oracle Autonomous Data Warehouse.
+ * **Deprecated.** See {@link AutonomousDatabase} for reference information about Autonomous Databases with the warehouse workload type.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

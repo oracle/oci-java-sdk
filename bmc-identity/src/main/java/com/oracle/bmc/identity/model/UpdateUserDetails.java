@@ -98,7 +98,7 @@ public class UpdateUserDetails {
     String description;
 
     /**
-     * The email you assign to the user. Has to be unique across the tenancy.
+     * The email address you assign to the user. Has to be unique across the tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("email")
     String email;

@@ -52,12 +52,45 @@ public class UpdateIPSecConnectionDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("cpeLocalIdentifier")
+        private String cpeLocalIdentifier;
+
+        public Builder cpeLocalIdentifier(String cpeLocalIdentifier) {
+            this.cpeLocalIdentifier = cpeLocalIdentifier;
+            this.__explicitlySet__.add("cpeLocalIdentifier");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("cpeLocalIdentifierType")
+        private CpeLocalIdentifierType cpeLocalIdentifierType;
+
+        public Builder cpeLocalIdentifierType(CpeLocalIdentifierType cpeLocalIdentifierType) {
+            this.cpeLocalIdentifierType = cpeLocalIdentifierType;
+            this.__explicitlySet__.add("cpeLocalIdentifierType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("staticRoutes")
+        private java.util.List<String> staticRoutes;
+
+        public Builder staticRoutes(java.util.List<String> staticRoutes) {
+            this.staticRoutes = staticRoutes;
+            this.__explicitlySet__.add("staticRoutes");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateIPSecConnectionDetails build() {
             UpdateIPSecConnectionDetails __instance__ =
-                    new UpdateIPSecConnectionDetails(definedTags, displayName, freeformTags);
+                    new UpdateIPSecConnectionDetails(
+                            definedTags,
+                            displayName,
+                            freeformTags,
+                            cpeLocalIdentifier,
+                            cpeLocalIdentifierType,
+                            staticRoutes);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -67,7 +100,10 @@ public class UpdateIPSecConnectionDetails {
             Builder copiedBuilder =
                     definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags());
+                            .freeformTags(o.getFreeformTags())
+                            .cpeLocalIdentifier(o.getCpeLocalIdentifier())
+                            .cpeLocalIdentifierType(o.getCpeLocalIdentifierType())
+                            .staticRoutes(o.getStaticRoutes());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -109,6 +145,73 @@ public class UpdateIPSecConnectionDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
+
+    /**
+     * Your identifier for your CPE device. Can be either an IP address or a hostname (specifically, the
+     * fully qualified domain name (FQDN)). The type of identifier you provide here must correspond
+     * to the value for `cpeLocalIdentifierType`.
+     * <p>
+     * Example IP address: `10.0.3.3`
+     * <p>
+     * Example hostname: `cpe.example.com`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cpeLocalIdentifier")
+    String cpeLocalIdentifier;
+    /**
+     * The type of identifier for your CPE device. The value you provide here must correspond to the value
+     * for `cpeLocalIdentifier`.
+     *
+     **/
+    public enum CpeLocalIdentifierType {
+        IpAddress("IP_ADDRESS"),
+        Hostname("HOSTNAME"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, CpeLocalIdentifierType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (CpeLocalIdentifierType v : CpeLocalIdentifierType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        CpeLocalIdentifierType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static CpeLocalIdentifierType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new RuntimeException("Invalid CpeLocalIdentifierType: " + key);
+        }
+    };
+    /**
+     * The type of identifier for your CPE device. The value you provide here must correspond to the value
+     * for `cpeLocalIdentifier`.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cpeLocalIdentifierType")
+    CpeLocalIdentifierType cpeLocalIdentifierType;
+
+    /**
+     * Static routes to the CPE. If you provide this attribute, it replaces the entire current set of
+     * static routes. A static route's CIDR must not be a multicast address or class E address.
+     * <p>
+     * Example: `10.0.1.0/24`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("staticRoutes")
+    java.util.List<String> staticRoutes;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

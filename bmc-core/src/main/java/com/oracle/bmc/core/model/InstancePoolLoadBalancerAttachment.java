@@ -140,7 +140,7 @@ public class InstancePoolLoadBalancerAttachment {
     String instancePoolId;
 
     /**
-     * The OCID of the load balancer attached to the pool.
+     * The OCID of the load balancer attached to the instance pool.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
     String loadBalancerId;
@@ -158,12 +158,12 @@ public class InstancePoolLoadBalancerAttachment {
     Integer port;
 
     /**
-     * Indicates which vnic on each instance in the pool should be used to associate with the load balancer. possible values are \"PrimaryVnic\" or the displayName of one of the secondary VNICs on the instance configuration that is associated to the instance pool.
+     * Indicates which VNIC on each instance in the instance pool should be used to associate with the load balancer. Possible values are \"PrimaryVnic\" or the displayName of one of the secondary VNICs on the instance configuration that is associated with the instance pool.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vnicSelection")
     String vnicSelection;
     /**
-     * The status of the interaction between the pool and the load balancer.
+     * The status of the interaction between the instance pool and the load balancer.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
@@ -211,7 +211,7 @@ public class InstancePoolLoadBalancerAttachment {
         }
     };
     /**
-     * The status of the interaction between the pool and the load balancer.
+     * The status of the interaction between the instance pool and the load balancer.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;

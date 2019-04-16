@@ -56,7 +56,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new Autonomous Data Warehouse.
+     * **Deprecated.** To create a new Autonomous Data Warehouse, use the {@link #createAutonomousDatabase(CreateAutonomousDatabaseRequest, Consumer, Consumer) createAutonomousDatabase} operation and specify `DW` as the workload type.
      *
      *
      * @param request The request object containing the details to send
@@ -75,7 +75,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Creates a new Autonomous Data Warehouse backup for the specified database based on the provided request parameters.
+     * **Deprecated.** To create a new Autonomous Data Warehouse backup for a specified database, use the {@link #createAutonomousDatabaseBackup(CreateAutonomousDatabaseBackupRequest, Consumer, Consumer) createAutonomousDatabaseBackup} operation.
      *
      *
      * @param request The request object containing the details to send
@@ -233,7 +233,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes the specified Autonomous Data Warehouse.
+     * **Deprecated.** To delete an Autonomous Data Warehouse, use the {@link #deleteAutonomousDatabase(DeleteAutonomousDatabaseRequest, Consumer, Consumer) deleteAutonomousDatabase} operation.
      *
      *
      * @param request The request object containing the details to send
@@ -322,7 +322,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates and downloads a wallet for the specified Autonomous Data Warehouse.
+     * **Deprecated.** To create and download a wallet for an Autonomous Data Warehouse, use the {@link #generateAutonomousDatabaseWallet(GenerateAutonomousDatabaseWalletRequest, Consumer, Consumer) generateAutonomousDatabaseWallet} operation.
      *
      *
      * @param request The request object containing the details to send
@@ -341,7 +341,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Creates and downloads a wallet for the specified Autonomous Transaction Processing database.
+     * Creates and downloads a wallet for the specified Autonomous Database.
      *
      *
      * @param request The request object containing the details to send
@@ -360,7 +360,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets the details of the specified Autonomous Data Warehouse.
+     * **Deprecated.** To get the details of an Autonomous Data Warehouse, use the {@link #getAutonomousDatabase(GetAutonomousDatabaseRequest, Consumer, Consumer) getAutonomousDatabase} operation.
      *
      *
      * @param request The request object containing the details to send
@@ -377,7 +377,8 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about the specified Autonomous Data Warehouse backup.
+     * **Deprecated.** To get information about a specified Autonomous Data Warehouse backup, use the {@link #getAutonomousDatabaseBackup(GetAutonomousDatabaseBackupRequest, Consumer, Consumer) getAutonomousDatabaseBackup} operation.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -640,7 +641,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of Autonomous Data Warehouse backups based on either the `autonomousDataWarehouseId` or `compartmentId` specified as a query parameter.
+     * **Deprecated.** To get a list of Autonomous Data Warehouse backups, use the {@link #listAutonomousDatabaseBackups(ListAutonomousDatabaseBackupsRequest, Consumer, Consumer) listAutonomousDatabaseBackups} operation.
      *
      *
      * @param request The request object containing the details to send
@@ -659,7 +660,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets a list of Autonomous Data Warehouses.
+     * **Deprecated.** To get a list of Autonomous Data Warehouses, use the {@link #listAutonomousDatabases(ListAutonomousDatabasesRequest, Consumer, Consumer) listAutonomousDatabases} operation and specify `DW` as the workload type.
      *
      *
      * @param request The request object containing the details to send
@@ -930,7 +931,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Restores an Autonomous Data Warehouse based on the provided request parameters.
+     * **Deprecated.** To restore an Autonomous Data Warehouse, use the {@link #restoreAutonomousDatabase(RestoreAutonomousDatabaseRequest, Consumer, Consumer) restoreAutonomousDatabase} operation.
      *
      *
      * @param request The request object containing the details to send
@@ -982,7 +983,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Starts the specified autonomous Data Warehouse.
+     * **Deprecated.** To start an Autonomous Data Warehouse, use the {@link #startAutonomousDatabase(StartAutonomousDatabaseRequest, Consumer, Consumer) startAutonomousDatabase} operation.
      *
      *
      * @param request The request object containing the details to send
@@ -1017,7 +1018,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Stops the specified Autonomous Data Warehouse.
+     * **Deprecated.** To stop an Autonomous Data Warehouse, use the {@link #stopAutonomousDatabase(StopAutonomousDatabaseRequest, Consumer, Consumer) stopAutonomousDatabase} operation.
      *
      *
      * @param request The request object containing the details to send
@@ -1089,7 +1090,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the specified Autonomous Data Warehouse with a new CPU core count and size.
+     * **Deprecated.** To update the CPU core count and storage size of an Autonomous Data Warehouse, use the {@link #updateAutonomousDatabase(UpdateAutonomousDatabaseRequest, Consumer, Consumer) updateAutonomousDatabase} operation.
      *
      *
      * @param request The request object containing the details to send

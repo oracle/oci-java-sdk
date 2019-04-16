@@ -157,7 +157,7 @@ public class InstancePoolSummary {
     String displayName;
 
     /**
-     * The OCID of the instance configuration associated to the intance pool.
+     * The OCID of the instance configuration associated with the instance pool.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceConfigurationId")
     String instanceConfigurationId;

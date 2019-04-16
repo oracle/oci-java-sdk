@@ -7,7 +7,7 @@ package com.oracle.bmc.core.model;
  * A connection between a DRG and CPE. This connection consists of multiple IPSec
  * tunnels. Creating this connection is one of the steps required when setting up
  * an IPSec VPN. For more information, see
- * [Overview of the Networking Service](https://docs.cloud.oracle.com/Content/Network/Concepts/overview.htm).
+ * [IPSec VPN](https://docs.cloud.oracle.com/Content/Network/Tasks/managingIPsec.htm).
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
@@ -106,6 +106,24 @@ public class IPSecConnection {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("cpeLocalIdentifier")
+        private String cpeLocalIdentifier;
+
+        public Builder cpeLocalIdentifier(String cpeLocalIdentifier) {
+            this.cpeLocalIdentifier = cpeLocalIdentifier;
+            this.__explicitlySet__.add("cpeLocalIdentifier");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("cpeLocalIdentifierType")
+        private CpeLocalIdentifierType cpeLocalIdentifierType;
+
+        public Builder cpeLocalIdentifierType(CpeLocalIdentifierType cpeLocalIdentifierType) {
+            this.cpeLocalIdentifierType = cpeLocalIdentifierType;
+            this.__explicitlySet__.add("cpeLocalIdentifierType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("staticRoutes")
         private java.util.List<String> staticRoutes;
 
@@ -138,6 +156,8 @@ public class IPSecConnection {
                             freeformTags,
                             id,
                             lifecycleState,
+                            cpeLocalIdentifier,
+                            cpeLocalIdentifierType,
                             staticRoutes,
                             timeCreated);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -155,6 +175,8 @@ public class IPSecConnection {
                             .freeformTags(o.getFreeformTags())
                             .id(o.getId())
                             .lifecycleState(o.getLifecycleState())
+                            .cpeLocalIdentifier(o.getCpeLocalIdentifier())
+                            .cpeLocalIdentifierType(o.getCpeLocalIdentifierType())
                             .staticRoutes(o.getStaticRoutes())
                             .timeCreated(o.getTimeCreated());
 
@@ -177,7 +199,7 @@ public class IPSecConnection {
     String compartmentId;
 
     /**
-     * The OCID of the CPE.
+     * The OCID of the {@link Cpe} object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpeId")
     String cpeId;
@@ -275,6 +297,77 @@ public class IPSecConnection {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
+
+    /**
+     * Your identifier for your CPE device. Can be either an IP address or a hostname (specifically,
+     * the fully qualified domain name (FQDN)). The type of identifier here must correspond
+     * to the value for `cpeLocalIdentifierType`.
+     * <p>
+     * If you don't provide a value when creating the IPSec connection, the `ipAddress` attribute
+     * for the {@link Cpe} object specified by `cpeId` is used as the `cpeLocalIdentifier`.
+     * <p>
+     * Example IP address: `10.0.3.3`
+     * <p>
+     * Example hostname: `cpe.example.com`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cpeLocalIdentifier")
+    String cpeLocalIdentifier;
+    /**
+     * The type of identifier for your CPE device. The value here must correspond to the value
+     * for `cpeLocalIdentifier`.
+     *
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum CpeLocalIdentifierType {
+        IpAddress("IP_ADDRESS"),
+        Hostname("HOSTNAME"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, CpeLocalIdentifierType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (CpeLocalIdentifierType v : CpeLocalIdentifierType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        CpeLocalIdentifierType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static CpeLocalIdentifierType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'CpeLocalIdentifierType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The type of identifier for your CPE device. The value here must correspond to the value
+     * for `cpeLocalIdentifier`.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cpeLocalIdentifierType")
+    CpeLocalIdentifierType cpeLocalIdentifierType;
 
     /**
      * Static routes to the CPE. At least one route must be included. The CIDR must not be a

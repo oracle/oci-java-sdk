@@ -49,7 +49,7 @@ public interface Database extends AutoCloseable {
             CompleteExternalBackupJobRequest request);
 
     /**
-     * Creates a new Autonomous Data Warehouse.
+     * **Deprecated.** To create a new Autonomous Data Warehouse, use the {@link #createAutonomousDatabase(CreateAutonomousDatabaseRequest) createAutonomousDatabase} operation and specify `DW` as the workload type.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -59,7 +59,7 @@ public interface Database extends AutoCloseable {
             CreateAutonomousDataWarehouseRequest request);
 
     /**
-     * Creates a new Autonomous Data Warehouse backup for the specified database based on the provided request parameters.
+     * **Deprecated.** To create a new Autonomous Data Warehouse backup for a specified database, use the {@link #createAutonomousDatabaseBackup(CreateAutonomousDatabaseBackupRequest) createAutonomousDatabaseBackup} operation.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -156,7 +156,7 @@ public interface Database extends AutoCloseable {
     DbNodeActionResponse dbNodeAction(DbNodeActionRequest request);
 
     /**
-     * Deletes the specified Autonomous Data Warehouse.
+     * **Deprecated.** To delete an Autonomous Data Warehouse, use the {@link #deleteAutonomousDatabase(DeleteAutonomousDatabaseRequest) deleteAutonomousDatabase} operation.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -207,7 +207,7 @@ public interface Database extends AutoCloseable {
             FailoverDataGuardAssociationRequest request);
 
     /**
-     * Creates and downloads a wallet for the specified Autonomous Data Warehouse.
+     * **Deprecated.** To create and download a wallet for an Autonomous Data Warehouse, use the {@link #generateAutonomousDatabaseWallet(GenerateAutonomousDatabaseWalletRequest) generateAutonomousDatabaseWallet} operation.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -217,7 +217,7 @@ public interface Database extends AutoCloseable {
             GenerateAutonomousDataWarehouseWalletRequest request);
 
     /**
-     * Creates and downloads a wallet for the specified Autonomous Transaction Processing database.
+     * Creates and downloads a wallet for the specified Autonomous Database.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -227,7 +227,7 @@ public interface Database extends AutoCloseable {
             GenerateAutonomousDatabaseWalletRequest request);
 
     /**
-     * Gets the details of the specified Autonomous Data Warehouse.
+     * **Deprecated.** To get the details of an Autonomous Data Warehouse, use the {@link #getAutonomousDatabase(GetAutonomousDatabaseRequest) getAutonomousDatabase} operation.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -237,7 +237,8 @@ public interface Database extends AutoCloseable {
             GetAutonomousDataWarehouseRequest request);
 
     /**
-     * Gets information about the specified Autonomous Data Warehouse backup.
+     * **Deprecated.** To get information about a specified Autonomous Data Warehouse backup, use the {@link #getAutonomousDatabaseBackup(GetAutonomousDatabaseBackupRequest) getAutonomousDatabaseBackup} operation.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -386,7 +387,7 @@ public interface Database extends AutoCloseable {
     LaunchDbSystemResponse launchDbSystem(LaunchDbSystemRequest request);
 
     /**
-     * Gets a list of Autonomous Data Warehouse backups based on either the `autonomousDataWarehouseId` or `compartmentId` specified as a query parameter.
+     * **Deprecated.** To get a list of Autonomous Data Warehouse backups, use the {@link #listAutonomousDatabaseBackups(ListAutonomousDatabaseBackupsRequest) listAutonomousDatabaseBackups} operation.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -396,7 +397,7 @@ public interface Database extends AutoCloseable {
             ListAutonomousDataWarehouseBackupsRequest request);
 
     /**
-     * Gets a list of Autonomous Data Warehouses.
+     * **Deprecated.** To get a list of Autonomous Data Warehouses, use the {@link #listAutonomousDatabases(ListAutonomousDatabasesRequest) listAutonomousDatabases} operation and specify `DW` as the workload type.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -545,7 +546,7 @@ public interface Database extends AutoCloseable {
             ReinstateDataGuardAssociationRequest request);
 
     /**
-     * Restores an Autonomous Data Warehouse based on the provided request parameters.
+     * **Deprecated.** To restore an Autonomous Data Warehouse, use the {@link #restoreAutonomousDatabase(RestoreAutonomousDatabaseRequest) restoreAutonomousDatabase} operation.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -574,7 +575,7 @@ public interface Database extends AutoCloseable {
     RestoreDatabaseResponse restoreDatabase(RestoreDatabaseRequest request);
 
     /**
-     * Starts the specified autonomous Data Warehouse.
+     * **Deprecated.** To start an Autonomous Data Warehouse, use the {@link #startAutonomousDatabase(StartAutonomousDatabaseRequest) startAutonomousDatabase} operation.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -593,7 +594,7 @@ public interface Database extends AutoCloseable {
     StartAutonomousDatabaseResponse startAutonomousDatabase(StartAutonomousDatabaseRequest request);
 
     /**
-     * Stops the specified Autonomous Data Warehouse.
+     * **Deprecated.** To stop an Autonomous Data Warehouse, use the {@link #stopAutonomousDatabase(StopAutonomousDatabaseRequest) stopAutonomousDatabase} operation.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -633,7 +634,7 @@ public interface Database extends AutoCloseable {
     TerminateDbSystemResponse terminateDbSystem(TerminateDbSystemRequest request);
 
     /**
-     * Updates the specified Autonomous Data Warehouse with a new CPU core count and size.
+     * **Deprecated.** To update the CPU core count and storage size of an Autonomous Data Warehouse, use the {@link #updateAutonomousDatabase(UpdateAutonomousDatabaseRequest) updateAutonomousDatabase} operation.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

@@ -454,7 +454,7 @@ public class DbSystemSummary {
     String availabilityDomain;
 
     /**
-     * List of the fault domains in which this DB system is provisioned.
+     * List of the Fault Domains in which this DB system is provisioned.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomains")
     java.util.List<String> faultDomains;

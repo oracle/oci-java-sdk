@@ -247,8 +247,8 @@ public class User {
     String description;
 
     /**
-     * The email you assign to the user during creation.
-     * The name must be unique across all users in the tenancy.
+     * The email address you assign to the user.
+     * The email address must be unique across all users in the tenancy.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("email")

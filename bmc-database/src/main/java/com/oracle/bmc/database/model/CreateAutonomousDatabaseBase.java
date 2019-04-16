@@ -60,7 +60,7 @@ public class CreateAutonomousDatabaseBase {
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     Integer cpuCoreCount;
     /**
-     * The autonomous database workload type.
+     * The autonomous database workload type. OLTP indicates an Autonomous Transaction Processing database and DW indicates an Autonomous Data Warehouse. The default is OLTP.
      **/
     public enum DbWorkload {
         Oltp("OLTP"),
@@ -95,7 +95,7 @@ public class CreateAutonomousDatabaseBase {
         }
     };
     /**
-     * The autonomous database workload type.
+     * The autonomous database workload type. OLTP indicates an Autonomous Transaction Processing database and DW indicates an Autonomous Data Warehouse. The default is OLTP.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
     DbWorkload dbWorkload;

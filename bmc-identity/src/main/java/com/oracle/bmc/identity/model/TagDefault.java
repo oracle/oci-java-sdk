@@ -4,10 +4,14 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * A document that specifies a default value for a Tag Definition for all resource types created in a Compartment.
+ * Tag defaults let you specify a default tag (tagnamespace.tag=\"value\") to apply to all resource types
+ * in a specified compartment. The tag default is applied at the time the resource is created. Resources
+ * that exist in the compartment before you create the tag default are not tagged. The `TagDefault` object
+ * specifies the tag and compartment details.
  * <p>
- * Tag Defaults are inherited by child compartments. This means that if you set a Tag Default on the root Compartment
- * for a tenancy, all resources are guaranteed to be created with the referenced Tag Definition applied.
+ * Tag defaults are inherited by child compartments. This means that if you set a tag default on the root compartment
+ * for a tenancy, all resources that are created in the tenancy are tagged. For more information about
+ * using tag defaults, see [Managing Tag Defaults](https://docs.cloud.oracle.com/Content/Identity/Tasks/managingtagdefaults.htm).
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator.
@@ -144,41 +148,42 @@ public class TagDefault {
     }
 
     /**
-     * The OCID of the Tag Default.
+     * The OCID of the tag default.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The OCID of the Compartment. The Tag Default will apply to any resource contained in this Compartment.
+     * The OCID of the compartment. The tag default applies to all new resources that get created in the
+     * compartment. Resources that existed before the tag default was created are not tagged.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The OCID of the Tag Namespace that contains the Tag Definition.
+     * The OCID of the tag namespace that contains the tag definition.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tagNamespaceId")
     String tagNamespaceId;
 
     /**
-     * The OCID of the Tag Definition. The Tag Default will always assign a default value for this Tag Definition.
+     * The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tagDefinitionId")
     String tagDefinitionId;
 
     /**
-     * The name used in the Tag Definition. This field is informational in the context of the Tag Default.
+     * The name used in the tag definition. This field is informational in the context of the tag default.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tagDefinitionName")
     String tagDefinitionName;
 
     /**
-     * The default value for the Tag Definition. This will be applied to all resources created in the Compartment.
+     * The default value for the tag definition. This will be applied to all resources created in the compartment.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
@@ -193,7 +198,7 @@ public class TagDefault {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
     /**
-     * The tag default's current state. After creating a tagdefault, make sure its `lifecycleState` is ACTIVE before using it.
+     * The tag default's current state. After creating a `TagDefault`, make sure its `lifecycleState` is ACTIVE before using it.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -239,7 +244,7 @@ public class TagDefault {
         }
     };
     /**
-     * The tag default's current state. After creating a tagdefault, make sure its `lifecycleState` is ACTIVE before using it.
+     * The tag default's current state. After creating a `TagDefault`, make sure its `lifecycleState` is ACTIVE before using it.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")

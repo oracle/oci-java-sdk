@@ -171,7 +171,7 @@ public class InstanceSummary {
     }
 
     /**
-     * The OCID of the instance
+     * The OCID of the instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -237,7 +237,7 @@ public class InstanceSummary {
     java.util.Date timeCreated;
 
     /**
-     * The load balancer backends configured for the instance pool instance.
+     * The load balancer backends that are configured for the instance pool instance.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerBackends")
