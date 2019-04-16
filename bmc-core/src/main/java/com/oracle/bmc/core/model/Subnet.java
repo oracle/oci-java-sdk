@@ -260,7 +260,8 @@ public class Subnet {
     }
 
     /**
-     * The subnet's availability domain.
+     * The subnet's availability domain. This attribute will be null if this is a regional subnet
+     * instead of an AD-specific subnet. Oracle recommends creating regional subnets.
      * <p>
      * Example: `Uocm:PHX-AD-1`
      *

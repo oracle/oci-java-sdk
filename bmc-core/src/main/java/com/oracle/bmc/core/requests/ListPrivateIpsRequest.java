@@ -30,7 +30,6 @@ public class ListPrivateIpsRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
      * An IP address.
-     * <p>
      * Example: `10.0.3.3`
      *
      */

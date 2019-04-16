@@ -179,6 +179,15 @@ public class AutonomousDatabase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("whitelistedIps")
+        private java.util.List<String> whitelistedIps;
+
+        public Builder whitelistedIps(java.util.List<String> whitelistedIps) {
+            this.whitelistedIps = whitelistedIps;
+            this.__explicitlySet__.add("whitelistedIps");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -201,7 +210,8 @@ public class AutonomousDatabase {
                             freeformTags,
                             definedTags,
                             dbVersion,
-                            dbWorkload);
+                            dbWorkload,
+                            whitelistedIps);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -225,7 +235,8 @@ public class AutonomousDatabase {
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .dbVersion(o.getDbVersion())
-                            .dbWorkload(o.getDbWorkload());
+                            .dbWorkload(o.getDbWorkload())
+                            .whitelistedIps(o.getWhitelistedIps());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -268,6 +279,7 @@ public class AutonomousDatabase {
         BackupInProgress("BACKUP_IN_PROGRESS"),
         ScaleInProgress("SCALE_IN_PROGRESS"),
         AvailableNeedsAttention("AVAILABLE_NEEDS_ATTENTION"),
+        Updating("UPDATING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -446,7 +458,7 @@ public class AutonomousDatabase {
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     String dbVersion;
     /**
-     * The Autonomous Database workload type.
+     * The Autonomous Database workload type. OLTP indicates an Autonomous Transaction Processing database and DW indicates an Autonomous Data Warehouse database.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum DbWorkload {
@@ -492,10 +504,16 @@ public class AutonomousDatabase {
         }
     };
     /**
-     * The Autonomous Database workload type.
+     * The Autonomous Database workload type. OLTP indicates an Autonomous Transaction Processing database and DW indicates an Autonomous Data Warehouse database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
     DbWorkload dbWorkload;
+
+    /**
+     * The client IP access control list (ACL). Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. This is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("whitelistedIps")
+    java.util.List<String> whitelistedIps;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

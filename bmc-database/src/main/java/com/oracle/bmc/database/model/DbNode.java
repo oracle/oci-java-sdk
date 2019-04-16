@@ -236,7 +236,7 @@ public class DbNode {
     String hostname;
 
     /**
-     * The name of the fault domain the instance is contained in.
+     * The name of the Fault Domain the instance is contained in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     String faultDomain;

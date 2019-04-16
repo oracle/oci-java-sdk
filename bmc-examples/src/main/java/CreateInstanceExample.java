@@ -103,8 +103,9 @@ public class CreateInstanceExample {
         VirtualNetworkClient vcnClient = new VirtualNetworkClient(provider);
         BlockstorageClient blockstorageClient = new BlockstorageClient(provider);
 
-        vcnClient.setRegion(Region.US_PHOENIX_1);
         computeClient.setRegion(Region.US_PHOENIX_1);
+        vcnClient.setRegion(Region.US_PHOENIX_1);
+        blockstorageClient.setRegion(Region.US_PHOENIX_1);
 
         // TODO: For this example we're just using the first AD returned.
         // You'll probably want different logic around which AD to use

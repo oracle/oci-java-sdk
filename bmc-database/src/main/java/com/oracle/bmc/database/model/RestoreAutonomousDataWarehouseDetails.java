@@ -4,7 +4,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details to restore an Oracle Autonomous Data Warehouse.
+ * **Deprecated.** See {@link #restoreAutonomousDatabaseDetails(RestoreAutonomousDatabaseDetailsRequest) restoreAutonomousDatabaseDetails} for reference information about restoring an Autonomous Data Warehouse.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

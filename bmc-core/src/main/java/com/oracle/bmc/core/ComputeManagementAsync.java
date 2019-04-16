@@ -37,7 +37,7 @@ public interface ComputeManagementAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Attach load balancer to the instance pool.
+     * Attach a load balancer to the instance pool.
      *
      *
      * @param request The request object containing the details to send

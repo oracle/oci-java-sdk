@@ -16,7 +16,7 @@ public class GenerateAutonomousDatabaseWalletRequest extends com.oracle.bmc.requ
     private String autonomousDatabaseId;
 
     /**
-     * Request to create a new Autonomous Transaction Processing database wallet.
+     * Request to create a new Autonomous Database wallet.
      */
     private GenerateAutonomousDatabaseWalletDetails generateAutonomousDatabaseWalletDetails;
 

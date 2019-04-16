@@ -92,7 +92,7 @@ public class InstancePoolInstanceLoadBalancerBackend {
     }
 
     /**
-     * The OCID of the load balancer attached to the pool.
+     * The OCID of the load balancer attached to the instance pool.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
     String loadBalancerId;

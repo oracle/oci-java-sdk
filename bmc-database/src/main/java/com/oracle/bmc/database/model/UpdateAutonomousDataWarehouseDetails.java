@@ -4,7 +4,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details to update an Oracle Autonomous Data Warehouse.
+ * **Deprecated.** See {@link #updateAutonomousDatabaseDetails(UpdateAutonomousDatabaseDetailsRequest) updateAutonomousDatabaseDetails} for reference information about updating an Autonomous Data Warehouse.
  * <p>
  **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *

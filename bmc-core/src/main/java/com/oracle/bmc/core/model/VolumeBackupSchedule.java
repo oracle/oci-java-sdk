@@ -143,7 +143,7 @@ public class VolumeBackupSchedule {
     BackupType backupType;
 
     /**
-     * The number of seconds (positive or negative) that the backup time should be shifted from the default interval boundaries specified by the period. Backup time = Frequency start time + Offset.
+     * The number of seconds that the backup time should be shifted from the default interval boundaries specified by the period. Backup time = Frequency start time + Offset.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("offsetSeconds")
     Integer offsetSeconds;

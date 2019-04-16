@@ -81,21 +81,21 @@ public class CreateTagDefaultDetails {
     }
 
     /**
-     * The OCID of the Compartment. The Tag Default will apply to any resource contained in this Compartment.
+     * The OCID of the compartment. The tag default will be applied to all new resources created in this compartment.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The OCID of the Tag Definition. The Tag Default will always assign a default value for this Tag Definition.
+     * The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tagDefinitionId")
     String tagDefinitionId;
 
     /**
-     * The default value for the Tag Definition. This will be applied to all resources created in the Compartment.
+     * The default value for the tag definition. This will be applied to all new resources created in the compartment.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")

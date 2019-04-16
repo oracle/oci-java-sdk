@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.ser.FilterProvider;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
+import com.google.common.annotations.VisibleForTesting;
 import com.oracle.bmc.ClientConfiguration;
 import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.http.signing.RequestSigner;
@@ -15,6 +16,7 @@ import com.oracle.bmc.http.signing.SigningStrategy;
 import lombok.Getter;
 import org.glassfish.jersey.client.ClientProperties;
 import org.glassfish.jersey.client.JerseyClientBuilder;
+import org.glassfish.jersey.internal.InternalProperties;
 import org.glassfish.jersey.jackson.internal.jackson.jaxrs.json.JacksonJaxbJsonProvider;
 import org.glassfish.jersey.jackson.internal.jackson.jaxrs.json.JacksonJsonProvider;
 
@@ -145,7 +147,8 @@ public class RestClientFactory {
         return new RestClient(client, new EntityFactory());
     }
 
-    private static Client createClient(
+    @VisibleForTesting
+    static Client createClient(
             RequestSigner defaultRequestSigner,
             Map<SigningStrategy, RequestSigner> requestSigners,
             ClientConfiguration configuration,
@@ -163,7 +166,8 @@ public class RestClientFactory {
                                 ClientProperties.READ_TIMEOUT, configuration.getReadTimeoutMillis())
                         .property(
                                 ClientProperties.ASYNC_THREADPOOL_SIZE,
-                                configuration.getMaxAsyncThreads());
+                                configuration.getMaxAsyncThreads())
+                        .property(InternalProperties.JSON_FEATURE, "JacksonFeature");
 
         client.register(new AuthnClientFilter(defaultRequestSigner, requestSigners));
         client.register(CLIENT_ID_FILTER);

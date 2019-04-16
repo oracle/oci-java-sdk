@@ -11,7 +11,7 @@ import com.oracle.bmc.identity.model.*;
 public class DeleteTagDefaultRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The OCID of the Tag Default.
+     * The OCID of the tag default.
      */
     private String tagDefaultId;
 

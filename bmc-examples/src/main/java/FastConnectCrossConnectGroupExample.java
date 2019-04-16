@@ -6,9 +6,33 @@ import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.core.VirtualNetwork;
 import com.oracle.bmc.core.VirtualNetworkClient;
-import com.oracle.bmc.core.model.*;
-import com.oracle.bmc.core.requests.*;
-import com.oracle.bmc.core.responses.*;
+import com.oracle.bmc.core.model.CrossConnect;
+import com.oracle.bmc.core.model.CrossConnectGroup;
+import com.oracle.bmc.core.model.CrossConnectLocation;
+import com.oracle.bmc.core.model.CrossConnectPortSpeedShape;
+import com.oracle.bmc.core.model.CreateCrossConnectDetails;
+import com.oracle.bmc.core.model.CreateCrossConnectGroupDetails;
+import com.oracle.bmc.core.model.UpdateCrossConnectGroupDetails;
+import com.oracle.bmc.core.model.UpdateCrossConnectDetails;
+import com.oracle.bmc.core.requests.CreateCrossConnectRequest;
+import com.oracle.bmc.core.requests.GetCrossConnectGroupRequest;
+import com.oracle.bmc.core.requests.UpdateCrossConnectRequest;
+import com.oracle.bmc.core.requests.DeleteCrossConnectRequest;
+import com.oracle.bmc.core.requests.CreateCrossConnectGroupRequest;
+import com.oracle.bmc.core.requests.GetCrossConnectRequest;
+import com.oracle.bmc.core.requests.UpdateCrossConnectGroupRequest;
+import com.oracle.bmc.core.requests.DeleteCrossConnectGroupRequest;
+import com.oracle.bmc.core.responses.GetCrossConnectResponse;
+import com.oracle.bmc.core.responses.CreateCrossConnectResponse;
+import com.oracle.bmc.core.responses.CreateCrossConnectGroupResponse;
+import com.oracle.bmc.core.responses.ListCrossConnectLocationsResponse;
+import com.oracle.bmc.core.responses.ListCrossconnectPortSpeedShapesResponse;
+import com.oracle.bmc.core.requests.ListCrossConnectLocationsRequest;
+import com.oracle.bmc.core.requests.ListCrossconnectPortSpeedShapesRequest;
+import com.oracle.bmc.core.responses.UpdateCrossConnectResponse;
+import com.oracle.bmc.core.responses.UpdateCrossConnectGroupResponse;
+import com.oracle.bmc.core.responses.GetCrossConnectGroupResponse;
+
 import com.oracle.bmc.identity.IdentityClient;
 import org.apache.commons.lang3.StringUtils;
 
@@ -32,7 +56,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class FastConnectCrossConnectGroupExample {
     // Set this with your own compartment ID
-    private static final String COMPARTMENT_ID = "";
+    private static final String COMPARTMENT_ID = "your_Compartment_Ocid_here";
 
     private static final String TIMESTAMP_SUFFIX =
             String.valueOf(System.currentTimeMillis() % TimeUnit.SECONDS.toMillis(10L));
@@ -47,7 +71,7 @@ public class FastConnectCrossConnectGroupExample {
     }
 
     public static void main(final String... args) throws Exception {
-        if ("".equals(COMPARTMENT_ID)) {
+        if (StringUtils.isBlank(COMPARTMENT_ID)) {
             throw new IllegalStateException("A compartment ID must be defined");
         }
 
@@ -76,30 +100,38 @@ public class FastConnectCrossConnectGroupExample {
         List<CrossConnectPortSpeedShape> listCrossConnectPortSpeedShape =
                 getCrossConnectPortSpeedShapes(virtualNetworkClient, COMPARTMENT_ID);
 
-        System.out.println("Create CrossConnectGroup.");
-        CrossConnectGroup ccg = createCrossConnectGroup(virtualNetworkClient, COMPARTMENT_ID);
+        CrossConnectGroup ccg = null;
+        CrossConnect cc = null;
+        try {
+            System.out.println("Create CrossConnectGroup.");
+            ccg = createCrossConnectGroup(virtualNetworkClient, COMPARTMENT_ID);
 
-        System.out.println("Update CrossConnectGroup.");
-        ccg = updateCrossConnectGroup(virtualNetworkClient, ccg.getId());
+            System.out.println("Update CrossConnectGroup.");
+            ccg = updateCrossConnectGroup(virtualNetworkClient, ccg.getId());
 
-        System.out.println("Add a (physical connection) CrossConnect to CrossConnectGroup.");
-        CrossConnect cc =
-                createCrossConnect(
-                        virtualNetworkClient,
-                        COMPARTMENT_ID,
-                        ccg.getId(),
-                        listCrossConnectLocations.get(0).getName(),
-                        listCrossConnectPortSpeedShape.get(0).getName());
+            System.out.println("Add a (physical connection) CrossConnect to CrossConnectGroup.");
+            cc =
+                    createCrossConnect(
+                            virtualNetworkClient,
+                            COMPARTMENT_ID,
+                            ccg.getId(),
+                            listCrossConnectLocations.get(0).getName(),
+                            listCrossConnectPortSpeedShape.get(0).getName());
 
-        System.out.println(
-                "Activate the CrossConnect. This also activate CrossConnectGroup as well.");
-        cc = updateCrossConnect(virtualNetworkClient, cc.getId(), true);
+            System.out.println(
+                    "Activate the CrossConnect. This also activate CrossConnectGroup as well.");
+            cc = updateCrossConnect(virtualNetworkClient, cc.getId(), true);
+        } finally {
+            System.out.println("Remove physical connection from LAG.");
+            if (null != cc) {
+                deleteCrossConnect(virtualNetworkClient, ccg.getId(), cc.getId());
+            }
 
-        System.out.println("Remove physical connection from LAG.");
-        deleteCrossConnect(virtualNetworkClient, ccg.getId(), cc.getId());
-
-        System.out.println("Delete CrossConnect group.");
-        deleteCrossConnectGroup(virtualNetworkClient, ccg.getId());
+            System.out.println("Delete CrossConnect group.");
+            if (null != ccg) {
+                deleteCrossConnectGroup(virtualNetworkClient, ccg.getId());
+            }
+        }
     }
 
     private static List<CrossConnectLocation> getCrossConnectLocations(
@@ -176,14 +208,14 @@ public class FastConnectCrossConnectGroupExample {
         return response.getCrossConnectGroup();
     }
 
-    private static void deleteCrossConnectGroup(VirtualNetwork virtualNetwork, final String ccgId)
-            throws Exception {
+    private static void deleteCrossConnectGroup(
+            final VirtualNetwork virtualNetwork, final String ccgId) throws Exception {
 
         // if ccg is in provisioning, wait until provisioned
         CrossConnectGroup ccg = getCrossConnectGroup(virtualNetwork, ccgId);
 
         if (ccg.getLifecycleState() != CrossConnectGroup.LifecycleState.Inactive) {
-            throw new Exception(
+            throw new IllegalStateException(
                     "Failed to start deleting CrossConnectGroup due to CrossConnectGroup in invalid state.");
         }
 
@@ -231,7 +263,7 @@ public class FastConnectCrossConnectGroupExample {
     }
 
     private static CrossConnect getCrossConnect(
-            final VirtualNetwork virtualNetwork, final String ccId) throws Exception {
+            final VirtualNetwork virtualNetwork, final String ccId) {
 
         final GetCrossConnectRequest request =
                 GetCrossConnectRequest.builder().crossConnectId(ccId).build();
@@ -282,12 +314,13 @@ public class FastConnectCrossConnectGroupExample {
     }
 
     private static void deleteCrossConnect(
-            VirtualNetwork virtualNetwork, final String ccgId, final String ccId) throws Exception {
+            final VirtualNetwork virtualNetwork, final String ccgId, final String ccId)
+            throws Exception {
 
         // if ccg is in provisioning, wait until provisioned
         CrossConnectGroup ccg = getCrossConnectGroup(virtualNetwork, ccgId);
         if (ccg.getLifecycleState() == CrossConnectGroup.LifecycleState.Provisioning) {
-            throw new Exception(
+            throw new IllegalStateException(
                     "Failed to start deleting CrossConnect of CrossConnectGroup due to CrossConnectGroup in invalid state.");
         }
         virtualNetwork.deleteCrossConnect(

@@ -184,7 +184,17 @@ public class CreateSubnetDetails {
     }
 
     /**
-     * The availability domain to contain the subnet.
+     * Controls whether the subnet is regional or specific to an availability domain. Oracle
+     * recommends creating regional subnets because they're more flexible and make it easier to
+     * implement failover across availability domains. Originally, AD-specific subnets were the
+     * only kind available to use.
+     * <p>
+     * To create a regional subnet, omit this attribute. Then any resources later created in this
+     * subnet (such as a Compute instance) can be created in any availability domain in the region.
+     * <p>
+     * To instead create an AD-specific subnet, set this attribute to the availability domain you
+     * want this subnet to be in. Then any resources later created in this subnet can only be
+     * created in that availability domain.
      * <p>
      * Example: `Uocm:PHX-AD-1`
      *
@@ -272,6 +282,7 @@ public class CreateSubnetDetails {
      * subnet cannot have public IP addresses (that is, it's a private
      * subnet).
      * <p>
+     *
      * Example: `true`
      *
      **/

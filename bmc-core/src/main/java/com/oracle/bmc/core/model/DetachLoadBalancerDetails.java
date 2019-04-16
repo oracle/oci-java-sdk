@@ -70,13 +70,13 @@ public class DetachLoadBalancerDetails {
     }
 
     /**
-     * The OCID of the load balancer to detach from the pool.
+     * The OCID of the load balancer to detach from the instance pool.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
     String loadBalancerId;
 
     /**
-     * The name of the backend set on the load balancer to detach from the pool.
+     * The name of the backend set on the load balancer to detach from the instance pool.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backendSetName")
     String backendSetName;

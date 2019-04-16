@@ -4,7 +4,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details to create and download an Oracle Autonomous Transaction Processing database wallet.
+ * Details to create and download an Oracle Autonomous Database wallet.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

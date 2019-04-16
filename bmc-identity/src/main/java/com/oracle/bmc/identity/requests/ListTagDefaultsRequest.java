@@ -35,7 +35,7 @@ public class ListTagDefaultsRequest extends com.oracle.bmc.requests.BmcRequest {
     private String compartmentId;
 
     /**
-     * The OCID of the Tag Definition.
+     * The OCID of the tag definition.
      *
      */
     private String tagDefinitionId;

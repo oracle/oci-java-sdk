@@ -82,6 +82,24 @@ public class UpdateAutonomousDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
+        private LicenseModel licenseModel;
+
+        public Builder licenseModel(LicenseModel licenseModel) {
+            this.licenseModel = licenseModel;
+            this.__explicitlySet__.add("licenseModel");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("whitelistedIps")
+        private java.util.List<String> whitelistedIps;
+
+        public Builder whitelistedIps(java.util.List<String> whitelistedIps) {
+            this.whitelistedIps = whitelistedIps;
+            this.__explicitlySet__.add("whitelistedIps");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -93,7 +111,9 @@ public class UpdateAutonomousDatabaseDetails {
                             displayName,
                             adminPassword,
                             freeformTags,
-                            definedTags);
+                            definedTags,
+                            licenseModel,
+                            whitelistedIps);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -106,7 +126,9 @@ public class UpdateAutonomousDatabaseDetails {
                             .displayName(o.getDisplayName())
                             .adminPassword(o.getAdminPassword())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .licenseModel(o.getLicenseModel())
+                            .whitelistedIps(o.getWhitelistedIps());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -164,6 +186,54 @@ public class UpdateAutonomousDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+    /**
+     * The new Oracle license model that applies to the Oracle Autonomous Transaction Processing database.
+     *
+     **/
+    public enum LicenseModel {
+        LicenseIncluded("LICENSE_INCLUDED"),
+        BringYourOwnLicense("BRING_YOUR_OWN_LICENSE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, LicenseModel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (LicenseModel v : LicenseModel.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        LicenseModel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static LicenseModel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new RuntimeException("Invalid LicenseModel: " + key);
+        }
+    };
+    /**
+     * The new Oracle license model that applies to the Oracle Autonomous Transaction Processing database.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
+    LicenseModel licenseModel;
+
+    /**
+     * The client IP access control list (ACL). Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. This is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet. To delete all the existing white listed IP\u2019s, use an array with a single empty string entry.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("whitelistedIps")
+    java.util.List<String> whitelistedIps;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
