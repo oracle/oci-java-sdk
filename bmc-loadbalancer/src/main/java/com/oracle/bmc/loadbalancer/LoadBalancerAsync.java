@@ -176,7 +176,8 @@ public interface LoadBalancerAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new rule set associated with the specified load balancer.
+     * Creates a new rule set associated with the specified load balancer. For more information, see
+     * [Managing Rule Sets](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrulesets.htm).
      *
      *
      * @param request The request object containing the details to send
