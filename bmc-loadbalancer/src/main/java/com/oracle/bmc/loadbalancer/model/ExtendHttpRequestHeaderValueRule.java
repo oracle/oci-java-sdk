@@ -4,7 +4,7 @@
 package com.oracle.bmc.loadbalancer.model;
 
 /**
- * An object that represents the action of modifying a request header value. This rule applies only to HTTP or HTTP2 listeners.
+ * An object that represents the action of modifying a request header value. This rule applies only to HTTP listeners.
  * <p>
  * This rule adds a prefix, a suffix, or both to the header value.
  * <p>

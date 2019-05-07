@@ -1291,7 +1291,8 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets the specified provider service key's information.
+     * Gets the specified provider service key's information. Use this operation to validate a
+     * provider service key. An invalid key returns a 404 error.
      *
      *
      * @param request The request object containing the details to send

@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
+## 1.5.4 - 2019-05-07
+### Added
+- Support for the Tokyo (NRT) region
+
 ## 1.5.2 - 2019-04-16
 ### Added
 - Support for tagging dynamic groups in the Identity service

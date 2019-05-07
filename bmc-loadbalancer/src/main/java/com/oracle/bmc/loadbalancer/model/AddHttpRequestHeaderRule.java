@@ -5,7 +5,7 @@ package com.oracle.bmc.loadbalancer.model;
 
 /**
  * An object that represents the action of adding a header to a request.
- * This rule applies only to HTTP or HTTP2 listeners.
+ * This rule applies only to HTTP listeners.
  * <p>
  **NOTES:**
  * <p>

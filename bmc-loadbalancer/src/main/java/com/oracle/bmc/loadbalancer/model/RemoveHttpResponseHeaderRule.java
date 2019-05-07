@@ -4,7 +4,7 @@
 package com.oracle.bmc.loadbalancer.model;
 
 /**
- * An object that represents the action of removing a header from a response. This rule applies only to HTTP or HTTP2 listeners.
+ * An object that represents the action of removing a header from a response. This rule applies only to HTTP listeners.
  * <p>
  * If the same header appears more than once in the response, the load balancer removes all occurances of the specified header.
  * <p>
