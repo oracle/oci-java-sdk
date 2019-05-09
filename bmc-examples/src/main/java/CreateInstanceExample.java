@@ -288,8 +288,9 @@ public class CreateInstanceExample {
         List<RouteRule> routeRules = new ArrayList<RouteRule>();
         RouteRule internetAccessRoute =
                 RouteRule.builder()
-                        .cidrBlock("0.0.0.0/0")
-                        .destination(internetGateway.getId())
+                        .destination("0.0.0.0/0")
+                        .destinationType(RouteRule.DestinationType.CidrBlock)
+                        .networkEntityId(internetGateway.getId())
                         .build();
         routeRules.add(internetAccessRoute);
 
