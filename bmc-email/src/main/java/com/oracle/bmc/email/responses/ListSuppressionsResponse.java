@@ -27,6 +27,14 @@ public class ListSuppressionsResponse {
     private String opcNextPage;
 
     /**
+     * For list pagination. When this header appears in the response, previous pages
+     * of results exist. For important details about how pagination works,
+     * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
+    private String opcPrevPage;
+
+    /**
      * A list of SuppressionSummary instances.
      */
     private java.util.List<SuppressionSummary> items;
@@ -39,6 +47,7 @@ public class ListSuppressionsResponse {
         public Builder copy(ListSuppressionsResponse o) {
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
+            opcPrevPage(o.getOpcPrevPage());
             items(o.getItems());
 
             return this;

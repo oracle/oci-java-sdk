@@ -397,6 +397,7 @@ public class KmsExample {
                 EncryptDataDetails.builder()
                         .keyId(keyId)
                         .plaintext(Base64.encodeBase64String(plaintext.getBytes()))
+                        .loggingContext(getSampleLoggingContext())
                         .build();
         EncryptRequest encryptRequest =
                 EncryptRequest.builder().encryptDataDetails(encryptDataDetails).build();
@@ -412,7 +413,11 @@ public class KmsExample {
             KmsCryptoClient kmsCryptoClient, String keyId, String cipherText) {
         System.out.println("Decrypt Test: ");
         DecryptDataDetails decryptDataDetails =
-                DecryptDataDetails.builder().ciphertext(cipherText).keyId(keyId).build();
+                DecryptDataDetails.builder()
+                        .ciphertext(cipherText)
+                        .keyId(keyId)
+                        .loggingContext(getSampleLoggingContext())
+                        .build();
         DecryptRequest decryptRequest =
                 DecryptRequest.builder().decryptDataDetails(decryptDataDetails).build();
         DecryptResponse response = kmsCryptoClient.decrypt(decryptRequest);
@@ -428,6 +433,7 @@ public class KmsExample {
                         .keyId(keyId)
                         .keyShape(TEST_KEY_SHAPE)
                         .includePlaintextKey(true)
+                        .loggingContext(getSampleLoggingContext())
                         .build();
         GenerateDataEncryptionKeyRequest generateDataEncryptionKeyRequest =
                 GenerateDataEncryptionKeyRequest.builder()
@@ -445,5 +451,12 @@ public class KmsExample {
         freeformTags.put("dummyfreeformkey1", "dummyfreeformvalue1");
         freeformTags.put("dummyfreeformkey2", "dummyfreeformvalue2");
         return freeformTags;
+    }
+
+    private static Map<String, String> getSampleLoggingContext() {
+        Map<String, String> loggingContext = new HashMap<String, String>();
+        loggingContext.put("loggingContextKey1", "loggingContextValue1");
+        loggingContext.put("loggingContextKey2", "loggingContextValue2");
+        return loggingContext;
     }
 }

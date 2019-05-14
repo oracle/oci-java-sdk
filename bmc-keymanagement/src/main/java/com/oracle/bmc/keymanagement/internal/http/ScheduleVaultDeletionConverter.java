@@ -8,7 +8,7 @@ import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
 import org.apache.commons.lang3.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
 @lombok.extern.slf4j.Slf4j
 public class ScheduleVaultDeletionConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
@@ -31,8 +31,7 @@ public class ScheduleVaultDeletionConverter {
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
-                        .path("/")
-                        .path("20180608")
+                        .path("/20180608")
                         .path("vaults")
                         .path(
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(

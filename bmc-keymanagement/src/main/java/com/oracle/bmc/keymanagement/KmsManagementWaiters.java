@@ -12,7 +12,7 @@ import com.oracle.bmc.keymanagement.responses.*;
  * <p>
  * The default configuration used is defined by {@link Waiters#DEFAULT_POLLING_WAITER}.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
 @lombok.RequiredArgsConstructor
 public class KmsManagementWaiters {
     private final java.util.concurrent.ExecutorService executorService;

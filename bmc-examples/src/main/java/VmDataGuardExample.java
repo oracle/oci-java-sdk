@@ -48,6 +48,7 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class VmDataGuardExample {
 
@@ -119,9 +120,9 @@ public class VmDataGuardExample {
                                             .build(),
                                     DbSystem.LifecycleState.Available,
                                     new MaxTimeTerminationStrategy(
-                                            minutesToMillis(MAX_WAIT_IN_MINS)),
+                                            TimeUnit.MINUTES.toMillis(MAX_WAIT_IN_MINS)),
                                     new ExponentialBackoffDelayStrategy(
-                                            minutesToMillis(DELAY_INTERVAL_IN_MINS)))
+                                            TimeUnit.MINUTES.toMillis(DELAY_INTERVAL_IN_MINS)))
                             .execute();
             firstDbSystemId = getDbSystemResponse.getDbSystem().getId();
             String firstDbHomeId = getDbHome(firstDbSystemId).getId();
@@ -313,9 +314,9 @@ public class VmDataGuardExample {
                                 .databaseId(databaseId)
                                 .build(),
                         DataGuardAssociation.LifecycleState.Available,
-                        new MaxTimeTerminationStrategy(minutesToMillis(MAX_WAIT_IN_MINS)),
+                        new MaxTimeTerminationStrategy(TimeUnit.MINUTES.toMillis(MAX_WAIT_IN_MINS)),
                         new ExponentialBackoffDelayStrategy(
-                                minutesToMillis(DELAY_INTERVAL_IN_MINS)))
+                                TimeUnit.MINUTES.toMillis(DELAY_INTERVAL_IN_MINS)))
                 .execute();
     }
 
@@ -371,9 +372,5 @@ public class VmDataGuardExample {
         return (null != dataGuardAssociationList && !dataGuardAssociationList.isEmpty())
                 ? dataGuardAssociationList.get(0)
                 : null;
-    }
-
-    private static long minutesToMillis(long minutes) {
-        return minutes * 60 * 1000L;
     }
 }

@@ -30,6 +30,7 @@ public final class Region implements Serializable, Comparable<Region> {
     private static final Map<String, Region> KNOWN_REGIONS = new LinkedHashMap<>();
 
     // OC1
+    public static final Region AP_SEOUL_1 = new Region("ap-seoul-1", Realm.OC1);
     public static final Region AP_TOKYO_1 = new Region("ap-tokyo-1", Realm.OC1);
     public static final Region CA_TORONTO_1 = new Region("ca-toronto-1", Realm.OC1);
     // regionCode for FRA shouldn't be needed, but left for backwards compatibility
