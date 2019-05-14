@@ -31,6 +31,7 @@ public class ResourceSearchAsyncClient implements ResourceSearchAsync {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("RESOURCESEARCH")
                     .serviceEndpointPrefix("query")
+                    .serviceEndpointTemplate("https://query.{region}.{secondLevelDomain}")
                     .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)

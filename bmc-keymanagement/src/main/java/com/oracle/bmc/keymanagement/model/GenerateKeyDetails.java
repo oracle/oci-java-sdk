@@ -13,7 +13,7 @@ package com.oracle.bmc.keymanagement.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
 @lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
@@ -60,12 +60,22 @@ public class GenerateKeyDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("loggingContext")
+        private java.util.Map<String, String> loggingContext;
+
+        public Builder loggingContext(java.util.Map<String, String> loggingContext) {
+            this.loggingContext = loggingContext;
+            this.__explicitlySet__.add("loggingContext");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public GenerateKeyDetails build() {
             GenerateKeyDetails __instance__ =
-                    new GenerateKeyDetails(associatedData, includePlaintextKey, keyId, keyShape);
+                    new GenerateKeyDetails(
+                            associatedData, includePlaintextKey, keyId, keyShape, loggingContext);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -76,7 +86,8 @@ public class GenerateKeyDetails {
                     associatedData(o.getAssociatedData())
                             .includePlaintextKey(o.getIncludePlaintextKey())
                             .keyId(o.getKeyId())
-                            .keyShape(o.getKeyShape());
+                            .keyShape(o.getKeyShape())
+                            .loggingContext(o.getLoggingContext());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -113,6 +124,14 @@ public class GenerateKeyDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("keyShape")
     KeyShape keyShape;
+
+    /**
+     * Information that can be used to provide context for audit logging. It is a map that contains any addtional
+     * data the users may have and will be added to the audit logs (if audit logging is enabled)
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("loggingContext")
+    java.util.Map<String, String> loggingContext;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

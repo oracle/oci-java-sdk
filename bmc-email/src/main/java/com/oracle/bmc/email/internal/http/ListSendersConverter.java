@@ -148,6 +148,18 @@ public class ListSendersConverter {
                                 }
 
                                 com.google.common.base.Optional<java.util.List<String>>
+                                        opcPrevPageHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-prev-page");
+                                if (opcPrevPageHeader.isPresent()) {
+                                    builder.opcPrevPage(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-prev-page",
+                                                    opcPrevPageHeader.get().get(0),
+                                                    String.class));
+                                }
+
+                                com.google.common.base.Optional<java.util.List<String>>
                                         opcTotalItemsHeader =
                                                 com.oracle.bmc.http.internal.HeaderUtils.get(
                                                         headers, "opc-total-items");

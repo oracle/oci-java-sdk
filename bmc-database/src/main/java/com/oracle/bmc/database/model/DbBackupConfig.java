@@ -33,18 +33,30 @@ public class DbBackupConfig {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("recoveryWindowInDays")
+        private Integer recoveryWindowInDays;
+
+        public Builder recoveryWindowInDays(Integer recoveryWindowInDays) {
+            this.recoveryWindowInDays = recoveryWindowInDays;
+            this.__explicitlySet__.add("recoveryWindowInDays");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DbBackupConfig build() {
-            DbBackupConfig __instance__ = new DbBackupConfig(autoBackupEnabled);
+            DbBackupConfig __instance__ =
+                    new DbBackupConfig(autoBackupEnabled, recoveryWindowInDays);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(DbBackupConfig o) {
-            Builder copiedBuilder = autoBackupEnabled(o.getAutoBackupEnabled());
+            Builder copiedBuilder =
+                    autoBackupEnabled(o.getAutoBackupEnabled())
+                            .recoveryWindowInDays(o.getRecoveryWindowInDays());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -63,6 +75,15 @@ public class DbBackupConfig {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoBackupEnabled")
     Boolean autoBackupEnabled;
+
+    /**
+     * Number of days between the current and the earliest point of recoverability covered by automatic backups.
+     * This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window.
+     * When the value is updated, it is applied to all existing automatic backups.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("recoveryWindowInDays")
+    Integer recoveryWindowInDays;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

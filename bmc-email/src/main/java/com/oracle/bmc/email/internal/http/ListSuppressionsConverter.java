@@ -158,6 +158,18 @@ public class ListSuppressionsConverter {
                                                     String.class));
                                 }
 
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcPrevPageHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-prev-page");
+                                if (opcPrevPageHeader.isPresent()) {
+                                    builder.opcPrevPage(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-prev-page",
+                                                    opcPrevPageHeader.get().get(0),
+                                                    String.class));
+                                }
+
                                 ListSuppressionsResponse responseWrapper = builder.build();
 
                                 return responseWrapper;

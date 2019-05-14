@@ -2,7 +2,6 @@
  * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 import com.oracle.bmc.ConfigFileReader;
-import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.core.VirtualNetworkClient;
@@ -10,20 +9,12 @@ import com.oracle.bmc.core.model.Subnet;
 import com.oracle.bmc.core.model.Vcn;
 import com.oracle.bmc.database.DatabaseClient;
 import com.oracle.bmc.database.DatabaseWaiters;
-import com.oracle.bmc.database.model.CreateBackupDetails;
 import com.oracle.bmc.database.model.CreateDatabaseFromBackupDetails;
-import com.oracle.bmc.database.model.CreateDbHomeDetails;
 import com.oracle.bmc.database.model.CreateDbHomeFromBackupDetails;
-import com.oracle.bmc.database.model.DataGuardAssociation;
-import com.oracle.bmc.database.model.DataGuardAssociationSummary;
-import com.oracle.bmc.database.model.DatabaseSummary;
-import com.oracle.bmc.database.model.DbHomeSummary;
 import com.oracle.bmc.database.model.DbSystem;
 import com.oracle.bmc.database.model.LaunchDbSystemFromBackupDetails;
 import com.oracle.bmc.database.requests.GetDbSystemRequest;
 import com.oracle.bmc.database.requests.LaunchDbSystemRequest;
-import com.oracle.bmc.database.requests.ListDatabasesRequest;
-import com.oracle.bmc.database.requests.ListDbHomesRequest;
 import com.oracle.bmc.database.requests.TerminateDbSystemRequest;
 import com.oracle.bmc.database.responses.GetDbSystemResponse;
 import com.oracle.bmc.database.responses.LaunchDbSystemResponse;
@@ -32,9 +23,31 @@ import com.oracle.bmc.waiter.MaxTimeTerminationStrategy;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
+/**
+ * This class provides a basic example of how to launch a DB system from an active backup using the Java SDK. This will cover:
+ * <p></p>
+ * <ul>
+ *   <li>Create a VCN and subnet for the DB system and its related resources</li>
+ *   <li>
+ *     Launch a DB system containing a single DB home and database from an active backup. See:
+ *       <a href="https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Concepts/overview.htm">overview</a> and
+ *       <a href="https://docs.us-phoenix-1.oraclecloud.com/Content/Database/Tasks/launchingDB.htm">managing DB systems</a>
+ *       for more information
+ * </ul>
+ * <p></p>
+ * Resources created by this class will be removed when this example is done.
+ * <p></p>
+ * This class also makes assumptions on the following database parameters:
+ * <p></p>
+ * <ul>
+ *   <li>Core count</li>
+ *   <li>DB edition</li>
+ *   <li>DB version</li>
+ * </ul>
+ */
 public class LaunchDbSystemFromBackupExample {
     private static final String CONFIG_LOCATION = "~/.oci/config";
     private static final String CONFIG_PROFILE = "DEFAULT";
@@ -43,31 +56,38 @@ public class LaunchDbSystemFromBackupExample {
     private static final String subnetCidrBlock = "10.0.1.0/24";
     private static int randomId = new Random().nextInt(999);
 
-    private static final long MAX_WAIT_IN_MINS = 4 * 60;
-    private static final long DELAY_INTERVAL_IN_MINS = 1;
+    private static final long MAX_WAIT_IN_MINS = TimeUnit.SECONDS.toMinutes(4L);
+    private static final long DELAY_INTERVAL_IN_MINS = TimeUnit.SECONDS.toMinutes(1L);
 
     private static DatabaseClient databaseClient = null;
     private static VirtualNetworkClient virtualNetworkClient = null;
-    private static String regionId;
     private static String compartmentId;
     private static String availabilityDomain;
     private static String backupId;
 
+    /**
+     * The entry point for the example.
+     *
+     * @param args Arguments to provide to the example. The following arguments are expected:
+     *             <ul>
+     *             <li>The OCID of the compartment which owns the DB system</li>
+     *             <li>The availability domain where the DB system will be launched</li>
+     *             <li>Sparse DiskGroup option: True, if Sparse Diskgroup is configured for Exadata dbsystem, False, if Sparse diskgroup was not configured.</li>
+     *             <li>The OCID of the backup that will be used during irestore</li>
+     *             </ul>
+     */
     public static void main(String[] args) throws Exception {
 
-        if (args.length != 4) {
+        if (args.length != 3) {
             System.out.println(args.length);
             throw new Exception(
-                    "This example expects 4 arguments: a region ID, a compartment OCID, availability domain for the VCN "
+                    "This example expects 3 arguments: a compartment OCID, availability domain for the VCN "
                             + "and BackupID of the database to be restored.");
         }
 
-        regionId = args[0];
-        compartmentId = args[1];
-        availabilityDomain = args[2];
-        backupId = args[3];
-
-        Region targetRegion = Region.fromRegionId(regionId);
+        compartmentId = args[0];
+        availabilityDomain = args[1];
+        backupId = args[2];
 
         final ConfigFileReader.ConfigFile configFile =
                 ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
@@ -75,9 +95,6 @@ public class LaunchDbSystemFromBackupExample {
                 new ConfigFileAuthenticationDetailsProvider(configFile);
         databaseClient = new DatabaseClient(provider);
         virtualNetworkClient = new VirtualNetworkClient(provider);
-
-        databaseClient.setRegion(targetRegion);
-        virtualNetworkClient.setRegion(targetRegion);
 
         Vcn vcn = null;
         Subnet subnet = null;
@@ -109,13 +126,11 @@ public class LaunchDbSystemFromBackupExample {
                                             .build(),
                                     DbSystem.LifecycleState.Available,
                                     new MaxTimeTerminationStrategy(
-                                            minutesToMillis(MAX_WAIT_IN_MINS)),
+                                            TimeUnit.MINUTES.toMillis(MAX_WAIT_IN_MINS)),
                                     new ExponentialBackoffDelayStrategy(
-                                            minutesToMillis(DELAY_INTERVAL_IN_MINS)))
+                                            TimeUnit.MINUTES.toMillis(DELAY_INTERVAL_IN_MINS)))
                             .execute();
             firstDbSystemId = getDbSystemResponse.getDbSystem().getId();
-            String firstDbHomeId = getDbHome(firstDbSystemId).getId();
-            String firstDatabaseId = getDatabase(firstDbHomeId).getId();
             System.out.println("Launched DB System from backup:" + firstDbSystemId);
         } finally {
             System.out.println("Begin terminating DbSystems");
@@ -190,34 +205,5 @@ public class LaunchDbSystemFromBackupExample {
                             DbSystem.LifecycleState.Terminated)
                     .execute();
         }
-    }
-
-    private static DbHomeSummary getDbHome(String dbSystemId) {
-        if (StringUtils.isEmpty(dbSystemId)) return null;
-
-        ListDbHomesRequest listDbHomesRequest =
-                ListDbHomesRequest.builder()
-                        .compartmentId(compartmentId)
-                        .dbSystemId(dbSystemId)
-                        .build();
-        List<DbHomeSummary> dbHomeList = databaseClient.listDbHomes(listDbHomesRequest).getItems();
-        return (null != dbHomeList && !dbHomeList.isEmpty()) ? dbHomeList.get(0) : null;
-    }
-
-    private static DatabaseSummary getDatabase(String dbHomeId) {
-        if (StringUtils.isEmpty(dbHomeId)) return null;
-
-        ListDatabasesRequest listDatabasesRequest =
-                ListDatabasesRequest.builder()
-                        .compartmentId(compartmentId)
-                        .dbHomeId(dbHomeId)
-                        .build();
-        List<DatabaseSummary> databaseList =
-                databaseClient.listDatabases(listDatabasesRequest).getItems();
-        return (null != databaseList && !databaseList.isEmpty()) ? databaseList.get(0) : null;
-    }
-
-    private static long minutesToMillis(long minutes) {
-        return minutes * 60 * 1000L;
     }
 }

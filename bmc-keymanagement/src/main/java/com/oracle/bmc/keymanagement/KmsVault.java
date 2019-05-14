@@ -6,7 +6,7 @@ package com.oracle.bmc.keymanagement;
 import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
 public interface KmsVault extends AutoCloseable {
 
     /**
