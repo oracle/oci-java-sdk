@@ -37,7 +37,7 @@ public interface AutoScalingAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Create an AutoScalingConfiguration
+     * Creates an autoscaling configuration.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -55,7 +55,8 @@ public interface AutoScalingAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Create a Policy for AutoScalingConfiguration
+     * Creates an autoscaling policy for the specified autoscaling configuration.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -71,7 +72,7 @@ public interface AutoScalingAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes an AutoScalingConfiguration
+     * Deletes an autoscaling configuration.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -89,7 +90,7 @@ public interface AutoScalingAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Deletes an AutoScalingConfiguration Policy
+     * Deletes an autoscaling policy for the specified autoscaling configuration.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -105,7 +106,7 @@ public interface AutoScalingAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Get AutoScalingConfiguration
+     * Gets information about the specified autoscaling configuration.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -121,7 +122,7 @@ public interface AutoScalingAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Get Policy from a specific AutoScalingConfiguration
+     * Gets information about the specified autoscaling policy in the specified autoscaling configuration.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -137,7 +138,7 @@ public interface AutoScalingAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists AutoScalingConfigurations in the specific compartment.
+     * Lists autoscaling configurations in the specifed compartment.
      *
      *
      * @param request The request object containing the details to send
@@ -156,7 +157,7 @@ public interface AutoScalingAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Lists Policies in an AutoScalingConfiguration.
+     * Lists the autoscaling policies in the specified autoscaling configuration.
      *
      *
      * @param request The request object containing the details to send
@@ -173,7 +174,9 @@ public interface AutoScalingAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates an AutoScalingConfiguration
+     * Updates certain fields on the specified autoscaling configuration, such as the name, the cooldown period,
+     * and whether the autoscaling configuration is enabled.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -191,7 +194,7 @@ public interface AutoScalingAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Updates a Policy in the specific AutoScalingConfiguration
+     * Updates an autoscaling policy in the specified autoscaling configuration.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

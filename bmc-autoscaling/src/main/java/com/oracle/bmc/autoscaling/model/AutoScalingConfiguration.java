@@ -4,6 +4,8 @@
 package com.oracle.bmc.autoscaling.model;
 
 /**
+ * An autoscaling configuration allows you to dynamically scale the resources in a Compute instance pool.
+ * For more information, see [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/autoscalinginstancepools.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -162,7 +164,7 @@ public class AutoScalingConfiguration {
     }
 
     /**
-     * The OCID of the compartment containing the AutoScalingConfiguration.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the autoscaling configuration.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -179,8 +181,7 @@ public class AutoScalingConfiguration {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * A user-friendly name for the AutoScalingConfiguration. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -197,20 +198,21 @@ public class AutoScalingConfiguration {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The OCID of the AutoScalingConfiguration
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The minimum period of time between scaling actions. The default is 300 seconds.
+     * The minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize
+     * before rescaling. The minimum value is 300 seconds, which is also the default.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("coolDownInSeconds")
     Integer coolDownInSeconds;
 
     /**
-     * If the AutoScalingConfiguration is enabled
+     * Whether the autoscaling configuration is enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     Boolean isEnabled;
@@ -219,7 +221,10 @@ public class AutoScalingConfiguration {
     Resource resource;
 
     /**
-     * AutoScalingConfiguration policy definitions
+     * Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that
+     * trigger autoscaling actions and the actions to take.
+     * <p>
+     * Each autoscaling configuration can have one autoscaling policy.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("policies")
@@ -227,6 +232,7 @@ public class AutoScalingConfiguration {
 
     /**
      * The date and time the AutoScalingConfiguration was created, in the format defined by RFC3339.
+     * <p>
      * Example: `2016-08-25T21:10:29.600Z`
      *
      **/

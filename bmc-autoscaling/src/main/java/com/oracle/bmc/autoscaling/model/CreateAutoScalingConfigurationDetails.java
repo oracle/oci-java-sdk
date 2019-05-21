@@ -4,7 +4,7 @@
 package com.oracle.bmc.autoscaling.model;
 
 /**
- * An AutoScalingConfiguration creation details
+ * Creation details for an autoscaling configuration.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -141,7 +141,8 @@ public class CreateAutoScalingConfigurationDetails {
     }
 
     /**
-     * The OCID of the compartment containing the AutoScalingConfiguration.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the autoscaling configuration.
+     * The autoscaling configuration and the instance pool that it manages must be in the same compartment.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -158,8 +159,7 @@ public class CreateAutoScalingConfigurationDetails {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * A user-friendly name for the AutoScalingConfiguration. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -176,14 +176,15 @@ public class CreateAutoScalingConfigurationDetails {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The minimum period of time between scaling actions. The default is 300 seconds.
+     * The minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize
+     * before rescaling. The minimum value is 300 seconds, which is also the default.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("coolDownInSeconds")
     Integer coolDownInSeconds;
 
     /**
-     * If the AutoScalingConfiguration is enabled
+     * Whether the autoscaling configuration is enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     Boolean isEnabled;

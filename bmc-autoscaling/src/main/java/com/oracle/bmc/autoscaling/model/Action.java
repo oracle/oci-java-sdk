@@ -4,8 +4,7 @@
 package com.oracle.bmc.autoscaling.model;
 
 /**
- * The action to take if a scale event has been triggered. Positive values indicate scale out
- * and negative value indicate scale in.
+ * The action to take when autoscaling is triggered.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -68,7 +67,7 @@ public class Action {
     }
 
     /**
-     * Action type to take
+     * The type of action to take.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Type {
@@ -112,11 +111,16 @@ public class Action {
         }
     };
     /**
-     * Action type to take
+     * The type of action to take.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     Type type;
 
+    /**
+     * To scale out (increase the number of instances), provide a positive value. To scale in (decrease the number of
+     * instances), provide a negative value.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     Integer value;
 

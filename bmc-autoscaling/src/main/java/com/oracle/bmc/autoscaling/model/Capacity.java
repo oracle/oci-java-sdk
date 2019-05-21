@@ -4,7 +4,7 @@
 package com.oracle.bmc.autoscaling.model;
 
 /**
- * Capacity boundaries for the pool
+ * Capacity limits for the instance pool.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -76,19 +76,22 @@ public class Capacity {
     }
 
     /**
-     * The maximum size the pool is allowed to increase to
+     * The maximum number of instances the instance pool is allowed to increase to (scale out).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("max")
     Integer max;
 
     /**
-     * The minimum size the pool is allowed to decrease to
+     * The minimum number of instances the instance pool is allowed to decrease to (scale in).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("min")
     Integer min;
 
     /**
-     * The initial size of the pool
+     * The initial number of instances to launch in the instance pool immediately after autoscaling is
+     * enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this
+     * initial number to a number that is based on the limits that you set.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("initial")
     Integer initial;

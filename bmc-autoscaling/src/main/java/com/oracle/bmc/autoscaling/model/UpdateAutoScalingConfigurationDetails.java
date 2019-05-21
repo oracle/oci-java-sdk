@@ -130,13 +130,14 @@ public class UpdateAutoScalingConfigurationDetails {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * If the AutoScalingConfiguration is enabled
+     * Whether the autoscaling configuration is enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     Boolean isEnabled;
 
     /**
-     * The minimum period of time between scaling actions. The default is 300 seconds.
+     * The minimum period of time to wait between scaling actions. The cooldown period gives the system time
+     * to stabilize before rescaling. The minimum value is 300 seconds, which is also the default.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("coolDownInSeconds")

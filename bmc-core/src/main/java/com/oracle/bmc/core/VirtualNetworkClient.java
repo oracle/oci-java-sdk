@@ -1857,6 +1857,59 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public GetIPSecConnectionTunnelResponse getIPSecConnectionTunnel(
+            GetIPSecConnectionTunnelRequest request) {
+        LOG.trace("Called getIPSecConnectionTunnel");
+        request = GetIPSecConnectionTunnelConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetIPSecConnectionTunnelConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetIPSecConnectionTunnelResponse>
+                transformer = GetIPSecConnectionTunnelConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public GetIPSecConnectionTunnelSharedSecretResponse getIPSecConnectionTunnelSharedSecret(
+            GetIPSecConnectionTunnelSharedSecretRequest request) {
+        LOG.trace("Called getIPSecConnectionTunnelSharedSecret");
+        request = GetIPSecConnectionTunnelSharedSecretConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetIPSecConnectionTunnelSharedSecretConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetIPSecConnectionTunnelSharedSecretResponse>
+                transformer = GetIPSecConnectionTunnelSharedSecretConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public GetInternetGatewayResponse getInternetGateway(GetInternetGatewayRequest request) {
         LOG.trace("Called getInternetGateway");
         request = GetInternetGatewayConverter.interceptRequest(request);
@@ -2557,6 +2610,33 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public ListIPSecConnectionTunnelsResponse listIPSecConnectionTunnels(
+            ListIPSecConnectionTunnelsRequest request) {
+        LOG.trace("Called listIPSecConnectionTunnels");
+        request = ListIPSecConnectionTunnelsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListIPSecConnectionTunnelsConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListIPSecConnectionTunnelsResponse>
+                transformer = ListIPSecConnectionTunnelsConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.get(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public ListIPSecConnectionsResponse listIPSecConnections(ListIPSecConnectionsRequest request) {
         LOG.trace("Called listIPSecConnections");
         request = ListIPSecConnectionsConverter.interceptRequest(request);
@@ -3135,6 +3215,65 @@ public class VirtualNetworkClient implements VirtualNetwork {
             try {
                 javax.ws.rs.core.Response response =
                         client.put(ib, request.getUpdateIPSecConnectionDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public UpdateIPSecConnectionTunnelResponse updateIPSecConnectionTunnel(
+            UpdateIPSecConnectionTunnelRequest request) {
+        LOG.trace("Called updateIPSecConnectionTunnel");
+        request = UpdateIPSecConnectionTunnelConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateIPSecConnectionTunnelConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateIPSecConnectionTunnelResponse>
+                transformer = UpdateIPSecConnectionTunnelConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(ib, request.getUpdateIPSecConnectionTunnelDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public UpdateIPSecConnectionTunnelSharedSecretResponse updateIPSecConnectionTunnelSharedSecret(
+            UpdateIPSecConnectionTunnelSharedSecretRequest request) {
+        LOG.trace("Called updateIPSecConnectionTunnelSharedSecret");
+        request = UpdateIPSecConnectionTunnelSharedSecretConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateIPSecConnectionTunnelSharedSecretConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateIPSecConnectionTunnelSharedSecretResponse>
+                transformer = UpdateIPSecConnectionTunnelSharedSecretConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.put(
+                                ib,
+                                request.getUpdateIPSecConnectionTunnelSharedSecretDetails(),
+                                request);
                 return transformer.apply(response);
             } catch (com.oracle.bmc.model.BmcException e) {
                 if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS

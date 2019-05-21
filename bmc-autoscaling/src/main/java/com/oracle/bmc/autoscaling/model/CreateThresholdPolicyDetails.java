@@ -4,7 +4,10 @@
 package com.oracle.bmc.autoscaling.model;
 
 /**
- * An AutoScalingConfiguration ThresholdPolicy creation details
+ * Creation details for a threshold-based autoscaling policy.
+ * <p>
+ * In a threshold-based autoscaling policy, an autoscaling action is triggered when a performance metric meets
+ * or exceeds a threshold.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

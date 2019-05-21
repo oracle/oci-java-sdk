@@ -37,7 +37,7 @@ public interface AutoScaling extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Create an AutoScalingConfiguration
+     * Creates an autoscaling configuration.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -46,7 +46,8 @@ public interface AutoScaling extends AutoCloseable {
             CreateAutoScalingConfigurationRequest request);
 
     /**
-     * Create a Policy for AutoScalingConfiguration
+     * Creates an autoscaling policy for the specified autoscaling configuration.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -54,7 +55,7 @@ public interface AutoScaling extends AutoCloseable {
     CreateAutoScalingPolicyResponse createAutoScalingPolicy(CreateAutoScalingPolicyRequest request);
 
     /**
-     * Deletes an AutoScalingConfiguration
+     * Deletes an autoscaling configuration.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -63,7 +64,7 @@ public interface AutoScaling extends AutoCloseable {
             DeleteAutoScalingConfigurationRequest request);
 
     /**
-     * Deletes an AutoScalingConfiguration Policy
+     * Deletes an autoscaling policy for the specified autoscaling configuration.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -71,7 +72,7 @@ public interface AutoScaling extends AutoCloseable {
     DeleteAutoScalingPolicyResponse deleteAutoScalingPolicy(DeleteAutoScalingPolicyRequest request);
 
     /**
-     * Get AutoScalingConfiguration
+     * Gets information about the specified autoscaling configuration.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -80,7 +81,7 @@ public interface AutoScaling extends AutoCloseable {
             GetAutoScalingConfigurationRequest request);
 
     /**
-     * Get Policy from a specific AutoScalingConfiguration
+     * Gets information about the specified autoscaling policy in the specified autoscaling configuration.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -88,7 +89,7 @@ public interface AutoScaling extends AutoCloseable {
     GetAutoScalingPolicyResponse getAutoScalingPolicy(GetAutoScalingPolicyRequest request);
 
     /**
-     * Lists AutoScalingConfigurations in the specific compartment.
+     * Lists autoscaling configurations in the specifed compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -98,7 +99,7 @@ public interface AutoScaling extends AutoCloseable {
             ListAutoScalingConfigurationsRequest request);
 
     /**
-     * Lists Policies in an AutoScalingConfiguration.
+     * Lists the autoscaling policies in the specified autoscaling configuration.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -107,7 +108,9 @@ public interface AutoScaling extends AutoCloseable {
     ListAutoScalingPoliciesResponse listAutoScalingPolicies(ListAutoScalingPoliciesRequest request);
 
     /**
-     * Updates an AutoScalingConfiguration
+     * Updates certain fields on the specified autoscaling configuration, such as the name, the cooldown period,
+     * and whether the autoscaling configuration is enabled.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -116,7 +119,7 @@ public interface AutoScaling extends AutoCloseable {
             UpdateAutoScalingConfigurationRequest request);
 
     /**
-     * Updates a Policy in the specific AutoScalingConfiguration
+     * Updates an autoscaling policy in the specified autoscaling configuration.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.

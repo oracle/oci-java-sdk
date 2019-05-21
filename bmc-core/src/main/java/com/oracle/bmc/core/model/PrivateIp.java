@@ -4,9 +4,10 @@
 package com.oracle.bmc.core.model;
 
 /**
- * A *private IP* is a conceptual term that refers to a private IP address and related properties.
+ * A *private IP* is a conceptual term that refers to an IPv4 private IP address and related properties.
  * The `privateIp` object is the API representation of a private IP.
  * <p>
+ *
  * Each instance has a *primary private IP* that is automatically created and
  * assigned to the primary VNIC during instance launch. If you add a secondary
  * VNIC to the instance, it also automatically gets a primary private IP. You

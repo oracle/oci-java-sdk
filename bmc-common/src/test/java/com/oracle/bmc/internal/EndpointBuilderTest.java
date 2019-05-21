@@ -4,7 +4,6 @@
 package com.oracle.bmc.internal;
 
 import static junit.framework.TestCase.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
@@ -52,5 +51,38 @@ public class EndpointBuilderTest {
         assertEquals(
                 "http://foobar.us-phoenix-1.oraclecloud.com",
                 EndpointBuilder.createEndpoint(testService, Region.US_PHOENIX_1));
+    }
+
+    @Test
+    public void createEndpoint_withOverrideRegionId() {
+        Region fakeRegion = Region.register("createEndpoint-withOverrideRegionId", Realm.OC1);
+        Service testServiceWithCustomTemplate =
+                Services.serviceBuilder()
+                        .serviceEndpointPrefix("foobar")
+                        .serviceName("EndpointBuilderTest4.1")
+                        .serviceEndpointTemplate(
+                                "http://{serviceEndpointPrefix}.{region}.{secondLevelDomain}")
+                        .build();
+        Service testServiceWithDefaultTemplate =
+                Services.serviceBuilder()
+                        .serviceEndpointPrefix("foobar")
+                        .serviceName("EndpointBuilderTest4.2")
+                        .build();
+
+        assertEquals(
+                "http://foobar.createendpoint-withoverrideregionid.oraclecloud.com",
+                EndpointBuilder.createEndpoint(testServiceWithCustomTemplate, fakeRegion));
+        assertEquals(
+                "https://foobar.createendpoint-withoverrideregionid.oraclecloud.com",
+                EndpointBuilder.createEndpoint(testServiceWithDefaultTemplate, fakeRegion));
+
+        EndpointBuilder.overrideRegionId(fakeRegion.getRegionId(), "fake");
+
+        assertEquals(
+                "http://foobar.fake.oraclecloud.com",
+                EndpointBuilder.createEndpoint(testServiceWithCustomTemplate, fakeRegion));
+        assertEquals(
+                "https://foobar.fake.oraclecloud.com",
+                EndpointBuilder.createEndpoint(testServiceWithDefaultTemplate, fakeRegion));
     }
 }

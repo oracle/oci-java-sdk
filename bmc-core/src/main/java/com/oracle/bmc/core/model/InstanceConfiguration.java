@@ -184,6 +184,11 @@ public class InstanceConfiguration {
     @com.fasterxml.jackson.annotation.JsonProperty("instanceDetails")
     InstanceConfigurationInstanceDetails instanceDetails;
 
+    /**
+     * The required details when using the {@link #launchInstanceConfiguration(LaunchInstanceConfigurationRequest) launchInstanceConfiguration} operation.
+     * These attributes are optional when using the {@link #createInstanceConfiguration(CreateInstanceConfigurationRequest) createInstanceConfiguration} operation.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deferredFields")
     java.util.List<String> deferredFields;
 

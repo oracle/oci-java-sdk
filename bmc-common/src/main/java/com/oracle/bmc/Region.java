@@ -30,24 +30,24 @@ public final class Region implements Serializable, Comparable<Region> {
     private static final Map<String, Region> KNOWN_REGIONS = new LinkedHashMap<>();
 
     // OC1
-    public static final Region AP_SEOUL_1 = new Region("ap-seoul-1", Realm.OC1);
-    public static final Region AP_TOKYO_1 = new Region("ap-tokyo-1", Realm.OC1);
-    public static final Region CA_TORONTO_1 = new Region("ca-toronto-1", Realm.OC1);
-    // regionCode for FRA shouldn't be needed, but left for backwards compatibility
-    public static final Region EU_FRANKFURT_1 = new Region("eu-frankfurt-1", "fra", Realm.OC1);
-    // regionCode for LHR shouldn't be needed, but left for backwards compatibility
-    public static final Region UK_LONDON_1 = new Region("uk-london-1", "lhr", Realm.OC1);
-    public static final Region US_ASHBURN_1 = new Region("us-ashburn-1", "iad", Realm.OC1);
-    public static final Region US_PHOENIX_1 = new Region("us-phoenix-1", "phx", Realm.OC1);
+    public static final Region AP_SEOUL_1 = register("ap-seoul-1", Realm.OC1);
+    public static final Region AP_TOKYO_1 = register("ap-tokyo-1", Realm.OC1);
+    public static final Region CA_TORONTO_1 = register("ca-toronto-1", Realm.OC1);
+    // regionCode for FRA shouldn't be needed, but left for backwards compat
+    public static final Region EU_FRANKFURT_1 = register("eu-frankfurt-1", Realm.OC1, "fra");
+    // regionCode for LHR shouldn't be needed, but left for backwards compat
+    public static final Region UK_LONDON_1 = register("uk-london-1", Realm.OC1, "lhr");
+    public static final Region US_ASHBURN_1 = register("us-ashburn-1", Realm.OC1, "iad");
+    public static final Region US_PHOENIX_1 = register("us-phoenix-1", Realm.OC1, "phx");
 
     // OC2
-    public static final Region US_LANGLEY_1 = new Region("us-langley-1", Realm.OC2);
-    public static final Region US_LUKE_1 = new Region("us-luke-1", Realm.OC2);
+    public static final Region US_LANGLEY_1 = register("us-langley-1", Realm.OC2);
+    public static final Region US_LUKE_1 = register("us-luke-1", Realm.OC2);
 
     // OC3
-    public static final Region US_GOV_ASHBURN_1 = new Region("us-gov-ashburn-1", Realm.OC3);
-    public static final Region US_GOV_CHICAGO_1 = new Region("us-gov-chicago-1", Realm.OC3);
-    public static final Region US_GOV_PHOENIX_1 = new Region("us-gov-phoenix-1", Realm.OC3);
+    public static final Region US_GOV_ASHBURN_1 = register("us-gov-ashburn-1", Realm.OC3);
+    public static final Region US_GOV_CHICAGO_1 = register("us-gov-chicago-1", Realm.OC3);
+    public static final Region US_GOV_PHOENIX_1 = register("us-gov-phoenix-1", Realm.OC3);
 
     private static final Map<String, Map<Region, String>> SERVICE_TO_REGION_ENDPOINTS =
             new HashMap<>();
@@ -70,14 +70,6 @@ public final class Region implements Serializable, Comparable<Region> {
      * Get the realm this region belongs to.
      */
     @Getter private final Realm realm;
-
-    private Region(String regionId, Realm realm) {
-        this(regionId, Optional.<String>absent(), realm);
-    }
-
-    private Region(String regionId, String regionCode, Realm realm) {
-        this(regionId, Optional.<String>of(regionCode), realm);
-    }
 
     private Region(
             @NonNull String regionId, @NonNull Optional<String> regionCode, @NonNull Realm realm) {
@@ -302,7 +294,24 @@ public final class Region implements Serializable, Comparable<Region> {
      * @return The registered region (or existing one if found).
      */
     public static Region register(@NonNull String regionId, @NonNull final Realm realm) {
-        regionId = regionId.toLowerCase(Locale.US);
+        return register(regionId, realm, null);
+    }
+
+    /**
+     * Register a new region. Used to allow the SDK to be forward compatible with unreleased regions.
+     *
+     * @param regionId The region ID.
+     * @param realm The realm of the new region.
+     * @param regionCode The 3-letter region code returned by the instance metadata service as the 'region'
+     *        value, if it differs from regionId.  This is only needed for very early regions.
+     * @return The registered region (or existing one if found).
+     */
+    public static Region register(
+            @NonNull String regionId, @NonNull final Realm realm, String regionCode) {
+        regionId = regionId.trim().toLowerCase(Locale.US);
+        if (regionId.isEmpty()) {
+            throw new IllegalArgumentException("Cannot have empty regionId");
+        }
         synchronized (KNOWN_REGIONS) {
             for (Region region : Region.values()) {
                 if (region.getRegionId().equals(regionId)) {
@@ -317,8 +326,13 @@ public final class Region implements Serializable, Comparable<Region> {
                     return region;
                 }
             }
-
-            return new Region(regionId, realm);
+            if (regionCode != null) {
+                regionCode = regionCode.trim().toLowerCase(Locale.US);
+                if (regionCode.isEmpty()) {
+                    regionCode = null;
+                }
+            }
+            return new Region(regionId, Optional.fromNullable(regionCode), realm);
         }
     }
 }

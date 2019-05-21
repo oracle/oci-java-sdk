@@ -243,7 +243,7 @@ public interface BlockstorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Remove kms for the specific boot volume. If the volume doesn't use KMS, then do nothing.
+     * Removes the KMS key for the specified boot volume.
      *
      *
      * @param request The request object containing the details to send
@@ -347,7 +347,7 @@ public interface BlockstorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Remove kms for the specific volume. If the volume doesn't use KMS, then do nothing.
+     * Removes the KMS key for the specified volume.
      *
      *
      * @param request The request object containing the details to send
@@ -395,7 +395,7 @@ public interface BlockstorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets kms key id for the specified boot volume.
+     * Gets the KMS key ID for the specified boot volume.
      *
      *
      * @param request The request object containing the details to send
@@ -527,7 +527,7 @@ public interface BlockstorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets kms key id for the specified volume.
+     * Gets the KMS key ID for the specified volume.
      *
      *
      * @param request The request object containing the details to send
@@ -692,7 +692,7 @@ public interface BlockstorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Update kms key id for the specific volume.
+     * Updates the KMS key ID for the specified volume.
      *
      *
      * @param request The request object containing the details to send
@@ -782,7 +782,7 @@ public interface BlockstorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Update kms key id for the specific volume.
+     * Updates the KMS key ID for the specified volume.
      *
      *
      * @param request The request object containing the details to send

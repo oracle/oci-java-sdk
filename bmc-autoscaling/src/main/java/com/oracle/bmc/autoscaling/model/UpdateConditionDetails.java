@@ -4,7 +4,7 @@
 package com.oracle.bmc.autoscaling.model;
 
 /**
- * Update details for Condition in a ThresholdPolicy
+ * Update details for a condition in a threshold-based autoscaling policy.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -83,8 +83,7 @@ public class UpdateConditionDetails {
     Action action;
 
     /**
-     * A user-friendly name for the AutoScalingConfiguration condition details. Does not have to be unique, and
-     * it's changeable. Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")

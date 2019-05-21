@@ -4,7 +4,9 @@
 package com.oracle.bmc.autoscaling.model;
 
 /**
- * A resource that the AutoScalingConfiguration manages. The only supported type is 'instancePool'
+ * A resource that is managed by an autoscaling configuration. The only supported type is \"instancePool.\"
+ * <p>
+ * Each instance pool can have one autoscaling configuration.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -37,7 +39,7 @@ package com.oracle.bmc.autoscaling.model;
 public class Resource {
 
     /**
-     * The OCID of resource that the AutoScalingConfiguration will manage.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")

@@ -16,7 +16,7 @@ public class UpdateVolumeKmsKeyRequest extends com.oracle.bmc.requests.BmcReques
     private String volumeId;
 
     /**
-     * Update kms key id for the specific volume.
+     * Update the KMS key ID for the specified volume.
      */
     private UpdateVolumeKmsKeyDetails updateVolumeKmsKeyDetails;
 

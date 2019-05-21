@@ -11,7 +11,7 @@ import com.oracle.bmc.autoscaling.model.*;
 public class ListAutoScalingPoliciesRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The OCID of the auto scaling configuration.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
      */
     private String autoScalingConfigurationId;
 
@@ -27,15 +27,15 @@ public class ListAutoScalingPoliciesRequest extends com.oracle.bmc.requests.BmcR
     private String opcRequestId;
 
     /**
-     * The maximum number of items to return in a paginated \"List\" call. For information about pagination, see
-     * [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+     * For list pagination. The maximum number of items to return in a paginated \"List\" call. For important details
+     * about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private Integer limit;
 
     /**
-     * The value of the `opc-next-page` response header from the previous \"List\" call. For information about
-     * pagination, see [List Pagination](https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination).
+     * For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important
+     * details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private String page;

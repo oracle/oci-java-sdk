@@ -4,7 +4,7 @@
 package com.oracle.bmc.autoscaling.model;
 
 /**
- * Metric threshold details
+ * Metric and threshold details for triggering an autoscaling action.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

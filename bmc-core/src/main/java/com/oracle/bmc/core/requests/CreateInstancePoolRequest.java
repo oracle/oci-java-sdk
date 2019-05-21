@@ -11,7 +11,7 @@ import com.oracle.bmc.core.model.*;
 public class CreateInstancePoolRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * Instance Pool creation details
+     * Instance pool creation details
      */
     private CreateInstancePoolDetails createInstancePoolDetails;
 
