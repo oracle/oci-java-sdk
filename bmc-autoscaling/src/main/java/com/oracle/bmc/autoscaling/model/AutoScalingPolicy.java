@@ -4,7 +4,10 @@
 package com.oracle.bmc.autoscaling.model;
 
 /**
- * A Policy defines the rules and actions of an AutoScalingConfiguration. The only supported type is 'threshold'
+ * Autoscaling policies define the criteria that trigger autoscaling actions and the actions to take.
+ * <p>
+ * An autoscaling policy is part of an autoscaling configuration. For more information, see
+ * [Autoscaling](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/autoscalinginstancepools.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -37,27 +40,27 @@ package com.oracle.bmc.autoscaling.model;
 public class AutoScalingPolicy {
 
     /**
-     * The capacity requirements of the Policy
+     * The capacity requirements of the autoscaling policy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacity")
     Capacity capacity;
 
     /**
-     * The ID of the policy that is assigned after creation
+     * The ID of the autoscaling policy that is assigned after creation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * A user-friendly name for the Policy. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * The date and time the AutoScalingConfiguration was created, in the format defined by RFC3339.
+     * The date and time the autoscaling configuration was created, in the format defined by RFC3339.
+     * <p>
      * Example: `2016-08-25T21:10:29.600Z`
      *
      **/

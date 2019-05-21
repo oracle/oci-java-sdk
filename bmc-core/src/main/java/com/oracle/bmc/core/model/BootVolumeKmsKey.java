@@ -58,7 +58,7 @@ public class BootVolumeKmsKey {
     }
 
     /**
-     * Kms key id associated with this volume. If volume is not using KMS, then kmsKeyId will be null string.
+     * The OCID of the KMS key associated with this volume. If volume is not using KMS, then the `kmsKeyId` will be a null string.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")

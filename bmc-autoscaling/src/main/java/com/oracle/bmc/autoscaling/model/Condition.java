@@ -4,7 +4,7 @@
 package com.oracle.bmc.autoscaling.model;
 
 /**
- * A container for metric and action details
+ * A rule that defines a specific autoscaling action to take (scale in or scale out) and the metric that triggers that action.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -92,15 +92,14 @@ public class Condition {
     Action action;
 
     /**
-     * A user-friendly name for the AutoScalingConfiguration condition details. Does not have to be unique, and
-     * it's changeable. Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Id of the condition that is assigned after creation
+     * ID of the condition that is assigned after creation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;

@@ -159,7 +159,10 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
                 region = Region.fromRegionCodeOrId(regionStr);
                 LOG.info("Using region {}", region.getRegionId());
             } catch (IllegalArgumentException e) {
-                LOG.warn("Region not supported by this version of the SDK", e);
+                LOG.warn(
+                        "Region not supported by this version of the SDK, registering region '{}' under OC1",
+                        regionStr,
+                        e);
                 // Proceed by assuming the region id belongs to the OC1 realm.
                 region = Region.register(regionStr, Realm.OC1);
             }

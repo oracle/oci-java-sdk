@@ -4,7 +4,12 @@
 package com.oracle.bmc.autoscaling.model;
 
 /**
- * An AutoScalingConfiguration Policy creation details
+ * Creation details for an autoscaling policy.
+ * <p>
+ * Each autoscaling configuration can have one autoscaling policy.
+ * <p>
+ * In a threshold-based autoscaling policy, an autoscaling action is triggered when a performance metric meets
+ * or exceeds a threshold.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -37,14 +42,13 @@ package com.oracle.bmc.autoscaling.model;
 public class CreateAutoScalingPolicyDetails {
 
     /**
-     * The capacity requirements of the Policy
+     * The capacity requirements of the autoscaling policy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacity")
     Capacity capacity;
 
     /**
-     * A user-friendly name for the Policy. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")

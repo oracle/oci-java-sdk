@@ -4,6 +4,7 @@
 package com.oracle.bmc.autoscaling.model;
 
 /**
+ * Summary information for an autoscaling policy.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -79,21 +80,20 @@ public class AutoScalingPolicySummary {
     }
 
     /**
-     * The ID of the policy that is assigned after creation
+     * The ID of the autoscaling policy that is assigned after creation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * A user-friendly name for the Policy. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * Indicates type of Policy
+     * The type of autoscaling policy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("policyType")
     String policyType;

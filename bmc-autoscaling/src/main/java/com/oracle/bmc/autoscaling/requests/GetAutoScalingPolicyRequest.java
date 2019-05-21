@@ -11,12 +11,12 @@ import com.oracle.bmc.autoscaling.model.*;
 public class GetAutoScalingPolicyRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The OCID of the auto scaling configuration.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
      */
     private String autoScalingConfigurationId;
 
     /**
-     * The ID of the auto scaling configuration policy.
+     * The ID of the autoscaling policy.
      */
     private String autoScalingPolicyId;
 

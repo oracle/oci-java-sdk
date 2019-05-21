@@ -16,7 +16,7 @@ public class UpdateBootVolumeKmsKeyRequest extends com.oracle.bmc.requests.BmcRe
     private String bootVolumeId;
 
     /**
-     * Update kms key id for the specific boot volume.
+     * Updates the KMS key ID for the specified boot volume.
      */
     private UpdateBootVolumeKmsKeyDetails updateBootVolumeKmsKeyDetails;
 

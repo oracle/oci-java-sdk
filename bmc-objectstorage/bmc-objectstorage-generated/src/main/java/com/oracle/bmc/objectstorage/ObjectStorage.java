@@ -155,6 +155,8 @@ public interface ObjectStorage extends AutoCloseable {
      * the tenancy name in all lower-case letters. You cannot edit a namespace.
      * <p>
      * GetNamespace returns the name of the Object Storage namespace for the user making the request.
+     * If an optional compartmentId query parameter is provided, GetNamespace returns the namespace name of the corresponding
+     * tenancy, provided the user has access to it.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

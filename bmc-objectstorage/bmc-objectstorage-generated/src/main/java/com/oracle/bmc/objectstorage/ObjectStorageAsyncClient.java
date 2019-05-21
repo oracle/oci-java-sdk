@@ -31,6 +31,7 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("OBJECTSTORAGE")
                     .serviceEndpointPrefix("objectstorage")
+                    .serviceEndpointTemplate("https://objectstorage.{region}.{secondLevelDomain}")
                     .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)

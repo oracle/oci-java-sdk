@@ -166,7 +166,7 @@ public interface Blockstorage extends AutoCloseable {
     DeleteBootVolumeBackupResponse deleteBootVolumeBackup(DeleteBootVolumeBackupRequest request);
 
     /**
-     * Remove kms for the specific boot volume. If the volume doesn't use KMS, then do nothing.
+     * Removes the KMS key for the specified boot volume.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -222,7 +222,7 @@ public interface Blockstorage extends AutoCloseable {
     DeleteVolumeGroupBackupResponse deleteVolumeGroupBackup(DeleteVolumeGroupBackupRequest request);
 
     /**
-     * Remove kms for the specific volume. If the volume doesn't use KMS, then do nothing.
+     * Removes the KMS key for the specified volume.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -247,7 +247,7 @@ public interface Blockstorage extends AutoCloseable {
     GetBootVolumeBackupResponse getBootVolumeBackup(GetBootVolumeBackupRequest request);
 
     /**
-     * Gets kms key id for the specified boot volume.
+     * Gets the KMS key ID for the specified boot volume.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -317,7 +317,7 @@ public interface Blockstorage extends AutoCloseable {
     GetVolumeGroupBackupResponse getVolumeGroupBackup(GetVolumeGroupBackupRequest request);
 
     /**
-     * Gets kms key id for the specified volume.
+     * Gets the KMS key ID for the specified volume.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -409,7 +409,7 @@ public interface Blockstorage extends AutoCloseable {
     UpdateBootVolumeBackupResponse updateBootVolumeBackup(UpdateBootVolumeBackupRequest request);
 
     /**
-     * Update kms key id for the specific volume.
+     * Updates the KMS key ID for the specified volume.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -460,7 +460,7 @@ public interface Blockstorage extends AutoCloseable {
     UpdateVolumeGroupBackupResponse updateVolumeGroupBackup(UpdateVolumeGroupBackupRequest request);
 
     /**
-     * Update kms key id for the specific volume.
+     * Updates the KMS key ID for the specified volume.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

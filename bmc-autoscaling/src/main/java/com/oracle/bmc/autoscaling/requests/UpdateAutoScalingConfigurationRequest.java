@@ -11,12 +11,12 @@ import com.oracle.bmc.autoscaling.model.*;
 public class UpdateAutoScalingConfigurationRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The OCID of the auto scaling configuration.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
      */
     private String autoScalingConfigurationId;
 
     /**
-     * AutoScalingConfiguration update details
+     * Update details for an autoscaling configuration.
      */
     private UpdateAutoScalingConfigurationDetails updateAutoScalingConfigurationDetails;
 

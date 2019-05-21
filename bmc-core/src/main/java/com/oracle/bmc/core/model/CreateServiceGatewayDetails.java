@@ -113,7 +113,7 @@ public class CreateServiceGatewayDetails {
     }
 
     /**
-     * The [OCID] (https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)  of the compartment to contain the service gateway.
+     * The [OCID] (https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -149,7 +149,16 @@ public class CreateServiceGatewayDetails {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * List of the service OCIDs. These are the services that will be enabled on the service gateway. This list can be empty.
+     * List of the OCIDs of the {@link Service} objects to
+     * enable for the service gateway. This list can be empty if you don't want to enable any
+     * `Service` objects when you create the gateway. You can enable a `Service`
+     * object later by using either {@link #attachServiceId(AttachServiceIdRequest) attachServiceId}
+     * or {@link #updateServiceGateway(UpdateServiceGatewayRequest) updateServiceGateway}.
+     * <p>
+     * For each enabled `Service`, make sure there's a route rule with the `Service` object's `cidrBlock`
+     * as the rule's destination and the service gateway as the rule's target. See
+     * {@link RouteTable}.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("services")
     java.util.List<ServiceIdRequestDetails> services;

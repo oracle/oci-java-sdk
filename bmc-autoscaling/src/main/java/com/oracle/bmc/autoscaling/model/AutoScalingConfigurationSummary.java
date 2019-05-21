@@ -4,6 +4,7 @@
 package com.oracle.bmc.autoscaling.model;
 
 /**
+ * Summary information for an autoscaling configuration.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -78,6 +79,25 @@ public class AutoScalingConfigurationSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -99,6 +119,8 @@ public class AutoScalingConfigurationSummary {
                             coolDownInSeconds,
                             isEnabled,
                             resource,
+                            definedTags,
+                            freeformTags,
                             timeCreated);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -113,6 +135,8 @@ public class AutoScalingConfigurationSummary {
                             .coolDownInSeconds(o.getCoolDownInSeconds())
                             .isEnabled(o.getIsEnabled())
                             .resource(o.getResource())
+                            .definedTags(o.getDefinedTags())
+                            .freeformTags(o.getFreeformTags())
                             .timeCreated(o.getTimeCreated());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -128,35 +152,35 @@ public class AutoScalingConfigurationSummary {
     }
 
     /**
-     * The OCID of the compartment containing the AutoScalingConfiguration.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the autoscaling configuration.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * A user-friendly name for the AutoScalingConfiguration. Does not have to be unique, and it's changeable.
-     * Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * The OCID of the AutoScalingConfiguration
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The minimum period of time between scaling actions. The default is 300 seconds.
+     * The minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize
+     * before rescaling. The minimum value is 300 seconds, which is also the default.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("coolDownInSeconds")
     Integer coolDownInSeconds;
 
     /**
-     * If the AutoScalingConfiguration is enabled
+     * Whether the autoscaling configuration is enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     Boolean isEnabled;
@@ -165,7 +189,28 @@ public class AutoScalingConfigurationSummary {
     Resource resource;
 
     /**
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Department\": \"Finance\"}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    java.util.Map<String, String> freeformTags;
+
+    /**
      * The date and time the AutoScalingConfiguration was created, in the format defined by RFC3339.
+     * <p>
      * Example: `2016-08-25T21:10:29.600Z`
      *
      **/

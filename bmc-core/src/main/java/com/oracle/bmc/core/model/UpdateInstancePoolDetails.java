@@ -154,8 +154,12 @@ public class UpdateInstancePoolDetails {
     String instanceConfigurationId;
 
     /**
-     * The placement configurations for the instance pool.
-     * There should be 1 placement configuration for each desired AD.
+     * The placement configurations for the instance pool. Provide one placement configuration for
+     * each availability domain.
+     * <p>
+     * To use the instance pool with a regional subnet, provide a placement configuration for
+     * each availability domain, and include the regional subnet in each placement
+     * configuration.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("placementConfigurations")

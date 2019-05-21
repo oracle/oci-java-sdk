@@ -136,8 +136,8 @@ public class EgressSecurityRule {
      * IP address range in CIDR notation. For example: `192.168.1.0/24`
      * <p>
      * The `cidrBlock` value for a {@link Service}, if you're
-     *     setting up a security list rule for traffic destined for a particular service through
-     *     a service gateway. For example: `oci-phx-objectstorage`
+     *     setting up a security list rule for traffic destined for a particular `Service` through
+     *     a service gateway. For example: `oci-phx-objectstorage`.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destination")
@@ -151,7 +151,7 @@ public class EgressSecurityRule {
      * <p>
      * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a
      *     {@link Service} (the rule is for traffic destined for a
-     *     particular service through a service gateway).
+     *     particular `Service` through a service gateway).
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -206,7 +206,7 @@ public class EgressSecurityRule {
      * <p>
      * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a
      *     {@link Service} (the rule is for traffic destined for a
-     *     particular service through a service gateway).
+     *     particular `Service` through a service gateway).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationType")

@@ -37,16 +37,16 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Enables the specified service on the specified gateway. In other words, enables the service
-     * gateway to send traffic to the specified service. You must also set up a route rule with the
-     * service's `cidrBlock` as the rule's destination CIDR and the gateway as the rule's target.
-     * See {@link RouteTable}.
+     * Adds the specified {@link Service} to the list of enabled
+     * `Service` objects for the specified gateway. You must also set up a route rule with the
+     * `cidrBlock` of the `Service` as the rule's destination and the service gateway as the rule's
+     * target. See {@link RouteTable}.
      * <p>
-     **Note:** The `AttachServiceId` operation is an easy way to enable an individual service on
+     **Note:** The `AttachServiceId` operation is an easy way to add an individual `Service` to
      * the service gateway. Compare it with
-     * {@link #updateServiceGateway(UpdateServiceGatewayRequest, Consumer, Consumer) updateServiceGateway}, which also
-     * lets you enable an individual service. However, with `UpdateServiceGateway`, you must specify
-     * the *entire* list of services you want enabled on the service gateway.
+     * {@link #updateServiceGateway(UpdateServiceGatewayRequest, Consumer, Consumer) updateServiceGateway}, which replaces
+     * the entire existing list of enabled `Service` objects with the list that you provide in the
+     * `Update` call.
      *
      *
      * @param request The request object containing the details to send
@@ -1119,19 +1119,18 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Disables the specified service on the specified gateway. In other words, stops the service
-     * gateway from sending traffic to the specified service. You do not need to remove any route
-     * rules that specify this service's `cidrBlock` as the destination CIDR. However, consider
-     * removing the rules if your intent is to permanently disable use of the service through this
+     * Removes the specified {@link Service} from the list of enabled
+     * `Service` objects for the specified gateway. You do not need to remove any route
+     * rules that specify this `Service` object's `cidrBlock` as the destination CIDR. However, consider
+     * removing the rules if your intent is to permanently disable use of the `Service` through this
      * service gateway.
      * <p>
-     **Note:** The `DetachServiceId` operation is an easy way to disable an individual service on
+     **Note:** The `DetachServiceId` operation is an easy way to remove an individual `Service` from
      * the service gateway. Compare it with
-     * {@link #updateServiceGateway(UpdateServiceGatewayRequest, Consumer, Consumer) updateServiceGateway}, which also
-     * lets you disable an individual service. However, with `UpdateServiceGateway`, you must specify
-     * the *entire* list of services you want enabled on the service gateway. `UpdateServiceGateway`
-     * also lets you block all traffic through the service gateway without having to disable each of
-     * the individual services.
+     * {@link #updateServiceGateway(UpdateServiceGatewayRequest, Consumer, Consumer) updateServiceGateway}, which replaces
+     * the entire existing list of enabled `Service` objects with the list that you provide in the
+     * `Update` call. `UpdateServiceGateway` also lets you block all traffic through the service
+     * gateway without having to remove each of the individual `Service` objects.
      *
      *
      * @param request The request object containing the details to send
@@ -1369,6 +1368,42 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Gets the specified IPSec connection's specified tunnel basic information.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetIPSecConnectionTunnelResponse> getIPSecConnectionTunnel(
+            GetIPSecConnectionTunnelRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetIPSecConnectionTunnelRequest, GetIPSecConnectionTunnelResponse>
+                    handler);
+
+    /**
+     * Gets the specified IPSec connection's specific tunnel's shared secret.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetIPSecConnectionTunnelSharedSecretResponse>
+            getIPSecConnectionTunnelSharedSecret(
+                    GetIPSecConnectionTunnelSharedSecretRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetIPSecConnectionTunnelSharedSecretRequest,
+                                    GetIPSecConnectionTunnelSharedSecretResponse>
+                            handler);
+
+    /**
      * Gets the specified internet gateway's information.
      *
      * @param request The request object containing the details to send
@@ -1555,7 +1590,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the specified service's information.
+     * Gets the specified {@link Service} object.
      *
      *
      * @param request The request object containing the details to send
@@ -1855,6 +1890,23 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Gets the lists of tunnel information for the specified IPSec connection.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListIPSecConnectionTunnelsResponse> listIPSecConnectionTunnels(
+            ListIPSecConnectionTunnelsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListIPSecConnectionTunnelsRequest, ListIPSecConnectionTunnelsResponse>
+                    handler);
+
+    /**
      * Lists the IPSec connections for the specified compartment. You can filter the
      * results by DRG or CPE.
      *
@@ -2060,7 +2112,8 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the available services that you can access through a service gateway in this region.
+     * Lists the available {@link Service} objects that you can enable for a
+     * service gateway in this region.
      *
      *
      * @param request The request object containing the details to send
@@ -2265,8 +2318,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the display name or tags for the specified IPSec connection.
-     * Avoid entering confidential information.
+     * Updates the specified IPSec connection.
      *
      *
      * @param request The request object containing the details to send
@@ -2281,6 +2333,42 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateIPSecConnectionRequest, UpdateIPSecConnectionResponse>
                     handler);
+
+    /**
+     * Update an IPsecConnection tunnel
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateIPSecConnectionTunnelResponse> updateIPSecConnectionTunnel(
+            UpdateIPSecConnectionTunnelRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateIPSecConnectionTunnelRequest, UpdateIPSecConnectionTunnelResponse>
+                    handler);
+
+    /**
+     * update shared secret for specifed Ipsec connection's specified tunnel
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateIPSecConnectionTunnelSharedSecretResponse>
+            updateIPSecConnectionTunnelSharedSecret(
+                    UpdateIPSecConnectionTunnelSharedSecretRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateIPSecConnectionTunnelSharedSecretRequest,
+                                    UpdateIPSecConnectionTunnelSharedSecretResponse>
+                            handler);
 
     /**
      * Updates the specified internet gateway. You can disable/enable it, or change its display name

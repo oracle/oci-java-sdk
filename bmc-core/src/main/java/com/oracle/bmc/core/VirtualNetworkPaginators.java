@@ -1201,6 +1201,123 @@ public class VirtualNetworkPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listIPSecConnectionTunnels operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListIPSecConnectionTunnelsResponse> listIPSecConnectionTunnelsResponseIterator(
+            final ListIPSecConnectionTunnelsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListIPSecConnectionTunnelsRequest.Builder, ListIPSecConnectionTunnelsRequest,
+                ListIPSecConnectionTunnelsResponse>(
+                new com.google.common.base.Supplier<ListIPSecConnectionTunnelsRequest.Builder>() {
+                    @Override
+                    public ListIPSecConnectionTunnelsRequest.Builder get() {
+                        return ListIPSecConnectionTunnelsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListIPSecConnectionTunnelsResponse, String>() {
+                    @Override
+                    public String apply(ListIPSecConnectionTunnelsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListIPSecConnectionTunnelsRequest.Builder>,
+                        ListIPSecConnectionTunnelsRequest>() {
+                    @Override
+                    public ListIPSecConnectionTunnelsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListIPSecConnectionTunnelsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListIPSecConnectionTunnelsRequest, ListIPSecConnectionTunnelsResponse>() {
+                    @Override
+                    public ListIPSecConnectionTunnelsResponse apply(
+                            ListIPSecConnectionTunnelsRequest request) {
+                        return client.listIPSecConnectionTunnels(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.IPSecConnectionTunnel} objects
+     * contained in responses from the listIPSecConnectionTunnels operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.IPSecConnectionTunnel} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.IPSecConnectionTunnel>
+            listIPSecConnectionTunnelsRecordIterator(
+                    final ListIPSecConnectionTunnelsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListIPSecConnectionTunnelsRequest.Builder, ListIPSecConnectionTunnelsRequest,
+                ListIPSecConnectionTunnelsResponse,
+                com.oracle.bmc.core.model.IPSecConnectionTunnel>(
+                new com.google.common.base.Supplier<ListIPSecConnectionTunnelsRequest.Builder>() {
+                    @Override
+                    public ListIPSecConnectionTunnelsRequest.Builder get() {
+                        return ListIPSecConnectionTunnelsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListIPSecConnectionTunnelsResponse, String>() {
+                    @Override
+                    public String apply(ListIPSecConnectionTunnelsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListIPSecConnectionTunnelsRequest.Builder>,
+                        ListIPSecConnectionTunnelsRequest>() {
+                    @Override
+                    public ListIPSecConnectionTunnelsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListIPSecConnectionTunnelsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListIPSecConnectionTunnelsRequest, ListIPSecConnectionTunnelsResponse>() {
+                    @Override
+                    public ListIPSecConnectionTunnelsResponse apply(
+                            ListIPSecConnectionTunnelsRequest request) {
+                        return client.listIPSecConnectionTunnels(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListIPSecConnectionTunnelsResponse,
+                        java.util.List<com.oracle.bmc.core.model.IPSecConnectionTunnel>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.IPSecConnectionTunnel> apply(
+                            ListIPSecConnectionTunnelsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listIPSecConnections operation. This iterable
      * will fetch more data from the server as needed.
      *

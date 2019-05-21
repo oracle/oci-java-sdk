@@ -4,7 +4,8 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Please see {@link CreateVnicDetails}
+ * Contains the properties of the VNIC for an instance configuration. See {@link CreateVnicDetails}
+ * and [Instance Configurations](https://docs.cloud.oracle.com/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -117,6 +118,11 @@ public class InstanceConfigurationCreateVnicDetails {
         return new Builder();
     }
 
+    /**
+     * Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of {@link CreateVnicDetails}
+     * for more information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("assignPublicIp")
     Boolean assignPublicIp;
 
@@ -128,15 +134,35 @@ public class InstanceConfigurationCreateVnicDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
+    /**
+     * The hostname for the VNIC's primary private IP.
+     * See the `hostnameLabel` attribute of {@link CreateVnicDetails} for more information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
     String hostnameLabel;
 
+    /**
+     * A private IP address of your choice to assign to the VNIC.
+     * See the `privateIp` attribute of {@link CreateVnicDetails} for more information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
     String privateIp;
 
+    /**
+     * Whether the source/destination check is disabled on the VNIC.
+     * See the `skipSourceDestCheck` attribute of {@link CreateVnicDetails} for more information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("skipSourceDestCheck")
     Boolean skipSourceDestCheck;
 
+    /**
+     * The OCID of the subnet to create the VNIC in.
+     * See the `subnetId` attribute of {@link CreateVnicDetails} for more information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     String subnetId;
 

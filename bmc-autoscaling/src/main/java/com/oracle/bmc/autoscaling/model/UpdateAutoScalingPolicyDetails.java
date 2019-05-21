@@ -43,7 +43,7 @@ public class UpdateAutoScalingPolicyDetails {
     String displayName;
 
     /**
-     * The capacity requirements of the Policy
+     * The capacity requirements of the autoscaling policy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacity")
     Capacity capacity;

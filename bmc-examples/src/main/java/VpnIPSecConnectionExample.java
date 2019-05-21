@@ -16,20 +16,31 @@ import com.oracle.bmc.core.requests.CreateDrgRequest;
 import com.oracle.bmc.core.requests.DeleteDrgRequest;
 import com.oracle.bmc.core.requests.GetDrgRequest;
 import com.oracle.bmc.core.model.IPSecConnection;
+import com.oracle.bmc.core.model.IPSecConnectionTunnel;
+import com.oracle.bmc.core.model.IPSecConnectionTunnelSharedSecret;
 import com.oracle.bmc.core.model.CreateIPSecConnectionDetails;
 import com.oracle.bmc.core.model.UpdateIPSecConnectionDetails;
+import com.oracle.bmc.core.model.UpdateIPSecConnectionTunnelDetails;
+import com.oracle.bmc.core.model.UpdateIPSecConnectionTunnelSharedSecretDetails;
 import com.oracle.bmc.core.requests.CreateIPSecConnectionRequest;
 import com.oracle.bmc.core.requests.UpdateIPSecConnectionRequest;
 import com.oracle.bmc.core.requests.DeleteIPSecConnectionRequest;
 import com.oracle.bmc.core.requests.GetIPSecConnectionRequest;
+import com.oracle.bmc.core.requests.GetIPSecConnectionTunnelRequest;
+import com.oracle.bmc.core.requests.GetIPSecConnectionTunnelSharedSecretRequest;
+import com.oracle.bmc.core.requests.UpdateIPSecConnectionTunnelRequest;
+import com.oracle.bmc.core.requests.UpdateIPSecConnectionTunnelSharedSecretRequest;
 import com.oracle.bmc.core.responses.CreateCpeResponse;
 import com.oracle.bmc.core.responses.CreateDrgResponse;
 import com.oracle.bmc.core.responses.CreateIPSecConnectionResponse;
 import com.oracle.bmc.core.responses.UpdateIPSecConnectionResponse;
 import com.oracle.bmc.core.responses.GetIPSecConnectionResponse;
+import com.oracle.bmc.core.responses.GetIPSecConnectionTunnelResponse;
+import com.oracle.bmc.core.responses.GetIPSecConnectionTunnelSharedSecretResponse;
+import com.oracle.bmc.core.responses.UpdateIPSecConnectionTunnelResponse;
+import com.oracle.bmc.core.responses.UpdateIPSecConnectionTunnelSharedSecretResponse;
 import com.oracle.bmc.identity.IdentityClient;
 import org.apache.commons.lang3.StringUtils;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -86,24 +97,48 @@ public class VpnIPSecConnectionExample {
         System.out.println("Create IPSecConnection example.");
         Cpe cpe = null;
         Drg drg = null;
-        IPSecConnection cc = null;
+        IPSecConnection ipsec = null;
+        IPSecConnectionTunnel tunnel = null;
+        IPSecConnectionTunnelSharedSecret sharedsecret = null;
         try {
-            System.out.println("Creating Cpe.");
+            System.out.println("Create Cpe.");
             cpe = createCpe(virtualNetworkClient, region);
 
-            System.out.println("Creating DRG.");
+            System.out.println("Create DRG.");
             drg = createDrg(virtualNetworkClient, region);
 
             System.out.println("Create IPSecConnection.");
-            cc = createIPSecConnection(virtualNetworkClient, COMPARTMENT_ID, cpe, drg);
+            ipsec = createIPSecConnection(virtualNetworkClient, COMPARTMENT_ID, cpe, drg);
 
             System.out.println("Activate the IPSecConnection.");
-            cc = updateIPSecConnection(virtualNetworkClient, cc.getId(), true);
+            ipsec = updateIPSecConnection(virtualNetworkClient, ipsec.getId(), true);
+
+            System.out.println("Get tunnel for the IPSecConnection.");
+            tunnel = getIPSecConnectionTunnel(virtualNetworkClient, ipsec.getId());
+
+            System.out.println("update tunnel for the IPSecConnection.");
+            tunnel = updateIPSecConnectionTunnel(virtualNetworkClient, tunnel.getId());
+
+            System.out.println("get Shared Secret for tunnel.");
+            sharedsecret =
+                    getIPSecConnectionTunnelSharedSecret(
+                            virtualNetworkClient, ipsec.getId(), tunnel.getId());
+            System.out.println(sharedsecret);
+
+            System.out.println("update tunnel for the IPSecConnection.");
+            updateIPSecConnectionTunnelSharedSecret(
+                    virtualNetworkClient, ipsec.getId(), tunnel.getId());
+
+            System.out.println("get Shared Secret for tunnel again.");
+            sharedsecret =
+                    getIPSecConnectionTunnelSharedSecret(
+                            virtualNetworkClient, ipsec.getId(), tunnel.getId());
+            System.out.println(sharedsecret);
 
         } finally {
             System.out.println("Delete IPSecConnection.");
-            if (null != cc) {
-                deleteIPSecConnection(virtualNetworkClient, cc.getId());
+            if (null != ipsec) {
+                deleteIPSecConnection(virtualNetworkClient, ipsec.getId());
             }
             System.out.println("Delete Drg.");
             if (null != drg) {
@@ -203,7 +238,7 @@ public class VpnIPSecConnectionExample {
                         .createIPSecConnectionDetails(
                                 CreateIPSecConnectionDetails.builder()
                                         .compartmentId(compartmentId)
-                                        .displayName(String.format("CC-%s", TIMESTAMP_SUFFIX))
+                                        .displayName(String.format("IPSec-%s", TIMESTAMP_SUFFIX))
                                         .cpeId(cpe.getId())
                                         .drgId(drg.getId())
                                         .staticRoutes(items)
@@ -225,27 +260,24 @@ public class VpnIPSecConnectionExample {
     }
 
     private static IPSecConnection getIPSecConnection(
-            final VirtualNetwork virtualNetwork, final String ccId) {
+            final VirtualNetwork virtualNetwork, final String ipsecId) {
 
         final GetIPSecConnectionRequest request =
-                GetIPSecConnectionRequest.builder().ipscId(ccId).build();
+                GetIPSecConnectionRequest.builder().ipscId(ipsecId).build();
         final GetIPSecConnectionResponse response = virtualNetwork.getIPSecConnection(request);
 
         return response.getIPSecConnection();
     }
 
-    /*
-     * Use UPDATE to update display name and activate the physical connection
-     */
     private static IPSecConnection updateIPSecConnection(
-            final VirtualNetwork virtualNetwork, final String ccId, final boolean isActive)
+            final VirtualNetwork virtualNetwork, final String ipsecId, final boolean isActive)
             throws Exception {
         final UpdateIPSecConnectionRequest request =
                 UpdateIPSecConnectionRequest.builder()
-                        .ipscId(ccId)
+                        .ipscId(ipsecId)
                         .updateIPSecConnectionDetails(
                                 UpdateIPSecConnectionDetails.builder()
-                                        .displayName(String.format("CC-%s", TIMESTAMP_SUFFIX))
+                                        .displayName(String.format("IPSec-%s", TIMESTAMP_SUFFIX))
                                         .build())
                         .build();
 
@@ -264,25 +296,99 @@ public class VpnIPSecConnectionExample {
         return response.getIPSecConnection();
     }
 
-    private static void deleteIPSecConnection(
-            final VirtualNetwork virtualNetwork, final String ccId) throws Exception {
+    private static IPSecConnectionTunnel getIPSecConnectionTunnel(
+            final VirtualNetwork virtualNetwork, final String ipsecId) throws Exception {
+        final GetIPSecConnectionTunnelRequest request =
+                GetIPSecConnectionTunnelRequest.builder().ipscId(ipsecId).build();
+        final GetIPSecConnectionTunnelResponse response =
+                virtualNetwork.getIPSecConnectionTunnel(request);
 
+        return response.getIPSecConnectionTunnel();
+    }
+
+    /*
+     * Use UPDATE to update display name and activate the physical connection
+     */
+    private static IPSecConnectionTunnel updateIPSecConnectionTunnel(
+            final VirtualNetwork virtualNetwork, final String ipsecId) throws Exception {
+        final UpdateIPSecConnectionTunnelRequest request =
+                UpdateIPSecConnectionTunnelRequest.builder()
+                        .ipscId(ipsecId)
+                        .updateIPSecConnectionTunnelDetails(
+                                UpdateIPSecConnectionTunnelDetails.builder()
+                                        .displayName(String.format("CC-%s", TIMESTAMP_SUFFIX))
+                                        .build())
+                        .build();
+
+        final UpdateIPSecConnectionTunnelResponse response =
+                virtualNetwork.updateIPSecConnectionTunnel(request);
+
+        virtualNetwork
+                .getWaiters()
+                .forIPSecConnectionTunnel(
+                        GetIPSecConnectionTunnelRequest.builder()
+                                .ipscId(response.getIPSecConnectionTunnel().getId())
+                                .build(),
+                        IPSecConnectionTunnel.LifecycleState.Available)
+                .execute();
+
+        return response.getIPSecConnectionTunnel();
+    }
+
+    private static IPSecConnectionTunnelSharedSecret getIPSecConnectionTunnelSharedSecret(
+            final VirtualNetwork virtualNetwork, final String ipsecId, final String tunnelId)
+            throws Exception {
+        final GetIPSecConnectionTunnelSharedSecretRequest request =
+                GetIPSecConnectionTunnelSharedSecretRequest.builder()
+                        .ipscId(ipsecId)
+                        .tunnelId(tunnelId)
+                        .build();
+        final GetIPSecConnectionTunnelSharedSecretResponse response =
+                virtualNetwork.getIPSecConnectionTunnelSharedSecret(request);
+
+        return response.getIPSecConnectionTunnelSharedSecret();
+    }
+
+    /*
+     * Use UPDATE to update display name and activate the physical connection
+     */
+    private static IPSecConnectionTunnelSharedSecret updateIPSecConnectionTunnelSharedSecret(
+            final VirtualNetwork virtualNetwork, final String ipsecId, final String tunnelId)
+            throws Exception {
+        final UpdateIPSecConnectionTunnelSharedSecretRequest request =
+                UpdateIPSecConnectionTunnelSharedSecretRequest.builder()
+                        .ipscId(ipsecId)
+                        .tunnelId(tunnelId)
+                        .updateIPSecConnectionTunnelSharedSecretDetails(
+                                UpdateIPSecConnectionTunnelSharedSecretDetails.builder()
+                                        .sharedSecret("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+                                        .build())
+                        .build();
+
+        final UpdateIPSecConnectionTunnelSharedSecretResponse response =
+                virtualNetwork.updateIPSecConnectionTunnelSharedSecret(request);
+
+        return response.getIPSecConnectionTunnelSharedSecret();
+    }
+
+    private static void deleteIPSecConnection(
+            final VirtualNetwork virtualNetwork, final String ipsecId) throws Exception {
         // if resource is in provisioning state, wait until provisioned
-        IPSecConnection cc = getIPSecConnection(virtualNetwork, ccId);
-        if (cc.getLifecycleState() != IPSecConnection.LifecycleState.Available
-                && cc.getLifecycleState() != IPSecConnection.LifecycleState.Provisioning) {
+        IPSecConnection ipsec = getIPSecConnection(virtualNetwork, ipsecId);
+        if (ipsec.getLifecycleState() != IPSecConnection.LifecycleState.Available
+                && ipsec.getLifecycleState() != IPSecConnection.LifecycleState.Provisioning) {
             throw new IllegalStateException(
                     "Failed to start deleting IPSecConnection due to IPSecConnection in invalid state.");
         }
 
         virtualNetwork.deleteIPSecConnection(
-                DeleteIPSecConnectionRequest.builder().ipscId(ccId).build());
+                DeleteIPSecConnectionRequest.builder().ipscId(ipsecId).build());
         virtualNetwork
                 .getWaiters()
                 .forIPSecConnection(
-                        GetIPSecConnectionRequest.builder().ipscId(ccId).build(),
+                        GetIPSecConnectionRequest.builder().ipscId(ipsecId).build(),
                         IPSecConnection.LifecycleState.Terminated)
                 .execute();
-        System.out.println("Deleted IPSecConnection: " + cc.getId());
+        System.out.println("Deleted IPSecConnection: " + ipsec.getId());
     }
 }

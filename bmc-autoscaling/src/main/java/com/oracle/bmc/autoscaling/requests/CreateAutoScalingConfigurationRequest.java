@@ -11,7 +11,7 @@ import com.oracle.bmc.autoscaling.model.*;
 public class CreateAutoScalingConfigurationRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * AutoScalingConfiguration creation details
+     * Creation details for an autoscaling configuration.
      */
     private CreateAutoScalingConfigurationDetails createAutoScalingConfigurationDetails;
 

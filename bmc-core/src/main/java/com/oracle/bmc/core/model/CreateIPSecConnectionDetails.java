@@ -106,6 +106,16 @@ public class CreateIPSecConnectionDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("tunnelConfiguration")
+        private java.util.List<CreateIPSecConnectionTunnelDetails> tunnelConfiguration;
+
+        public Builder tunnelConfiguration(
+                java.util.List<CreateIPSecConnectionTunnelDetails> tunnelConfiguration) {
+            this.tunnelConfiguration = tunnelConfiguration;
+            this.__explicitlySet__.add("tunnelConfiguration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -120,7 +130,8 @@ public class CreateIPSecConnectionDetails {
                             freeformTags,
                             cpeLocalIdentifier,
                             cpeLocalIdentifierType,
-                            staticRoutes);
+                            staticRoutes,
+                            tunnelConfiguration);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -136,7 +147,8 @@ public class CreateIPSecConnectionDetails {
                             .freeformTags(o.getFreeformTags())
                             .cpeLocalIdentifier(o.getCpeLocalIdentifier())
                             .cpeLocalIdentifierType(o.getCpeLocalIdentifierType())
-                            .staticRoutes(o.getStaticRoutes());
+                            .staticRoutes(o.getStaticRoutes())
+                            .tunnelConfiguration(o.getTunnelConfiguration());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -256,14 +268,23 @@ public class CreateIPSecConnectionDetails {
     CpeLocalIdentifierType cpeLocalIdentifierType;
 
     /**
-     * Static routes to the CPE. At least one route must be included. A static route's CIDR must not be a
+     * Static routes to the CPE. A static route's CIDR must not be a
      * multicast address or class E address.
+     * <p>
+     *
      * <p>
      * Example: `10.0.1.0/24`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("staticRoutes")
     java.util.List<String> staticRoutes;
+
+    /**
+     * array of tunnel parameters to create tunnels for IPSecConnection.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("tunnelConfiguration")
+    java.util.List<CreateIPSecConnectionTunnelDetails> tunnelConfiguration;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
