@@ -4,7 +4,6 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Details to modify an IPSec Tunnel's BGP session paramaters.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -83,21 +82,55 @@ public class UpdateIPSecTunnelBgpSessionDetails {
     }
 
     /**
-     * The IPv4 Address used in the BGP peering session for the Oracle router. Example: 10.0.0.1/31.
+     * The IP address for the Oracle end of the inside tunnel interface.
+     * <p>
+     * If the tunnel's `routing` attribute is set to `BGP`
+     * (see {@link #updateIPSecConnectionTunnelDetails(UpdateIPSecConnectionTunnelDetailsRequest) updateIPSecConnectionTunnelDetails}), this IP address
+     * is used for the tunnel's BGP session.
+     * <p>
+     * If `routing` is instead set to `STATIC`, you can set this IP address to troubleshoot or
+     * monitor the tunnel.
+     * <p>
+     * The value must be a /30 or /31.
+     * <p>
+     * If you are switching the tunnel from using BGP dynamic routing to static routing and want
+     * to remove the value for `oracleInterfaceIp`, you can set the value to an empty string.
+     * <p>
+     * Example: `10.0.0.4/31`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleInterfaceIp")
     String oracleInterfaceIp;
 
     /**
-     * The IPv4 Address used in the BGP peering session for the non-Oracle router. Example: 10.0.0.2/31.
+     * The IP address for the CPE end of the inside tunnel interface.
+     * <p>
+     * If the tunnel's `routing` attribute is set to `BGP`
+     * (see {@link #updateIPSecConnectionTunnelDetails(UpdateIPSecConnectionTunnelDetailsRequest) updateIPSecConnectionTunnelDetails}), this IP address
+     * is used for the tunnel's BGP session.
+     * <p>
+     * If `routing` is instead set to `STATIC`, you can set this IP address to troubleshoot or
+     * monitor the tunnel.
+     * <p>
+     * The value must be a /30 or /31.
+     * <p>
+     * If you are switching the tunnel from using BGP dynamic routing to static routing and want
+     * to remove the value for `customerInterfaceIp`, you can set the value to an empty string.
+     * <p>
+     * Example: `10.0.0.5/31`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerInterfaceIp")
     String customerInterfaceIp;
 
     /**
-     * The value of the remote BGP ASN in asplain format, as a string. Example: 1587232876 (4 byte ASN) or 12345 (2 byte ASN).
+     * The BGP ASN of the network on the CPE end of the BGP session. Can be a 2-byte or 4-byte ASN.
+     * Uses \"asplain\" format.
+     * <p>
+     * If you are switching the tunnel from using BGP dynamic routing to static routing, the
+     * `customerBgpAsn` must be null.
+     * <p>
+     * Example: `12345` (2-byte) or `1587232876` (4-byte)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerBgpAsn")

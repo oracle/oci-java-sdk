@@ -4,7 +4,9 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Status of the IPSec connection.
+ * Deprecated. For tunnel information, instead see
+ * {@link IPSecConnectionTunnel}.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in

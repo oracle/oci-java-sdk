@@ -439,7 +439,8 @@ public class NatGatewayExample {
 
         routeRuleList.add(
                 RouteRule.builder()
-                        .cidrBlock("0.0.0.0/0")
+                        .destination("0.0.0.0/0")
+                        .destinationType(RouteRule.DestinationType.CidrBlock)
                         .networkEntityId(natGateway.getId())
                         .build());
 

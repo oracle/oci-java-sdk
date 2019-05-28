@@ -1,9 +1,9 @@
-# Oracle Cloud Infrastructure Java SDK
+# Oracle Cloud Infrastructure SDK for Java
 [![Build Status](https://travis-ci.org/oracle/oci-java-sdk.svg?branch=master)](https://travis-ci.org/oracle/oci-java-sdk)
 
 ## About
 
-oci-java-sdk provides a Java SDK for managing your Oracle Cloud Infrastructure resources.
+oci-java-sdk provides an SDK for Java that you can use to manage your Oracle Cloud Infrastructure resources.
 
 The project is open source and maintained by Oracle Corp. The home page for the project is [here](https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm).
 

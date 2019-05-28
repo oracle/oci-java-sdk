@@ -42,6 +42,10 @@ public class UpdateExportSetConverter {
             ib.header("if-match", request.getIfMatch());
         }
 
+        if (request.getOpcRequestId() != null) {
+            ib.header("opc-request-id", request.getOpcRequestId());
+        }
+
         return ib;
     }
 

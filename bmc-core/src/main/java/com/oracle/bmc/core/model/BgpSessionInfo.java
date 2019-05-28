@@ -4,7 +4,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Information needed to establish a BGP Session on an interface.
+ * Information for establishing a BGP session for the IPSec tunnel.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -104,34 +104,63 @@ public class BgpSessionInfo {
     }
 
     /**
-     * This is the IPv4 Address used in the BGP peering session for the Oracle router. Example: 10.0.0.1/31
+     * The IP address for the Oracle end of the inside tunnel interface.
+     * <p>
+     * If the tunnel's `routing` attribute is set to `BGP`
+     * (see {@link IPSecConnectionTunnel}), this IP address
+     * is required and used for the tunnel's BGP session.
+     * <p>
+     * If `routing` is instead set to `STATIC`, this IP address is optional. You can set this IP
+     * address so you can troubleshoot or monitor the tunnel.
+     * <p>
+     * The value must be a /30 or /31.
+     * <p>
+     * Example: `10.0.0.4/31`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleInterfaceIp")
     String oracleInterfaceIp;
 
     /**
-     * This is the IPv4 Address used in the BGP peering session for the non-Oracle router. Example: 10.0.0.2/31
+     * The IP address for the CPE end of the inside tunnel interface.
+     * <p>
+     * If the tunnel's `routing` attribute is set to `BGP`
+     * (see {@link IPSecConnectionTunnel}), this IP address
+     * is required and used for the tunnel's BGP session.
+     * <p>
+     * If `routing` is instead set to `STATIC`, this IP address is optional. You can set this IP
+     * address so you can troubleshoot or monitor the tunnel.
+     * <p>
+     * The value must be a /30 or /31.
+     * <p>
+     * Example: `10.0.0.5/31`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerInterfaceIp")
     String customerInterfaceIp;
 
     /**
-     * This is the value of the Oracle Bgp ASN in asplain format, as a string. Example: 1587232876 (4 byte ASN) or 12345 (2 byte ASN)
+     * The Oracle BGP ASN.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleBgpAsn")
     String oracleBgpAsn;
 
     /**
-     * This is the value of the remote Bgp ASN in asplain format, as a string. Example: 1587232876 (4 byte ASN) or 12345 (2 byte ASN)
+     * If the tunnel's `routing` attribute is set to `BGP`
+     * (see {@link IPSecConnectionTunnel}), this ASN
+     * is required and used for the tunnel's BGP session. This is the ASN of the network on the
+     * CPE end of the BGP session. Can be a 2-byte or 4-byte ASN. Uses \"asplain\" format.
+     * <p>
+     * If the tunnel uses static routing, the `customerBgpAsn` must be null.
+     * <p>
+     * Example: `12345` (2-byte) or `1587232876` (4-byte)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerBgpAsn")
     String customerBgpAsn;
     /**
-     * the state of the BGP.
+     * The state of the BGP session.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -178,7 +207,7 @@ public class BgpSessionInfo {
         }
     };
     /**
-     * the state of the BGP.
+     * The state of the BGP session.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bgpState")

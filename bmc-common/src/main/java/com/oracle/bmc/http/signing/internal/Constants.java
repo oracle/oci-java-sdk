@@ -74,7 +74,7 @@ public class Constants {
      * Headers included in the signature if they are set.
      */
     public static final ImmutableList<String> OPTIONAL_HEADERS_NAMES =
-            ImmutableList.of(CROSS_TENANCY_REQUEST_HEADER_NAME, X_SUBSCRIPTION);
+            ImmutableList.of(OPC_OBO_TOKEN, CROSS_TENANCY_REQUEST_HEADER_NAME, X_SUBSCRIPTION);
 
     public static final ImmutableMap<String, List<String>> OPTIONAL_SIGNING_HEADERS =
             createHeadersToSignMap(

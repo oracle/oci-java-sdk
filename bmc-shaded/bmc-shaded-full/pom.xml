@@ -1,17 +1,16 @@
-<?xml version="1.0"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk-shaded</artifactId>
-    <version>1.5.6</version>
+    <version>1.5.7</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <artifactId>oci-java-sdk-shaded-full</artifactId>
   <name>Oracle Cloud Infrastructure SDK - Shaded Distribution</name>
   <description>This project contains the SDK distribution used for Oracle Cloud Infrastructure, and all the dependencies that can be shaded. It also has Maven dependencies that cannot be shaded. Therefore, use this module to depend on the shaded distribution via Maven -- it will shade everything that can be shaded, and automatically pull in the other dependencies.</description>
   <url>https://docs.us-phoenix-1.oraclecloud.com/Content/API/SDKDocs/javasdk.htm</url>
-
   <dependencies>
     <dependency>
       <groupId>org.slf4j</groupId>
@@ -28,6 +27,5 @@
       <artifactId>bcprov-jdk15on</artifactId>
       <version>${bouncycastle.version}</version>
     </dependency>
-
   </dependencies>
 </project>

@@ -60,9 +60,9 @@ public class UpdateIPSecConnectionTunnelSharedSecretDetails {
     }
 
     /**
-     * The shared secret of the IPSec tunnel.
+     * The shared secret (pre-shared key) to use for the tunnel.
      * <p>
-     * Example: `vFG2IF6TWq4UToUiLSRDoJEUs6j1c.p8G.dVQxiMfMO0yXMLi.lZTbYIWhGu4V8o`
+     * Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sharedSecret")

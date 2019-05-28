@@ -1,11 +1,6 @@
 /**
  * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import com.google.common.base.Strings;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
@@ -28,8 +23,8 @@ import com.oracle.bmc.core.model.Instance;
 import com.oracle.bmc.core.model.InstanceSourceViaBootVolumeDetails;
 import com.oracle.bmc.core.model.InstanceSourceViaImageDetails;
 import com.oracle.bmc.core.model.InternetGateway;
-import com.oracle.bmc.core.model.LaunchInstanceDetails;
 import com.oracle.bmc.core.model.LaunchInstanceAgentConfigDetails;
+import com.oracle.bmc.core.model.LaunchInstanceDetails;
 import com.oracle.bmc.core.model.RouteRule;
 import com.oracle.bmc.core.model.Shape;
 import com.oracle.bmc.core.model.Subnet;
@@ -60,6 +55,10 @@ import com.oracle.bmc.identity.IdentityClient;
 import com.oracle.bmc.identity.model.AvailabilityDomain;
 import com.oracle.bmc.identity.requests.ListAvailabilityDomainsRequest;
 import com.oracle.bmc.identity.responses.ListAvailabilityDomainsResponse;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class CreateInstanceExample {
     /**

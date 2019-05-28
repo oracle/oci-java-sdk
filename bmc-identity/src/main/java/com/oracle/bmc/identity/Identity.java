@@ -691,6 +691,17 @@ public interface Identity extends AutoCloseable {
     GetUserGroupMembershipResponse getUserGroupMembership(GetUserGroupMembershipRequest request);
 
     /**
+     * Gets the specified user's console password information. The returned object contains the user's OCID,
+     * but not the password itself. The actual password is returned only when created or reset.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetUserUIPasswordInformationResponse getUserUIPasswordInformation(
+            GetUserUIPasswordInformationRequest request);
+
+    /**
      * Gets details on a specified work request. The workRequestID is returned in the opc-workrequest-id header
      * for any asynchronous operation in the Identity and Access Management service.
      *

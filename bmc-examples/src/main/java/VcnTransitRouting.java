@@ -167,7 +167,8 @@ public class VcnTransitRouting {
                 "Creating Route Table that will be associated with Drg Attachment in the hub Vcn.");
         RouteRule routeToSpoke =
                 RouteRule.builder()
-                        .cidrBlock(SPOKE_VCN_CIDR)
+                        .destination(SPOKE_VCN_CIDR)
+                        .destinationType(RouteRule.DestinationType.CidrBlock)
                         .networkEntityId(hubLpg.getId())
                         .build();
         RouteTable drgAttRT =
@@ -185,7 +186,8 @@ public class VcnTransitRouting {
                 "Creating Route Table that will be associated with hubLpg in the hub Vcn.");
         RouteRule routeToOnPrem =
                 RouteRule.builder()
-                        .cidrBlock(ON_PREM_NETWORK_CIDR)
+                        .destination(ON_PREM_NETWORK_CIDR)
+                        .destinationType(RouteRule.DestinationType.CidrBlock)
                         .networkEntityId(drg.getId())
                         .build();
         RouteTable hubLpgRT =
@@ -213,14 +215,16 @@ public class VcnTransitRouting {
         System.out.println("Adding peer route to subnet route table in spoke VCN");
         subnetRTRules.add(
                 RouteRule.builder()
-                        .cidrBlock(HUB_VCN_CIDR)
+                        .destination(HUB_VCN_CIDR)
+                        .destinationType(RouteRule.DestinationType.CidrBlock)
                         .networkEntityId(spokeLpg.getId())
                         .build());
 
         System.out.println("Adding on-prem route to subnet route table in spoke VCN");
         subnetRTRules.add(
                 RouteRule.builder()
-                        .cidrBlock(ON_PREM_NETWORK_CIDR)
+                        .destination(ON_PREM_NETWORK_CIDR)
+                        .destinationType(RouteRule.DestinationType.CidrBlock)
                         .networkEntityId(spokeLpg.getId())
                         .build());
 

@@ -30,6 +30,13 @@ public class UpdateMountTargetRequest extends com.oracle.bmc.requests.BmcRequest
      */
     private String ifMatch;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
+    private String opcRequestId;
+
     public static class Builder {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
@@ -54,6 +61,7 @@ public class UpdateMountTargetRequest extends com.oracle.bmc.requests.BmcRequest
             mountTargetId(o.getMountTargetId());
             updateMountTargetDetails(o.getUpdateMountTargetDetails());
             ifMatch(o.getIfMatch());
+            opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             return this;
         }

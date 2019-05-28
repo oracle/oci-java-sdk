@@ -41,6 +41,10 @@ package com.oracle.bmc.core.model;
         name = "iscsi"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = EmulatedVolumeAttachment.class,
+        name = "emulated"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ParavirtualizedVolumeAttachment.class,
         name = "paravirtualized"
     )

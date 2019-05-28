@@ -18,6 +18,7 @@ public class FileStorageClient implements FileStorage {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("FILESTORAGE")
                     .serviceEndpointPrefix("filestorage")
+                    .serviceEndpointTemplate("https://filestorage.{region}.{secondLevelDomain}")
                     .build();
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
@@ -363,6 +364,62 @@ public class FileStorageClient implements FileStorage {
     @Override
     public void close() {
         client.close();
+    }
+
+    @Override
+    public ChangeFileSystemCompartmentResponse changeFileSystemCompartment(
+            ChangeFileSystemCompartmentRequest request) {
+        LOG.trace("Called changeFileSystemCompartment");
+        request = ChangeFileSystemCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeFileSystemCompartmentConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeFileSystemCompartmentResponse>
+                transformer = ChangeFileSystemCompartmentConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getChangeFileSystemCompartmentDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public ChangeMountTargetCompartmentResponse changeMountTargetCompartment(
+            ChangeMountTargetCompartmentRequest request) {
+        LOG.trace("Called changeMountTargetCompartment");
+        request = ChangeMountTargetCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeMountTargetCompartmentConverter.fromRequest(client, request);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeMountTargetCompartmentResponse>
+                transformer = ChangeMountTargetCompartmentConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response =
+                        client.post(ib, request.getChangeMountTargetCompartmentDetails(), request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
     }
 
     @Override

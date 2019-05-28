@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
+## 1.5.7 - 2019-05-28
+### Added
+- Support for the Work Requests service, and tracking of a number of Core Services operations through work requests
+- Support for emulated volume attachments in Core Services
+- Support for changing the compartment of resources in the File Storage service
+- Support for tags in list operations in the File Storage service
+- Support for returning UI password creation dates in the Identity service
+
 ## 1.5.6 - 2019-05-21
 ### Added
 - Support for returning tags when listing instance configurations, instance pools, or autoscaling configurations in the Compute Autoscaling service

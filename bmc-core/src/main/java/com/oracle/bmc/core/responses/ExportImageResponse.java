@@ -23,6 +23,13 @@ public class ExportImageResponse {
     private String opcRequestId;
 
     /**
+     * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest}
+     * with this ID to track the status of the request.
+     *
+     */
+    private String opcWorkRequestId;
+
+    /**
      * The returned Image instance.
      */
     private Image image;
@@ -35,6 +42,7 @@ public class ExportImageResponse {
         public Builder copy(ExportImageResponse o) {
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
+            opcWorkRequestId(o.getOpcWorkRequestId());
             image(o.getImage());
 
             return this;
