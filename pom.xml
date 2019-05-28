@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>1.5.6</version>
+  <version>1.5.7</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -21,7 +21,6 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
-
   <developers>
     <developer>
       <id>oracle</id>
@@ -29,13 +28,11 @@
       <organizationUrl>https://www.oracle.com</organizationUrl>
     </developer>
   </developers>
-
   <scm>
     <connection>scm:git:git@github.com:oracle/oci-java-sdk.git</connection>
     <url>https://github.com/oracle/oci-java-sdk</url>
   </scm>
-
-    <properties>
+  <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jackson.version>2.9.8</jackson.version>
     <jersey.version>2.27</jersey.version>
@@ -655,6 +652,7 @@
     <module>bmc-ons</module>
     <module>bmc-autoscaling</module>
     <module>bmc-budget</module>
+    <module>bmc-workrequests</module>
     <module>bmc-full</module>
     <module>bmc-shaded</module>
   </modules>

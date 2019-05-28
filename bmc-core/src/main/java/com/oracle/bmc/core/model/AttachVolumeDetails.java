@@ -28,6 +28,14 @@ package com.oracle.bmc.core.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = AttachServiceDeterminedVolumeDetails.class,
+        name = "service_determined"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = AttachEmulatedVolumeDetails.class,
+        name = "emulated"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = AttachIScsiVolumeDetails.class,
         name = "iscsi"
     ),

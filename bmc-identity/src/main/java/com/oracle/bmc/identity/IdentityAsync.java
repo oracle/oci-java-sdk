@@ -1049,6 +1049,25 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the specified user's console password information. The returned object contains the user's OCID,
+     * but not the password itself. The actual password is returned only when created or reset.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetUserUIPasswordInformationResponse> getUserUIPasswordInformation(
+            GetUserUIPasswordInformationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetUserUIPasswordInformationRequest,
+                            GetUserUIPasswordInformationResponse>
+                    handler);
+
+    /**
      * Gets details on a specified work request. The workRequestID is returned in the opc-workrequest-id header
      * for any asynchronous operation in the Identity and Access Management service.
      *

@@ -4,7 +4,6 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Details to modify an IPSecConnection Tunnel paramaters.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -89,7 +88,7 @@ public class UpdateIPSecConnectionTunnelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
     /**
-     * the routing strategy used for this tunnel, either static route or BGP.
+     * The type of routing to use for this tunnel (either BGP dynamic routing or static routing).
      *
      **/
     public enum Routing {
@@ -125,14 +124,14 @@ public class UpdateIPSecConnectionTunnelDetails {
         }
     };
     /**
-     * the routing strategy used for this tunnel, either static route or BGP.
+     * The type of routing to use for this tunnel (either BGP dynamic routing or static routing).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routing")
     Routing routing;
 
     /**
-     * Information needed to establish a BGP Session on an interface.
+     * Information for establishing a BGP session for the IPSec tunnel.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bgpSessionConfig")

@@ -37,6 +37,26 @@ public interface FileStorage extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Moves a file system and its associated snapshots into a different compartment within the same tenancy. For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes)
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeFileSystemCompartmentResponse changeFileSystemCompartment(
+            ChangeFileSystemCompartmentRequest request);
+
+    /**
+     * Moves a mount target and its associated export set into a different compartment within the same tenancy. For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes)
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeMountTargetCompartmentResponse changeMountTargetCompartment(
+            ChangeMountTargetCompartmentRequest request);
+
+    /**
      * Creates a new export in the specified export set, path, and
      * file system.
      *

@@ -4,7 +4,10 @@
 package com.oracle.bmc.core.model;
 
 /**
- * information about IPSecConnection tunnel.
+ * Information about a single tunnel in an IPSec connection. This object does not include the tunnel's
+ * shared secret (pre-shared key). That is in the
+ * {@link IPSecConnectionTunnelSharedSecret} object.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -172,13 +175,14 @@ public class IPSecConnectionTunnel {
     }
 
     /**
-     * The OCID of the compartment containing the tunnel.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The tunnel's Oracle ID (OCID).
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the tunnel.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -186,22 +190,22 @@ public class IPSecConnectionTunnel {
     /**
      * The IP address of Oracle's VPN headend.
      * <p>
-     * Example: `129.146.17.50`
+     * Example: `192.0.2.5`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vpnIp")
     String vpnIp;
 
     /**
-     * The IP address of Cpe headend.
+     * The IP address of the CPE's VPN headend.
      * <p>
-     * Example: `129.146.17.50`
+     * Example: `192.0.2.157`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpeIp")
     String cpeIp;
     /**
-     * The tunnel's current state.
+     * The status of the tunnel based on IPSec protocol characteristics.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Status {
@@ -248,12 +252,12 @@ public class IPSecConnectionTunnel {
         }
     };
     /**
-     * The tunnel's current state.
+     * The status of the tunnel based on IPSec protocol characteristics.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     Status status;
     /**
-     * The IPSec connection's tunnel's lifecycle state.
+     * The tunnel's lifecycle state.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
@@ -301,7 +305,7 @@ public class IPSecConnectionTunnel {
         }
     };
     /**
-     * The IPSec connection's tunnel's lifecycle state.
+     * The tunnel's lifecycle state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
@@ -315,13 +319,14 @@ public class IPSecConnectionTunnel {
     String displayName;
 
     /**
-     * Information needed to establish a BGP Session on an interface.
+     * Information for establishing the tunnel's BGP session.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bgpSessionInfo")
     BgpSessionInfo bgpSessionInfo;
     /**
-     * the routing strategy used for this tunnel, either static route or BGP dynamic routing
+     * The type of routing used for this tunnel (either BGP dynamic routing or static routing).
+     *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Routing {
@@ -367,7 +372,8 @@ public class IPSecConnectionTunnel {
         }
     };
     /**
-     * the routing strategy used for this tunnel, either static route or BGP dynamic routing
+     * The type of routing used for this tunnel (either BGP dynamic routing or static routing).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routing")
     Routing routing;

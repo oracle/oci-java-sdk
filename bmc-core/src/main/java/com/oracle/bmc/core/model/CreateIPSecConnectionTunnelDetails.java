@@ -4,7 +4,6 @@
 package com.oracle.bmc.core.model;
 
 /**
- * details need to create an IPSecConnection tunnel.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -100,7 +99,8 @@ public class CreateIPSecConnectionTunnelDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
     /**
-     * the routing strategy used for this tunnel, either static route or BGP.
+     * The type of routing to use for this tunnel (either BGP dynamic routing or static routing).
+     *
      **/
     public enum Routing {
         Bgp("BGP"),
@@ -135,22 +135,30 @@ public class CreateIPSecConnectionTunnelDetails {
         }
     };
     /**
-     * the routing strategy used for this tunnel, either static route or BGP.
+     * The type of routing to use for this tunnel (either BGP dynamic routing or static routing).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routing")
     Routing routing;
 
     /**
-     * The shared secret of the IPSec tunnel.
+     * The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value,
+     * Oracle generates a value for you. You can specify your own shared secret later if
+     * you like with {@link #updateIPSecConnectionTunnelSharedSecret(UpdateIPSecConnectionTunnelSharedSecretRequest) updateIPSecConnectionTunnelSharedSecret}.
      * <p>
-     * Example: `vFG2IF6TWq4UToUiLSRDoJEUs6j1c.p8G.dVQxiMfMO0yXMLi.lZTbYIWhGu4V8o`
+     * Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sharedSecret")
     String sharedSecret;
 
     /**
-     * Information needed to establish a BGP Session on an interface.
+     * Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses
+     * BGP dynamic routing.
+     * <p>
+     * If the tunnel instead uses static routing, you may optionally provide
+     * this object and set an IP address for one or both ends of the IPSec tunnel for the purposes
+     * of troubleshooting or monitoring the tunnel.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bgpSessionConfig")

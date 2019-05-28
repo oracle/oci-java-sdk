@@ -250,8 +250,11 @@ public interface VirtualNetwork extends AutoCloseable {
      * Creates a new IPSec connection between the specified DRG and CPE. For more information, see
      * [IPSec VPNs](https://docs.cloud.oracle.com/Content/Network/Tasks/managingIPsec.htm).
      * <p>
-     * In the request, you must include at least one static route to the CPE object (you're allowed a maximum
-     * of 10). For example: 10.0.8.0/16.
+     * If you configure at least one tunnel to use static routing, then in the request you must provide
+     * at least one valid static route (you're allowed a maximum of 10). For example: 10.0.0.0/16.
+     * If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for
+     * the static routes. For more information, see the important note in
+     * {@link IPSecConnection}.
      * <p>
      * For the purposes of access control, you must provide the OCID of the compartment where you want the
      * IPSec connection to reside. Notice that the IPSec connection doesn't have to be in the same compartment
@@ -265,14 +268,14 @@ public interface VirtualNetwork extends AutoCloseable {
      * It does not have to be unique, and you can change it. Avoid entering confidential information.
      * <p>
      * After creating the IPSec connection, you need to configure your on-premises router
-     * with tunnel-specific information returned by
-     * {@link #getIPSecConnectionDeviceConfig(GetIPSecConnectionDeviceConfigRequest) getIPSecConnectionDeviceConfig}.
-     * For each tunnel, that operation gives you the IP address of Oracle's VPN headend and the shared secret
+     * with tunnel-specific information. For tunnel status and the required configuration information, see:
+     * <p>
+     * {@link IPSecConnectionTunnel}
+     *   * {@link IPSecConnectionTunnelSharedSecret}
+     * <p>
+     * For each tunnel, you need the IP address of Oracle's VPN headend and the shared secret
      * (that is, the pre-shared key). For more information, see
      * [Configuring Your On-Premises Router for an IPSec VPN](https://docs.cloud.oracle.com/Content/Network/Tasks/configuringCPE.htm).
-     * <p>
-     * To get the status of the tunnels (whether they're up or down), use
-     * {@link #getIPSecConnectionDeviceStatus(GetIPSecConnectionDeviceStatusRequest) getIPSecConnectionDeviceStatus}.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -906,7 +909,7 @@ public interface VirtualNetwork extends AutoCloseable {
     /**
      * Gets the specified IPSec connection's basic information, including the static routes for the
      * on-premises router. If you want the status of the connection (whether it's up or down), use
-     * {@link #getIPSecConnectionDeviceStatus(GetIPSecConnectionDeviceStatusRequest) getIPSecConnectionDeviceStatus}.
+     * {@link #getIPSecConnectionTunnel(GetIPSecConnectionTunnelRequest) getIPSecConnectionTunnel}.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -915,8 +918,10 @@ public interface VirtualNetwork extends AutoCloseable {
     GetIPSecConnectionResponse getIPSecConnection(GetIPSecConnectionRequest request);
 
     /**
-     * Gets the configuration information for the specified IPSec connection. For each tunnel, the
-     * response includes the IP address of Oracle's VPN headend and the shared secret.
+     * Deprecated. To get tunnel information, instead use:
+     * <p>
+     * {@link #getIPSecConnectionTunnel(GetIPSecConnectionTunnelRequest) getIPSecConnectionTunnel}
+     * * {@link #getIPSecConnectionTunnelSharedSecret(GetIPSecConnectionTunnelSharedSecretRequest) getIPSecConnectionTunnelSharedSecret}
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -926,7 +931,8 @@ public interface VirtualNetwork extends AutoCloseable {
             GetIPSecConnectionDeviceConfigRequest request);
 
     /**
-     * Gets the status of the specified IPSec connection (whether it's up or down).
+     * Deprecated. To get the tunnel status, instead use
+     * {@link #getIPSecConnectionTunnel(GetIPSecConnectionTunnelRequest) getIPSecConnectionTunnel}.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -936,7 +942,9 @@ public interface VirtualNetwork extends AutoCloseable {
             GetIPSecConnectionDeviceStatusRequest request);
 
     /**
-     * Gets the specified IPSec connection's specified tunnel basic information.
+     * Gets the specified tunnel's information. The resulting object does not include the tunnel's
+     * shared secret (pre-shared key). To retrieve that, use
+     * {@link #getIPSecConnectionTunnelSharedSecret(GetIPSecConnectionTunnelSharedSecretRequest) getIPSecConnectionTunnelSharedSecret}.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -946,7 +954,8 @@ public interface VirtualNetwork extends AutoCloseable {
             GetIPSecConnectionTunnelRequest request);
 
     /**
-     * Gets the specified IPSec connection's specific tunnel's shared secret.
+     * Gets the specified tunnel's shared secret (pre-shared key). To get other information
+     * about the tunnel, use {@link #getIPSecConnectionTunnel(GetIPSecConnectionTunnelRequest) getIPSecConnectionTunnel}.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1245,7 +1254,7 @@ public interface VirtualNetwork extends AutoCloseable {
                     ListFastConnectProviderVirtualCircuitBandwidthShapesRequest request);
 
     /**
-     * Gets the lists of tunnel information for the specified IPSec connection.
+     * Lists the tunnel information for the specified IPSec connection.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1503,6 +1512,9 @@ public interface VirtualNetwork extends AutoCloseable {
 
     /**
      * Updates the specified IPSec connection.
+     * <p>
+     * To update an individual IPSec tunnel's attributes, use
+     * {@link #updateIPSecConnectionTunnel(UpdateIPSecConnectionTunnelRequest) updateIPSecConnectionTunnel}.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1511,7 +1523,18 @@ public interface VirtualNetwork extends AutoCloseable {
     UpdateIPSecConnectionResponse updateIPSecConnection(UpdateIPSecConnectionRequest request);
 
     /**
-     * Update an IPsecConnection tunnel
+     * Updates the specified tunnel. This operation lets you change tunnel attributes such as the
+     * routing type (BGP dynamic routing or static routing). Here are some important notes:
+     * <p>
+     * If you change the tunnel's routing type or BGP session configuration, the tunnel will go
+     *     down while it's reprovisioned.
+     * <p>
+     * If you want to switch the tunnel's `routing` from `STATIC` to `BGP`, make sure the tunnel's
+     *     BGP session configuration attributes have been set ({@link #bgpSessionInfo(BgpSessionInfoRequest) bgpSessionInfo}).
+     * <p>
+     * If you want to switch the tunnel's `routing` from `BGP` to `STATIC`, make sure the
+     *     {@link IPSecConnection} already has at least one valid CIDR
+     *     static route.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1521,7 +1544,9 @@ public interface VirtualNetwork extends AutoCloseable {
             UpdateIPSecConnectionTunnelRequest request);
 
     /**
-     * update shared secret for specifed Ipsec connection's specified tunnel
+     * Updates the shared secret (pre-shared key) for the specified tunnel.
+     * <p>
+     **Important:** If you change the shared secret, the tunnel will go down while it's reprovisioned.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

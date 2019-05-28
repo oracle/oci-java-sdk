@@ -23,6 +23,13 @@ public class LaunchInstanceResponse {
     private String opcRequestId;
 
     /**
+     * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest}
+     * with this ID to track the status of the request.
+     *
+     */
+    private String opcWorkRequestId;
+
+    /**
      * The returned Instance instance.
      */
     private Instance instance;
@@ -35,6 +42,7 @@ public class LaunchInstanceResponse {
         public Builder copy(LaunchInstanceResponse o) {
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
+            opcWorkRequestId(o.getOpcWorkRequestId());
             instance(o.getInstance());
 
             return this;

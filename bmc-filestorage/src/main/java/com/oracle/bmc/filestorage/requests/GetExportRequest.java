@@ -15,6 +15,13 @@ public class GetExportRequest extends com.oracle.bmc.requests.BmcRequest {
      */
     private String exportId;
 
+    /**
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
+     */
+    private String opcRequestId;
+
     public static class Builder {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
@@ -37,6 +44,7 @@ public class GetExportRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(GetExportRequest o) {
             exportId(o.getExportId());
+            opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             return this;
         }

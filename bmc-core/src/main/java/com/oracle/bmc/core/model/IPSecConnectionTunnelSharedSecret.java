@@ -4,7 +4,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The shared secret of a IPSec connection's specified tunnel.
+ * The tunnel's shared secret (pre-shared key).
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -60,9 +60,9 @@ public class IPSecConnectionTunnelSharedSecret {
     }
 
     /**
-     * The shared secret of the IPSec tunnel.
+     * The tunnel's shared secret (pre-shared key).
      * <p>
-     * Example: `vFG2IF6TWq4UToUiLSRDoJEUs6j1c.p8G.dVQxiMfMO0yXMLi.lZTbYIWhGu4V8o`
+     * Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sharedSecret")
