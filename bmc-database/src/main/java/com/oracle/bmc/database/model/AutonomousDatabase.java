@@ -188,6 +188,15 @@ public class AutonomousDatabase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
+        private Boolean isAutoScalingEnabled;
+
+        public Builder isAutoScalingEnabled(Boolean isAutoScalingEnabled) {
+            this.isAutoScalingEnabled = isAutoScalingEnabled;
+            this.__explicitlySet__.add("isAutoScalingEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -211,7 +220,8 @@ public class AutonomousDatabase {
                             definedTags,
                             dbVersion,
                             dbWorkload,
-                            whitelistedIps);
+                            whitelistedIps,
+                            isAutoScalingEnabled);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -236,7 +246,8 @@ public class AutonomousDatabase {
                             .definedTags(o.getDefinedTags())
                             .dbVersion(o.getDbVersion())
                             .dbWorkload(o.getDbWorkload())
-                            .whitelistedIps(o.getWhitelistedIps());
+                            .whitelistedIps(o.getWhitelistedIps())
+                            .isAutoScalingEnabled(o.getIsAutoScalingEnabled());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -514,6 +525,13 @@ public class AutonomousDatabase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("whitelistedIps")
     java.util.List<String> whitelistedIps;
+
+    /**
+     * Indicates if auto scaling is enabled for the Autonomous Database CPU core count.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
+    Boolean isAutoScalingEnabled;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

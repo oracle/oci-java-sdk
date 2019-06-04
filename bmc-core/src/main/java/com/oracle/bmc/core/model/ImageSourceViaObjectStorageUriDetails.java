@@ -30,6 +30,24 @@ public class ImageSourceViaObjectStorageUriDetails extends ImageSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
+        private String operatingSystem;
+
+        public Builder operatingSystem(String operatingSystem) {
+            this.operatingSystem = operatingSystem;
+            this.__explicitlySet__.add("operatingSystem");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("operatingSystemVersion")
+        private String operatingSystemVersion;
+
+        public Builder operatingSystemVersion(String operatingSystemVersion) {
+            this.operatingSystemVersion = operatingSystemVersion;
+            this.__explicitlySet__.add("operatingSystemVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sourceImageType")
         private SourceImageType sourceImageType;
 
@@ -53,7 +71,8 @@ public class ImageSourceViaObjectStorageUriDetails extends ImageSourceDetails {
 
         public ImageSourceViaObjectStorageUriDetails build() {
             ImageSourceViaObjectStorageUriDetails __instance__ =
-                    new ImageSourceViaObjectStorageUriDetails(sourceImageType, sourceUri);
+                    new ImageSourceViaObjectStorageUriDetails(
+                            operatingSystem, operatingSystemVersion, sourceImageType, sourceUri);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -61,7 +80,10 @@ public class ImageSourceViaObjectStorageUriDetails extends ImageSourceDetails {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ImageSourceViaObjectStorageUriDetails o) {
             Builder copiedBuilder =
-                    sourceImageType(o.getSourceImageType()).sourceUri(o.getSourceUri());
+                    operatingSystem(o.getOperatingSystem())
+                            .operatingSystemVersion(o.getOperatingSystemVersion())
+                            .sourceImageType(o.getSourceImageType())
+                            .sourceUri(o.getSourceUri());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -77,8 +99,11 @@ public class ImageSourceViaObjectStorageUriDetails extends ImageSourceDetails {
 
     @Deprecated
     public ImageSourceViaObjectStorageUriDetails(
-            SourceImageType sourceImageType, String sourceUri) {
-        super(sourceImageType);
+            String operatingSystem,
+            String operatingSystemVersion,
+            SourceImageType sourceImageType,
+            String sourceUri) {
+        super(operatingSystem, operatingSystemVersion, sourceImageType);
         this.sourceUri = sourceUri;
     }
 

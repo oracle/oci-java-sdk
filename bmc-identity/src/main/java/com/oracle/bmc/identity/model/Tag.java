@@ -107,6 +107,15 @@ public class Tag {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+        private LifecycleState lifecycleState;
+
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -140,6 +149,7 @@ public class Tag {
                             freeformTags,
                             definedTags,
                             isRetired,
+                            lifecycleState,
                             timeCreated,
                             isCostTracking);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -158,6 +168,7 @@ public class Tag {
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .isRetired(o.getIsRetired())
+                            .lifecycleState(o.getLifecycleState())
                             .timeCreated(o.getTimeCreated())
                             .isCostTracking(o.getIsCostTracking());
 
@@ -236,6 +247,59 @@ public class Tag {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRetired")
     Boolean isRetired;
+    /**
+     * The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum LifecycleState {
+        Active("ACTIVE"),
+        Inactive("INACTIVE"),
+        Deleting("DELETING"),
+        Deleted("DELETED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, LifecycleState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (LifecycleState v : LifecycleState.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        LifecycleState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static LifecycleState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    LifecycleState lifecycleState;
 
     /**
      * Date and time the tag was created, in the format defined by RFC3339.

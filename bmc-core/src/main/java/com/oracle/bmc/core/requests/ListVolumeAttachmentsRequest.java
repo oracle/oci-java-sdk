@@ -11,7 +11,7 @@ import com.oracle.bmc.core.model.*;
 public class ListVolumeAttachmentsRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The OCID of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     private String compartmentId;
 

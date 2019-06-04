@@ -162,6 +162,13 @@ public class CreateAutonomousDatabaseBase {
     LicenseModel licenseModel;
 
     /**
+     * Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is false.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
+    Boolean isAutoScalingEnabled;
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>

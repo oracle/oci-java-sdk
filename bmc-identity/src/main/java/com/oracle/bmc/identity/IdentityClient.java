@@ -1195,6 +1195,31 @@ public class IdentityClient implements Identity {
     }
 
     @Override
+    public DeleteTagResponse deleteTag(DeleteTagRequest request) {
+        LOG.trace("Called deleteTag");
+        request = DeleteTagConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteTagConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTagResponse> transformer =
+                DeleteTagConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
     public DeleteTagDefaultResponse deleteTagDefault(DeleteTagDefaultRequest request) {
         LOG.trace("Called deleteTagDefault");
         request = DeleteTagDefaultConverter.interceptRequest(request);
@@ -1202,6 +1227,31 @@ public class IdentityClient implements Identity {
                 DeleteTagDefaultConverter.fromRequest(client, request);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTagDefaultResponse>
                 transformer = DeleteTagDefaultConverter.fromResponse();
+
+        int attempts = 0;
+        while (true) {
+            try {
+                javax.ws.rs.core.Response response = client.delete(ib, request);
+                return transformer.apply(response);
+            } catch (com.oracle.bmc.model.BmcException e) {
+                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
+                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
+                    continue;
+                } else {
+                    throw e;
+                }
+            }
+        }
+    }
+
+    @Override
+    public DeleteTagNamespaceResponse deleteTagNamespace(DeleteTagNamespaceRequest request) {
+        LOG.trace("Called deleteTagNamespace");
+        request = DeleteTagNamespaceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteTagNamespaceConverter.fromRequest(client, request);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTagNamespaceResponse>
+                transformer = DeleteTagNamespaceConverter.fromResponse();
 
         int attempts = 0;
         while (true) {

@@ -125,6 +125,15 @@ public class InstanceConfigurationLaunchInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
+        private String faultDomain;
+
+        public Builder faultDomain(String faultDomain) {
+            this.faultDomain = faultDomain;
+            this.__explicitlySet__.add("faultDomain");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -141,7 +150,8 @@ public class InstanceConfigurationLaunchInstanceDetails {
                             ipxeScript,
                             metadata,
                             shape,
-                            sourceDetails);
+                            sourceDetails,
+                            faultDomain);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -159,7 +169,8 @@ public class InstanceConfigurationLaunchInstanceDetails {
                             .ipxeScript(o.getIpxeScript())
                             .metadata(o.getMetadata())
                             .shape(o.getShape())
-                            .sourceDetails(o.getSourceDetails());
+                            .sourceDetails(o.getSourceDetails())
+                            .faultDomain(o.getFaultDomain());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -197,8 +208,8 @@ public class InstanceConfigurationLaunchInstanceDetails {
     InstanceConfigurationCreateVnicDetails createVnicDetails;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
@@ -227,8 +238,7 @@ public class InstanceConfigurationLaunchInstanceDetails {
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see
-     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: `{\"Department\": \"Finance\"}`
      *
@@ -347,6 +357,26 @@ public class InstanceConfigurationLaunchInstanceDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
     InstanceConfigurationInstanceSourceDetails sourceDetails;
+
+    /**
+     * A fault domain is a grouping of hardware and infrastructure within an availability domain.
+     * Each availability domain contains three fault domains. Fault domains let you distribute your
+     * instances so that they are not on the same physical hardware within a single availability domain.
+     * A hardware failure or Compute hardware maintenance that affects one fault domain does not affect
+     * instances in other fault domains.
+     * <p>
+     * If you do not specify the fault domain, the system selects one for you. To change the fault
+     * domain for an instance, terminate it and launch a new instance in the preferred fault domain.
+     * <p>
+     * To get a list of fault domains, use the
+     * {@link #listFaultDomains(ListFaultDomainsRequest) listFaultDomains} operation in the
+     * Identity and Access Management Service API.
+     * <p>
+     * Example: `FAULT-DOMAIN-1`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
+    String faultDomain;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

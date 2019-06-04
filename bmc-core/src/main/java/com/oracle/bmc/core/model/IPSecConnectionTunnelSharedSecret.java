@@ -62,7 +62,7 @@ public class IPSecConnectionTunnelSharedSecret {
     /**
      * The tunnel's shared secret (pre-shared key).
      * <p>
-     * Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
+     * Example: `EXAMPLEToUis6j1cp8GdVQxcmdfMO0yXMLilZTbYCMDGu4V8o`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sharedSecret")

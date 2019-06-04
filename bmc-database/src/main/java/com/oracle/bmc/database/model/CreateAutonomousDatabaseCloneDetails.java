@@ -103,6 +103,15 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
+        private Boolean isAutoScalingEnabled;
+
+        public Builder isAutoScalingEnabled(Boolean isAutoScalingEnabled) {
+            this.isAutoScalingEnabled = isAutoScalingEnabled;
+            this.__explicitlySet__.add("isAutoScalingEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -154,6 +163,7 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
                             adminPassword,
                             displayName,
                             licenseModel,
+                            isAutoScalingEnabled,
                             freeformTags,
                             definedTags,
                             sourceId,
@@ -173,6 +183,7 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
                             .adminPassword(o.getAdminPassword())
                             .displayName(o.getDisplayName())
                             .licenseModel(o.getLicenseModel())
+                            .isAutoScalingEnabled(o.getIsAutoScalingEnabled())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .sourceId(o.getSourceId())
@@ -200,6 +211,7 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
             String adminPassword,
             String displayName,
             LicenseModel licenseModel,
+            Boolean isAutoScalingEnabled,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String sourceId,
@@ -213,6 +225,7 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
                 adminPassword,
                 displayName,
                 licenseModel,
+                isAutoScalingEnabled,
                 freeformTags,
                 definedTags);
         this.sourceId = sourceId;

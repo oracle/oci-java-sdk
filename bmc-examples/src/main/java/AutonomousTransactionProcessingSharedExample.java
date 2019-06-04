@@ -233,6 +233,7 @@ public class AutonomousTransactionProcessingSharedExample {
                 .dbName("javaSdkExam" + rand.nextInt(500))
                 .compartmentId(compartmentId)
                 .dbWorkload(CreateAutonomousDatabaseDetails.DbWorkload.Oltp)
+                .isAutoScalingEnabled(Boolean.FALSE)
                 .licenseModel(CreateAutonomousDatabaseDetails.LicenseModel.LicenseIncluded)
                 .build();
     }
@@ -258,6 +259,7 @@ public class AutonomousTransactionProcessingSharedExample {
         return UpdateAutonomousDatabaseDetails.builder()
                 .cpuCoreCount(2)
                 .dataStorageSizeInTBs(2)
+                .isAutoScalingEnabled(Boolean.TRUE)
                 .build();
     }
 

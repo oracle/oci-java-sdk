@@ -52,12 +52,35 @@ public class UpdateImageDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
+        private String operatingSystem;
+
+        public Builder operatingSystem(String operatingSystem) {
+            this.operatingSystem = operatingSystem;
+            this.__explicitlySet__.add("operatingSystem");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("operatingSystemVersion")
+        private String operatingSystemVersion;
+
+        public Builder operatingSystemVersion(String operatingSystemVersion) {
+            this.operatingSystemVersion = operatingSystemVersion;
+            this.__explicitlySet__.add("operatingSystemVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateImageDetails build() {
             UpdateImageDetails __instance__ =
-                    new UpdateImageDetails(definedTags, displayName, freeformTags);
+                    new UpdateImageDetails(
+                            definedTags,
+                            displayName,
+                            freeformTags,
+                            operatingSystem,
+                            operatingSystemVersion);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -67,7 +90,9 @@ public class UpdateImageDetails {
             Builder copiedBuilder =
                     definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags());
+                            .freeformTags(o.getFreeformTags())
+                            .operatingSystem(o.getOperatingSystem())
+                            .operatingSystemVersion(o.getOperatingSystemVersion());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -82,8 +107,8 @@ public class UpdateImageDetails {
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
@@ -103,14 +128,31 @@ public class UpdateImageDetails {
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see
-     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: `{\"Department\": \"Finance\"}`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
+
+    /**
+     * Operating system
+     * <p>
+     * Example: `Oracle Linux`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
+    String operatingSystem;
+
+    /**
+     * Operating system version
+     * <p>
+     * Example: `7.4`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("operatingSystemVersion")
+    String operatingSystemVersion;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

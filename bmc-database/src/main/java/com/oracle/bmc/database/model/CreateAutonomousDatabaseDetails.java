@@ -103,6 +103,15 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
+        private Boolean isAutoScalingEnabled;
+
+        public Builder isAutoScalingEnabled(Boolean isAutoScalingEnabled) {
+            this.isAutoScalingEnabled = isAutoScalingEnabled;
+            this.__explicitlySet__.add("isAutoScalingEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -136,6 +145,7 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                             adminPassword,
                             displayName,
                             licenseModel,
+                            isAutoScalingEnabled,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -153,6 +163,7 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                             .adminPassword(o.getAdminPassword())
                             .displayName(o.getDisplayName())
                             .licenseModel(o.getLicenseModel())
+                            .isAutoScalingEnabled(o.getIsAutoScalingEnabled())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -178,6 +189,7 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
             String adminPassword,
             String displayName,
             LicenseModel licenseModel,
+            Boolean isAutoScalingEnabled,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super(
@@ -189,6 +201,7 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                 adminPassword,
                 displayName,
                 licenseModel,
+                isAutoScalingEnabled,
                 freeformTags,
                 definedTags);
     }

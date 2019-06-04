@@ -19,7 +19,7 @@ public class ListBootVolumeAttachmentsRequest extends com.oracle.bmc.requests.Bm
     private String availabilityDomain;
 
     /**
-     * The OCID of the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     private String compartmentId;
 

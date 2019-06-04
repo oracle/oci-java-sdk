@@ -87,6 +87,15 @@ public class TagSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+        private Tag.LifecycleState lifecycleState;
+
+        public Builder lifecycleState(Tag.LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -118,6 +127,7 @@ public class TagSummary {
                             freeformTags,
                             definedTags,
                             isRetired,
+                            lifecycleState,
                             timeCreated,
                             isCostTracking);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -134,6 +144,7 @@ public class TagSummary {
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .isRetired(o.getIsRetired())
+                            .lifecycleState(o.getLifecycleState())
                             .timeCreated(o.getTimeCreated())
                             .isCostTracking(o.getIsCostTracking());
 
@@ -199,6 +210,12 @@ public class TagSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRetired")
     Boolean isRetired;
+
+    /**
+     * The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    Tag.LifecycleState lifecycleState;
 
     /**
      * Date and time the tag was created, in the format defined by RFC3339.

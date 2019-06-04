@@ -28,6 +28,12 @@ public class ListTagsRequest extends com.oracle.bmc.requests.BmcRequest {
      */
     private Integer limit;
 
+    /**
+     * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+     *
+     */
+    private Tag.LifecycleState lifecycleState;
+
     public static class Builder {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
@@ -52,6 +58,7 @@ public class ListTagsRequest extends com.oracle.bmc.requests.BmcRequest {
             tagNamespaceId(o.getTagNamespaceId());
             page(o.getPage());
             limit(o.getLimit());
+            lifecycleState(o.getLifecycleState());
             invocationCallback(o.getInvocationCallback());
             return this;
         }
