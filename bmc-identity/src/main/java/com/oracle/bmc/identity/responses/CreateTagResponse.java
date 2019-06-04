@@ -18,6 +18,11 @@ public class CreateTagResponse {
     private String opcRequestId;
 
     /**
+     * For optimistic concurrency control. See `if-match`.
+     */
+    private String etag;
+
+    /**
      * The returned Tag instance.
      */
     private Tag tag;
@@ -29,6 +34,7 @@ public class CreateTagResponse {
          */
         public Builder copy(CreateTagResponse o) {
             opcRequestId(o.getOpcRequestId());
+            etag(o.getEtag());
             tag(o.getTag());
 
             return this;

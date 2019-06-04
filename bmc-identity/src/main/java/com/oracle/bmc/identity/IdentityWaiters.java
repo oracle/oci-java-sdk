@@ -629,6 +629,101 @@ public class IdentityWaiters {
      * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
+    public com.oracle.bmc.waiter.Waiter<GetTagRequest, GetTagResponse> forTag(
+            GetTagRequest request,
+            com.oracle.bmc.identity.model.Tag.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forTag(com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetTagRequest, GetTagResponse> forTag(
+            GetTagRequest request,
+            com.oracle.bmc.identity.model.Tag.LifecycleState targetState,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forTag(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetTagRequest, GetTagResponse> forTag(
+            GetTagRequest request,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+            com.oracle.bmc.identity.model.Tag.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forTag(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for Tag.
+    private com.oracle.bmc.waiter.Waiter<GetTagRequest, GetTagResponse> forTag(
+            com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+            final GetTagRequest request,
+            final com.oracle.bmc.identity.model.Tag.LifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.identity.model.Tag.LifecycleState> targetStatesSet =
+                new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<GetTagRequest, GetTagResponse>() {
+                            @Override
+                            public GetTagResponse apply(GetTagRequest request) {
+                                return client.getTag(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetTagResponse>() {
+                            @Override
+                            public boolean apply(GetTagResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getTag().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.identity.model.Tag.LifecycleState.Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
     public com.oracle.bmc.waiter.Waiter<GetTagDefaultRequest, GetTagDefaultResponse> forTagDefault(
             GetTagDefaultRequest request,
             com.oracle.bmc.identity.model.TagDefault.LifecycleState... targetStates) {
@@ -715,6 +810,108 @@ public class IdentityWaiters {
                             }
                         },
                         false),
+                request);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetTagNamespaceRequest, GetTagNamespaceResponse>
+            forTagNamespace(
+                    GetTagNamespaceRequest request,
+                    com.oracle.bmc.identity.model.TagNamespace.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forTagNamespace(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetTagNamespaceRequest, GetTagNamespaceResponse>
+            forTagNamespace(
+                    GetTagNamespaceRequest request,
+                    com.oracle.bmc.identity.model.TagNamespace.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forTagNamespace(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link TerminationStrategy} to use
+     * @param delayStrategy the {@link DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetTagNamespaceRequest, GetTagNamespaceResponse>
+            forTagNamespace(
+                    GetTagNamespaceRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.identity.model.TagNamespace.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forTagNamespace(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for TagNamespace.
+    private com.oracle.bmc.waiter.Waiter<GetTagNamespaceRequest, GetTagNamespaceResponse>
+            forTagNamespace(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetTagNamespaceRequest request,
+                    final com.oracle.bmc.identity.model.TagNamespace.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.identity.model.TagNamespace.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetTagNamespaceRequest, GetTagNamespaceResponse>() {
+                            @Override
+                            public GetTagNamespaceResponse apply(GetTagNamespaceRequest request) {
+                                return client.getTagNamespace(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetTagNamespaceResponse>() {
+                            @Override
+                            public boolean apply(GetTagNamespaceResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getTagNamespace().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.identity.model.TagNamespace.LifecycleState.Deleted)),
                 request);
     }
 

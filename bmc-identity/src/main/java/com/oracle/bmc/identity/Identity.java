@@ -534,6 +534,15 @@ public interface Identity extends AutoCloseable {
     DeleteSwiftPasswordResponse deleteSwiftPassword(DeleteSwiftPasswordRequest request);
 
     /**
+     * Deletes the the specified tag definition.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteTagResponse deleteTag(DeleteTagRequest request);
+
+    /**
      * Deletes the the specified tag default.
      *
      * @param request The request object containing the details to send
@@ -541,6 +550,16 @@ public interface Identity extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     DeleteTagDefaultResponse deleteTagDefault(DeleteTagDefaultRequest request);
+
+    /**
+     * Delete the specified tag namespace. Only an empty tagnamespace can be deleted.
+     * If the tag namespace you are trying to delete is not empty, please remove tag definitions from it first.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteTagNamespaceResponse deleteTagNamespace(DeleteTagNamespaceRequest request);
 
     /**
      * Deletes the specified user. The user must not be in any groups.
@@ -1108,7 +1127,7 @@ public interface Identity extends AutoCloseable {
     UpdateTagResponse updateTag(UpdateTagRequest request);
 
     /**
-     * Updates the the specified tag default. You can update the following field: `value`.
+     * Updates the specified tag default. You can update the following field: `value`.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

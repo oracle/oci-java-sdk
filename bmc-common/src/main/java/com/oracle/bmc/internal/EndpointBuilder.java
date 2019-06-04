@@ -42,16 +42,18 @@ public class EndpointBuilder {
     public static String createEndpoint(
             @NonNull Service service, @NonNull String regionId, @NonNull Realm realm) {
         final String endpointTemplateToUse;
+        if (StringUtils.isNotBlank(service.getServiceEndpointTemplate())) {
+            endpointTemplateToUse = service.getServiceEndpointTemplate();
+        } else {
+            endpointTemplateToUse = DEFAULT_ENDPOINT_TEMPLATE;
+        }
+        final String regionIdToUse;
         synchronized (OVERRIDE_REGION_IDS) {
-            if (StringUtils.isNotBlank(service.getServiceEndpointTemplate())) {
-                endpointTemplateToUse = service.getServiceEndpointTemplate();
-            } else {
-                endpointTemplateToUse = DEFAULT_ENDPOINT_TEMPLATE;
-            }
+            regionIdToUse = OVERRIDE_REGION_IDS.getOrDefault(regionId, regionId);
         }
 
         return DefaultEndpointConfiguration.builder(endpointTemplateToUse)
-                .regionId(OVERRIDE_REGION_IDS.getOrDefault(regionId, regionId))
+                .regionId(regionIdToUse)
                 .serviceEndpointPrefix(service.getServiceEndpointPrefix())
                 .secondLevelDomain(realm.getSecondLevelDomain())
                 .build();

@@ -89,6 +89,15 @@ public class TagNamespaceSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+        private TagNamespace.LifecycleState lifecycleState;
+
+        public Builder lifecycleState(TagNamespace.LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -111,6 +120,7 @@ public class TagNamespaceSummary {
                             freeformTags,
                             definedTags,
                             isRetired,
+                            lifecycleState,
                             timeCreated);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -126,6 +136,7 @@ public class TagNamespaceSummary {
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .isRetired(o.getIsRetired())
+                            .lifecycleState(o.getLifecycleState())
                             .timeCreated(o.getTimeCreated());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -190,6 +201,12 @@ public class TagNamespaceSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRetired")
     Boolean isRetired;
+
+    /**
+     * The tagnamespace's current state. After creating a tagnamespace, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tagnamespace, make sure its `lifecycleState` is INACTIVE before using it.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    TagNamespace.LifecycleState lifecycleState;
 
     /**
      * Date and time the tag namespace was created, in the format defined by RFC3339.

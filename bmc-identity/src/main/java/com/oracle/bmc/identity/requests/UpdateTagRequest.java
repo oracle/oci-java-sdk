@@ -27,6 +27,14 @@ public class UpdateTagRequest extends com.oracle.bmc.requests.BmcRequest {
      */
     private UpdateTagDetails updateTagDetails;
 
+    /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
+    private String ifMatch;
+
     public static class Builder {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
@@ -51,6 +59,7 @@ public class UpdateTagRequest extends com.oracle.bmc.requests.BmcRequest {
             tagNamespaceId(o.getTagNamespaceId());
             tagName(o.getTagName());
             updateTagDetails(o.getUpdateTagDetails());
+            ifMatch(o.getIfMatch());
             invocationCallback(o.getInvocationCallback());
             return this;
         }

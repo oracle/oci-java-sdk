@@ -39,6 +39,11 @@ package com.oracle.bmc.core.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class ImageSourceDetails {
 
+    @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
+    String operatingSystem;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("operatingSystemVersion")
+    String operatingSystemVersion;
     /**
      * The format of the image to be imported.  Only monolithic
      * images are supported. This attribute is not used for exported Oracle images with the OCI image format.

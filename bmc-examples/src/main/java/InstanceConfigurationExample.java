@@ -111,6 +111,40 @@ public class InstanceConfigurationExample {
         return configurationDetails;
     }
 
+    public static CreateInstanceConfigurationDetails createInstanceConfigurationWithFaultDomain(
+            String availabilityDomain, String subnetId, String imageId, String compartmentId) {
+        InstanceConfigurationCreateVnicDetails vnicDetails =
+                InstanceConfigurationCreateVnicDetails.builder().subnetId(subnetId).build();
+
+        InstanceConfigurationInstanceSourceViaImageDetails sourceDetails =
+                InstanceConfigurationInstanceSourceViaImageDetails.builder()
+                        .imageId(imageId)
+                        .build();
+
+        InstanceConfigurationLaunchInstanceDetails launchDetails =
+                InstanceConfigurationLaunchInstanceDetails.builder()
+                        .compartmentId(compartmentId)
+                        .availabilityDomain(availabilityDomain)
+                        .displayName("Instance Configuration Example")
+                        .createVnicDetails(vnicDetails)
+                        .shape("VM.Standard2.1")
+                        .sourceDetails(sourceDetails)
+                        .faultDomain("FAULT-DOMAIN-2")
+                        .build();
+
+        ComputeInstanceDetails instanceDetails =
+                ComputeInstanceDetails.builder().launchDetails(launchDetails).build();
+
+        CreateInstanceConfigurationDetails configurationDetails =
+                CreateInstanceConfigurationDetails.builder()
+                        .displayName("Instance Configuration With FaultDomain")
+                        .compartmentId(compartmentId)
+                        .instanceDetails(instanceDetails)
+                        .build();
+
+        return configurationDetails;
+    }
+
     public static LaunchInstanceConfigurationRequest createLaunchRequest(
             String instanceConfigurationId) {
         return LaunchInstanceConfigurationRequest.builder()
@@ -217,6 +251,22 @@ public class InstanceConfigurationExample {
         System.out.printf(
                 "%nCreated partially defined instanceConfiguration:%s%n",
                 partialCreateResponse.getInstanceConfiguration().getId());
+
+        // Create an instance configuration with faultDomain
+        CreateInstanceConfigurationRequest instanceConfigurationWithFaultDomainRequest =
+                CreateInstanceConfigurationRequest.builder()
+                        .createInstanceConfiguration(
+                                createInstanceConfigurationWithFaultDomain(
+                                        imageId, subnetId, imageId, compartmentId))
+                        .build();
+
+        CreateInstanceConfigurationResponse instanceConfigurationWithFaultDomainResponse =
+                computeManagementClient.createInstanceConfiguration(
+                        instanceConfigurationWithFaultDomainRequest);
+
+        System.out.printf(
+                "%nCreated instance configuration with faultDomain:%s%n",
+                instanceConfigurationWithFaultDomainResponse.getInstanceConfiguration().getId());
 
         LaunchInstanceConfigurationRequest partialLaunchRequest =
                 createPartialLaunchRequest(

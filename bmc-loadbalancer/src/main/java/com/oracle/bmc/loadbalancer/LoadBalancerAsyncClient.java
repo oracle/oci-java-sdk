@@ -31,7 +31,7 @@ public class LoadBalancerAsyncClient implements LoadBalancerAsync {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("LOADBALANCER")
                     .serviceEndpointPrefix("iaas")
-                    .serviceEndpointTemplate("https://iaas.{region}.oraclecloud.com")
+                    .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
                     .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)

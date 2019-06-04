@@ -8,6 +8,7 @@ package com.oracle.bmc.loadbalancer.model;
  * Service to direct any number of requests that originate from a single logical client to a single backend web server.
  * For more information, see [Session Persistence](https://docs.cloud.oracle.com/Content/Balance/Reference/sessionpersistence.htm).
  * <p>
+ *
  * To disable session persistence on a running load balancer, use the
  * {@link #updateBackendSet(UpdateBackendSetRequest) updateBackendSet} operation and specify \"null\" for the
  * `SessionPersistenceConfigurationDetails` object.

@@ -30,6 +30,24 @@ public class ImageSourceViaObjectStorageTupleDetails extends ImageSourceDetails 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
+        private String operatingSystem;
+
+        public Builder operatingSystem(String operatingSystem) {
+            this.operatingSystem = operatingSystem;
+            this.__explicitlySet__.add("operatingSystem");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("operatingSystemVersion")
+        private String operatingSystemVersion;
+
+        public Builder operatingSystemVersion(String operatingSystemVersion) {
+            this.operatingSystemVersion = operatingSystemVersion;
+            this.__explicitlySet__.add("operatingSystemVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sourceImageType")
         private SourceImageType sourceImageType;
 
@@ -72,7 +90,12 @@ public class ImageSourceViaObjectStorageTupleDetails extends ImageSourceDetails 
         public ImageSourceViaObjectStorageTupleDetails build() {
             ImageSourceViaObjectStorageTupleDetails __instance__ =
                     new ImageSourceViaObjectStorageTupleDetails(
-                            sourceImageType, bucketName, namespaceName, objectName);
+                            operatingSystem,
+                            operatingSystemVersion,
+                            sourceImageType,
+                            bucketName,
+                            namespaceName,
+                            objectName);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -80,7 +103,9 @@ public class ImageSourceViaObjectStorageTupleDetails extends ImageSourceDetails 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ImageSourceViaObjectStorageTupleDetails o) {
             Builder copiedBuilder =
-                    sourceImageType(o.getSourceImageType())
+                    operatingSystem(o.getOperatingSystem())
+                            .operatingSystemVersion(o.getOperatingSystemVersion())
+                            .sourceImageType(o.getSourceImageType())
                             .bucketName(o.getBucketName())
                             .namespaceName(o.getNamespaceName())
                             .objectName(o.getObjectName());
@@ -99,11 +124,13 @@ public class ImageSourceViaObjectStorageTupleDetails extends ImageSourceDetails 
 
     @Deprecated
     public ImageSourceViaObjectStorageTupleDetails(
+            String operatingSystem,
+            String operatingSystemVersion,
             SourceImageType sourceImageType,
             String bucketName,
             String namespaceName,
             String objectName) {
-        super(sourceImageType);
+        super(operatingSystem, operatingSystemVersion, sourceImageType);
         this.bucketName = bucketName;
         this.namespaceName = namespaceName;
         this.objectName = objectName;
