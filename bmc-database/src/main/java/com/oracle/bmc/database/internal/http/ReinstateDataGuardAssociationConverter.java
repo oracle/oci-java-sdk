@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc.database.internal.http;
 
+import com.oracle.bmc.http.internal.ResponseHelper;
 import com.oracle.bmc.database.model.*;
 import com.oracle.bmc.database.requests.*;
 import com.oracle.bmc.database.responses.*;
@@ -113,6 +114,7 @@ public class ReinstateDataGuardAssociationConverter {
                                 ReinstateDataGuardAssociationResponse responseWrapper =
                                         builder.build();
 
+                                ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;
                             }
                         };

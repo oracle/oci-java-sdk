@@ -88,6 +88,24 @@ public class AutonomousDatabase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isDedicated")
+        private Boolean isDedicated;
+
+        public Builder isDedicated(Boolean isDedicated) {
+            this.isDedicated = isDedicated;
+            this.__explicitlySet__.add("isDedicated");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousContainerDatabaseId")
+        private String autonomousContainerDatabaseId;
+
+        public Builder autonomousContainerDatabaseId(String autonomousContainerDatabaseId) {
+            this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
+            this.__explicitlySet__.add("autonomousContainerDatabaseId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -121,6 +139,15 @@ public class AutonomousDatabase {
         public Builder connectionStrings(AutonomousDatabaseConnectionStrings connectionStrings) {
             this.connectionStrings = connectionStrings;
             this.__explicitlySet__.add("connectionStrings");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("connectionUrls")
+        private AutonomousDatabaseConnectionUrls connectionUrls;
+
+        public Builder connectionUrls(AutonomousDatabaseConnectionUrls connectionUrls) {
+            this.connectionUrls = connectionUrls;
+            this.__explicitlySet__.add("connectionUrls");
             return this;
         }
 
@@ -210,10 +237,13 @@ public class AutonomousDatabase {
                             dbName,
                             cpuCoreCount,
                             dataStorageSizeInTBs,
+                            isDedicated,
+                            autonomousContainerDatabaseId,
                             timeCreated,
                             displayName,
                             serviceConsoleUrl,
                             connectionStrings,
+                            connectionUrls,
                             licenseModel,
                             usedDataStorageSizeInTBs,
                             freeformTags,
@@ -236,10 +266,13 @@ public class AutonomousDatabase {
                             .dbName(o.getDbName())
                             .cpuCoreCount(o.getCpuCoreCount())
                             .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
+                            .isDedicated(o.getIsDedicated())
+                            .autonomousContainerDatabaseId(o.getAutonomousContainerDatabaseId())
                             .timeCreated(o.getTimeCreated())
                             .displayName(o.getDisplayName())
                             .serviceConsoleUrl(o.getServiceConsoleUrl())
                             .connectionStrings(o.getConnectionStrings())
+                            .connectionUrls(o.getConnectionUrls())
                             .licenseModel(o.getLicenseModel())
                             .usedDataStorageSizeInTBs(o.getUsedDataStorageSizeInTBs())
                             .freeformTags(o.getFreeformTags())
@@ -291,6 +324,7 @@ public class AutonomousDatabase {
         ScaleInProgress("SCALE_IN_PROGRESS"),
         AvailableNeedsAttention("AVAILABLE_NEEDS_ATTENTION"),
         Updating("UPDATING"),
+        MaintenanceInProgress("MAINTENANCE_IN_PROGRESS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -361,6 +395,19 @@ public class AutonomousDatabase {
     Integer dataStorageSizeInTBs;
 
     /**
+     * True if it is dedicated database.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDedicated")
+    Boolean isDedicated;
+
+    /**
+     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousContainerDatabaseId")
+    String autonomousContainerDatabaseId;
+
+    /**
      * The date and time the database was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
@@ -383,6 +430,9 @@ public class AutonomousDatabase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionStrings")
     AutonomousDatabaseConnectionStrings connectionStrings;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("connectionUrls")
+    AutonomousDatabaseConnectionUrls connectionUrls;
     /**
      * The Oracle license model that applies to the Oracle Autonomous Database. The default is BRING_YOUR_OWN_LICENSE.
      *

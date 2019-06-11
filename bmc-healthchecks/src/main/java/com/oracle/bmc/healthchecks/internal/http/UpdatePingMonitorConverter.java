@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc.healthchecks.internal.http;
 
+import com.oracle.bmc.http.internal.ResponseHelper;
 import com.oracle.bmc.healthchecks.model.*;
 import com.oracle.bmc.healthchecks.requests.*;
 import com.oracle.bmc.healthchecks.responses.*;
@@ -103,6 +104,7 @@ public class UpdatePingMonitorConverter {
 
                                 UpdatePingMonitorResponse responseWrapper = builder.build();
 
+                                ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;
                             }
                         };

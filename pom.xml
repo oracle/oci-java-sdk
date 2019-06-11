@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>1.5.8</version>
+  <version>1.5.9</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -36,19 +36,17 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jackson.version>2.9.8</jackson.version>
     <jersey.version>2.27</jersey.version>
-    <!-- As per https://github.com/google/guava/blob/master/README.md#guava-google-core-libraries-for-java, using
-      the Android flavor of guava to support JDK 1.7 -->
-    <guava.version>25.0-android</guava.version>
+    <guava.version>27.1-jre</guava.version>
     <junit.version>4.12</junit.version>
-    <lombok.version>1.16.16</lombok.version>
-    <lombok.maven.version>1.16.16.0</lombok.maven.version>
+    <lombok.version>1.18.4</lombok.version>
+    <lombok.maven.version>1.18.4.0</lombok.maven.version>
     <jsr305.version>3.0.2</jsr305.version>
-    <slf4j.version>1.7.25</slf4j.version>
+    <slf4j.version>1.7.26</slf4j.version>
     <validation-api.version>1.1.0.Final</validation-api.version>
     <javax.ws.rs-api.version>2.1</javax.ws.rs-api.version>
-    <commons-codec.version>1.10</commons-codec.version>
-    <commons-lang3.version>3.4</commons-lang3.version>
-    <commons-io.version>2.5</commons-io.version>
+    <commons-codec.version>1.12</commons-codec.version>
+    <commons-lang3.version>3.8.1</commons-lang3.version>
+    <commons-io.version>2.6</commons-io.version>
     <maven-shade-plugin.version>3.1.1</maven-shade-plugin.version>
     <bouncycastle.version>1.60</bouncycastle.version>
     <mockito.version>1.10.19</mockito.version>

@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc.dns.internal.http;
 
+import com.oracle.bmc.http.internal.ResponseHelper;
 import com.oracle.bmc.dns.model.*;
 import com.oracle.bmc.dns.requests.*;
 import com.oracle.bmc.dns.responses.*;
@@ -187,6 +188,7 @@ public class ListZonesConverter {
 
                                 ListZonesResponse responseWrapper = builder.build();
 
+                                ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;
                             }
                         };

@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc.filestorage.internal.http;
 
+import com.oracle.bmc.http.internal.ResponseHelper;
 import com.oracle.bmc.filestorage.model.*;
 import com.oracle.bmc.filestorage.requests.*;
 import com.oracle.bmc.filestorage.responses.*;
@@ -87,6 +88,7 @@ public class DeleteFileSystemConverter {
 
                                 DeleteFileSystemResponse responseWrapper = builder.build();
 
+                                ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;
                             }
                         };

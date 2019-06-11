@@ -3,6 +3,8 @@
  */
 package com.oracle.bmc;
 
+import com.oracle.bmc.retrier.RetryConfiguration;
+import com.oracle.bmc.waiter.WaiterConfiguration;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
@@ -30,17 +32,24 @@ public class ClientConfiguration {
      */
     private final int maxAsyncThreads;
 
+    /**
+     * The retry configuration to use.  Default is no retry.
+     */
+    private final RetryConfiguration retryConfiguration;
+
     // Explicit @Builder on constructor so we can enforce default values.
     @Builder
     private ClientConfiguration(
             Integer connectionTimeoutMillis,
             Integer readTimeoutMillis,
             Integer maxAsyncThreads,
-            Boolean disableDataBufferingOnUpload) {
+            Boolean disableDataBufferingOnUpload,
+            RetryConfiguration retryConfiguration) {
         this.connectionTimeoutMillis =
                 getOrDefault(connectionTimeoutMillis, CONNECTION_TIMEOUT_MILLIS);
         this.readTimeoutMillis = getOrDefault(readTimeoutMillis, READ_TIMEOUT_MILLIS);
         this.maxAsyncThreads = getOrDefault(maxAsyncThreads, MAX_ASYNC_THREADS);
+        this.retryConfiguration = retryConfiguration;
     }
 
     private static <T> T getOrDefault(T value, T defaultValue) {

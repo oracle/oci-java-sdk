@@ -41,6 +41,7 @@ public class ListRemotePeeringConnectionsRequest extends com.oracle.bmc.requests
     public static class Builder {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
+        private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
          * Set the invocation callback for the request to be built.
@@ -55,6 +56,17 @@ public class ListRemotePeeringConnectionsRequest extends com.oracle.bmc.requests
         }
 
         /**
+         * Set the retry configuration for the request to be built.
+         * @param retryConfiguration the retry configuration to be used for the request
+         * @return this builder instance
+         */
+        public Builder retryConfiguration(
+                com.oracle.bmc.retrier.RetryConfiguration retryConfiguration) {
+            this.retryConfiguration = retryConfiguration;
+            return this;
+        }
+
+        /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
          */
@@ -64,6 +76,7 @@ public class ListRemotePeeringConnectionsRequest extends com.oracle.bmc.requests
             limit(o.getLimit());
             page(o.getPage());
             invocationCallback(o.getInvocationCallback());
+            retryConfiguration(o.getRetryConfiguration());
             return this;
         }
 
@@ -80,6 +93,7 @@ public class ListRemotePeeringConnectionsRequest extends com.oracle.bmc.requests
         public ListRemotePeeringConnectionsRequest build() {
             ListRemotePeeringConnectionsRequest request = buildWithoutInvocationCallback();
             request.setInvocationCallback(invocationCallback);
+            request.setRetryConfiguration(retryConfiguration);
             return request;
         }
     }

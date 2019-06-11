@@ -19,6 +19,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 import com.google.common.base.Optional;
 import com.oracle.bmc.io.internal.ContentLengthVerifyingInputStream;
+import com.oracle.bmc.io.internal.WrappedResponseInputStream;
 import com.oracle.bmc.model.BmcException;
 
 import lombok.Builder;
@@ -79,15 +80,21 @@ public class ResponseHelper {
                     LOG.warn("Unable to read response body", e);
                 }
 
-                throw new BmcException(
-                        response.getStatus(),
-                        "Unknown",
-                        String.format(
-                                "Unexpected Content-Type: %s instead of %s. Response body: %s",
-                                response.getMediaType(),
-                                MediaType.APPLICATION_JSON_TYPE,
-                                responseBody),
-                        opcRequestId);
+                try {
+                    throw new BmcException(
+                            response.getStatus(),
+                            "Unknown",
+                            String.format(
+                                    "Unexpected Content-Type: %s instead of %s. Response body: %s",
+                                    response.getMediaType(),
+                                    MediaType.APPLICATION_JSON_TYPE,
+                                    responseBody),
+                            opcRequestId);
+                } finally {
+                    // Ensure that the response entity is closed so that the connection isn't left in use.  This is
+                    // especially important for customers using the ApacheConnectorProvider.
+                    closeResponseSilently(response);
+                }
             }
 
             boolean isBuffered = false;
@@ -190,7 +197,9 @@ public class ResponseHelper {
                     try {
                         // NOTE: do not buffer InputStreams (namely object storage) as those might be very large
                         final InputStream rawInputStream = response.readEntity(InputStream.class);
-                        InputStream inputStream = rawInputStream;
+                        // Wrap the input stream to ensure that it gets closed.
+                        InputStream inputStream =
+                                new WrappedResponseInputStream(rawInputStream, response);
 
                         Optional<List<String>> contentLengthHeader =
                                 HeaderUtils.get(
@@ -205,8 +214,9 @@ public class ResponseHelper {
 
                             inputStream =
                                     new ContentLengthVerifyingInputStream(
-                                            rawInputStream, contentLength);
+                                            inputStream, contentLength);
                         }
+
                         return (T) inputStream;
                     } finally {
                         if (contentType != null) {
@@ -237,6 +247,54 @@ public class ResponseHelper {
         }
         throw new IllegalStateException(
                 "Attempted to read entity from unsuccessful response, should have called throwIfNotSuccessful first");
+    }
+
+    /**
+     * Closes a given {@link Response} and ignores any thrown exceptions. Closing a response is idempotent, so there
+     * is no harm in closing a {@link Response} once the response has been fully processed to ensure that the client
+     * connection is not left in use.
+     *
+     * @param response the response to close
+     */
+    public static void closeResponseSilently(final Response response) {
+        synchronized (response) {
+            try {
+                response.close();
+            } catch (Throwable t) {
+                LOG.info("Exception while closing response", t);
+            }
+        }
+    }
+
+    /**
+     * Closes a {@link Response} silently if a {@link Response} is not buffered or is not backed by an unconsumed stream
+     * (e.g., for responses with no body).
+     *
+     * @param response the response to close
+     */
+    public static void closeResponseSilentlyIfNotBuffered(@NonNull final Response response) {
+        synchronized (response) {
+            /*
+             * Ensure that the entity has been buffered.  A status of true asserts that the entity is backed
+             * by a stream and has been read + closed.  Also, default to true for the case that the response has either
+             * already been buffered or is not backed by an unconsumed stream.
+             */
+            boolean isResponseAlreadyClosed = true;
+            try {
+                isResponseAlreadyClosed = response.bufferEntity();
+            } catch (IllegalStateException ex) {
+                /*
+                 * It's possible for bufferEntity to throw an IllegalStateException if the underlying
+                 * stream is already closed. If this is the case, assume that the entity has already been buffered
+                 * and closed by readEntity() above as that is the contract defined by bufferEntity().
+                 */
+                LOG.trace("Exception while buffering the entity before closing the response", ex);
+            }
+
+            if (!isResponseAlreadyClosed) {
+                closeResponseSilently(response);
+            }
+        }
     }
 
     @Value

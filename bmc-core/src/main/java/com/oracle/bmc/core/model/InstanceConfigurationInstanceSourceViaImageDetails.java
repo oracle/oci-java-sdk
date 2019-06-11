@@ -31,6 +31,15 @@ public class InstanceConfigurationInstanceSourceViaImageDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeSizeInGBs")
+        private Long bootVolumeSizeInGBs;
+
+        public Builder bootVolumeSizeInGBs(Long bootVolumeSizeInGBs) {
+            this.bootVolumeSizeInGBs = bootVolumeSizeInGBs;
+            this.__explicitlySet__.add("bootVolumeSizeInGBs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("imageId")
         private String imageId;
 
@@ -45,14 +54,16 @@ public class InstanceConfigurationInstanceSourceViaImageDetails
 
         public InstanceConfigurationInstanceSourceViaImageDetails build() {
             InstanceConfigurationInstanceSourceViaImageDetails __instance__ =
-                    new InstanceConfigurationInstanceSourceViaImageDetails(imageId);
+                    new InstanceConfigurationInstanceSourceViaImageDetails(
+                            bootVolumeSizeInGBs, imageId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(InstanceConfigurationInstanceSourceViaImageDetails o) {
-            Builder copiedBuilder = imageId(o.getImageId());
+            Builder copiedBuilder =
+                    bootVolumeSizeInGBs(o.getBootVolumeSizeInGBs()).imageId(o.getImageId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -67,10 +78,18 @@ public class InstanceConfigurationInstanceSourceViaImageDetails
     }
 
     @Deprecated
-    public InstanceConfigurationInstanceSourceViaImageDetails(String imageId) {
+    public InstanceConfigurationInstanceSourceViaImageDetails(
+            Long bootVolumeSizeInGBs, String imageId) {
         super();
+        this.bootVolumeSizeInGBs = bootVolumeSizeInGBs;
         this.imageId = imageId;
     }
+
+    /**
+     * The size of the boot volume in GBs. Minimum value is 50 GB and maximum value is 16384 GB (16TB).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("bootVolumeSizeInGBs")
+    Long bootVolumeSizeInGBs;
 
     /**
      * The OCID of the image used to boot the instance.

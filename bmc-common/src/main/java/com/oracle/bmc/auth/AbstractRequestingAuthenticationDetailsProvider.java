@@ -6,14 +6,11 @@ package com.oracle.bmc.auth;
 import com.oracle.bmc.InternalSdk;
 import com.oracle.bmc.auth.internal.AuthUtils;
 import com.oracle.bmc.auth.internal.FederationClient;
-import com.oracle.bmc.auth.internal.X509FederationClient;
 import com.oracle.bmc.http.ClientConfigurator;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.security.KeyPair;
-import java.security.KeyPairGenerator;
-import java.security.NoSuchAlgorithmException;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 import java.util.ArrayList;
@@ -82,25 +79,6 @@ public class AbstractRequestingAuthenticationDetailsProvider
                 @lombok.NonNull ClientConfigurator additionalClientConfigurator) {
             this.additionalFederationClientConfigurators.add(additionalClientConfigurator);
             return (B) this;
-        }
-
-        protected SessionKeySupplier getSessionKeySupplier() {
-            return sessionKeySupplier != null ? sessionKeySupplier : new SessionKeySupplierImpl();
-        }
-
-        protected void buildFederationClient(
-                String federationEndpoint,
-                String tenancyId,
-                X509CertificateSupplier leafCertificateSupplier) {
-            federationClient =
-                    new X509FederationClient(
-                            federationEndpoint,
-                            tenancyId,
-                            leafCertificateSupplier,
-                            getSessionKeySupplier(),
-                            intermediateCertificateSuppliers,
-                            federationClientConfigurator,
-                            additionalFederationClientConfigurators);
         }
     }
 
@@ -179,62 +157,6 @@ public class AbstractRequestingAuthenticationDetailsProvider
                 lastPrivateKey = privateKey;
                 this.privateKeyBytes = AuthUtils.toByteArrayFromRSAPrivateKey(privateKey);
             }
-        }
-    }
-
-    /**
-     * This is a helper class to generate in-memory temporary session keys.
-     * <p>
-     * The thread safety of this class is ensured through the Caching class above
-     * which synchronizes on all methods.
-     */
-    protected static class SessionKeySupplierImpl implements SessionKeySupplier {
-        private final static KeyPairGenerator GENERATOR;
-        private KeyPair keyPair = null;
-
-        static {
-            try {
-                GENERATOR = KeyPairGenerator.getInstance("RSA");
-                GENERATOR.initialize(2048);
-            } catch (NoSuchAlgorithmException e) {
-                throw new Error(e.getMessage());
-            }
-        }
-
-        protected SessionKeySupplierImpl() {
-            this.keyPair = GENERATOR.generateKeyPair();
-        }
-
-        @Override
-        public KeyPair getKeyPair() {
-            return keyPair;
-        }
-
-        /**
-         * Gets the public key
-         * @return the public key, not null
-         * @deprecated use getKeyPair() instead
-         */
-        @Override
-        @Deprecated
-        public RSAPublicKey getPublicKey() {
-            return (RSAPublicKey) keyPair.getPublic();
-        }
-
-        /**
-         * Gets the private key
-         * @return the private key, not null
-         * @deprecated use getKeyPair() instead
-         */
-        @Override
-        @Deprecated
-        public RSAPrivateKey getPrivateKey() {
-            return (RSAPrivateKey) keyPair.getPrivate();
-        }
-
-        @Override
-        public void refreshKeys() {
-            this.keyPair = GENERATOR.generateKeyPair();
         }
     }
 }

@@ -52,6 +52,15 @@ public class AutonomousDatabaseConnectionStrings {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dedicated")
+        private String dedicated;
+
+        public Builder dedicated(String dedicated) {
+            this.dedicated = dedicated;
+            this.__explicitlySet__.add("dedicated");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("allConnectionStrings")
         private java.util.Map<String, String> allConnectionStrings;
 
@@ -67,7 +76,7 @@ public class AutonomousDatabaseConnectionStrings {
         public AutonomousDatabaseConnectionStrings build() {
             AutonomousDatabaseConnectionStrings __instance__ =
                     new AutonomousDatabaseConnectionStrings(
-                            high, medium, low, allConnectionStrings);
+                            high, medium, low, dedicated, allConnectionStrings);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -78,6 +87,7 @@ public class AutonomousDatabaseConnectionStrings {
                     high(o.getHigh())
                             .medium(o.getMedium())
                             .low(o.getLow())
+                            .dedicated(o.getDedicated())
                             .allConnectionStrings(o.getAllConnectionStrings());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -109,6 +119,12 @@ public class AutonomousDatabaseConnectionStrings {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("low")
     String low;
+
+    /**
+     * The database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dedicated")
+    String dedicated;
 
     /**
      * Returns all connection strings that can be used to connect to the Autonomous Database.

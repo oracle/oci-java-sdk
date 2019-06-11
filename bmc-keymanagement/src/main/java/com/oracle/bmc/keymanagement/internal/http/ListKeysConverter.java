@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc.keymanagement.internal.http;
 
+import com.oracle.bmc.http.internal.ResponseHelper;
 import com.oracle.bmc.keymanagement.model.*;
 import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
@@ -130,6 +131,7 @@ public class ListKeysConverter {
 
                                 ListKeysResponse responseWrapper = builder.build();
 
+                                ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;
                             }
                         };

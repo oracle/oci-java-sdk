@@ -16,6 +16,11 @@ public class ListAutonomousDatabasesRequest extends com.oracle.bmc.requests.BmcR
     private String compartmentId;
 
     /**
+     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     */
+    private String autonomousContainerDatabaseId;
+
+    /**
      * The maximum number of items to return per page.
      */
     private Integer limit;
@@ -137,6 +142,7 @@ public class ListAutonomousDatabasesRequest extends com.oracle.bmc.requests.BmcR
     public static class Builder {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
+        private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
          * Set the invocation callback for the request to be built.
@@ -151,11 +157,23 @@ public class ListAutonomousDatabasesRequest extends com.oracle.bmc.requests.BmcR
         }
 
         /**
+         * Set the retry configuration for the request to be built.
+         * @param retryConfiguration the retry configuration to be used for the request
+         * @return this builder instance
+         */
+        public Builder retryConfiguration(
+                com.oracle.bmc.retrier.RetryConfiguration retryConfiguration) {
+            this.retryConfiguration = retryConfiguration;
+            return this;
+        }
+
+        /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
          */
         public Builder copy(ListAutonomousDatabasesRequest o) {
             compartmentId(o.getCompartmentId());
+            autonomousContainerDatabaseId(o.getAutonomousContainerDatabaseId());
             limit(o.getLimit());
             page(o.getPage());
             sortBy(o.getSortBy());
@@ -165,6 +183,7 @@ public class ListAutonomousDatabasesRequest extends com.oracle.bmc.requests.BmcR
             displayName(o.getDisplayName());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
+            retryConfiguration(o.getRetryConfiguration());
             return this;
         }
 
@@ -181,6 +200,7 @@ public class ListAutonomousDatabasesRequest extends com.oracle.bmc.requests.BmcR
         public ListAutonomousDatabasesRequest build() {
             ListAutonomousDatabasesRequest request = buildWithoutInvocationCallback();
             request.setInvocationCallback(invocationCallback);
+            request.setRetryConfiguration(retryConfiguration);
             return request;
         }
     }

@@ -16,7 +16,6 @@ import com.oracle.bmc.http.internal.ResponseConversionFunctionFactory;
 import com.oracle.bmc.http.internal.RestClient;
 import com.oracle.bmc.http.internal.WithHeaders;
 import com.oracle.bmc.http.internal.WrappedInvocationBuilder;
-import com.oracle.bmc.http.signing.internal.Constants;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.requests.BmcRequest;
 
@@ -34,9 +33,7 @@ import java.security.KeyPair;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.security.interfaces.RSAPublicKey;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 /**

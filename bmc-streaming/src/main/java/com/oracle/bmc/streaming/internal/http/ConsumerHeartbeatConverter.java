@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc.streaming.internal.http;
 
+import com.oracle.bmc.http.internal.ResponseHelper;
 import com.oracle.bmc.streaming.model.*;
 import com.oracle.bmc.streaming.requests.*;
 import com.oracle.bmc.streaming.responses.*;
@@ -94,6 +95,7 @@ public class ConsumerHeartbeatConverter {
 
                                 ConsumerHeartbeatResponse responseWrapper = builder.build();
 
+                                ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;
                             }
                         };

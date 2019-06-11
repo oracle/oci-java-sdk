@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc.database.internal.http;
 
+import com.oracle.bmc.http.internal.ResponseHelper;
 import com.oracle.bmc.database.model.*;
 import com.oracle.bmc.database.requests.*;
 import com.oracle.bmc.database.responses.*;
@@ -24,7 +25,6 @@ public class ListDbHomesConverter {
             com.oracle.bmc.http.internal.RestClient client, ListDbHomesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
-        Validate.notNull(request.getDbSystemId(), "dbSystemId is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget().path("/20160918").path("dbHomes");
@@ -35,11 +35,13 @@ public class ListDbHomesConverter {
                         com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                 request.getCompartmentId()));
 
-        target =
-                target.queryParam(
-                        "dbSystemId",
-                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                request.getDbSystemId()));
+        if (request.getDbSystemId() != null) {
+            target =
+                    target.queryParam(
+                            "dbSystemId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getDbSystemId()));
+        }
 
         if (request.getLimit() != null) {
             target =
@@ -152,6 +154,7 @@ public class ListDbHomesConverter {
 
                                 ListDbHomesResponse responseWrapper = builder.build();
 
+                                ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;
                             }
                         };

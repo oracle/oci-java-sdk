@@ -11,6 +11,7 @@ import lombok.ToString;
  * Configuration used when invoking a waiter loop.
  */
 @Getter
+@ToString
 @RequiredArgsConstructor
 public class WaiterConfiguration {
     private final TerminationStrategy terminationStrategy;

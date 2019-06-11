@@ -52,6 +52,7 @@ public class ListMultipartUploadPartsRequest extends com.oracle.bmc.requests.Bmc
     public static class Builder {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
+        private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
          * Set the invocation callback for the request to be built.
@@ -62,6 +63,17 @@ public class ListMultipartUploadPartsRequest extends com.oracle.bmc.requests.Bmc
                 com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                         invocationCallback) {
             this.invocationCallback = invocationCallback;
+            return this;
+        }
+
+        /**
+         * Set the retry configuration for the request to be built.
+         * @param retryConfiguration the retry configuration to be used for the request
+         * @return this builder instance
+         */
+        public Builder retryConfiguration(
+                com.oracle.bmc.retrier.RetryConfiguration retryConfiguration) {
+            this.retryConfiguration = retryConfiguration;
             return this;
         }
 
@@ -78,6 +90,7 @@ public class ListMultipartUploadPartsRequest extends com.oracle.bmc.requests.Bmc
             page(o.getPage());
             opcClientRequestId(o.getOpcClientRequestId());
             invocationCallback(o.getInvocationCallback());
+            retryConfiguration(o.getRetryConfiguration());
             return this;
         }
 
@@ -94,6 +107,7 @@ public class ListMultipartUploadPartsRequest extends com.oracle.bmc.requests.Bmc
         public ListMultipartUploadPartsRequest build() {
             ListMultipartUploadPartsRequest request = buildWithoutInvocationCallback();
             request.setInvocationCallback(invocationCallback);
+            request.setRetryConfiguration(retryConfiguration);
             return request;
         }
     }
