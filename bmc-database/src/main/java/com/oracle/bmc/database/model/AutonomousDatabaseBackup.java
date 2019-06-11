@@ -106,6 +106,15 @@ public class AutonomousDatabaseBackup {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseSizeInTBs")
+        private java.math.BigDecimal databaseSizeInTBs;
+
+        public Builder databaseSizeInTBs(java.math.BigDecimal databaseSizeInTBs) {
+            this.databaseSizeInTBs = databaseSizeInTBs;
+            this.__explicitlySet__.add("databaseSizeInTBs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -130,6 +139,7 @@ public class AutonomousDatabaseBackup {
                             timeStarted,
                             timeEnded,
                             lifecycleDetails,
+                            databaseSizeInTBs,
                             lifecycleState);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -147,6 +157,7 @@ public class AutonomousDatabaseBackup {
                             .timeStarted(o.getTimeStarted())
                             .timeEnded(o.getTimeEnded())
                             .lifecycleDetails(o.getLifecycleDetails())
+                            .databaseSizeInTBs(o.getDatabaseSizeInTBs())
                             .lifecycleState(o.getLifecycleState());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -258,6 +269,13 @@ public class AutonomousDatabaseBackup {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     String lifecycleDetails;
+
+    /**
+     * The size of the database in terabytes at the time the backup was taken.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseSizeInTBs")
+    java.math.BigDecimal databaseSizeInTBs;
     /**
      * The current state of the backup.
      **/

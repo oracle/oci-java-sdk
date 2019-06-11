@@ -32,6 +32,8 @@ public class ContainerEngineClient implements ContainerEngine {
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
 
+    private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
+
     /**
      * Creates a new service instance using the given authentication provider.
      * @param authenticationDetailsProvider The authentication details provider, required.
@@ -235,7 +237,16 @@ public class ContainerEngineClient implements ContainerEngine {
                                 .createRequestSigner(SERVICE, authenticationDetailsProvider));
             }
         }
-        this.client = restClientFactory.create(defaultRequestSigner, requestSigners, configuration);
+
+        final com.oracle.bmc.ClientConfiguration clientConfigurationToUse =
+                (configuration != null)
+                        ? configuration
+                        : com.oracle.bmc.ClientConfiguration.builder().build();
+        this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
+        this.client =
+                restClientFactory.create(
+                        defaultRequestSigner, requestSigners, clientConfigurationToUse);
+
         if (executorService == null) {
             // up to 50 (core) threads, time out after 60s idle, all daemon
             java.util.concurrent.ThreadPoolExecutor threadPoolExecutor =
@@ -369,470 +380,529 @@ public class ContainerEngineClient implements ContainerEngine {
     @Override
     public CreateClusterResponse createCluster(CreateClusterRequest request) {
         LOG.trace("Called createCluster");
-        request = CreateClusterConverter.interceptRequest(request);
+        final CreateClusterRequest interceptedRequest =
+                CreateClusterConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateClusterConverter.fromRequest(client, request);
+                CreateClusterConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateClusterResponse>
                 transformer = CreateClusterConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response =
-                        client.post(ib, request.getCreateClusterDetails(), request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateClusterDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateKubeconfigResponse createKubeconfig(CreateKubeconfigRequest request) {
         LOG.trace("Called createKubeconfig");
-        request = CreateKubeconfigConverter.interceptRequest(request);
+        final CreateKubeconfigRequest interceptedRequest =
+                CreateKubeconfigConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateKubeconfigConverter.fromRequest(client, request);
+                CreateKubeconfigConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateKubeconfigResponse>
                 transformer = CreateKubeconfigConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response =
-                        client.post(
-                                ib, request.getCreateClusterKubeconfigContentDetails(), request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateClusterKubeconfigContentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateNodePoolResponse createNodePool(CreateNodePoolRequest request) {
         LOG.trace("Called createNodePool");
-        request = CreateNodePoolConverter.interceptRequest(request);
+        final CreateNodePoolRequest interceptedRequest =
+                CreateNodePoolConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateNodePoolConverter.fromRequest(client, request);
+                CreateNodePoolConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateNodePoolResponse>
                 transformer = CreateNodePoolConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response =
-                        client.post(ib, request.getCreateNodePoolDetails(), request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateNodePoolDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteClusterResponse deleteCluster(DeleteClusterRequest request) {
         LOG.trace("Called deleteCluster");
-        request = DeleteClusterConverter.interceptRequest(request);
+        final DeleteClusterRequest interceptedRequest =
+                DeleteClusterConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteClusterConverter.fromRequest(client, request);
+                DeleteClusterConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteClusterResponse>
                 transformer = DeleteClusterConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.delete(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteNodePoolResponse deleteNodePool(DeleteNodePoolRequest request) {
         LOG.trace("Called deleteNodePool");
-        request = DeleteNodePoolConverter.interceptRequest(request);
+        final DeleteNodePoolRequest interceptedRequest =
+                DeleteNodePoolConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteNodePoolConverter.fromRequest(client, request);
+                DeleteNodePoolConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteNodePoolResponse>
                 transformer = DeleteNodePoolConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.delete(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteWorkRequestResponse deleteWorkRequest(DeleteWorkRequestRequest request) {
         LOG.trace("Called deleteWorkRequest");
-        request = DeleteWorkRequestConverter.interceptRequest(request);
+        final DeleteWorkRequestRequest interceptedRequest =
+                DeleteWorkRequestConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteWorkRequestConverter.fromRequest(client, request);
+                DeleteWorkRequestConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteWorkRequestResponse>
                 transformer = DeleteWorkRequestConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.delete(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetClusterResponse getCluster(GetClusterRequest request) {
         LOG.trace("Called getCluster");
-        request = GetClusterConverter.interceptRequest(request);
+        final GetClusterRequest interceptedRequest = GetClusterConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetClusterConverter.fromRequest(client, request);
+                GetClusterConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetClusterResponse> transformer =
                 GetClusterConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.get(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetClusterOptionsResponse getClusterOptions(GetClusterOptionsRequest request) {
         LOG.trace("Called getClusterOptions");
-        request = GetClusterOptionsConverter.interceptRequest(request);
+        final GetClusterOptionsRequest interceptedRequest =
+                GetClusterOptionsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetClusterOptionsConverter.fromRequest(client, request);
+                GetClusterOptionsConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetClusterOptionsResponse>
                 transformer = GetClusterOptionsConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.get(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetNodePoolResponse getNodePool(GetNodePoolRequest request) {
         LOG.trace("Called getNodePool");
-        request = GetNodePoolConverter.interceptRequest(request);
+        final GetNodePoolRequest interceptedRequest =
+                GetNodePoolConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetNodePoolConverter.fromRequest(client, request);
+                GetNodePoolConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetNodePoolResponse>
                 transformer = GetNodePoolConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.get(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetNodePoolOptionsResponse getNodePoolOptions(GetNodePoolOptionsRequest request) {
         LOG.trace("Called getNodePoolOptions");
-        request = GetNodePoolOptionsConverter.interceptRequest(request);
+        final GetNodePoolOptionsRequest interceptedRequest =
+                GetNodePoolOptionsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetNodePoolOptionsConverter.fromRequest(client, request);
+                GetNodePoolOptionsConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetNodePoolOptionsResponse>
                 transformer = GetNodePoolOptionsConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.get(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request) {
         LOG.trace("Called getWorkRequest");
-        request = GetWorkRequestConverter.interceptRequest(request);
+        final GetWorkRequestRequest interceptedRequest =
+                GetWorkRequestConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetWorkRequestConverter.fromRequest(client, request);
+                GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer = GetWorkRequestConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.get(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListClustersResponse listClusters(ListClustersRequest request) {
         LOG.trace("Called listClusters");
-        request = ListClustersConverter.interceptRequest(request);
+        final ListClustersRequest interceptedRequest =
+                ListClustersConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListClustersConverter.fromRequest(client, request);
+                ListClustersConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListClustersResponse>
                 transformer = ListClustersConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.get(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListNodePoolsResponse listNodePools(ListNodePoolsRequest request) {
         LOG.trace("Called listNodePools");
-        request = ListNodePoolsConverter.interceptRequest(request);
+        final ListNodePoolsRequest interceptedRequest =
+                ListNodePoolsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListNodePoolsConverter.fromRequest(client, request);
+                ListNodePoolsConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListNodePoolsResponse>
                 transformer = ListNodePoolsConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.get(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListWorkRequestErrorsResponse listWorkRequestErrors(
             ListWorkRequestErrorsRequest request) {
         LOG.trace("Called listWorkRequestErrors");
-        request = ListWorkRequestErrorsConverter.interceptRequest(request);
+        final ListWorkRequestErrorsRequest interceptedRequest =
+                ListWorkRequestErrorsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWorkRequestErrorsConverter.fromRequest(client, request);
+                ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer = ListWorkRequestErrorsConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.get(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request) {
         LOG.trace("Called listWorkRequestLogs");
-        request = ListWorkRequestLogsConverter.interceptRequest(request);
+        final ListWorkRequestLogsRequest interceptedRequest =
+                ListWorkRequestLogsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWorkRequestLogsConverter.fromRequest(client, request);
+                ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer = ListWorkRequestLogsConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.get(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request) {
         LOG.trace("Called listWorkRequests");
-        request = ListWorkRequestsConverter.interceptRequest(request);
+        final ListWorkRequestsRequest interceptedRequest =
+                ListWorkRequestsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListWorkRequestsConverter.fromRequest(client, request);
+                ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer = ListWorkRequestsConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.get(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateClusterResponse updateCluster(UpdateClusterRequest request) {
         LOG.trace("Called updateCluster");
-        request = UpdateClusterConverter.interceptRequest(request);
+        final UpdateClusterRequest interceptedRequest =
+                UpdateClusterConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateClusterConverter.fromRequest(client, request);
+                UpdateClusterConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateClusterResponse>
                 transformer = UpdateClusterConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response =
-                        client.put(ib, request.getUpdateClusterDetails(), request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateClusterDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateNodePoolResponse updateNodePool(UpdateNodePoolRequest request) {
         LOG.trace("Called updateNodePool");
-        request = UpdateNodePoolConverter.interceptRequest(request);
+        final UpdateNodePoolRequest interceptedRequest =
+                UpdateNodePoolConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateNodePoolConverter.fromRequest(client, request);
+                UpdateNodePoolConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateNodePoolResponse>
                 transformer = UpdateNodePoolConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response =
-                        client.put(ib, request.getUpdateNodePoolDetails(), request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
-    }
-
-    private boolean canRetryRequestIfRefreshableAuthTokenUsed(com.oracle.bmc.model.BmcException e) {
-        if (e.getStatusCode() == 401
-                && this.authenticationDetailsProvider
-                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            ((com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider)
-                    .refresh();
-            return true;
-        }
-        return false;
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateNodePoolDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override

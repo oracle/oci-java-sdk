@@ -32,6 +32,8 @@ public class BlockstorageClient implements Blockstorage {
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
 
+    private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
+
     /**
      * Creates a new service instance using the given authentication provider.
      * @param authenticationDetailsProvider The authentication details provider, required.
@@ -235,7 +237,16 @@ public class BlockstorageClient implements Blockstorage {
                                 .createRequestSigner(SERVICE, authenticationDetailsProvider));
             }
         }
-        this.client = restClientFactory.create(defaultRequestSigner, requestSigners, configuration);
+
+        final com.oracle.bmc.ClientConfiguration clientConfigurationToUse =
+                (configuration != null)
+                        ? configuration
+                        : com.oracle.bmc.ClientConfiguration.builder().build();
+        this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
+        this.client =
+                restClientFactory.create(
+                        defaultRequestSigner, requestSigners, clientConfigurationToUse);
+
         if (executorService == null) {
             // up to 50 (core) threads, time out after 60s idle, all daemon
             java.util.concurrent.ThreadPoolExecutor threadPoolExecutor =
@@ -369,1127 +380,1299 @@ public class BlockstorageClient implements Blockstorage {
     @Override
     public CopyVolumeBackupResponse copyVolumeBackup(CopyVolumeBackupRequest request) {
         LOG.trace("Called copyVolumeBackup");
-        request = CopyVolumeBackupConverter.interceptRequest(request);
+        final CopyVolumeBackupRequest interceptedRequest =
+                CopyVolumeBackupConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CopyVolumeBackupConverter.fromRequest(client, request);
+                CopyVolumeBackupConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, CopyVolumeBackupResponse>
                 transformer = CopyVolumeBackupConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response =
-                        client.post(ib, request.getCopyVolumeBackupDetails(), request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCopyVolumeBackupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateBootVolumeResponse createBootVolume(CreateBootVolumeRequest request) {
         LOG.trace("Called createBootVolume");
-        request = CreateBootVolumeConverter.interceptRequest(request);
+        final CreateBootVolumeRequest interceptedRequest =
+                CreateBootVolumeConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateBootVolumeConverter.fromRequest(client, request);
+                CreateBootVolumeConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateBootVolumeResponse>
                 transformer = CreateBootVolumeConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response =
-                        client.post(ib, request.getCreateBootVolumeDetails(), request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateBootVolumeDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateBootVolumeBackupResponse createBootVolumeBackup(
             CreateBootVolumeBackupRequest request) {
         LOG.trace("Called createBootVolumeBackup");
-        request = CreateBootVolumeBackupConverter.interceptRequest(request);
+        final CreateBootVolumeBackupRequest interceptedRequest =
+                CreateBootVolumeBackupConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateBootVolumeBackupConverter.fromRequest(client, request);
+                CreateBootVolumeBackupConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateBootVolumeBackupResponse>
                 transformer = CreateBootVolumeBackupConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response =
-                        client.post(ib, request.getCreateBootVolumeBackupDetails(), request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateBootVolumeBackupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateVolumeResponse createVolume(CreateVolumeRequest request) {
         LOG.trace("Called createVolume");
-        request = CreateVolumeConverter.interceptRequest(request);
+        final CreateVolumeRequest interceptedRequest =
+                CreateVolumeConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateVolumeConverter.fromRequest(client, request);
+                CreateVolumeConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateVolumeResponse>
                 transformer = CreateVolumeConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response =
-                        client.post(ib, request.getCreateVolumeDetails(), request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateVolumeDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateVolumeBackupResponse createVolumeBackup(CreateVolumeBackupRequest request) {
         LOG.trace("Called createVolumeBackup");
-        request = CreateVolumeBackupConverter.interceptRequest(request);
+        final CreateVolumeBackupRequest interceptedRequest =
+                CreateVolumeBackupConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateVolumeBackupConverter.fromRequest(client, request);
+                CreateVolumeBackupConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateVolumeBackupResponse>
                 transformer = CreateVolumeBackupConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response =
-                        client.post(ib, request.getCreateVolumeBackupDetails(), request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateVolumeBackupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateVolumeBackupPolicyAssignmentResponse createVolumeBackupPolicyAssignment(
             CreateVolumeBackupPolicyAssignmentRequest request) {
         LOG.trace("Called createVolumeBackupPolicyAssignment");
-        request = CreateVolumeBackupPolicyAssignmentConverter.interceptRequest(request);
+        final CreateVolumeBackupPolicyAssignmentRequest interceptedRequest =
+                CreateVolumeBackupPolicyAssignmentConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateVolumeBackupPolicyAssignmentConverter.fromRequest(client, request);
+                CreateVolumeBackupPolicyAssignmentConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, CreateVolumeBackupPolicyAssignmentResponse>
                 transformer = CreateVolumeBackupPolicyAssignmentConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response =
-                        client.post(
-                                ib,
-                                request.getCreateVolumeBackupPolicyAssignmentDetails(),
-                                request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateVolumeBackupPolicyAssignmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateVolumeGroupResponse createVolumeGroup(CreateVolumeGroupRequest request) {
         LOG.trace("Called createVolumeGroup");
-        request = CreateVolumeGroupConverter.interceptRequest(request);
+        final CreateVolumeGroupRequest interceptedRequest =
+                CreateVolumeGroupConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateVolumeGroupConverter.fromRequest(client, request);
+                CreateVolumeGroupConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateVolumeGroupResponse>
                 transformer = CreateVolumeGroupConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response =
-                        client.post(ib, request.getCreateVolumeGroupDetails(), request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateVolumeGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateVolumeGroupBackupResponse createVolumeGroupBackup(
             CreateVolumeGroupBackupRequest request) {
         LOG.trace("Called createVolumeGroupBackup");
-        request = CreateVolumeGroupBackupConverter.interceptRequest(request);
+        final CreateVolumeGroupBackupRequest interceptedRequest =
+                CreateVolumeGroupBackupConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateVolumeGroupBackupConverter.fromRequest(client, request);
+                CreateVolumeGroupBackupConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateVolumeGroupBackupResponse>
                 transformer = CreateVolumeGroupBackupConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response =
-                        client.post(ib, request.getCreateVolumeGroupBackupDetails(), request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateVolumeGroupBackupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteBootVolumeResponse deleteBootVolume(DeleteBootVolumeRequest request) {
         LOG.trace("Called deleteBootVolume");
-        request = DeleteBootVolumeConverter.interceptRequest(request);
+        final DeleteBootVolumeRequest interceptedRequest =
+                DeleteBootVolumeConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteBootVolumeConverter.fromRequest(client, request);
+                DeleteBootVolumeConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBootVolumeResponse>
                 transformer = DeleteBootVolumeConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.delete(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteBootVolumeBackupResponse deleteBootVolumeBackup(
             DeleteBootVolumeBackupRequest request) {
         LOG.trace("Called deleteBootVolumeBackup");
-        request = DeleteBootVolumeBackupConverter.interceptRequest(request);
+        final DeleteBootVolumeBackupRequest interceptedRequest =
+                DeleteBootVolumeBackupConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteBootVolumeBackupConverter.fromRequest(client, request);
+                DeleteBootVolumeBackupConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBootVolumeBackupResponse>
                 transformer = DeleteBootVolumeBackupConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.delete(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteBootVolumeKmsKeyResponse deleteBootVolumeKmsKey(
             DeleteBootVolumeKmsKeyRequest request) {
         LOG.trace("Called deleteBootVolumeKmsKey");
-        request = DeleteBootVolumeKmsKeyConverter.interceptRequest(request);
+        final DeleteBootVolumeKmsKeyRequest interceptedRequest =
+                DeleteBootVolumeKmsKeyConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteBootVolumeKmsKeyConverter.fromRequest(client, request);
+                DeleteBootVolumeKmsKeyConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBootVolumeKmsKeyResponse>
                 transformer = DeleteBootVolumeKmsKeyConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.delete(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteVolumeResponse deleteVolume(DeleteVolumeRequest request) {
         LOG.trace("Called deleteVolume");
-        request = DeleteVolumeConverter.interceptRequest(request);
+        final DeleteVolumeRequest interceptedRequest =
+                DeleteVolumeConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteVolumeConverter.fromRequest(client, request);
+                DeleteVolumeConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVolumeResponse>
                 transformer = DeleteVolumeConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.delete(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteVolumeBackupResponse deleteVolumeBackup(DeleteVolumeBackupRequest request) {
         LOG.trace("Called deleteVolumeBackup");
-        request = DeleteVolumeBackupConverter.interceptRequest(request);
+        final DeleteVolumeBackupRequest interceptedRequest =
+                DeleteVolumeBackupConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteVolumeBackupConverter.fromRequest(client, request);
+                DeleteVolumeBackupConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVolumeBackupResponse>
                 transformer = DeleteVolumeBackupConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.delete(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteVolumeBackupPolicyAssignmentResponse deleteVolumeBackupPolicyAssignment(
             DeleteVolumeBackupPolicyAssignmentRequest request) {
         LOG.trace("Called deleteVolumeBackupPolicyAssignment");
-        request = DeleteVolumeBackupPolicyAssignmentConverter.interceptRequest(request);
+        final DeleteVolumeBackupPolicyAssignmentRequest interceptedRequest =
+                DeleteVolumeBackupPolicyAssignmentConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteVolumeBackupPolicyAssignmentConverter.fromRequest(client, request);
+                DeleteVolumeBackupPolicyAssignmentConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteVolumeBackupPolicyAssignmentResponse>
                 transformer = DeleteVolumeBackupPolicyAssignmentConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.delete(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteVolumeGroupResponse deleteVolumeGroup(DeleteVolumeGroupRequest request) {
         LOG.trace("Called deleteVolumeGroup");
-        request = DeleteVolumeGroupConverter.interceptRequest(request);
+        final DeleteVolumeGroupRequest interceptedRequest =
+                DeleteVolumeGroupConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteVolumeGroupConverter.fromRequest(client, request);
+                DeleteVolumeGroupConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVolumeGroupResponse>
                 transformer = DeleteVolumeGroupConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.delete(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteVolumeGroupBackupResponse deleteVolumeGroupBackup(
             DeleteVolumeGroupBackupRequest request) {
         LOG.trace("Called deleteVolumeGroupBackup");
-        request = DeleteVolumeGroupBackupConverter.interceptRequest(request);
+        final DeleteVolumeGroupBackupRequest interceptedRequest =
+                DeleteVolumeGroupBackupConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteVolumeGroupBackupConverter.fromRequest(client, request);
+                DeleteVolumeGroupBackupConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVolumeGroupBackupResponse>
                 transformer = DeleteVolumeGroupBackupConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.delete(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteVolumeKmsKeyResponse deleteVolumeKmsKey(DeleteVolumeKmsKeyRequest request) {
         LOG.trace("Called deleteVolumeKmsKey");
-        request = DeleteVolumeKmsKeyConverter.interceptRequest(request);
+        final DeleteVolumeKmsKeyRequest interceptedRequest =
+                DeleteVolumeKmsKeyConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteVolumeKmsKeyConverter.fromRequest(client, request);
+                DeleteVolumeKmsKeyConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVolumeKmsKeyResponse>
                 transformer = DeleteVolumeKmsKeyConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.delete(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetBootVolumeResponse getBootVolume(GetBootVolumeRequest request) {
         LOG.trace("Called getBootVolume");
-        request = GetBootVolumeConverter.interceptRequest(request);
+        final GetBootVolumeRequest interceptedRequest =
+                GetBootVolumeConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetBootVolumeConverter.fromRequest(client, request);
+                GetBootVolumeConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetBootVolumeResponse>
                 transformer = GetBootVolumeConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.get(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetBootVolumeBackupResponse getBootVolumeBackup(GetBootVolumeBackupRequest request) {
         LOG.trace("Called getBootVolumeBackup");
-        request = GetBootVolumeBackupConverter.interceptRequest(request);
+        final GetBootVolumeBackupRequest interceptedRequest =
+                GetBootVolumeBackupConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetBootVolumeBackupConverter.fromRequest(client, request);
+                GetBootVolumeBackupConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetBootVolumeBackupResponse>
                 transformer = GetBootVolumeBackupConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.get(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetBootVolumeKmsKeyResponse getBootVolumeKmsKey(GetBootVolumeKmsKeyRequest request) {
         LOG.trace("Called getBootVolumeKmsKey");
-        request = GetBootVolumeKmsKeyConverter.interceptRequest(request);
+        final GetBootVolumeKmsKeyRequest interceptedRequest =
+                GetBootVolumeKmsKeyConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetBootVolumeKmsKeyConverter.fromRequest(client, request);
+                GetBootVolumeKmsKeyConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetBootVolumeKmsKeyResponse>
                 transformer = GetBootVolumeKmsKeyConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.get(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetVolumeResponse getVolume(GetVolumeRequest request) {
         LOG.trace("Called getVolume");
-        request = GetVolumeConverter.interceptRequest(request);
+        final GetVolumeRequest interceptedRequest = GetVolumeConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetVolumeConverter.fromRequest(client, request);
+                GetVolumeConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeResponse> transformer =
                 GetVolumeConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.get(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetVolumeBackupResponse getVolumeBackup(GetVolumeBackupRequest request) {
         LOG.trace("Called getVolumeBackup");
-        request = GetVolumeBackupConverter.interceptRequest(request);
+        final GetVolumeBackupRequest interceptedRequest =
+                GetVolumeBackupConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetVolumeBackupConverter.fromRequest(client, request);
+                GetVolumeBackupConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeBackupResponse>
                 transformer = GetVolumeBackupConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.get(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetVolumeBackupPolicyResponse getVolumeBackupPolicy(
             GetVolumeBackupPolicyRequest request) {
         LOG.trace("Called getVolumeBackupPolicy");
-        request = GetVolumeBackupPolicyConverter.interceptRequest(request);
+        final GetVolumeBackupPolicyRequest interceptedRequest =
+                GetVolumeBackupPolicyConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetVolumeBackupPolicyConverter.fromRequest(client, request);
+                GetVolumeBackupPolicyConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeBackupPolicyResponse>
                 transformer = GetVolumeBackupPolicyConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.get(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetVolumeBackupPolicyAssetAssignmentResponse getVolumeBackupPolicyAssetAssignment(
             GetVolumeBackupPolicyAssetAssignmentRequest request) {
         LOG.trace("Called getVolumeBackupPolicyAssetAssignment");
-        request = GetVolumeBackupPolicyAssetAssignmentConverter.interceptRequest(request);
+        final GetVolumeBackupPolicyAssetAssignmentRequest interceptedRequest =
+                GetVolumeBackupPolicyAssetAssignmentConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetVolumeBackupPolicyAssetAssignmentConverter.fromRequest(client, request);
+                GetVolumeBackupPolicyAssetAssignmentConverter.fromRequest(
+                        client, interceptedRequest);
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetVolumeBackupPolicyAssetAssignmentResponse>
                 transformer = GetVolumeBackupPolicyAssetAssignmentConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.get(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetVolumeBackupPolicyAssignmentResponse getVolumeBackupPolicyAssignment(
             GetVolumeBackupPolicyAssignmentRequest request) {
         LOG.trace("Called getVolumeBackupPolicyAssignment");
-        request = GetVolumeBackupPolicyAssignmentConverter.interceptRequest(request);
+        final GetVolumeBackupPolicyAssignmentRequest interceptedRequest =
+                GetVolumeBackupPolicyAssignmentConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetVolumeBackupPolicyAssignmentConverter.fromRequest(client, request);
+                GetVolumeBackupPolicyAssignmentConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, GetVolumeBackupPolicyAssignmentResponse>
                 transformer = GetVolumeBackupPolicyAssignmentConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.get(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetVolumeGroupResponse getVolumeGroup(GetVolumeGroupRequest request) {
         LOG.trace("Called getVolumeGroup");
-        request = GetVolumeGroupConverter.interceptRequest(request);
+        final GetVolumeGroupRequest interceptedRequest =
+                GetVolumeGroupConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetVolumeGroupConverter.fromRequest(client, request);
+                GetVolumeGroupConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeGroupResponse>
                 transformer = GetVolumeGroupConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.get(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetVolumeGroupBackupResponse getVolumeGroupBackup(GetVolumeGroupBackupRequest request) {
         LOG.trace("Called getVolumeGroupBackup");
-        request = GetVolumeGroupBackupConverter.interceptRequest(request);
+        final GetVolumeGroupBackupRequest interceptedRequest =
+                GetVolumeGroupBackupConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetVolumeGroupBackupConverter.fromRequest(client, request);
+                GetVolumeGroupBackupConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeGroupBackupResponse>
                 transformer = GetVolumeGroupBackupConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.get(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetVolumeKmsKeyResponse getVolumeKmsKey(GetVolumeKmsKeyRequest request) {
         LOG.trace("Called getVolumeKmsKey");
-        request = GetVolumeKmsKeyConverter.interceptRequest(request);
+        final GetVolumeKmsKeyRequest interceptedRequest =
+                GetVolumeKmsKeyConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetVolumeKmsKeyConverter.fromRequest(client, request);
+                GetVolumeKmsKeyConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetVolumeKmsKeyResponse>
                 transformer = GetVolumeKmsKeyConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.get(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListBootVolumeBackupsResponse listBootVolumeBackups(
             ListBootVolumeBackupsRequest request) {
         LOG.trace("Called listBootVolumeBackups");
-        request = ListBootVolumeBackupsConverter.interceptRequest(request);
+        final ListBootVolumeBackupsRequest interceptedRequest =
+                ListBootVolumeBackupsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListBootVolumeBackupsConverter.fromRequest(client, request);
+                ListBootVolumeBackupsConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListBootVolumeBackupsResponse>
                 transformer = ListBootVolumeBackupsConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.get(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListBootVolumesResponse listBootVolumes(ListBootVolumesRequest request) {
         LOG.trace("Called listBootVolumes");
-        request = ListBootVolumesConverter.interceptRequest(request);
+        final ListBootVolumesRequest interceptedRequest =
+                ListBootVolumesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListBootVolumesConverter.fromRequest(client, request);
+                ListBootVolumesConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListBootVolumesResponse>
                 transformer = ListBootVolumesConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.get(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListVolumeBackupPoliciesResponse listVolumeBackupPolicies(
             ListVolumeBackupPoliciesRequest request) {
         LOG.trace("Called listVolumeBackupPolicies");
-        request = ListVolumeBackupPoliciesConverter.interceptRequest(request);
+        final ListVolumeBackupPoliciesRequest interceptedRequest =
+                ListVolumeBackupPoliciesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListVolumeBackupPoliciesConverter.fromRequest(client, request);
+                ListVolumeBackupPoliciesConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumeBackupPoliciesResponse>
                 transformer = ListVolumeBackupPoliciesConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.get(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListVolumeBackupsResponse listVolumeBackups(ListVolumeBackupsRequest request) {
         LOG.trace("Called listVolumeBackups");
-        request = ListVolumeBackupsConverter.interceptRequest(request);
+        final ListVolumeBackupsRequest interceptedRequest =
+                ListVolumeBackupsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListVolumeBackupsConverter.fromRequest(client, request);
+                ListVolumeBackupsConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumeBackupsResponse>
                 transformer = ListVolumeBackupsConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.get(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListVolumeGroupBackupsResponse listVolumeGroupBackups(
             ListVolumeGroupBackupsRequest request) {
         LOG.trace("Called listVolumeGroupBackups");
-        request = ListVolumeGroupBackupsConverter.interceptRequest(request);
+        final ListVolumeGroupBackupsRequest interceptedRequest =
+                ListVolumeGroupBackupsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListVolumeGroupBackupsConverter.fromRequest(client, request);
+                ListVolumeGroupBackupsConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumeGroupBackupsResponse>
                 transformer = ListVolumeGroupBackupsConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.get(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListVolumeGroupsResponse listVolumeGroups(ListVolumeGroupsRequest request) {
         LOG.trace("Called listVolumeGroups");
-        request = ListVolumeGroupsConverter.interceptRequest(request);
+        final ListVolumeGroupsRequest interceptedRequest =
+                ListVolumeGroupsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListVolumeGroupsConverter.fromRequest(client, request);
+                ListVolumeGroupsConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumeGroupsResponse>
                 transformer = ListVolumeGroupsConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.get(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListVolumesResponse listVolumes(ListVolumesRequest request) {
         LOG.trace("Called listVolumes");
-        request = ListVolumesConverter.interceptRequest(request);
+        final ListVolumesRequest interceptedRequest =
+                ListVolumesConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListVolumesConverter.fromRequest(client, request);
+                ListVolumesConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListVolumesResponse>
                 transformer = ListVolumesConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.get(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateBootVolumeResponse updateBootVolume(UpdateBootVolumeRequest request) {
         LOG.trace("Called updateBootVolume");
-        request = UpdateBootVolumeConverter.interceptRequest(request);
+        final UpdateBootVolumeRequest interceptedRequest =
+                UpdateBootVolumeConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateBootVolumeConverter.fromRequest(client, request);
+                UpdateBootVolumeConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBootVolumeResponse>
                 transformer = UpdateBootVolumeConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response =
-                        client.put(ib, request.getUpdateBootVolumeDetails(), request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateBootVolumeDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateBootVolumeBackupResponse updateBootVolumeBackup(
             UpdateBootVolumeBackupRequest request) {
         LOG.trace("Called updateBootVolumeBackup");
-        request = UpdateBootVolumeBackupConverter.interceptRequest(request);
+        final UpdateBootVolumeBackupRequest interceptedRequest =
+                UpdateBootVolumeBackupConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateBootVolumeBackupConverter.fromRequest(client, request);
+                UpdateBootVolumeBackupConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBootVolumeBackupResponse>
                 transformer = UpdateBootVolumeBackupConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response =
-                        client.put(ib, request.getUpdateBootVolumeBackupDetails(), request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateBootVolumeBackupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateBootVolumeKmsKeyResponse updateBootVolumeKmsKey(
             UpdateBootVolumeKmsKeyRequest request) {
         LOG.trace("Called updateBootVolumeKmsKey");
-        request = UpdateBootVolumeKmsKeyConverter.interceptRequest(request);
+        final UpdateBootVolumeKmsKeyRequest interceptedRequest =
+                UpdateBootVolumeKmsKeyConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateBootVolumeKmsKeyConverter.fromRequest(client, request);
+                UpdateBootVolumeKmsKeyConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBootVolumeKmsKeyResponse>
                 transformer = UpdateBootVolumeKmsKeyConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response =
-                        client.put(ib, request.getUpdateBootVolumeKmsKeyDetails(), request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateBootVolumeKmsKeyDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateVolumeResponse updateVolume(UpdateVolumeRequest request) {
         LOG.trace("Called updateVolume");
-        request = UpdateVolumeConverter.interceptRequest(request);
+        final UpdateVolumeRequest interceptedRequest =
+                UpdateVolumeConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateVolumeConverter.fromRequest(client, request);
+                UpdateVolumeConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVolumeResponse>
                 transformer = UpdateVolumeConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response =
-                        client.put(ib, request.getUpdateVolumeDetails(), request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateVolumeDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateVolumeBackupResponse updateVolumeBackup(UpdateVolumeBackupRequest request) {
         LOG.trace("Called updateVolumeBackup");
-        request = UpdateVolumeBackupConverter.interceptRequest(request);
+        final UpdateVolumeBackupRequest interceptedRequest =
+                UpdateVolumeBackupConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateVolumeBackupConverter.fromRequest(client, request);
+                UpdateVolumeBackupConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVolumeBackupResponse>
                 transformer = UpdateVolumeBackupConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response =
-                        client.put(ib, request.getUpdateVolumeBackupDetails(), request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateVolumeBackupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateVolumeGroupResponse updateVolumeGroup(UpdateVolumeGroupRequest request) {
         LOG.trace("Called updateVolumeGroup");
-        request = UpdateVolumeGroupConverter.interceptRequest(request);
+        final UpdateVolumeGroupRequest interceptedRequest =
+                UpdateVolumeGroupConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateVolumeGroupConverter.fromRequest(client, request);
+                UpdateVolumeGroupConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVolumeGroupResponse>
                 transformer = UpdateVolumeGroupConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response =
-                        client.put(ib, request.getUpdateVolumeGroupDetails(), request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateVolumeGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateVolumeGroupBackupResponse updateVolumeGroupBackup(
             UpdateVolumeGroupBackupRequest request) {
         LOG.trace("Called updateVolumeGroupBackup");
-        request = UpdateVolumeGroupBackupConverter.interceptRequest(request);
+        final UpdateVolumeGroupBackupRequest interceptedRequest =
+                UpdateVolumeGroupBackupConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateVolumeGroupBackupConverter.fromRequest(client, request);
+                UpdateVolumeGroupBackupConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVolumeGroupBackupResponse>
                 transformer = UpdateVolumeGroupBackupConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response =
-                        client.put(ib, request.getUpdateVolumeGroupBackupDetails(), request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateVolumeGroupBackupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateVolumeKmsKeyResponse updateVolumeKmsKey(UpdateVolumeKmsKeyRequest request) {
         LOG.trace("Called updateVolumeKmsKey");
-        request = UpdateVolumeKmsKeyConverter.interceptRequest(request);
+        final UpdateVolumeKmsKeyRequest interceptedRequest =
+                UpdateVolumeKmsKeyConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateVolumeKmsKeyConverter.fromRequest(client, request);
+                UpdateVolumeKmsKeyConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVolumeKmsKeyResponse>
                 transformer = UpdateVolumeKmsKeyConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response =
-                        client.put(ib, request.getUpdateVolumeKmsKeyDetails(), request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
-    }
-
-    private boolean canRetryRequestIfRefreshableAuthTokenUsed(com.oracle.bmc.model.BmcException e) {
-        if (e.getStatusCode() == 401
-                && this.authenticationDetailsProvider
-                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            ((com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider)
-                    .refresh();
-            return true;
-        }
-        return false;
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateVolumeKmsKeyDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override

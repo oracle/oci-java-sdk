@@ -30,6 +30,8 @@ public class NotificationControlPlaneClient implements NotificationControlPlane 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
 
+    private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
+
     /**
      * Creates a new service instance using the given authentication provider.
      * @param authenticationDetailsProvider The authentication details provider, required.
@@ -196,7 +198,15 @@ public class NotificationControlPlaneClient implements NotificationControlPlane 
                                 .createRequestSigner(SERVICE, authenticationDetailsProvider));
             }
         }
-        this.client = restClientFactory.create(defaultRequestSigner, requestSigners, configuration);
+
+        final com.oracle.bmc.ClientConfiguration clientConfigurationToUse =
+                (configuration != null)
+                        ? configuration
+                        : com.oracle.bmc.ClientConfiguration.builder().build();
+        this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
+        this.client =
+                restClientFactory.create(
+                        defaultRequestSigner, requestSigners, clientConfigurationToUse);
 
         this.paginators = new NotificationControlPlanePaginators(this);
 
@@ -299,140 +309,148 @@ public class NotificationControlPlaneClient implements NotificationControlPlane 
     @Override
     public CreateTopicResponse createTopic(CreateTopicRequest request) {
         LOG.trace("Called createTopic");
-        request = CreateTopicConverter.interceptRequest(request);
+        final CreateTopicRequest interceptedRequest =
+                CreateTopicConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                CreateTopicConverter.fromRequest(client, request);
+                CreateTopicConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, CreateTopicResponse>
                 transformer = CreateTopicConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response =
-                        client.post(ib, request.getCreateTopicDetails(), request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateTopicDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteTopicResponse deleteTopic(DeleteTopicRequest request) {
         LOG.trace("Called deleteTopic");
-        request = DeleteTopicConverter.interceptRequest(request);
+        final DeleteTopicRequest interceptedRequest =
+                DeleteTopicConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                DeleteTopicConverter.fromRequest(client, request);
+                DeleteTopicConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTopicResponse>
                 transformer = DeleteTopicConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.delete(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetTopicResponse getTopic(GetTopicRequest request) {
         LOG.trace("Called getTopic");
-        request = GetTopicConverter.interceptRequest(request);
+        final GetTopicRequest interceptedRequest = GetTopicConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetTopicConverter.fromRequest(client, request);
+                GetTopicConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetTopicResponse> transformer =
                 GetTopicConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.get(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListTopicsResponse listTopics(ListTopicsRequest request) {
         LOG.trace("Called listTopics");
-        request = ListTopicsConverter.interceptRequest(request);
+        final ListTopicsRequest interceptedRequest = ListTopicsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListTopicsConverter.fromRequest(client, request);
+                ListTopicsConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListTopicsResponse> transformer =
                 ListTopicsConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.get(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateTopicResponse updateTopic(UpdateTopicRequest request) {
         LOG.trace("Called updateTopic");
-        request = UpdateTopicConverter.interceptRequest(request);
+        final UpdateTopicRequest interceptedRequest =
+                UpdateTopicConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateTopicConverter.fromRequest(client, request);
+                UpdateTopicConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTopicResponse>
                 transformer = UpdateTopicConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response =
-                        client.put(ib, request.getTopicAttributesDetails(), request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
-    }
-
-    private boolean canRetryRequestIfRefreshableAuthTokenUsed(com.oracle.bmc.model.BmcException e) {
-        if (e.getStatusCode() == 401
-                && this.authenticationDetailsProvider
-                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            ((com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider)
-                    .refresh();
-            return true;
-        }
-        return false;
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getTopicAttributesDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override

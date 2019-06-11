@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc.objectstorage.internal.http;
 
+import com.oracle.bmc.http.internal.ResponseHelper;
 import com.oracle.bmc.objectstorage.model.*;
 import com.oracle.bmc.objectstorage.requests.*;
 import com.oracle.bmc.objectstorage.responses.*;
@@ -115,6 +116,7 @@ public class UpdateBucketConverter {
 
                                 UpdateBucketResponse responseWrapper = builder.build();
 
+                                ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;
                             }
                         };

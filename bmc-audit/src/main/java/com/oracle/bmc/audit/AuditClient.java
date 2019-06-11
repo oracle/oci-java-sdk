@@ -30,6 +30,8 @@ public class AuditClient implements Audit {
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
 
+    private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
+
     /**
      * Creates a new service instance using the given authentication provider.
      * @param authenticationDetailsProvider The authentication details provider, required.
@@ -196,7 +198,15 @@ public class AuditClient implements Audit {
                                 .createRequestSigner(SERVICE, authenticationDetailsProvider));
             }
         }
-        this.client = restClientFactory.create(defaultRequestSigner, requestSigners, configuration);
+
+        final com.oracle.bmc.ClientConfiguration clientConfigurationToUse =
+                (configuration != null)
+                        ? configuration
+                        : com.oracle.bmc.ClientConfiguration.builder().build();
+        this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
+        this.client =
+                restClientFactory.create(
+                        defaultRequestSigner, requestSigners, clientConfigurationToUse);
 
         this.paginators = new AuditPaginators(this);
 
@@ -298,89 +308,88 @@ public class AuditClient implements Audit {
     @Override
     public GetConfigurationResponse getConfiguration(GetConfigurationRequest request) {
         LOG.trace("Called getConfiguration");
-        request = GetConfigurationConverter.interceptRequest(request);
+        final GetConfigurationRequest interceptedRequest =
+                GetConfigurationConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetConfigurationConverter.fromRequest(client, request);
+                GetConfigurationConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetConfigurationResponse>
                 transformer = GetConfigurationConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.get(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListEventsResponse listEvents(ListEventsRequest request) {
         LOG.trace("Called listEvents");
-        request = ListEventsConverter.interceptRequest(request);
+        final ListEventsRequest interceptedRequest = ListEventsConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ListEventsConverter.fromRequest(client, request);
+                ListEventsConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListEventsResponse> transformer =
                 ListEventsConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response = client.get(ib, request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateConfigurationResponse updateConfiguration(UpdateConfigurationRequest request) {
         LOG.trace("Called updateConfiguration");
-        request = UpdateConfigurationConverter.interceptRequest(request);
+        final UpdateConfigurationRequest interceptedRequest =
+                UpdateConfigurationConverter.interceptRequest(request);
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                UpdateConfigurationConverter.fromRequest(client, request);
+                UpdateConfigurationConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, UpdateConfigurationResponse>
                 transformer = UpdateConfigurationConverter.fromResponse();
 
-        int attempts = 0;
-        while (true) {
-            try {
-                javax.ws.rs.core.Response response =
-                        client.put(ib, request.getUpdateConfigurationDetails(), request);
-                return transformer.apply(response);
-            } catch (com.oracle.bmc.model.BmcException e) {
-                if (++attempts < MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS
-                        && canRetryRequestIfRefreshableAuthTokenUsed(e)) {
-                    continue;
-                } else {
-                    throw e;
-                }
-            }
-        }
-    }
-
-    private boolean canRetryRequestIfRefreshableAuthTokenUsed(com.oracle.bmc.model.BmcException e) {
-        if (e.getStatusCode() == 401
-                && this.authenticationDetailsProvider
-                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            ((com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider)
-                    .refresh();
-            return true;
-        }
-        return false;
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateConfigurationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override

@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc.core.internal.http;
 
+import com.oracle.bmc.http.internal.ResponseHelper;
 import com.oracle.bmc.core.model.*;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
@@ -92,6 +93,7 @@ public class GetSecurityListConverter {
 
                                 GetSecurityListResponse responseWrapper = builder.build();
 
+                                ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;
                             }
                         };

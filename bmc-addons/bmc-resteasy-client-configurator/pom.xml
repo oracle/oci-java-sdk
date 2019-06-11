@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk-addons</artifactId>
-    <version>1.5.8</version>
+    <version>1.5.9</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -14,31 +14,29 @@
   <description>This project adds support for the RestEasyClientConfigurator for the Java SDK</description>
   <url>https://docs.us-phoenix-1.oraclecloud.com/Content/API/SDKDocs/javasdk.htm</url>
 
+  <properties>
+    <resteasy.version>3.6.3.Final</resteasy.version>
+  </properties>
+
 
   <dependencies>
     <!-- https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-client -->
     <dependency>
       <groupId>org.jboss.resteasy</groupId>
       <artifactId>resteasy-client</artifactId>
-      <version>3.1.2.Final</version>
+      <version>${resteasy.version}</version>
     </dependency>
 
     <dependency>
       <groupId>org.jboss.resteasy</groupId>
       <artifactId>resteasy-jaxrs</artifactId>
-      <version>3.1.2.Final</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.jboss.resteasy</groupId>
-      <artifactId>jaxrs-api</artifactId>
-      <version>3.0.12.Final</version>
+      <version>${resteasy.version}</version>
     </dependency>
 
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common</artifactId>
-      <version>1.5.8</version>
+      <version>1.5.9</version>
     </dependency>
   </dependencies>
 </project>

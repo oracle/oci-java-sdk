@@ -2,6 +2,15 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
+## 1.5.9 - 2019-06-11
+### Added
+- Support for specifying custom boot volume sizes on instance configurations in the Compute Autoscaling service
+- Support for 'Autonomous Transaction Processing - Dedicated' features, as well as maintenance run and backup operations on autonomous databases, autonomous container databases, and autonomous Exadata infrastructure in the Database service
+- Support for retries in the Java SDK. An example of how to do this is available [here](https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/RetryExample.java)
+
+### Fixed
+- Non-buffered responses are now closed to fix connection leaks
+
 ## 1.5.8 - 2019-06-04
 ### Added
 - Support for autoscaling autonomous databases and autonomous data warehouses in the Database service

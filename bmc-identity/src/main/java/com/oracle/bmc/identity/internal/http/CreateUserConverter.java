@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc.identity.internal.http;
 
+import com.oracle.bmc.http.internal.ResponseHelper;
 import com.oracle.bmc.identity.model.*;
 import com.oracle.bmc.identity.requests.*;
 import com.oracle.bmc.identity.responses.*;
@@ -85,6 +86,7 @@ public class CreateUserConverter {
 
                                 CreateUserResponse responseWrapper = builder.build();
 
+                                ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;
                             }
                         };

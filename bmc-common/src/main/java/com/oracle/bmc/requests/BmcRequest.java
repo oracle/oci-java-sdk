@@ -5,6 +5,7 @@ package com.oracle.bmc.requests;
 
 import javax.ws.rs.client.Invocation;
 
+import com.oracle.bmc.retrier.RetryConfiguration;
 import com.oracle.bmc.util.internal.Consumer;
 
 import lombok.Getter;
@@ -22,4 +23,13 @@ public class BmcRequest {
      * effect on headers set.
      */
     @Setter @Getter private Consumer<Invocation.Builder> invocationCallback;
+
+    /**
+     * Optional {@link RetryConfiguration} to use for this request.
+     *
+     * Note: This overrides the retry configurations set on the client (via
+     * {@link com.oracle.bmc.ClientConfiguration} and SDK level (via
+     * {@link com.oracle.bmc.retrier.Retriers#setDefaultRetryConfiguration(RetryConfiguration)}
+     */
+    @Setter @Getter private RetryConfiguration retryConfiguration;
 }

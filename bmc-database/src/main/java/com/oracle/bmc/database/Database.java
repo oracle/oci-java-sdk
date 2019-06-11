@@ -49,6 +49,16 @@ public interface Database extends AutoCloseable {
             CompleteExternalBackupJobRequest request);
 
     /**
+     * Create a new Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateAutonomousContainerDatabaseResponse createAutonomousContainerDatabase(
+            CreateAutonomousContainerDatabaseRequest request);
+
+    /**
      * **Deprecated.** To create a new Autonomous Data Warehouse, use the {@link #createAutonomousDatabase(CreateAutonomousDatabaseRequest) createAutonomousDatabase} operation and specify `DW` as the workload type.
      *
      * @param request The request object containing the details to send
@@ -227,6 +237,15 @@ public interface Database extends AutoCloseable {
             GenerateAutonomousDatabaseWalletRequest request);
 
     /**
+     * Gets information about the specified Autonomous Container Database.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetAutonomousContainerDatabaseResponse getAutonomousContainerDatabase(
+            GetAutonomousContainerDatabaseRequest request);
+
+    /**
      * **Deprecated.** To get the details of an Autonomous Data Warehouse, use the {@link #getAutonomousDatabase(GetAutonomousDatabaseRequest) getAutonomousDatabase} operation.
      *
      * @param request The request object containing the details to send
@@ -263,6 +282,15 @@ public interface Database extends AutoCloseable {
      */
     GetAutonomousDatabaseBackupResponse getAutonomousDatabaseBackup(
             GetAutonomousDatabaseBackupRequest request);
+
+    /**
+     * Gets information about the specified Autonomous Exadata Infrastructure.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetAutonomousExadataInfrastructureResponse getAutonomousExadataInfrastructure(
+            GetAutonomousExadataInfrastructureRequest request);
 
     /**
      * Gets information about the specified backup.
@@ -373,6 +401,24 @@ public interface Database extends AutoCloseable {
     GetExternalBackupJobResponse getExternalBackupJob(GetExternalBackupJobRequest request);
 
     /**
+     * Gets information about the specified Maintenance Run.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetMaintenanceRunResponse getMaintenanceRun(GetMaintenanceRunRequest request);
+
+    /**
+     * Launches a new Autonomous Exadata Infrastructure in the specified compartment and availability domain.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    LaunchAutonomousExadataInfrastructureResponse launchAutonomousExadataInfrastructure(
+            LaunchAutonomousExadataInfrastructureRequest request);
+
+    /**
      * Launches a new DB system in the specified compartment and availability domain. The Oracle
      * Database edition that you specify applies to all the databases on that DB system. The selected edition cannot be changed.
      * <p>
@@ -385,6 +431,16 @@ public interface Database extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     LaunchDbSystemResponse launchDbSystem(LaunchDbSystemRequest request);
+
+    /**
+     * Gets a list of the Autonomous Container Databases in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListAutonomousContainerDatabasesResponse listAutonomousContainerDatabases(
+            ListAutonomousContainerDatabasesRequest request);
 
     /**
      * **Deprecated.** To get a list of Autonomous Data Warehouse backups, use the {@link #listAutonomousDatabaseBackups(ListAutonomousDatabaseBackupsRequest) listAutonomousDatabaseBackups} operation.
@@ -424,6 +480,25 @@ public interface Database extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListAutonomousDatabasesResponse listAutonomousDatabases(ListAutonomousDatabasesRequest request);
+
+    /**
+     * Gets a list of the shapes that can be used to launch a new Autonomous Exadata Infrastructure DB system. The shape determines resources to allocate to the DB system (CPU cores, memory and storage).
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListAutonomousExadataInfrastructureShapesResponse listAutonomousExadataInfrastructureShapes(
+            ListAutonomousExadataInfrastructureShapesRequest request);
+
+    /**
+     * Gets a list of the Autonomous Exadata Infrastructures in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListAutonomousExadataInfrastructuresResponse listAutonomousExadataInfrastructures(
+            ListAutonomousExadataInfrastructuresRequest request);
 
     /**
      * Gets a list of backups based on the databaseId or compartmentId specified. Either one of the query parameters must be provided.
@@ -536,6 +611,15 @@ public interface Database extends AutoCloseable {
     ListDbVersionsResponse listDbVersions(ListDbVersionsRequest request);
 
     /**
+     * Gets a list of the Maintenance Runs in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListMaintenanceRunsResponse listMaintenanceRuns(ListMaintenanceRunsRequest request);
+
+    /**
      * Reinstates the database identified by the `databaseId` parameter into the standby role in a Data Guard association.
      *
      * @param request The request object containing the details to send
@@ -544,6 +628,16 @@ public interface Database extends AutoCloseable {
      */
     ReinstateDataGuardAssociationResponse reinstateDataGuardAssociation(
             ReinstateDataGuardAssociationRequest request);
+
+    /**
+     * Rolling restarts the specified Autonomous Container Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    RestartAutonomousContainerDatabaseResponse restartAutonomousContainerDatabase(
+            RestartAutonomousContainerDatabaseRequest request);
 
     /**
      * **Deprecated.** To restore an Autonomous Data Warehouse, use the {@link #restoreAutonomousDatabase(RestoreAutonomousDatabaseRequest) restoreAutonomousDatabase} operation.
@@ -626,12 +720,39 @@ public interface Database extends AutoCloseable {
             SwitchoverDataGuardAssociationRequest request);
 
     /**
+     * Terminates an Autonomous Container Database, which permanently deletes the container database and any databases within the container database. The database data is local to the Autonomous Exadata Infrastructure and will be lost when the container database is terminated. Oracle recommends that you back up any data in the Autonomous Container Database prior to terminating it.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    TerminateAutonomousContainerDatabaseResponse terminateAutonomousContainerDatabase(
+            TerminateAutonomousContainerDatabaseRequest request);
+
+    /**
+     * Terminates an Autonomous Exadata Infrastructure, which permanently deletes the Exadata Infrastructure and any container databases and databases contained in the Exadata Infrastructure. The database data is local to the Autonomous Exadata Infrastructure and will be lost when the system is terminated. Oracle recommends that you back up any data in the Autonomous Exadata Infrastructure prior to terminating it.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    TerminateAutonomousExadataInfrastructureResponse terminateAutonomousExadataInfrastructure(
+            TerminateAutonomousExadataInfrastructureRequest request);
+
+    /**
      * Terminates a DB system and permanently deletes it and any databases running on it, and any storage volumes attached to it. The database data is local to the DB system and will be lost when the system is terminated. Oracle recommends that you back up any data in the DB system prior to terminating it.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      */
     TerminateDbSystemResponse terminateDbSystem(TerminateDbSystemRequest request);
+
+    /**
+     * Updates the properties of an Autonomous Container Database, such as the CPU core count and storage size.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateAutonomousContainerDatabaseResponse updateAutonomousContainerDatabase(
+            UpdateAutonomousContainerDatabaseRequest request);
 
     /**
      * **Deprecated.** To update the CPU core count and storage size of an Autonomous Data Warehouse, use the {@link #updateAutonomousDatabase(UpdateAutonomousDatabaseRequest) updateAutonomousDatabase} operation.
@@ -652,6 +773,15 @@ public interface Database extends AutoCloseable {
      */
     UpdateAutonomousDatabaseResponse updateAutonomousDatabase(
             UpdateAutonomousDatabaseRequest request);
+
+    /**
+     * Updates the properties of an Autonomous Exadata Infrastructure, such as the CPU core count.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateAutonomousExadataInfrastructureResponse updateAutonomousExadataInfrastructure(
+            UpdateAutonomousExadataInfrastructureRequest request);
 
     /**
      * Update a Database based on the request parameters you provide.
@@ -686,6 +816,14 @@ public interface Database extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateExadataIormConfigResponse updateExadataIormConfig(UpdateExadataIormConfigRequest request);
+
+    /**
+     * Updates the properties of a Maintenance Run, such as the state of a Maintenance Run.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateMaintenanceRunResponse updateMaintenanceRun(UpdateMaintenanceRunRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

@@ -128,6 +128,7 @@ public class GetZoneRecordsRequest extends com.oracle.bmc.requests.BmcRequest {
     public static class Builder {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
+        private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
          * Set the invocation callback for the request to be built.
@@ -138,6 +139,17 @@ public class GetZoneRecordsRequest extends com.oracle.bmc.requests.BmcRequest {
                 com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                         invocationCallback) {
             this.invocationCallback = invocationCallback;
+            return this;
+        }
+
+        /**
+         * Set the retry configuration for the request to be built.
+         * @param retryConfiguration the retry configuration to be used for the request
+         * @return this builder instance
+         */
+        public Builder retryConfiguration(
+                com.oracle.bmc.retrier.RetryConfiguration retryConfiguration) {
+            this.retryConfiguration = retryConfiguration;
             return this;
         }
 
@@ -159,6 +171,7 @@ public class GetZoneRecordsRequest extends com.oracle.bmc.requests.BmcRequest {
             sortOrder(o.getSortOrder());
             compartmentId(o.getCompartmentId());
             invocationCallback(o.getInvocationCallback());
+            retryConfiguration(o.getRetryConfiguration());
             return this;
         }
 
@@ -175,6 +188,7 @@ public class GetZoneRecordsRequest extends com.oracle.bmc.requests.BmcRequest {
         public GetZoneRecordsRequest build() {
             GetZoneRecordsRequest request = buildWithoutInvocationCallback();
             request.setInvocationCallback(invocationCallback);
+            request.setRetryConfiguration(retryConfiguration);
             return request;
         }
     }

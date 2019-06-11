@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc.email.internal.http;
 
+import com.oracle.bmc.http.internal.ResponseHelper;
 import com.oracle.bmc.email.model.*;
 import com.oracle.bmc.email.requests.*;
 import com.oracle.bmc.email.responses.*;
@@ -172,6 +173,7 @@ public class ListSuppressionsConverter {
 
                                 ListSuppressionsResponse responseWrapper = builder.build();
 
+                                ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;
                             }
                         };

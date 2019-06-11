@@ -39,7 +39,7 @@ public enum ResetPeriod {
         return value;
     }
 
-    @com.fasterxml.jackson.annotation.JsonIgnore
+    @com.fasterxml.jackson.annotation.JsonCreator
     public static ResetPeriod create(String key) {
         if (map.containsKey(key)) {
             return map.get(key);

@@ -169,6 +169,19 @@ public class CreateAutonomousDatabaseBase {
     Boolean isAutoScalingEnabled;
 
     /**
+     * True if it is dedicated database.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDedicated")
+    Boolean isDedicated;
+
+    /**
+     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousContainerDatabaseId")
+    String autonomousContainerDatabaseId;
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>

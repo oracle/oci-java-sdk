@@ -6,11 +6,13 @@ package com.oracle.bmc.waiter;
 import com.oracle.bmc.waiter.WaiterConfiguration.WaitContext;
 
 import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 
 /**
  * Delay strategy that increases the wait time exponentially until a max time has been reached.
  */
 @RequiredArgsConstructor
+@ToString
 public class ExponentialBackoffDelayStrategy implements DelayStrategy {
     private final long maxDelayInMillis;
 

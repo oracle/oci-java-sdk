@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc.loadbalancer.internal.http;
 
+import com.oracle.bmc.http.internal.ResponseHelper;
 import com.oracle.bmc.loadbalancer.model.*;
 import com.oracle.bmc.loadbalancer.requests.*;
 import com.oracle.bmc.loadbalancer.responses.*;
@@ -86,6 +87,7 @@ public class GetWorkRequestConverter {
 
                                 GetWorkRequestResponse responseWrapper = builder.build();
 
+                                ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;
                             }
                         };

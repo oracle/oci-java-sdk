@@ -37,13 +37,18 @@ import com.oracle.bmc.core.responses.LaunchInstanceConfigurationResponse;
 public class InstanceConfigurationExample {
 
     public static CreateInstanceConfigurationDetails createInstanceConfigurationWithBlockVolume(
-            String availabilityDomain, String subnetId, String imageId, String compartmentId) {
+            String availabilityDomain,
+            String subnetId,
+            String imageId,
+            String compartmentId,
+            Long bootVolumeSizeInGBs) {
         InstanceConfigurationCreateVnicDetails vnicDetails =
                 InstanceConfigurationCreateVnicDetails.builder().subnetId(subnetId).build();
 
         InstanceConfigurationInstanceSourceViaImageDetails sourceDetails =
                 InstanceConfigurationInstanceSourceViaImageDetails.builder()
                         .imageId(imageId)
+                        .bootVolumeSizeInGBs(bootVolumeSizeInGBs)
                         .build();
 
         InstanceConfigurationLaunchInstanceDetails launchDetails =
@@ -181,6 +186,7 @@ public class InstanceConfigurationExample {
      *   <li>The second is the availability domain to launch the instance.</li>
      *   <li>Third parameter is the subnet for the launched instances.</li>
      *   <li>The fourth parameter is the ocid for the image source for the instance.</li>
+     *   <li>The fifth parameter is the bootVolumeSizeInGBs that is optional</li>
      * </ul>
      * @throws Exception
      */
@@ -188,16 +194,22 @@ public class InstanceConfigurationExample {
         final String CONFIG_LOCATION = "~/.oci/config";
         final String CONFIG_PROFILE = "DEFAULT";
 
-        if (args.length != 4) {
+        if (args.length < 4) {
             throw new IllegalArgumentException(
                     String.format(
-                            "Unexpected number of arguments.  Expected 4, got %s", args.length));
+                            "Unexpected number of arguments.  Expected at least 4, got %s",
+                            args.length));
         }
 
         final String compartmentId = args[0];
         final String availabilityDomain = args[1];
         final String subnetId = args[2];
         final String imageId = args[3];
+        Long bootVolumeSizeInGBs = null;
+
+        if (args.length > 4 && args[4] != null) {
+            bootVolumeSizeInGBs = Long.parseLong(args[4]);
+        }
 
         AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(CONFIG_LOCATION, CONFIG_PROFILE);
@@ -209,7 +221,7 @@ public class InstanceConfigurationExample {
 
         CreateInstanceConfigurationDetails configurationDetails =
                 createInstanceConfigurationWithBlockVolume(
-                        availabilityDomain, subnetId, imageId, compartmentId);
+                        availabilityDomain, subnetId, imageId, compartmentId, bootVolumeSizeInGBs);
 
         CreateInstanceConfigurationRequest req =
                 CreateInstanceConfigurationRequest.builder()

@@ -63,6 +63,15 @@ public class UpdateAutonomousDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dbName")
+        private String dbName;
+
+        public Builder dbName(String dbName) {
+            this.dbName = dbName;
+            this.__explicitlySet__.add("dbName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -119,6 +128,7 @@ public class UpdateAutonomousDatabaseDetails {
                             dataStorageSizeInTBs,
                             displayName,
                             adminPassword,
+                            dbName,
                             freeformTags,
                             definedTags,
                             licenseModel,
@@ -135,6 +145,7 @@ public class UpdateAutonomousDatabaseDetails {
                             .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
                             .displayName(o.getDisplayName())
                             .adminPassword(o.getAdminPassword())
+                            .dbName(o.getDbName())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .licenseModel(o.getLicenseModel())
@@ -177,6 +188,15 @@ public class UpdateAutonomousDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
     String adminPassword;
+
+    /**
+     * New name for this Autonomous Database. It must begin with an alphabetic character and can contain a
+     * maximum of eight alphanumeric characters. Special characters are not permitted. This is valid only
+     * for dedicated databases.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbName")
+    String dbName;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.

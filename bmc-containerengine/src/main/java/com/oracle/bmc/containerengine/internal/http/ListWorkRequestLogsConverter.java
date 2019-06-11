@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc.containerengine.internal.http;
 
+import com.oracle.bmc.http.internal.ResponseHelper;
 import com.oracle.bmc.containerengine.model.*;
 import com.oracle.bmc.containerengine.requests.*;
 import com.oracle.bmc.containerengine.responses.*;
@@ -100,6 +101,7 @@ public class ListWorkRequestLogsConverter {
 
                                 ListWorkRequestLogsResponse responseWrapper = builder.build();
 
+                                ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;
                             }
                         };

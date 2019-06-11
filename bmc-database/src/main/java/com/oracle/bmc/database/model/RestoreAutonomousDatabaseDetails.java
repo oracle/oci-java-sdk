@@ -34,19 +34,40 @@ public class RestoreAutonomousDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseSCN")
+        private String databaseSCN;
+
+        public Builder databaseSCN(String databaseSCN) {
+            this.databaseSCN = databaseSCN;
+            this.__explicitlySet__.add("databaseSCN");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("latest")
+        private Boolean latest;
+
+        public Builder latest(Boolean latest) {
+            this.latest = latest;
+            this.__explicitlySet__.add("latest");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RestoreAutonomousDatabaseDetails build() {
             RestoreAutonomousDatabaseDetails __instance__ =
-                    new RestoreAutonomousDatabaseDetails(timestamp);
+                    new RestoreAutonomousDatabaseDetails(timestamp, databaseSCN, latest);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(RestoreAutonomousDatabaseDetails o) {
-            Builder copiedBuilder = timestamp(o.getTimestamp());
+            Builder copiedBuilder =
+                    timestamp(o.getTimestamp())
+                            .databaseSCN(o.getDatabaseSCN())
+                            .latest(o.getLatest());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -65,6 +86,20 @@ public class RestoreAutonomousDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     java.util.Date timestamp;
+
+    /**
+     * Restores using the backup with the System Change Number (SCN) specified.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseSCN")
+    String databaseSCN;
+
+    /**
+     * Restores to the last known good state with the least possible data loss.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("latest")
+    Boolean latest;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

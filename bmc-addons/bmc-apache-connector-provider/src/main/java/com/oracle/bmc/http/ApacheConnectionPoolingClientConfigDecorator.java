@@ -24,11 +24,23 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public class ApacheConnectionPoolingClientConfigDecorator implements ClientConfigDecorator {
     private final ApacheConnectionPoolConfig config;
+    private PoolingHttpClientConnectionManager poolConnectionManager;
 
     /** Creates a new {@code ApacheConnectionPoolingClientConfigDecorator} object. */
     public ApacheConnectionPoolingClientConfigDecorator(
             @NonNull final ApacheConnectionPoolConfig config) {
         this.config = config;
+    }
+
+    /**
+     * Gets the underlying {@code PoolingHttpClientConnectionManager} for the
+     * {@code ApacheConnectionPoolingClientConfigDecorator}.  If the client has yet to be initialized and configured,
+     * then the {@code PoolingHttpClientConnectionManager} can be {@code null}.
+     *
+     * @return the configured PoolingHttpClientConnectionManager
+     */
+    public PoolingHttpClientConnectionManager getPoolingHttpClientConnectionManager() {
+        return poolConnectionManager;
     }
 
     @Override
@@ -47,13 +59,13 @@ public class ApacheConnectionPoolingClientConfigDecorator implements ClientConfi
         LOG.info("ApacheConnectionPoolConfig: {}", config);
 
         final Pair<Integer, TimeUnit> ttl = config.getTtl();
-        final PoolingHttpClientConnectionManager connectionManager =
+        poolConnectionManager =
                 (ttl != null)
                         ? new PoolingHttpClientConnectionManager(ttl.getLeft(), ttl.getRight())
                         : new PoolingHttpClientConnectionManager();
-        connectionManager.setMaxTotal(config.getTotalOpenConnections());
-        connectionManager.setDefaultMaxPerRoute(config.getDefaultMaxConnectionsPerRoute());
+        poolConnectionManager.setMaxTotal(config.getTotalOpenConnections());
+        poolConnectionManager.setDefaultMaxPerRoute(config.getDefaultMaxConnectionsPerRoute());
 
-        clientConfig.property(ApacheClientProperties.CONNECTION_MANAGER, connectionManager);
+        clientConfig.property(ApacheClientProperties.CONNECTION_MANAGER, poolConnectionManager);
     }
 }

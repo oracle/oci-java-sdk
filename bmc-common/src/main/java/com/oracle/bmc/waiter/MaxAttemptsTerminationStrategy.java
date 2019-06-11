@@ -6,11 +6,13 @@ package com.oracle.bmc.waiter;
 import com.oracle.bmc.waiter.WaiterConfiguration.WaitContext;
 
 import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 
 /**
  * Termination strategy that allows up to X attempts before terminating.
  */
 @RequiredArgsConstructor
+@ToString
 public class MaxAttemptsTerminationStrategy implements TerminationStrategy {
     /**
      * The maximum number of attempts to make.

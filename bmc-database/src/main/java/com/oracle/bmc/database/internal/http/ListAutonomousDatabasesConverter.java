@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc.database.internal.http;
 
+import com.oracle.bmc.http.internal.ResponseHelper;
 import com.oracle.bmc.database.model.*;
 import com.oracle.bmc.database.requests.*;
 import com.oracle.bmc.database.responses.*;
@@ -35,6 +36,14 @@ public class ListAutonomousDatabasesConverter {
                         "compartmentId",
                         com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                 request.getCompartmentId()));
+
+        if (request.getAutonomousContainerDatabaseId() != null) {
+            target =
+                    target.queryParam(
+                            "autonomousContainerDatabaseId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getAutonomousContainerDatabaseId()));
+        }
 
         if (request.getLimit() != null) {
             target =
@@ -163,6 +172,7 @@ public class ListAutonomousDatabasesConverter {
 
                                 ListAutonomousDatabasesResponse responseWrapper = builder.build();
 
+                                ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;
                             }
                         };

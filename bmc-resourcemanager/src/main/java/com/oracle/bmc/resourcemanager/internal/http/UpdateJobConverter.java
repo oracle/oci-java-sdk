@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc.resourcemanager.internal.http;
 
+import com.oracle.bmc.http.internal.ResponseHelper;
 import com.oracle.bmc.resourcemanager.model.*;
 import com.oracle.bmc.resourcemanager.requests.*;
 import com.oracle.bmc.resourcemanager.responses.*;
@@ -95,6 +96,7 @@ public class UpdateJobConverter {
 
                                 UpdateJobResponse responseWrapper = builder.build();
 
+                                ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;
                             }
                         };

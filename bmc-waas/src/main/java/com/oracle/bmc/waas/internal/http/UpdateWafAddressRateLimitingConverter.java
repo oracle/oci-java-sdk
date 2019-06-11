@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc.waas.internal.http;
 
+import com.oracle.bmc.http.internal.ResponseHelper;
 import com.oracle.bmc.waas.model.*;
 import com.oracle.bmc.waas.requests.*;
 import com.oracle.bmc.waas.responses.*;
@@ -121,6 +122,7 @@ public class UpdateWafAddressRateLimitingConverter {
                                 UpdateWafAddressRateLimitingResponse responseWrapper =
                                         builder.build();
 
+                                ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;
                             }
                         };

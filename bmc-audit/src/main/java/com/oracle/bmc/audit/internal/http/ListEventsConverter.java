@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc.audit.internal.http;
 
+import com.oracle.bmc.http.internal.ResponseHelper;
 import com.oracle.bmc.audit.model.*;
 import com.oracle.bmc.audit.requests.*;
 import com.oracle.bmc.audit.responses.*;
@@ -120,6 +121,7 @@ public class ListEventsConverter {
 
                                 ListEventsResponse responseWrapper = builder.build();
 
+                                ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;
                             }
                         };

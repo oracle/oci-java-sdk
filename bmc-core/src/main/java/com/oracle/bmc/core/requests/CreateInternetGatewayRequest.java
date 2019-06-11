@@ -28,6 +28,7 @@ public class CreateInternetGatewayRequest extends com.oracle.bmc.requests.BmcReq
     public static class Builder {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
+        private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
          * Set the invocation callback for the request to be built.
@@ -42,6 +43,17 @@ public class CreateInternetGatewayRequest extends com.oracle.bmc.requests.BmcReq
         }
 
         /**
+         * Set the retry configuration for the request to be built.
+         * @param retryConfiguration the retry configuration to be used for the request
+         * @return this builder instance
+         */
+        public Builder retryConfiguration(
+                com.oracle.bmc.retrier.RetryConfiguration retryConfiguration) {
+            this.retryConfiguration = retryConfiguration;
+            return this;
+        }
+
+        /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
          */
@@ -49,6 +61,7 @@ public class CreateInternetGatewayRequest extends com.oracle.bmc.requests.BmcReq
             createInternetGatewayDetails(o.getCreateInternetGatewayDetails());
             opcRetryToken(o.getOpcRetryToken());
             invocationCallback(o.getInvocationCallback());
+            retryConfiguration(o.getRetryConfiguration());
             return this;
         }
 
@@ -65,6 +78,7 @@ public class CreateInternetGatewayRequest extends com.oracle.bmc.requests.BmcReq
         public CreateInternetGatewayRequest build() {
             CreateInternetGatewayRequest request = buildWithoutInvocationCallback();
             request.setInvocationCallback(invocationCallback);
+            request.setRetryConfiguration(retryConfiguration);
             return request;
         }
     }

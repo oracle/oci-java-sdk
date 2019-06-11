@@ -9,6 +9,7 @@ import com.oracle.bmc.Realm;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.internal.AuthUtils;
 import com.oracle.bmc.auth.internal.X509FederationClient;
+
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
@@ -18,6 +19,11 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.security.KeyPair;
+import java.security.KeyPairGenerator;
+import java.security.NoSuchAlgorithmException;
+import java.security.interfaces.RSAPrivateKey;
+import java.security.interfaces.RSAPublicKey;
 import java.util.HashSet;
 
 /**
@@ -67,7 +73,7 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
     /**
      * Detected region.
      */
-    protected Region region = null;
+    @Getter protected Region region = null;
 
     /**
      * Configures the custom federationEndpoint to use.
@@ -102,10 +108,7 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
      */
     public P build() {
         SessionKeySupplier sessionKeySupplierToUse =
-                sessionKeySupplier != null
-                        ? sessionKeySupplier
-                        : new AbstractRequestingAuthenticationDetailsProvider
-                                .SessionKeySupplierImpl();
+                sessionKeySupplier != null ? sessionKeySupplier : new SessionKeySupplierImpl();
 
         if (purpose != null) {
             this.federationClient =
@@ -221,4 +224,60 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
      * @return authentication details provider
      */
     protected abstract P buildProvider(SessionKeySupplier sessionKeySupplierToUse);
+
+    /**
+     * This is a helper class to generate in-memory temporary session keys.
+     * <p>
+     * The thread safety of this class is ensured through the Caching class above
+     * which synchronizes on all methods.
+     */
+    private static class SessionKeySupplierImpl implements SessionKeySupplier {
+        private final static KeyPairGenerator GENERATOR;
+        private KeyPair keyPair = null;
+
+        static {
+            try {
+                GENERATOR = KeyPairGenerator.getInstance("RSA");
+                GENERATOR.initialize(2048);
+            } catch (NoSuchAlgorithmException e) {
+                throw new Error(e.getMessage(), e);
+            }
+        }
+
+        private SessionKeySupplierImpl() {
+            this.keyPair = GENERATOR.generateKeyPair();
+        }
+
+        @Override
+        public KeyPair getKeyPair() {
+            return keyPair;
+        }
+
+        /**
+         * Gets the public key
+         * @return the public key, not null
+         * @deprecated use getKeyPair() instead
+         */
+        @Override
+        @Deprecated
+        public RSAPublicKey getPublicKey() {
+            return (RSAPublicKey) keyPair.getPublic();
+        }
+
+        /**
+         * Gets the private key
+         * @return the private key, not null
+         * @deprecated use getKeyPair() instead
+         */
+        @Override
+        @Deprecated
+        public RSAPrivateKey getPrivateKey() {
+            return (RSAPrivateKey) keyPair.getPrivate();
+        }
+
+        @Override
+        public void refreshKeys() {
+            this.keyPair = GENERATOR.generateKeyPair();
+        }
+    }
 }

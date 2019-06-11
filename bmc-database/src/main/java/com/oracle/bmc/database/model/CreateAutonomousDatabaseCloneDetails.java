@@ -112,6 +112,24 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isDedicated")
+        private Boolean isDedicated;
+
+        public Builder isDedicated(Boolean isDedicated) {
+            this.isDedicated = isDedicated;
+            this.__explicitlySet__.add("isDedicated");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousContainerDatabaseId")
+        private String autonomousContainerDatabaseId;
+
+        public Builder autonomousContainerDatabaseId(String autonomousContainerDatabaseId) {
+            this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
+            this.__explicitlySet__.add("autonomousContainerDatabaseId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -164,6 +182,8 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
                             displayName,
                             licenseModel,
                             isAutoScalingEnabled,
+                            isDedicated,
+                            autonomousContainerDatabaseId,
                             freeformTags,
                             definedTags,
                             sourceId,
@@ -184,6 +204,8 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
                             .displayName(o.getDisplayName())
                             .licenseModel(o.getLicenseModel())
                             .isAutoScalingEnabled(o.getIsAutoScalingEnabled())
+                            .isDedicated(o.getIsDedicated())
+                            .autonomousContainerDatabaseId(o.getAutonomousContainerDatabaseId())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .sourceId(o.getSourceId())
@@ -212,6 +234,8 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
             String displayName,
             LicenseModel licenseModel,
             Boolean isAutoScalingEnabled,
+            Boolean isDedicated,
+            String autonomousContainerDatabaseId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String sourceId,
@@ -226,6 +250,8 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
                 displayName,
                 licenseModel,
                 isAutoScalingEnabled,
+                isDedicated,
+                autonomousContainerDatabaseId,
                 freeformTags,
                 definedTags);
         this.sourceId = sourceId;

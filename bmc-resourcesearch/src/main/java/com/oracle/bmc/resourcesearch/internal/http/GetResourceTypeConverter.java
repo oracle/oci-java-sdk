@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc.resourcesearch.internal.http;
 
+import com.oracle.bmc.http.internal.ResponseHelper;
 import com.oracle.bmc.resourcesearch.model.*;
 import com.oracle.bmc.resourcesearch.requests.*;
 import com.oracle.bmc.resourcesearch.responses.*;
@@ -87,6 +88,7 @@ public class GetResourceTypeConverter {
 
                                 GetResourceTypeResponse responseWrapper = builder.build();
 
+                                ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;
                             }
                         };

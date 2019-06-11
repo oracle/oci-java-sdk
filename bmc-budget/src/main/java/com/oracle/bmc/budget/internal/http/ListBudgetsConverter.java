@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc.budget.internal.http;
 
+import com.oracle.bmc.http.internal.ResponseHelper;
 import com.oracle.bmc.budget.model.*;
 import com.oracle.bmc.budget.requests.*;
 import com.oracle.bmc.budget.responses.*;
@@ -149,6 +150,7 @@ public class ListBudgetsConverter {
 
                                 ListBudgetsResponse responseWrapper = builder.build();
 
+                                ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;
                             }
                         };
