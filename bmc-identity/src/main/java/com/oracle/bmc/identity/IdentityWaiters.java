@@ -7,10 +7,10 @@ import com.oracle.bmc.identity.requests.*;
 import com.oracle.bmc.identity.responses.*;
 
 /**
- * Collection of helper methods to produce {@link Waiter}s for different
+ * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
  * resources of Identity.
  * <p>
- * The default configuration used is defined by {@link Waiters#DEFAULT_POLLING_WAITER}.
+ * The default configuration used is defined by {@link com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.RequiredArgsConstructor
@@ -19,7 +19,7 @@ public class IdentityWaiters {
     private final Identity client;
 
     /**
-     * Creates a new {@link Waiter} using default configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
      * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
@@ -39,13 +39,13 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using the provided configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
      *
      * @param request the request to send
      * @param targetState the desired state to wait for
-     * @param terminationStrategy the {@link TerminationStrategy} to use
-     * @param delayStrategy the {@link DelayStrategy} to use
-     * @return a new {@code Waiter} instance
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetCompartmentRequest, GetCompartmentResponse>
             forCompartment(
@@ -62,13 +62,13 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using the provided configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
      *
      * @param request the request to send
-     * @param terminationStrategy the {@link TerminationStrategy} to use
-     * @param delayStrategy the {@link DelayStrategy} to use
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
      * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
-     * @return a new {@code Waiter} instance
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetCompartmentRequest, GetCompartmentResponse>
             forCompartment(
@@ -121,7 +121,7 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using default configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
      * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
@@ -141,13 +141,13 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using the provided configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
      *
      * @param request the request to send
      * @param targetState the desired state to wait for
-     * @param terminationStrategy the {@link TerminationStrategy} to use
-     * @param delayStrategy the {@link DelayStrategy} to use
-     * @return a new {@code Waiter} instance
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetDynamicGroupRequest, GetDynamicGroupResponse>
             forDynamicGroup(
@@ -164,13 +164,13 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using the provided configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
      *
      * @param request the request to send
-     * @param terminationStrategy the {@link TerminationStrategy} to use
-     * @param delayStrategy the {@link DelayStrategy} to use
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
      * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
-     * @return a new {@code Waiter} instance
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetDynamicGroupRequest, GetDynamicGroupResponse>
             forDynamicGroup(
@@ -223,7 +223,7 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using default configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
      * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
@@ -242,13 +242,13 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using the provided configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
      *
      * @param request the request to send
      * @param targetState the desired state to wait for
-     * @param terminationStrategy the {@link TerminationStrategy} to use
-     * @param delayStrategy the {@link DelayStrategy} to use
-     * @return a new {@code Waiter} instance
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetGroupRequest, GetGroupResponse> forGroup(
             GetGroupRequest request,
@@ -264,13 +264,13 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using the provided configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
      *
      * @param request the request to send
-     * @param terminationStrategy the {@link TerminationStrategy} to use
-     * @param delayStrategy the {@link DelayStrategy} to use
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
      * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
-     * @return a new {@code Waiter} instance
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetGroupRequest, GetGroupResponse> forGroup(
             GetGroupRequest request,
@@ -319,7 +319,7 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using default configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
      * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
@@ -339,13 +339,13 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using the provided configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
      *
      * @param request the request to send
      * @param targetState the desired state to wait for
-     * @param terminationStrategy the {@link TerminationStrategy} to use
-     * @param delayStrategy the {@link DelayStrategy} to use
-     * @return a new {@code Waiter} instance
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetIdentityProviderRequest, GetIdentityProviderResponse>
             forIdentityProvider(
@@ -362,13 +362,13 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using the provided configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
      *
      * @param request the request to send
-     * @param terminationStrategy the {@link TerminationStrategy} to use
-     * @param delayStrategy the {@link DelayStrategy} to use
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
      * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
-     * @return a new {@code Waiter} instance
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetIdentityProviderRequest, GetIdentityProviderResponse>
             forIdentityProvider(
@@ -423,7 +423,7 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using default configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
      * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
@@ -443,13 +443,13 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using the provided configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
      *
      * @param request the request to send
      * @param targetState the desired state to wait for
-     * @param terminationStrategy the {@link TerminationStrategy} to use
-     * @param delayStrategy the {@link DelayStrategy} to use
-     * @return a new {@code Waiter} instance
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetIdpGroupMappingRequest, GetIdpGroupMappingResponse>
             forIdpGroupMapping(
@@ -466,13 +466,13 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using the provided configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
      *
      * @param request the request to send
-     * @param terminationStrategy the {@link TerminationStrategy} to use
-     * @param delayStrategy the {@link DelayStrategy} to use
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
      * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
-     * @return a new {@code Waiter} instance
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetIdpGroupMappingRequest, GetIdpGroupMappingResponse>
             forIdpGroupMapping(
@@ -527,7 +527,7 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using default configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
      * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
@@ -546,13 +546,13 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using the provided configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
      *
      * @param request the request to send
      * @param targetState the desired state to wait for
-     * @param terminationStrategy the {@link TerminationStrategy} to use
-     * @param delayStrategy the {@link DelayStrategy} to use
-     * @return a new {@code Waiter} instance
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetPolicyRequest, GetPolicyResponse> forPolicy(
             GetPolicyRequest request,
@@ -568,13 +568,13 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using the provided configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
      *
      * @param request the request to send
-     * @param terminationStrategy the {@link TerminationStrategy} to use
-     * @param delayStrategy the {@link DelayStrategy} to use
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
      * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
-     * @return a new {@code Waiter} instance
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetPolicyRequest, GetPolicyResponse> forPolicy(
             GetPolicyRequest request,
@@ -623,7 +623,7 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using default configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
      * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
@@ -641,13 +641,13 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using the provided configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
      *
      * @param request the request to send
      * @param targetState the desired state to wait for
-     * @param terminationStrategy the {@link TerminationStrategy} to use
-     * @param delayStrategy the {@link DelayStrategy} to use
-     * @return a new {@code Waiter} instance
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetTagRequest, GetTagResponse> forTag(
             GetTagRequest request,
@@ -663,13 +663,13 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using the provided configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
      *
      * @param request the request to send
-     * @param terminationStrategy the {@link TerminationStrategy} to use
-     * @param delayStrategy the {@link DelayStrategy} to use
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
      * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
-     * @return a new {@code Waiter} instance
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetTagRequest, GetTagResponse> forTag(
             GetTagRequest request,
@@ -718,7 +718,7 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using default configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
      * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
@@ -737,13 +737,13 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using the provided configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
      *
      * @param request the request to send
      * @param targetState the desired state to wait for
-     * @param terminationStrategy the {@link TerminationStrategy} to use
-     * @param delayStrategy the {@link DelayStrategy} to use
-     * @return a new {@code Waiter} instance
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetTagDefaultRequest, GetTagDefaultResponse> forTagDefault(
             GetTagDefaultRequest request,
@@ -759,13 +759,13 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using the provided configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
      *
      * @param request the request to send
-     * @param terminationStrategy the {@link TerminationStrategy} to use
-     * @param delayStrategy the {@link DelayStrategy} to use
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
      * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
-     * @return a new {@code Waiter} instance
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetTagDefaultRequest, GetTagDefaultResponse> forTagDefault(
             GetTagDefaultRequest request,
@@ -814,7 +814,7 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using default configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
      * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
@@ -834,13 +834,13 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using the provided configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
      *
      * @param request the request to send
      * @param targetState the desired state to wait for
-     * @param terminationStrategy the {@link TerminationStrategy} to use
-     * @param delayStrategy the {@link DelayStrategy} to use
-     * @return a new {@code Waiter} instance
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetTagNamespaceRequest, GetTagNamespaceResponse>
             forTagNamespace(
@@ -857,13 +857,13 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using the provided configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
      *
      * @param request the request to send
-     * @param terminationStrategy the {@link TerminationStrategy} to use
-     * @param delayStrategy the {@link DelayStrategy} to use
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
      * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
-     * @return a new {@code Waiter} instance
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetTagNamespaceRequest, GetTagNamespaceResponse>
             forTagNamespace(
@@ -916,7 +916,7 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using default configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
      * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
@@ -934,13 +934,13 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using the provided configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
      *
      * @param request the request to send
      * @param targetState the desired state to wait for
-     * @param terminationStrategy the {@link TerminationStrategy} to use
-     * @param delayStrategy the {@link DelayStrategy} to use
-     * @return a new {@code Waiter} instance
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetUserRequest, GetUserResponse> forUser(
             GetUserRequest request,
@@ -956,13 +956,13 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using the provided configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
      *
      * @param request the request to send
-     * @param terminationStrategy the {@link TerminationStrategy} to use
-     * @param delayStrategy the {@link DelayStrategy} to use
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
      * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
-     * @return a new {@code Waiter} instance
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetUserRequest, GetUserResponse> forUser(
             GetUserRequest request,
@@ -1011,7 +1011,7 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using default configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
      * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
@@ -1033,13 +1033,13 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using the provided configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
      *
      * @param request the request to send
      * @param targetState the desired state to wait for
-     * @param terminationStrategy the {@link TerminationStrategy} to use
-     * @param delayStrategy the {@link DelayStrategy} to use
-     * @return a new {@code Waiter} instance
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
                     GetUserGroupMembershipRequest, GetUserGroupMembershipResponse>
@@ -1057,13 +1057,13 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using the provided configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
      *
      * @param request the request to send
-     * @param terminationStrategy the {@link TerminationStrategy} to use
-     * @param delayStrategy the {@link DelayStrategy} to use
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
      * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
-     * @return a new {@code Waiter} instance
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
                     GetUserGroupMembershipRequest, GetUserGroupMembershipResponse>
@@ -1121,10 +1121,10 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using default configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using default configuration.
      *
      * @param request the request to send
-     * @return a new Waiter instance
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetWorkRequestRequest, GetWorkRequestResponse>
             forWorkRequest(GetWorkRequestRequest request) {
@@ -1132,12 +1132,12 @@ public class IdentityWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using the provided configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
      *
      * @param request the request to send
-     * @param terminationStrategy the {@link TerminationStrategy} to use
-     * @param delayStrategy the {@link DelayStrategy} to use
-     * @return a new {@code Waiter} instance
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@linkcom.oracle.bmc.waiter. DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetWorkRequestRequest, GetWorkRequestResponse>
             forWorkRequest(

@@ -8,7 +8,7 @@ import com.oracle.bmc.keymanagement.internal.http.*;
 import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @lombok.extern.slf4j.Slf4j
 public class KmsVaultClient implements KmsVault {
     /**
@@ -23,6 +23,7 @@ public class KmsVaultClient implements KmsVault {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private final KmsVaultWaiters waiters;
+
     private final KmsVaultPaginators paginators;
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
@@ -30,7 +31,6 @@ public class KmsVaultClient implements KmsVault {
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
-
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
 
     /**
@@ -263,7 +263,6 @@ public class KmsVaultClient implements KmsVault {
 
             executorService = threadPoolExecutor;
         }
-
         this.waiters = new KmsVaultWaiters(executorService, this);
 
         this.paginators = new KmsVaultPaginators(this);

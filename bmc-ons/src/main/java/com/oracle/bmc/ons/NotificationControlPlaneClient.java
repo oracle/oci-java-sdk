@@ -29,7 +29,6 @@ public class NotificationControlPlaneClient implements NotificationControlPlane 
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
-
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
 
     /**

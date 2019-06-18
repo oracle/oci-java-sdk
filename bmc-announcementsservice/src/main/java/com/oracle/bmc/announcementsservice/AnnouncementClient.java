@@ -27,7 +27,6 @@ public class AnnouncementClient implements Announcement {
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
-
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
 
     /**

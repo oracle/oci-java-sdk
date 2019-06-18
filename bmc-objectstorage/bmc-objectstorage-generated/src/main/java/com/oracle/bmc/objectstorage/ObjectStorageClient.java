@@ -24,6 +24,7 @@ public class ObjectStorageClient implements ObjectStorage {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private final ObjectStorageWaiters waiters;
+
     private final ObjectStoragePaginators paginators;
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
@@ -31,7 +32,6 @@ public class ObjectStorageClient implements ObjectStorage {
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
-
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
 
     /**
@@ -266,7 +266,6 @@ public class ObjectStorageClient implements ObjectStorage {
 
             executorService = threadPoolExecutor;
         }
-
         this.waiters = new ObjectStorageWaiters(executorService, this);
 
         this.paginators = new ObjectStoragePaginators(this);

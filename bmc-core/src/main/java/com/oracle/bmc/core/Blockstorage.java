@@ -5,6 +5,7 @@ package com.oracle.bmc.core;
 
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
+import com.oracle.bmc.workrequests.WorkRequest;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface Blockstorage extends AutoCloseable {
@@ -35,6 +36,65 @@ public interface Blockstorage extends AutoCloseable {
      * @param regionId The public region ID.
      */
     void setRegion(String regionId);
+
+    /**
+     * Change the compartment of a boot volume backup
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeBootVolumeBackupCompartmentResponse changeBootVolumeBackupCompartment(
+            ChangeBootVolumeBackupCompartmentRequest request);
+
+    /**
+     * Change the compartment of a boot volume
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeBootVolumeCompartmentResponse changeBootVolumeCompartment(
+            ChangeBootVolumeCompartmentRequest request);
+
+    /**
+     * Change the compartment of a volume backup
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeVolumeBackupCompartmentResponse changeVolumeBackupCompartment(
+            ChangeVolumeBackupCompartmentRequest request);
+
+    /**
+     * Change the compartment of a volume
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeVolumeCompartmentResponse changeVolumeCompartment(ChangeVolumeCompartmentRequest request);
+
+    /**
+     * Change the compartment of a volume group backup
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeVolumeGroupBackupCompartmentResponse changeVolumeGroupBackupCompartment(
+            ChangeVolumeGroupBackupCompartmentRequest request);
+
+    /**
+     * Change the compartment of a volume group
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeVolumeGroupCompartmentResponse changeVolumeGroupCompartment(
+            ChangeVolumeGroupCompartmentRequest request);
 
     /**
      * Creates a volume backup copy in specified region. For general information about volume backups,
@@ -472,8 +532,20 @@ public interface Blockstorage extends AutoCloseable {
      * Gets the pre-configured waiters available for resources for this service.
      *
      * @return The service waiters.
+     * @deprecated use {@link #newWaiters(WorkRequest)} instead.  Otherwise, a default one will be provided
+     *   that does not support operations that rely on the {@code WorkRequestClient} for polling.  An
+     *   {@code IllegalStateException} will be thrown for such operations.
      */
+    @Deprecated
     BlockstorageWaiters getWaiters();
+
+    /**
+     * Creates a new {@code BlockstorageWaiters} for resources for this service.
+     *
+     * @param workRequestClient The work request service client used to query for work request status
+     * @return The service waiters.
+     */
+    BlockstorageWaiters newWaiters(WorkRequest workRequestClient);
 
     /**
      * Gets the pre-configured paginators available for list operations in this service which may return multiple

@@ -6,7 +6,7 @@ package com.oracle.bmc.keymanagement;
 import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 public interface KmsVault extends AutoCloseable {
 
     /**
@@ -39,7 +39,8 @@ public interface KmsVault extends AutoCloseable {
     /**
      * Cancels the scheduled deletion of the specified vault. Canceling a scheduled deletion
      * restores the vault and all keys in it to the respective states they were in before
-     * the deletion was scheduled.
+     * the deletion was scheduled. All the keys that have already been scheduled deletion before the
+     * scheduled deletion of the vault will also remain in their state and timeOfDeletion.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -78,8 +79,12 @@ public interface KmsVault extends AutoCloseable {
     ListVaultsResponse listVaults(ListVaultsRequest request);
 
     /**
-     * Schedules the deletion of the specified vault. This sets the state of the vault and all keys in it
-     * to `PENDING_DELETION` and then deletes them after the retention period ends.
+     * Schedules the deletion of the specified vault. This sets the state of the vault and
+     * keys that are not scheduled deletion in it to `PENDING_DELETION` and then deletes them
+     * after the retention period ends.
+     * The state and the timeOfDeletion of the keys that have already been scheduled for deletion
+     * will not change. If any keys in it are scheduled for deletion after the specified timeOfDeletion
+     * for the vault, the call will be rejected with status code 409.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

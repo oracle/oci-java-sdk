@@ -24,6 +24,7 @@ public class ContainerEngineClient implements ContainerEngine {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private final ContainerEngineWaiters waiters;
+
     private final ContainerEnginePaginators paginators;
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
@@ -31,7 +32,6 @@ public class ContainerEngineClient implements ContainerEngine {
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
-
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
 
     /**
@@ -264,7 +264,6 @@ public class ContainerEngineClient implements ContainerEngine {
 
             executorService = threadPoolExecutor;
         }
-
         this.waiters = new ContainerEngineWaiters(executorService, this);
 
         this.paginators = new ContainerEnginePaginators(this);

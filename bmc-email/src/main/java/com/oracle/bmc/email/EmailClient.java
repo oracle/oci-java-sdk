@@ -24,6 +24,7 @@ public class EmailClient implements Email {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private final EmailWaiters waiters;
+
     private final EmailPaginators paginators;
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
@@ -31,7 +32,6 @@ public class EmailClient implements Email {
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
-
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
 
     /**
@@ -264,7 +264,6 @@ public class EmailClient implements Email {
 
             executorService = threadPoolExecutor;
         }
-
         this.waiters = new EmailWaiters(executorService, this);
 
         this.paginators = new EmailPaginators(this);

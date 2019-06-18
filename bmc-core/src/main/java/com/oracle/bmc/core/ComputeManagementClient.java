@@ -7,6 +7,7 @@ import java.util.Locale;
 import com.oracle.bmc.core.internal.http.*;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
+import com.oracle.bmc.workrequests.WorkRequest;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.extern.slf4j.Slf4j
@@ -24,6 +25,7 @@ public class ComputeManagementClient implements ComputeManagement {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private final ComputeManagementWaiters waiters;
+
     private final ComputeManagementPaginators paginators;
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
@@ -31,7 +33,7 @@ public class ComputeManagementClient implements ComputeManagement {
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
-
+    private final java.util.concurrent.ExecutorService executorService;
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
 
     /**
@@ -264,7 +266,7 @@ public class ComputeManagementClient implements ComputeManagement {
 
             executorService = threadPoolExecutor;
         }
-
+        this.executorService = executorService;
         this.waiters = new ComputeManagementWaiters(executorService, this);
 
         this.paginators = new ComputeManagementPaginators(this);
@@ -934,6 +936,11 @@ public class ComputeManagementClient implements ComputeManagement {
     @Override
     public ComputeManagementWaiters getWaiters() {
         return waiters;
+    }
+
+    @Override
+    public ComputeManagementWaiters newWaiters(WorkRequest workRequestClient) {
+        return new ComputeManagementWaiters(executorService, this, workRequestClient);
     }
 
     @Override

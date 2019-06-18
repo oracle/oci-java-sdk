@@ -24,6 +24,7 @@ public class DatabaseClient implements Database {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private final DatabaseWaiters waiters;
+
     private final DatabasePaginators paginators;
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
@@ -31,7 +32,6 @@ public class DatabaseClient implements Database {
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
-
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
 
     /**
@@ -264,7 +264,6 @@ public class DatabaseClient implements Database {
 
             executorService = threadPoolExecutor;
         }
-
         this.waiters = new DatabaseWaiters(executorService, this);
 
         this.paginators = new DatabasePaginators(this);

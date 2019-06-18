@@ -24,6 +24,7 @@ public class ResourceManagerClient implements ResourceManager {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private final ResourceManagerWaiters waiters;
+
     private final ResourceManagerPaginators paginators;
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
@@ -31,7 +32,6 @@ public class ResourceManagerClient implements ResourceManager {
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
-
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
 
     /**
@@ -264,7 +264,6 @@ public class ResourceManagerClient implements ResourceManager {
 
             executorService = threadPoolExecutor;
         }
-
         this.waiters = new ResourceManagerWaiters(executorService, this);
 
         this.paginators = new ResourceManagerPaginators(this);

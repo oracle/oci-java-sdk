@@ -24,6 +24,7 @@ public class BudgetClient implements Budget {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private final BudgetWaiters waiters;
+
     private final BudgetPaginators paginators;
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
@@ -31,7 +32,6 @@ public class BudgetClient implements Budget {
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
-
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
 
     /**
@@ -264,7 +264,6 @@ public class BudgetClient implements Budget {
 
             executorService = threadPoolExecutor;
         }
-
         this.waiters = new BudgetWaiters(executorService, this);
 
         this.paginators = new BudgetPaginators(this);

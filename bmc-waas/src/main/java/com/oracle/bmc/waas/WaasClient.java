@@ -23,6 +23,7 @@ public class WaasClient implements Waas {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private final WaasWaiters waiters;
+
     private final WaasPaginators paginators;
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
@@ -30,7 +31,6 @@ public class WaasClient implements Waas {
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
-
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
 
     /**
@@ -263,7 +263,6 @@ public class WaasClient implements Waas {
 
             executorService = threadPoolExecutor;
         }
-
         this.waiters = new WaasWaiters(executorService, this);
 
         this.paginators = new WaasPaginators(this);

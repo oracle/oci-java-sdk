@@ -23,6 +23,7 @@ public class NotificationDataPlaneClient implements NotificationDataPlane {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private final NotificationDataPlaneWaiters waiters;
+
     private final NotificationDataPlanePaginators paginators;
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
@@ -30,7 +31,6 @@ public class NotificationDataPlaneClient implements NotificationDataPlane {
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
-
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
 
     /**
@@ -263,7 +263,6 @@ public class NotificationDataPlaneClient implements NotificationDataPlane {
 
             executorService = threadPoolExecutor;
         }
-
         this.waiters = new NotificationDataPlaneWaiters(executorService, this);
 
         this.paginators = new NotificationDataPlanePaginators(this);

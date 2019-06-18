@@ -13,7 +13,7 @@ import lombok.NonNull;
  * https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm for which the operation may be retried.
  */
 public class DefaultRetryCondition implements RetryCondition {
-    // List of retryable error from https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm
+    // List of retryable errors from https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm
     private static final Multimap<Integer, String> RETRYABLE_SERVICE_ERRORS =
             ImmutableSetMultimap.<Integer, String>builder()
                     .put(400, "RelatedResourceNotAuthorizedOrNotFound")
@@ -29,7 +29,7 @@ public class DefaultRetryCondition implements RetryCondition {
     public boolean shouldBeRetried(@NonNull final BmcException exception) {
         return exception.isClientSide()
                 || exception.isTimeout()
-                || exception.getStatusCode() > 500
+                || exception.getStatusCode() >= 500
                 || RETRYABLE_SERVICE_ERRORS.containsEntry(
                         exception.getStatusCode(), exception.getServiceCode());
     }

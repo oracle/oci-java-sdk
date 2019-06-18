@@ -25,6 +25,7 @@ public class StreamAdminClient implements StreamAdmin {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private final StreamAdminWaiters waiters;
+
     private final StreamAdminPaginators paginators;
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
@@ -32,7 +33,6 @@ public class StreamAdminClient implements StreamAdmin {
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
-
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
 
     /**
@@ -265,7 +265,6 @@ public class StreamAdminClient implements StreamAdmin {
 
             executorService = threadPoolExecutor;
         }
-
         this.waiters = new StreamAdminWaiters(executorService, this);
 
         this.paginators = new StreamAdminPaginators(this);

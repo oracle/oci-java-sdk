@@ -2,6 +2,15 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
+## 1.5.10 - 2019-06-18
+### Added
+- Support for moving service gateway resources across compartments in Core Services
+- Support for moving block storage resources across compartments in Core Services
+- Support for key deletion in the Key Management service
+
+### Security
+- Due to a security vulnerability in a dependency of older versions of the Java SDK, **it is important that you upgrade to this or a later version of the Java SDK**. Jackson-databind version 2.9.8, used by prior versions of the SDK, has known security vulnerabilities. The SDK now uses Jackson-databind version 2.9.9 which fixes these vulnerabilities.
+
 ## 1.5.9 - 2019-06-11
 ### Added
 - Support for specifying custom boot volume sizes on instance configurations in the Compute Autoscaling service

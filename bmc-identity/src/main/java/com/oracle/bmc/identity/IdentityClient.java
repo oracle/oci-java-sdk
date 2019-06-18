@@ -23,6 +23,7 @@ public class IdentityClient implements Identity {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private final IdentityWaiters waiters;
+
     private final IdentityPaginators paginators;
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
@@ -30,7 +31,6 @@ public class IdentityClient implements Identity {
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
-
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
 
     /**
@@ -263,7 +263,6 @@ public class IdentityClient implements Identity {
 
             executorService = threadPoolExecutor;
         }
-
         this.waiters = new IdentityWaiters(executorService, this);
 
         this.paginators = new IdentityPaginators(this);

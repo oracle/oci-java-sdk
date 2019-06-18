@@ -7,6 +7,7 @@ import java.util.Locale;
 import com.oracle.bmc.core.internal.http.*;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
+import com.oracle.bmc.workrequests.WorkRequest;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.extern.slf4j.Slf4j
@@ -24,6 +25,7 @@ public class BlockstorageClient implements Blockstorage {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private final BlockstorageWaiters waiters;
+
     private final BlockstoragePaginators paginators;
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
@@ -31,7 +33,7 @@ public class BlockstorageClient implements Blockstorage {
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
-
+    private final java.util.concurrent.ExecutorService executorService;
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
 
     /**
@@ -264,7 +266,7 @@ public class BlockstorageClient implements Blockstorage {
 
             executorService = threadPoolExecutor;
         }
-
+        this.executorService = executorService;
         this.waiters = new BlockstorageWaiters(executorService, this);
 
         this.paginators = new BlockstoragePaginators(this);
@@ -375,6 +377,214 @@ public class BlockstorageClient implements Blockstorage {
     @Override
     public void close() {
         client.close();
+    }
+
+    @Override
+    public ChangeBootVolumeBackupCompartmentResponse changeBootVolumeBackupCompartment(
+            ChangeBootVolumeBackupCompartmentRequest request) {
+        LOG.trace("Called changeBootVolumeBackupCompartment");
+        final ChangeBootVolumeBackupCompartmentRequest interceptedRequest =
+                ChangeBootVolumeBackupCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeBootVolumeBackupCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeBootVolumeBackupCompartmentResponse>
+                transformer = ChangeBootVolumeBackupCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeBootVolumeBackupCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeBootVolumeCompartmentResponse changeBootVolumeCompartment(
+            ChangeBootVolumeCompartmentRequest request) {
+        LOG.trace("Called changeBootVolumeCompartment");
+        final ChangeBootVolumeCompartmentRequest interceptedRequest =
+                ChangeBootVolumeCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeBootVolumeCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeBootVolumeCompartmentResponse>
+                transformer = ChangeBootVolumeCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeBootVolumeCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeVolumeBackupCompartmentResponse changeVolumeBackupCompartment(
+            ChangeVolumeBackupCompartmentRequest request) {
+        LOG.trace("Called changeVolumeBackupCompartment");
+        final ChangeVolumeBackupCompartmentRequest interceptedRequest =
+                ChangeVolumeBackupCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeVolumeBackupCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeVolumeBackupCompartmentResponse>
+                transformer = ChangeVolumeBackupCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeVolumeBackupCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeVolumeCompartmentResponse changeVolumeCompartment(
+            ChangeVolumeCompartmentRequest request) {
+        LOG.trace("Called changeVolumeCompartment");
+        final ChangeVolumeCompartmentRequest interceptedRequest =
+                ChangeVolumeCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeVolumeCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeVolumeCompartmentResponse>
+                transformer = ChangeVolumeCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getChangeVolumeCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeVolumeGroupBackupCompartmentResponse changeVolumeGroupBackupCompartment(
+            ChangeVolumeGroupBackupCompartmentRequest request) {
+        LOG.trace("Called changeVolumeGroupBackupCompartment");
+        final ChangeVolumeGroupBackupCompartmentRequest interceptedRequest =
+                ChangeVolumeGroupBackupCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeVolumeGroupBackupCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeVolumeGroupBackupCompartmentResponse>
+                transformer = ChangeVolumeGroupBackupCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeVolumeGroupBackupCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeVolumeGroupCompartmentResponse changeVolumeGroupCompartment(
+            ChangeVolumeGroupCompartmentRequest request) {
+        LOG.trace("Called changeVolumeGroupCompartment");
+        final ChangeVolumeGroupCompartmentRequest interceptedRequest =
+                ChangeVolumeGroupCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeVolumeGroupCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeVolumeGroupCompartmentResponse>
+                transformer = ChangeVolumeGroupCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeVolumeGroupCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
@@ -1678,6 +1888,11 @@ public class BlockstorageClient implements Blockstorage {
     @Override
     public BlockstorageWaiters getWaiters() {
         return waiters;
+    }
+
+    @Override
+    public BlockstorageWaiters newWaiters(WorkRequest workRequestClient) {
+        return new BlockstorageWaiters(executorService, this, workRequestClient);
     }
 
     @Override
