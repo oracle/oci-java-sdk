@@ -23,6 +23,7 @@ public class DnsClient implements Dns {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private final DnsWaiters waiters;
+
     private final DnsPaginators paginators;
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
@@ -30,7 +31,6 @@ public class DnsClient implements Dns {
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
-
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
 
     /**
@@ -263,7 +263,6 @@ public class DnsClient implements Dns {
 
             executorService = threadPoolExecutor;
         }
-
         this.waiters = new DnsWaiters(executorService, this);
 
         this.paginators = new DnsPaginators(this);

@@ -24,6 +24,7 @@ public class WorkRequestClient implements WorkRequest {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private final WorkRequestWaiters waiters;
+
     private final WorkRequestPaginators paginators;
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
@@ -31,7 +32,6 @@ public class WorkRequestClient implements WorkRequest {
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
-
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
 
     /**
@@ -264,7 +264,6 @@ public class WorkRequestClient implements WorkRequest {
 
             executorService = threadPoolExecutor;
         }
-
         this.waiters = new WorkRequestWaiters(executorService, this);
 
         this.paginators = new WorkRequestPaginators(this);

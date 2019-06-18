@@ -5,6 +5,7 @@ package com.oracle.bmc.core;
 
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
+import com.oracle.bmc.workrequests.WorkRequest;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface VirtualNetwork extends AutoCloseable {
@@ -79,6 +80,18 @@ public interface VirtualNetwork extends AutoCloseable {
      */
     BulkDeleteVirtualCircuitPublicPrefixesResponse bulkDeleteVirtualCircuitPublicPrefixes(
             BulkDeleteVirtualCircuitPublicPrefixesRequest request);
+
+    /**
+     * Moves a service gateway into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeServiceGatewayCompartmentResponse changeServiceGatewayCompartment(
+            ChangeServiceGatewayCompartmentRequest request);
 
     /**
      * Connects this local peering gateway (LPG) to another one in the same region.
@@ -1760,8 +1773,20 @@ public interface VirtualNetwork extends AutoCloseable {
      * Gets the pre-configured waiters available for resources for this service.
      *
      * @return The service waiters.
+     * @deprecated use {@link #newWaiters(WorkRequest)} instead.  Otherwise, a default one will be provided
+     *   that does not support operations that rely on the {@code WorkRequestClient} for polling.  An
+     *   {@code IllegalStateException} will be thrown for such operations.
      */
+    @Deprecated
     VirtualNetworkWaiters getWaiters();
+
+    /**
+     * Creates a new {@code VirtualNetworkWaiters} for resources for this service.
+     *
+     * @param workRequestClient The work request service client used to query for work request status
+     * @return The service waiters.
+     */
+    VirtualNetworkWaiters newWaiters(WorkRequest workRequestClient);
 
     /**
      * Gets the pre-configured paginators available for list operations in this service which may return multiple

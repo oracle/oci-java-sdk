@@ -37,6 +37,115 @@ public interface BlockstorageAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Change the compartment of a boot volume backup
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeBootVolumeBackupCompartmentResponse>
+            changeBootVolumeBackupCompartment(
+                    ChangeBootVolumeBackupCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeBootVolumeBackupCompartmentRequest,
+                                    ChangeBootVolumeBackupCompartmentResponse>
+                            handler);
+
+    /**
+     * Change the compartment of a boot volume
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeBootVolumeCompartmentResponse> changeBootVolumeCompartment(
+            ChangeBootVolumeCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeBootVolumeCompartmentRequest, ChangeBootVolumeCompartmentResponse>
+                    handler);
+
+    /**
+     * Change the compartment of a volume backup
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeVolumeBackupCompartmentResponse>
+            changeVolumeBackupCompartment(
+                    ChangeVolumeBackupCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeVolumeBackupCompartmentRequest,
+                                    ChangeVolumeBackupCompartmentResponse>
+                            handler);
+
+    /**
+     * Change the compartment of a volume
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeVolumeCompartmentResponse> changeVolumeCompartment(
+            ChangeVolumeCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeVolumeCompartmentRequest, ChangeVolumeCompartmentResponse>
+                    handler);
+
+    /**
+     * Change the compartment of a volume group backup
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeVolumeGroupBackupCompartmentResponse>
+            changeVolumeGroupBackupCompartment(
+                    ChangeVolumeGroupBackupCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeVolumeGroupBackupCompartmentRequest,
+                                    ChangeVolumeGroupBackupCompartmentResponse>
+                            handler);
+
+    /**
+     * Change the compartment of a volume group
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeVolumeGroupCompartmentResponse> changeVolumeGroupCompartment(
+            ChangeVolumeGroupCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeVolumeGroupCompartmentRequest,
+                            ChangeVolumeGroupCompartmentResponse>
+                    handler);
+
+    /**
      * Creates a volume backup copy in specified region. For general information about volume backups,
      * see [Overview of Block Volume Service Backups](https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumebackups.htm)
      *

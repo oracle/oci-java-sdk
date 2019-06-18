@@ -24,6 +24,7 @@ public class FileStorageClient implements FileStorage {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private final FileStorageWaiters waiters;
+
     private final FileStoragePaginators paginators;
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
@@ -31,7 +32,6 @@ public class FileStorageClient implements FileStorage {
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
-
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
 
     /**
@@ -264,7 +264,6 @@ public class FileStorageClient implements FileStorage {
 
             executorService = threadPoolExecutor;
         }
-
         this.waiters = new FileStorageWaiters(executorService, this);
 
         this.paginators = new FileStoragePaginators(this);

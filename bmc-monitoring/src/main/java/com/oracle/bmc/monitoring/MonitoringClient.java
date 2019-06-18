@@ -23,6 +23,7 @@ public class MonitoringClient implements Monitoring {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private final MonitoringWaiters waiters;
+
     private final MonitoringPaginators paginators;
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
@@ -30,7 +31,6 @@ public class MonitoringClient implements Monitoring {
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
-
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
 
     /**
@@ -263,7 +263,6 @@ public class MonitoringClient implements Monitoring {
 
             executorService = threadPoolExecutor;
         }
-
         this.waiters = new MonitoringWaiters(executorService, this);
 
         this.paginators = new MonitoringPaginators(this);

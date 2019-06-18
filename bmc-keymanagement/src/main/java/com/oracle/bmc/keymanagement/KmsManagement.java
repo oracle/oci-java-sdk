@@ -6,7 +6,7 @@ package com.oracle.bmc.keymanagement;
 import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 public interface KmsManagement extends AutoCloseable {
 
     /**
@@ -14,6 +14,17 @@ public interface KmsManagement extends AutoCloseable {
      * @param endpoint The endpoint of the service.
      */
     void setEndpoint(String endpoint);
+
+    /**
+     * Cancels the scheduled deletion of the specified key. Canceling
+     * a scheduled deletion restores the key to the respective
+     * states they were in before the deletion was scheduled.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CancelKeyDeletionResponse cancelKeyDeletion(CancelKeyDeletionRequest request);
 
     /**
      * Creates a new key.
@@ -88,6 +99,16 @@ public interface KmsManagement extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListKeysResponse listKeys(ListKeysRequest request);
+
+    /**
+     * Schedules the deletion of the specified key. This sets the state of the key
+     * to `PENDING_DELETION` and then deletes it after the retention period ends.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ScheduleKeyDeletionResponse scheduleKeyDeletion(ScheduleKeyDeletionRequest request);
 
     /**
      * Updates the properties of a key. Specifically, you can update the

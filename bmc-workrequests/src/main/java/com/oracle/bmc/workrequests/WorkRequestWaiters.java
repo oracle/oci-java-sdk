@@ -7,10 +7,10 @@ import com.oracle.bmc.workrequests.requests.*;
 import com.oracle.bmc.workrequests.responses.*;
 
 /**
- * Collection of helper methods to produce {@link Waiter}s for different
+ * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
  * resources of WorkRequest.
  * <p>
- * The default configuration used is defined by {@link Waiters#DEFAULT_POLLING_WAITER}.
+ * The default configuration used is defined by {@link com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.RequiredArgsConstructor
@@ -19,10 +19,10 @@ public class WorkRequestWaiters {
     private final WorkRequest client;
 
     /**
-     * Creates a new {@link Waiter} using default configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using default configuration.
      *
      * @param request the request to send
-     * @return a new Waiter instance
+     * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetWorkRequestRequest, GetWorkRequestResponse>
             forWorkRequest(GetWorkRequestRequest request) {
@@ -30,12 +30,12 @@ public class WorkRequestWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using the provided configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
      *
      * @param request the request to send
-     * @param terminationStrategy the {@link TerminationStrategy} to use
-     * @param delayStrategy the {@link DelayStrategy} to use
-     * @return a new {@code Waiter} instance
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@linkcom.oracle.bmc.waiter. DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetWorkRequestRequest, GetWorkRequestResponse>
             forWorkRequest(

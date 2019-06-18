@@ -24,6 +24,7 @@ public class LoadBalancerClient implements LoadBalancer {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private final LoadBalancerWaiters waiters;
+
     private final LoadBalancerPaginators paginators;
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
@@ -31,7 +32,6 @@ public class LoadBalancerClient implements LoadBalancer {
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
-
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
 
     /**
@@ -264,7 +264,6 @@ public class LoadBalancerClient implements LoadBalancer {
 
             executorService = threadPoolExecutor;
         }
-
         this.waiters = new LoadBalancerWaiters(executorService, this);
 
         this.paginators = new LoadBalancerPaginators(this);

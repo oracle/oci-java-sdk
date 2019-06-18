@@ -7,6 +7,7 @@ import java.util.Locale;
 import com.oracle.bmc.core.internal.http.*;
 import com.oracle.bmc.core.requests.*;
 import com.oracle.bmc.core.responses.*;
+import com.oracle.bmc.workrequests.WorkRequest;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.extern.slf4j.Slf4j
@@ -24,6 +25,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private final VirtualNetworkWaiters waiters;
+
     private final VirtualNetworkPaginators paginators;
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
@@ -31,7 +33,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
-
+    private final java.util.concurrent.ExecutorService executorService;
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
 
     /**
@@ -264,7 +266,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
 
             executorService = threadPoolExecutor;
         }
-
+        this.executorService = executorService;
         this.waiters = new VirtualNetworkWaiters(executorService, this);
 
         this.paginators = new VirtualNetworkPaginators(this);
@@ -475,6 +477,41 @@ public class VirtualNetworkClient implements VirtualNetwork {
                                                 ib,
                                                 retriedRequest
                                                         .getBulkDeleteVirtualCircuitPublicPrefixesDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeServiceGatewayCompartmentResponse changeServiceGatewayCompartment(
+            ChangeServiceGatewayCompartmentRequest request) {
+        LOG.trace("Called changeServiceGatewayCompartment");
+        final ChangeServiceGatewayCompartmentRequest interceptedRequest =
+                ChangeServiceGatewayCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeServiceGatewayCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeServiceGatewayCompartmentResponse>
+                transformer = ChangeServiceGatewayCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeServiceGatewayCompartmentDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -4169,6 +4206,11 @@ public class VirtualNetworkClient implements VirtualNetwork {
     @Override
     public VirtualNetworkWaiters getWaiters() {
         return waiters;
+    }
+
+    @Override
+    public VirtualNetworkWaiters newWaiters(WorkRequest workRequestClient) {
+        return new VirtualNetworkWaiters(executorService, this, workRequestClient);
     }
 
     @Override

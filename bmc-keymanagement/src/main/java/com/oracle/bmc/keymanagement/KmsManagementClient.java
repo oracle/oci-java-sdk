@@ -8,7 +8,7 @@ import com.oracle.bmc.keymanagement.internal.http.*;
 import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @lombok.extern.slf4j.Slf4j
 public class KmsManagementClient implements KmsManagement {
     /**
@@ -23,6 +23,7 @@ public class KmsManagementClient implements KmsManagement {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private final KmsManagementWaiters waiters;
+
     private final KmsManagementPaginators paginators;
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
@@ -30,7 +31,6 @@ public class KmsManagementClient implements KmsManagement {
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
-
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
 
     /**
@@ -263,7 +263,6 @@ public class KmsManagementClient implements KmsManagement {
 
             executorService = threadPoolExecutor;
         }
-
         this.waiters = new KmsManagementWaiters(executorService, this);
 
         this.paginators = new KmsManagementPaginators(this);
@@ -290,6 +289,35 @@ public class KmsManagementClient implements KmsManagement {
     @Override
     public void close() {
         client.close();
+    }
+
+    @Override
+    public CancelKeyDeletionResponse cancelKeyDeletion(CancelKeyDeletionRequest request) {
+        LOG.trace("Called cancelKeyDeletion");
+        final CancelKeyDeletionRequest interceptedRequest =
+                CancelKeyDeletionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelKeyDeletionConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CancelKeyDeletionResponse>
+                transformer = CancelKeyDeletionConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
@@ -513,6 +541,38 @@ public class KmsManagementClient implements KmsManagement {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ScheduleKeyDeletionResponse scheduleKeyDeletion(ScheduleKeyDeletionRequest request) {
+        LOG.trace("Called scheduleKeyDeletion");
+        final ScheduleKeyDeletionRequest interceptedRequest =
+                ScheduleKeyDeletionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ScheduleKeyDeletionConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ScheduleKeyDeletionResponse>
+                transformer = ScheduleKeyDeletionConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getScheduleKeyDeletionDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

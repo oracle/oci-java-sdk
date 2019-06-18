@@ -15,11 +15,13 @@ import com.oracle.bmc.keymanagement.model.GenerateKeyDetails;
 import com.oracle.bmc.keymanagement.model.KeyShape;
 import com.oracle.bmc.keymanagement.model.KeySummary;
 import com.oracle.bmc.keymanagement.model.KeyVersionSummary;
+import com.oracle.bmc.keymanagement.model.ScheduleKeyDeletionDetails;
 import com.oracle.bmc.keymanagement.model.ScheduleVaultDeletionDetails;
 import com.oracle.bmc.keymanagement.model.UpdateKeyDetails;
 import com.oracle.bmc.keymanagement.model.UpdateVaultDetails;
 import com.oracle.bmc.keymanagement.model.Vault;
 import com.oracle.bmc.keymanagement.model.VaultSummary;
+import com.oracle.bmc.keymanagement.requests.CancelKeyDeletionRequest;
 import com.oracle.bmc.keymanagement.requests.CancelVaultDeletionRequest;
 import com.oracle.bmc.keymanagement.requests.CreateKeyRequest;
 import com.oracle.bmc.keymanagement.requests.CreateKeyVersionRequest;
@@ -34,9 +36,11 @@ import com.oracle.bmc.keymanagement.requests.GetVaultRequest;
 import com.oracle.bmc.keymanagement.requests.ListKeyVersionsRequest;
 import com.oracle.bmc.keymanagement.requests.ListKeysRequest;
 import com.oracle.bmc.keymanagement.requests.ListVaultsRequest;
+import com.oracle.bmc.keymanagement.requests.ScheduleKeyDeletionRequest;
 import com.oracle.bmc.keymanagement.requests.ScheduleVaultDeletionRequest;
 import com.oracle.bmc.keymanagement.requests.UpdateKeyRequest;
 import com.oracle.bmc.keymanagement.requests.UpdateVaultRequest;
+import com.oracle.bmc.keymanagement.responses.CancelKeyDeletionResponse;
 import com.oracle.bmc.keymanagement.responses.CancelVaultDeletionResponse;
 import com.oracle.bmc.keymanagement.responses.CreateKeyResponse;
 import com.oracle.bmc.keymanagement.responses.CreateKeyVersionResponse;
@@ -51,6 +55,7 @@ import com.oracle.bmc.keymanagement.responses.GetVaultResponse;
 import com.oracle.bmc.keymanagement.responses.ListKeyVersionsResponse;
 import com.oracle.bmc.keymanagement.responses.ListKeysResponse;
 import com.oracle.bmc.keymanagement.responses.ListVaultsResponse;
+import com.oracle.bmc.keymanagement.responses.ScheduleKeyDeletionResponse;
 import com.oracle.bmc.keymanagement.responses.ScheduleVaultDeletionResponse;
 import com.oracle.bmc.keymanagement.responses.UpdateKeyResponse;
 import com.oracle.bmc.keymanagement.responses.UpdateVaultResponse;
@@ -156,6 +161,18 @@ public class KmsExample {
         // After enabling a Key, the Key will stay in ENABLING state shortly and then
         // transit to ENABLED state. Wait a bit for the transition to happen.
         System.out.println("Wait a bit for Key enabling to finish");
+        Thread.sleep(TRANSIENT_STATE_WAIT_TIME_MS);
+
+        scheduleKeyDetetionTest(kmsManagementClient, keyId);
+        // After scheduling deletion, the Key will stay in SCHEDULING_DELETION state shortly and then
+        // transit to PENDING_DELETION state. Wait a bit for the transition to happen.
+        System.out.println("Wait a bit for the deletion scheduling to finish");
+        Thread.sleep(TRANSIENT_STATE_WAIT_TIME_MS);
+
+        cancelKeyDetetionTest(kmsManagementClient, keyId);
+        // After cancelling deletion, the Key will stay in CANCELLING_DELETION state shortly and then
+        // transit to Enabled state. Wait a bit for the transition to happen.
+        System.out.println("Wait a bit for the deletion cancelling to finish");
         Thread.sleep(TRANSIENT_STATE_WAIT_TIME_MS);
 
         createKeyVersionTest(kmsManagementClient, keyId);
@@ -362,6 +379,35 @@ public class KmsExample {
         EnableKeyRequest enableKeyRequest = EnableKeyRequest.builder().keyId(keyId).build();
         EnableKeyResponse response = kmsManagementClient.enableKey(enableKeyRequest);
         System.out.println("Key Enabled Successfully, Updated Key: ");
+        System.out.println(response.getKey());
+        System.out.println();
+    }
+
+    public static void cancelKeyDetetionTest(
+            KmsManagementClient kmsManagementClient, String keyId) {
+        System.out.println("CancelKeyDeletion Test: ");
+        CancelKeyDeletionRequest cancelKeyDeletionRequest =
+                CancelKeyDeletionRequest.builder().keyId(keyId).build();
+        CancelKeyDeletionResponse response =
+                kmsManagementClient.cancelKeyDeletion(cancelKeyDeletionRequest);
+        System.out.println("Key Cancelled deletion Successfully, Updated Key: ");
+        System.out.println(response.getKey());
+        System.out.println();
+    }
+
+    public static void scheduleKeyDetetionTest(
+            KmsManagementClient kmsManagementClient, String keyId) {
+        System.out.println("ScheduleKeyDeletion Test: ");
+        ScheduleKeyDeletionDetails scheduleKeyDeletionDetails =
+                ScheduleKeyDeletionDetails.builder().timeOfDeletion(null).build();
+        ScheduleKeyDeletionRequest scheduleKeyDeletionRequest =
+                ScheduleKeyDeletionRequest.builder()
+                        .keyId(keyId)
+                        .scheduleKeyDeletionDetails(scheduleKeyDeletionDetails)
+                        .build();
+        ScheduleKeyDeletionResponse response =
+                kmsManagementClient.scheduleKeyDeletion(scheduleKeyDeletionRequest);
+        System.out.println("Key Scheduled deletion Successfully, Updated Key: ");
         System.out.println(response.getKey());
         System.out.println();
     }

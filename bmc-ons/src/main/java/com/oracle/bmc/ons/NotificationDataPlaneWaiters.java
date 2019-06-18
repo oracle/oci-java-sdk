@@ -7,10 +7,10 @@ import com.oracle.bmc.ons.requests.*;
 import com.oracle.bmc.ons.responses.*;
 
 /**
- * Collection of helper methods to produce {@link Waiter}s for different
+ * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
  * resources of NotificationDataPlane.
  * <p>
- * The default configuration used is defined by {@link Waiters#DEFAULT_POLLING_WAITER}.
+ * The default configuration used is defined by {@link com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @lombok.RequiredArgsConstructor
@@ -19,7 +19,7 @@ public class NotificationDataPlaneWaiters {
     private final NotificationDataPlane client;
 
     /**
-     * Creates a new {@link Waiter} using default configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
      * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
@@ -39,13 +39,13 @@ public class NotificationDataPlaneWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using the provided configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
      *
      * @param request the request to send
      * @param targetState the desired state to wait for
-     * @param terminationStrategy the {@link TerminationStrategy} to use
-     * @param delayStrategy the {@link DelayStrategy} to use
-     * @return a new {@code Waiter} instance
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetSubscriptionRequest, GetSubscriptionResponse>
             forSubscription(
@@ -62,13 +62,13 @@ public class NotificationDataPlaneWaiters {
     }
 
     /**
-     * Creates a new {@link Waiter} using the provided configuration.
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
      *
      * @param request the request to send
-     * @param terminationStrategy the {@link TerminationStrategy} to use
-     * @param delayStrategy the {@link DelayStrategy} to use
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
      * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
-     * @return a new {@code Waiter} instance
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetSubscriptionRequest, GetSubscriptionResponse>
             forSubscription(
