@@ -8,6 +8,7 @@ import com.oracle.bmc.InternalSdk;
 import com.oracle.bmc.Realm;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.internal.AuthUtils;
+import com.oracle.bmc.auth.internal.FederationClient;
 import com.oracle.bmc.auth.internal.X509FederationClient;
 
 import lombok.Getter;
@@ -110,30 +111,32 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
         SessionKeySupplier sessionKeySupplierToUse =
                 sessionKeySupplier != null ? sessionKeySupplier : new SessionKeySupplierImpl();
 
-        if (purpose != null) {
-            this.federationClient =
-                    new X509FederationClient(
-                            federationEndpoint,
-                            tenancyId,
-                            leafCertificateSupplier,
-                            sessionKeySupplierToUse,
-                            intermediateCertificateSuppliers,
-                            federationClientConfigurator,
-                            additionalFederationClientConfigurators,
-                            purpose);
-        } else {
-            this.federationClient =
-                    new X509FederationClient(
-                            federationEndpoint,
-                            tenancyId,
-                            leafCertificateSupplier,
-                            sessionKeySupplierToUse,
-                            intermediateCertificateSuppliers,
-                            federationClientConfigurator,
-                            additionalFederationClientConfigurators);
-        }
+        this.federationClient = createFederationClient(sessionKeySupplierToUse);
 
         return buildProvider(sessionKeySupplierToUse);
+    }
+
+    protected FederationClient createFederationClient(SessionKeySupplier sessionKeySupplier) {
+        if (purpose != null) {
+            return new X509FederationClient(
+                    federationEndpoint,
+                    tenancyId,
+                    leafCertificateSupplier,
+                    sessionKeySupplier,
+                    intermediateCertificateSuppliers,
+                    federationClientConfigurator,
+                    additionalFederationClientConfigurators,
+                    purpose);
+        } else {
+            return new X509FederationClient(
+                    federationEndpoint,
+                    tenancyId,
+                    leafCertificateSupplier,
+                    sessionKeySupplier,
+                    intermediateCertificateSuppliers,
+                    federationClientConfigurator,
+                    additionalFederationClientConfigurators);
+        }
     }
 
     /**

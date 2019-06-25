@@ -94,6 +94,18 @@ public interface VirtualNetwork extends AutoCloseable {
             ChangeServiceGatewayCompartmentRequest request);
 
     /**
+     * Moves a NAT gateway into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeNatGatewayCompartmentResponse changeNatGatewayCompartment(
+            ChangeNatGatewayCompartmentRequest request);
+
+    /**
      * Connects this local peering gateway (LPG) to another one in the same region.
      * <p>
      * This operation must be called by the VCN administrator who is designated as
