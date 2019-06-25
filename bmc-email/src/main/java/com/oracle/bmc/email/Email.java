@@ -37,6 +37,14 @@ public interface Email extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Moves a sender into a different compartment. When provided, If-Match is checked against ETag values of the resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeSenderCompartmentResponse changeSenderCompartment(ChangeSenderCompartmentRequest request);
+
+    /**
      * Creates a sender for a tenancy in a given compartment.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

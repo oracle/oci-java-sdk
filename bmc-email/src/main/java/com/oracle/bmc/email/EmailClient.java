@@ -377,6 +377,39 @@ public class EmailClient implements Email {
     }
 
     @Override
+    public ChangeSenderCompartmentResponse changeSenderCompartment(
+            ChangeSenderCompartmentRequest request) {
+        LOG.trace("Called changeSenderCompartment");
+        final ChangeSenderCompartmentRequest interceptedRequest =
+                ChangeSenderCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeSenderCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeSenderCompartmentResponse>
+                transformer = ChangeSenderCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getChangeSenderCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateSenderResponse createSender(CreateSenderRequest request) {
         LOG.trace("Called createSender");
         final CreateSenderRequest interceptedRequest =

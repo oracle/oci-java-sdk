@@ -8,6 +8,7 @@ import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.email.EmailClient;
 import com.oracle.bmc.email.EmailPaginators;
+import com.oracle.bmc.email.model.ChangeSenderCompartmentDetails;
 import com.oracle.bmc.email.model.CreateSenderDetails;
 import com.oracle.bmc.email.model.CreateSuppressionDetails;
 import com.oracle.bmc.email.model.Sender;
@@ -15,6 +16,7 @@ import com.oracle.bmc.email.model.SenderSummary;
 import com.oracle.bmc.email.model.Suppression;
 import com.oracle.bmc.email.model.SuppressionSummary;
 import com.oracle.bmc.email.model.UpdateSenderDetails;
+import com.oracle.bmc.email.requests.ChangeSenderCompartmentRequest;
 import com.oracle.bmc.email.requests.CreateSenderRequest;
 import com.oracle.bmc.email.requests.CreateSuppressionRequest;
 import com.oracle.bmc.email.requests.DeleteSenderRequest;
@@ -24,6 +26,7 @@ import com.oracle.bmc.email.requests.GetSuppressionRequest;
 import com.oracle.bmc.email.requests.ListSendersRequest;
 import com.oracle.bmc.email.requests.ListSuppressionsRequest;
 import com.oracle.bmc.email.requests.UpdateSenderRequest;
+import com.oracle.bmc.email.responses.ChangeSenderCompartmentResponse;
 import com.oracle.bmc.email.responses.UpdateSenderResponse;
 import com.oracle.bmc.email.responses.CreateSenderResponse;
 import com.oracle.bmc.email.responses.CreateSuppressionResponse;
@@ -51,7 +54,7 @@ import java.util.Map;
  * This class demonstrates how to use the Email Service in the Java SDK. This will cover:
  *
  * <ul>
- *   <li>Creating, retrieving, updating, listing, and deleting approved senders</li>
+ *   <li>Creating, retrieving, updating, moving, listing, and deleting approved senders</li>
  *   <li>Creating, retrieving, listing, and deleting email suppressions</li>
  *   <li>
  *       Creating, updating, listing, and deleting SMTP credentials
@@ -70,14 +73,13 @@ import java.util.Map;
  *   <li>An approved sender with the given email address does not already exist</li>
  *   <li>An SMTP credential will be created for user defined in the configuration file</li>
  *   <li>
- *      You have the appropriate permissions to create email senders in the compartment you've specified
+ *      You have the appropriate permissions to create, move email senders in the compartment you've specified
  *      and can also create email suppressions at the tenancy level
  *   </li>
  *   <li>Your user does not already have the maximum number of smtp credentials [2]</li>
  * <ul>
  */
 public class EmailServiceExample {
-
     private static final String CONFIG_LOCATION = "~/.oci/config";
     private static final String CONFIG_PROFILE = "DEFAULT";
 
@@ -93,19 +95,21 @@ public class EmailServiceExample {
      *         from your configuration file
      *       </p>
      *   </li>
+     *   <li>The OCID of the target compartment where email senders will be moved to</li>
      *   <li>The email address to add as a sender</li>
      *   <li>The email address to add as a suppression</li>
      * </ul>
      */
     public static void main(String[] args) throws Exception {
-        if (args.length != 3) {
+        if (args.length != 4) {
             throw new IllegalArgumentException(
-                    "This example expects three arguments: a compartment OCID, the sender email address and the suppression email address");
+                    "This example expects four arguments: a compartment OCID, a targetCompartment OCID,  the sender email address and the suppression email address");
         }
 
         final String compartmentId = args[0];
-        final String senderEmailAddress = args[1];
-        final String suppressionEmailAddress = args[2];
+        final String targetCompartmentId = args[1];
+        final String senderEmailAddress = args[2];
+        final String suppressionEmailAddress = args[3];
 
         final ConfigFile configFile = ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
         final AuthenticationDetailsProvider provider =
@@ -123,8 +127,9 @@ public class EmailServiceExample {
             sender = createEmailSender(emailClient, compartmentId, senderEmailAddress);
             getEmailSender(emailClient, sender);
             updateSender(emailClient, sender);
+            moveSender(emailClient, sender, targetCompartmentId);
             listAllSenders(emailClient, compartmentId);
-            listSendersFilteredByAddress(emailClient, compartmentId, senderEmailAddress);
+            listSendersFilteredByAddress(emailClient, targetCompartmentId, senderEmailAddress);
             System.out.println();
 
             final String tenancy = configFile.get("tenancy");
@@ -231,6 +236,31 @@ public class EmailServiceExample {
         final UpdateSenderResponse response = emailClient.updateSender(request);
 
         System.out.println("Updated sender: " + response.getSender().toString());
+        System.out.println();
+    }
+
+    /**
+     * Move an approved sender to the provided compartment
+     *
+     * @param emailClient the client used to communicate with the Email Service
+     * @param sender the sender to move
+     * @param targetCompartmentId the OCID of the compartment to be moved to
+     */
+    private static void moveSender(
+            final EmailClient emailClient, final Sender sender, final String targetCompartmentId) {
+        System.out.println("Moving sender");
+        System.out.println("=======================");
+
+        final ChangeSenderCompartmentDetails details =
+                ChangeSenderCompartmentDetails.builder().compartmentId(targetCompartmentId).build();
+        final ChangeSenderCompartmentRequest request =
+                ChangeSenderCompartmentRequest.builder()
+                        .senderId(sender.getId())
+                        .changeSenderCompartmentDetails(details)
+                        .build();
+        emailClient.changeSenderCompartment(request);
+
+        System.out.println("Moved sender " + sender.getId());
         System.out.println();
     }
 
