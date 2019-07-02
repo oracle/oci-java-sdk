@@ -82,18 +82,6 @@ public interface VirtualNetwork extends AutoCloseable {
             BulkDeleteVirtualCircuitPublicPrefixesRequest request);
 
     /**
-     * Moves a service gateway into a different compartment within the same tenancy. For information
-     * about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     */
-    ChangeServiceGatewayCompartmentResponse changeServiceGatewayCompartment(
-            ChangeServiceGatewayCompartmentRequest request);
-
-    /**
      * Moves a NAT gateway into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see
      * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -104,6 +92,18 @@ public interface VirtualNetwork extends AutoCloseable {
      */
     ChangeNatGatewayCompartmentResponse changeNatGatewayCompartment(
             ChangeNatGatewayCompartmentRequest request);
+
+    /**
+     * Moves a service gateway into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeServiceGatewayCompartmentResponse changeServiceGatewayCompartment(
+            ChangeServiceGatewayCompartmentRequest request);
 
     /**
      * Connects this local peering gateway (LPG) to another one in the same region.

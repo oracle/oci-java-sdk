@@ -49,7 +49,7 @@ public interface StreamAdmin extends AutoCloseable {
 
     /**
      * Deletes a stream and its content. Stream contents are deleted immediately. The service retains records of the stream itself for 90 days after deletion.
-     * The `lifeCycleState` parameter of the `Stream` object changes to `DELETING` and the stream becomes inaccessible for read or write operations.
+     * The `lifecycleState` parameter of the `Stream` object changes to `DELETING` and the stream becomes inaccessible for read or write operations.
      * To verify that a stream has been deleted, make a {@link #getStream(GetStreamRequest) getStream} request. If the call returns the stream's
      * lifecycle state as `DELETED`, then the stream has been deleted. If the call returns a \"404 Not Found\" error, that means all records of the
      * stream have been deleted.

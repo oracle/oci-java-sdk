@@ -412,6 +412,77 @@ public class ComputeManagementClient implements ComputeManagement {
     }
 
     @Override
+    public ChangeInstanceConfigurationCompartmentResponse changeInstanceConfigurationCompartment(
+            ChangeInstanceConfigurationCompartmentRequest request) {
+        LOG.trace("Called changeInstanceConfigurationCompartment");
+        final ChangeInstanceConfigurationCompartmentRequest interceptedRequest =
+                ChangeInstanceConfigurationCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeInstanceConfigurationCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeInstanceConfigurationCompartmentResponse>
+                transformer = ChangeInstanceConfigurationCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeInstanceConfigurationCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeInstancePoolCompartmentResponse changeInstancePoolCompartment(
+            ChangeInstancePoolCompartmentRequest request) {
+        LOG.trace("Called changeInstancePoolCompartment");
+        final ChangeInstancePoolCompartmentRequest interceptedRequest =
+                ChangeInstancePoolCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeInstancePoolCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeInstancePoolCompartmentResponse>
+                transformer = ChangeInstancePoolCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeInstancePoolCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateInstanceConfigurationResponse createInstanceConfiguration(
             CreateInstanceConfigurationRequest request) {
         LOG.trace("Called createInstanceConfiguration");

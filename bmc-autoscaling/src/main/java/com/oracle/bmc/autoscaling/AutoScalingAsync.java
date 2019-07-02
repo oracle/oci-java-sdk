@@ -37,6 +37,30 @@ public interface AutoScalingAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Moves an autoscaling configuration into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * <p>
+     * When you move an autoscaling configuration to a different compartment, associated resources such as instance
+     * pools are not moved.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeAutoScalingConfigurationCompartmentResponse>
+            changeAutoScalingConfigurationCompartment(
+                    ChangeAutoScalingConfigurationCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeAutoScalingConfigurationCompartmentRequest,
+                                    ChangeAutoScalingConfigurationCompartmentResponse>
+                            handler);
+
+    /**
      * Creates an autoscaling configuration.
      *
      * @param request The request object containing the details to send

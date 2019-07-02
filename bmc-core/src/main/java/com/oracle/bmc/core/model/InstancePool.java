@@ -4,7 +4,10 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Instance Pool
+ * An instance pool is a group of instances within the same region that are created based off of the same
+ * instance configuration. For more information about instance pools and instance configurations, see
+ * [Managing Compute Instances](https://docs.cloud.oracle.com/Content/Compute/Concepts/instancemanagement.htm).
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in

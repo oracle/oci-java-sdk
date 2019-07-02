@@ -37,6 +37,21 @@ public interface AutoScaling extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Moves an autoscaling configuration into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * <p>
+     * When you move an autoscaling configuration to a different compartment, associated resources such as instance
+     * pools are not moved.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeAutoScalingConfigurationCompartmentResponse changeAutoScalingConfigurationCompartment(
+            ChangeAutoScalingConfigurationCompartmentRequest request);
+
+    /**
      * Creates an autoscaling configuration.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

@@ -4,7 +4,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Condensed InstancePool data when listing instance pools.
+ * Summary information for an instance pool.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -162,13 +162,13 @@ public class InstancePoolSummary {
     }
 
     /**
-     * The OCID of the instance pool
+     * The OCID of the instance pool.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The OCID of the compartment containing the instance pool
+     * The OCID of the compartment containing the instance pool.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;

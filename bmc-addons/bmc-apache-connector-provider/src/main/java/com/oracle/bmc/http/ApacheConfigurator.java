@@ -5,6 +5,8 @@ package com.oracle.bmc.http;
 
 import com.oracle.bmc.http.internal.ContentLengthFilter;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.http.client.config.RequestConfig;
+import org.glassfish.jersey.apache.connector.ApacheClientProperties;
 import org.glassfish.jersey.apache.connector.ApacheConnectorProvider;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.client.ClientProperties;
@@ -58,9 +60,14 @@ public class ApacheConfigurator implements ClientConfigurator {
     }
 
     protected void setConnectorProvider(ClientBuilder builder) {
-        LOG.info("Setting connector provider to ApacheConnectorProviders");
+        LOG.info("Setting connector provider to ApacheConnectorProvider");
 
         final ClientConfig clientConfig = new ClientConfig();
+        // Disable the default behavior to auto compress and deflate the request/response content based on the
+        // content-encoding.
+        final RequestConfig requestConfig =
+                RequestConfig.custom().setContentCompressionEnabled(false).build();
+        clientConfig.property(ApacheClientProperties.REQUEST_CONFIG, requestConfig);
         clientConfig.connectorProvider(new ApacheConnectorProvider());
 
         // Decorate config with any configured client config decorators

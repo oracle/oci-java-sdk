@@ -42,7 +42,7 @@ public class ListShapesRequest extends com.oracle.bmc.requests.BmcRequest {
     private String page;
 
     /**
-     * The OCID of an image.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an image.
      */
     private String imageId;
 
