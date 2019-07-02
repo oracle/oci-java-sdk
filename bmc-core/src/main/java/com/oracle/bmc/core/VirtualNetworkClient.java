@@ -484,40 +484,6 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
-    public ChangeServiceGatewayCompartmentResponse changeServiceGatewayCompartment(
-            ChangeServiceGatewayCompartmentRequest request) {
-        LOG.trace("Called changeServiceGatewayCompartment");
-        final ChangeServiceGatewayCompartmentRequest interceptedRequest =
-                ChangeServiceGatewayCompartmentConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                ChangeServiceGatewayCompartmentConverter.fromRequest(client, interceptedRequest);
-        com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ChangeServiceGatewayCompartmentResponse>
-                transformer = ChangeServiceGatewayCompartmentConverter.fromResponse();
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response =
-                                        client.post(
-                                                ib,
-                                                retriedRequest
-                                                        .getChangeServiceGatewayCompartmentDetails(),
-                                                retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
     public ChangeNatGatewayCompartmentResponse changeNatGatewayCompartment(
             ChangeNatGatewayCompartmentRequest request) {
         LOG.trace("Called changeNatGatewayCompartment");
@@ -546,6 +512,41 @@ public class VirtualNetworkClient implements VirtualNetwork {
                                                 ib,
                                                 retriedRequest
                                                         .getChangeNatGatewayCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeServiceGatewayCompartmentResponse changeServiceGatewayCompartment(
+            ChangeServiceGatewayCompartmentRequest request) {
+        LOG.trace("Called changeServiceGatewayCompartment");
+        final ChangeServiceGatewayCompartmentRequest interceptedRequest =
+                ChangeServiceGatewayCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeServiceGatewayCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeServiceGatewayCompartmentResponse>
+                transformer = ChangeServiceGatewayCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeServiceGatewayCompartmentDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

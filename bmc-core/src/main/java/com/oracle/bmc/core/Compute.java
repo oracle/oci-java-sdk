@@ -92,6 +92,17 @@ public interface Compute extends AutoCloseable {
     CaptureConsoleHistoryResponse captureConsoleHistory(CaptureConsoleHistoryRequest request);
 
     /**
+     * Moves an image into a different compartment within the same tenancy. For information about moving
+     * resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeImageCompartmentResponse changeImageCompartment(ChangeImageCompartmentRequest request);
+
+    /**
      * Create a subscription for listing resource version for a compartment. It will take some time to propagate to all regions.
      *
      * @param request The request object containing the details to send

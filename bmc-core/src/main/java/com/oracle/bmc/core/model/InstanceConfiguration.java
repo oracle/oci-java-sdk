@@ -4,7 +4,9 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Instance Configuration
+ * An instance configuration is a template that defines the settings to use when creating Compute instances
+ * as part of an instance pool. For more information about instance pools and instance configurations, see
+ * [Managing Compute Instances](https://docs.cloud.oracle.com/Content/Compute/Concepts/instancemanagement.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

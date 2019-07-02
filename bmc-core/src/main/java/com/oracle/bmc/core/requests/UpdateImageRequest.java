@@ -11,7 +11,7 @@ import com.oracle.bmc.core.model.*;
 public class UpdateImageRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The OCID of the image.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.
      */
     private String imageId;
 

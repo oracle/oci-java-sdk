@@ -31,8 +31,7 @@ public class StreamAsyncClient implements StreamAsync {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("STREAM")
                     .serviceEndpointPrefix("streams")
-                    .serviceEndpointTemplate(
-                            "https://streams.{region}.streaming.oci.{secondLevelDomain}")
+                    .serviceEndpointTemplate("https://streaming.{region}.oci.{secondLevelDomain}")
                     .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)

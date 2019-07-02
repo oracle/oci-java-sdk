@@ -54,6 +54,58 @@ public interface ComputeManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Moves an instance configuration into a different compartment within the same tenancy.
+     * For information about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * <p>
+     **Important:** Most of the properties for an existing instance configuration, including the compartment,
+     * cannot be modified after you create the instance configuration. Although you can move an instance configuration
+     * to a different compartment, you will not be able to use the instance configuration to manage instance pools
+     * in the new compartment. If you want to update an instance configuration to point to a different compartment,
+     * you should instead create a new instance configuration in the target compartment using
+     * [CreateInstanceConfiguration](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConfiguration/CreateInstanceConfiguration).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeInstanceConfigurationCompartmentResponse>
+            changeInstanceConfigurationCompartment(
+                    ChangeInstanceConfigurationCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeInstanceConfigurationCompartmentRequest,
+                                    ChangeInstanceConfigurationCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves an instance pool into a different compartment within the same tenancy. For
+     * information about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * <p>
+     * When you move an instance pool to a different compartment, associated resources such as the instances in
+     * the pool, boot volumes, VNICs, and autoscaling configurations are not moved.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeInstancePoolCompartmentResponse>
+            changeInstancePoolCompartment(
+                    ChangeInstancePoolCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeInstancePoolCompartmentRequest,
+                                    ChangeInstancePoolCompartmentResponse>
+                            handler);
+
+    /**
      * Creates an instance configuration
      *
      *
