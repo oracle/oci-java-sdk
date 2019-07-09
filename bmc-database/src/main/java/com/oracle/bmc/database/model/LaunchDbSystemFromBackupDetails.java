@@ -85,6 +85,24 @@ public class LaunchDbSystemFromBackupDetails extends LaunchDbSystemBase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+        private java.util.List<String> nsgIds;
+
+        public Builder nsgIds(java.util.List<String> nsgIds) {
+            this.nsgIds = nsgIds;
+            this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
+        private java.util.List<String> backupNetworkNsgIds;
+
+        public Builder backupNetworkNsgIds(java.util.List<String> backupNetworkNsgIds) {
+            this.backupNetworkNsgIds = backupNetworkNsgIds;
+            this.__explicitlySet__.add("backupNetworkNsgIds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
@@ -251,6 +269,8 @@ public class LaunchDbSystemFromBackupDetails extends LaunchDbSystemBase {
                             availabilityDomain,
                             subnetId,
                             backupSubnetId,
+                            nsgIds,
+                            backupNetworkNsgIds,
                             shape,
                             timeZone,
                             sparseDiskgroup,
@@ -281,6 +301,8 @@ public class LaunchDbSystemFromBackupDetails extends LaunchDbSystemBase {
                             .availabilityDomain(o.getAvailabilityDomain())
                             .subnetId(o.getSubnetId())
                             .backupSubnetId(o.getBackupSubnetId())
+                            .nsgIds(o.getNsgIds())
+                            .backupNetworkNsgIds(o.getBackupNetworkNsgIds())
                             .shape(o.getShape())
                             .timeZone(o.getTimeZone())
                             .sparseDiskgroup(o.getSparseDiskgroup())
@@ -319,6 +341,8 @@ public class LaunchDbSystemFromBackupDetails extends LaunchDbSystemBase {
             String availabilityDomain,
             String subnetId,
             String backupSubnetId,
+            java.util.List<String> nsgIds,
+            java.util.List<String> backupNetworkNsgIds,
             String shape,
             String timeZone,
             Boolean sparseDiskgroup,
@@ -343,6 +367,8 @@ public class LaunchDbSystemFromBackupDetails extends LaunchDbSystemBase {
                 availabilityDomain,
                 subnetId,
                 backupSubnetId,
+                nsgIds,
+                backupNetworkNsgIds,
                 shape,
                 timeZone,
                 sparseDiskgroup,

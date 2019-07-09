@@ -54,6 +54,22 @@ public interface ResourceManagerAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CancelJobRequest, CancelJobResponse> handler);
 
     /**
+     * Moves a Stack and it's associated Jobs into a different compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeStackCompartmentResponse> changeStackCompartment(
+            ChangeStackCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeStackCompartmentRequest, ChangeStackCompartmentResponse>
+                    handler);
+
+    /**
      * Creates a job.
      *
      * @param request The request object containing the details to send
@@ -208,6 +224,21 @@ public interface ResourceManagerAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Return the given work request.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
+            GetWorkRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
+                    handler);
+
+    /**
      * Returns a list of jobs in a stack or compartment, ordered by time created.
      * <p>
      * - To list all jobs in a stack, provide the stack OCID.
@@ -242,6 +273,56 @@ public interface ResourceManagerAsync extends AutoCloseable {
     java.util.concurrent.Future<ListStacksResponse> listStacks(
             ListStacksRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListStacksRequest, ListStacksResponse> handler);
+
+    /**
+     * Return a (paginated) list of errors for a given work request.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListWorkRequestErrorsResponse> listWorkRequestErrors(
+            ListWorkRequestErrorsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
+                    handler);
+
+    /**
+     * Return a (paginated) list of logs for a given work request.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListWorkRequestLogsResponse> listWorkRequestLogs(
+            ListWorkRequestLogsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
+                    handler);
+
+    /**
+     * Lists the work requests in a given compartment or for a given resource.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
+            ListWorkRequestsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
+                    handler);
 
     /**
      * Updates the specified job.

@@ -90,6 +90,15 @@ public class CreateLoadBalancerDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
+        private java.util.List<String> networkSecurityGroupIds;
+
+        public Builder networkSecurityGroupIds(java.util.List<String> networkSecurityGroupIds) {
+            this.networkSecurityGroupIds = networkSecurityGroupIds;
+            this.__explicitlySet__.add("networkSecurityGroupIds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
         private java.util.List<String> subnetIds;
 
@@ -158,6 +167,7 @@ public class CreateLoadBalancerDetails {
                             listeners,
                             hostnames,
                             backendSets,
+                            networkSecurityGroupIds,
                             subnetIds,
                             certificates,
                             pathRouteSets,
@@ -178,6 +188,7 @@ public class CreateLoadBalancerDetails {
                             .listeners(o.getListeners())
                             .hostnames(o.getHostnames())
                             .backendSets(o.getBackendSets())
+                            .networkSecurityGroupIds(o.getNetworkSecurityGroupIds())
                             .subnetIds(o.getSubnetIds())
                             .certificates(o.getCertificates())
                             .pathRouteSets(o.getPathRouteSets())
@@ -249,6 +260,13 @@ public class CreateLoadBalancerDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("backendSets")
     java.util.Map<String, BackendSetDetails> backendSets;
+
+    /**
+     * The array of NSG [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) to be used by this Load Balancer.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
+    java.util.List<String> networkSecurityGroupIds;
 
     /**
      * An array of subnet [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).

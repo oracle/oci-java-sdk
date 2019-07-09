@@ -82,6 +82,24 @@ public class UpdateDbSystemDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+        private java.util.List<String> nsgIds;
+
+        public Builder nsgIds(java.util.List<String> nsgIds) {
+            this.nsgIds = nsgIds;
+            this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
+        private java.util.List<String> backupNetworkNsgIds;
+
+        public Builder backupNetworkNsgIds(java.util.List<String> backupNetworkNsgIds) {
+            this.backupNetworkNsgIds = backupNetworkNsgIds;
+            this.__explicitlySet__.add("backupNetworkNsgIds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -93,7 +111,9 @@ public class UpdateDbSystemDetails {
                             sshPublicKeys,
                             dataStorageSizeInGBs,
                             freeformTags,
-                            definedTags);
+                            definedTags,
+                            nsgIds,
+                            backupNetworkNsgIds);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -106,7 +126,9 @@ public class UpdateDbSystemDetails {
                             .sshPublicKeys(o.getSshPublicKeys())
                             .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .nsgIds(o.getNsgIds())
+                            .backupNetworkNsgIds(o.getBackupNetworkNsgIds());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -161,6 +183,23 @@ public class UpdateDbSystemDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * The list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with this DB system.
+     * A maximum of 5 allowed.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+    java.util.List<String> nsgIds;
+
+    /**
+     * The list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with the backup network of this DB system.
+     * Applicable only to Exadata DB systems.
+     * A maximum of 5 allowed.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
+    java.util.List<String> backupNetworkNsgIds;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

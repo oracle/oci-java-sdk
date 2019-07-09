@@ -103,6 +103,17 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isPreviewVersionWithServiceTermsAccepted")
+        private Boolean isPreviewVersionWithServiceTermsAccepted;
+
+        public Builder isPreviewVersionWithServiceTermsAccepted(
+                Boolean isPreviewVersionWithServiceTermsAccepted) {
+            this.isPreviewVersionWithServiceTermsAccepted =
+                    isPreviewVersionWithServiceTermsAccepted;
+            this.__explicitlySet__.add("isPreviewVersionWithServiceTermsAccepted");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
         private Boolean isAutoScalingEnabled;
 
@@ -181,6 +192,7 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
                             adminPassword,
                             displayName,
                             licenseModel,
+                            isPreviewVersionWithServiceTermsAccepted,
                             isAutoScalingEnabled,
                             isDedicated,
                             autonomousContainerDatabaseId,
@@ -203,6 +215,8 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
                             .adminPassword(o.getAdminPassword())
                             .displayName(o.getDisplayName())
                             .licenseModel(o.getLicenseModel())
+                            .isPreviewVersionWithServiceTermsAccepted(
+                                    o.getIsPreviewVersionWithServiceTermsAccepted())
                             .isAutoScalingEnabled(o.getIsAutoScalingEnabled())
                             .isDedicated(o.getIsDedicated())
                             .autonomousContainerDatabaseId(o.getAutonomousContainerDatabaseId())
@@ -233,6 +247,7 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
             String adminPassword,
             String displayName,
             LicenseModel licenseModel,
+            Boolean isPreviewVersionWithServiceTermsAccepted,
             Boolean isAutoScalingEnabled,
             Boolean isDedicated,
             String autonomousContainerDatabaseId,
@@ -249,6 +264,7 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
                 adminPassword,
                 displayName,
                 licenseModel,
+                isPreviewVersionWithServiceTermsAccepted,
                 isAutoScalingEnabled,
                 isDedicated,
                 autonomousContainerDatabaseId,

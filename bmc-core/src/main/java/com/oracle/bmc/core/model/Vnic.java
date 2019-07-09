@@ -131,6 +131,15 @@ public class Vnic {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+        private java.util.List<String> nsgIds;
+
+        public Builder nsgIds(java.util.List<String> nsgIds) {
+            this.nsgIds = nsgIds;
+            this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
         private String privateIp;
 
@@ -192,6 +201,7 @@ public class Vnic {
                             isPrimary,
                             lifecycleState,
                             macAddress,
+                            nsgIds,
                             privateIp,
                             publicIp,
                             skipSourceDestCheck,
@@ -214,6 +224,7 @@ public class Vnic {
                             .isPrimary(o.getIsPrimary())
                             .lifecycleState(o.getLifecycleState())
                             .macAddress(o.getMacAddress())
+                            .nsgIds(o.getNsgIds())
                             .privateIp(o.getPrivateIp())
                             .publicIp(o.getPublicIp())
                             .skipSourceDestCheck(o.getSkipSourceDestCheck())
@@ -367,6 +378,15 @@ public class Vnic {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("macAddress")
     String macAddress;
+
+    /**
+     * A list of the OCIDs of the network security groups that the VNIC belongs to. For more
+     * information about NSGs, see
+     * {@link NetworkSecurityGroup}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+    java.util.List<String> nsgIds;
 
     /**
      * The private IP address of the primary `privateIp` object on the VNIC.

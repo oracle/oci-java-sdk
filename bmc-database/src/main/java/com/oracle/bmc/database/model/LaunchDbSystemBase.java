@@ -108,6 +108,23 @@ public class LaunchDbSystemBase {
     String backupSubnetId;
 
     /**
+     * The list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with this DB system.
+     * A maximum of 5 allowed.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+    java.util.List<String> nsgIds;
+
+    /**
+     * The list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with the backup network of this DB system.
+     * Applicable only to Exadata DB systems.
+     * A maximum of 5 allowed.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
+    java.util.List<String> backupNetworkNsgIds;
+
+    /**
      * The shape of the DB system. The shape determines resources allocated to the DB system.
      * - For virtual machine shapes, the number of CPU cores and memory
      * - For bare metal and Exadata shapes, the number of CPU cores, memory, and storage

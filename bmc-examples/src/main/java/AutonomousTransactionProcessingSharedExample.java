@@ -14,11 +14,13 @@ import com.oracle.bmc.database.model.UpdateAutonomousDatabaseDetails;
 import com.oracle.bmc.database.requests.CreateAutonomousDatabaseRequest;
 import com.oracle.bmc.database.requests.DeleteAutonomousDatabaseRequest;
 import com.oracle.bmc.database.requests.GetAutonomousDatabaseRequest;
+import com.oracle.bmc.database.requests.ListAutonomousDbPreviewVersionsRequest;
 import com.oracle.bmc.database.requests.StartAutonomousDatabaseRequest;
 import com.oracle.bmc.database.requests.StopAutonomousDatabaseRequest;
 import com.oracle.bmc.database.requests.UpdateAutonomousDatabaseRequest;
 import com.oracle.bmc.database.responses.CreateAutonomousDatabaseResponse;
 import com.oracle.bmc.database.responses.GetAutonomousDatabaseResponse;
+import com.oracle.bmc.database.responses.ListAutonomousDbPreviewVersionsResponse;
 import com.oracle.bmc.database.responses.UpdateAutonomousDatabaseResponse;
 import com.oracle.bmc.database.responses.GenerateAutonomousDatabaseWalletResponse;
 import com.oracle.bmc.database.requests.GenerateAutonomousDatabaseWalletRequest;
@@ -75,6 +77,16 @@ public class AutonomousTransactionProcessingSharedExample {
                                         .build())
                         .getAutonomousDatabase();
         System.out.println("GET request returned :" + atpShared);
+
+        // Get Preview Versions
+        ListAutonomousDbPreviewVersionsResponse listAutonomousDbPreviewVersionsResponse =
+                dbClient.listAutonomousDbPreviewVersions(
+                        ListAutonomousDbPreviewVersionsRequest.builder()
+                                .compartmentId(compartmentId)
+                                .build());
+        System.out.println(
+                "ListAutonomousDbPreviewVersions returned :"
+                        + listAutonomousDbPreviewVersionsResponse.getItems());
 
         // Scale
         UpdateAutonomousDatabaseDetails updateRequest = scaleAtpRequest();
@@ -235,6 +247,7 @@ public class AutonomousTransactionProcessingSharedExample {
                 .dbWorkload(CreateAutonomousDatabaseDetails.DbWorkload.Oltp)
                 .isAutoScalingEnabled(Boolean.FALSE)
                 .licenseModel(CreateAutonomousDatabaseDetails.LicenseModel.LicenseIncluded)
+                .isPreviewVersionWithServiceTermsAccepted(Boolean.FALSE)
                 .build();
     }
 

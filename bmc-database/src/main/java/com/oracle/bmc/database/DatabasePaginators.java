@@ -654,6 +654,133 @@ public class DatabasePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listAutonomousDbPreviewVersions operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListAutonomousDbPreviewVersionsResponse>
+            listAutonomousDbPreviewVersionsResponseIterator(
+                    final ListAutonomousDbPreviewVersionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAutonomousDbPreviewVersionsRequest.Builder,
+                ListAutonomousDbPreviewVersionsRequest, ListAutonomousDbPreviewVersionsResponse>(
+                new com.google.common.base.Supplier<
+                        ListAutonomousDbPreviewVersionsRequest.Builder>() {
+                    @Override
+                    public ListAutonomousDbPreviewVersionsRequest.Builder get() {
+                        return ListAutonomousDbPreviewVersionsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAutonomousDbPreviewVersionsResponse, String>() {
+                    @Override
+                    public String apply(ListAutonomousDbPreviewVersionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAutonomousDbPreviewVersionsRequest.Builder>,
+                        ListAutonomousDbPreviewVersionsRequest>() {
+                    @Override
+                    public ListAutonomousDbPreviewVersionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAutonomousDbPreviewVersionsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAutonomousDbPreviewVersionsRequest,
+                        ListAutonomousDbPreviewVersionsResponse>() {
+                    @Override
+                    public ListAutonomousDbPreviewVersionsResponse apply(
+                            ListAutonomousDbPreviewVersionsRequest request) {
+                        return client.listAutonomousDbPreviewVersions(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.AutonomousDbPreviewVersionSummary} objects
+     * contained in responses from the listAutonomousDbPreviewVersions operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.AutonomousDbPreviewVersionSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.AutonomousDbPreviewVersionSummary>
+            listAutonomousDbPreviewVersionsRecordIterator(
+                    final ListAutonomousDbPreviewVersionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAutonomousDbPreviewVersionsRequest.Builder,
+                ListAutonomousDbPreviewVersionsRequest, ListAutonomousDbPreviewVersionsResponse,
+                com.oracle.bmc.database.model.AutonomousDbPreviewVersionSummary>(
+                new com.google.common.base.Supplier<
+                        ListAutonomousDbPreviewVersionsRequest.Builder>() {
+                    @Override
+                    public ListAutonomousDbPreviewVersionsRequest.Builder get() {
+                        return ListAutonomousDbPreviewVersionsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAutonomousDbPreviewVersionsResponse, String>() {
+                    @Override
+                    public String apply(ListAutonomousDbPreviewVersionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAutonomousDbPreviewVersionsRequest.Builder>,
+                        ListAutonomousDbPreviewVersionsRequest>() {
+                    @Override
+                    public ListAutonomousDbPreviewVersionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAutonomousDbPreviewVersionsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAutonomousDbPreviewVersionsRequest,
+                        ListAutonomousDbPreviewVersionsResponse>() {
+                    @Override
+                    public ListAutonomousDbPreviewVersionsResponse apply(
+                            ListAutonomousDbPreviewVersionsRequest request) {
+                        return client.listAutonomousDbPreviewVersions(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAutonomousDbPreviewVersionsResponse,
+                        java.util.List<
+                                com.oracle.bmc.database.model
+                                        .AutonomousDbPreviewVersionSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.database.model.AutonomousDbPreviewVersionSummary>
+                            apply(ListAutonomousDbPreviewVersionsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listAutonomousExadataInfrastructureShapes operation. This iterable
      * will fetch more data from the server as needed.
      *

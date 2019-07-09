@@ -4,16 +4,20 @@
 package com.oracle.bmc.loadbalancer.model;
 
 /**
- * The configuration details for implementing session persistence. Session persistence enables the Load Balancing
- * Service to direct any number of requests that originate from a single logical client to a single backend web server.
- * For more information, see [Session Persistence](https://docs.cloud.oracle.com/Content/Balance/Reference/sessionpersistence.htm).
+ * The configuration details for implementing session persistence based on a user-specified cookie name (application
+ * cookie stickiness).
  * <p>
- *
- * To disable session persistence on a running load balancer, use the
- * {@link #updateBackendSet(UpdateBackendSetRequest) updateBackendSet} operation and specify \"null\" for the
+ * Session persistence enables the Load Balancing service to direct any number of requests that originate from a single
+ * logical client to a single backend web server. For more information, see
+ * [Session Persistence](https://docs.cloud.oracle.com/Content/Balance/Reference/sessionpersistence.htm).
+ * <p>
+ * To disable application cookie stickiness on a running load balancer, use the
+ * {@link #updateBackendSet(UpdateBackendSetRequest) updateBackendSet} operation and specify `null` for the
  * `SessionPersistenceConfigurationDetails` object.
  * <p>
  * Example: `SessionPersistenceConfigurationDetails: null`
+ * <p>
+ **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

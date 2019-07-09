@@ -482,6 +482,15 @@ public interface Database extends AutoCloseable {
     ListAutonomousDatabasesResponse listAutonomousDatabases(ListAutonomousDatabasesRequest request);
 
     /**
+     * Gets a list of supported Autonomous Database versions.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListAutonomousDbPreviewVersionsResponse listAutonomousDbPreviewVersions(
+            ListAutonomousDbPreviewVersionsRequest request);
+
+    /**
      * Gets a list of the shapes that can be used to launch a new Autonomous Exadata Infrastructure DB system. The shape determines resources to allocate to the DB system (CPU cores, memory and storage).
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

@@ -113,6 +113,15 @@ public class LoadBalancer {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
+        private java.util.List<String> networkSecurityGroupIds;
+
+        public Builder networkSecurityGroupIds(java.util.List<String> networkSecurityGroupIds) {
+            this.networkSecurityGroupIds = networkSecurityGroupIds;
+            this.__explicitlySet__.add("networkSecurityGroupIds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("listeners")
         private java.util.Map<String, Listener> listeners;
 
@@ -201,6 +210,7 @@ public class LoadBalancer {
                             shapeName,
                             isPrivate,
                             subnetIds,
+                            networkSecurityGroupIds,
                             listeners,
                             hostnames,
                             certificates,
@@ -225,6 +235,7 @@ public class LoadBalancer {
                             .shapeName(o.getShapeName())
                             .isPrivate(o.getIsPrivate())
                             .subnetIds(o.getSubnetIds())
+                            .networkSecurityGroupIds(o.getNetworkSecurityGroupIds())
                             .listeners(o.getListeners())
                             .hostnames(o.getHostnames())
                             .certificates(o.getCertificates())
@@ -372,6 +383,13 @@ public class LoadBalancer {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
     java.util.List<String> subnetIds;
+
+    /**
+     * The array of NSG [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) in use by this Load Balancer.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
+    java.util.List<String> networkSecurityGroupIds;
 
     @com.fasterxml.jackson.annotation.JsonProperty("listeners")
     java.util.Map<String, Listener> listeners;

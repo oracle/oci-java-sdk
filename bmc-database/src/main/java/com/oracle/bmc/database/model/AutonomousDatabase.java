@@ -197,6 +197,15 @@ public class AutonomousDatabase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isPreview")
+        private Boolean isPreview;
+
+        public Builder isPreview(Boolean isPreview) {
+            this.isPreview = isPreview;
+            this.__explicitlySet__.add("isPreview");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
         private DbWorkload dbWorkload;
 
@@ -249,6 +258,7 @@ public class AutonomousDatabase {
                             freeformTags,
                             definedTags,
                             dbVersion,
+                            isPreview,
                             dbWorkload,
                             whitelistedIps,
                             isAutoScalingEnabled);
@@ -278,6 +288,7 @@ public class AutonomousDatabase {
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .dbVersion(o.getDbVersion())
+                            .isPreview(o.getIsPreview())
                             .dbWorkload(o.getDbWorkload())
                             .whitelistedIps(o.getWhitelistedIps())
                             .isAutoScalingEnabled(o.getIsAutoScalingEnabled());
@@ -518,6 +529,12 @@ public class AutonomousDatabase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     String dbVersion;
+
+    /**
+     * Indicates if the Autonomous Database version is a preview version.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isPreview")
+    Boolean isPreview;
     /**
      * The Autonomous Database workload type. OLTP indicates an Autonomous Transaction Processing database and DW indicates an Autonomous Data Warehouse database.
      **/

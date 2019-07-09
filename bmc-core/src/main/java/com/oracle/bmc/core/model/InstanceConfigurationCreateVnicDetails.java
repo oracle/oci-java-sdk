@@ -53,6 +53,15 @@ public class InstanceConfigurationCreateVnicDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+        private java.util.List<String> nsgIds;
+
+        public Builder nsgIds(java.util.List<String> nsgIds) {
+            this.nsgIds = nsgIds;
+            this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
         private String privateIp;
 
@@ -89,6 +98,7 @@ public class InstanceConfigurationCreateVnicDetails {
                             assignPublicIp,
                             displayName,
                             hostnameLabel,
+                            nsgIds,
                             privateIp,
                             skipSourceDestCheck,
                             subnetId);
@@ -102,6 +112,7 @@ public class InstanceConfigurationCreateVnicDetails {
                     assignPublicIp(o.getAssignPublicIp())
                             .displayName(o.getDisplayName())
                             .hostnameLabel(o.getHostnameLabel())
+                            .nsgIds(o.getNsgIds())
                             .privateIp(o.getPrivateIp())
                             .skipSourceDestCheck(o.getSkipSourceDestCheck())
                             .subnetId(o.getSubnetId());
@@ -141,6 +152,15 @@ public class InstanceConfigurationCreateVnicDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
     String hostnameLabel;
+
+    /**
+     * A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more
+     * information about NSGs, see
+     * {@link NetworkSecurityGroup}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+    java.util.List<String> nsgIds;
 
     /**
      * A private IP address of your choice to assign to the VNIC.

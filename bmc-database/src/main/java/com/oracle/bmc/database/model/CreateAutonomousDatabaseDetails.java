@@ -103,6 +103,17 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isPreviewVersionWithServiceTermsAccepted")
+        private Boolean isPreviewVersionWithServiceTermsAccepted;
+
+        public Builder isPreviewVersionWithServiceTermsAccepted(
+                Boolean isPreviewVersionWithServiceTermsAccepted) {
+            this.isPreviewVersionWithServiceTermsAccepted =
+                    isPreviewVersionWithServiceTermsAccepted;
+            this.__explicitlySet__.add("isPreviewVersionWithServiceTermsAccepted");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
         private Boolean isAutoScalingEnabled;
 
@@ -163,6 +174,7 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                             adminPassword,
                             displayName,
                             licenseModel,
+                            isPreviewVersionWithServiceTermsAccepted,
                             isAutoScalingEnabled,
                             isDedicated,
                             autonomousContainerDatabaseId,
@@ -183,6 +195,8 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                             .adminPassword(o.getAdminPassword())
                             .displayName(o.getDisplayName())
                             .licenseModel(o.getLicenseModel())
+                            .isPreviewVersionWithServiceTermsAccepted(
+                                    o.getIsPreviewVersionWithServiceTermsAccepted())
                             .isAutoScalingEnabled(o.getIsAutoScalingEnabled())
                             .isDedicated(o.getIsDedicated())
                             .autonomousContainerDatabaseId(o.getAutonomousContainerDatabaseId())
@@ -211,6 +225,7 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
             String adminPassword,
             String displayName,
             LicenseModel licenseModel,
+            Boolean isPreviewVersionWithServiceTermsAccepted,
             Boolean isAutoScalingEnabled,
             Boolean isDedicated,
             String autonomousContainerDatabaseId,
@@ -225,6 +240,7 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                 adminPassword,
                 displayName,
                 licenseModel,
+                isPreviewVersionWithServiceTermsAccepted,
                 isAutoScalingEnabled,
                 isDedicated,
                 autonomousContainerDatabaseId,

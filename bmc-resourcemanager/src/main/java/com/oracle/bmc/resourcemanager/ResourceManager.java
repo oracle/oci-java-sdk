@@ -48,6 +48,14 @@ public interface ResourceManager extends AutoCloseable {
     CancelJobResponse cancelJob(CancelJobRequest request);
 
     /**
+     * Moves a Stack and it's associated Jobs into a different compartment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeStackCompartmentResponse changeStackCompartment(ChangeStackCompartmentRequest request);
+
+    /**
      * Creates a job.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -137,6 +145,14 @@ public interface ResourceManager extends AutoCloseable {
     GetStackTfConfigResponse getStackTfConfig(GetStackTfConfigRequest request);
 
     /**
+     * Return the given work request.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
+
+    /**
      * Returns a list of jobs in a stack or compartment, ordered by time created.
      * <p>
      * - To list all jobs in a stack, provide the stack OCID.
@@ -159,6 +175,33 @@ public interface ResourceManager extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListStacksResponse listStacks(ListStacksRequest request);
+
+    /**
+     * Return a (paginated) list of errors for a given work request.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
+
+    /**
+     * Return a (paginated) list of logs for a given work request.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
+
+    /**
+     * Lists the work requests in a given compartment or for a given resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
      * Updates the specified job.

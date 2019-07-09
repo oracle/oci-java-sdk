@@ -102,6 +102,24 @@ public class DbSystemSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+        private java.util.List<String> nsgIds;
+
+        public Builder nsgIds(java.util.List<String> nsgIds) {
+            this.nsgIds = nsgIds;
+            this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
+        private java.util.List<String> backupNetworkNsgIds;
+
+        public Builder backupNetworkNsgIds(java.util.List<String> backupNetworkNsgIds) {
+            this.backupNetworkNsgIds = backupNetworkNsgIds;
+            this.__explicitlySet__.add("backupNetworkNsgIds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
@@ -350,6 +368,8 @@ public class DbSystemSummary {
                             faultDomains,
                             subnetId,
                             backupSubnetId,
+                            nsgIds,
+                            backupNetworkNsgIds,
                             shape,
                             sshPublicKeys,
                             timeZone,
@@ -390,6 +410,8 @@ public class DbSystemSummary {
                             .faultDomains(o.getFaultDomains())
                             .subnetId(o.getSubnetId())
                             .backupSubnetId(o.getBackupSubnetId())
+                            .nsgIds(o.getNsgIds())
+                            .backupNetworkNsgIds(o.getBackupNetworkNsgIds())
                             .shape(o.getShape())
                             .sshPublicKeys(o.getSshPublicKeys())
                             .timeZone(o.getTimeZone())
@@ -482,6 +504,23 @@ public class DbSystemSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupSubnetId")
     String backupSubnetId;
+
+    /**
+     * The list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with this DB system.
+     * A maximum of 5 allowed.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+    java.util.List<String> nsgIds;
+
+    /**
+     * The list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with the backup network of this DB system.
+     * Applicable only to Exadata DB systems.
+     * A maximum of 5 allowed.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
+    java.util.List<String> backupNetworkNsgIds;
 
     /**
      * The shape of the DB system. The shape determines resources to allocate to the DB system.

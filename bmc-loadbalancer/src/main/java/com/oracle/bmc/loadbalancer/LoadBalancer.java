@@ -444,6 +444,15 @@ public interface LoadBalancer extends AutoCloseable {
     UpdateLoadBalancerResponse updateLoadBalancer(UpdateLoadBalancerRequest request);
 
     /**
+     * Updates the network security groups to be used by a load balancer.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateNetworkSecurityGroupsResponse updateNetworkSecurityGroups(
+            UpdateNetworkSecurityGroupsRequest request);
+
+    /**
      * Overwrites an existing path route set on the specified load balancer. Use this operation to add, delete, or alter
      * path route rules in a path route set.
      * <p>

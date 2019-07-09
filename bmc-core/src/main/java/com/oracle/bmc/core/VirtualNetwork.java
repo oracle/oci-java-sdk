@@ -38,6 +38,16 @@ public interface VirtualNetwork extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Adds one or more security rules to the specified network security group.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    AddNetworkSecurityGroupSecurityRulesResponse addNetworkSecurityGroupSecurityRules(
+            AddNetworkSecurityGroupSecurityRulesRequest request);
+
+    /**
      * Adds the specified {@link Service} to the list of enabled
      * `Service` objects for the specified gateway. You must also set up a route rule with the
      * `cidrBlock` of the `Service` as the rule's destination and the service gateway as the rule's
@@ -94,6 +104,30 @@ public interface VirtualNetwork extends AutoCloseable {
             ChangeNatGatewayCompartmentRequest request);
 
     /**
+     * Moves a route table into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeRouteTableCompartmentResponse changeRouteTableCompartment(
+            ChangeRouteTableCompartmentRequest request);
+
+    /**
+     * Moves a security list into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeSecurityListCompartmentResponse changeSecurityListCompartment(
+            ChangeSecurityListCompartmentRequest request);
+
+    /**
      * Moves a service gateway into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see
      * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -104,6 +138,28 @@ public interface VirtualNetwork extends AutoCloseable {
      */
     ChangeServiceGatewayCompartmentResponse changeServiceGatewayCompartment(
             ChangeServiceGatewayCompartmentRequest request);
+
+    /**
+     * Moves a subnet into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeSubnetCompartmentResponse changeSubnetCompartment(ChangeSubnetCompartmentRequest request);
+
+    /**
+     * Moves a VCN into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeVcnCompartmentResponse changeVcnCompartment(ChangeVcnCompartmentRequest request);
 
     /**
      * Connects this local peering gateway (LPG) to another one in the same region.
@@ -356,6 +412,16 @@ public interface VirtualNetwork extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     CreateNatGatewayResponse createNatGateway(CreateNatGatewayRequest request);
+
+    /**
+     * Creates a new network security group for the specified VCN.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateNetworkSecurityGroupResponse createNetworkSecurityGroup(
+            CreateNetworkSecurityGroupRequest request);
 
     /**
      * Creates a secondary private IP for the specified VNIC.
@@ -698,6 +764,22 @@ public interface VirtualNetwork extends AutoCloseable {
     DeleteNatGatewayResponse deleteNatGateway(DeleteNatGatewayRequest request);
 
     /**
+     * Deletes the specified network security group. The group must not contain any VNICs.
+     * <p>
+     * To get a list of the VNICs in a network security group, use
+     * {@link #listNetworkSecurityGroupVnics(ListNetworkSecurityGroupVnicsRequest) listNetworkSecurityGroupVnics}.
+     * Each returned {@link NetworkSecurityGroupVnic} object
+     * contains both the OCID of the VNIC and the OCID of the VNIC's parent resource (for example,
+     * the Compute instance that the VNIC is attached to).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteNetworkSecurityGroupResponse deleteNetworkSecurityGroup(
+            DeleteNetworkSecurityGroupRequest request);
+
+    /**
      * Unassigns and deletes the specified private IP. You must
      * specify the object's OCID. The private IP address is returned to
      * the subnet's pool of available addresses.
@@ -1012,6 +1094,21 @@ public interface VirtualNetwork extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     GetNatGatewayResponse getNatGateway(GetNatGatewayRequest request);
+
+    /**
+     * Gets the specified network security group's information.
+     * <p>
+     * To list the VNICs in an NSG, see
+     * {@link #listNetworkSecurityGroupVnics(ListNetworkSecurityGroupVnicsRequest) listNetworkSecurityGroupVnics}.
+     * <p>
+     * To list the security rules in an NSG, see
+     * {@link #listNetworkSecurityGroupSecurityRules(ListNetworkSecurityGroupSecurityRulesRequest) listNetworkSecurityGroupSecurityRules}.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetNetworkSecurityGroupResponse getNetworkSecurityGroup(GetNetworkSecurityGroupRequest request);
 
     /**
      * Gets the specified private IP. You must specify the object's OCID.
@@ -1329,6 +1426,36 @@ public interface VirtualNetwork extends AutoCloseable {
     ListNatGatewaysResponse listNatGateways(ListNatGatewaysRequest request);
 
     /**
+     * Lists the security rules in the specified network security group.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListNetworkSecurityGroupSecurityRulesResponse listNetworkSecurityGroupSecurityRules(
+            ListNetworkSecurityGroupSecurityRulesRequest request);
+
+    /**
+     * Lists the VNICs in the specified network security group.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListNetworkSecurityGroupVnicsResponse listNetworkSecurityGroupVnics(
+            ListNetworkSecurityGroupVnicsRequest request);
+
+    /**
+     * Lists the network security groups in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListNetworkSecurityGroupsResponse listNetworkSecurityGroups(
+            ListNetworkSecurityGroupsRequest request);
+
+    /**
      * Lists the {@link PrivateIp} objects based
      * on one of these filters:
      * <p>
@@ -1477,6 +1604,16 @@ public interface VirtualNetwork extends AutoCloseable {
     ListVirtualCircuitsResponse listVirtualCircuits(ListVirtualCircuitsRequest request);
 
     /**
+     * Removes one or more security rules from the specified network security group.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    RemoveNetworkSecurityGroupSecurityRulesResponse removeNetworkSecurityGroupSecurityRules(
+            RemoveNetworkSecurityGroupSecurityRulesRequest request);
+
+    /**
      * Updates the specified CPE's display name or tags.
      * Avoid entering confidential information.
      *
@@ -1611,6 +1748,40 @@ public interface VirtualNetwork extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateNatGatewayResponse updateNatGateway(UpdateNatGatewayRequest request);
+
+    /**
+     * Updates the specified network security group.
+     * <p>
+     * To add or remove an existing VNIC from the group, use
+     * {@link #updateVnic(UpdateVnicRequest) updateVnic}.
+     * <p>
+     * To add a VNIC to the group *when you create the VNIC*, specify the NSG's OCID during creation.
+     * For example, see the `nsgIds` attribute in {@link #createVnicDetails(CreateVnicDetailsRequest) createVnicDetails}.
+     * <p>
+     * To add or remove security rules from the group, use
+     * {@link #addNetworkSecurityGroupSecurityRules(AddNetworkSecurityGroupSecurityRulesRequest) addNetworkSecurityGroupSecurityRules}
+     * or
+     * {@link #removeNetworkSecurityGroupSecurityRules(RemoveNetworkSecurityGroupSecurityRulesRequest) removeNetworkSecurityGroupSecurityRules}.
+     * <p>
+     * To edit the contents of existing security rules in the group, use
+     * {@link #updateNetworkSecurityGroupSecurityRules(UpdateNetworkSecurityGroupSecurityRulesRequest) updateNetworkSecurityGroupSecurityRules}.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateNetworkSecurityGroupResponse updateNetworkSecurityGroup(
+            UpdateNetworkSecurityGroupRequest request);
+
+    /**
+     * Updates one or more security rules in the specified network security group.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateNetworkSecurityGroupSecurityRulesResponse updateNetworkSecurityGroupSecurityRules(
+            UpdateNetworkSecurityGroupSecurityRulesRequest request);
 
     /**
      * Updates the specified private IP. You must specify the object's OCID.

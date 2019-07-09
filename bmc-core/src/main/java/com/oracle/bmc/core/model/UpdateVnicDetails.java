@@ -61,6 +61,15 @@ public class UpdateVnicDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+        private java.util.List<String> nsgIds;
+
+        public Builder nsgIds(java.util.List<String> nsgIds) {
+            this.nsgIds = nsgIds;
+            this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("skipSourceDestCheck")
         private Boolean skipSourceDestCheck;
 
@@ -80,6 +89,7 @@ public class UpdateVnicDetails {
                             displayName,
                             freeformTags,
                             hostnameLabel,
+                            nsgIds,
                             skipSourceDestCheck);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -92,6 +102,7 @@ public class UpdateVnicDetails {
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
                             .hostnameLabel(o.getHostnameLabel())
+                            .nsgIds(o.getNsgIds())
                             .skipSourceDestCheck(o.getSkipSourceDestCheck());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -150,6 +161,17 @@ public class UpdateVnicDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
     String hostnameLabel;
+
+    /**
+     * A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. Setting this as
+     * an empty array removes the VNIC from all network security groups.
+     * <p>
+     * For more information about NSGs, see
+     * {@link NetworkSecurityGroup}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+    java.util.List<String> nsgIds;
 
     /**
      * Whether the source/destination check is disabled on the VNIC.
