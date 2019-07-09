@@ -134,6 +134,16 @@ public interface ComputeManagement extends AutoCloseable {
     GetInstancePoolResponse getInstancePool(GetInstancePoolRequest request);
 
     /**
+     * Gets information about a load balancer that is attached to the specified instance pool.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetInstancePoolLoadBalancerAttachmentResponse getInstancePoolLoadBalancerAttachment(
+            GetInstancePoolLoadBalancerAttachmentRequest request);
+
+    /**
      * Launch an instance from an instance configuration
      *
      * @param request The request object containing the details to send

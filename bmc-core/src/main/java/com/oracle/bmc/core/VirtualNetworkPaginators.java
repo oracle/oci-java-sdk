@@ -1771,6 +1771,372 @@ public class VirtualNetworkPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listNetworkSecurityGroupSecurityRules operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListNetworkSecurityGroupSecurityRulesResponse>
+            listNetworkSecurityGroupSecurityRulesResponseIterator(
+                    final ListNetworkSecurityGroupSecurityRulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListNetworkSecurityGroupSecurityRulesRequest.Builder,
+                ListNetworkSecurityGroupSecurityRulesRequest,
+                ListNetworkSecurityGroupSecurityRulesResponse>(
+                new com.google.common.base.Supplier<
+                        ListNetworkSecurityGroupSecurityRulesRequest.Builder>() {
+                    @Override
+                    public ListNetworkSecurityGroupSecurityRulesRequest.Builder get() {
+                        return ListNetworkSecurityGroupSecurityRulesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListNetworkSecurityGroupSecurityRulesResponse, String>() {
+                    @Override
+                    public String apply(ListNetworkSecurityGroupSecurityRulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListNetworkSecurityGroupSecurityRulesRequest.Builder>,
+                        ListNetworkSecurityGroupSecurityRulesRequest>() {
+                    @Override
+                    public ListNetworkSecurityGroupSecurityRulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListNetworkSecurityGroupSecurityRulesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListNetworkSecurityGroupSecurityRulesRequest,
+                        ListNetworkSecurityGroupSecurityRulesResponse>() {
+                    @Override
+                    public ListNetworkSecurityGroupSecurityRulesResponse apply(
+                            ListNetworkSecurityGroupSecurityRulesRequest request) {
+                        return client.listNetworkSecurityGroupSecurityRules(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.SecurityRule} objects
+     * contained in responses from the listNetworkSecurityGroupSecurityRules operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.SecurityRule} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.SecurityRule>
+            listNetworkSecurityGroupSecurityRulesRecordIterator(
+                    final ListNetworkSecurityGroupSecurityRulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListNetworkSecurityGroupSecurityRulesRequest.Builder,
+                ListNetworkSecurityGroupSecurityRulesRequest,
+                ListNetworkSecurityGroupSecurityRulesResponse,
+                com.oracle.bmc.core.model.SecurityRule>(
+                new com.google.common.base.Supplier<
+                        ListNetworkSecurityGroupSecurityRulesRequest.Builder>() {
+                    @Override
+                    public ListNetworkSecurityGroupSecurityRulesRequest.Builder get() {
+                        return ListNetworkSecurityGroupSecurityRulesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListNetworkSecurityGroupSecurityRulesResponse, String>() {
+                    @Override
+                    public String apply(ListNetworkSecurityGroupSecurityRulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListNetworkSecurityGroupSecurityRulesRequest.Builder>,
+                        ListNetworkSecurityGroupSecurityRulesRequest>() {
+                    @Override
+                    public ListNetworkSecurityGroupSecurityRulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListNetworkSecurityGroupSecurityRulesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListNetworkSecurityGroupSecurityRulesRequest,
+                        ListNetworkSecurityGroupSecurityRulesResponse>() {
+                    @Override
+                    public ListNetworkSecurityGroupSecurityRulesResponse apply(
+                            ListNetworkSecurityGroupSecurityRulesRequest request) {
+                        return client.listNetworkSecurityGroupSecurityRules(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListNetworkSecurityGroupSecurityRulesResponse,
+                        java.util.List<com.oracle.bmc.core.model.SecurityRule>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.SecurityRule> apply(
+                            ListNetworkSecurityGroupSecurityRulesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listNetworkSecurityGroupVnics operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListNetworkSecurityGroupVnicsResponse>
+            listNetworkSecurityGroupVnicsResponseIterator(
+                    final ListNetworkSecurityGroupVnicsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListNetworkSecurityGroupVnicsRequest.Builder, ListNetworkSecurityGroupVnicsRequest,
+                ListNetworkSecurityGroupVnicsResponse>(
+                new com.google.common.base.Supplier<
+                        ListNetworkSecurityGroupVnicsRequest.Builder>() {
+                    @Override
+                    public ListNetworkSecurityGroupVnicsRequest.Builder get() {
+                        return ListNetworkSecurityGroupVnicsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListNetworkSecurityGroupVnicsResponse, String>() {
+                    @Override
+                    public String apply(ListNetworkSecurityGroupVnicsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListNetworkSecurityGroupVnicsRequest.Builder>,
+                        ListNetworkSecurityGroupVnicsRequest>() {
+                    @Override
+                    public ListNetworkSecurityGroupVnicsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListNetworkSecurityGroupVnicsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListNetworkSecurityGroupVnicsRequest,
+                        ListNetworkSecurityGroupVnicsResponse>() {
+                    @Override
+                    public ListNetworkSecurityGroupVnicsResponse apply(
+                            ListNetworkSecurityGroupVnicsRequest request) {
+                        return client.listNetworkSecurityGroupVnics(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.NetworkSecurityGroupVnic} objects
+     * contained in responses from the listNetworkSecurityGroupVnics operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.NetworkSecurityGroupVnic} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.NetworkSecurityGroupVnic>
+            listNetworkSecurityGroupVnicsRecordIterator(
+                    final ListNetworkSecurityGroupVnicsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListNetworkSecurityGroupVnicsRequest.Builder, ListNetworkSecurityGroupVnicsRequest,
+                ListNetworkSecurityGroupVnicsResponse,
+                com.oracle.bmc.core.model.NetworkSecurityGroupVnic>(
+                new com.google.common.base.Supplier<
+                        ListNetworkSecurityGroupVnicsRequest.Builder>() {
+                    @Override
+                    public ListNetworkSecurityGroupVnicsRequest.Builder get() {
+                        return ListNetworkSecurityGroupVnicsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListNetworkSecurityGroupVnicsResponse, String>() {
+                    @Override
+                    public String apply(ListNetworkSecurityGroupVnicsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListNetworkSecurityGroupVnicsRequest.Builder>,
+                        ListNetworkSecurityGroupVnicsRequest>() {
+                    @Override
+                    public ListNetworkSecurityGroupVnicsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListNetworkSecurityGroupVnicsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListNetworkSecurityGroupVnicsRequest,
+                        ListNetworkSecurityGroupVnicsResponse>() {
+                    @Override
+                    public ListNetworkSecurityGroupVnicsResponse apply(
+                            ListNetworkSecurityGroupVnicsRequest request) {
+                        return client.listNetworkSecurityGroupVnics(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListNetworkSecurityGroupVnicsResponse,
+                        java.util.List<com.oracle.bmc.core.model.NetworkSecurityGroupVnic>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.NetworkSecurityGroupVnic> apply(
+                            ListNetworkSecurityGroupVnicsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listNetworkSecurityGroups operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListNetworkSecurityGroupsResponse> listNetworkSecurityGroupsResponseIterator(
+            final ListNetworkSecurityGroupsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListNetworkSecurityGroupsRequest.Builder, ListNetworkSecurityGroupsRequest,
+                ListNetworkSecurityGroupsResponse>(
+                new com.google.common.base.Supplier<ListNetworkSecurityGroupsRequest.Builder>() {
+                    @Override
+                    public ListNetworkSecurityGroupsRequest.Builder get() {
+                        return ListNetworkSecurityGroupsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListNetworkSecurityGroupsResponse, String>() {
+                    @Override
+                    public String apply(ListNetworkSecurityGroupsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListNetworkSecurityGroupsRequest.Builder>,
+                        ListNetworkSecurityGroupsRequest>() {
+                    @Override
+                    public ListNetworkSecurityGroupsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListNetworkSecurityGroupsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListNetworkSecurityGroupsRequest, ListNetworkSecurityGroupsResponse>() {
+                    @Override
+                    public ListNetworkSecurityGroupsResponse apply(
+                            ListNetworkSecurityGroupsRequest request) {
+                        return client.listNetworkSecurityGroups(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.NetworkSecurityGroup} objects
+     * contained in responses from the listNetworkSecurityGroups operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.NetworkSecurityGroup} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.NetworkSecurityGroup>
+            listNetworkSecurityGroupsRecordIterator(
+                    final ListNetworkSecurityGroupsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListNetworkSecurityGroupsRequest.Builder, ListNetworkSecurityGroupsRequest,
+                ListNetworkSecurityGroupsResponse, com.oracle.bmc.core.model.NetworkSecurityGroup>(
+                new com.google.common.base.Supplier<ListNetworkSecurityGroupsRequest.Builder>() {
+                    @Override
+                    public ListNetworkSecurityGroupsRequest.Builder get() {
+                        return ListNetworkSecurityGroupsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListNetworkSecurityGroupsResponse, String>() {
+                    @Override
+                    public String apply(ListNetworkSecurityGroupsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListNetworkSecurityGroupsRequest.Builder>,
+                        ListNetworkSecurityGroupsRequest>() {
+                    @Override
+                    public ListNetworkSecurityGroupsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListNetworkSecurityGroupsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListNetworkSecurityGroupsRequest, ListNetworkSecurityGroupsResponse>() {
+                    @Override
+                    public ListNetworkSecurityGroupsResponse apply(
+                            ListNetworkSecurityGroupsRequest request) {
+                        return client.listNetworkSecurityGroups(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListNetworkSecurityGroupsResponse,
+                        java.util.List<com.oracle.bmc.core.model.NetworkSecurityGroup>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.NetworkSecurityGroup> apply(
+                            ListNetworkSecurityGroupsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listPrivateIps operation. This iterable
      * will fetch more data from the server as needed.
      *

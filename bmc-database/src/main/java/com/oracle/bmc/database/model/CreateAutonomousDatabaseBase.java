@@ -162,6 +162,12 @@ public class CreateAutonomousDatabaseBase {
     LicenseModel licenseModel;
 
     /**
+     * If set to true, indicates that an Autonomous Database preview version is being provisioned, and that the preview version's terms of service have been accepted.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isPreviewVersionWithServiceTermsAccepted")
+    Boolean isPreviewVersionWithServiceTermsAccepted;
+
+    /**
      * Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is false.
      *
      **/

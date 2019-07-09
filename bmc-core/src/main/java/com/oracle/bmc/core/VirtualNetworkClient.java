@@ -380,6 +380,42 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public AddNetworkSecurityGroupSecurityRulesResponse addNetworkSecurityGroupSecurityRules(
+            AddNetworkSecurityGroupSecurityRulesRequest request) {
+        LOG.trace("Called addNetworkSecurityGroupSecurityRules");
+        final AddNetworkSecurityGroupSecurityRulesRequest interceptedRequest =
+                AddNetworkSecurityGroupSecurityRulesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddNetworkSecurityGroupSecurityRulesConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, AddNetworkSecurityGroupSecurityRulesResponse>
+                transformer = AddNetworkSecurityGroupSecurityRulesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getAddNetworkSecurityGroupSecurityRulesDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public AttachServiceIdResponse attachServiceId(AttachServiceIdRequest request) {
         LOG.trace("Called attachServiceId");
         final AttachServiceIdRequest interceptedRequest =
@@ -519,6 +555,76 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public ChangeRouteTableCompartmentResponse changeRouteTableCompartment(
+            ChangeRouteTableCompartmentRequest request) {
+        LOG.trace("Called changeRouteTableCompartment");
+        final ChangeRouteTableCompartmentRequest interceptedRequest =
+                ChangeRouteTableCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeRouteTableCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeRouteTableCompartmentResponse>
+                transformer = ChangeRouteTableCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeRouteTableCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeSecurityListCompartmentResponse changeSecurityListCompartment(
+            ChangeSecurityListCompartmentRequest request) {
+        LOG.trace("Called changeSecurityListCompartment");
+        final ChangeSecurityListCompartmentRequest interceptedRequest =
+                ChangeSecurityListCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeSecurityListCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeSecurityListCompartmentResponse>
+                transformer = ChangeSecurityListCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeSecurityListCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeServiceGatewayCompartmentResponse changeServiceGatewayCompartment(
             ChangeServiceGatewayCompartmentRequest request) {
         LOG.trace("Called changeServiceGatewayCompartment");
@@ -547,6 +653,71 @@ public class VirtualNetworkClient implements VirtualNetwork {
                                                 ib,
                                                 retriedRequest
                                                         .getChangeServiceGatewayCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeSubnetCompartmentResponse changeSubnetCompartment(
+            ChangeSubnetCompartmentRequest request) {
+        LOG.trace("Called changeSubnetCompartment");
+        final ChangeSubnetCompartmentRequest interceptedRequest =
+                ChangeSubnetCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeSubnetCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeSubnetCompartmentResponse>
+                transformer = ChangeSubnetCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getChangeSubnetCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeVcnCompartmentResponse changeVcnCompartment(ChangeVcnCompartmentRequest request) {
+        LOG.trace("Called changeVcnCompartment");
+        final ChangeVcnCompartmentRequest interceptedRequest =
+                ChangeVcnCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeVcnCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeVcnCompartmentResponse>
+                transformer = ChangeVcnCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getChangeVcnCompartmentDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -941,6 +1112,41 @@ public class VirtualNetworkClient implements VirtualNetwork {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getCreateNatGatewayDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateNetworkSecurityGroupResponse createNetworkSecurityGroup(
+            CreateNetworkSecurityGroupRequest request) {
+        LOG.trace("Called createNetworkSecurityGroup");
+        final CreateNetworkSecurityGroupRequest interceptedRequest =
+                CreateNetworkSecurityGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateNetworkSecurityGroupConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateNetworkSecurityGroupResponse>
+                transformer = CreateNetworkSecurityGroupConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateNetworkSecurityGroupDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -1510,6 +1716,37 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 DeleteNatGatewayConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteNatGatewayResponse>
                 transformer = DeleteNatGatewayConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteNetworkSecurityGroupResponse deleteNetworkSecurityGroup(
+            DeleteNetworkSecurityGroupRequest request) {
+        LOG.trace("Called deleteNetworkSecurityGroup");
+        final DeleteNetworkSecurityGroupRequest interceptedRequest =
+                DeleteNetworkSecurityGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteNetworkSecurityGroupConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteNetworkSecurityGroupResponse>
+                transformer = DeleteNetworkSecurityGroupConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -2323,6 +2560,35 @@ public class VirtualNetworkClient implements VirtualNetwork {
                 GetNatGatewayConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetNatGatewayResponse>
                 transformer = GetNatGatewayConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetNetworkSecurityGroupResponse getNetworkSecurityGroup(
+            GetNetworkSecurityGroupRequest request) {
+        LOG.trace("Called getNetworkSecurityGroup");
+        final GetNetworkSecurityGroupRequest interceptedRequest =
+                GetNetworkSecurityGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetNetworkSecurityGroupConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetNetworkSecurityGroupResponse>
+                transformer = GetNetworkSecurityGroupConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -3182,6 +3448,97 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public ListNetworkSecurityGroupSecurityRulesResponse listNetworkSecurityGroupSecurityRules(
+            ListNetworkSecurityGroupSecurityRulesRequest request) {
+        LOG.trace("Called listNetworkSecurityGroupSecurityRules");
+        final ListNetworkSecurityGroupSecurityRulesRequest interceptedRequest =
+                ListNetworkSecurityGroupSecurityRulesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListNetworkSecurityGroupSecurityRulesConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListNetworkSecurityGroupSecurityRulesResponse>
+                transformer = ListNetworkSecurityGroupSecurityRulesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListNetworkSecurityGroupVnicsResponse listNetworkSecurityGroupVnics(
+            ListNetworkSecurityGroupVnicsRequest request) {
+        LOG.trace("Called listNetworkSecurityGroupVnics");
+        final ListNetworkSecurityGroupVnicsRequest interceptedRequest =
+                ListNetworkSecurityGroupVnicsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListNetworkSecurityGroupVnicsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListNetworkSecurityGroupVnicsResponse>
+                transformer = ListNetworkSecurityGroupVnicsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListNetworkSecurityGroupsResponse listNetworkSecurityGroups(
+            ListNetworkSecurityGroupsRequest request) {
+        LOG.trace("Called listNetworkSecurityGroups");
+        final ListNetworkSecurityGroupsRequest interceptedRequest =
+                ListNetworkSecurityGroupsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListNetworkSecurityGroupsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListNetworkSecurityGroupsResponse>
+                transformer = ListNetworkSecurityGroupsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListPrivateIpsResponse listPrivateIps(ListPrivateIpsRequest request) {
         LOG.trace("Called listPrivateIps");
         final ListPrivateIpsRequest interceptedRequest =
@@ -3517,6 +3874,42 @@ public class VirtualNetworkClient implements VirtualNetwork {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RemoveNetworkSecurityGroupSecurityRulesResponse removeNetworkSecurityGroupSecurityRules(
+            RemoveNetworkSecurityGroupSecurityRulesRequest request) {
+        LOG.trace("Called removeNetworkSecurityGroupSecurityRules");
+        final RemoveNetworkSecurityGroupSecurityRulesRequest interceptedRequest =
+                RemoveNetworkSecurityGroupSecurityRulesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveNetworkSecurityGroupSecurityRulesConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RemoveNetworkSecurityGroupSecurityRulesResponse>
+                transformer = RemoveNetworkSecurityGroupSecurityRulesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getRemoveNetworkSecurityGroupSecurityRulesDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -3911,6 +4304,77 @@ public class VirtualNetworkClient implements VirtualNetwork {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateNatGatewayDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateNetworkSecurityGroupResponse updateNetworkSecurityGroup(
+            UpdateNetworkSecurityGroupRequest request) {
+        LOG.trace("Called updateNetworkSecurityGroup");
+        final UpdateNetworkSecurityGroupRequest interceptedRequest =
+                UpdateNetworkSecurityGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateNetworkSecurityGroupConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateNetworkSecurityGroupResponse>
+                transformer = UpdateNetworkSecurityGroupConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateNetworkSecurityGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateNetworkSecurityGroupSecurityRulesResponse updateNetworkSecurityGroupSecurityRules(
+            UpdateNetworkSecurityGroupSecurityRulesRequest request) {
+        LOG.trace("Called updateNetworkSecurityGroupSecurityRules");
+        final UpdateNetworkSecurityGroupSecurityRulesRequest interceptedRequest =
+                UpdateNetworkSecurityGroupSecurityRulesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateNetworkSecurityGroupSecurityRulesConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateNetworkSecurityGroupSecurityRulesResponse>
+                transformer = UpdateNetworkSecurityGroupSecurityRulesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateNetworkSecurityGroupSecurityRulesDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

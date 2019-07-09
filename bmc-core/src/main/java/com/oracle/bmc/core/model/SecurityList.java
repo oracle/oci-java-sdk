@@ -9,6 +9,11 @@ package com.oracle.bmc.core.model;
  * in the subnet. The rules can be stateful or stateless. For more information, see
  * [Security Lists](https://docs.cloud.oracle.com/Content/Network/Concepts/securitylists.htm).
  * <p>
+ **Note:** Compare security lists to {@link NetworkSecurityGroup}s,
+ * which let you apply a set of security rules to a *specific set of VNICs* instead of an entire
+ * subnet. Oracle recommends using network security groups instead of security lists, although you
+ * can use either or both together.
+ * <p>
  **Important:** Oracle Cloud Infrastructure Compute service images automatically include firewall rules (for example,
  * Linux iptables, Windows firewall). If there are issues with some type of access to an instance,
  * make sure both the security lists associated with the instance's subnet and the instance's

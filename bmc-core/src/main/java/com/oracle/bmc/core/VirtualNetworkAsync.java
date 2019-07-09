@@ -37,6 +37,25 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Adds one or more security rules to the specified network security group.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddNetworkSecurityGroupSecurityRulesResponse>
+            addNetworkSecurityGroupSecurityRules(
+                    AddNetworkSecurityGroupSecurityRulesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    AddNetworkSecurityGroupSecurityRulesRequest,
+                                    AddNetworkSecurityGroupSecurityRulesResponse>
+                            handler);
+
+    /**
      * Adds the specified {@link Service} to the list of enabled
      * `Service` objects for the specified gateway. You must also set up a route rule with the
      * `cidrBlock` of the `Service` as the rule's destination and the service gateway as the rule's
@@ -125,6 +144,46 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Moves a route table into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeRouteTableCompartmentResponse> changeRouteTableCompartment(
+            ChangeRouteTableCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeRouteTableCompartmentRequest, ChangeRouteTableCompartmentResponse>
+                    handler);
+
+    /**
+     * Moves a security list into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeSecurityListCompartmentResponse>
+            changeSecurityListCompartment(
+                    ChangeSecurityListCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSecurityListCompartmentRequest,
+                                    ChangeSecurityListCompartmentResponse>
+                            handler);
+
+    /**
      * Moves a service gateway into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see
      * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -144,6 +203,44 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                                     ChangeServiceGatewayCompartmentRequest,
                                     ChangeServiceGatewayCompartmentResponse>
                             handler);
+
+    /**
+     * Moves a subnet into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeSubnetCompartmentResponse> changeSubnetCompartment(
+            ChangeSubnetCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeSubnetCompartmentRequest, ChangeSubnetCompartmentResponse>
+                    handler);
+
+    /**
+     * Moves a VCN into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeVcnCompartmentResponse> changeVcnCompartment(
+            ChangeVcnCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeVcnCompartmentRequest, ChangeVcnCompartmentResponse>
+                    handler);
 
     /**
      * Connects this local peering gateway (LPG) to another one in the same region.
@@ -485,6 +582,23 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     java.util.concurrent.Future<CreateNatGatewayResponse> createNatGateway(
             CreateNatGatewayRequest request,
             com.oracle.bmc.responses.AsyncHandler<CreateNatGatewayRequest, CreateNatGatewayResponse>
+                    handler);
+
+    /**
+     * Creates a new network security group for the specified VCN.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateNetworkSecurityGroupResponse> createNetworkSecurityGroup(
+            CreateNetworkSecurityGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateNetworkSecurityGroupRequest, CreateNetworkSecurityGroupResponse>
                     handler);
 
     /**
@@ -966,6 +1080,29 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteNatGatewayResponse> deleteNatGateway(
             DeleteNatGatewayRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteNatGatewayRequest, DeleteNatGatewayResponse>
+                    handler);
+
+    /**
+     * Deletes the specified network security group. The group must not contain any VNICs.
+     * <p>
+     * To get a list of the VNICs in a network security group, use
+     * {@link #listNetworkSecurityGroupVnics(ListNetworkSecurityGroupVnicsRequest, Consumer, Consumer) listNetworkSecurityGroupVnics}.
+     * Each returned {@link NetworkSecurityGroupVnic} object
+     * contains both the OCID of the VNIC and the OCID of the VNIC's parent resource (for example,
+     * the Compute instance that the VNIC is attached to).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteNetworkSecurityGroupResponse> deleteNetworkSecurityGroup(
+            DeleteNetworkSecurityGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteNetworkSecurityGroupRequest, DeleteNetworkSecurityGroupResponse>
                     handler);
 
     /**
@@ -1500,6 +1637,29 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the specified network security group's information.
+     * <p>
+     * To list the VNICs in an NSG, see
+     * {@link #listNetworkSecurityGroupVnics(ListNetworkSecurityGroupVnicsRequest, Consumer, Consumer) listNetworkSecurityGroupVnics}.
+     * <p>
+     * To list the security rules in an NSG, see
+     * {@link #listNetworkSecurityGroupSecurityRules(ListNetworkSecurityGroupSecurityRulesRequest, Consumer, Consumer) listNetworkSecurityGroupSecurityRules}.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetNetworkSecurityGroupResponse> getNetworkSecurityGroup(
+            GetNetworkSecurityGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetNetworkSecurityGroupRequest, GetNetworkSecurityGroupResponse>
+                    handler);
+
+    /**
      * Gets the specified private IP. You must specify the object's OCID.
      * Alternatively, you can get the object by using
      * {@link #listPrivateIps(ListPrivateIpsRequest, Consumer, Consumer) listPrivateIps}
@@ -2026,6 +2186,61 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists the security rules in the specified network security group.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListNetworkSecurityGroupSecurityRulesResponse>
+            listNetworkSecurityGroupSecurityRules(
+                    ListNetworkSecurityGroupSecurityRulesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListNetworkSecurityGroupSecurityRulesRequest,
+                                    ListNetworkSecurityGroupSecurityRulesResponse>
+                            handler);
+
+    /**
+     * Lists the VNICs in the specified network security group.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListNetworkSecurityGroupVnicsResponse>
+            listNetworkSecurityGroupVnics(
+                    ListNetworkSecurityGroupVnicsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListNetworkSecurityGroupVnicsRequest,
+                                    ListNetworkSecurityGroupVnicsResponse>
+                            handler);
+
+    /**
+     * Lists the network security groups in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListNetworkSecurityGroupsResponse> listNetworkSecurityGroups(
+            ListNetworkSecurityGroupsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListNetworkSecurityGroupsRequest, ListNetworkSecurityGroupsResponse>
+                    handler);
+
+    /**
      * Lists the {@link PrivateIp} objects based
      * on one of these filters:
      * <p>
@@ -2264,6 +2479,25 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Removes one or more security rules from the specified network security group.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveNetworkSecurityGroupSecurityRulesResponse>
+            removeNetworkSecurityGroupSecurityRules(
+                    RemoveNetworkSecurityGroupSecurityRulesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveNetworkSecurityGroupSecurityRulesRequest,
+                                    RemoveNetworkSecurityGroupSecurityRulesResponse>
+                            handler);
+
+    /**
      * Updates the specified CPE's display name or tags.
      * Avoid entering confidential information.
      *
@@ -2488,6 +2722,56 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             UpdateNatGatewayRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateNatGatewayRequest, UpdateNatGatewayResponse>
                     handler);
+
+    /**
+     * Updates the specified network security group.
+     * <p>
+     * To add or remove an existing VNIC from the group, use
+     * {@link #updateVnic(UpdateVnicRequest, Consumer, Consumer) updateVnic}.
+     * <p>
+     * To add a VNIC to the group *when you create the VNIC*, specify the NSG's OCID during creation.
+     * For example, see the `nsgIds` attribute in {@link #createVnicDetails(CreateVnicDetailsRequest, Consumer, Consumer) createVnicDetails}.
+     * <p>
+     * To add or remove security rules from the group, use
+     * {@link #addNetworkSecurityGroupSecurityRules(AddNetworkSecurityGroupSecurityRulesRequest, Consumer, Consumer) addNetworkSecurityGroupSecurityRules}
+     * or
+     * {@link #removeNetworkSecurityGroupSecurityRules(RemoveNetworkSecurityGroupSecurityRulesRequest, Consumer, Consumer) removeNetworkSecurityGroupSecurityRules}.
+     * <p>
+     * To edit the contents of existing security rules in the group, use
+     * {@link #updateNetworkSecurityGroupSecurityRules(UpdateNetworkSecurityGroupSecurityRulesRequest, Consumer, Consumer) updateNetworkSecurityGroupSecurityRules}.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateNetworkSecurityGroupResponse> updateNetworkSecurityGroup(
+            UpdateNetworkSecurityGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateNetworkSecurityGroupRequest, UpdateNetworkSecurityGroupResponse>
+                    handler);
+
+    /**
+     * Updates one or more security rules in the specified network security group.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateNetworkSecurityGroupSecurityRulesResponse>
+            updateNetworkSecurityGroupSecurityRules(
+                    UpdateNetworkSecurityGroupSecurityRulesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateNetworkSecurityGroupSecurityRulesRequest,
+                                    UpdateNetworkSecurityGroupSecurityRulesResponse>
+                            handler);
 
     /**
      * Updates the specified private IP. You must specify the object's OCID.

@@ -768,6 +768,22 @@ public interface LoadBalancerAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Updates the network security groups to be used by a load balancer.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateNetworkSecurityGroupsResponse> updateNetworkSecurityGroups(
+            UpdateNetworkSecurityGroupsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateNetworkSecurityGroupsRequest, UpdateNetworkSecurityGroupsResponse>
+                    handler);
+
+    /**
      * Overwrites an existing path route set on the specified load balancer. Use this operation to add, delete, or alter
      * path route rules in a path route set.
      * <p>

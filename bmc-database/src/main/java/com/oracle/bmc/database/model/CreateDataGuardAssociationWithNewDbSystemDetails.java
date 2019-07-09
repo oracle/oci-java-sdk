@@ -88,6 +88,24 @@ public class CreateDataGuardAssociationWithNewDbSystemDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+        private java.util.List<String> nsgIds;
+
+        public Builder nsgIds(java.util.List<String> nsgIds) {
+            this.nsgIds = nsgIds;
+            this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
+        private java.util.List<String> backupNetworkNsgIds;
+
+        public Builder backupNetworkNsgIds(java.util.List<String> backupNetworkNsgIds) {
+            this.backupNetworkNsgIds = backupNetworkNsgIds;
+            this.__explicitlySet__.add("backupNetworkNsgIds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
@@ -109,6 +127,8 @@ public class CreateDataGuardAssociationWithNewDbSystemDetails
                             displayName,
                             availabilityDomain,
                             subnetId,
+                            nsgIds,
+                            backupNetworkNsgIds,
                             hostname);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -123,6 +143,8 @@ public class CreateDataGuardAssociationWithNewDbSystemDetails
                             .displayName(o.getDisplayName())
                             .availabilityDomain(o.getAvailabilityDomain())
                             .subnetId(o.getSubnetId())
+                            .nsgIds(o.getNsgIds())
+                            .backupNetworkNsgIds(o.getBackupNetworkNsgIds())
                             .hostname(o.getHostname());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -145,11 +167,15 @@ public class CreateDataGuardAssociationWithNewDbSystemDetails
             String displayName,
             String availabilityDomain,
             String subnetId,
+            java.util.List<String> nsgIds,
+            java.util.List<String> backupNetworkNsgIds,
             String hostname) {
         super(databaseAdminPassword, protectionMode, transportType);
         this.displayName = displayName;
         this.availabilityDomain = availabilityDomain;
         this.subnetId = subnetId;
+        this.nsgIds = nsgIds;
+        this.backupNetworkNsgIds = backupNetworkNsgIds;
         this.hostname = hostname;
     }
 
@@ -177,6 +203,23 @@ public class CreateDataGuardAssociationWithNewDbSystemDetails
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     String subnetId;
+
+    /**
+     * The list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with this DB system.
+     * A maximum of 5 allowed.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+    java.util.List<String> nsgIds;
+
+    /**
+     * The list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with the backup network of this DB system.
+     * Applicable only to Exadata DB systems.
+     * A maximum of 5 allowed.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
+    java.util.List<String> backupNetworkNsgIds;
 
     /**
      * The hostname for the DB node.

@@ -2,14 +2,22 @@
  * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
 import com.oracle.bmc.core.VirtualNetwork;
+import com.oracle.bmc.core.model.AddNetworkSecurityGroupSecurityRulesDetails;
+import com.oracle.bmc.core.model.AddSecurityRuleDetails;
+import com.oracle.bmc.core.model.CreateNetworkSecurityGroupDetails;
 import com.oracle.bmc.core.model.CreateSubnetDetails;
 import com.oracle.bmc.core.model.CreateVcnDetails;
 import com.oracle.bmc.core.model.EgressSecurityRule;
 import com.oracle.bmc.core.model.IngressSecurityRule;
+import com.oracle.bmc.core.model.PortRange;
 import com.oracle.bmc.core.model.SecurityList;
 import com.oracle.bmc.core.model.Subnet;
+import com.oracle.bmc.core.model.TcpOptions;
+import com.oracle.bmc.core.model.UdpOptions;
 import com.oracle.bmc.core.model.UpdateSecurityListDetails;
 import com.oracle.bmc.core.model.Vcn;
+import com.oracle.bmc.core.requests.AddNetworkSecurityGroupSecurityRulesRequest;
+import com.oracle.bmc.core.requests.CreateNetworkSecurityGroupRequest;
 import com.oracle.bmc.core.requests.CreateSubnetRequest;
 import com.oracle.bmc.core.requests.CreateVcnRequest;
 import com.oracle.bmc.core.requests.DeleteSubnetRequest;
@@ -18,16 +26,38 @@ import com.oracle.bmc.core.requests.GetSecurityListRequest;
 import com.oracle.bmc.core.requests.GetSubnetRequest;
 import com.oracle.bmc.core.requests.GetVcnRequest;
 import com.oracle.bmc.core.requests.UpdateSecurityListRequest;
+import com.oracle.bmc.core.responses.CreateNetworkSecurityGroupResponse;
 import com.oracle.bmc.core.responses.CreateSubnetResponse;
 import com.oracle.bmc.core.responses.CreateVcnResponse;
 import com.oracle.bmc.core.responses.GetSecurityListResponse;
 import com.oracle.bmc.core.responses.UpdateSecurityListResponse;
+import lombok.Getter;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Random;
 
 public class DatabaseExampleHelper {
 
     private static Random rand = new Random();
+
+    /**
+     *  Protocol Numbers:
+     *  @link https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml
+     */
+    public enum NetworkProtocol {
+        Icmp(1),
+        Tcp(6),
+        Udp(17);
+
+        @Getter private final Integer protocolNumber;
+
+        NetworkProtocol(Integer protocol) {
+            this.protocolNumber = protocol;
+        }
+    }
 
     public static Vcn createVcn(
             VirtualNetwork virtualNetwork, String compartmentId, String cidrBlock)
@@ -147,5 +177,114 @@ public class DatabaseExampleHelper {
                         Subnet.LifecycleState.Terminated)
                 .execute();
         System.out.println("Deleted Subnet: " + subnet.getId());
+    }
+
+    public static List<String> createNSGs(
+            VirtualNetwork virtualNetwork, String vcnId, String compartmentId) throws Exception {
+
+        try {
+
+            CreateNetworkSecurityGroupDetails createNetworkSecurityGroupDetails =
+                    CreateNetworkSecurityGroupDetails.builder()
+                            .vcnId(vcnId)
+                            .compartmentId(compartmentId)
+                            .build();
+
+            CreateNetworkSecurityGroupRequest createNetworkSecurityGroupRequest =
+                    CreateNetworkSecurityGroupRequest.builder()
+                            .createNetworkSecurityGroupDetails(createNetworkSecurityGroupDetails)
+                            .build();
+
+            CreateNetworkSecurityGroupResponse response =
+                    virtualNetwork.createNetworkSecurityGroup(createNetworkSecurityGroupRequest);
+
+            AddSecurityRuleDetails allowAllIngressIcmpTraffic =
+                    AddSecurityRuleDetails.builder()
+                            .description("Security Rule to allow all ICMP Ingress Traffic")
+                            .direction(AddSecurityRuleDetails.Direction.Ingress)
+                            .isStateless(false)
+                            .source("0.0.0.0/0")
+                            .protocol(NetworkProtocol.Icmp.getProtocolNumber().toString())
+                            .sourceType(AddSecurityRuleDetails.SourceType.CidrBlock)
+                            .build();
+
+            AddSecurityRuleDetails allowAllIngressTcpTraffic =
+                    AddSecurityRuleDetails.builder()
+                            .description("Security Rule to allow all TCP Ingress Traffic")
+                            .direction(AddSecurityRuleDetails.Direction.Ingress)
+                            .isStateless(false)
+                            .source("0.0.0.0/0")
+                            .protocol(NetworkProtocol.Tcp.getProtocolNumber().toString())
+                            .sourceType(AddSecurityRuleDetails.SourceType.CidrBlock)
+                            .tcpOptions(
+                                    TcpOptions.builder()
+                                            .destinationPortRange(
+                                                    PortRange.builder().min(22).max(22).build())
+                                            .sourcePortRange(null)
+                                            .build())
+                            .build();
+
+            AddSecurityRuleDetails allowAllIngressUdpTraffic =
+                    AddSecurityRuleDetails.builder()
+                            .description("Security Rule to allow all UDP Ingress Traffic")
+                            .direction(AddSecurityRuleDetails.Direction.Ingress)
+                            .isStateless(false)
+                            .source("0.0.0.0/0")
+                            .protocol(NetworkProtocol.Udp.getProtocolNumber().toString())
+                            .sourceType(AddSecurityRuleDetails.SourceType.CidrBlock)
+                            .udpOptions(
+                                    UdpOptions.builder()
+                                            .destinationPortRange(
+                                                    PortRange.builder().min(53).max(53).build())
+                                            .sourcePortRange(
+                                                    PortRange.builder().min(1).max(65535).build())
+                                            .build())
+                            .build();
+
+            AddSecurityRuleDetails allowAllEgressTcpTraffic =
+                    AddSecurityRuleDetails.builder()
+                            .description("Security Rule to allow all TCP Egress Traffic")
+                            .direction(AddSecurityRuleDetails.Direction.Egress)
+                            .isStateless(false)
+                            .destination("0.0.0.0/0")
+                            .protocol(NetworkProtocol.Tcp.getProtocolNumber().toString())
+                            .sourceType(AddSecurityRuleDetails.SourceType.CidrBlock)
+                            .tcpOptions(
+                                    TcpOptions.builder()
+                                            .destinationPortRange(
+                                                    PortRange.builder().min(1).max(65535).build())
+                                            .sourcePortRange(null)
+                                            .build())
+                            .build();
+
+            List<AddSecurityRuleDetails> addSecurityRuleDetailsList = new ArrayList<>();
+            addSecurityRuleDetailsList.add(allowAllIngressIcmpTraffic);
+            addSecurityRuleDetailsList.add(allowAllIngressTcpTraffic);
+            addSecurityRuleDetailsList.add(allowAllIngressUdpTraffic);
+            addSecurityRuleDetailsList.add(allowAllEgressTcpTraffic);
+
+            AddNetworkSecurityGroupSecurityRulesDetails
+                    addNetworkSecurityGroupSecurityRulesDetails =
+                            AddNetworkSecurityGroupSecurityRulesDetails.builder()
+                                    .securityRules(addSecurityRuleDetailsList)
+                                    .build();
+
+            AddNetworkSecurityGroupSecurityRulesRequest
+                    addNetworkSecurityGroupSecurityRulesRequest =
+                            AddNetworkSecurityGroupSecurityRulesRequest.builder()
+                                    .networkSecurityGroupId(
+                                            response.getNetworkSecurityGroup().getId())
+                                    .addNetworkSecurityGroupSecurityRulesDetails(
+                                            addNetworkSecurityGroupSecurityRulesDetails)
+                                    .build();
+
+            virtualNetwork.addNetworkSecurityGroupSecurityRules(
+                    addNetworkSecurityGroupSecurityRulesRequest);
+            return Arrays.asList(response.getNetworkSecurityGroup().getId());
+        } catch (Exception e) {
+            System.out.println("Exception " + e.getMessage());
+        }
+
+        return new ArrayList<>();
     }
 }

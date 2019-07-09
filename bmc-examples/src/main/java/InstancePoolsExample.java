@@ -21,18 +21,18 @@ import com.oracle.bmc.core.requests.AttachLoadBalancerRequest;
 import com.oracle.bmc.core.requests.CreateInstanceConfigurationRequest;
 import com.oracle.bmc.core.requests.CreateInstancePoolRequest;
 import com.oracle.bmc.core.requests.DeleteInstanceConfigurationRequest;
+import com.oracle.bmc.core.requests.GetInstancePoolLoadBalancerAttachmentRequest;
 import com.oracle.bmc.core.requests.GetInstancePoolRequest;
 import com.oracle.bmc.core.requests.TerminateInstancePoolRequest;
 import com.oracle.bmc.core.requests.UpdateInstancePoolRequest;
+import com.oracle.bmc.core.responses.AttachLoadBalancerResponse;
 import com.oracle.bmc.core.responses.CreateInstanceConfigurationResponse;
 import com.oracle.bmc.core.responses.CreateInstancePoolResponse;
-import com.oracle.bmc.core.responses.GetInstancePoolResponse;
 import com.oracle.bmc.core.responses.UpdateInstancePoolResponse;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 /**
  * This class provides an example of how you can create an InstanceConfiguration and use that configuration with a
@@ -203,28 +203,30 @@ public class InstancePoolsExample {
                                         .build())
                         .build();
 
-        client.attachLoadBalancer(attachLbRequest);
-
-        // Poll for LB attachment manually. TODO: remove this once we have lb attachment waiters
-        boolean isLbAttached = false;
-        for (int waitAttempt = 0; waitAttempt < 10; waitAttempt++) {
-            GetInstancePoolResponse response = client.getInstancePool(getInstancePoolRequest);
-            List<InstancePoolLoadBalancerAttachment> poolLoadBalancerAttachments =
-                    response.getInstancePool().getLoadBalancers();
-
-            for (InstancePoolLoadBalancerAttachment lbAttachment : poolLoadBalancerAttachments) {
-                if (lbAttachment.getLifecycleState()
-                        == InstancePoolLoadBalancerAttachment.LifecycleState.Attached) {
-                    isLbAttached = true;
-                    break;
-                }
+        AttachLoadBalancerResponse attachLoadBalancerResponse =
+                client.attachLoadBalancer(attachLbRequest);
+        List<InstancePoolLoadBalancerAttachment> instancePoolLoadBalancerAttachments =
+                attachLoadBalancerResponse.getInstancePool().getLoadBalancers();
+        for (InstancePoolLoadBalancerAttachment loadBalancerAttachment :
+                instancePoolLoadBalancerAttachments) {
+            if (!loadBalancerAttachment.getLoadBalancerId().equals(loadBalancerId)
+                    || !loadBalancerAttachment
+                            .getBackendSetName()
+                            .equals(loadBalancerBackendSetName)) {
+                continue;
             }
 
-            TimeUnit.SECONDS.sleep(30);
-        }
-
-        if (!isLbAttached) {
-            throw new Exception("LoadBalancer did not become attached!");
+            GetInstancePoolLoadBalancerAttachmentRequest
+                    getInstancePoolLoadBalancerAttachmentRequest =
+                            GetInstancePoolLoadBalancerAttachmentRequest.builder()
+                                    .instancePoolId(instancePool.getId())
+                                    .instancePoolLoadBalancerAttachmentId(
+                                            loadBalancerAttachment.getId())
+                                    .build();
+            waiter.forInstancePoolLoadBalancerAttachment(
+                            getInstancePoolLoadBalancerAttachmentRequest,
+                            InstancePoolLoadBalancerAttachment.LifecycleState.Attached)
+                    .execute();
         }
 
         // Terminate the Pool

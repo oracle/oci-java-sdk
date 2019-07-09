@@ -7,6 +7,8 @@ package com.oracle.bmc.loadbalancer.model;
  * The configuration details for updating a load balancer backend set.
  * For more information on backend set configuration, see
  * [Managing Backend Sets](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingbackendsets.htm).
+ * <p>
+ **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
