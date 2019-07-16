@@ -217,6 +217,7 @@ public class VaultSummary {
         PendingDeletion("PENDING_DELETION"),
         SchedulingDeletion("SCHEDULING_DELETION"),
         CancellingDeletion("CANCELLING_DELETION"),
+        Updating("UPDATING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

@@ -4,7 +4,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Contains details indicating which compartment the resource should move to
+ * Contains the details for the compartment to move the boot volume to.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -60,7 +60,7 @@ public class ChangeBootVolumeCompartmentDetails {
     }
 
     /**
-     * The OCID of the new compartment
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment to move the boot volume to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;

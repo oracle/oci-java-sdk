@@ -70,6 +70,15 @@ public class SubscriptionSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("createdTime")
         private Long createdTime;
 
@@ -127,6 +136,7 @@ public class SubscriptionSummary {
                             protocol,
                             endpoint,
                             lifecycleState,
+                            compartmentId,
                             createdTime,
                             deliveryPolicy,
                             etag,
@@ -144,6 +154,7 @@ public class SubscriptionSummary {
                             .protocol(o.getProtocol())
                             .endpoint(o.getEndpoint())
                             .lifecycleState(o.getLifecycleState())
+                            .compartmentId(o.getCompartmentId())
                             .createdTime(o.getCreatedTime())
                             .deliveryPolicy(o.getDeliveryPolicy())
                             .etag(o.getEtag())
@@ -186,13 +197,12 @@ public class SubscriptionSummary {
     /**
      * The endpoint of the subscription. Valid values depend on the protocol.
      * For EMAIL, only an email address is valid. For HTTPS, only a PagerDuty URL is valid. A URL cannot exceed 512 characters.
-     * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
     String endpoint;
     /**
-     * The lifecycle state of the subscription. Default value for a newly created subscription: PENDING.
+     * The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -240,11 +250,18 @@ public class SubscriptionSummary {
         }
     };
     /**
-     * The lifecycle state of the subscription. Default value for a newly created subscription: PENDING.
+     * The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the subscription.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    String compartmentId;
 
     /**
      * The time when this suscription was created.

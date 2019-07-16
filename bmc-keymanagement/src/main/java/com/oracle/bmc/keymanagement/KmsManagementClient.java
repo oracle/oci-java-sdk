@@ -321,6 +321,38 @@ public class KmsManagementClient implements KmsManagement {
     }
 
     @Override
+    public ChangeKeyCompartmentResponse changeKeyCompartment(ChangeKeyCompartmentRequest request) {
+        LOG.trace("Called changeKeyCompartment");
+        final ChangeKeyCompartmentRequest interceptedRequest =
+                ChangeKeyCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeKeyCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeKeyCompartmentResponse>
+                transformer = ChangeKeyCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getChangeKeyCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateKeyResponse createKey(CreateKeyRequest request) {
         LOG.trace("Called createKey");
         final CreateKeyRequest interceptedRequest = CreateKeyConverter.interceptRequest(request);

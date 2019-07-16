@@ -29,25 +29,27 @@ public class ListTopicsRequest extends com.oracle.bmc.requests.BmcRequest {
     private String name;
 
     /**
-     * For list pagination. The value of the opc-next-page response header from the previous \"List\" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the opc-next-page response header from the previous \"List\" call.
+     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private String page;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
+     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private Integer limit;
 
     /**
-     * The field to sort by. Only one field can be selected for sorting. Default value: TIMECREATED.
+     * The field to sort by. Only one field can be selected for sorting.
      *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one field can be selected for sorting. Default value: TIMECREATED.
+     * The field to sort by. Only one field can be selected for sorting.
      *
      **/
     public enum SortBy {
@@ -84,13 +86,13 @@ public class ListTopicsRequest extends com.oracle.bmc.requests.BmcRequest {
     };
 
     /**
-     * The sort order to use (ascending or descending). Default value: ASC.
+     * The sort order to use (ascending or descending).
      *
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use (ascending or descending). Default value: ASC.
+     * The sort order to use (ascending or descending).
      *
      **/
     public enum SortOrder {

@@ -17,7 +17,8 @@ public class NotificationControlPlaneClient implements NotificationControlPlane 
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("NOTIFICATIONCONTROLPLANE")
-                    .serviceEndpointPrefix("notification")
+                    .serviceEndpointPrefix("notifications")
+                    .serviceEndpointTemplate("https://notification.{region}.oraclecloud.com")
                     .build();
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
@@ -303,6 +304,39 @@ public class NotificationControlPlaneClient implements NotificationControlPlane 
     @Override
     public void close() {
         client.close();
+    }
+
+    @Override
+    public ChangeTopicCompartmentResponse changeTopicCompartment(
+            ChangeTopicCompartmentRequest request) {
+        LOG.trace("Called changeTopicCompartment");
+        final ChangeTopicCompartmentRequest interceptedRequest =
+                ChangeTopicCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeTopicCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeTopicCompartmentResponse>
+                transformer = ChangeTopicCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getChangeTopicCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override

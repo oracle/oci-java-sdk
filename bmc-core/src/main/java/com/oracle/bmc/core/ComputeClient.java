@@ -541,6 +541,41 @@ public class ComputeClient implements Compute {
     }
 
     @Override
+    public ChangeInstanceCompartmentResponse changeInstanceCompartment(
+            ChangeInstanceCompartmentRequest request) {
+        LOG.trace("Called changeInstanceCompartment");
+        final ChangeInstanceCompartmentRequest interceptedRequest =
+                ChangeInstanceCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeInstanceCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeInstanceCompartmentResponse>
+                transformer = ChangeInstanceCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeInstanceCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateAppCatalogSubscriptionResponse createAppCatalogSubscription(
             CreateAppCatalogSubscriptionRequest request) {
         LOG.trace("Called createAppCatalogSubscription");

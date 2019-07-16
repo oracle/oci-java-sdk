@@ -37,6 +37,17 @@ public interface LoadBalancer extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Moves a load balancer into a different compartment within the same tenancy. For information about moving resources
+     * between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeLoadBalancerCompartmentResponse changeLoadBalancerCompartment(
+            ChangeLoadBalancerCompartmentRequest request);
+
+    /**
      * Adds a backend server to a backend set.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -328,6 +339,14 @@ public interface LoadBalancer extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListHostnamesResponse listHostnames(ListHostnamesRequest request);
+
+    /**
+     * List set of all rules associated with a listener ordered by execution phase.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListListenerRulesResponse listListenerRules(ListListenerRulesRequest request);
 
     /**
      * Lists the summary health statuses for all load balancers in the specified compartment.

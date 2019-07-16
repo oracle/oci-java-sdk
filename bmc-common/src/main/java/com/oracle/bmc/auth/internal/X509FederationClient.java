@@ -133,6 +133,17 @@ public class X509FederationClient implements FederationClient {
         return refreshAndGetSecurityTokenInner(true);
     }
 
+    /**
+     * Return a claim embedded in the security token
+     * @param key the name of the claim
+     * @return the value of the claim
+     */
+    @Override
+    public String getStringClaim(String key) {
+        refreshAndGetSecurityTokenInner(true);
+        return securityTokenAdapter.getStringClaim(key);
+    }
+
     @Override
     public String refreshAndGetSecurityToken() {
         return refreshAndGetSecurityTokenInner(false);

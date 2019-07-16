@@ -58,6 +58,9 @@ public interface ComputeManagementAsync extends AutoCloseable {
      * For information about moving resources between compartments, see
      * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      * <p>
+     * When you move an instance configuration to a different compartment, associated resources such as
+     * instance pools are not moved.
+     * <p>
      **Important:** Most of the properties for an existing instance configuration, including the compartment,
      * cannot be modified after you create the instance configuration. Although you can move an instance configuration
      * to a different compartment, you will not be able to use the instance configuration to manage instance pools

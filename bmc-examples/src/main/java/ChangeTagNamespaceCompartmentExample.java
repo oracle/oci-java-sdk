@@ -12,8 +12,9 @@ import com.oracle.bmc.identity.model.TagNamespace;
 import com.oracle.bmc.identity.model.TagNamespaceSummary;
 import com.oracle.bmc.identity.requests.ChangeTagNamespaceCompartmentRequest;
 import com.oracle.bmc.identity.requests.GetTagNamespaceRequest;
-import com.oracle.bmc.identity.requests.ListCompartmentsRequest;
 import com.oracle.bmc.identity.requests.ListTagNamespacesRequest;
+
+import shared.ExampleCompartmentHelper;
 
 import java.util.List;
 
@@ -48,7 +49,9 @@ public class ChangeTagNamespaceCompartmentExample {
                 getTagNamespace(identityClient, tenantId, tagNamespaceName);
 
         // Get the compartment of given name from tenancy
-        Compartment compartment = getCompartment(identityClient, tenantId, targetCompartmentName);
+        Compartment compartment =
+                ExampleCompartmentHelper.getCompartment(
+                        identityClient, tenantId, targetCompartmentName);
 
         //Move Tag Namespace from root comapartment to new compartment
         changeTagNamespaceCompartment(identityClient, tagNamespace.getId(), compartment.getId());
@@ -87,27 +90,6 @@ public class ChangeTagNamespaceCompartmentExample {
         }
 
         throw new RuntimeException("TagNamespace " + tagNamespaceName + " does not exist");
-    }
-
-    public static Compartment getCompartment(
-            Identity client, String tenantId, String compartmentName) {
-
-        IdentityPaginators paginators = client.getPaginators();
-
-        // Get the compartment from tenancy of given name
-        ListCompartmentsRequest listCompartmentsRequest =
-                ListCompartmentsRequest.builder().compartmentId(tenantId).limit(1000).build();
-
-        for (Compartment compartment :
-                paginators.listCompartmentsRecordIterator(listCompartmentsRequest)) {
-            if (compartment.getName().equalsIgnoreCase(compartmentName)) {
-                return compartment;
-            }
-        }
-
-        System.out.println(
-                "Compartment " + compartmentName + "does not exist. Please check the name.");
-        throw new RuntimeException("Compartment does not exist");
     }
 
     public static void changeTagNamespaceCompartment(

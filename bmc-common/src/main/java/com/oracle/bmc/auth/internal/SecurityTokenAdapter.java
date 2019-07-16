@@ -110,4 +110,19 @@ class SecurityTokenAdapter {
 
         return encodedKey1.equals(encodedKey2);
     }
+
+    /**
+     * Return a claim from the token
+     */
+    public String getStringClaim(String key) {
+        if (jwt == null) {
+            LOG.debug("Security token is not valid.");
+            return null;
+        }
+        try {
+            return jwt.getStringClaim(key);
+        } catch (ParseException e) {
+            throw new IllegalStateException("JWT parsing failed");
+        }
+    }
 }

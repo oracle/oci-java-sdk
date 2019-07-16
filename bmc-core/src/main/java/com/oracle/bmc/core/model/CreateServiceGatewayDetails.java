@@ -61,6 +61,15 @@ public class CreateServiceGatewayDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+        private String routeTableId;
+
+        public Builder routeTableId(String routeTableId) {
+            this.routeTableId = routeTableId;
+            this.__explicitlySet__.add("routeTableId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("services")
         private java.util.List<ServiceIdRequestDetails> services;
 
@@ -85,7 +94,13 @@ public class CreateServiceGatewayDetails {
         public CreateServiceGatewayDetails build() {
             CreateServiceGatewayDetails __instance__ =
                     new CreateServiceGatewayDetails(
-                            compartmentId, definedTags, displayName, freeformTags, services, vcnId);
+                            compartmentId,
+                            definedTags,
+                            displayName,
+                            freeformTags,
+                            routeTableId,
+                            services,
+                            vcnId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -97,6 +112,7 @@ public class CreateServiceGatewayDetails {
                             .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
+                            .routeTableId(o.getRouteTableId())
                             .services(o.getServices())
                             .vcnId(o.getVcnId());
 
@@ -146,6 +162,20 @@ public class CreateServiceGatewayDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
+
+    /**
+     * The OCID of the route table the service gateway will use.
+     * <p>
+     * If you don't specify a route table here, the service gateway is created without an associated route
+     * table. The Networking service does NOT automatically associate the attached VCN's default route table
+     * with the service gateway.
+     * <p>
+     * For information about why you would associate a route table with a service gateway, see
+     * [Transit Routing: Private Access to Oracle Services Network](https://docs.cloud.oracle.com/Content/Network/Tasks/transitroutingoracleservices.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+    String routeTableId;
 
     /**
      * List of the OCIDs of the {@link Service} objects to

@@ -32,13 +32,15 @@ import java.util.List;
 public class CopyVolumeBackupExample {
 
     public static void main(String[] args) throws Exception {
-        if (args.length != 2) {
+        if (args.length < 2 || args.length > 3) {
             throw new IllegalArgumentException(
-                    "This example expects two arguments: a compartment OCID, the volume display name.");
+                    "This example expects two (or three) arguments: a compartment OCID, the volume display name, "
+                            + "(optional) the kmsKeyId OCID to use in the destination region");
         }
 
         final String compartmentId = args[0];
         final String volumeDisplayName = args[1];
+        final String destinationKmsKeyId = args.length == 3 ? args[2] : null;
 
         String srcRegionConfigurationFilePath = "~/.oci/config";
         String destRegionConfigurationFilePath = "~/.oci/destConfig";
@@ -96,7 +98,8 @@ public class CopyVolumeBackupExample {
                 copyVolumeBackup(
                         srcRegionBlockstorageClient,
                         volumeBackup.getId(),
-                        Region.US_ASHBURN_1.getRegionId());
+                        Region.US_ASHBURN_1.getRegionId(),
+                        destinationKmsKeyId);
 
         System.out.println("VolumeBackup is being copied...");
 
@@ -176,7 +179,8 @@ public class CopyVolumeBackupExample {
     public static VolumeBackup copyVolumeBackup(
             BlockstorageClient blockstorageClient,
             String volumeBackupId,
-            String destinationRegion) {
+            String destinationRegion,
+            String kmsKeyId) {
 
         CopyVolumeBackupResponse response =
                 blockstorageClient.copyVolumeBackup(
@@ -184,6 +188,7 @@ public class CopyVolumeBackupExample {
                                 .copyVolumeBackupDetails(
                                         CopyVolumeBackupDetails.builder()
                                                 .destinationRegion(destinationRegion)
+                                                .kmsKeyId(kmsKeyId)
                                                 .build())
                                 .volumeBackupId(volumeBackupId)
                                 .build());

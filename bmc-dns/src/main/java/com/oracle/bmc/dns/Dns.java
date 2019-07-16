@@ -37,6 +37,24 @@ public interface Dns extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Moves a steering policy into a different compartment. When provided, If-Match is checked against ETag values of the resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeSteeringPolicyCompartmentResponse changeSteeringPolicyCompartment(
+            ChangeSteeringPolicyCompartmentRequest request);
+
+    /**
+     * Moves a zone into a different compartment. When provided, If-Match is checked against ETag values of the resource.
+     * **Note:** All SteeringPolicyAttachment objects associated with this zone will also be moved into the provided compartment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeZoneCompartmentResponse changeZoneCompartment(ChangeZoneCompartmentRequest request);
+
+    /**
      * Creates a new steering policy in the specified compartment. For more information on
      * creating policies with templates, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
      *

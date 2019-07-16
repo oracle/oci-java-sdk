@@ -100,6 +100,15 @@ public class ServiceGateway {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+        private String routeTableId;
+
+        public Builder routeTableId(String routeTableId) {
+            this.routeTableId = routeTableId;
+            this.__explicitlySet__.add("routeTableId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("services")
         private java.util.List<ServiceIdResponseDetails> services;
 
@@ -140,6 +149,7 @@ public class ServiceGateway {
                             freeformTags,
                             id,
                             lifecycleState,
+                            routeTableId,
                             services,
                             timeCreated,
                             vcnId);
@@ -157,6 +167,7 @@ public class ServiceGateway {
                             .freeformTags(o.getFreeformTags())
                             .id(o.getId())
                             .lifecycleState(o.getLifecycleState())
+                            .routeTableId(o.getRouteTableId())
                             .services(o.getServices())
                             .timeCreated(o.getTimeCreated())
                             .vcnId(o.getVcnId());
@@ -278,6 +289,15 @@ public class ServiceGateway {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
+
+    /**
+     * The OCID of the route table the service gateway is using. For information about why you
+     * would associate a route table with a service gateway, see
+     * [Transit Routing: Private Access to Oracle Services Network](https://docs.cloud.oracle.com/Content/Network/Tasks/transitroutingoracleservices.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+    String routeTableId;
 
     /**
      * List of the {@link Service} objects enabled for this service gateway.

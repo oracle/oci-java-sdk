@@ -37,6 +37,41 @@ public interface DnsAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Moves a steering policy into a different compartment. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeSteeringPolicyCompartmentResponse>
+            changeSteeringPolicyCompartment(
+                    ChangeSteeringPolicyCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSteeringPolicyCompartmentRequest,
+                                    ChangeSteeringPolicyCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves a zone into a different compartment. When provided, If-Match is checked against ETag values of the resource.
+     * **Note:** All SteeringPolicyAttachment objects associated with this zone will also be moved into the provided compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeZoneCompartmentResponse> changeZoneCompartment(
+            ChangeZoneCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeZoneCompartmentRequest, ChangeZoneCompartmentResponse>
+                    handler);
+
+    /**
      * Creates a new steering policy in the specified compartment. For more information on
      * creating policies with templates, see [Traffic Management API Guide](https://docs.cloud.oracle.com/iaas/Content/TrafficManagement/Concepts/trafficmanagementapi.htm).
      *

@@ -5,9 +5,11 @@ import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.dns.Dns;
 import com.oracle.bmc.dns.DnsClient;
+import com.oracle.bmc.dns.model.ChangeSteeringPolicyCompartmentDetails;
 import com.oracle.bmc.dns.model.CreateSteeringPolicyAttachmentDetails;
 import com.oracle.bmc.dns.model.CreateSteeringPolicyDetails;
 import com.oracle.bmc.dns.model.CreateZoneDetails;
+import com.oracle.bmc.dns.model.SteeringPolicy;
 import com.oracle.bmc.dns.model.SteeringPolicyAnswer;
 import com.oracle.bmc.dns.model.SteeringPolicyFilterAnswerData;
 import com.oracle.bmc.dns.model.SteeringPolicyFilterRule;
@@ -15,11 +17,14 @@ import com.oracle.bmc.dns.model.SteeringPolicyLimitRule;
 import com.oracle.bmc.dns.model.SteeringPolicyRule;
 import com.oracle.bmc.dns.model.SteeringPolicyWeightedAnswerData;
 import com.oracle.bmc.dns.model.SteeringPolicyWeightedRule;
+import com.oracle.bmc.dns.model.Zone;
+import com.oracle.bmc.dns.requests.ChangeSteeringPolicyCompartmentRequest;
 import com.oracle.bmc.dns.requests.CreateSteeringPolicyAttachmentRequest;
 import com.oracle.bmc.dns.requests.CreateSteeringPolicyRequest;
 import com.oracle.bmc.dns.requests.CreateZoneRequest;
 import com.oracle.bmc.dns.requests.GetZoneRequest;
 import com.oracle.bmc.dns.requests.ListSteeringPolicyAttachmentsRequest;
+import com.oracle.bmc.dns.responses.ChangeSteeringPolicyCompartmentResponse;
 import com.oracle.bmc.dns.responses.CreateSteeringPolicyAttachmentResponse;
 import com.oracle.bmc.dns.responses.CreateSteeringPolicyResponse;
 import com.oracle.bmc.dns.responses.CreateZoneResponse;
@@ -32,7 +37,7 @@ import java.util.List;
 
 /**
  * This class provides a basic example of how to use the DNS Traffic Management features in the Java SDK. This
- * program takes the following four arguments:
+ * program takes the following required arguments:
  * <p>
  * - The first is the OCID of the compartment where we'll create the DNS Zone, Steering Policy, and Steering Policy
  * Attachment.
@@ -40,9 +45,11 @@ import java.util.List;
  * - The third is the name of the Steering Policy (e.g. "Priority Policy")
  * - The fourth is the domain name to attach the Steering Policy to within the Zone we created
  * (e.g. www.my-example-zone.com)
+ * - The fifth is the OCID of the compartment where the DNS Steering Policy will be moved.
  * <p>
  * The program checks if the specified zone already exists and creates it if does not. It then creates a steering
- * policy that uses the LOAD_BALANCE template and attaches it to a domain within the zone.
+ * policy that uses the LOAD_BALANCE template and attaches it to a domain within the zone. Afterwards, it moves the
+ * steering policy to a different compartment.
  */
 public class DnsTrafficManagementLoadBalanceExample {
     public static void main(String[] args) throws Exception {
@@ -57,15 +64,16 @@ public class DnsTrafficManagementLoadBalanceExample {
 
         final Dns client = new DnsClient(provider);
 
-        if (args.length != 4) {
+        if (args.length != 5) {
             System.err.println(
                     "Missing required arguments: <compartment-id> <zone-name> <steering-policy-name> "
-                            + "domain-name>");
+                            + "domain-name> <target-compartment-id>");
         }
         final String compartmentId = args[0];
         final String zoneName = args[1];
         final String steeringPolicyName = args[2];
         final String domainName = args[3];
+        final String targetCompartmentId = args[4];
 
         System.out.println(
                 "Creating a steering policy and attaching it with the following attributes:");
@@ -73,9 +81,11 @@ public class DnsTrafficManagementLoadBalanceExample {
         System.out.println("  zone name: " + zoneName);
         System.out.println("  steering policy name: " + steeringPolicyName);
         System.out.println("  domain name: " + domainName);
+        System.out.println("  target compartment id: " + targetCompartmentId);
 
         // Check if the zone already exists
         final GetZoneResponse getZoneResponse;
+        Zone zone = null;
         String zoneID = "";
         System.out.print("Checking if zone " + zoneName + " already exists... ");
         try {
@@ -86,7 +96,8 @@ public class DnsTrafficManagementLoadBalanceExample {
                                     .zoneNameOrId(zoneName)
                                     .build());
             System.out.println("found.");
-            zoneID = getZoneResponse.getZone().getId();
+            zone = getZoneResponse.getZone();
+            zoneID = zone.getId();
         } catch (BmcException e) {
             if (e.getStatusCode() == 404) {
                 System.out.println("not found.");
@@ -111,7 +122,8 @@ public class DnsTrafficManagementLoadBalanceExample {
                                                     .build())
                                     .build());
             System.out.println("done.");
-            zoneID = createZoneResponse.getZone().getId();
+            zone = createZoneResponse.getZone();
+            zoneID = zone.getId();
         }
 
         // Construct a Steering Policy
@@ -205,7 +217,8 @@ public class DnsTrafficManagementLoadBalanceExample {
                                 .createSteeringPolicyDetails(steeringPolicyDetails)
                                 .build());
         System.out.println("done.");
-        String policyID = steeringPolicyResponse.getSteeringPolicy().getId();
+        SteeringPolicy policy = steeringPolicyResponse.getSteeringPolicy();
+        String policyID = policy.getId();
         System.out.println("Created steering policy " + policyID);
 
         // In order to activate a policy for a domain within a zone we have to create a steering policy attachment that
@@ -254,6 +267,35 @@ public class DnsTrafficManagementLoadBalanceExample {
                             + attachmentResponse.getSteeringPolicyAttachment().getId());
         }
 
+        // We can move the DNS Steering Policy to a different compartment.
+        changeCompartment(client, policy, targetCompartmentId);
+
         client.close();
+    }
+
+    /**
+     * We can change the compartment for a DNS Steering Policy.
+     */
+    private static void changeCompartment(
+            Dns client, SteeringPolicy policy, String targetCompartmentId) throws Exception {
+        final ChangeSteeringPolicyCompartmentDetails policyDetails =
+                ChangeSteeringPolicyCompartmentDetails.builder()
+                        .compartmentId(targetCompartmentId)
+                        .build();
+        final ChangeSteeringPolicyCompartmentRequest policyRequest =
+                ChangeSteeringPolicyCompartmentRequest.builder()
+                        .steeringPolicyId(policy.getId())
+                        .changeSteeringPolicyCompartmentDetails(policyDetails)
+                        .build();
+        ChangeSteeringPolicyCompartmentResponse policyResponse =
+                client.changeSteeringPolicyCompartment(policyRequest);
+
+        System.out.println();
+        System.out.println(
+                "Changed steering policy compartment from "
+                        + policy.getCompartmentId()
+                        + " to "
+                        + policyResponse.toString());
+        System.out.println();
     }
 }

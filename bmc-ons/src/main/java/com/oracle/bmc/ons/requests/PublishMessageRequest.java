@@ -29,13 +29,13 @@ public class PublishMessageRequest extends com.oracle.bmc.requests.BmcRequest {
     private String opcRequestId;
 
     /**
-     * Type of message body in the request. Default value: JSON.
+     * Type of message body in the request.
      *
      */
     private MessageType messageType;
 
     /**
-     * Type of message body in the request. Default value: JSON.
+     * Type of message body in the request.
      *
      **/
     public enum MessageType {

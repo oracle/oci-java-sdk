@@ -18,6 +18,7 @@ public class DnsClient implements Dns {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("DNS")
                     .serviceEndpointPrefix("dns")
+                    .serviceEndpointTemplate("https://dns.{region}.{secondLevelDomain}")
                     .build();
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
@@ -373,6 +374,74 @@ public class DnsClient implements Dns {
     @Override
     public void close() {
         client.close();
+    }
+
+    @Override
+    public ChangeSteeringPolicyCompartmentResponse changeSteeringPolicyCompartment(
+            ChangeSteeringPolicyCompartmentRequest request) {
+        LOG.trace("Called changeSteeringPolicyCompartment");
+        final ChangeSteeringPolicyCompartmentRequest interceptedRequest =
+                ChangeSteeringPolicyCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeSteeringPolicyCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeSteeringPolicyCompartmentResponse>
+                transformer = ChangeSteeringPolicyCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeSteeringPolicyCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeZoneCompartmentResponse changeZoneCompartment(
+            ChangeZoneCompartmentRequest request) {
+        LOG.trace("Called changeZoneCompartment");
+        final ChangeZoneCompartmentRequest interceptedRequest =
+                ChangeZoneCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeZoneCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeZoneCompartmentResponse>
+                transformer = ChangeZoneCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getChangeZoneCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override

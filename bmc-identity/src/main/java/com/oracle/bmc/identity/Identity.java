@@ -1002,6 +1002,15 @@ public interface Identity extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
+     * Move the compartment tree to a different parent compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    MoveCompartmentResponse moveCompartment(MoveCompartmentRequest request);
+
+    /**
      * Removes a user from a group by deleting the corresponding `UserGroupMembership`.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

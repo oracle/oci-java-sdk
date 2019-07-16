@@ -7,10 +7,10 @@ import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.identity.Identity;
 import com.oracle.bmc.identity.IdentityClient;
 import com.oracle.bmc.identity.model.Compartment;
-import com.oracle.bmc.identity.model.CreateCompartmentDetails;
-import com.oracle.bmc.identity.requests.CreateCompartmentRequest;
 import com.oracle.bmc.identity.requests.ListCompartmentsRequest;
 import com.oracle.bmc.identity.responses.ListCompartmentsResponse;
+
+import shared.ExampleCompartmentHelper;
 
 public class ListCompartmentsExample {
     public static void main(String[] args) throws Exception {
@@ -49,22 +49,26 @@ public class ListCompartmentsExample {
          */
 
         // Setup the first level compartments (CP-1, CP-2, CP-3)
-        createCompartment(identityClient, tenantId, "CP-1");
-        final Compartment cp2 = createCompartment(identityClient, tenantId, "CP-2");
-        final Compartment cp3 = createCompartment(identityClient, tenantId, "CP-3");
+        ExampleCompartmentHelper.createCompartment(identityClient, tenantId, "CP-1");
+        final Compartment cp2 =
+                ExampleCompartmentHelper.createCompartment(identityClient, tenantId, "CP-2");
+        final Compartment cp3 =
+                ExampleCompartmentHelper.createCompartment(identityClient, tenantId, "CP-3");
 
         // If we create/update and then try to use compartments straight away, sometimes we can get a 404. To try and avoid this, the script
         // adds a short delay between the compartment management operations
         Thread.sleep(5000);
 
         // Setup the second level compartments (CP-21, CP-31)
-        final Compartment cp21 = createCompartment(identityClient, cp2.getId(), "CP-21");
-        final Compartment cp31 = createCompartment(identityClient, cp3.getId(), "CP-31");
+        final Compartment cp21 =
+                ExampleCompartmentHelper.createCompartment(identityClient, cp2.getId(), "CP-21");
+        final Compartment cp31 =
+                ExampleCompartmentHelper.createCompartment(identityClient, cp3.getId(), "CP-31");
 
         Thread.sleep(5000);
 
         // Setup the third level compartments (CP-211)
-        createCompartment(identityClient, cp2.getId(), "CP-211");
+        ExampleCompartmentHelper.createCompartment(identityClient, cp2.getId(), "CP-211");
 
         // List all compartments within tenancy with Accessible compartment filter
         String nextPageToken = null;
@@ -140,29 +144,5 @@ public class ListCompartmentsExample {
             }
             nextPageToken = response.getOpcNextPage();
         } while (nextPageToken != null);
-    }
-
-    private static Compartment createCompartment(
-            Identity client, String compartmentId, String name) {
-        CreateCompartmentDetails createCompartmentDetails =
-                CreateCompartmentDetails.builder()
-                        .compartmentId(compartmentId)
-                        .name(name)
-                        .description(name)
-                        .build();
-
-        Compartment compartment =
-                client.createCompartment(
-                                CreateCompartmentRequest.builder()
-                                        .createCompartmentDetails(createCompartmentDetails)
-                                        .build())
-                        .getCompartment();
-
-        if (compartment == null) {
-            throw new RuntimeException(
-                    "Compartment creation fails with " + createCompartmentDetails.toString());
-        }
-        System.out.println("Compartment " + compartment.getName() + " created successfully");
-        return compartment;
     }
 }

@@ -12,6 +12,8 @@ public class GetTopicRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to retrieve.
+     * <p>
+     * Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.
      *
      */
     private String topicId;

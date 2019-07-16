@@ -4,7 +4,7 @@
 package com.oracle.bmc.ons.model;
 
 /**
- * The confirmation result.
+ * The confirmation details for the specified subscription.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -120,7 +120,7 @@ public class ConfirmationResult {
     String topicName;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to delete.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic associated with the specified subscription.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("topicId")
@@ -129,26 +129,25 @@ public class ConfirmationResult {
     /**
      * The endpoint of the subscription. Valid values depend on the protocol.
      * For EMAIL, only an email address is valid. For HTTPS, only a PagerDuty URL is valid. A URL cannot exceed 512 characters.
-     * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
     String endpoint;
 
     /**
-     * The URL user can use to unsubscribe the topic.
+     * The URL for unsubscribing from the topic.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unsubscribeUrl")
     String unsubscribeUrl;
 
     /**
-     * Human readable text which tells the user if the confirmation succeeds.
+     * A human-readable string indicating the status of the subscription confirmation.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     String message;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription specified in the request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
     String subscriptionId;

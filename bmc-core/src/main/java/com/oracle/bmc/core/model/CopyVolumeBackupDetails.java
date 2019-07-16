@@ -42,12 +42,21 @@ public class CopyVolumeBackupDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CopyVolumeBackupDetails build() {
             CopyVolumeBackupDetails __instance__ =
-                    new CopyVolumeBackupDetails(destinationRegion, displayName);
+                    new CopyVolumeBackupDetails(destinationRegion, displayName, kmsKeyId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -55,7 +64,9 @@ public class CopyVolumeBackupDetails {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CopyVolumeBackupDetails o) {
             Builder copiedBuilder =
-                    destinationRegion(o.getDestinationRegion()).displayName(o.getDisplayName());
+                    destinationRegion(o.getDestinationRegion())
+                            .displayName(o.getDisplayName())
+                            .kmsKeyId(o.getKmsKeyId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -85,6 +96,21 @@ public class CopyVolumeBackupDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * The OCID of the KMS key in the destination region which will be the master encryption key
+     * for the copied volume backup.
+     * If you do not specify this attribute the volume backup will be encrypted with the Oracle-provided encryption
+     * key when it is copied to the destination region.
+     * <p>
+     *
+     * For more information about the Key Management service and encryption keys, see
+     * [Overview of Key Management](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/usingkeys.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    String kmsKeyId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

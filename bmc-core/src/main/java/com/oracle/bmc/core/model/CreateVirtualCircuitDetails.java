@@ -298,7 +298,7 @@ public class CreateVirtualCircuitDetails {
     /**
      * The type of IP addresses used in this virtual circuit. PRIVATE
      * means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses
-     * (10.0.0.0/8, 172.16/12, and 192.168/16). Only PRIVATE is supported.
+     * (10.0.0.0/8, 172.16/12, and 192.168/16).
      *
      **/
     public enum Type {
@@ -336,7 +336,7 @@ public class CreateVirtualCircuitDetails {
     /**
      * The type of IP addresses used in this virtual circuit. PRIVATE
      * means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses
-     * (10.0.0.0/8, 172.16/12, and 192.168/16). Only PRIVATE is supported.
+     * (10.0.0.0/8, 172.16/12, and 192.168/16).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")

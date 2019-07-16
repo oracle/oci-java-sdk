@@ -8,6 +8,10 @@ package com.oracle.bmc.loadbalancer.model;
  * For more information on backend set configuration, see
  * [Managing Backend Sets](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingbackendsets.htm).
  * <p>
+ **Note:** The `sessionPersistenceConfiguration` (application cookie stickiness) and `lbCookieSessionPersistenceConfiguration`
+ * (LB cookie stickiness) attributes are mutually exclusive. To avoid returning an error, configure only one of these two
+ * attributes per backend set.
+ * <p>
  **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
  * <br/>
@@ -75,6 +79,18 @@ public class UpdateBackendSetDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("lbCookieSessionPersistenceConfiguration")
+        private LBCookieSessionPersistenceConfigurationDetails
+                lbCookieSessionPersistenceConfiguration;
+
+        public Builder lbCookieSessionPersistenceConfiguration(
+                LBCookieSessionPersistenceConfigurationDetails
+                        lbCookieSessionPersistenceConfiguration) {
+            this.lbCookieSessionPersistenceConfiguration = lbCookieSessionPersistenceConfiguration;
+            this.__explicitlySet__.add("lbCookieSessionPersistenceConfiguration");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -85,7 +101,8 @@ public class UpdateBackendSetDetails {
                             backends,
                             healthChecker,
                             sslConfiguration,
-                            sessionPersistenceConfiguration);
+                            sessionPersistenceConfiguration,
+                            lbCookieSessionPersistenceConfiguration);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -97,8 +114,9 @@ public class UpdateBackendSetDetails {
                             .backends(o.getBackends())
                             .healthChecker(o.getHealthChecker())
                             .sslConfiguration(o.getSslConfiguration())
-                            .sessionPersistenceConfiguration(
-                                    o.getSessionPersistenceConfiguration());
+                            .sessionPersistenceConfiguration(o.getSessionPersistenceConfiguration())
+                            .lbCookieSessionPersistenceConfiguration(
+                                    o.getLbCookieSessionPersistenceConfiguration());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -133,6 +151,9 @@ public class UpdateBackendSetDetails {
 
     @com.fasterxml.jackson.annotation.JsonProperty("sessionPersistenceConfiguration")
     SessionPersistenceConfigurationDetails sessionPersistenceConfiguration;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("lbCookieSessionPersistenceConfiguration")
+    LBCookieSessionPersistenceConfigurationDetails lbCookieSessionPersistenceConfiguration;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

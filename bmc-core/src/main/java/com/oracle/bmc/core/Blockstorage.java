@@ -38,7 +38,9 @@ public interface Blockstorage extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Change the compartment of a boot volume backup
+     * Moves a boot volume backup into a different compartment within the same tenancy.
+     * For information about moving resources between compartments,
+     * see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -48,7 +50,9 @@ public interface Blockstorage extends AutoCloseable {
             ChangeBootVolumeBackupCompartmentRequest request);
 
     /**
-     * Change the compartment of a boot volume
+     * Moves a boot volume into a different compartment within the same tenancy.
+     * For information about moving resources between compartments,
+     * see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -58,7 +62,9 @@ public interface Blockstorage extends AutoCloseable {
             ChangeBootVolumeCompartmentRequest request);
 
     /**
-     * Change the compartment of a volume backup
+     * Moves a volume backup into a different compartment within the same tenancy.
+     * For information about moving resources between compartments,
+     * see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -68,7 +74,9 @@ public interface Blockstorage extends AutoCloseable {
             ChangeVolumeBackupCompartmentRequest request);
 
     /**
-     * Change the compartment of a volume
+     * Moves a volume into a different compartment within the same tenancy.
+     * For information about moving resources between compartments,
+     * see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -77,7 +85,9 @@ public interface Blockstorage extends AutoCloseable {
     ChangeVolumeCompartmentResponse changeVolumeCompartment(ChangeVolumeCompartmentRequest request);
 
     /**
-     * Change the compartment of a volume group backup
+     * Moves a volume group backup into a different compartment within the same tenancy.
+     * For information about moving resources between compartments,
+     * see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -87,7 +97,9 @@ public interface Blockstorage extends AutoCloseable {
             ChangeVolumeGroupBackupCompartmentRequest request);
 
     /**
-     * Change the compartment of a volume group
+     * Moves a volume group into a different compartment within the same tenancy.
+     * For information about moving resources between compartments,
+     * see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

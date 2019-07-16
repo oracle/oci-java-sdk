@@ -61,6 +61,15 @@ public class UpdateServiceGatewayDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+        private String routeTableId;
+
+        public Builder routeTableId(String routeTableId) {
+            this.routeTableId = routeTableId;
+            this.__explicitlySet__.add("routeTableId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("services")
         private java.util.List<ServiceIdRequestDetails> services;
 
@@ -76,7 +85,12 @@ public class UpdateServiceGatewayDetails {
         public UpdateServiceGatewayDetails build() {
             UpdateServiceGatewayDetails __instance__ =
                     new UpdateServiceGatewayDetails(
-                            blockTraffic, definedTags, displayName, freeformTags, services);
+                            blockTraffic,
+                            definedTags,
+                            displayName,
+                            freeformTags,
+                            routeTableId,
+                            services);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -88,6 +102,7 @@ public class UpdateServiceGatewayDetails {
                             .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
+                            .routeTableId(o.getRouteTableId())
                             .services(o.getServices());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -139,6 +154,15 @@ public class UpdateServiceGatewayDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
+
+    /**
+     * The OCID of the route table the service gateway will use. For information about why you
+     * would associate a route table with a service gateway, see
+     * [Transit Routing: Private Access to Oracle Services Network](https://docs.cloud.oracle.com/Content/Network/Tasks/transitroutingoracleservices.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+    String routeTableId;
 
     /**
      * List of all the `Service` objects you want enabled on this service gateway. Sending an empty list

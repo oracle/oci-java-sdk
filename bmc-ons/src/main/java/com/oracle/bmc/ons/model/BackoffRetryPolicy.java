@@ -70,12 +70,12 @@ public class BackoffRetryPolicy {
     }
 
     /**
-     * The maximum retry duration in milliseconds.
+     * The maximum retry duration in milliseconds. Default value is `7200000` (2 hours).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxRetryDuration")
     Integer maxRetryDuration;
     /**
-     * The type of delivery policy. Default value: EXPONENTIAL.
+     * The type of delivery policy.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -121,7 +121,7 @@ public class BackoffRetryPolicy {
         }
     };
     /**
-     * The type of delivery policy. Default value: EXPONENTIAL.
+     * The type of delivery policy.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("policyType")

@@ -11,11 +11,17 @@ package com.oracle.bmc.loadbalancer.model;
  * logical client to a single backend web server. For more information, see
  * [Session Persistence](https://docs.cloud.oracle.com/Content/Balance/Reference/sessionpersistence.htm).
  * <p>
+ * With application cookie stickiness, the load balancer enables session persistence only when the response from a backend
+ * application server includes a `Set-cookie` header with the user-specified cookie name.
+ * <p>
  * To disable application cookie stickiness on a running load balancer, use the
  * {@link #updateBackendSet(UpdateBackendSetRequest) updateBackendSet} operation and specify `null` for the
  * `SessionPersistenceConfigurationDetails` object.
  * <p>
  * Example: `SessionPersistenceConfigurationDetails: null`
+ * <p>
+ **Note:** `SessionPersistenceConfigurationDetails` (application cookie stickiness) and `LBCookieSessionPersistenceConfigurationDetails`
+ * (LB cookie stickiness) are mutually exclusive. An error results if you try to enable both types of session persistence.
  * <p>
  **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
