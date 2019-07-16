@@ -11,7 +11,8 @@ import com.oracle.bmc.ons.model.*;
 public class ListTopicsResponse {
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of results remain. For important details about how pagination works, see List Pagination.
+     * For list pagination. When this header appears in the response, additional pages of results remain.
+     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private String opcNextPage;

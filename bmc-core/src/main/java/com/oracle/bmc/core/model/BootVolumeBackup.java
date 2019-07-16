@@ -105,6 +105,15 @@ public class BootVolumeBackup {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -182,6 +191,7 @@ public class BootVolumeBackup {
                             freeformTags,
                             id,
                             imageId,
+                            kmsKeyId,
                             lifecycleState,
                             sizeInGBs,
                             sourceType,
@@ -204,6 +214,7 @@ public class BootVolumeBackup {
                             .freeformTags(o.getFreeformTags())
                             .id(o.getId())
                             .imageId(o.getImageId())
+                            .kmsKeyId(o.getKmsKeyId())
                             .lifecycleState(o.getLifecycleState())
                             .sizeInGBs(o.getSizeInGBs())
                             .sourceType(o.getSourceType())
@@ -286,6 +297,16 @@ public class BootVolumeBackup {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
     String imageId;
+
+    /**
+     * The OCID of the KMS key which is the master encryption key for the boot volume backup.
+     * For more information about the Key Management service and encryption keys, see
+     * [Overview of Key Management](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/usingkeys.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    String kmsKeyId;
     /**
      * The current state of a boot volume backup.
      **/

@@ -37,7 +37,23 @@ public interface NotificationDataPlane extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Moves a subscription into a different compartment within the same tenancy. For information about moving
+     * resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * <p>
+     * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeSubscriptionCompartmentResponse changeSubscriptionCompartment(
+            ChangeSubscriptionCompartmentRequest request);
+
+    /**
      * Creates a subscription for the specified topic.
+     * <p>
+     * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -47,6 +63,8 @@ public interface NotificationDataPlane extends AutoCloseable {
 
     /**
      * Deletes the specified subscription.
+     * <p>
+     * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -56,6 +74,8 @@ public interface NotificationDataPlane extends AutoCloseable {
 
     /**
      * Gets the confirmation details for the specified subscription.
+     * <p>
+     * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -65,6 +85,8 @@ public interface NotificationDataPlane extends AutoCloseable {
 
     /**
      * Gets the specified subscription's configuration information.
+     * <p>
+     * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -74,6 +96,8 @@ public interface NotificationDataPlane extends AutoCloseable {
 
     /**
      * Gets the unsubscription details for the specified subscription.
+     * <p>
+     * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -83,6 +107,8 @@ public interface NotificationDataPlane extends AutoCloseable {
 
     /**
      * Lists the subscriptions in the specified compartment or topic.
+     * <p>
+     * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -91,7 +117,15 @@ public interface NotificationDataPlane extends AutoCloseable {
     ListSubscriptionsResponse listSubscriptions(ListSubscriptionsRequest request);
 
     /**
-     * Publishes a message to the specified topic. For more information about publishing messages, see [Publishing Messages](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/publishingmessages.htm).
+     * Publishes a message to the specified topic. Limits information follows.
+     * <p>
+     * Message size limit per request: 64KB.
+     * <p>
+     * Message delivery rate limit per endpoint: 60 messages per minute for HTTPS (PagerDuty) protocol, 10 messages per minute for Email protocol.
+     * <p>
+     * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60 per topic.
+     * <p>
+     * For more information about publishing messages, see [Publishing Messages](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/publishingmessages.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -101,6 +135,8 @@ public interface NotificationDataPlane extends AutoCloseable {
 
     /**
      * Resends the confirmation details for the specified subscription.
+     * <p>
+     * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -111,6 +147,8 @@ public interface NotificationDataPlane extends AutoCloseable {
 
     /**
      * Updates the specified subscription's configuration.
+     * <p>
+     * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

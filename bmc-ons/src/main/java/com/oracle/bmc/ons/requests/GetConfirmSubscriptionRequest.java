@@ -11,7 +11,7 @@ import com.oracle.bmc.ons.model.*;
 public class GetConfirmSubscriptionRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The subscription ID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription to get the confirmation details for.
      *
      */
     private String id;

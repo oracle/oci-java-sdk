@@ -11,7 +11,8 @@ import com.oracle.bmc.ons.model.*;
 public class ListSubscriptionsResponse {
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call. Default value: 10. For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call. Default value: 10.
+     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private String opcNextPage;

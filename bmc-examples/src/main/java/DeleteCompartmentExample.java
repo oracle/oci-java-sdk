@@ -25,6 +25,8 @@ import net.jodah.failsafe.function.Predicate;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
+import shared.ExampleCompartmentHelper;
+
 public class DeleteCompartmentExample {
     final static RetryPolicy RETRY_POLICY =
             new RetryPolicy()
@@ -46,7 +48,8 @@ public class DeleteCompartmentExample {
 
         // Create a compartment.
         final Compartment compartment =
-                createChildCompartment(identityClient, tenantId, "Compartment-1");
+                ExampleCompartmentHelper.createCompartment(
+                        identityClient, tenantId, "Compartment-1");
         System.out.println("Created compartment with compartmentId:" + compartment.getId());
         System.out.println();
 

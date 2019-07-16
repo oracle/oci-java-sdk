@@ -6,6 +6,7 @@ import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.loadbalancer.LoadBalancerClient;
 import com.oracle.bmc.loadbalancer.model.AddHttpRequestHeaderRule;
 import com.oracle.bmc.loadbalancer.model.AddHttpResponseHeaderRule;
+import com.oracle.bmc.loadbalancer.model.ControlAccessUsingHttpMethodsRule;
 import com.oracle.bmc.loadbalancer.model.CreateListenerDetails;
 import com.oracle.bmc.loadbalancer.model.CreateRuleSetDetails;
 import com.oracle.bmc.loadbalancer.model.ExtendHttpRequestHeaderValueRule;
@@ -14,14 +15,20 @@ import com.oracle.bmc.loadbalancer.model.RemoveHttpRequestHeaderRule;
 import com.oracle.bmc.loadbalancer.model.RemoveHttpResponseHeaderRule;
 import com.oracle.bmc.loadbalancer.model.Rule;
 import com.oracle.bmc.loadbalancer.model.RuleSet;
+import com.oracle.bmc.loadbalancer.model.AddHttpRequestHeaderRule;
+import com.oracle.bmc.loadbalancer.model.AddHttpResponseHeaderRule;
+
 import com.oracle.bmc.loadbalancer.requests.CreateListenerRequest;
 import com.oracle.bmc.loadbalancer.requests.CreateRuleSetRequest;
-import com.oracle.bmc.loadbalancer.requests.GetRuleSetRequest;
 import com.oracle.bmc.loadbalancer.requests.GetWorkRequestRequest;
+import com.oracle.bmc.loadbalancer.requests.GetRuleSetRequest;
+import com.oracle.bmc.loadbalancer.requests.ListListenerRulesRequest;
+
 import com.oracle.bmc.loadbalancer.responses.CreateListenerResponse;
 import com.oracle.bmc.loadbalancer.responses.CreateRuleSetResponse;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -107,6 +114,11 @@ public class CreateLoadBalancerRuleSetExample {
                         .suffix("Some static sufix value")
                         .build());
         rules.add(RemoveHttpResponseHeaderRule.builder().header("someResponseHeader").build());
+        rules.add(
+                ControlAccessUsingHttpMethodsRule.builder()
+                        .allowedMethods(Arrays.asList("PUT", "POST"))
+                        .statusCode(403)
+                        .build());
 
         CreateRuleSetResponse response =
                 loadBalancerClient.createRuleSet(

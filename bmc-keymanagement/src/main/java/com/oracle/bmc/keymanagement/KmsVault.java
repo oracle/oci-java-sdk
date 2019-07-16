@@ -49,6 +49,14 @@ public interface KmsVault extends AutoCloseable {
     CancelVaultDeletionResponse cancelVaultDeletion(CancelVaultDeletionRequest request);
 
     /**
+     * Moves a vault into a different compartment. When provided, If-Match is checked against ETag values of the resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeVaultCompartmentResponse changeVaultCompartment(ChangeVaultCompartmentRequest request);
+
+    /**
      * Creates a new vault. The type of vault you create determines key
      * placement, pricing, and available options. Options include storage
      * isolation, a dedicated service endpoint instead of a shared service

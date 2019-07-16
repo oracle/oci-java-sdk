@@ -163,7 +163,7 @@ public class NotificationTopicSummary {
     }
 
     /**
-     * The name of the topic. Avoid entering confidential information.
+     * The name of the topic.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
@@ -238,7 +238,7 @@ public class NotificationTopicSummary {
     LifecycleState lifecycleState;
 
     /**
-     * The description of the topic. Avoid entering confidential information.
+     * The description of the topic.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;

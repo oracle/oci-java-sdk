@@ -87,6 +87,15 @@ public class VolumeBackup {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -198,6 +207,7 @@ public class VolumeBackup {
                             expirationTime,
                             freeformTags,
                             id,
+                            kmsKeyId,
                             lifecycleState,
                             sizeInGBs,
                             sizeInMBs,
@@ -222,6 +232,7 @@ public class VolumeBackup {
                             .expirationTime(o.getExpirationTime())
                             .freeformTags(o.getFreeformTags())
                             .id(o.getId())
+                            .kmsKeyId(o.getKmsKeyId())
                             .lifecycleState(o.getLifecycleState())
                             .sizeInGBs(o.getSizeInGBs())
                             .sizeInMBs(o.getSizeInMBs())
@@ -296,6 +307,16 @@ public class VolumeBackup {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
+
+    /**
+     * The OCID of the KMS key which is the master encryption key for the volume backup.
+     * For more information about the Key Management service and encryption keys, see
+     * [Overview of Key Management](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/usingkeys.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    String kmsKeyId;
     /**
      * The current state of a volume backup.
      **/

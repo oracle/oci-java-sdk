@@ -37,6 +37,19 @@ public interface NotificationControlPlane extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Moves a topic into a different compartment within the same tenancy. For information about moving resources
+     * between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * <p>
+     * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeTopicCompartmentResponse changeTopicCompartment(ChangeTopicCompartmentRequest request);
+
+    /**
      * Creates a topic in the specified compartment. For general information about topics, see
      * [Managing Topics and Subscriptions](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm).
      * <p>
@@ -48,7 +61,9 @@ public interface NotificationControlPlane extends AutoCloseable {
      * All Oracle Cloud Infrastructure resources, including topics, get an Oracle-assigned, unique ID called an
      * Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID in the response. You can also
      * retrieve a resource's OCID by using a List API operation on that resource type, or by viewing the resource in the
-     * Console. Fore more information, see [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Console. For more information, see [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * <p>
+     * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -58,6 +73,8 @@ public interface NotificationControlPlane extends AutoCloseable {
 
     /**
      * Deletes the specified topic.
+     * <p>
+     * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -76,6 +93,8 @@ public interface NotificationControlPlane extends AutoCloseable {
 
     /**
      * Lists topics in the specified compartment.
+     * <p>
+     * Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -85,6 +104,8 @@ public interface NotificationControlPlane extends AutoCloseable {
 
     /**
      * Updates the specified topic's configuration.
+     * <p>
+     * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

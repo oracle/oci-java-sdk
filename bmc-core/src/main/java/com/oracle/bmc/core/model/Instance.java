@@ -463,6 +463,7 @@ public class Instance {
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
+        Moving("MOVING"),
         Provisioning("PROVISIONING"),
         Running("RUNNING"),
         Starting("STARTING"),

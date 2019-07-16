@@ -7,6 +7,8 @@ import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.keymanagement.KmsCryptoClient;
 import com.oracle.bmc.keymanagement.KmsManagementClient;
 import com.oracle.bmc.keymanagement.KmsVaultClient;
+import com.oracle.bmc.keymanagement.model.ChangeKeyCompartmentDetails;
+import com.oracle.bmc.keymanagement.model.ChangeVaultCompartmentDetails;
 import com.oracle.bmc.keymanagement.model.CreateKeyDetails;
 import com.oracle.bmc.keymanagement.model.CreateVaultDetails;
 import com.oracle.bmc.keymanagement.model.DecryptDataDetails;
@@ -23,6 +25,8 @@ import com.oracle.bmc.keymanagement.model.Vault;
 import com.oracle.bmc.keymanagement.model.VaultSummary;
 import com.oracle.bmc.keymanagement.requests.CancelKeyDeletionRequest;
 import com.oracle.bmc.keymanagement.requests.CancelVaultDeletionRequest;
+import com.oracle.bmc.keymanagement.requests.ChangeKeyCompartmentRequest;
+import com.oracle.bmc.keymanagement.requests.ChangeVaultCompartmentRequest;
 import com.oracle.bmc.keymanagement.requests.CreateKeyRequest;
 import com.oracle.bmc.keymanagement.requests.CreateKeyVersionRequest;
 import com.oracle.bmc.keymanagement.requests.CreateVaultRequest;
@@ -42,6 +46,8 @@ import com.oracle.bmc.keymanagement.requests.UpdateKeyRequest;
 import com.oracle.bmc.keymanagement.requests.UpdateVaultRequest;
 import com.oracle.bmc.keymanagement.responses.CancelKeyDeletionResponse;
 import com.oracle.bmc.keymanagement.responses.CancelVaultDeletionResponse;
+import com.oracle.bmc.keymanagement.responses.ChangeKeyCompartmentResponse;
+import com.oracle.bmc.keymanagement.responses.ChangeVaultCompartmentResponse;
 import com.oracle.bmc.keymanagement.responses.CreateKeyResponse;
 import com.oracle.bmc.keymanagement.responses.CreateKeyVersionResponse;
 import com.oracle.bmc.keymanagement.responses.CreateVaultResponse;
@@ -88,11 +94,21 @@ public class KmsExample {
     // Please pass in the compartmentId and the vaultId as the first and second argument
     public static void main(final String[] args) throws Exception {
 
+        if (args.length != 3) {
+            throw new IllegalArgumentException(
+                    "This example expects 3 arguments: compartment ID, vault ID and target compartment ID (for move example)");
+        }
+
         // Read in compartmentId and vaultId and perform basic validations.
         final String compartmentId = args[0];
         final String vaultId = args[1];
-        if (StringUtils.isBlank(compartmentId) || StringUtils.isBlank(vaultId)) {
-            System.out.println("compartmentId and vaultId cannot be empty or null");
+        final String targetCompartmentForMove = args[2];
+
+        if (StringUtils.isBlank(compartmentId)
+                || StringUtils.isBlank(vaultId)
+                || StringUtils.isBlank(targetCompartmentForMove)) {
+            System.out.println(
+                    "compartmentId, vaultId and targetCompartmentForMove cannot be empty or null");
             return;
         }
 
@@ -182,6 +198,15 @@ public class KmsExample {
         String ciphertext = encryptTest(kmsCryptoClient, keyId);
         decryptTest(kmsCryptoClient, keyId, ciphertext);
         generateDataEncryptionKeyTest(kmsCryptoClient, keyId);
+
+        // change compartment operations
+        changeKeyCompartmentTest(kmsManagementClient, keyId, targetCompartmentForMove);
+        System.out.println("Wait a bit for Key move to finish");
+        Thread.sleep(TRANSIENT_STATE_WAIT_TIME_MS);
+
+        changeVaultCompartmentTest(kmsVaultClient, vaultId, targetCompartmentForMove);
+        System.out.println("Wait a bit for Vault move to finish");
+        Thread.sleep(TRANSIENT_STATE_WAIT_TIME_MS);
     }
 
     public static Vault createVaultTest(KmsVaultClient kmsVaultClient, String compartmentId) {
@@ -489,6 +514,42 @@ public class KmsExample {
                 kmsCryptoClient.generateDataEncryptionKey(generateDataEncryptionKeyRequest);
         System.out.println("GenerateDataEncryptionKey Response: ");
         System.out.println(response.getGeneratedKey());
+        System.out.println();
+    }
+
+    public static void changeVaultCompartmentTest(
+            KmsVaultClient kmsVaultClient, String vaultId, String targetCompartment) {
+        System.out.println("ChangeVaultCompartment Test: ");
+        ChangeVaultCompartmentDetails changeVaultCompartmentDetails =
+                ChangeVaultCompartmentDetails.builder().compartmentId(targetCompartment).build();
+
+        ChangeVaultCompartmentRequest request =
+                ChangeVaultCompartmentRequest.builder()
+                        .vaultId(vaultId)
+                        .changeVaultCompartmentDetails(changeVaultCompartmentDetails)
+                        .build();
+
+        ChangeVaultCompartmentResponse response = kmsVaultClient.changeVaultCompartment(request);
+
+        System.out.println("ChangeVaultCompartment operation succeeded");
+        System.out.println();
+    }
+
+    public static void changeKeyCompartmentTest(
+            KmsManagementClient kmsManagementClient, String keyId, String targetCompartment) {
+        System.out.println("ChangeKeyCompartment Test: ");
+        ChangeKeyCompartmentDetails changeKeyCompartmentDetails =
+                ChangeKeyCompartmentDetails.builder().compartmentId(targetCompartment).build();
+
+        ChangeKeyCompartmentRequest request =
+                ChangeKeyCompartmentRequest.builder()
+                        .keyId(keyId)
+                        .changeKeyCompartmentDetails(changeKeyCompartmentDetails)
+                        .build();
+
+        ChangeKeyCompartmentResponse response = kmsManagementClient.changeKeyCompartment(request);
+
+        System.out.println("ChangeKeyCompartment success");
         System.out.println();
     }
 

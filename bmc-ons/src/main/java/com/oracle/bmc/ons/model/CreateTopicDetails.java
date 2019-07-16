@@ -104,7 +104,7 @@ public class CreateTopicDetails {
     }
 
     /**
-     * The name of the topic being created. Avoid entering confidential information.
+     * The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;

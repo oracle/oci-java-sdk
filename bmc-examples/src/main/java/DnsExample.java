@@ -1,25 +1,60 @@
 /**
  * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
-import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.dns.Dns;
 import com.oracle.bmc.dns.DnsClient;
-import com.oracle.bmc.dns.model.*;
-import com.oracle.bmc.dns.requests.*;
-import com.oracle.bmc.dns.responses.*;
+import com.oracle.bmc.dns.model.ChangeZoneCompartmentDetails;
+import com.oracle.bmc.dns.model.CreateZoneDetails;
+import com.oracle.bmc.dns.model.PatchDomainRecordsDetails;
+import com.oracle.bmc.dns.model.PatchRRSetDetails;
+import com.oracle.bmc.dns.model.PatchZoneRecordsDetails;
+import com.oracle.bmc.dns.model.Record;
+import com.oracle.bmc.dns.model.RecordDetails;
+import com.oracle.bmc.dns.model.RecordOperation;
+import com.oracle.bmc.dns.model.SortOrder;
+import com.oracle.bmc.dns.model.UpdateDomainRecordsDetails;
+import com.oracle.bmc.dns.model.UpdateRRSetDetails;
+import com.oracle.bmc.dns.model.UpdateZoneRecordsDetails;
+import com.oracle.bmc.dns.model.Zone;
+import com.oracle.bmc.dns.model.ZoneSummary;
+import com.oracle.bmc.dns.requests.ChangeZoneCompartmentRequest;
+import com.oracle.bmc.dns.requests.CreateZoneRequest;
+import com.oracle.bmc.dns.requests.DeleteDomainRecordsRequest;
+import com.oracle.bmc.dns.requests.DeleteRRSetRequest;
+import com.oracle.bmc.dns.requests.GetDomainRecordsRequest;
+import com.oracle.bmc.dns.requests.GetRRSetRequest;
+import com.oracle.bmc.dns.requests.GetZoneRecordsRequest;
+import com.oracle.bmc.dns.requests.GetZoneRequest;
+import com.oracle.bmc.dns.requests.ListZonesRequest;
+import com.oracle.bmc.dns.requests.PatchDomainRecordsRequest;
+import com.oracle.bmc.dns.requests.PatchRRSetRequest;
+import com.oracle.bmc.dns.requests.PatchZoneRecordsRequest;
+import com.oracle.bmc.dns.requests.UpdateDomainRecordsRequest;
+import com.oracle.bmc.dns.requests.UpdateRRSetRequest;
+import com.oracle.bmc.dns.requests.UpdateZoneRecordsRequest;
+import com.oracle.bmc.dns.responses.ChangeZoneCompartmentResponse;
+import com.oracle.bmc.dns.responses.CreateZoneResponse;
+import com.oracle.bmc.dns.responses.GetDomainRecordsResponse;
+import com.oracle.bmc.dns.responses.GetRRSetResponse;
+import com.oracle.bmc.dns.responses.GetZoneRecordsResponse;
+import com.oracle.bmc.dns.responses.GetZoneResponse;
+import com.oracle.bmc.dns.responses.ListZonesResponse;
 import com.oracle.bmc.model.BmcException;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.oracle.bmc.dns.model.ChangeZoneCompartmentDetails.builder;
+
 /**
  * This class provides a basic example of how to use the DNS service in the Java SDK. The main() method
- * in this class can take in two parameters:
+ * in this class requires the following arguments:
  *
  *      - The first is the OCID of the compartment where we'll create the DNS Zone
  *      - The second is the name of the DNS zone (e.g. my-example-zone.com) to create
+ *      - The third is the OCID of the target compartment where the DNS Zone will be moved
  */
 public class DnsExample {
     public static void main(String[] args) throws Exception {
@@ -30,11 +65,15 @@ public class DnsExample {
                 new ConfigFileAuthenticationDetailsProvider(configurationFilePath, profile);
 
         final Dns client = new DnsClient(provider);
-        client.setRegion(Region.US_PHOENIX_1);
 
-        // TODO: Pass in the compartment ID as an argument, or enter the value directly here (if known)
+        if (args.length != 3) {
+            System.err.println(
+                    "Missing required arguments: <compartment-id> <zone-name> <target-compartment-id>");
+        }
+
         final String compartmentId = args[0];
         final String zoneName = args[1];
+        final String targetCompartmentId = args[2];
 
         final CreateZoneResponse createZoneResponse =
                 client.createZone(
@@ -84,6 +123,32 @@ public class DnsExample {
 
         updateAndPatchDomainRecords(client, zoneName, compartmentId);
         updateAndPatchRRSet(client, zoneName, compartmentId);
+
+        final Zone zone = createZoneResponse.getZone();
+        changeZoneCompartment(client, zone, targetCompartmentId);
+    }
+
+    /**
+     * We can change the compartment for a zone.
+     */
+    private static void changeZoneCompartment(
+            final Dns client, final Zone zone, String targetCompartmentId) throws Exception {
+        final ChangeZoneCompartmentDetails details =
+                builder().compartmentId(targetCompartmentId).build();
+        final ChangeZoneCompartmentRequest request =
+                ChangeZoneCompartmentRequest.builder()
+                        .zoneId(zone.getId())
+                        .changeZoneCompartmentDetails(details)
+                        .build();
+        ChangeZoneCompartmentResponse changeResponse = client.changeZoneCompartment(request);
+
+        System.out.println();
+        System.out.println(
+                "Changed zone compartment from "
+                        + zone.getCompartmentId()
+                        + " to "
+                        + changeResponse.toString());
+        System.out.println();
     }
 
     /**

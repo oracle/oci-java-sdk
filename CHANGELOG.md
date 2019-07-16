@@ -2,6 +2,23 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
+## 1.5.14 - 2019-07-16
+### Added
+- Support for the Functions service
+- Support for the Quotas service
+- Support for moving resources across compartments in the DNS service
+- Support for moving instances across compartments in the Compute service
+- Support for moving keys and vaults across compartments in the Key Management service
+- Support for moving topics and subscriptions across compartments in the Notifications service
+- Support for moving load balancers across compartments in the Load Balancing service
+- Support for specifying permitted REST methods in load balancer rule sets in the Load Balancing service
+- Support for configuring cookie session persistence in backend sets in the Load Balancing service
+- Support for ACL rules in rule sets in the Load Balancing service
+- Support for move compartment tree in the Identity service
+- Support for specifying and returning a KMS key in backup operations in the Block Storage service
+- Support for transit routing in the Networking service
+- Support for authenticating via Resource Principals. An example of how to use resource principals is available on [GitHub](https://github.com/oracle/oci-java-sdk/tree/master/bmc-examples/src/main/java/FunctionsEphemeralResourcePrincipalAuthenticationDetailsProviderExample.java). This authentication method is only supported within the Functions service at this time.
+
 ## 1.5.13 - 2019-07-09
 ### Added
 - Support for network security groups in the Load Balancing service

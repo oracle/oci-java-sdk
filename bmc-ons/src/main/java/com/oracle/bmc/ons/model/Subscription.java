@@ -32,6 +32,15 @@ public class Subscription {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("topicId")
+        private String topicId;
+
+        public Builder topicId(String topicId) {
+            this.topicId = topicId;
+            this.__explicitlySet__.add("topicId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private String protocol;
 
@@ -56,6 +65,24 @@ public class Subscription {
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("createdTime")
+        private Long createdTime;
+
+        public Builder createdTime(Long createdTime) {
+            this.createdTime = createdTime;
+            this.__explicitlySet__.add("createdTime");
             return this;
         }
 
@@ -103,9 +130,12 @@ public class Subscription {
             Subscription __instance__ =
                     new Subscription(
                             id,
+                            topicId,
                             protocol,
                             endpoint,
                             lifecycleState,
+                            compartmentId,
+                            createdTime,
                             deliverPolicy,
                             etag,
                             freeformTags,
@@ -118,9 +148,12 @@ public class Subscription {
         public Builder copy(Subscription o) {
             Builder copiedBuilder =
                     id(o.getId())
+                            .topicId(o.getTopicId())
                             .protocol(o.getProtocol())
                             .endpoint(o.getEndpoint())
                             .lifecycleState(o.getLifecycleState())
+                            .compartmentId(o.getCompartmentId())
+                            .createdTime(o.getCreatedTime())
                             .deliverPolicy(o.getDeliverPolicy())
                             .etag(o.getEtag())
                             .freeformTags(o.getFreeformTags())
@@ -146,7 +179,13 @@ public class Subscription {
     String id;
 
     /**
-     * The subscription protocol. Valid values: EMAIL, HTTPS.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated topic.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("topicId")
+    String topicId;
+
+    /**
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
@@ -155,13 +194,13 @@ public class Subscription {
     /**
      * The endpoint of the subscription. Valid values depend on the protocol.
      * For EMAIL, only an email address is valid. For HTTPS, only a PagerDuty URL is valid. A URL cannot exceed 512 characters.
-     * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
     String endpoint;
     /**
-     * The lifecycle state of the subscription.
+     * The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
+     *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
@@ -208,10 +247,25 @@ public class Subscription {
         }
     };
     /**
-     * The lifecycle state of the subscription.
+     * The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the subscription.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    String compartmentId;
+
+    /**
+     * The time when this suscription was created.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("createdTime")
+    Long createdTime;
 
     /**
      * The delivery policy of the subscription. Stored as a JSON string.

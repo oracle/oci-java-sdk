@@ -21,4 +21,10 @@ public interface FederationClient {
      * @return A security token that can be used to authenticate requests.
      */
     String refreshAndGetSecurityToken();
+
+    /**
+     * Get a claim embedded in the security token. May use the cached token if it is
+     * judged to still be valid.
+     */
+    String getStringClaim(String key);
 }
