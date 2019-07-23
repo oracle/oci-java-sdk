@@ -37,7 +37,21 @@ public interface Monitoring extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Moves an alarm into a different compartment within the same tenancy.
+     * <p>
+     * For information about moving resources between compartments, see [Moving Resources Between Compartments](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeAlarmCompartmentResponse changeAlarmCompartment(ChangeAlarmCompartmentRequest request);
+
+    /**
      * Creates a new alarm in the specified compartment.
+     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * <p>
+     * Transactions Per Second (TPS) per-tenancy limit for this operation: 1.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -47,6 +61,9 @@ public interface Monitoring extends AutoCloseable {
 
     /**
      * Deletes the specified alarm.
+     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * <p>
+     * Transactions Per Second (TPS) per-tenancy limit for this operation: 1.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -56,6 +73,9 @@ public interface Monitoring extends AutoCloseable {
 
     /**
      * Gets the specified alarm.
+     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * <p>
+     * Transactions Per Second (TPS) per-tenancy limit for this operation: 1.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -65,6 +85,9 @@ public interface Monitoring extends AutoCloseable {
 
     /**
      * Get the history of the specified alarm.
+     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * <p>
+     * Transactions Per Second (TPS) per-tenancy limit for this operation: 1.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -74,6 +97,9 @@ public interface Monitoring extends AutoCloseable {
 
     /**
      * Lists the alarms for the specified compartment.
+     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * <p>
+     * Transactions Per Second (TPS) per-tenancy limit for this operation: 1.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -83,6 +109,9 @@ public interface Monitoring extends AutoCloseable {
 
     /**
      * List the status of each alarm in the specified compartment.
+     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * <p>
+     * Transactions Per Second (TPS) per-tenancy limit for this operation: 1.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -93,6 +122,9 @@ public interface Monitoring extends AutoCloseable {
     /**
      * Returns metric definitions that match the criteria specified in the request. Compartment OCID required.
      * For information about metrics, see [Metrics Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
+     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * <p>
+     * Transactions Per Second (TPS) per-tenancy limit for this operation: 1.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -103,6 +135,18 @@ public interface Monitoring extends AutoCloseable {
     /**
      * Publishes raw metric data points to the Monitoring service.
      * For more information about publishing metrics, see [Publishing Custom Metrics](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/publishingcustommetrics.htm).
+     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * <p>
+     * Per-call limits information follows.
+     * <p>
+     * Dimensions per metric group*. Maximum: 20. Minimum: 1.
+     * * Unique metric streams*. Maximum: 50.
+     * * Transactions Per Second (TPS) per-tenancy limit for this operation: 50.
+     * <p>
+     *A metric group is the combination of a given metric, metric namespace, and tenancy for the purpose of determining limits.
+     * A dimension is a qualifier provided in a metric definition.
+     * A metric stream is an individual set of aggregated data for a metric, typically specific to a resource.
+     * For more information about metric-related concepts, see [Monitoring Concepts](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#concepts).
      * <p>
      * The endpoints for this operation differ from other Monitoring operations. Replace the string `telemetry` with `telemetry-ingestion` in the endpoint, as in the following example:
      * <p>
@@ -116,6 +160,9 @@ public interface Monitoring extends AutoCloseable {
 
     /**
      * Removes any existing suppression for the specified alarm.
+     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * <p>
+     * Transactions Per Second (TPS) per-tenancy limit for this operation: 1.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -126,6 +173,9 @@ public interface Monitoring extends AutoCloseable {
     /**
      * Returns aggregated data that match the criteria specified in the request. Compartment OCID required.
      * For information on metric queries, see [Building Metric Queries](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/buildingqueries.htm).
+     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * <p>
+     * Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -135,6 +185,9 @@ public interface Monitoring extends AutoCloseable {
 
     /**
      * Updates the specified alarm.
+     * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+     * <p>
+     * Transactions Per Second (TPS) per-tenancy limit for this operation: 1.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

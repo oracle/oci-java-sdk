@@ -16,7 +16,7 @@ public class ListListenerRulesRequest extends com.oracle.bmc.requests.BmcRequest
     private String loadBalancerId;
 
     /**
-     * The name of the listener.
+     * The name of the listener the rules are associated with.
      *
      */
     private String listenerName;

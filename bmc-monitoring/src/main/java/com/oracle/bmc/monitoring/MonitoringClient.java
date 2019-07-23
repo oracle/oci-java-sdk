@@ -18,6 +18,7 @@ public class MonitoringClient implements Monitoring {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("MONITORING")
                     .serviceEndpointPrefix("telemetry")
+                    .serviceEndpointTemplate("https://telemetry.{region}.{secondLevelDomain}")
                     .build();
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
@@ -373,6 +374,39 @@ public class MonitoringClient implements Monitoring {
     @Override
     public void close() {
         client.close();
+    }
+
+    @Override
+    public ChangeAlarmCompartmentResponse changeAlarmCompartment(
+            ChangeAlarmCompartmentRequest request) {
+        LOG.trace("Called changeAlarmCompartment");
+        final ChangeAlarmCompartmentRequest interceptedRequest =
+                ChangeAlarmCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeAlarmCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeAlarmCompartmentResponse>
+                transformer = ChangeAlarmCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getChangeAlarmCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override

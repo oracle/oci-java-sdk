@@ -4,7 +4,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details for creating a database backup.
+ * Details for creating a database.
  * <p>
  **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *

@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
+## 1.5.15 - 2019-07-23
+### Added
+- Support for moving resources across compartments in the Database service
+- Support for moving resources across compartments in the Health Checks service
+- Support for moving alarms across compartments in the Monitoring service
+- Support for creating instance configurations from running instances in the Compute service
+- Support for setting up budget alerts for cost tracking tags in the Budgets service
+
 ## 1.5.14 - 2019-07-16
 ### Added
 - Support for the Functions service

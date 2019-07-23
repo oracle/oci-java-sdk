@@ -5,8 +5,8 @@ package com.oracle.bmc.monitoring.model;
 
 /**
  * The request details for retrieving metric definitions. Specify optional properties to filter the returned results.
- * Use an asterisk (\"\\*\") as a wildcard character, placed anywhere in the string.
- * For example, to search for all metrics with names that begin with \"disk\", specify \"name\" as \"disk\\*\".
+ * Use an asterisk (&#42;) as a wildcard character, placed anywhere in the string.
+ * For example, to search for all metrics with names that begin with \"disk\", specify \"name\" as \"disk&#42;\".
  * If no properties are specified, then all metric definitions within the request scope are returned.
  *
  * <br/>
@@ -147,8 +147,8 @@ public class ListMetricsDetails {
      * Group metrics by these fields in the response. For example, to list all metric namespaces available
      * in a compartment, groupBy the \"namespace\" field.
      * <p>
-     * Example - group by namespace and resource:
-     * `[ \"namespace\", \"resourceId\" ]`
+     * Example - group by namespace:
+     * `[ \"namespace\" ]`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupBy")

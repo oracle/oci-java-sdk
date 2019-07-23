@@ -408,7 +408,7 @@ public class AutonomousDatabaseSummary {
     Integer dataStorageSizeInTBs;
 
     /**
-     * True if it is dedicated database.
+     * True if the database uses the [dedicated deployment](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm) option.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDedicated")
@@ -590,13 +590,15 @@ public class AutonomousDatabaseSummary {
     DbWorkload dbWorkload;
 
     /**
-     * The client IP access control list (ACL). Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. This is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet.
+     * The client IP access control list (ACL). This feature is available for [serverless deployments](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI) only.
+     * Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. This is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("whitelistedIps")
     java.util.List<String> whitelistedIps;
 
     /**
-     * Indicates if auto scaling is enabled for the Autonomous Database CPU core count.
+     * Indicates if auto scaling is enabled for the Autonomous Database CPU core count. Note that auto scaling is available for [serverless deployments](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI) only.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")

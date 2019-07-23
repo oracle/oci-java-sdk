@@ -13,7 +13,7 @@ public class CreateInstanceConfigurationRequest extends com.oracle.bmc.requests.
     /**
      * Instance configuration creation details
      */
-    private CreateInstanceConfigurationDetails createInstanceConfiguration;
+    private CreateInstanceConfigurationBase createInstanceConfiguration;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or

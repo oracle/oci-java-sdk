@@ -11,6 +11,12 @@ import com.oracle.bmc.monitoring.model.*;
 public class UpdateAlarmResponse {
 
     /**
+     * For optimistic concurrency control. See `if-match`.
+     *
+     */
+    private String etag;
+
+    /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
      * a particular request, please provide the request ID.
      *
@@ -28,6 +34,7 @@ public class UpdateAlarmResponse {
          * @return this builder instance
          */
         public Builder copy(UpdateAlarmResponse o) {
+            etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             alarm(o.getAlarm());
 

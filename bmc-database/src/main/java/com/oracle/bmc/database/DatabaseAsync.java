@@ -37,6 +37,88 @@ public interface DatabaseAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Move the Autonomous Container Database and its dependent resources to the specified compartment.
+     * For more information about moving Autonomous Container Databases, see
+     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeAutonomousContainerDatabaseCompartmentResponse>
+            changeAutonomousContainerDatabaseCompartment(
+                    ChangeAutonomousContainerDatabaseCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeAutonomousContainerDatabaseCompartmentRequest,
+                                    ChangeAutonomousContainerDatabaseCompartmentResponse>
+                            handler);
+
+    /**
+     * Move the Autonomous Database and its dependent resources to the specified compartment.
+     * For more information about moving Autonomous Databases, see
+     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeAutonomousDatabaseCompartmentResponse>
+            changeAutonomousDatabaseCompartment(
+                    ChangeAutonomousDatabaseCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeAutonomousDatabaseCompartmentRequest,
+                                    ChangeAutonomousDatabaseCompartmentResponse>
+                            handler);
+
+    /**
+     * Move the Autonomous Exadata Infrastructure and its dependent resources to the specified compartment.
+     * For more information about moving Autonomous Exadata Infrastructures, see
+     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeAutonomousExadataInfrastructureCompartmentResponse>
+            changeAutonomousExadataInfrastructureCompartment(
+                    ChangeAutonomousExadataInfrastructureCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeAutonomousExadataInfrastructureCompartmentRequest,
+                                    ChangeAutonomousExadataInfrastructureCompartmentResponse>
+                            handler);
+
+    /**
+     * Move the DB system and its dependent resources to the specified compartment.
+     * For more information about moving DB systems, see
+     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeDbSystemCompartmentResponse> changeDbSystemCompartment(
+            ChangeDbSystemCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeDbSystemCompartmentRequest, ChangeDbSystemCompartmentResponse>
+                    handler);
+
+    /**
      * Changes the status of the standalone backup resource to `ACTIVE` after the backup is created from the on-premises database and placed in Oracle Cloud Infrastructure Object Storage.
      * <p>
      **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud](https://docs.cloud.oracle.com/Content/Database/Tasks/mig-onprembackup.htm) for more information.
@@ -823,7 +905,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of supported Autonomous Database versions.
+     * Gets a list of supported Autonomous Database versions. Note that preview version software is only available for [serverless deployments](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

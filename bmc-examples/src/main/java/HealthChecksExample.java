@@ -5,6 +5,8 @@ import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.healthchecks.HealthChecks;
 import com.oracle.bmc.healthchecks.HealthChecksClient;
+import com.oracle.bmc.healthchecks.model.ChangeHttpMonitorCompartmentDetails;
+import com.oracle.bmc.healthchecks.model.ChangePingMonitorCompartmentDetails;
 import com.oracle.bmc.healthchecks.model.CreateHttpMonitorDetails;
 import com.oracle.bmc.healthchecks.model.CreatePingMonitorDetails;
 import com.oracle.bmc.healthchecks.model.HealthChecksVantagePointSummary;
@@ -18,6 +20,8 @@ import com.oracle.bmc.healthchecks.model.PingProbeProtocol;
 import com.oracle.bmc.healthchecks.model.PingProbeResultSummary;
 import com.oracle.bmc.healthchecks.model.UpdateHttpMonitorDetails;
 import com.oracle.bmc.healthchecks.model.UpdatePingMonitorDetails;
+import com.oracle.bmc.healthchecks.requests.ChangeHttpMonitorCompartmentRequest;
+import com.oracle.bmc.healthchecks.requests.ChangePingMonitorCompartmentRequest;
 import com.oracle.bmc.healthchecks.requests.CreateHttpMonitorRequest;
 import com.oracle.bmc.healthchecks.requests.CreatePingMonitorRequest;
 import com.oracle.bmc.healthchecks.requests.DeleteHttpMonitorRequest;
@@ -31,6 +35,8 @@ import com.oracle.bmc.healthchecks.requests.ListPingMonitorsRequest;
 import com.oracle.bmc.healthchecks.requests.ListPingProbeResultsRequest;
 import com.oracle.bmc.healthchecks.requests.UpdateHttpMonitorRequest;
 import com.oracle.bmc.healthchecks.requests.UpdatePingMonitorRequest;
+import com.oracle.bmc.healthchecks.responses.ChangeHttpMonitorCompartmentResponse;
+import com.oracle.bmc.healthchecks.responses.ChangePingMonitorCompartmentResponse;
 import com.oracle.bmc.healthchecks.responses.CreateHttpMonitorResponse;
 import com.oracle.bmc.healthchecks.responses.CreatePingMonitorResponse;
 import com.oracle.bmc.healthchecks.responses.DeleteHttpMonitorResponse;
@@ -175,6 +181,17 @@ public class HealthChecksExample {
                             summary.getIsHealthy() ? "Healthy" : "Unhealthy"));
         }
 
+        // To change the compartment:
+        ChangeHttpMonitorCompartmentResponse changeCompartmentResponse =
+                client.changeHttpMonitorCompartment(
+                        ChangeHttpMonitorCompartmentRequest.builder()
+                                .monitorId(newHttpMonitor.getId())
+                                .changeHttpMonitorCompartmentDetails(
+                                        ChangeHttpMonitorCompartmentDetails.builder()
+                                                .compartmentId("NEW_COMPARTMENT_ID")
+                                                .build())
+                                .build());
+
         // Delete the example HttpMonitor:
         DeleteHttpMonitorResponse deleteResponse =
                 client.deleteHttpMonitor(
@@ -277,6 +294,17 @@ public class HealthChecksExample {
                             summary.getStartTime(),
                             summary.getIsHealthy() ? "Healthy" : "Unhealthy"));
         }
+
+        // To change the compartment:
+        ChangePingMonitorCompartmentResponse changeCompartmentResponse =
+                client.changePingMonitorCompartment(
+                        ChangePingMonitorCompartmentRequest.builder()
+                                .monitorId(newPingMonitor.getId())
+                                .changePingMonitorCompartmentDetails(
+                                        ChangePingMonitorCompartmentDetails.builder()
+                                                .compartmentId("NEW_COMPARTMENT_ID")
+                                                .build())
+                                .build());
 
         // Delete the example PingMonitor:
         DeletePingMonitorResponse deleteResponse =

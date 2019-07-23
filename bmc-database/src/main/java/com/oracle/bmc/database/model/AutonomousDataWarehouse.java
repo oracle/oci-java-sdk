@@ -246,6 +246,7 @@ public class AutonomousDataWarehouse {
         BackupInProgress("BACKUP_IN_PROGRESS"),
         ScaleInProgress("SCALE_IN_PROGRESS"),
         AvailableNeedsAttention("AVAILABLE_NEEDS_ATTENTION"),
+        Updating("UPDATING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

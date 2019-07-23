@@ -4,7 +4,8 @@
 package com.oracle.bmc.loadbalancer.model;
 
 /**
- * Source VCN/Overlay IP address based match condition. Should be used always in conjunction with SourceVcnIdCondition
+ * An access control rule condition that requires a match on the specified source VCN and IP address range.
+ * This condition must be used only in conjunction with `SourceVcnIdCondition`.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -73,11 +74,14 @@ public class SourceVcnIpAddressCondition extends RuleCondition {
     }
 
     /**
-     * IPv4 address range to which the original client IP address (in customer VCN) of incoming packet would be matched against
+     * An IPv4 address range that the original client IP address (in the context of the specified VCN) of an
+     * incoming packet must match.
      * <p>
-     * Only classless inter-domain routing (CIDR) format(x.x.x.x/y or x:x::x/y) is accepted
+     * The service accepts only classless inter-domain routing (CIDR) format (x.x.x.x/y) strings.
      * <p>
-     * Specify 0.0.0.0/0 or ::/0 to match all incoming traffic in the customer VCN
+     * Specify 0.0.0.0/0 to match all incoming traffic in the customer VCN.
+     * <p>
+     * example: \"10.10.1.0/24\"
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributeValue")

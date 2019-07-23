@@ -37,6 +37,44 @@ public interface HealthChecksAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Moves a monitor into a different compartment. When provided, `If-Match` is checked
+     * against ETag values of the resource.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeHttpMonitorCompartmentResponse> changeHttpMonitorCompartment(
+            ChangeHttpMonitorCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeHttpMonitorCompartmentRequest,
+                            ChangeHttpMonitorCompartmentResponse>
+                    handler);
+
+    /**
+     * Moves a monitor into a different compartment. When provided, `If-Match` is checked
+     * against ETag values of the resource.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangePingMonitorCompartmentResponse> changePingMonitorCompartment(
+            ChangePingMonitorCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangePingMonitorCompartmentRequest,
+                            ChangePingMonitorCompartmentResponse>
+                    handler);
+
+    /**
      * Creates an HTTP monitor. Vantage points will be automatically selected if not specified,
      * and probes will be initiated from each vantage point to each of the targets at the frequency
      * specified by `intervalInSeconds`.
