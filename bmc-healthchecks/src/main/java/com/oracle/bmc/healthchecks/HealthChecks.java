@@ -37,6 +37,28 @@ public interface HealthChecks extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Moves a monitor into a different compartment. When provided, `If-Match` is checked
+     * against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeHttpMonitorCompartmentResponse changeHttpMonitorCompartment(
+            ChangeHttpMonitorCompartmentRequest request);
+
+    /**
+     * Moves a monitor into a different compartment. When provided, `If-Match` is checked
+     * against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangePingMonitorCompartmentResponse changePingMonitorCompartment(
+            ChangePingMonitorCompartmentRequest request);
+
+    /**
      * Creates an HTTP monitor. Vantage points will be automatically selected if not specified,
      * and probes will be initiated from each vantage point to each of the targets at the frequency
      * specified by `intervalInSeconds`.

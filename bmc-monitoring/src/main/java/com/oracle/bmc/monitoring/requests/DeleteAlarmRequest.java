@@ -17,6 +17,14 @@ public class DeleteAlarmRequest extends com.oracle.bmc.requests.BmcRequest {
     private String alarmId;
 
     /**
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
+     */
+    private String ifMatch;
+
+    /**
      * Customer part of the request identifier token. If you need to contact Oracle about a particular
      * request, please provide the complete request ID.
      *
@@ -57,6 +65,7 @@ public class DeleteAlarmRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(DeleteAlarmRequest o) {
             alarmId(o.getAlarmId());
+            ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());

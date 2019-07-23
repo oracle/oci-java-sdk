@@ -37,6 +37,56 @@ public interface Database extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Move the Autonomous Container Database and its dependent resources to the specified compartment.
+     * For more information about moving Autonomous Container Databases, see
+     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeAutonomousContainerDatabaseCompartmentResponse
+            changeAutonomousContainerDatabaseCompartment(
+                    ChangeAutonomousContainerDatabaseCompartmentRequest request);
+
+    /**
+     * Move the Autonomous Database and its dependent resources to the specified compartment.
+     * For more information about moving Autonomous Databases, see
+     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeAutonomousDatabaseCompartmentResponse changeAutonomousDatabaseCompartment(
+            ChangeAutonomousDatabaseCompartmentRequest request);
+
+    /**
+     * Move the Autonomous Exadata Infrastructure and its dependent resources to the specified compartment.
+     * For more information about moving Autonomous Exadata Infrastructures, see
+     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeAutonomousExadataInfrastructureCompartmentResponse
+            changeAutonomousExadataInfrastructureCompartment(
+                    ChangeAutonomousExadataInfrastructureCompartmentRequest request);
+
+    /**
+     * Move the DB system and its dependent resources to the specified compartment.
+     * For more information about moving DB systems, see
+     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeDbSystemCompartmentResponse changeDbSystemCompartment(
+            ChangeDbSystemCompartmentRequest request);
+
+    /**
      * Changes the status of the standalone backup resource to `ACTIVE` after the backup is created from the on-premises database and placed in Oracle Cloud Infrastructure Object Storage.
      * <p>
      **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud](https://docs.cloud.oracle.com/Content/Database/Tasks/mig-onprembackup.htm) for more information.
@@ -482,7 +532,7 @@ public interface Database extends AutoCloseable {
     ListAutonomousDatabasesResponse listAutonomousDatabases(ListAutonomousDatabasesRequest request);
 
     /**
-     * Gets a list of supported Autonomous Database versions.
+     * Gets a list of supported Autonomous Database versions. Note that preview version software is only available for [serverless deployments](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI).
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.

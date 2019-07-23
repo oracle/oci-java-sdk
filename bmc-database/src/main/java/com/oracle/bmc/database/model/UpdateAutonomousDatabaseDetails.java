@@ -218,7 +218,7 @@ public class UpdateAutonomousDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
     /**
-     * The new Oracle license model that applies to the Oracle Autonomous Transaction Processing database.
+     * The new Oracle license model that applies to the Oracle Autonomous Transaction Processing database. Note that when updating an Autonomous Database that uses the [dedicated deployment](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm) option, this attribute must be null.
      *
      **/
     public enum LicenseModel {
@@ -254,20 +254,22 @@ public class UpdateAutonomousDatabaseDetails {
         }
     };
     /**
-     * The new Oracle license model that applies to the Oracle Autonomous Transaction Processing database.
+     * The new Oracle license model that applies to the Oracle Autonomous Transaction Processing database. Note that when updating an Autonomous Database that uses the [dedicated deployment](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm) option, this attribute must be null.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     LicenseModel licenseModel;
 
     /**
-     * The client IP access control list (ACL). Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. This is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet. To delete all the existing white listed IP\u2019s, use an array with a single empty string entry.
+     * The client IP access control list (ACL). This feature is available for [serverless deployments](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI) only.
+     * Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. This is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet. To delete all the existing white listed IP\u2019s, use an array with a single empty string entry.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("whitelistedIps")
     java.util.List<String> whitelistedIps;
 
     /**
-     * Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is false.
+     * Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is false. Note that auto scaling is available for [serverless deployments](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI) only.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")

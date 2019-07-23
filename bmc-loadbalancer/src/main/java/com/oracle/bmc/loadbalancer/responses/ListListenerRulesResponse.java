@@ -11,7 +11,7 @@ import com.oracle.bmc.loadbalancer.model.*;
 public class ListListenerRulesResponse {
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
      * a particular request, please provide the request ID.
      *
      */

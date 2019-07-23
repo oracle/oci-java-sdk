@@ -1,7 +1,6 @@
 /**
  * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
-import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.budget.BudgetClient;
 import com.oracle.bmc.budget.BudgetPaginators;
@@ -13,6 +12,7 @@ import com.oracle.bmc.budget.model.BudgetSummary;
 import com.oracle.bmc.budget.model.CreateAlertRuleDetails;
 import com.oracle.bmc.budget.model.CreateBudgetDetails;
 import com.oracle.bmc.budget.model.ResetPeriod;
+import com.oracle.bmc.budget.model.TargetType;
 import com.oracle.bmc.budget.model.ThresholdType;
 import com.oracle.bmc.budget.model.UpdateAlertRuleDetails;
 import com.oracle.bmc.budget.model.UpdateBudgetDetails;
@@ -33,7 +33,11 @@ import com.oracle.bmc.budget.responses.GetBudgetResponse;
 import com.oracle.bmc.budget.responses.UpdateAlertRuleResponse;
 import com.oracle.bmc.budget.responses.UpdateBudgetResponse;
 
+import com.oracle.bmc.http.ResteasyClientConfigurator;
+import org.apache.commons.lang3.StringUtils;
+
 import java.math.BigDecimal;
+import java.util.Collections;
 
 /**
  * This class provides an example of how you can create a budget and an alert rule on the budget. It then shows how to
@@ -59,18 +63,17 @@ import java.math.BigDecimal;
 public class BudgetExample {
     private static final String CONFIG_LOCATION = "~/.oci/config";
     private static final String CONFIG_PROFILE = "DEFAULT";
-    private static final int REQUIRED_ARGS_LENGTH = 4;
+    private static final int REQUIRED_ARGS_LENGTH = 5;
     private static final int ALL_ARGS_LENGTH = 7;
-
-    private static com.oracle.bmc.budget.Budget budgetClient;
 
     /**
      * @param args Parameters to use for the budget service example are as follows:
      * <ul>
      *   <li>The 1st argument is the ocid of the compartment for the budget, which should be the tenancy root compartment.</li>
-     *   <li>The 2nd is the target compartment for the budget, which should be in the same tenancy as the first.</li>
-     *   <li>The 3rd is the amount for the budget, which should an unformatted number.</li>
-     *   <li>The 4th is an email address to be used as the budget alert rule recipient.</li>
+     *   <li>The 2nd argument is the target type of the budget, which should be COMPARTMENT or TAG.</li>
+     *   <li>The 3rd is the target for the budget. For COMPARTMENT budget, this should be the target compartment OCID; For TAG budget, this should be the target tag in String format 'TagNamespace.TagDefinition.TagValue'.</li>
+     *   <li>The 4th is the amount for the budget, which should an unformatted number.</li>
+     *   <li>The 5th is an email address to be used as the budget alert rule recipient.</li>
      *   <li>Optional params below may be left unspecified or fully specified, but not partially specified:</li>
      * </ul>
      * @throws Exception
@@ -78,7 +81,7 @@ public class BudgetExample {
     public static void main(String[] args) throws Exception {
         if (args.length != REQUIRED_ARGS_LENGTH && args.length != ALL_ARGS_LENGTH) {
             throw new IllegalArgumentException(
-                    "This example expects 4 arguments: compartment OCID, target compartment OCID, budget amount, alert rule recipient");
+                    "This example expects 5 arguments: compartment OCID, target type (COMPARTMENT or TAG), target (compartment OCID or cost tracking tag in format \"TagNamespace.TagDefinition.TagValue\"), budget amount, alert rule recipient");
         }
 
         for (String arg : args) {
@@ -86,34 +89,43 @@ public class BudgetExample {
         }
 
         String compartmentId = args[0];
-        String targetCompartmentId = args[1];
+        TargetType targetType = TargetType.create(StringUtils.upperCase(args[1]));
+        if (targetType == null) {
+            throw new IllegalArgumentException(
+                    String.format("%s is not a valid target type", args[2]));
+        }
+
+        String target = args[2];
 
         BigDecimal budgetAmount;
         try {
-            budgetAmount = new BigDecimal(args[2]);
+            budgetAmount = new BigDecimal(args[3]);
         } catch (NumberFormatException ex) {
             throw new IllegalArgumentException(
-                    String.format("%s is not a valid budget amount", args[2]));
+                    String.format("%s is not a valid budget amount", args[3]));
         }
 
-        String alertRuleRecipient = args[3];
+        String alertRuleRecipient = args[4];
         BigDecimal threshold = new BigDecimal(100);
         ThresholdType thresholdType = ThresholdType.Percentage;
         AlertType alertType = AlertType.Forecast;
 
-        AuthenticationDetailsProvider provider =
-                new ConfigFileAuthenticationDetailsProvider(CONFIG_LOCATION, CONFIG_PROFILE);
+        final BudgetClient budgetClient =
+                BudgetClient.builder()
+                        .additionalClientConfigurator(new ResteasyClientConfigurator())
+                        .build(
+                                new ConfigFileAuthenticationDetailsProvider(
+                                        CONFIG_LOCATION, CONFIG_PROFILE));
 
-        budgetClient = new BudgetClient(provider);
-
-        // Create a budget
+        // Create a budget for the given target
         CreateBudgetResponse createBudgetResponse =
                 budgetClient.createBudget(
                         CreateBudgetRequest.builder()
                                 .createBudgetDetails(
                                         CreateBudgetDetails.builder()
                                                 .compartmentId(compartmentId)
-                                                .targetCompartmentId(targetCompartmentId)
+                                                .targetType(targetType)
+                                                .targets(Collections.singletonList(target))
                                                 .amount(budgetAmount)
                                                 .resetPeriod(ResetPeriod.Monthly)
                                                 .build())
@@ -122,12 +134,16 @@ public class BudgetExample {
         Budget budget = createBudgetResponse.getBudget();
 
         // List out all budgets in the compartment
+        // Or list out budgets in the compartment by target type:
+        //      - ListBudgetsRequest.TargetType.Tag
+        //      - ListBudgetsRequest.TargetType.Compartment
         BudgetPaginators budgetPaginators = new BudgetPaginators(budgetClient);
 
         Iterable<BudgetSummary> budgetSummaries =
                 budgetPaginators.listBudgetsRecordIterator(
                         ListBudgetsRequest.builder()
                                 .compartmentId(compartmentId)
+                                .targetType(ListBudgetsRequest.TargetType.All)
                                 .limit(50)
                                 .build());
 
@@ -206,8 +222,7 @@ public class BudgetExample {
                                         UpdateAlertRuleDetails.builder()
                                                 .threshold(new BigDecimal(80))
                                                 .type(AlertType.Actual)
-                                                .message(
-                                                        "Spending in your compartment has reached 80% of the compartment budget.")
+                                                .message("Spending has reached 80% of the budget.")
                                                 .build())
                                 .build());
 

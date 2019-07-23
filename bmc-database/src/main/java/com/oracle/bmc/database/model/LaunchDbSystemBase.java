@@ -108,17 +108,14 @@ public class LaunchDbSystemBase {
     String backupSubnetId;
 
     /**
-     * The list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with this DB system.
-     * A maximum of 5 allowed.
+     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     java.util.List<String> nsgIds;
 
     /**
-     * The list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with the backup network of this DB system.
-     * Applicable only to Exadata DB systems.
-     * A maximum of 5 allowed.
+     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata DB systems.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupNetworkNsgIds")
@@ -181,6 +178,7 @@ public class LaunchDbSystemBase {
      * <p>
      * - BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
      * - BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
+     * - Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
      * - Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
      * - Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
      * - Exadata.Full1.336 - Specify a multiple of 8, from 88 to 336.

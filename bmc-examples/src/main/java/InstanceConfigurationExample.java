@@ -9,6 +9,7 @@ import com.oracle.bmc.core.ComputeManagementClient;
 import com.oracle.bmc.core.ComputeWaiters;
 import com.oracle.bmc.core.model.ComputeInstanceDetails;
 import com.oracle.bmc.core.model.CreateInstanceConfigurationDetails;
+import com.oracle.bmc.core.model.CreateInstanceConfigurationFromInstanceDetails;
 import com.oracle.bmc.core.model.Instance;
 import com.oracle.bmc.core.model.InstanceConfiguration;
 import com.oracle.bmc.core.model.InstanceConfigurationBlockVolumeDetails;
@@ -18,8 +19,10 @@ import com.oracle.bmc.core.model.InstanceConfigurationInstanceSourceViaImageDeta
 import com.oracle.bmc.core.model.InstanceConfigurationIscsiAttachVolumeDetails;
 import com.oracle.bmc.core.model.InstanceConfigurationLaunchInstanceDetails;
 import com.oracle.bmc.core.requests.CreateInstanceConfigurationRequest;
+import com.oracle.bmc.core.requests.DeleteInstanceConfigurationRequest;
 import com.oracle.bmc.core.requests.GetInstanceRequest;
 import com.oracle.bmc.core.requests.LaunchInstanceConfigurationRequest;
+import com.oracle.bmc.core.requests.TerminateInstanceRequest;
 import com.oracle.bmc.core.responses.CreateInstanceConfigurationResponse;
 import com.oracle.bmc.core.responses.GetInstanceResponse;
 import com.oracle.bmc.core.responses.LaunchInstanceConfigurationResponse;
@@ -30,9 +33,11 @@ import com.oracle.bmc.core.responses.LaunchInstanceConfigurationResponse;
  *  1) Create the InstanceConfiguration with a Block Volume
  *  2) Launch an Instance from an Instance Configuration
  *  3) Wait for the instance to go into running state
- *  4) Create a partially defined InstanceConfiguration
- *  5) Launch an Instance from a partially defined InstanceConfiguration
- *  6) Wait for the instance to go into running state
+ *  4) Create the InstanceConfiguration from a running instance
+ *  5) Create a partially defined InstanceConfiguration
+ *  6) Launch an Instance from a partially defined InstanceConfiguration
+ *  7) Wait for the instance to transition to the running state
+ *  8) Create the InstanceConfiguration with FaultDomain
  */
 public class InstanceConfigurationExample {
 
@@ -61,7 +66,7 @@ public class InstanceConfigurationExample {
                         .sourceDetails(sourceDetails)
                         .build();
 
-        //Create a block volume
+        // Create a block volume
         InstanceConfigurationBlockVolumeDetails volumeDetails =
                 InstanceConfigurationBlockVolumeDetails.builder()
                         .createDetails(
@@ -95,7 +100,7 @@ public class InstanceConfigurationExample {
                         .imageId(imageId)
                         .build();
 
-        //Leave out subnetId and AvailabilityDomain
+        // Leave out subnetId and AvailabilityDomain
         InstanceConfigurationLaunchInstanceDetails launchDetails =
                 InstanceConfigurationLaunchInstanceDetails.builder()
                         .compartmentId(compartmentId)
@@ -150,6 +155,17 @@ public class InstanceConfigurationExample {
         return configurationDetails;
     }
 
+    public static CreateInstanceConfigurationFromInstanceDetails
+            createInstanceConfigurationFromInstance(String instanceId, String compartmentId) {
+        CreateInstanceConfigurationFromInstanceDetails configurationDetails =
+                CreateInstanceConfigurationFromInstanceDetails.builder()
+                        .compartmentId(compartmentId)
+                        .instanceId(instanceId)
+                        .build();
+
+        return configurationDetails;
+    }
+
     public static LaunchInstanceConfigurationRequest createLaunchRequest(
             String instanceConfigurationId) {
         return LaunchInstanceConfigurationRequest.builder()
@@ -161,7 +177,7 @@ public class InstanceConfigurationExample {
     public static LaunchInstanceConfigurationRequest createPartialLaunchRequest(
             String instanceConfigurationId, String availabilityDomain, String subnetId) {
 
-        //Provide availabilityDomain and subnetId during launch
+        // Provide availabilityDomain and subnetId during launch
         return LaunchInstanceConfigurationRequest.builder()
                 .instanceConfigurationId(instanceConfigurationId)
                 .instanceConfiguration(
@@ -250,7 +266,25 @@ public class InstanceConfigurationExample {
         System.out.printf(
                 "Instance:%s is in state running%n", instanceResponse.getInstance().getId());
 
-        //Create an instance from a partially defined instance config
+        // Create an instance configuration from running instance
+        CreateInstanceConfigurationRequest createInstanceConfigurationFromInstanceRequest =
+                CreateInstanceConfigurationRequest.builder()
+                        .createInstanceConfiguration(
+                                createInstanceConfigurationFromInstance(
+                                        instance.getId(), compartmentId))
+                        .build();
+
+        CreateInstanceConfigurationResponse createInstanceConfigurationFromInstanceResponse =
+                computeManagementClient.createInstanceConfiguration(
+                        createInstanceConfigurationFromInstanceRequest);
+
+        InstanceConfiguration instanceConfigurationFromInstance =
+                createInstanceConfigurationFromInstanceResponse.getInstanceConfiguration();
+        System.out.printf(
+                "%nCreated instance configuration from running instance:%s%n",
+                instanceConfigurationFromInstance.getId());
+
+        // Create an instance from a partially defined instance config
         CreateInstanceConfigurationRequest partialCreateRequest =
                 CreateInstanceConfigurationRequest.builder()
                         .createInstanceConfiguration(
@@ -260,29 +294,15 @@ public class InstanceConfigurationExample {
         CreateInstanceConfigurationResponse partialCreateResponse =
                 computeManagementClient.createInstanceConfiguration(partialCreateRequest);
 
+        InstanceConfiguration partiallyDefinedInstanceConfiguration =
+                partialCreateResponse.getInstanceConfiguration();
         System.out.printf(
                 "%nCreated partially defined instanceConfiguration:%s%n",
-                partialCreateResponse.getInstanceConfiguration().getId());
-
-        // Create an instance configuration with faultDomain
-        CreateInstanceConfigurationRequest instanceConfigurationWithFaultDomainRequest =
-                CreateInstanceConfigurationRequest.builder()
-                        .createInstanceConfiguration(
-                                createInstanceConfigurationWithFaultDomain(
-                                        imageId, subnetId, imageId, compartmentId))
-                        .build();
-
-        CreateInstanceConfigurationResponse instanceConfigurationWithFaultDomainResponse =
-                computeManagementClient.createInstanceConfiguration(
-                        instanceConfigurationWithFaultDomainRequest);
-
-        System.out.printf(
-                "%nCreated instance configuration with faultDomain:%s%n",
-                instanceConfigurationWithFaultDomainResponse.getInstanceConfiguration().getId());
+                partiallyDefinedInstanceConfiguration.getId());
 
         LaunchInstanceConfigurationRequest partialLaunchRequest =
                 createPartialLaunchRequest(
-                        partialCreateResponse.getInstanceConfiguration().getId(),
+                        partiallyDefinedInstanceConfiguration.getId(),
                         availabilityDomain,
                         subnetId);
 
@@ -305,6 +325,61 @@ public class InstanceConfigurationExample {
         System.out.printf(
                 "Partially defined instance:%s is running%n",
                 partialInstanceResponse.getInstance().getId());
+
+        // Create an instance configuration with faultDomain
+        CreateInstanceConfigurationRequest instanceConfigurationWithFaultDomainRequest =
+                CreateInstanceConfigurationRequest.builder()
+                        .createInstanceConfiguration(
+                                createInstanceConfigurationWithFaultDomain(
+                                        imageId, subnetId, imageId, compartmentId))
+                        .build();
+
+        CreateInstanceConfigurationResponse instanceConfigurationWithFaultDomainResponse =
+                computeManagementClient.createInstanceConfiguration(
+                        instanceConfigurationWithFaultDomainRequest);
+
+        InstanceConfiguration instanceConfigurationWithFaultDomain =
+                instanceConfigurationWithFaultDomainResponse.getInstanceConfiguration();
+        System.out.printf(
+                "%nCreated instance configuration with faultDomain:%s%n",
+                instanceConfigurationWithFaultDomain.getId());
+
+        // Delete the instance configurations
+        DeleteInstanceConfigurationRequest deleteInstanceConfigurationRequest =
+                DeleteInstanceConfigurationRequest.builder()
+                        .instanceConfigurationId(instanceConfiguration.getId())
+                        .build();
+        computeManagementClient.deleteInstanceConfiguration(deleteInstanceConfigurationRequest);
+
+        DeleteInstanceConfigurationRequest deleteInstanceConfigurationFromInstanceRequest =
+                DeleteInstanceConfigurationRequest.builder()
+                        .instanceConfigurationId(instanceConfigurationFromInstance.getId())
+                        .build();
+        computeManagementClient.deleteInstanceConfiguration(
+                deleteInstanceConfigurationFromInstanceRequest);
+
+        DeleteInstanceConfigurationRequest deletePartiallyDefinedInstanceConfigurationRequest =
+                DeleteInstanceConfigurationRequest.builder()
+                        .instanceConfigurationId(partiallyDefinedInstanceConfiguration.getId())
+                        .build();
+        computeManagementClient.deleteInstanceConfiguration(
+                deletePartiallyDefinedInstanceConfigurationRequest);
+
+        DeleteInstanceConfigurationRequest deleteInstanceConfigurationWithFaultDomainRequest =
+                DeleteInstanceConfigurationRequest.builder()
+                        .instanceConfigurationId(instanceConfigurationWithFaultDomain.getId())
+                        .build();
+        computeManagementClient.deleteInstanceConfiguration(
+                deleteInstanceConfigurationWithFaultDomainRequest);
+
+        // Terminate the instances
+        TerminateInstanceRequest terminateInstanceRequest =
+                TerminateInstanceRequest.builder().instanceId(instance.getId()).build();
+        computeClient.terminateInstance(terminateInstanceRequest);
+
+        TerminateInstanceRequest terminatePartialInstanceRequest =
+                TerminateInstanceRequest.builder().instanceId(partialInstance.getId()).build();
+        computeClient.terminateInstance(terminatePartialInstanceRequest);
 
         computeClient.close();
         computeManagementClient.close();

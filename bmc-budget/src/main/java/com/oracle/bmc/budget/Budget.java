@@ -96,7 +96,16 @@ public interface Budget extends AutoCloseable {
     ListAlertRulesResponse listAlertRules(ListAlertRulesRequest request);
 
     /**
-     * Gets a list of all Budgets in a compartment.
+     * Gets a list of Budgets in a compartment.
+     * <p>
+     * By default, ListBudgets returns budgets of 'COMPARTMENT' target type and the budget records with only ONE target compartment OCID.
+     * <p>
+     * To list ALL budgets, set the targetType query parameter to ALL.
+     * Example:
+     *   'targetType=ALL'
+     * <p>
+     * Additional targetTypes would be available in future releases. Clients should ignore new targetType
+     * or upgrade to latest version of client SDK to handle new targetType.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

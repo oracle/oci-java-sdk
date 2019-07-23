@@ -4,7 +4,9 @@
 package com.oracle.bmc.loadbalancer.model;
 
 /**
- * Information about a Rule.
+ * The attributes of a rule associated with the specified listener, and the name of the rule set that the rule
+ * belongs to.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -68,13 +70,13 @@ public class ListenerRuleSummary {
     }
 
     /**
-     * Rule object that was applied to a listener.
+     * A rule object that applies to the listener.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("rule")
     Rule rule;
 
     /**
-     * Name of the ruleset to which rule belongs to
+     * The name of the rule set that the rule belongs to.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleSetName")

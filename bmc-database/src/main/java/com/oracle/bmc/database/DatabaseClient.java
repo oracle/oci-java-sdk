@@ -377,6 +377,150 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public ChangeAutonomousContainerDatabaseCompartmentResponse
+            changeAutonomousContainerDatabaseCompartment(
+                    ChangeAutonomousContainerDatabaseCompartmentRequest request) {
+        LOG.trace("Called changeAutonomousContainerDatabaseCompartment");
+        final ChangeAutonomousContainerDatabaseCompartmentRequest interceptedRequest =
+                ChangeAutonomousContainerDatabaseCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeAutonomousContainerDatabaseCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeAutonomousContainerDatabaseCompartmentResponse>
+                transformer = ChangeAutonomousContainerDatabaseCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getChangeCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeAutonomousDatabaseCompartmentResponse changeAutonomousDatabaseCompartment(
+            ChangeAutonomousDatabaseCompartmentRequest request) {
+        LOG.trace("Called changeAutonomousDatabaseCompartment");
+        final ChangeAutonomousDatabaseCompartmentRequest interceptedRequest =
+                ChangeAutonomousDatabaseCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeAutonomousDatabaseCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeAutonomousDatabaseCompartmentResponse>
+                transformer = ChangeAutonomousDatabaseCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getChangeCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeAutonomousExadataInfrastructureCompartmentResponse
+            changeAutonomousExadataInfrastructureCompartment(
+                    ChangeAutonomousExadataInfrastructureCompartmentRequest request) {
+        LOG.trace("Called changeAutonomousExadataInfrastructureCompartment");
+        final ChangeAutonomousExadataInfrastructureCompartmentRequest interceptedRequest =
+                ChangeAutonomousExadataInfrastructureCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeAutonomousExadataInfrastructureCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeAutonomousExadataInfrastructureCompartmentResponse>
+                transformer =
+                        ChangeAutonomousExadataInfrastructureCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getChangeCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeDbSystemCompartmentResponse changeDbSystemCompartment(
+            ChangeDbSystemCompartmentRequest request) {
+        LOG.trace("Called changeDbSystemCompartment");
+        final ChangeDbSystemCompartmentRequest interceptedRequest =
+                ChangeDbSystemCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeDbSystemCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeDbSystemCompartmentResponse>
+                transformer = ChangeDbSystemCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getChangeCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CompleteExternalBackupJobResponse completeExternalBackupJob(
             CompleteExternalBackupJobRequest request) {
         LOG.trace("Called completeExternalBackupJob");

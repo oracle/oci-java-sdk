@@ -5,6 +5,14 @@ package com.oracle.bmc.budget.model;
 
 /**
  * The create budget details.
+ * <p>
+ * Client should use 'targetType' & 'targets' to specify the target type and list of targets on which the budget is applied.
+ * <p>
+ * For backwards compatibility, 'targetCompartmentId' will still be supported for all existing clients.
+ * However, this is considered deprecreated and all clients be upgraded to use 'targetType' & 'targets'.
+ * <p>
+ * Specifying both 'targetCompartmentId' and 'targets' will cause a Bad Request.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -78,6 +86,24 @@ public class CreateBudgetDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("targetType")
+        private TargetType targetType;
+
+        public Builder targetType(TargetType targetType) {
+            this.targetType = targetType;
+            this.__explicitlySet__.add("targetType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("targets")
+        private java.util.List<String> targets;
+
+        public Builder targets(java.util.List<String> targets) {
+            this.targets = targets;
+            this.__explicitlySet__.add("targets");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -109,6 +135,8 @@ public class CreateBudgetDetails {
                             description,
                             amount,
                             resetPeriod,
+                            targetType,
+                            targets,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -124,6 +152,8 @@ public class CreateBudgetDetails {
                             .description(o.getDescription())
                             .amount(o.getAmount())
                             .resetPeriod(o.getResetPeriod())
+                            .targetType(o.getTargetType())
+                            .targets(o.getTargets())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -146,7 +176,8 @@ public class CreateBudgetDetails {
     String compartmentId;
 
     /**
-     * The OCID of the compartment on which budget is applied
+     * This is DEPRECTAED. Set the target compartment id in targets instead.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetCompartmentId")
     String targetCompartmentId;
@@ -176,6 +207,23 @@ public class CreateBudgetDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resetPeriod")
     ResetPeriod resetPeriod;
+
+    /**
+     * The type of target on which the budget is applied.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("targetType")
+    TargetType targetType;
+
+    /**
+     * The list of targets on which the budget is applied.
+     *   If targetType is \"COMPARTMENT\", targets contains list of compartment OCIDs.
+     *   If targetType is \"TAG\", targets contains list of tag identifiers in the form of \"{tagNamespace}.{tagKey}.{tagValue}\".
+     * Curerntly, the array should contain EXACT ONE item.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("targets")
+    java.util.List<String> targets;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.

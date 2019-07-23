@@ -43,11 +43,11 @@ package com.oracle.bmc.loadbalancer.model;
         value = RemoveHttpResponseHeaderRule.class,
         name = "REMOVE_HTTP_RESPONSE_HEADER"
     ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = AllowRule.class, name = "ALLOW"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ControlAccessUsingHttpMethodsRule.class,
         name = "CONTROL_ACCESS_USING_HTTP_METHODS"
     ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = AllowRule.class, name = "ALLOW"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = AddHttpResponseHeaderRule.class,
         name = "ADD_HTTP_RESPONSE_HEADER"

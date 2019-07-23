@@ -97,7 +97,7 @@ public class Datapoint {
     /**
      * The number of occurrences of the associated value in the set of data.
      * <p>
-     * Optional. Default is 1.
+     * Default is 1. Value must be greater than zero.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("count")

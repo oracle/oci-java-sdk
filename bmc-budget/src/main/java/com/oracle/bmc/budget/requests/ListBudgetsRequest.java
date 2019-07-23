@@ -88,6 +88,56 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest {
     private String displayName;
 
     /**
+     * The type of target to filter by.
+     *   * ALL - List all budgets
+     *   * COMPARTMENT - List all budgets with targetType == \"COMPARTMENT\"
+     *   * TAG - List all budgets with targetType == \"TAG\"
+     *
+     */
+    private TargetType targetType;
+
+    /**
+     * The type of target to filter by.
+     *   * ALL - List all budgets
+     *   * COMPARTMENT - List all budgets with targetType == \"COMPARTMENT\"
+     *   * TAG - List all budgets with targetType == \"TAG\"
+     *
+     **/
+    public enum TargetType {
+        All("ALL"),
+        Compartment("COMPARTMENT"),
+        Tag("TAG"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, TargetType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (TargetType v : TargetType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        TargetType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static TargetType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new RuntimeException("Invalid TargetType: " + key);
+        }
+    };
+
+    /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
@@ -132,6 +182,7 @@ public class ListBudgetsRequest extends com.oracle.bmc.requests.BmcRequest {
             sortBy(o.getSortBy());
             lifecycleState(o.getLifecycleState());
             displayName(o.getDisplayName());
+            targetType(o.getTargetType());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());

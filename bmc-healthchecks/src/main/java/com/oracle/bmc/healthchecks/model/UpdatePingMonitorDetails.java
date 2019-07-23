@@ -161,9 +161,15 @@ public class UpdatePingMonitorDetails {
         return new Builder();
     }
 
+    /**
+     * A list of targets (hostnames or IP addresses) of the probe.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targets")
     java.util.List<String> targets;
 
+    /**
+     * A list of names of vantage points from which to execute the probe.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vantagePointNames")
     java.util.List<String> vantagePointNames;
 

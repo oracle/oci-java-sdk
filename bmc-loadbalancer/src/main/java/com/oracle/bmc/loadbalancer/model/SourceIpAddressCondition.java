@@ -4,7 +4,7 @@
 package com.oracle.bmc.loadbalancer.model;
 
 /**
- * Source IP address based match condition
+ * An access control rule condition that requires a match on the specified source IP address or address range.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -72,11 +72,11 @@ public class SourceIpAddressCondition extends RuleCondition {
     }
 
     /**
-     * IPv4 or IPv6 address range to which the source IP address of incoming packet would be matched against
+     * An IPv4 or IPv6 address range that the source IP address of an incoming packet must match.
      * <p>
-     * Only classless inter-domain routing (CIDR) format(x.x.x.x/y or x:x::x/y) is accepted
+     * The service accepts only classless inter-domain routing (CIDR) format (x.x.x.x/y or x:x::x/y) strings.
      * <p>
-     * Specify 0.0.0.0/0 or ::/0 to match all incoming traffic
+     * Specify 0.0.0.0/0 or ::/0 to match all incoming traffic.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributeValue")

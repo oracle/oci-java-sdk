@@ -83,6 +83,14 @@ public class ListBudgetsConverter {
                                     request.getDisplayName()));
         }
 
+        if (request.getTargetType() != null) {
+            target =
+                    target.queryParam(
+                            "targetType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTargetType().getValue()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

@@ -14,6 +14,8 @@ public class SummarizeMetricsDataRequest extends com.oracle.bmc.requests.BmcRequ
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
      * resources monitored by the metric that you are searching for. Use tenancyId to search in
      * the root compartment.
+     * <p>
+     * Example: `ocid1.compartment.oc1..exampleuniqueID`
      *
      */
     private String compartmentId;

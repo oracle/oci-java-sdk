@@ -18,6 +18,8 @@ public class HealthChecksClient implements HealthChecks {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("HEALTHCHECKS")
                     .serviceEndpointPrefix("healthchecks")
+                    .serviceEndpointTemplate(
+                            "https://healthchecks.{region}.oci.{secondLevelDomain}")
                     .build();
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
@@ -302,6 +304,76 @@ public class HealthChecksClient implements HealthChecks {
     @Override
     public void close() {
         client.close();
+    }
+
+    @Override
+    public ChangeHttpMonitorCompartmentResponse changeHttpMonitorCompartment(
+            ChangeHttpMonitorCompartmentRequest request) {
+        LOG.trace("Called changeHttpMonitorCompartment");
+        final ChangeHttpMonitorCompartmentRequest interceptedRequest =
+                ChangeHttpMonitorCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeHttpMonitorCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeHttpMonitorCompartmentResponse>
+                transformer = ChangeHttpMonitorCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeHttpMonitorCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangePingMonitorCompartmentResponse changePingMonitorCompartment(
+            ChangePingMonitorCompartmentRequest request) {
+        LOG.trace("Called changePingMonitorCompartment");
+        final ChangePingMonitorCompartmentRequest interceptedRequest =
+                ChangePingMonitorCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangePingMonitorCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangePingMonitorCompartmentResponse>
+                transformer = ChangePingMonitorCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangePingMonitorCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override

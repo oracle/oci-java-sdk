@@ -119,7 +119,7 @@ public class CreateAutonomousDatabaseBase {
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. The default is BRING_YOUR_OWN_LICENSE.
+     * The Oracle license model that applies to the Oracle Autonomous Database. The default is BRING_YOUR_OWN_LICENSE. Note that when provisioning an Autonomous Database using the [dedicated deployment](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm) option, this attribute must be null.
      *
      **/
     public enum LicenseModel {
@@ -155,27 +155,28 @@ public class CreateAutonomousDatabaseBase {
         }
     };
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. The default is BRING_YOUR_OWN_LICENSE.
+     * The Oracle license model that applies to the Oracle Autonomous Database. The default is BRING_YOUR_OWN_LICENSE. Note that when provisioning an Autonomous Database using the [dedicated deployment](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm) option, this attribute must be null.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     LicenseModel licenseModel;
 
     /**
-     * If set to true, indicates that an Autonomous Database preview version is being provisioned, and that the preview version's terms of service have been accepted.
+     * If set to true, indicates that an Autonomous Database preview version is being provisioned, and that the preview version's terms of service have been accepted. Note that preview version software is only available for [serverless deployments](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPreviewVersionWithServiceTermsAccepted")
     Boolean isPreviewVersionWithServiceTermsAccepted;
 
     /**
-     * Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is false.
+     * Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is false. Note that auto scaling is available for [serverless deployments](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI) only.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
     Boolean isAutoScalingEnabled;
 
     /**
-     * True if it is dedicated database.
+     * True if the database uses the [dedicated deployment](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm) option.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDedicated")

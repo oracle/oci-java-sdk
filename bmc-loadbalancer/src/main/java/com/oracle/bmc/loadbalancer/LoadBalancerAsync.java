@@ -572,7 +572,14 @@ public interface LoadBalancerAsync extends AutoCloseable {
                     handler);
 
     /**
-     * List set of all rules associated with a listener ordered by execution phase.
+     * Lists all of the rules from all of the rule sets associated with the specified listener. The response organizes
+     * the rules in the following order:
+     * <p>
+     *  Access control rules
+     * *  Allow method rules
+     * *  Request header rules
+     * *  Response header rules
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
