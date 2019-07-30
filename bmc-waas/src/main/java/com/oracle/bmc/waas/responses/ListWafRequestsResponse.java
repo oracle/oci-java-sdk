@@ -16,6 +16,11 @@ public class ListWafRequestsResponse {
     private String opcRequestId;
 
     /**
+     * For pagination of a list of items. When paging through a list, if this header appears in the response, then a partial list might have been returned. Include this value as the page parameter for the subsequent GET request to get the next batch of items.
+     */
+    private String opcNextPage;
+
+    /**
      * A list of WafRequest instances.
      */
     private java.util.List<WafRequest> items;
@@ -27,6 +32,7 @@ public class ListWafRequestsResponse {
          */
         public Builder copy(ListWafRequestsResponse o) {
             opcRequestId(o.getOpcRequestId());
+            opcNextPage(o.getOpcNextPage());
             items(o.getItems());
 
             return this;

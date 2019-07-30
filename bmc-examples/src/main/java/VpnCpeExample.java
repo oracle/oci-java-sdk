@@ -9,10 +9,12 @@ import com.oracle.bmc.core.VirtualNetworkClient;
 import com.oracle.bmc.core.model.Cpe;
 import com.oracle.bmc.core.model.CreateCpeDetails;
 import com.oracle.bmc.core.model.UpdateCpeDetails;
+import com.oracle.bmc.core.model.ChangeCpeCompartmentDetails;
 import com.oracle.bmc.core.requests.CreateCpeRequest;
 import com.oracle.bmc.core.requests.UpdateCpeRequest;
 import com.oracle.bmc.core.requests.DeleteCpeRequest;
 import com.oracle.bmc.core.requests.GetCpeRequest;
+import com.oracle.bmc.core.requests.ChangeCpeCompartmentRequest;
 import com.oracle.bmc.core.responses.CreateCpeResponse;
 import com.oracle.bmc.core.responses.UpdateCpeResponse;
 import com.oracle.bmc.core.responses.GetCpeResponse;
@@ -41,6 +43,7 @@ import java.util.concurrent.TimeUnit;
 public class VpnCpeExample {
     // Set this with your own compartment ID
     private static final String COMPARTMENT_ID = "your_Compartment_Ocid_here";
+    private static final String NEW_COMPARTMENT_ID = "your_New_Compartment_Ocid_here";
 
     private static final String TIMESTAMP_SUFFIX =
             String.valueOf(System.currentTimeMillis() % TimeUnit.SECONDS.toMillis(10L));
@@ -82,6 +85,10 @@ public class VpnCpeExample {
 
             System.out.println("Activate the customer premise equipment.");
             cc = updateCpe(virtualNetworkClient, cc.getId(), true);
+
+            System.out.println("Change Cpe compartment.");
+            changeCpeCompartment(virtualNetworkClient, cc.getId(), NEW_COMPARTMENT_ID);
+
         } finally {
             System.out.println("Delete customer premise equipment.");
             if (null != cc) {
@@ -141,5 +148,22 @@ public class VpnCpeExample {
 
         virtualNetwork.deleteCpe(DeleteCpeRequest.builder().cpeId(ccId).build());
         System.out.println("Deleted Cpe: " + cc.getId());
+    }
+
+    /*
+     * Change Compartment
+     */
+    private static void changeCpeCompartment(
+            final VirtualNetwork virtualNetwork, final String cpeId, final String newCompartment) {
+        final ChangeCpeCompartmentRequest request =
+                ChangeCpeCompartmentRequest.builder()
+                        .cpeId(cpeId)
+                        .changeCpeCompartmentDetails(
+                                ChangeCpeCompartmentDetails.builder()
+                                        .compartmentId(newCompartment)
+                                        .build())
+                        .build();
+
+        virtualNetwork.changeCpeCompartment(request);
     }
 }

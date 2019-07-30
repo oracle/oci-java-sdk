@@ -7,6 +7,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.fail;
 import static org.mockito.AdditionalMatchers.and;
 import static org.mockito.AdditionalMatchers.gt;
 import static org.mockito.AdditionalMatchers.leq;
@@ -31,12 +33,14 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import com.oracle.bmc.objectstorage.model.MultipartUpload;
+import com.oracle.bmc.objectstorage.requests.AbortMultipartUploadRequest;
 import com.oracle.bmc.objectstorage.requests.CommitMultipartUploadRequest;
 import com.oracle.bmc.objectstorage.requests.CreateMultipartUploadRequest;
 import com.oracle.bmc.objectstorage.requests.UploadPartRequest;
 import com.oracle.bmc.objectstorage.responses.CreateMultipartUploadResponse;
 import com.oracle.bmc.objectstorage.responses.UploadPartResponse;
 import com.oracle.bmc.objectstorage.transfer.internal.MultipartUtils;
+import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -498,6 +502,28 @@ public class UploadManagerTest {
         verify(assembler).newRequest(CONTENT_TYPE, CONTENT_LANG, CONTENT_ENCODING, METADATA);
         verify(assembler, times(20))
                 .addPart(any(InputStream.class), eq(CONTENT_LENGTH / 20), eq((String) null));
+    }
+
+    @Test
+    public void multiplartUpload_shouldAbort_whenNoPartsWereUploaded() {
+        final UploadManager uploadManager =
+                new UploadManager(objectStorage, getMultipartUploadConfiguration());
+
+        when(objectStorage.createMultipartUpload(any(CreateMultipartUploadRequest.class)))
+                .thenReturn(
+                        CreateMultipartUploadResponse.builder()
+                                .multipartUpload(MultipartUpload.builder().build())
+                                .build());
+        when(objectStorage.uploadPart(any(UploadPartRequest.class)))
+                .thenThrow(new BmcException(-1, null, null, null));
+
+        try {
+            uploadManager.upload(createUploadRequest());
+            fail("BmcException should have been thrown");
+        } catch (BmcException e) {
+            assertThat(e.getCause(), Matchers.instanceOf(IllegalStateException.class));
+            verify(objectStorage).abortMultipartUpload(any(AbortMultipartUploadRequest.class));
+        }
     }
 
     private static UploadConfiguration getMultipartUploadConfiguration() {

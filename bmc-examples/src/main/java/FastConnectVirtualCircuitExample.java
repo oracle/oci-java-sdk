@@ -14,6 +14,7 @@ import com.oracle.bmc.core.model.VirtualCircuitBandwidthShape;
 import com.oracle.bmc.core.model.CreateVirtualCircuitDetails;
 import com.oracle.bmc.core.model.UpdateVirtualCircuitDetails;
 import com.oracle.bmc.core.model.FastConnectProviderService;
+import com.oracle.bmc.core.model.ChangeVirtualCircuitCompartmentDetails;
 import com.oracle.bmc.core.requests.CreateVirtualCircuitRequest;
 import com.oracle.bmc.core.requests.GetVirtualCircuitRequest;
 import com.oracle.bmc.core.requests.UpdateVirtualCircuitRequest;
@@ -21,6 +22,7 @@ import com.oracle.bmc.core.requests.DeleteVirtualCircuitRequest;
 import com.oracle.bmc.core.requests.GetDrgRequest;
 import com.oracle.bmc.core.requests.DeleteDrgRequest;
 import com.oracle.bmc.core.requests.ListFastConnectProviderServicesRequest;
+import com.oracle.bmc.core.requests.ChangeVirtualCircuitCompartmentRequest;
 import com.oracle.bmc.core.requests.ListFastConnectProviderVirtualCircuitBandwidthShapesRequest;
 import com.oracle.bmc.core.responses.ListFastConnectProviderVirtualCircuitBandwidthShapesResponse;
 import com.oracle.bmc.core.responses.ListFastConnectProviderServicesResponse;
@@ -53,6 +55,7 @@ import java.util.concurrent.TimeUnit;
 public class FastConnectVirtualCircuitExample {
     // Set this with your own compartment ID
     private static final String COMPARTMENT_ID = "your_Compartment_Ocid_here";
+    private static final String NEW_COMPARTMENT_ID = "your_New_Compartment_Ocid_here";
 
     private static final String CUSTOMER_BGP_IP = "10.0.0.3/31";
     private static final String UPDATE_CUSTOMER_BGP_IP = "10.0.1.3/31";
@@ -135,6 +138,9 @@ public class FastConnectVirtualCircuitExample {
                             vcBandwidthShapes.get(1).getName(),
                             UPDATE_CUSTOMER_BGP_IP,
                             UPDATE_CUSTOMER_ASN);
+
+            System.out.println("Change virtual circuit compartment.");
+            changeVirtualCircuitCompartment(virtualNetworkClient, vc.getId(), NEW_COMPARTMENT_ID);
 
             System.out.println("Deleting virtual circuit.");
             deleteVirtualCircuit(virtualNetworkClient, vc.getId());
@@ -297,5 +303,21 @@ public class FastConnectVirtualCircuitExample {
                         VirtualCircuit.LifecycleState.Terminated)
                 .execute();
         System.out.println("Deleted virtual circuit: " + vcId);
+    }
+    /*
+     * Change Compartment
+     */
+    private static void changeVirtualCircuitCompartment(
+            final VirtualNetwork virtualNetwork, final String vcId, final String newCompartment) {
+        final ChangeVirtualCircuitCompartmentRequest request =
+                ChangeVirtualCircuitCompartmentRequest.builder()
+                        .virtualCircuitId(vcId)
+                        .changeVirtualCircuitCompartmentDetails(
+                                ChangeVirtualCircuitCompartmentDetails.builder()
+                                        .compartmentId(newCompartment)
+                                        .build())
+                        .build();
+
+        virtualNetwork.changeVirtualCircuitCompartment(request);
     }
 }

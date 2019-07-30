@@ -243,7 +243,7 @@ public class WaasPolicy {
     java.util.Date timeCreated;
 
     /**
-     * A map of host to origin for the web application. The key should be a customer friendly name for the host, ex. primary, secondary, etc.
+     * A map of host servers (origins) and their keys for the web application. Origin keys are used to associate origins to specific protection rules. The key should be a user-friendly name for the host. **Examples:** `primary` or `secondary`.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("origins")
     java.util.Map<String, Origin> origins;

@@ -22,6 +22,7 @@ import com.oracle.bmc.core.model.CreateIPSecConnectionDetails;
 import com.oracle.bmc.core.model.UpdateIPSecConnectionDetails;
 import com.oracle.bmc.core.model.UpdateIPSecConnectionTunnelDetails;
 import com.oracle.bmc.core.model.UpdateIPSecConnectionTunnelSharedSecretDetails;
+import com.oracle.bmc.core.model.ChangeIPSecConnectionCompartmentDetails;
 import com.oracle.bmc.core.requests.CreateIPSecConnectionRequest;
 import com.oracle.bmc.core.requests.UpdateIPSecConnectionRequest;
 import com.oracle.bmc.core.requests.DeleteIPSecConnectionRequest;
@@ -30,6 +31,7 @@ import com.oracle.bmc.core.requests.GetIPSecConnectionTunnelRequest;
 import com.oracle.bmc.core.requests.GetIPSecConnectionTunnelSharedSecretRequest;
 import com.oracle.bmc.core.requests.UpdateIPSecConnectionTunnelRequest;
 import com.oracle.bmc.core.requests.UpdateIPSecConnectionTunnelSharedSecretRequest;
+import com.oracle.bmc.core.requests.ChangeIPSecConnectionCompartmentRequest;
 import com.oracle.bmc.core.responses.CreateCpeResponse;
 import com.oracle.bmc.core.responses.CreateDrgResponse;
 import com.oracle.bmc.core.responses.CreateIPSecConnectionResponse;
@@ -63,6 +65,7 @@ import java.util.concurrent.TimeUnit;
 public class VpnIPSecConnectionExample {
     // Set this with your own compartment ID
     private static final String COMPARTMENT_ID = "your_Compartment_Ocid_here";
+    private static final String NEW_COMPARTMENT_ID = "your_New_Compartment_Ocid_here";
 
     private static final String TIMESTAMP_SUFFIX =
             String.valueOf(System.currentTimeMillis() % TimeUnit.SECONDS.toMillis(10L));
@@ -111,7 +114,10 @@ public class VpnIPSecConnectionExample {
             ipsec = createIPSecConnection(virtualNetworkClient, COMPARTMENT_ID, cpe, drg);
 
             System.out.println("Activate the IPSecConnection.");
-            ipsec = updateIPSecConnection(virtualNetworkClient, ipsec.getId(), true);
+            ipsec = updateIPSecConnection(virtualNetworkClient, ipsec.getId());
+
+            System.out.println("Change IPSecConnection compartment.");
+            changeIPSecCompartment(virtualNetworkClient, ipsec.getId(), NEW_COMPARTMENT_ID);
 
             System.out.println("Get tunnel for the IPSecConnection.");
             tunnel = getIPSecConnectionTunnel(virtualNetworkClient, ipsec.getId());
@@ -270,8 +276,7 @@ public class VpnIPSecConnectionExample {
     }
 
     private static IPSecConnection updateIPSecConnection(
-            final VirtualNetwork virtualNetwork, final String ipsecId, final boolean isActive)
-            throws Exception {
+            final VirtualNetwork virtualNetwork, final String ipsecId) throws Exception {
         final UpdateIPSecConnectionRequest request =
                 UpdateIPSecConnectionRequest.builder()
                         .ipscId(ipsecId)
@@ -390,5 +395,24 @@ public class VpnIPSecConnectionExample {
                         IPSecConnection.LifecycleState.Terminated)
                 .execute();
         System.out.println("Deleted IPSecConnection: " + ipsec.getId());
+    }
+
+    /*
+     * Change Compartment
+     */
+    private static void changeIPSecCompartment(
+            final VirtualNetwork virtualNetwork,
+            final String ipsecId,
+            final String newCompartment) {
+        final ChangeIPSecConnectionCompartmentRequest request =
+                ChangeIPSecConnectionCompartmentRequest.builder()
+                        .ipscId(ipsecId)
+                        .changeIPSecConnectionCompartmentDetails(
+                                ChangeIPSecConnectionCompartmentDetails.builder()
+                                        .compartmentId(newCompartment)
+                                        .build())
+                        .build();
+
+        virtualNetwork.changeIPSecConnectionCompartment(request);
     }
 }

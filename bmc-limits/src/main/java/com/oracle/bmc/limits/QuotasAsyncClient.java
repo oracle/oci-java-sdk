@@ -30,7 +30,7 @@ public class QuotasAsyncClient implements QuotasAsync {
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("QUOTAS")
-                    .serviceEndpointPrefix("none")
+                    .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://limits.{region}.oci.{secondLevelDomain}")
                     .build();
 

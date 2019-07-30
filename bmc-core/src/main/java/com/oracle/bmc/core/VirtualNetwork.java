@@ -92,6 +92,53 @@ public interface VirtualNetwork extends AutoCloseable {
             BulkDeleteVirtualCircuitPublicPrefixesRequest request);
 
     /**
+     * Moves a CPE object into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeCpeCompartmentResponse changeCpeCompartment(ChangeCpeCompartmentRequest request);
+
+    /**
+     * Moves a cross-connect into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeCrossConnectCompartmentResponse changeCrossConnectCompartment(
+            ChangeCrossConnectCompartmentRequest request);
+
+    /**
+     * Moves a cross-connect group into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeCrossConnectGroupCompartmentResponse changeCrossConnectGroupCompartment(
+            ChangeCrossConnectGroupCompartmentRequest request);
+
+    /**
+     * Moves an IPSec connection into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeIPSecConnectionCompartmentResponse changeIPSecConnectionCompartment(
+            ChangeIPSecConnectionCompartmentRequest request);
+
+    /**
      * Moves a NAT gateway into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see
      * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -102,6 +149,18 @@ public interface VirtualNetwork extends AutoCloseable {
      */
     ChangeNatGatewayCompartmentResponse changeNatGatewayCompartment(
             ChangeNatGatewayCompartmentRequest request);
+
+    /**
+     * Moves a remote peering connection (RPC) into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeRemotePeeringConnectionCompartmentResponse changeRemotePeeringConnectionCompartment(
+            ChangeRemotePeeringConnectionCompartmentRequest request);
 
     /**
      * Moves a route table into a different compartment within the same tenancy. For information
@@ -160,6 +219,18 @@ public interface VirtualNetwork extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ChangeVcnCompartmentResponse changeVcnCompartment(ChangeVcnCompartmentRequest request);
+
+    /**
+     * Moves a virtual circuit into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeVirtualCircuitCompartmentResponse changeVirtualCircuitCompartment(
+            ChangeVirtualCircuitCompartmentRequest request);
 
     /**
      * Connects this local peering gateway (LPG) to another one in the same region.

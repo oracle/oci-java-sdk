@@ -150,49 +150,49 @@ public class WafConfigDetails {
     }
 
     /**
-     * The access rules applied to the Web Application Firewall. Used for defining custom access policies with the combination of `ALLOW`, `DETECT`, and `BLOCK` rules, based on different criteria.
+     * The access rules applied to the Web Application Firewall. Access rules allow custom content access policies to be defined and `ALLOW`, `DETECT`, or `BLOCK` actions to be taken on a request when specified criteria are met.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessRules")
     java.util.List<AccessRule> accessRules;
 
     /**
-     * The IP address rate limiting settings used to limit the number of requests from an address.
+     * The settings used to limit the number of requests from an IP address.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("addressRateLimiting")
     AddressRateLimiting addressRateLimiting;
 
     /**
-     * A list of CAPTCHA challenge settings. These are used to challenge requests with a CAPTCHA to block bots.
+     * A list of CAPTCHA challenge settings. CAPTCHAs challenge requests to ensure a human is attempting to reach the specified URL and not a bot.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("captchas")
     java.util.List<Captcha> captchas;
 
     /**
-     * The device fingerprint challenge settings. Used to detect unique devices based on the device fingerprint information collected in order to block bots.
+     * The device fingerprint challenge settings. Blocks bots based on unique device fingerprint information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deviceFingerprintChallenge")
     DeviceFingerprintChallenge deviceFingerprintChallenge;
 
     /**
-     * The human interaction challenge settings. Used to look for natural human interactions such as mouse movements, time on site, and page scrolling to identify bots.
+     * The human interaction challenge settings. Detects natural human interactions such as mouse movements, time on site, and page scrolling to identify bots.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("humanInteractionChallenge")
     HumanInteractionChallenge humanInteractionChallenge;
 
     /**
-     * The JavaScript challenge settings. Used to challenge requests with a JavaScript challenge and take the action if a browser has no JavaScript support in order to block bots.
+     * The JavaScript challenge settings. Blocks bots by challenging requests from browsers that have no JavaScript support.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("jsChallenge")
     JsChallenge jsChallenge;
 
     /**
-     * The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
+     * The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but is not required upon updating the configuration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("origin")
     String origin;
 
     /**
-     * The settings to apply to protection rules.
+     * The settings applied to protection rules.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protectionSettings")
     ProtectionSettings protectionSettings;

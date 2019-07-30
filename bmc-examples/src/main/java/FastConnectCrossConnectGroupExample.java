@@ -14,6 +14,7 @@ import com.oracle.bmc.core.model.CreateCrossConnectDetails;
 import com.oracle.bmc.core.model.CreateCrossConnectGroupDetails;
 import com.oracle.bmc.core.model.UpdateCrossConnectGroupDetails;
 import com.oracle.bmc.core.model.UpdateCrossConnectDetails;
+import com.oracle.bmc.core.model.ChangeCrossConnectGroupCompartmentDetails;
 import com.oracle.bmc.core.requests.CreateCrossConnectRequest;
 import com.oracle.bmc.core.requests.GetCrossConnectGroupRequest;
 import com.oracle.bmc.core.requests.UpdateCrossConnectRequest;
@@ -22,6 +23,7 @@ import com.oracle.bmc.core.requests.CreateCrossConnectGroupRequest;
 import com.oracle.bmc.core.requests.GetCrossConnectRequest;
 import com.oracle.bmc.core.requests.UpdateCrossConnectGroupRequest;
 import com.oracle.bmc.core.requests.DeleteCrossConnectGroupRequest;
+import com.oracle.bmc.core.requests.ChangeCrossConnectGroupCompartmentRequest;
 import com.oracle.bmc.core.responses.GetCrossConnectResponse;
 import com.oracle.bmc.core.responses.CreateCrossConnectResponse;
 import com.oracle.bmc.core.responses.CreateCrossConnectGroupResponse;
@@ -57,6 +59,7 @@ import java.util.concurrent.TimeUnit;
 public class FastConnectCrossConnectGroupExample {
     // Set this with your own compartment ID
     private static final String COMPARTMENT_ID = "your_Compartment_Ocid_here";
+    private static final String NEW_COMPARTMENT_ID = "your_New_Compartment_Ocid_here";
 
     private static final String TIMESTAMP_SUFFIX =
             String.valueOf(System.currentTimeMillis() % TimeUnit.SECONDS.toMillis(10L));
@@ -121,6 +124,10 @@ public class FastConnectCrossConnectGroupExample {
             System.out.println(
                     "Activate the CrossConnect. This also activate CrossConnectGroup as well.");
             cc = updateCrossConnect(virtualNetworkClient, cc.getId(), true);
+
+            System.out.println("Change the CrossConnectGroup compartment.");
+            changeCrossConnectGroupCompartment(
+                    virtualNetworkClient, cc.getId(), NEW_COMPARTMENT_ID);
         } finally {
             System.out.println("Remove physical connection from LAG.");
             if (null != cc) {
@@ -332,5 +339,22 @@ public class FastConnectCrossConnectGroupExample {
                         CrossConnect.LifecycleState.Terminated)
                 .execute();
         System.out.println("Deleted CrossConnect: " + ccId);
+    }
+
+    /*
+     * Change Compartment
+     */
+    private static void changeCrossConnectGroupCompartment(
+            final VirtualNetwork virtualNetwork, final String ccgId, final String newCompartment) {
+        final ChangeCrossConnectGroupCompartmentRequest request =
+                ChangeCrossConnectGroupCompartmentRequest.builder()
+                        .crossConnectGroupId(ccgId)
+                        .changeCrossConnectGroupCompartmentDetails(
+                                ChangeCrossConnectGroupCompartmentDetails.builder()
+                                        .compartmentId(newCompartment)
+                                        .build())
+                        .build();
+
+        virtualNetwork.changeCrossConnectGroupCompartment(request);
     }
 }

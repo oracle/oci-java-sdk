@@ -4,7 +4,7 @@
 package com.oracle.bmc.waas.model;
 
 /**
- * A list of Web Application Firewall log entries. Each entry is a JSON object whose fields vary based on log type. Logs record what rules and countermeasures are triggered by requests and are used as a basis to move request handling into block mode.
+ * A list of Web Application Firewall log entries. Each entry is a JSON object, including a timestamp property and other fields varying based on log type. Logs record what rules and countermeasures are triggered by requests and are used as a basis to move request handling into block mode. For more information about WAF logs, see [WAF Logs](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/waflogs.htm).
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -358,13 +358,15 @@ public class WafLog {
     }
 
     /**
-     * The action taken on the request.
+     * The action taken on the request, either `ALLOW`, `DETECT`, or `BLOCK`.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     String action;
 
     /**
-     * The CAPTCHA action taken on the request.
+     * The CAPTCHA action taken on the request, `ALLOW` or `BLOCK`. For more information about
+     * CAPTCHAs, see `UpdateCaptchas`.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("captchaAction")
     String captchaAction;
@@ -394,25 +396,29 @@ public class WafLog {
     String clientAddress;
 
     /**
-     * The name of the country where the request was made.
+     * The name of the country where the request originated.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("countryName")
     String countryName;
 
     /**
-     * The `User-Agent` header value of the request.
+     * The value of the request's `User-Agent` header field.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("userAgent")
     String userAgent;
 
     /**
-     * The domain where the request was sent.
+     * The `Host` header data of the request.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("domain")
     String domain;
 
     /**
-     * A map of protection rule keys to detection message details.
+     * A map of protection rule keys to detection message details. Detections are
+     * requests that matched the criteria of a protection rule but the rule's
+     * action was set to `DETECT`.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protectionRuleDetections")
     java.util.Map<String, String> protectionRuleDetections;
@@ -430,7 +436,7 @@ public class WafLog {
     String requestUrl;
 
     /**
-     * The map of header names to values of the request sent to the origin.
+     * The map of the request's header names to their respective values.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("httpHeaders")
     java.util.Map<String, String> httpHeaders;
@@ -454,13 +460,17 @@ public class WafLog {
     Integer responseSize;
 
     /**
-     * The incident key that matched the request.
+     * The incident key of a request. An incident key is generated for
+     * each request processed by the Web Application Firewall and is used to
+     * idenitfy blocked requests in applicable logs.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("incidentKey")
     String incidentKey;
 
     /**
-     * TODO: what is this? MD5 hash of the request? SHA1?
+     * The hashed signature of the device's fingerprint. For more information,
+     * see `DeviceFingerPrintChallenge`.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("fingerprint")
@@ -473,43 +483,55 @@ public class WafLog {
     String device;
 
     /**
-     * The ISO 3166-1 country code of the request.
+     * ISO 3166-1 alpha-2 code of the country from which the request originated.
+     * For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("countryCode")
     String countryCode;
 
     /**
-     * A map of header names to values of the original request.
+     * A map of header names to values of the request sent to the origin, including any headers
+     * appended by the Web Application Firewall.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("requestHeaders")
     java.util.Map<String, String> requestHeaders;
 
     /**
-     * The `ThreatFeed` key that matched the request.
+     * The `ThreatFeed` key that matched the request. For more information about
+     * threat feeds, see `UpdateThreatFeeds`.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("threatFeedKey")
     String threatFeedKey;
 
     /**
-     * The `AccessRule` key that matched the request.
+     * The `AccessRule` key that matched the request. For more information about
+     * access rules, see `UpdateAccessRules`.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessRuleKey")
     String accessRuleKey;
 
     /**
-     * The `AddressRateLimiting` key that matched the request.
+     * The `AddressRateLimiting` key that matched the request. For more information
+     * about address rate limiting, see `UpdateWafAddressRateLimiting`.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("addressRateLimitingKey")
     String addressRateLimitingKey;
 
     /**
-     * The `Date` header value of the request.
+     * The date and time the Web Application Firewall processed the request and logged it.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     String timestamp;
 
     /**
-     * The type of log of the request.
+     * The type of log of the request. For more about log types, see [WAF Logs](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/waflogs.htm).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("logType")
     String logType;
@@ -521,8 +543,7 @@ public class WafLog {
     String originAddress;
 
     /**
-     * The amount of time it took the origin server to respond to the request.
-     * TODO: determine unit of time and example
+     * The amount of time it took the origin server to respond to the request, in seconds.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("originResponseTime")

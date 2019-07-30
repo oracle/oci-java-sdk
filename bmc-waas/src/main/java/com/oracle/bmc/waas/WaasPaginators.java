@@ -1258,6 +1258,118 @@ public class WaasPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listWafRequests operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListWafRequestsResponse> listWafRequestsResponseIterator(
+            final ListWafRequestsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListWafRequestsRequest.Builder, ListWafRequestsRequest, ListWafRequestsResponse>(
+                new com.google.common.base.Supplier<ListWafRequestsRequest.Builder>() {
+                    @Override
+                    public ListWafRequestsRequest.Builder get() {
+                        return ListWafRequestsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListWafRequestsResponse, String>() {
+                    @Override
+                    public String apply(ListWafRequestsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWafRequestsRequest.Builder>,
+                        ListWafRequestsRequest>() {
+                    @Override
+                    public ListWafRequestsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWafRequestsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWafRequestsRequest, ListWafRequestsResponse>() {
+                    @Override
+                    public ListWafRequestsResponse apply(ListWafRequestsRequest request) {
+                        return client.listWafRequests(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.waas.model.WafRequest} objects
+     * contained in responses from the listWafRequests operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.waas.model.WafRequest} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.waas.model.WafRequest> listWafRequestsRecordIterator(
+            final ListWafRequestsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListWafRequestsRequest.Builder, ListWafRequestsRequest, ListWafRequestsResponse,
+                com.oracle.bmc.waas.model.WafRequest>(
+                new com.google.common.base.Supplier<ListWafRequestsRequest.Builder>() {
+                    @Override
+                    public ListWafRequestsRequest.Builder get() {
+                        return ListWafRequestsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListWafRequestsResponse, String>() {
+                    @Override
+                    public String apply(ListWafRequestsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWafRequestsRequest.Builder>,
+                        ListWafRequestsRequest>() {
+                    @Override
+                    public ListWafRequestsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWafRequestsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWafRequestsRequest, ListWafRequestsResponse>() {
+                    @Override
+                    public ListWafRequestsResponse apply(ListWafRequestsRequest request) {
+                        return client.listWafRequests(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWafRequestsResponse,
+                        java.util.List<com.oracle.bmc.waas.model.WafRequest>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.waas.model.WafRequest> apply(
+                            ListWafRequestsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listWafTraffic operation. This iterable
      * will fetch more data from the server as needed.
      *

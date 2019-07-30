@@ -17,7 +17,7 @@ public class WorkRequestClient implements WorkRequest {
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("WORKREQUEST")
-                    .serviceEndpointPrefix("none")
+                    .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
                     .build();
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
