@@ -30,7 +30,7 @@ public class WorkRequestAsyncClient implements WorkRequestAsync {
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("WORKREQUEST")
-                    .serviceEndpointPrefix("none")
+                    .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://iaas.{region}.{secondLevelDomain}")
                     .build();
 

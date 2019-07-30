@@ -270,19 +270,23 @@ public class ProtectionSettings {
     String blockErrorPageDescription;
 
     /**
-     * The maximum number of arguments allowed to be passed to your application before an action is taken. If unspecified, defaults to `255`.
+     * The maximum number of arguments allowed to be passed to your application before an action is taken. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `255`. This setting only applies if a corresponding protection rule is enabled, such as the \"Number of Arguments Limits\" rule (key: 960335).
+     * <p>
+     * Example: If `maxArgumentCount` to `2` for the Max Number of Arguments protection rule (key: 960335), the following requests would be blocked:
+     * `GET /myapp/path?query=one&query=two&query=three`
+     * `POST /myapp/path` with Body `{\"argument1\":\"one\",\"argument2\":\"two\",\"argument3\":\"three\"}`
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxArgumentCount")
     Integer maxArgumentCount;
 
     /**
-     * The maximum length allowed for each argument name, in characters. If unspecified, defaults to `400`.
+     * The maximum length allowed for each argument name, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `400`. This setting only applies if a corresponding protection rule is enabled, such as the \"Values Limits\" rule (key: 960208).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxNameLengthPerArgument")
     Integer maxNameLengthPerArgument;
 
     /**
-     * The maximum length allowed for the sum of all argument names, in characters. If unspecified, defaults to `64000`.
+     * The maximum length allowed for the sum of the argument name and value, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `64000`. This setting only applies if a corresponding protection rule is enabled, such as the \"Total Arguments Limits\" rule (key: 960341).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxTotalNameLengthOfArguments")
     Integer maxTotalNameLengthOfArguments;
@@ -362,13 +366,13 @@ public class ProtectionSettings {
         }
     };
     /**
-     * The list of allowed HTTP methods. If unspecified, default to `[OPTIONS, GET, HEAD, POST]`.
+     * The list of allowed HTTP methods. If unspecified, default to `[OPTIONS, GET, HEAD, POST]`. This setting only applies if a corresponding protection rule is enabled, such as the \"Restrict HTTP Request Methods\" rule (key: 911100).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowedHttpMethods")
     java.util.List<AllowedHttpMethods> allowedHttpMethods;
 
     /**
-     * The list of media types to allow for inspection, if `isResponseInspected` is enabled. Only responses with MIME types in this list will be inspected. If unspecified, defaults to `[`text/html`, `text/plain`, `text/xml`]`.
+     * The list of media types to allow for inspection, if `isResponseInspected` is enabled. Only responses with MIME types in this list will be inspected. If unspecified, defaults to `[\"text/html\", \"text/plain\", \"text/xml\"]`.
      * <p>
      * Supported MIME types include:
      * <p>

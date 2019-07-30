@@ -30,7 +30,7 @@ public class FunctionsInvokeAsyncClient implements FunctionsInvokeAsync {
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("FUNCTIONSINVOKE")
-                    .serviceEndpointPrefix("none")
+                    .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://functions.{region}.{secondLevelDomain}")
                     .build();
 

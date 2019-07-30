@@ -2,6 +2,15 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
+## 1.5.16 - 2019-07-30
+### Added
+- Support for the Mumbai (BOM) region
+- Support for the Events service
+- Support for moving streams across compartments in the Streaming service
+- Support for moving FastConnect resources across compartments in the Networking service
+- Support for moving policies across compartments in the Web Application Acceleration and Security service
+- Support for tagging FastConnect resources in the Networking service
+
 ## 1.5.15 - 2019-07-23
 ### Added
 - Support for moving resources across compartments in the Database service

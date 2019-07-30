@@ -30,7 +30,7 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("FUNCTIONSMANAGEMENT")
-                    .serviceEndpointPrefix("none")
+                    .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://functions.{region}.{secondLevelDomain}")
                     .build();
 

@@ -30,7 +30,7 @@ public class AutoScalingAsyncClient implements AutoScalingAsync {
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("AUTOSCALING")
-                    .serviceEndpointPrefix("none")
+                    .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://autoscaling.{region}.oci.{secondLevelDomain}")
                     .build();
 

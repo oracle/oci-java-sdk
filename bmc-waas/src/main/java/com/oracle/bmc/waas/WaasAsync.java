@@ -71,6 +71,39 @@ public interface WaasAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Moves certificate into a different compartment. When provided, If-Match is checked against ETag values of the certificate.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeCertificateCompartmentResponse> changeCertificateCompartment(
+            ChangeCertificateCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeCertificateCompartmentRequest,
+                            ChangeCertificateCompartmentResponse>
+                    handler);
+
+    /**
+     * Moves WAAS policy into a different compartment. When provided, If-Match is checked against ETag values of the WAAS policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeWaasPolicyCompartmentResponse> changeWaasPolicyCompartment(
+            ChangeWaasPolicyCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeWaasPolicyCompartmentRequest, ChangeWaasPolicyCompartmentResponse>
+                    handler);
+
+    /**
      * Allows an SSL certificate to be added to a WAAS policy. The Web Application Firewall terminates SSL connections to inspect requests in runtime, and then re-encrypts requests before sending them to the origin for fulfillment.
      * <p>
      * For more information, see [WAF Settings](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/wafsettings.htm).
@@ -388,7 +421,7 @@ public interface WaasAsync extends AutoCloseable {
     /**
      * Gets the list of good bots defined in the Web Application Firewall configuration for a WAAS policy.
      * <p>
-     * The list is sorted ascending by `key`.
+     * The list is sorted by `key`, in ascending order.
      *
      *
      * @param request The request object containing the details to send
@@ -404,8 +437,8 @@ public interface WaasAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the list of protection rules in the Web Application Firewall configuration for a WAAS policy, including currently defined rules and recommended rules.
-     * The list is sorted ascending by `key`.
+     * Gets the list of available protection rules for a WAAS policy. Use the `GetWafConfig` operation to view a list of currently configured protection rules for the Web Application Firewall, or use the `ListRecommendations` operation to get a list of recommended protection rules for the Web Application Firewall.
+     * The list is sorted by `key`, in ascending order.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -424,7 +457,7 @@ public interface WaasAsync extends AutoCloseable {
      * Gets the list of recommended Web Application Firewall protection rules.
      * <p>
      * Use the `POST /waasPolicies/{waasPolicyId}/actions/acceptWafConfigRecommendations` method to accept recommended Web Application Firewall protection rules. For more information, see [WAF Protection Rules](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/wafprotectionrules.htm).
-     * The list is sorted ascending by `key`.
+     * The list is sorted by `key`, in ascending order.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -441,8 +474,8 @@ public interface WaasAsync extends AutoCloseable {
 
     /**
      * Gets the list of available web application threat intelligence feeds
-     * and the actions set for each feed. The list is sorted ascending by
-     * `key`.
+     * and the actions set for each feed. The list is sorted by `key`,
+     * in ascending order.
      *
      *
      * @param request The request object containing the details to send
@@ -473,7 +506,7 @@ public interface WaasAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the number of blocked requests by a Web Application Firewall feature in five minute blocks, in ascending order by `timeObserved`.
+     * Gets the number of blocked requests by a Web Application Firewall feature in five minute blocks, sorted by `timeObserved` in ascending order (starting from oldest data).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -490,8 +523,8 @@ public interface WaasAsync extends AutoCloseable {
 
     /**
      * Gets structured Web Application Firewall event logs for a WAAS
-     * policy. The list is sorted by the `timeObserved` starting from the
-     * oldest recorded event (ascending).
+     * policy. Sorted by the `timeObserved` in ascending order (starting from the
+     * oldest recorded event).
      *
      *
      * @param request The request object containing the details to send
@@ -508,7 +541,7 @@ public interface WaasAsync extends AutoCloseable {
     /**
      * Gets the number of requests managed by a Web Application Firewall
      * over a specified period of time, including blocked requests. Sorted
-     * by `timeObserved` with oldest requests first (ascending).
+     * by `timeObserved` in ascending order (starting from oldest requests).
      *
      *
      * @param request The request object containing the details to send
@@ -525,7 +558,7 @@ public interface WaasAsync extends AutoCloseable {
 
     /**
      * Gets the Web Application Firewall traffic data for a WAAS policy.
-     * Sorted by `timeObserved` with oldest data points first (ascending).
+     * Sorted by `timeObserved` in ascending order (starting from oldest data).
      *
      *
      * @param request The request object containing the details to send
@@ -572,11 +605,14 @@ public interface WaasAsync extends AutoCloseable {
 
     /**
      * Updates the list of access rules in the Web Application Firewall configuration for a specified WAAS policy. Access rules allow explicit actions to be defined and executed for requests that meet various conditions. A rule action can be set to allow, detect, or block requests. The detect setting allows the request to pass through the Web Application Firewall and is tagged with a `DETECT` flag in the Web Application Firewall's log.
+     * <p>
      * This operation can create, delete, update, and/or reorder access rules depending on the structure of the request body.
-     * Updating an existing access rule can be accomplished by changing the properties of the access rule object with a non-empty `key` property in the list.
-     * Reordering of access rules can be accomplished by changing the order of the access rules in the list when updating.
-     * Creating an access rule can be accomplished by adding a new access rule object to the list without a `key` property. A `key` will be generated for the new access rule upon update.
-     * Deleting an access rule can be accomplished by removing the existing access rule object from the list. Any existing access rule with a `key` that is not present in the list of access rules sent in the request will be deleted.
+     * <p>
+     * Access rules can be updated by changing the properties of the access rule object with the rule's key specified in the key field. Access rules can be reordered by changing the order of the access rules in the list when updating.
+     * <p>
+     * Access rules can be created by adding a new access rule object to the list without a `key` property specified. A `key` will be generated for the new access rule upon update.
+     * <p>
+     * Any existing access rules that are not specified with a `key` in the list of access rules will be deleted upon update.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -594,9 +630,11 @@ public interface WaasAsync extends AutoCloseable {
     /**
      * Updates the list of CAPTCHA challenges in the Web Application Firewall configuration for a WAAS policy.
      * This operation can create, update, or delete CAPTCHAs depending on the structure of the request body.
-     * Updating an existing CAPTCHA can be accomplished by changing the properties of the CAPTCHA object with a non-empty `key` property in the list.
-     * Creating a CAPTCHA can be accomplished by adding a new CAPTCHA object to the list without a `key` property. A `key` will be generated for the new CAPTCHA upon update.
-     * Deleting a CAPTCHA can be accomplished by removing the existing CAPTCHA object from the list. Any existing CAPTCHA with a `key` that is not present in the list of CAPTCHAs sent in the request will be deleted.
+     * CAPTCHA challenges can be updated by changing the properties of the CAPTCHA object with the rule's key specified in the key field. CAPTCHA challenges can be reordered by changing the order of the CAPTCHA challenges in the list when updating.
+     * <p>
+     * CAPTCHA challenges can be created by adding a new access rule object to the list without a `key` property specified. A `key` will be generated for the new CAPTCHA challenges upon update.
+     * <p>
+     * Any existing CAPTCHA challenges that are not specified with a `key` in the list of CAPTCHA challenges will be deleted upon update.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -651,7 +689,7 @@ public interface WaasAsync extends AutoCloseable {
     /**
      * Updates the list of good bots in the Web Application Firewall configuration for a policy. Only the fields specified in the request body will be updated, all other configuration properties will remain unchanged.
      * <p>
-     * Good bots allows you to manage access for bots from known providers, such as Google or Baidu. For more information about good bots, please see [Bot Management](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/botmanagement.htm).
+     * Good bots allows you to manage access for bots from known providers, such as Google or Baidu. For more information about good bots, see [Bot Management](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/botmanagement.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -718,7 +756,7 @@ public interface WaasAsync extends AutoCloseable {
     /**
      * Updates the action for each specified protection rule. Requests can either be allowed, blocked, or trigger an alert if they meet the parameters of an applied rule. For more information on protection rules, see [WAF Protection Rules](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/wafprotectionrules.htm).
      * This operation can update or disable protection rules depending on the structure of the request body.
-     * Updating an existing protection rule can be accomplished by changing the properties of the protection rule object with a non-empty `key` property in the list.
+     * Protection rules can be updated by changing the properties of the protection rule object with the rule's key specified in the key field.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -767,7 +805,7 @@ public interface WaasAsync extends AutoCloseable {
 
     /**
      * Updates the details of a WAAS policy, including origins and tags. Only the fields specified in the request body will be updated; all other properties will remain unchanged.
-     * To update platform provided resources such as `GoodBots`, `ProtectionRules`, and `ThreatFeeds` first retrieve the list of available resources with the related list operation such as `GetThreatFeeds` or `GetProtectionRules`.
+     * To update platform provided resources such as `GoodBots`, `ProtectionRules`, and `ThreatFeeds`, first retrieve the list of available resources with the related list operation such as `GetThreatFeeds` or `GetProtectionRules`.
      * The returned list will contain objects with `key` properties that can be used to update the resource during the `UpdateWaasPolicy` request.
      *
      * @param request The request object containing the details to send
@@ -802,8 +840,8 @@ public interface WaasAsync extends AutoCloseable {
     /**
      * Updates the Web Application Firewall configuration for a specified WAAS policy.
      * <p>
-     * To update platform provided resources such as `GoodBots`, `ProtectionRules`, and `ThreatFeeds`
-     * first retrieve the list of available resources with the related list operation such as
+     * To update platform provided resources such as `GoodBots`, `ProtectionRules`, and `ThreatFeeds`,
+     * first retrieve the list of available resources with the related list operation, such as
      * `GetThreatFeeds` or `GetProtectionRules`.
      * <p>
      * The returned list will contain objects with `key` properties that can be used to update the
@@ -824,11 +862,14 @@ public interface WaasAsync extends AutoCloseable {
 
     /**
      * Updates the list of IP addresses that bypass the Web Application Firewall for a WAAS policy. Supports both single IP addresses or subnet masks (CIDR notation).
+     * <p>
      * This operation can create, delete, update, and/or reorder whitelists depending on the structure of the request body.
-     * Updating an existing whitelist can be accomplished by changing the properties of the whitelist object with a non-empty `key` property in the list.
-     * Reordering of whitelists can be accomplished by changing the order of the whitelists in the list when updating.
-     * Creating a whitelist can be accomplished by adding a new whitelist object to the list without a `key` property. A `key` will be generated for the new whitelist upon update.
-     * Deleting a whitelist can be accomplished by removing the existing whitelist object from the list. Any existing whitelist with a `key` that is not present in the list of whitelists sent in the request will be deleted.
+     * <p>
+     * Whitelists can be updated by changing the properties of the whitelist object with the rule's key specified in the `key` field. Whitelists can be reordered by changing the order of the whitelists in the list of objects when updating.
+     * <p>
+     * Whitelists can be created by adding a new whitelist object to the list without a `key` property specified. A `key` will be generated for the new whitelist upon update.
+     * <p>
+     * Whitelists can be deleted by removing the existing whitelist object from the list. Any existing whitelists that are not specified with a `key` in the list of access rules will be deleted upon update.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

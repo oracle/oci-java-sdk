@@ -30,7 +30,7 @@ public class BudgetAsyncClient implements BudgetAsync {
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("BUDGET")
-                    .serviceEndpointPrefix("none")
+                    .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://usage.{region}.oci.{secondLevelDomain}")
                     .build();
 

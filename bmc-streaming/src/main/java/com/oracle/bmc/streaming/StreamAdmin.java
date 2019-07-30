@@ -37,6 +37,14 @@ public interface StreamAdmin extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Moves a resource into a different compartment. When provided, If-Match is checked against ETag values of the resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeStreamCompartmentResponse changeStreamCompartment(ChangeStreamCompartmentRequest request);
+
+    /**
      * Starts the provisioning of a new stream.
      * To track the progress of the provisioning, you can periodically call {@link #getStream(GetStreamRequest) getStream}.
      * In the response, the `lifecycleState` parameter of the {@link Stream} object tells you its current state.

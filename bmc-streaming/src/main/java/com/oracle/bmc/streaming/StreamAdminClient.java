@@ -377,6 +377,39 @@ public class StreamAdminClient implements StreamAdmin {
     }
 
     @Override
+    public ChangeStreamCompartmentResponse changeStreamCompartment(
+            ChangeStreamCompartmentRequest request) {
+        LOG.trace("Called changeStreamCompartment");
+        final ChangeStreamCompartmentRequest interceptedRequest =
+                ChangeStreamCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeStreamCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeStreamCompartmentResponse>
+                transformer = ChangeStreamCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getChangeStreamCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateStreamResponse createStream(CreateStreamRequest request) {
         LOG.trace("Called createStream");
         final CreateStreamRequest interceptedRequest =

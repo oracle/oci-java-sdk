@@ -125,6 +125,88 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves a CPE object into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeCpeCompartmentResponse> changeCpeCompartment(
+            ChangeCpeCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeCpeCompartmentRequest, ChangeCpeCompartmentResponse>
+                    handler);
+
+    /**
+     * Moves a cross-connect into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeCrossConnectCompartmentResponse>
+            changeCrossConnectCompartment(
+                    ChangeCrossConnectCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeCrossConnectCompartmentRequest,
+                                    ChangeCrossConnectCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves a cross-connect group into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeCrossConnectGroupCompartmentResponse>
+            changeCrossConnectGroupCompartment(
+                    ChangeCrossConnectGroupCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeCrossConnectGroupCompartmentRequest,
+                                    ChangeCrossConnectGroupCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves an IPSec connection into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeIPSecConnectionCompartmentResponse>
+            changeIPSecConnectionCompartment(
+                    ChangeIPSecConnectionCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeIPSecConnectionCompartmentRequest,
+                                    ChangeIPSecConnectionCompartmentResponse>
+                            handler);
+
+    /**
      * Moves a NAT gateway into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see
      * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -142,6 +224,27 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ChangeNatGatewayCompartmentRequest, ChangeNatGatewayCompartmentResponse>
                     handler);
+
+    /**
+     * Moves a remote peering connection (RPC) into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeRemotePeeringConnectionCompartmentResponse>
+            changeRemotePeeringConnectionCompartment(
+                    ChangeRemotePeeringConnectionCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeRemotePeeringConnectionCompartmentRequest,
+                                    ChangeRemotePeeringConnectionCompartmentResponse>
+                            handler);
 
     /**
      * Moves a route table into a different compartment within the same tenancy. For information
@@ -241,6 +344,27 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ChangeVcnCompartmentRequest, ChangeVcnCompartmentResponse>
                     handler);
+
+    /**
+     * Moves a virtual circuit into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeVirtualCircuitCompartmentResponse>
+            changeVirtualCircuitCompartment(
+                    ChangeVirtualCircuitCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeVirtualCircuitCompartmentRequest,
+                                    ChangeVirtualCircuitCompartmentResponse>
+                            handler);
 
     /**
      * Connects this local peering gateway (LPG) to another one in the same region.

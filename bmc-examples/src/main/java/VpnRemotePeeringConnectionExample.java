@@ -14,10 +14,12 @@ import com.oracle.bmc.core.requests.GetDrgRequest;
 import com.oracle.bmc.core.model.RemotePeeringConnection;
 import com.oracle.bmc.core.model.CreateRemotePeeringConnectionDetails;
 import com.oracle.bmc.core.model.UpdateRemotePeeringConnectionDetails;
+import com.oracle.bmc.core.model.ChangeRemotePeeringConnectionCompartmentDetails;
 import com.oracle.bmc.core.requests.CreateRemotePeeringConnectionRequest;
 import com.oracle.bmc.core.requests.UpdateRemotePeeringConnectionRequest;
 import com.oracle.bmc.core.requests.DeleteRemotePeeringConnectionRequest;
 import com.oracle.bmc.core.requests.GetRemotePeeringConnectionRequest;
+import com.oracle.bmc.core.requests.ChangeRemotePeeringConnectionCompartmentRequest;
 import com.oracle.bmc.core.responses.CreateDrgResponse;
 
 import com.oracle.bmc.core.responses.CreateRemotePeeringConnectionResponse;
@@ -47,6 +49,7 @@ import java.util.concurrent.TimeUnit;
 public class VpnRemotePeeringConnectionExample {
     // Set this with your own compartment ID
     private static final String COMPARTMENT_ID = "your_Compartment_Ocid_here";
+    private static final String NEW_COMPARTMENT_ID = "your_New_Compartment_Ocid_here";
 
     private static final String TIMESTAMP_SUFFIX =
             String.valueOf(System.currentTimeMillis() % TimeUnit.SECONDS.toMillis(10L));
@@ -92,6 +95,9 @@ public class VpnRemotePeeringConnectionExample {
             System.out.println("Activate the RemotePeeringConnection.");
             cc = updateRemotePeeringConnection(virtualNetworkClient, cc.getId(), true);
 
+            System.out.println("Change RemotePeeringConnection compartment.");
+            changeRemotePeeringConnectionCompartment(
+                    virtualNetworkClient, cc.getId(), NEW_COMPARTMENT_ID);
         } finally {
             System.out.println("Delete RemotePeeringConnection.");
             if (null != cc) {
@@ -240,5 +246,24 @@ public class VpnRemotePeeringConnectionExample {
                         RemotePeeringConnection.LifecycleState.Terminated)
                 .execute();
         System.out.println("Deleted RemotePeeringConnection: " + cc.getId());
+    }
+
+    /*
+     * Change Compartment
+     */
+
+    private static void changeRemotePeeringConnectionCompartment(
+            final VirtualNetwork virtualNetwork, final String rpcId, final String newCompartment) {
+        final ChangeRemotePeeringConnectionCompartmentRequest request =
+                ChangeRemotePeeringConnectionCompartmentRequest.builder()
+                        .remotePeeringConnectionId(rpcId)
+                        .changeRemotePeeringConnectionCompartmentDetails(
+                                ChangeRemotePeeringConnectionCompartmentDetails.builder()
+                                        .compartmentId(newCompartment)
+                                        .build())
+                        .build();
+
+        // if resource is in provisioning, wait until provisioned
+        virtualNetwork.changeRemotePeeringConnectionCompartment(request);
     }
 }

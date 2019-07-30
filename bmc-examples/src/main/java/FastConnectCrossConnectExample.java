@@ -12,11 +12,13 @@ import com.oracle.bmc.core.model.CrossConnectLocation;
 import com.oracle.bmc.core.model.CrossConnectPortSpeedShape;
 import com.oracle.bmc.core.model.CreateCrossConnectDetails;
 import com.oracle.bmc.core.model.UpdateCrossConnectDetails;
+import com.oracle.bmc.core.model.ChangeCrossConnectCompartmentDetails;
 import com.oracle.bmc.core.requests.CreateCrossConnectRequest;
 import com.oracle.bmc.core.requests.GetCrossConnectGroupRequest;
 import com.oracle.bmc.core.requests.UpdateCrossConnectRequest;
 import com.oracle.bmc.core.requests.DeleteCrossConnectRequest;
 import com.oracle.bmc.core.requests.GetCrossConnectRequest;
+import com.oracle.bmc.core.requests.ChangeCrossConnectCompartmentRequest;
 import com.oracle.bmc.core.responses.CreateCrossConnectResponse;
 import com.oracle.bmc.core.responses.ListCrossConnectLocationsResponse;
 import com.oracle.bmc.core.responses.ListCrossconnectPortSpeedShapesResponse;
@@ -48,6 +50,7 @@ import java.util.concurrent.TimeUnit;
 public class FastConnectCrossConnectExample {
     // Set this with your own compartment ID
     private static final String COMPARTMENT_ID = "your_Compartment_Ocid_here";
+    private static final String NEW_COMPARTMENT_ID = "your_New_Compartment_Ocid_here";
 
     private static final String TIMESTAMP_SUFFIX =
             String.valueOf(System.currentTimeMillis() % TimeUnit.SECONDS.toMillis(10L));
@@ -103,6 +106,9 @@ public class FastConnectCrossConnectExample {
 
             System.out.println("Activate the CrossConnect.");
             cc = updateCrossConnect(virtualNetworkClient, cc.getId(), true);
+
+            System.out.println("Change CrossConnect compartment.");
+            changeCrossConnectCompartment(virtualNetworkClient, cc.getId(), NEW_COMPARTMENT_ID);
         } finally {
             System.out.println("Delete CrossConnect.");
             if (null != cc) {
@@ -236,5 +242,22 @@ public class FastConnectCrossConnectExample {
                         CrossConnect.LifecycleState.Terminated)
                 .execute();
         System.out.println("Deleted CrossConnect: " + cc.getId());
+    }
+
+    /*
+     * Change Compartment
+     */
+    private static void changeCrossConnectCompartment(
+            final VirtualNetwork virtualNetwork, final String ccId, final String newCompartment) {
+        final ChangeCrossConnectCompartmentRequest request =
+                ChangeCrossConnectCompartmentRequest.builder()
+                        .crossConnectId(ccId)
+                        .changeCrossConnectCompartmentDetails(
+                                ChangeCrossConnectCompartmentDetails.builder()
+                                        .compartmentId(newCompartment)
+                                        .build())
+                        .build();
+
+        virtualNetwork.changeCrossConnectCompartment(request);
     }
 }
