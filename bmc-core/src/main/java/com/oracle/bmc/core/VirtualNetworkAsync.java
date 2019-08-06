@@ -675,6 +675,21 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates an IPv6 for the specified VNIC.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateIpv6Response> createIpv6(
+            CreateIpv6Request request,
+            com.oracle.bmc.responses.AsyncHandler<CreateIpv6Request, CreateIpv6Response> handler);
+
+    /**
      * Creates a new local peering gateway (LPG) for the specified VCN.
      *
      *
@@ -1165,6 +1180,22 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteInternetGatewayRequest, DeleteInternetGatewayResponse>
                     handler);
+
+    /**
+     * Unassigns and deletes the specified IPv6. You must specify the object's OCID.
+     * The IPv6 address is returned to the subnet's pool of available addresses.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteIpv6Response> deleteIpv6(
+            DeleteIpv6Request request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteIpv6Request, DeleteIpv6Response> handler);
 
     /**
      * Deletes the specified local peering gateway (LPG).
@@ -1730,6 +1761,24 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the specified IPv6. You must specify the object's OCID.
+     * Alternatively, you can get the object by using
+     * {@link #listIpv6s(ListIpv6sRequest, Consumer, Consumer) listIpv6s}
+     * with the IPv6 address (for example, 2001:0db8:0123:1111:98fe:dcba:9876:4321) and subnet OCID.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetIpv6Response> getIpv6(
+            GetIpv6Request request,
+            com.oracle.bmc.responses.AsyncHandler<GetIpv6Request, GetIpv6Response> handler);
+
+    /**
      * Gets the specified local peering gateway's information.
      *
      * @param request The request object containing the details to send
@@ -2275,6 +2324,28 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists the {@link Ipv6} objects based
+     * on one of these filters:
+     * <p>
+     * Subnet OCID.
+     *   * VNIC OCID.
+     *   * Both IPv6 address and subnet OCID: This lets you get an `Ipv6` object based on its private
+     *   IPv6 address (for example, 2001:0db8:0123:1111:abcd:ef01:2345:6789) and not its OCID. For comparison,
+     *   {@link #getIpv6(GetIpv6Request, Consumer, Consumer) getIpv6} requires the OCID.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListIpv6sResponse> listIpv6s(
+            ListIpv6sRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListIpv6sRequest, ListIpv6sResponse> handler);
+
+    /**
      * Lists the local peering gateways (LPGs) for the specified VCN and compartment
      * (the LPG's compartment).
      *
@@ -2813,6 +2884,27 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateInternetGatewayRequest, UpdateInternetGatewayResponse>
                     handler);
+
+    /**
+     * Updates the specified IPv6. You must specify the object's OCID.
+     * Use this operation if you want to:
+     * <p>
+     * Move an IPv6 to a different VNIC in the same subnet.
+     *   * Enable/disable internet access for an IPv6.
+     *   * Change the display name for an IPv6.
+     *   * Update resource tags for an IPv6.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateIpv6Response> updateIpv6(
+            UpdateIpv6Request request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateIpv6Request, UpdateIpv6Response> handler);
 
     /**
      * Updates the specified local peering gateway (LPG).

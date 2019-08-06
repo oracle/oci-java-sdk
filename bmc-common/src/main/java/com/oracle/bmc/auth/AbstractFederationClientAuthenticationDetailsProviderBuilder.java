@@ -50,9 +50,14 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
                     .build();
 
     /**
-     * Base url of metadata service.
+     * Default base url of metadata service.
      */
     protected static final String METADATA_SERVICE_BASE_URL = "http://169.254.169.254/opc/v1/";
+
+    /**
+     * Base url of metadata service.
+     */
+    @Getter protected String metadataBaseUrl = METADATA_SERVICE_BASE_URL;
 
     /**
      * The federation endpoint url.
@@ -75,6 +80,17 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
      * Detected region.
      */
     @Getter protected Region region = null;
+
+    /**
+     * Configure the metadata endpoint to use when retrieving the instance data and principal for federation.
+     */
+    public B metadataBaseUrl(String metadataBaseUrl) {
+        this.metadataBaseUrl = metadataBaseUrl;
+        if (!this.metadataBaseUrl.endsWith("/")) {
+            this.metadataBaseUrl += "/";
+        }
+        return (B) this;
+    }
 
     /**
      * Configures the custom federationEndpoint to use.
@@ -155,7 +171,7 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
     protected String autoDetectEndpointUsingMetadataUrl() {
         if (federationEndpoint == null) {
             Client client = ClientBuilder.newClient();
-            WebTarget base = client.target(METADATA_SERVICE_BASE_URL + "instance/");
+            WebTarget base = client.target(getMetadataBaseUrl() + "instance/");
             String regionStr = base.path("region").request(MediaType.TEXT_PLAIN).get(String.class);
             LOG.info("Looking up region for {}", regionStr);
 
@@ -194,8 +210,8 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
             if (leafCertificateSupplier == null) {
                 leafCertificateSupplier =
                         new URLBasedX509CertificateSupplier(
-                                new URL(METADATA_SERVICE_BASE_URL + "identity/cert.pem"),
-                                new URL(METADATA_SERVICE_BASE_URL + "identity/key.pem"),
+                                new URL(getMetadataBaseUrl() + "identity/cert.pem"),
+                                new URL(getMetadataBaseUrl() + "identity/key.pem"),
                                 (char[]) null);
             }
 
@@ -212,7 +228,7 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
 
                 intermediateCertificateSuppliers.add(
                         new URLBasedX509CertificateSupplier(
-                                new URL(METADATA_SERVICE_BASE_URL + "identity/intermediate.pem"),
+                                new URL(getMetadataBaseUrl() + "identity/intermediate.pem"),
                                 null,
                                 (char[]) null));
             }

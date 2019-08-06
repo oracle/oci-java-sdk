@@ -40,6 +40,15 @@ public class CreateVcnDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
+        private String ipv6CidrBlock;
+
+        public Builder ipv6CidrBlock(String ipv6CidrBlock) {
+            this.ipv6CidrBlock = ipv6CidrBlock;
+            this.__explicitlySet__.add("ipv6CidrBlock");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -77,6 +86,15 @@ public class CreateVcnDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isIpv6Enabled")
+        private Boolean isIpv6Enabled;
+
+        public Builder isIpv6Enabled(Boolean isIpv6Enabled) {
+            this.isIpv6Enabled = isIpv6Enabled;
+            this.__explicitlySet__.add("isIpv6Enabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -85,10 +103,12 @@ public class CreateVcnDetails {
                     new CreateVcnDetails(
                             cidrBlock,
                             compartmentId,
+                            ipv6CidrBlock,
                             definedTags,
                             displayName,
                             dnsLabel,
-                            freeformTags);
+                            freeformTags,
+                            isIpv6Enabled);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -98,10 +118,12 @@ public class CreateVcnDetails {
             Builder copiedBuilder =
                     cidrBlock(o.getCidrBlock())
                             .compartmentId(o.getCompartmentId())
+                            .ipv6CidrBlock(o.getIpv6CidrBlock())
                             .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .dnsLabel(o.getDnsLabel())
-                            .freeformTags(o.getFreeformTags());
+                            .freeformTags(o.getFreeformTags())
+                            .isIpv6Enabled(o.getIsIpv6Enabled());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -129,6 +151,32 @@ public class CreateVcnDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
+
+    /**
+     * If you enable IPv6 for the VCN (see `isIpv6Enabled`), you may optionally provide an IPv6
+     * /48 CIDR block from the supported ranges (see [IPv6 Addresses](https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm).
+     * The addresses in this block will be considered private and cannot be accessed
+     * from the internet. The documentation refers to this as a *custom CIDR* for the VCN.
+     * <p>
+     * If you don't provide a custom CIDR for the VCN, Oracle assigns the VCN's IPv6 /48 CIDR block.
+     * <p>
+     * Regardless of whether you or Oracle assigns the `ipv6CidrBlock`,
+     * Oracle *also* assigns the VCN an IPv6 CIDR block for the VCN's public IP address space
+     * (see the `ipv6PublicCidrBlock` of the {@link Vcn} object). If you do
+     * not assign a custom CIDR, Oracle uses the *same* Oracle-assigned CIDR for both the private
+     * IP address space (`ipv6CidrBlock` in the `Vcn` object) and the public IP addreses space
+     * (`ipv6PublicCidrBlock` in the `Vcn` object). This means that a given VNIC might use the same
+     * IPv6 IP address for both private and public (internet) communication. You control whether
+     * an IPv6 address can be used for internet communication by using the `isInternetAccessAllowed`
+     * attribute in the {@link Ipv6} object.
+     * <p>
+     * For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm).
+     * <p>
+     * Example: `2001:0db8:0123::/48`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
+    String ipv6CidrBlock;
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
@@ -176,6 +224,16 @@ public class CreateVcnDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
+
+    /**
+     * Whether IPv6 is enabled for the VCN. Default is `false`. You cannot change this later.
+     * For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm).
+     * <p>
+     * Example: `true`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isIpv6Enabled")
+    Boolean isIpv6Enabled;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

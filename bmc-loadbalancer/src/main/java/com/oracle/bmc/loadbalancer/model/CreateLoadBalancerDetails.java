@@ -63,6 +63,15 @@ public class CreateLoadBalancerDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ipMode")
+        private IpMode ipMode;
+
+        public Builder ipMode(IpMode ipMode) {
+            this.ipMode = ipMode;
+            this.__explicitlySet__.add("ipMode");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("listeners")
         private java.util.Map<String, ListenerDetails> listeners;
 
@@ -164,6 +173,7 @@ public class CreateLoadBalancerDetails {
                             displayName,
                             shapeName,
                             isPrivate,
+                            ipMode,
                             listeners,
                             hostnames,
                             backendSets,
@@ -185,6 +195,7 @@ public class CreateLoadBalancerDetails {
                             .displayName(o.getDisplayName())
                             .shapeName(o.getShapeName())
                             .isPrivate(o.getIsPrivate())
+                            .ipMode(o.getIpMode())
                             .listeners(o.getListeners())
                             .hostnames(o.getHostnames())
                             .backendSets(o.getBackendSets())
@@ -251,6 +262,60 @@ public class CreateLoadBalancerDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
     Boolean isPrivate;
+    /**
+     * Whether the load balancer has an IPv4 or IPv6 IP address.
+     * <p>
+     * If \"IPV4\", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+     * <p>
+     * If \"IPV6\", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+     * <p>
+     * Example: \"ipMode\":\"IPV6\"
+     *
+     **/
+    public enum IpMode {
+        Ipv4("IPV4"),
+        Ipv6("IPV6"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, IpMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (IpMode v : IpMode.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        IpMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static IpMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new RuntimeException("Invalid IpMode: " + key);
+        }
+    };
+    /**
+     * Whether the load balancer has an IPv4 or IPv6 IP address.
+     * <p>
+     * If \"IPV4\", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+     * <p>
+     * If \"IPV6\", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+     * <p>
+     * Example: \"ipMode\":\"IPV6\"
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipMode")
+    IpMode ipMode;
 
     @com.fasterxml.jackson.annotation.JsonProperty("listeners")
     java.util.Map<String, ListenerDetails> listeners;

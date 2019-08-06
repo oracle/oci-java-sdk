@@ -37,7 +37,7 @@ public interface WorkRequestAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Return the given work request.
+     * Gets the details of a work request.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -52,7 +52,7 @@ public interface WorkRequestAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Return a (paginated) list of errors for a given work request.
+     * Gets the errors for a work request.
      *
      *
      * @param request The request object containing the details to send
@@ -69,7 +69,7 @@ public interface WorkRequestAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Return a (paginated) list of logs for a given work request.
+     * Gets the logs for a work request.
      *
      *
      * @param request The request object containing the details to send
@@ -86,7 +86,7 @@ public interface WorkRequestAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the work requests in a given compartment or for a given resource.
+     * Lists the work requests in a compartment or for a specified resource.
      *
      *
      * @param request The request object containing the details to send

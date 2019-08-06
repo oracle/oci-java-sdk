@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
+## 1.5.17 - 2019-08-06
+### Added
+- Support for IPv6 load balancers in the Load Balancing service
+- Support for IPv6 on VCN and FastConnect resources in the Networking service
+
 ## 1.5.16 - 2019-07-30
 ### Added
 - Support for the Mumbai (BOM) region

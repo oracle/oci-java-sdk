@@ -200,37 +200,43 @@ public class WorkRequestSummary {
     Status status;
 
     /**
-     * OCID identifying this work request.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The OCID of the compartment containing this work request.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing
+     * this work request.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The amount of work done relative to the total amount of work.
+     * The percentage complete of the operation tracked by this work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     Float percentComplete;
 
     /**
-     * When the work request was created.
+     * The date and time the work request was created, in the format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     java.util.Date timeAccepted;
 
     /**
-     * When the work request transitioned from ACCEPTED to IN_PROGRESS.
+     * The date and time the work request transitioned from `ACCEPTED` to `IN_PROGRESS`, in
+     * the format defined by RFC3339.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     java.util.Date timeStarted;
 
     /**
-     * When the work request reached a terminal state (FAILED or SUCCEEDED).
+     * The date and time the work request reached a terminal state, either `FAILED` or `SUCCEEDED`.
+     * Format is defined by RFC3339.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     java.util.Date timeFinished;

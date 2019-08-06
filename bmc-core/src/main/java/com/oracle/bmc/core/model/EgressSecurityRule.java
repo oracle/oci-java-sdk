@@ -133,7 +133,7 @@ public class EgressSecurityRule {
      * <p>
      * Allowed values:
      * <p>
-     * IP address range in CIDR notation. For example: `192.168.1.0/24`
+     * IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`
      * <p>
      * The `cidrBlock` value for a {@link Service}, if you're
      *     setting up a security list rule for traffic destined for a particular `Service` through
@@ -213,12 +213,15 @@ public class EgressSecurityRule {
     DestinationType destinationType;
 
     /**
-     * Optional and valid only for ICMP. Use to specify a particular ICMP type and code
-     * as defined in
-     * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml).
-     * If you specify ICMP as the protocol but omit this object, then all ICMP types and
+     * Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code
+     * as defined in:
+     * <p>
+     * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
+     * * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
+     * <p>
+     * If you specify ICMP or ICMPv6 as the protocol but omit this object, then all ICMP types and
      * codes are allowed. If you do provide this object, the type is required and the code is optional.
-     * To enable MTU negotiation for ingress internet traffic, make sure to allow type 3 (\"Destination
+     * To enable MTU negotiation for ingress internet traffic via IPv4, make sure to allow type 3 (\"Destination
      * Unreachable\") code 4 (\"Fragmentation Needed and Don't Fragment was Set\"). If you need to specify
      * multiple codes for a single type, create a separate security list rule for each.
      *
@@ -241,7 +244,7 @@ public class EgressSecurityRule {
      * The transport protocol. Specify either `all` or an IPv4 protocol number as
      * defined in
      * [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml).
-     * Options are supported only for ICMP (\"1\"), TCP (\"6\"), and UDP (\"17\").
+     * Options are supported only for ICMP (\"1\"), TCP (\"6\"), UDP (\"17\"), and ICMPv6 (\"58\").
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")

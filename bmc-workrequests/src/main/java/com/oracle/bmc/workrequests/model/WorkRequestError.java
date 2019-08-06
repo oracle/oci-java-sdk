@@ -4,7 +4,7 @@
 package com.oracle.bmc.workrequests.model;
 
 /**
- * An error encountered while executing a work request.
+ * An error encountered while executing an operation that is tracked by a work request.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -76,7 +76,7 @@ public class WorkRequestError {
     }
 
     /**
-     * A short error code that defines the error, meant for programmatic parsing.
+     * A machine-usable code for the error that occured.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     String code;
@@ -88,7 +88,7 @@ public class WorkRequestError {
     String message;
 
     /**
-     * The time the error happened.
+     * The date and time the error occurred.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     java.util.Date timestamp;

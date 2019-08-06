@@ -116,6 +116,33 @@ public class Subnet {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
+        private String ipv6CidrBlock;
+
+        public Builder ipv6CidrBlock(String ipv6CidrBlock) {
+            this.ipv6CidrBlock = ipv6CidrBlock;
+            this.__explicitlySet__.add("ipv6CidrBlock");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6PublicCidrBlock")
+        private String ipv6PublicCidrBlock;
+
+        public Builder ipv6PublicCidrBlock(String ipv6PublicCidrBlock) {
+            this.ipv6PublicCidrBlock = ipv6PublicCidrBlock;
+            this.__explicitlySet__.add("ipv6PublicCidrBlock");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6VirtualRouterIp")
+        private String ipv6VirtualRouterIp;
+
+        public Builder ipv6VirtualRouterIp(String ipv6VirtualRouterIp) {
+            this.ipv6VirtualRouterIp = ipv6VirtualRouterIp;
+            this.__explicitlySet__.add("ipv6VirtualRouterIp");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -212,6 +239,9 @@ public class Subnet {
                             dnsLabel,
                             freeformTags,
                             id,
+                            ipv6CidrBlock,
+                            ipv6PublicCidrBlock,
+                            ipv6VirtualRouterIp,
                             lifecycleState,
                             prohibitPublicIpOnVnic,
                             routeTableId,
@@ -237,6 +267,9 @@ public class Subnet {
                             .dnsLabel(o.getDnsLabel())
                             .freeformTags(o.getFreeformTags())
                             .id(o.getId())
+                            .ipv6CidrBlock(o.getIpv6CidrBlock())
+                            .ipv6PublicCidrBlock(o.getIpv6PublicCidrBlock())
+                            .ipv6VirtualRouterIp(o.getIpv6VirtualRouterIp())
                             .lifecycleState(o.getLifecycleState())
                             .prohibitPublicIpOnVnic(o.getProhibitPublicIpOnVnic())
                             .routeTableId(o.getRouteTableId())
@@ -343,6 +376,37 @@ public class Subnet {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
+
+    /**
+     * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's private IP address
+     * space. The subnet size is always /64.
+     * <p>
+     * Example: `2001:0db8:0123:1111::/64`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
+    String ipv6CidrBlock;
+
+    /**
+     * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's public IP address
+     * space. The subnet size is always /64. The left 48 bits are inherited from the
+     * `ipv6PublicCidrBlock` of the {@link Vcn},
+     * and the remaining 16 bits are from the subnet's `ipv6CidrBlock`.
+     * <p>
+     * Example: `2001:0db8:0123:1111::/64`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6PublicCidrBlock")
+    String ipv6PublicCidrBlock;
+
+    /**
+     * For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.
+     * <p>
+     * Example: `2001:0db8:0123:1111:89ab:cdef:1234:5678`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6VirtualRouterIp")
+    String ipv6VirtualRouterIp;
     /**
      * The subnet's current state.
      **/
