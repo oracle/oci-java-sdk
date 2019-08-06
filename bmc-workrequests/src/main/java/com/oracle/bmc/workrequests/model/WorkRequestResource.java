@@ -4,7 +4,9 @@
 package com.oracle.bmc.workrequests.model;
 
 /**
- * A resource created or operated on by a work request.
+ * A resource that is created or operated on by an asynchronous operation that is tracked by
+ * a work request.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -91,10 +93,8 @@ public class WorkRequestResource {
     }
 
     /**
-     * The way in which this resource is affected by the work tracked in the work request.
-     * A resource being created, updated, or deleted will remain in the IN_PROGRESS state until
-     * work is complete for that resource at which point it will transition to CREATED, UPDATED,
-     * or DELETED, respectively.
+     * The way in which this resource was affected by the operation that spawned the work
+     * request.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -144,10 +144,8 @@ public class WorkRequestResource {
         }
     };
     /**
-     * The way in which this resource is affected by the work tracked in the work request.
-     * A resource being created, updated, or deleted will remain in the IN_PROGRESS state until
-     * work is complete for that resource at which point it will transition to CREATED, UPDATED,
-     * or DELETED, respectively.
+     * The way in which this resource was affected by the operation that spawned the work
+     * request.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionType")
@@ -160,13 +158,15 @@ public class WorkRequestResource {
     String entityType;
 
     /**
-     * An OCID or other unique identifier for the resource.
+     * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) or other unique identifier for the
+     * resource.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     String identifier;
 
     /**
-     * The URI path used to access the resource metadata.
+     * The URI path that you can use for a GET request to access the resource metadata.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityUri")
     String entityUri;

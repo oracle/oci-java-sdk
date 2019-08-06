@@ -184,7 +184,7 @@ public class AddSecurityRuleDetails {
      * <p>
      * Allowed values:
      * <p>
-     * An IP address range in CIDR notation. For example: `192.168.1.0/24`
+     * An IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`
      * <p>
      * The `cidrBlock` value for a {@link Service}, if you're
      *     setting up a security rule for traffic destined for a particular `Service` through
@@ -346,7 +346,7 @@ public class AddSecurityRuleDetails {
      * <p>
      * Allowed values:
      * <p>
-     * An IP address range in CIDR notation. For example: `192.168.1.0/24`
+     * An IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`
      * <p>
      * The `cidrBlock` value for a {@link Service}, if you're
      *     setting up a security rule for traffic coming from a particular `Service` through

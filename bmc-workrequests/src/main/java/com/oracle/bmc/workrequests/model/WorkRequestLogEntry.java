@@ -4,7 +4,7 @@
 package com.oracle.bmc.workrequests.model;
 
 /**
- * A log message from the execution of a work request.
+ * A log message from executing an operation that is tracked by a work request.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -74,7 +74,7 @@ public class WorkRequestLogEntry {
     String message;
 
     /**
-     * The time the log message was written.
+     * The date and time the log message was written.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     java.util.Date timestamp;

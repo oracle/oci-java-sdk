@@ -29,6 +29,10 @@ package com.oracle.bmc.core.model;
  * goes from Oracle to the customer's edge router, then the customer specifies the BGP
  * peering information. There's one exception: for a public virtual circuit, Oracle
  * specifies the BGP IPv4 addresses.
+ * <p>
+ * Every `CrossConnectMapping` must have BGP IPv4 peering addresses. BGP IPv6 peering
+ * addresses are optional. If BGP IPv6 addresses are provided, the customer can
+ * exchange IPv6 routes with Oracle.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -85,6 +89,24 @@ public class CrossConnectMapping {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customerBgpPeeringIpv6")
+        private String customerBgpPeeringIpv6;
+
+        public Builder customerBgpPeeringIpv6(String customerBgpPeeringIpv6) {
+            this.customerBgpPeeringIpv6 = customerBgpPeeringIpv6;
+            this.__explicitlySet__.add("customerBgpPeeringIpv6");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("oracleBgpPeeringIpv6")
+        private String oracleBgpPeeringIpv6;
+
+        public Builder oracleBgpPeeringIpv6(String oracleBgpPeeringIpv6) {
+            this.oracleBgpPeeringIpv6 = oracleBgpPeeringIpv6;
+            this.__explicitlySet__.add("oracleBgpPeeringIpv6");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("vlan")
         private Integer vlan;
 
@@ -104,6 +126,8 @@ public class CrossConnectMapping {
                             crossConnectOrCrossConnectGroupId,
                             customerBgpPeeringIp,
                             oracleBgpPeeringIp,
+                            customerBgpPeeringIpv6,
+                            oracleBgpPeeringIpv6,
                             vlan);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -117,6 +141,8 @@ public class CrossConnectMapping {
                                     o.getCrossConnectOrCrossConnectGroupId())
                             .customerBgpPeeringIp(o.getCustomerBgpPeeringIp())
                             .oracleBgpPeeringIp(o.getOracleBgpPeeringIp())
+                            .customerBgpPeeringIpv6(o.getCustomerBgpPeeringIpv6())
+                            .oracleBgpPeeringIpv6(o.getOracleBgpPeeringIpv6())
                             .vlan(o.getVlan());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -178,6 +204,35 @@ public class CrossConnectMapping {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleBgpPeeringIp")
     String oracleBgpPeeringIp;
+
+    /**
+     * The BGP IPv6 address for the router on the other end of the BGP session from
+     * Oracle. Specified by the owner of that router. If the session goes from Oracle
+     * to a customer, this is the BGP IPv6 address of the customer's edge router. If the
+     * session goes from Oracle to a provider, this is the BGP IPv6 address of the
+     * provider's edge router. Only subnet masks from /64 up to /127 are allowed.
+     * <p>
+     * There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
+     * <p>
+     * Example: `2001:db8::1/64`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customerBgpPeeringIpv6")
+    String customerBgpPeeringIpv6;
+
+    /**
+     * The IPv6 address for Oracle's end of the BGP session.  Only subnet masks from /64 up to /127 are allowed.
+     * If the session goes from Oracle to a customer's edge router,
+     * the customer specifies this information. If the session goes from Oracle to
+     * a provider's edge router, the provider specifies this.
+     * <p>
+     * There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
+     * <p>
+     * Example: `2001:db8::2/64`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("oracleBgpPeeringIpv6")
+    String oracleBgpPeeringIpv6;
 
     /**
      * The number of the specific VLAN (on the cross-connect or cross-connect group)

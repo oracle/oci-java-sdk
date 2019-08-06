@@ -37,7 +37,7 @@ public interface WorkRequest extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Return the given work request.
+     * Gets the details of a work request.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -45,7 +45,7 @@ public interface WorkRequest extends AutoCloseable {
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
-     * Return a (paginated) list of errors for a given work request.
+     * Gets the errors for a work request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -54,7 +54,7 @@ public interface WorkRequest extends AutoCloseable {
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
     /**
-     * Return a (paginated) list of logs for a given work request.
+     * Gets the logs for a work request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -63,7 +63,7 @@ public interface WorkRequest extends AutoCloseable {
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
     /**
-     * Lists the work requests in a given compartment or for a given resource.
+     * Lists the work requests in a compartment or for a specified resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

@@ -97,6 +97,15 @@ public class CreateSubnetDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
+        private String ipv6CidrBlock;
+
+        public Builder ipv6CidrBlock(String ipv6CidrBlock) {
+            this.ipv6CidrBlock = ipv6CidrBlock;
+            this.__explicitlySet__.add("ipv6CidrBlock");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("prohibitPublicIpOnVnic")
         private Boolean prohibitPublicIpOnVnic;
 
@@ -147,6 +156,7 @@ public class CreateSubnetDetails {
                             displayName,
                             dnsLabel,
                             freeformTags,
+                            ipv6CidrBlock,
                             prohibitPublicIpOnVnic,
                             routeTableId,
                             securityListIds,
@@ -166,6 +176,7 @@ public class CreateSubnetDetails {
                             .displayName(o.getDisplayName())
                             .dnsLabel(o.getDnsLabel())
                             .freeformTags(o.getFreeformTags())
+                            .ipv6CidrBlock(o.getIpv6CidrBlock())
                             .prohibitPublicIpOnVnic(o.getProhibitPublicIpOnVnic())
                             .routeTableId(o.getRouteTableId())
                             .securityListIds(o.getSecurityListIds())
@@ -272,6 +283,19 @@ public class CreateSubnetDetails {
     java.util.Map<String, String> freeformTags;
 
     /**
+     * Use this to enable IPv6 addressing for this subnet. The VCN must be enabled for IPv6.
+     * You can't change this subnet characteristic later. All subnets are /64 in size. The subnet
+     * portion of the IPv6 address is the fourth hextet from the left (1111 in the following example).
+     * <p>
+     * For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm).
+     * <p>
+     * Example: `2001:0db8:0123:1111::/64`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlock")
+    String ipv6CidrBlock;
+
+    /**
      * Whether VNICs within this subnet can have public IP addresses.
      * Defaults to false, which means VNICs created in this subnet will
      * automatically be assigned public IP addresses unless specified
@@ -281,7 +305,9 @@ public class CreateSubnetDetails {
      * subnet cannot have public IP addresses (that is, it's a private
      * subnet).
      * <p>
-     *
+     * For IPv6, if `prohibitPublicIpOnVnic` is set to `true`, internet access is not allowed for any
+     * IPv6s assigned to VNICs in the subnet.
+     * <p>
      * Example: `true`
      *
      **/

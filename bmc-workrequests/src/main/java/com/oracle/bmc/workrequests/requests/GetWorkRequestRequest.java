@@ -11,7 +11,7 @@ import com.oracle.bmc.workrequests.model.*;
 public class GetWorkRequestRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The OCID of the work request.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
      */
     private String workRequestId;
 

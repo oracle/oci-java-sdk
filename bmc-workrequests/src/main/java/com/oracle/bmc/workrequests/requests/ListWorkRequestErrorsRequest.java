@@ -11,18 +11,22 @@ import com.oracle.bmc.workrequests.model.*;
 public class ListWorkRequestErrorsRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The OCID of the work request.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
      */
     private String workRequestId;
 
     /**
-     * The maximum number of items to return in a paginated \"List\" call.
+     * For list pagination. The maximum number of results per page, or items to return in a
+     * paginated \"List\" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private Integer limit;
 
     /**
-     * The value of the `opc-next-page` response header from the previous \"List\" call.
+     * For list pagination. The value of the `opc-next-page` response header from the
+     * previous \"List\" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private String page;

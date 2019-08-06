@@ -30,7 +30,7 @@ public class EventsAsyncClient implements EventsAsync {
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("EVENTS")
-                    .serviceEndpointPrefix("none")
+                    .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://events.{region}.{secondLevelDomain}")
                     .build();
 

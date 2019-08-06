@@ -29,7 +29,7 @@ public class ListPrivateIpsRequest extends com.oracle.bmc.requests.BmcRequest {
     private String page;
 
     /**
-     * An IP address.
+     * An IP address. This could be either IPv4 or IPv6, depending on the resource.
      * Example: `10.0.3.3`
      *
      */

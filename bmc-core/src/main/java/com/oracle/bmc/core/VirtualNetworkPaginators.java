@@ -1544,6 +1544,114 @@ public class VirtualNetworkPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listIpv6s operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListIpv6sResponse> listIpv6sResponseIterator(final ListIpv6sRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListIpv6sRequest.Builder, ListIpv6sRequest, ListIpv6sResponse>(
+                new com.google.common.base.Supplier<ListIpv6sRequest.Builder>() {
+                    @Override
+                    public ListIpv6sRequest.Builder get() {
+                        return ListIpv6sRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListIpv6sResponse, String>() {
+                    @Override
+                    public String apply(ListIpv6sResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListIpv6sRequest.Builder>,
+                        ListIpv6sRequest>() {
+                    @Override
+                    public ListIpv6sRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListIpv6sRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListIpv6sRequest, ListIpv6sResponse>() {
+                    @Override
+                    public ListIpv6sResponse apply(ListIpv6sRequest request) {
+                        return client.listIpv6s(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.Ipv6} objects
+     * contained in responses from the listIpv6s operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.Ipv6} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.Ipv6> listIpv6sRecordIterator(
+            final ListIpv6sRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListIpv6sRequest.Builder, ListIpv6sRequest, ListIpv6sResponse,
+                com.oracle.bmc.core.model.Ipv6>(
+                new com.google.common.base.Supplier<ListIpv6sRequest.Builder>() {
+                    @Override
+                    public ListIpv6sRequest.Builder get() {
+                        return ListIpv6sRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListIpv6sResponse, String>() {
+                    @Override
+                    public String apply(ListIpv6sResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListIpv6sRequest.Builder>,
+                        ListIpv6sRequest>() {
+                    @Override
+                    public ListIpv6sRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListIpv6sRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListIpv6sRequest, ListIpv6sResponse>() {
+                    @Override
+                    public ListIpv6sResponse apply(ListIpv6sRequest request) {
+                        return client.listIpv6s(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListIpv6sResponse, java.util.List<com.oracle.bmc.core.model.Ipv6>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.Ipv6> apply(
+                            ListIpv6sResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listLocalPeeringGateways operation. This iterable
      * will fetch more data from the server as needed.
      *
