@@ -4,7 +4,7 @@
 package com.oracle.bmc.waas.model;
 
 /**
- *
+ * The issuer of the certificate.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -17,10 +17,10 @@ package com.oracle.bmc.waas.model;
 @lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = Certificate_subjectName.Builder.class
+    builder = CertificateIssuerName.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class Certificate_subjectName {
+public class CertificateIssuerName {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
@@ -90,9 +90,9 @@ public class Certificate_subjectName {
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
-        public Certificate_subjectName build() {
-            Certificate_subjectName __instance__ =
-                    new Certificate_subjectName(
+        public CertificateIssuerName build() {
+            CertificateIssuerName __instance__ =
+                    new CertificateIssuerName(
                             country,
                             stateProvince,
                             locality,
@@ -105,7 +105,7 @@ public class Certificate_subjectName {
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(Certificate_subjectName o) {
+        public Builder copy(CertificateIssuerName o) {
             Builder copiedBuilder =
                     country(o.getCountry())
                             .stateProvince(o.getStateProvince())
@@ -127,24 +127,45 @@ public class Certificate_subjectName {
         return new Builder();
     }
 
+    /**
+     * ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("country")
     String country;
 
+    /**
+     * The province where the organization is located.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("stateProvince")
     String stateProvince;
 
+    /**
+     * The city in which the organization is located.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("locality")
     String locality;
 
+    /**
+     * The organization name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("organization")
     String organization;
 
+    /**
+     * The field to differentiate between divisions within an organization.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("organizationalUnit")
     String organizationalUnit;
 
+    /**
+     * The Certificate Authority (CA) name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("commonName")
     String commonName;
 
+    /**
+     * The email address of the server's administrator.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("emailAddress")
     String emailAddress;
 

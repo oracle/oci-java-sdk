@@ -126,7 +126,7 @@ public class ListWaasPoliciesRequest extends com.oracle.bmc.requests.BmcRequest 
     /**
      * Filter policies using a list of lifecycle states.
      */
-    private java.util.List<String> lifecycleState;
+    private java.util.List<com.oracle.bmc.waas.model.LifecycleStates> lifecycleState;
 
     /**
      * A filter that matches policies created on or after the specified date and time.

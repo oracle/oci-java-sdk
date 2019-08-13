@@ -2,6 +2,36 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
+## 1.6.0 - 2019-08-13
+### Added
+- Support for the Data Transfer service
+- Support for the Zurich (ZRH) region
+
+### Breaking changes
+- Breaking changes were made in the Web Application Acceleration and Security (WAAS) service:
+    - `Certificate_subjectName` class was renamed to `CertificateIssuerName`
+    - `Certificate_subjectName` class was renamed to `CertificateSubjectName`
+    - `WafLog#timestamp` type was changed from `String` to `java.util.Date`
+    - `WorkRequestOperationTypes#PurgeWaasPolicy` enum was removed
+    - `ListCertificatesRequest#lifecycleState` and `ListWaasPoliciesRequest#lifecycleState` type was changed from `String` to `com.oracle.bmc.waas.model.LifecycleStates`
+    - The `etag` parameter was removed from the following classes:
+        - `AcceptRecommendationsResponse`
+        - `DeleteWaasPolicyResponse`
+        - `UpdateAccessRulesResponse`
+        - `UpdateCaptchasResponse`
+        - `UpdateDeviceFingerprintChallengeResponse`
+        - `UpdateGoodBotsResponse`
+        - `UpdateHumanInteractionChallengeResponse`
+        - `UpdateJsChallengeResponse`
+        - `UpdatePolicyConfigResponse`
+        - `UpdateProtectionRulesResponse`
+        - `UpdateProtectionSettingsResponse`
+        - `UpdateThreatFeedsResponse`
+        - `UpdateWaasPolicyResponse`
+        - `UpdateWafAddressRateLimitingResponse`
+        - `UpdateWafConfigResponse`
+        - `UpdateWhitelistsResponse`
+
 ## 1.5.17 - 2019-08-06
 ### Added
 - Support for IPv6 load balancers in the Load Balancing service

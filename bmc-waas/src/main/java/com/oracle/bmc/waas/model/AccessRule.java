@@ -149,6 +149,12 @@ public class AccessRule {
     java.util.List<AccessRuleCriteria> criteria;
     /**
      * The action to take when the access criteria are met for a rule. If unspecified, defaults to `ALLOW`.
+     * <p>
+     * - **ALLOW:** Takes no action, just logs the request.
+     * <p>
+     * - **DETECT:** Takes no action, but creates an alert for the request.
+     * <p>
+     * - **BLOCK:** Blocks the request by returning specified response code or showing error page.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Action {
@@ -196,6 +202,12 @@ public class AccessRule {
     };
     /**
      * The action to take when the access criteria are met for a rule. If unspecified, defaults to `ALLOW`.
+     * <p>
+     * - **ALLOW:** Takes no action, just logs the request.
+     * <p>
+     * - **DETECT:** Takes no action, but creates an alert for the request.
+     * <p>
+     * - **BLOCK:** Blocks the request by returning specified response code or showing error page.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     Action action;

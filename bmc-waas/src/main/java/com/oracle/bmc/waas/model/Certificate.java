@@ -60,18 +60,18 @@ public class Certificate {
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("subjectName")
-        private Certificate_subjectName subjectName;
+        private CertificateSubjectName subjectName;
 
-        public Builder subjectName(Certificate_subjectName subjectName) {
+        public Builder subjectName(CertificateSubjectName subjectName) {
             this.subjectName = subjectName;
             this.__explicitlySet__.add("subjectName");
             return this;
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("issuerName")
-        private Certificate_subjectName issuerName;
+        private CertificateIssuerName issuerName;
 
-        public Builder issuerName(Certificate_subjectName issuerName) {
+        public Builder issuerName(CertificateIssuerName issuerName) {
             this.issuerName = issuerName;
             this.__explicitlySet__.add("issuerName");
             return this;
@@ -259,20 +259,32 @@ public class Certificate {
     String issuedBy;
 
     @com.fasterxml.jackson.annotation.JsonProperty("subjectName")
-    Certificate_subjectName subjectName;
+    CertificateSubjectName subjectName;
 
     @com.fasterxml.jackson.annotation.JsonProperty("issuerName")
-    Certificate_subjectName issuerName;
+    CertificateIssuerName issuerName;
 
+    /**
+     * A unique, positive integer assigned by the Certificate Authority (CA). The issuer name and serial number identify a unique certificate.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serialNumber")
     String serialNumber;
 
+    /**
+     * The version of the encoded certificate.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     Integer version;
 
+    /**
+     * The identifier for the cryptographic algorithm used by the Certificate Authority (CA) to sign this certificate.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("signatureAlgorithm")
     String signatureAlgorithm;
 
+    /**
+     * The date and time the certificate will become valid, expressed in RFC 3339 timestamp format.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeNotValidBefore")
     java.util.Date timeNotValidBefore;
 
@@ -285,17 +297,28 @@ public class Certificate {
     @com.fasterxml.jackson.annotation.JsonProperty("publicKeyInfo")
     Certificate_publicKeyInfo publicKeyInfo;
 
+    /**
+     * Additional attributes associated with users or public keys for managing relationships between Certificate Authorities.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("extensions")
     java.util.List<Certificate_extensions> extensions;
 
     /**
-     * A simple key-value pair without any defined schema.
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Department\": \"Finance\"}`
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
 
     /**
-     * A key-value pair with a defined schema that restricts the values of tags. These predefined keys are scoped to namespaces.
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
