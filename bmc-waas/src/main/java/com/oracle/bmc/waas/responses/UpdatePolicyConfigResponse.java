@@ -16,11 +16,6 @@ public class UpdatePolicyConfigResponse {
     private String opcRequestId;
 
     /**
-     * For optimistic concurrency control. See `if-match`.
-     */
-    private String etag;
-
-    /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request.
      */
     private String opcWorkRequestId;
@@ -32,7 +27,6 @@ public class UpdatePolicyConfigResponse {
          */
         public Builder copy(UpdatePolicyConfigResponse o) {
             opcRequestId(o.getOpcRequestId());
-            etag(o.getEtag());
             opcWorkRequestId(o.getOpcWorkRequestId());
 
             return this;

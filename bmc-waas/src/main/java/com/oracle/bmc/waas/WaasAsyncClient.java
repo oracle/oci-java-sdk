@@ -31,6 +31,7 @@ public class WaasAsyncClient implements WaasAsync {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("WAAS")
                     .serviceEndpointPrefix("waas")
+                    .serviceEndpointTemplate("https://waas.{region}.{secondLevelDomain}")
                     .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)

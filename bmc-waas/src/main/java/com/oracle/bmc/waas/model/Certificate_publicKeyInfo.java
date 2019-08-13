@@ -4,7 +4,7 @@
 package com.oracle.bmc.waas.model;
 
 /**
- *
+ * Information about the public key and the algorithm used by the public key.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -78,12 +78,21 @@ public class Certificate_publicKeyInfo {
         return new Builder();
     }
 
+    /**
+     * The algorithm identifier and parameters for the public key.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("algorithm")
     String algorithm;
 
+    /**
+     * The private key exponent.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("exponent")
     Integer exponent;
 
+    /**
+     * The number of bits in a key used by a cryptographic algorithm.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keySize")
     Integer keySize;
 

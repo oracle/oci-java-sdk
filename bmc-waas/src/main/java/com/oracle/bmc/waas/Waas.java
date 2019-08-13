@@ -210,7 +210,7 @@ public interface Waas extends AutoCloseable {
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
-     * Gets the currently configured access rules for the Web Application Firewall configration of a specified WAAS policy.
+     * Gets the currently configured access rules for the Web Application Firewall configuration of a specified WAAS policy.
      * The order of the access rules is important. The rules will be checked in the order they are specified and the first matching rule will be used.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

@@ -78,12 +78,21 @@ public class Certificate_extensions {
         return new Builder();
     }
 
+    /**
+     * The certificate extension name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
 
+    /**
+     * The critical flag of the extension. Critical extensions must be processed, non-critical extensions can be ignored.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCritical")
     Boolean isCritical;
 
+    /**
+     * The certificate extension value.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     String value;
 

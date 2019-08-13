@@ -128,7 +128,7 @@ public class ListCertificatesRequest extends com.oracle.bmc.requests.BmcRequest 
     /**
      * Filter certificates using a list of lifecycle states.
      */
-    private java.util.List<String> lifecycleState;
+    private java.util.List<com.oracle.bmc.waas.model.LifecycleStates> lifecycleState;
 
     /**
      * A filter that matches certificates created on or after the specified date-time.

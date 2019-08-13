@@ -240,9 +240,9 @@ public class WafLog {
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
-        private String timestamp;
+        private java.util.Date timestamp;
 
-        public Builder timestamp(String timestamp) {
+        public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
@@ -527,7 +527,7 @@ public class WafLog {
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
-    String timestamp;
+    java.util.Date timestamp;
 
     /**
      * The type of log of the request. For more about log types, see [WAF Logs](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/waflogs.htm).

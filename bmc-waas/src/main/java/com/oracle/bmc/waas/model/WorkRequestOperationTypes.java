@@ -12,7 +12,6 @@ public enum WorkRequestOperationTypes {
     CreateWaasPolicy("CREATE_WAAS_POLICY"),
     UpdateWaasPolicy("UPDATE_WAAS_POLICY"),
     DeleteWaasPolicy("DELETE_WAAS_POLICY"),
-    PurgeWaasPolicy("PURGE_WAAS_POLICY"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

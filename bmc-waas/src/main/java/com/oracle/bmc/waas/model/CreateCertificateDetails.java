@@ -144,6 +144,17 @@ public class CreateCertificateDetails {
 
     /**
      * The data of the SSL certificate.
+     * <p>
+     *
+     * **Note:** Many SSL certificate providers require an intermediate certificate chain to ensure a trusted status.
+     * If your SSL certificate requires an intermediate certificate chain, please append the intermediate certificate
+     * key in the `certificateData` field after the leaf certificate issued by the SSL certificate provider. If you
+     * are unsure if your certificate requires an intermediate certificate chain, see your certificate
+     * provider's documentation.
+     * <p>
+     *
+     * The example below shows an intermediate certificate appended to a leaf certificate.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateData")
     String certificateData;
@@ -155,19 +166,27 @@ public class CreateCertificateDetails {
     String privateKeyData;
 
     /**
-     * Set to true if the SSL certificate is self-signed.
+     * Set to `true` if the SSL certificate is self-signed.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isTrustVerificationDisabled")
     Boolean isTrustVerificationDisabled;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Department\": \"Finance\"}`
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). Example:
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
