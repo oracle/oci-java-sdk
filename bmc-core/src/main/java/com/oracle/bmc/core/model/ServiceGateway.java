@@ -291,9 +291,10 @@ public class ServiceGateway {
     LifecycleState lifecycleState;
 
     /**
-     * The OCID of the route table the service gateway is using. For information about why you
-     * would associate a route table with a service gateway, see
-     * [Transit Routing: Private Access to Oracle Services Network](https://docs.cloud.oracle.com/Content/Network/Tasks/transitroutingoracleservices.htm).
+     * The OCID of the route table the service gateway is using.
+     * <p>
+     * For information about why you would associate a route table with a service gateway, see
+     * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/Content/Network/Tasks/transitroutingoracleservices.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")

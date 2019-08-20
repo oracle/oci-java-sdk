@@ -52,12 +52,21 @@ public class UpdateFileSystemDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateFileSystemDetails build() {
             UpdateFileSystemDetails __instance__ =
-                    new UpdateFileSystemDetails(displayName, freeformTags, definedTags);
+                    new UpdateFileSystemDetails(displayName, freeformTags, definedTags, kmsKeyId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -67,7 +76,8 @@ public class UpdateFileSystemDetails {
             Builder copiedBuilder =
                     displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .kmsKeyId(o.getKmsKeyId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -109,6 +119,16 @@ public class UpdateFileSystemDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * A KMS key OCID that will be associated with the given file system. If it is empty the Update operation will
+     * actually remove the KMS key, if there is one, from the given file system. Note that the old KMS key should
+     * still be enabled in KMS otherwise all the files in the file system encrypted with the old KMS key will no
+     * longer be accessible.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    String kmsKeyId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

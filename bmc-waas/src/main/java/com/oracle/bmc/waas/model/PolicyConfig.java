@@ -49,12 +49,85 @@ public class PolicyConfig {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("tlsProtocols")
+        private java.util.List<TlsProtocols> tlsProtocols;
+
+        public Builder tlsProtocols(java.util.List<TlsProtocols> tlsProtocols) {
+            this.tlsProtocols = tlsProtocols;
+            this.__explicitlySet__.add("tlsProtocols");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isOriginCompressionEnabled")
+        private Boolean isOriginCompressionEnabled;
+
+        public Builder isOriginCompressionEnabled(Boolean isOriginCompressionEnabled) {
+            this.isOriginCompressionEnabled = isOriginCompressionEnabled;
+            this.__explicitlySet__.add("isOriginCompressionEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isBehindCdn")
+        private Boolean isBehindCdn;
+
+        public Builder isBehindCdn(Boolean isBehindCdn) {
+            this.isBehindCdn = isBehindCdn;
+            this.__explicitlySet__.add("isBehindCdn");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("clientAddressHeader")
+        private ClientAddressHeader clientAddressHeader;
+
+        public Builder clientAddressHeader(ClientAddressHeader clientAddressHeader) {
+            this.clientAddressHeader = clientAddressHeader;
+            this.__explicitlySet__.add("clientAddressHeader");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isCacheControlRespected")
+        private Boolean isCacheControlRespected;
+
+        public Builder isCacheControlRespected(Boolean isCacheControlRespected) {
+            this.isCacheControlRespected = isCacheControlRespected;
+            this.__explicitlySet__.add("isCacheControlRespected");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isResponseBufferingEnabled")
+        private Boolean isResponseBufferingEnabled;
+
+        public Builder isResponseBufferingEnabled(Boolean isResponseBufferingEnabled) {
+            this.isResponseBufferingEnabled = isResponseBufferingEnabled;
+            this.__explicitlySet__.add("isResponseBufferingEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("cipherGroup")
+        private CipherGroup cipherGroup;
+
+        public Builder cipherGroup(CipherGroup cipherGroup) {
+            this.cipherGroup = cipherGroup;
+            this.__explicitlySet__.add("cipherGroup");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PolicyConfig build() {
             PolicyConfig __instance__ =
-                    new PolicyConfig(certificateId, isHttpsEnabled, isHttpsForced);
+                    new PolicyConfig(
+                            certificateId,
+                            isHttpsEnabled,
+                            isHttpsForced,
+                            tlsProtocols,
+                            isOriginCompressionEnabled,
+                            isBehindCdn,
+                            clientAddressHeader,
+                            isCacheControlRespected,
+                            isResponseBufferingEnabled,
+                            cipherGroup);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -64,7 +137,14 @@ public class PolicyConfig {
             Builder copiedBuilder =
                     certificateId(o.getCertificateId())
                             .isHttpsEnabled(o.getIsHttpsEnabled())
-                            .isHttpsForced(o.getIsHttpsForced());
+                            .isHttpsForced(o.getIsHttpsForced())
+                            .tlsProtocols(o.getTlsProtocols())
+                            .isOriginCompressionEnabled(o.getIsOriginCompressionEnabled())
+                            .isBehindCdn(o.getIsBehindCdn())
+                            .clientAddressHeader(o.getClientAddressHeader())
+                            .isCacheControlRespected(o.getIsCacheControlRespected())
+                            .isResponseBufferingEnabled(o.getIsResponseBufferingEnabled())
+                            .cipherGroup(o.getCipherGroup());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -95,6 +175,217 @@ public class PolicyConfig {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHttpsForced")
     Boolean isHttpsForced;
+    /**
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum TlsProtocols {
+        TlsV1("TLS_V1"),
+        TlsV11("TLS_V1_1"),
+        TlsV12("TLS_V1_2"),
+        TlsV13("TLS_V1_3"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, TlsProtocols> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (TlsProtocols v : TlsProtocols.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        TlsProtocols(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static TlsProtocols create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'TlsProtocols', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * A list of allowed TLS protocols. Only applicable when HTTPS support is enabled. It affects client's connection to the edge nodes. The most secure TLS version will be chosen.
+     * - **TLS_V1:** corresponds to TLS 1.0 specification.
+     * <p>
+     * - **TLS_V1_1:** corresponds to TLS 1.1 specification.
+     * <p>
+     * - **TLS_V1_2:** corresponds to TLS 1.2 specification.
+     * <p>
+     * - **TLS_V1_3:** corresponds to TLS 1.3 specification.
+     * <p>
+     * Enabled TLS protocols must go in a row. For example if TLS_v1_1 and TLS_V1_3 are enabled, TLS_V1_2 must be enabled too.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("tlsProtocols")
+    java.util.List<TlsProtocols> tlsProtocols;
+
+    /**
+     * Enable or disable GZIP compression of origin responses. If enabled, the header `Accept-Encoding: gzip` is sent to origin, otherwise - empty `Accept-Encoding:` header is used.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isOriginCompressionEnabled")
+    Boolean isOriginCompressionEnabled;
+
+    /**
+     * Enable or disable the use of CDN. It allows to specify true client IP address if clients do not connect directly to us.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isBehindCdn")
+    Boolean isBehindCdn;
+    /**
+     * The HTTP header used to pass the client IP address from the CDN if `isBehindCdn` is enabled. This feature consumes the header and its value as the true client IP address. It does not create the header. Using trusted chains (for example `X-Client-Ip: 11.1.1.1, 13.3.3.3`), the last IP address in the list will be used as true client IP address. In case of multiple headers with the same name, the first one will be used. If the header is not present it will use the connecting IP address as the true client IP address. It's assumed that CDN sets the correct client IP address and prevents spoofing.
+     * <p>
+     * - **X_FORWARDED_FOR:** Corresponds to `X-Forwarded-For` header name.
+     * <p>
+     * - **X_CLIENT_IP:** Corresponds to `X-Client-Ip` header name.
+     * <p>
+     * - **X_REAL_IP:** Corresponds to `X-Real-Ip` header name.
+     * <p>
+     * - **CLIENT_IP:** Corresponds to `Client-Ip` header name.
+     * <p>
+     * - **TRUE_CLIENT_IP:** Corresponds to `True-Client-Ip` header name.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum ClientAddressHeader {
+        XForwardedFor("X_FORWARDED_FOR"),
+        XClientIp("X_CLIENT_IP"),
+        XRealIp("X_REAL_IP"),
+        ClientIp("CLIENT_IP"),
+        TrueClientIp("TRUE_CLIENT_IP"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, ClientAddressHeader> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ClientAddressHeader v : ClientAddressHeader.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ClientAddressHeader(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ClientAddressHeader create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ClientAddressHeader', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The HTTP header used to pass the client IP address from the CDN if `isBehindCdn` is enabled. This feature consumes the header and its value as the true client IP address. It does not create the header. Using trusted chains (for example `X-Client-Ip: 11.1.1.1, 13.3.3.3`), the last IP address in the list will be used as true client IP address. In case of multiple headers with the same name, the first one will be used. If the header is not present it will use the connecting IP address as the true client IP address. It's assumed that CDN sets the correct client IP address and prevents spoofing.
+     * <p>
+     * - **X_FORWARDED_FOR:** Corresponds to `X-Forwarded-For` header name.
+     * <p>
+     * - **X_CLIENT_IP:** Corresponds to `X-Client-Ip` header name.
+     * <p>
+     * - **X_REAL_IP:** Corresponds to `X-Real-Ip` header name.
+     * <p>
+     * - **CLIENT_IP:** Corresponds to `Client-Ip` header name.
+     * <p>
+     * - **TRUE_CLIENT_IP:** Corresponds to `True-Client-Ip` header name.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("clientAddressHeader")
+    ClientAddressHeader clientAddressHeader;
+
+    /**
+     * Enable or disable automatic content caching based on the response `cache-control` header. This feature enables the origin to act as a proxy cache. Caching policies are usually defined using `cache-control` header. For example `cache-control: max-age=120` means that the returned resource is valid for 120 seconds. Caching rules will overwrite this setting.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isCacheControlRespected")
+    Boolean isCacheControlRespected;
+
+    /**
+     * Enable or disable buffering of responses from the origin. Buffering improves overall stability in case of network issues, but slightly increases Time To First Byte.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isResponseBufferingEnabled")
+    Boolean isResponseBufferingEnabled;
+    /**
+     * The cipher group
+     * - **DEFAULT:** Cipher group supports TLS 1.0, TLS 1.1, TLS 1.2, TLS 1.3 protocols. It has the following ciphers enabled: `ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:!DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA`
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum CipherGroup {
+        Default("DEFAULT"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, CipherGroup> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (CipherGroup v : CipherGroup.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        CipherGroup(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static CipherGroup create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'CipherGroup', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The cipher group
+     * - **DEFAULT:** Cipher group supports TLS 1.0, TLS 1.1, TLS 1.2, TLS 1.3 protocols. It has the following ciphers enabled: `ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:!DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA`
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cipherGroup")
+    CipherGroup cipherGroup;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

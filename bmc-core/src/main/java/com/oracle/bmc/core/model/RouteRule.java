@@ -113,7 +113,8 @@ public class RouteRule {
      * <p>
      * IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24`
      *   or `2001:0db8:0123:45::/56`. If you set this to an IPv6 CIDR, the route rule's target
-     *   can only be a DRG or internet gateway.
+     *   can only be a DRG or internet gateway. Note that IPv6 addressing is currently supported only
+     *   in the Government Cloud.
      * <p>
      * The `cidrBlock` value for a {@link Service}, if you're
      *     setting up a route rule for traffic destined for a particular `Service` through

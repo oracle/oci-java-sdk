@@ -5,14 +5,14 @@ package com.oracle.bmc.limits.responses;
 
 import com.oracle.bmc.limits.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: ")
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class UpdateQuotaResponse {
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      */
     private String opcRequestId;

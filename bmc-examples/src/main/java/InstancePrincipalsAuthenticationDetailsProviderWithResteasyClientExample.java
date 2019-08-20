@@ -23,10 +23,10 @@ import java.net.SocketTimeoutException;
  */
 public class InstancePrincipalsAuthenticationDetailsProviderWithResteasyClientExample {
 
-    public static void main(String[] args) throws Exception {
-        // The following line is only necessary for this example because we the configuration in
-        // resources/META-INF/services/javax.ws.rs.client.ClientBuilder. If you are using Resteasy by default, this line
-        // is not necessary
+    public static void main(String[] args) {
+        // The following line is only necessary for this example because of our configuration in
+        // resources/META-INF/services/javax.ws.rs.client.ClientBuilder
+        // which enables Jersey by default. If you are using Resteasy by default, this line is not necessary
         System.setProperty(
                 ClientBuilder.JAXRS_DEFAULT_CLIENT_BUILDER_PROPERTY,
                 "org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder");

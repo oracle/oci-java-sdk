@@ -439,6 +439,41 @@ public class WaasClient implements Waas {
     }
 
     @Override
+    public ChangeAddressListCompartmentResponse changeAddressListCompartment(
+            ChangeAddressListCompartmentRequest request) {
+        LOG.trace("Called changeAddressListCompartment");
+        final ChangeAddressListCompartmentRequest interceptedRequest =
+                ChangeAddressListCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeAddressListCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeAddressListCompartmentResponse>
+                transformer = ChangeAddressListCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeAddressListCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeCertificateCompartmentResponse changeCertificateCompartment(
             ChangeCertificateCompartmentRequest request) {
         LOG.trace("Called changeCertificateCompartment");
@@ -467,6 +502,42 @@ public class WaasClient implements Waas {
                                                 ib,
                                                 retriedRequest
                                                         .getChangeCertificateCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeCustomProtectionRuleCompartmentResponse changeCustomProtectionRuleCompartment(
+            ChangeCustomProtectionRuleCompartmentRequest request) {
+        LOG.trace("Called changeCustomProtectionRuleCompartment");
+        final ChangeCustomProtectionRuleCompartmentRequest interceptedRequest =
+                ChangeCustomProtectionRuleCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeCustomProtectionRuleCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeCustomProtectionRuleCompartmentResponse>
+                transformer = ChangeCustomProtectionRuleCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeCustomProtectionRuleCompartmentDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -509,6 +580,38 @@ public class WaasClient implements Waas {
     }
 
     @Override
+    public CreateAddressListResponse createAddressList(CreateAddressListRequest request) {
+        LOG.trace("Called createAddressList");
+        final CreateAddressListRequest interceptedRequest =
+                CreateAddressListConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateAddressListConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateAddressListResponse>
+                transformer = CreateAddressListConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateAddressListDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateCertificateResponse createCertificate(CreateCertificateRequest request) {
         LOG.trace("Called createCertificate");
         final CreateCertificateRequest interceptedRequest =
@@ -534,6 +637,41 @@ public class WaasClient implements Waas {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getCreateCertificateDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateCustomProtectionRuleResponse createCustomProtectionRule(
+            CreateCustomProtectionRuleRequest request) {
+        LOG.trace("Called createCustomProtectionRule");
+        final CreateCustomProtectionRuleRequest interceptedRequest =
+                CreateCustomProtectionRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateCustomProtectionRuleConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateCustomProtectionRuleResponse>
+                transformer = CreateCustomProtectionRuleConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateCustomProtectionRuleDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -573,6 +711,35 @@ public class WaasClient implements Waas {
     }
 
     @Override
+    public DeleteAddressListResponse deleteAddressList(DeleteAddressListRequest request) {
+        LOG.trace("Called deleteAddressList");
+        final DeleteAddressListRequest interceptedRequest =
+                DeleteAddressListConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteAddressListConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteAddressListResponse>
+                transformer = DeleteAddressListConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeleteCertificateResponse deleteCertificate(DeleteCertificateRequest request) {
         LOG.trace("Called deleteCertificate");
         final DeleteCertificateRequest interceptedRequest =
@@ -581,6 +748,37 @@ public class WaasClient implements Waas {
                 DeleteCertificateConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteCertificateResponse>
                 transformer = DeleteCertificateConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteCustomProtectionRuleResponse deleteCustomProtectionRule(
+            DeleteCustomProtectionRuleRequest request) {
+        LOG.trace("Called deleteCustomProtectionRule");
+        final DeleteCustomProtectionRuleRequest interceptedRequest =
+                DeleteCustomProtectionRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteCustomProtectionRuleConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteCustomProtectionRuleResponse>
+                transformer = DeleteCustomProtectionRuleConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -631,6 +829,34 @@ public class WaasClient implements Waas {
     }
 
     @Override
+    public GetAddressListResponse getAddressList(GetAddressListRequest request) {
+        LOG.trace("Called getAddressList");
+        final GetAddressListRequest interceptedRequest =
+                GetAddressListConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAddressListConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetAddressListResponse>
+                transformer = GetAddressListConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetCertificateResponse getCertificate(GetCertificateRequest request) {
         LOG.trace("Called getCertificate");
         final GetCertificateRequest interceptedRequest =
@@ -639,6 +865,35 @@ public class WaasClient implements Waas {
                 GetCertificateConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetCertificateResponse>
                 transformer = GetCertificateConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetCustomProtectionRuleResponse getCustomProtectionRule(
+            GetCustomProtectionRuleRequest request) {
+        LOG.trace("Called getCustomProtectionRule");
+        final GetCustomProtectionRuleRequest interceptedRequest =
+                GetCustomProtectionRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCustomProtectionRuleConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetCustomProtectionRuleResponse>
+                transformer = GetCustomProtectionRuleConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -974,6 +1229,62 @@ public class WaasClient implements Waas {
     }
 
     @Override
+    public ListAddressListsResponse listAddressLists(ListAddressListsRequest request) {
+        LOG.trace("Called listAddressLists");
+        final ListAddressListsRequest interceptedRequest =
+                ListAddressListsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAddressListsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListAddressListsResponse>
+                transformer = ListAddressListsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListCachingRulesResponse listCachingRules(ListCachingRulesRequest request) {
+        LOG.trace("Called listCachingRules");
+        final ListCachingRulesRequest interceptedRequest =
+                ListCachingRulesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCachingRulesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListCachingRulesResponse>
+                transformer = ListCachingRulesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListCaptchasResponse listCaptchas(ListCaptchasRequest request) {
         LOG.trace("Called listCaptchas");
         final ListCaptchasRequest interceptedRequest =
@@ -1010,6 +1321,36 @@ public class WaasClient implements Waas {
                 ListCertificatesConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListCertificatesResponse>
                 transformer = ListCertificatesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListCustomProtectionRulesResponse listCustomProtectionRules(
+            ListCustomProtectionRulesRequest request) {
+        LOG.trace("Called listCustomProtectionRules");
+        final ListCustomProtectionRulesRequest interceptedRequest =
+                ListCustomProtectionRulesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCustomProtectionRulesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListCustomProtectionRulesResponse>
+                transformer = ListCustomProtectionRulesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -1178,6 +1519,37 @@ public class WaasClient implements Waas {
                 ListWaasPoliciesConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListWaasPoliciesResponse>
                 transformer = ListWaasPoliciesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListWaasPolicyCustomProtectionRulesResponse listWaasPolicyCustomProtectionRules(
+            ListWaasPolicyCustomProtectionRulesRequest request) {
+        LOG.trace("Called listWaasPolicyCustomProtectionRules");
+        final ListWaasPolicyCustomProtectionRulesRequest interceptedRequest =
+                ListWaasPolicyCustomProtectionRulesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWaasPolicyCustomProtectionRulesConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListWaasPolicyCustomProtectionRulesResponse>
+                transformer = ListWaasPolicyCustomProtectionRulesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -1367,6 +1739,35 @@ public class WaasClient implements Waas {
     }
 
     @Override
+    public PurgeCacheResponse purgeCache(PurgeCacheRequest request) {
+        LOG.trace("Called purgeCache");
+        final PurgeCacheRequest interceptedRequest = PurgeCacheConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PurgeCacheConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, PurgeCacheResponse> transformer =
+                PurgeCacheConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib, retriedRequest.getPurgeCache(), retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public UpdateAccessRulesResponse updateAccessRules(UpdateAccessRulesRequest request) {
         LOG.trace("Called updateAccessRules");
         final UpdateAccessRulesRequest interceptedRequest =
@@ -1392,6 +1793,70 @@ public class WaasClient implements Waas {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getAccessRules(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateAddressListResponse updateAddressList(UpdateAddressListRequest request) {
+        LOG.trace("Called updateAddressList");
+        final UpdateAddressListRequest interceptedRequest =
+                UpdateAddressListConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateAddressListConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateAddressListResponse>
+                transformer = UpdateAddressListConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateAddressListDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateCachingRulesResponse updateCachingRules(UpdateCachingRulesRequest request) {
+        LOG.trace("Called updateCachingRules");
+        final UpdateCachingRulesRequest interceptedRequest =
+                UpdateCachingRulesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCachingRulesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateCachingRulesResponse>
+                transformer = UpdateCachingRulesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getCachingRulesDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -1454,6 +1919,41 @@ public class WaasClient implements Waas {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateCertificateDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateCustomProtectionRuleResponse updateCustomProtectionRule(
+            UpdateCustomProtectionRuleRequest request) {
+        LOG.trace("Called updateCustomProtectionRule");
+        final UpdateCustomProtectionRuleRequest interceptedRequest =
+                UpdateCustomProtectionRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCustomProtectionRuleConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateCustomProtectionRuleResponse>
+                transformer = UpdateCustomProtectionRuleConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateCustomProtectionRuleDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -1748,6 +2248,42 @@ public class WaasClient implements Waas {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateWaasPolicyDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateWaasPolicyCustomProtectionRulesResponse updateWaasPolicyCustomProtectionRules(
+            UpdateWaasPolicyCustomProtectionRulesRequest request) {
+        LOG.trace("Called updateWaasPolicyCustomProtectionRules");
+        final UpdateWaasPolicyCustomProtectionRulesRequest interceptedRequest =
+                UpdateWaasPolicyCustomProtectionRulesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateWaasPolicyCustomProtectionRulesConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateWaasPolicyCustomProtectionRulesResponse>
+                transformer = UpdateWaasPolicyCustomProtectionRulesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateCustomProtectionRulesDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

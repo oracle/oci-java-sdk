@@ -24,7 +24,7 @@ public class ChangeInstanceCompartmentResponse {
     private String opcRequestId;
 
     /**
-     * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest}
+     * The OCID of the work request. Use [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
      * with this ID to track the status of the request.
      *
      */

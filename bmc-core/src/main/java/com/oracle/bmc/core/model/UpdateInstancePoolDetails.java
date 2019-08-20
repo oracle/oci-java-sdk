@@ -131,7 +131,9 @@ public class UpdateInstancePoolDetails {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * The user-friendly name.  Does not have to be unique.
+     * A user-friendly name for the instance pool. Does not have to be unique, and it's
+     * changeable. Avoid entering confidential information.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;

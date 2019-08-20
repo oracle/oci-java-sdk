@@ -379,7 +379,8 @@ public class Subnet {
 
     /**
      * For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's private IP address
-     * space. The subnet size is always /64.
+     * space. The subnet size is always /64. Note that IPv6 addressing is currently supported only
+     * in the Government Cloud.
      * <p>
      * Example: `2001:0db8:0123:1111::/64`
      *

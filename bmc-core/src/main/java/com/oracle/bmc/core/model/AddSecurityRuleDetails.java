@@ -172,7 +172,7 @@ public class AddSecurityRuleDetails {
     }
 
     /**
-     * An optional description of your choice for the rule.
+     * An optional description of your choice for the rule. Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
@@ -185,6 +185,7 @@ public class AddSecurityRuleDetails {
      * Allowed values:
      * <p>
      * An IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`
+     *     Note that IPv6 addressing is currently supported only in the Government Cloud.
      * <p>
      * The `cidrBlock` value for a {@link Service}, if you're
      *     setting up a security rule for traffic destined for a particular `Service` through
@@ -347,6 +348,7 @@ public class AddSecurityRuleDetails {
      * Allowed values:
      * <p>
      * An IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`
+     *     Note that IPv6 addressing is currently supported only in the Government Cloud.
      * <p>
      * The `cidrBlock` value for a {@link Service}, if you're
      *     setting up a security rule for traffic coming from a particular `Service` through
@@ -368,7 +370,7 @@ public class AddSecurityRuleDetails {
      *     {@link Service} (the rule is for traffic coming from a
      *     particular `Service` through a service gateway).
      * <p>
-     * `NETWORK_SECURITY_GROUP`: If the rule's `destination` is the OCID of a
+     * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the OCID of a
      *     {@link NetworkSecurityGroup}.
      *
      **/
@@ -414,7 +416,7 @@ public class AddSecurityRuleDetails {
      *     {@link Service} (the rule is for traffic coming from a
      *     particular `Service` through a service gateway).
      * <p>
-     * `NETWORK_SECURITY_GROUP`: If the rule's `destination` is the OCID of a
+     * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the OCID of a
      *     {@link NetworkSecurityGroup}.
      *
      **/

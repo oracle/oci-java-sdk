@@ -4,7 +4,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Create an instance configuration from an existing instance.
+ * Details for creating an instance configuration using an existing instance as a template.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -122,7 +122,8 @@ public class CreateInstanceConfigurationFromInstanceDetails
     }
 
     /**
-     * The ID of the instance that will be used to create instance configuration.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the
+     * instance configuration.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceId")

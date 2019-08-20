@@ -129,7 +129,7 @@ public class CreateImageDetails {
     }
 
     /**
-     * The OCID of the compartment containing the instance you want to use as the basis for the image.
+     * The OCID of the compartment you want the image to be created in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;

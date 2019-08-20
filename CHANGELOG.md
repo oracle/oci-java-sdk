@@ -2,6 +2,18 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
+## 1.6.1 - 2019-08-20
+### Added
+- Support for the Limits service
+- Support for archiving to Object Storage in the Streaming service
+- Support for etags on resources in the Streaming service
+- Support for Key Management service (KMS) encryption of file systems in the File Storage service
+- Support for moving public IP, DHCP, local peering gateway, internet gateway, network security group, and DRG attachment resources across compartments in the Networking service
+- Support for multi-origin, basic cache, certificate mapping, and OCI Monitoring service integration in the Web Application Acceleration and Security service
+
+### Changed
+- Updated the Apache Connector Provider Add-On's transitive dependency on org.apache.httpcomponents:httpclient dependency to 4.5.9 to address the httpclient security vulnerability in normalizePath (see https://issues.apache.org/jira/browse/HTTPCLIENT-1803)
+
 ## 1.6.0 - 2019-08-13
 ### Added
 - Support for the Data Transfer service

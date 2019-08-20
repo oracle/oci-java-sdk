@@ -127,6 +127,18 @@ public interface VirtualNetwork extends AutoCloseable {
             ChangeCrossConnectGroupCompartmentRequest request);
 
     /**
+     * Moves a set of DHCP options into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeDhcpOptionsCompartmentResponse changeDhcpOptionsCompartment(
+            ChangeDhcpOptionsCompartmentRequest request);
+
+    /**
      * Moves an IPSec connection into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see
      * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -139,6 +151,30 @@ public interface VirtualNetwork extends AutoCloseable {
             ChangeIPSecConnectionCompartmentRequest request);
 
     /**
+     * Moves an internet gateway into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeInternetGatewayCompartmentResponse changeInternetGatewayCompartment(
+            ChangeInternetGatewayCompartmentRequest request);
+
+    /**
+     * Moves a local peering gateway into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeLocalPeeringGatewayCompartmentResponse changeLocalPeeringGatewayCompartment(
+            ChangeLocalPeeringGatewayCompartmentRequest request);
+
+    /**
      * Moves a NAT gateway into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see
      * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -149,6 +185,32 @@ public interface VirtualNetwork extends AutoCloseable {
      */
     ChangeNatGatewayCompartmentResponse changeNatGatewayCompartment(
             ChangeNatGatewayCompartmentRequest request);
+
+    /**
+     * Moves a network security group into a different compartment within the same tenancy. For
+     * information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeNetworkSecurityGroupCompartmentResponse changeNetworkSecurityGroupCompartment(
+            ChangeNetworkSecurityGroupCompartmentRequest request);
+
+    /**
+     * Moves a public IP into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * <p>
+     * This operation applies only to reserved public IPs. Ephemeral public IPs always belong to the
+     * same compartment as their VNIC and move accordingly.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangePublicIpCompartmentResponse changePublicIpCompartment(
+            ChangePublicIpCompartmentRequest request);
 
     /**
      * Moves a remote peering connection (RPC) into a different compartment within the same tenancy. For information

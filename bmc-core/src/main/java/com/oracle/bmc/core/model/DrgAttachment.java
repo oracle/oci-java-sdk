@@ -221,9 +221,12 @@ public class DrgAttachment {
     LifecycleState lifecycleState;
 
     /**
-     * The OCID of the route table the DRG attachment is using. For information about why you
-     * would associate a route table with a DRG attachment, see
-     * [Advanced Scenario: Transit Routing](https://docs.cloud.oracle.com/Content/Network/Tasks/transitrouting.htm).
+     * The OCID of the route table the DRG attachment is using.
+     * <p>
+     * For information about why you would associate a route table with a DRG attachment, see:
+     * <p>
+     * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/Content/Network/Tasks/transitrouting.htm)
+     *   * [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/Content/Network/Tasks/transitroutingoracleservices.htm)
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")

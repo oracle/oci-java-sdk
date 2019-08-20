@@ -92,7 +92,7 @@ public class UpdateVolumeBackupDetails {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * A friendly user-specified name for the volume backup.
+     * A user-friendly name for the volume backup.
      * Avoid entering confidential information.
      *
      **/

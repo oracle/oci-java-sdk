@@ -12,6 +12,10 @@ public enum WorkRequestOperationTypes {
     CreateWaasPolicy("CREATE_WAAS_POLICY"),
     UpdateWaasPolicy("UPDATE_WAAS_POLICY"),
     DeleteWaasPolicy("DELETE_WAAS_POLICY"),
+    PurgeWaasPolicyCache("PURGE_WAAS_POLICY_CACHE"),
+    CreateCustomProtectionRule("CREATE_CUSTOM_PROTECTION_RULE"),
+    UpdateCustomProtectionRule("UPDATE_CUSTOM_PROTECTION_RULE"),
+    DeleteCustomProtectionRule("DELETE_CUSTOM_PROTECTION_RULE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

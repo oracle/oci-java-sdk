@@ -622,6 +622,41 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public ChangeDhcpOptionsCompartmentResponse changeDhcpOptionsCompartment(
+            ChangeDhcpOptionsCompartmentRequest request) {
+        LOG.trace("Called changeDhcpOptionsCompartment");
+        final ChangeDhcpOptionsCompartmentRequest interceptedRequest =
+                ChangeDhcpOptionsCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeDhcpOptionsCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeDhcpOptionsCompartmentResponse>
+                transformer = ChangeDhcpOptionsCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeDhcpOptionsCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeIPSecConnectionCompartmentResponse changeIPSecConnectionCompartment(
             ChangeIPSecConnectionCompartmentRequest request) {
         LOG.trace("Called changeIPSecConnectionCompartment");
@@ -657,6 +692,77 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public ChangeInternetGatewayCompartmentResponse changeInternetGatewayCompartment(
+            ChangeInternetGatewayCompartmentRequest request) {
+        LOG.trace("Called changeInternetGatewayCompartment");
+        final ChangeInternetGatewayCompartmentRequest interceptedRequest =
+                ChangeInternetGatewayCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeInternetGatewayCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeInternetGatewayCompartmentResponse>
+                transformer = ChangeInternetGatewayCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeInternetGatewayCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeLocalPeeringGatewayCompartmentResponse changeLocalPeeringGatewayCompartment(
+            ChangeLocalPeeringGatewayCompartmentRequest request) {
+        LOG.trace("Called changeLocalPeeringGatewayCompartment");
+        final ChangeLocalPeeringGatewayCompartmentRequest interceptedRequest =
+                ChangeLocalPeeringGatewayCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeLocalPeeringGatewayCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeLocalPeeringGatewayCompartmentResponse>
+                transformer = ChangeLocalPeeringGatewayCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeLocalPeeringGatewayCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeNatGatewayCompartmentResponse changeNatGatewayCompartment(
             ChangeNatGatewayCompartmentRequest request) {
         LOG.trace("Called changeNatGatewayCompartment");
@@ -685,6 +791,77 @@ public class VirtualNetworkClient implements VirtualNetwork {
                                                 ib,
                                                 retriedRequest
                                                         .getChangeNatGatewayCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeNetworkSecurityGroupCompartmentResponse changeNetworkSecurityGroupCompartment(
+            ChangeNetworkSecurityGroupCompartmentRequest request) {
+        LOG.trace("Called changeNetworkSecurityGroupCompartment");
+        final ChangeNetworkSecurityGroupCompartmentRequest interceptedRequest =
+                ChangeNetworkSecurityGroupCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeNetworkSecurityGroupCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeNetworkSecurityGroupCompartmentResponse>
+                transformer = ChangeNetworkSecurityGroupCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeNetworkSecurityGroupCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangePublicIpCompartmentResponse changePublicIpCompartment(
+            ChangePublicIpCompartmentRequest request) {
+        LOG.trace("Called changePublicIpCompartment");
+        final ChangePublicIpCompartmentRequest interceptedRequest =
+                ChangePublicIpCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangePublicIpCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangePublicIpCompartmentResponse>
+                transformer = ChangePublicIpCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangePublicIpCompartmentDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

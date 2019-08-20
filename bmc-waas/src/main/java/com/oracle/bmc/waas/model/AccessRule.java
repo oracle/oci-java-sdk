@@ -94,6 +94,33 @@ public class AccessRule {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("bypassChallenges")
+        private java.util.List<BypassChallenges> bypassChallenges;
+
+        public Builder bypassChallenges(java.util.List<BypassChallenges> bypassChallenges) {
+            this.bypassChallenges = bypassChallenges;
+            this.__explicitlySet__.add("bypassChallenges");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("redirectUrl")
+        private String redirectUrl;
+
+        public Builder redirectUrl(String redirectUrl) {
+            this.redirectUrl = redirectUrl;
+            this.__explicitlySet__.add("redirectUrl");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("redirectResponseCode")
+        private RedirectResponseCode redirectResponseCode;
+
+        public Builder redirectResponseCode(RedirectResponseCode redirectResponseCode) {
+            this.redirectResponseCode = redirectResponseCode;
+            this.__explicitlySet__.add("redirectResponseCode");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -107,7 +134,10 @@ public class AccessRule {
                             blockResponseCode,
                             blockErrorPageMessage,
                             blockErrorPageCode,
-                            blockErrorPageDescription);
+                            blockErrorPageDescription,
+                            bypassChallenges,
+                            redirectUrl,
+                            redirectResponseCode);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -122,7 +152,10 @@ public class AccessRule {
                             .blockResponseCode(o.getBlockResponseCode())
                             .blockErrorPageMessage(o.getBlockErrorPageMessage())
                             .blockErrorPageCode(o.getBlockErrorPageCode())
-                            .blockErrorPageDescription(o.getBlockErrorPageDescription());
+                            .blockErrorPageDescription(o.getBlockErrorPageDescription())
+                            .bypassChallenges(o.getBypassChallenges())
+                            .redirectUrl(o.getRedirectUrl())
+                            .redirectResponseCode(o.getRedirectResponseCode());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -155,12 +188,20 @@ public class AccessRule {
      * - **DETECT:** Takes no action, but creates an alert for the request.
      * <p>
      * - **BLOCK:** Blocks the request by returning specified response code or showing error page.
+     * <p>
+     * - **BYPASS:** Bypasses some or all challenges.
+     * <p>
+     * - **REDIRECT:** Redirects the request to the specified URL.
+     * <p>
+     * Regardless of action, no further rules are processed once the rule is matched.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Action {
         Allow("ALLOW"),
         Detect("DETECT"),
         Block("BLOCK"),
+        Bypass("BYPASS"),
+        Redirect("REDIRECT"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -208,6 +249,12 @@ public class AccessRule {
      * - **DETECT:** Takes no action, but creates an alert for the request.
      * <p>
      * - **BLOCK:** Blocks the request by returning specified response code or showing error page.
+     * <p>
+     * - **BYPASS:** Bypasses some or all challenges.
+     * <p>
+     * - **REDIRECT:** Redirects the request to the specified URL.
+     * <p>
+     * Regardless of action, no further rules are processed once the rule is matched.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     Action action;
@@ -286,6 +333,131 @@ public class AccessRule {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockErrorPageDescription")
     String blockErrorPageDescription;
+    /**
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum BypassChallenges {
+        JsChallenge("JS_CHALLENGE"),
+        DeviceFingerprintChallenge("DEVICE_FINGERPRINT_CHALLENGE"),
+        HumanInteractionChallenge("HUMAN_INTERACTION_CHALLENGE"),
+        Captcha("CAPTCHA"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, BypassChallenges> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (BypassChallenges v : BypassChallenges.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        BypassChallenges(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static BypassChallenges create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'BypassChallenges', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The list of challenges to bypass when `action` is set to `BYPASS`. If unspecified or empty, all challenges are bypassed.
+     * <p>
+     * - **JS_CHALLENGE:** Bypasses JavaScript Challenge.
+     * <p>
+     * - **DEVICE_FINGERPRINT_CHALLENGE:** Bypasses Device Fingerprint Challenge.
+     * <p>
+     * - **HUMAN_INTERACTION_CHALLENGE:** Bypasses Human Interaction Challenge.
+     * <p>
+     * - **CAPTCHA:** Bypasses CAPTCHA Challenge.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("bypassChallenges")
+    java.util.List<BypassChallenges> bypassChallenges;
+
+    /**
+     * The target to which the request should be redirected, represented as a URI reference.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("redirectUrl")
+    String redirectUrl;
+    /**
+     * The response status code to return when `action` is set to `REDIRECT`.
+     * <p>
+     * - **MOVED_PERMANENTLY:** Used for designating the permanent movement of a page (numerical code - 301).
+     * <p>
+     * - **FOUND:** Used for designating the temporary movement of a page (numerical code - 302).
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum RedirectResponseCode {
+        MovedPermanently("MOVED_PERMANENTLY"),
+        Found("FOUND"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, RedirectResponseCode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (RedirectResponseCode v : RedirectResponseCode.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        RedirectResponseCode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static RedirectResponseCode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'RedirectResponseCode', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The response status code to return when `action` is set to `REDIRECT`.
+     * <p>
+     * - **MOVED_PERMANENTLY:** Used for designating the permanent movement of a page (numerical code - 301).
+     * <p>
+     * - **FOUND:** Used for designating the temporary movement of a page (numerical code - 302).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("redirectResponseCode")
+    RedirectResponseCode redirectResponseCode;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

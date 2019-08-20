@@ -4,7 +4,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * An instance configuration that can be used to launch
+ * Creation details for an instance configuration.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -41,7 +41,8 @@ package com.oracle.bmc.core.model;
 public class CreateInstanceConfigurationBase {
 
     /**
-     * The OCID of the compartment containing the instance configuration.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment
+     * containing the instance configuration.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -58,7 +59,8 @@ public class CreateInstanceConfigurationBase {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * A user-friendly name for the instance configuration
+     * A user-friendly name for the instance configuration.  Does not have to be unique,
+     * and it's changeable. Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")

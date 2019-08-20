@@ -92,7 +92,8 @@ public class UpdateVolumeGroupBackupDetails {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * A friendly user-specified name for the volume group backup.
+     * A user-friendly name for the volume group backup. Avoid entering confidential information.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;

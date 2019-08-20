@@ -21,7 +21,7 @@ import com.oracle.bmc.limits.responses.*;
  * Future.isDone/isCancelled.<br/>
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: ")
 @lombok.extern.slf4j.Slf4j
 public class QuotasAsyncClient implements QuotasAsync {
     /**
