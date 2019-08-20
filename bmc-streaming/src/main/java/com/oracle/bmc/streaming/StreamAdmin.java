@@ -45,6 +45,17 @@ public interface StreamAdmin extends AutoCloseable {
     ChangeStreamCompartmentResponse changeStreamCompartment(ChangeStreamCompartmentRequest request);
 
     /**
+     * Starts the provisioning of a new stream archiver.
+     * To track the progress of the provisioning, you can periodically call {@link #getArchiver(GetArchiverRequest) getArchiver}.
+     * In the response, the `lifecycleState` parameter of the {@link Archiver} object tells you its current state.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateArchiverResponse createArchiver(CreateArchiverRequest request);
+
+    /**
      * Starts the provisioning of a new stream.
      * To track the progress of the provisioning, you can periodically call {@link #getStream(GetStreamRequest) getStream}.
      * In the response, the `lifecycleState` parameter of the {@link Stream} object tells you its current state.
@@ -69,6 +80,15 @@ public interface StreamAdmin extends AutoCloseable {
     DeleteStreamResponse deleteStream(DeleteStreamRequest request);
 
     /**
+     * Returns the current state of the stream archiver.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetArchiverResponse getArchiver(GetArchiverRequest request);
+
+    /**
      * Gets detailed information about a stream, including the number of partitions.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -83,6 +103,33 @@ public interface StreamAdmin extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListStreamsResponse listStreams(ListStreamsRequest request);
+
+    /**
+     * Start the archiver for the specified stream.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    StartArchiverResponse startArchiver(StartArchiverRequest request);
+
+    /**
+     * Stop the archiver for the specified stream.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    StopArchiverResponse stopArchiver(StopArchiverRequest request);
+
+    /**
+     * Update the stream archiver parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateArchiverResponse updateArchiver(UpdateArchiverRequest request);
 
     /**
      * Updates the tags applied to the stream.

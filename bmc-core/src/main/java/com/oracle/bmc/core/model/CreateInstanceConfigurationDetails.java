@@ -4,7 +4,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Create an instance configuration from API input.
+ * Details for creating an instance configuration by providing a list of configuration settings.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

@@ -102,7 +102,8 @@ public class UpdateVolumeGroupDetails {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * A user-friendly name for the volume group.
+     * A user-friendly name for the volume group. Avoid entering confidential information.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;

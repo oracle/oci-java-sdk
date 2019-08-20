@@ -71,6 +71,23 @@ public interface WaasAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Moves address list into a different compartment. When provided, If-Match is checked against ETag values of the address list.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeAddressListCompartmentResponse> changeAddressListCompartment(
+            ChangeAddressListCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeAddressListCompartmentRequest,
+                            ChangeAddressListCompartmentResponse>
+                    handler);
+
+    /**
      * Moves certificate into a different compartment. When provided, If-Match is checked against ETag values of the certificate.
      *
      * @param request The request object containing the details to send
@@ -86,6 +103,24 @@ public interface WaasAsync extends AutoCloseable {
                             ChangeCertificateCompartmentRequest,
                             ChangeCertificateCompartmentResponse>
                     handler);
+
+    /**
+     * Moves Custom Protection rule into a different compartment. When provided, If-Match is checked against ETag values of the Custom Protection rule.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeCustomProtectionRuleCompartmentResponse>
+            changeCustomProtectionRuleCompartment(
+                    ChangeCustomProtectionRuleCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeCustomProtectionRuleCompartmentRequest,
+                                    ChangeCustomProtectionRuleCompartmentResponse>
+                            handler);
 
     /**
      * Moves WAAS policy into a different compartment. When provided, If-Match is checked against ETag values of the WAAS policy.
@@ -104,6 +139,23 @@ public interface WaasAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates an address list in set compartment and allows it to be used in a WAAS policy.
+     * For more information, see [WAF Settings](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/wafsettings.htm).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateAddressListResponse> createAddressList(
+            CreateAddressListRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateAddressListRequest, CreateAddressListResponse>
+                    handler);
+
+    /**
      * Allows an SSL certificate to be added to a WAAS policy. The Web Application Firewall terminates SSL connections to inspect requests in runtime, and then re-encrypts requests before sending them to the origin for fulfillment.
      * <p>
      * For more information, see [WAF Settings](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/wafsettings.htm).
@@ -119,6 +171,22 @@ public interface WaasAsync extends AutoCloseable {
             CreateCertificateRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CreateCertificateRequest, CreateCertificateResponse>
+                    handler);
+
+    /**
+     * Creates a new Custom Protection rule in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateCustomProtectionRuleResponse> createCustomProtectionRule(
+            CreateCustomProtectionRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateCustomProtectionRuleRequest, CreateCustomProtectionRuleResponse>
                     handler);
 
     /**
@@ -149,6 +217,22 @@ public interface WaasAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes the address list from the compartment if it is not used.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteAddressListResponse> deleteAddressList(
+            DeleteAddressListRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteAddressListRequest, DeleteAddressListResponse>
+                    handler);
+
+    /**
      * Deletes an SSL certificate from the WAAS service.
      *
      * @param request The request object containing the details to send
@@ -162,6 +246,22 @@ public interface WaasAsync extends AutoCloseable {
             DeleteCertificateRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteCertificateRequest, DeleteCertificateResponse>
+                    handler);
+
+    /**
+     * Deletes a Custom Protection rule.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteCustomProtectionRuleResponse> deleteCustomProtectionRule(
+            DeleteCustomProtectionRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteCustomProtectionRuleRequest, DeleteCustomProtectionRuleResponse>
                     handler);
 
     /**
@@ -180,6 +280,21 @@ public interface WaasAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the details of an address list.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAddressListResponse> getAddressList(
+            GetAddressListRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetAddressListRequest, GetAddressListResponse>
+                    handler);
+
+    /**
      * Gets the details of an SSL certificate.
      *
      * @param request The request object containing the details to send
@@ -192,6 +307,22 @@ public interface WaasAsync extends AutoCloseable {
     java.util.concurrent.Future<GetCertificateResponse> getCertificate(
             GetCertificateRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetCertificateRequest, GetCertificateResponse>
+                    handler);
+
+    /**
+     * Gets the details of a Custom Protection rule.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetCustomProtectionRuleResponse> getCustomProtectionRule(
+            GetCustomProtectionRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetCustomProtectionRuleRequest, GetCustomProtectionRuleResponse>
                     handler);
 
     /**
@@ -369,6 +500,37 @@ public interface WaasAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a list of address lists that can be used in a WAAS policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAddressListsResponse> listAddressLists(
+            ListAddressListsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListAddressListsRequest, ListAddressListsResponse>
+                    handler);
+
+    /**
+     * Gets the currently configured caching rules for the Web Application Firewall configuration of a specified WAAS policy.
+     * The order of the caching rules is important. The rules will be checked in the order they are specified and the first matching rule will be used.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCachingRulesResponse> listCachingRules(
+            ListCachingRulesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListCachingRulesRequest, ListCachingRulesResponse>
+                    handler);
+
+    /**
      * Gets the list of currently configured CAPTCHA challenges in the Web
      * Application Firewall configuration of a WAAS policy.
      * <p>
@@ -401,6 +563,22 @@ public interface WaasAsync extends AutoCloseable {
     java.util.concurrent.Future<ListCertificatesResponse> listCertificates(
             ListCertificatesRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListCertificatesRequest, ListCertificatesResponse>
+                    handler);
+
+    /**
+     * Gets a list of Custom Protection rules.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCustomProtectionRulesResponse> listCustomProtectionRules(
+            ListCustomProtectionRulesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListCustomProtectionRulesRequest, ListCustomProtectionRulesResponse>
                     handler);
 
     /**
@@ -506,6 +684,24 @@ public interface WaasAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the list of currently configured custom protection rules for a WAAS policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListWaasPolicyCustomProtectionRulesResponse>
+            listWaasPolicyCustomProtectionRules(
+                    ListWaasPolicyCustomProtectionRulesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListWaasPolicyCustomProtectionRulesRequest,
+                                    ListWaasPolicyCustomProtectionRulesResponse>
+                            handler);
+
+    /**
      * Gets the number of blocked requests by a Web Application Firewall feature in five minute blocks, sorted by `timeObserved` in ascending order (starting from oldest data).
      *
      * @param request The request object containing the details to send
@@ -604,6 +800,20 @@ public interface WaasAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Accepts a list of resources that will get it's cache purged. If resources property is not passed, then the entire cache for Web Application will be purged.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<PurgeCacheResponse> purgeCache(
+            PurgeCacheRequest request,
+            com.oracle.bmc.responses.AsyncHandler<PurgeCacheRequest, PurgeCacheResponse> handler);
+
+    /**
      * Updates the list of access rules in the Web Application Firewall configuration for a specified WAAS policy. Access rules allow explicit actions to be defined and executed for requests that meet various conditions. A rule action can be set to allow, detect, or block requests. The detect setting allows the request to pass through the Web Application Firewall and is tagged with a `DETECT` flag in the Web Application Firewall's log.
      * <p>
      * This operation can create, delete, update, and/or reorder access rules depending on the structure of the request body.
@@ -625,6 +835,41 @@ public interface WaasAsync extends AutoCloseable {
             UpdateAccessRulesRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateAccessRulesRequest, UpdateAccessRulesResponse>
+                    handler);
+
+    /**
+     * Updates the details of an address list. Only the fields specified in the request body will be updated; all other properties will remain unchanged.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateAddressListResponse> updateAddressList(
+            UpdateAddressListRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateAddressListRequest, UpdateAddressListResponse>
+                    handler);
+
+    /**
+     * Updates the configuration for each specified caching rule.
+     * This operation can update or delete caching rules depending on the structure of the request body.
+     * Caching rules can be updated by changing the properties of the caching rule object with the rule's key specified in the key field.
+     * Any existing caching rules that are not specified with a key in the list of access rules will be deleted upon update.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateCachingRulesResponse> updateCachingRules(
+            UpdateCachingRulesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateCachingRulesRequest, UpdateCachingRulesResponse>
                     handler);
 
     /**
@@ -662,6 +907,22 @@ public interface WaasAsync extends AutoCloseable {
             UpdateCertificateRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateCertificateRequest, UpdateCertificateResponse>
+                    handler);
+
+    /**
+     * Updates the details of a Custom Protection rule. Only the fields specified in the request body will be updated; all other properties will remain unchanged.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateCustomProtectionRuleResponse> updateCustomProtectionRule(
+            UpdateCustomProtectionRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateCustomProtectionRuleRequest, UpdateCustomProtectionRuleResponse>
                     handler);
 
     /**
@@ -819,6 +1080,24 @@ public interface WaasAsync extends AutoCloseable {
             UpdateWaasPolicyRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateWaasPolicyRequest, UpdateWaasPolicyResponse>
                     handler);
+
+    /**
+     * Updates the action for each specified custom protection rule. Only the `DETECT` and `BLOCK` actions can be set. Disabled rules should not be included in the list. For more information on protection rules, see [WAF Protection Rules](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/wafprotectionrules.htm).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateWaasPolicyCustomProtectionRulesResponse>
+            updateWaasPolicyCustomProtectionRules(
+                    UpdateWaasPolicyCustomProtectionRulesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateWaasPolicyCustomProtectionRulesRequest,
+                                    UpdateWaasPolicyCustomProtectionRulesResponse>
+                            handler);
 
     /**
      * Updates the address rate limiting settings in the Web Application Firewall configuration for a policy. Rate limiting allows you to configure a threshold for the number of requests from a unique IP address for the given period. You can also define the response code for the requests from the same address that exceed the threshold.

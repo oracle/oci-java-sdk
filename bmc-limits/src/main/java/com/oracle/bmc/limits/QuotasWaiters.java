@@ -12,7 +12,7 @@ import com.oracle.bmc.limits.responses.*;
  * <p>
  * The default configuration used is defined by {@link com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: ")
 @lombok.RequiredArgsConstructor
 public class QuotasWaiters {
     private final java.util.concurrent.ExecutorService executorService;

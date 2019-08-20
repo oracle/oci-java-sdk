@@ -71,6 +71,15 @@ public class CreateWaasPolicyDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("originGroups")
+        private java.util.Map<String, OriginGroup> originGroups;
+
+        public Builder originGroups(java.util.Map<String, OriginGroup> originGroups) {
+            this.originGroups = originGroups;
+            this.__explicitlySet__.add("originGroups");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("policyConfig")
         private PolicyConfig policyConfig;
 
@@ -119,6 +128,7 @@ public class CreateWaasPolicyDetails {
                             domain,
                             additionalDomains,
                             origins,
+                            originGroups,
                             policyConfig,
                             wafConfig,
                             freeformTags,
@@ -135,6 +145,7 @@ public class CreateWaasPolicyDetails {
                             .domain(o.getDomain())
                             .additionalDomains(o.getAdditionalDomains())
                             .origins(o.getOrigins())
+                            .originGroups(o.getOriginGroups())
                             .policyConfig(o.getPolicyConfig())
                             .wafConfig(o.getWafConfig())
                             .freeformTags(o.getFreeformTags())
@@ -181,6 +192,12 @@ public class CreateWaasPolicyDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("origins")
     java.util.Map<String, Origin> origins;
+
+    /**
+     * The map of origin groups and their keys used to associate origins to the wafConfig.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("originGroups")
+    java.util.Map<String, OriginGroup> originGroups;
 
     @com.fasterxml.jackson.annotation.JsonProperty("policyConfig")
     PolicyConfig policyConfig;

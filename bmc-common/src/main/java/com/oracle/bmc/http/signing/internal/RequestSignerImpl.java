@@ -314,26 +314,22 @@ public class RequestSignerImpl implements RequestSigner {
         if (!(isPut || isPost || isPatch)) {
             // Asking to sign a body on GET/DELETE/HEAD is not allowed
             if (body != null) {
-                throw new RequestSignerException("MUST NOT send body on non-POST/PUT request");
+                throw new RequestSignerException(
+                        "MUST NOT send body on non-POST/PUT/PATCH request");
             } else {
                 // nothing left to do
                 return missingHeaders;
             }
         }
 
-        // the one exception for the below is when doing a PUT if the body is an InputStream
-        // and the configuration allows it to be skipped
-        if ((isPut || isPatch) && (body instanceof InputStream)) {
-            if (signingConfiguration.skipContentHeadersForStreamingPutRequests) {
-                return missingHeaders;
-            } else {
-                // TODO: support DuplicatableInputStream to be able to calculate length/sha-256
-                throw new IllegalArgumentException(
-                        "Streaming body not supported for signing strategy");
-            }
+        // Return if the body is an InputStream and the configuration allows for it to be skipped.
+        // This is typically done for put, patch, and post http method types.
+        if (body instanceof InputStream
+                && signingConfiguration.skipContentHeadersForStreamingPutRequests) {
+            return missingHeaders;
         }
 
-        // supply content-type, content-length and x-content-sha256 if missing (PUT and POST only)
+        // supply content-type, content-length and x-content-sha256 if missing (PUT, PATCH, and POST only)
         if (requiredHeaders.contains(Constants.CONTENT_TYPE)) {
             // While we don't always sign content-type, services always
             // expect application/json (except if we're sending an input stream)

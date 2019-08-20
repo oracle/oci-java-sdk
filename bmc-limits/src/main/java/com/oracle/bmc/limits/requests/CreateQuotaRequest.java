@@ -5,7 +5,7 @@ package com.oracle.bmc.limits.requests;
 
 import com.oracle.bmc.limits.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: ")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
 public class CreateQuotaRequest extends com.oracle.bmc.requests.BmcRequest {

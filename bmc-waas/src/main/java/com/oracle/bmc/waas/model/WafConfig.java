@@ -96,6 +96,34 @@ public class WafConfig {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("cachingRules")
+        private java.util.List<CachingRule> cachingRules;
+
+        public Builder cachingRules(java.util.List<CachingRule> cachingRules) {
+            this.cachingRules = cachingRules;
+            this.__explicitlySet__.add("cachingRules");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("customProtectionRules")
+        private java.util.List<CustomProtectionRuleSetting> customProtectionRules;
+
+        public Builder customProtectionRules(
+                java.util.List<CustomProtectionRuleSetting> customProtectionRules) {
+            this.customProtectionRules = customProtectionRules;
+            this.__explicitlySet__.add("customProtectionRules");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("originGroups")
+        private java.util.List<String> originGroups;
+
+        public Builder originGroups(java.util.List<String> originGroups) {
+            this.originGroups = originGroups;
+            this.__explicitlySet__.add("originGroups");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("protectionRules")
         private java.util.List<ProtectionRule> protectionRules;
 
@@ -146,6 +174,9 @@ public class WafConfig {
                             humanInteractionChallenge,
                             jsChallenge,
                             origin,
+                            cachingRules,
+                            customProtectionRules,
+                            originGroups,
                             protectionRules,
                             protectionSettings,
                             threatFeeds,
@@ -165,6 +196,9 @@ public class WafConfig {
                             .humanInteractionChallenge(o.getHumanInteractionChallenge())
                             .jsChallenge(o.getJsChallenge())
                             .origin(o.getOrigin())
+                            .cachingRules(o.getCachingRules())
+                            .customProtectionRules(o.getCustomProtectionRules())
+                            .originGroups(o.getOriginGroups())
                             .protectionRules(o.getProtectionRules())
                             .protectionSettings(o.getProtectionSettings())
                             .threatFeeds(o.getThreatFeeds())
@@ -229,6 +263,24 @@ public class WafConfig {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("origin")
     String origin;
+
+    /**
+     * A list of caching rules applied to the web application.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cachingRules")
+    java.util.List<CachingRule> cachingRules;
+
+    /**
+     * A list of the custom protection rule OCIDs and their actions.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customProtectionRules")
+    java.util.List<CustomProtectionRuleSetting> customProtectionRules;
+
+    /**
+     * The list of origin group references that provide support for additional origin servers. A list of combined unique origin servers from `origin` and `originGroups` will be used.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("originGroups")
+    java.util.List<String> originGroups;
 
     /**
      * A list of the protection rules and their details.

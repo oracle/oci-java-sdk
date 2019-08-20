@@ -4,8 +4,8 @@
 package com.oracle.bmc.core.model;
 
 /**
- * An instance configuration is a template that defines the settings to use when creating Compute instances
- * as part of an instance pool. For more information about instance pools and instance configurations, see
+ * An instance configuration is a template that defines the settings to use when creating Compute instances.
+ * For more information about instance configurations, see
  * [Managing Compute Instances](https://docs.cloud.oracle.com/Content/Compute/Concepts/instancemanagement.htm).
  *
  * <br/>
@@ -143,7 +143,8 @@ public class InstanceConfiguration {
     }
 
     /**
-     * The OCID of the compartment containing the instance configuration.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment
+     * containing the instance configuration.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -160,7 +161,7 @@ public class InstanceConfiguration {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * A user-friendly name for the instance configuration
+     * A user-friendly name for the instance configuration.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -177,7 +178,7 @@ public class InstanceConfiguration {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The OCID of the instance configuration
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -186,8 +187,9 @@ public class InstanceConfiguration {
     InstanceConfigurationInstanceDetails instanceDetails;
 
     /**
-     * The required details when using the {@link #launchInstanceConfiguration(LaunchInstanceConfigurationRequest) launchInstanceConfiguration} operation.
-     * These attributes are optional when using the {@link #createInstanceConfiguration(CreateInstanceConfigurationRequest) createInstanceConfiguration} operation.
+     * Parameters that were not specified when the instance configuration was created, but that
+     * are required to launch an instance from the instance configuration. See the
+     * {@link #launchInstanceConfiguration(LaunchInstanceConfigurationRequest) launchInstanceConfiguration} operation.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("deferredFields")
@@ -195,6 +197,7 @@ public class InstanceConfiguration {
 
     /**
      * The date and time the instance configuration was created, in the format defined by RFC3339.
+     * <p>
      * Example: `2016-08-25T21:10:29.600Z`
      *
      **/

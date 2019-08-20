@@ -9,7 +9,7 @@ import com.oracle.bmc.limits.requests.*;
 import com.oracle.bmc.limits.responses.*;
 import org.apache.commons.lang3.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: ")
 @lombok.extern.slf4j.Slf4j
 public class UpdateQuotaConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
@@ -29,7 +29,8 @@ public class UpdateQuotaConverter {
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
-                        .path("/20181025")
+                        .path("/")
+                        .path("20181025")
                         .path("quotas")
                         .path(
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(

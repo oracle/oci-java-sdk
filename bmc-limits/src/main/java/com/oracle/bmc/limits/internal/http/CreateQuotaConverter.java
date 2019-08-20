@@ -9,7 +9,7 @@ import com.oracle.bmc.limits.requests.*;
 import com.oracle.bmc.limits.responses.*;
 import org.apache.commons.lang3.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: ")
 @lombok.extern.slf4j.Slf4j
 public class CreateQuotaConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
@@ -27,7 +27,7 @@ public class CreateQuotaConverter {
         Validate.notNull(request.getCreateQuotaDetails(), "createQuotaDetails is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20181025").path("quotas");
+                client.getBaseTarget().path("/").path("20181025").path("quotas");
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 

@@ -248,9 +248,10 @@ public class LaunchOptions {
     @com.fasterxml.jackson.annotation.JsonProperty("firmware")
     Firmware firmware;
     /**
-     * Emulation type for NIC.
+     * Emulation type for the physical network interface card (NIC).
      * * `E1000` - Emulated Gigabit ethernet controller.  Compatible with Linux e1000 network driver.
-     * * `VFIO` - Direct attached Virtual Function network controller.  Default for Oracle provided images.
+     * * `VFIO` - Direct attached Virtual Function network controller. This is the networking type
+     * when you launch an instance using hardware-assisted (SR-IOV) networking.
      * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using virtio drivers.
      *
      **/
@@ -299,9 +300,10 @@ public class LaunchOptions {
         }
     };
     /**
-     * Emulation type for NIC.
+     * Emulation type for the physical network interface card (NIC).
      * * `E1000` - Emulated Gigabit ethernet controller.  Compatible with Linux e1000 network driver.
-     * * `VFIO` - Direct attached Virtual Function network controller.  Default for Oracle provided images.
+     * * `VFIO` - Direct attached Virtual Function network controller. This is the networking type
+     * when you launch an instance using hardware-assisted (SR-IOV) networking.
      * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using virtio drivers.
      *
      **/

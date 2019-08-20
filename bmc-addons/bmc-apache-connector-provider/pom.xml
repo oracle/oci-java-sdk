@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk-addons</artifactId>
-    <version>1.6.0</version>
+    <version>1.6.1</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -28,6 +28,9 @@
       <version>${jersey.version}</version>
     </dependency>
 
+    <!-- TODO: Remove the explicit dependency on org.apache.httpcomponents:httpclient:jar:4.5.9
+         when org.glassfish.jersey.connectors:jersey-apache-connector transitively depends on a newer version
+         of httpclient (> 4.5.2). -->
     <dependency>
       <groupId>org.glassfish.jersey.connectors</groupId>
       <artifactId>jersey-apache-connector</artifactId>
@@ -43,7 +46,15 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common</artifactId>
-      <version>1.6.0</version>
+      <version>1.6.1</version>
+    </dependency>
+
+    <!-- Explicitly pull in this version of httpclient and its httpcore dependency to address:
+         https://issues.apache.org/jira/browse/HTTPCLIENT-1803 -->
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpclient</artifactId>
+      <version>4.5.9</version>
     </dependency>
   </dependencies>
 </project>

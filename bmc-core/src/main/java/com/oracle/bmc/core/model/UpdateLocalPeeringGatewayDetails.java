@@ -121,9 +121,10 @@ public class UpdateLocalPeeringGatewayDetails {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The OCID of the route table the LPG will use. For information about why you
-     * would associate a route table with an LPG, see
-     * [Advanced Scenario: Transit Routing](https://docs.cloud.oracle.com/Content/Network/Tasks/transitrouting.htm).
+     * The OCID of the route table the LPG will use.
+     * <p>
+     * For information about why you would associate a route table with an LPG, see
+     * [Transit Routing: Access to Multiple VCNs in Same Region](https://docs.cloud.oracle.com/Content/Network/Tasks/transitrouting.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")

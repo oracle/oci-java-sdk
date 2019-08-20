@@ -142,6 +142,230 @@ public class WaasPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listAddressLists operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListAddressListsResponse> listAddressListsResponseIterator(
+            final ListAddressListsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAddressListsRequest.Builder, ListAddressListsRequest, ListAddressListsResponse>(
+                new com.google.common.base.Supplier<ListAddressListsRequest.Builder>() {
+                    @Override
+                    public ListAddressListsRequest.Builder get() {
+                        return ListAddressListsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListAddressListsResponse, String>() {
+                    @Override
+                    public String apply(ListAddressListsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAddressListsRequest.Builder>,
+                        ListAddressListsRequest>() {
+                    @Override
+                    public ListAddressListsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAddressListsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAddressListsRequest, ListAddressListsResponse>() {
+                    @Override
+                    public ListAddressListsResponse apply(ListAddressListsRequest request) {
+                        return client.listAddressLists(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.waas.model.AddressListSummary} objects
+     * contained in responses from the listAddressLists operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.waas.model.AddressListSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.waas.model.AddressListSummary> listAddressListsRecordIterator(
+            final ListAddressListsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAddressListsRequest.Builder, ListAddressListsRequest, ListAddressListsResponse,
+                com.oracle.bmc.waas.model.AddressListSummary>(
+                new com.google.common.base.Supplier<ListAddressListsRequest.Builder>() {
+                    @Override
+                    public ListAddressListsRequest.Builder get() {
+                        return ListAddressListsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListAddressListsResponse, String>() {
+                    @Override
+                    public String apply(ListAddressListsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAddressListsRequest.Builder>,
+                        ListAddressListsRequest>() {
+                    @Override
+                    public ListAddressListsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAddressListsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAddressListsRequest, ListAddressListsResponse>() {
+                    @Override
+                    public ListAddressListsResponse apply(ListAddressListsRequest request) {
+                        return client.listAddressLists(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListAddressListsResponse,
+                        java.util.List<com.oracle.bmc.waas.model.AddressListSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.waas.model.AddressListSummary> apply(
+                            ListAddressListsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listCachingRules operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListCachingRulesResponse> listCachingRulesResponseIterator(
+            final ListCachingRulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCachingRulesRequest.Builder, ListCachingRulesRequest, ListCachingRulesResponse>(
+                new com.google.common.base.Supplier<ListCachingRulesRequest.Builder>() {
+                    @Override
+                    public ListCachingRulesRequest.Builder get() {
+                        return ListCachingRulesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListCachingRulesResponse, String>() {
+                    @Override
+                    public String apply(ListCachingRulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCachingRulesRequest.Builder>,
+                        ListCachingRulesRequest>() {
+                    @Override
+                    public ListCachingRulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCachingRulesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCachingRulesRequest, ListCachingRulesResponse>() {
+                    @Override
+                    public ListCachingRulesResponse apply(ListCachingRulesRequest request) {
+                        return client.listCachingRules(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.waas.model.CachingRuleSummary} objects
+     * contained in responses from the listCachingRules operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.waas.model.CachingRuleSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.waas.model.CachingRuleSummary> listCachingRulesRecordIterator(
+            final ListCachingRulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCachingRulesRequest.Builder, ListCachingRulesRequest, ListCachingRulesResponse,
+                com.oracle.bmc.waas.model.CachingRuleSummary>(
+                new com.google.common.base.Supplier<ListCachingRulesRequest.Builder>() {
+                    @Override
+                    public ListCachingRulesRequest.Builder get() {
+                        return ListCachingRulesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListCachingRulesResponse, String>() {
+                    @Override
+                    public String apply(ListCachingRulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCachingRulesRequest.Builder>,
+                        ListCachingRulesRequest>() {
+                    @Override
+                    public ListCachingRulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCachingRulesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCachingRulesRequest, ListCachingRulesResponse>() {
+                    @Override
+                    public ListCachingRulesResponse apply(ListCachingRulesRequest request) {
+                        return client.listCachingRules(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCachingRulesResponse,
+                        java.util.List<com.oracle.bmc.waas.model.CachingRuleSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.waas.model.CachingRuleSummary> apply(
+                            ListCachingRulesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listCaptchas operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -357,6 +581,123 @@ public class WaasPaginators {
                     @Override
                     public java.util.List<com.oracle.bmc.waas.model.CertificateSummary> apply(
                             ListCertificatesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listCustomProtectionRules operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListCustomProtectionRulesResponse> listCustomProtectionRulesResponseIterator(
+            final ListCustomProtectionRulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCustomProtectionRulesRequest.Builder, ListCustomProtectionRulesRequest,
+                ListCustomProtectionRulesResponse>(
+                new com.google.common.base.Supplier<ListCustomProtectionRulesRequest.Builder>() {
+                    @Override
+                    public ListCustomProtectionRulesRequest.Builder get() {
+                        return ListCustomProtectionRulesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListCustomProtectionRulesResponse, String>() {
+                    @Override
+                    public String apply(ListCustomProtectionRulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCustomProtectionRulesRequest.Builder>,
+                        ListCustomProtectionRulesRequest>() {
+                    @Override
+                    public ListCustomProtectionRulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCustomProtectionRulesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCustomProtectionRulesRequest, ListCustomProtectionRulesResponse>() {
+                    @Override
+                    public ListCustomProtectionRulesResponse apply(
+                            ListCustomProtectionRulesRequest request) {
+                        return client.listCustomProtectionRules(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.waas.model.CustomProtectionRuleSummary} objects
+     * contained in responses from the listCustomProtectionRules operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.waas.model.CustomProtectionRuleSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.waas.model.CustomProtectionRuleSummary>
+            listCustomProtectionRulesRecordIterator(
+                    final ListCustomProtectionRulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCustomProtectionRulesRequest.Builder, ListCustomProtectionRulesRequest,
+                ListCustomProtectionRulesResponse,
+                com.oracle.bmc.waas.model.CustomProtectionRuleSummary>(
+                new com.google.common.base.Supplier<ListCustomProtectionRulesRequest.Builder>() {
+                    @Override
+                    public ListCustomProtectionRulesRequest.Builder get() {
+                        return ListCustomProtectionRulesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListCustomProtectionRulesResponse, String>() {
+                    @Override
+                    public String apply(ListCustomProtectionRulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCustomProtectionRulesRequest.Builder>,
+                        ListCustomProtectionRulesRequest>() {
+                    @Override
+                    public ListCustomProtectionRulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCustomProtectionRulesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCustomProtectionRulesRequest, ListCustomProtectionRulesResponse>() {
+                    @Override
+                    public ListCustomProtectionRulesResponse apply(
+                            ListCustomProtectionRulesRequest request) {
+                        return client.listCustomProtectionRules(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCustomProtectionRulesResponse,
+                        java.util.List<com.oracle.bmc.waas.model.CustomProtectionRuleSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.waas.model.CustomProtectionRuleSummary>
+                            apply(ListCustomProtectionRulesResponse response) {
                         return response.getItems();
                     }
                 });
@@ -1028,6 +1369,135 @@ public class WaasPaginators {
                     @Override
                     public java.util.List<com.oracle.bmc.waas.model.WaasPolicySummary> apply(
                             ListWaasPoliciesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listWaasPolicyCustomProtectionRules operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListWaasPolicyCustomProtectionRulesResponse>
+            listWaasPolicyCustomProtectionRulesResponseIterator(
+                    final ListWaasPolicyCustomProtectionRulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListWaasPolicyCustomProtectionRulesRequest.Builder,
+                ListWaasPolicyCustomProtectionRulesRequest,
+                ListWaasPolicyCustomProtectionRulesResponse>(
+                new com.google.common.base.Supplier<
+                        ListWaasPolicyCustomProtectionRulesRequest.Builder>() {
+                    @Override
+                    public ListWaasPolicyCustomProtectionRulesRequest.Builder get() {
+                        return ListWaasPolicyCustomProtectionRulesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWaasPolicyCustomProtectionRulesResponse, String>() {
+                    @Override
+                    public String apply(ListWaasPolicyCustomProtectionRulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWaasPolicyCustomProtectionRulesRequest.Builder>,
+                        ListWaasPolicyCustomProtectionRulesRequest>() {
+                    @Override
+                    public ListWaasPolicyCustomProtectionRulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWaasPolicyCustomProtectionRulesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWaasPolicyCustomProtectionRulesRequest,
+                        ListWaasPolicyCustomProtectionRulesResponse>() {
+                    @Override
+                    public ListWaasPolicyCustomProtectionRulesResponse apply(
+                            ListWaasPolicyCustomProtectionRulesRequest request) {
+                        return client.listWaasPolicyCustomProtectionRules(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.waas.model.WaasPolicyCustomProtectionRuleSummary} objects
+     * contained in responses from the listWaasPolicyCustomProtectionRules operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.waas.model.WaasPolicyCustomProtectionRuleSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.waas.model.WaasPolicyCustomProtectionRuleSummary>
+            listWaasPolicyCustomProtectionRulesRecordIterator(
+                    final ListWaasPolicyCustomProtectionRulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListWaasPolicyCustomProtectionRulesRequest.Builder,
+                ListWaasPolicyCustomProtectionRulesRequest,
+                ListWaasPolicyCustomProtectionRulesResponse,
+                com.oracle.bmc.waas.model.WaasPolicyCustomProtectionRuleSummary>(
+                new com.google.common.base.Supplier<
+                        ListWaasPolicyCustomProtectionRulesRequest.Builder>() {
+                    @Override
+                    public ListWaasPolicyCustomProtectionRulesRequest.Builder get() {
+                        return ListWaasPolicyCustomProtectionRulesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWaasPolicyCustomProtectionRulesResponse, String>() {
+                    @Override
+                    public String apply(ListWaasPolicyCustomProtectionRulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListWaasPolicyCustomProtectionRulesRequest.Builder>,
+                        ListWaasPolicyCustomProtectionRulesRequest>() {
+                    @Override
+                    public ListWaasPolicyCustomProtectionRulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListWaasPolicyCustomProtectionRulesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWaasPolicyCustomProtectionRulesRequest,
+                        ListWaasPolicyCustomProtectionRulesResponse>() {
+                    @Override
+                    public ListWaasPolicyCustomProtectionRulesResponse apply(
+                            ListWaasPolicyCustomProtectionRulesRequest request) {
+                        return client.listWaasPolicyCustomProtectionRules(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListWaasPolicyCustomProtectionRulesResponse,
+                        java.util.List<
+                                com.oracle.bmc.waas.model
+                                        .WaasPolicyCustomProtectionRuleSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.waas.model.WaasPolicyCustomProtectionRuleSummary>
+                            apply(ListWaasPolicyCustomProtectionRulesResponse response) {
                         return response.getItems();
                     }
                 });

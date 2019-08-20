@@ -84,7 +84,8 @@ public interface ComputeManagement extends AutoCloseable {
             ChangeInstancePoolCompartmentRequest request);
 
     /**
-     * Creates an instance configuration
+     * Creates an instance configuration. An instance configuration is a template that defines the
+     * settings to use when creating Compute instances.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -147,7 +148,13 @@ public interface ComputeManagement extends AutoCloseable {
             GetInstancePoolLoadBalancerAttachmentRequest request);
 
     /**
-     * Launch an instance from an instance configuration
+     * Launches an instance from an instance configuration.
+     * <p>
+     * If the instance configuration does not include all of the parameters that are
+     * required to launch an instance, such as the availability domain and subnet ID, you must
+     * provide these parameters when you launch an instance from the instance configuration.
+     * For more information, see the {@link InstanceConfiguration}
+     * resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -157,7 +164,7 @@ public interface ComputeManagement extends AutoCloseable {
             LaunchInstanceConfigurationRequest request);
 
     /**
-     * Lists the available instanceConfigurations in the specific compartment.
+     * Lists the instance configurations in the specified compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -232,7 +239,7 @@ public interface ComputeManagement extends AutoCloseable {
     TerminateInstancePoolResponse terminateInstancePool(TerminateInstancePoolRequest request);
 
     /**
-     * Updates the freeFormTags, definedTags, and display name of an instance configuration.
+     * Updates the free-form tags, defined tags, and display name of an instance configuration.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.

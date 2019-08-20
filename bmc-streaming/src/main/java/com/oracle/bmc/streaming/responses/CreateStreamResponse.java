@@ -18,6 +18,11 @@ public class CreateStreamResponse {
     private String opcRequestId;
 
     /**
+     * For optimistic concurrency control. See `if-match`.
+     */
+    private String etag;
+
+    /**
      * The returned Stream instance.
      */
     private Stream stream;
@@ -29,6 +34,7 @@ public class CreateStreamResponse {
          */
         public Builder copy(CreateStreamResponse o) {
             opcRequestId(o.getOpcRequestId());
+            etag(o.getEtag());
             stream(o.getStream());
 
             return this;

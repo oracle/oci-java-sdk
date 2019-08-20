@@ -186,6 +186,26 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves a set of DHCP options into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeDhcpOptionsCompartmentResponse> changeDhcpOptionsCompartment(
+            ChangeDhcpOptionsCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeDhcpOptionsCompartmentRequest,
+                            ChangeDhcpOptionsCompartmentResponse>
+                    handler);
+
+    /**
      * Moves an IPSec connection into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see
      * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -207,6 +227,48 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves an internet gateway into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeInternetGatewayCompartmentResponse>
+            changeInternetGatewayCompartment(
+                    ChangeInternetGatewayCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeInternetGatewayCompartmentRequest,
+                                    ChangeInternetGatewayCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves a local peering gateway into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeLocalPeeringGatewayCompartmentResponse>
+            changeLocalPeeringGatewayCompartment(
+                    ChangeLocalPeeringGatewayCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeLocalPeeringGatewayCompartmentRequest,
+                                    ChangeLocalPeeringGatewayCompartmentResponse>
+                            handler);
+
+    /**
      * Moves a NAT gateway into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see
      * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -223,6 +285,48 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             ChangeNatGatewayCompartmentRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ChangeNatGatewayCompartmentRequest, ChangeNatGatewayCompartmentResponse>
+                    handler);
+
+    /**
+     * Moves a network security group into a different compartment within the same tenancy. For
+     * information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeNetworkSecurityGroupCompartmentResponse>
+            changeNetworkSecurityGroupCompartment(
+                    ChangeNetworkSecurityGroupCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeNetworkSecurityGroupCompartmentRequest,
+                                    ChangeNetworkSecurityGroupCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves a public IP into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * <p>
+     * This operation applies only to reserved public IPs. Ephemeral public IPs always belong to the
+     * same compartment as their VNIC and move accordingly.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangePublicIpCompartmentResponse> changePublicIpCompartment(
+            ChangePublicIpCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangePublicIpCompartmentRequest, ChangePublicIpCompartmentResponse>
                     handler);
 
     /**

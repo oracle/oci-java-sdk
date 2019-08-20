@@ -1,7 +1,6 @@
 /**
  * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
-import com.oracle.bmc.Region;
 import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.ConfigFileReader.ConfigFile;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
@@ -9,45 +8,21 @@ import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.identity.IdentityClient;
 import com.oracle.bmc.waas.WaasClient;
 import com.oracle.bmc.waas.WaasPaginators;
-import com.oracle.bmc.waas.model.Captcha;
-import com.oracle.bmc.waas.model.Certificate;
-import com.oracle.bmc.waas.model.CreateCertificateDetails;
-import com.oracle.bmc.waas.model.CreateWaasPolicyDetails;
-import com.oracle.bmc.waas.model.LifecycleStates;
-import com.oracle.bmc.waas.model.Origin;
-import com.oracle.bmc.waas.model.PolicyConfig;
-import com.oracle.bmc.waas.model.WaasPolicy;
-import com.oracle.bmc.waas.model.WaasPolicySummary;
-import com.oracle.bmc.waas.requests.CreateCertificateRequest;
-import com.oracle.bmc.waas.requests.CreateWaasPolicyRequest;
-import com.oracle.bmc.waas.requests.DeleteCertificateRequest;
-import com.oracle.bmc.waas.requests.DeleteWaasPolicyRequest;
-import com.oracle.bmc.waas.requests.GetCertificateRequest;
-import com.oracle.bmc.waas.requests.GetWaasPolicyRequest;
-import com.oracle.bmc.waas.requests.GetWorkRequestRequest;
-import com.oracle.bmc.waas.requests.ListCaptchasRequest;
-import com.oracle.bmc.waas.requests.ListWaasPoliciesRequest;
-import com.oracle.bmc.waas.requests.UpdateCaptchasRequest;
-import com.oracle.bmc.waas.responses.CreateCertificateResponse;
-import com.oracle.bmc.waas.responses.CreateWaasPolicyResponse;
-import com.oracle.bmc.waas.responses.GetWaasPolicyResponse;
-import com.oracle.bmc.waas.responses.GetWorkRequestResponse;
-import com.oracle.bmc.waas.responses.ListCaptchasResponse;
+import com.oracle.bmc.waas.model.*;
+import com.oracle.bmc.waas.requests.*;
+import com.oracle.bmc.waas.responses.*;
 
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * This class demonstrates how to use the WAAS service in the Java SDK. This will cover:
  *
  * <ul>
- *   <li>Creating, retrieving, listing, and deleting WAAS policies</li>
- *   <li>Uploading, retrieving, listing, and deleting SSL certificates</li>
+ *   <li>Creating, retrieving, listing, moving and deleting WAAS policies</li>
+ *   <li>Uploading, retrieving, listing, moving and deleting SSL certificates</li>
  *   <li>Creating and updating WAF protection rules</li>
  *   <li>Updating challenges (CAPTCHAs, device fingerprints, etc.)</li>
  * </ul>
@@ -72,6 +47,7 @@ public class WaasServiceExample {
     private static final String CONFIG_LOCATION = "~/.oci/config";
     private static final String CONFIG_PROFILE = "DEFAULT";
     private static final String COMPARTMENT_ID = "ocid1.compartment.oc1...aaaaaa";
+    private static final String TARGET_COMPARTMENT_ID = "ocid1.compartment.oc1...xxxxxx";
     private static final String DOMAIN = "www.mydomain.test";
     private static final String ORIGIN = "192.168.2.1";
     private static final String KEY_PATH = "path/to/rsa_key";
@@ -141,6 +117,15 @@ public class WaasServiceExample {
 
             listPolicies(waasClient, COMPARTMENT_ID, DOMAIN);
 
+            changePolicyCompartment(waasClient, policy.getId(), TARGET_COMPARTMENT_ID);
+
+            listCachingRules(waasClient, policy.getId());
+
+            updateCachingRule(
+                    waasClient, policy.getId(), "CacheRule", CachingRule.Action.BypassCache);
+
+            changeCertificateCompartment(waasClient, certificate.getId(), TARGET_COMPARTMENT_ID);
+
             addCaptcha(
                     waasClient,
                     policy.getId(),
@@ -199,6 +184,30 @@ public class WaasServiceExample {
     }
 
     /**
+     * Changes the compartment for an existing SSL Certificate
+     *
+     * @param waasClient            client used to communicate with the service
+     * @param certificateId         ID of the waasPolicy to be updated
+     * @param targetCompartment     target compartment to which the LoadBalancer will be moved
+     */
+    private static void changeCertificateCompartment(
+            final WaasClient waasClient,
+            final String certificateId,
+            final String targetCompartment) {
+        ChangeCertificateCompartmentResponse response =
+                waasClient.changeCertificateCompartment(
+                        ChangeCertificateCompartmentRequest.builder()
+                                .certificateId(certificateId)
+                                .changeCertificateCompartmentDetails(
+                                        ChangeCertificateCompartmentDetails.builder()
+                                                .compartmentId(targetCompartment)
+                                                .build())
+                                .build());
+        System.out.println("Moved SSL Certificate " + response.toString());
+        System.out.println();
+    }
+
+    /**
      * Creates a WAAS policy and waits for it to be come available.
      *
      * @param waasClient the client used to communicate with the WAAS service
@@ -221,9 +230,12 @@ public class WaasServiceExample {
         Map<String, Origin> origins = new HashMap<>();
         origins.put(origin, Origin.builder().uri(origin).httpPort(80).httpsPort(443).build());
 
+        WafConfigDetails wafConfigDetails = WafConfigDetails.builder().origin(origin).build();
+
         CreateWaasPolicyDetails.Builder policyDetails =
                 CreateWaasPolicyDetails.builder()
                         .compartmentId(compartmentId)
+                        .wafConfig(wafConfigDetails)
                         .domain(domain)
                         .origins(origins);
 
@@ -291,6 +303,30 @@ public class WaasServiceExample {
                 System.out.println(summary);
             }
         }
+    }
+
+    /**
+     * Changes the compartment for an existing WAAS Policy
+     *
+     * @param waasClient            client used to communicate with the service
+     * @param waasPolicyId          ID of the waasPolicy to be updated
+     * @param targetCompartment     target compartment to which the WAAS Policy will be moved
+     */
+    private static void changePolicyCompartment(
+            final WaasClient waasClient,
+            final String waasPolicyId,
+            final String targetCompartment) {
+        ChangeWaasPolicyCompartmentResponse response =
+                waasClient.changeWaasPolicyCompartment(
+                        ChangeWaasPolicyCompartmentRequest.builder()
+                                .waasPolicyId(waasPolicyId)
+                                .changeWaasPolicyCompartmentDetails(
+                                        ChangeWaasPolicyCompartmentDetails.builder()
+                                                .compartmentId(targetCompartment)
+                                                .build())
+                                .build());
+        System.out.println("Moved WAAS Policy " + response.toString());
+        System.out.println();
     }
 
     /**
@@ -394,5 +430,74 @@ public class WaasServiceExample {
         for (Captcha captcha : captchas) {
             System.out.println(captcha);
         }
+    }
+    /**
+     * Update Caching Rule of the WAAS policy.
+     *
+     * @param waasClient the client used to communicate with the WAAS service
+     * @param waasPolicyId the OCID of the WAAS Policy to list resources of
+     * @param name text used as a name of the Caching Rule
+     * @param action the action to take on matched caching rules
+     */
+    private static void updateCachingRule(
+            WaasClient waasClient,
+            final String waasPolicyId,
+            final String name,
+            final CachingRule.Action action) {
+
+        ListCachingRulesRequest listCachingRulesRequest =
+                ListCachingRulesRequest.builder().waasPolicyId(waasPolicyId).build();
+
+        Iterable<CachingRuleSummary> cachingRuleIterator =
+                waasClient.getPaginators().listCachingRulesRecordIterator(listCachingRulesRequest);
+
+        for (CachingRuleSummary summary : cachingRuleIterator) {
+            if (summary.getName() == name) {
+                CachingRule cachingRule =
+                        new CachingRule(
+                                summary.getKey(),
+                                summary.getName(),
+                                action,
+                                summary.getCachingDuration(),
+                                summary.getIsClientCachingEnabled(),
+                                summary.getCachingDuration(),
+                                summary.getCriteria());
+                UpdateCachingRulesRequest updateCachingRulesRequest =
+                        UpdateCachingRulesRequest.builder()
+                                .waasPolicyId(waasPolicyId)
+                                .cachingRulesDetails(Arrays.asList(cachingRule))
+                                .build();
+            }
+        }
+    }
+
+    /**
+     * Lists Caching Rules of the WAAS policy.
+     *
+     * @param waasClient the client used to communicate with the WAAS service
+     * @param waasPolicyId the OCID of the WAAS Policy to list resources of
+     */
+    private static void listCachingRules(WaasClient waasClient, final String waasPolicyId) {
+
+        ListCachingRulesRequest listCachingRulesRequest =
+                ListCachingRulesRequest.builder().waasPolicyId(waasPolicyId).build();
+
+        Iterable<CachingRuleSummary> cachingRuleIterator =
+                waasClient.getPaginators().listCachingRulesRecordIterator(listCachingRulesRequest);
+
+        for (CachingRuleSummary summary : cachingRuleIterator) {
+            System.out.println("Caching rule: " + summary.getName());
+        }
+    }
+
+    /**
+     * Purge cache of the WAAS policy.
+     *
+     * @param waasClient the client used to communicate with the WAAS service
+     * @param waasPolicyId the OCID of the WAAS Policy to list resources of
+     */
+    private static void purgeWaasPolicyCache(WaasClient waasClient, final String waasPolicyId) {
+
+        waasClient.purgeCache(PurgeCacheRequest.builder().waasPolicyId(waasPolicyId).build());
     }
 }

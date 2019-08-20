@@ -6,7 +6,7 @@ package com.oracle.bmc.limits;
 import com.oracle.bmc.limits.requests.*;
 import com.oracle.bmc.limits.responses.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: ")
 public interface QuotasAsync extends AutoCloseable {
 
     /**

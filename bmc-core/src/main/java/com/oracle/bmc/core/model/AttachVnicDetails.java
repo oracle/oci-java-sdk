@@ -99,6 +99,7 @@ public class AttachVnicDetails {
 
     /**
      * A user-friendly name for the attachment. Does not have to be unique, and it cannot be changed.
+     * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")

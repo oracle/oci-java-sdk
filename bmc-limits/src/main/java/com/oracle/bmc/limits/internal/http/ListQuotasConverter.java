@@ -9,7 +9,7 @@ import com.oracle.bmc.limits.requests.*;
 import com.oracle.bmc.limits.responses.*;
 import org.apache.commons.lang3.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: ")
 @lombok.extern.slf4j.Slf4j
 public class ListQuotasConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
@@ -27,7 +27,7 @@ public class ListQuotasConverter {
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20181025").path("quotas");
+                client.getBaseTarget().path("/").path("20181025").path("quotas");
 
         target =
                 target.queryParam(
@@ -123,18 +123,6 @@ public class ListQuotasConverter {
                                 builder.items(response.getItem());
 
                                 com.google.common.base.Optional<java.util.List<String>>
-                                        opcRequestIdHeader =
-                                                com.oracle.bmc.http.internal.HeaderUtils.get(
-                                                        headers, "opc-request-id");
-                                if (opcRequestIdHeader.isPresent()) {
-                                    builder.opcRequestId(
-                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
-                                                    "opc-request-id",
-                                                    opcRequestIdHeader.get().get(0),
-                                                    String.class));
-                                }
-
-                                com.google.common.base.Optional<java.util.List<String>>
                                         opcNextPageHeader =
                                                 com.oracle.bmc.http.internal.HeaderUtils.get(
                                                         headers, "opc-next-page");
@@ -143,6 +131,18 @@ public class ListQuotasConverter {
                                             com.oracle.bmc.http.internal.HeaderUtils.toValue(
                                                     "opc-next-page",
                                                     opcNextPageHeader.get().get(0),
+                                                    String.class));
+                                }
+
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcRequestIdHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-request-id");
+                                if (opcRequestIdHeader.isPresent()) {
+                                    builder.opcRequestId(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-request-id",
+                                                    opcRequestIdHeader.get().get(0),
                                                     String.class));
                                 }
 

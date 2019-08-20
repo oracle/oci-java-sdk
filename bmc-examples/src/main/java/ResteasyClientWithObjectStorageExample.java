@@ -6,39 +6,21 @@ import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.http.ResteasyClientConfigurator;
-import com.oracle.bmc.identity.IdentityAsyncClient;
-import com.oracle.bmc.identity.IdentityClient;
-import com.oracle.bmc.identity.model.AvailabilityDomain;
-import com.oracle.bmc.identity.model.CreateUserDetails;
-import com.oracle.bmc.identity.model.UpdateUserDetails;
-import com.oracle.bmc.identity.requests.CreateUserRequest;
-import com.oracle.bmc.identity.requests.DeleteUserRequest;
-import com.oracle.bmc.identity.requests.GetUserRequest;
-import com.oracle.bmc.identity.requests.ListAvailabilityDomainsRequest;
-import com.oracle.bmc.identity.requests.UpdateUserRequest;
-import com.oracle.bmc.identity.responses.CreateUserResponse;
-import com.oracle.bmc.identity.responses.GetUserResponse;
-import com.oracle.bmc.identity.responses.ListAvailabilityDomainsResponse;
-import com.oracle.bmc.identity.responses.UpdateUserResponse;
 import com.oracle.bmc.objectstorage.ObjectStorage;
-import com.oracle.bmc.objectstorage.ObjectStorageAsync;
 import com.oracle.bmc.objectstorage.ObjectStorageAsyncClient;
 import com.oracle.bmc.objectstorage.ObjectStorageClient;
-import com.oracle.bmc.objectstorage.model.BucketSummary;
 import com.oracle.bmc.objectstorage.model.CreateBucketDetails;
 import com.oracle.bmc.objectstorage.requests.CreateBucketRequest;
 import com.oracle.bmc.objectstorage.requests.DeleteBucketRequest;
 import com.oracle.bmc.objectstorage.requests.DeleteObjectRequest;
 import com.oracle.bmc.objectstorage.requests.GetNamespaceRequest;
 import com.oracle.bmc.objectstorage.requests.GetObjectRequest;
-import com.oracle.bmc.objectstorage.requests.ListBucketsRequest;
 import com.oracle.bmc.objectstorage.requests.PutObjectRequest;
 import com.oracle.bmc.objectstorage.responses.CreateBucketResponse;
 import com.oracle.bmc.objectstorage.responses.DeleteBucketResponse;
 import com.oracle.bmc.objectstorage.responses.DeleteObjectResponse;
 import com.oracle.bmc.objectstorage.responses.GetNamespaceResponse;
 import com.oracle.bmc.objectstorage.responses.GetObjectResponse;
-import com.oracle.bmc.objectstorage.responses.ListBucketsResponse;
 import com.oracle.bmc.objectstorage.responses.PutObjectResponse;
 import com.oracle.bmc.responses.AsyncHandler;
 import lombok.extern.slf4j.Slf4j;
@@ -51,6 +33,10 @@ import java.util.concurrent.Future;
 
 /**
  * An example to demonstrate how to use resteasy client with JavaSDK.
+ *
+ * When running this example, comment out the following line in the bmc-examples/pom.xml file:
+ *
+ * <scope>provided</scope> <!-- When running the Resteasy examples, comment out this line. -->
  */
 @Slf4j
 public class ResteasyClientWithObjectStorageExample {
@@ -66,9 +52,9 @@ public class ResteasyClientWithObjectStorageExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        // The following line is only necessary for this example because we the configuration in
-        // resources/META-INF/services/javax.ws.rs.client.ClientBuilder. If you are using Resteasy by default, this line
-        // is not necessary
+        // The following line is only necessary for this example because of our configuration in
+        // resources/META-INF/services/javax.ws.rs.client.ClientBuilder
+        // which enables Jersey by default. If you are using Resteasy by default, this line is not necessary
         System.setProperty(
                 ClientBuilder.JAXRS_DEFAULT_CLIENT_BUILDER_PROPERTY,
                 "org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder");

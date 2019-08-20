@@ -15,7 +15,9 @@ import com.oracle.bmc.http.signing.RequestSignerException;
 import com.oracle.bmc.http.signing.SigningStrategy;
 import com.oracle.bmc.util.StreamUtils;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.powermock.core.classloader.annotations.PrepareForTest;
@@ -57,6 +59,8 @@ import static org.powermock.api.mockito.PowerMockito.when;
 public class RequestSignerImplTest {
     private static final String SERIALIZED_MAP_JSON_STRING = "{\"header\":[\"value1\",\"value2\"]}";
     private static final byte[] BYTE_BUFFER = new byte[8196];
+
+    @Rule public ExpectedException thrown = ExpectedException.none();
 
     @Mock private Logger mockLogger;
     @Mock private ObjectMapper mockObjectMapper;
@@ -146,17 +150,21 @@ public class RequestSignerImplTest {
     @Test
     public void calculateMissingHeaders_postStringContentAsJson() throws IOException {
         calculateAndVerifyMissingHeaders(
+                HttpMethod.POST,
                 MediaType.APPLICATION_JSON,
                 SERIALIZED_MAP_JSON_STRING,
-                SERIALIZED_MAP_JSON_STRING.length());
+                SERIALIZED_MAP_JSON_STRING.length(),
+                SigningStrategy.STANDARD);
     }
 
     @Test
     public void calculateMissingHeaders_postStringContentAsPlainText() throws IOException {
         calculateAndVerifyMissingHeaders(
+                HttpMethod.POST,
                 MediaType.TEXT_PLAIN,
                 SERIALIZED_MAP_JSON_STRING,
-                SERIALIZED_MAP_JSON_STRING.length());
+                SERIALIZED_MAP_JSON_STRING.length(),
+                SigningStrategy.STANDARD);
     }
 
     @Test
@@ -164,7 +172,11 @@ public class RequestSignerImplTest {
             throws IOException {
         final InputStream body = StreamUtils.createByteArrayInputStream(BYTE_BUFFER);
         calculateAndVerifyMissingHeaders(
-                MediaType.APPLICATION_OCTET_STREAM, body, BYTE_BUFFER.length);
+                HttpMethod.POST,
+                MediaType.APPLICATION_OCTET_STREAM,
+                body,
+                BYTE_BUFFER.length,
+                SigningStrategy.STANDARD);
 
         // Read the stream one more time to verify it wasn't consumed already and verify content matches source
         assertTrue(Arrays.equals(BYTE_BUFFER, ByteStreams.toByteArray(body)));
@@ -174,59 +186,130 @@ public class RequestSignerImplTest {
     public void calculateMissingHeaders_postDuplicatableInputStreamAsPlainText()
             throws IOException {
         final InputStream body = StreamUtils.createByteArrayInputStream(BYTE_BUFFER);
-        calculateAndVerifyMissingHeaders(MediaType.TEXT_PLAIN, body, BYTE_BUFFER.length);
+        calculateAndVerifyMissingHeaders(
+                HttpMethod.POST,
+                MediaType.TEXT_PLAIN,
+                body,
+                BYTE_BUFFER.length,
+                SigningStrategy.STANDARD);
 
         // Read the stream one more time to verify it wasn't consumed already and verify content matches source
         assertTrue(Arrays.equals(BYTE_BUFFER, ByteStreams.toByteArray(body)));
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void calculateMissingHeaders_postByteArrayBody() throws IOException {
-        calculateAndVerifyMissingHeaders(MediaType.TEXT_PLAIN, BYTE_BUFFER, BYTE_BUFFER.length);
-    }
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("Unexpected body type");
 
-    @Test(expected = IllegalArgumentException.class)
-    public void calculateMissingHeaders_postInputStreamBody() throws IOException {
         calculateAndVerifyMissingHeaders(
-                MediaType.TEXT_PLAIN, new ByteArrayInputStream(BYTE_BUFFER), BYTE_BUFFER.length);
+                HttpMethod.POST,
+                MediaType.TEXT_PLAIN,
+                BYTE_BUFFER,
+                BYTE_BUFFER.length,
+                SigningStrategy.STANDARD);
     }
 
-    private void calculateAndVerifyMissingHeaders(
-            final String contentType, final Object body, final int contentLength)
+    @Test
+    public void calculateMissingHeaders_postInputStreamBody() throws IOException {
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("Only DuplicatableInputStream supported for body that needs signing");
+
+        calculateAndVerifyMissingHeaders(
+                HttpMethod.POST,
+                MediaType.TEXT_PLAIN,
+                new ByteArrayInputStream(BYTE_BUFFER),
+                BYTE_BUFFER.length,
+                SigningStrategy.STANDARD);
+    }
+
+    @Test
+    public void calculateMissingHeaders_postInputStreamBodyWithExcludeBodySigningStrategy()
             throws IOException {
-        final URI uri = URI.create("https://identity.us-phoenix-1.oraclecloud.com/20160918/users");
-        final Map<String, List<String>> existingHeaders =
-                ImmutableMap.<String, List<String>>of(
-                        HttpHeaders.CONTENT_TYPE.toLowerCase(),
-                        ImmutableList.of(contentType),
-                        "opc-request-id",
-                        ImmutableList.of("2F9BA4A30BB3452397A5BC1BFE447C5D"),
-                        HttpHeaders.ACCEPT.toLowerCase(),
-                        ImmutableList.of(MediaType.APPLICATION_JSON));
-        final RequestSignerImpl.SigningConfiguration signingConfiguration =
-                new RequestSignerImpl.SigningConfiguration(
-                        SigningStrategy.STANDARD.getHeadersToSign(),
-                        SigningStrategy.STANDARD.getOptionalHeadersToSign(),
-                        SigningStrategy.STANDARD.isSkipContentHeadersForStreamingPutRequests());
-        final Map<String, String> missingHeaders =
-                RequestSignerImpl.calculateMissingHeaders(
-                        HttpMethod.POST.toLowerCase(),
-                        uri,
-                        existingHeaders,
-                        body,
-                        Constants.ALL_HEADERS,
-                        signingConfiguration);
-        assertNotNull(missingHeaders);
-        assertEquals(4, missingHeaders.size());
-        assertTrue(missingHeaders.containsKey(HttpHeaders.DATE.toLowerCase()));
-        assertTrue(missingHeaders.containsKey(HttpHeaders.CONTENT_LENGTH.toLowerCase()));
-        assertEquals(
-                Integer.toString(contentLength),
-                missingHeaders.get(HttpHeaders.CONTENT_LENGTH.toLowerCase()));
-        assertTrue(missingHeaders.containsKey("x-content-sha256"));
-        assertEquals(
-                "identity.us-phoenix-1.oraclecloud.com",
-                missingHeaders.get(HttpHeaders.HOST.toLowerCase()));
+        calculateAndVerifyMissingHeaders(
+                HttpMethod.POST,
+                MediaType.TEXT_PLAIN,
+                new ByteArrayInputStream(BYTE_BUFFER),
+                BYTE_BUFFER.length,
+                SigningStrategy.EXCLUDE_BODY);
+    }
+
+    @Test
+    public void calculateMissingHeaders_putInputStreamBodyWithExcludeBodySigningStrategy()
+            throws IOException {
+        calculateAndVerifyMissingHeaders(
+                HttpMethod.PUT,
+                MediaType.TEXT_PLAIN,
+                new ByteArrayInputStream(BYTE_BUFFER),
+                BYTE_BUFFER.length,
+                SigningStrategy.EXCLUDE_BODY);
+    }
+
+    @Test
+    public void calculateMissingHeaders_patchInputStreamBodyWithExcludeBodySigningStrategy()
+            throws IOException {
+        calculateAndVerifyMissingHeaders(
+                HttpMethod.PATCH,
+                MediaType.TEXT_PLAIN,
+                new ByteArrayInputStream(BYTE_BUFFER),
+                BYTE_BUFFER.length,
+                SigningStrategy.EXCLUDE_BODY);
+    }
+
+    @Test
+    public void calculateMissingHeaders_getInputStreamBodyWithExcludeBodySigningStrategy()
+            throws IOException {
+        thrown.expect(RequestSignerException.class);
+        thrown.expectMessage("MUST NOT send body on non-POST/PUT/PATCH request");
+
+        calculateAndVerifyMissingHeaders(
+                HttpMethod.GET,
+                MediaType.TEXT_PLAIN,
+                new ByteArrayInputStream(BYTE_BUFFER),
+                BYTE_BUFFER.length,
+                SigningStrategy.EXCLUDE_BODY);
+    }
+
+    @Test
+    public void calculateMissingHeaders_deleteInputStreamBodyWithExcludeBodySigningStrategy()
+            throws IOException {
+        thrown.expect(RequestSignerException.class);
+        thrown.expectMessage("MUST NOT send body on non-POST/PUT/PATCH request");
+
+        calculateAndVerifyMissingHeaders(
+                HttpMethod.DELETE,
+                MediaType.TEXT_PLAIN,
+                new ByteArrayInputStream(BYTE_BUFFER),
+                BYTE_BUFFER.length,
+                SigningStrategy.EXCLUDE_BODY);
+    }
+
+    @Test
+    public void calculateMissingHeaders_optionsInputStreamBodyWithExcludeBodySigningStrategy()
+            throws IOException {
+        thrown.expect(RequestSignerException.class);
+        thrown.expectMessage("MUST NOT send body on non-POST/PUT/PATCH request");
+
+        calculateAndVerifyMissingHeaders(
+                HttpMethod.OPTIONS,
+                MediaType.TEXT_PLAIN,
+                new ByteArrayInputStream(BYTE_BUFFER),
+                BYTE_BUFFER.length,
+                SigningStrategy.EXCLUDE_BODY);
+    }
+
+    @Test
+    public void calculateMissingHeaders_headInputStreamBodyWithExcludeBodySigningStrategy()
+            throws IOException {
+        thrown.expect(RequestSignerException.class);
+        thrown.expectMessage("MUST NOT send body on non-POST/PUT/PATCH request");
+
+        calculateAndVerifyMissingHeaders(
+                HttpMethod.HEAD,
+                MediaType.TEXT_PLAIN,
+                new ByteArrayInputStream(BYTE_BUFFER),
+                BYTE_BUFFER.length,
+                SigningStrategy.EXCLUDE_BODY);
     }
 
     // Reload the classes so PowerMockito can inject the static mocks.
@@ -323,5 +406,51 @@ public class RequestSignerImplTest {
                 assertTrue(authorizationHeaders.contains(optionalHeader));
             }
         }
+    }
+
+    private void calculateAndVerifyMissingHeaders(
+            final String httpMethod,
+            final String contentType,
+            final Object body,
+            final int contentLength,
+            final SigningStrategy signingStrategy)
+            throws IOException {
+        final URI uri = URI.create("https://identity.us-phoenix-1.oraclecloud.com/20160918/users");
+        final Map<String, List<String>> existingHeaders =
+                ImmutableMap.<String, List<String>>of(
+                        HttpHeaders.CONTENT_TYPE.toLowerCase(),
+                        ImmutableList.of(contentType),
+                        "opc-request-id",
+                        ImmutableList.of("2F9BA4A30BB3452397A5BC1BFE447C5D"),
+                        HttpHeaders.ACCEPT.toLowerCase(),
+                        ImmutableList.of(MediaType.APPLICATION_JSON));
+        final RequestSignerImpl.SigningConfiguration signingConfiguration =
+                new RequestSignerImpl.SigningConfiguration(
+                        signingStrategy.getHeadersToSign(),
+                        signingStrategy.getOptionalHeadersToSign(),
+                        signingStrategy.isSkipContentHeadersForStreamingPutRequests());
+        final Map<String, String> missingHeaders =
+                RequestSignerImpl.calculateMissingHeaders(
+                        httpMethod.toLowerCase(),
+                        uri,
+                        existingHeaders,
+                        body,
+                        Constants.ALL_HEADERS,
+                        signingConfiguration);
+        assertNotNull(missingHeaders);
+        int expectedMissingHeaderSize =
+                (signingStrategy.isSkipContentHeadersForStreamingPutRequests()) ? 2 : 4;
+        assertEquals(expectedMissingHeaderSize, missingHeaders.size());
+        assertTrue(missingHeaders.containsKey(HttpHeaders.DATE.toLowerCase()));
+        if (!signingStrategy.isSkipContentHeadersForStreamingPutRequests()) {
+            assertTrue(missingHeaders.containsKey(HttpHeaders.CONTENT_LENGTH.toLowerCase()));
+            assertEquals(
+                    Integer.toString(contentLength),
+                    missingHeaders.get(HttpHeaders.CONTENT_LENGTH.toLowerCase()));
+            assertTrue(missingHeaders.containsKey("x-content-sha256"));
+        }
+        assertEquals(
+                "identity.us-phoenix-1.oraclecloud.com",
+                missingHeaders.get(HttpHeaders.HOST.toLowerCase()));
     }
 }

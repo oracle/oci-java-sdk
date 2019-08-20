@@ -55,6 +55,15 @@ public interface Waas extends AutoCloseable {
     CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request);
 
     /**
+     * Moves address list into a different compartment. When provided, If-Match is checked against ETag values of the address list.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeAddressListCompartmentResponse changeAddressListCompartment(
+            ChangeAddressListCompartmentRequest request);
+
+    /**
      * Moves certificate into a different compartment. When provided, If-Match is checked against ETag values of the certificate.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -62,6 +71,15 @@ public interface Waas extends AutoCloseable {
      */
     ChangeCertificateCompartmentResponse changeCertificateCompartment(
             ChangeCertificateCompartmentRequest request);
+
+    /**
+     * Moves Custom Protection rule into a different compartment. When provided, If-Match is checked against ETag values of the Custom Protection rule.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeCustomProtectionRuleCompartmentResponse changeCustomProtectionRuleCompartment(
+            ChangeCustomProtectionRuleCompartmentRequest request);
 
     /**
      * Moves WAAS policy into a different compartment. When provided, If-Match is checked against ETag values of the WAAS policy.
@@ -73,6 +91,15 @@ public interface Waas extends AutoCloseable {
             ChangeWaasPolicyCompartmentRequest request);
 
     /**
+     * Creates an address list in set compartment and allows it to be used in a WAAS policy.
+     * For more information, see [WAF Settings](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/wafsettings.htm).
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateAddressListResponse createAddressList(CreateAddressListRequest request);
+
+    /**
      * Allows an SSL certificate to be added to a WAAS policy. The Web Application Firewall terminates SSL connections to inspect requests in runtime, and then re-encrypts requests before sending them to the origin for fulfillment.
      * <p>
      * For more information, see [WAF Settings](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/wafsettings.htm).
@@ -81,6 +108,15 @@ public interface Waas extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     CreateCertificateResponse createCertificate(CreateCertificateRequest request);
+
+    /**
+     * Creates a new Custom Protection rule in the specified compartment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateCustomProtectionRuleResponse createCustomProtectionRule(
+            CreateCustomProtectionRuleRequest request);
 
     /**
      * Creates a new Web Application Acceleration and Security (WAAS) policy in the specified compartment. A WAAS policy must be established before creating Web Application Firewall (WAF) rules. To use WAF rules, your web application's origin servers must defined in the `WaasPolicy` schema.
@@ -103,12 +139,29 @@ public interface Waas extends AutoCloseable {
     CreateWaasPolicyResponse createWaasPolicy(CreateWaasPolicyRequest request);
 
     /**
+     * Deletes the address list from the compartment if it is not used.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteAddressListResponse deleteAddressList(DeleteAddressListRequest request);
+
+    /**
      * Deletes an SSL certificate from the WAAS service.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      */
     DeleteCertificateResponse deleteCertificate(DeleteCertificateRequest request);
+
+    /**
+     * Deletes a Custom Protection rule.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteCustomProtectionRuleResponse deleteCustomProtectionRule(
+            DeleteCustomProtectionRuleRequest request);
 
     /**
      * Deletes a policy.
@@ -119,12 +172,28 @@ public interface Waas extends AutoCloseable {
     DeleteWaasPolicyResponse deleteWaasPolicy(DeleteWaasPolicyRequest request);
 
     /**
+     * Gets the details of an address list.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetAddressListResponse getAddressList(GetAddressListRequest request);
+
+    /**
      * Gets the details of an SSL certificate.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      */
     GetCertificateResponse getCertificate(GetCertificateRequest request);
+
+    /**
+     * Gets the details of a Custom Protection rule.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetCustomProtectionRuleResponse getCustomProtectionRule(GetCustomProtectionRuleRequest request);
 
     /**
      * Gets the device fingerprint challenge settings in the Web Application Firewall configuration for a WAAS policy.
@@ -219,6 +288,23 @@ public interface Waas extends AutoCloseable {
     ListAccessRulesResponse listAccessRules(ListAccessRulesRequest request);
 
     /**
+     * Gets a list of address lists that can be used in a WAAS policy.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListAddressListsResponse listAddressLists(ListAddressListsRequest request);
+
+    /**
+     * Gets the currently configured caching rules for the Web Application Firewall configuration of a specified WAAS policy.
+     * The order of the caching rules is important. The rules will be checked in the order they are specified and the first matching rule will be used.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListCachingRulesResponse listCachingRules(ListCachingRulesRequest request);
+
+    /**
      * Gets the list of currently configured CAPTCHA challenges in the Web
      * Application Firewall configuration of a WAAS policy.
      * <p>
@@ -238,6 +324,15 @@ public interface Waas extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListCertificatesResponse listCertificates(ListCertificatesRequest request);
+
+    /**
+     * Gets a list of Custom Protection rules.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListCustomProtectionRulesResponse listCustomProtectionRules(
+            ListCustomProtectionRulesRequest request);
 
     /**
      * Return the list of the tenant's edge node subnets. Use these CIDR blocks to restrict incoming traffic to your origin. These subnets are owned by OCI and forward traffic to customer origins. They are not associated with specific regions or compartments.
@@ -298,6 +393,15 @@ public interface Waas extends AutoCloseable {
     ListWaasPoliciesResponse listWaasPolicies(ListWaasPoliciesRequest request);
 
     /**
+     * Gets the list of currently configured custom protection rules for a WAAS policy.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListWaasPolicyCustomProtectionRulesResponse listWaasPolicyCustomProtectionRules(
+            ListWaasPolicyCustomProtectionRulesRequest request);
+
+    /**
      * Gets the number of blocked requests by a Web Application Firewall feature in five minute blocks, sorted by `timeObserved` in ascending order (starting from oldest data).
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -354,6 +458,14 @@ public interface Waas extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
+     * Accepts a list of resources that will get it's cache purged. If resources property is not passed, then the entire cache for Web Application will be purged.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    PurgeCacheResponse purgeCache(PurgeCacheRequest request);
+
+    /**
      * Updates the list of access rules in the Web Application Firewall configuration for a specified WAAS policy. Access rules allow explicit actions to be defined and executed for requests that meet various conditions. A rule action can be set to allow, detect, or block requests. The detect setting allows the request to pass through the Web Application Firewall and is tagged with a `DETECT` flag in the Web Application Firewall's log.
      * <p>
      * This operation can create, delete, update, and/or reorder access rules depending on the structure of the request body.
@@ -368,6 +480,25 @@ public interface Waas extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateAccessRulesResponse updateAccessRules(UpdateAccessRulesRequest request);
+
+    /**
+     * Updates the details of an address list. Only the fields specified in the request body will be updated; all other properties will remain unchanged.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateAddressListResponse updateAddressList(UpdateAddressListRequest request);
+
+    /**
+     * Updates the configuration for each specified caching rule.
+     * This operation can update or delete caching rules depending on the structure of the request body.
+     * Caching rules can be updated by changing the properties of the caching rule object with the rule's key specified in the key field.
+     * Any existing caching rules that are not specified with a key in the list of access rules will be deleted upon update.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateCachingRulesResponse updateCachingRules(UpdateCachingRulesRequest request);
 
     /**
      * Updates the list of CAPTCHA challenges in the Web Application Firewall configuration for a WAAS policy.
@@ -390,6 +521,15 @@ public interface Waas extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateCertificateResponse updateCertificate(UpdateCertificateRequest request);
+
+    /**
+     * Updates the details of a Custom Protection rule. Only the fields specified in the request body will be updated; all other properties will remain unchanged.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateCustomProtectionRuleResponse updateCustomProtectionRule(
+            UpdateCustomProtectionRuleRequest request);
 
     /**
      * Updates the Device Fingerprint Challenge (DFC) settings in the Web Application Firewall configuration for a policy. The DFC generates a hashed signature of both virtual and real browsers based on 50+ attributes. These proprietary signatures are then leveraged for real-time correlation to identify and block malicious bots.
@@ -475,6 +615,15 @@ public interface Waas extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateWaasPolicyResponse updateWaasPolicy(UpdateWaasPolicyRequest request);
+
+    /**
+     * Updates the action for each specified custom protection rule. Only the `DETECT` and `BLOCK` actions can be set. Disabled rules should not be included in the list. For more information on protection rules, see [WAF Protection Rules](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/wafprotectionrules.htm).
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateWaasPolicyCustomProtectionRulesResponse updateWaasPolicyCustomProtectionRules(
+            UpdateWaasPolicyCustomProtectionRulesRequest request);
 
     /**
      * Updates the address rate limiting settings in the Web Application Firewall configuration for a policy. Rate limiting allows you to configure a threshold for the number of requests from a unique IP address for the given period. You can also define the response code for the requests from the same address that exceed the threshold.

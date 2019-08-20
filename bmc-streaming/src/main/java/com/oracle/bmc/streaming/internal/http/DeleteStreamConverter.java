@@ -42,6 +42,10 @@ public class DeleteStreamConverter {
             ib.header("opc-request-id", request.getOpcRequestId());
         }
 
+        if (request.getIfMatch() != null) {
+            ib.header("if-match", request.getIfMatch());
+        }
+
         return ib;
     }
 

@@ -33,7 +33,6 @@ import com.oracle.bmc.budget.responses.GetBudgetResponse;
 import com.oracle.bmc.budget.responses.UpdateAlertRuleResponse;
 import com.oracle.bmc.budget.responses.UpdateBudgetResponse;
 
-import com.oracle.bmc.http.ResteasyClientConfigurator;
 import org.apache.commons.lang3.StringUtils;
 
 import java.math.BigDecimal;
@@ -112,7 +111,6 @@ public class BudgetExample {
 
         final BudgetClient budgetClient =
                 BudgetClient.builder()
-                        .additionalClientConfigurator(new ResteasyClientConfigurator())
                         .build(
                                 new ConfigFileAuthenticationDetailsProvider(
                                         CONFIG_LOCATION, CONFIG_PROFILE));

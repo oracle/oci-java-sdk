@@ -239,6 +239,7 @@ public class Image {
     /**
      * Whether instances launched with this image can be used to create new images.
      * For example, you cannot create an image of an Oracle Database instance.
+     * <p>
      * Example: `true`
      *
      **/
@@ -258,6 +259,7 @@ public class Image {
     /**
      * A user-friendly name for the image. It does not have to be unique, and it's changeable.
      * Avoid entering confidential information.
+     * <p>
      * You cannot use an Oracle-provided image name as a custom image name.
      * <p>
      * Example: `My custom Oracle Linux image`
