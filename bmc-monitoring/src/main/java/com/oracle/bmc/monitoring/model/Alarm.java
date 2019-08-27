@@ -86,6 +86,15 @@ public class Alarm {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
+        private String resourceGroup;
+
+        public Builder resourceGroup(String resourceGroup) {
+            this.resourceGroup = resourceGroup;
+            this.__explicitlySet__.add("resourceGroup");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("query")
         private String query;
 
@@ -225,6 +234,7 @@ public class Alarm {
                             metricCompartmentId,
                             metricCompartmentIdInSubtree,
                             namespace,
+                            resourceGroup,
                             query,
                             resolution,
                             pendingDuration,
@@ -252,6 +262,7 @@ public class Alarm {
                             .metricCompartmentId(o.getMetricCompartmentId())
                             .metricCompartmentIdInSubtree(o.getMetricCompartmentIdInSubtree())
                             .namespace(o.getNamespace())
+                            .resourceGroup(o.getResourceGroup())
                             .query(o.getQuery())
                             .resolution(o.getResolution())
                             .pendingDuration(o.getPendingDuration())
@@ -334,6 +345,17 @@ public class Alarm {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     String namespace;
+
+    /**
+     * Resource group specified as a filter for metric data retrieved by the alarm. A resource group is a custom string that can be used as a filter. Only one resource group can be applied per metric.
+     * A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+     * Avoid entering confidential information.
+     * <p>
+     * Example: `frontend-fleet`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
+    String resourceGroup;
 
     /**
      * The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of

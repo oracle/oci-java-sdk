@@ -35,6 +35,15 @@ public class SummarizeMetricsDataDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
+        private String resourceGroup;
+
+        public Builder resourceGroup(String resourceGroup) {
+            this.resourceGroup = resourceGroup;
+            this.__explicitlySet__.add("resourceGroup");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("query")
         private String query;
 
@@ -77,7 +86,7 @@ public class SummarizeMetricsDataDetails {
         public SummarizeMetricsDataDetails build() {
             SummarizeMetricsDataDetails __instance__ =
                     new SummarizeMetricsDataDetails(
-                            namespace, query, startTime, endTime, resolution);
+                            namespace, resourceGroup, query, startTime, endTime, resolution);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -86,6 +95,7 @@ public class SummarizeMetricsDataDetails {
         public Builder copy(SummarizeMetricsDataDetails o) {
             Builder copiedBuilder =
                     namespace(o.getNamespace())
+                            .resourceGroup(o.getResourceGroup())
                             .query(o.getQuery())
                             .startTime(o.getStartTime())
                             .endTime(o.getEndTime())
@@ -111,6 +121,17 @@ public class SummarizeMetricsDataDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     String namespace;
+
+    /**
+     * Resource group that you want to use as a filter. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric.
+     * A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+     * Avoid entering confidential information.
+     * <p>
+     * Example: `frontend-fleet`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
+    String resourceGroup;
 
     /**
      * The Monitoring Query Language (MQL) expression to use when searching for metric data points to

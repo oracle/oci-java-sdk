@@ -119,6 +119,24 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Moves a dedicated vm host from one compartment to another
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeDedicatedVmHostCompartmentResponse>
+            changeDedicatedVmHostCompartment(
+                    ChangeDedicatedVmHostCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeDedicatedVmHostCompartmentRequest,
+                                    ChangeDedicatedVmHostCompartmentResponse>
+                            handler);
+
+    /**
      * Moves an image into a different compartment within the same tenancy. For information about moving
      * resources between compartments, see
      * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -175,6 +193,23 @@ public interface ComputeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             CreateAppCatalogSubscriptionRequest,
                             CreateAppCatalogSubscriptionResponse>
+                    handler);
+
+    /**
+     * Creates a new dedicated virtual machine (VM) host in the specified compartment and the specified availability domain.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateDedicatedVmHostResponse> createDedicatedVmHost(
+            CreateDedicatedVmHostRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateDedicatedVmHostRequest, CreateDedicatedVmHostResponse>
                     handler);
 
     /**
@@ -268,6 +303,25 @@ public interface ComputeAsync extends AutoCloseable {
             DeleteConsoleHistoryRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteConsoleHistoryRequest, DeleteConsoleHistoryResponse>
+                    handler);
+
+    /**
+     * Deletes the specified dedicated virtual machine (VM) host.
+     * <p>
+     * If any VM instances are assigned to the dedicated VM host, it will not be deleted and the service will return a 409 response code.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteDedicatedVmHostResponse> deleteDedicatedVmHost(
+            DeleteDedicatedVmHostRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteDedicatedVmHostRequest, DeleteDedicatedVmHostResponse>
                     handler);
 
     /**
@@ -492,6 +546,22 @@ public interface ComputeAsync extends AutoCloseable {
             GetConsoleHistoryContentRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetConsoleHistoryContentRequest, GetConsoleHistoryContentResponse>
+                    handler);
+
+    /**
+     * Gets information about the specified dedicated virtual machine (VM) host.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDedicatedVmHostResponse> getDedicatedVmHost(
+            GetDedicatedVmHostRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetDedicatedVmHostRequest, GetDedicatedVmHostResponse>
                     handler);
 
     /**
@@ -752,6 +822,81 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists the shapes that can be used to launch a virtual machine (VM) instance on a dedicated VM host within the specified compartment.
+     * You can filter the list by compatibility with a specific dedicated VM host shape.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDedicatedVmHostInstanceShapesResponse>
+            listDedicatedVmHostInstanceShapes(
+                    ListDedicatedVmHostInstanceShapesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListDedicatedVmHostInstanceShapesRequest,
+                                    ListDedicatedVmHostInstanceShapesResponse>
+                            handler);
+
+    /**
+     * Returns the list of instances on the dedicated virtual machine (VM) hosts that match the specified criteria.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDedicatedVmHostInstancesResponse> listDedicatedVmHostInstances(
+            ListDedicatedVmHostInstancesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDedicatedVmHostInstancesRequest,
+                            ListDedicatedVmHostInstancesResponse>
+                    handler);
+
+    /**
+     * Lists the shapes that can be used to launch a dedicated virtual machine (VM) host within the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDedicatedVmHostShapesResponse> listDedicatedVmHostShapes(
+            ListDedicatedVmHostShapesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDedicatedVmHostShapesRequest, ListDedicatedVmHostShapesResponse>
+                    handler);
+
+    /**
+     * Returns the list of dedicated virtual machine (VM) hosts that match the specified criteria from the specified compartment.
+     * <p>
+     * You can limit the list by specifying a dedicated VM host display name. The list will include all the identically-named
+     * dedicated VM hosts in the compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDedicatedVmHostsResponse> listDedicatedVmHosts(
+            ListDedicatedVmHostsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListDedicatedVmHostsRequest, ListDedicatedVmHostsResponse>
+                    handler);
+
+    /**
      * Lists the available images in the specified compartment, including both
      * [Oracle-provided images](https://docs.cloud.oracle.com/Content/Compute/References/images.htm) and
      * [custom images](https://docs.cloud.oracle.com/Content/Compute/Tasks/managingcustomimages.htm) that have
@@ -921,6 +1066,24 @@ public interface ComputeAsync extends AutoCloseable {
             UpdateConsoleHistoryRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateConsoleHistoryRequest, UpdateConsoleHistoryResponse>
+                    handler);
+
+    /**
+     * Updates the displayName, freeformTags, and definedTags attributes for the specified dedicated virtual machine (VM) host.
+     * If an attribute value is not included, it will not be updated.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateDedicatedVmHostResponse> updateDedicatedVmHost(
+            UpdateDedicatedVmHostRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDedicatedVmHostRequest, UpdateDedicatedVmHostResponse>
                     handler);
 
     /**
