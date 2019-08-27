@@ -92,6 +92,15 @@ public interface Compute extends AutoCloseable {
     CaptureConsoleHistoryResponse captureConsoleHistory(CaptureConsoleHistoryRequest request);
 
     /**
+     * Moves a dedicated vm host from one compartment to another
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeDedicatedVmHostCompartmentResponse changeDedicatedVmHostCompartment(
+            ChangeDedicatedVmHostCompartmentRequest request);
+
+    /**
      * Moves an image into a different compartment within the same tenancy. For information about moving
      * resources between compartments, see
      * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -126,6 +135,15 @@ public interface Compute extends AutoCloseable {
      */
     CreateAppCatalogSubscriptionResponse createAppCatalogSubscription(
             CreateAppCatalogSubscriptionRequest request);
+
+    /**
+     * Creates a new dedicated virtual machine (VM) host in the specified compartment and the specified availability domain.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateDedicatedVmHostResponse createDedicatedVmHost(CreateDedicatedVmHostRequest request);
 
     /**
      * Creates a boot disk image for the specified instance or imports an exported image from the Oracle Cloud Infrastructure Object Storage service.
@@ -188,6 +206,17 @@ public interface Compute extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     DeleteConsoleHistoryResponse deleteConsoleHistory(DeleteConsoleHistoryRequest request);
+
+    /**
+     * Deletes the specified dedicated virtual machine (VM) host.
+     * <p>
+     * If any VM instances are assigned to the dedicated VM host, it will not be deleted and the service will return a 409 response code.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteDedicatedVmHostResponse deleteDedicatedVmHost(DeleteDedicatedVmHostRequest request);
 
     /**
      * Deletes an image.
@@ -322,6 +351,14 @@ public interface Compute extends AutoCloseable {
      */
     GetConsoleHistoryContentResponse getConsoleHistoryContent(
             GetConsoleHistoryContentRequest request);
+
+    /**
+     * Gets information about the specified dedicated virtual machine (VM) host.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetDedicatedVmHostResponse getDedicatedVmHost(GetDedicatedVmHostRequest request);
 
     /**
      * Gets the specified image.
@@ -483,6 +520,49 @@ public interface Compute extends AutoCloseable {
     ListConsoleHistoriesResponse listConsoleHistories(ListConsoleHistoriesRequest request);
 
     /**
+     * Lists the shapes that can be used to launch a virtual machine (VM) instance on a dedicated VM host within the specified compartment.
+     * You can filter the list by compatibility with a specific dedicated VM host shape.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListDedicatedVmHostInstanceShapesResponse listDedicatedVmHostInstanceShapes(
+            ListDedicatedVmHostInstanceShapesRequest request);
+
+    /**
+     * Returns the list of instances on the dedicated virtual machine (VM) hosts that match the specified criteria.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListDedicatedVmHostInstancesResponse listDedicatedVmHostInstances(
+            ListDedicatedVmHostInstancesRequest request);
+
+    /**
+     * Lists the shapes that can be used to launch a dedicated virtual machine (VM) host within the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListDedicatedVmHostShapesResponse listDedicatedVmHostShapes(
+            ListDedicatedVmHostShapesRequest request);
+
+    /**
+     * Returns the list of dedicated virtual machine (VM) hosts that match the specified criteria from the specified compartment.
+     * <p>
+     * You can limit the list by specifying a dedicated VM host display name. The list will include all the identically-named
+     * dedicated VM hosts in the compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListDedicatedVmHostsResponse listDedicatedVmHosts(ListDedicatedVmHostsRequest request);
+
+    /**
      * Lists the available images in the specified compartment, including both
      * [Oracle-provided images](https://docs.cloud.oracle.com/Content/Compute/References/images.htm) and
      * [custom images](https://docs.cloud.oracle.com/Content/Compute/Tasks/managingcustomimages.htm) that have
@@ -585,6 +665,16 @@ public interface Compute extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateConsoleHistoryResponse updateConsoleHistory(UpdateConsoleHistoryRequest request);
+
+    /**
+     * Updates the displayName, freeformTags, and definedTags attributes for the specified dedicated virtual machine (VM) host.
+     * If an attribute value is not included, it will not be updated.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateDedicatedVmHostResponse updateDedicatedVmHost(UpdateDedicatedVmHostRequest request);
 
     /**
      * Updates the display name of the image. Avoid entering confidential information.

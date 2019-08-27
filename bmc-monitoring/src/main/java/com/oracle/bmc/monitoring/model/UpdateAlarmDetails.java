@@ -72,6 +72,15 @@ public class UpdateAlarmDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
+        private String resourceGroup;
+
+        public Builder resourceGroup(String resourceGroup) {
+            this.resourceGroup = resourceGroup;
+            this.__explicitlySet__.add("resourceGroup");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("query")
         private String query;
 
@@ -183,6 +192,7 @@ public class UpdateAlarmDetails {
                             metricCompartmentId,
                             metricCompartmentIdInSubtree,
                             namespace,
+                            resourceGroup,
                             query,
                             resolution,
                             pendingDuration,
@@ -206,6 +216,7 @@ public class UpdateAlarmDetails {
                             .metricCompartmentId(o.getMetricCompartmentId())
                             .metricCompartmentIdInSubtree(o.getMetricCompartmentIdInSubtree())
                             .namespace(o.getNamespace())
+                            .resourceGroup(o.getResourceGroup())
                             .query(o.getQuery())
                             .resolution(o.getResolution())
                             .pendingDuration(o.getPendingDuration())
@@ -278,6 +289,17 @@ public class UpdateAlarmDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     String namespace;
+
+    /**
+     * Resource group that you want to use as a filter. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric.
+     * A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+     * Avoid entering confidential information.
+     * <p>
+     * Example: `frontend-fleet`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
+    String resourceGroup;
 
     /**
      * The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of

@@ -42,6 +42,15 @@ public class Metric {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
+        private String resourceGroup;
+
+        public Builder resourceGroup(String resourceGroup) {
+            this.resourceGroup = resourceGroup;
+            this.__explicitlySet__.add("resourceGroup");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -64,7 +73,8 @@ public class Metric {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Metric build() {
-            Metric __instance__ = new Metric(name, namespace, compartmentId, dimensions);
+            Metric __instance__ =
+                    new Metric(name, namespace, resourceGroup, compartmentId, dimensions);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -74,6 +84,7 @@ public class Metric {
             Builder copiedBuilder =
                     name(o.getName())
                             .namespace(o.getNamespace())
+                            .resourceGroup(o.getResourceGroup())
                             .compartmentId(o.getCompartmentId())
                             .dimensions(o.getDimensions());
 
@@ -106,6 +117,17 @@ public class Metric {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     String namespace;
+
+    /**
+     * Resource group provided with the posted metric. A resource group is a custom string that can be used as a filter. Only one resource group can be applied per metric.
+     * A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+     * Avoid entering confidential information.
+     * <p>
+     * Example: `frontend-fleet`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
+    String resourceGroup;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing

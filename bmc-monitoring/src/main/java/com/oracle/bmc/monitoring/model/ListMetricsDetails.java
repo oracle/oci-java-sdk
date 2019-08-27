@@ -46,6 +46,15 @@ public class ListMetricsDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
+        private String resourceGroup;
+
+        public Builder resourceGroup(String resourceGroup) {
+            this.resourceGroup = resourceGroup;
+            this.__explicitlySet__.add("resourceGroup");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dimensionFilters")
         private java.util.Map<String, String> dimensionFilters;
 
@@ -88,7 +97,13 @@ public class ListMetricsDetails {
         public ListMetricsDetails build() {
             ListMetricsDetails __instance__ =
                     new ListMetricsDetails(
-                            name, namespace, dimensionFilters, groupBy, sortBy, sortOrder);
+                            name,
+                            namespace,
+                            resourceGroup,
+                            dimensionFilters,
+                            groupBy,
+                            sortBy,
+                            sortOrder);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -98,6 +113,7 @@ public class ListMetricsDetails {
             Builder copiedBuilder =
                     name(o.getName())
                             .namespace(o.getNamespace())
+                            .resourceGroup(o.getResourceGroup())
                             .dimensionFilters(o.getDimensionFilters())
                             .groupBy(o.getGroupBy())
                             .sortBy(o.getSortBy())
@@ -134,6 +150,17 @@ public class ListMetricsDetails {
     String namespace;
 
     /**
+     * Resource group that you want to use as a filter. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric.
+     * A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+     * Avoid entering confidential information.
+     * <p>
+     * Example: `frontend-fleet`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
+    String resourceGroup;
+
+    /**
      * Qualifiers that you want to use when searching for metric definitions.
      * Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.
      * <p>
@@ -145,7 +172,7 @@ public class ListMetricsDetails {
 
     /**
      * Group metrics by these fields in the response. For example, to list all metric namespaces available
-     * in a compartment, groupBy the \"namespace\" field.
+     *           in a compartment, groupBy the \"namespace\" field. Supported fields: namespace, name, resourceGroup.
      * <p>
      * Example - group by namespace:
      * `[ \"namespace\" ]`
@@ -162,6 +189,7 @@ public class ListMetricsDetails {
     public enum SortBy {
         Namespace("NAMESPACE"),
         Name("NAME"),
+        Resourcegroup("RESOURCEGROUP"),
         ;
 
         private final String value;

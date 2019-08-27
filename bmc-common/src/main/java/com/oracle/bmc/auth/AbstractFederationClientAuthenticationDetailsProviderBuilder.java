@@ -4,6 +4,7 @@
 package com.oracle.bmc.auth;
 
 import com.google.common.base.Optional;
+import com.google.common.collect.ImmutableMap;
 import com.oracle.bmc.InternalSdk;
 import com.oracle.bmc.Realm;
 import com.oracle.bmc.Region;
@@ -17,6 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -53,6 +55,11 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
      * Default base url of metadata service.
      */
     protected static final String METADATA_SERVICE_BASE_URL = "http://169.254.169.254/opc/v1/";
+
+    /**
+     * The Authorization header value to be sent for requests to the metadata service.
+     */
+    private static final String AUTHORIZATION_HEADER_VALUE = "Bearer Oracle";
 
     /**
      * Base url of metadata service.
@@ -172,7 +179,11 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
         if (federationEndpoint == null) {
             Client client = ClientBuilder.newClient();
             WebTarget base = client.target(getMetadataBaseUrl() + "instance/");
-            String regionStr = base.path("region").request(MediaType.TEXT_PLAIN).get(String.class);
+            String regionStr =
+                    base.path("region")
+                            .request(MediaType.TEXT_PLAIN)
+                            .header(HttpHeaders.AUTHORIZATION, AUTHORIZATION_HEADER_VALUE)
+                            .get(String.class);
             LOG.info("Looking up region for {}", regionStr);
 
             try {
@@ -210,8 +221,8 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
             if (leafCertificateSupplier == null) {
                 leafCertificateSupplier =
                         new URLBasedX509CertificateSupplier(
-                                new URL(getMetadataBaseUrl() + "identity/cert.pem"),
-                                new URL(getMetadataBaseUrl() + "identity/key.pem"),
+                                getMetadataResourceDetails("identity/cert.pem"),
+                                getMetadataResourceDetails("identity/key.pem"),
                                 (char[]) null);
             }
 
@@ -228,13 +239,21 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
 
                 intermediateCertificateSuppliers.add(
                         new URLBasedX509CertificateSupplier(
-                                new URL(getMetadataBaseUrl() + "identity/intermediate.pem"),
+                                getMetadataResourceDetails("identity/intermediate.pem"),
                                 null,
                                 (char[]) null));
             }
         } catch (MalformedURLException ex) {
             throw new IllegalArgumentException("The metadata service url is invalid.", ex);
         }
+    }
+
+    private URLBasedX509CertificateSupplier.ResourceDetails getMetadataResourceDetails(
+            final String path) throws MalformedURLException {
+        return URLBasedX509CertificateSupplier.ResourceDetails.builder()
+                .url(new URL(getMetadataBaseUrl() + path))
+                .headers(ImmutableMap.of(HttpHeaders.AUTHORIZATION, AUTHORIZATION_HEADER_VALUE))
+                .build();
     }
 
     /**

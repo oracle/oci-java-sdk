@@ -508,6 +508,41 @@ public class ComputeClient implements Compute {
     }
 
     @Override
+    public ChangeDedicatedVmHostCompartmentResponse changeDedicatedVmHostCompartment(
+            ChangeDedicatedVmHostCompartmentRequest request) {
+        LOG.trace("Called changeDedicatedVmHostCompartment");
+        final ChangeDedicatedVmHostCompartmentRequest interceptedRequest =
+                ChangeDedicatedVmHostCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeDedicatedVmHostCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeDedicatedVmHostCompartmentResponse>
+                transformer = ChangeDedicatedVmHostCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeDedicatedVmHostCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeImageCompartmentResponse changeImageCompartment(
             ChangeImageCompartmentRequest request) {
         LOG.trace("Called changeImageCompartment");
@@ -604,6 +639,39 @@ public class ComputeClient implements Compute {
                                                 ib,
                                                 retriedRequest
                                                         .getCreateAppCatalogSubscriptionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateDedicatedVmHostResponse createDedicatedVmHost(
+            CreateDedicatedVmHostRequest request) {
+        LOG.trace("Called createDedicatedVmHost");
+        final CreateDedicatedVmHostRequest interceptedRequest =
+                CreateDedicatedVmHostConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDedicatedVmHostConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateDedicatedVmHostResponse>
+                transformer = CreateDedicatedVmHostConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateDedicatedVmHostDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -717,6 +785,36 @@ public class ComputeClient implements Compute {
                 DeleteConsoleHistoryConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteConsoleHistoryResponse>
                 transformer = DeleteConsoleHistoryConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteDedicatedVmHostResponse deleteDedicatedVmHost(
+            DeleteDedicatedVmHostRequest request) {
+        LOG.trace("Called deleteDedicatedVmHost");
+        final DeleteDedicatedVmHostRequest interceptedRequest =
+                DeleteDedicatedVmHostConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDedicatedVmHostConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteDedicatedVmHostResponse>
+                transformer = DeleteDedicatedVmHostConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -1071,6 +1169,34 @@ public class ComputeClient implements Compute {
                 GetConsoleHistoryContentConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetConsoleHistoryContentResponse>
                 transformer = GetConsoleHistoryContentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetDedicatedVmHostResponse getDedicatedVmHost(GetDedicatedVmHostRequest request) {
+        LOG.trace("Called getDedicatedVmHost");
+        final GetDedicatedVmHostRequest interceptedRequest =
+                GetDedicatedVmHostConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDedicatedVmHostConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetDedicatedVmHostResponse>
+                transformer = GetDedicatedVmHostConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -1472,6 +1598,124 @@ public class ComputeClient implements Compute {
     }
 
     @Override
+    public ListDedicatedVmHostInstanceShapesResponse listDedicatedVmHostInstanceShapes(
+            ListDedicatedVmHostInstanceShapesRequest request) {
+        LOG.trace("Called listDedicatedVmHostInstanceShapes");
+        final ListDedicatedVmHostInstanceShapesRequest interceptedRequest =
+                ListDedicatedVmHostInstanceShapesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDedicatedVmHostInstanceShapesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListDedicatedVmHostInstanceShapesResponse>
+                transformer = ListDedicatedVmHostInstanceShapesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListDedicatedVmHostInstancesResponse listDedicatedVmHostInstances(
+            ListDedicatedVmHostInstancesRequest request) {
+        LOG.trace("Called listDedicatedVmHostInstances");
+        final ListDedicatedVmHostInstancesRequest interceptedRequest =
+                ListDedicatedVmHostInstancesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDedicatedVmHostInstancesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListDedicatedVmHostInstancesResponse>
+                transformer = ListDedicatedVmHostInstancesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListDedicatedVmHostShapesResponse listDedicatedVmHostShapes(
+            ListDedicatedVmHostShapesRequest request) {
+        LOG.trace("Called listDedicatedVmHostShapes");
+        final ListDedicatedVmHostShapesRequest interceptedRequest =
+                ListDedicatedVmHostShapesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDedicatedVmHostShapesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListDedicatedVmHostShapesResponse>
+                transformer = ListDedicatedVmHostShapesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListDedicatedVmHostsResponse listDedicatedVmHosts(ListDedicatedVmHostsRequest request) {
+        LOG.trace("Called listDedicatedVmHosts");
+        final ListDedicatedVmHostsRequest interceptedRequest =
+                ListDedicatedVmHostsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDedicatedVmHostsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListDedicatedVmHostsResponse>
+                transformer = ListDedicatedVmHostsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListImagesResponse listImages(ListImagesRequest request) {
         LOG.trace("Called listImages");
         final ListImagesRequest interceptedRequest = ListImagesConverter.interceptRequest(request);
@@ -1723,6 +1967,39 @@ public class ComputeClient implements Compute {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateConsoleHistoryDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateDedicatedVmHostResponse updateDedicatedVmHost(
+            UpdateDedicatedVmHostRequest request) {
+        LOG.trace("Called updateDedicatedVmHost");
+        final UpdateDedicatedVmHostRequest interceptedRequest =
+                UpdateDedicatedVmHostConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDedicatedVmHostConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateDedicatedVmHostResponse>
+                transformer = UpdateDedicatedVmHostConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateDedicatedVmHostDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

@@ -622,6 +622,486 @@ public class ComputePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listDedicatedVmHostInstanceShapes operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListDedicatedVmHostInstanceShapesResponse>
+            listDedicatedVmHostInstanceShapesResponseIterator(
+                    final ListDedicatedVmHostInstanceShapesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDedicatedVmHostInstanceShapesRequest.Builder,
+                ListDedicatedVmHostInstanceShapesRequest,
+                ListDedicatedVmHostInstanceShapesResponse>(
+                new com.google.common.base.Supplier<
+                        ListDedicatedVmHostInstanceShapesRequest.Builder>() {
+                    @Override
+                    public ListDedicatedVmHostInstanceShapesRequest.Builder get() {
+                        return ListDedicatedVmHostInstanceShapesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDedicatedVmHostInstanceShapesResponse, String>() {
+                    @Override
+                    public String apply(ListDedicatedVmHostInstanceShapesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDedicatedVmHostInstanceShapesRequest.Builder>,
+                        ListDedicatedVmHostInstanceShapesRequest>() {
+                    @Override
+                    public ListDedicatedVmHostInstanceShapesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDedicatedVmHostInstanceShapesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDedicatedVmHostInstanceShapesRequest,
+                        ListDedicatedVmHostInstanceShapesResponse>() {
+                    @Override
+                    public ListDedicatedVmHostInstanceShapesResponse apply(
+                            ListDedicatedVmHostInstanceShapesRequest request) {
+                        return client.listDedicatedVmHostInstanceShapes(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.DedicatedVmHostInstanceShapeSummary} objects
+     * contained in responses from the listDedicatedVmHostInstanceShapes operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.DedicatedVmHostInstanceShapeSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.DedicatedVmHostInstanceShapeSummary>
+            listDedicatedVmHostInstanceShapesRecordIterator(
+                    final ListDedicatedVmHostInstanceShapesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDedicatedVmHostInstanceShapesRequest.Builder,
+                ListDedicatedVmHostInstanceShapesRequest, ListDedicatedVmHostInstanceShapesResponse,
+                com.oracle.bmc.core.model.DedicatedVmHostInstanceShapeSummary>(
+                new com.google.common.base.Supplier<
+                        ListDedicatedVmHostInstanceShapesRequest.Builder>() {
+                    @Override
+                    public ListDedicatedVmHostInstanceShapesRequest.Builder get() {
+                        return ListDedicatedVmHostInstanceShapesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDedicatedVmHostInstanceShapesResponse, String>() {
+                    @Override
+                    public String apply(ListDedicatedVmHostInstanceShapesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDedicatedVmHostInstanceShapesRequest.Builder>,
+                        ListDedicatedVmHostInstanceShapesRequest>() {
+                    @Override
+                    public ListDedicatedVmHostInstanceShapesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDedicatedVmHostInstanceShapesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDedicatedVmHostInstanceShapesRequest,
+                        ListDedicatedVmHostInstanceShapesResponse>() {
+                    @Override
+                    public ListDedicatedVmHostInstanceShapesResponse apply(
+                            ListDedicatedVmHostInstanceShapesRequest request) {
+                        return client.listDedicatedVmHostInstanceShapes(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDedicatedVmHostInstanceShapesResponse,
+                        java.util.List<
+                                com.oracle.bmc.core.model.DedicatedVmHostInstanceShapeSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.core.model.DedicatedVmHostInstanceShapeSummary>
+                            apply(ListDedicatedVmHostInstanceShapesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listDedicatedVmHostInstances operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListDedicatedVmHostInstancesResponse>
+            listDedicatedVmHostInstancesResponseIterator(
+                    final ListDedicatedVmHostInstancesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDedicatedVmHostInstancesRequest.Builder, ListDedicatedVmHostInstancesRequest,
+                ListDedicatedVmHostInstancesResponse>(
+                new com.google.common.base.Supplier<ListDedicatedVmHostInstancesRequest.Builder>() {
+                    @Override
+                    public ListDedicatedVmHostInstancesRequest.Builder get() {
+                        return ListDedicatedVmHostInstancesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDedicatedVmHostInstancesResponse, String>() {
+                    @Override
+                    public String apply(ListDedicatedVmHostInstancesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDedicatedVmHostInstancesRequest.Builder>,
+                        ListDedicatedVmHostInstancesRequest>() {
+                    @Override
+                    public ListDedicatedVmHostInstancesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDedicatedVmHostInstancesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDedicatedVmHostInstancesRequest,
+                        ListDedicatedVmHostInstancesResponse>() {
+                    @Override
+                    public ListDedicatedVmHostInstancesResponse apply(
+                            ListDedicatedVmHostInstancesRequest request) {
+                        return client.listDedicatedVmHostInstances(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.DedicatedVmHostInstanceSummary} objects
+     * contained in responses from the listDedicatedVmHostInstances operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.DedicatedVmHostInstanceSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.DedicatedVmHostInstanceSummary>
+            listDedicatedVmHostInstancesRecordIterator(
+                    final ListDedicatedVmHostInstancesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDedicatedVmHostInstancesRequest.Builder, ListDedicatedVmHostInstancesRequest,
+                ListDedicatedVmHostInstancesResponse,
+                com.oracle.bmc.core.model.DedicatedVmHostInstanceSummary>(
+                new com.google.common.base.Supplier<ListDedicatedVmHostInstancesRequest.Builder>() {
+                    @Override
+                    public ListDedicatedVmHostInstancesRequest.Builder get() {
+                        return ListDedicatedVmHostInstancesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDedicatedVmHostInstancesResponse, String>() {
+                    @Override
+                    public String apply(ListDedicatedVmHostInstancesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDedicatedVmHostInstancesRequest.Builder>,
+                        ListDedicatedVmHostInstancesRequest>() {
+                    @Override
+                    public ListDedicatedVmHostInstancesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDedicatedVmHostInstancesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDedicatedVmHostInstancesRequest,
+                        ListDedicatedVmHostInstancesResponse>() {
+                    @Override
+                    public ListDedicatedVmHostInstancesResponse apply(
+                            ListDedicatedVmHostInstancesRequest request) {
+                        return client.listDedicatedVmHostInstances(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDedicatedVmHostInstancesResponse,
+                        java.util.List<
+                                com.oracle.bmc.core.model.DedicatedVmHostInstanceSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.DedicatedVmHostInstanceSummary>
+                            apply(ListDedicatedVmHostInstancesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listDedicatedVmHostShapes operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListDedicatedVmHostShapesResponse> listDedicatedVmHostShapesResponseIterator(
+            final ListDedicatedVmHostShapesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDedicatedVmHostShapesRequest.Builder, ListDedicatedVmHostShapesRequest,
+                ListDedicatedVmHostShapesResponse>(
+                new com.google.common.base.Supplier<ListDedicatedVmHostShapesRequest.Builder>() {
+                    @Override
+                    public ListDedicatedVmHostShapesRequest.Builder get() {
+                        return ListDedicatedVmHostShapesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListDedicatedVmHostShapesResponse, String>() {
+                    @Override
+                    public String apply(ListDedicatedVmHostShapesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDedicatedVmHostShapesRequest.Builder>,
+                        ListDedicatedVmHostShapesRequest>() {
+                    @Override
+                    public ListDedicatedVmHostShapesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDedicatedVmHostShapesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDedicatedVmHostShapesRequest, ListDedicatedVmHostShapesResponse>() {
+                    @Override
+                    public ListDedicatedVmHostShapesResponse apply(
+                            ListDedicatedVmHostShapesRequest request) {
+                        return client.listDedicatedVmHostShapes(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.DedicatedVmHostShapeSummary} objects
+     * contained in responses from the listDedicatedVmHostShapes operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.DedicatedVmHostShapeSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.DedicatedVmHostShapeSummary>
+            listDedicatedVmHostShapesRecordIterator(
+                    final ListDedicatedVmHostShapesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDedicatedVmHostShapesRequest.Builder, ListDedicatedVmHostShapesRequest,
+                ListDedicatedVmHostShapesResponse,
+                com.oracle.bmc.core.model.DedicatedVmHostShapeSummary>(
+                new com.google.common.base.Supplier<ListDedicatedVmHostShapesRequest.Builder>() {
+                    @Override
+                    public ListDedicatedVmHostShapesRequest.Builder get() {
+                        return ListDedicatedVmHostShapesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListDedicatedVmHostShapesResponse, String>() {
+                    @Override
+                    public String apply(ListDedicatedVmHostShapesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDedicatedVmHostShapesRequest.Builder>,
+                        ListDedicatedVmHostShapesRequest>() {
+                    @Override
+                    public ListDedicatedVmHostShapesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDedicatedVmHostShapesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDedicatedVmHostShapesRequest, ListDedicatedVmHostShapesResponse>() {
+                    @Override
+                    public ListDedicatedVmHostShapesResponse apply(
+                            ListDedicatedVmHostShapesRequest request) {
+                        return client.listDedicatedVmHostShapes(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDedicatedVmHostShapesResponse,
+                        java.util.List<com.oracle.bmc.core.model.DedicatedVmHostShapeSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.DedicatedVmHostShapeSummary>
+                            apply(ListDedicatedVmHostShapesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listDedicatedVmHosts operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListDedicatedVmHostsResponse> listDedicatedVmHostsResponseIterator(
+            final ListDedicatedVmHostsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDedicatedVmHostsRequest.Builder, ListDedicatedVmHostsRequest,
+                ListDedicatedVmHostsResponse>(
+                new com.google.common.base.Supplier<ListDedicatedVmHostsRequest.Builder>() {
+                    @Override
+                    public ListDedicatedVmHostsRequest.Builder get() {
+                        return ListDedicatedVmHostsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListDedicatedVmHostsResponse, String>() {
+                    @Override
+                    public String apply(ListDedicatedVmHostsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDedicatedVmHostsRequest.Builder>,
+                        ListDedicatedVmHostsRequest>() {
+                    @Override
+                    public ListDedicatedVmHostsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDedicatedVmHostsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDedicatedVmHostsRequest, ListDedicatedVmHostsResponse>() {
+                    @Override
+                    public ListDedicatedVmHostsResponse apply(ListDedicatedVmHostsRequest request) {
+                        return client.listDedicatedVmHosts(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.DedicatedVmHostSummary} objects
+     * contained in responses from the listDedicatedVmHosts operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.DedicatedVmHostSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.DedicatedVmHostSummary>
+            listDedicatedVmHostsRecordIterator(final ListDedicatedVmHostsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDedicatedVmHostsRequest.Builder, ListDedicatedVmHostsRequest,
+                ListDedicatedVmHostsResponse, com.oracle.bmc.core.model.DedicatedVmHostSummary>(
+                new com.google.common.base.Supplier<ListDedicatedVmHostsRequest.Builder>() {
+                    @Override
+                    public ListDedicatedVmHostsRequest.Builder get() {
+                        return ListDedicatedVmHostsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListDedicatedVmHostsResponse, String>() {
+                    @Override
+                    public String apply(ListDedicatedVmHostsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDedicatedVmHostsRequest.Builder>,
+                        ListDedicatedVmHostsRequest>() {
+                    @Override
+                    public ListDedicatedVmHostsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDedicatedVmHostsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDedicatedVmHostsRequest, ListDedicatedVmHostsResponse>() {
+                    @Override
+                    public ListDedicatedVmHostsResponse apply(ListDedicatedVmHostsRequest request) {
+                        return client.listDedicatedVmHosts(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListDedicatedVmHostsResponse,
+                        java.util.List<com.oracle.bmc.core.model.DedicatedVmHostSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.DedicatedVmHostSummary> apply(
+                            ListDedicatedVmHostsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listImages operation. This iterable
      * will fetch more data from the server as needed.
      *

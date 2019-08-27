@@ -51,6 +51,15 @@ public class Instance {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHostId")
+        private String dedicatedVmHostId;
+
+        public Builder dedicatedVmHostId(String dedicatedVmHostId) {
+            this.dedicatedVmHostId = dedicatedVmHostId;
+            this.__explicitlySet__.add("dedicatedVmHostId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -222,6 +231,7 @@ public class Instance {
                     new Instance(
                             availabilityDomain,
                             compartmentId,
+                            dedicatedVmHostId,
                             definedTags,
                             displayName,
                             extendedMetadata,
@@ -249,6 +259,7 @@ public class Instance {
             Builder copiedBuilder =
                     availabilityDomain(o.getAvailabilityDomain())
                             .compartmentId(o.getCompartmentId())
+                            .dedicatedVmHostId(o.getDedicatedVmHostId())
                             .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .extendedMetadata(o.getExtendedMetadata())
@@ -294,6 +305,13 @@ public class Instance {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
+
+    /**
+     * The OCID of dedicated VM host.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHostId")
+    String dedicatedVmHostId;
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
