@@ -47,6 +47,16 @@ public interface ComputeManagement extends AutoCloseable {
     AttachLoadBalancerResponse attachLoadBalancer(AttachLoadBalancerRequest request);
 
     /**
+     * Change the compartment of a cluster network.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeClusterNetworkCompartmentResponse changeClusterNetworkCompartment(
+            ChangeClusterNetworkCompartmentRequest request);
+
+    /**
      * Moves an instance configuration into a different compartment within the same tenancy.
      * For information about moving resources between compartments, see
      * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -84,6 +94,14 @@ public interface ComputeManagement extends AutoCloseable {
             ChangeInstancePoolCompartmentRequest request);
 
     /**
+     * Create a cluster network.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateClusterNetworkResponse createClusterNetwork(CreateClusterNetworkRequest request);
+
+    /**
      * Creates an instance configuration. An instance configuration is a template that defines the
      * settings to use when creating Compute instances.
      *
@@ -119,6 +137,14 @@ public interface ComputeManagement extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     DetachLoadBalancerResponse detachLoadBalancer(DetachLoadBalancerRequest request);
+
+    /**
+     * Gets the specified cluster network
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetClusterNetworkResponse getClusterNetwork(GetClusterNetworkRequest request);
 
     /**
      * Gets the specified instance configuration
@@ -162,6 +188,23 @@ public interface ComputeManagement extends AutoCloseable {
      */
     LaunchInstanceConfigurationResponse launchInstanceConfiguration(
             LaunchInstanceConfigurationRequest request);
+
+    /**
+     * List the instances in the specified cluster network.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListClusterNetworkInstancesResponse listClusterNetworkInstances(
+            ListClusterNetworkInstancesRequest request);
+
+    /**
+     * Lists the cluster networks in the specified compartment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListClusterNetworksResponse listClusterNetworks(ListClusterNetworksRequest request);
 
     /**
      * Lists the instance configurations in the specified compartment.
@@ -231,12 +274,30 @@ public interface ComputeManagement extends AutoCloseable {
     StopInstancePoolResponse stopInstancePool(StopInstancePoolRequest request);
 
     /**
+     * Terminate the specified cluster network.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    TerminateClusterNetworkResponse terminateClusterNetwork(TerminateClusterNetworkRequest request);
+
+    /**
      * Terminate the specified instance pool.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      */
     TerminateInstancePoolResponse terminateInstancePool(TerminateInstancePoolRequest request);
+
+    /**
+     * Update the specified cluster network.
+     * The OCID of the cluster network remains the same.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateClusterNetworkResponse updateClusterNetwork(UpdateClusterNetworkRequest request);
 
     /**
      * Updates the free-form tags, defined tags, and display name of an instance configuration.

@@ -280,7 +280,7 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     String sourceId;
     /**
-     * The clone type.
+     * The Autonomous Database clone type.
      **/
     public enum CloneType {
         Full("FULL"),
@@ -315,7 +315,7 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
         }
     };
     /**
-     * The clone type.
+     * The Autonomous Database clone type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloneType")
     CloneType cloneType;

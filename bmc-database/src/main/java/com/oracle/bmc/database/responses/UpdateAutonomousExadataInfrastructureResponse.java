@@ -23,6 +23,12 @@ public class UpdateAutonomousExadataInfrastructureResponse {
     private String opcRequestId;
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request. Multiple OCID values are returned in a comma-separated list. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the status of the request.
+     *
+     */
+    private String opcWorkRequestId;
+
+    /**
      * The returned AutonomousExadataInfrastructure instance.
      */
     private AutonomousExadataInfrastructure autonomousExadataInfrastructure;
@@ -35,6 +41,7 @@ public class UpdateAutonomousExadataInfrastructureResponse {
         public Builder copy(UpdateAutonomousExadataInfrastructureResponse o) {
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
+            opcWorkRequestId(o.getOpcWorkRequestId());
             autonomousExadataInfrastructure(o.getAutonomousExadataInfrastructure());
 
             return this;

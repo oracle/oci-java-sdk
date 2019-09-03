@@ -54,6 +54,25 @@ public interface ComputeManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Change the compartment of a cluster network.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeClusterNetworkCompartmentResponse>
+            changeClusterNetworkCompartment(
+                    ChangeClusterNetworkCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeClusterNetworkCompartmentRequest,
+                                    ChangeClusterNetworkCompartmentResponse>
+                            handler);
+
+    /**
      * Moves an instance configuration into a different compartment within the same tenancy.
      * For information about moving resources between compartments, see
      * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -107,6 +126,22 @@ public interface ComputeManagementAsync extends AutoCloseable {
                                     ChangeInstancePoolCompartmentRequest,
                                     ChangeInstancePoolCompartmentResponse>
                             handler);
+
+    /**
+     * Create a cluster network.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateClusterNetworkResponse> createClusterNetwork(
+            CreateClusterNetworkRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateClusterNetworkRequest, CreateClusterNetworkResponse>
+                    handler);
 
     /**
      * Creates an instance configuration. An instance configuration is a template that defines the
@@ -173,6 +208,22 @@ public interface ComputeManagementAsync extends AutoCloseable {
             DetachLoadBalancerRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DetachLoadBalancerRequest, DetachLoadBalancerResponse>
+                    handler);
+
+    /**
+     * Gets the specified cluster network
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetClusterNetworkResponse> getClusterNetwork(
+            GetClusterNetworkRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetClusterNetworkRequest, GetClusterNetworkResponse>
                     handler);
 
     /**
@@ -246,6 +297,38 @@ public interface ComputeManagementAsync extends AutoCloseable {
             LaunchInstanceConfigurationRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             LaunchInstanceConfigurationRequest, LaunchInstanceConfigurationResponse>
+                    handler);
+
+    /**
+     * List the instances in the specified cluster network.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListClusterNetworkInstancesResponse> listClusterNetworkInstances(
+            ListClusterNetworkInstancesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListClusterNetworkInstancesRequest, ListClusterNetworkInstancesResponse>
+                    handler);
+
+    /**
+     * Lists the cluster networks in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListClusterNetworksResponse> listClusterNetworks(
+            ListClusterNetworksRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListClusterNetworksRequest, ListClusterNetworksResponse>
                     handler);
 
     /**
@@ -369,6 +452,22 @@ public interface ComputeManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Terminate the specified cluster network.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<TerminateClusterNetworkResponse> terminateClusterNetwork(
+            TerminateClusterNetworkRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            TerminateClusterNetworkRequest, TerminateClusterNetworkResponse>
+                    handler);
+
+    /**
      * Terminate the specified instance pool.
      *
      * @param request The request object containing the details to send
@@ -382,6 +481,24 @@ public interface ComputeManagementAsync extends AutoCloseable {
             TerminateInstancePoolRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             TerminateInstancePoolRequest, TerminateInstancePoolResponse>
+                    handler);
+
+    /**
+     * Update the specified cluster network.
+     * The OCID of the cluster network remains the same.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateClusterNetworkResponse> updateClusterNetwork(
+            UpdateClusterNetworkRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateClusterNetworkRequest, UpdateClusterNetworkResponse>
                     handler);
 
     /**

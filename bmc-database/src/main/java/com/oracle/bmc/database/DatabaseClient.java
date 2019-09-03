@@ -7,6 +7,7 @@ import java.util.Locale;
 import com.oracle.bmc.database.internal.http.*;
 import com.oracle.bmc.database.requests.*;
 import com.oracle.bmc.database.responses.*;
+import com.oracle.bmc.workrequests.WorkRequest;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.extern.slf4j.Slf4j
@@ -32,6 +33,7 @@ public class DatabaseClient implements Database {
 
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
+    private final java.util.concurrent.ExecutorService executorService;
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
 
     /**
@@ -264,6 +266,7 @@ public class DatabaseClient implements Database {
 
             executorService = threadPoolExecutor;
         }
+        this.executorService = executorService;
         this.waiters = new DatabaseWaiters(executorService, this);
 
         this.paginators = new DatabasePaginators(this);
@@ -3064,6 +3067,11 @@ public class DatabaseClient implements Database {
     @Override
     public DatabaseWaiters getWaiters() {
         return waiters;
+    }
+
+    @Override
+    public DatabaseWaiters newWaiters(WorkRequest workRequestClient) {
+        return new DatabaseWaiters(executorService, this, workRequestClient);
     }
 
     @Override

@@ -30,6 +30,236 @@ public class ComputeManagementPaginators {
     private final ComputeManagement client;
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listClusterNetworkInstances operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListClusterNetworkInstancesResponse>
+            listClusterNetworkInstancesResponseIterator(
+                    final ListClusterNetworkInstancesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListClusterNetworkInstancesRequest.Builder, ListClusterNetworkInstancesRequest,
+                ListClusterNetworkInstancesResponse>(
+                new com.google.common.base.Supplier<ListClusterNetworkInstancesRequest.Builder>() {
+                    @Override
+                    public ListClusterNetworkInstancesRequest.Builder get() {
+                        return ListClusterNetworkInstancesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListClusterNetworkInstancesResponse, String>() {
+                    @Override
+                    public String apply(ListClusterNetworkInstancesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListClusterNetworkInstancesRequest.Builder>,
+                        ListClusterNetworkInstancesRequest>() {
+                    @Override
+                    public ListClusterNetworkInstancesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListClusterNetworkInstancesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListClusterNetworkInstancesRequest, ListClusterNetworkInstancesResponse>() {
+                    @Override
+                    public ListClusterNetworkInstancesResponse apply(
+                            ListClusterNetworkInstancesRequest request) {
+                        return client.listClusterNetworkInstances(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.InstanceSummary} objects
+     * contained in responses from the listClusterNetworkInstances operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.InstanceSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.InstanceSummary>
+            listClusterNetworkInstancesRecordIterator(
+                    final ListClusterNetworkInstancesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListClusterNetworkInstancesRequest.Builder, ListClusterNetworkInstancesRequest,
+                ListClusterNetworkInstancesResponse, com.oracle.bmc.core.model.InstanceSummary>(
+                new com.google.common.base.Supplier<ListClusterNetworkInstancesRequest.Builder>() {
+                    @Override
+                    public ListClusterNetworkInstancesRequest.Builder get() {
+                        return ListClusterNetworkInstancesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListClusterNetworkInstancesResponse, String>() {
+                    @Override
+                    public String apply(ListClusterNetworkInstancesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListClusterNetworkInstancesRequest.Builder>,
+                        ListClusterNetworkInstancesRequest>() {
+                    @Override
+                    public ListClusterNetworkInstancesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListClusterNetworkInstancesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListClusterNetworkInstancesRequest, ListClusterNetworkInstancesResponse>() {
+                    @Override
+                    public ListClusterNetworkInstancesResponse apply(
+                            ListClusterNetworkInstancesRequest request) {
+                        return client.listClusterNetworkInstances(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListClusterNetworkInstancesResponse,
+                        java.util.List<com.oracle.bmc.core.model.InstanceSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.InstanceSummary> apply(
+                            ListClusterNetworkInstancesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listClusterNetworks operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListClusterNetworksResponse> listClusterNetworksResponseIterator(
+            final ListClusterNetworksRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListClusterNetworksRequest.Builder, ListClusterNetworksRequest,
+                ListClusterNetworksResponse>(
+                new com.google.common.base.Supplier<ListClusterNetworksRequest.Builder>() {
+                    @Override
+                    public ListClusterNetworksRequest.Builder get() {
+                        return ListClusterNetworksRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListClusterNetworksResponse, String>() {
+                    @Override
+                    public String apply(ListClusterNetworksResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListClusterNetworksRequest.Builder>,
+                        ListClusterNetworksRequest>() {
+                    @Override
+                    public ListClusterNetworksRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListClusterNetworksRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListClusterNetworksRequest, ListClusterNetworksResponse>() {
+                    @Override
+                    public ListClusterNetworksResponse apply(ListClusterNetworksRequest request) {
+                        return client.listClusterNetworks(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ClusterNetworkSummary} objects
+     * contained in responses from the listClusterNetworks operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ClusterNetworkSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.ClusterNetworkSummary>
+            listClusterNetworksRecordIterator(final ListClusterNetworksRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListClusterNetworksRequest.Builder, ListClusterNetworksRequest,
+                ListClusterNetworksResponse, com.oracle.bmc.core.model.ClusterNetworkSummary>(
+                new com.google.common.base.Supplier<ListClusterNetworksRequest.Builder>() {
+                    @Override
+                    public ListClusterNetworksRequest.Builder get() {
+                        return ListClusterNetworksRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListClusterNetworksResponse, String>() {
+                    @Override
+                    public String apply(ListClusterNetworksResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListClusterNetworksRequest.Builder>,
+                        ListClusterNetworksRequest>() {
+                    @Override
+                    public ListClusterNetworksRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListClusterNetworksRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListClusterNetworksRequest, ListClusterNetworksResponse>() {
+                    @Override
+                    public ListClusterNetworksResponse apply(ListClusterNetworksRequest request) {
+                        return client.listClusterNetworks(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListClusterNetworksResponse,
+                        java.util.List<com.oracle.bmc.core.model.ClusterNetworkSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.ClusterNetworkSummary> apply(
+                            ListClusterNetworksResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listInstanceConfigurations operation. This iterable
      * will fetch more data from the server as needed.
      *
