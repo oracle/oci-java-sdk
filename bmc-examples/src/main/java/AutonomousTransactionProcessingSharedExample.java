@@ -191,6 +191,8 @@ public class AutonomousTransactionProcessingSharedExample {
                                 .createAutonomousDatabaseDetails(request)
                                 .build());
 
+        System.out.println("Opc-work-request-id is " + response.getOpcWorkRequestId());
+
         return response.getAutonomousDatabase();
     }
 

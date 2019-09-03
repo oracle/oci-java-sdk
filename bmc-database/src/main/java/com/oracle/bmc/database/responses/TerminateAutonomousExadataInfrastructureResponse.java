@@ -17,6 +17,12 @@ public class TerminateAutonomousExadataInfrastructureResponse {
      */
     private String opcRequestId;
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request. Multiple OCID values are returned in a comma-separated list. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the status of the request.
+     *
+     */
+    private String opcWorkRequestId;
+
     public static class Builder {
         /**
          * Copy method to populate the builder with values from the given instance.
@@ -24,6 +30,7 @@ public class TerminateAutonomousExadataInfrastructureResponse {
          */
         public Builder copy(TerminateAutonomousExadataInfrastructureResponse o) {
             opcRequestId(o.getOpcRequestId());
+            opcWorkRequestId(o.getOpcWorkRequestId());
 
             return this;
         }

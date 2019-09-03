@@ -5,6 +5,7 @@ package com.oracle.bmc.database;
 
 import com.oracle.bmc.database.requests.*;
 import com.oracle.bmc.database.responses.*;
+import com.oracle.bmc.workrequests.WorkRequest;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface Database extends AutoCloseable {
@@ -888,8 +889,20 @@ public interface Database extends AutoCloseable {
      * Gets the pre-configured waiters available for resources for this service.
      *
      * @return The service waiters.
+     * @deprecated use {@link #newWaiters(WorkRequest)} instead.  Otherwise, a default one will be provided
+     *   that does not support operations that rely on the {@code WorkRequestClient} for polling.  An
+     *   {@code IllegalStateException} will be thrown for such operations.
      */
+    @Deprecated
     DatabaseWaiters getWaiters();
+
+    /**
+     * Creates a new {@code DatabaseWaiters} for resources for this service.
+     *
+     * @param workRequestClient The work request service client used to query for work request status
+     * @return The service waiters.
+     */
+    DatabaseWaiters newWaiters(WorkRequest workRequestClient);
 
     /**
      * Gets the pre-configured paginators available for list operations in this service which may return multiple

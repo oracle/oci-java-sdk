@@ -412,6 +412,41 @@ public class ComputeManagementClient implements ComputeManagement {
     }
 
     @Override
+    public ChangeClusterNetworkCompartmentResponse changeClusterNetworkCompartment(
+            ChangeClusterNetworkCompartmentRequest request) {
+        LOG.trace("Called changeClusterNetworkCompartment");
+        final ChangeClusterNetworkCompartmentRequest interceptedRequest =
+                ChangeClusterNetworkCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeClusterNetworkCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeClusterNetworkCompartmentResponse>
+                transformer = ChangeClusterNetworkCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeClusterNetworkCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeInstanceConfigurationCompartmentResponse changeInstanceConfigurationCompartment(
             ChangeInstanceConfigurationCompartmentRequest request) {
         LOG.trace("Called changeInstanceConfigurationCompartment");
@@ -476,6 +511,38 @@ public class ComputeManagementClient implements ComputeManagement {
                                                 ib,
                                                 retriedRequest
                                                         .getChangeInstancePoolCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateClusterNetworkResponse createClusterNetwork(CreateClusterNetworkRequest request) {
+        LOG.trace("Called createClusterNetwork");
+        final CreateClusterNetworkRequest interceptedRequest =
+                CreateClusterNetworkConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateClusterNetworkConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateClusterNetworkResponse>
+                transformer = CreateClusterNetworkConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateClusterNetworkDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -612,6 +679,34 @@ public class ComputeManagementClient implements ComputeManagement {
     }
 
     @Override
+    public GetClusterNetworkResponse getClusterNetwork(GetClusterNetworkRequest request) {
+        LOG.trace("Called getClusterNetwork");
+        final GetClusterNetworkRequest interceptedRequest =
+                GetClusterNetworkConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetClusterNetworkConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetClusterNetworkResponse>
+                transformer = GetClusterNetworkConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetInstanceConfigurationResponse getInstanceConfiguration(
             GetInstanceConfigurationRequest request) {
         LOG.trace("Called getInstanceConfiguration");
@@ -728,6 +823,64 @@ public class ComputeManagementClient implements ComputeManagement {
                                                 ib,
                                                 retriedRequest.getInstanceConfiguration(),
                                                 retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListClusterNetworkInstancesResponse listClusterNetworkInstances(
+            ListClusterNetworkInstancesRequest request) {
+        LOG.trace("Called listClusterNetworkInstances");
+        final ListClusterNetworkInstancesRequest interceptedRequest =
+                ListClusterNetworkInstancesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListClusterNetworkInstancesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListClusterNetworkInstancesResponse>
+                transformer = ListClusterNetworkInstancesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListClusterNetworksResponse listClusterNetworks(ListClusterNetworksRequest request) {
+        LOG.trace("Called listClusterNetworks");
+        final ListClusterNetworksRequest interceptedRequest =
+                ListClusterNetworksConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListClusterNetworksConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListClusterNetworksResponse>
+                transformer = ListClusterNetworksConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -939,6 +1092,36 @@ public class ComputeManagementClient implements ComputeManagement {
     }
 
     @Override
+    public TerminateClusterNetworkResponse terminateClusterNetwork(
+            TerminateClusterNetworkRequest request) {
+        LOG.trace("Called terminateClusterNetwork");
+        final TerminateClusterNetworkRequest interceptedRequest =
+                TerminateClusterNetworkConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                TerminateClusterNetworkConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, TerminateClusterNetworkResponse>
+                transformer = TerminateClusterNetworkConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public TerminateInstancePoolResponse terminateInstancePool(
             TerminateInstancePoolRequest request) {
         LOG.trace("Called terminateInstancePool");
@@ -963,6 +1146,38 @@ public class ComputeManagementClient implements ComputeManagement {
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
                                         client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateClusterNetworkResponse updateClusterNetwork(UpdateClusterNetworkRequest request) {
+        LOG.trace("Called updateClusterNetwork");
+        final UpdateClusterNetworkRequest interceptedRequest =
+                UpdateClusterNetworkConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateClusterNetworkConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateClusterNetworkResponse>
+                transformer = UpdateClusterNetworkConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateClusterNetworkDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
