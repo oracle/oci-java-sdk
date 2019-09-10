@@ -8,6 +8,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import javax.ws.rs.client.ClientRequestContext;
 import javax.ws.rs.client.ClientRequestFilter;
+import javax.ws.rs.core.MultivaluedMap;
 
 /**
  * A client request filter to remove content-length.
@@ -17,17 +18,29 @@ import javax.ws.rs.client.ClientRequestFilter;
 public class ContentLengthFilter implements ClientRequestFilter {
     @Override
     public void filter(ClientRequestContext requestContext) {
+        final MultivaluedMap<String, Object> headers = requestContext.getHeaders();
+        final String method = requestContext.getMethod();
+        final String uri = requestContext.getUri().toString();
+
+        if (headers == null) {
+            LOG.debug(
+                    "Headers from request context is null for Method [{}], URI [{}]", method, uri);
+            return;
+        }
+
         String contentLengthHeader = null;
-        for (String key : requestContext.getHeaders().keySet()) {
+        for (String key : headers.keySet()) {
             if (StringUtils.equalsIgnoreCase("content-length", key)) {
                 contentLengthHeader = key;
             }
         }
 
-        final String method = requestContext.getMethod();
-        final String uri = requestContext.getUri().toString();
-        final Object existingContentLengthValue =
-                requestContext.getHeaders().remove(contentLengthHeader);
+        if (contentLengthHeader == null) {
+            LOG.debug("content-length not found for Method [{}], URI [{}]", method, uri);
+            return;
+        }
+
+        final Object existingContentLengthValue = headers.remove(contentLengthHeader);
         if (existingContentLengthValue != null) {
             LOG.debug(
                     "Removed existing content-length header for Method [{}], URI [{}], Existing Value [{}]",

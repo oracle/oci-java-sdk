@@ -327,7 +327,18 @@ public class CreateLoadBalancerDetails {
     java.util.Map<String, BackendSetDetails> backendSets;
 
     /**
-     * The array of NSG [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) to be used by this Load Balancer.
+     * An array of NSG [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with this load balancer.
+     * <p>
+     * During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+     * <p>
+     * The benefits of using NSGs with the load balancer include:
+     * <p>
+     *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+     * <p>
+     *  The network security rules of other resources can reference the NSGs associated with the load balancer
+     *    to ensure access.
+     * <p>
+     * Example: `[\"ocid1.nsg.oc1.phx.unique_ID\"]`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")

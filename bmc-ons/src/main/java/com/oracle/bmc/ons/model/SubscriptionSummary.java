@@ -188,15 +188,17 @@ public class SubscriptionSummary {
     String topicId;
 
     /**
-     * The protocol used for the subscription. Valid values: EMAIL, HTTPS.
+     * The protocol used for the subscription.
+     * For information about subscription protocols, see
+     * [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     String protocol;
 
     /**
-     * The endpoint of the subscription. Valid values depend on the protocol.
-     * For EMAIL, only an email address is valid. For HTTPS, only a PagerDuty URL is valid. A URL cannot exceed 512 characters.
+     * A locator that corresponds to the subscription protocol.
+     * For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpoint")

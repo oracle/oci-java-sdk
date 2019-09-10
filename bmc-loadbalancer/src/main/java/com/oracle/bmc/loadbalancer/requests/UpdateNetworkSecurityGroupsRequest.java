@@ -11,12 +11,12 @@ import com.oracle.bmc.loadbalancer.model.*;
 public class UpdateNetworkSecurityGroupsRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The details for updating the NSGs of the load balancer.
+     * The details for updating the NSGs associated with the specified load balancer.
      */
     private UpdateNetworkSecurityGroupsDetails updateNetworkSecurityGroupsDetails;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer on which update the NSGs.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer to update the NSGs for.
      */
     private String loadBalancerId;
 

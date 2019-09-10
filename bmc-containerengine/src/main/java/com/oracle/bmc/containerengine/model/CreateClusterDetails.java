@@ -60,6 +60,15 @@ public class CreateClusterDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("options")
         private ClusterCreateOptions options;
 
@@ -75,7 +84,7 @@ public class CreateClusterDetails {
         public CreateClusterDetails build() {
             CreateClusterDetails __instance__ =
                     new CreateClusterDetails(
-                            name, compartmentId, vcnId, kubernetesVersion, options);
+                            name, compartmentId, vcnId, kubernetesVersion, kmsKeyId, options);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -87,6 +96,7 @@ public class CreateClusterDetails {
                             .compartmentId(o.getCompartmentId())
                             .vcnId(o.getVcnId())
                             .kubernetesVersion(o.getKubernetesVersion())
+                            .kmsKeyId(o.getKmsKeyId())
                             .options(o.getOptions());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -124,6 +134,14 @@ public class CreateClusterDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kubernetesVersion")
     String kubernetesVersion;
+
+    /**
+     * The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption.
+     * When used, `kubernetesVersion` must be at least `v1.13.0`.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    String kmsKeyId;
 
     /**
      * Optional attributes for the cluster.

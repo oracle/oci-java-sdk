@@ -93,6 +93,14 @@ public class ListAutonomousDatabasesConverter {
                                     request.getDbWorkload().getValue()));
         }
 
+        if (request.getIsFreeTier() != null) {
+            target =
+                    target.queryParam(
+                            "isFreeTier",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsFreeTier()));
+        }
+
         if (request.getDisplayName() != null) {
             target =
                     target.queryParam(

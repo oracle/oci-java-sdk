@@ -78,6 +78,15 @@ public class Volume {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
@@ -170,6 +179,7 @@ public class Volume {
                             definedTags,
                             displayName,
                             freeformTags,
+                            systemTags,
                             id,
                             isHydrated,
                             kmsKeyId,
@@ -191,6 +201,7 @@ public class Volume {
                             .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
+                            .systemTags(o.getSystemTags())
                             .id(o.getId())
                             .isHydrated(o.getIsHydrated())
                             .kmsKeyId(o.getKmsKeyId())
@@ -255,6 +266,14 @@ public class Volume {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
      * The OCID of the volume.

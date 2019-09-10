@@ -811,7 +811,7 @@ public interface LoadBalancerAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the network security groups to be used by a load balancer.
+     * Updates the network security groups associated with the specified load balancer.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

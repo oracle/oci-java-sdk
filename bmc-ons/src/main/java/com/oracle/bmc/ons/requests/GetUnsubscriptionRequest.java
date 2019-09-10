@@ -22,7 +22,10 @@ public class GetUnsubscriptionRequest extends com.oracle.bmc.requests.BmcRequest
     private String token;
 
     /**
-     * The subscription protocol. Valid values: EMAIL, HTTPS.
+     * The protocol used for the subscription.
+     * <p>
+     * For information about subscription protocols, see
+     * [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
      *
      */
     private String protocol;

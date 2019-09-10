@@ -2,6 +2,16 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
+## 1.7.0 - 2019-09-10
+### Added
+- Support for specifying the autoBackupWindow field for scheduling backups in the Database service
+- Support for network security groups on autonomous Exadata infrastructure in the Database service
+- Support for Kubernetes secrets encryption in customer clusters, regional subnets, and cluster authentication for instance principals in the Container Engine for Kubernetes service
+- Support for the Oracle Content and Experience service
+
+### Breaking
+- The etag field has been removed from the com.oracle.bmc.ons.responses.ChangeTopicCompartmentResponse and com.oracle.bmc.ons.responses.ChangeSubscriptionCompartmentResponse classes of the Notifications service
+
 ## 1.6.3 - 2019-09-03
 ### Added
 - Support for the Sydney (SYD) region

@@ -42,21 +42,21 @@ public class UpdateNodePoolDetails {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("quantityPerSubnet")
-        private Integer quantityPerSubnet;
-
-        public Builder quantityPerSubnet(Integer quantityPerSubnet) {
-            this.quantityPerSubnet = quantityPerSubnet;
-            this.__explicitlySet__.add("quantityPerSubnet");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("initialNodeLabels")
         private java.util.List<KeyValue> initialNodeLabels;
 
         public Builder initialNodeLabels(java.util.List<KeyValue> initialNodeLabels) {
             this.initialNodeLabels = initialNodeLabels;
             this.__explicitlySet__.add("initialNodeLabels");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("quantityPerSubnet")
+        private Integer quantityPerSubnet;
+
+        public Builder quantityPerSubnet(Integer quantityPerSubnet) {
+            this.quantityPerSubnet = quantityPerSubnet;
+            this.__explicitlySet__.add("quantityPerSubnet");
             return this;
         }
 
@@ -69,6 +69,15 @@ public class UpdateNodePoolDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nodeConfigDetails")
+        private UpdateNodePoolNodeConfigDetails nodeConfigDetails;
+
+        public Builder nodeConfigDetails(UpdateNodePoolNodeConfigDetails nodeConfigDetails) {
+            this.nodeConfigDetails = nodeConfigDetails;
+            this.__explicitlySet__.add("nodeConfigDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -77,9 +86,10 @@ public class UpdateNodePoolDetails {
                     new UpdateNodePoolDetails(
                             name,
                             kubernetesVersion,
-                            quantityPerSubnet,
                             initialNodeLabels,
-                            subnetIds);
+                            quantityPerSubnet,
+                            subnetIds,
+                            nodeConfigDetails);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -89,9 +99,10 @@ public class UpdateNodePoolDetails {
             Builder copiedBuilder =
                     name(o.getName())
                             .kubernetesVersion(o.getKubernetesVersion())
-                            .quantityPerSubnet(o.getQuantityPerSubnet())
                             .initialNodeLabels(o.getInitialNodeLabels())
-                            .subnetIds(o.getSubnetIds());
+                            .quantityPerSubnet(o.getQuantityPerSubnet())
+                            .subnetIds(o.getSubnetIds())
+                            .nodeConfigDetails(o.getNodeConfigDetails());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -118,22 +129,40 @@ public class UpdateNodePoolDetails {
     String kubernetesVersion;
 
     /**
-     * The number of nodes to ensure in each subnet.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("quantityPerSubnet")
-    Integer quantityPerSubnet;
-
-    /**
      * A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("initialNodeLabels")
     java.util.List<KeyValue> initialNodeLabels;
 
     /**
-     * The OCIDs of the subnets in which to place nodes for this node pool.
+     * The number of nodes to have in each subnet specified in the subnetIds property. This property is deprecated,
+     * use nodeConfigDetails instead. If the current value of quantityPerSubnet is greater than 0, you can only
+     * use quantityPerSubnet to scale the node pool. If the current value of quantityPerSubnet is equal to 0 and
+     * the current value of size in nodeConfigDetails is greater than 0, before you can use quantityPerSubnet,
+     * you must first scale the node pool to 0 nodes using nodeConfigDetails.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("quantityPerSubnet")
+    Integer quantityPerSubnet;
+
+    /**
+     * The OCIDs of the subnets in which to place nodes for this node pool. This property is deprecated,
+     * use nodeConfigDetails instead. Only one of the subnetIds or nodeConfigDetails
+     * properties can be specified.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
     java.util.List<String> subnetIds;
+
+    /**
+     * The configuration of nodes in the node pool. Only one of the subnetIds or nodeConfigDetails
+     * properties should be specified. If the current value of quantityPerSubnet is greater than 0, the node
+     * pool may still be scaled using quantityPerSubnet. Before you can use nodeConfigDetails,
+     * you must first scale the node pool to 0 nodes using quantityPerSubnet.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nodeConfigDetails")
+    UpdateNodePoolNodeConfigDetails nodeConfigDetails;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

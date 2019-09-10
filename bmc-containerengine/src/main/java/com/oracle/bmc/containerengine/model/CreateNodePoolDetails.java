@@ -123,6 +123,15 @@ public class CreateNodePoolDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nodeConfigDetails")
+        private CreateNodePoolNodeConfigDetails nodeConfigDetails;
+
+        public Builder nodeConfigDetails(CreateNodePoolNodeConfigDetails nodeConfigDetails) {
+            this.nodeConfigDetails = nodeConfigDetails;
+            this.__explicitlySet__.add("nodeConfigDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -139,7 +148,8 @@ public class CreateNodePoolDetails {
                             initialNodeLabels,
                             sshPublicKey,
                             quantityPerSubnet,
-                            subnetIds);
+                            subnetIds,
+                            nodeConfigDetails);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -157,7 +167,8 @@ public class CreateNodePoolDetails {
                             .initialNodeLabels(o.getInitialNodeLabels())
                             .sshPublicKey(o.getSshPublicKey())
                             .quantityPerSubnet(o.getQuantityPerSubnet())
-                            .subnetIds(o.getSubnetIds());
+                            .subnetIds(o.getSubnetIds())
+                            .nodeConfigDetails(o.getNodeConfigDetails());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -226,16 +237,29 @@ public class CreateNodePoolDetails {
     String sshPublicKey;
 
     /**
-     * The number of nodes to create in each subnet.
+     * Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property.
+     * When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("quantityPerSubnet")
     Integer quantityPerSubnet;
 
     /**
-     * The OCIDs of the subnets in which to place nodes for this node pool.
+     * The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet
+     * can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the
+     * subnetIds or nodeConfigDetails properties must be specified.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
     java.util.List<String> subnetIds;
+
+    /**
+     * The configuration of nodes in the node pool. Exactly one of the
+     * subnetIds or nodeConfigDetails properties must be specified.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nodeConfigDetails")
+    CreateNodePoolNodeConfigDetails nodeConfigDetails;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
