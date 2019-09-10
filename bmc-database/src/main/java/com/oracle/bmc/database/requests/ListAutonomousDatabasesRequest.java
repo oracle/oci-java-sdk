@@ -129,6 +129,13 @@ public class ListAutonomousDatabasesRequest extends com.oracle.bmc.requests.BmcR
     private AutonomousDatabaseSummary.DbWorkload dbWorkload;
 
     /**
+     * Filter on the value of the resource's 'isFreeTier' property. A value of `true` returns only Always Free resources.
+     * A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
+     *
+     */
+    private Boolean isFreeTier;
+
+    /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
     private String displayName;
@@ -180,6 +187,7 @@ public class ListAutonomousDatabasesRequest extends com.oracle.bmc.requests.BmcR
             sortOrder(o.getSortOrder());
             lifecycleState(o.getLifecycleState());
             dbWorkload(o.getDbWorkload());
+            isFreeTier(o.getIsFreeTier());
             displayName(o.getDisplayName());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());

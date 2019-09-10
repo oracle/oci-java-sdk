@@ -4,7 +4,8 @@
 package com.oracle.bmc.ons.model;
 
 /**
- * The properties that define a topic.
+ * The properties that define a topic. For general information about topics, see
+ * [Notifications Overview](https://docs.cloud.oracle.com/iaas/Content/Notification/Concepts/notificationoverview.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

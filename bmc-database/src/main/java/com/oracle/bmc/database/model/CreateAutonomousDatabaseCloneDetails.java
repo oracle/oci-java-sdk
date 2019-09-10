@@ -76,6 +76,15 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isFreeTier")
+        private Boolean isFreeTier;
+
+        public Builder isFreeTier(Boolean isFreeTier) {
+            this.isFreeTier = isFreeTier;
+            this.__explicitlySet__.add("isFreeTier");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
         private String adminPassword;
 
@@ -189,6 +198,7 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
                             cpuCoreCount,
                             dbWorkload,
                             dataStorageSizeInTBs,
+                            isFreeTier,
                             adminPassword,
                             displayName,
                             licenseModel,
@@ -212,6 +222,7 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
                             .cpuCoreCount(o.getCpuCoreCount())
                             .dbWorkload(o.getDbWorkload())
                             .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
+                            .isFreeTier(o.getIsFreeTier())
                             .adminPassword(o.getAdminPassword())
                             .displayName(o.getDisplayName())
                             .licenseModel(o.getLicenseModel())
@@ -244,6 +255,7 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
             Integer cpuCoreCount,
             DbWorkload dbWorkload,
             Integer dataStorageSizeInTBs,
+            Boolean isFreeTier,
             String adminPassword,
             String displayName,
             LicenseModel licenseModel,
@@ -261,6 +273,7 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
                 cpuCoreCount,
                 dbWorkload,
                 dataStorageSizeInTBs,
+                isFreeTier,
                 adminPassword,
                 displayName,
                 licenseModel,

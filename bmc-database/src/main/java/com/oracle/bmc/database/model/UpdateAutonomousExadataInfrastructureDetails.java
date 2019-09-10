@@ -43,6 +43,15 @@ public class UpdateAutonomousExadataInfrastructureDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+        private java.util.List<String> nsgIds;
+
+        public Builder nsgIds(java.util.List<String> nsgIds) {
+            this.nsgIds = nsgIds;
+            this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -68,7 +77,11 @@ public class UpdateAutonomousExadataInfrastructureDetails {
         public UpdateAutonomousExadataInfrastructureDetails build() {
             UpdateAutonomousExadataInfrastructureDetails __instance__ =
                     new UpdateAutonomousExadataInfrastructureDetails(
-                            displayName, maintenanceWindowDetails, freeformTags, definedTags);
+                            displayName,
+                            maintenanceWindowDetails,
+                            nsgIds,
+                            freeformTags,
+                            definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -78,6 +91,7 @@ public class UpdateAutonomousExadataInfrastructureDetails {
             Builder copiedBuilder =
                     displayName(o.getDisplayName())
                             .maintenanceWindowDetails(o.getMaintenanceWindowDetails())
+                            .nsgIds(o.getNsgIds())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -103,6 +117,13 @@ public class UpdateAutonomousExadataInfrastructureDetails {
     MaintenanceWindow maintenanceWindowDetails;
 
     /**
+     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+    java.util.List<String> nsgIds;
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
@@ -115,8 +136,6 @@ public class UpdateAutonomousExadataInfrastructureDetails {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

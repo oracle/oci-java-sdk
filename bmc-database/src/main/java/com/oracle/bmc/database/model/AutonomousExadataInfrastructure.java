@@ -69,6 +69,15 @@ public class AutonomousExadataInfrastructure {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+        private java.util.List<String> nsgIds;
+
+        public Builder nsgIds(java.util.List<String> nsgIds) {
+            this.nsgIds = nsgIds;
+            this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
@@ -189,6 +198,7 @@ public class AutonomousExadataInfrastructure {
                             displayName,
                             availabilityDomain,
                             subnetId,
+                            nsgIds,
                             shape,
                             hostname,
                             domain,
@@ -213,6 +223,7 @@ public class AutonomousExadataInfrastructure {
                             .displayName(o.getDisplayName())
                             .availabilityDomain(o.getAvailabilityDomain())
                             .subnetId(o.getSubnetId())
+                            .nsgIds(o.getNsgIds())
                             .shape(o.getShape())
                             .hostname(o.getHostname())
                             .domain(o.getDomain())
@@ -275,6 +286,13 @@ public class AutonomousExadataInfrastructure {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     String subnetId;
+
+    /**
+     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+    java.util.List<String> nsgIds;
 
     /**
      * The shape of the Autonomous Exadata Infrastructure. The shape determines resources to allocate to the Autonomous Exadata Infrastructure (CPU cores, memory and storage).
@@ -443,8 +461,6 @@ public class AutonomousExadataInfrastructure {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

@@ -176,7 +176,8 @@ public class HealthCheckerDetails {
     Integer returnCode;
 
     /**
-     * The number of retries to attempt before a backend server is considered \"unhealthy\".
+     * The number of retries to attempt before a backend server is considered \"unhealthy\". This number also applies
+     * when recovering a server to the \"healthy\" state.
      * <p>
      * Example: `3`
      *

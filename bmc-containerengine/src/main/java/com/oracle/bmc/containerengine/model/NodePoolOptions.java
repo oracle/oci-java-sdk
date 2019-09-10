@@ -84,7 +84,7 @@ public class NodePoolOptions {
     java.util.List<String> kubernetesVersions;
 
     /**
-     * Available Kubernetes versions.
+     * Available image names.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("images")
     java.util.List<String> images;

@@ -67,6 +67,15 @@ public class Cluster {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("options")
         private ClusterCreateOptions options;
 
@@ -133,6 +142,7 @@ public class Cluster {
                             compartmentId,
                             vcnId,
                             kubernetesVersion,
+                            kmsKeyId,
                             options,
                             metadata,
                             lifecycleState,
@@ -151,6 +161,7 @@ public class Cluster {
                             .compartmentId(o.getCompartmentId())
                             .vcnId(o.getVcnId())
                             .kubernetesVersion(o.getKubernetesVersion())
+                            .kmsKeyId(o.getKmsKeyId())
                             .options(o.getOptions())
                             .metadata(o.getMetadata())
                             .lifecycleState(o.getLifecycleState())
@@ -199,6 +210,12 @@ public class Cluster {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kubernetesVersion")
     String kubernetesVersion;
+
+    /**
+     * The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    String kmsKeyId;
 
     /**
      * Optional attributes for the cluster.

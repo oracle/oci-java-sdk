@@ -196,6 +196,15 @@ public class Instance {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -247,6 +256,7 @@ public class Instance {
                             region,
                             shape,
                             sourceDetails,
+                            systemTags,
                             timeCreated,
                             agentConfig,
                             timeMaintenanceRebootDue);
@@ -275,6 +285,7 @@ public class Instance {
                             .region(o.getRegion())
                             .shape(o.getShape())
                             .sourceDetails(o.getSourceDetails())
+                            .systemTags(o.getSystemTags())
                             .timeCreated(o.getTimeCreated())
                             .agentConfig(o.getAgentConfig())
                             .timeMaintenanceRebootDue(o.getTimeMaintenanceRebootDue());
@@ -567,6 +578,14 @@ public class Instance {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
     InstanceSourceDetails sourceDetails;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
      * The date and time the instance was created, in the format defined by RFC3339.

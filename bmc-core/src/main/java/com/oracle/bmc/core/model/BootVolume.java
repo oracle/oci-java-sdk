@@ -59,6 +59,15 @@ public class BootVolume {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -176,6 +185,7 @@ public class BootVolume {
                             availabilityDomain,
                             compartmentId,
                             definedTags,
+                            systemTags,
                             displayName,
                             freeformTags,
                             id,
@@ -198,6 +208,7 @@ public class BootVolume {
                     availabilityDomain(o.getAvailabilityDomain())
                             .compartmentId(o.getCompartmentId())
                             .definedTags(o.getDefinedTags())
+                            .systemTags(o.getSystemTags())
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
                             .id(o.getId())
@@ -247,6 +258,14 @@ public class BootVolume {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.

@@ -54,6 +54,15 @@ public class UpdateAutonomousDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isFreeTier")
+        private Boolean isFreeTier;
+
+        public Builder isFreeTier(Boolean isFreeTier) {
+            this.isFreeTier = isFreeTier;
+            this.__explicitlySet__.add("isFreeTier");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
         private String adminPassword;
 
@@ -127,6 +136,7 @@ public class UpdateAutonomousDatabaseDetails {
                             cpuCoreCount,
                             dataStorageSizeInTBs,
                             displayName,
+                            isFreeTier,
                             adminPassword,
                             dbName,
                             freeformTags,
@@ -144,6 +154,7 @@ public class UpdateAutonomousDatabaseDetails {
                     cpuCoreCount(o.getCpuCoreCount())
                             .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
                             .displayName(o.getDisplayName())
+                            .isFreeTier(o.getIsFreeTier())
                             .adminPassword(o.getAdminPassword())
                             .dbName(o.getDbName())
                             .freeformTags(o.getFreeformTags())
@@ -184,6 +195,13 @@ public class UpdateAutonomousDatabaseDetails {
     String displayName;
 
     /**
+     * Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB memory. For Always Free databases, memory and CPU cannot be scaled.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isFreeTier")
+    Boolean isFreeTier;
+
+    /**
      * The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (\") or the username \"admin\", regardless of casing. It must be different from the last four passwords and it must not be a password used within the last 24 hours.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
@@ -211,14 +229,12 @@ public class UpdateAutonomousDatabaseDetails {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
     /**
-     * The new Oracle license model that applies to the Oracle Autonomous Transaction Processing database. Note that when updating an Autonomous Database that uses the [dedicated deployment](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm) option, this attribute must be null.
+     * The Oracle license model that applies to the Oracle Autonomous Database. The default for Autonomous Database using the [shared deployment] is BRING_YOUR_OWN_LICENSE. Note that when provisioning an Autonomous Database using the [dedicated deployment](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm) option, this attribute must be null because the attribute is already set on Autonomous Exadata Infrastructure level.
      *
      **/
     public enum LicenseModel {
@@ -254,7 +270,7 @@ public class UpdateAutonomousDatabaseDetails {
         }
     };
     /**
-     * The new Oracle license model that applies to the Oracle Autonomous Transaction Processing database. Note that when updating an Autonomous Database that uses the [dedicated deployment](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm) option, this attribute must be null.
+     * The Oracle license model that applies to the Oracle Autonomous Database. The default for Autonomous Database using the [shared deployment] is BRING_YOUR_OWN_LICENSE. Note that when provisioning an Autonomous Database using the [dedicated deployment](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm) option, this attribute must be null because the attribute is already set on Autonomous Exadata Infrastructure level.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")

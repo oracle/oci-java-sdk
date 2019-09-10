@@ -130,6 +130,15 @@ public class NodePoolSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nodeConfigDetails")
+        private NodePoolNodeConfigDetails nodeConfigDetails;
+
+        public Builder nodeConfigDetails(NodePoolNodeConfigDetails nodeConfigDetails) {
+            this.nodeConfigDetails = nodeConfigDetails;
+            this.__explicitlySet__.add("nodeConfigDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -147,7 +156,8 @@ public class NodePoolSummary {
                             initialNodeLabels,
                             sshPublicKey,
                             quantityPerSubnet,
-                            subnetIds);
+                            subnetIds,
+                            nodeConfigDetails);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -166,7 +176,8 @@ public class NodePoolSummary {
                             .initialNodeLabels(o.getInitialNodeLabels())
                             .sshPublicKey(o.getSshPublicKey())
                             .quantityPerSubnet(o.getQuantityPerSubnet())
-                            .subnetIds(o.getSubnetIds());
+                            .subnetIds(o.getSubnetIds())
+                            .nodeConfigDetails(o.getNodeConfigDetails());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -251,6 +262,12 @@ public class NodePoolSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
     java.util.List<String> subnetIds;
+
+    /**
+     * The configuration of nodes in the node pool.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nodeConfigDetails")
+    NodePoolNodeConfigDetails nodeConfigDetails;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

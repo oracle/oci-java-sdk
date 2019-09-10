@@ -470,7 +470,7 @@ public interface LoadBalancer extends AutoCloseable {
     UpdateLoadBalancerResponse updateLoadBalancer(UpdateLoadBalancerRequest request);
 
     /**
-     * Updates the network security groups to be used by a load balancer.
+     * Updates the network security groups associated with the specified load balancer.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.

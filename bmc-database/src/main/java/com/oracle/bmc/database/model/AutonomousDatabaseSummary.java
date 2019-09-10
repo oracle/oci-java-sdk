@@ -72,6 +72,44 @@ public class AutonomousDatabaseSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isFreeTier")
+        private Boolean isFreeTier;
+
+        public Builder isFreeTier(Boolean isFreeTier) {
+            this.isFreeTier = isFreeTier;
+            this.__explicitlySet__.add("isFreeTier");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeReclamationOfFreeAutonomousDatabase")
+        private java.util.Date timeReclamationOfFreeAutonomousDatabase;
+
+        public Builder timeReclamationOfFreeAutonomousDatabase(
+                java.util.Date timeReclamationOfFreeAutonomousDatabase) {
+            this.timeReclamationOfFreeAutonomousDatabase = timeReclamationOfFreeAutonomousDatabase;
+            this.__explicitlySet__.add("timeReclamationOfFreeAutonomousDatabase");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeDeletionOfFreeAutonomousDatabase")
+        private java.util.Date timeDeletionOfFreeAutonomousDatabase;
+
+        public Builder timeDeletionOfFreeAutonomousDatabase(
+                java.util.Date timeDeletionOfFreeAutonomousDatabase) {
+            this.timeDeletionOfFreeAutonomousDatabase = timeDeletionOfFreeAutonomousDatabase;
+            this.__explicitlySet__.add("timeDeletionOfFreeAutonomousDatabase");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
         private Integer cpuCoreCount;
 
@@ -246,6 +284,10 @@ public class AutonomousDatabaseSummary {
                             lifecycleState,
                             lifecycleDetails,
                             dbName,
+                            isFreeTier,
+                            systemTags,
+                            timeReclamationOfFreeAutonomousDatabase,
+                            timeDeletionOfFreeAutonomousDatabase,
                             cpuCoreCount,
                             dataStorageSizeInTBs,
                             isDedicated,
@@ -276,6 +318,12 @@ public class AutonomousDatabaseSummary {
                             .lifecycleState(o.getLifecycleState())
                             .lifecycleDetails(o.getLifecycleDetails())
                             .dbName(o.getDbName())
+                            .isFreeTier(o.getIsFreeTier())
+                            .systemTags(o.getSystemTags())
+                            .timeReclamationOfFreeAutonomousDatabase(
+                                    o.getTimeReclamationOfFreeAutonomousDatabase())
+                            .timeDeletionOfFreeAutonomousDatabase(
+                                    o.getTimeDeletionOfFreeAutonomousDatabase())
                             .cpuCoreCount(o.getCpuCoreCount())
                             .dataStorageSizeInTBs(o.getDataStorageSizeInTBs())
                             .isDedicated(o.getIsDedicated())
@@ -396,6 +444,35 @@ public class AutonomousDatabaseSummary {
     String dbName;
 
     /**
+     * Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB memory. For Always Free databases, memory and CPU cannot be scaled.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isFreeTier")
+    Boolean isFreeTier;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeReclamationOfFreeAutonomousDatabase")
+    java.util.Date timeReclamationOfFreeAutonomousDatabase;
+
+    /**
+     * The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeDeletionOfFreeAutonomousDatabase")
+    java.util.Date timeDeletionOfFreeAutonomousDatabase;
+
+    /**
      * The number of CPU cores to be made available to the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
@@ -447,7 +524,7 @@ public class AutonomousDatabaseSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("connectionUrls")
     AutonomousDatabaseConnectionUrls connectionUrls;
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. The default is BRING_YOUR_OWN_LICENSE.
+     * The Oracle license model that applies to the Oracle Autonomous Database. The default for Autonomous Database using the [shared deployment] is BRING_YOUR_OWN_LICENSE. Note that when provisioning an Autonomous Database using the [dedicated deployment](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm) option, this attribute must be null because the attribute is already set on Autonomous Exadata Infrastructure level.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -494,7 +571,7 @@ public class AutonomousDatabaseSummary {
         }
     };
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. The default is BRING_YOUR_OWN_LICENSE.
+     * The Oracle license model that applies to the Oracle Autonomous Database. The default for Autonomous Database using the [shared deployment] is BRING_YOUR_OWN_LICENSE. Note that when provisioning an Autonomous Database using the [dedicated deployment](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm) option, this attribute must be null because the attribute is already set on Autonomous Exadata Infrastructure level.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
@@ -519,8 +596,6 @@ public class AutonomousDatabaseSummary {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * <p>
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")

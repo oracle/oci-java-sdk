@@ -17,12 +17,6 @@ public class ChangeSubscriptionCompartmentResponse {
      */
     private String opcRequestId;
 
-    /**
-     * For optimistic concurrency control. See `if-match`.
-     *
-     */
-    private String etag;
-
     public static class Builder {
         /**
          * Copy method to populate the builder with values from the given instance.
@@ -30,7 +24,6 @@ public class ChangeSubscriptionCompartmentResponse {
          */
         public Builder copy(ChangeSubscriptionCompartmentResponse o) {
             opcRequestId(o.getOpcRequestId());
-            etag(o.getEtag());
 
             return this;
         }

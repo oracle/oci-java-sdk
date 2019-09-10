@@ -60,6 +60,15 @@ public class BootVolumeBackup {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -186,6 +195,7 @@ public class BootVolumeBackup {
                             bootVolumeId,
                             compartmentId,
                             definedTags,
+                            systemTags,
                             displayName,
                             expirationTime,
                             freeformTags,
@@ -209,6 +219,7 @@ public class BootVolumeBackup {
                     bootVolumeId(o.getBootVolumeId())
                             .compartmentId(o.getCompartmentId())
                             .definedTags(o.getDefinedTags())
+                            .systemTags(o.getSystemTags())
                             .displayName(o.getDisplayName())
                             .expirationTime(o.getExpirationTime())
                             .freeformTags(o.getFreeformTags())
@@ -256,6 +267,14 @@ public class BootVolumeBackup {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
      * A user-friendly name for the boot volume backup. Does not have to be unique and it's changeable.

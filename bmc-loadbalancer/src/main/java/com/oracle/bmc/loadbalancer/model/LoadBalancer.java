@@ -186,6 +186,15 @@ public class LoadBalancer {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("ruleSets")
         private java.util.Map<String, RuleSet> ruleSets;
 
@@ -218,6 +227,7 @@ public class LoadBalancer {
                             pathRouteSets,
                             freeformTags,
                             definedTags,
+                            systemTags,
                             ruleSets);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -243,6 +253,7 @@ public class LoadBalancer {
                             .pathRouteSets(o.getPathRouteSets())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
+                            .systemTags(o.getSystemTags())
                             .ruleSets(o.getRuleSets());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -385,7 +396,19 @@ public class LoadBalancer {
     java.util.List<String> subnetIds;
 
     /**
-     * The array of NSG [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) in use by this Load Balancer.
+     * An array of NSG [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with the load
+     * balancer.
+     * <p>
+     * During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+     * <p>
+     * The benefits of associating the load balancer with NSGs include:
+     * <p>
+     *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+     * <p>
+     *  The network security rules of other resources can reference the NSGs associated with the load balancer
+     *    to ensure access.
+     * <p>
+     * Example: [\"ocid1.nsg.oc1.phx.unique_ID\"]
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
@@ -425,6 +448,17 @@ public class LoadBalancer {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * System tags can be viewed by users, but can only be created by the system.
+     * <p>
+     * Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     @com.fasterxml.jackson.annotation.JsonProperty("ruleSets")
     java.util.Map<String, RuleSet> ruleSets;
