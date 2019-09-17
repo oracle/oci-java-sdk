@@ -85,6 +85,15 @@ public class DbHomeSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
+        private String vmClusterId;
+
+        public Builder vmClusterId(String vmClusterId) {
+            this.vmClusterId = vmClusterId;
+            this.__explicitlySet__.add("vmClusterId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
         private String dbVersion;
 
@@ -115,6 +124,7 @@ public class DbHomeSummary {
                             lastPatchHistoryEntryId,
                             lifecycleState,
                             dbSystemId,
+                            vmClusterId,
                             dbVersion,
                             timeCreated);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -130,6 +140,7 @@ public class DbHomeSummary {
                             .lastPatchHistoryEntryId(o.getLastPatchHistoryEntryId())
                             .lifecycleState(o.getLifecycleState())
                             .dbSystemId(o.getDbSystemId())
+                            .vmClusterId(o.getVmClusterId())
                             .dbVersion(o.getDbVersion())
                             .timeCreated(o.getTimeCreated());
 
@@ -229,6 +240,12 @@ public class DbHomeSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
     String dbSystemId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
+    String vmClusterId;
 
     /**
      * The Oracle Database version.

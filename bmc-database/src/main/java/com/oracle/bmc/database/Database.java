@@ -38,6 +38,15 @@ public interface Database extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Activates the specified Exadata infrastructure.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ActivateExadataInfrastructureResponse activateExadataInfrastructure(
+            ActivateExadataInfrastructureRequest request);
+
+    /**
      * Move the Autonomous Container Database and its dependent resources to the specified compartment.
      * For more information about moving Autonomous Container Databases, see
      * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
@@ -76,6 +85,18 @@ public interface Database extends AutoCloseable {
                     ChangeAutonomousExadataInfrastructureCompartmentRequest request);
 
     /**
+     * Move the backup destination and its dependent resources to the specified compartment.
+     * For more information about moving backup destinations, see
+     * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeBackupDestinationCompartmentResponse changeBackupDestinationCompartment(
+            ChangeBackupDestinationCompartmentRequest request);
+
+    /**
      * Move the DB system and its dependent resources to the specified compartment.
      * For more information about moving DB systems, see
      * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
@@ -86,6 +107,28 @@ public interface Database extends AutoCloseable {
      */
     ChangeDbSystemCompartmentResponse changeDbSystemCompartment(
             ChangeDbSystemCompartmentRequest request);
+
+    /**
+     * To move an Exadata infrastructure and its dependent resources to another compartment, use the
+     * {@link #changeExadataInfrastructureCompartment(ChangeExadataInfrastructureCompartmentRequest) changeExadataInfrastructureCompartment} operation.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeExadataInfrastructureCompartmentResponse changeExadataInfrastructureCompartment(
+            ChangeExadataInfrastructureCompartmentRequest request);
+
+    /**
+     * To move a VM cluster and its dependent resources to another compartment, use the
+     * {@link #changeVmClusterCompartment(ChangeVmClusterCompartmentRequest) changeVmClusterCompartment} operation.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeVmClusterCompartmentResponse changeVmClusterCompartment(
+            ChangeVmClusterCompartmentRequest request);
 
     /**
      * Changes the status of the standalone backup resource to `ACTIVE` after the backup is created from the on-premises database and placed in Oracle Cloud Infrastructure Object Storage.
@@ -159,6 +202,15 @@ public interface Database extends AutoCloseable {
     CreateBackupResponse createBackup(CreateBackupRequest request);
 
     /**
+     * Creates a backup destination.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateBackupDestinationResponse createBackupDestination(CreateBackupDestinationRequest request);
+
+    /**
      * Creates a new Data Guard association.  A Data Guard association represents the replication relationship between the
      * specified database and a peer database. For more information, see [Using Oracle Data Guard](https://docs.cloud.oracle.com/Content/Database/Tasks/usingdataguard.htm).
      * <p>
@@ -185,6 +237,15 @@ public interface Database extends AutoCloseable {
     CreateDbHomeResponse createDbHome(CreateDbHomeRequest request);
 
     /**
+     * Create Exadata infrastructure.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateExadataInfrastructureResponse createExadataInfrastructure(
+            CreateExadataInfrastructureRequest request);
+
+    /**
      * Creates a new backup resource and returns the information the caller needs to back up an on-premises Oracle Database to Oracle Cloud Infrastructure.
      * <p>
      **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud](https://docs.cloud.oracle.com/Content/Database/Tasks/mig-onprembackup.htm) for more information.
@@ -194,6 +255,24 @@ public interface Database extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     CreateExternalBackupJobResponse createExternalBackupJob(CreateExternalBackupJobRequest request);
+
+    /**
+     * Creates a VM cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateVmClusterResponse createVmCluster(CreateVmClusterRequest request);
+
+    /**
+     * Creates the VM cluster network.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateVmClusterNetworkResponse createVmClusterNetwork(CreateVmClusterNetworkRequest request);
 
     /**
      * Performs one of the following power actions on the specified DB node:
@@ -245,6 +324,15 @@ public interface Database extends AutoCloseable {
     DeleteBackupResponse deleteBackup(DeleteBackupRequest request);
 
     /**
+     * Deletes a backup destination.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteBackupDestinationResponse deleteBackupDestination(DeleteBackupDestinationRequest request);
+
+    /**
      * Deletes a DB Home. The DB Home and its database data are local to the DB system and will be lost when it is deleted. Oracle recommends that you back up any data in the DB system prior to deleting it.
      *
      * @param request The request object containing the details to send
@@ -252,6 +340,54 @@ public interface Database extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     DeleteDbHomeResponse deleteDbHome(DeleteDbHomeRequest request);
+
+    /**
+     * Deletes the Exadata infrastructure.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteExadataInfrastructureResponse deleteExadataInfrastructure(
+            DeleteExadataInfrastructureRequest request);
+
+    /**
+     * Deletes the specified VM cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteVmClusterResponse deleteVmCluster(DeleteVmClusterRequest request);
+
+    /**
+     * Deletes the specified VM cluster network.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteVmClusterNetworkResponse deleteVmClusterNetwork(DeleteVmClusterNetworkRequest request);
+
+    /**
+     * Downloads the configuration file for the specified Exadata infrastructure.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DownloadExadataInfrastructureConfigFileResponse downloadExadataInfrastructureConfigFile(
+            DownloadExadataInfrastructureConfigFileRequest request);
+
+    /**
+     * Downloads the configuration file for the specified VM Cluster Network.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DownloadVmClusterNetworkConfigFileResponse downloadVmClusterNetworkConfigFile(
+            DownloadVmClusterNetworkConfigFileRequest request);
 
     /**
      * Performs a failover to transition the standby database identified by the `databaseId` parameter into the
@@ -286,6 +422,16 @@ public interface Database extends AutoCloseable {
      */
     GenerateAutonomousDatabaseWalletResponse generateAutonomousDatabaseWallet(
             GenerateAutonomousDatabaseWalletRequest request);
+
+    /**
+     * Generates a recommended VM cluster network configuration.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GenerateRecommendedVmClusterNetworkResponse generateRecommendedVmClusterNetwork(
+            GenerateRecommendedVmClusterNetworkRequest request);
 
     /**
      * Gets information about the specified Autonomous Container Database.
@@ -350,6 +496,15 @@ public interface Database extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     GetBackupResponse getBackup(GetBackupRequest request);
+
+    /**
+     * Gets information about the specified backup destination.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetBackupDestinationResponse getBackupDestination(GetBackupDestinationRequest request);
 
     /**
      * Gets the specified Data Guard association's configuration information.
@@ -431,6 +586,15 @@ public interface Database extends AutoCloseable {
             GetDbSystemPatchHistoryEntryRequest request);
 
     /**
+     * Gets information about the specified Exadata infrastructure.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetExadataInfrastructureResponse getExadataInfrastructure(
+            GetExadataInfrastructureRequest request);
+
+    /**
      * Gets `IORM` Setting for the requested Exadata DB System.
      * The default IORM Settings is pre-created in all the Exadata DB System.
      *
@@ -458,6 +622,22 @@ public interface Database extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     GetMaintenanceRunResponse getMaintenanceRun(GetMaintenanceRunRequest request);
+
+    /**
+     * Gets information about the specified VM cluster.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetVmClusterResponse getVmCluster(GetVmClusterRequest request);
+
+    /**
+     * Gets information about the specified VM cluster network.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetVmClusterNetworkResponse getVmClusterNetwork(GetVmClusterNetworkRequest request);
 
     /**
      * Launches a new Autonomous Exadata Infrastructure in the specified compartment and availability domain.
@@ -559,6 +739,15 @@ public interface Database extends AutoCloseable {
      */
     ListAutonomousExadataInfrastructuresResponse listAutonomousExadataInfrastructures(
             ListAutonomousExadataInfrastructuresRequest request);
+
+    /**
+     * Gets a list of backup destinations in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListBackupDestinationResponse listBackupDestination(ListBackupDestinationRequest request);
 
     /**
      * Gets a list of backups based on the databaseId or compartmentId specified. Either one of the query parameters must be provided.
@@ -671,6 +860,24 @@ public interface Database extends AutoCloseable {
     ListDbVersionsResponse listDbVersions(ListDbVersionsRequest request);
 
     /**
+     * Gets a list of the Exadata infrastructure in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListExadataInfrastructuresResponse listExadataInfrastructures(
+            ListExadataInfrastructuresRequest request);
+
+    /**
+     * Gets a list of supported GI versions for VM Cluster.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListGiVersionsResponse listGiVersions(ListGiVersionsRequest request);
+
+    /**
      * Gets a list of the Maintenance Runs in the specified compartment.
      *
      * @param request The request object containing the details to send
@@ -678,6 +885,24 @@ public interface Database extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListMaintenanceRunsResponse listMaintenanceRuns(ListMaintenanceRunsRequest request);
+
+    /**
+     * Gets a list of the VM cluster networks in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListVmClusterNetworksResponse listVmClusterNetworks(ListVmClusterNetworksRequest request);
+
+    /**
+     * Gets a list of the VM clusters in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListVmClustersResponse listVmClusters(ListVmClustersRequest request);
 
     /**
      * Reinstates the database identified by the `databaseId` parameter into the standby role in a Data Guard association.
@@ -844,6 +1069,17 @@ public interface Database extends AutoCloseable {
             UpdateAutonomousExadataInfrastructureRequest request);
 
     /**
+     * If no database is associated with the backup destination:
+     * - For a RECOVERY_APPLIANCE backup destination, updates the connection string and/or the list of VPC users.
+     * - For an NFS backup destination, updates the NFS location.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateBackupDestinationResponse updateBackupDestination(UpdateBackupDestinationRequest request);
+
+    /**
      * Update a Database based on the request parameters you provide.
      *
      * @param request The request object containing the details to send
@@ -869,6 +1105,16 @@ public interface Database extends AutoCloseable {
     UpdateDbSystemResponse updateDbSystem(UpdateDbSystemRequest request);
 
     /**
+     * Updates the Exadata infrastructure.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateExadataInfrastructureResponse updateExadataInfrastructure(
+            UpdateExadataInfrastructureRequest request);
+
+    /**
      * Update `IORM` Settings for the requested Exadata DB System.
      *
      * @param request The request object containing the details to send
@@ -884,6 +1130,34 @@ public interface Database extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateMaintenanceRunResponse updateMaintenanceRun(UpdateMaintenanceRunRequest request);
+
+    /**
+     * Updates the specified VM cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateVmClusterResponse updateVmCluster(UpdateVmClusterRequest request);
+
+    /**
+     * Updates the specified VM cluster network.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateVmClusterNetworkResponse updateVmClusterNetwork(UpdateVmClusterNetworkRequest request);
+
+    /**
+     * Validates the specified VM cluster network.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ValidateVmClusterNetworkResponse validateVmClusterNetwork(
+            ValidateVmClusterNetworkRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

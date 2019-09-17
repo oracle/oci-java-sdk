@@ -1,0 +1,309 @@
+/**
+ * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+ */
+package exacc;
+
+import com.oracle.bmc.auth.AuthenticationDetailsProvider;
+import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
+import com.oracle.bmc.database.DatabaseClient;
+import com.oracle.bmc.database.model.CreateDatabaseDetails;
+import com.oracle.bmc.database.model.CreateDbHomeBase;
+import com.oracle.bmc.database.model.CreateDbHomeWithVmClusterIdDetails;
+import com.oracle.bmc.database.model.DbHomeSummary;
+import com.oracle.bmc.database.requests.CreateDbHomeRequest;
+import com.oracle.bmc.database.requests.GetDbHomeRequest;
+import com.oracle.bmc.database.requests.GetVmClusterRequest;
+import com.oracle.bmc.database.requests.ListDbHomesRequest;
+import com.oracle.bmc.database.responses.CreateDbHomeResponse;
+import com.oracle.bmc.database.responses.GetDbHomeResponse;
+import com.oracle.bmc.database.responses.GetVmClusterResponse;
+import com.oracle.bmc.database.responses.ListDbHomesResponse;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NonNull;
+import org.apache.commons.lang3.ObjectUtils;
+import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.Collection;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.function.Function;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+/**
+ * This class provides some basic example of how to create, get a DbHome for a given VmCluster, as well as list DbHomes
+ * within the given VmCluster.
+ * <p>
+ * Sample arguments (not comprehensive, see below for a full list):
+ * <b>--vmClusterOcid &lt;OCID of a VmCluster&gt; --dbName &lt;a Db Name&gt; --dbUniqueName &lt;a DbUniqueName&gt;</b>
+ */
+public class ExaCCDbHomeExample {
+    private static final String CONFIG_LOCATION = "~/.oci/config";
+    private static final String CONFIG_PROFILE = "DEFAULT";
+    private static final String DEFAULT_VERSION = "18.0.0.0";
+    private static final String USAGE =
+            "This problem expects the following parameters. Parameters marked with an asterisk (*) are required:";
+    private static final Map<String, Opts> mappings =
+            Arrays.stream(Opts.values()).collect(Collectors.toMap(Opts::getArgName, o -> o));
+
+    /**
+     * Defines the arguments for this example.
+     */
+    @AllArgsConstructor
+    private enum Opts {
+        VM_CLUSTER_OCID("--vmClusterOcid", "The OCID of a VmCluster.", true, null),
+        DB_NAME(
+                "--dbName",
+                "A DbName. Generates a value if not specified.",
+                false,
+                o -> RandomStringUtils.randomAlphabetic(8)),
+        DB_UNIQUE_NAME(
+                "--dbUniqueName",
+                "A DbUniqueName. Generates a value if not specified.",
+                false,
+                dbName -> dbName + "_" + RandomStringUtils.randomAlphabetic(2, 16)),
+        DB_PASSWORD(
+                "--dbPassword",
+                "The admin password for your DB. Generates a value if not specified.",
+                false,
+                o ->
+                        RandomStringUtils.random(16, "abcdefgABCDEFG#-_1234567890")
+                                + RandomStringUtils.random(2, "abcdefg")
+                                + RandomStringUtils.random(2, "ABCDEFG")
+                                + RandomStringUtils.random(2, "#-_")
+                                + RandomStringUtils.random(2, "1234567890")),
+        DB_VERSION(
+                "--dbVersion",
+                String.format(
+                        "The version to use. Defaults to %s if not specified.", DEFAULT_VERSION),
+                false,
+                o -> DEFAULT_VERSION);
+        @Getter public final String argName;
+        @Getter public final String description;
+        @Getter public final boolean required;
+        @Getter public final Function<Object, String> defaultSupplier;
+    }
+
+    /**
+     * A helper method for parsing command line arguments.
+     *
+     * @param argv the arguments as passed
+     * @return a mapping of argument to its value. Arguments may be missing from the map if they were not supplied by
+     * the user and not required.
+     */
+    private static Map<Opts, String> parseOpts(@NonNull String[] argv) {
+        final Iterable<String> iterable = Arrays.asList(argv);
+        final Iterator<String> iterator = iterable.iterator();
+        final Map<Opts, String> argsMap = new HashMap<>();
+
+        while (iterator.hasNext()) {
+            String token = iterator.next();
+            if (mappings.containsKey(token)) {
+                if (iterator.hasNext()) {
+                    argsMap.put(mappings.get(token), iterator.next());
+                } else {
+                    throw new IllegalArgumentException("Missing value for parameter " + token);
+                }
+            } else {
+                throw new IllegalArgumentException("Unknown parameter " + token);
+            }
+        }
+
+        Arrays.stream(Opts.values())
+                .filter(Opts::isRequired)
+                .filter(opt -> !argsMap.containsKey(opt))
+                .findAny()
+                .ifPresent(
+                        opts -> {
+                            throw new IllegalArgumentException(
+                                    "Missing required parameter " + opts.argName);
+                        });
+
+        return argsMap;
+    }
+
+    /**
+     * Creates a DbHome for a given VmCluster
+     *
+     * @param vmClusterOcid the OCID of the VmCluster
+     * @param client        the DatabaseClient to use
+     * @return the OCID of the DbHome that is created
+     */
+    private static String create(
+            @NonNull final String vmClusterOcid,
+            @NonNull final DatabaseClient client,
+            @NonNull final String dbName,
+            @NonNull final String dbUniqueName,
+            @NonNull final String dbPassword,
+            @NonNull final String version) {
+
+        System.out.println(
+                String.format(
+                        "Creating DbName %s with DbUniqueName %s with DbVersion %s ...",
+                        dbName,
+                        dbUniqueName,
+                        version));
+
+        final CreateDatabaseDetails databaseDetails =
+                CreateDatabaseDetails.builder()
+                        .adminPassword(dbPassword)
+                        .dbName(dbName)
+                        .dbUniqueName(dbUniqueName)
+                        .build();
+
+        final CreateDbHomeBase details =
+                CreateDbHomeWithVmClusterIdDetails.builder()
+                        .displayName(RandomStringUtils.randomPrint(4, 96))
+                        .database(databaseDetails)
+                        .vmClusterId(vmClusterOcid)
+                        .dbVersion(version)
+                        .build();
+
+        final CreateDbHomeRequest request =
+                CreateDbHomeRequest.builder().createDbHomeWithDbSystemIdDetails(details).build();
+
+        CreateDbHomeResponse response = client.createDbHome(request);
+
+        if (response == null) {
+            throw new RuntimeException("Response from server was null.");
+        } else if (response.getDbHome() == null
+                || StringUtils.isBlank(response.getDbHome().getId())) {
+            throw new RuntimeException(
+                    "Response from server did not contain expected data! request id: "
+                            + response.getOpcRequestId());
+        } else {
+            System.out.println(response.getDbHome().getId());
+            return response.getDbHome().getId();
+        }
+    }
+
+    /**
+     * Lists DbHomes for a given VmCluster
+     *
+     * @param vmClusterOcid the OCID of a given VmCluster
+     * @param client        the DatabaseClient to use
+     * @return a Collection of OCIDs of the DbHomes
+     */
+    private static Collection<String> list(
+            @NonNull final String vmClusterOcid, @NonNull final DatabaseClient client) {
+
+        System.out.printf("Listing dbHomes for VmCluster: %s ... %n", vmClusterOcid);
+
+        final GetVmClusterRequest getVmClusterRequest =
+                GetVmClusterRequest.builder().vmClusterId(vmClusterOcid).build();
+
+        final GetVmClusterResponse getVmClusterResponse = client.getVmCluster(getVmClusterRequest);
+
+        final ListDbHomesRequest request =
+                ListDbHomesRequest.builder()
+                        .compartmentId(getVmClusterResponse.getVmCluster().getCompartmentId())
+                        .vmClusterId(vmClusterOcid)
+                        .build();
+
+        ListDbHomesResponse response = client.listDbHomes(request);
+
+        if (response == null) {
+            throw new RuntimeException("Response from server was null.");
+        } else {
+            Collection<String> collection =
+                    response.getItems()
+                            .stream()
+                            .map(DbHomeSummary::getId)
+                            .collect(Collectors.toList());
+            collection.forEach(System.out::println);
+            return collection;
+        }
+    }
+
+    /**
+     * Gets a DbHome
+     *
+     * @param dbHomeOcid the OCID of a DbHome
+     * @param client     the DatabaseClient instance to be used
+     * @return the OCID of the DbHome that was fetched.
+     */
+    public static String get(
+            @NonNull final String dbHomeOcid, @NonNull final DatabaseClient client) {
+
+        System.out.println("Getting dbHome...");
+
+        final GetDbHomeRequest request = GetDbHomeRequest.builder().dbHomeId(dbHomeOcid).build();
+
+        GetDbHomeResponse response = client.getDbHome(request);
+
+        if (response == null) {
+            throw new RuntimeException("Response from server was null.");
+        } else if (response.getDbHome() == null
+                || StringUtils.isBlank(response.getDbHome().getId())
+                || ObjectUtils.notEqual(dbHomeOcid, response.getDbHome().getId())) {
+            throw new RuntimeException(
+                    "Response from server did not contain expected data! request id: "
+                            + response.getOpcRequestId());
+        } else {
+            System.out.println(response.getDbHome().getId());
+            return response.getDbHome().getId();
+        }
+    }
+
+    /**
+     * The entry point for this example.
+     *
+     * @param args The following arguments are expected and handled:
+     *             <ul>
+     *             <li>--vmClusterOcid The OCID of a given VmCluster. This argument is required.</li>
+     *             <li>--dbName the DbName for the database to be created.</li>
+     *             <li>--dbUniqueName the DbUniqueName for the database to be created.</li>
+     *             <li>--dbPassword the admin password of the database to be created.</li>
+     *             <li>--dbVersion the version the database to use.</li>
+     *             </ul>
+     * @throws IOException
+     */
+    public static void main(String[] args) throws IOException {
+        try {
+            final Map<Opts, String> argumentMap = parseOpts(args);
+
+            final String vmClusterOcid = argumentMap.get(Opts.VM_CLUSTER_OCID);
+            final String dbName =
+                    argumentMap.getOrDefault(
+                            Opts.DB_NAME, Opts.DB_NAME.getDefaultSupplier().apply(null));
+            final String dbUniqueName =
+                    argumentMap.getOrDefault(
+                            Opts.DB_UNIQUE_NAME,
+                            Opts.DB_UNIQUE_NAME.getDefaultSupplier().apply(dbName));
+            final String dbPassword =
+                    argumentMap.getOrDefault(
+                            Opts.DB_PASSWORD, Opts.DB_PASSWORD.getDefaultSupplier().apply(null));
+            final String version =
+                    argumentMap.getOrDefault(
+                            Opts.DB_VERSION, Opts.DB_VERSION.getDefaultSupplier().apply(null));
+
+            final AuthenticationDetailsProvider provider =
+                    new ConfigFileAuthenticationDetailsProvider(CONFIG_LOCATION, CONFIG_PROFILE);
+            final DatabaseClient client = DatabaseClient.builder().build(provider);
+
+            final String dbHomeOcid =
+                    create(vmClusterOcid, client, dbName, dbUniqueName, dbPassword, version);
+
+            get(dbHomeOcid, client);
+            list(vmClusterOcid, client);
+
+        } catch (IllegalArgumentException e) {
+            // print out usage guide with full list possible arguments
+            System.out.println(USAGE);
+            for (Opts opt : Opts.values()) {
+                System.out.printf(
+                        "%s\t%s %n\t\t\t %s%n%n",
+                        opt.required ? "*" : "",
+                        opt.argName,
+                        opt.description);
+            }
+            System.out.flush();
+            throw e;
+        }
+    }
+}

@@ -13,7 +13,7 @@ public class CreateDbHomeRequest extends com.oracle.bmc.requests.BmcRequest {
     /**
      * Request to create a new database home.
      */
-    private CreateDbHomeWithDbSystemIdBase createDbHomeWithDbSystemIdDetails;
+    private CreateDbHomeBase createDbHomeWithDbSystemIdDetails;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or

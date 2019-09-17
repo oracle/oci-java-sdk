@@ -27,25 +27,25 @@ package com.oracle.bmc.database.model;
     property = "source"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class CreateDbHomeWithDbSystemIdFromBackupDetails extends CreateDbHomeWithDbSystemIdBase {
+public class CreateDbHomeWithDbSystemIdFromBackupDetails extends CreateDbHomeBase {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
-        private String dbSystemId;
-
-        public Builder dbSystemId(String dbSystemId) {
-            this.dbSystemId = dbSystemId;
-            this.__explicitlySet__.add("dbSystemId");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
+        private String dbSystemId;
+
+        public Builder dbSystemId(String dbSystemId) {
+            this.dbSystemId = dbSystemId;
+            this.__explicitlySet__.add("dbSystemId");
             return this;
         }
 
@@ -64,7 +64,7 @@ public class CreateDbHomeWithDbSystemIdFromBackupDetails extends CreateDbHomeWit
         public CreateDbHomeWithDbSystemIdFromBackupDetails build() {
             CreateDbHomeWithDbSystemIdFromBackupDetails __instance__ =
                     new CreateDbHomeWithDbSystemIdFromBackupDetails(
-                            dbSystemId, displayName, database);
+                            displayName, dbSystemId, database);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -72,8 +72,8 @@ public class CreateDbHomeWithDbSystemIdFromBackupDetails extends CreateDbHomeWit
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateDbHomeWithDbSystemIdFromBackupDetails o) {
             Builder copiedBuilder =
-                    dbSystemId(o.getDbSystemId())
-                            .displayName(o.getDisplayName())
+                    displayName(o.getDisplayName())
+                            .dbSystemId(o.getDbSystemId())
                             .database(o.getDatabase());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -90,10 +90,17 @@ public class CreateDbHomeWithDbSystemIdFromBackupDetails extends CreateDbHomeWit
 
     @Deprecated
     public CreateDbHomeWithDbSystemIdFromBackupDetails(
-            String dbSystemId, String displayName, CreateDatabaseFromBackupDetails database) {
-        super(dbSystemId, displayName);
+            String displayName, String dbSystemId, CreateDatabaseFromBackupDetails database) {
+        super(displayName);
+        this.dbSystemId = dbSystemId;
         this.database = database;
     }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
+    String dbSystemId;
 
     @com.fasterxml.jackson.annotation.JsonProperty("database")
     CreateDatabaseFromBackupDetails database;

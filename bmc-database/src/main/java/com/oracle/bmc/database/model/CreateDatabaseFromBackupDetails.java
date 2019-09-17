@@ -51,6 +51,15 @@ public class CreateDatabaseFromBackupDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
+        private String dbUniqueName;
+
+        public Builder dbUniqueName(String dbUniqueName) {
+            this.dbUniqueName = dbUniqueName;
+            this.__explicitlySet__.add("dbUniqueName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dbName")
         private String dbName;
 
@@ -66,7 +75,7 @@ public class CreateDatabaseFromBackupDetails {
         public CreateDatabaseFromBackupDetails build() {
             CreateDatabaseFromBackupDetails __instance__ =
                     new CreateDatabaseFromBackupDetails(
-                            backupId, backupTDEPassword, adminPassword, dbName);
+                            backupId, backupTDEPassword, adminPassword, dbUniqueName, dbName);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -77,6 +86,7 @@ public class CreateDatabaseFromBackupDetails {
                     backupId(o.getBackupId())
                             .backupTDEPassword(o.getBackupTDEPassword())
                             .adminPassword(o.getAdminPassword())
+                            .dbUniqueName(o.getDbUniqueName())
                             .dbName(o.getDbName());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -108,6 +118,12 @@ public class CreateDatabaseFromBackupDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
     String adminPassword;
+
+    /**
+     * The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
+    String dbUniqueName;
 
     /**
      * The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.

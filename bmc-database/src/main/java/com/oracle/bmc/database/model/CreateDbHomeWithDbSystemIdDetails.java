@@ -27,25 +27,25 @@ package com.oracle.bmc.database.model;
     property = "source"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class CreateDbHomeWithDbSystemIdDetails extends CreateDbHomeWithDbSystemIdBase {
+public class CreateDbHomeWithDbSystemIdDetails extends CreateDbHomeBase {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
-        private String dbSystemId;
-
-        public Builder dbSystemId(String dbSystemId) {
-            this.dbSystemId = dbSystemId;
-            this.__explicitlySet__.add("dbSystemId");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
+        private String dbSystemId;
+
+        public Builder dbSystemId(String dbSystemId) {
+            this.dbSystemId = dbSystemId;
+            this.__explicitlySet__.add("dbSystemId");
             return this;
         }
 
@@ -73,7 +73,7 @@ public class CreateDbHomeWithDbSystemIdDetails extends CreateDbHomeWithDbSystemI
         public CreateDbHomeWithDbSystemIdDetails build() {
             CreateDbHomeWithDbSystemIdDetails __instance__ =
                     new CreateDbHomeWithDbSystemIdDetails(
-                            dbSystemId, displayName, dbVersion, database);
+                            displayName, dbSystemId, dbVersion, database);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -81,8 +81,8 @@ public class CreateDbHomeWithDbSystemIdDetails extends CreateDbHomeWithDbSystemI
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateDbHomeWithDbSystemIdDetails o) {
             Builder copiedBuilder =
-                    dbSystemId(o.getDbSystemId())
-                            .displayName(o.getDisplayName())
+                    displayName(o.getDisplayName())
+                            .dbSystemId(o.getDbSystemId())
                             .dbVersion(o.getDbVersion())
                             .database(o.getDatabase());
 
@@ -100,14 +100,21 @@ public class CreateDbHomeWithDbSystemIdDetails extends CreateDbHomeWithDbSystemI
 
     @Deprecated
     public CreateDbHomeWithDbSystemIdDetails(
-            String dbSystemId,
             String displayName,
+            String dbSystemId,
             String dbVersion,
             CreateDatabaseDetails database) {
-        super(dbSystemId, displayName);
+        super(displayName);
+        this.dbSystemId = dbSystemId;
         this.dbVersion = dbVersion;
         this.database = database;
     }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
+    String dbSystemId;
 
     /**
      * A valid Oracle Database version. To get a list of supported versions, use the {@link #listDbVersions(ListDbVersionsRequest) listDbVersions} operation.
