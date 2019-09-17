@@ -21,6 +21,11 @@ public class ListDbHomesRequest extends com.oracle.bmc.requests.BmcRequest {
     private String dbSystemId;
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM cluster.
+     */
+    private String vmClusterId;
+
+    /**
      * The maximum number of items to return per page.
      */
     private Integer limit;
@@ -157,6 +162,7 @@ public class ListDbHomesRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(ListDbHomesRequest o) {
             compartmentId(o.getCompartmentId());
             dbSystemId(o.getDbSystemId());
+            vmClusterId(o.getVmClusterId());
             limit(o.getLimit());
             page(o.getPage());
             sortBy(o.getSortBy());

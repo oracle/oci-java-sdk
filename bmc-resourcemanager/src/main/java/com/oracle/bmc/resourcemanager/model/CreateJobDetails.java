@@ -50,6 +50,15 @@ public class CreateJobDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("jobOperationDetails")
+        private CreateJobOperationDetails jobOperationDetails;
+
+        public Builder jobOperationDetails(CreateJobOperationDetails jobOperationDetails) {
+            this.jobOperationDetails = jobOperationDetails;
+            this.__explicitlySet__.add("jobOperationDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("applyJobPlanResolution")
         private ApplyJobPlanResolution applyJobPlanResolution;
 
@@ -87,6 +96,7 @@ public class CreateJobDetails {
                             stackId,
                             displayName,
                             operation,
+                            jobOperationDetails,
                             applyJobPlanResolution,
                             freeformTags,
                             definedTags);
@@ -100,6 +110,7 @@ public class CreateJobDetails {
                     stackId(o.getStackId())
                             .displayName(o.getDisplayName())
                             .operation(o.getOperation())
+                            .jobOperationDetails(o.getJobOperationDetails())
                             .applyJobPlanResolution(o.getApplyJobPlanResolution())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
@@ -134,6 +145,15 @@ public class CreateJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
     Job.Operation operation;
 
+    /**
+     * Job details that are specific to the operation type.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("jobOperationDetails")
+    CreateJobOperationDetails jobOperationDetails;
+
+    /**
+     * Deprecated. Use the property `executionPlanStrategy` in `jobOperationDetails` instead.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("applyJobPlanResolution")
     ApplyJobPlanResolution applyJobPlanResolution;
 

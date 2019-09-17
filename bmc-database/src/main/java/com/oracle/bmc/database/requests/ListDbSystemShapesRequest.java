@@ -11,14 +11,14 @@ import com.oracle.bmc.database.model.*;
 public class ListDbSystemShapesRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The name of the Availability Domain.
-     */
-    private String availabilityDomain;
-
-    /**
      * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     private String compartmentId;
+
+    /**
+     * The name of the Availability Domain.
+     */
+    private String availabilityDomain;
 
     /**
      * The maximum number of items to return per page.
@@ -63,8 +63,8 @@ public class ListDbSystemShapesRequest extends com.oracle.bmc.requests.BmcReques
          * @return this builder instance
          */
         public Builder copy(ListDbSystemShapesRequest o) {
-            availabilityDomain(o.getAvailabilityDomain());
             compartmentId(o.getCompartmentId());
+            availabilityDomain(o.getAvailabilityDomain());
             limit(o.getLimit());
             page(o.getPage());
             invocationCallback(o.getInvocationCallback());

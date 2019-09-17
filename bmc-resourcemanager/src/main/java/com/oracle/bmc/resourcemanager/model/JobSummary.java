@@ -67,6 +67,15 @@ public class JobSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("jobOperationDetails")
+        private JobOperationDetailsSummary jobOperationDetails;
+
+        public Builder jobOperationDetails(JobOperationDetailsSummary jobOperationDetails) {
+            this.jobOperationDetails = jobOperationDetails;
+            this.__explicitlySet__.add("jobOperationDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("applyJobPlanResolution")
         private ApplyJobPlanResolution applyJobPlanResolution;
 
@@ -142,6 +151,7 @@ public class JobSummary {
                             compartmentId,
                             displayName,
                             operation,
+                            jobOperationDetails,
                             applyJobPlanResolution,
                             resolvedPlanJobId,
                             timeCreated,
@@ -161,6 +171,7 @@ public class JobSummary {
                             .compartmentId(o.getCompartmentId())
                             .displayName(o.getDisplayName())
                             .operation(o.getOperation())
+                            .jobOperationDetails(o.getJobOperationDetails())
                             .applyJobPlanResolution(o.getApplyJobPlanResolution())
                             .resolvedPlanJobId(o.getResolvedPlanJobId())
                             .timeCreated(o.getTimeCreated())
@@ -211,11 +222,22 @@ public class JobSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
     Job.Operation operation;
 
+    /**
+     * Job details that are specific to the operation type.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("jobOperationDetails")
+    JobOperationDetailsSummary jobOperationDetails;
+
+    /**
+     * Deprecated. Use the property `executionPlanStrategy` in `jobOperationDetails` instead.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("applyJobPlanResolution")
     ApplyJobPlanResolution applyJobPlanResolution;
 
     /**
-     * The plan job OCID that was used (if this was an APPLY job and not auto approved).
+     * Deprecated. Use the property `executionPlanJobId` in `jobOperationDetails` instead.
+     * The plan job OCID that was used (if this was an apply job and was not auto-approved).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resolvedPlanJobId")
     String resolvedPlanJobId;

@@ -2414,6 +2414,237 @@ public class DatabasePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listExadataInfrastructures operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListExadataInfrastructuresResponse> listExadataInfrastructuresResponseIterator(
+            final ListExadataInfrastructuresRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListExadataInfrastructuresRequest.Builder, ListExadataInfrastructuresRequest,
+                ListExadataInfrastructuresResponse>(
+                new com.google.common.base.Supplier<ListExadataInfrastructuresRequest.Builder>() {
+                    @Override
+                    public ListExadataInfrastructuresRequest.Builder get() {
+                        return ListExadataInfrastructuresRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListExadataInfrastructuresResponse, String>() {
+                    @Override
+                    public String apply(ListExadataInfrastructuresResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExadataInfrastructuresRequest.Builder>,
+                        ListExadataInfrastructuresRequest>() {
+                    @Override
+                    public ListExadataInfrastructuresRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExadataInfrastructuresRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExadataInfrastructuresRequest, ListExadataInfrastructuresResponse>() {
+                    @Override
+                    public ListExadataInfrastructuresResponse apply(
+                            ListExadataInfrastructuresRequest request) {
+                        return client.listExadataInfrastructures(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.ExadataInfrastructureSummary} objects
+     * contained in responses from the listExadataInfrastructures operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.ExadataInfrastructureSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.ExadataInfrastructureSummary>
+            listExadataInfrastructuresRecordIterator(
+                    final ListExadataInfrastructuresRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListExadataInfrastructuresRequest.Builder, ListExadataInfrastructuresRequest,
+                ListExadataInfrastructuresResponse,
+                com.oracle.bmc.database.model.ExadataInfrastructureSummary>(
+                new com.google.common.base.Supplier<ListExadataInfrastructuresRequest.Builder>() {
+                    @Override
+                    public ListExadataInfrastructuresRequest.Builder get() {
+                        return ListExadataInfrastructuresRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListExadataInfrastructuresResponse, String>() {
+                    @Override
+                    public String apply(ListExadataInfrastructuresResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExadataInfrastructuresRequest.Builder>,
+                        ListExadataInfrastructuresRequest>() {
+                    @Override
+                    public ListExadataInfrastructuresRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExadataInfrastructuresRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExadataInfrastructuresRequest, ListExadataInfrastructuresResponse>() {
+                    @Override
+                    public ListExadataInfrastructuresResponse apply(
+                            ListExadataInfrastructuresRequest request) {
+                        return client.listExadataInfrastructures(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListExadataInfrastructuresResponse,
+                        java.util.List<
+                                com.oracle.bmc.database.model.ExadataInfrastructureSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.database.model.ExadataInfrastructureSummary>
+                            apply(ListExadataInfrastructuresResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listGiVersions operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListGiVersionsResponse> listGiVersionsResponseIterator(
+            final ListGiVersionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListGiVersionsRequest.Builder, ListGiVersionsRequest, ListGiVersionsResponse>(
+                new com.google.common.base.Supplier<ListGiVersionsRequest.Builder>() {
+                    @Override
+                    public ListGiVersionsRequest.Builder get() {
+                        return ListGiVersionsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListGiVersionsResponse, String>() {
+                    @Override
+                    public String apply(ListGiVersionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListGiVersionsRequest.Builder>,
+                        ListGiVersionsRequest>() {
+                    @Override
+                    public ListGiVersionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListGiVersionsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListGiVersionsRequest, ListGiVersionsResponse>() {
+                    @Override
+                    public ListGiVersionsResponse apply(ListGiVersionsRequest request) {
+                        return client.listGiVersions(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.GiVersionSummary} objects
+     * contained in responses from the listGiVersions operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.GiVersionSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.GiVersionSummary> listGiVersionsRecordIterator(
+            final ListGiVersionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListGiVersionsRequest.Builder, ListGiVersionsRequest, ListGiVersionsResponse,
+                com.oracle.bmc.database.model.GiVersionSummary>(
+                new com.google.common.base.Supplier<ListGiVersionsRequest.Builder>() {
+                    @Override
+                    public ListGiVersionsRequest.Builder get() {
+                        return ListGiVersionsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListGiVersionsResponse, String>() {
+                    @Override
+                    public String apply(ListGiVersionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListGiVersionsRequest.Builder>,
+                        ListGiVersionsRequest>() {
+                    @Override
+                    public ListGiVersionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListGiVersionsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListGiVersionsRequest, ListGiVersionsResponse>() {
+                    @Override
+                    public ListGiVersionsResponse apply(ListGiVersionsRequest request) {
+                        return client.listGiVersions(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListGiVersionsResponse,
+                        java.util.List<com.oracle.bmc.database.model.GiVersionSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.database.model.GiVersionSummary> apply(
+                            ListGiVersionsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listMaintenanceRuns operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -2521,6 +2752,234 @@ public class DatabasePaginators {
                     @Override
                     public java.util.List<com.oracle.bmc.database.model.MaintenanceRunSummary>
                             apply(ListMaintenanceRunsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listVmClusterNetworks operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListVmClusterNetworksResponse> listVmClusterNetworksResponseIterator(
+            final ListVmClusterNetworksRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListVmClusterNetworksRequest.Builder, ListVmClusterNetworksRequest,
+                ListVmClusterNetworksResponse>(
+                new com.google.common.base.Supplier<ListVmClusterNetworksRequest.Builder>() {
+                    @Override
+                    public ListVmClusterNetworksRequest.Builder get() {
+                        return ListVmClusterNetworksRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListVmClusterNetworksResponse, String>() {
+                    @Override
+                    public String apply(ListVmClusterNetworksResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListVmClusterNetworksRequest.Builder>,
+                        ListVmClusterNetworksRequest>() {
+                    @Override
+                    public ListVmClusterNetworksRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListVmClusterNetworksRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListVmClusterNetworksRequest, ListVmClusterNetworksResponse>() {
+                    @Override
+                    public ListVmClusterNetworksResponse apply(
+                            ListVmClusterNetworksRequest request) {
+                        return client.listVmClusterNetworks(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.VmClusterNetworkSummary} objects
+     * contained in responses from the listVmClusterNetworks operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.VmClusterNetworkSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.VmClusterNetworkSummary>
+            listVmClusterNetworksRecordIterator(final ListVmClusterNetworksRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListVmClusterNetworksRequest.Builder, ListVmClusterNetworksRequest,
+                ListVmClusterNetworksResponse,
+                com.oracle.bmc.database.model.VmClusterNetworkSummary>(
+                new com.google.common.base.Supplier<ListVmClusterNetworksRequest.Builder>() {
+                    @Override
+                    public ListVmClusterNetworksRequest.Builder get() {
+                        return ListVmClusterNetworksRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListVmClusterNetworksResponse, String>() {
+                    @Override
+                    public String apply(ListVmClusterNetworksResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListVmClusterNetworksRequest.Builder>,
+                        ListVmClusterNetworksRequest>() {
+                    @Override
+                    public ListVmClusterNetworksRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListVmClusterNetworksRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListVmClusterNetworksRequest, ListVmClusterNetworksResponse>() {
+                    @Override
+                    public ListVmClusterNetworksResponse apply(
+                            ListVmClusterNetworksRequest request) {
+                        return client.listVmClusterNetworks(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListVmClusterNetworksResponse,
+                        java.util.List<com.oracle.bmc.database.model.VmClusterNetworkSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.database.model.VmClusterNetworkSummary>
+                            apply(ListVmClusterNetworksResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listVmClusters operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListVmClustersResponse> listVmClustersResponseIterator(
+            final ListVmClustersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListVmClustersRequest.Builder, ListVmClustersRequest, ListVmClustersResponse>(
+                new com.google.common.base.Supplier<ListVmClustersRequest.Builder>() {
+                    @Override
+                    public ListVmClustersRequest.Builder get() {
+                        return ListVmClustersRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListVmClustersResponse, String>() {
+                    @Override
+                    public String apply(ListVmClustersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListVmClustersRequest.Builder>,
+                        ListVmClustersRequest>() {
+                    @Override
+                    public ListVmClustersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListVmClustersRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListVmClustersRequest, ListVmClustersResponse>() {
+                    @Override
+                    public ListVmClustersResponse apply(ListVmClustersRequest request) {
+                        return client.listVmClusters(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.VmClusterSummary} objects
+     * contained in responses from the listVmClusters operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.VmClusterSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.VmClusterSummary> listVmClustersRecordIterator(
+            final ListVmClustersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListVmClustersRequest.Builder, ListVmClustersRequest, ListVmClustersResponse,
+                com.oracle.bmc.database.model.VmClusterSummary>(
+                new com.google.common.base.Supplier<ListVmClustersRequest.Builder>() {
+                    @Override
+                    public ListVmClustersRequest.Builder get() {
+                        return ListVmClustersRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListVmClustersResponse, String>() {
+                    @Override
+                    public String apply(ListVmClustersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListVmClustersRequest.Builder>,
+                        ListVmClustersRequest>() {
+                    @Override
+                    public ListVmClustersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListVmClustersRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListVmClustersRequest, ListVmClustersResponse>() {
+                    @Override
+                    public ListVmClustersResponse apply(ListVmClustersRequest request) {
+                        return client.listVmClusters(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListVmClustersResponse,
+                        java.util.List<com.oracle.bmc.database.model.VmClusterSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.database.model.VmClusterSummary> apply(
+                            ListVmClustersResponse response) {
                         return response.getItems();
                     }
                 });

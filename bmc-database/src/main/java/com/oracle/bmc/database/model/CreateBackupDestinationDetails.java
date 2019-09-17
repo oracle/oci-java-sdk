@@ -4,10 +4,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details for creating a database home.
- * <p>
- **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
- *
+ * Details for creating a backup destination.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -26,31 +23,49 @@ package com.oracle.bmc.database.model;
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
     use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
     include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-    property = "source",
-    defaultImpl = CreateDbHomeWithDbSystemIdBase.class
+    property = "type",
+    defaultImpl = CreateBackupDestinationDetails.class
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CreateDbHomeWithDbSystemIdFromBackupDetails.class,
-        name = "DB_BACKUP"
+        value = CreateNFSBackupDestinationDetails.class,
+        name = "NFS"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CreateDbHomeWithDbSystemIdDetails.class,
-        name = "NONE"
+        value = CreateRecoveryApplianceBackupDestinationDetails.class,
+        name = "RECOVERY_APPLIANCE"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class CreateDbHomeWithDbSystemIdBase {
+public class CreateBackupDestinationDetails {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
-    String dbSystemId;
-
-    /**
-     * The user-provided name of the database home.
+     * The user-provided name of the backup destination.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    String compartmentId;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: `{\"Department\": \"Finance\"}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    java.util.Map<String, String> freeformTags;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
 }

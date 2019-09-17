@@ -24,17 +24,18 @@ public class ListDbSystemShapesConverter {
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client, ListDbSystemShapesRequest request) {
         Validate.notNull(request, "request instance is required");
-        Validate.notNull(request.getAvailabilityDomain(), "availabilityDomain is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget().path("/20160918").path("dbSystemShapes");
 
-        target =
-                target.queryParam(
-                        "availabilityDomain",
-                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                request.getAvailabilityDomain()));
+        if (request.getAvailabilityDomain() != null) {
+            target =
+                    target.queryParam(
+                            "availabilityDomain",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getAvailabilityDomain()));
+        }
 
         target =
                 target.queryParam(

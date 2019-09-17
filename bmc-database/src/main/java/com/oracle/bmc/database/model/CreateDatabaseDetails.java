@@ -36,6 +36,15 @@ public class CreateDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
+        private String dbUniqueName;
+
+        public Builder dbUniqueName(String dbUniqueName) {
+            this.dbUniqueName = dbUniqueName;
+            this.__explicitlySet__.add("dbUniqueName");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("pdbName")
         private String pdbName;
 
@@ -116,6 +125,7 @@ public class CreateDatabaseDetails {
             CreateDatabaseDetails __instance__ =
                     new CreateDatabaseDetails(
                             dbName,
+                            dbUniqueName,
                             pdbName,
                             adminPassword,
                             characterSet,
@@ -132,6 +142,7 @@ public class CreateDatabaseDetails {
         public Builder copy(CreateDatabaseDetails o) {
             Builder copiedBuilder =
                     dbName(o.getDbName())
+                            .dbUniqueName(o.getDbUniqueName())
                             .pdbName(o.getPdbName())
                             .adminPassword(o.getAdminPassword())
                             .characterSet(o.getCharacterSet())
@@ -158,6 +169,12 @@ public class CreateDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbName")
     String dbName;
+
+    /**
+     * The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
+    String dbUniqueName;
 
     /**
      * The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.

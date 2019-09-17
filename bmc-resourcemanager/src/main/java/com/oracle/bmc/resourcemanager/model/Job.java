@@ -11,6 +11,8 @@ package com.oracle.bmc.resourcemanager.model;
  * - **Destroy job**. To clean up the infrastructure controlled by the stack, you run a destroy job.
  * A destroy job does not delete the stack or associated job resources,
  * but instead releases the resources managed by the stack.
+ * - **Import_TF_State job**. An import Terraform state job takes a Terraform state file and sets it as the current
+ * state of the stack. This is used to migrate local Terraform environments to Resource Manager.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -71,6 +73,15 @@ public class Job {
         public Builder operation(Operation operation) {
             this.operation = operation;
             this.__explicitlySet__.add("operation");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("jobOperationDetails")
+        private JobOperationDetails jobOperationDetails;
+
+        public Builder jobOperationDetails(JobOperationDetails jobOperationDetails) {
+            this.jobOperationDetails = jobOperationDetails;
+            this.__explicitlySet__.add("jobOperationDetails");
             return this;
         }
 
@@ -176,6 +187,7 @@ public class Job {
                             compartmentId,
                             displayName,
                             operation,
+                            jobOperationDetails,
                             applyJobPlanResolution,
                             resolvedPlanJobId,
                             timeCreated,
@@ -198,6 +210,7 @@ public class Job {
                             .compartmentId(o.getCompartmentId())
                             .displayName(o.getDisplayName())
                             .operation(o.getOperation())
+                            .jobOperationDetails(o.getJobOperationDetails())
                             .applyJobPlanResolution(o.getApplyJobPlanResolution())
                             .resolvedPlanJobId(o.getResolvedPlanJobId())
                             .timeCreated(o.getTimeCreated())
@@ -252,6 +265,7 @@ public class Job {
         Plan("PLAN"),
         Apply("APPLY"),
         Destroy("DESTROY"),
+        ImportTfState("IMPORT_TF_STATE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -297,11 +311,22 @@ public class Job {
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
     Operation operation;
 
+    /**
+     * Job details that are specific to the operation type.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("jobOperationDetails")
+    JobOperationDetails jobOperationDetails;
+
+    /**
+     * Deprecated. Use the property `executionPlanStrategy` in `jobOperationDetails` instead.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("applyJobPlanResolution")
     ApplyJobPlanResolution applyJobPlanResolution;
 
     /**
+     * Deprecated. Use the property `executionPlanJobId` in `jobOperationDetails` instead.
      * The plan job OCID that was used (if this was an apply job and was not auto-approved).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resolvedPlanJobId")
     String resolvedPlanJobId;

@@ -38,6 +38,15 @@ public class DbSystemShapeSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("shapeFamily")
+        private String shapeFamily;
+
+        public Builder shapeFamily(String shapeFamily) {
+            this.shapeFamily = shapeFamily;
+            this.__explicitlySet__.add("shapeFamily");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
@@ -99,6 +108,7 @@ public class DbSystemShapeSummary {
             DbSystemShapeSummary __instance__ =
                     new DbSystemShapeSummary(
                             name,
+                            shapeFamily,
                             shape,
                             availableCoreCount,
                             minimumCoreCount,
@@ -113,6 +123,7 @@ public class DbSystemShapeSummary {
         public Builder copy(DbSystemShapeSummary o) {
             Builder copiedBuilder =
                     name(o.getName())
+                            .shapeFamily(o.getShapeFamily())
                             .shape(o.getShape())
                             .availableCoreCount(o.getAvailableCoreCount())
                             .minimumCoreCount(o.getMinimumCoreCount())
@@ -137,6 +148,12 @@ public class DbSystemShapeSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
+
+    /**
+     * The family of the shape used for the DB system.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shapeFamily")
+    String shapeFamily;
 
     /**
      * Deprecated. Use `name` instead of `shape`.

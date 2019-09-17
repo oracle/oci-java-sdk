@@ -50,14 +50,25 @@ public class AutonomousTransactionProcessingSharedExample {
         // Create
         CreateAutonomousDatabaseDetails createRequest = createAtpRequest(compartmentId);
 
+        CreateAutonomousDatabaseDetails createFreeRequest = createFreeTierAtpRequest(compartmentId);
+
         System.out.println(
                 "Creating Autonomous Transaction Processing Shared with request : "
                         + createRequest);
         AutonomousDatabase atpShared = createATP(dbClient, createRequest);
         System.out.println("ATP Shared instance is provisioning : " + atpShared);
 
+        System.out.println(
+                "Creating Free Autonomous Transaction Processing Shared with request : "
+                        + createFreeRequest);
+        AutonomousDatabase freeAtpShared = createATP(dbClient, createFreeRequest);
+        System.out.println("Free ATP Shared instance is provisioning : " + freeAtpShared);
+
         atpShared = waitForInstanceToBecomeAvailable(dbClient, atpShared.getId());
+        freeAtpShared = waitForInstanceToBecomeAvailable(dbClient, freeAtpShared.getId());
+
         System.out.println("Instance is provisioned:" + atpShared);
+        System.out.println("Free Instance is provisioned:" + freeAtpShared);
 
         //Clone
         CreateAutonomousDatabaseCloneDetails createAutonomousDatabaseCloneDetails =
@@ -179,6 +190,22 @@ public class AutonomousTransactionProcessingSharedExample {
                                 AutonomousDatabase.LifecycleState.Terminated)
                         .execute();
 
+        // Delete Free Tier Database
+        System.out.println(
+                "Deleting Free Autonomous Transaction Processing Shared : " + freeAtpShared);
+        dbClient.deleteAutonomousDatabase(
+                DeleteAutonomousDatabaseRequest.builder()
+                        .autonomousDatabaseId(freeAtpShared.getId())
+                        .build());
+        waiter = dbClient.getWaiters();
+        response =
+                waiter.forAutonomousDatabase(
+                                GetAutonomousDatabaseRequest.builder()
+                                        .autonomousDatabaseId(freeAtpShared.getId())
+                                        .build(),
+                                AutonomousDatabase.LifecycleState.Terminated)
+                        .execute();
+
         dbClient.close();
     }
 
@@ -250,6 +277,23 @@ public class AutonomousTransactionProcessingSharedExample {
                 .isAutoScalingEnabled(Boolean.FALSE)
                 .licenseModel(CreateAutonomousDatabaseDetails.LicenseModel.LicenseIncluded)
                 .isPreviewVersionWithServiceTermsAccepted(Boolean.FALSE)
+                .build();
+    }
+
+    private static CreateAutonomousDatabaseDetails createFreeTierAtpRequest(String compartmentId) {
+        Random rand = new Random();
+        return CreateAutonomousDatabaseDetails.builder()
+                .cpuCoreCount(1)
+                .dataStorageSizeInTBs(1)
+                .displayName("javaSdkExample")
+                .adminPassword("DBaaS12345_#")
+                .dbName("javaSdkExam" + rand.nextInt(500))
+                .compartmentId(compartmentId)
+                .dbWorkload(CreateAutonomousDatabaseDetails.DbWorkload.Oltp)
+                .isAutoScalingEnabled(Boolean.FALSE)
+                .licenseModel(CreateAutonomousDatabaseDetails.LicenseModel.LicenseIncluded)
+                .isPreviewVersionWithServiceTermsAccepted(Boolean.FALSE)
+                .isFreeTier(Boolean.TRUE)
                 .build();
     }
 

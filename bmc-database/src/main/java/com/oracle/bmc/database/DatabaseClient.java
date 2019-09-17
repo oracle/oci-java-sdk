@@ -380,6 +380,41 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public ActivateExadataInfrastructureResponse activateExadataInfrastructure(
+            ActivateExadataInfrastructureRequest request) {
+        LOG.trace("Called activateExadataInfrastructure");
+        final ActivateExadataInfrastructureRequest interceptedRequest =
+                ActivateExadataInfrastructureConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ActivateExadataInfrastructureConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ActivateExadataInfrastructureResponse>
+                transformer = ActivateExadataInfrastructureConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getActivateExadataInfrastructureDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeAutonomousContainerDatabaseCompartmentResponse
             changeAutonomousContainerDatabaseCompartment(
                     ChangeAutonomousContainerDatabaseCompartmentRequest request) {
@@ -490,6 +525,40 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public ChangeBackupDestinationCompartmentResponse changeBackupDestinationCompartment(
+            ChangeBackupDestinationCompartmentRequest request) {
+        LOG.trace("Called changeBackupDestinationCompartment");
+        final ChangeBackupDestinationCompartmentRequest interceptedRequest =
+                ChangeBackupDestinationCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeBackupDestinationCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeBackupDestinationCompartmentResponse>
+                transformer = ChangeBackupDestinationCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getChangeCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeDbSystemCompartmentResponse changeDbSystemCompartment(
             ChangeDbSystemCompartmentRequest request) {
         LOG.trace("Called changeDbSystemCompartment");
@@ -517,6 +586,77 @@ public class DatabaseClient implements Database {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getChangeCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeExadataInfrastructureCompartmentResponse changeExadataInfrastructureCompartment(
+            ChangeExadataInfrastructureCompartmentRequest request) {
+        LOG.trace("Called changeExadataInfrastructureCompartment");
+        final ChangeExadataInfrastructureCompartmentRequest interceptedRequest =
+                ChangeExadataInfrastructureCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeExadataInfrastructureCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeExadataInfrastructureCompartmentResponse>
+                transformer = ChangeExadataInfrastructureCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeExadataInfrastructureCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ChangeVmClusterCompartmentResponse changeVmClusterCompartment(
+            ChangeVmClusterCompartmentRequest request) {
+        LOG.trace("Called changeVmClusterCompartment");
+        final ChangeVmClusterCompartmentRequest interceptedRequest =
+                ChangeVmClusterCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeVmClusterCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ChangeVmClusterCompartmentResponse>
+                transformer = ChangeVmClusterCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeVmClusterCompartmentDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -765,6 +905,39 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public CreateBackupDestinationResponse createBackupDestination(
+            CreateBackupDestinationRequest request) {
+        LOG.trace("Called createBackupDestination");
+        final CreateBackupDestinationRequest interceptedRequest =
+                CreateBackupDestinationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateBackupDestinationConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateBackupDestinationResponse>
+                transformer = CreateBackupDestinationConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateBackupDestinationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateDataGuardAssociationResponse createDataGuardAssociation(
             CreateDataGuardAssociationRequest request) {
         LOG.trace("Called createDataGuardAssociation");
@@ -833,6 +1006,41 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public CreateExadataInfrastructureResponse createExadataInfrastructure(
+            CreateExadataInfrastructureRequest request) {
+        LOG.trace("Called createExadataInfrastructure");
+        final CreateExadataInfrastructureRequest interceptedRequest =
+                CreateExadataInfrastructureConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateExadataInfrastructureConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateExadataInfrastructureResponse>
+                transformer = CreateExadataInfrastructureConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateExadataInfrastructureDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateExternalBackupJobResponse createExternalBackupJob(
             CreateExternalBackupJobRequest request) {
         LOG.trace("Called createExternalBackupJob");
@@ -859,6 +1067,71 @@ public class DatabaseClient implements Database {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getCreateExternalBackupJobDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateVmClusterResponse createVmCluster(CreateVmClusterRequest request) {
+        LOG.trace("Called createVmCluster");
+        final CreateVmClusterRequest interceptedRequest =
+                CreateVmClusterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateVmClusterConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateVmClusterResponse>
+                transformer = CreateVmClusterConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateVmClusterDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateVmClusterNetworkResponse createVmClusterNetwork(
+            CreateVmClusterNetworkRequest request) {
+        LOG.trace("Called createVmClusterNetwork");
+        final CreateVmClusterNetworkRequest interceptedRequest =
+                CreateVmClusterNetworkConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateVmClusterNetworkConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateVmClusterNetworkResponse>
+                transformer = CreateVmClusterNetworkConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getVmClusterNetworkDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -985,6 +1258,36 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public DeleteBackupDestinationResponse deleteBackupDestination(
+            DeleteBackupDestinationRequest request) {
+        LOG.trace("Called deleteBackupDestination");
+        final DeleteBackupDestinationRequest interceptedRequest =
+                DeleteBackupDestinationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteBackupDestinationConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteBackupDestinationResponse>
+                transformer = DeleteBackupDestinationConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeleteDbHomeResponse deleteDbHome(DeleteDbHomeRequest request) {
         LOG.trace("Called deleteDbHome");
         final DeleteDbHomeRequest interceptedRequest =
@@ -1008,6 +1311,159 @@ public class DatabaseClient implements Database {
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
                                         client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteExadataInfrastructureResponse deleteExadataInfrastructure(
+            DeleteExadataInfrastructureRequest request) {
+        LOG.trace("Called deleteExadataInfrastructure");
+        final DeleteExadataInfrastructureRequest interceptedRequest =
+                DeleteExadataInfrastructureConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteExadataInfrastructureConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteExadataInfrastructureResponse>
+                transformer = DeleteExadataInfrastructureConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteVmClusterResponse deleteVmCluster(DeleteVmClusterRequest request) {
+        LOG.trace("Called deleteVmCluster");
+        final DeleteVmClusterRequest interceptedRequest =
+                DeleteVmClusterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteVmClusterConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVmClusterResponse>
+                transformer = DeleteVmClusterConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteVmClusterNetworkResponse deleteVmClusterNetwork(
+            DeleteVmClusterNetworkRequest request) {
+        LOG.trace("Called deleteVmClusterNetwork");
+        final DeleteVmClusterNetworkRequest interceptedRequest =
+                DeleteVmClusterNetworkConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteVmClusterNetworkConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVmClusterNetworkResponse>
+                transformer = DeleteVmClusterNetworkConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DownloadExadataInfrastructureConfigFileResponse downloadExadataInfrastructureConfigFile(
+            DownloadExadataInfrastructureConfigFileRequest request) {
+        LOG.trace("Called downloadExadataInfrastructureConfigFile");
+        final DownloadExadataInfrastructureConfigFileRequest interceptedRequest =
+                DownloadExadataInfrastructureConfigFileConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DownloadExadataInfrastructureConfigFileConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DownloadExadataInfrastructureConfigFileResponse>
+                transformer = DownloadExadataInfrastructureConfigFileConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DownloadVmClusterNetworkConfigFileResponse downloadVmClusterNetworkConfigFile(
+            DownloadVmClusterNetworkConfigFileRequest request) {
+        LOG.trace("Called downloadVmClusterNetworkConfigFile");
+        final DownloadVmClusterNetworkConfigFileRequest interceptedRequest =
+                DownloadVmClusterNetworkConfigFileConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DownloadVmClusterNetworkConfigFileConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DownloadVmClusterNetworkConfigFileResponse>
+                transformer = DownloadVmClusterNetworkConfigFileConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -1113,6 +1569,42 @@ public class DatabaseClient implements Database {
                                                 ib,
                                                 retriedRequest
                                                         .getGenerateAutonomousDatabaseWalletDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GenerateRecommendedVmClusterNetworkResponse generateRecommendedVmClusterNetwork(
+            GenerateRecommendedVmClusterNetworkRequest request) {
+        LOG.trace("Called generateRecommendedVmClusterNetwork");
+        final GenerateRecommendedVmClusterNetworkRequest interceptedRequest =
+                GenerateRecommendedVmClusterNetworkConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GenerateRecommendedVmClusterNetworkConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GenerateRecommendedVmClusterNetworkResponse>
+                transformer = GenerateRecommendedVmClusterNetworkConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getGenerateRecommendedNetworkDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -1306,6 +1798,34 @@ public class DatabaseClient implements Database {
                 GetBackupConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetBackupResponse> transformer =
                 GetBackupConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetBackupDestinationResponse getBackupDestination(GetBackupDestinationRequest request) {
+        LOG.trace("Called getBackupDestination");
+        final GetBackupDestinationRequest interceptedRequest =
+                GetBackupDestinationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetBackupDestinationConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetBackupDestinationResponse>
+                transformer = GetBackupDestinationConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -1581,6 +2101,35 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public GetExadataInfrastructureResponse getExadataInfrastructure(
+            GetExadataInfrastructureRequest request) {
+        LOG.trace("Called getExadataInfrastructure");
+        final GetExadataInfrastructureRequest interceptedRequest =
+                GetExadataInfrastructureConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetExadataInfrastructureConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetExadataInfrastructureResponse>
+                transformer = GetExadataInfrastructureConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetExadataIormConfigResponse getExadataIormConfig(GetExadataIormConfigRequest request) {
         LOG.trace("Called getExadataIormConfig");
         final GetExadataIormConfigRequest interceptedRequest =
@@ -1645,6 +2194,62 @@ public class DatabaseClient implements Database {
                 GetMaintenanceRunConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetMaintenanceRunResponse>
                 transformer = GetMaintenanceRunConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetVmClusterResponse getVmCluster(GetVmClusterRequest request) {
+        LOG.trace("Called getVmCluster");
+        final GetVmClusterRequest interceptedRequest =
+                GetVmClusterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetVmClusterConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetVmClusterResponse>
+                transformer = GetVmClusterConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetVmClusterNetworkResponse getVmClusterNetwork(GetVmClusterNetworkRequest request) {
+        LOG.trace("Called getVmClusterNetwork");
+        final GetVmClusterNetworkRequest interceptedRequest =
+                GetVmClusterNetworkConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetVmClusterNetworkConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetVmClusterNetworkResponse>
+                transformer = GetVmClusterNetworkConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -1956,6 +2561,35 @@ public class DatabaseClient implements Database {
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAutonomousExadataInfrastructuresResponse>
                 transformer = ListAutonomousExadataInfrastructuresConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListBackupDestinationResponse listBackupDestination(
+            ListBackupDestinationRequest request) {
+        LOG.trace("Called listBackupDestination");
+        final ListBackupDestinationRequest interceptedRequest =
+                ListBackupDestinationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListBackupDestinationConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListBackupDestinationResponse>
+                transformer = ListBackupDestinationConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -2318,6 +2952,64 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public ListExadataInfrastructuresResponse listExadataInfrastructures(
+            ListExadataInfrastructuresRequest request) {
+        LOG.trace("Called listExadataInfrastructures");
+        final ListExadataInfrastructuresRequest interceptedRequest =
+                ListExadataInfrastructuresConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListExadataInfrastructuresConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListExadataInfrastructuresResponse>
+                transformer = ListExadataInfrastructuresConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListGiVersionsResponse listGiVersions(ListGiVersionsRequest request) {
+        LOG.trace("Called listGiVersions");
+        final ListGiVersionsRequest interceptedRequest =
+                ListGiVersionsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListGiVersionsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListGiVersionsResponse>
+                transformer = ListGiVersionsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListMaintenanceRunsResponse listMaintenanceRuns(ListMaintenanceRunsRequest request) {
         LOG.trace("Called listMaintenanceRuns");
         final ListMaintenanceRunsRequest interceptedRequest =
@@ -2326,6 +3018,63 @@ public class DatabaseClient implements Database {
                 ListMaintenanceRunsConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListMaintenanceRunsResponse>
                 transformer = ListMaintenanceRunsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListVmClusterNetworksResponse listVmClusterNetworks(
+            ListVmClusterNetworksRequest request) {
+        LOG.trace("Called listVmClusterNetworks");
+        final ListVmClusterNetworksRequest interceptedRequest =
+                ListVmClusterNetworksConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListVmClusterNetworksConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListVmClusterNetworksResponse>
+                transformer = ListVmClusterNetworksConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListVmClustersResponse listVmClusters(ListVmClustersRequest request) {
+        LOG.trace("Called listVmClusters");
+        final ListVmClustersRequest interceptedRequest =
+                ListVmClustersConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListVmClustersConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListVmClustersResponse>
+                transformer = ListVmClustersConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -2904,6 +3653,39 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public UpdateBackupDestinationResponse updateBackupDestination(
+            UpdateBackupDestinationRequest request) {
+        LOG.trace("Called updateBackupDestination");
+        final UpdateBackupDestinationRequest interceptedRequest =
+                UpdateBackupDestinationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateBackupDestinationConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateBackupDestinationResponse>
+                transformer = UpdateBackupDestinationConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateBackupDestinationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public UpdateDatabaseResponse updateDatabase(UpdateDatabaseRequest request) {
         LOG.trace("Called updateDatabase");
         final UpdateDatabaseRequest interceptedRequest =
@@ -3000,6 +3782,41 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public UpdateExadataInfrastructureResponse updateExadataInfrastructure(
+            UpdateExadataInfrastructureRequest request) {
+        LOG.trace("Called updateExadataInfrastructure");
+        final UpdateExadataInfrastructureRequest interceptedRequest =
+                UpdateExadataInfrastructureConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateExadataInfrastructureConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateExadataInfrastructureResponse>
+                transformer = UpdateExadataInfrastructureConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateExadataInfrastructureDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public UpdateExadataIormConfigResponse updateExadataIormConfig(
             UpdateExadataIormConfigRequest request) {
         LOG.trace("Called updateExadataIormConfig");
@@ -3059,6 +3876,101 @@ public class DatabaseClient implements Database {
                                                 ib,
                                                 retriedRequest.getUpdateMaintenanceRunDetails(),
                                                 retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateVmClusterResponse updateVmCluster(UpdateVmClusterRequest request) {
+        LOG.trace("Called updateVmCluster");
+        final UpdateVmClusterRequest interceptedRequest =
+                UpdateVmClusterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateVmClusterConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVmClusterResponse>
+                transformer = UpdateVmClusterConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateVmClusterDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateVmClusterNetworkResponse updateVmClusterNetwork(
+            UpdateVmClusterNetworkRequest request) {
+        LOG.trace("Called updateVmClusterNetwork");
+        final UpdateVmClusterNetworkRequest interceptedRequest =
+                UpdateVmClusterNetworkConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateVmClusterNetworkConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVmClusterNetworkResponse>
+                transformer = UpdateVmClusterNetworkConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateVmClusterNetworkDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ValidateVmClusterNetworkResponse validateVmClusterNetwork(
+            ValidateVmClusterNetworkRequest request) {
+        LOG.trace("Called validateVmClusterNetwork");
+        final ValidateVmClusterNetworkRequest interceptedRequest =
+                ValidateVmClusterNetworkConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ValidateVmClusterNetworkConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ValidateVmClusterNetworkResponse>
+                transformer = ValidateVmClusterNetworkConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

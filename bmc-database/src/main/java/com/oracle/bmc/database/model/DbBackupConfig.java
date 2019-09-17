@@ -51,12 +51,26 @@ public class DbBackupConfig {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("backupDestinationDetails")
+        private java.util.List<BackupDestinationDetails> backupDestinationDetails;
+
+        public Builder backupDestinationDetails(
+                java.util.List<BackupDestinationDetails> backupDestinationDetails) {
+            this.backupDestinationDetails = backupDestinationDetails;
+            this.__explicitlySet__.add("backupDestinationDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DbBackupConfig build() {
             DbBackupConfig __instance__ =
-                    new DbBackupConfig(autoBackupEnabled, recoveryWindowInDays, autoBackupWindow);
+                    new DbBackupConfig(
+                            autoBackupEnabled,
+                            recoveryWindowInDays,
+                            autoBackupWindow,
+                            backupDestinationDetails);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -66,7 +80,8 @@ public class DbBackupConfig {
             Builder copiedBuilder =
                     autoBackupEnabled(o.getAutoBackupEnabled())
                             .recoveryWindowInDays(o.getRecoveryWindowInDays())
-                            .autoBackupWindow(o.getAutoBackupWindow());
+                            .autoBackupWindow(o.getAutoBackupWindow())
+                            .backupDestinationDetails(o.getBackupDestinationDetails());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -161,6 +176,12 @@ public class DbBackupConfig {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoBackupWindow")
     AutoBackupWindow autoBackupWindow;
+
+    /**
+     * Backup destination details.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("backupDestinationDetails")
+    java.util.List<BackupDestinationDetails> backupDestinationDetails;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

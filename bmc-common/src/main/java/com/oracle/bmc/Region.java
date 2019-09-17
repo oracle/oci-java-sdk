@@ -30,28 +30,26 @@ public final class Region implements Serializable, Comparable<Region> {
     private static final Map<String, Region> KNOWN_REGIONS = new LinkedHashMap<>();
 
     // OC1
-    public static final Region AP_MUMBAI_1 = register("ap-mumbai-1", Realm.OC1);
-    public static final Region AP_SEOUL_1 = register("ap-seoul-1", Realm.OC1);
-    public static final Region AP_SYDNEY_1 = register("ap-sydney-1", Realm.OC1);
-    public static final Region AP_TOKYO_1 = register("ap-tokyo-1", Realm.OC1);
-    public static final Region CA_TORONTO_1 = register("ca-toronto-1", Realm.OC1);
-    // regionCode for FRA shouldn't be needed, but left for backwards compat
+    public static final Region AP_MUMBAI_1 = register("ap-mumbai-1", Realm.OC1, "bom");
+    public static final Region AP_SEOUL_1 = register("ap-seoul-1", Realm.OC1, "icn");
+    public static final Region AP_SYDNEY_1 = register("ap-sydney-1", Realm.OC1, "syd");
+    public static final Region AP_TOKYO_1 = register("ap-tokyo-1", Realm.OC1, "nrt");
+    public static final Region CA_TORONTO_1 = register("ca-toronto-1", Realm.OC1, "yyz");
     public static final Region EU_FRANKFURT_1 = register("eu-frankfurt-1", Realm.OC1, "fra");
-    public static final Region EU_ZURICH_1 = register("eu-zurich-1", Realm.OC1);
-    public static final Region SA_SAOPAULO_1 = register("sa-saopaulo-1", Realm.OC1);
-    // regionCode for LHR shouldn't be needed, but left for backwards compat
+    public static final Region EU_ZURICH_1 = register("eu-zurich-1", Realm.OC1, "zrh");
+    public static final Region SA_SAOPAULO_1 = register("sa-saopaulo-1", Realm.OC1, "gru");
     public static final Region UK_LONDON_1 = register("uk-london-1", Realm.OC1, "lhr");
     public static final Region US_ASHBURN_1 = register("us-ashburn-1", Realm.OC1, "iad");
     public static final Region US_PHOENIX_1 = register("us-phoenix-1", Realm.OC1, "phx");
 
     // OC2
-    public static final Region US_LANGLEY_1 = register("us-langley-1", Realm.OC2);
-    public static final Region US_LUKE_1 = register("us-luke-1", Realm.OC2);
+    public static final Region US_LANGLEY_1 = register("us-langley-1", Realm.OC2, "lfi");
+    public static final Region US_LUKE_1 = register("us-luke-1", Realm.OC2, "luf");
 
     // OC3
-    public static final Region US_GOV_ASHBURN_1 = register("us-gov-ashburn-1", Realm.OC3);
-    public static final Region US_GOV_CHICAGO_1 = register("us-gov-chicago-1", Realm.OC3);
-    public static final Region US_GOV_PHOENIX_1 = register("us-gov-phoenix-1", Realm.OC3);
+    public static final Region US_GOV_ASHBURN_1 = register("us-gov-ashburn-1", Realm.OC3, "ric");
+    public static final Region US_GOV_CHICAGO_1 = register("us-gov-chicago-1", Realm.OC3, "pia");
+    public static final Region US_GOV_PHOENIX_1 = register("us-gov-phoenix-1", Realm.OC3, "tus");
 
     private static final Map<String, Map<Region, String>> SERVICE_TO_REGION_ENDPOINTS =
             new HashMap<>();

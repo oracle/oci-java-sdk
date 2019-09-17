@@ -43,6 +43,14 @@ public class ListDbNodesConverter {
                                     request.getDbSystemId()));
         }
 
+        if (request.getVmClusterId() != null) {
+            target =
+                    target.queryParam(
+                            "vmClusterId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getVmClusterId()));
+        }
+
         if (request.getLimit() != null) {
             target =
                     target.queryParam(
