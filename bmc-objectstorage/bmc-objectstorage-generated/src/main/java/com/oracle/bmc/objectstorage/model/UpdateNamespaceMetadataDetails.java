@@ -5,7 +5,7 @@ package com.oracle.bmc.objectstorage.model;
 
 /**
  * UpdateNamespaceMetadataDetails is used to update the NamespaceMetadata. To update NamespaceMetadata, a user
- * must have NAMESPACE_UPDATE permission.
+ * must have OBJECTSTORAGE_NAMESPACE_UPDATE permission.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

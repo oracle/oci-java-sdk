@@ -72,6 +72,15 @@ public class UpdateBucketDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("objectEventsEnabled")
+        private Boolean objectEventsEnabled;
+
+        public Builder objectEventsEnabled(Boolean objectEventsEnabled) {
+            this.objectEventsEnabled = objectEventsEnabled;
+            this.__explicitlySet__.add("objectEventsEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -111,6 +120,7 @@ public class UpdateBucketDetails {
                             name,
                             metadata,
                             publicAccessType,
+                            objectEventsEnabled,
                             freeformTags,
                             definedTags,
                             kmsKeyId);
@@ -126,6 +136,7 @@ public class UpdateBucketDetails {
                             .name(o.getName())
                             .metadata(o.getMetadata())
                             .publicAccessType(o.getPublicAccessType())
+                            .objectEventsEnabled(o.getObjectEventsEnabled())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .kmsKeyId(o.getKmsKeyId());
@@ -149,7 +160,7 @@ public class UpdateBucketDetails {
     String namespace;
 
     /**
-     * The compartmentId for the compartment to which the bucket is targeted to move to.
+     * The compartmentId for the compartment to move the bucket to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -216,6 +227,14 @@ public class UpdateBucketDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicAccessType")
     PublicAccessType publicAccessType;
+
+    /**
+     * A property that determines whether events will be generated for operations on objects in this bucket.
+     * This is false by default.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("objectEventsEnabled")
+    Boolean objectEventsEnabled;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.

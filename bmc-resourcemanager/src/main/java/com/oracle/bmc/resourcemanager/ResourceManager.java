@@ -177,6 +177,14 @@ public interface ResourceManager extends AutoCloseable {
     ListStacksResponse listStacks(ListStacksRequest request);
 
     /**
+     * Returns a list of supported Terraform versions in a compartment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListTerraformVersionsResponse listTerraformVersions(ListTerraformVersionsRequest request);
+
+    /**
      * Return a (paginated) list of errors for a given work request.
      *
      * @param request The request object containing the details to send

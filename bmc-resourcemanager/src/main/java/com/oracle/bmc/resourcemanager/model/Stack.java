@@ -96,6 +96,15 @@ public class Stack {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("terraformVersion")
+        private String terraformVersion;
+
+        public Builder terraformVersion(String terraformVersion) {
+            this.terraformVersion = terraformVersion;
+            this.__explicitlySet__.add("terraformVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -129,6 +138,7 @@ public class Stack {
                             lifecycleState,
                             configSource,
                             variables,
+                            terraformVersion,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -146,6 +156,7 @@ public class Stack {
                             .lifecycleState(o.getLifecycleState())
                             .configSource(o.getConfigSource())
                             .variables(o.getVariables())
+                            .terraformVersion(o.getTerraformVersion())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -261,6 +272,12 @@ public class Stack {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("variables")
     java.util.Map<String, String> variables;
+
+    /**
+     * The Terraform version of the stack.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("terraformVersion")
+    String terraformVersion;
 
     /**
      * Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace.
