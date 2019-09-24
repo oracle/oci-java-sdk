@@ -35,6 +35,10 @@ public class BmcException extends RuntimeException {
      */
     @Getter private final String opcRequestId;
 
+    /**
+     * Flag to indicate that the exception originated from the client and not from the service.
+     * Status code and service code should not be used if this is true.
+     */
     @Getter private final boolean isClientSide;
 
     public BmcException(

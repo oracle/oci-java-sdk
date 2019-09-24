@@ -153,6 +153,7 @@ public class WorkRequest {
     @lombok.extern.slf4j.Slf4j
     public enum OperationType {
         CopyObject("COPY_OBJECT"),
+        Reencrypt("REENCRYPT"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -260,10 +261,12 @@ public class WorkRequest {
     String id;
 
     /**
-     * The OCID of the compartment that contains the work request. Work requests should be scoped to
-     * the same compartment as the resource the work request affects. If the work request affects multiple resources,
-     * and those resources are not in the same compartment, it is up to the service team to pick the primary
-     * resource whose compartment should be used.
+     * The OCID of the compartment that contains the work request. Work requests are scoped to the same compartment
+     * as the resource the work request affects.
+     * <p>
+     * If the work request affects multiple resources and those resources are not in the same compartment, the OCID of
+     * the primary resource is used. For example, you can copy an object in a bucket in one compartment to a bucket in
+     * another compartment. In this case, the OCID of the source compartment is used.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")

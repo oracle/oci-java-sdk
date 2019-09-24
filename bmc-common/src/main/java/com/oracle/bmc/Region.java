@@ -57,16 +57,14 @@ public final class Region implements Serializable, Comparable<Region> {
     private static final long serialVersionUID = -905384971L;
 
     /**
-     * Get the region ID.
+     * The region identifier as defined in https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm
      */
     @Getter private final String regionId;
 
     /**
-     * The region code obtained from the 'region' field of instance metadata.  This
-     * does not match the regionId in us-phoenix-1 and us-ashburn-1, but does in all
-     * other regions.
+     * The region key as defined in https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm
      */
-    @Deprecated private final Optional<String> regionCode;
+    private final Optional<String> regionCode;
 
     /**
      * Get the realm this region belongs to.
@@ -88,10 +86,7 @@ public final class Region implements Serializable, Comparable<Region> {
 
     /**
      * Get the region code.
-     * @Deprecated Do not use regionCode anymore.  Use {@link #getRegionId()} to retrieve
-     * the canonical region ID.
      */
-    @Deprecated
     public String getRegionCode() {
         return regionCode.or(regionId);
     }
@@ -256,9 +251,7 @@ public final class Region implements Serializable, Comparable<Region> {
      * @param regionCode
      *            The region code.
      * @return The Region object.
-     * @deprecated use {@link #fromRegionId(String)} and provide the canonical region ID.
      */
-    @Deprecated
     public static Region fromRegionCode(String regionCode) {
         for (Region region : Region.values()) {
             if (region.getRegionCode().compareToIgnoreCase(regionCode) == 0) {
@@ -275,9 +268,7 @@ public final class Region implements Serializable, Comparable<Region> {
      * @param regionCodeOrId
      *            The region code or id.
      * @return The Region object.
-     * @deprecated use {@link #fromRegionId(String)} and provide the canonical region ID.
      */
-    @Deprecated
     public static Region fromRegionCodeOrId(String regionCodeOrId) {
         for (Region region : Region.values()) {
             if (region.getRegionCode().compareToIgnoreCase(regionCodeOrId) == 0

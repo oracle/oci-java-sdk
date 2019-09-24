@@ -397,17 +397,18 @@ public class Alarm {
 
     /**
      * The period of time that the condition defined in the alarm must persist before the alarm state
-     * changes from \"OK\" to \"FIRING\" or vice versa. For example, a value of 5 minutes means that the
+     * changes from \"OK\" to \"FIRING\". For example, a value of 5 minutes means that the
      * alarm must persist in breaching the condition for five minutes before the alarm updates its
-     * state to \"FIRING\"; likewise, the alarm must persist in not breaching the condition for five
-     * minutes before the alarm updates its state to \"OK.\"
+     * state to \"FIRING\".
      * <p>
      * The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H`
      * for one hour). Minimum: PT1M. Maximum: PT1H. Default: PT1M.
      * <p>
      * Under the default value of PT1M, the first evaluation that breaches the alarm updates the
-     * state to \"FIRING\" and the first evaluation that does not breach the alarm updates the state
-     * to \"OK\".
+     * state to \"FIRING\".
+     * <p>
+     * The alarm updates its status to \"OK\" when the breaching condition has been clear for
+     * the most recent minute.
      * <p>
      * Example: `PT5M`
      *

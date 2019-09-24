@@ -110,6 +110,15 @@ public class Bucket {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("objectEventsEnabled")
+        private Boolean objectEventsEnabled;
+
+        public Builder objectEventsEnabled(Boolean objectEventsEnabled) {
+            this.objectEventsEnabled = objectEventsEnabled;
+            this.__explicitlySet__.add("objectEventsEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -180,6 +189,7 @@ public class Bucket {
                             etag,
                             publicAccessType,
                             storageTier,
+                            objectEventsEnabled,
                             freeformTags,
                             definedTags,
                             kmsKeyId,
@@ -202,6 +212,7 @@ public class Bucket {
                             .etag(o.getEtag())
                             .publicAccessType(o.getPublicAccessType())
                             .storageTier(o.getStorageTier())
+                            .objectEventsEnabled(o.getObjectEventsEnabled())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .kmsKeyId(o.getKmsKeyId())
@@ -385,6 +396,14 @@ public class Bucket {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageTier")
     StorageTier storageTier;
+
+    /**
+     * A property that determines whether events will be generated for operations on objects in this bucket.
+     * This is false by default.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("objectEventsEnabled")
+    Boolean objectEventsEnabled;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
