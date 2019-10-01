@@ -75,7 +75,7 @@ public class ListDedicatedVmHostsRequest extends com.oracle.bmc.requests.BmcRequ
     private String displayName;
 
     /**
-     * Instance shape name
+     * The name for the instance's shape.
      *
      */
     private String instanceShapeName;

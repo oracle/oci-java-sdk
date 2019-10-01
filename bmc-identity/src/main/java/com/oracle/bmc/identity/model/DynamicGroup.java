@@ -13,6 +13,9 @@ package com.oracle.bmc.identity.model;
  * This works like regular user/group membership. But in that case, the membership is a static relationship, whereas
  * in a dynamic group, the membership of an instance certificate to a dynamic group is determined during runtime.
  * For more information, see [Managing Dynamic Groups](https://docs.cloud.oracle.com/Content/Identity/Tasks/managingdynamicgroups.htm).
+ * <p>
+ **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using
+ * the API.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

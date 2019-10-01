@@ -18,6 +18,15 @@ public class ListCostTrackingTagsResponse {
     private String opcRequestId;
 
     /**
+     * For pagination of a list of cost tracking tag. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the `page` parameter for the
+     * subsequent GET request to get the next batch of items. For important details about how pagination works,
+     * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
+     */
+    private String opcNextPage;
+
+    /**
      * A list of Tag instances.
      */
     private java.util.List<Tag> items;
@@ -29,6 +38,7 @@ public class ListCostTrackingTagsResponse {
          */
         public Builder copy(ListCostTrackingTagsResponse o) {
             opcRequestId(o.getOpcRequestId());
+            opcNextPage(o.getOpcNextPage());
             items(o.getItems());
 
             return this;

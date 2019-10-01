@@ -4,7 +4,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Update dedicated VM host details.
+ * Details for updating the dedicated virtual machine host details.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

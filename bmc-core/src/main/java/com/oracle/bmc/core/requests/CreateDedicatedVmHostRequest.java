@@ -11,7 +11,7 @@ import com.oracle.bmc.core.model.*;
 public class CreateDedicatedVmHostRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The details for creating a new dedicated virtual machine (VM) host.
+     * The details for creating a new dedicated virtual machine host.
      */
     private CreateDedicatedVmHostDetails createDedicatedVmHostDetails;
 

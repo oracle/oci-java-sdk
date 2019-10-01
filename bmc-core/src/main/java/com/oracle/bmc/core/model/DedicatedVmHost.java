@@ -4,7 +4,8 @@
 package com.oracle.bmc.core.model;
 
 /**
- * A dedicated virtual machine (VM) host that enables you to host multiple virtual machine instances on a dedicated host that is not shared with other tenancies.
+ * A dedicated virtual machine host that enables you to host multiple VM instances
+ * on a dedicated host that is not shared with other tenancies.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -183,7 +184,7 @@ public class DedicatedVmHost {
     }
 
     /**
-     * The availability domain the dedicated VM host is running in.
+     * The availability domain the dedicated virtual machine host is running in.
      * <p>
      * Example: `Uocm:PHX-AD-1`
      *
@@ -192,13 +193,13 @@ public class DedicatedVmHost {
     String availabilityDomain;
 
     /**
-     * The OCID of the compartment that contains the dedicated VM host.
+     * The OCID of the compartment that contains the dedicated virtual machine host.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The shape of the dedicated VM host. The shape determines the number of CPUs and
+     * The dedicated virtual machine host shape. The shape determines the number of CPUs and
      * other resources available for VMs.
      *
      **/
@@ -226,12 +227,13 @@ public class DedicatedVmHost {
     String displayName;
 
     /**
-     * The fault domain for the dedicated VM host's assigned instances. For more information, see Fault Domains.
+     * The fault domain for the dedicated virtual machine host's assigned instances.
+     * For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault).
      * <p>
-     * If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated VM host,
-     * delete it and create a new dedicated VM host in the preferred fault domain.
+     * If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated virtual machine host,
+     * delete it, and then create a new dedicated virtual machine host in the preferred fault domain.
      * <p>
-     * To get a list of fault domains, use the ListFaultDomains operation in the Identity and Access Management Service API.
+     * To get a list of fault domains, use the `ListFaultDomains` operation in the [Identity and Access Management Service API](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/).
      * <p>
      * Example: `FAULT-DOMAIN-1`
      *

@@ -441,6 +441,35 @@ public class IdentityClient implements Identity {
     }
 
     @Override
+    public AssembleEffectiveTagSetResponse assembleEffectiveTagSet(
+            AssembleEffectiveTagSetRequest request) {
+        LOG.trace("Called assembleEffectiveTagSet");
+        final AssembleEffectiveTagSetRequest interceptedRequest =
+                AssembleEffectiveTagSetConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AssembleEffectiveTagSetConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, AssembleEffectiveTagSetResponse>
+                transformer = AssembleEffectiveTagSetConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeTagNamespaceCompartmentResponse changeTagNamespaceCompartment(
             ChangeTagNamespaceCompartmentRequest request) {
         LOG.trace("Called changeTagNamespaceCompartment");
@@ -1817,6 +1846,35 @@ public class IdentityClient implements Identity {
     }
 
     @Override
+    public GetTaggingWorkRequestResponse getTaggingWorkRequest(
+            GetTaggingWorkRequestRequest request) {
+        LOG.trace("Called getTaggingWorkRequest");
+        final GetTaggingWorkRequestRequest interceptedRequest =
+                GetTaggingWorkRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetTaggingWorkRequestConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetTaggingWorkRequestResponse>
+                transformer = GetTaggingWorkRequestConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetTenancyResponse getTenancy(GetTenancyRequest request) {
         LOG.trace("Called getTenancy");
         final GetTenancyRequest interceptedRequest = GetTenancyConverter.interceptRequest(request);
@@ -2503,6 +2561,95 @@ public class IdentityClient implements Identity {
                 ListTagNamespacesConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListTagNamespacesResponse>
                 transformer = ListTagNamespacesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListTaggingWorkRequestErrorsResponse listTaggingWorkRequestErrors(
+            ListTaggingWorkRequestErrorsRequest request) {
+        LOG.trace("Called listTaggingWorkRequestErrors");
+        final ListTaggingWorkRequestErrorsRequest interceptedRequest =
+                ListTaggingWorkRequestErrorsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTaggingWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListTaggingWorkRequestErrorsResponse>
+                transformer = ListTaggingWorkRequestErrorsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListTaggingWorkRequestLogsResponse listTaggingWorkRequestLogs(
+            ListTaggingWorkRequestLogsRequest request) {
+        LOG.trace("Called listTaggingWorkRequestLogs");
+        final ListTaggingWorkRequestLogsRequest interceptedRequest =
+                ListTaggingWorkRequestLogsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTaggingWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListTaggingWorkRequestLogsResponse>
+                transformer = ListTaggingWorkRequestLogsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListTaggingWorkRequestsResponse listTaggingWorkRequests(
+            ListTaggingWorkRequestsRequest request) {
+        LOG.trace("Called listTaggingWorkRequests");
+        final ListTaggingWorkRequestsRequest interceptedRequest =
+                ListTaggingWorkRequestsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTaggingWorkRequestsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListTaggingWorkRequestsResponse>
+                transformer = ListTaggingWorkRequestsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(

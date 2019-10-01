@@ -4,7 +4,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The details for creating a new dedicated virtual machine (VM) host.
+ * The details for creating a new dedicated virtual machine host.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -130,7 +130,7 @@ public class CreateDedicatedVmHostDetails {
     }
 
     /**
-     * The availability domain of the dedicated VM host.
+     * The availability domain of the dedicated virtual machine host.
      * <p>
      * Example: `Uocm:PHX-AD-1`
      *
@@ -145,8 +145,8 @@ public class CreateDedicatedVmHostDetails {
     String compartmentId;
 
     /**
-     * The shape of the dedicated VM host. The shape determines the number of CPUs and
-     * other resources available for VMs.
+     * The dedicated virtual machine host shape. The shape determines the number of CPUs and
+     * other resources available for VM instances launched on the dedicated virtual machine host.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHostShape")
@@ -173,11 +173,13 @@ public class CreateDedicatedVmHostDetails {
     String displayName;
 
     /**
-     * The fault domain for the dedicated VM host's assigned instances. For more information, see Fault Domains.
-     * If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated VM host,
-     * delete it and create a new dedicated VM host in the preferred fault domain.
+     * The fault domain for the dedicated virtual machine host's assigned instances.
+     * For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault).
+     * If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated virtual machine host,
+     * delete it and create a new dedicated virtual machine host in the preferred fault domain.
      * <p>
-     * To get a list of fault domains, use the ListFaultDomains operation in the Identity and Access Management Service API.
+     * To get a list of fault domains, use the `ListFaultDomains` operation in
+     * the [Identity and Access Management Service API](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/).
      * <p>
      * Example: `FAULT-DOMAIN-1`
      *

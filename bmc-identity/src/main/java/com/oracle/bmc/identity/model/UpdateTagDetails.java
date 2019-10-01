@@ -68,13 +68,27 @@ public class UpdateTagDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("validator")
+        private BaseTagDefinitionValidator validator;
+
+        public Builder validator(BaseTagDefinitionValidator validator) {
+            this.validator = validator;
+            this.__explicitlySet__.add("validator");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateTagDetails build() {
             UpdateTagDetails __instance__ =
                     new UpdateTagDetails(
-                            description, isRetired, freeformTags, definedTags, isCostTracking);
+                            description,
+                            isRetired,
+                            freeformTags,
+                            definedTags,
+                            isCostTracking,
+                            validator);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -86,7 +100,8 @@ public class UpdateTagDetails {
                             .isRetired(o.getIsRetired())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
-                            .isCostTracking(o.getIsCostTracking());
+                            .isCostTracking(o.getIsCostTracking())
+                            .validator(o.getValidator());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -138,6 +153,17 @@ public class UpdateTagDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCostTracking")
     Boolean isCostTracking;
+
+    /**
+     * Additional validation rule for values specified for the tag definition.
+     * <p>
+     * If no validator is defined for a tag definition, then any (valid) value will be accepted.
+     * <p>
+     * The default value for `validator` is an empty map (no additional validation).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("validator")
+    BaseTagDefinitionValidator validator;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

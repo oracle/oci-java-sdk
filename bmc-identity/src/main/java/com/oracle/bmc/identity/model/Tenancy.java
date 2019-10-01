@@ -144,6 +144,9 @@ public class Tenancy {
      * - `PHX`
      * - `FRA`
      * - `LHR`
+     * - `ICN`
+     * - `YYZ`
+     * - `NRT`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("homeRegionKey")

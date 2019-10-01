@@ -142,6 +142,119 @@ public class IdentityPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listCostTrackingTags operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListCostTrackingTagsResponse> listCostTrackingTagsResponseIterator(
+            final ListCostTrackingTagsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCostTrackingTagsRequest.Builder, ListCostTrackingTagsRequest,
+                ListCostTrackingTagsResponse>(
+                new com.google.common.base.Supplier<ListCostTrackingTagsRequest.Builder>() {
+                    @Override
+                    public ListCostTrackingTagsRequest.Builder get() {
+                        return ListCostTrackingTagsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListCostTrackingTagsResponse, String>() {
+                    @Override
+                    public String apply(ListCostTrackingTagsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCostTrackingTagsRequest.Builder>,
+                        ListCostTrackingTagsRequest>() {
+                    @Override
+                    public ListCostTrackingTagsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCostTrackingTagsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCostTrackingTagsRequest, ListCostTrackingTagsResponse>() {
+                    @Override
+                    public ListCostTrackingTagsResponse apply(ListCostTrackingTagsRequest request) {
+                        return client.listCostTrackingTags(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.Tag} objects
+     * contained in responses from the listCostTrackingTags operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.Tag} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.identity.model.Tag> listCostTrackingTagsRecordIterator(
+            final ListCostTrackingTagsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCostTrackingTagsRequest.Builder, ListCostTrackingTagsRequest,
+                ListCostTrackingTagsResponse, com.oracle.bmc.identity.model.Tag>(
+                new com.google.common.base.Supplier<ListCostTrackingTagsRequest.Builder>() {
+                    @Override
+                    public ListCostTrackingTagsRequest.Builder get() {
+                        return ListCostTrackingTagsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListCostTrackingTagsResponse, String>() {
+                    @Override
+                    public String apply(ListCostTrackingTagsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCostTrackingTagsRequest.Builder>,
+                        ListCostTrackingTagsRequest>() {
+                    @Override
+                    public ListCostTrackingTagsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCostTrackingTagsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCostTrackingTagsRequest, ListCostTrackingTagsResponse>() {
+                    @Override
+                    public ListCostTrackingTagsResponse apply(ListCostTrackingTagsRequest request) {
+                        return client.listCostTrackingTags(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCostTrackingTagsResponse,
+                        java.util.List<com.oracle.bmc.identity.model.Tag>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.identity.model.Tag> apply(
+                            ListCostTrackingTagsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listDynamicGroups operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -1153,6 +1266,365 @@ public class IdentityPaginators {
                     @Override
                     public java.util.List<com.oracle.bmc.identity.model.TagNamespaceSummary> apply(
                             ListTagNamespacesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listTaggingWorkRequestErrors operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListTaggingWorkRequestErrorsResponse>
+            listTaggingWorkRequestErrorsResponseIterator(
+                    final ListTaggingWorkRequestErrorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListTaggingWorkRequestErrorsRequest.Builder, ListTaggingWorkRequestErrorsRequest,
+                ListTaggingWorkRequestErrorsResponse>(
+                new com.google.common.base.Supplier<ListTaggingWorkRequestErrorsRequest.Builder>() {
+                    @Override
+                    public ListTaggingWorkRequestErrorsRequest.Builder get() {
+                        return ListTaggingWorkRequestErrorsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListTaggingWorkRequestErrorsResponse, String>() {
+                    @Override
+                    public String apply(ListTaggingWorkRequestErrorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTaggingWorkRequestErrorsRequest.Builder>,
+                        ListTaggingWorkRequestErrorsRequest>() {
+                    @Override
+                    public ListTaggingWorkRequestErrorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTaggingWorkRequestErrorsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListTaggingWorkRequestErrorsRequest,
+                        ListTaggingWorkRequestErrorsResponse>() {
+                    @Override
+                    public ListTaggingWorkRequestErrorsResponse apply(
+                            ListTaggingWorkRequestErrorsRequest request) {
+                        return client.listTaggingWorkRequestErrors(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.TaggingWorkRequestErrorSummary} objects
+     * contained in responses from the listTaggingWorkRequestErrors operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.TaggingWorkRequestErrorSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.identity.model.TaggingWorkRequestErrorSummary>
+            listTaggingWorkRequestErrorsRecordIterator(
+                    final ListTaggingWorkRequestErrorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListTaggingWorkRequestErrorsRequest.Builder, ListTaggingWorkRequestErrorsRequest,
+                ListTaggingWorkRequestErrorsResponse,
+                com.oracle.bmc.identity.model.TaggingWorkRequestErrorSummary>(
+                new com.google.common.base.Supplier<ListTaggingWorkRequestErrorsRequest.Builder>() {
+                    @Override
+                    public ListTaggingWorkRequestErrorsRequest.Builder get() {
+                        return ListTaggingWorkRequestErrorsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListTaggingWorkRequestErrorsResponse, String>() {
+                    @Override
+                    public String apply(ListTaggingWorkRequestErrorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTaggingWorkRequestErrorsRequest.Builder>,
+                        ListTaggingWorkRequestErrorsRequest>() {
+                    @Override
+                    public ListTaggingWorkRequestErrorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTaggingWorkRequestErrorsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListTaggingWorkRequestErrorsRequest,
+                        ListTaggingWorkRequestErrorsResponse>() {
+                    @Override
+                    public ListTaggingWorkRequestErrorsResponse apply(
+                            ListTaggingWorkRequestErrorsRequest request) {
+                        return client.listTaggingWorkRequestErrors(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListTaggingWorkRequestErrorsResponse,
+                        java.util.List<
+                                com.oracle.bmc.identity.model.TaggingWorkRequestErrorSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.identity.model.TaggingWorkRequestErrorSummary>
+                            apply(ListTaggingWorkRequestErrorsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listTaggingWorkRequestLogs operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListTaggingWorkRequestLogsResponse> listTaggingWorkRequestLogsResponseIterator(
+            final ListTaggingWorkRequestLogsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListTaggingWorkRequestLogsRequest.Builder, ListTaggingWorkRequestLogsRequest,
+                ListTaggingWorkRequestLogsResponse>(
+                new com.google.common.base.Supplier<ListTaggingWorkRequestLogsRequest.Builder>() {
+                    @Override
+                    public ListTaggingWorkRequestLogsRequest.Builder get() {
+                        return ListTaggingWorkRequestLogsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListTaggingWorkRequestLogsResponse, String>() {
+                    @Override
+                    public String apply(ListTaggingWorkRequestLogsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTaggingWorkRequestLogsRequest.Builder>,
+                        ListTaggingWorkRequestLogsRequest>() {
+                    @Override
+                    public ListTaggingWorkRequestLogsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTaggingWorkRequestLogsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListTaggingWorkRequestLogsRequest, ListTaggingWorkRequestLogsResponse>() {
+                    @Override
+                    public ListTaggingWorkRequestLogsResponse apply(
+                            ListTaggingWorkRequestLogsRequest request) {
+                        return client.listTaggingWorkRequestLogs(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.TaggingWorkRequestLogSummary} objects
+     * contained in responses from the listTaggingWorkRequestLogs operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.TaggingWorkRequestLogSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.identity.model.TaggingWorkRequestLogSummary>
+            listTaggingWorkRequestLogsRecordIterator(
+                    final ListTaggingWorkRequestLogsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListTaggingWorkRequestLogsRequest.Builder, ListTaggingWorkRequestLogsRequest,
+                ListTaggingWorkRequestLogsResponse,
+                com.oracle.bmc.identity.model.TaggingWorkRequestLogSummary>(
+                new com.google.common.base.Supplier<ListTaggingWorkRequestLogsRequest.Builder>() {
+                    @Override
+                    public ListTaggingWorkRequestLogsRequest.Builder get() {
+                        return ListTaggingWorkRequestLogsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListTaggingWorkRequestLogsResponse, String>() {
+                    @Override
+                    public String apply(ListTaggingWorkRequestLogsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTaggingWorkRequestLogsRequest.Builder>,
+                        ListTaggingWorkRequestLogsRequest>() {
+                    @Override
+                    public ListTaggingWorkRequestLogsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTaggingWorkRequestLogsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListTaggingWorkRequestLogsRequest, ListTaggingWorkRequestLogsResponse>() {
+                    @Override
+                    public ListTaggingWorkRequestLogsResponse apply(
+                            ListTaggingWorkRequestLogsRequest request) {
+                        return client.listTaggingWorkRequestLogs(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListTaggingWorkRequestLogsResponse,
+                        java.util.List<
+                                com.oracle.bmc.identity.model.TaggingWorkRequestLogSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.identity.model.TaggingWorkRequestLogSummary>
+                            apply(ListTaggingWorkRequestLogsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listTaggingWorkRequests operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListTaggingWorkRequestsResponse> listTaggingWorkRequestsResponseIterator(
+            final ListTaggingWorkRequestsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListTaggingWorkRequestsRequest.Builder, ListTaggingWorkRequestsRequest,
+                ListTaggingWorkRequestsResponse>(
+                new com.google.common.base.Supplier<ListTaggingWorkRequestsRequest.Builder>() {
+                    @Override
+                    public ListTaggingWorkRequestsRequest.Builder get() {
+                        return ListTaggingWorkRequestsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListTaggingWorkRequestsResponse, String>() {
+                    @Override
+                    public String apply(ListTaggingWorkRequestsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTaggingWorkRequestsRequest.Builder>,
+                        ListTaggingWorkRequestsRequest>() {
+                    @Override
+                    public ListTaggingWorkRequestsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTaggingWorkRequestsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListTaggingWorkRequestsRequest, ListTaggingWorkRequestsResponse>() {
+                    @Override
+                    public ListTaggingWorkRequestsResponse apply(
+                            ListTaggingWorkRequestsRequest request) {
+                        return client.listTaggingWorkRequests(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.TaggingWorkRequestSummary} objects
+     * contained in responses from the listTaggingWorkRequests operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.TaggingWorkRequestSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.identity.model.TaggingWorkRequestSummary>
+            listTaggingWorkRequestsRecordIterator(final ListTaggingWorkRequestsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListTaggingWorkRequestsRequest.Builder, ListTaggingWorkRequestsRequest,
+                ListTaggingWorkRequestsResponse,
+                com.oracle.bmc.identity.model.TaggingWorkRequestSummary>(
+                new com.google.common.base.Supplier<ListTaggingWorkRequestsRequest.Builder>() {
+                    @Override
+                    public ListTaggingWorkRequestsRequest.Builder get() {
+                        return ListTaggingWorkRequestsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListTaggingWorkRequestsResponse, String>() {
+                    @Override
+                    public String apply(ListTaggingWorkRequestsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTaggingWorkRequestsRequest.Builder>,
+                        ListTaggingWorkRequestsRequest>() {
+                    @Override
+                    public ListTaggingWorkRequestsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTaggingWorkRequestsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListTaggingWorkRequestsRequest, ListTaggingWorkRequestsResponse>() {
+                    @Override
+                    public ListTaggingWorkRequestsResponse apply(
+                            ListTaggingWorkRequestsRequest request) {
+                        return client.listTaggingWorkRequests(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListTaggingWorkRequestsResponse,
+                        java.util.List<com.oracle.bmc.identity.model.TaggingWorkRequestSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.identity.model.TaggingWorkRequestSummary>
+                            apply(ListTaggingWorkRequestsResponse response) {
                         return response.getItems();
                     }
                 });

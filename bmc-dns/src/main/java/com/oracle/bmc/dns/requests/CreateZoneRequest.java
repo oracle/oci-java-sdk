@@ -13,7 +13,7 @@ public class CreateZoneRequest extends com.oracle.bmc.requests.BmcRequest {
     /**
      * Details for creating a new zone.
      */
-    private CreateZoneDetails createZoneDetails;
+    private CreateZoneBaseDetails createZoneDetails;
 
     /**
      * The OCID of the compartment the resource belongs to.
