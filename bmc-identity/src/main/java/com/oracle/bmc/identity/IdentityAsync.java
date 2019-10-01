@@ -73,6 +73,26 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Assembles tag defaults in the specified compartment and any parent compartments to determine
+     * the tags to apply. Tag defaults from parent compartments do not override tag defaults
+     * referencing the same tag in a compartment lower down the hierarchy. This set of tag defaults
+     * includes all tag defaults from the current compartment back to the root compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AssembleEffectiveTagSetResponse> assembleEffectiveTagSet(
+            AssembleEffectiveTagSetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AssembleEffectiveTagSetRequest, AssembleEffectiveTagSetResponse>
+                    handler);
+
+    /**
      * Moves the specified tag namespace to the specified compartment within the same tenancy.
      * <p>
      * To move the tag namespace, you must have the manage tag-namespaces permission on both compartments.
@@ -458,6 +478,11 @@ public interface IdentityAsync extends AutoCloseable {
      * You must also specify a *description* for the tag.
      * It does not have to be unique, and you can change it with
      * {@link #updateTag(UpdateTagRequest, Consumer, Consumer) updateTag}.
+     * <p>
+     * If no 'validator' is set on this tag definition, then any (valid) value can be set for this definedTag.
+     * <p>
+     * If a 'validator' is set on this tag definition, then the only valid values that can be set for this
+     * definedTag those that pass the additional validation imposed by the set 'validator'.
      *
      *
      * @param request The request object containing the details to send
@@ -473,6 +498,13 @@ public interface IdentityAsync extends AutoCloseable {
 
     /**
      * Creates a new tag default in the specified compartment for the specified tag definition.
+     * <p>
+     * If you specify that a value is required, a value is set during resource creation (either by
+     * the user creating the resource or another tag defualt). If no value is set, resource creation
+     * is blocked.
+     * <p>
+     * If the `isRequired` flag is set to \"true\", the value is set during resource creation.
+     * * If the `isRequired` flag is set to \"false\", the value you enter is set during resource creation.
      *
      *
      * @param request The request object containing the details to send
@@ -502,9 +534,6 @@ public interface IdentityAsync extends AutoCloseable {
      * You must also specify a *description* for the namespace.
      * It does not have to be unique, and you can change it with
      * {@link #updateTagNamespace(UpdateTagNamespaceRequest, Consumer, Consumer) updateTagNamespace}.
-     * <p>
-     * Tag namespaces cannot be deleted, but they can be retired.
-     * See [Retiring Key Definitions and Namespace Definitions](https://docs.cloud.oracle.com/Content/Identity/Concepts/taggingoverview.htm#Retiring) for more information.
      *
      *
      * @param request The request object containing the details to send
@@ -775,7 +804,24 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes the the specified tag definition.
+     * Deletes the specified tag definition. This operation triggers a process that removes the
+     * tag from all resources in your tenancy.
+     * <p>
+     * These things happen immediately:
+     * \u00A0
+     *   * If the tag was a cost-tracking tag, it no longer counts against your 10 cost-tracking
+     *   tags limit, whether you first disabled it or not.
+     *   * If the tag was used with dynamic groups, none of the rules that contain the tag will
+     *   be evaluated against the tag.
+     * <p>
+     * Once you start the delete operation, the state of the tag changes to DELETING and tag removal
+     * from resources begins. This can take up to 48 hours depending on the number of resources that
+     * were tagged as well as the regions in which those resources reside. When all tags have been
+     * removed, the state changes to DELETED. You cannot restore a deleted tag. Once the deleted tag
+     * changes its state to DELETED, you can use the same tag name again.
+     * <p>
+     * To delete a tag, you must first retire it. Use {@link #updateTag(UpdateTagRequest, Consumer, Consumer) updateTag}
+     * to retire a tag.
      *
      *
      * @param request The request object containing the details to send
@@ -806,8 +852,10 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Delete the specified tag namespace. Only an empty tagnamespace can be deleted.
-     * If the tag namespace you are trying to delete is not empty, please remove tag definitions from it first.
+     * Deletes the specified tag namespace. Only an empty tag namespace can be deleted. To delete
+     * a tag namespace, first delete all its tag definitions.
+     * <p>
+     * Use {@link #deleteTag(DeleteTagRequest, Consumer, Consumer) deleteTag} to delete a tag definition.
      *
      *
      * @param request The request object containing the details to send
@@ -1035,6 +1083,24 @@ public interface IdentityAsync extends AutoCloseable {
     java.util.concurrent.Future<GetTagNamespaceResponse> getTagNamespace(
             GetTagNamespaceRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetTagNamespaceRequest, GetTagNamespaceResponse>
+                    handler);
+
+    /**
+     * Gets details on a specified work request. The workRequestID is returned in the opc-workrequest-id header
+     * for any asynchronous operation in the Identity and Access Management service.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetTaggingWorkRequestResponse> getTaggingWorkRequest(
+            GetTaggingWorkRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetTaggingWorkRequestRequest, GetTaggingWorkRequestResponse>
                     handler);
 
     /**
@@ -1489,6 +1555,58 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the errors for a work request.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListTaggingWorkRequestErrorsResponse> listTaggingWorkRequestErrors(
+            ListTaggingWorkRequestErrorsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListTaggingWorkRequestErrorsRequest,
+                            ListTaggingWorkRequestErrorsResponse>
+                    handler);
+
+    /**
+     * Gets the logs for a work request.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListTaggingWorkRequestLogsResponse> listTaggingWorkRequestLogs(
+            ListTaggingWorkRequestLogsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListTaggingWorkRequestLogsRequest, ListTaggingWorkRequestLogsResponse>
+                    handler);
+
+    /**
+     * Lists the tagging work requests in compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListTaggingWorkRequestsResponse> listTaggingWorkRequests(
+            ListTaggingWorkRequestsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListTaggingWorkRequestsRequest, ListTaggingWorkRequestsResponse>
+                    handler);
+
+    /**
      * Lists the tag definitions in the specified tag namespace.
      *
      *
@@ -1563,7 +1681,14 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Move the compartment tree to a different parent compartment.
+     * Move the compartment to a different parent compartment in the same tenancy. When you move a
+     * compartment, all its contents (subcompartments and resources) are moved with it. Note that
+     * the `CompartmentId` that you specify in the path is the compartment that you want to move.
+     * <p>
+     **IMPORTANT**: After you move a compartment to a new parent compartment, the access policies of
+     * the new parent take effect and the policies of the previous parent no longer apply. Ensure that you
+     * are aware of the implications for the compartment contents before you move it. For more
+     * information, see [Moving a Compartment](https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcompartments.htm#MoveCompartment).
      *
      *
      * @param request The request object containing the details to send
@@ -1794,7 +1919,11 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the the specified tag definition. You can update `description`, and `isRetired`.
+     * Updates the specified tag definition.
+     * <p>
+     * Setting a 'validator' will enable enforcement of additional validation on values contained in the specified for
+     * this definedTag. Any values that were previously set will not be changed, but any new value set for the
+     * definedTag must pass validation.
      *
      *
      * @param request The request object containing the details to send
@@ -1809,7 +1938,12 @@ public interface IdentityAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<UpdateTagRequest, UpdateTagResponse> handler);
 
     /**
-     * Updates the specified tag default. You can update the following field: `value`.
+     * Updates the specified tag default. If you specify that a value is required, a value is set
+     * during resource creation (either by the user creating the resource or another tag defualt).
+     * If no value is set, resource creation is blocked.
+     * <p>
+     * If the `isRequired` flag is set to \"true\", the value is set during resource creation.
+     * * If the `isRequired` flag is set to \"false\", the value you enter is set during resource creation.
      *
      *
      * @param request The request object containing the details to send

@@ -7,6 +7,9 @@ package com.oracle.bmc.identity.model;
  * A tag definition that belongs to a specific tag namespace.  \"Defined tags\" must be set up in your tenancy before
  * you can apply them to resources.
  * For more information, see [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/Content/Identity/Concepts/taggingoverview.htm).
+ * <p>
+ **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values
+ * using the API.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -134,6 +137,15 @@ public class Tag {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("validator")
+        private BaseTagDefinitionValidator validator;
+
+        public Builder validator(BaseTagDefinitionValidator validator) {
+            this.validator = validator;
+            this.__explicitlySet__.add("validator");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -151,7 +163,8 @@ public class Tag {
                             isRetired,
                             lifecycleState,
                             timeCreated,
-                            isCostTracking);
+                            isCostTracking,
+                            validator);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -170,7 +183,8 @@ public class Tag {
                             .isRetired(o.getIsRetired())
                             .lifecycleState(o.getLifecycleState())
                             .timeCreated(o.getTimeCreated())
-                            .isCostTracking(o.getIsCostTracking());
+                            .isCostTracking(o.getIsCostTracking())
+                            .validator(o.getValidator());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -210,7 +224,8 @@ public class Tag {
     String id;
 
     /**
-     * The name of the tag. The name must be unique across all tags in the namespace and can't be changed.
+     * The name assigned to the tag during creation. This is the tag key definition.
+     * The name must be unique within the tag namespace and cannot be changed.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
@@ -248,7 +263,7 @@ public class Tag {
     @com.fasterxml.jackson.annotation.JsonProperty("isRetired")
     Boolean isRetired;
     /**
-     * The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it.
+     * The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag's `lifecycleState` changes from DELETING to DELETED.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
@@ -296,7 +311,7 @@ public class Tag {
         }
     };
     /**
-     * The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it.
+     * The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag's `lifecycleState` changes from DELETING to DELETED.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
@@ -315,6 +330,17 @@ public class Tag {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCostTracking")
     Boolean isCostTracking;
+
+    /**
+     * Additional validation rule for values specified for the tag definition.
+     * <p>
+     * If no validator is defined for a tag definition, then any (valid) value will be accepted.
+     * <p>
+     * To clear the validator call the UPDATE operation with DefaultTagDefinitionValidator
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("validator")
+    BaseTagDefinitionValidator validator;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

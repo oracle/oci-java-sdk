@@ -173,7 +173,8 @@ public class TagSummary {
     String id;
 
     /**
-     * The name of the tag. The name must be unique across all tags in the tag namespace and can't be changed.
+     * The name assigned to the tag during creation. This is the tag key definition.
+     * The name must be unique within the tag namespace and cannot be changed.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
@@ -212,7 +213,7 @@ public class TagSummary {
     Boolean isRetired;
 
     /**
-     * The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it.
+     * The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag's `lifecycleState` changes from DELETING to DELETED.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     Tag.LifecycleState lifecycleState;

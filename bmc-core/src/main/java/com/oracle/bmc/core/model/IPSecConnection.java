@@ -393,8 +393,12 @@ public class IPSecConnection {
      * you must provide at least one valid static route. If you configure both
      * tunnels to use BGP dynamic routing, you can provide an empty list for the static routes.
      * <p>
-     *
+     * The CIDR can be either IPv4 or IPv6. Note that IPv6 addressing is currently supported only
+     * in the Government Cloud.
+     * <p>
      * Example: `10.0.1.0/24`
+     * <p>
+     * Example: `2001:db8::/32`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("staticRoutes")

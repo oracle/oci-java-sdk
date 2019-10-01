@@ -17,6 +17,13 @@ public class TerminateClusterNetworkResponse {
      */
     private String opcRequestId;
 
+    /**
+     * The OCID of the work request. Use [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
+     * with this ID to track the status of the request.
+     *
+     */
+    private String opcWorkRequestId;
+
     public static class Builder {
         /**
          * Copy method to populate the builder with values from the given instance.
@@ -24,6 +31,7 @@ public class TerminateClusterNetworkResponse {
          */
         public Builder copy(TerminateClusterNetworkResponse o) {
             opcRequestId(o.getOpcRequestId());
+            opcWorkRequestId(o.getOpcWorkRequestId());
 
             return this;
         }

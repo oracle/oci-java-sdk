@@ -138,6 +138,9 @@ public class LaunchDbSystemBase {
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
     String timeZone;
 
+    @com.fasterxml.jackson.annotation.JsonProperty("dbSystemOptions")
+    DbSystemOptions dbSystemOptions;
+
     /**
      * If true, Sparse Diskgroup is configured for Exadata dbsystem. If False, Sparse diskgroup is not configured.
      *

@@ -16,7 +16,7 @@ public class ChangeDedicatedVmHostCompartmentRequest extends com.oracle.bmc.requ
     private String dedicatedVmHostId;
 
     /**
-     * Request to change the compartment of a given dedicated vm host.
+     * The request to move the dedicated virtual machine host to a different compartment.
      */
     private ChangeDedicatedVmHostCompartmentDetails changeDedicatedVmHostCompartmentDetails;
 

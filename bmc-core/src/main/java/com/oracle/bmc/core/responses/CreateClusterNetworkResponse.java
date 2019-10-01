@@ -24,6 +24,13 @@ public class CreateClusterNetworkResponse {
     private String opcRequestId;
 
     /**
+     * The OCID of the work request. Use [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
+     * with this ID to track the status of the request.
+     *
+     */
+    private String opcWorkRequestId;
+
+    /**
      * The returned ClusterNetwork instance.
      */
     private ClusterNetwork clusterNetwork;
@@ -36,6 +43,7 @@ public class CreateClusterNetworkResponse {
         public Builder copy(CreateClusterNetworkResponse o) {
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
+            opcWorkRequestId(o.getOpcWorkRequestId());
             clusterNetwork(o.getClusterNetwork());
 
             return this;

@@ -24,7 +24,7 @@ public class ListDedicatedVmHostShapesRequest extends com.oracle.bmc.requests.Bm
     private String availabilityDomain;
 
     /**
-     * Instance shape name
+     * The name for the instance's shape.
      *
      */
     private String instanceShapeName;

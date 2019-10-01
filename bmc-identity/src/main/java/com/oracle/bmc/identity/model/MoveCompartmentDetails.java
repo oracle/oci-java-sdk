@@ -59,8 +59,8 @@ public class MoveCompartmentDetails {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the parent compartment
-     * into which the compartment should be moved.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the destination compartment
+     * into which to move the compartment.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetCompartmentId")

@@ -92,7 +92,7 @@ public interface Compute extends AutoCloseable {
     CaptureConsoleHistoryResponse captureConsoleHistory(CaptureConsoleHistoryRequest request);
 
     /**
-     * Moves a dedicated vm host from one compartment to another
+     * Moves a dedicated virtual machine host from one compartment to another.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -137,7 +137,10 @@ public interface Compute extends AutoCloseable {
             CreateAppCatalogSubscriptionRequest request);
 
     /**
-     * Creates a new dedicated virtual machine (VM) host in the specified compartment and the specified availability domain.
+     * Creates a new dedicated virtual machine host in the specified compartment and the specified availability domain.
+     * Dedicated virtual machine hosts enable you to run your Compute virtual machine (VM) instances on dedicated servers
+     * that are a single tenant and not shared with other customers.
+     * For more information, see [Dedicated Virtual Machine Hosts](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/dedicatedvmhosts.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -208,9 +211,10 @@ public interface Compute extends AutoCloseable {
     DeleteConsoleHistoryResponse deleteConsoleHistory(DeleteConsoleHistoryRequest request);
 
     /**
-     * Deletes the specified dedicated virtual machine (VM) host.
+     * Deletes the specified dedicated virtual machine host.
      * <p>
-     * If any VM instances are assigned to the dedicated VM host, it will not be deleted and the service will return a 409 response code.
+     * If any VM instances are assigned to the dedicated virtual machine host,
+     * the delete operation will fail and the service will return a 409 response code.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -353,7 +357,7 @@ public interface Compute extends AutoCloseable {
             GetConsoleHistoryContentRequest request);
 
     /**
-     * Gets information about the specified dedicated virtual machine (VM) host.
+     * Gets information about the specified dedicated virtual machine host.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -520,8 +524,8 @@ public interface Compute extends AutoCloseable {
     ListConsoleHistoriesResponse listConsoleHistories(ListConsoleHistoriesRequest request);
 
     /**
-     * Lists the shapes that can be used to launch a virtual machine (VM) instance on a dedicated VM host within the specified compartment.
-     * You can filter the list by compatibility with a specific dedicated VM host shape.
+     * Lists the shapes that can be used to launch a virtual machine instance on a dedicated virtual machine host within the specified compartment.
+     * You can filter the list by compatibility with a specific dedicated virtual machine host shape.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -531,7 +535,7 @@ public interface Compute extends AutoCloseable {
             ListDedicatedVmHostInstanceShapesRequest request);
 
     /**
-     * Returns the list of instances on the dedicated virtual machine (VM) hosts that match the specified criteria.
+     * Returns the list of instances on the dedicated virtual machine hosts that match the specified criteria.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -541,7 +545,7 @@ public interface Compute extends AutoCloseable {
             ListDedicatedVmHostInstancesRequest request);
 
     /**
-     * Lists the shapes that can be used to launch a dedicated virtual machine (VM) host within the specified compartment.
+     * Lists the shapes that can be used to launch a dedicated virtual machine host within the specified compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -551,10 +555,10 @@ public interface Compute extends AutoCloseable {
             ListDedicatedVmHostShapesRequest request);
 
     /**
-     * Returns the list of dedicated virtual machine (VM) hosts that match the specified criteria from the specified compartment.
+     * Returns the list of dedicated virtual machine hosts that match the specified criteria in the specified compartment.
      * <p>
-     * You can limit the list by specifying a dedicated VM host display name. The list will include all the identically-named
-     * dedicated VM hosts in the compartment.
+     * You can limit the list by specifying a dedicated virtual machine host display name. The list will include all the identically-named
+     * dedicated virtual machine hosts in the compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -667,7 +671,7 @@ public interface Compute extends AutoCloseable {
     UpdateConsoleHistoryResponse updateConsoleHistory(UpdateConsoleHistoryRequest request);
 
     /**
-     * Updates the displayName, freeformTags, and definedTags attributes for the specified dedicated virtual machine (VM) host.
+     * Updates the displayName, freeformTags, and definedTags attributes for the specified dedicated virtual machine host.
      * If an attribute value is not included, it will not be updated.
      *
      * @param request The request object containing the details to send

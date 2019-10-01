@@ -31,7 +31,7 @@ public class FunctionsManagementAsyncClient implements FunctionsManagementAsync 
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("FUNCTIONSMANAGEMENT")
                     .serviceEndpointPrefix("")
-                    .serviceEndpointTemplate("https://functions.{region}.{secondLevelDomain}")
+                    .serviceEndpointTemplate("https://functions.{region}.oci.{secondLevelDomain}")
                     .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)

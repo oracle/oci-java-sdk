@@ -121,6 +121,15 @@ public class LaunchDbSystemDetails extends LaunchDbSystemBase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dbSystemOptions")
+        private DbSystemOptions dbSystemOptions;
+
+        public Builder dbSystemOptions(DbSystemOptions dbSystemOptions) {
+            this.dbSystemOptions = dbSystemOptions;
+            this.__explicitlySet__.add("dbSystemOptions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sparseDiskgroup")
         private Boolean sparseDiskgroup;
 
@@ -273,6 +282,7 @@ public class LaunchDbSystemDetails extends LaunchDbSystemBase {
                             backupNetworkNsgIds,
                             shape,
                             timeZone,
+                            dbSystemOptions,
                             sparseDiskgroup,
                             sshPublicKeys,
                             hostname,
@@ -305,6 +315,7 @@ public class LaunchDbSystemDetails extends LaunchDbSystemBase {
                             .backupNetworkNsgIds(o.getBackupNetworkNsgIds())
                             .shape(o.getShape())
                             .timeZone(o.getTimeZone())
+                            .dbSystemOptions(o.getDbSystemOptions())
                             .sparseDiskgroup(o.getSparseDiskgroup())
                             .sshPublicKeys(o.getSshPublicKeys())
                             .hostname(o.getHostname())
@@ -345,6 +356,7 @@ public class LaunchDbSystemDetails extends LaunchDbSystemBase {
             java.util.List<String> backupNetworkNsgIds,
             String shape,
             String timeZone,
+            DbSystemOptions dbSystemOptions,
             Boolean sparseDiskgroup,
             java.util.List<String> sshPublicKeys,
             String hostname,
@@ -371,6 +383,7 @@ public class LaunchDbSystemDetails extends LaunchDbSystemBase {
                 backupNetworkNsgIds,
                 shape,
                 timeZone,
+                dbSystemOptions,
                 sparseDiskgroup,
                 sshPublicKeys,
                 hostname,

@@ -17,6 +17,9 @@ package com.oracle.bmc.identity.model;
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator.
+ * <p>
+ **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values
+ * using the API.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

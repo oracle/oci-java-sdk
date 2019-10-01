@@ -121,6 +121,15 @@ public class DbSystem {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dbSystemOptions")
+        private DbSystemOptions dbSystemOptions;
+
+        public Builder dbSystemOptions(DbSystemOptions dbSystemOptions) {
+            this.dbSystemOptions = dbSystemOptions;
+            this.__explicitlySet__.add("dbSystemOptions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sshPublicKeys")
         private java.util.List<String> sshPublicKeys;
 
@@ -364,6 +373,7 @@ public class DbSystem {
                             nsgIds,
                             backupNetworkNsgIds,
                             shape,
+                            dbSystemOptions,
                             sshPublicKeys,
                             timeZone,
                             hostname,
@@ -407,6 +417,7 @@ public class DbSystem {
                             .nsgIds(o.getNsgIds())
                             .backupNetworkNsgIds(o.getBackupNetworkNsgIds())
                             .shape(o.getShape())
+                            .dbSystemOptions(o.getDbSystemOptions())
                             .sshPublicKeys(o.getSshPublicKeys())
                             .timeZone(o.getTimeZone())
                             .hostname(o.getHostname())
@@ -524,6 +535,9 @@ public class DbSystem {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     String shape;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("dbSystemOptions")
+    DbSystemOptions dbSystemOptions;
 
     /**
      * The public key portion of one or more key pairs used for SSH access to the DB system.

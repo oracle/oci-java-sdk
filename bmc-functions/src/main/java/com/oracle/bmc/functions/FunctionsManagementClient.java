@@ -18,7 +18,7 @@ public class FunctionsManagementClient implements FunctionsManagement {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("FUNCTIONSMANAGEMENT")
                     .serviceEndpointPrefix("")
-                    .serviceEndpointTemplate("https://functions.{region}.{secondLevelDomain}")
+                    .serviceEndpointTemplate("https://functions.{region}.oci.{secondLevelDomain}")
                     .build();
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;

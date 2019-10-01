@@ -24,6 +24,13 @@ public class LaunchInstanceConfigurationResponse {
     private String opcRequestId;
 
     /**
+     * The OCID of the work request. Use [GetWorkRequest](https://docs.cloud.oracle.com/api/#/en/workrequests/20160918/WorkRequest/GetWorkRequest)
+     * with this ID to track the status of the request.
+     *
+     */
+    private String opcWorkRequestId;
+
+    /**
      * The returned Instance instance.
      */
     private Instance instance;
@@ -36,6 +43,7 @@ public class LaunchInstanceConfigurationResponse {
         public Builder copy(LaunchInstanceConfigurationResponse o) {
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
+            opcWorkRequestId(o.getOpcWorkRequestId());
             instance(o.getInstance());
 
             return this;

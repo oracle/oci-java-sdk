@@ -31,7 +31,7 @@ public class FunctionsInvokeAsyncClient implements FunctionsInvokeAsync {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("FUNCTIONSINVOKE")
                     .serviceEndpointPrefix("")
-                    .serviceEndpointTemplate("https://functions.{region}.{secondLevelDomain}")
+                    .serviceEndpointTemplate("https://functions.{region}.oci.{secondLevelDomain}")
                     .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)

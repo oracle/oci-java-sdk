@@ -4,8 +4,11 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * A managed container for defined tags. A tag namespace is unique in a tenancy. A tag namespace can't be deleted.
- * For more information, see [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/Content/Identity/Concepts/taggingoverview.htm).
+ * A managed container for defined tags. A tag namespace is unique in a tenancy. For more information,
+ * see [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/Content/Identity/Concepts/taggingoverview.htm).
+ * <p>
+ **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values
+ * using the API.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
