@@ -41,6 +41,24 @@ public class PingMonitor {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("homeRegion")
+        private String homeRegion;
+
+        public Builder homeRegion(String homeRegion) {
+            this.homeRegion = homeRegion;
+            this.__explicitlySet__.add("homeRegion");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+        private java.util.Date timeCreated;
+
+        public Builder timeCreated(java.util.Date timeCreated) {
+            this.timeCreated = timeCreated;
+            this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -149,6 +167,8 @@ public class PingMonitor {
                     new PingMonitor(
                             id,
                             resultsUrl,
+                            homeRegion,
+                            timeCreated,
                             compartmentId,
                             targets,
                             vantagePointNames,
@@ -169,6 +189,8 @@ public class PingMonitor {
             Builder copiedBuilder =
                     id(o.getId())
                             .resultsUrl(o.getResultsUrl())
+                            .homeRegion(o.getHomeRegion())
+                            .timeCreated(o.getTimeCreated())
                             .compartmentId(o.getCompartmentId())
                             .targets(o.getTargets())
                             .vantagePointNames(o.getVantagePointNames())
@@ -204,6 +226,20 @@ public class PingMonitor {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resultsUrl")
     String resultsUrl;
+
+    /**
+     * The region where updates must be made and where results must be fetched from.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("homeRegion")
+    String homeRegion;
+
+    /**
+     * The RFC 3339-formatted creation date and time of the probe.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    java.util.Date timeCreated;
 
     /**
      * The OCID of the compartment.

@@ -28,6 +28,13 @@ public class ListVolumeBackupPoliciesRequest extends com.oracle.bmc.requests.Bmc
      */
     private String page;
 
+    /**
+     * The OCID of the compartment to list.
+     * If no compartment is specified, list the predefined (Gold, Silver, Bronze) backup policies.
+     *
+     */
+    private String compartmentId;
+
     public static class Builder {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
@@ -63,6 +70,7 @@ public class ListVolumeBackupPoliciesRequest extends com.oracle.bmc.requests.Bmc
         public Builder copy(ListVolumeBackupPoliciesRequest o) {
             limit(o.getLimit());
             page(o.getPage());
+            compartmentId(o.getCompartmentId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

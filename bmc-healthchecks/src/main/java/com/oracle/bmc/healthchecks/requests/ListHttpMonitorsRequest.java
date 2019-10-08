@@ -46,6 +46,7 @@ public class ListHttpMonitorsRequest extends com.oracle.bmc.requests.BmcRequest 
     public enum SortBy {
         Id("id"),
         DisplayName("displayName"),
+        TimeCreated("timeCreated"),
         ;
 
         private final String value;
@@ -122,6 +123,11 @@ public class ListHttpMonitorsRequest extends com.oracle.bmc.requests.BmcRequest 
      */
     private String displayName;
 
+    /**
+     * Filters results that match the `homeRegion`.
+     */
+    private String homeRegion;
+
     public static class Builder {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
@@ -162,6 +168,7 @@ public class ListHttpMonitorsRequest extends com.oracle.bmc.requests.BmcRequest 
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             displayName(o.getDisplayName());
+            homeRegion(o.getHomeRegion());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

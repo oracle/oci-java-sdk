@@ -9,7 +9,7 @@ import com.oracle.bmc.dts.requests.*;
 import com.oracle.bmc.dts.responses.*;
 import org.apache.commons.lang3.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.009")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.011")
 @lombok.extern.slf4j.Slf4j
 public class GetTransferApplianceEntitlementConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
@@ -26,7 +26,7 @@ public class GetTransferApplianceEntitlementConverter {
             com.oracle.bmc.http.internal.RestClient client,
             GetTransferApplianceEntitlementRequest request) {
         Validate.notNull(request, "request instance is required");
-        Validate.notBlank(request.getTenantId(), "tenantId must not be blank");
+        Validate.notBlank(request.getId(), "id must not be blank");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
@@ -34,11 +34,15 @@ public class GetTransferApplianceEntitlementConverter {
                         .path("transferApplianceEntitlement")
                         .path(
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
-                                        request.getTenantId()));
+                                        request.getId()));
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
+
+        if (request.getOpcRetryToken() != null) {
+            ib.header("opc-retry-token", request.getOpcRetryToken());
+        }
 
         if (request.getOpcRequestId() != null) {
             ib.header("opc-request-id", request.getOpcRequestId());

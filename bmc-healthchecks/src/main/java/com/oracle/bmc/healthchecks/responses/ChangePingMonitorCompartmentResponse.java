@@ -18,11 +18,6 @@ public class ChangePingMonitorCompartmentResponse {
      */
     private String opcRequestId;
 
-    /**
-     * For optimistic concurrency control. See `if-match`.
-     */
-    private String etag;
-
     public static class Builder {
         /**
          * Copy method to populate the builder with values from the given instance.
@@ -30,7 +25,6 @@ public class ChangePingMonitorCompartmentResponse {
          */
         public Builder copy(ChangePingMonitorCompartmentResponse o) {
             opcRequestId(o.getOpcRequestId());
-            etag(o.getEtag());
 
             return this;
         }

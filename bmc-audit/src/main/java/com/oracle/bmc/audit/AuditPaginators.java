@@ -24,7 +24,7 @@ import com.oracle.bmc.audit.responses.*;
  * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
  * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
 @lombok.RequiredArgsConstructor
 public class AuditPaginators {
     private final Audit client;

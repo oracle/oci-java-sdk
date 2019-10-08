@@ -5,7 +5,7 @@ package com.oracle.bmc.audit.requests;
 
 import com.oracle.bmc.audit.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
 public class GetConfigurationRequest extends com.oracle.bmc.requests.BmcRequest {

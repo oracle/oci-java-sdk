@@ -749,6 +749,39 @@ public class BlockstorageClient implements Blockstorage {
     }
 
     @Override
+    public CreateVolumeBackupPolicyResponse createVolumeBackupPolicy(
+            CreateVolumeBackupPolicyRequest request) {
+        LOG.trace("Called createVolumeBackupPolicy");
+        final CreateVolumeBackupPolicyRequest interceptedRequest =
+                CreateVolumeBackupPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateVolumeBackupPolicyConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateVolumeBackupPolicyResponse>
+                transformer = CreateVolumeBackupPolicyConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateVolumeBackupPolicyDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateVolumeBackupPolicyAssignmentResponse createVolumeBackupPolicyAssignment(
             CreateVolumeBackupPolicyAssignmentRequest request) {
         LOG.trace("Called createVolumeBackupPolicyAssignment");
@@ -975,6 +1008,36 @@ public class BlockstorageClient implements Blockstorage {
                 DeleteVolumeBackupConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVolumeBackupResponse>
                 transformer = DeleteVolumeBackupConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteVolumeBackupPolicyResponse deleteVolumeBackupPolicy(
+            DeleteVolumeBackupPolicyRequest request) {
+        LOG.trace("Called deleteVolumeBackupPolicy");
+        final DeleteVolumeBackupPolicyRequest interceptedRequest =
+                DeleteVolumeBackupPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteVolumeBackupPolicyConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteVolumeBackupPolicyResponse>
+                transformer = DeleteVolumeBackupPolicyConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -1782,6 +1845,39 @@ public class BlockstorageClient implements Blockstorage {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateVolumeBackupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateVolumeBackupPolicyResponse updateVolumeBackupPolicy(
+            UpdateVolumeBackupPolicyRequest request) {
+        LOG.trace("Called updateVolumeBackupPolicy");
+        final UpdateVolumeBackupPolicyRequest interceptedRequest =
+                UpdateVolumeBackupPolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateVolumeBackupPolicyConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateVolumeBackupPolicyResponse>
+                transformer = UpdateVolumeBackupPolicyConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateVolumeBackupPolicyDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

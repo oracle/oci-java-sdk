@@ -13,7 +13,7 @@ package com.oracle.bmc.dts.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.009")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.011")
 @lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
@@ -24,12 +24,30 @@ public class TransferApplianceEntitlement {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
-        private String tenantId;
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
+        private String id;
 
-        public Builder tenantId(String tenantId) {
-            this.tenantId = tenantId;
-            this.__explicitlySet__.add("tenantId");
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+        private String displayName;
+
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            this.__explicitlySet__.add("displayName");
             return this;
         }
 
@@ -51,12 +69,21 @@ public class TransferApplianceEntitlement {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("status")
-        private Status status;
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+        private LifecycleState lifecycleState;
 
-        public Builder status(Status status) {
-            this.status = status;
-            this.__explicitlySet__.add("status");
+        public Builder lifecycleState(LifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleStateDetails")
+        private String lifecycleStateDetails;
+
+        public Builder lifecycleStateDetails(String lifecycleStateDetails) {
+            this.lifecycleStateDetails = lifecycleStateDetails;
+            this.__explicitlySet__.add("lifecycleStateDetails");
             return this;
         }
 
@@ -78,18 +105,42 @@ public class TransferApplianceEntitlement {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TransferApplianceEntitlement build() {
             TransferApplianceEntitlement __instance__ =
                     new TransferApplianceEntitlement(
-                            tenantId,
+                            id,
+                            compartmentId,
+                            displayName,
                             requestorName,
                             requestorEmail,
-                            status,
+                            lifecycleState,
+                            lifecycleStateDetails,
                             creationTime,
-                            updateTime);
+                            updateTime,
+                            freeformTags,
+                            definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -97,12 +148,17 @@ public class TransferApplianceEntitlement {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(TransferApplianceEntitlement o) {
             Builder copiedBuilder =
-                    tenantId(o.getTenantId())
+                    id(o.getId())
+                            .compartmentId(o.getCompartmentId())
+                            .displayName(o.getDisplayName())
                             .requestorName(o.getRequestorName())
                             .requestorEmail(o.getRequestorEmail())
-                            .status(o.getStatus())
+                            .lifecycleState(o.getLifecycleState())
+                            .lifecycleStateDetails(o.getLifecycleStateDetails())
                             .creationTime(o.getCreationTime())
-                            .updateTime(o.getUpdateTime());
+                            .updateTime(o.getUpdateTime())
+                            .freeformTags(o.getFreeformTags())
+                            .definedTags(o.getDefinedTags());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -116,8 +172,14 @@ public class TransferApplianceEntitlement {
         return new Builder();
     }
 
-    @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
-    String tenantId;
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    String id;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    String compartmentId;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    String displayName;
 
     @com.fasterxml.jackson.annotation.JsonProperty("requestorName")
     String requestorName;
@@ -127,14 +189,11 @@ public class TransferApplianceEntitlement {
     /**
      **/
     @lombok.extern.slf4j.Slf4j
-    public enum Status {
-        Requested("REQUESTED"),
-        PendingSigning("PENDING_SIGNING"),
-        PendingApproval("PENDING_APPROVAL"),
-        TermsExpired("TERMS_EXPIRED"),
-        Approved("APPROVED"),
-        Rejected("REJECTED"),
-        Cancelled("CANCELLED"),
+    public enum LifecycleState {
+        Creating("CREATING"),
+        Active("ACTIVE"),
+        Inactive("INACTIVE"),
+        Deleted("DELETED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -143,18 +202,18 @@ public class TransferApplianceEntitlement {
         UnknownEnumValue(null);
 
         private final String value;
-        private static java.util.Map<String, Status> map;
+        private static java.util.Map<String, LifecycleState> map;
 
         static {
             map = new java.util.HashMap<>();
-            for (Status v : Status.values()) {
+            for (LifecycleState v : LifecycleState.values()) {
                 if (v != UnknownEnumValue) {
                     map.put(v.getValue(), v);
                 }
             }
         }
 
-        Status(String value) {
+        LifecycleState(String value) {
             this.value = value;
         }
 
@@ -164,25 +223,47 @@ public class TransferApplianceEntitlement {
         }
 
         @com.fasterxml.jackson.annotation.JsonCreator
-        public static Status create(String key) {
+        public static LifecycleState create(String key) {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
             LOG.warn(
-                    "Received unknown value '{}' for enum 'Status', returning UnknownEnumValue",
+                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
                     key);
             return UnknownEnumValue;
         }
     };
 
-    @com.fasterxml.jackson.annotation.JsonProperty("status")
-    Status status;
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    LifecycleState lifecycleState;
+
+    /**
+     * A property that can contain details on the lifecycle.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleStateDetails")
+    String lifecycleStateDetails;
 
     @com.fasterxml.jackson.annotation.JsonProperty("creationTime")
     java.util.Date creationTime;
 
     @com.fasterxml.jackson.annotation.JsonProperty("updateTime")
     java.util.Date updateTime;
+
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: `{\"bar-key\": \"value\"}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    java.util.Map<String, String> freeformTags;
+
+    /**
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+     * Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

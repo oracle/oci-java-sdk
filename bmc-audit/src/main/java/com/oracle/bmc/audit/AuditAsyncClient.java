@@ -21,7 +21,7 @@ import com.oracle.bmc.audit.responses.*;
  * Future.isDone/isCancelled.<br/>
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
 @lombok.extern.slf4j.Slf4j
 public class AuditAsyncClient implements AuditAsync {
     /**
@@ -31,6 +31,7 @@ public class AuditAsyncClient implements AuditAsync {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("AUDIT")
                     .serviceEndpointPrefix("audit")
+                    .serviceEndpointTemplate("https://audit.{region}.oraclecloud.com")
                     .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)

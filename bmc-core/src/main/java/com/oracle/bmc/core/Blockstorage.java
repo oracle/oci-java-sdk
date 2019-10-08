@@ -181,6 +181,15 @@ public interface Blockstorage extends AutoCloseable {
     CreateVolumeBackupResponse createVolumeBackup(CreateVolumeBackupRequest request);
 
     /**
+     * Creates a new backup policy for the caller.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateVolumeBackupPolicyResponse createVolumeBackupPolicy(
+            CreateVolumeBackupPolicyRequest request);
+
+    /**
      * Assigns a policy to the specified asset, such as a volume. Note that a given asset can
      * only have one policy assigned to it; if this method is called for an asset that previously
      * has a different policy assigned, the prior assignment will be silently deleted.
@@ -265,6 +274,15 @@ public interface Blockstorage extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     DeleteVolumeBackupResponse deleteVolumeBackup(DeleteVolumeBackupRequest request);
+
+    /**
+     * Deletes the specified scheduled backup policy.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteVolumeBackupPolicyResponse deleteVolumeBackupPolicy(
+            DeleteVolumeBackupPolicyRequest request);
 
     /**
      * Deletes a volume backup policy assignment (i.e. unassigns the policy from an asset).
@@ -508,6 +526,17 @@ public interface Blockstorage extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     UpdateVolumeBackupResponse updateVolumeBackup(UpdateVolumeBackupRequest request);
+
+    /**
+     * Updates a volume backup policy.
+     * Avoid entering confidential information.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateVolumeBackupPolicyResponse updateVolumeBackupPolicy(
+            UpdateVolumeBackupPolicyRequest request);
 
     /**
      * Updates the set of volumes in a volume group along with the display name. Use this operation

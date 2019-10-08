@@ -9,8 +9,10 @@ import com.oracle.bmc.containerengine.model.Cluster;
 import com.oracle.bmc.containerengine.model.ClusterCreateOptions;
 import com.oracle.bmc.containerengine.model.CreateClusterDetails;
 import com.oracle.bmc.containerengine.model.CreateNodePoolDetails;
+import com.oracle.bmc.containerengine.model.CreateNodePoolNodeConfigDetails;
 import com.oracle.bmc.containerengine.model.KeyValue;
 import com.oracle.bmc.containerengine.model.NodePool;
+import com.oracle.bmc.containerengine.model.NodePoolPlacementConfigDetails;
 import com.oracle.bmc.containerengine.model.UpdateNodePoolDetails;
 import com.oracle.bmc.containerengine.model.WorkRequestResource;
 import com.oracle.bmc.containerengine.model.WorkRequestStatus;
@@ -145,25 +147,23 @@ public class ContainerEngineNodePoolExample {
         try {
             final List<AvailabilityDomain> availabilityDomains =
                     getAvailabilityDomains(identityClient, compartmentId);
-            final AvailabilityDomain adToUse = availabilityDomains.get(0);
 
             // A VCN and subnets are required to create a Container Engine Cluster
             vcn = createVcn(vcnClient, compartmentId);
             System.out.println("Created VCN");
             System.out.println();
 
-            // Create three subnets. Two for load balancer, one for node pool
-            for (int i = 0; i < 3; i++) {
+            // Create two regional subnets. One for load balancer, One for node pool
+            for (int i = 0; i < 2; i++) {
                 Subnet subnet =
                         createSubnet(
                                 vcnClient,
                                 compartmentId,
-                                adToUse,
                                 vcn.getId(),
                                 SUBNET_DISPLAY_NAMES[i],
                                 SUBNET_CIDR_BLOCKS[i]);
                 subnets.add(subnet);
-                if (i < 2) {
+                if (i < 1) {
                     lb_subnetIds.add(subnet.getId());
                 } else {
                     pool_subnetIds.add(subnet.getId());
@@ -188,9 +188,17 @@ public class ContainerEngineNodePoolExample {
             System.out.println();
 
             // Add node pool in the cluster
-            Integer quantityPerSubnet = 1;
             List<KeyValue> initialNodeLabels =
                     Arrays.asList(new KeyValue.Builder().key("key1").value("value1").build());
+
+            List<NodePoolPlacementConfigDetails> nodePoolPlacementConfigDetails = new ArrayList<>();
+            availabilityDomains.forEach(
+                    ad ->
+                            nodePoolPlacementConfigDetails.add(
+                                    NodePoolPlacementConfigDetails.builder()
+                                            .availabilityDomain(ad.getName())
+                                            .subnetId(pool_subnetIds.get(0))
+                                            .build()));
 
             nodePool =
                     createNodePool(
@@ -203,8 +211,11 @@ public class ContainerEngineNodePoolExample {
                             NODE_SHAPE,
                             NODE_METADATA,
                             initialNodeLabels,
-                            quantityPerSubnet,
-                            pool_subnetIds);
+                            CreateNodePoolNodeConfigDetails.builder()
+                                    .size(availabilityDomains.size())
+                                    .placementConfigs(nodePoolPlacementConfigDetails)
+                                    .build());
+
             System.out.println("Created node pool");
             System.out.println();
 
@@ -307,7 +318,6 @@ public class ContainerEngineNodePoolExample {
      *
      * @param vcnClient the service client to use to create the subnet
      * @param compartmentId the OCID of the compartment which owns the VCN
-     * @param availabilityDomain the availability domain where the subnet will be created
      * @param vcnId the ID of the VCN which will own the subnet
      * @param subnetName the subnet that will be created
      * @param cidrBlock the cidr block used to create subnet
@@ -319,7 +329,6 @@ public class ContainerEngineNodePoolExample {
     private static Subnet createSubnet(
             final VirtualNetworkClient vcnClient,
             final String compartmentId,
-            final AvailabilityDomain availabilityDomain,
             final String vcnId,
             final String subnetName,
             final String cidrBlock)
@@ -330,7 +339,6 @@ public class ContainerEngineNodePoolExample {
                         CreateSubnetRequest.builder()
                                 .createSubnetDetails(
                                         CreateSubnetDetails.builder()
-                                                .availabilityDomain(availabilityDomain.getName())
                                                 .compartmentId(compartmentId)
                                                 .displayName(subnetName)
                                                 .cidrBlock(cidrBlock)
@@ -499,9 +507,7 @@ public class ContainerEngineNodePoolExample {
      * @param nodeImageName The image to use on each node in the node pool
      * @param nodeShape The number of CPUs and the amount of memory allocated to each node in the node pool
      * @param initialNodeLabels The initial node label
-     * @param quantityPerSubnet The number of worker nodes to create for the node pool in each subnet
-     * @param subnetIds One or more subnets configured to host worker nodes
-     *
+     * @param nodePoolNodeConfigDetails The node pool size and the placementConfig of nodes.
      * @return the created node pool
      *
      * @throws Exception if there is an error waiting for work request finished
@@ -516,8 +522,7 @@ public class ContainerEngineNodePoolExample {
             final String nodeShape,
             final Map<String, String> nodeMetadata,
             final List<KeyValue> initialNodeLabels,
-            final Integer quantityPerSubnet,
-            final List<String> subnetIds)
+            final CreateNodePoolNodeConfigDetails nodePoolNodeConfigDetails)
             throws Exception {
 
         NodePool nodePool = null;
@@ -535,8 +540,7 @@ public class ContainerEngineNodePoolExample {
                                                 .nodeShape(nodeShape)
                                                 .nodeMetadata(nodeMetadata)
                                                 .initialNodeLabels(initialNodeLabels)
-                                                .quantityPerSubnet(quantityPerSubnet)
-                                                .subnetIds(subnetIds)
+                                                .nodeConfigDetails(nodePoolNodeConfigDetails)
                                                 .build())
                                 .build());
 

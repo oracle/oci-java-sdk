@@ -9,7 +9,7 @@ import com.oracle.bmc.audit.requests.*;
 import com.oracle.bmc.audit.responses.*;
 import org.apache.commons.lang3.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
 @lombok.extern.slf4j.Slf4j
 public class UpdateConfigurationConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
@@ -29,7 +29,7 @@ public class UpdateConfigurationConverter {
                 request.getUpdateConfigurationDetails(), "updateConfigurationDetails is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20160918").path("configuration");
+                client.getBaseTarget().path("/20190901").path("configuration");
 
         target =
                 target.queryParam(

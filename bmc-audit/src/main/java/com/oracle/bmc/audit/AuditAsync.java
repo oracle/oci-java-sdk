@@ -6,7 +6,7 @@ package com.oracle.bmc.audit;
 import com.oracle.bmc.audit.requests.*;
 import com.oracle.bmc.audit.responses.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
 public interface AuditAsync extends AutoCloseable {
 
     /**
@@ -52,7 +52,9 @@ public interface AuditAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns all audit events for the specified compartment that were processed within the specified time range.
+     * Returns all the audit events processed for the specified compartment within the specified
+     * time range.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

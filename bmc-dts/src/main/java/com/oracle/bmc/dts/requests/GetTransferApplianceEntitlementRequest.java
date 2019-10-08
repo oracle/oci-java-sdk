@@ -5,18 +5,30 @@ package com.oracle.bmc.dts.requests;
 
 import com.oracle.bmc.dts.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.009")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.011")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
 public class GetTransferApplianceEntitlementRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * Tenant Id
+     * Id of the Transfer Appliance Entitlement
      */
-    private String tenantId;
+    private String id;
 
     /**
-     * opc request id
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or
+     * server error without risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
+     */
+    private String opcRetryToken;
+
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
@@ -53,7 +65,8 @@ public class GetTransferApplianceEntitlementRequest extends com.oracle.bmc.reque
          * @return this builder instance
          */
         public Builder copy(GetTransferApplianceEntitlementRequest o) {
-            tenantId(o.getTenantId());
+            id(o.getId());
+            opcRetryToken(o.getOpcRetryToken());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());

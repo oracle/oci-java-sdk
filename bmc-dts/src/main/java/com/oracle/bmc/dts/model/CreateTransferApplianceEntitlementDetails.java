@@ -13,7 +13,7 @@ package com.oracle.bmc.dts.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.009")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.011")
 @lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
@@ -30,6 +30,15 @@ public class CreateTransferApplianceEntitlementDetails {
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+        private String displayName;
+
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            this.__explicitlySet__.add("displayName");
             return this;
         }
 
@@ -51,13 +60,37 @@ public class CreateTransferApplianceEntitlementDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateTransferApplianceEntitlementDetails build() {
             CreateTransferApplianceEntitlementDetails __instance__ =
                     new CreateTransferApplianceEntitlementDetails(
-                            compartmentId, requestorName, requestorEmail);
+                            compartmentId,
+                            displayName,
+                            requestorName,
+                            requestorEmail,
+                            freeformTags,
+                            definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -66,8 +99,11 @@ public class CreateTransferApplianceEntitlementDetails {
         public Builder copy(CreateTransferApplianceEntitlementDetails o) {
             Builder copiedBuilder =
                     compartmentId(o.getCompartmentId())
+                            .displayName(o.getDisplayName())
                             .requestorName(o.getRequestorName())
-                            .requestorEmail(o.getRequestorEmail());
+                            .requestorEmail(o.getRequestorEmail())
+                            .freeformTags(o.getFreeformTags())
+                            .definedTags(o.getDefinedTags());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -84,11 +120,30 @@ public class CreateTransferApplianceEntitlementDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    String displayName;
+
     @com.fasterxml.jackson.annotation.JsonProperty("requestorName")
     String requestorName;
 
     @com.fasterxml.jackson.annotation.JsonProperty("requestorEmail")
     String requestorEmail;
+
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: `{\"bar-key\": \"value\"}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    java.util.Map<String, String> freeformTags;
+
+    /**
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+     * Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

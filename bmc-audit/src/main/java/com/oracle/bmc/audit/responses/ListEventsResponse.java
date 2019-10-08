@@ -5,15 +5,16 @@ package com.oracle.bmc.audit.responses;
 
 import com.oracle.bmc.audit.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class ListEventsResponse {
 
     /**
      * For pagination of a list of audit events. When this header appears in the response,
-     * it means you received a partial list and there are more results.
-     * Include this value as the `page` parameter for the subsequent ListEvents request to get the next batch of events.
+     * it means you received a partial list and there are more results. Include this value as the `page`
+     * parameter for the subsequent ListEvents request to get the next batch of events. For important
+     * details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private String opcNextPage;
