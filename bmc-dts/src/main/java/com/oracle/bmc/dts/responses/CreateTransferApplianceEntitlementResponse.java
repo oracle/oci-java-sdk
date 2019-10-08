@@ -5,7 +5,7 @@ package com.oracle.bmc.dts.responses;
 
 import com.oracle.bmc.dts.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.009")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.011")
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
 public class CreateTransferApplianceEntitlementResponse {

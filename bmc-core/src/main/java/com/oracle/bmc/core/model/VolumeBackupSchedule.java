@@ -51,6 +51,51 @@ public class VolumeBackupSchedule {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("offsetType")
+        private OffsetType offsetType;
+
+        public Builder offsetType(OffsetType offsetType) {
+            this.offsetType = offsetType;
+            this.__explicitlySet__.add("offsetType");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("hourOfDay")
+        private Integer hourOfDay;
+
+        public Builder hourOfDay(Integer hourOfDay) {
+            this.hourOfDay = hourOfDay;
+            this.__explicitlySet__.add("hourOfDay");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dayOfWeek")
+        private DayOfWeek dayOfWeek;
+
+        public Builder dayOfWeek(DayOfWeek dayOfWeek) {
+            this.dayOfWeek = dayOfWeek;
+            this.__explicitlySet__.add("dayOfWeek");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dayOfMonth")
+        private Integer dayOfMonth;
+
+        public Builder dayOfMonth(Integer dayOfMonth) {
+            this.dayOfMonth = dayOfMonth;
+            this.__explicitlySet__.add("dayOfMonth");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("month")
+        private Month month;
+
+        public Builder month(Month month) {
+            this.month = month;
+            this.__explicitlySet__.add("month");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("retentionSeconds")
         private Integer retentionSeconds;
 
@@ -60,12 +105,31 @@ public class VolumeBackupSchedule {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
+        private TimeZone timeZone;
+
+        public Builder timeZone(TimeZone timeZone) {
+            this.timeZone = timeZone;
+            this.__explicitlySet__.add("timeZone");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VolumeBackupSchedule build() {
             VolumeBackupSchedule __instance__ =
-                    new VolumeBackupSchedule(backupType, offsetSeconds, period, retentionSeconds);
+                    new VolumeBackupSchedule(
+                            backupType,
+                            offsetSeconds,
+                            period,
+                            offsetType,
+                            hourOfDay,
+                            dayOfWeek,
+                            dayOfMonth,
+                            month,
+                            retentionSeconds,
+                            timeZone);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -76,7 +140,13 @@ public class VolumeBackupSchedule {
                     backupType(o.getBackupType())
                             .offsetSeconds(o.getOffsetSeconds())
                             .period(o.getPeriod())
-                            .retentionSeconds(o.getRetentionSeconds());
+                            .offsetType(o.getOffsetType())
+                            .hourOfDay(o.getHourOfDay())
+                            .dayOfWeek(o.getDayOfWeek())
+                            .dayOfMonth(o.getDayOfMonth())
+                            .month(o.getMonth())
+                            .retentionSeconds(o.getRetentionSeconds())
+                            .timeZone(o.getTimeZone());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -201,12 +271,243 @@ public class VolumeBackupSchedule {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("period")
     Period period;
+    /**
+     * Indicates how offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the respones. `hourOfDay` is applicable for periods `ONE_DAY`, `ONE_WEEK`, `ONE_MONTH` and `ONE_YEAR`. `dayOfWeek` is applicable for period `ONE_WEEK`. `dayOfMonth` is applicable for periods `ONE_MONTH` and `ONE_YEAR`. 'month' is applicable for period 'ONE_YEAR'. They will be ignored in the requests for inapplicable periods. If value is `NUMERIC_SECONDS`, then `offsetSeconds` will be used for both requests and responses and the structured fields will be ignored in the requests and users should ignore their values from the respones. For clients using older versions of Apis and not sending `offsetType` in their requests, the behaviour is just like `NUMERIC_SECONDS`.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum OffsetType {
+        Structured("STRUCTURED"),
+        NumericSeconds("NUMERIC_SECONDS"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, OffsetType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (OffsetType v : OffsetType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        OffsetType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static OffsetType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'OffsetType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Indicates how offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the respones. `hourOfDay` is applicable for periods `ONE_DAY`, `ONE_WEEK`, `ONE_MONTH` and `ONE_YEAR`. `dayOfWeek` is applicable for period `ONE_WEEK`. `dayOfMonth` is applicable for periods `ONE_MONTH` and `ONE_YEAR`. 'month' is applicable for period 'ONE_YEAR'. They will be ignored in the requests for inapplicable periods. If value is `NUMERIC_SECONDS`, then `offsetSeconds` will be used for both requests and responses and the structured fields will be ignored in the requests and users should ignore their values from the respones. For clients using older versions of Apis and not sending `offsetType` in their requests, the behaviour is just like `NUMERIC_SECONDS`.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("offsetType")
+    OffsetType offsetType;
+
+    /**
+     * The hour of the day to schedule the backup
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("hourOfDay")
+    Integer hourOfDay;
+    /**
+     * The day of the week to schedule the backup
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum DayOfWeek {
+        Monday("MONDAY"),
+        Tuesday("TUESDAY"),
+        Wednesday("WEDNESDAY"),
+        Thursday("THURSDAY"),
+        Friday("FRIDAY"),
+        Saturday("SATURDAY"),
+        Sunday("SUNDAY"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, DayOfWeek> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DayOfWeek v : DayOfWeek.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        DayOfWeek(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DayOfWeek create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DayOfWeek', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The day of the week to schedule the backup
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dayOfWeek")
+    DayOfWeek dayOfWeek;
+
+    /**
+     * The day of the month to schedule the backup
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dayOfMonth")
+    Integer dayOfMonth;
+    /**
+     * The month of the year to schedule the backup
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum Month {
+        January("JANUARY"),
+        February("FEBRUARY"),
+        March("MARCH"),
+        April("APRIL"),
+        May("MAY"),
+        June("JUNE"),
+        July("JULY"),
+        August("AUGUST"),
+        September("SEPTEMBER"),
+        October("OCTOBER"),
+        November("NOVEMBER"),
+        December("DECEMBER"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, Month> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Month v : Month.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        Month(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Month create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Month', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The month of the year to schedule the backup
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("month")
+    Month month;
 
     /**
      * How long, in seconds, backups created by this schedule should be kept until being automatically deleted.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("retentionSeconds")
     Integer retentionSeconds;
+    /**
+     * Specifies what time zone is the schedule in
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum TimeZone {
+        Utc("UTC"),
+        RegionalDataCenterTime("REGIONAL_DATA_CENTER_TIME"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, TimeZone> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (TimeZone v : TimeZone.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        TimeZone(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static TimeZone create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'TimeZone', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Specifies what time zone is the schedule in
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
+    TimeZone timeZone;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

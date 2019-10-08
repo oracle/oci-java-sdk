@@ -8,7 +8,7 @@ import com.oracle.bmc.audit.internal.http.*;
 import com.oracle.bmc.audit.requests.*;
 import com.oracle.bmc.audit.responses.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
 @lombok.extern.slf4j.Slf4j
 public class AuditClient implements Audit {
     /**
@@ -18,6 +18,7 @@ public class AuditClient implements Audit {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("AUDIT")
                     .serviceEndpointPrefix("audit")
+                    .serviceEndpointTemplate("https://audit.{region}.oraclecloud.com")
                     .build();
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;

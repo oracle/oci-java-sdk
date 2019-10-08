@@ -4,6 +4,8 @@
 package com.oracle.bmc.audit.model;
 
 /**
+ * The configuration details for the retention period setting, specified in days. For more
+ * information, see [Setting Audit Log Retention Period](https://docs.cloud.oracle.com/iaas/Content/Audit/Tasks/settingretentionperiod.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -13,7 +15,7 @@ package com.oracle.bmc.audit.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
 @lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
@@ -60,7 +62,10 @@ public class UpdateConfigurationDetails {
     }
 
     /**
-     * The retention period days
+     * The retention period setting, specified in days. The minimum is 90, the maximum 365.
+     * <p>
+     * Example: `90`
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriodDays")
     Integer retentionPeriodDays;

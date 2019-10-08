@@ -25,6 +25,7 @@ public class UpdateTopicConverter {
             com.oracle.bmc.http.internal.RestClient client, UpdateTopicRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getTopicId(), "topicId must not be blank");
+        Validate.notNull(request.getTopicAttributesDetails(), "topicAttributesDetails is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()

@@ -6,7 +6,7 @@ package com.oracle.bmc.dts;
 import com.oracle.bmc.dts.requests.*;
 import com.oracle.bmc.dts.responses.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.009")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.011")
 public interface TransferApplianceEntitlement extends AutoCloseable {
 
     /**
@@ -37,7 +37,7 @@ public interface TransferApplianceEntitlement extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Create the Transfer Appliance Entitlement that allows customers to use Transfer Appliance
+     * Create the Entitlement to use a Transfer Appliance. It requires some offline process of review and signatures before request is granted.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -53,4 +53,20 @@ public interface TransferApplianceEntitlement extends AutoCloseable {
      */
     GetTransferApplianceEntitlementResponse getTransferApplianceEntitlement(
             GetTransferApplianceEntitlementRequest request);
+
+    /**
+     * Lists Transfer Transfer Appliance Entitlement
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListTransferApplianceEntitlementResponse listTransferApplianceEntitlement(
+            ListTransferApplianceEntitlementRequest request);
+
+    /**
+     * Gets the pre-configured waiters available for resources for this service.
+     *
+     * @return The service waiters.
+     */
+    TransferApplianceEntitlementWaiters getWaiters();
 }

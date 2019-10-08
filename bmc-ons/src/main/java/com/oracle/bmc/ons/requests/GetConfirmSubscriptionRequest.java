@@ -24,6 +24,13 @@ public class GetConfirmSubscriptionRequest extends com.oracle.bmc.requests.BmcRe
     /**
      * The protocol used for the subscription.
      * <p>
+     * Allowed values:
+     *   * `CUSTOM_HTTPS`
+     *   * `EMAIL`
+     *   * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
+     *   * `PAGERDUTY`
+     *   * `SLACK`
+     * <p>
      * For information about subscription protocols, see
      * [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
      *

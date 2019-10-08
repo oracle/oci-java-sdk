@@ -2,6 +2,21 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
+## 1.9.0 - 2019-10-08
+### Added
+- Support for the new schema for events in the Audit service
+- Support for entitlements in the Data Transfer service
+- Support for custom scheduled backup policies on volumes in the Block Storage service
+- Support for specifying the network type when launching virtual machine instances in the Compute service
+- Support for Monitoring service integration in the Health Checks service
+
+### Breaking changes
+- For `com.oracle.bmc.dts.model.TransferApplianceEntitlement`:
+	- The `Status` enum has been removed and replaced with `LifecycleState`
+	- The `tenantId` parameter has been renamed as `id`
+- The `eTag` parameter has been removed from `com.oracle.bmc.healthchecks.responses.ChangeHttpMonitorCompartmentResponse`
+- The Audit service version to support the new schema was increased to 20190901.  Older versions of the SDK (< 1.9.0) will continue to function to support Audit service version 20160918
+
 ## 1.8.2 - 2019-10-01
 ### Added
 - Support for required tags in the Identity service

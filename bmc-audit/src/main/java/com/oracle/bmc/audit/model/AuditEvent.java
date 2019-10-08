@@ -4,6 +4,7 @@
 package com.oracle.bmc.audit.model;
 
 /**
+ * All the attributes of an audit event. For more information, see [Viewing Audit Log Events](https://docs.cloud.oracle.com/iaas/Content/Audit/Tasks/viewinglogevents.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -13,7 +14,7 @@ package com.oracle.bmc.audit.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
 @lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AuditEvent.Builder.class)
@@ -22,30 +23,39 @@ public class AuditEvent {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
-        private String tenantId;
+        @com.fasterxml.jackson.annotation.JsonProperty("eventType")
+        private String eventType;
 
-        public Builder tenantId(String tenantId) {
-            this.tenantId = tenantId;
-            this.__explicitlySet__.add("tenantId");
+        public Builder eventType(String eventType) {
+            this.eventType = eventType;
+            this.__explicitlySet__.add("eventType");
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-        private String compartmentId;
+        @com.fasterxml.jackson.annotation.JsonProperty("cloudEventsVersion")
+        private String cloudEventsVersion;
 
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = compartmentId;
-            this.__explicitlySet__.add("compartmentId");
+        public Builder cloudEventsVersion(String cloudEventsVersion) {
+            this.cloudEventsVersion = cloudEventsVersion;
+            this.__explicitlySet__.add("cloudEventsVersion");
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("compartmentName")
-        private String compartmentName;
+        @com.fasterxml.jackson.annotation.JsonProperty("eventTypeVersion")
+        private String eventTypeVersion;
 
-        public Builder compartmentName(String compartmentName) {
-            this.compartmentName = compartmentName;
-            this.__explicitlySet__.add("compartmentName");
+        public Builder eventTypeVersion(String eventTypeVersion) {
+            this.eventTypeVersion = eventTypeVersion;
+            this.__explicitlySet__.add("eventTypeVersion");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("source")
+        private String source;
+
+        public Builder source(String source) {
+            this.source = source;
+            this.__explicitlySet__.add("source");
             return this;
         }
 
@@ -58,33 +68,6 @@ public class AuditEvent {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("eventName")
-        private String eventName;
-
-        public Builder eventName(String eventName) {
-            this.eventName = eventName;
-            this.__explicitlySet__.add("eventName");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("eventSource")
-        private String eventSource;
-
-        public Builder eventSource(String eventSource) {
-            this.eventSource = eventSource;
-            this.__explicitlySet__.add("eventSource");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("eventType")
-        private String eventType;
-
-        public Builder eventType(String eventType) {
-            this.eventType = eventType;
-            this.__explicitlySet__.add("eventType");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("eventTime")
         private java.util.Date eventTime;
 
@@ -94,132 +77,21 @@ public class AuditEvent {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("principalId")
-        private String principalId;
+        @com.fasterxml.jackson.annotation.JsonProperty("contentType")
+        private String contentType;
 
-        public Builder principalId(String principalId) {
-            this.principalId = principalId;
-            this.__explicitlySet__.add("principalId");
+        public Builder contentType(String contentType) {
+            this.contentType = contentType;
+            this.__explicitlySet__.add("contentType");
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("credentialId")
-        private String credentialId;
+        @com.fasterxml.jackson.annotation.JsonProperty("data")
+        private Data data;
 
-        public Builder credentialId(String credentialId) {
-            this.credentialId = credentialId;
-            this.__explicitlySet__.add("credentialId");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("requestAction")
-        private String requestAction;
-
-        public Builder requestAction(String requestAction) {
-            this.requestAction = requestAction;
-            this.__explicitlySet__.add("requestAction");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("requestId")
-        private String requestId;
-
-        public Builder requestId(String requestId) {
-            this.requestId = requestId;
-            this.__explicitlySet__.add("requestId");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("requestAgent")
-        private String requestAgent;
-
-        public Builder requestAgent(String requestAgent) {
-            this.requestAgent = requestAgent;
-            this.__explicitlySet__.add("requestAgent");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("requestHeaders")
-        private java.util.Map<String, java.util.List<String>> requestHeaders;
-
-        public Builder requestHeaders(
-                java.util.Map<String, java.util.List<String>> requestHeaders) {
-            this.requestHeaders = requestHeaders;
-            this.__explicitlySet__.add("requestHeaders");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("requestOrigin")
-        private String requestOrigin;
-
-        public Builder requestOrigin(String requestOrigin) {
-            this.requestOrigin = requestOrigin;
-            this.__explicitlySet__.add("requestOrigin");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("requestParameters")
-        private java.util.Map<String, java.util.List<String>> requestParameters;
-
-        public Builder requestParameters(
-                java.util.Map<String, java.util.List<String>> requestParameters) {
-            this.requestParameters = requestParameters;
-            this.__explicitlySet__.add("requestParameters");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("requestResource")
-        private String requestResource;
-
-        public Builder requestResource(String requestResource) {
-            this.requestResource = requestResource;
-            this.__explicitlySet__.add("requestResource");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("responseHeaders")
-        private java.util.Map<String, java.util.List<String>> responseHeaders;
-
-        public Builder responseHeaders(
-                java.util.Map<String, java.util.List<String>> responseHeaders) {
-            this.responseHeaders = responseHeaders;
-            this.__explicitlySet__.add("responseHeaders");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("responseStatus")
-        private String responseStatus;
-
-        public Builder responseStatus(String responseStatus) {
-            this.responseStatus = responseStatus;
-            this.__explicitlySet__.add("responseStatus");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("responseTime")
-        private java.util.Date responseTime;
-
-        public Builder responseTime(java.util.Date responseTime) {
-            this.responseTime = responseTime;
-            this.__explicitlySet__.add("responseTime");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("responsePayload")
-        private java.util.Map<String, Object> responsePayload;
-
-        public Builder responsePayload(java.util.Map<String, Object> responsePayload) {
-            this.responsePayload = responsePayload;
-            this.__explicitlySet__.add("responsePayload");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("userName")
-        private String userName;
-
-        public Builder userName(String userName) {
-            this.userName = userName;
-            this.__explicitlySet__.add("userName");
+        public Builder data(Data data) {
+            this.data = data;
+            this.__explicitlySet__.add("data");
             return this;
         }
 
@@ -229,28 +101,14 @@ public class AuditEvent {
         public AuditEvent build() {
             AuditEvent __instance__ =
                     new AuditEvent(
-                            tenantId,
-                            compartmentId,
-                            compartmentName,
-                            eventId,
-                            eventName,
-                            eventSource,
                             eventType,
+                            cloudEventsVersion,
+                            eventTypeVersion,
+                            source,
+                            eventId,
                             eventTime,
-                            principalId,
-                            credentialId,
-                            requestAction,
-                            requestId,
-                            requestAgent,
-                            requestHeaders,
-                            requestOrigin,
-                            requestParameters,
-                            requestResource,
-                            responseHeaders,
-                            responseStatus,
-                            responseTime,
-                            responsePayload,
-                            userName);
+                            contentType,
+                            data);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -258,28 +116,14 @@ public class AuditEvent {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(AuditEvent o) {
             Builder copiedBuilder =
-                    tenantId(o.getTenantId())
-                            .compartmentId(o.getCompartmentId())
-                            .compartmentName(o.getCompartmentName())
+                    eventType(o.getEventType())
+                            .cloudEventsVersion(o.getCloudEventsVersion())
+                            .eventTypeVersion(o.getEventTypeVersion())
+                            .source(o.getSource())
                             .eventId(o.getEventId())
-                            .eventName(o.getEventName())
-                            .eventSource(o.getEventSource())
-                            .eventType(o.getEventType())
                             .eventTime(o.getEventTime())
-                            .principalId(o.getPrincipalId())
-                            .credentialId(o.getCredentialId())
-                            .requestAction(o.getRequestAction())
-                            .requestId(o.getRequestId())
-                            .requestAgent(o.getRequestAgent())
-                            .requestHeaders(o.getRequestHeaders())
-                            .requestOrigin(o.getRequestOrigin())
-                            .requestParameters(o.getRequestParameters())
-                            .requestResource(o.getRequestResource())
-                            .responseHeaders(o.getResponseHeaders())
-                            .responseStatus(o.getResponseStatus())
-                            .responseTime(o.getResponseTime())
-                            .responsePayload(o.getResponsePayload())
-                            .userName(o.getUserName());
+                            .contentType(o.getContentType())
+                            .data(o.getData());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -294,140 +138,77 @@ public class AuditEvent {
     }
 
     /**
-     * The OCID of the tenant.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
-    String tenantId;
-
-    /**
-     * The OCID of the compartment.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    String compartmentId;
-
-    /**
-     * The name of the compartment. This value is the friendly name associated with compartmentId.
-     * This value can change, but the service logs the value that appeared at the time of the audit event.
+     * The type of event that happened.
+     * <p>
+     * The service that produces the event can also add, remove, or change the meaning of a field.
+     * A service implementing these type changes would publish a new version of an `eventType` and
+     * revise the `eventTypeVersion` field.
+     * <p>
+     * Example: `com.oraclecloud.ComputeApi.GetInstance`
      *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("compartmentName")
-    String compartmentName;
-
-    /**
-     * The GUID of the event.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("eventId")
-    String eventId;
-
-    /**
-     * The name of the event.
-     * Example: `LaunchInstance`
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("eventName")
-    String eventName;
-
-    /**
-     * The source of the event.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("eventSource")
-    String eventSource;
-
-    /**
-     * The type of the event.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("eventType")
     String eventType;
 
     /**
+     * The version of the CloudEvents specification. The structure of the envelope follows the
+     * [CloudEvents](https://github.com/cloudevents/spec) industry standard format hosted by the
+     * [Cloud Native Computing Foundation ( CNCF)](https://www.cncf.io/).
+     * <p>
+     * Audit uses version 0.1 specification of the CloudEvents event envelope.
+     * <p>
+     * Example: `0.1`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cloudEventsVersion")
+    String cloudEventsVersion;
+
+    /**
+     * The version of the event type. This version applies to the payload of the event, not the envelope.
+     * Use `cloudEventsVersion` to determine the version of the envelope.
+     * <p>
+     * Example: `2.0`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("eventTypeVersion")
+    String eventTypeVersion;
+
+    /**
+     * The source of the event.
+     * <p>
+     * Example: `ComputeApi`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("source")
+    String source;
+
+    /**
+     * The GUID of the event.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("eventId")
+    String eventId;
+
+    /**
      * The time the event occurred, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * <p>
+     * Example: `2019-09-18T00:10:59.252Z`
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("eventTime")
     java.util.Date eventTime;
 
     /**
-     * The OCID of the user whose action triggered the event.
+     * The content type of the data contained in `data`.
+     * <p>
+     * Example: `application/json`
+     *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("principalId")
-    String principalId;
+    @com.fasterxml.jackson.annotation.JsonProperty("contentType")
+    String contentType;
 
-    /**
-     * The credential ID of the user. This value is extracted from the HTTP 'Authorization' request header. It consists of the tenantId, userId, and user fingerprint, all delimited by a slash (/).
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("credentialId")
-    String credentialId;
-
-    /**
-     * The HTTP method of the request.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("requestAction")
-    String requestAction;
-
-    /**
-     * The opc-request-id of the request.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("requestId")
-    String requestId;
-
-    /**
-     * The user agent of the client that made the request.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("requestAgent")
-    String requestAgent;
-
-    /**
-     * The HTTP header fields and values in the request.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("requestHeaders")
-    java.util.Map<String, java.util.List<String>> requestHeaders;
-
-    /**
-     * The IP address of the source of the request.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("requestOrigin")
-    String requestOrigin;
-
-    /**
-     * The query parameter fields and values for the request.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("requestParameters")
-    java.util.Map<String, java.util.List<String>> requestParameters;
-
-    /**
-     * The resource targeted by the request.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("requestResource")
-    String requestResource;
-
-    /**
-     * The headers of the response.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("responseHeaders")
-    java.util.Map<String, java.util.List<String>> responseHeaders;
-
-    /**
-     * The status code of the response.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("responseStatus")
-    String responseStatus;
-
-    /**
-     * The time of the response to the audited request, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("responseTime")
-    java.util.Date responseTime;
-
-    /**
-     * Metadata of interest from the response payload. For example, the OCID of a resource.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("responsePayload")
-    java.util.Map<String, Object> responsePayload;
-
-    /**
-     * The name of the user or service. This value is the friendly name associated with principalId.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("userName")
-    String userName;
+    @com.fasterxml.jackson.annotation.JsonProperty("data")
+    Data data;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

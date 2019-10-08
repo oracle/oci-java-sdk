@@ -75,6 +75,14 @@ public class ListPingMonitorsConverter {
                                     request.getDisplayName()));
         }
 
+        if (request.getHomeRegion() != null) {
+            target =
+                    target.queryParam(
+                            "homeRegion",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getHomeRegion()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
