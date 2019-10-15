@@ -109,7 +109,8 @@ public class CreateLoadBalancerBackendSetExample {
             String backendSetName,
             String policy,
             HealthCheckerDetails healthChecker,
-            LBCookieSessionPersistenceConfigurationDetails lbcspDetails) {
+            LBCookieSessionPersistenceConfigurationDetails lbcspDetails)
+            throws Exception {
 
         CreateBackendSetResponse response =
                 loadBalancerClient.createBackendSet(
@@ -129,7 +130,8 @@ public class CreateLoadBalancerBackendSetExample {
                 .forWorkRequest(
                         GetWorkRequestRequest.builder()
                                 .workRequestId(response.getOpcWorkRequestId())
-                                .build());
+                                .build())
+                .execute();
     }
 
     /**
@@ -146,7 +148,8 @@ public class CreateLoadBalancerBackendSetExample {
             String loadBalancerId,
             String backendSetName,
             String policy,
-            HealthCheckerDetails healthChecker) {
+            HealthCheckerDetails healthChecker)
+            throws Exception {
 
         List<BackendDetails> backends = new ArrayList<BackendDetails>();
         backends.add(BackendDetails.builder().ipAddress("10.0.0.5").port(80).build());
@@ -170,7 +173,8 @@ public class CreateLoadBalancerBackendSetExample {
                 .forWorkRequest(
                         GetWorkRequestRequest.builder()
                                 .workRequestId(response.getOpcWorkRequestId())
-                                .build());
+                                .build())
+                .execute();
     }
 
     /**
@@ -181,7 +185,8 @@ public class CreateLoadBalancerBackendSetExample {
      * @param backendSetName the name of the backend set to delete
      */
     private static void deleteBackendSet(
-            LoadBalancerClient loadBalancerClient, String backendSetName, String loadBalancerId) {
+            LoadBalancerClient loadBalancerClient, String loadBalancerId, String backendSetName)
+            throws Exception {
         DeleteBackendSetResponse response =
                 loadBalancerClient.deleteBackendSet(
                         DeleteBackendSetRequest.builder()
@@ -193,6 +198,7 @@ public class CreateLoadBalancerBackendSetExample {
                 .forWorkRequest(
                         GetWorkRequestRequest.builder()
                                 .workRequestId(response.getOpcWorkRequestId())
-                                .build());
+                                .build())
+                .execute();
     }
 }

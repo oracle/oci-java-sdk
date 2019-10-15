@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
+## 1.9.1 - 2019-10-15
+### Added
+- Support for the Digital Assistant service
+- Support for work requests on Instance Pool operations in the Compute service
+
 ## 1.9.0 - 2019-10-08
 ### Added
 - Support for the new schema for events in the Audit service

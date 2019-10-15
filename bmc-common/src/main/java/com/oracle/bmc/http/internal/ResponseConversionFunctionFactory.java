@@ -75,6 +75,7 @@ public class ResponseConversionFunctionFactory {
             extends ValidatingParseResponseFunction<WithHeaders<Void>> {
         @Override
         protected WithHeaders<Void> doApply(Response response) {
+            ResponseHelper.readWithoutEntity(response);
             return new WithHeaders<>(null, response.getStringHeaders(), response.getStatus());
         }
     }

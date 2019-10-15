@@ -56,9 +56,8 @@ public class ChangeLoadBalancerCompartmentExample {
      * @param targetCompartment   target compartment to which the LoadBalancer will be moved
      */
     private static void changeLoadBalancerCompartment(
-            LoadBalancerClient loadBalancerClient,
-            String loadBalancerId,
-            String targetCompartment) {
+            LoadBalancerClient loadBalancerClient, String loadBalancerId, String targetCompartment)
+            throws Exception {
         ChangeLoadBalancerCompartmentResponse response =
                 loadBalancerClient.changeLoadBalancerCompartment(
                         ChangeLoadBalancerCompartmentRequest.builder()
@@ -74,6 +73,7 @@ public class ChangeLoadBalancerCompartmentExample {
                 .forWorkRequest(
                         GetWorkRequestRequest.builder()
                                 .workRequestId(response.getOpcWorkRequestId())
-                                .build());
+                                .build())
+                .execute();
     }
 }

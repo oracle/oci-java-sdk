@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc.http.internal;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableList;
 import com.oracle.bmc.io.internal.ContentLengthVerifyingInputStream;
 import com.oracle.bmc.io.internal.WrappedResponseInputStream;
@@ -81,6 +82,32 @@ public class ResponseHelperTest {
             validateExceptionFields(
                     exception, OPC_REQUEST_ID, BAD_GATEWAY_STATUS, dummyServiceCode, dummyMessage);
         }
+    }
+
+    @Test
+    public void testReadEntity_encodedJsonString() throws Exception {
+        Response response = mock(Response.class);
+        Response.StatusType statusInfo = mock(Response.StatusType.class);
+        // with embedded quote
+        String jsonEncodedString = new ObjectMapper().writeValueAsString("foo \" bar");
+        assertEquals("\"foo \\\" bar\"", jsonEncodedString);
+
+        Class<String> entityType = String.class;
+
+        when(response.getStatusInfo()).thenReturn(statusInfo);
+        when(statusInfo.getFamily()).thenReturn(Response.Status.Family.SUCCESSFUL);
+        when(response.getHeaderString(HttpHeaders.CONTENT_TYPE))
+                .thenReturn(javax.ws.rs.core.MediaType.APPLICATION_JSON);
+        when(response.readEntity(entityType)).thenReturn(jsonEncodedString);
+
+        String responseString = ResponseHelper.readEntity(response, entityType);
+
+        // embedded quote preserved, outer quotes removed
+        assertEquals("foo \" bar", responseString);
+        verify(response).bufferEntity();
+        verify(statusInfo).getFamily();
+        verify(response).readEntity(entityType);
+        verify(response).getHeaderString(HttpHeaders.CONTENT_TYPE);
     }
 
     @Test

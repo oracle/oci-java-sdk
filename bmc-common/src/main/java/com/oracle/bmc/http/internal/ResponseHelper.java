@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc.http.internal;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
@@ -15,6 +16,8 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 import com.google.common.base.Optional;
@@ -36,6 +39,7 @@ import lombok.extern.slf4j.Slf4j;
 @Getter
 @Slf4j
 public class ResponseHelper {
+    private static final ObjectReader STRING_READER = new ObjectMapper().readerFor(String.class);
     private static final int MAX_RESPONSE_BUFFER_BYTES = 4096;
     private static final String OPC_REQUEST_ID_HEADER = "opc-request-id";
     private static final Map<Integer, String> DEFAULT_ERROR_MESSAGES = new HashMap<>();
@@ -57,18 +61,17 @@ public class ResponseHelper {
      *            The response received.
      */
     public static void throwIfNotSuccessful(@NonNull Response response) {
-        if (Status.Family.SUCCESSFUL.equals(response.getStatusInfo().getFamily())) {
-            return;
-        }
-        if (response.getStatus() == Status.NOT_MODIFIED.getStatusCode()) {
-            return;
-        }
-
-        String opcRequestId = response.getHeaderString(OPC_REQUEST_ID_HEADER);
-
         // synchronized for async handlers where both an AsyncHandler and a Future might try to
         // handle the response
         synchronized (response) {
+            if (Status.Family.SUCCESSFUL.equals(response.getStatusInfo().getFamily())) {
+                return;
+            }
+            if (response.getStatus() == Status.NOT_MODIFIED.getStatusCode()) {
+                return;
+            }
+
+            String opcRequestId = response.getHeaderString(OPC_REQUEST_ID_HEADER);
 
             // If the response Content-Type is not application/json, then don't bother parsing the response body.
             if (!MediaType.APPLICATION_JSON_TYPE.equals(response.getMediaType())) {
@@ -107,7 +110,14 @@ public class ResponseHelper {
                  * by handing the parsing ourselves.
                  */
                 if (response.getLength() < MAX_RESPONSE_BUFFER_BYTES) {
-                    isBuffered = response.bufferEntity();
+                    try {
+                        isBuffered = response.bufferEntity();
+                    } catch (IllegalStateException e) {
+                        // bufferEntity will throw ISE if the response is closed already
+                        LOG.info(
+                                "Unable to buffer response entity as the response has already been closed",
+                                e);
+                    }
                 }
                 final ErrorCodeAndMessage errorCodeAndMessage =
                         response.readEntity(ErrorCodeAndMessage.class);
@@ -128,16 +138,35 @@ public class ResponseHelper {
                             opcRequestId);
                 }
             } catch (ProcessingException e) {
-                throw new BmcException(
-                        response.getStatus(),
-                        "Unknown",
+                // NOTE: for async paths, this means the first invocation will be the only one that gets
+                // the original message.
+                String message =
                         isBuffered
                                 ? "Unable to parse error response: "
                                         + response.readEntity(String.class)
-                                : "Unable to parse error response.",
-                        opcRequestId,
-                        e);
+                                : "Unable to parse error response.";
+                int status = response.getStatus();
+
+                // if there's a processing exception, we cannot assume that the response has been closed,
+                // so close it now after the response has been read out.
+                closeResponseSilently(response);
+
+                throw new BmcException(status, "Unknown", message, opcRequestId, e);
             }
+        }
+    }
+
+    /**
+     * Simple response handler that just cleans up the response, assuming
+     * no entity needs to be read out.
+     *
+     * @param response the response
+     */
+    public static void readWithoutEntity(@NonNull final Response response) {
+        // synchronized for async handlers where both an AsyncHandler and a Future might try to
+        // handle the response
+        synchronized (response) {
+            closeResponseSilently(response);
         }
     }
 
@@ -160,11 +189,15 @@ public class ResponseHelper {
                 // through both an AsyncHandler and through the returned Future)
                 response.bufferEntity();
 
+                // NOTE: readEntity will take care of closing the response
                 return response.readEntity(entityType);
             }
-        }
-        if (response.getStatus() == Status.NOT_MODIFIED.getStatusCode()) {
-            return null;
+
+            if (response.getStatus() == Status.NOT_MODIFIED.getStatusCode()) {
+                // close response when not modified
+                closeResponseSilently(response);
+                return null;
+            }
         }
         throw new IllegalStateException(
                 "Attempted to read entity from unsuccessful response, should have called throwIfNotSuccessful first");
@@ -217,7 +250,7 @@ public class ResponseHelper {
                                             inputStream, contentLength);
                         }
 
-                        return (T) inputStream;
+                        return entityType.cast(inputStream);
                     } finally {
                         if (contentType != null) {
                             response.getHeaders().addAll(HttpHeaders.CONTENT_TYPE, contentType);
@@ -230,20 +263,18 @@ public class ResponseHelper {
                 response.bufferEntity();
 
                 T entity = response.readEntity(entityType);
-                if (MediaType.APPLICATION_JSON_TYPE.equals(response.getMediaType())
-                        && entityType == String.class) {
-                    // HACK alert, if the entry is a string, and it's mime was
-                    // application/json, jackson's provider won't deserialize it since
-                    // the default provider takes precedence. Need to explicitly remove
-                    // outer quotes.
-                    // TODO: figure out how to do this through providers
-                    return (T) ((String) entity).replaceAll("\"", "");
+                T entityAsJsonString = readResponseAsJsonString(entity, response, entityType);
+                if (entityAsJsonString != null) {
+                    return entityAsJsonString;
                 }
                 return entity;
             }
-        }
-        if (response.getStatus() == Status.NOT_MODIFIED.getStatusCode()) {
-            return null;
+
+            if (response.getStatus() == Status.NOT_MODIFIED.getStatusCode()) {
+                // close response when not modified
+                closeResponseSilently(response);
+                return null;
+            }
         }
         throw new IllegalStateException(
                 "Attempted to read entity from unsuccessful response, should have called throwIfNotSuccessful first");
@@ -295,6 +326,40 @@ public class ResponseHelper {
                 closeResponseSilently(response);
             }
         }
+    }
+
+    /**
+     * Attempt to read responses that are actually json encoded strings, but would otherwise fail to read correctly because
+     * of how the Jersey client is configured.
+     */
+    private static <T> T readResponseAsJsonString(
+            T entity, Response response, Class<T> entityType) {
+        // HACK alert, if the entry is a string, and it's mime was
+        // application/json, jackson's provider won't deserialize it since
+        // the default provider takes presidence. Need to explicitly deserialize the
+        // String as a JSON encoded string
+        // TODO: figure out how to do this through providers
+        String contentType = response.getHeaderString(HttpHeaders.CONTENT_TYPE);
+        if (contentType == null) {
+            return null;
+        }
+        if (!javax.ws.rs.core.MediaType.APPLICATION_JSON.equalsIgnoreCase(contentType)) {
+            return null;
+        }
+        if (!(entityType == String.class)) {
+            return null;
+        }
+
+        String stringEntity = (String) entity;
+        // double check it looks like a JSON encoded string
+        if (stringEntity.startsWith("\"") && stringEntity.endsWith("\"")) {
+            try {
+                return entityType.cast(STRING_READER.readValue(stringEntity));
+            } catch (IOException e) {
+                LOG.error("Unable to extract string response", e);
+            }
+        }
+        return null;
     }
 
     @Value
