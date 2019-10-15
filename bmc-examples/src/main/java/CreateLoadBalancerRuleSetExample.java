@@ -15,14 +15,11 @@ import com.oracle.bmc.loadbalancer.model.RemoveHttpRequestHeaderRule;
 import com.oracle.bmc.loadbalancer.model.RemoveHttpResponseHeaderRule;
 import com.oracle.bmc.loadbalancer.model.Rule;
 import com.oracle.bmc.loadbalancer.model.RuleSet;
-import com.oracle.bmc.loadbalancer.model.AddHttpRequestHeaderRule;
-import com.oracle.bmc.loadbalancer.model.AddHttpResponseHeaderRule;
 
 import com.oracle.bmc.loadbalancer.requests.CreateListenerRequest;
 import com.oracle.bmc.loadbalancer.requests.CreateRuleSetRequest;
 import com.oracle.bmc.loadbalancer.requests.GetWorkRequestRequest;
 import com.oracle.bmc.loadbalancer.requests.GetRuleSetRequest;
-import com.oracle.bmc.loadbalancer.requests.ListListenerRulesRequest;
 
 import com.oracle.bmc.loadbalancer.responses.CreateListenerResponse;
 import com.oracle.bmc.loadbalancer.responses.CreateRuleSetResponse;
@@ -88,7 +85,8 @@ public class CreateLoadBalancerRuleSetExample {
     }
 
     private static RuleSet createRuleSet(
-            LoadBalancerClient loadBalancerClient, String loadBalancerId, String ruleSetName) {
+            LoadBalancerClient loadBalancerClient, String loadBalancerId, String ruleSetName)
+            throws Exception {
         List<Rule> rules = new ArrayList<>();
         rules.add(
                 AddHttpRequestHeaderRule.builder()
@@ -136,7 +134,8 @@ public class CreateLoadBalancerRuleSetExample {
                 .forWorkRequest(
                         GetWorkRequestRequest.builder()
                                 .workRequestId(response.getOpcWorkRequestId())
-                                .build());
+                                .build())
+                .execute();
 
         return loadBalancerClient
                 .getRuleSet(
@@ -154,7 +153,8 @@ public class CreateLoadBalancerRuleSetExample {
             String listenerName,
             String backendSetName,
             String listenerProtocol,
-            RuleSet ruleSet) {
+            RuleSet ruleSet)
+            throws Exception {
         CreateListenerResponse response =
                 loadBalancerClient.createListener(
                         CreateListenerRequest.builder()
@@ -175,6 +175,7 @@ public class CreateLoadBalancerRuleSetExample {
                 .forWorkRequest(
                         GetWorkRequestRequest.builder()
                                 .workRequestId(response.getOpcWorkRequestId())
-                                .build());
+                                .build())
+                .execute();
     }
 }
