@@ -139,10 +139,10 @@ public class CachingRuleSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     String name;
     /**
-     * The action to take on matched caching rules.
-     * - **CACHE:** Allow to set caching rule, which would be cached.
+     * The action to take when the criteria of a caching rule are met.
+     * - **CACHE:** Caches requested content when the criteria of the rule are met.
      * <p>
-     * - **BYPASS_CACHE:** Allow to set caching rule, which would never be cached. e.g. all requests would be passed directly to origin for those file types.
+     * - **BYPASS_CACHE:** Allows requests to bypass the cache and be directed to the origin when the criteria of the rule is met.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Action {
@@ -188,30 +188,31 @@ public class CachingRuleSummary {
         }
     };
     /**
-     * The action to take on matched caching rules.
-     * - **CACHE:** Allow to set caching rule, which would be cached.
+     * The action to take when the criteria of a caching rule are met.
+     * - **CACHE:** Caches requested content when the criteria of the rule are met.
      * <p>
-     * - **BYPASS_CACHE:** Allow to set caching rule, which would never be cached. e.g. all requests would be passed directly to origin for those file types.
+     * - **BYPASS_CACHE:** Allows requests to bypass the cache and be directed to the origin when the criteria of the rule is met.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     Action action;
 
     /**
-     * The caching duration (applies only to `CACHE` action) specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. Max value - 99. Mixing of multiple units is not supported.
+     * The duration to cache content for the caching rule, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`.
+     * Example: `PT1H`
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cachingDuration")
     String cachingDuration;
 
     /**
-     * Enables or disables the client caching.
-     * Browsers use the Cache-Control header value for caching content locally, in the browser.
-     * This setting will control the addition of a Cache-Control header to responses. It overrides existing Cache-Control headers.
+     * Enables or disables client caching.
+     * Browsers use the `Cache-Control` header value for caching content locally in the browser. This setting overrides the addition of a `Cache-Control` header in responses.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isClientCachingEnabled")
     Boolean isClientCachingEnabled;
 
     /**
-     * The client caching duration (applies only to `CACHE` action) specified in ISO 8601 extended format, in case client caching enabled. It sets Cache-Control header max-age time, i.e. the local browser cache expire time. Supported units: seconds, minutes, hours, days, weeks, months. Max value - 99. Mixing of multiple units is not supported.
+     * The duration to cache content in the user's browser, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`.
+     * Example: `PT1H`
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientCachingDuration")
     String clientCachingDuration;

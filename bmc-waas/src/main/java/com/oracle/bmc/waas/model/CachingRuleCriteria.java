@@ -77,11 +77,7 @@ public class CachingRuleCriteria {
      * <p>
      * - **URL_PART_CONTAINS:** Matches if the concatenation of request URL path and query contains the contents of the `value` field.
      * <p>
-     * URL must start with /
-     * <p>
-     * URL can't contain restricted double slashes //
-     * <p>
-     * URL can't contain restricted ' & ? symbols
+     * URLs must start with a `/`. URLs can't contain restricted double slashes `//`. URLs can't contain the restricted `'` `&` `?` symbols. Resources to cache can only be specified by a URL, any query parameters are ignored.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Condition {
@@ -138,11 +134,7 @@ public class CachingRuleCriteria {
      * <p>
      * - **URL_PART_CONTAINS:** Matches if the concatenation of request URL path and query contains the contents of the `value` field.
      * <p>
-     * URL must start with /
-     * <p>
-     * URL can't contain restricted double slashes //
-     * <p>
-     * URL can't contain restricted ' & ? symbols
+     * URLs must start with a `/`. URLs can't contain restricted double slashes `//`. URLs can't contain the restricted `'` `&` `?` symbols. Resources to cache can only be specified by a URL, any query parameters are ignored.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("condition")
     Condition condition;

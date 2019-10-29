@@ -52,12 +52,25 @@ public class DynectMigrationDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("httpRedirectReplacements")
+        private java.util.Map<String, java.util.List<MigrationReplacement>>
+                httpRedirectReplacements;
+
+        public Builder httpRedirectReplacements(
+                java.util.Map<String, java.util.List<MigrationReplacement>>
+                        httpRedirectReplacements) {
+            this.httpRedirectReplacements = httpRedirectReplacements;
+            this.__explicitlySet__.add("httpRedirectReplacements");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DynectMigrationDetails build() {
             DynectMigrationDetails __instance__ =
-                    new DynectMigrationDetails(customerName, username, password);
+                    new DynectMigrationDetails(
+                            customerName, username, password, httpRedirectReplacements);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -67,7 +80,8 @@ public class DynectMigrationDetails {
             Builder copiedBuilder =
                     customerName(o.getCustomerName())
                             .username(o.getUsername())
-                            .password(o.getPassword());
+                            .password(o.getPassword())
+                            .httpRedirectReplacements(o.getHttpRedirectReplacements());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -101,6 +115,13 @@ public class DynectMigrationDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     String password;
+
+    /**
+     * A map of fully-qualified domain names (FQDNs) to an array of `MigrationReplacement` objects.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("httpRedirectReplacements")
+    java.util.Map<String, java.util.List<MigrationReplacement>> httpRedirectReplacements;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

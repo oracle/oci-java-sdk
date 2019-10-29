@@ -31,12 +31,12 @@ public class ListCustomProtectionRulesRequest extends com.oracle.bmc.requests.Bm
     private String page;
 
     /**
-     * The value by which Custom Protection rules are sorted in a paginated 'List' call. If unspecified, defaults to `timeCreated`.
+     * The value by which custom protection rules are sorted in a paginated 'List' call. If unspecified, defaults to `timeCreated`.
      */
     private SortBy sortBy;
 
     /**
-     * The value by which Custom Protection rules are sorted in a paginated 'List' call. If unspecified, defaults to `timeCreated`.
+     * The value by which custom protection rules are sorted in a paginated 'List' call. If unspecified, defaults to `timeCreated`.
      **/
     public enum SortBy {
         Id("id"),
@@ -116,12 +116,12 @@ public class ListCustomProtectionRulesRequest extends com.oracle.bmc.requests.Bm
     };
 
     /**
-     * Filter Custom Protection rules using a list of Custom Protection rules OCIDs.
+     * Filter custom protection rules using a list of custom protection rule OCIDs.
      */
     private java.util.List<String> id;
 
     /**
-     * Filter Custom Protection rules using a list of display names.
+     * Filter custom protection rules using a list of display names.
      */
     private java.util.List<String> displayName;
 
@@ -136,7 +136,7 @@ public class ListCustomProtectionRulesRequest extends com.oracle.bmc.requests.Bm
     private java.util.Date timeCreatedGreaterThanOrEqualTo;
 
     /**
-     * A filter that matches Custom Protection rules created before the specified date-time.
+     * A filter that matches custom protection rules created before the specified date-time.
      */
     private java.util.Date timeCreatedLessThan;
 

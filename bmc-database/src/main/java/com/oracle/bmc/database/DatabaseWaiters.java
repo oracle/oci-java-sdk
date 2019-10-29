@@ -1282,6 +1282,117 @@ public class DatabaseWaiters {
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
+                    GetAutonomousDatabaseWalletRequest, GetAutonomousDatabaseWalletResponse>
+            forAutonomousDatabaseWallet(
+                    GetAutonomousDatabaseWalletRequest request,
+                    com.oracle.bmc.database.model.AutonomousDatabaseWallet.LifecycleState...
+                            targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forAutonomousDatabaseWallet(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetAutonomousDatabaseWalletRequest, GetAutonomousDatabaseWalletResponse>
+            forAutonomousDatabaseWallet(
+                    GetAutonomousDatabaseWalletRequest request,
+                    com.oracle.bmc.database.model.AutonomousDatabaseWallet.LifecycleState
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forAutonomousDatabaseWallet(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    GetAutonomousDatabaseWalletRequest, GetAutonomousDatabaseWalletResponse>
+            forAutonomousDatabaseWallet(
+                    GetAutonomousDatabaseWalletRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.database.model.AutonomousDatabaseWallet.LifecycleState...
+                            targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forAutonomousDatabaseWallet(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for AutonomousDatabaseWallet.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetAutonomousDatabaseWalletRequest, GetAutonomousDatabaseWalletResponse>
+            forAutonomousDatabaseWallet(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetAutonomousDatabaseWalletRequest request,
+                    final com.oracle.bmc.database.model.AutonomousDatabaseWallet.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.database.model.AutonomousDatabaseWallet.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetAutonomousDatabaseWalletRequest,
+                                GetAutonomousDatabaseWalletResponse>() {
+                            @Override
+                            public GetAutonomousDatabaseWalletResponse apply(
+                                    GetAutonomousDatabaseWalletRequest request) {
+                                return client.getAutonomousDatabaseWallet(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<
+                                GetAutonomousDatabaseWalletResponse>() {
+                            @Override
+                            public boolean apply(GetAutonomousDatabaseWalletResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getAutonomousDatabaseWallet().getLifecycleState());
+                            }
+                        },
+                        false),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
                     GetAutonomousExadataInfrastructureRequest,
                     GetAutonomousExadataInfrastructureResponse>
             forAutonomousExadataInfrastructure(
@@ -3141,6 +3252,128 @@ public class DatabaseWaiters {
                     public UpdateAutonomousDatabaseResponse call() throws Exception {
                         final UpdateAutonomousDatabaseResponse response =
                                 client.updateAutonomousDatabase(request);
+
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    UpdateAutonomousDatabaseRegionalWalletRequest,
+                    UpdateAutonomousDatabaseRegionalWalletResponse>
+            forUpdateAutonomousDatabaseRegionalWallet(
+                    UpdateAutonomousDatabaseRegionalWalletRequest request) {
+        return forUpdateAutonomousDatabaseRegionalWallet(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    UpdateAutonomousDatabaseRegionalWalletRequest,
+                    UpdateAutonomousDatabaseRegionalWalletResponse>
+            forUpdateAutonomousDatabaseRegionalWallet(
+                    UpdateAutonomousDatabaseRegionalWalletRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<
+                        UpdateAutonomousDatabaseRegionalWalletResponse>() {
+                    @Override
+                    public UpdateAutonomousDatabaseRegionalWalletResponse call() throws Exception {
+                        final UpdateAutonomousDatabaseRegionalWalletResponse response =
+                                client.updateAutonomousDatabaseRegionalWallet(request);
+
+                        final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                getWorkRequestRequest =
+                                        com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                                .builder()
+                                                .workRequestId(response.getOpcWorkRequestId())
+                                                .build();
+                        workRequestClient
+                                .getWaiters()
+                                .forWorkRequest(
+                                        getWorkRequestRequest, terminationStrategy, delayStrategy)
+                                .execute();
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    UpdateAutonomousDatabaseWalletRequest, UpdateAutonomousDatabaseWalletResponse>
+            forUpdateAutonomousDatabaseWallet(UpdateAutonomousDatabaseWalletRequest request) {
+        return forUpdateAutonomousDatabaseWallet(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    UpdateAutonomousDatabaseWalletRequest, UpdateAutonomousDatabaseWalletResponse>
+            forUpdateAutonomousDatabaseWallet(
+                    UpdateAutonomousDatabaseWalletRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<UpdateAutonomousDatabaseWalletResponse>() {
+                    @Override
+                    public UpdateAutonomousDatabaseWalletResponse call() throws Exception {
+                        final UpdateAutonomousDatabaseWalletResponse response =
+                                client.updateAutonomousDatabaseWallet(request);
 
                         final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
                                 getWorkRequestRequest =

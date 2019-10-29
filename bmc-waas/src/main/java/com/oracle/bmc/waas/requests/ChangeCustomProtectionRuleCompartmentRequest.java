@@ -12,7 +12,7 @@ public class ChangeCustomProtectionRuleCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Custom Protection rule. This number is generated when the Custom Protection rule is added to the compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the custom protection rule. This number is generated when the custom protection rule is added to the compartment.
      */
     private String customProtectionRuleId;
 

@@ -60,4 +60,46 @@ public class ActionDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
+
+    /**
+     * The action to perform if the condition in the rule matches an event.
+     * <p>
+     * **ONS:** Send to an Oracle Notification Service topic.
+     * * **OSS:** Send to a stream from Oracle Streaming Service.
+     * * **FAAS:** Send to an Oracle Functions Service endpoint.
+     *
+     **/
+    public enum ActionType {
+        Ons("ONS"),
+        Oss("OSS"),
+        Faas("FAAS"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ActionType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ActionType v : ActionType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ActionType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ActionType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new RuntimeException("Invalid ActionType: " + key);
+        }
+    };
 }

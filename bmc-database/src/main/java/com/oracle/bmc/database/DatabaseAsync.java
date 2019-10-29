@@ -815,6 +815,42 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the Autonomous Database regional wallet details.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAutonomousDatabaseRegionalWalletResponse>
+            getAutonomousDatabaseRegionalWallet(
+                    GetAutonomousDatabaseRegionalWalletRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetAutonomousDatabaseRegionalWalletRequest,
+                                    GetAutonomousDatabaseRegionalWalletResponse>
+                            handler);
+
+    /**
+     * Gets the wallet details for the specified Autonomous Database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAutonomousDatabaseWalletResponse> getAutonomousDatabaseWallet(
+            GetAutonomousDatabaseWalletRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetAutonomousDatabaseWalletRequest, GetAutonomousDatabaseWalletResponse>
+                    handler);
+
+    /**
      * Gets information about the specified Autonomous Exadata Infrastructure.
      *
      * @param request The request object containing the details to send
@@ -1873,6 +1909,44 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateAutonomousDatabaseRequest, UpdateAutonomousDatabaseResponse>
                     handler);
+
+    /**
+     * Updates the Autonomous Database regional wallet.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateAutonomousDatabaseRegionalWalletResponse>
+            updateAutonomousDatabaseRegionalWallet(
+                    UpdateAutonomousDatabaseRegionalWalletRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateAutonomousDatabaseRegionalWalletRequest,
+                                    UpdateAutonomousDatabaseRegionalWalletResponse>
+                            handler);
+
+    /**
+     * Updates the wallet for the specified Autonomous Database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateAutonomousDatabaseWalletResponse>
+            updateAutonomousDatabaseWallet(
+                    UpdateAutonomousDatabaseWalletRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateAutonomousDatabaseWalletRequest,
+                                    UpdateAutonomousDatabaseWalletResponse>
+                            handler);
 
     /**
      * Updates the properties of an Autonomous Exadata Infrastructure, such as the CPU core count.

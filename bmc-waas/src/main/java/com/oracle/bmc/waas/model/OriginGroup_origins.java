@@ -68,13 +68,13 @@ public class OriginGroup_origins {
     }
 
     /**
-     * The reference string to the origin server.
+     * The IP address or CIDR notation of the origin server.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("origin")
     String origin;
 
     /**
-     * The weight of the origin used in load balancing. The higher the weight, the larger the proportion of client requests the server receives.
+     * The weight of the origin used in load balancing. Origins with higher weights will receive larger proportions of client requests.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("weight")
     Integer weight;

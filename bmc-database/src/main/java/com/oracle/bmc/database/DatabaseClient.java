@@ -1761,6 +1761,67 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public GetAutonomousDatabaseRegionalWalletResponse getAutonomousDatabaseRegionalWallet(
+            GetAutonomousDatabaseRegionalWalletRequest request) {
+        LOG.trace("Called getAutonomousDatabaseRegionalWallet");
+        final GetAutonomousDatabaseRegionalWalletRequest interceptedRequest =
+                GetAutonomousDatabaseRegionalWalletConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAutonomousDatabaseRegionalWalletConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetAutonomousDatabaseRegionalWalletResponse>
+                transformer = GetAutonomousDatabaseRegionalWalletConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetAutonomousDatabaseWalletResponse getAutonomousDatabaseWallet(
+            GetAutonomousDatabaseWalletRequest request) {
+        LOG.trace("Called getAutonomousDatabaseWallet");
+        final GetAutonomousDatabaseWalletRequest interceptedRequest =
+                GetAutonomousDatabaseWalletConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAutonomousDatabaseWalletConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetAutonomousDatabaseWalletResponse>
+                transformer = GetAutonomousDatabaseWalletConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetAutonomousExadataInfrastructureResponse getAutonomousExadataInfrastructure(
             GetAutonomousExadataInfrastructureRequest request) {
         LOG.trace("Called getAutonomousExadataInfrastructure");
@@ -3610,6 +3671,77 @@ public class DatabaseClient implements Database {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateAutonomousDatabaseDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateAutonomousDatabaseRegionalWalletResponse updateAutonomousDatabaseRegionalWallet(
+            UpdateAutonomousDatabaseRegionalWalletRequest request) {
+        LOG.trace("Called updateAutonomousDatabaseRegionalWallet");
+        final UpdateAutonomousDatabaseRegionalWalletRequest interceptedRequest =
+                UpdateAutonomousDatabaseRegionalWalletConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateAutonomousDatabaseRegionalWalletConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateAutonomousDatabaseRegionalWalletResponse>
+                transformer = UpdateAutonomousDatabaseRegionalWalletConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateAutonomousDatabaseWalletDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateAutonomousDatabaseWalletResponse updateAutonomousDatabaseWallet(
+            UpdateAutonomousDatabaseWalletRequest request) {
+        LOG.trace("Called updateAutonomousDatabaseWallet");
+        final UpdateAutonomousDatabaseWalletRequest interceptedRequest =
+                UpdateAutonomousDatabaseWalletConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateAutonomousDatabaseWalletConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateAutonomousDatabaseWalletResponse>
+                transformer = UpdateAutonomousDatabaseWalletConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateAutonomousDatabaseWalletDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

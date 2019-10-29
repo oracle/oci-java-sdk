@@ -4,7 +4,7 @@
 package com.oracle.bmc.waas.model;
 
 /**
- * The OCID and action of a Custom Protection rule.
+ * The OCID and action of a custom protection rule.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -68,12 +68,13 @@ public class CustomProtectionRuleSetting {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Custom Protecion rule.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the custom protection rule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
     /**
-     * The action to take when the Custom Protection rule is triggered.
+     * The action to take when the custom protection rule is triggered.
+     * `DETECT` - Logs the request when the criteria of the custom protection rule are met. `BLOCK` - Blocks the request when the criteria of the custom protection rule are met.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Action {
@@ -119,7 +120,8 @@ public class CustomProtectionRuleSetting {
         }
     };
     /**
-     * The action to take when the Custom Protection rule is triggered.
+     * The action to take when the custom protection rule is triggered.
+     * `DETECT` - Logs the request when the criteria of the custom protection rule are met. `BLOCK` - Blocks the request when the criteria of the custom protection rule are met.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     Action action;

@@ -260,7 +260,7 @@ public class WaasPolicy {
     java.util.Map<String, Origin> origins;
 
     /**
-     * The map of origin groups and their keys used to associate origins to the wafConfig.
+     * The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("originGroups")
     java.util.Map<String, OriginGroup> originGroups;

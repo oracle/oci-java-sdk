@@ -22,6 +22,8 @@ public class AnnouncementClient implements Announcement {
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
+    private final AnnouncementPaginators paginators;
+
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
     private final com.oracle.bmc.http.internal.RestClient client;
 
@@ -204,6 +206,8 @@ public class AnnouncementClient implements Announcement {
         this.client =
                 restClientFactory.create(
                         defaultRequestSigner, requestSigners, clientConfigurationToUse);
+
+        this.paginators = new AnnouncementPaginators(this);
 
         if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
             com.oracle.bmc.auth.RegionProvider provider =
@@ -418,5 +422,10 @@ public class AnnouncementClient implements Announcement {
                                 return transformer.apply(response);
                             });
                 });
+    }
+
+    @Override
+    public AnnouncementPaginators getPaginators() {
+        return paginators;
     }
 }

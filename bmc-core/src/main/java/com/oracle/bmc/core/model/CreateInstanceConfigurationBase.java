@@ -75,4 +75,51 @@ public class CreateInstanceConfigurationBase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
+
+    /**
+     * The source of the instance configuration. An instance configuration defines the
+     * settings to use when creating Compute instances, including details
+     * such as the base image, shape, and metadata. You can also specify the associated resources for the
+     * instance, such as block volume attachments and network configuration.
+     * <p>
+     * The following values are supported:
+     * <p>
+     * `NONE`: Creates an instance configuration using the list of settings that you specify.
+     * <p>
+     * `INSTANCE`: Creates an instance configuration using an existing instance as a template. The
+     * instance configuration uses the same settings as the instance.
+     *
+     **/
+    public enum Source {
+        None("NONE"),
+        Instance("INSTANCE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Source> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Source v : Source.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Source(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Source create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new RuntimeException("Invalid Source: " + key);
+        }
+    };
 }

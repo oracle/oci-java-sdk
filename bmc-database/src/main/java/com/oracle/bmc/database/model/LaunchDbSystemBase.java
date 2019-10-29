@@ -243,4 +243,42 @@ public class LaunchDbSystemBase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * The source of the database:
+     * NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a backup. The default is NONE.
+     *
+     **/
+    public enum Source {
+        None("NONE"),
+        DbBackup("DB_BACKUP"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Source> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Source v : Source.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Source(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Source create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new RuntimeException("Invalid Source: " + key);
+        }
+    };
 }

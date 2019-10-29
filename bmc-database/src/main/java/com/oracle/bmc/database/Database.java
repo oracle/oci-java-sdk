@@ -481,6 +481,26 @@ public interface Database extends AutoCloseable {
             GetAutonomousDatabaseBackupRequest request);
 
     /**
+     * Gets the Autonomous Database regional wallet details.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetAutonomousDatabaseRegionalWalletResponse getAutonomousDatabaseRegionalWallet(
+            GetAutonomousDatabaseRegionalWalletRequest request);
+
+    /**
+     * Gets the wallet details for the specified Autonomous Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetAutonomousDatabaseWalletResponse getAutonomousDatabaseWallet(
+            GetAutonomousDatabaseWalletRequest request);
+
+    /**
      * Gets information about the specified Autonomous Exadata Infrastructure.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1058,6 +1078,26 @@ public interface Database extends AutoCloseable {
      */
     UpdateAutonomousDatabaseResponse updateAutonomousDatabase(
             UpdateAutonomousDatabaseRequest request);
+
+    /**
+     * Updates the Autonomous Database regional wallet.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateAutonomousDatabaseRegionalWalletResponse updateAutonomousDatabaseRegionalWallet(
+            UpdateAutonomousDatabaseRegionalWalletRequest request);
+
+    /**
+     * Updates the wallet for the specified Autonomous Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateAutonomousDatabaseWalletResponse updateAutonomousDatabaseWallet(
+            UpdateAutonomousDatabaseWalletRequest request);
 
     /**
      * Updates the properties of an Autonomous Exadata Infrastructure, such as the CPU core count.
