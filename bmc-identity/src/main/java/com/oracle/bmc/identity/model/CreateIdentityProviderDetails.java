@@ -125,4 +125,43 @@ public class CreateIdentityProviderDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * The protocol used for federation.
+     * <p>
+     * Example: `SAML2`
+     *
+     **/
+    public enum Protocol {
+        Saml2("SAML2"),
+        Adfs("ADFS"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Protocol> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Protocol v : Protocol.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Protocol(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Protocol create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new RuntimeException("Invalid Protocol: " + key);
+        }
+    };
 }

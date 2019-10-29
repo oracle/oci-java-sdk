@@ -212,4 +212,41 @@ public class CreateAutonomousDatabaseBase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * The source of the database: Use NONE for creating a new Autonomous Database. Use DATABASE for creating a new Autonomous Database by cloning an existing Autonomous Database.
+     *
+     **/
+    public enum Source {
+        None("NONE"),
+        Database("DATABASE"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Source> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Source v : Source.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Source(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Source create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new RuntimeException("Invalid Source: " + key);
+        }
+    };
 }

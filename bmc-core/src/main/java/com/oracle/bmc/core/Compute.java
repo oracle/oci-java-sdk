@@ -38,6 +38,15 @@ public interface Compute extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
+     * Adds a shape to the compatible shapes list for the image.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    AddImageShapeCompatibilityEntryResponse addImageShapeCompatibilityEntry(
+            AddImageShapeCompatibilityEntryRequest request);
+
+    /**
      * Attaches the specified boot volume to the specified instance.
      *
      * @param request The request object containing the details to send
@@ -645,6 +654,15 @@ public interface Compute extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListVolumeAttachmentsResponse listVolumeAttachments(ListVolumeAttachmentsRequest request);
+
+    /**
+     * Removes a shape from the compatible shapes list for the image.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    RemoveImageShapeCompatibilityEntryResponse removeImageShapeCompatibilityEntry(
+            RemoveImageShapeCompatibilityEntryRequest request);
 
     /**
      * Terminates the specified instance. Any attached VNICs and volumes are automatically detached

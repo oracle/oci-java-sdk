@@ -55,7 +55,10 @@ public interface Waas extends AutoCloseable {
     CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request);
 
     /**
-     * Moves address list into a different compartment. When provided, If-Match is checked against ETag values of the address list.
+     * Moves address list into a different compartment. When provided, If-Match
+     * is checked against ETag values of the address list. For information about moving
+     * resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -65,6 +68,8 @@ public interface Waas extends AutoCloseable {
 
     /**
      * Moves certificate into a different compartment. When provided, If-Match is checked against ETag values of the certificate.
+     * For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -73,7 +78,7 @@ public interface Waas extends AutoCloseable {
             ChangeCertificateCompartmentRequest request);
 
     /**
-     * Moves Custom Protection rule into a different compartment. When provided, If-Match is checked against ETag values of the Custom Protection rule.
+     * Moves a custom protection rule into a different compartment within the same tenancy. When provided, If-Match is checked against ETag values of the custom protection rule. For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -83,6 +88,8 @@ public interface Waas extends AutoCloseable {
 
     /**
      * Moves WAAS policy into a different compartment. When provided, If-Match is checked against ETag values of the WAAS policy.
+     * For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -91,8 +98,7 @@ public interface Waas extends AutoCloseable {
             ChangeWaasPolicyCompartmentRequest request);
 
     /**
-     * Creates an address list in set compartment and allows it to be used in a WAAS policy.
-     * For more information, see [WAF Settings](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/wafsettings.htm).
+     * Creates an address list in a set compartment and allows it to be used in a WAAS policy and referenced by access rules. Addresses can be IP addresses and CIDR notations.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -110,7 +116,9 @@ public interface Waas extends AutoCloseable {
     CreateCertificateResponse createCertificate(CreateCertificateRequest request);
 
     /**
-     * Creates a new Custom Protection rule in the specified compartment.
+     * Creates a new custom protection rule in the specified compartment.
+     * <p>
+     * Custom protection rules allow you to create rules in addition to the rulesets provided by the Web Application Firewall service, including rules from [ModSecurity](https://modsecurity.org/). The syntax for custom rules is based on the ModSecurity syntax. For more information about custom protection rules, see [Custom Protection Rules](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/customprotectionrules.htm).
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -188,7 +196,7 @@ public interface Waas extends AutoCloseable {
     GetCertificateResponse getCertificate(GetCertificateRequest request);
 
     /**
-     * Gets the details of a Custom Protection rule.
+     * Gets the details of a custom protection rule.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -297,7 +305,7 @@ public interface Waas extends AutoCloseable {
 
     /**
      * Gets the currently configured caching rules for the Web Application Firewall configuration of a specified WAAS policy.
-     * The order of the caching rules is important. The rules will be checked in the order they are specified and the first matching rule will be used.
+     * The rules are processed in the order they are specified in and the first matching rule will be used when processing a request.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -326,7 +334,7 @@ public interface Waas extends AutoCloseable {
     ListCertificatesResponse listCertificates(ListCertificatesRequest request);
 
     /**
-     * Gets a list of Custom Protection rules.
+     * Gets a list of custom protection rules for the specified Web Application Firewall.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -458,7 +466,8 @@ public interface Waas extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
-     * Accepts a list of resources that will get it's cache purged. If resources property is not passed, then the entire cache for Web Application will be purged.
+     * Performs a purge of the cache for each specified resource. If no resources are passed, the cache for the entire Web Application Firewall will be purged.
+     * For more information, see [Caching Rules](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/cachingrules.htm#purge).
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -491,9 +500,12 @@ public interface Waas extends AutoCloseable {
 
     /**
      * Updates the configuration for each specified caching rule.
-     * This operation can update or delete caching rules depending on the structure of the request body.
-     * Caching rules can be updated by changing the properties of the caching rule object with the rule's key specified in the key field.
-     * Any existing caching rules that are not specified with a key in the list of access rules will be deleted upon update.
+     * <p>
+     * Caching rules WAF policies allow you to selectively cache content on Oracle Cloud Infrastructure's edge servers, such as webpages or certain file types. For more information about caching rules, see [Caching Rules](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/cachingrules.htm).
+     * <p>
+     * This operation can create, delete, update, and/or reorder caching rules depending on the structure of the request body. Caching rules can be updated by changing the properties of the caching rule object with the rule's key specified in the key field. Any existing caching rules that are not specified with a key in the list of access rules will be deleted upon update.
+     * <p>
+     * The order the caching rules are specified in is important. The rules are processed in the order they are specified and the first matching rule will be used when processing a request. Use `ListCachingRules` to view a list of all available caching rules in a compartment.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -523,7 +535,7 @@ public interface Waas extends AutoCloseable {
     UpdateCertificateResponse updateCertificate(UpdateCertificateRequest request);
 
     /**
-     * Updates the details of a Custom Protection rule. Only the fields specified in the request body will be updated; all other properties will remain unchanged.
+     * Updates the configuration of a custom protection rule. Only the fields specified in the request body will be updated; all other properties will remain unchanged.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.

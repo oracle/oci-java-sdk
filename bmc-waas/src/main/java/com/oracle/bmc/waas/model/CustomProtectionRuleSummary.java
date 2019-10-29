@@ -4,7 +4,7 @@
 package com.oracle.bmc.waas.model;
 
 /**
- * Summary information about a Custom Protection rule.
+ * An overview of a custom protection rule.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -140,31 +140,31 @@ public class CustomProtectionRuleSummary {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Custom Protection rule.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the custom protection rule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Custom Protection rule's compartment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the custom protection rule's compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The user-friendly name of the Custom Protection rule.
+     * The user-friendly name of the custom protection rule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
 
     /**
-     * The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity's open source WAF rules, see [Mod Security's documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
+     * The auto-generated ID for the custom protection rule. These IDs are referenced in logs.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modSecurityRuleIds")
     java.util.List<String> modSecurityRuleIds;
 
     /**
-     * The current lifecycle state of the Custom Protection rule.
+     * The current lifecycle state of the custom protection rule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleStates lifecycleState;

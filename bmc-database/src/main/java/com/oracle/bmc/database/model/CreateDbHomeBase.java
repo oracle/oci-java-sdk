@@ -55,4 +55,43 @@ public class CreateDbHomeBase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup.
+     *
+     **/
+    public enum Source {
+        None("NONE"),
+        DbBackup("DB_BACKUP"),
+        VmClusterNew("VM_CLUSTER_NEW"),
+        VmClusterBackup("VM_CLUSTER_BACKUP"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Source> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Source v : Source.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Source(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Source create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new RuntimeException("Invalid Source: " + key);
+        }
+    };
 }

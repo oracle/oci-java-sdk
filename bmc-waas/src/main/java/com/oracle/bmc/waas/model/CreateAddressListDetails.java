@@ -4,7 +4,7 @@
 package com.oracle.bmc.waas.model;
 
 /**
- * The data used to create a new address list.
+ * The data used to create a new address list of IP addresses and CIDR notations.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in

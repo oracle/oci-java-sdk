@@ -380,6 +380,36 @@ public class ComputeClient implements Compute {
     }
 
     @Override
+    public AddImageShapeCompatibilityEntryResponse addImageShapeCompatibilityEntry(
+            AddImageShapeCompatibilityEntryRequest request) {
+        LOG.trace("Called addImageShapeCompatibilityEntry");
+        final AddImageShapeCompatibilityEntryRequest interceptedRequest =
+                AddImageShapeCompatibilityEntryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddImageShapeCompatibilityEntryConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, AddImageShapeCompatibilityEntryResponse>
+                transformer = AddImageShapeCompatibilityEntryConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.put(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public AttachBootVolumeResponse attachBootVolume(AttachBootVolumeRequest request) {
         LOG.trace("Called attachBootVolume");
         final AttachBootVolumeRequest interceptedRequest =
@@ -1907,6 +1937,37 @@ public class ComputeClient implements Compute {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RemoveImageShapeCompatibilityEntryResponse removeImageShapeCompatibilityEntry(
+            RemoveImageShapeCompatibilityEntryRequest request) {
+        LOG.trace("Called removeImageShapeCompatibilityEntry");
+        final RemoveImageShapeCompatibilityEntryRequest interceptedRequest =
+                RemoveImageShapeCompatibilityEntryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveImageShapeCompatibilityEntryConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RemoveImageShapeCompatibilityEntryResponse>
+                transformer = RemoveImageShapeCompatibilityEntryConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

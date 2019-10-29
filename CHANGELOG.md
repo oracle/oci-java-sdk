@@ -2,6 +2,13 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
+## 1.9.2 - 2019-10-29
+### Added
+- Support for wallet rotation operations on Autonomous Databases in the Database service
+- Support for adding and removing image shape compatibility entries in the Compute service
+- Support for managing redirects in the Web Application Acceleration and Security service
+- Support for migrating zones from the Dyn HTTP Redirect Service to Oracle Cloud Infrastructure in the DNS service
+
 ## 1.9.1 - 2019-10-15
 ### Added
 - Support for the Digital Assistant service

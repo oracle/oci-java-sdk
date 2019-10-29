@@ -11,7 +11,7 @@ import com.oracle.bmc.waas.model.*;
 public class CreateCustomProtectionRuleRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The details of the Custom Protection rule.
+     * The details of the custom protection rule.
      */
     private CreateCustomProtectionRuleDetails createCustomProtectionRuleDetails;
 

@@ -134,7 +134,9 @@ public class HeadObjectConverter {
                                         opcMeta.put(header.getKey(), header.getValue().get(0));
                                     }
                                 }
-                                builder.opcMeta(opcMeta);
+                                if (opcMeta.size() > 0) {
+                                    builder.opcMeta(opcMeta);
+                                }
 
                                 com.google.common.base.Optional<java.util.List<String>>
                                         contentLengthHeader =

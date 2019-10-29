@@ -76,4 +76,41 @@ public class CreateZoneBaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Discriminator that is used to determine whether to create a new zone (NONE) or to migrate an existing DynECT zone (DYNECT).
+     *
+     **/
+    public enum MigrationSource {
+        None("NONE"),
+        Dynect("DYNECT"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, MigrationSource> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (MigrationSource v : MigrationSource.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        MigrationSource(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static MigrationSource create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new RuntimeException("Invalid MigrationSource: " + key);
+        }
+    };
 }

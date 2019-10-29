@@ -58,4 +58,57 @@ package com.oracle.bmc.loadbalancer.model;
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class Rule {}
+public class Rule {
+
+    /**
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum Action {
+        AddHttpRequestHeader("ADD_HTTP_REQUEST_HEADER"),
+        ExtendHttpRequestHeaderValue("EXTEND_HTTP_REQUEST_HEADER_VALUE"),
+        RemoveHttpRequestHeader("REMOVE_HTTP_REQUEST_HEADER"),
+        AddHttpResponseHeader("ADD_HTTP_RESPONSE_HEADER"),
+        ExtendHttpResponseHeaderValue("EXTEND_HTTP_RESPONSE_HEADER_VALUE"),
+        RemoveHttpResponseHeader("REMOVE_HTTP_RESPONSE_HEADER"),
+        Allow("ALLOW"),
+        ControlAccessUsingHttpMethods("CONTROL_ACCESS_USING_HTTP_METHODS"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, Action> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Action v : Action.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        Action(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Action create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Action', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+}

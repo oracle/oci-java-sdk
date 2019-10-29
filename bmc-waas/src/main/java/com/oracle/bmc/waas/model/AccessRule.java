@@ -193,7 +193,7 @@ public class AccessRule {
      * <p>
      * - **REDIRECT:** Redirects the request to the specified URL.
      * <p>
-     * Regardless of action, no further rules are processed once the rule is matched.
+     * Regardless of action, no further rules are processed once a rule is matched.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Action {
@@ -254,7 +254,7 @@ public class AccessRule {
      * <p>
      * - **REDIRECT:** Redirects the request to the specified URL.
      * <p>
-     * Regardless of action, no further rules are processed once the rule is matched.
+     * Regardless of action, no further rules are processed once a rule is matched.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     Action action;
@@ -311,7 +311,7 @@ public class AccessRule {
     BlockAction blockAction;
 
     /**
-     * The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the access criteria are met. If unspecified, defaults to `403`.
+     * The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the access criteria are met. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockResponseCode")
     Integer blockResponseCode;
