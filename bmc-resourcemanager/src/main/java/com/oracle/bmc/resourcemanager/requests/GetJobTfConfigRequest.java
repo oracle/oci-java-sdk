@@ -11,7 +11,7 @@ import com.oracle.bmc.resourcemanager.model.*;
 public class GetJobTfConfigRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The job OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
      */
     private String jobId;
 

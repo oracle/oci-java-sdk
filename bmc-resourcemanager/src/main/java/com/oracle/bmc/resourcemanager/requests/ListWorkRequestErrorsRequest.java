@@ -11,12 +11,12 @@ import com.oracle.bmc.resourcemanager.model.*;
 public class ListWorkRequestErrorsRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The OCID of the work request.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
      */
     private String workRequestId;
 
     /**
-     * The compartment OCID on which to filter.
+     * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to filter.
      */
     private String compartmentId;
 

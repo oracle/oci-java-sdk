@@ -42,6 +42,15 @@ public class UpdateIPSecConnectionTunnelDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("ikeVersion")
+        private IkeVersion ikeVersion;
+
+        public Builder ikeVersion(IkeVersion ikeVersion) {
+            this.ikeVersion = ikeVersion;
+            this.__explicitlySet__.add("ikeVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("bgpSessionConfig")
         private UpdateIPSecTunnelBgpSessionDetails bgpSessionConfig;
 
@@ -56,7 +65,8 @@ public class UpdateIPSecConnectionTunnelDetails {
 
         public UpdateIPSecConnectionTunnelDetails build() {
             UpdateIPSecConnectionTunnelDetails __instance__ =
-                    new UpdateIPSecConnectionTunnelDetails(displayName, routing, bgpSessionConfig);
+                    new UpdateIPSecConnectionTunnelDetails(
+                            displayName, routing, ikeVersion, bgpSessionConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -66,6 +76,7 @@ public class UpdateIPSecConnectionTunnelDetails {
             Builder copiedBuilder =
                     displayName(o.getDisplayName())
                             .routing(o.getRouting())
+                            .ikeVersion(o.getIkeVersion())
                             .bgpSessionConfig(o.getBgpSessionConfig());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -129,6 +140,48 @@ public class UpdateIPSecConnectionTunnelDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("routing")
     Routing routing;
+    /**
+     * Internet Key Exchange protocol version.
+     *
+     **/
+    public enum IkeVersion {
+        V1("V1"),
+        V2("V2"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, IkeVersion> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (IkeVersion v : IkeVersion.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        IkeVersion(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static IkeVersion create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new RuntimeException("Invalid IkeVersion: " + key);
+        }
+    };
+    /**
+     * Internet Key Exchange protocol version.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ikeVersion")
+    IkeVersion ikeVersion;
 
     /**
      * Information for establishing a BGP session for the IPSec tunnel.

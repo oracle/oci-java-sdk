@@ -235,19 +235,19 @@ public class Job {
     }
 
     /**
-     * The job's OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The OCID of the stack that is associated with the job.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack that is associated with the job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stackId")
     String stackId;
 
     /**
-     * The OCID of the compartment in which the job's associated stack resides.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the job's associated stack resides.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -311,21 +311,15 @@ public class Job {
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
     Operation operation;
 
-    /**
-     * Job details that are specific to the operation type.
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("jobOperationDetails")
     JobOperationDetails jobOperationDetails;
 
-    /**
-     * Deprecated. Use the property `executionPlanStrategy` in `jobOperationDetails` instead.
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("applyJobPlanResolution")
     ApplyJobPlanResolution applyJobPlanResolution;
 
     /**
      * Deprecated. Use the property `executionPlanJobId` in `jobOperationDetails` instead.
-     * The plan job OCID that was used (if this was an apply job and was not auto-approved).
+     * The plan job [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that was used (if this was an apply job and was not auto-approved).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resolvedPlanJobId")

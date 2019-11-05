@@ -11,7 +11,7 @@ import com.oracle.bmc.resourcemanager.model.*;
 public class GetStackTfConfigRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The stack OCID.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack.
      */
     private String stackId;
 

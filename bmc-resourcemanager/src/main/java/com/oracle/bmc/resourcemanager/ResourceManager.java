@@ -66,6 +66,7 @@ public interface ResourceManager extends AutoCloseable {
     /**
      * Creates a stack in the specified comparment.
      * Specify the compartment using the compartment ID.
+     * For more information, see [Create a Stack](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/usingconsole.htm#CreateStack).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -145,6 +146,14 @@ public interface ResourceManager extends AutoCloseable {
     GetStackTfConfigResponse getStackTfConfig(GetStackTfConfigRequest request);
 
     /**
+     * Returns the Terraform state for the specified stack.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetStackTfStateResponse getStackTfState(GetStackTfStateRequest request);
+
+    /**
      * Return the given work request.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -155,9 +164,9 @@ public interface ResourceManager extends AutoCloseable {
     /**
      * Returns a list of jobs in a stack or compartment, ordered by time created.
      * <p>
-     * - To list all jobs in a stack, provide the stack OCID.
-     * - To list all jobs in a compartment, provide the compartment OCID.
-     * - To return a specific job, provide the job OCID.
+     * - To list all jobs in a stack, provide the stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * - To list all jobs in a compartment, provide the compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * - To return a specific job, provide the job [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -177,7 +186,8 @@ public interface ResourceManager extends AutoCloseable {
     ListStacksResponse listStacks(ListStacksRequest request);
 
     /**
-     * Returns a list of supported Terraform versions in a compartment.
+     * Returns a list of supported Terraform versions for use with stacks.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -223,6 +233,8 @@ public interface ResourceManager extends AutoCloseable {
      * Updates the specified stack object.
      * Use `UpdateStack` when you update your Terraform configuration
      * and want your changes to be reflected in the execution plan.
+     * For more information, see [Update a Stack](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/usingconsole.htm#UpdateStack) and
+     * [Edit or Delete a Stack](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/usingconsole.htm#EditStack).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

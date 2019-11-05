@@ -140,7 +140,7 @@ public class CreateStackDetails {
     }
 
     /**
-     * Unique identifier (OCID) of the compartment in which the stack resides.
+     * Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the compartment in which the stack resides.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -171,7 +171,8 @@ public class CreateStackDetails {
     java.util.Map<String, String> variables;
 
     /**
-     * The stack's Terraform version
+     * The version of Terraform to use with the stack. Example: `0.12.x`
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("terraformVersion")
     String terraformVersion;

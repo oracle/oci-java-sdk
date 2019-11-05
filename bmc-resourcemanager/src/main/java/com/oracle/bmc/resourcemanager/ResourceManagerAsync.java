@@ -86,6 +86,7 @@ public interface ResourceManagerAsync extends AutoCloseable {
     /**
      * Creates a stack in the specified comparment.
      * Specify the compartment using the compartment ID.
+     * For more information, see [Create a Stack](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/usingconsole.htm#CreateStack).
      *
      *
      * @param request The request object containing the details to send
@@ -224,6 +225,21 @@ public interface ResourceManagerAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns the Terraform state for the specified stack.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetStackTfStateResponse> getStackTfState(
+            GetStackTfStateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetStackTfStateRequest, GetStackTfStateResponse>
+                    handler);
+
+    /**
      * Return the given work request.
      *
      * @param request The request object containing the details to send
@@ -241,9 +257,9 @@ public interface ResourceManagerAsync extends AutoCloseable {
     /**
      * Returns a list of jobs in a stack or compartment, ordered by time created.
      * <p>
-     * - To list all jobs in a stack, provide the stack OCID.
-     * - To list all jobs in a compartment, provide the compartment OCID.
-     * - To return a specific job, provide the job OCID.
+     * - To list all jobs in a stack, provide the stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * - To list all jobs in a compartment, provide the compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * - To return a specific job, provide the job [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -275,7 +291,8 @@ public interface ResourceManagerAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListStacksRequest, ListStacksResponse> handler);
 
     /**
-     * Returns a list of supported Terraform versions in a compartment.
+     * Returns a list of supported Terraform versions for use with stacks.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -358,6 +375,8 @@ public interface ResourceManagerAsync extends AutoCloseable {
      * Updates the specified stack object.
      * Use `UpdateStack` when you update your Terraform configuration
      * and want your changes to be reflected in the execution plan.
+     * For more information, see [Update a Stack](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/usingconsole.htm#UpdateStack) and
+     * [Edit or Delete a Stack](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/usingconsole.htm#EditStack).
      *
      *
      * @param request The request object containing the details to send

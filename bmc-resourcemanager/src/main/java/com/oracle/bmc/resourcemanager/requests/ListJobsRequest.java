@@ -18,18 +18,18 @@ public class ListJobsRequest extends com.oracle.bmc.requests.BmcRequest {
     private String opcRequestId;
 
     /**
-     * The compartment OCID on which to filter.
+     * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to filter.
      */
     private String compartmentId;
 
     /**
-     * The stack OCID on which to filter.
+     * The stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to filter.
      *
      */
     private String stackId;
 
     /**
-     * The OCID on which to query for jobs.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to query for jobs.
      *
      */
     private String id;

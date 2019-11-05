@@ -155,7 +155,8 @@ public class UpdateStackDetails {
     java.util.Map<String, String> variables;
 
     /**
-     * The Terraform version of the stack.
+     * The version of Terraform to use with the stack. Example: `0.12.x`
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("terraformVersion")
     String terraformVersion;

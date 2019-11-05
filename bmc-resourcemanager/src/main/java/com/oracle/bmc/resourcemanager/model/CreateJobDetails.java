@@ -128,7 +128,7 @@ public class CreateJobDetails {
     }
 
     /**
-     * OCID of the stack that is associated with the current job.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack that is associated with the current job.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stackId")
     String stackId;
@@ -145,15 +145,9 @@ public class CreateJobDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
     Job.Operation operation;
 
-    /**
-     * Job details that are specific to the operation type.
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("jobOperationDetails")
     CreateJobOperationDetails jobOperationDetails;
 
-    /**
-     * Deprecated. Use the property `executionPlanStrategy` in `jobOperationDetails` instead.
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("applyJobPlanResolution")
     ApplyJobPlanResolution applyJobPlanResolution;
 

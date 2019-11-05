@@ -96,7 +96,7 @@ public class CreateApplyJobOperationDetails extends CreateJobOperationDetails {
     ApplyJobOperationDetails.ExecutionPlanStrategy executionPlanStrategy;
 
     /**
-     * The OCID of a plan job, for use when specifying `FROM_PLAN_JOB_ID` as the `executionPlanStrategy`.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a plan job, for use when specifying `FROM_PLAN_JOB_ID` as the `executionPlanStrategy`.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionPlanJobId")

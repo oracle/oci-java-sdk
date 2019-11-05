@@ -173,13 +173,13 @@ public class Stack {
     }
 
     /**
-     * Unique identifier (OCID) for the stack.
+     * Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the stack.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * Unique identifier (OCID) for the compartment where the stack is located.
+     * Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the compartment where the stack is located.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -255,11 +255,6 @@ public class Stack {
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
 
-    /**
-     * Specifies the `configSourceType` for uploading the Terraform configuration.
-     * Presently, the .zip file type (`ZIP_UPLOAD`) is the only supported `configSourceType`.
-     *
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("configSource")
     ConfigSource configSource;
 
@@ -274,7 +269,8 @@ public class Stack {
     java.util.Map<String, String> variables;
 
     /**
-     * The Terraform version of the stack.
+     * The version of Terraform specified for the stack. Example: `0.12.x`
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("terraformVersion")
     String terraformVersion;

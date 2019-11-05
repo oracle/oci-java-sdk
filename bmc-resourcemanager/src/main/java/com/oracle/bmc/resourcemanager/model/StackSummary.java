@@ -183,7 +183,8 @@ public class StackSummary {
     Stack.LifecycleState lifecycleState;
 
     /**
-     * The Terraform version of the specified stack.
+     * The version of Terraform specified for the stack. Example: `0.12.x`
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("terraformVersion")
     String terraformVersion;

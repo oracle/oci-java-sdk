@@ -4,7 +4,8 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * Results of a Terraform version list. Contains TerraformVersionSummary items.
+ * The list of Terraform versions supported for use with stacks.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -59,7 +60,7 @@ public class TerraformVersionCollection {
     }
 
     /**
-     * Collection of Terraform versions
+     * Collection of supported Terraform versions.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     java.util.List<TerraformVersionSummary> items;
