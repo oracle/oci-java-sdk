@@ -159,7 +159,7 @@ public class WorkRequestResource {
     String entityType;
 
     /**
-     * An OCID or other unique identifier for the resource.
+     * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) or other unique identifier for the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     String identifier;

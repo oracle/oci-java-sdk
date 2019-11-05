@@ -18,7 +18,7 @@ public class ListTerraformVersionsRequest extends com.oracle.bmc.requests.BmcReq
     private String opcRequestId;
 
     /**
-     * The compartment OCID on which to filter.
+     * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to filter.
      */
     private String compartmentId;
 

@@ -11,12 +11,12 @@ import com.oracle.bmc.resourcemanager.model.*;
 public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The compartment OCID on which to filter.
+     * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to filter.
      */
     private String compartmentId;
 
     /**
-     * The OCID of the resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      */
     private String resourceId;
 

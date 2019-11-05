@@ -96,7 +96,7 @@ public class ApplyJobOperationDetailsSummary extends JobOperationDetailsSummary 
     ApplyJobOperationDetails.ExecutionPlanStrategy executionPlanStrategy;
 
     /**
-     * The OCID of the plan job that contains the execution plan used for this job,
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the plan job that contains the execution plan used for this job,
      * or `null` if no execution plan was used.
      *
      **/

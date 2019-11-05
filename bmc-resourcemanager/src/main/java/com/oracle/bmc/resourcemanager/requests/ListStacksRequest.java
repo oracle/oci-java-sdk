@@ -18,12 +18,12 @@ public class ListStacksRequest extends com.oracle.bmc.requests.BmcRequest {
     private String opcRequestId;
 
     /**
-     * The compartment OCID on which to filter.
+     * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to filter.
      */
     private String compartmentId;
 
     /**
-     * The OCID on which to query for a stack.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to query for a stack.
      *
      */
     private String id;
@@ -37,7 +37,6 @@ public class ListStacksRequest extends com.oracle.bmc.requests.BmcRequest {
      * - ACTIVE
      * - DELETING
      * - DELETED
-     *
      *
      */
     private Stack.LifecycleState lifecycleState;

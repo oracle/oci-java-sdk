@@ -4,7 +4,7 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * Location of the zip file that contains the Terraform configuration.
+ * Location of the Terraform configuration.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -45,7 +45,8 @@ public class ConfigSource {
     String workingDirectory;
 
     /**
-     * The configuration file type.
+     * Specifies the `configSourceType` for uploading the Terraform configuration.
+     * Presently, the .zip file type (`ZIP_UPLOAD`) is the only supported `configSourceType`.
      *
      **/
     @lombok.extern.slf4j.Slf4j
