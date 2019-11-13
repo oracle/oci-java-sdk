@@ -1407,6 +1407,38 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public DeregisterAutonomousDatabaseDataSafeResponse deregisterAutonomousDatabaseDataSafe(
+            DeregisterAutonomousDatabaseDataSafeRequest request) {
+        LOG.trace("Called deregisterAutonomousDatabaseDataSafe");
+        final DeregisterAutonomousDatabaseDataSafeRequest interceptedRequest =
+                DeregisterAutonomousDatabaseDataSafeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeregisterAutonomousDatabaseDataSafeConverter.fromRequest(
+                        client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeregisterAutonomousDatabaseDataSafeResponse>
+                transformer = DeregisterAutonomousDatabaseDataSafeConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DownloadExadataInfrastructureConfigFileResponse downloadExadataInfrastructureConfigFile(
             DownloadExadataInfrastructureConfigFileRequest request) {
         LOG.trace("Called downloadExadataInfrastructureConfigFile");
@@ -3150,6 +3182,37 @@ public class DatabaseClient implements Database {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RegisterAutonomousDatabaseDataSafeResponse registerAutonomousDatabaseDataSafe(
+            RegisterAutonomousDatabaseDataSafeRequest request) {
+        LOG.trace("Called registerAutonomousDatabaseDataSafe");
+        final RegisterAutonomousDatabaseDataSafeRequest interceptedRequest =
+                RegisterAutonomousDatabaseDataSafeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RegisterAutonomousDatabaseDataSafeConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, RegisterAutonomousDatabaseDataSafeResponse>
+                transformer = RegisterAutonomousDatabaseDataSafeConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

@@ -16,27 +16,6 @@ public interface Stream extends AutoCloseable {
     void setEndpoint(String endpoint);
 
     /**
-     * Sets the region to call (ex, Region.US_PHOENIX_1).
-     * <p>
-     * Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the endpoint.  If the service is not available in this Region, however, an IllegalArgumentException will be raised.
-     * @param region The region of the service.
-     */
-    void setRegion(com.oracle.bmc.Region region);
-
-    /**
-     * Sets the region to call (ex, 'us-phoenix-1').
-     * <p>
-     * Note, this will first try to map the region ID to a known Region and call
-     * {@link #setRegion(Region) setRegion}.
-     * <p>
-     * If no known Region could be determined, it will create an endpoint based on the
-     * default endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
-     * and then call {@link #setEndpoint(String) setEndpoint}.
-     * @param regionId The public region ID.
-     */
-    void setRegion(String regionId);
-
-    /**
      * Provides a mechanism to manually commit offsets, if not using commit-on-get consumer semantics.
      * This commits offsets assicated with the provided cursor, extends the timeout on each of the affected partitions, and returns an updated cursor.
      *

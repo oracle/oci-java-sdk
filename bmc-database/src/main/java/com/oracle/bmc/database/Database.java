@@ -370,6 +370,16 @@ public interface Database extends AutoCloseable {
     DeleteVmClusterNetworkResponse deleteVmClusterNetwork(DeleteVmClusterNetworkRequest request);
 
     /**
+     * Asynchronously deregisters Data Safe for this Autonomous Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeregisterAutonomousDatabaseDataSafeResponse deregisterAutonomousDatabaseDataSafe(
+            DeregisterAutonomousDatabaseDataSafeRequest request);
+
+    /**
      * Downloads the configuration file for the specified Exadata infrastructure.
      *
      * @param request The request object containing the details to send
@@ -923,6 +933,16 @@ public interface Database extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     ListVmClustersResponse listVmClusters(ListVmClustersRequest request);
+
+    /**
+     * Asynchronously registers Data Safe with this Autonomous Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    RegisterAutonomousDatabaseDataSafeResponse registerAutonomousDatabaseDataSafe(
+            RegisterAutonomousDatabaseDataSafeRequest request);
 
     /**
      * Reinstates the database identified by the `databaseId` parameter into the standby role in a Data Guard association.

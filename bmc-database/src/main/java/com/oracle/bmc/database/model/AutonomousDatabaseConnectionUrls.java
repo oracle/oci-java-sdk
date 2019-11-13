@@ -45,19 +45,33 @@ public class AutonomousDatabaseConnectionUrls {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("machineLearningUserManagementUrl")
+        private String machineLearningUserManagementUrl;
+
+        public Builder machineLearningUserManagementUrl(String machineLearningUserManagementUrl) {
+            this.machineLearningUserManagementUrl = machineLearningUserManagementUrl;
+            this.__explicitlySet__.add("machineLearningUserManagementUrl");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public AutonomousDatabaseConnectionUrls build() {
             AutonomousDatabaseConnectionUrls __instance__ =
-                    new AutonomousDatabaseConnectionUrls(sqlDevWebUrl, apexUrl);
+                    new AutonomousDatabaseConnectionUrls(
+                            sqlDevWebUrl, apexUrl, machineLearningUserManagementUrl);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(AutonomousDatabaseConnectionUrls o) {
-            Builder copiedBuilder = sqlDevWebUrl(o.getSqlDevWebUrl()).apexUrl(o.getApexUrl());
+            Builder copiedBuilder =
+                    sqlDevWebUrl(o.getSqlDevWebUrl())
+                            .apexUrl(o.getApexUrl())
+                            .machineLearningUserManagementUrl(
+                                    o.getMachineLearningUserManagementUrl());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -82,6 +96,12 @@ public class AutonomousDatabaseConnectionUrls {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("apexUrl")
     String apexUrl;
+
+    /**
+     * Oracle Machine Learning User Management URL.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("machineLearningUserManagementUrl")
+    String machineLearningUserManagementUrl;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

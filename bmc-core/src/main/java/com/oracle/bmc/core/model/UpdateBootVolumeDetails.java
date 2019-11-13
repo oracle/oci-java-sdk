@@ -61,12 +61,22 @@ public class UpdateBootVolumeDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")
+        private Long vpusPerGB;
+
+        public Builder vpusPerGB(Long vpusPerGB) {
+            this.vpusPerGB = vpusPerGB;
+            this.__explicitlySet__.add("vpusPerGB");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateBootVolumeDetails build() {
             UpdateBootVolumeDetails __instance__ =
-                    new UpdateBootVolumeDetails(definedTags, displayName, freeformTags, sizeInGBs);
+                    new UpdateBootVolumeDetails(
+                            definedTags, displayName, freeformTags, sizeInGBs, vpusPerGB);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -77,7 +87,8 @@ public class UpdateBootVolumeDetails {
                     definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
-                            .sizeInGBs(o.getSizeInGBs());
+                            .sizeInGBs(o.getSizeInGBs())
+                            .vpusPerGB(o.getVpusPerGB());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -124,6 +135,12 @@ public class UpdateBootVolumeDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
     Long sizeInGBs;
+
+    /**
+     * The number of Volume Performance Units that will be applied to this boot volume per GB.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")
+    Long vpusPerGB;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

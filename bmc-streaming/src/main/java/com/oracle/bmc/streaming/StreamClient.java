@@ -206,20 +206,6 @@ public class StreamClient implements Stream {
                 restClientFactory.create(
                         defaultRequestSigner, requestSigners, clientConfigurationToUse);
 
-        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
-            com.oracle.bmc.auth.RegionProvider provider =
-                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
-
-            if (provider.getRegion() != null) {
-                this.setRegion(provider.getRegion());
-                if (endpoint != null) {
-                    LOG.info(
-                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
-                            provider.getRegion(),
-                            endpoint);
-                }
-            }
-        }
         if (endpoint != null) {
             setEndpoint(endpoint);
         }
@@ -229,71 +215,14 @@ public class StreamClient implements Stream {
      * Create a builder for this client.
      * @return builder
      */
-    public static Builder builder() {
-        return new Builder(SERVICE);
-    }
-
-    /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
-     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
-     */
-    public static class Builder
-            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, StreamClient> {
-        private Builder(com.oracle.bmc.Service service) {
-            super(service);
-            requestSignerFactory =
-                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
-        }
-
-        /**
-         * Build the client.
-         * @param authenticationDetailsProvider authentication details provider
-         * @return the client
-         */
-        public StreamClient build(
-                @lombok.NonNull
-                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                        authenticationDetailsProvider) {
-            return new StreamClient(
-                    authenticationDetailsProvider,
-                    configuration,
-                    clientConfigurator,
-                    requestSignerFactory,
-                    signingStrategyRequestSignerFactories,
-                    additionalClientConfigurators,
-                    endpoint);
-        }
+    public static com.oracle.bmc.streaming.StreamClientBuilder builder() {
+        return new com.oracle.bmc.streaming.StreamClientBuilder(SERVICE);
     }
 
     @Override
     public void setEndpoint(String endpoint) {
         LOG.info("Setting endpoint to {}", endpoint);
         client.setEndpoint(endpoint);
-    }
-
-    @Override
-    public void setRegion(com.oracle.bmc.Region region) {
-        com.google.common.base.Optional<String> endpoint = region.getEndpoint(SERVICE);
-        if (endpoint.isPresent()) {
-            setEndpoint(endpoint.get());
-        } else {
-            throw new IllegalArgumentException(
-                    "Endpoint for " + SERVICE + " is not known in region " + region);
-        }
-    }
-
-    @Override
-    public void setRegion(String regionId) {
-        regionId = regionId.toLowerCase(Locale.ENGLISH);
-        try {
-            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
-            setRegion(region);
-        } catch (IllegalArgumentException e) {
-            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
-            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
-            setEndpoint(endpoint);
-        }
     }
 
     @Override

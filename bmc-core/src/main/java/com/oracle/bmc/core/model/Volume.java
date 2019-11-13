@@ -123,6 +123,15 @@ public class Volume {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")
+        private Long vpusPerGB;
+
+        public Builder vpusPerGB(Long vpusPerGB) {
+            this.vpusPerGB = vpusPerGB;
+            this.__explicitlySet__.add("vpusPerGB");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
         private Long sizeInGBs;
 
@@ -184,6 +193,7 @@ public class Volume {
                             isHydrated,
                             kmsKeyId,
                             lifecycleState,
+                            vpusPerGB,
                             sizeInGBs,
                             sizeInMBs,
                             sourceDetails,
@@ -206,6 +216,7 @@ public class Volume {
                             .isHydrated(o.getIsHydrated())
                             .kmsKeyId(o.getKmsKeyId())
                             .lifecycleState(o.getLifecycleState())
+                            .vpusPerGB(o.getVpusPerGB())
                             .sizeInGBs(o.getSizeInGBs())
                             .sizeInMBs(o.getSizeInMBs())
                             .sourceDetails(o.getSourceDetails())
@@ -347,6 +358,12 @@ public class Volume {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
+
+    /**
+     * The number of Volume Performance Units that will be applied to this volume per GB.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")
+    Long vpusPerGB;
 
     /**
      * The size of the volume in GBs.

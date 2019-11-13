@@ -88,6 +88,15 @@ public class CreateVolumeDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")
+        private Long vpusPerGB;
+
+        public Builder vpusPerGB(Long vpusPerGB) {
+            this.vpusPerGB = vpusPerGB;
+            this.__explicitlySet__.add("vpusPerGB");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
         private Long sizeInGBs;
 
@@ -137,6 +146,7 @@ public class CreateVolumeDetails {
                             displayName,
                             freeformTags,
                             kmsKeyId,
+                            vpusPerGB,
                             sizeInGBs,
                             sizeInMBs,
                             sourceDetails,
@@ -155,6 +165,7 @@ public class CreateVolumeDetails {
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
                             .kmsKeyId(o.getKmsKeyId())
+                            .vpusPerGB(o.getVpusPerGB())
                             .sizeInGBs(o.getSizeInGBs())
                             .sizeInMBs(o.getSizeInMBs())
                             .sourceDetails(o.getSourceDetails())
@@ -228,6 +239,12 @@ public class CreateVolumeDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     String kmsKeyId;
+
+    /**
+     * The number of Volume Performance Units that will be applied to this volume per GB.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")
+    Long vpusPerGB;
 
     /**
      * The size of the volume in GBs.

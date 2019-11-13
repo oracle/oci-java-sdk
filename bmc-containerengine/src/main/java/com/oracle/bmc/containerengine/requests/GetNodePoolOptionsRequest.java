@@ -16,6 +16,11 @@ public class GetNodePoolOptionsRequest extends com.oracle.bmc.requests.BmcReques
     private String nodePoolOptionId;
 
     /**
+     * The OCID of the compartment.
+     */
+    private String compartmentId;
+
+    /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
      *
@@ -56,6 +61,7 @@ public class GetNodePoolOptionsRequest extends com.oracle.bmc.requests.BmcReques
          */
         public Builder copy(GetNodePoolOptionsRequest o) {
             nodePoolOptionId(o.getNodePoolOptionId());
+            compartmentId(o.getCompartmentId());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());

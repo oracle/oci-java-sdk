@@ -31,15 +31,6 @@ public class NodePoolOptions {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("images")
-        private java.util.List<String> images;
-
-        public Builder images(java.util.List<String> images) {
-            this.images = images;
-            this.__explicitlySet__.add("images");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("shapes")
         private java.util.List<String> shapes;
 
@@ -49,11 +40,20 @@ public class NodePoolOptions {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("images")
+        private java.util.List<String> images;
+
+        public Builder images(java.util.List<String> images) {
+            this.images = images;
+            this.__explicitlySet__.add("images");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public NodePoolOptions build() {
-            NodePoolOptions __instance__ = new NodePoolOptions(kubernetesVersions, images, shapes);
+            NodePoolOptions __instance__ = new NodePoolOptions(kubernetesVersions, shapes, images);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -62,8 +62,8 @@ public class NodePoolOptions {
         public Builder copy(NodePoolOptions o) {
             Builder copiedBuilder =
                     kubernetesVersions(o.getKubernetesVersions())
-                            .images(o.getImages())
-                            .shapes(o.getShapes());
+                            .shapes(o.getShapes())
+                            .images(o.getImages());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -84,16 +84,16 @@ public class NodePoolOptions {
     java.util.List<String> kubernetesVersions;
 
     /**
-     * Available image names.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("images")
-    java.util.List<String> images;
-
-    /**
      * Available shapes for nodes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapes")
     java.util.List<String> shapes;
+
+    /**
+     * Available image names.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("images")
+    java.util.List<String> images;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

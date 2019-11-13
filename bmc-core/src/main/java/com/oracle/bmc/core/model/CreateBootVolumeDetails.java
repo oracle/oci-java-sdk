@@ -97,6 +97,15 @@ public class CreateBootVolumeDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")
+        private Long vpusPerGB;
+
+        public Builder vpusPerGB(Long vpusPerGB) {
+            this.vpusPerGB = vpusPerGB;
+            this.__explicitlySet__.add("vpusPerGB");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDetails")
         private BootVolumeSourceDetails sourceDetails;
 
@@ -120,6 +129,7 @@ public class CreateBootVolumeDetails {
                             freeformTags,
                             kmsKeyId,
                             sizeInGBs,
+                            vpusPerGB,
                             sourceDetails);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -136,6 +146,7 @@ public class CreateBootVolumeDetails {
                             .freeformTags(o.getFreeformTags())
                             .kmsKeyId(o.getKmsKeyId())
                             .sizeInGBs(o.getSizeInGBs())
+                            .vpusPerGB(o.getVpusPerGB())
                             .sourceDetails(o.getSourceDetails());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -212,6 +223,12 @@ public class CreateBootVolumeDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
     Long sizeInGBs;
+
+    /**
+     * The number of Volume Performance Units that will be applied to this boot volume per GB.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")
+    Long vpusPerGB;
 
     /**
      * Specifies the boot volume source details for a new boot volume. The volume source is either another boot volume in the same availability domain or a boot volume backup.

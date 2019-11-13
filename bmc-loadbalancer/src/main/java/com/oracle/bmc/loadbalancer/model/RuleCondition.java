@@ -36,6 +36,10 @@ package com.oracle.bmc.loadbalancer.model;
         name = "SOURCE_IP_ADDRESS"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = PathMatchCondition.class,
+        name = "PATH"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = SourceVcnIpAddressCondition.class,
         name = "SOURCE_VCN_IP_ADDRESS"
     )
@@ -50,6 +54,7 @@ public class RuleCondition {
         SourceIpAddress("SOURCE_IP_ADDRESS"),
         SourceVcnId("SOURCE_VCN_ID"),
         SourceVcnIpAddress("SOURCE_VCN_IP_ADDRESS"),
+        Path("PATH"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
