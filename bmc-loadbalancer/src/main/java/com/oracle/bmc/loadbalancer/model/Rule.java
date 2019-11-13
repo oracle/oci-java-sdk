@@ -32,6 +32,10 @@ package com.oracle.bmc.loadbalancer.model;
         name = "ADD_HTTP_REQUEST_HEADER"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = RedirectRule.class,
+        name = "REDIRECT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = RemoveHttpRequestHeaderRule.class,
         name = "REMOVE_HTTP_REQUEST_HEADER"
     ),
@@ -72,6 +76,7 @@ public class Rule {
         RemoveHttpResponseHeader("REMOVE_HTTP_RESPONSE_HEADER"),
         Allow("ALLOW"),
         ControlAccessUsingHttpMethods("CONTROL_ACCESS_USING_HTTP_METHODS"),
+        Redirect("REDIRECT"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

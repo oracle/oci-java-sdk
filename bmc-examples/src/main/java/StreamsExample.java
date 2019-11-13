@@ -58,7 +58,7 @@ public class StreamsExample {
                 new ConfigFileAuthenticationDetailsProvider(configurationFilePath, profile);
 
         // Create an admin-client for the phoenix region.
-        final StreamAdminClient adminClient = new StreamAdminClient(provider);
+        final StreamAdminClient adminClient = StreamAdminClient.builder().build(provider);
 
         if (args.length < 1) {
             throw new IllegalArgumentException(
@@ -76,8 +76,7 @@ public class StreamsExample {
 
         // Streams are assigned a specific endpoint url based on where they are provisioned.
         // Create a stream client using the provided message endpoint.
-        StreamClient streamClient = new StreamClient(provider);
-        streamClient.setEndpoint(stream.getMessagesEndpoint());
+        StreamClient streamClient = StreamClient.builder().stream(stream).build(provider);
 
         String streamId = stream.getId();
 

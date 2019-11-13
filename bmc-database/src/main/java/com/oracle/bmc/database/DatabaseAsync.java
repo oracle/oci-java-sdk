@@ -611,6 +611,25 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Asynchronously deregisters Data Safe for this Autonomous Database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeregisterAutonomousDatabaseDataSafeResponse>
+            deregisterAutonomousDatabaseDataSafe(
+                    DeregisterAutonomousDatabaseDataSafeRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeregisterAutonomousDatabaseDataSafeRequest,
+                                    DeregisterAutonomousDatabaseDataSafeResponse>
+                            handler);
+
+    /**
      * Downloads the configuration file for the specified Exadata infrastructure.
      *
      *
@@ -1622,6 +1641,25 @@ public interface DatabaseAsync extends AutoCloseable {
             ListVmClustersRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListVmClustersRequest, ListVmClustersResponse>
                     handler);
+
+    /**
+     * Asynchronously registers Data Safe with this Autonomous Database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RegisterAutonomousDatabaseDataSafeResponse>
+            registerAutonomousDatabaseDataSafe(
+                    RegisterAutonomousDatabaseDataSafeRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RegisterAutonomousDatabaseDataSafeRequest,
+                                    RegisterAutonomousDatabaseDataSafeResponse>
+                            handler);
 
     /**
      * Reinstates the database identified by the `databaseId` parameter into the standby role in a Data Guard association.

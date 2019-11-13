@@ -271,6 +271,15 @@ public class AutonomousDatabase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dataSafeStatus")
+        private DataSafeStatus dataSafeStatus;
+
+        public Builder dataSafeStatus(DataSafeStatus dataSafeStatus) {
+            this.dataSafeStatus = dataSafeStatus;
+            this.__explicitlySet__.add("dataSafeStatus");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -303,7 +312,8 @@ public class AutonomousDatabase {
                             isPreview,
                             dbWorkload,
                             whitelistedIps,
-                            isAutoScalingEnabled);
+                            isAutoScalingEnabled,
+                            dataSafeStatus);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -339,7 +349,8 @@ public class AutonomousDatabase {
                             .isPreview(o.getIsPreview())
                             .dbWorkload(o.getDbWorkload())
                             .whitelistedIps(o.getWhitelistedIps())
-                            .isAutoScalingEnabled(o.getIsAutoScalingEnabled());
+                            .isAutoScalingEnabled(o.getIsAutoScalingEnabled())
+                            .dataSafeStatus(o.getDataSafeStatus());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -676,6 +687,60 @@ public class AutonomousDatabase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
     Boolean isAutoScalingEnabled;
+    /**
+     * Status of the Data Safe registration for this Autonomous Database.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum DataSafeStatus {
+        Registering("REGISTERING"),
+        Registered("REGISTERED"),
+        Deregistering("DEREGISTERING"),
+        NotRegistered("NOT_REGISTERED"),
+        Failed("FAILED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, DataSafeStatus> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DataSafeStatus v : DataSafeStatus.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        DataSafeStatus(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DataSafeStatus create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DataSafeStatus', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Status of the Data Safe registration for this Autonomous Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataSafeStatus")
+    DataSafeStatus dataSafeStatus;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

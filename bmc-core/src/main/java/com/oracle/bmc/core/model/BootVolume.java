@@ -113,6 +113,15 @@ public class BootVolume {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")
+        private Long vpusPerGB;
+
+        public Builder vpusPerGB(Long vpusPerGB) {
+            this.vpusPerGB = vpusPerGB;
+            this.__explicitlySet__.add("vpusPerGB");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -191,6 +200,7 @@ public class BootVolume {
                             id,
                             imageId,
                             isHydrated,
+                            vpusPerGB,
                             lifecycleState,
                             sizeInGBs,
                             sizeInMBs,
@@ -214,6 +224,7 @@ public class BootVolume {
                             .id(o.getId())
                             .imageId(o.getImageId())
                             .isHydrated(o.getIsHydrated())
+                            .vpusPerGB(o.getVpusPerGB())
                             .lifecycleState(o.getLifecycleState())
                             .sizeInGBs(o.getSizeInGBs())
                             .sizeInMBs(o.getSizeInMBs())
@@ -302,6 +313,12 @@ public class BootVolume {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHydrated")
     Boolean isHydrated;
+
+    /**
+     * The number of Volume Performance Units that will be applied to this boot volume per GB.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")
+    Long vpusPerGB;
     /**
      * The current state of a boot volume.
      **/

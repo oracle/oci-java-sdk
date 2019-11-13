@@ -52,6 +52,15 @@ public class UpdateVolumeDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")
+        private Long vpusPerGB;
+
+        public Builder vpusPerGB(Long vpusPerGB) {
+            this.vpusPerGB = vpusPerGB;
+            this.__explicitlySet__.add("vpusPerGB");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
         private Long sizeInGBs;
 
@@ -66,7 +75,8 @@ public class UpdateVolumeDetails {
 
         public UpdateVolumeDetails build() {
             UpdateVolumeDetails __instance__ =
-                    new UpdateVolumeDetails(definedTags, displayName, freeformTags, sizeInGBs);
+                    new UpdateVolumeDetails(
+                            definedTags, displayName, freeformTags, vpusPerGB, sizeInGBs);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -77,6 +87,7 @@ public class UpdateVolumeDetails {
                     definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
+                            .vpusPerGB(o.getVpusPerGB())
                             .sizeInGBs(o.getSizeInGBs());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -118,6 +129,12 @@ public class UpdateVolumeDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
+
+    /**
+     * The number of Volume Performance Units that will be applied to this volume per GB.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")
+    Long vpusPerGB;
 
     /**
      * The size to resize the volume to in GBs. Has to be larger than the current size.
