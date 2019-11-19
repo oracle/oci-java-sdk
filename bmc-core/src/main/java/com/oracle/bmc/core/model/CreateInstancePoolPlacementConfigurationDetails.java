@@ -33,6 +33,15 @@ public class CreateInstancePoolPlacementConfigurationDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("faultDomains")
+        private java.util.List<String> faultDomains;
+
+        public Builder faultDomains(java.util.List<String> faultDomains) {
+            this.faultDomains = faultDomains;
+            this.__explicitlySet__.add("faultDomains");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("primarySubnetId")
         private String primarySubnetId;
 
@@ -58,7 +67,10 @@ public class CreateInstancePoolPlacementConfigurationDetails {
         public CreateInstancePoolPlacementConfigurationDetails build() {
             CreateInstancePoolPlacementConfigurationDetails __instance__ =
                     new CreateInstancePoolPlacementConfigurationDetails(
-                            availabilityDomain, primarySubnetId, secondaryVnicSubnets);
+                            availabilityDomain,
+                            faultDomains,
+                            primarySubnetId,
+                            secondaryVnicSubnets);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -67,6 +79,7 @@ public class CreateInstancePoolPlacementConfigurationDetails {
         public Builder copy(CreateInstancePoolPlacementConfigurationDetails o) {
             Builder copiedBuilder =
                     availabilityDomain(o.getAvailabilityDomain())
+                            .faultDomains(o.getFaultDomains())
                             .primarySubnetId(o.getPrimarySubnetId())
                             .secondaryVnicSubnets(o.getSecondaryVnicSubnets());
 
@@ -89,6 +102,13 @@ public class CreateInstancePoolPlacementConfigurationDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     String availabilityDomain;
+
+    /**
+     * The fault domains to place instances.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("faultDomains")
+    java.util.List<String> faultDomains;
 
     /**
      * The OCID of the primary subnet to place instances.

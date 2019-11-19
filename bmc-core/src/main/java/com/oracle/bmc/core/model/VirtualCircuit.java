@@ -99,6 +99,15 @@ public class VirtualCircuit {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customerAsn")
+        private Long customerAsn;
+
+        public Builder customerAsn(Long customerAsn) {
+            this.customerAsn = customerAsn;
+            this.__explicitlySet__.add("customerAsn");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -274,6 +283,7 @@ public class VirtualCircuit {
                             compartmentId,
                             crossConnectMappings,
                             customerBgpAsn,
+                            customerAsn,
                             definedTags,
                             displayName,
                             freeformTags,
@@ -305,6 +315,7 @@ public class VirtualCircuit {
                             .compartmentId(o.getCompartmentId())
                             .crossConnectMappings(o.getCrossConnectMappings())
                             .customerBgpAsn(o.getCustomerBgpAsn())
+                            .customerAsn(o.getCustomerAsn())
                             .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
@@ -470,15 +481,24 @@ public class VirtualCircuit {
     java.util.List<CrossConnectMapping> crossConnectMappings;
 
     /**
+     * Deprecated. Instead use `customerAsn`.
+     * If you specify values for both, the request will be rejected.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customerBgpAsn")
+    Integer customerBgpAsn;
+
+    /**
      * The BGP ASN of the network at the other end of the BGP
      * session from Oracle. If the session is between the customer's
      * edge router and Oracle, the value is the customer's ASN. If the BGP
      * session is between the provider's edge router and Oracle, the value
      * is the provider's ASN.
+     * Can be a 2-byte or 4-byte ASN. Uses \"asplain\" format.
      *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("customerBgpAsn")
-    Integer customerBgpAsn;
+    @com.fasterxml.jackson.annotation.JsonProperty("customerAsn")
+    Long customerAsn;
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a

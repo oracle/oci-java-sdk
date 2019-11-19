@@ -150,6 +150,15 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("whitelistedIps")
+        private java.util.List<String> whitelistedIps;
+
+        public Builder whitelistedIps(java.util.List<String> whitelistedIps) {
+            this.whitelistedIps = whitelistedIps;
+            this.__explicitlySet__.add("whitelistedIps");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -206,6 +215,7 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
                             isAutoScalingEnabled,
                             isDedicated,
                             autonomousContainerDatabaseId,
+                            whitelistedIps,
                             freeformTags,
                             definedTags,
                             sourceId,
@@ -231,6 +241,7 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
                             .isAutoScalingEnabled(o.getIsAutoScalingEnabled())
                             .isDedicated(o.getIsDedicated())
                             .autonomousContainerDatabaseId(o.getAutonomousContainerDatabaseId())
+                            .whitelistedIps(o.getWhitelistedIps())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .sourceId(o.getSourceId())
@@ -263,6 +274,7 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
             Boolean isAutoScalingEnabled,
             Boolean isDedicated,
             String autonomousContainerDatabaseId,
+            java.util.List<String> whitelistedIps,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String sourceId,
@@ -281,6 +293,7 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
                 isAutoScalingEnabled,
                 isDedicated,
                 autonomousContainerDatabaseId,
+                whitelistedIps,
                 freeformTags,
                 definedTags);
         this.sourceId = sourceId;

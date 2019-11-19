@@ -4,7 +4,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The data to create a cluster network
+ * The data to create a cluster network.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -120,7 +120,9 @@ public class CreateClusterNetworkDetails {
     }
 
     /**
-     * The OCID of the compartment containing the cluster network.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment
+     * containing the cluster network.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -136,7 +138,9 @@ public class CreateClusterNetworkDetails {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * The user-friendly name.  Does not have to be unique.
+     * A user-friendly name for the cluster network. Does not have to be unique, and it's
+     * changeable. Avoid entering confidential information.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
@@ -152,13 +156,16 @@ public class CreateClusterNetworkDetails {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * the data to create the instance pools in the cluster network.
+     * The data to create the instance pools in the cluster network.
+     * <p>
+     * Each cluster network can have one instance pool.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instancePools")
     java.util.List<CreateClusterNetworkInstancePoolDetails> instancePools;
 
     /**
-     * the placement data for the intance pools in the cluster network
+     * The placement configuration for the instance pools in the cluster network.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("placementConfiguration")
     ClusterNetworkPlacementConfigurationDetails placementConfiguration;

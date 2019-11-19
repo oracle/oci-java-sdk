@@ -113,7 +113,8 @@ public class CreateClusterNetworkInstancePoolDetails {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * The user-friendly name.  Does not have to be unique.
+     * A user-friendly name. Does not have to be unique. Avoid entering confidential information.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
@@ -129,13 +130,19 @@ public class CreateClusterNetworkInstancePoolDetails {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The OCID of the instance configuration associated to the instance pool.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration
+     * associated with the instance pool.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceConfigurationId")
     String instanceConfigurationId;
 
     /**
      * The number of instances that should be in the instance pool.
+     * <p>
+     * If the required number of instances is not available or if some instances fail to launch,
+     * the cluster network is not created.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("size")
     Integer size;

@@ -4,7 +4,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Condensed Cluster Network data when listing cluster networks.
+ * Summary information for a cluster network.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -151,13 +151,15 @@ public class ClusterNetworkSummary {
     }
 
     /**
-     * The OCID of the cluster network.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster network.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The OCID of the compartment containing the cluster netowrk.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the
+     * cluster netowrk.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -173,7 +175,8 @@ public class ClusterNetworkSummary {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * The user-friendly name.  Does not have to be unique.
+     * A user-friendly name for the cluster network. Does not have to be unique, and it's changeable.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
@@ -253,6 +256,7 @@ public class ClusterNetworkSummary {
 
     /**
      * The date and time the resource was created, in the format defined by RFC3339.
+     * <p>
      * Example: `2016-08-25T21:10:29.600Z`
      *
      **/
@@ -261,6 +265,7 @@ public class ClusterNetworkSummary {
 
     /**
      * The date and time the resource was updated, in the format defined by RFC3339.
+     * <p>
      * Example: `2016-08-25T21:10:29.600Z`
      *
      **/
