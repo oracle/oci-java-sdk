@@ -8,8 +8,7 @@ package com.oracle.bmc.core.model;
  * level, but the rules are applied to the ingress and egress traffic for the individual instances
  * in the subnet. The rules can be stateful or stateless. For more information, see
  * [Security Lists](https://docs.cloud.oracle.com/Content/Network/Concepts/securitylists.htm).
- * <p>
- **Note:** Compare security lists to {@link NetworkSecurityGroup}s,
+ * **Note:** Compare security lists to {@link NetworkSecurityGroup}s,
  * which let you apply a set of security rules to a *specific set of VNICs* instead of an entire
  * subnet. Oracle recommends using network security groups instead of security lists, although you
  * can use either or both together.

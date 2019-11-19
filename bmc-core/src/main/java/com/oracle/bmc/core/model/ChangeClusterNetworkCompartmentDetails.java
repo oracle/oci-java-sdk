@@ -4,7 +4,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Contains details indicating which compartment the resource should move to
+ * The configuration details for the move operation.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -60,7 +60,7 @@ public class ChangeClusterNetworkCompartmentDetails {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment
      * into which the resource should be moved.
      *
      **/

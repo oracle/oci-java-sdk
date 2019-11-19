@@ -61,6 +61,15 @@ public class CreateVirtualCircuitDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("customerAsn")
+        private Long customerAsn;
+
+        public Builder customerAsn(Long customerAsn) {
+            this.customerAsn = customerAsn;
+            this.__explicitlySet__.add("customerAsn");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -172,6 +181,7 @@ public class CreateVirtualCircuitDetails {
                             compartmentId,
                             crossConnectMappings,
                             customerBgpAsn,
+                            customerAsn,
                             definedTags,
                             displayName,
                             freeformTags,
@@ -194,6 +204,7 @@ public class CreateVirtualCircuitDetails {
                             .compartmentId(o.getCompartmentId())
                             .crossConnectMappings(o.getCrossConnectMappings())
                             .customerBgpAsn(o.getCustomerBgpAsn())
+                            .customerAsn(o.getCustomerAsn())
                             .definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
                             .freeformTags(o.getFreeformTags())
@@ -245,13 +256,24 @@ public class CreateVirtualCircuitDetails {
     java.util.List<CrossConnectMapping> crossConnectMappings;
 
     /**
-     * Your BGP ASN (either public or private). Provide this value only if
-     * there's a BGP session that goes from your edge router to Oracle.
-     * Otherwise, leave this empty or null.
+     * Deprecated. Instead use `customerAsn`.
+     * If you specify values for both, the request will be rejected.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerBgpAsn")
     Integer customerBgpAsn;
+
+    /**
+     * Your BGP ASN (either public or private). Provide this value only if
+     * there's a BGP session that goes from your edge router to Oracle.
+     * Otherwise, leave this empty or null.
+     * Can be a 2-byte or 4-byte ASN. Uses \"asplain\" format.
+     * <p>
+     * Example: `12345` (2-byte) or `1587232876` (4-byte)
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customerAsn")
+    Long customerAsn;
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a

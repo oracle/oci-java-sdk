@@ -42,6 +42,15 @@ public class InstancePoolPlacementConfiguration {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("faultDomains")
+        private java.util.List<String> faultDomains;
+
+        public Builder faultDomains(java.util.List<String> faultDomains) {
+            this.faultDomains = faultDomains;
+            this.__explicitlySet__.add("faultDomains");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("secondaryVnicSubnets")
         private java.util.List<InstancePoolPlacementSecondaryVnicSubnet> secondaryVnicSubnets;
 
@@ -58,7 +67,10 @@ public class InstancePoolPlacementConfiguration {
         public InstancePoolPlacementConfiguration build() {
             InstancePoolPlacementConfiguration __instance__ =
                     new InstancePoolPlacementConfiguration(
-                            availabilityDomain, primarySubnetId, secondaryVnicSubnets);
+                            availabilityDomain,
+                            primarySubnetId,
+                            faultDomains,
+                            secondaryVnicSubnets);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -68,6 +80,7 @@ public class InstancePoolPlacementConfiguration {
             Builder copiedBuilder =
                     availabilityDomain(o.getAvailabilityDomain())
                             .primarySubnetId(o.getPrimarySubnetId())
+                            .faultDomains(o.getFaultDomains())
                             .secondaryVnicSubnets(o.getSecondaryVnicSubnets());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -95,6 +108,13 @@ public class InstancePoolPlacementConfiguration {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("primarySubnetId")
     String primarySubnetId;
+
+    /**
+     * The fault domains to place instances.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("faultDomains")
+    java.util.List<String> faultDomains;
 
     /**
      * The set of secondary VNIC data for instances in the pool.

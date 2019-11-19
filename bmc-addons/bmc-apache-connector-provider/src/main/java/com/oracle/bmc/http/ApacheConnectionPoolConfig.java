@@ -44,7 +44,7 @@ public class ApacheConnectionPoolConfig {
     public final static class Builder {
         private int totalOpenConnections;
         private int defaultMaxConnectionsPerRoute;
-        private Pair ttl;
+        private Pair<Integer, TimeUnit> ttl;
 
         public Builder() {}
 

@@ -84,6 +84,7 @@ public class ClusterNetworkPlacementConfigurationDetails {
 
     /**
      * The availability domain to place instances.
+     * <p>
      * Example: `Uocm:PHX-AD-1`
      *
      **/
@@ -91,7 +92,9 @@ public class ClusterNetworkPlacementConfigurationDetails {
     String availabilityDomain;
 
     /**
-     * The OCID of the primary subnet to place instances.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place
+     * instances.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("primarySubnetId")
     String primarySubnetId;

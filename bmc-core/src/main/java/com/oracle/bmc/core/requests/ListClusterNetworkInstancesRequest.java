@@ -16,7 +16,7 @@ public class ListClusterNetworkInstancesRequest extends com.oracle.bmc.requests.
     private String compartmentId;
 
     /**
-     * The OCID of the cluster network.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster network.
      */
     private String clusterNetworkId;
 

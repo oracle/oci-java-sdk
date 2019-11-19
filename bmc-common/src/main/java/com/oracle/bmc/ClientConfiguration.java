@@ -4,7 +4,6 @@
 package com.oracle.bmc;
 
 import com.oracle.bmc.retrier.RetryConfiguration;
-import com.oracle.bmc.waiter.WaiterConfiguration;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;

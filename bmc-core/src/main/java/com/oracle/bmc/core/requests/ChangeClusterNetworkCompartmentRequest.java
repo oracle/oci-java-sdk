@@ -11,7 +11,7 @@ import com.oracle.bmc.core.model.*;
 public class ChangeClusterNetworkCompartmentRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The OCID of the cluster network.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster network.
      */
     private String clusterNetworkId;
 

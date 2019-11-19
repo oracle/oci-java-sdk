@@ -4,7 +4,10 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Cluster Network
+ * A cluster network is a group of high performance computing (HPC) bare metal instances that are connected
+ * with an ultra low latency network. For more information about cluster networks, see
+ * [Managing Cluster Networks](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -161,13 +164,13 @@ public class ClusterNetwork {
     }
 
     /**
-     * The OCID of the cluster network.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster network.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The OCID of the compartment containing the cluster netowrk.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cluster netowrk.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -183,7 +186,7 @@ public class ClusterNetwork {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * The user-friendly name.  Does not have to be unique.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
@@ -199,13 +202,17 @@ public class ClusterNetwork {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * the instance pools in the cluster network.
+     * The instance pools in the cluster network.
+     * <p>
+     * Each cluster network can have one instance pool.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instancePools")
     java.util.List<InstancePool> instancePools;
 
     /**
-     * the placement data for the intance pools in the cluster network
+     * The placement configuration for the instance pools in the cluster network.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("placementConfiguration")
     ClusterNetworkPlacementConfigurationDetails placementConfiguration;
@@ -269,6 +276,7 @@ public class ClusterNetwork {
 
     /**
      * The date and time the resource was created, in the format defined by RFC3339.
+     * <p>
      * Example: `2016-08-25T21:10:29.600Z`
      *
      **/
@@ -277,6 +285,7 @@ public class ClusterNetwork {
 
     /**
      * The date and time the resource was updated, in the format defined by RFC3339.
+     * <p>
      * Example: `2016-08-25T21:10:29.600Z`
      *
      **/

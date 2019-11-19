@@ -4,7 +4,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The `InstanceConsoleConnection` API provides you with console access to virtual machine (VM) instances,
+ * The `InstanceConsoleConnection` API provides you with console access to Compute instances,
  * enabling you to troubleshoot malfunctioning instances remotely.
  * <p>
  * For more information about console access, see

@@ -54,7 +54,12 @@ public interface ComputeManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Change the compartment of a cluster network.
+     * Moves a cluster network into a different compartment within the same tenancy. For
+     * information about moving resources between compartments, see
+     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * <p>
+     * When you move a cluster network to a different compartment, associated resources such as the instances
+     * in the cluster network, boot volumes, and VNICs are not moved.
      *
      *
      * @param request The request object containing the details to send
@@ -128,7 +133,9 @@ public interface ComputeManagementAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Create a cluster network.
+     * Creates a cluster network. For more information about cluster networks, see
+     * [Managing Cluster Networks](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm).
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -211,7 +218,7 @@ public interface ComputeManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the specified cluster network
+     * Gets information about the specified cluster network.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -300,7 +307,7 @@ public interface ComputeManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * List the instances in the specified cluster network.
+     * Lists the instances in the specified cluster network.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -452,7 +459,11 @@ public interface ComputeManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Terminate the specified cluster network.
+     * Terminates the specified cluster network.
+     * <p>
+     * When you delete a cluster network, all of its resources are permanently deleted,
+     * including associated instances and instance pools.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -484,8 +495,7 @@ public interface ComputeManagementAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Update the specified cluster network.
-     * The OCID of the cluster network remains the same.
+     * Updates the specified cluster network. The OCID of the cluster network remains the same.
      *
      *
      * @param request The request object containing the details to send
