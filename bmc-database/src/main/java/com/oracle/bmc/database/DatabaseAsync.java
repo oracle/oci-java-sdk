@@ -611,7 +611,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Asynchronously deregisters Data Safe for this Autonomous Database.
+     * Asynchronously deregisters this Autonomous Database with Data Safe.
      *
      *
      * @param request The request object containing the details to send
@@ -1073,6 +1073,25 @@ public interface DatabaseAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             GetExadataInfrastructureRequest, GetExadataInfrastructureResponse>
                     handler);
+
+    /**
+     * Gets details of the available and consumed OCPUs for the specified Autonomous Exadata Infrastructure instance.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExadataInfrastructureOcpusResponse>
+            getExadataInfrastructureOcpus(
+                    GetExadataInfrastructureOcpusRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetExadataInfrastructureOcpusRequest,
+                                    GetExadataInfrastructureOcpusResponse>
+                            handler);
 
     /**
      * Gets `IORM` Setting for the requested Exadata DB System.
@@ -1643,7 +1662,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Asynchronously registers Data Safe with this Autonomous Database.
+     * Asynchronously registers this Autonomous Database with Data Safe.
      *
      *
      * @param request The request object containing the details to send
@@ -1895,7 +1914,7 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the properties of an Autonomous Container Database, such as the CPU core count and storage size.
+     * Updates the properties of an Autonomous Container Database, such as the OCPU core count and storage size.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1932,7 +1951,7 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Updates the specified Autonomous Database with a new CPU core count and size.
+     * Updates one or more attributes of the specified Autonomous Database. See the UpdateAutonomousDatabaseDetails resource for a full list of attributes that can be updated.
      *
      *
      * @param request The request object containing the details to send

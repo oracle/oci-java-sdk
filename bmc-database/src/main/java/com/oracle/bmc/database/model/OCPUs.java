@@ -4,7 +4,8 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The token that allows the OCI Console to access the Autonomous Database Service Console.
+ * The details of the available and consumed CPU cores of the Autonomous Exadata Infrastructure instance, including consumption by database workload type.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -16,45 +17,54 @@ package com.oracle.bmc.database.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AutonomousDatabaseConsoleTokenDetails.Builder.class
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OCPUs.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class AutonomousDatabaseConsoleTokenDetails {
+public class OCPUs {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("token")
-        private String token;
+        @com.fasterxml.jackson.annotation.JsonProperty("totalCpu")
+        private Float totalCpu;
 
-        public Builder token(String token) {
-            this.token = token;
-            this.__explicitlySet__.add("token");
+        public Builder totalCpu(Float totalCpu) {
+            this.totalCpu = totalCpu;
+            this.__explicitlySet__.add("totalCpu");
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("loginUrl")
-        private String loginUrl;
+        @com.fasterxml.jackson.annotation.JsonProperty("consumedCpu")
+        private Float consumedCpu;
 
-        public Builder loginUrl(String loginUrl) {
-            this.loginUrl = loginUrl;
-            this.__explicitlySet__.add("loginUrl");
+        public Builder consumedCpu(Float consumedCpu) {
+            this.consumedCpu = consumedCpu;
+            this.__explicitlySet__.add("consumedCpu");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("byWorkloadType")
+        private WorkloadType byWorkloadType;
+
+        public Builder byWorkloadType(WorkloadType byWorkloadType) {
+            this.byWorkloadType = byWorkloadType;
+            this.__explicitlySet__.add("byWorkloadType");
             return this;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
-        public AutonomousDatabaseConsoleTokenDetails build() {
-            AutonomousDatabaseConsoleTokenDetails __instance__ =
-                    new AutonomousDatabaseConsoleTokenDetails(token, loginUrl);
+        public OCPUs build() {
+            OCPUs __instance__ = new OCPUs(totalCpu, consumedCpu, byWorkloadType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AutonomousDatabaseConsoleTokenDetails o) {
-            Builder copiedBuilder = token(o.getToken()).loginUrl(o.getLoginUrl());
+        public Builder copy(OCPUs o) {
+            Builder copiedBuilder =
+                    totalCpu(o.getTotalCpu())
+                            .consumedCpu(o.getConsumedCpu())
+                            .byWorkloadType(o.getByWorkloadType());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -69,16 +79,19 @@ public class AutonomousDatabaseConsoleTokenDetails {
     }
 
     /**
-     * The token that allows the OCI Console to access the Autonomous Transaction Processing Service Console.
+     * The total number of OCPUs in the Autonomous Exadata Infrastructure instance.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("token")
-    String token;
+    @com.fasterxml.jackson.annotation.JsonProperty("totalCpu")
+    Float totalCpu;
 
     /**
-     * The login URL that allows the OCI Console to access the Autonomous Transaction Processing Service Console.
+     * The total number of consumed OCPUs in the Autonomous Exadata Infrastructure instance.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("loginUrl")
-    String loginUrl;
+    @com.fasterxml.jackson.annotation.JsonProperty("consumedCpu")
+    Float consumedCpu;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("byWorkloadType")
+    WorkloadType byWorkloadType;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

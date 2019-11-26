@@ -103,6 +103,9 @@ public interface FileStorageAsync extends AutoCloseable {
      * For information about access control and compartments, see
      * [Overview of the IAM Service](https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm).
      * <p>
+     * For information about Network Security Groups access control, see
+     * [Network Security Groups](https://docs.cloud.oracle.com/Content/Network/Concepts/networksecuritygroups.htm).
+     * <p>
      * For information about availability domains, see [Regions and
      * Availability Domains](https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm).
      * To get a list of availability domains, use the

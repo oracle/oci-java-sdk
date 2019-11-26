@@ -246,7 +246,7 @@ public class LaunchDbSystemBase {
 
     /**
      * The source of the database:
-     * NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a backup. The default is NONE.
+     * Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. The default is `NONE`.
      *
      **/
     public enum Source {

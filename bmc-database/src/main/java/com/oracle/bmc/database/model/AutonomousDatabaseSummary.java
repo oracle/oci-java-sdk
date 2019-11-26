@@ -282,6 +282,24 @@ public class AutonomousDatabaseSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceBegin")
+        private java.util.Date timeMaintenanceBegin;
+
+        public Builder timeMaintenanceBegin(java.util.Date timeMaintenanceBegin) {
+            this.timeMaintenanceBegin = timeMaintenanceBegin;
+            this.__explicitlySet__.add("timeMaintenanceBegin");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceEnd")
+        private java.util.Date timeMaintenanceEnd;
+
+        public Builder timeMaintenanceEnd(java.util.Date timeMaintenanceEnd) {
+            this.timeMaintenanceEnd = timeMaintenanceEnd;
+            this.__explicitlySet__.add("timeMaintenanceEnd");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -315,7 +333,9 @@ public class AutonomousDatabaseSummary {
                             dbWorkload,
                             whitelistedIps,
                             isAutoScalingEnabled,
-                            dataSafeStatus);
+                            dataSafeStatus,
+                            timeMaintenanceBegin,
+                            timeMaintenanceEnd);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -352,7 +372,9 @@ public class AutonomousDatabaseSummary {
                             .dbWorkload(o.getDbWorkload())
                             .whitelistedIps(o.getWhitelistedIps())
                             .isAutoScalingEnabled(o.getIsAutoScalingEnabled())
-                            .dataSafeStatus(o.getDataSafeStatus());
+                            .dataSafeStatus(o.getDataSafeStatus())
+                            .timeMaintenanceBegin(o.getTimeMaintenanceBegin())
+                            .timeMaintenanceEnd(o.getTimeMaintenanceEnd());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -378,7 +400,7 @@ public class AutonomousDatabaseSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
     /**
-     * The current state of the database.
+     * The current state of the Autonomous Database.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
@@ -437,7 +459,7 @@ public class AutonomousDatabaseSummary {
         }
     };
     /**
-     * The current state of the database.
+     * The current state of the Autonomous Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
@@ -455,7 +477,7 @@ public class AutonomousDatabaseSummary {
     String dbName;
 
     /**
-     * Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB memory. For Always Free databases, memory and CPU cannot be scaled.
+     * Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFreeTier")
@@ -484,7 +506,7 @@ public class AutonomousDatabaseSummary {
     java.util.Date timeDeletionOfFreeAutonomousDatabase;
 
     /**
-     * The number of CPU cores to be made available to the database.
+     * The number of OCPU cores to be made available to the database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     Integer cpuCoreCount;
@@ -509,7 +531,7 @@ public class AutonomousDatabaseSummary {
     String autonomousContainerDatabaseId;
 
     /**
-     * The date and time the database was created.
+     * The date and time the Autonomous Database was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
@@ -535,7 +557,8 @@ public class AutonomousDatabaseSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("connectionUrls")
     AutonomousDatabaseConnectionUrls connectionUrls;
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. The default for Autonomous Database using the [shared deployment] is BRING_YOUR_OWN_LICENSE. Note that when provisioning an Autonomous Database using the [dedicated deployment](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm) option, this attribute must be null because the attribute is already set on Autonomous Exadata Infrastructure level.
+     * The Oracle license model that applies to the Oracle Autonomous Database. Note that when provisioning an Autonomous Database using the [dedicated deployment](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm) option, this attribute must be null because the attribute is already set at the
+     * Autonomous Exadata Infrastructure level. When using the [serverless deployment](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#DeploymentTypes) option, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
      *
      **/
     @lombok.extern.slf4j.Slf4j
@@ -582,7 +605,8 @@ public class AutonomousDatabaseSummary {
         }
     };
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. The default for Autonomous Database using the [shared deployment] is BRING_YOUR_OWN_LICENSE. Note that when provisioning an Autonomous Database using the [dedicated deployment](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm) option, this attribute must be null because the attribute is already set on Autonomous Exadata Infrastructure level.
+     * The Oracle license model that applies to the Oracle Autonomous Database. Note that when provisioning an Autonomous Database using the [dedicated deployment](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm) option, this attribute must be null because the attribute is already set at the
+     * Autonomous Exadata Infrastructure level. When using the [serverless deployment](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#DeploymentTypes) option, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
@@ -745,6 +769,18 @@ public class AutonomousDatabaseSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataSafeStatus")
     DataSafeStatus dataSafeStatus;
+
+    /**
+     * The date and time when maintenance will begin.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceBegin")
+    java.util.Date timeMaintenanceBegin;
+
+    /**
+     * The date and time when maintenance will end.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceEnd")
+    java.util.Date timeMaintenanceEnd;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

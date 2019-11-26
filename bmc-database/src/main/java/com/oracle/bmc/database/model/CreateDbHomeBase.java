@@ -35,10 +35,6 @@ package com.oracle.bmc.database.model;
         name = "DB_BACKUP"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CreateDbHomeWithVmClusterIdFromBackupDetails.class,
-        name = "VM_CLUSTER_BACKUP"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateDbHomeWithDbSystemIdDetails.class,
         name = "NONE"
     ),
@@ -64,7 +60,6 @@ public class CreateDbHomeBase {
         None("NONE"),
         DbBackup("DB_BACKUP"),
         VmClusterNew("VM_CLUSTER_NEW"),
-        VmClusterBackup("VM_CLUSTER_BACKUP"),
         ;
 
         private final String value;

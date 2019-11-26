@@ -195,7 +195,7 @@ public class UpdateAutonomousDatabaseDetails {
     String displayName;
 
     /**
-     * Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB memory. For Always Free databases, memory and CPU cannot be scaled.
+     * Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFreeTier")
@@ -234,7 +234,8 @@ public class UpdateAutonomousDatabaseDetails {
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. The default for Autonomous Database using the [shared deployment] is BRING_YOUR_OWN_LICENSE. Note that when provisioning an Autonomous Database using the [dedicated deployment](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm) option, this attribute must be null because the attribute is already set on Autonomous Exadata Infrastructure level.
+     * The Oracle license model that applies to the Oracle Autonomous Database. Note that when provisioning an Autonomous Database using the [dedicated deployment](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm) option, this attribute must be null because the attribute is already set at the
+     * Autonomous Exadata Infrastructure level. When using the [serverless deployment](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#DeploymentTypes) option, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
      *
      **/
     public enum LicenseModel {
@@ -270,7 +271,8 @@ public class UpdateAutonomousDatabaseDetails {
         }
     };
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. The default for Autonomous Database using the [shared deployment] is BRING_YOUR_OWN_LICENSE. Note that when provisioning an Autonomous Database using the [dedicated deployment](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm) option, this attribute must be null because the attribute is already set on Autonomous Exadata Infrastructure level.
+     * The Oracle license model that applies to the Oracle Autonomous Database. Note that when provisioning an Autonomous Database using the [dedicated deployment](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm) option, this attribute must be null because the attribute is already set at the
+     * Autonomous Exadata Infrastructure level. When using the [serverless deployment](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#DeploymentTypes) option, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
@@ -287,7 +289,7 @@ public class UpdateAutonomousDatabaseDetails {
     java.util.List<String> whitelistedIps;
 
     /**
-     * Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is false. Note that auto scaling is available for [serverless deployments](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI) only.
+     * Indicates whether to enable or disable auto scaling for the Autonomous Database OCPU core count. Setting to `true` enables auto scaling. Setting to `false` disables auto scaling. The default value is true. Auto scaling is available for [serverless deployments](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI) only.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")

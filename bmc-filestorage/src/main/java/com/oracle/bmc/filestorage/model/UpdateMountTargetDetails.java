@@ -33,6 +33,15 @@ public class UpdateMountTargetDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+        private java.util.List<String> nsgIds;
+
+        public Builder nsgIds(java.util.List<String> nsgIds) {
+            this.nsgIds = nsgIds;
+            this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -57,7 +66,7 @@ public class UpdateMountTargetDetails {
 
         public UpdateMountTargetDetails build() {
             UpdateMountTargetDetails __instance__ =
-                    new UpdateMountTargetDetails(displayName, freeformTags, definedTags);
+                    new UpdateMountTargetDetails(displayName, nsgIds, freeformTags, definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -66,6 +75,7 @@ public class UpdateMountTargetDetails {
         public Builder copy(UpdateMountTargetDetails o) {
             Builder copiedBuilder =
                     displayName(o.getDisplayName())
+                            .nsgIds(o.getNsgIds())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -90,6 +100,16 @@ public class UpdateMountTargetDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
+
+    /**
+     * A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with this mount target.
+     * A maximum of 5 is allowed.
+     * Setting this to an empty array after the list is created removes the mount target from all NSGs.
+     * For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+    java.util.List<String> nsgIds;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair

@@ -98,7 +98,7 @@ public class AutonomousDatabaseConnectionUrls {
     String apexUrl;
 
     /**
-     * Oracle Machine Learning User Management URL.
+     * Oracle Machine Learning user management URL.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("machineLearningUserManagementUrl")
     String machineLearningUserManagementUrl;

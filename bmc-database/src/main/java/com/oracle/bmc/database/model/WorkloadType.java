@@ -4,7 +4,8 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The token that allows the OCI Console to access the Autonomous Database Service Console.
+ * The number of consumed OCPUs, by database workload type.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -16,45 +17,42 @@ package com.oracle.bmc.database.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AutonomousDatabaseConsoleTokenDetails.Builder.class
-)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WorkloadType.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class AutonomousDatabaseConsoleTokenDetails {
+public class WorkloadType {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("token")
-        private String token;
+        @com.fasterxml.jackson.annotation.JsonProperty("atp")
+        private Float atp;
 
-        public Builder token(String token) {
-            this.token = token;
-            this.__explicitlySet__.add("token");
+        public Builder atp(Float atp) {
+            this.atp = atp;
+            this.__explicitlySet__.add("atp");
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("loginUrl")
-        private String loginUrl;
+        @com.fasterxml.jackson.annotation.JsonProperty("adw")
+        private Float adw;
 
-        public Builder loginUrl(String loginUrl) {
-            this.loginUrl = loginUrl;
-            this.__explicitlySet__.add("loginUrl");
+        public Builder adw(Float adw) {
+            this.adw = adw;
+            this.__explicitlySet__.add("adw");
             return this;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
-        public AutonomousDatabaseConsoleTokenDetails build() {
-            AutonomousDatabaseConsoleTokenDetails __instance__ =
-                    new AutonomousDatabaseConsoleTokenDetails(token, loginUrl);
+        public WorkloadType build() {
+            WorkloadType __instance__ = new WorkloadType(atp, adw);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AutonomousDatabaseConsoleTokenDetails o) {
-            Builder copiedBuilder = token(o.getToken()).loginUrl(o.getLoginUrl());
+        public Builder copy(WorkloadType o) {
+            Builder copiedBuilder = atp(o.getAtp()).adw(o.getAdw());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -69,16 +67,16 @@ public class AutonomousDatabaseConsoleTokenDetails {
     }
 
     /**
-     * The token that allows the OCI Console to access the Autonomous Transaction Processing Service Console.
+     * The total number of OCPU cores in use for Autonomous Transaction Processing databases in the infrastructure instance.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("token")
-    String token;
+    @com.fasterxml.jackson.annotation.JsonProperty("atp")
+    Float atp;
 
     /**
-     * The login URL that allows the OCI Console to access the Autonomous Transaction Processing Service Console.
+     * The total number of OCPU cores in use for Autonomous Data Warehouse databases in the infrastructure instance.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("loginUrl")
-    String loginUrl;
+    @com.fasterxml.jackson.annotation.JsonProperty("adw")
+    Float adw;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

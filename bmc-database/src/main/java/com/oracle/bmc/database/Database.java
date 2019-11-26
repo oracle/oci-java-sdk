@@ -370,7 +370,7 @@ public interface Database extends AutoCloseable {
     DeleteVmClusterNetworkResponse deleteVmClusterNetwork(DeleteVmClusterNetworkRequest request);
 
     /**
-     * Asynchronously deregisters Data Safe for this Autonomous Database.
+     * Asynchronously deregisters this Autonomous Database with Data Safe.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -623,6 +623,16 @@ public interface Database extends AutoCloseable {
      */
     GetExadataInfrastructureResponse getExadataInfrastructure(
             GetExadataInfrastructureRequest request);
+
+    /**
+     * Gets details of the available and consumed OCPUs for the specified Autonomous Exadata Infrastructure instance.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetExadataInfrastructureOcpusResponse getExadataInfrastructureOcpus(
+            GetExadataInfrastructureOcpusRequest request);
 
     /**
      * Gets `IORM` Setting for the requested Exadata DB System.
@@ -935,7 +945,7 @@ public interface Database extends AutoCloseable {
     ListVmClustersResponse listVmClusters(ListVmClustersRequest request);
 
     /**
-     * Asynchronously registers Data Safe with this Autonomous Database.
+     * Asynchronously registers this Autonomous Database with Data Safe.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1071,7 +1081,7 @@ public interface Database extends AutoCloseable {
     TerminateDbSystemResponse terminateDbSystem(TerminateDbSystemRequest request);
 
     /**
-     * Updates the properties of an Autonomous Container Database, such as the CPU core count and storage size.
+     * Updates the properties of an Autonomous Container Database, such as the OCPU core count and storage size.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -1090,7 +1100,7 @@ public interface Database extends AutoCloseable {
             UpdateAutonomousDataWarehouseRequest request);
 
     /**
-     * Updates the specified Autonomous Database with a new CPU core count and size.
+     * Updates one or more attributes of the specified Autonomous Database. See the UpdateAutonomousDatabaseDetails resource for a full list of attributes that can be updated.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
