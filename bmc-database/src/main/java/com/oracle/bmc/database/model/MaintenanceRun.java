@@ -225,6 +225,7 @@ public class MaintenanceRun {
         Succeeded("SUCCEEDED"),
         Skipped("SKIPPED"),
         Failed("FAILED"),
+        Updating("UPDATING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -300,6 +301,7 @@ public class MaintenanceRun {
     public enum TargetResourceType {
         AutonomousExadataInfrastructure("AUTONOMOUS_EXADATA_INFRASTRUCTURE"),
         AutonomousContainerDatabase("AUTONOMOUS_CONTAINER_DATABASE"),
+        ExadataDbSystem("EXADATA_DB_SYSTEM"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

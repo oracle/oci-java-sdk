@@ -16,7 +16,7 @@ public class ListDbHomesRequest extends com.oracle.bmc.requests.BmcRequest {
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system.
+     * The DB system [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
      */
     private String dbSystemId;
 

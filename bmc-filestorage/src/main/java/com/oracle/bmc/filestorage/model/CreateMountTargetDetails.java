@@ -78,6 +78,15 @@ public class CreateMountTargetDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+        private java.util.List<String> nsgIds;
+
+        public Builder nsgIds(java.util.List<String> nsgIds) {
+            this.nsgIds = nsgIds;
+            this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -109,6 +118,7 @@ public class CreateMountTargetDetails {
                             hostnameLabel,
                             ipAddress,
                             subnetId,
+                            nsgIds,
                             freeformTags,
                             definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -124,6 +134,7 @@ public class CreateMountTargetDetails {
                             .hostnameLabel(o.getHostnameLabel())
                             .ipAddress(o.getIpAddress())
                             .subnetId(o.getSubnetId())
+                            .nsgIds(o.getNsgIds())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -199,6 +210,16 @@ public class CreateMountTargetDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     String subnetId;
+
+    /**
+     * A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with this mount target.
+     * A maximum of 5 is allowed.
+     * Setting this to an empty array after the list is created removes the mount target from all NSGs.
+     * For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+    java.util.List<String> nsgIds;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair

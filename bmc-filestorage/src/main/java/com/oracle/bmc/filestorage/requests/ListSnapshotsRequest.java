@@ -18,12 +18,12 @@ public class ListSnapshotsRequest extends com.oracle.bmc.requests.BmcRequest {
     /**
      * For list pagination. The maximum number of results per page,
      * or items to return in a paginated \"List\" call.
-     * 1 is the minimum, 1000 is the maximum.
+     * 1 is the minimum, 100 is the maximum.
      * <p>
      * For important details about how pagination works,
      * see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      * <p>
-     * Example: `500`
+     * Example: `100`
      *
      */
     private Integer limit;
@@ -95,14 +95,16 @@ public class ListSnapshotsRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
      * The sort order to use, either 'asc' or 'desc', where 'asc' is
-     * ascending and 'desc' is descending.
+     * ascending and 'desc' is descending. The default order is 'desc'
+     * except for numeric values.
      *
      */
     private SortOrder sortOrder;
 
     /**
      * The sort order to use, either 'asc' or 'desc', where 'asc' is
-     * ascending and 'desc' is descending.
+     * ascending and 'desc' is descending. The default order is 'desc'
+     * except for numeric values.
      *
      **/
     public enum SortOrder {

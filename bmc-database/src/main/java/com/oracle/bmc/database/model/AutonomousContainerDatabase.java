@@ -360,12 +360,12 @@ public class AutonomousContainerDatabase {
     String lifecycleDetails;
 
     /**
-     * The date and time the Autonomous was created.
+     * The date and time the Autonomous Container Database was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
     /**
-     * Database Patch model preference.
+     * Database patch model preference.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum PatchModel {
@@ -411,7 +411,7 @@ public class AutonomousContainerDatabase {
         }
     };
     /**
-     * Database Patch model preference.
+     * Database patch model preference.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchModel")
     PatchModel patchModel;

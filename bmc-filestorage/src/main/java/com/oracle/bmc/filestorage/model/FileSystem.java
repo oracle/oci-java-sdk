@@ -296,7 +296,7 @@ public class FileSystem {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * The OCID of KMS key used to encrypt the encryption keys associated with this file system.
+     * The OCID of the KMS key which is the master encryption key for the file system.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")

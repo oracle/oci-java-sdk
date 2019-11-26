@@ -160,14 +160,16 @@ public class ListFileSystemsRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
      * The sort order to use, either 'asc' or 'desc', where 'asc' is
-     * ascending and 'desc' is descending.
+     * ascending and 'desc' is descending. The default order is 'desc'
+     * except for numeric values.
      *
      */
     private SortOrder sortOrder;
 
     /**
      * The sort order to use, either 'asc' or 'desc', where 'asc' is
-     * ascending and 'desc' is descending.
+     * ascending and 'desc' is descending. The default order is 'desc'
+     * except for numeric values.
      *
      **/
     public enum SortOrder {

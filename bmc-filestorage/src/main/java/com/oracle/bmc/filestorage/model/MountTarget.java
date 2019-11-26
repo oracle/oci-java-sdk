@@ -108,6 +108,15 @@ public class MountTarget {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+        private java.util.List<String> nsgIds;
+
+        public Builder nsgIds(java.util.List<String> nsgIds) {
+            this.nsgIds = nsgIds;
+            this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -151,6 +160,7 @@ public class MountTarget {
                             lifecycleState,
                             privateIpIds,
                             subnetId,
+                            nsgIds,
                             timeCreated,
                             freeformTags,
                             definedTags);
@@ -170,6 +180,7 @@ public class MountTarget {
                             .lifecycleState(o.getLifecycleState())
                             .privateIpIds(o.getPrivateIpIds())
                             .subnetId(o.getSubnetId())
+                            .nsgIds(o.getNsgIds())
                             .timeCreated(o.getTimeCreated())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
@@ -298,6 +309,16 @@ public class MountTarget {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     String subnetId;
+
+    /**
+     * A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) associated with this mount target.
+     * A maximum of 5 is allowed.
+     * Setting this to an empty array after the list is created removes the mount target from all NSGs.
+     * For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+    java.util.List<String> nsgIds;
 
     /**
      * The date and time the mount target was created, expressed
