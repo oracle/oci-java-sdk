@@ -11,7 +11,8 @@ import com.oracle.bmc.streaming.model.*;
 public class UpdateGroupRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The OCID of the stream, on which the group is operating.
+     * The OCID of the stream.
+     *
      */
     private String streamId;
 

@@ -85,6 +85,14 @@ public class PutObjectConverter {
             ib.header("Content-Encoding", request.getContentEncoding());
         }
 
+        if (request.getContentDisposition() != null) {
+            ib.header("Content-Disposition", request.getContentDisposition());
+        }
+
+        if (request.getCacheControl() != null) {
+            ib.header("Cache-Control", request.getCacheControl());
+        }
+
         if (request.getOpcMeta() != null) {
             for (java.util.Map.Entry<String, String> header : request.getOpcMeta().entrySet()) {
                 ib.header(header.getKey(), header.getValue());

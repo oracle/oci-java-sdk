@@ -51,6 +51,15 @@ public class CreateStreamDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("streamPoolId")
+        private String streamPoolId;
+
+        public Builder streamPoolId(String streamPoolId) {
+            this.streamPoolId = streamPoolId;
+            this.__explicitlySet__.add("streamPoolId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("retentionInHours")
         private Integer retentionInHours;
 
@@ -88,6 +97,7 @@ public class CreateStreamDetails {
                             name,
                             partitions,
                             compartmentId,
+                            streamPoolId,
                             retentionInHours,
                             freeformTags,
                             definedTags);
@@ -101,6 +111,7 @@ public class CreateStreamDetails {
                     name(o.getName())
                             .partitions(o.getPartitions())
                             .compartmentId(o.getCompartmentId())
+                            .streamPoolId(o.getStreamPoolId())
                             .retentionInHours(o.getRetentionInHours())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
@@ -137,6 +148,12 @@ public class CreateStreamDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
+
+    /**
+     * The OCID of the stream pool that contains the stream.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("streamPoolId")
+    String streamPoolId;
 
     /**
      * The retention period of the stream, in hours. Accepted values are between 24 and 168 (7 days).

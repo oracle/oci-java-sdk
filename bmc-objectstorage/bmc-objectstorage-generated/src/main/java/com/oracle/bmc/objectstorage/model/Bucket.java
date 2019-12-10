@@ -174,6 +174,15 @@ public class Bucket {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
+        private String id;
+
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -195,7 +204,8 @@ public class Bucket {
                             kmsKeyId,
                             objectLifecyclePolicyEtag,
                             approximateCount,
-                            approximateSize);
+                            approximateSize,
+                            id);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -218,7 +228,8 @@ public class Bucket {
                             .kmsKeyId(o.getKmsKeyId())
                             .objectLifecyclePolicyEtag(o.getObjectLifecyclePolicyEtag())
                             .approximateCount(o.getApproximateCount())
-                            .approximateSize(o.getApproximateSize());
+                            .approximateSize(o.getApproximateSize())
+                            .id(o.getId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -398,8 +409,9 @@ public class Bucket {
     StorageTier storageTier;
 
     /**
-     * A property that determines whether events will be generated for operations on objects in this bucket.
-     * This is false by default.
+     * Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is
+     * set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information
+     * about events, see [Overview of Events](https://docs.cloud.oracle.com/Content/Events/Concepts/eventsoverview.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectEventsEnabled")
@@ -424,7 +436,8 @@ public class Bucket {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * The OCID of a KMS key id used to call KMS to generate data key or decrypt the encrypted data key.
+     * The OCID of a master encryption key used to call the Key Management service to generate a data encryption key
+     * or to encrypt or decrypt a data encryption key.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
@@ -451,6 +464,13 @@ public class Bucket {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("approximateSize")
     Long approximateSize;
+
+    /**
+     * The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    String id;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

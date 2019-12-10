@@ -11,7 +11,8 @@ import com.oracle.bmc.streaming.model.*;
 public class PutMessagesRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The OCID of the stream where you want to put messages.
+     * The OCID of the stream.
+     *
      */
     private String streamId;
 

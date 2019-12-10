@@ -11,7 +11,8 @@ import com.oracle.bmc.streaming.model.*;
 public class ConsumerCommitRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The OCID of the stream for which the group is committing offsets.
+     * The OCID of the stream.
+     *
      */
     private String streamId;
 

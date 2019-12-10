@@ -11,7 +11,8 @@ import com.oracle.bmc.streaming.model.*;
 public class CreateGroupCursorRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The OCID of the stream to create a cursor for.
+     * The OCID of the stream.
+     *
      */
     private String streamId;
 

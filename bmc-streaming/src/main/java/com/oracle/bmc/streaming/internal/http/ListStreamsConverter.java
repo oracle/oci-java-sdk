@@ -35,6 +35,14 @@ public class ListStreamsConverter {
                         com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                 request.getCompartmentId()));
 
+        if (request.getStreamPoolId() != null) {
+            target =
+                    target.queryParam(
+                            "streamPoolId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getStreamPoolId()));
+        }
+
         if (request.getId() != null) {
             target =
                     target.queryParam(

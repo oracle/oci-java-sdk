@@ -337,21 +337,26 @@ public interface Identity extends AutoCloseable {
     /**
      * Creates a new tag in the specified tag namespace.
      * <p>
-     * You must specify either the OCID or the name of the tag namespace that will contain this tag definition.
+     * The tag requires either the OCID or the name of the tag namespace that will contain this
+     * tag definition.
      * <p>
-     * You must also specify a *name* for the tag, which must be unique across all tags in the tag namespace
+     * You must specify a *name* for the tag, which must be unique across all tags in the tag namespace
      * and cannot be changed. The name can contain any ASCII character except the space (_) or period (.) characters.
      * Names are case insensitive. That means, for example, \"myTag\" and \"mytag\" are not allowed in the same namespace.
      * If you specify a name that's already in use in the tag namespace, a 409 error is returned.
      * <p>
-     * You must also specify a *description* for the tag.
-     * It does not have to be unique, and you can change it with
+     * The tag must have a *description*. It does not have to be unique, and you can change it with
      * {@link #updateTag(UpdateTagRequest) updateTag}.
      * <p>
-     * If no 'validator' is set on this tag definition, then any (valid) value can be set for this definedTag.
+     * The tag must have a value type, which is specified with a validator. Tags can use either a
+     * static value or a list of possible values. Static values are entered by a user applying the tag
+     * to a resource. Lists are created by you and the user must apply a value from the list. Lists
+     * are validiated.
      * <p>
-     * If a 'validator' is set on this tag definition, then the only valid values that can be set for this
-     * definedTag those that pass the additional validation imposed by the set 'validator'.
+     * If no `validator` is set, the user applying the tag to a resource can type in a static
+     * value or leave the tag value empty.
+     * * If a `validator` is set, the user applying the tag to a resource must select from a list
+     * of values that you supply with {@link #enumTagDefinitionValidator(EnumTagDefinitionValidatorRequest) enumTagDefinitionValidator}.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1051,7 +1056,7 @@ public interface Identity extends AutoCloseable {
      * - Similarly, you can limit the results to just the memberships for a given group by specifying a `groupId`.
      * - You can set both the `userId` and `groupId` to determine if the specified user is in the specified group.
      * If the answer is no, the response is an empty list.
-     * - Although`userId` and `groupId` are not indvidually required, you must set one of them.
+     * - Although`userId` and `groupId` are not individually required, you must set one of them.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1095,6 +1100,15 @@ public interface Identity extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     MoveCompartmentResponse moveCompartment(MoveCompartmentRequest request);
+
+    /**
+     * Recover the compartment from DELETED state to ACTIVE state.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    RecoverCompartmentResponse recoverCompartment(RecoverCompartmentRequest request);
 
     /**
      * Removes a user from a group by deleting the corresponding `UserGroupMembership`.
@@ -1215,9 +1229,14 @@ public interface Identity extends AutoCloseable {
     /**
      * Updates the specified tag definition.
      * <p>
-     * Setting a 'validator' will enable enforcement of additional validation on values contained in the specified for
-     * this definedTag. Any values that were previously set will not be changed, but any new value set for the
-     * definedTag must pass validation.
+     * Setting `validator` determines the value type. Tags can use either a static value or a
+     * list of possible values. Static values are entered by a user applying the tag to a resource.
+     * Lists are created by you and the user must apply a value from the list. On update, any values
+     * in a list that were previously set do not change, but new values must pass validation. Values
+     * already applied to a resource do not change.
+     * <p>
+     * You cannot remove list values that appear in a TagDefault. To remove a list value that
+     * appears in a TagDefault, first update the TagDefault to use a different value.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1244,7 +1263,7 @@ public interface Identity extends AutoCloseable {
      * <p>
      * Updating `isRetired` to 'true' retires the namespace and all the tag definitions in the namespace. Reactivating a
      * namespace (changing `isRetired` from 'true' to 'false') does not reactivate tag definitions.
-     * To reactivate the tag definitions, you must reactivate each one indvidually *after* you reactivate the namespace,
+     * To reactivate the tag definitions, you must reactivate each one individually *after* you reactivate the namespace,
      * using {@link #updateTag(UpdateTagRequest) updateTag}. For more information about retiring tag namespaces, see
      * [Retiring Key Definitions and Namespace Definitions](https://docs.cloud.oracle.com/Content/Identity/Concepts/taggingoverview.htm#Retiring).
      * <p>

@@ -240,6 +240,7 @@ public class Tag {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * <p>
      * Example: `{\"Department\": \"Finance\"}`
      *
      **/
@@ -249,7 +250,8 @@ public class Tag {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
-     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}``
+     * <p>
+     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -318,6 +320,7 @@ public class Tag {
 
     /**
      * Date and time the tag was created, in the format defined by RFC3339.
+     * <p>
      * Example: `2016-08-25T21:10:29.600Z`
      *
      **/
@@ -332,11 +335,16 @@ public class Tag {
     Boolean isCostTracking;
 
     /**
-     * Additional validation rule for values specified for the tag definition.
+     * The tag must have a value type, which is specified with a validator. Tags can use either a
+     * static value or a list of possible values. Static values are entered by a user applying the tag
+     * to a resource. Lists are created by you and the user must apply a value from the list. Lists
+     * are validiated.
      * <p>
-     * If no validator is defined for a tag definition, then any (valid) value will be accepted.
+     * If you use the default validiator (or don't define a validator), the user applying the tag
+     * enters a value. No additional validation is performed.
      * <p>
-     * To clear the validator call the UPDATE operation with DefaultTagDefinitionValidator
+     * To clear the validator, call UpdateTag with
+     * [DefaultTagDefinitionValidator](https://docs.cloud.oracle.com/api/#/en/identity/latest/datatypes/DefaultTagDefinitionValidator).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("validator")

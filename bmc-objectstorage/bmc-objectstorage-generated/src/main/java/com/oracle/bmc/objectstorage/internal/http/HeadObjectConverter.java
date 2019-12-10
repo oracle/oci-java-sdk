@@ -211,6 +211,30 @@ public class HeadObjectConverter {
                                 }
 
                                 com.google.common.base.Optional<java.util.List<String>>
+                                        cacheControlHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "cache-control");
+                                if (cacheControlHeader.isPresent()) {
+                                    builder.cacheControl(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "cache-control",
+                                                    cacheControlHeader.get().get(0),
+                                                    String.class));
+                                }
+
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        contentDispositionHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "content-disposition");
+                                if (contentDispositionHeader.isPresent()) {
+                                    builder.contentDisposition(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "content-disposition",
+                                                    contentDispositionHeader.get().get(0),
+                                                    String.class));
+                                }
+
+                                com.google.common.base.Optional<java.util.List<String>>
                                         lastModifiedHeader =
                                                 com.oracle.bmc.http.internal.HeaderUtils.get(
                                                         headers, "last-modified");

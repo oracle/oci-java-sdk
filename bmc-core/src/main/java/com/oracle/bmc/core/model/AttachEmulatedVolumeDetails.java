@@ -66,6 +66,15 @@ public class AttachEmulatedVolumeDetails extends AttachVolumeDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isShareable")
+        private Boolean isShareable;
+
+        public Builder isShareable(Boolean isShareable) {
+            this.isShareable = isShareable;
+            this.__explicitlySet__.add("isShareable");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("volumeId")
         private String volumeId;
 
@@ -81,7 +90,7 @@ public class AttachEmulatedVolumeDetails extends AttachVolumeDetails {
         public AttachEmulatedVolumeDetails build() {
             AttachEmulatedVolumeDetails __instance__ =
                     new AttachEmulatedVolumeDetails(
-                            device, displayName, instanceId, isReadOnly, volumeId);
+                            device, displayName, instanceId, isReadOnly, isShareable, volumeId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -93,6 +102,7 @@ public class AttachEmulatedVolumeDetails extends AttachVolumeDetails {
                             .displayName(o.getDisplayName())
                             .instanceId(o.getInstanceId())
                             .isReadOnly(o.getIsReadOnly())
+                            .isShareable(o.getIsShareable())
                             .volumeId(o.getVolumeId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -113,8 +123,9 @@ public class AttachEmulatedVolumeDetails extends AttachVolumeDetails {
             String displayName,
             String instanceId,
             Boolean isReadOnly,
+            Boolean isShareable,
             String volumeId) {
-        super(device, displayName, instanceId, isReadOnly, volumeId);
+        super(device, displayName, instanceId, isReadOnly, isShareable, volumeId);
     }
 
     @com.fasterxml.jackson.annotation.JsonIgnore

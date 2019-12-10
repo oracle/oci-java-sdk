@@ -75,6 +75,16 @@ public class GetObjectResponse {
     private String contentEncoding;
 
     /**
+     * Cache-Control header, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.9.
+     */
+    private String cacheControl;
+
+    /**
+     * Content-Disposition header, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 19.5.1
+     */
+    private String contentDisposition;
+
+    /**
      * The object modification time, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
      */
     private java.util.Date lastModified;
@@ -119,6 +129,8 @@ public class GetObjectResponse {
             contentType(o.getContentType());
             contentLanguage(o.getContentLanguage());
             contentEncoding(o.getContentEncoding());
+            cacheControl(o.getCacheControl());
+            contentDisposition(o.getContentDisposition());
             lastModified(o.getLastModified());
             archivalState(o.getArchivalState());
             timeOfArchival(o.getTimeOfArchival());

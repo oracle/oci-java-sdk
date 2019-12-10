@@ -4,8 +4,9 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * This is the default validatorType for definedTag. This is same as not setting any value on the validator field.
- * By default only string value can be set for this definedTag.
+ * Use this validator to clear any existing validator on the tag key definition with the UpdateTag
+ * operation. Using this `validatorType` is the same as not setting any value on the validator field.
+ * The resultant value for `validatorType` returned in the response body is `null`.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

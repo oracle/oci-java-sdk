@@ -54,9 +54,9 @@ public class ListObjectsRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
      * Object summary in list of objects includes the 'name' field. This parameter can also include 'size'
-     * (object size in bytes), 'md5', and 'timeCreated' (object creation date and time) fields.
+     * (object size in bytes), 'etag', 'md5', and 'timeCreated' (object creation date and time) fields.
      * Value of this parameter should be a comma-separated, case-insensitive list of those field names.
-     * For example 'name,timeCreated,md5'.
+     * For example 'name,etag,timeCreated,md5'.
      *
      */
     private String fields;

@@ -100,6 +100,12 @@ public class VolumeAttachment {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isReadOnly")
     Boolean isReadOnly;
+
+    /**
+     * Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isShareable")
+    Boolean isShareable;
     /**
      * The current state of the volume attachment.
      **/

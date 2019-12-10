@@ -11,7 +11,8 @@ import com.oracle.bmc.streaming.model.*;
 public class DeleteStreamRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The OCID of the stream to delete.
+     * The OCID of the stream.
+     *
      */
     private String streamId;
 

@@ -2813,6 +2813,35 @@ public class IdentityClient implements Identity {
     }
 
     @Override
+    public RecoverCompartmentResponse recoverCompartment(RecoverCompartmentRequest request) {
+        LOG.trace("Called recoverCompartment");
+        final RecoverCompartmentRequest interceptedRequest =
+                RecoverCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RecoverCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, RecoverCompartmentResponse>
+                transformer = RecoverCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public RemoveUserFromGroupResponse removeUserFromGroup(RemoveUserFromGroupRequest request) {
         LOG.trace("Called removeUserFromGroup");
         final RemoveUserFromGroupRequest interceptedRequest =
