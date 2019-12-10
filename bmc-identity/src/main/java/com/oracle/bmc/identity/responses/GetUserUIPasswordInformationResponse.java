@@ -18,6 +18,11 @@ public class GetUserUIPasswordInformationResponse {
     private String opcRequestId;
 
     /**
+     * For optimistic concurrency control. See `if-match`.
+     */
+    private String etag;
+
+    /**
      * The returned UIPasswordInformation instance.
      */
     private UIPasswordInformation uIPasswordInformation;
@@ -29,6 +34,7 @@ public class GetUserUIPasswordInformationResponse {
          */
         public Builder copy(GetUserUIPasswordInformationResponse o) {
             opcRequestId(o.getOpcRequestId());
+            etag(o.getEtag());
             uIPasswordInformation(o.getUIPasswordInformation());
 
             return this;

@@ -61,11 +61,20 @@ public class ObjectSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("etag")
+        private String etag;
+
+        public Builder etag(String etag) {
+            this.etag = etag;
+            this.__explicitlySet__.add("etag");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ObjectSummary build() {
-            ObjectSummary __instance__ = new ObjectSummary(name, size, md5, timeCreated);
+            ObjectSummary __instance__ = new ObjectSummary(name, size, md5, timeCreated, etag);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -76,7 +85,8 @@ public class ObjectSummary {
                     name(o.getName())
                             .size(o.getSize())
                             .md5(o.getMd5())
-                            .timeCreated(o.getTimeCreated());
+                            .timeCreated(o.getTimeCreated())
+                            .etag(o.getEtag());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -115,6 +125,12 @@ public class ObjectSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
+
+    /**
+     * The current entity tag (ETag) for the object.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("etag")
+    String etag;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

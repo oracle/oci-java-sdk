@@ -63,6 +63,24 @@ public class CreateMultipartUploadDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("contentDisposition")
+        private String contentDisposition;
+
+        public Builder contentDisposition(String contentDisposition) {
+            this.contentDisposition = contentDisposition;
+            this.__explicitlySet__.add("contentDisposition");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("cacheControl")
+        private String cacheControl;
+
+        public Builder cacheControl(String cacheControl) {
+            this.cacheControl = cacheControl;
+            this.__explicitlySet__.add("cacheControl");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private java.util.Map<String, String> metadata;
 
@@ -78,7 +96,13 @@ public class CreateMultipartUploadDetails {
         public CreateMultipartUploadDetails build() {
             CreateMultipartUploadDetails __instance__ =
                     new CreateMultipartUploadDetails(
-                            object, contentType, contentLanguage, contentEncoding, metadata);
+                            object,
+                            contentType,
+                            contentLanguage,
+                            contentEncoding,
+                            contentDisposition,
+                            cacheControl,
+                            metadata);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -90,6 +114,8 @@ public class CreateMultipartUploadDetails {
                             .contentType(o.getContentType())
                             .contentLanguage(o.getContentLanguage())
                             .contentEncoding(o.getContentEncoding())
+                            .contentDisposition(o.getContentDisposition())
+                            .cacheControl(o.getCacheControl())
                             .metadata(o.getMetadata());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -129,6 +155,18 @@ public class CreateMultipartUploadDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("contentEncoding")
     String contentEncoding;
+
+    /**
+     * The Content-Disposition header value to be returned in GetObjectReponse.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("contentDisposition")
+    String contentDisposition;
+
+    /**
+     * The cache-control header value to be returned in GetObjectReponse.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cacheControl")
+    String cacheControl;
 
     /**
      * Arbitrary string keys and values for the user-defined metadata for the object.

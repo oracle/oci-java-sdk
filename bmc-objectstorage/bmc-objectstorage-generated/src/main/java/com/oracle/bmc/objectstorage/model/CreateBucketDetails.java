@@ -274,8 +274,9 @@ public class CreateBucketDetails {
     StorageTier storageTier;
 
     /**
-     * A property that determines whether events will be generated for operations on objects in this bucket.
-     * This is false by default.
+     * Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is
+     * set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information
+     * about events, see [Overview of Events](https://docs.cloud.oracle.com/Content/Events/Concepts/eventsoverview.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectEventsEnabled")
@@ -300,7 +301,9 @@ public class CreateBucketDetails {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * The OCID of a KMS key id used to call KMS to generate the data key or decrypt the encrypted data key.
+     * The OCID of a master encryption key used to call the Key Management service to generate a data
+     * encryption key or to encrypt or decrypt a data encryption key.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     String kmsKeyId;

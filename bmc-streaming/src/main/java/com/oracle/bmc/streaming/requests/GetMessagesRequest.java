@@ -11,7 +11,8 @@ import com.oracle.bmc.streaming.model.*;
 public class GetMessagesRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The OCID of the stream to get messages from.
+     * The OCID of the stream.
+     *
      */
     private String streamId;
 

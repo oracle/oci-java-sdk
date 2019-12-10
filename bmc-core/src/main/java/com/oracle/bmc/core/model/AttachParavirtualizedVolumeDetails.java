@@ -66,6 +66,15 @@ public class AttachParavirtualizedVolumeDetails extends AttachVolumeDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isShareable")
+        private Boolean isShareable;
+
+        public Builder isShareable(Boolean isShareable) {
+            this.isShareable = isShareable;
+            this.__explicitlySet__.add("isShareable");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("volumeId")
         private String volumeId;
 
@@ -94,6 +103,7 @@ public class AttachParavirtualizedVolumeDetails extends AttachVolumeDetails {
                             displayName,
                             instanceId,
                             isReadOnly,
+                            isShareable,
                             volumeId,
                             isPvEncryptionInTransitEnabled);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -107,6 +117,7 @@ public class AttachParavirtualizedVolumeDetails extends AttachVolumeDetails {
                             .displayName(o.getDisplayName())
                             .instanceId(o.getInstanceId())
                             .isReadOnly(o.getIsReadOnly())
+                            .isShareable(o.getIsShareable())
                             .volumeId(o.getVolumeId())
                             .isPvEncryptionInTransitEnabled(o.getIsPvEncryptionInTransitEnabled());
 
@@ -128,9 +139,10 @@ public class AttachParavirtualizedVolumeDetails extends AttachVolumeDetails {
             String displayName,
             String instanceId,
             Boolean isReadOnly,
+            Boolean isShareable,
             String volumeId,
             Boolean isPvEncryptionInTransitEnabled) {
-        super(device, displayName, instanceId, isReadOnly, volumeId);
+        super(device, displayName, instanceId, isReadOnly, isShareable, volumeId);
         this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
     }
 

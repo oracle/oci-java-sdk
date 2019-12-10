@@ -11,12 +11,13 @@ import com.oracle.bmc.streaming.model.*;
 public class UpdateStreamRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The OCID of the stream to update.
+     * The OCID of the stream.
+     *
      */
     private String streamId;
 
     /**
-     * The stream is updated with the tags provided.
+     * The stream is updated with the values provided.
      */
     private UpdateStreamDetails updateStreamDetails;
 

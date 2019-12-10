@@ -42,7 +42,28 @@ public interface StreamAdmin extends AutoCloseable {
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      */
+    ChangeConnectHarnessCompartmentResponse changeConnectHarnessCompartment(
+            ChangeConnectHarnessCompartmentRequest request);
+
+    /**
+     * Moves a resource into a different compartment.
+     * When provided, If-Match is checked against ETag values of the resource.
+     * The stream will also be moved into the default stream pool in the destination compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
     ChangeStreamCompartmentResponse changeStreamCompartment(ChangeStreamCompartmentRequest request);
+
+    /**
+     * Moves a resource into a different compartment. When provided, If-Match is checked against ETag values of the resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeStreamPoolCompartmentResponse changeStreamPoolCompartment(
+            ChangeStreamPoolCompartmentRequest request);
 
     /**
      * Starts the provisioning of a new stream archiver.
@@ -56,7 +77,19 @@ public interface StreamAdmin extends AutoCloseable {
     CreateArchiverResponse createArchiver(CreateArchiverRequest request);
 
     /**
+     * Starts the provisioning of a new connect harness.
+     * To track the progress of the provisioning, you can periodically call {@link ConnectHarness} object tells you its current state.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateConnectHarnessResponse createConnectHarness(CreateConnectHarnessRequest request);
+
+    /**
      * Starts the provisioning of a new stream.
+     * The stream will be created in the given compartment id or stream pool id, depending on which parameter is specified.
+     * Compartment id and stream pool id cannot be specified at the same time.
      * To track the progress of the provisioning, you can periodically call {@link #getStream(GetStreamRequest) getStream}.
      * In the response, the `lifecycleState` parameter of the {@link Stream} object tells you its current state.
      *
@@ -65,6 +98,30 @@ public interface StreamAdmin extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     CreateStreamResponse createStream(CreateStreamRequest request);
+
+    /**
+     * Starts the provisioning of a new stream pool.
+     * To track the progress of the provisioning, you can periodically call GetStreamPool.
+     * In the response, the `lifecycleState` parameter of the object tells you its current state.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateStreamPoolResponse createStreamPool(CreateStreamPoolRequest request);
+
+    /**
+     * Deletes a connect harness and its content. Connect harness contents are deleted immediately. The service retains records of the connect harness itself for 90 days after deletion.
+     * The `lifecycleState` parameter of the `ConnectHarness` object changes to `DELETING` and the connect harness becomes inaccessible for read or write operations.
+     * To verify that a connect harness has been deleted, make a {@link #getConnectHarness(GetConnectHarnessRequest) getConnectHarness} request. If the call returns the connect harness's
+     * lifecycle state as `DELETED`, then the connect harness has been deleted. If the call returns a \"404 Not Found\" error, that means all records of the
+     * connect harness have been deleted.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteConnectHarnessResponse deleteConnectHarness(DeleteConnectHarnessRequest request);
 
     /**
      * Deletes a stream and its content. Stream contents are deleted immediately. The service retains records of the stream itself for 90 days after deletion.
@@ -80,6 +137,16 @@ public interface StreamAdmin extends AutoCloseable {
     DeleteStreamResponse deleteStream(DeleteStreamRequest request);
 
     /**
+     * Deletes a stream pool. All containing streams will also be deleted.
+     * The default stream pool of a compartment cannot be deleted.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteStreamPoolResponse deleteStreamPool(DeleteStreamPoolRequest request);
+
+    /**
      * Returns the current state of the stream archiver.
      *
      * @param request The request object containing the details to send
@@ -87,6 +154,14 @@ public interface StreamAdmin extends AutoCloseable {
      * @throws BmcException when an error occurs.
      */
     GetArchiverResponse getArchiver(GetArchiverRequest request);
+
+    /**
+     * Gets detailed information about a connect harness.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetConnectHarnessResponse getConnectHarness(GetConnectHarnessRequest request);
 
     /**
      * Gets detailed information about a stream, including the number of partitions.
@@ -97,7 +172,35 @@ public interface StreamAdmin extends AutoCloseable {
     GetStreamResponse getStream(GetStreamRequest request);
 
     /**
-     * Lists the streams.
+     * Gets detailed information about the stream pool, such as Kafka settings.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetStreamPoolResponse getStreamPool(GetStreamPoolRequest request);
+
+    /**
+     * Lists the connectharness.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListConnectHarnessesResponse listConnectHarnesses(ListConnectHarnessesRequest request);
+
+    /**
+     * List the stream pools for a given compartment ID.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListStreamPoolsResponse listStreamPools(ListStreamPoolsRequest request);
+
+    /**
+     * Lists the streams in the given compartment id.
+     * If the compartment id is specified, it will list streams in the compartment, regardless of their stream pool.
+     * If the stream pool id is specified, the action will be scoped to that stream pool.
+     * The compartment id and stream pool id cannot be specified at the same time.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -132,13 +235,31 @@ public interface StreamAdmin extends AutoCloseable {
     UpdateArchiverResponse updateArchiver(UpdateArchiverRequest request);
 
     /**
-     * Updates the tags applied to the stream.
+     * Updates the tags applied to the connect harness.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateConnectHarnessResponse updateConnectHarness(UpdateConnectHarnessRequest request);
+
+    /**
+     * Updates the stream. Only specified values will be updated.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
      */
     UpdateStreamResponse updateStream(UpdateStreamRequest request);
+
+    /**
+     * Updates the specified stream pool.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateStreamPoolResponse updateStreamPool(UpdateStreamPoolRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

@@ -30,6 +30,231 @@ public class StreamAdminPaginators {
     private final StreamAdmin client;
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listConnectHarnesses operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListConnectHarnessesResponse> listConnectHarnessesResponseIterator(
+            final ListConnectHarnessesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListConnectHarnessesRequest.Builder, ListConnectHarnessesRequest,
+                ListConnectHarnessesResponse>(
+                new com.google.common.base.Supplier<ListConnectHarnessesRequest.Builder>() {
+                    @Override
+                    public ListConnectHarnessesRequest.Builder get() {
+                        return ListConnectHarnessesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListConnectHarnessesResponse, String>() {
+                    @Override
+                    public String apply(ListConnectHarnessesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListConnectHarnessesRequest.Builder>,
+                        ListConnectHarnessesRequest>() {
+                    @Override
+                    public ListConnectHarnessesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListConnectHarnessesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListConnectHarnessesRequest, ListConnectHarnessesResponse>() {
+                    @Override
+                    public ListConnectHarnessesResponse apply(ListConnectHarnessesRequest request) {
+                        return client.listConnectHarnesses(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.streaming.model.ConnectHarnessSummary} objects
+     * contained in responses from the listConnectHarnesses operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.streaming.model.ConnectHarnessSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.streaming.model.ConnectHarnessSummary>
+            listConnectHarnessesRecordIterator(final ListConnectHarnessesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListConnectHarnessesRequest.Builder, ListConnectHarnessesRequest,
+                ListConnectHarnessesResponse, com.oracle.bmc.streaming.model.ConnectHarnessSummary>(
+                new com.google.common.base.Supplier<ListConnectHarnessesRequest.Builder>() {
+                    @Override
+                    public ListConnectHarnessesRequest.Builder get() {
+                        return ListConnectHarnessesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListConnectHarnessesResponse, String>() {
+                    @Override
+                    public String apply(ListConnectHarnessesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListConnectHarnessesRequest.Builder>,
+                        ListConnectHarnessesRequest>() {
+                    @Override
+                    public ListConnectHarnessesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListConnectHarnessesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListConnectHarnessesRequest, ListConnectHarnessesResponse>() {
+                    @Override
+                    public ListConnectHarnessesResponse apply(ListConnectHarnessesRequest request) {
+                        return client.listConnectHarnesses(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListConnectHarnessesResponse,
+                        java.util.List<com.oracle.bmc.streaming.model.ConnectHarnessSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.streaming.model.ConnectHarnessSummary>
+                            apply(ListConnectHarnessesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listStreamPools operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListStreamPoolsResponse> listStreamPoolsResponseIterator(
+            final ListStreamPoolsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListStreamPoolsRequest.Builder, ListStreamPoolsRequest, ListStreamPoolsResponse>(
+                new com.google.common.base.Supplier<ListStreamPoolsRequest.Builder>() {
+                    @Override
+                    public ListStreamPoolsRequest.Builder get() {
+                        return ListStreamPoolsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListStreamPoolsResponse, String>() {
+                    @Override
+                    public String apply(ListStreamPoolsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListStreamPoolsRequest.Builder>,
+                        ListStreamPoolsRequest>() {
+                    @Override
+                    public ListStreamPoolsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListStreamPoolsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListStreamPoolsRequest, ListStreamPoolsResponse>() {
+                    @Override
+                    public ListStreamPoolsResponse apply(ListStreamPoolsRequest request) {
+                        return client.listStreamPools(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.streaming.model.StreamPoolSummary} objects
+     * contained in responses from the listStreamPools operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.streaming.model.StreamPoolSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.streaming.model.StreamPoolSummary> listStreamPoolsRecordIterator(
+            final ListStreamPoolsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListStreamPoolsRequest.Builder, ListStreamPoolsRequest, ListStreamPoolsResponse,
+                com.oracle.bmc.streaming.model.StreamPoolSummary>(
+                new com.google.common.base.Supplier<ListStreamPoolsRequest.Builder>() {
+                    @Override
+                    public ListStreamPoolsRequest.Builder get() {
+                        return ListStreamPoolsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListStreamPoolsResponse, String>() {
+                    @Override
+                    public String apply(ListStreamPoolsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListStreamPoolsRequest.Builder>,
+                        ListStreamPoolsRequest>() {
+                    @Override
+                    public ListStreamPoolsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListStreamPoolsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListStreamPoolsRequest, ListStreamPoolsResponse>() {
+                    @Override
+                    public ListStreamPoolsResponse apply(ListStreamPoolsRequest request) {
+                        return client.listStreamPools(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListStreamPoolsResponse,
+                        java.util.List<com.oracle.bmc.streaming.model.StreamPoolSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.streaming.model.StreamPoolSummary> apply(
+                            ListStreamPoolsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listStreams operation. This iterable
      * will fetch more data from the server as needed.
      *

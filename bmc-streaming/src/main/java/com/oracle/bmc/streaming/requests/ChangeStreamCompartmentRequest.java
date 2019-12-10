@@ -11,7 +11,8 @@ import com.oracle.bmc.streaming.model.*;
 public class ChangeStreamCompartmentRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The OCID of the stream to change compatment for.
+     * The OCID of the stream.
+     *
      */
     private String streamId;
 

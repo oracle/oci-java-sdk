@@ -33,9 +33,9 @@ public class Archiver {
         }
 
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-        private ArchiverLifecycleState lifecycleState;
+        private LifecycleState lifecycleState;
 
-        public Builder lifecycleState(ArchiverLifecycleState lifecycleState) {
+        public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
@@ -142,12 +142,61 @@ public class Archiver {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
+    /**
+     * The state of the stream archiver.
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum LifecycleState {
+        Creating("CREATING"),
+        Stopped("STOPPED"),
+        Starting("STARTING"),
+        Running("RUNNING"),
+        Stopping("STOPPING"),
+        Updating("UPDATING"),
 
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, LifecycleState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (LifecycleState v : LifecycleState.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        LifecycleState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static LifecycleState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
     /**
      * The state of the stream archiver.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    ArchiverLifecycleState lifecycleState;
+    LifecycleState lifecycleState;
 
     /**
      * The name of the bucket.
@@ -179,9 +228,6 @@ public class Archiver {
     @com.fasterxml.jackson.annotation.JsonProperty("batchRolloverTimeInSeconds")
     Integer batchRolloverTimeInSeconds;
 
-    /**
-     * If an operation failed this property contained the last error occurred.
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("error")
     ArchiverError error;
 

@@ -90,6 +90,16 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest {
     private String contentEncoding;
 
     /**
+     * The Content-Disposition header value to be returned in GetObjectReponse.
+     */
+    private String contentDisposition;
+
+    /**
+     * The cache-control header value to be returned in GetObjectReponse.
+     */
+    private String cacheControl;
+
+    /**
      * Optional user-defined metadata key and value.
      */
     private java.util.Map<String, String> opcMeta;
@@ -140,6 +150,8 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest {
             contentType(o.getContentType());
             contentLanguage(o.getContentLanguage());
             contentEncoding(o.getContentEncoding());
+            contentDisposition(o.getContentDisposition());
+            cacheControl(o.getCacheControl());
             opcMeta(o.getOpcMeta());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());

@@ -58,6 +58,15 @@ public class StreamSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("streamPoolId")
+        private String streamPoolId;
+
+        public Builder streamPoolId(String streamPoolId) {
+            this.streamPoolId = streamPoolId;
+            this.__explicitlySet__.add("streamPoolId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -114,6 +123,7 @@ public class StreamSummary {
                             id,
                             partitions,
                             compartmentId,
+                            streamPoolId,
                             lifecycleState,
                             timeCreated,
                             messagesEndpoint,
@@ -130,6 +140,7 @@ public class StreamSummary {
                             .id(o.getId())
                             .partitions(o.getPartitions())
                             .compartmentId(o.getCompartmentId())
+                            .streamPoolId(o.getStreamPoolId())
                             .lifecycleState(o.getLifecycleState())
                             .timeCreated(o.getTimeCreated())
                             .messagesEndpoint(o.getMessagesEndpoint())
@@ -174,6 +185,12 @@ public class StreamSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
+
+    /**
+     * The OCID of the stream pool that contains the stream.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("streamPoolId")
+    String streamPoolId;
     /**
      * The current state of the stream.
      **/
@@ -184,6 +201,7 @@ public class StreamSummary {
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),
+        Updating("UPDATING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

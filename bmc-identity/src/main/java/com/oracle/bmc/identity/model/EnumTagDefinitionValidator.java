@@ -4,9 +4,10 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * Validates the 'value' set for a definedTag is contained in the list of allowable 'values'.
+ * Used to validate the value set for a defined tag and contains the list of allowable `values`.
  * <p>
- * If the 'validatorType' is 'ENUM', then at least one valid value must be specified in the 'values' array.
+ * You must specify at least one valid value in the `values` array. You can't have blank or
+ * or empty strings (`\"\"`). Duplicate values are not allowed.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

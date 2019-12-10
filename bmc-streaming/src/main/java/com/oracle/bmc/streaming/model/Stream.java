@@ -67,6 +67,15 @@ public class Stream {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("streamPoolId")
+        private String streamPoolId;
+
+        public Builder streamPoolId(String streamPoolId) {
+            this.streamPoolId = streamPoolId;
+            this.__explicitlySet__.add("streamPoolId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -133,6 +142,7 @@ public class Stream {
                             partitions,
                             retentionInHours,
                             compartmentId,
+                            streamPoolId,
                             lifecycleState,
                             lifecycleStateDetails,
                             timeCreated,
@@ -151,6 +161,7 @@ public class Stream {
                             .partitions(o.getPartitions())
                             .retentionInHours(o.getRetentionInHours())
                             .compartmentId(o.getCompartmentId())
+                            .streamPoolId(o.getStreamPoolId())
                             .lifecycleState(o.getLifecycleState())
                             .lifecycleStateDetails(o.getLifecycleStateDetails())
                             .timeCreated(o.getTimeCreated())
@@ -202,6 +213,12 @@ public class Stream {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
+
+    /**
+     * The OCID of the stream pool that contains the stream.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("streamPoolId")
+    String streamPoolId;
     /**
      * The current state of the stream.
      **/
@@ -212,6 +229,7 @@ public class Stream {
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),
+        Updating("UPDATING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

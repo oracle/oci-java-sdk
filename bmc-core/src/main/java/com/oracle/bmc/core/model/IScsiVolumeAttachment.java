@@ -93,6 +93,15 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isShareable")
+        private Boolean isShareable;
+
+        public Builder isShareable(Boolean isShareable) {
+            this.isShareable = isShareable;
+            this.__explicitlySet__.add("isShareable");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
@@ -187,6 +196,7 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
                             id,
                             instanceId,
                             isReadOnly,
+                            isShareable,
                             lifecycleState,
                             timeCreated,
                             volumeId,
@@ -210,6 +220,7 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
                             .id(o.getId())
                             .instanceId(o.getInstanceId())
                             .isReadOnly(o.getIsReadOnly())
+                            .isShareable(o.getIsShareable())
                             .lifecycleState(o.getLifecycleState())
                             .timeCreated(o.getTimeCreated())
                             .volumeId(o.getVolumeId())
@@ -241,6 +252,7 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
             String id,
             String instanceId,
             Boolean isReadOnly,
+            Boolean isShareable,
             LifecycleState lifecycleState,
             java.util.Date timeCreated,
             String volumeId,
@@ -258,6 +270,7 @@ public class IScsiVolumeAttachment extends VolumeAttachment {
                 id,
                 instanceId,
                 isReadOnly,
+                isShareable,
                 lifecycleState,
                 timeCreated,
                 volumeId,

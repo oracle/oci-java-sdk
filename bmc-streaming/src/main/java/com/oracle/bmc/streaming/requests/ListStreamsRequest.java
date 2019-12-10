@@ -16,6 +16,11 @@ public class ListStreamsRequest extends com.oracle.bmc.requests.BmcRequest {
     private String compartmentId;
 
     /**
+     * The OCID of the stream pool.
+     */
+    private String streamPoolId;
+
+    /**
      * A filter to return only resources that match the given ID exactly.
      *
      */
@@ -170,6 +175,7 @@ public class ListStreamsRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(ListStreamsRequest o) {
             compartmentId(o.getCompartmentId());
+            streamPoolId(o.getStreamPoolId());
             id(o.getId());
             name(o.getName());
             limit(o.getLimit());

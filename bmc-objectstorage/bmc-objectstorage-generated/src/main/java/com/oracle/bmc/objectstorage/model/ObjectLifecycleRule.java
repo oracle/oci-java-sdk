@@ -194,7 +194,7 @@ public class ObjectLifecycleRule {
     TimeUnit timeUnit;
 
     /**
-     * A boolean that determines whether this rule is currently enabled.
+     * A Boolean that determines whether this rule is currently enabled.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     Boolean isEnabled;
