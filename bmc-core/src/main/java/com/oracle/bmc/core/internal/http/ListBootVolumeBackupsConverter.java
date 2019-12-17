@@ -68,6 +68,14 @@ public class ListBootVolumeBackupsConverter {
                                     request.getDisplayName()));
         }
 
+        if (request.getSourceBootVolumeBackupId() != null) {
+            target =
+                    target.queryParam(
+                            "sourceBootVolumeBackupId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getSourceBootVolumeBackupId()));
+        }
+
         if (request.getSortBy() != null) {
             target =
                     target.queryParam(

@@ -94,6 +94,15 @@ public class NodePool {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nodeSource")
+        private NodeSourceOption nodeSource;
+
+        public Builder nodeSource(NodeSourceOption nodeSource) {
+            this.nodeSource = nodeSource;
+            this.__explicitlySet__.add("nodeSource");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("nodeShape")
         private String nodeShape;
 
@@ -171,6 +180,7 @@ public class NodePool {
                             nodeMetadata,
                             nodeImageId,
                             nodeImageName,
+                            nodeSource,
                             nodeShape,
                             initialNodeLabels,
                             sshPublicKey,
@@ -193,6 +203,7 @@ public class NodePool {
                             .nodeMetadata(o.getNodeMetadata())
                             .nodeImageId(o.getNodeImageId())
                             .nodeImageName(o.getNodeImageName())
+                            .nodeSource(o.getNodeSource())
                             .nodeShape(o.getNodeShape())
                             .initialNodeLabels(o.getInitialNodeLabels())
                             .sshPublicKey(o.getSshPublicKey())
@@ -250,16 +261,24 @@ public class NodePool {
     java.util.Map<String, String> nodeMetadata;
 
     /**
-     * The OCID of the image running on the nodes in the node pool.
+     * Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeImageId")
     String nodeImageId;
 
     /**
-     * The name of the image running on the nodes in the node pool.
+     * Deprecated. see `nodeSource`. The name of the image running on the nodes in the node pool.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeImageName")
     String nodeImageName;
+
+    /**
+     * Source running on the nodes in the node pool.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nodeSource")
+    NodeSourceOption nodeSource;
 
     /**
      * The name of the node shape of the nodes in the node pool.

@@ -529,6 +529,7 @@ public interface ComputeManagementAsync extends AutoCloseable {
 
     /**
      * Update the specified instance pool.
+     * <p>
      * The OCID of the instance pool remains the same.
      *
      *

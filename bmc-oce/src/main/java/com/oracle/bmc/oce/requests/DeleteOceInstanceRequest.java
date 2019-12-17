@@ -16,11 +16,6 @@ public class DeleteOceInstanceRequest extends com.oracle.bmc.requests.BmcRequest
     private String oceInstanceId;
 
     /**
-     * The information about resource to be deleted.
-     */
-    private DeleteOceInstanceDetails deleteOceInstanceDetails;
-
-    /**
      * For optimistic concurrency control. In the PUT or DELETE call
      * for a resource, set the `if-match` parameter to the value of the
      * etag from a previous GET or POST response for that resource.
@@ -69,7 +64,6 @@ public class DeleteOceInstanceRequest extends com.oracle.bmc.requests.BmcRequest
          */
         public Builder copy(DeleteOceInstanceRequest o) {
             oceInstanceId(o.getOceInstanceId());
-            deleteOceInstanceDetails(o.getDeleteOceInstanceDetails());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());

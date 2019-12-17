@@ -41,6 +41,14 @@ public class ChangeZoneCompartmentRequest extends com.oracle.bmc.requests.BmcReq
      */
     private String opcRetryToken;
 
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
+     */
+    private String opcRequestId;
+
     public static class Builder {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
@@ -78,6 +86,7 @@ public class ChangeZoneCompartmentRequest extends com.oracle.bmc.requests.BmcReq
             changeZoneCompartmentDetails(o.getChangeZoneCompartmentDetails());
             ifMatch(o.getIfMatch());
             opcRetryToken(o.getOpcRetryToken());
+            opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

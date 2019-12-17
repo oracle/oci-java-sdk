@@ -128,19 +128,21 @@ public class InstancePoolLoadBalancerAttachment {
     }
 
     /**
-     * The OCID of the load balancer attachment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
 
     /**
-     * The OCID of the instance pool of the load balancer attachment.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instancePoolId")
     String instancePoolId;
 
     /**
-     * The OCID of the load balancer attached to the instance pool.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the load balancer attached to the instance pool.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerId")
     String loadBalancerId;

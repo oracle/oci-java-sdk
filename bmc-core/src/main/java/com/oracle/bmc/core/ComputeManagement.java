@@ -320,6 +320,7 @@ public interface ComputeManagement extends AutoCloseable {
 
     /**
      * Update the specified instance pool.
+     * <p>
      * The OCID of the instance pool remains the same.
      *
      * @param request The request object containing the details to send

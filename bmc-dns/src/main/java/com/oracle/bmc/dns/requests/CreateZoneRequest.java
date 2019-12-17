@@ -16,6 +16,14 @@ public class CreateZoneRequest extends com.oracle.bmc.requests.BmcRequest {
     private CreateZoneBaseDetails createZoneDetails;
 
     /**
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
+     */
+    private String opcRequestId;
+
+    /**
      * The OCID of the compartment the resource belongs to.
      */
     private String compartmentId;
@@ -54,6 +62,7 @@ public class CreateZoneRequest extends com.oracle.bmc.requests.BmcRequest {
          */
         public Builder copy(CreateZoneRequest o) {
             createZoneDetails(o.getCreateZoneDetails());
+            opcRequestId(o.getOpcRequestId());
             compartmentId(o.getCompartmentId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());

@@ -137,7 +137,16 @@ public class UpdateBootVolumeDetails {
     Long sizeInGBs;
 
     /**
-     * The number of Volume Performance Units that will be applied to this boot volume per GB.
+     * The number of volume performance units (VPUs) that will be applied to this volume per GB,
+     * representing the Block Volume service's elastic performance options.
+     * See [Block Volume Elastic Performance](https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeelasticperformance.htm) for more information.
+     * <p>
+     * Allowed values:
+     * <p>
+     * `10`: Represents Balanced option.
+     * <p>
+     * `20`: Represents Higher Performance option.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vpusPerGB")
     Long vpusPerGB;

@@ -141,6 +141,15 @@ public class BootVolumeBackup {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceBootVolumeBackupId")
+        private String sourceBootVolumeBackupId;
+
+        public Builder sourceBootVolumeBackupId(String sourceBootVolumeBackupId) {
+            this.sourceBootVolumeBackupId = sourceBootVolumeBackupId;
+            this.__explicitlySet__.add("sourceBootVolumeBackupId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
         private SourceType sourceType;
 
@@ -204,6 +213,7 @@ public class BootVolumeBackup {
                             kmsKeyId,
                             lifecycleState,
                             sizeInGBs,
+                            sourceBootVolumeBackupId,
                             sourceType,
                             timeCreated,
                             timeRequestReceived,
@@ -228,6 +238,7 @@ public class BootVolumeBackup {
                             .kmsKeyId(o.getKmsKeyId())
                             .lifecycleState(o.getLifecycleState())
                             .sizeInGBs(o.getSizeInGBs())
+                            .sourceBootVolumeBackupId(o.getSourceBootVolumeBackupId())
                             .sourceType(o.getSourceType())
                             .timeCreated(o.getTimeCreated())
                             .timeRequestReceived(o.getTimeRequestReceived())
@@ -318,7 +329,7 @@ public class BootVolumeBackup {
     String imageId;
 
     /**
-     * The OCID of the KMS key which is the master encryption key for the boot volume backup.
+     * The OCID of the Key Management master encryption assigned to the boot volume backup.
      * For more information about the Key Management service and encryption keys, see
      * [Overview of Key Management](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm) and
      * [Using Keys](https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/usingkeys.htm).
@@ -388,6 +399,12 @@ public class BootVolumeBackup {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInGBs")
     Long sizeInGBs;
+
+    /**
+     * The OCID of the source boot volume backup.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceBootVolumeBackupId")
+    String sourceBootVolumeBackupId;
     /**
      * Specifies whether the backup was created manually, or via scheduled backup policy.
      **/

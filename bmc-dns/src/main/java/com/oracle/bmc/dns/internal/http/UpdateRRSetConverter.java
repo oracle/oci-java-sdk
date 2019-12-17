@@ -64,6 +64,10 @@ public class UpdateRRSetConverter {
             ib.header("If-Unmodified-Since", request.getIfUnmodifiedSince());
         }
 
+        if (request.getOpcRequestId() != null) {
+            ib.header("opc-request-id", request.getOpcRequestId());
+        }
+
         return ib;
     }
 

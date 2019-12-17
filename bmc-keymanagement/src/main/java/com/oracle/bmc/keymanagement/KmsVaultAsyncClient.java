@@ -31,6 +31,7 @@ public class KmsVaultAsyncClient implements KmsVaultAsync {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("KMSVAULT")
                     .serviceEndpointPrefix("kms")
+                    .serviceEndpointTemplate("https://kms.{region}.{secondLevelDomain}")
                     .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)

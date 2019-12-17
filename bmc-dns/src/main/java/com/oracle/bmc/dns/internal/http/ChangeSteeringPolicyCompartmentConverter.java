@@ -53,6 +53,10 @@ public class ChangeSteeringPolicyCompartmentConverter {
             ib.header("opc-retry-token", request.getOpcRetryToken());
         }
 
+        if (request.getOpcRequestId() != null) {
+            ib.header("opc-request-id", request.getOpcRequestId());
+        }
+
         return ib;
     }
 

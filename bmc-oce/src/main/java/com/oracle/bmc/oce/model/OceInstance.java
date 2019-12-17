@@ -94,6 +94,15 @@ public class OceInstance {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("identityStripe")
+        private IdentityStripeDetails identityStripe;
+
+        public Builder identityStripe(IdentityStripeDetails identityStripe) {
+            this.identityStripe = identityStripe;
+            this.__explicitlySet__.add("identityStripe");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("objectStorageNamespace")
         private String objectStorageNamespace;
 
@@ -190,6 +199,7 @@ public class OceInstance {
                             tenancyId,
                             idcsTenancy,
                             tenancyName,
+                            identityStripe,
                             objectStorageNamespace,
                             adminEmail,
                             timeCreated,
@@ -214,6 +224,7 @@ public class OceInstance {
                             .tenancyId(o.getTenancyId())
                             .idcsTenancy(o.getIdcsTenancy())
                             .tenancyName(o.getTenancyName())
+                            .identityStripe(o.getIdentityStripe())
                             .objectStorageNamespace(o.getObjectStorageNamespace())
                             .adminEmail(o.getAdminEmail())
                             .timeCreated(o.getTimeCreated())
@@ -283,6 +294,9 @@ public class OceInstance {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyName")
     String tenancyName;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("identityStripe")
+    IdentityStripeDetails identityStripe;
 
     /**
      * Object Storage Namespace of tenancy

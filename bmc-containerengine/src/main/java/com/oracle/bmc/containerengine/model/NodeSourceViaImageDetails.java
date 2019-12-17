@@ -1,10 +1,10 @@
 /**
  * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
  */
-package com.oracle.bmc.oce.model;
+package com.oracle.bmc.containerengine.model;
 
 /**
- * The information about the resource to be deleted.
+ * Details of the image running on the node.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -13,38 +13,44 @@ package com.oracle.bmc.oce.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190912")
-@lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = DeleteOceInstanceDetails.Builder.class
+    builder = NodeSourceViaImageDetails.Builder.class
+)
+@lombok.ToString(callSuper = true)
+@lombok.EqualsAndHashCode(callSuper = true)
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "sourceType"
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class DeleteOceInstanceDetails {
+public class NodeSourceViaImageDetails extends NodeSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
-        @com.fasterxml.jackson.annotation.JsonProperty("idcsAccessToken")
-        private String idcsAccessToken;
+        @com.fasterxml.jackson.annotation.JsonProperty("imageId")
+        private String imageId;
 
-        public Builder idcsAccessToken(String idcsAccessToken) {
-            this.idcsAccessToken = idcsAccessToken;
-            this.__explicitlySet__.add("idcsAccessToken");
+        public Builder imageId(String imageId) {
+            this.imageId = imageId;
+            this.__explicitlySet__.add("imageId");
             return this;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
-        public DeleteOceInstanceDetails build() {
-            DeleteOceInstanceDetails __instance__ = new DeleteOceInstanceDetails(idcsAccessToken);
+        public NodeSourceViaImageDetails build() {
+            NodeSourceViaImageDetails __instance__ = new NodeSourceViaImageDetails(imageId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(DeleteOceInstanceDetails o) {
-            Builder copiedBuilder = idcsAccessToken(o.getIdcsAccessToken());
+        public Builder copy(NodeSourceViaImageDetails o) {
+            Builder copiedBuilder = imageId(o.getImageId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -58,11 +64,17 @@ public class DeleteOceInstanceDetails {
         return new Builder();
     }
 
+    @Deprecated
+    public NodeSourceViaImageDetails(String imageId) {
+        super();
+        this.imageId = imageId;
+    }
+
     /**
-     * IDCS access token identifying a stripe and service administrator user
+     * The OCID of the image used to boot the node.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("idcsAccessToken")
-    String idcsAccessToken;
+    @com.fasterxml.jackson.annotation.JsonProperty("imageId")
+    String imageId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

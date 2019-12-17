@@ -66,11 +66,12 @@ public class KeyShape {
     }
 
     /**
-     * The algorithm used by a key's KeyVersions to encrypt or decrypt.
+     * The algorithm used by a key's key versions to encrypt or decrypt.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Algorithm {
         Aes("AES"),
+        Rsa("RSA"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -111,7 +112,7 @@ public class KeyShape {
         }
     };
     /**
-     * The algorithm used by a key's KeyVersions to encrypt or decrypt.
+     * The algorithm used by a key's key versions to encrypt or decrypt.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("algorithm")
     Algorithm algorithm;

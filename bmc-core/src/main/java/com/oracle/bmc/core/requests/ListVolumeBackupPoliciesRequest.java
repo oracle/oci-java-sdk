@@ -29,8 +29,8 @@ public class ListVolumeBackupPoliciesRequest extends com.oracle.bmc.requests.Bmc
     private String page;
 
     /**
-     * The OCID of the compartment to list.
-     * If no compartment is specified, list the predefined (Gold, Silver, Bronze) backup policies.
+     * The OCID of the compartment.
+     * If no compartment is specified, the Oracle defined backup policies are listed.
      *
      */
     private String compartmentId;

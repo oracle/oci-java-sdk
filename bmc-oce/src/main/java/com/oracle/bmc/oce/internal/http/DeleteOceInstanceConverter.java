@@ -25,8 +25,6 @@ public class DeleteOceInstanceConverter {
             com.oracle.bmc.http.internal.RestClient client, DeleteOceInstanceRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getOceInstanceId(), "oceInstanceId must not be blank");
-        Validate.notNull(
-                request.getDeleteOceInstanceDetails(), "deleteOceInstanceDetails is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()

@@ -24,6 +24,15 @@ public class UpdateStreamPoolDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("name")
+        private String name;
+
+        public Builder name(String name) {
+            this.name = name;
+            this.__explicitlySet__.add("name");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("kafkaSettings")
         private KafkaSettings kafkaSettings;
 
@@ -57,7 +66,7 @@ public class UpdateStreamPoolDetails {
 
         public UpdateStreamPoolDetails build() {
             UpdateStreamPoolDetails __instance__ =
-                    new UpdateStreamPoolDetails(kafkaSettings, freeformTags, definedTags);
+                    new UpdateStreamPoolDetails(name, kafkaSettings, freeformTags, definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -65,7 +74,8 @@ public class UpdateStreamPoolDetails {
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateStreamPoolDetails o) {
             Builder copiedBuilder =
-                    kafkaSettings(o.getKafkaSettings())
+                    name(o.getName())
+                            .kafkaSettings(o.getKafkaSettings())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -80,6 +90,9 @@ public class UpdateStreamPoolDetails {
     public static Builder builder() {
         return new Builder();
     }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("name")
+    String name;
 
     @com.fasterxml.jackson.annotation.JsonProperty("kafkaSettings")
     KafkaSettings kafkaSettings;

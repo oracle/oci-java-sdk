@@ -38,7 +38,7 @@ public class ListVaultsRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
      * The field to sort by. You can specify only one sort order. The default
-     * order for TIMECREATED is descending. The default order for DISPLAYNAME
+     * order for `TIMECREATED` is descending. The default order for `DISPLAYNAME`
      * is ascending.
      *
      */
@@ -46,7 +46,7 @@ public class ListVaultsRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
      * The field to sort by. You can specify only one sort order. The default
-     * order for TIMECREATED is descending. The default order for DISPLAYNAME
+     * order for `TIMECREATED` is descending. The default order for `DISPLAYNAME`
      * is ascending.
      *
      **/

@@ -16,6 +16,14 @@ public class ListSteeringPolicyAttachmentsRequest extends com.oracle.bmc.request
     private String compartmentId;
 
     /**
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
+     */
+    private String opcRequestId;
+
+    /**
      * The maximum number of items to return in a page of the collection.
      *
      */
@@ -166,6 +174,7 @@ public class ListSteeringPolicyAttachmentsRequest extends com.oracle.bmc.request
          */
         public Builder copy(ListSteeringPolicyAttachmentsRequest o) {
             compartmentId(o.getCompartmentId());
+            opcRequestId(o.getOpcRequestId());
             limit(o.getLimit());
             page(o.getPage());
             id(o.getId());

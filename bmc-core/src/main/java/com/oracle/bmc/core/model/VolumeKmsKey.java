@@ -4,7 +4,7 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The KMS key OCID associated with this volume.
+ * The Key Management master encryption key associated with this volume.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -58,7 +58,7 @@ public class VolumeKmsKey {
     }
 
     /**
-     * The KMS key OCID associated with this volume. If the volume is not using KMS, then the `kmsKeyId` will be a null string.
+     * The OCID of the Key Management key assigned to this volume. If the volume is not using Key Management, then the `kmsKeyId` will be a null string.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")

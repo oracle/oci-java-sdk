@@ -18,6 +18,7 @@ public class KmsManagementClient implements KmsManagement {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("KMSMANAGEMENT")
                     .serviceEndpointPrefix("kms")
+                    .serviceEndpointTemplate("https://kms.{region}.{secondLevelDomain}")
                     .build();
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
@@ -321,6 +322,36 @@ public class KmsManagementClient implements KmsManagement {
     }
 
     @Override
+    public CancelKeyVersionDeletionResponse cancelKeyVersionDeletion(
+            CancelKeyVersionDeletionRequest request) {
+        LOG.trace("Called cancelKeyVersionDeletion");
+        final CancelKeyVersionDeletionRequest interceptedRequest =
+                CancelKeyVersionDeletionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelKeyVersionDeletionConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CancelKeyVersionDeletionResponse>
+                transformer = CancelKeyVersionDeletionConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeKeyCompartmentResponse changeKeyCompartment(ChangeKeyCompartmentRequest request) {
         LOG.trace("Called changeKeyCompartment");
         final ChangeKeyCompartmentRequest interceptedRequest =
@@ -524,6 +555,97 @@ public class KmsManagementClient implements KmsManagement {
     }
 
     @Override
+    public GetWrappingKeyResponse getWrappingKey(GetWrappingKeyRequest request) {
+        LOG.trace("Called getWrappingKey");
+        final GetWrappingKeyRequest interceptedRequest =
+                GetWrappingKeyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetWrappingKeyConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetWrappingKeyResponse>
+                transformer = GetWrappingKeyConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ImportKeyResponse importKey(ImportKeyRequest request) {
+        LOG.trace("Called importKey");
+        final ImportKeyRequest interceptedRequest = ImportKeyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ImportKeyConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ImportKeyResponse> transformer =
+                ImportKeyConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getImportKeyDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ImportKeyVersionResponse importKeyVersion(ImportKeyVersionRequest request) {
+        LOG.trace("Called importKeyVersion");
+        final ImportKeyVersionRequest interceptedRequest =
+                ImportKeyVersionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ImportKeyVersionConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ImportKeyVersionResponse>
+                transformer = ImportKeyVersionConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getImportKeyVersionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListKeyVersionsResponse listKeyVersions(ListKeyVersionsRequest request) {
         LOG.trace("Called listKeyVersions");
         final ListKeyVersionsRequest interceptedRequest =
@@ -604,6 +726,41 @@ public class KmsManagementClient implements KmsManagement {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getScheduleKeyDeletionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ScheduleKeyVersionDeletionResponse scheduleKeyVersionDeletion(
+            ScheduleKeyVersionDeletionRequest request) {
+        LOG.trace("Called scheduleKeyVersionDeletion");
+        final ScheduleKeyVersionDeletionRequest interceptedRequest =
+                ScheduleKeyVersionDeletionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ScheduleKeyVersionDeletionConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ScheduleKeyVersionDeletionResponse>
+                transformer = ScheduleKeyVersionDeletionConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getScheduleKeyVersionDeletionDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

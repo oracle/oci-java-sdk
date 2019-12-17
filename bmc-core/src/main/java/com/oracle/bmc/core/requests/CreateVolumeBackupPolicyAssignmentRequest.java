@@ -11,7 +11,7 @@ import com.oracle.bmc.core.model.*;
 public class CreateVolumeBackupPolicyAssignmentRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * Request to assign a specified policy to a particular asset.
+     * Request to assign a specified policy to a particular volume.
      */
     private CreateVolumeBackupPolicyAssignmentDetails createVolumeBackupPolicyAssignmentDetails;
 

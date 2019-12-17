@@ -4,7 +4,9 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Defines a chronological recurrence pattern for creating scheduled backups at a particular periodicity.
+ * Defines the backup frequency and retention period for a volume backup policy. For more information,
+ * see [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -161,7 +163,7 @@ public class VolumeBackupSchedule {
     }
 
     /**
-     * The type of backup to create.
+     * The type of volume backup to create.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum BackupType {
@@ -207,18 +209,18 @@ public class VolumeBackupSchedule {
         }
     };
     /**
-     * The type of backup to create.
+     * The type of volume backup to create.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupType")
     BackupType backupType;
 
     /**
-     * The number of seconds that the backup time should be shifted from the default interval boundaries specified by the period. Backup time = Frequency start time + Offset.
+     * The number of seconds that the volume backup start time should be shifted from the default interval boundaries specified by the period. The volume backup start time is the frequency start time plus the offset.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("offsetSeconds")
     Integer offsetSeconds;
     /**
-     * How often the backup should occur.
+     * The volume backup frequency.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Period {
@@ -267,12 +269,26 @@ public class VolumeBackupSchedule {
         }
     };
     /**
-     * How often the backup should occur.
+     * The volume backup frequency.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("period")
     Period period;
     /**
-     * Indicates how offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the respones. `hourOfDay` is applicable for periods `ONE_DAY`, `ONE_WEEK`, `ONE_MONTH` and `ONE_YEAR`. `dayOfWeek` is applicable for period `ONE_WEEK`. `dayOfMonth` is applicable for periods `ONE_MONTH` and `ONE_YEAR`. 'month' is applicable for period 'ONE_YEAR'. They will be ignored in the requests for inapplicable periods. If value is `NUMERIC_SECONDS`, then `offsetSeconds` will be used for both requests and responses and the structured fields will be ignored in the requests and users should ignore their values from the respones. For clients using older versions of Apis and not sending `offsetType` in their requests, the behaviour is just like `NUMERIC_SECONDS`.
+     * Indicates how the offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the responses.
+     * <p>
+     * `hourOfDay` is applicable for periods `ONE_DAY`, `ONE_WEEK`, `ONE_MONTH` and `ONE_YEAR`.
+     * <p>
+     * `dayOfWeek` is applicable for period `ONE_WEEK`.
+     * <p>
+     * `dayOfMonth` is applicable for periods `ONE_MONTH` and `ONE_YEAR`.
+     * <p>
+     * 'month' is applicable for period 'ONE_YEAR'.
+     * <p>
+     * They will be ignored in the requests for inapplicable periods.
+     * <p>
+     * If value is `NUMERIC_SECONDS`, then `offsetSeconds` will be used for both requests and responses and the structured fields will be ignored in the requests and users should ignore their values from the responses.
+     * <p>
+     * For clients using older versions of Apis and not sending `offsetType` in their requests, the behaviour is just like `NUMERIC_SECONDS`.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum OffsetType {
@@ -318,18 +334,32 @@ public class VolumeBackupSchedule {
         }
     };
     /**
-     * Indicates how offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the respones. `hourOfDay` is applicable for periods `ONE_DAY`, `ONE_WEEK`, `ONE_MONTH` and `ONE_YEAR`. `dayOfWeek` is applicable for period `ONE_WEEK`. `dayOfMonth` is applicable for periods `ONE_MONTH` and `ONE_YEAR`. 'month' is applicable for period 'ONE_YEAR'. They will be ignored in the requests for inapplicable periods. If value is `NUMERIC_SECONDS`, then `offsetSeconds` will be used for both requests and responses and the structured fields will be ignored in the requests and users should ignore their values from the respones. For clients using older versions of Apis and not sending `offsetType` in their requests, the behaviour is just like `NUMERIC_SECONDS`.
+     * Indicates how the offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the responses.
+     * <p>
+     * `hourOfDay` is applicable for periods `ONE_DAY`, `ONE_WEEK`, `ONE_MONTH` and `ONE_YEAR`.
+     * <p>
+     * `dayOfWeek` is applicable for period `ONE_WEEK`.
+     * <p>
+     * `dayOfMonth` is applicable for periods `ONE_MONTH` and `ONE_YEAR`.
+     * <p>
+     * 'month' is applicable for period 'ONE_YEAR'.
+     * <p>
+     * They will be ignored in the requests for inapplicable periods.
+     * <p>
+     * If value is `NUMERIC_SECONDS`, then `offsetSeconds` will be used for both requests and responses and the structured fields will be ignored in the requests and users should ignore their values from the responses.
+     * <p>
+     * For clients using older versions of Apis and not sending `offsetType` in their requests, the behaviour is just like `NUMERIC_SECONDS`.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("offsetType")
     OffsetType offsetType;
 
     /**
-     * The hour of the day to schedule the backup
+     * The hour of the day to schedule the volume backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hourOfDay")
     Integer hourOfDay;
     /**
-     * The day of the week to schedule the backup
+     * The day of the week to schedule the volume backup.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum DayOfWeek {
@@ -380,18 +410,18 @@ public class VolumeBackupSchedule {
         }
     };
     /**
-     * The day of the week to schedule the backup
+     * The day of the week to schedule the volume backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dayOfWeek")
     DayOfWeek dayOfWeek;
 
     /**
-     * The day of the month to schedule the backup
+     * The day of the month to schedule the volume backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dayOfMonth")
     Integer dayOfMonth;
     /**
-     * The month of the year to schedule the backup
+     * The month of the year to schedule the volume backup.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Month {
@@ -447,13 +477,13 @@ public class VolumeBackupSchedule {
         }
     };
     /**
-     * The month of the year to schedule the backup
+     * The month of the year to schedule the volume backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("month")
     Month month;
 
     /**
-     * How long, in seconds, backups created by this schedule should be kept until being automatically deleted.
+     * How long, in seconds, to keep the volume backups created by this schedule.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("retentionSeconds")
     Integer retentionSeconds;

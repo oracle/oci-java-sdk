@@ -12,7 +12,7 @@ public class GetInstancePoolLoadBalancerAttachmentRequest
         extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The OCID of the instance pool.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the instance pool.
      */
     private String instancePoolId;
 

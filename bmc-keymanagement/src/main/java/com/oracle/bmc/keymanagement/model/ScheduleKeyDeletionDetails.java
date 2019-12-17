@@ -4,7 +4,7 @@
 package com.oracle.bmc.keymanagement.model;
 
 /**
- * Details for scheduling key deletion
+ * Details for scheduling key deletion.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -60,9 +60,11 @@ public class ScheduleKeyDeletionDetails {
     }
 
     /**
-     * An optional property to indicate the deletion time of the key, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
-     * timestamp format. The specified time must be between 7 and 30 days from the time
-     * when the request is received. If this property is missing, it will be set to 30 days from the time of the request by default.
+     * An optional property to indicate when to delete the vault, expressed in
+     * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The specified
+     * time must be between 7 and 30 days from when the request is received.
+     * If this property is missing, it will be set to 30 days from the time of the request
+     * by default.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")
