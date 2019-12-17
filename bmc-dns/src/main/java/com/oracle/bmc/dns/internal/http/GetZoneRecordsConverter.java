@@ -119,6 +119,10 @@ public class GetZoneRecordsConverter {
             ib.header("If-Modified-Since", request.getIfModifiedSince());
         }
 
+        if (request.getOpcRequestId() != null) {
+            ib.header("opc-request-id", request.getOpcRequestId());
+        }
+
         return ib;
     }
 

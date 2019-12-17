@@ -31,6 +31,7 @@ public class KmsCryptoAsyncClient implements KmsCryptoAsync {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("KMSCRYPTO")
                     .serviceEndpointPrefix("kms")
+                    .serviceEndpointTemplate("https://kms.{region}.{secondLevelDomain}")
                     .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)

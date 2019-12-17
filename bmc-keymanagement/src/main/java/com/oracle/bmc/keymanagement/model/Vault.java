@@ -122,6 +122,15 @@ public class Vault {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("wrappingkeyId")
+        private String wrappingkeyId;
+
+        public Builder wrappingkeyId(String wrappingkeyId) {
+            this.wrappingkeyId = wrappingkeyId;
+            this.__explicitlySet__.add("wrappingkeyId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -138,7 +147,8 @@ public class Vault {
                             managementEndpoint,
                             timeCreated,
                             timeOfDeletion,
-                            vaultType);
+                            vaultType,
+                            wrappingkeyId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -156,7 +166,8 @@ public class Vault {
                             .managementEndpoint(o.getManagementEndpoint())
                             .timeCreated(o.getTimeCreated())
                             .timeOfDeletion(o.getTimeOfDeletion())
-                            .vaultType(o.getVaultType());
+                            .vaultType(o.getVaultType())
+                            .wrappingkeyId(o.getWrappingkeyId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -177,15 +188,18 @@ public class Vault {
     String compartmentId;
 
     /**
-     * The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations.
+     * The service endpoint to perform cryptographic operations against. Cryptographic operations include
+     * [Encrypt](https://docs.cloud.oracle.com/api/#/en/key/release/EncryptedData/Encrypt), [Decrypt](https://docs.cloud.oracle.com/api/#/en/key/release/DecryptedData/Decrypt),
+     * and [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/release/GeneratedKey/GenerateDataEncryptionKey) operations.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cryptoEndpoint")
     String cryptoEndpoint;
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -200,9 +214,9 @@ public class Vault {
     String displayName;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type, or scope.
-     * Exists for cross-compatibility only.
-     * Example: `{\"bar-key\": \"value\"}`
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: `{\"Department\": \"Finance\"}`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -278,7 +292,7 @@ public class Vault {
     LifecycleState lifecycleState;
 
     /**
-     * The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations.
+     * The service endpoint to perform management operations against. Management operations include \"Create,\" \"Update,\" \"List,\" \"Get,\" and \"Delete\" operations.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementEndpoint")
@@ -294,18 +308,21 @@ public class Vault {
     java.util.Date timeCreated;
 
     /**
-     * An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * An optional property to indicate when to delete the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * Example: `2018-04-03T21:10:29.600Z`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfDeletion")
     java.util.Date timeOfDeletion;
     /**
-     * The type of vault. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
+     * The type of vault. Each type of vault stores the key with different
+     * degrees of isolation and has different options and pricing.
+     *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum VaultType {
         VirtualPrivate("VIRTUAL_PRIVATE"),
+        Default("DEFAULT"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -346,10 +363,18 @@ public class Vault {
         }
     };
     /**
-     * The type of vault. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
+     * The type of vault. Each type of vault stores the key with different
+     * degrees of isolation and has different options and pricing.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultType")
     VaultType vaultType;
+
+    /**
+     * The OCID of the vault wrapping key.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("wrappingkeyId")
+    String wrappingkeyId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

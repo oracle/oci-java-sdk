@@ -97,6 +97,7 @@ public class UpdateInstancePoolPlacementConfigurationDetails {
 
     /**
      * The availability domain to place instances.
+     * <p>
      * Example: `Uocm:PHX-AD-1`
      *
      **/
@@ -105,6 +106,19 @@ public class UpdateInstancePoolPlacementConfigurationDetails {
 
     /**
      * The fault domains to place instances.
+     * <p>
+     * If you don't provide any values, the system makes a best effort to distribute
+     * instances across all fault domains based on capacity.
+     * <p>
+     * To distribute the instances evenly across selected fault domains, provide a
+     * set of fault domains. For example, you might want instances to be evenly
+     * distributed if your applications require high availability.
+     * <p>
+     * To get a list of fault domains, use the
+     * {@link #listFaultDomains(ListFaultDomainsRequest) listFaultDomains} operation
+     * in the Identity and Access Management Service API.
+     * <p>
+     * Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomains")

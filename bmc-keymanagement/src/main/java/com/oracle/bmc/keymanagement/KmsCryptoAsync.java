@@ -16,7 +16,7 @@ public interface KmsCryptoAsync extends AutoCloseable {
     void setEndpoint(String endpoint);
 
     /**
-     * Decrypts data using the given DecryptDataDetails resource.
+     * Decrypts data using the given [DecryptDataDetails](https://docs.cloud.oracle.com/api/#/en/key/release/datatypes/DecryptDataDetails) resource.
      *
      *
      * @param request The request object containing the details to send
@@ -31,9 +31,8 @@ public interface KmsCryptoAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<DecryptRequest, DecryptResponse> handler);
 
     /**
-     * Encrypts data using the given EncryptDataDetails resource.
-     * Plaintext included in the example request is a base64-encoded value
-     * of a UTF-8 string.
+     * Encrypts data using the given [EncryptDataDetails](https://docs.cloud.oracle.com/api/#/en/key/release/datatypes/EncryptDataDetails) resource.
+     * Plaintext included in the example request is a base64-encoded value of a UTF-8 string.
      *
      *
      * @param request The request object containing the details to send

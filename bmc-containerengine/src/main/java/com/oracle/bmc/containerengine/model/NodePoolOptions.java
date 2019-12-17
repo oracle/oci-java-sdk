@@ -49,11 +49,21 @@ public class NodePoolOptions {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sources")
+        private java.util.List<NodeSourceOption> sources;
+
+        public Builder sources(java.util.List<NodeSourceOption> sources) {
+            this.sources = sources;
+            this.__explicitlySet__.add("sources");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public NodePoolOptions build() {
-            NodePoolOptions __instance__ = new NodePoolOptions(kubernetesVersions, shapes, images);
+            NodePoolOptions __instance__ =
+                    new NodePoolOptions(kubernetesVersions, shapes, images, sources);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -63,7 +73,8 @@ public class NodePoolOptions {
             Builder copiedBuilder =
                     kubernetesVersions(o.getKubernetesVersions())
                             .shapes(o.getShapes())
-                            .images(o.getImages());
+                            .images(o.getImages())
+                            .sources(o.getSources());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -90,10 +101,19 @@ public class NodePoolOptions {
     java.util.List<String> shapes;
 
     /**
-     * Available image names.
+     * Deprecated. See sources.
+     * When creating a node pool using the `CreateNodePoolDetails` object, only image names contained in this
+     * property can be passed to the `nodeImageName` property.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("images")
     java.util.List<String> images;
+
+    /**
+     * Available source of the node.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sources")
+    java.util.List<NodeSourceOption> sources;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

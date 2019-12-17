@@ -42,6 +42,14 @@ public class PatchZoneRecordsRequest extends com.oracle.bmc.requests.BmcRequest 
     private String ifUnmodifiedSince;
 
     /**
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
+     */
+    private String opcRequestId;
+
+    /**
      * The OCID of the compartment the resource belongs to.
      */
     private String compartmentId;
@@ -83,6 +91,7 @@ public class PatchZoneRecordsRequest extends com.oracle.bmc.requests.BmcRequest 
             patchZoneRecordsDetails(o.getPatchZoneRecordsDetails());
             ifMatch(o.getIfMatch());
             ifUnmodifiedSince(o.getIfUnmodifiedSince());
+            opcRequestId(o.getOpcRequestId());
             compartmentId(o.getCompartmentId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());

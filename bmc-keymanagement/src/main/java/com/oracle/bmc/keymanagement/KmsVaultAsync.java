@@ -38,9 +38,14 @@ public interface KmsVaultAsync extends AutoCloseable {
 
     /**
      * Cancels the scheduled deletion of the specified vault. Canceling a scheduled deletion
-     * restores the vault and all keys in it to the respective states they were in before
-     * the deletion was scheduled. All the keys that have already been scheduled deletion before the
-     * scheduled deletion of the vault will also remain in their state and timeOfDeletion.
+     * restores the vault and all keys in it to their respective states from before their
+     * scheduled deletion. All keys that were scheduled for deletion prior to vault
+     * deletion retain their lifecycle state and time of deletion.
+     * <p>
+     * As a provisioning operation, this call is subject to a Key Management limit that applies to
+     * the total number of requests across all provisioning write operations. Key Management might
+     * throttle this call to reject an otherwise valid request when the total rate of provisioning
+     * write operations exceeds 10 requests per second for a given tenancy.
      *
      *
      * @param request The request object containing the details to send
@@ -57,7 +62,16 @@ public interface KmsVaultAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Moves a vault into a different compartment. When provided, If-Match is checked against ETag values of the resource.
+     * Moves a vault into a different compartment within the same tenancy. For information about
+     * moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * <p>
+     * When provided, if-match is checked against the ETag values of the resource.
+     * <p>
+     * As a provisioning operation, this call is subject to a Key Management limit that applies to
+     * the total number of requests across all provisioning write operations. Key Management might
+     * throttle this call to reject an otherwise valid request when the total rate of provisioning
+     * write operations exceeds 10 requests per second for a given tenancy.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -73,10 +87,15 @@ public interface KmsVaultAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new vault. The type of vault you create determines key
-     * placement, pricing, and available options. Options include storage
-     * isolation, a dedicated service endpoint instead of a shared service
-     * endpoint for API calls, and a dedicated hardware security module (HSM) or a multitenant HSM.
+     * Creates a new vault. The type of vault you create determines key placement, pricing, and
+     * available options. Options include storage isolation, a dedicated service endpoint instead
+     * of a shared service endpoint for API calls, and either a dedicated hardware security module
+     * (HSM) or a multitenant HSM.
+     * <p>
+     * As a provisioning operation, this call is subject to a Key Management limit that applies to
+     * the total number of requests across all provisioning write operations. Key Management might
+     * throttle this call to reject an otherwise valid request when the total rate of provisioning
+     * write operations exceeds 10 requests per second for a given tenancy.
      *
      *
      * @param request The request object containing the details to send
@@ -92,6 +111,11 @@ public interface KmsVaultAsync extends AutoCloseable {
 
     /**
      * Gets the specified vault's configuration information.
+     * <p>
+     * As a provisioning operation, this call is subject to a Key Management limit that applies to
+     * the total number of requests across all provisioning read operations. Key Management might
+     * throttle this call to reject an otherwise valid request when the total rate of provisioning
+     * read operations exceeds 10 requests per second for a given tenancy.
      *
      *
      * @param request The request object containing the details to send
@@ -107,6 +131,11 @@ public interface KmsVaultAsync extends AutoCloseable {
 
     /**
      * Lists the vaults in the specified compartment.
+     * <p>
+     * As a provisioning operation, this call is subject to a Key Management limit that applies to
+     * the total number of requests across all provisioning read operations. Key Management might
+     * throttle this call to reject an otherwise valid request when the total rate of provisioning
+     * read operations exceeds 10 requests per second for a given tenancy.
      *
      *
      * @param request The request object containing the details to send
@@ -121,12 +150,16 @@ public interface KmsVaultAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListVaultsRequest, ListVaultsResponse> handler);
 
     /**
-     * Schedules the deletion of the specified vault. This sets the state of the vault and
-     * keys that are not scheduled deletion in it to `PENDING_DELETION` and then deletes them
-     * after the retention period ends.
-     * The state and the timeOfDeletion of the keys that have already been scheduled for deletion
-     * will not change. If any keys in it are scheduled for deletion after the specified timeOfDeletion
-     * for the vault, the call will be rejected with status code 409.
+     * Schedules the deletion of the specified vault. This sets the lifecycle state of the vault and all keys in it
+     * that are not already scheduled for deletion to PENDING_DELETION and then deletes them after the
+     * retention period ends. The lifecycle state and time of deletion for keys already scheduled for deletion won't
+     * change. If any keys in the vault are scheduled to be deleted after the specified time of
+     * deletion for the vault, the call is rejected with the error code 409.
+     * <p>
+     * As a provisioning operation, this call is subject to a Key Management limit that applies to
+     * the total number of requests across all provisioning write operations. Key Management might
+     * throttle this call to reject an otherwise valid request when the total rate of provisioning
+     * write operations exceeds 10 requests per second for a given tenancy.
      *
      *
      * @param request The request object containing the details to send
@@ -145,7 +178,12 @@ public interface KmsVaultAsync extends AutoCloseable {
     /**
      * Updates the properties of a vault. Specifically, you can update the
      * `displayName`, `freeformTags`, and `definedTags` properties. Furthermore,
-     * the vault must be in an `ACTIVE` or `CREATING` state to be updated.
+     * the vault must be in an ACTIVE or CREATING state to be updated.
+     * <p>
+     * As a provisioning operation, this call is subject to a Key Management limit that applies to
+     * the total number of requests across all provisioning write operations. Key Management might
+     * throttle this call to reject an otherwise valid request when the total rate of provisioning
+     * write operations exceeds 10 requests per second for a given tenancy.
      *
      *
      * @param request The request object containing the details to send

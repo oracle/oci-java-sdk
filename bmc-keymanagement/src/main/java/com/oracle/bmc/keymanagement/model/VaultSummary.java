@@ -166,15 +166,18 @@ public class VaultSummary {
     String compartmentId;
 
     /**
-     * The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations.
+     * The service endpoint to perform cryptographic operations against. Cryptographic operations include
+     * [Encrypt](https://docs.cloud.oracle.com/api/#/en/key/release/EncryptedData/Encrypt), [Decrypt](https://docs.cloud.oracle.com/api/#/en/key/release/DecryptedData/Decrypt),
+     * and [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/api/#/en/key/release/GeneratedKey/GenerateDataEncryptionKey) operations.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cryptoEndpoint")
     String cryptoEndpoint;
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -189,9 +192,9 @@ public class VaultSummary {
     String displayName;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type, or scope.
-     * Exists for cross-compatibility only.
-     * Example: `{\"bar-key\": \"value\"}`
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: `{\"Department\": \"Finance\"}`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -267,7 +270,7 @@ public class VaultSummary {
     LifecycleState lifecycleState;
 
     /**
-     * The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations.
+     * The service endpoint to perform management operations against. Management operations include \"Create,\" \"Update,\" \"List,\" \"Get,\" and \"Delete\" operations.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementEndpoint")
@@ -282,11 +285,14 @@ public class VaultSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
     /**
-     * The type of vault. Each type of vault stores keys with different degrees of isolation and has different options and pricing.
+     * The type of vault. Each type of vault stores keys with different
+     * degrees of isolation and has different options and pricing.
+     *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum VaultType {
         VirtualPrivate("VIRTUAL_PRIVATE"),
+        Default("DEFAULT"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -327,7 +333,9 @@ public class VaultSummary {
         }
     };
     /**
-     * The type of vault. Each type of vault stores keys with different degrees of isolation and has different options and pricing.
+     * The type of vault. Each type of vault stores keys with different
+     * degrees of isolation and has different options and pricing.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultType")
     VaultType vaultType;

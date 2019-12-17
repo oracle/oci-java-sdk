@@ -33,18 +33,30 @@ public class InstanceAgentFeatures {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isManagementSupported")
+        private Boolean isManagementSupported;
+
+        public Builder isManagementSupported(Boolean isManagementSupported) {
+            this.isManagementSupported = isManagementSupported;
+            this.__explicitlySet__.add("isManagementSupported");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstanceAgentFeatures build() {
-            InstanceAgentFeatures __instance__ = new InstanceAgentFeatures(isMonitoringSupported);
+            InstanceAgentFeatures __instance__ =
+                    new InstanceAgentFeatures(isMonitoringSupported, isManagementSupported);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(InstanceAgentFeatures o) {
-            Builder copiedBuilder = isMonitoringSupported(o.getIsMonitoringSupported());
+            Builder copiedBuilder =
+                    isMonitoringSupported(o.getIsMonitoringSupported())
+                            .isManagementSupported(o.getIsManagementSupported());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -64,6 +76,13 @@ public class InstanceAgentFeatures {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMonitoringSupported")
     Boolean isMonitoringSupported;
+
+    /**
+     * Whether the agent running on the instance can run all the available management plugins
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isManagementSupported")
+    Boolean isManagementSupported;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

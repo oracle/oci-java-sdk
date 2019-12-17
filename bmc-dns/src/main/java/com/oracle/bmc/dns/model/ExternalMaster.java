@@ -5,6 +5,9 @@ package com.oracle.bmc.dns.model;
 
 /**
  * An external master name server used as the source of zone data.
+ * May either have a zone-embedded TSIG or reference a TSIG key by OCID,
+ * but not both.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -49,18 +52,31 @@ public class ExternalMaster {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("tsigKeyId")
+        private String tsigKeyId;
+
+        public Builder tsigKeyId(String tsigKeyId) {
+            this.tsigKeyId = tsigKeyId;
+            this.__explicitlySet__.add("tsigKeyId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ExternalMaster build() {
-            ExternalMaster __instance__ = new ExternalMaster(address, port, tsig);
+            ExternalMaster __instance__ = new ExternalMaster(address, port, tsig, tsigKeyId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ExternalMaster o) {
-            Builder copiedBuilder = address(o.getAddress()).port(o.getPort()).tsig(o.getTsig());
+            Builder copiedBuilder =
+                    address(o.getAddress())
+                            .port(o.getPort())
+                            .tsig(o.getTsig())
+                            .tsigKeyId(o.getTsigKeyId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -90,6 +106,12 @@ public class ExternalMaster {
 
     @com.fasterxml.jackson.annotation.JsonProperty("tsig")
     TSIG tsig;
+
+    /**
+     * The OCID of the TSIG key.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("tsigKeyId")
+    String tsigKeyId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

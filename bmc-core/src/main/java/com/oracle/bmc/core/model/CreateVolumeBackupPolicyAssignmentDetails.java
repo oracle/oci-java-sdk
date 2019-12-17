@@ -69,13 +69,13 @@ public class CreateVolumeBackupPolicyAssignmentDetails {
     }
 
     /**
-     * The OCID of the asset (e.g. a volume) to which to assign the policy.
+     * The OCID of the volume to assign the policy to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("assetId")
     String assetId;
 
     /**
-     * The OCID of the volume backup policy to assign to an asset.
+     * The OCID of the volume backup policy to assign to the volume.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("policyId")
     String policyId;

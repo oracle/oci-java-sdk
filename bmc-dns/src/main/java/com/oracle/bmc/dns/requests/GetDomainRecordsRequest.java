@@ -39,6 +39,14 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest 
     private String ifModifiedSince;
 
     /**
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
+     */
+    private String opcRequestId;
+
+    /**
      * The maximum number of items to return in a page of the collection.
      *
      */
@@ -152,6 +160,7 @@ public class GetDomainRecordsRequest extends com.oracle.bmc.requests.BmcRequest 
             domain(o.getDomain());
             ifNoneMatch(o.getIfNoneMatch());
             ifModifiedSince(o.getIfModifiedSince());
+            opcRequestId(o.getOpcRequestId());
             limit(o.getLimit());
             page(o.getPage());
             zoneVersion(o.getZoneVersion());

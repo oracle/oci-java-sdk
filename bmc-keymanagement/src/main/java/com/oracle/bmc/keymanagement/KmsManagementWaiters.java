@@ -112,4 +112,205 @@ public class KmsManagementWaiters {
                                 com.oracle.bmc.keymanagement.model.Key.LifecycleState.Deleted)),
                 request);
     }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetKeyVersionRequest, GetKeyVersionResponse> forKeyVersion(
+            GetKeyVersionRequest request,
+            com.oracle.bmc.keymanagement.model.KeyVersion.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forKeyVersion(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetKeyVersionRequest, GetKeyVersionResponse> forKeyVersion(
+            GetKeyVersionRequest request,
+            com.oracle.bmc.keymanagement.model.KeyVersion.LifecycleState targetState,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forKeyVersion(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetKeyVersionRequest, GetKeyVersionResponse> forKeyVersion(
+            GetKeyVersionRequest request,
+            com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+            com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+            com.oracle.bmc.keymanagement.model.KeyVersion.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forKeyVersion(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for KeyVersion.
+    private com.oracle.bmc.waiter.Waiter<GetKeyVersionRequest, GetKeyVersionResponse> forKeyVersion(
+            com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+            final GetKeyVersionRequest request,
+            final com.oracle.bmc.keymanagement.model.KeyVersion.LifecycleState... targetStates) {
+        final java.util.Set<com.oracle.bmc.keymanagement.model.KeyVersion.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetKeyVersionRequest, GetKeyVersionResponse>() {
+                            @Override
+                            public GetKeyVersionResponse apply(GetKeyVersionRequest request) {
+                                return client.getKeyVersion(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetKeyVersionResponse>() {
+                            @Override
+                            public boolean apply(GetKeyVersionResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getKeyVersion().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.keymanagement.model.KeyVersion.LifecycleState
+                                        .Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetWrappingKeyRequest, GetWrappingKeyResponse>
+            forWrappingKey(
+                    GetWrappingKeyRequest request,
+                    com.oracle.bmc.keymanagement.model.WrappingKey.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forWrappingKey(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetWrappingKeyRequest, GetWrappingKeyResponse>
+            forWrappingKey(
+                    GetWrappingKeyRequest request,
+                    com.oracle.bmc.keymanagement.model.WrappingKey.LifecycleState targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        org.apache.commons.lang3.Validate.notNull(targetState, "The targetState cannot be null");
+
+        return forWrappingKey(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetWrappingKeyRequest, GetWrappingKeyResponse>
+            forWrappingKey(
+                    GetWrappingKeyRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.keymanagement.model.WrappingKey.LifecycleState... targetStates) {
+        org.apache.commons.lang3.Validate.notEmpty(
+                targetStates, "At least one target state must be provided");
+        org.apache.commons.lang3.Validate.noNullElements(
+                targetStates, "Null target states are not permitted");
+
+        return forWrappingKey(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for WrappingKey.
+    private com.oracle.bmc.waiter.Waiter<GetWrappingKeyRequest, GetWrappingKeyResponse>
+            forWrappingKey(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetWrappingKeyRequest request,
+                    final com.oracle.bmc.keymanagement.model.WrappingKey.LifecycleState...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.keymanagement.model.WrappingKey.LifecycleState>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        com.google.common.base.Suppliers.ofInstance(request),
+                        new com.google.common.base.Function<
+                                GetWrappingKeyRequest, GetWrappingKeyResponse>() {
+                            @Override
+                            public GetWrappingKeyResponse apply(GetWrappingKeyRequest request) {
+                                return client.getWrappingKey(request);
+                            }
+                        },
+                        new com.google.common.base.Predicate<GetWrappingKeyResponse>() {
+                            @Override
+                            public boolean apply(GetWrappingKeyResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getWrappingKey().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.keymanagement.model.WrappingKey.LifecycleState
+                                        .Deleted)),
+                request);
+    }
 }

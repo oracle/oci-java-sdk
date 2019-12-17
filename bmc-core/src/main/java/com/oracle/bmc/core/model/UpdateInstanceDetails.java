@@ -79,6 +79,15 @@ public class UpdateInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("shape")
+        private String shape;
+
+        public Builder shape(String shape) {
+            this.shape = shape;
+            this.__explicitlySet__.add("shape");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -90,7 +99,8 @@ public class UpdateInstanceDetails {
                             freeformTags,
                             agentConfig,
                             metadata,
-                            extendedMetadata);
+                            extendedMetadata,
+                            shape);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -103,7 +113,8 @@ public class UpdateInstanceDetails {
                             .freeformTags(o.getFreeformTags())
                             .agentConfig(o.getAgentConfig())
                             .metadata(o.getMetadata())
-                            .extendedMetadata(o.getExtendedMetadata());
+                            .extendedMetadata(o.getExtendedMetadata())
+                            .shape(o.getShape());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -183,6 +194,17 @@ public class UpdateInstanceDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("extendedMetadata")
     java.util.Map<String, Object> extendedMetadata;
+
+    /**
+     * The shape of the instance. The shape determines the number of CPUs and the amount of memory
+     * allocated to the instance. You can enumerate all available shapes by calling
+     * {@link #listShapes(ListShapesRequest) listShapes}.
+     * <p>
+     * Example: `VM.Standard1.1`
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shape")
+    String shape;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

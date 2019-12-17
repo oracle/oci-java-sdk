@@ -33,19 +33,31 @@ public class UpdateInstanceAgentConfigDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isManagementDisabled")
+        private Boolean isManagementDisabled;
+
+        public Builder isManagementDisabled(Boolean isManagementDisabled) {
+            this.isManagementDisabled = isManagementDisabled;
+            this.__explicitlySet__.add("isManagementDisabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateInstanceAgentConfigDetails build() {
             UpdateInstanceAgentConfigDetails __instance__ =
-                    new UpdateInstanceAgentConfigDetails(isMonitoringDisabled);
+                    new UpdateInstanceAgentConfigDetails(
+                            isMonitoringDisabled, isManagementDisabled);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateInstanceAgentConfigDetails o) {
-            Builder copiedBuilder = isMonitoringDisabled(o.getIsMonitoringDisabled());
+            Builder copiedBuilder =
+                    isMonitoringDisabled(o.getIsMonitoringDisabled())
+                            .isManagementDisabled(o.getIsManagementDisabled());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -65,6 +77,13 @@ public class UpdateInstanceAgentConfigDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMonitoringDisabled")
     Boolean isMonitoringDisabled;
+
+    /**
+     * Whether the agent running on the instance can run all the available management plugins
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isManagementDisabled")
+    Boolean isManagementDisabled;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

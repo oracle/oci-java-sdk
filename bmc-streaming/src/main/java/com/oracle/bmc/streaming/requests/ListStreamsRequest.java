@@ -11,12 +11,12 @@ import com.oracle.bmc.streaming.model.*;
 public class ListStreamsRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The OCID of the compartment.
+     * The OCID of the compartment. Is exclusive with the `streamPoolId` parameter. One of them is required.
      */
     private String compartmentId;
 
     /**
-     * The OCID of the stream pool.
+     * The OCID of the stream pool. Is exclusive with the `compartmentId` parameter. One of them is required.
      */
     private String streamPoolId;
 

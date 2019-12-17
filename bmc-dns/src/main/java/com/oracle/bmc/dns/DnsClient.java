@@ -412,6 +412,39 @@ public class DnsClient implements Dns {
     }
 
     @Override
+    public ChangeTsigKeyCompartmentResponse changeTsigKeyCompartment(
+            ChangeTsigKeyCompartmentRequest request) {
+        LOG.trace("Called changeTsigKeyCompartment");
+        final ChangeTsigKeyCompartmentRequest interceptedRequest =
+                ChangeTsigKeyCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeTsigKeyCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ChangeTsigKeyCompartmentResponse>
+                transformer = ChangeTsigKeyCompartmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getChangeTsigKeyCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeZoneCompartmentResponse changeZoneCompartment(
             ChangeZoneCompartmentRequest request) {
         LOG.trace("Called changeZoneCompartment");
@@ -505,6 +538,38 @@ public class DnsClient implements Dns {
                                                 ib,
                                                 retriedRequest
                                                         .getCreateSteeringPolicyAttachmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateTsigKeyResponse createTsigKey(CreateTsigKeyRequest request) {
+        LOG.trace("Called createTsigKey");
+        final CreateTsigKeyRequest interceptedRequest =
+                CreateTsigKeyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateTsigKeyConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateTsigKeyResponse>
+                transformer = CreateTsigKeyConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateTsigKeyDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -640,6 +705,35 @@ public class DnsClient implements Dns {
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, DeleteSteeringPolicyAttachmentResponse>
                 transformer = DeleteSteeringPolicyAttachmentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteTsigKeyResponse deleteTsigKey(DeleteTsigKeyRequest request) {
+        LOG.trace("Called deleteTsigKey");
+        final DeleteTsigKeyRequest interceptedRequest =
+                DeleteTsigKeyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteTsigKeyConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteTsigKeyResponse>
+                transformer = DeleteTsigKeyConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -802,6 +896,33 @@ public class DnsClient implements Dns {
     }
 
     @Override
+    public GetTsigKeyResponse getTsigKey(GetTsigKeyRequest request) {
+        LOG.trace("Called getTsigKey");
+        final GetTsigKeyRequest interceptedRequest = GetTsigKeyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetTsigKeyConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetTsigKeyResponse> transformer =
+                GetTsigKeyConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetZoneResponse getZone(GetZoneRequest request) {
         LOG.trace("Called getZone");
         final GetZoneRequest interceptedRequest = GetZoneConverter.interceptRequest(request);
@@ -895,6 +1016,34 @@ public class DnsClient implements Dns {
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListSteeringPolicyAttachmentsResponse>
                 transformer = ListSteeringPolicyAttachmentsConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListTsigKeysResponse listTsigKeys(ListTsigKeysRequest request) {
+        LOG.trace("Called listTsigKeys");
+        final ListTsigKeysRequest interceptedRequest =
+                ListTsigKeysConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTsigKeysConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListTsigKeysResponse>
+                transformer = ListTsigKeysConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -1161,6 +1310,38 @@ public class DnsClient implements Dns {
                                                 ib,
                                                 retriedRequest
                                                         .getUpdateSteeringPolicyAttachmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateTsigKeyResponse updateTsigKey(UpdateTsigKeyRequest request) {
+        LOG.trace("Called updateTsigKey");
+        final UpdateTsigKeyRequest interceptedRequest =
+                UpdateTsigKeyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateTsigKeyConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateTsigKeyResponse>
+                transformer = UpdateTsigKeyConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateTsigKeyDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

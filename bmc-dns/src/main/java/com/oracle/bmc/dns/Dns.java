@@ -37,7 +37,7 @@ public interface Dns extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Moves a steering policy into a different compartment. When provided, If-Match is checked against ETag values of the resource.
+     * Moves a steering policy into a different compartment.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -46,7 +46,16 @@ public interface Dns extends AutoCloseable {
             ChangeSteeringPolicyCompartmentRequest request);
 
     /**
-     * Moves a zone into a different compartment. When provided, If-Match is checked against ETag values of the resource.
+     * Moves a TSIG key into a different compartment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ChangeTsigKeyCompartmentResponse changeTsigKeyCompartment(
+            ChangeTsigKeyCompartmentRequest request);
+
+    /**
+     * Moves a zone into a different compartment.
      * **Note:** All SteeringPolicyAttachment objects associated with this zone will also be moved into the provided compartment.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -78,6 +87,16 @@ public interface Dns extends AutoCloseable {
      */
     CreateSteeringPolicyAttachmentResponse createSteeringPolicyAttachment(
             CreateSteeringPolicyAttachmentRequest request);
+
+    /**
+     * Creates a new TSIG key in the specified compartment. There is no
+     * `opc-retry-token` header since TSIG key names must be globally unique.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CreateTsigKeyResponse createTsigKey(CreateTsigKeyRequest request);
 
     /**
      * Creates a new zone in the specified compartment. The `compartmentId`
@@ -131,6 +150,15 @@ public interface Dns extends AutoCloseable {
             DeleteSteeringPolicyAttachmentRequest request);
 
     /**
+     * Deletes the specified TSIG key.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    DeleteTsigKeyResponse deleteTsigKey(DeleteTsigKeyRequest request);
+
+    /**
      * Deletes the specified zone and all its steering policy attachments.
      * A `204` response indicates that zone has been successfully deleted.
      *
@@ -181,6 +209,15 @@ public interface Dns extends AutoCloseable {
             GetSteeringPolicyAttachmentRequest request);
 
     /**
+     * Gets information about the specified TSIG key.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetTsigKeyResponse getTsigKey(GetTsigKeyRequest request);
+
+    /**
      * Gets information about the specified zone, including its creation date,
      * zone type, and serial.
      *
@@ -219,6 +256,15 @@ public interface Dns extends AutoCloseable {
      */
     ListSteeringPolicyAttachmentsResponse listSteeringPolicyAttachments(
             ListSteeringPolicyAttachmentsRequest request);
+
+    /**
+     * Gets a list of all TSIG keys in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ListTsigKeysResponse listTsigKeys(ListTsigKeysRequest request);
 
     /**
      * Gets a list of all zones in the specified compartment. The collection
@@ -302,6 +348,15 @@ public interface Dns extends AutoCloseable {
      */
     UpdateSteeringPolicyAttachmentResponse updateSteeringPolicyAttachment(
             UpdateSteeringPolicyAttachmentRequest request);
+
+    /**
+     * Updates the specified TSIG key.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    UpdateTsigKeyResponse updateTsigKey(UpdateTsigKeyRequest request);
 
     /**
      * Updates the specified secondary zone with your new external master

@@ -46,6 +46,14 @@ public class UpdateDomainRecordsRequest extends com.oracle.bmc.requests.BmcReque
     private String ifUnmodifiedSince;
 
     /**
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
+     */
+    private String opcRequestId;
+
+    /**
      * The OCID of the compartment the resource belongs to.
      */
     private String compartmentId;
@@ -88,6 +96,7 @@ public class UpdateDomainRecordsRequest extends com.oracle.bmc.requests.BmcReque
             updateDomainRecordsDetails(o.getUpdateDomainRecordsDetails());
             ifMatch(o.getIfMatch());
             ifUnmodifiedSince(o.getIfUnmodifiedSince());
+            opcRequestId(o.getOpcRequestId());
             compartmentId(o.getCompartmentId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());

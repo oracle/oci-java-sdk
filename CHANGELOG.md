@@ -3,6 +3,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.12.0 - 2019-12-17
+### Added
+- Support for the API Gateway service
+- Support for the OS Management service
+- Support for the Marketplace service
+- Support for "default"-type vaults in the Key Management service
+- Support for bringing your own keys in the Key Management service 
+- Support for cross-region backups of boot volumes in the Block Storage service
+- Support for top-level TSIG keys in the DNS service
+- Support for resizing virtual machine instances to different shapes in the Compute service
+- Support for management configuration of cloud agents in the Compute service
+- Support for launching node pools using image IDs in the Container Engine for Kubernetes service
+
+### Breaking changes
+- Removed support for v1 auth tokens in kubeconfig files in the `CreateClusterKubeconfigContentDetails` class of the Container Engine for Kubernetes service
+- Removed the IDCS access token requirement on the delete deleteOceInstance operation in the Content and Experience service, which is why the `DeleteOceInstanceDetails` class was removed
+
 ## 1.11.0 - 2019-12-10
 ### Added
 - Support for etags on results of the List Objects API in the Object Storage service

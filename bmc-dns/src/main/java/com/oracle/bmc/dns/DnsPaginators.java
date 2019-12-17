@@ -599,6 +599,116 @@ public class DnsPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listTsigKeys operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListTsigKeysResponse> listTsigKeysResponseIterator(
+            final ListTsigKeysRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListTsigKeysRequest.Builder, ListTsigKeysRequest, ListTsigKeysResponse>(
+                new com.google.common.base.Supplier<ListTsigKeysRequest.Builder>() {
+                    @Override
+                    public ListTsigKeysRequest.Builder get() {
+                        return ListTsigKeysRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListTsigKeysResponse, String>() {
+                    @Override
+                    public String apply(ListTsigKeysResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTsigKeysRequest.Builder>,
+                        ListTsigKeysRequest>() {
+                    @Override
+                    public ListTsigKeysRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTsigKeysRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListTsigKeysRequest, ListTsigKeysResponse>() {
+                    @Override
+                    public ListTsigKeysResponse apply(ListTsigKeysRequest request) {
+                        return client.listTsigKeys(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.dns.model.TsigKeySummary} objects
+     * contained in responses from the listTsigKeys operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.dns.model.TsigKeySummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.dns.model.TsigKeySummary> listTsigKeysRecordIterator(
+            final ListTsigKeysRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListTsigKeysRequest.Builder, ListTsigKeysRequest, ListTsigKeysResponse,
+                com.oracle.bmc.dns.model.TsigKeySummary>(
+                new com.google.common.base.Supplier<ListTsigKeysRequest.Builder>() {
+                    @Override
+                    public ListTsigKeysRequest.Builder get() {
+                        return ListTsigKeysRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListTsigKeysResponse, String>() {
+                    @Override
+                    public String apply(ListTsigKeysResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTsigKeysRequest.Builder>,
+                        ListTsigKeysRequest>() {
+                    @Override
+                    public ListTsigKeysRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTsigKeysRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<ListTsigKeysRequest, ListTsigKeysResponse>() {
+                    @Override
+                    public ListTsigKeysResponse apply(ListTsigKeysRequest request) {
+                        return client.listTsigKeys(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListTsigKeysResponse,
+                        java.util.List<com.oracle.bmc.dns.model.TsigKeySummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.dns.model.TsigKeySummary> apply(
+                            ListTsigKeysResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listZones operation. This iterable
      * will fetch more data from the server as needed.
      *

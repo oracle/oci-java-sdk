@@ -78,6 +78,15 @@ public class CreateNodePoolDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("nodeSourceDetails")
+        private NodeSourceDetails nodeSourceDetails;
+
+        public Builder nodeSourceDetails(NodeSourceDetails nodeSourceDetails) {
+            this.nodeSourceDetails = nodeSourceDetails;
+            this.__explicitlySet__.add("nodeSourceDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("nodeShape")
         private String nodeShape;
 
@@ -144,6 +153,7 @@ public class CreateNodePoolDetails {
                             kubernetesVersion,
                             nodeMetadata,
                             nodeImageName,
+                            nodeSourceDetails,
                             nodeShape,
                             initialNodeLabels,
                             sshPublicKey,
@@ -163,6 +173,7 @@ public class CreateNodePoolDetails {
                             .kubernetesVersion(o.getKubernetesVersion())
                             .nodeMetadata(o.getNodeMetadata())
                             .nodeImageName(o.getNodeImageName())
+                            .nodeSourceDetails(o.getNodeSourceDetails())
                             .nodeShape(o.getNodeShape())
                             .initialNodeLabels(o.getInitialNodeLabels())
                             .sshPublicKey(o.getSshPublicKey())
@@ -213,10 +224,20 @@ public class CreateNodePoolDetails {
     java.util.Map<String, String> nodeMetadata;
 
     /**
+     * Deprecated. Use `nodeSourceDetails` instead.
+     * If you specify values for both, this value is ignored.
      * The name of the image running on the nodes in the node pool.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeImageName")
     String nodeImageName;
+
+    /**
+     * Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nodeSourceDetails")
+    NodeSourceDetails nodeSourceDetails;
 
     /**
      * The name of the node shape of the nodes in the node pool.

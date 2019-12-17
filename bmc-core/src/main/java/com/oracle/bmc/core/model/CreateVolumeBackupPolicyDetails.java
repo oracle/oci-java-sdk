@@ -4,7 +4,11 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Contains properties for a scheduled backup policy.
+ * Specifies the properties for creating user defined backup policy.
+ * For more information about user defined backup policies,
+ * see [User Defined Policies](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#UserDefinedBackupPolicies) in
+ * [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -103,7 +107,7 @@ public class CreateVolumeBackupPolicyDetails {
     }
 
     /**
-     * The OCID of the compartment that contains the backup policy.
+     * The OCID of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -117,7 +121,10 @@ public class CreateVolumeBackupPolicyDetails {
     String displayName;
 
     /**
-     * The collection of schedules that this policy will apply.
+     * The collection of schedules for the volume backup policy. See
+     * see [Schedules](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#schedules) in
+     * [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm) for more information.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("schedules")
     java.util.List<VolumeBackupSchedule> schedules;

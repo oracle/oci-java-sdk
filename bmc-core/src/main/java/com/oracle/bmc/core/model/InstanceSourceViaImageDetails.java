@@ -108,7 +108,7 @@ public class InstanceSourceViaImageDetails extends InstanceSourceDetails {
     String imageId;
 
     /**
-     * The OCID of the KMS key to be used as the master encryption key for the boot volume.
+     * The OCID of the Key Management key to assign as the master encryption key for the boot volume.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     String kmsKeyId;

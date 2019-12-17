@@ -171,23 +171,24 @@ public class Key {
     }
 
     /**
-     * The OCID of the compartment that contains this key.
+     * The OCID of the compartment that contains this master encryption key.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
 
     /**
-     * The OCID of the KeyVersion resource used in cryptographic operations. During key rotation, service might be in a transitional state
-     * where this or a newer KeyVersion are used intermittently. The currentKeyVersion field is updated when the service is guaranteed to
-     * use the new KeyVersion for all subsequent encryption operations.
+     * The OCID of the key version used in cryptographic operations. During key rotation, the service might be
+     * in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion`
+     * field is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentKeyVersion")
     String currentKeyVersion;
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-     * Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -202,9 +203,9 @@ public class Key {
     String displayName;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type, or scope.
-     * Exists for cross-compatibility only.
-     * Example: `{\"bar-key\": \"value\"}`
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * Example: `{\"Department\": \"Finance\"}`
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
@@ -295,7 +296,7 @@ public class Key {
     java.util.Date timeCreated;
 
     /**
-     * An optional property for the deletion time of the key, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * An optional property indicating when to delete the key, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      * Example: `2019-04-03T21:10:29.600Z`
      *
      **/

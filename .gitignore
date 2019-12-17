@@ -100,6 +100,7 @@ fabric.properties
 # Ignoring .idea and *.iml files (https://intellij-support.jetbrains.com/hc/en-us/articles/206544839)
 *.iml
 .idea
+*.ipr
 
 #==================
 # Java
@@ -174,3 +175,5 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+bmc-codegen/temp
+scripts/temp

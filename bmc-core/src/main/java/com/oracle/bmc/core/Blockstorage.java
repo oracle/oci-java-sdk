@@ -109,6 +109,16 @@ public interface Blockstorage extends AutoCloseable {
             ChangeVolumeGroupCompartmentRequest request);
 
     /**
+     * Creates a boot volume backup copy in specified region. For general information about volume backups,
+     * see [Overview of Boot Volume Backups](https://docs.cloud.oracle.com/Content/Block/Concepts/bootvolumebackups.htm)
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CopyBootVolumeBackupResponse copyBootVolumeBackup(CopyBootVolumeBackupRequest request);
+
+    /**
      * Creates a volume backup copy in specified region. For general information about volume backups,
      * see [Overview of Block Volume Service Backups](https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumebackups.htm)
      *
@@ -181,7 +191,11 @@ public interface Blockstorage extends AutoCloseable {
     CreateVolumeBackupResponse createVolumeBackup(CreateVolumeBackupRequest request);
 
     /**
-     * Creates a new backup policy for the caller.
+     * Creates a new user defined backup policy.
+     * <p>
+     * For more information about Oracle defined backup policies and user defined backup policies,
+     * see [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -190,9 +204,9 @@ public interface Blockstorage extends AutoCloseable {
             CreateVolumeBackupPolicyRequest request);
 
     /**
-     * Assigns a policy to the specified asset, such as a volume. Note that a given asset can
-     * only have one policy assigned to it; if this method is called for an asset that previously
-     * has a different policy assigned, the prior assignment will be silently deleted.
+     * Assigns a volume backup policy to the specified volume. Note that a given volume can
+     * only have one backup policy assigned to it. If this operation is used for a volume that already
+     * has a different backup policy assigned, the prior backup policy will be silently unassigned.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -247,7 +261,7 @@ public interface Blockstorage extends AutoCloseable {
     DeleteBootVolumeBackupResponse deleteBootVolumeBackup(DeleteBootVolumeBackupRequest request);
 
     /**
-     * Removes the KMS key for the specified boot volume.
+     * Removes the specified boot volume's assigned Key Management encryption key.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -276,7 +290,12 @@ public interface Blockstorage extends AutoCloseable {
     DeleteVolumeBackupResponse deleteVolumeBackup(DeleteVolumeBackupRequest request);
 
     /**
-     * Deletes the specified scheduled backup policy.
+     * Deletes a user defined backup policy.
+     *  For more information about user defined backup policies,
+     *  see [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#UserDefinedBackupPolicies).
+     * <p>
+     * Avoid entering confidential information.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -285,7 +304,7 @@ public interface Blockstorage extends AutoCloseable {
             DeleteVolumeBackupPolicyRequest request);
 
     /**
-     * Deletes a volume backup policy assignment (i.e. unassigns the policy from an asset).
+     * Deletes a volume backup policy assignment.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -312,7 +331,7 @@ public interface Blockstorage extends AutoCloseable {
     DeleteVolumeGroupBackupResponse deleteVolumeGroupBackup(DeleteVolumeGroupBackupRequest request);
 
     /**
-     * Removes the KMS key for the specified volume.
+     * Removes the specified volume's assigned Key Management encryption key.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -337,7 +356,7 @@ public interface Blockstorage extends AutoCloseable {
     GetBootVolumeBackupResponse getBootVolumeBackup(GetBootVolumeBackupRequest request);
 
     /**
-     * Gets the KMS key ID for the specified boot volume.
+     * Gets the Key Management encryption key assigned to the specified boot volume.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -370,9 +389,9 @@ public interface Blockstorage extends AutoCloseable {
     GetVolumeBackupPolicyResponse getVolumeBackupPolicy(GetVolumeBackupPolicyRequest request);
 
     /**
-     * Gets the volume backup policy assignment for the specified asset. Note that the
-     * assetId query parameter is required, and that the returned list will contain at most
-     * one item (since any given asset can only have one policy assigned to it).
+     * Gets the volume backup policy assignment for the specified volume. The
+     * `assetId` query parameter is required, and the returned list will contain at most
+     * one item, since volume can only have one volume backup policy assigned at a time.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -407,7 +426,7 @@ public interface Blockstorage extends AutoCloseable {
     GetVolumeGroupBackupResponse getVolumeGroupBackup(GetVolumeGroupBackupRequest request);
 
     /**
-     * Gets the KMS key ID for the specified volume.
+     * Gets the Key Management encryption key assigned to the specified volume.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -434,7 +453,11 @@ public interface Blockstorage extends AutoCloseable {
     ListBootVolumesResponse listBootVolumes(ListBootVolumesRequest request);
 
     /**
-     * Lists all volume backup policies available to the caller.
+     * Lists all the volume backup policies available in the specified compartment.
+     * <p>
+     * For more information about Oracle defined backup policies and user defined backup policies,
+     * see [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -499,7 +522,7 @@ public interface Blockstorage extends AutoCloseable {
     UpdateBootVolumeBackupResponse updateBootVolumeBackup(UpdateBootVolumeBackupRequest request);
 
     /**
-     * Updates the KMS key ID for the specified volume.
+     * Updates the specified volume with a new Key Management master encryption key.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -528,7 +551,10 @@ public interface Blockstorage extends AutoCloseable {
     UpdateVolumeBackupResponse updateVolumeBackup(UpdateVolumeBackupRequest request);
 
     /**
-     * Updates a volume backup policy.
+     * Updates a user defined backup policy.
+     *  For more information about user defined backup policies,
+     *  see [Policy-Based Backups](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#UserDefinedBackupPolicies).
+     * <p>
      * Avoid entering confidential information.
      *
      * @param request The request object containing the details to send
@@ -561,7 +587,7 @@ public interface Blockstorage extends AutoCloseable {
     UpdateVolumeGroupBackupResponse updateVolumeGroupBackup(UpdateVolumeGroupBackupRequest request);
 
     /**
-     * Updates the KMS key ID for the specified volume.
+     * Updates the specified volume with a new Key Management master encryption key.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

@@ -143,7 +143,8 @@ public class CreateInstancePoolDetails {
     }
 
     /**
-     * The OCID of the compartment containing the instance pool
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     String compartmentId;
@@ -177,7 +178,9 @@ public class CreateInstancePoolDetails {
     java.util.Map<String, String> freeformTags;
 
     /**
-     * The OCID of the instance configuration associated with the instance pool.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the instance configuration associated
+     * with the instance pool.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceConfigurationId")
     String instanceConfigurationId;

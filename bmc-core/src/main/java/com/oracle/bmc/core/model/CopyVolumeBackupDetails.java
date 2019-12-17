@@ -98,7 +98,7 @@ public class CopyVolumeBackupDetails {
     String displayName;
 
     /**
-     * The OCID of the KMS key in the destination region which will be the master encryption key
+     * The OCID of the Key Management key in the destination region which will be the master encryption key
      * for the copied volume backup.
      * If you do not specify this attribute the volume backup will be encrypted with the Oracle-provided encryption
      * key when it is copied to the destination region.

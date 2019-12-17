@@ -37,7 +37,7 @@ public interface DnsAsync extends AutoCloseable {
     void setRegion(String regionId);
 
     /**
-     * Moves a steering policy into a different compartment. When provided, If-Match is checked against ETag values of the resource.
+     * Moves a steering policy into a different compartment.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -55,7 +55,23 @@ public interface DnsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves a zone into a different compartment. When provided, If-Match is checked against ETag values of the resource.
+     * Moves a TSIG key into a different compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeTsigKeyCompartmentResponse> changeTsigKeyCompartment(
+            ChangeTsigKeyCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeTsigKeyCompartmentRequest, ChangeTsigKeyCompartmentResponse>
+                    handler);
+
+    /**
+     * Moves a zone into a different compartment.
      * **Note:** All SteeringPolicyAttachment objects associated with this zone will also be moved into the provided compartment.
      *
      * @param request The request object containing the details to send
@@ -112,6 +128,23 @@ public interface DnsAsync extends AutoCloseable {
                                     CreateSteeringPolicyAttachmentRequest,
                                     CreateSteeringPolicyAttachmentResponse>
                             handler);
+
+    /**
+     * Creates a new TSIG key in the specified compartment. There is no
+     * `opc-retry-token` header since TSIG key names must be globally unique.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateTsigKeyResponse> createTsigKey(
+            CreateTsigKeyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateTsigKeyRequest, CreateTsigKeyResponse>
+                    handler);
 
     /**
      * Creates a new zone in the specified compartment. The `compartmentId`
@@ -202,6 +235,22 @@ public interface DnsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Deletes the specified TSIG key.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteTsigKeyResponse> deleteTsigKey(
+            DeleteTsigKeyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteTsigKeyRequest, DeleteTsigKeyResponse>
+                    handler);
+
+    /**
      * Deletes the specified zone and all its steering policy attachments.
      * A `204` response indicates that zone has been successfully deleted.
      *
@@ -286,6 +335,21 @@ public interface DnsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets information about the specified TSIG key.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetTsigKeyResponse> getTsigKey(
+            GetTsigKeyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetTsigKeyRequest, GetTsigKeyResponse> handler);
+
+    /**
      * Gets information about the specified zone, including its creation date,
      * zone type, and serial.
      *
@@ -354,6 +418,22 @@ public interface DnsAsync extends AutoCloseable {
                                     ListSteeringPolicyAttachmentsRequest,
                                     ListSteeringPolicyAttachmentsResponse>
                             handler);
+
+    /**
+     * Gets a list of all TSIG keys in the specified compartment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListTsigKeysResponse> listTsigKeys(
+            ListTsigKeysRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListTsigKeysRequest, ListTsigKeysResponse>
+                    handler);
 
     /**
      * Gets a list of all zones in the specified compartment. The collection
@@ -495,6 +575,22 @@ public interface DnsAsync extends AutoCloseable {
                                     UpdateSteeringPolicyAttachmentRequest,
                                     UpdateSteeringPolicyAttachmentResponse>
                             handler);
+
+    /**
+     * Updates the specified TSIG key.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateTsigKeyResponse> updateTsigKey(
+            UpdateTsigKeyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateTsigKeyRequest, UpdateTsigKeyResponse>
+                    handler);
 
     /**
      * Updates the specified secondary zone with your new external master

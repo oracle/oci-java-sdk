@@ -17,8 +17,13 @@ public interface KmsManagement extends AutoCloseable {
 
     /**
      * Cancels the scheduled deletion of the specified key. Canceling
-     * a scheduled deletion restores the key to the respective
-     * states they were in before the deletion was scheduled.
+     * a scheduled deletion restores the key's lifecycle state to what
+     * it was before its scheduled deletion.
+     * <p>
+     * As a provisioning operation, this call is subject to a Key Management limit that applies to
+     * the total number of requests across all provisioning write operations. Key Management might
+     * throttle this call to reject an otherwise valid request when the total rate of provisioning
+     * write operations exceeds 10 requests per second for a given tenancy.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -27,7 +32,33 @@ public interface KmsManagement extends AutoCloseable {
     CancelKeyDeletionResponse cancelKeyDeletion(CancelKeyDeletionRequest request);
 
     /**
-     * Moves a key into a different compartment. When provided, If-Match is checked against ETag values of the key.
+     * Cancels the scheduled deletion of the specified key version. Canceling
+     * a scheduled deletion restores the key version to its lifecycle state from
+     * before its scheduled deletion.
+     * <p>
+     * As a provisioning operation, this call is subject to a Key Management limit that applies to
+     * the total number of requests across all provisioning write operations. Key Management might
+     * throttle this call to reject an otherwise valid request when the total rate of provisioning
+     * write operations exceeds 10 requests per second for a given tenancy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    CancelKeyVersionDeletionResponse cancelKeyVersionDeletion(
+            CancelKeyVersionDeletionRequest request);
+
+    /**
+     * Moves a key into a different compartment within the same tenancy. For information about
+     * moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * <p>
+     * When provided, if-match is checked against the ETag values of the key.
+     * <p>
+     * As a provisioning operation, this call is subject to a Key Management limit that applies to
+     * the total number of requests across all provisioning write operations. Key Management might
+     * throttle this call to reject an otherwise valid request when the total rate of provisioning
+     * write operations exceeds 10 requests per second for a given tenancy.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -35,7 +66,13 @@ public interface KmsManagement extends AutoCloseable {
     ChangeKeyCompartmentResponse changeKeyCompartment(ChangeKeyCompartmentRequest request);
 
     /**
-     * Creates a new key.
+     * Creates a new master encryption key.
+     * <p>
+     * As a management operation, this call is subject to a Key Management limit that applies to the total
+     * number of requests across all management write operations. Key Management might throttle this call
+     * to reject an otherwise valid request when the total rate of management write operations exceeds 10
+     * requests per second for a given tenancy.
+     *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -43,8 +80,13 @@ public interface KmsManagement extends AutoCloseable {
     CreateKeyResponse createKey(CreateKeyRequest request);
 
     /**
-     * Generates new cryptographic material for a key. The key must be in an `ENABLED` state to be
-     * rotated.
+     * Generates a new [KeyVersion](https://docs.cloud.oracle.com/api/#/en/key/release/KeyVersion/) resource that provides new cryptographic
+     * material for a master encryption key. The key must be in an ENABLED state to be rotated.
+     * <p>
+     * As a management operation, this call is subject to a Key Management limit that applies to the total number
+     * of requests across all  management write operations. Key Management might throttle this call to reject an
+     * otherwise valid request when the total rate of management write operations exceeds 10 requests per second
+     * for a given tenancy.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -53,8 +95,13 @@ public interface KmsManagement extends AutoCloseable {
     CreateKeyVersionResponse createKeyVersion(CreateKeyVersionRequest request);
 
     /**
-     * Disables a key to make it unavailable for encryption
-     * or decryption.
+     * Disables a master encryption key so it can no longer be used for encryption, decryption, or
+     * generating new data encryption keys.
+     * <p>
+     * As a management operation, this call is subject to a Key Management limit that applies to the total number
+     * of requests across all management write operations. Key Management might throttle this call to reject an
+     * otherwise valid request when the total rate of management write operations exceeds 10 requests per second
+     * for a given tenancy.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -63,8 +110,13 @@ public interface KmsManagement extends AutoCloseable {
     DisableKeyResponse disableKey(DisableKeyRequest request);
 
     /**
-     * Enables a key to make it available for encryption or
-     * decryption.
+     * Enables a master encryption key so it can be used for encryption, decryption, or
+     * generating new data encryption keys.
+     * <p>
+     * As a management operation, this call is subject to a Key Management limit that applies to the total number
+     * of requests across all management write operations. Key Management might throttle this call to reject an
+     * otherwise valid request when the total rate of management write operations exceeds 10 requests per second
+     * for a given tenancy.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -73,7 +125,12 @@ public interface KmsManagement extends AutoCloseable {
     EnableKeyResponse enableKey(EnableKeyRequest request);
 
     /**
-     * Gets information about the specified key.
+     * Gets information about the specified master encryption key.
+     * <p>
+     * As a management operation, this call is subject to a Key Management limit that applies to the total number
+     * of requests across all management read operations. Key Management might throttle this call to reject an
+     * otherwise valid request when the total rate of management read operations exceeds 10 requests per second for
+     * a given tenancy.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -83,6 +140,11 @@ public interface KmsManagement extends AutoCloseable {
 
     /**
      * Gets information about the specified key version.
+     * <p>
+     * As a management operation, this call is subject to a Key Management limit that applies to the total number
+     * of requests across all management read operations. Key Management might throttle this call to reject an
+     * otherwise valid request when the total rate of management read operations exceeds 10 requests per second
+     * for a given tenancy.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -91,7 +153,38 @@ public interface KmsManagement extends AutoCloseable {
     GetKeyVersionResponse getKeyVersion(GetKeyVersionRequest request);
 
     /**
-     * Lists all key versions for the specified key.
+     * Returns the RSA wrapping key associated with the vault in the endpoint.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetWrappingKeyResponse getWrappingKey(GetWrappingKeyRequest request);
+
+    /**
+     * Imports the given wrapped/encrypted AES key.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ImportKeyResponse importKey(ImportKeyRequest request);
+
+    /**
+     * Imports the given key version.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ImportKeyVersionResponse importKeyVersion(ImportKeyVersionRequest request);
+
+    /**
+     * Lists all [KeyVersion](https://docs.cloud.oracle.com/api/#/en/key/release/KeyVersion/) resources for the specified
+     * master encryption key.
+     * <p>
+     * As a management operation, this call is subject to a Key Management limit that applies to the total number
+     * of requests across all management read operations. Key Management might throttle this call to reject an
+     * otherwise valid request when the total rate of management read operations exceeds 10 requests per second
+     * for a given tenancy.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -100,7 +193,12 @@ public interface KmsManagement extends AutoCloseable {
     ListKeyVersionsResponse listKeyVersions(ListKeyVersionsRequest request);
 
     /**
-     * Lists the keys in the specified vault and compartment.
+     * Lists the master encryption keys in the specified vault and compartment.
+     * <p>
+     * As a management operation, this call is subject to a Key Management limit that applies to the total number
+     * of requests across all management read operations. Key Management might throttle this call to reject an
+     * otherwise valid request when the total rate of management read operations exceeds 10 requests per second
+     * for a given tenancy.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -109,8 +207,13 @@ public interface KmsManagement extends AutoCloseable {
     ListKeysResponse listKeys(ListKeysRequest request);
 
     /**
-     * Schedules the deletion of the specified key. This sets the state of the key
-     * to `PENDING_DELETION` and then deletes it after the retention period ends.
+     * Schedules the deletion of the specified key. This sets the lifecycle state of the key
+     * to `PENDING_DELETION` and then deletes it after the specified retention period ends.
+     * <p>
+     * As a provisioning operation, this call is subject to a Key Management limit that applies to
+     * the total number of requests across all provisioning write operations. Key Management might
+     * throttle this call to reject an otherwise valid request when the total rate of provisioning
+     * write operations exceeds 10 requests per second for a given tenancy.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -119,9 +222,30 @@ public interface KmsManagement extends AutoCloseable {
     ScheduleKeyDeletionResponse scheduleKeyDeletion(ScheduleKeyDeletionRequest request);
 
     /**
-     * Updates the properties of a key. Specifically, you can update the
+     * Schedules the deletion of the specified key version. This sets the lifecycle state of the key version
+     * to `PENDING_DELETION` and then deletes it after the specified retention period ends.
+     * <p>
+     * As a provisioning operation, this call is subject to a Key Management limit that applies to
+     * the total number of requests across all provisioning write operations. Key Management might
+     * throttle this call to reject an otherwise valid request when the total rate of provisioning
+     * write operations exceeds 10 requests per second for a given tenancy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    ScheduleKeyVersionDeletionResponse scheduleKeyVersionDeletion(
+            ScheduleKeyVersionDeletionRequest request);
+
+    /**
+     * Updates the properties of a master encryption key. Specifically, you can update the
      * `displayName`, `freeformTags`, and `definedTags` properties. Furthermore,
-     * the key must in an `ACTIVE` or `CREATING` state to be updated.
+     * the key must in an ENABLED or CREATING state to be updated.
+     * <p>
+     * As a management operation, this call is subject to a Key Management limit that applies to the total number
+     * of requests across all management write operations. Key Management might throttle this call to reject an
+     * otherwise valid request when the total rate of management write operations exceeds 10 requests per second
+     * for a given tenancy.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
