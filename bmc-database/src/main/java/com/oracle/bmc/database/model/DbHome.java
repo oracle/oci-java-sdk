@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.database.model;
 
@@ -148,7 +148,7 @@ public class DbHome {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database home.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Home.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -160,7 +160,7 @@ public class DbHome {
     String compartmentId;
 
     /**
-     * The user-provided name for the database home. The name does not need to be unique.
+     * The user-provided name for the Database Home. The name does not need to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
@@ -171,7 +171,7 @@ public class DbHome {
     @com.fasterxml.jackson.annotation.JsonProperty("lastPatchHistoryEntryId")
     String lastPatchHistoryEntryId;
     /**
-     * The current state of the database home.
+     * The current state of the Database Home.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
@@ -221,7 +221,7 @@ public class DbHome {
         }
     };
     /**
-     * The current state of the database home.
+     * The current state of the Database Home.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
@@ -245,7 +245,7 @@ public class DbHome {
     String dbVersion;
 
     /**
-     * The date and time the database home was created.
+     * The date and time the Database Home was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;

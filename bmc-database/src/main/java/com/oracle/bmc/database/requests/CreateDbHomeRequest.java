@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.database.requests;
 
@@ -11,7 +11,7 @@ import com.oracle.bmc.database.model.*;
 public class CreateDbHomeRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * Request to create a new database home.
+     * Request to create a new Database Home.
      */
     private CreateDbHomeBase createDbHomeWithDbSystemIdDetails;
 

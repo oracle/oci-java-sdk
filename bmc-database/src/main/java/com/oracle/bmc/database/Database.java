@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.database;
 
@@ -228,7 +228,7 @@ public interface Database extends AutoCloseable {
             CreateDataGuardAssociationRequest request);
 
     /**
-     * Creates a new database home in the specified DB system based on the request parameters you provide.
+     * Creates a new Database Home in the specified DB system based on the request parameters you provide. Applies only to bare metal and Exadata DB systems.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -333,7 +333,7 @@ public interface Database extends AutoCloseable {
     DeleteBackupDestinationResponse deleteBackupDestination(DeleteBackupDestinationRequest request);
 
     /**
-     * Deletes a DB Home. The DB Home and its database data are local to the DB system and will be lost when it is deleted. Oracle recommends that you back up any data in the DB system prior to deleting it.
+     * Deletes a Database Home. The Database Home and its database data are local to the DB system and are lost when you delete the Database Home. Oracle recommends that you back up any data on the DB system before you delete it.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -554,7 +554,7 @@ public interface Database extends AutoCloseable {
     GetDatabaseResponse getDatabase(GetDatabaseRequest request);
 
     /**
-     * Gets information about the specified database home.
+     * Gets information about the specified Database Home.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -809,7 +809,7 @@ public interface Database extends AutoCloseable {
             ListDataGuardAssociationsRequest request);
 
     /**
-     * Gets a list of the databases in the specified database home.
+     * Gets a list of the databases in the specified Database Home.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -818,7 +818,7 @@ public interface Database extends AutoCloseable {
     ListDatabasesResponse listDatabases(ListDatabasesRequest request);
 
     /**
-     * Gets history of the actions taken for patches for the specified database home.
+     * Gets history of the actions taken for patches for the specified Database Home.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -828,7 +828,7 @@ public interface Database extends AutoCloseable {
             ListDbHomePatchHistoryEntriesRequest request);
 
     /**
-     * Lists patches applicable to the requested database home.
+     * Lists patches applicable to the requested Database Home.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -837,7 +837,7 @@ public interface Database extends AutoCloseable {
     ListDbHomePatchesResponse listDbHomePatches(ListDbHomePatchesRequest request);
 
     /**
-     * Gets a list of database homes in the specified DB system and compartment. A database home is a directory where Oracle Database software is installed.
+     * Gets a list of Database Homes in the specified DB system and compartment. A Database Home is a directory where Oracle Database software is installed.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.database.model;
 
@@ -57,7 +57,10 @@ public class DbSystemOptions {
     }
 
     /**
-     * The storage option used in DB system. For 1-node VM systems, you can specify either [Automatic Storage Management (ASM)](https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/19&id=OSTMG-GUID-BC612D35-5399-4A35-843E-CF76E3D3CDB5) or [Logical Volume Manager (LVM)](https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/19&id=ADMIN-GUID-57C50259-9472-4ED0-8818-DB9ABA96EC8E). For more information, see [Bare Metal and Virtual Machine DB Systems](https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm#fastprovisioning).
+     * The storage option used in DB system.
+     * ASM - Automatic storage management
+     * LVM - Logical Volume management
+     *
      **/
     @lombok.extern.slf4j.Slf4j
     public enum StorageManagement {
@@ -103,7 +106,10 @@ public class DbSystemOptions {
         }
     };
     /**
-     * The storage option used in DB system. For 1-node VM systems, you can specify either [Automatic Storage Management (ASM)](https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/19&id=OSTMG-GUID-BC612D35-5399-4A35-843E-CF76E3D3CDB5) or [Logical Volume Manager (LVM)](https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/19&id=ADMIN-GUID-57C50259-9472-4ED0-8818-DB9ABA96EC8E). For more information, see [Bare Metal and Virtual Machine DB Systems](https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm#fastprovisioning).
+     * The storage option used in DB system.
+     * ASM - Automatic storage management
+     * LVM - Logical Volume management
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageManagement")
     StorageManagement storageManagement;

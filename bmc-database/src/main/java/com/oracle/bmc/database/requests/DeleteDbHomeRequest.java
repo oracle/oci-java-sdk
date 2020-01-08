@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.database.requests;
 
@@ -11,7 +11,7 @@ import com.oracle.bmc.database.model.*;
 public class DeleteDbHomeRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The database home [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The Database Home [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     private String dbHomeId;
 
@@ -24,7 +24,10 @@ public class DeleteDbHomeRequest extends com.oracle.bmc.requests.BmcRequest {
     private String ifMatch;
 
     /**
-     * Whether to perform a final backup of the database or not. Default is false. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+     * Whether to perform a final backup of the database or not. Default is false.
+     * <p>
+     * If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+     *
      */
     private Boolean performFinalBackup;
 

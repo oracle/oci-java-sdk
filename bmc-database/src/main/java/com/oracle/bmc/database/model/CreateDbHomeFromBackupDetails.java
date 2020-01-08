@@ -1,10 +1,10 @@
 /**
- * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.database.model;
 
 /**
- * Details for creating a database home if you are creating a database by restoring from a database backup.
+ * Details for creating a Database Home if you are creating a database by restoring from a database backup.
  * <p>
  **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
@@ -72,7 +72,7 @@ public class CreateDbHomeFromBackupDetails {
     }
 
     /**
-     * The user-provided name of the database home.
+     * The user-provided name of the Database Home.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;

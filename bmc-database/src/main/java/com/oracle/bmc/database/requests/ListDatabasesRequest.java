@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.database.requests;
 
@@ -16,7 +16,7 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest {
     private String compartmentId;
 
     /**
-     * A database home [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * A Database Home [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     private String dbHomeId;
 

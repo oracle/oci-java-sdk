@@ -1,12 +1,12 @@
 /**
- * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.database.model;
 
 /**
- * A directory where Oracle Database software is installed. A bare metal DB system can have multiple database homes
- * and each database home can run a different supported version of Oracle Database. A virtual machine DB system can have only one database home.
- * For more information, see [Bare Metal and Virtual Machine DB Systems](https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm).
+ * A directory where Oracle Database software is installed. A bare metal or Exadata DB system can have multiple Database Homes
+ * and each Database Home can run a different supported version of Oracle Database. A virtual machine DB system can have only one Database Home.
+ * For more information, see [Bare Metal and Virtual Machine DB Systems](https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm) and [Exadata DB Systems](https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm).
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an
  * administrator. If you're an administrator who needs to write policies to give users access,
@@ -157,7 +157,7 @@ public class DbHomeSummary {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database home.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Database Home.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
@@ -169,7 +169,7 @@ public class DbHomeSummary {
     String compartmentId;
 
     /**
-     * The user-provided name for the database home. The name does not need to be unique.
+     * The user-provided name for the Database Home. The name does not need to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     String displayName;
@@ -180,7 +180,7 @@ public class DbHomeSummary {
     @com.fasterxml.jackson.annotation.JsonProperty("lastPatchHistoryEntryId")
     String lastPatchHistoryEntryId;
     /**
-     * The current state of the database home.
+     * The current state of the Database Home.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum LifecycleState {
@@ -230,7 +230,7 @@ public class DbHomeSummary {
         }
     };
     /**
-     * The current state of the database home.
+     * The current state of the Database Home.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
@@ -254,7 +254,7 @@ public class DbHomeSummary {
     String dbVersion;
 
     /**
-     * The date and time the database home was created.
+     * The date and time the Database Home was created.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     java.util.Date timeCreated;
