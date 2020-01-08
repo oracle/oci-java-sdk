@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.database;
 
@@ -2580,7 +2580,9 @@ public class DatabaseWaiters {
                                         response.getMaintenanceRun().getLifecycleState());
                             }
                         },
-                        false),
+                        targetStatesSet.contains(
+                                com.oracle.bmc.database.model.MaintenanceRun.LifecycleState
+                                        .Deleted)),
                 request);
     }
 

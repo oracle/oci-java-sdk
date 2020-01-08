@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.database.requests;
 
@@ -11,7 +11,7 @@ import com.oracle.bmc.database.model.*;
 public class UpdateDbHomeRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
-     * The database home [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The Database Home [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     private String dbHomeId;
 

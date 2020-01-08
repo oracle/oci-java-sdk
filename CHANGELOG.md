@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.12.1 - 2020-01-08
+### Added
+- Support for optionally specifying the corporate proxy field when creating Exadata infrastructure in the Database service
+- Support for maintenance windows, and rescheduling maintenance runs, on autonomous container databases in the Database service
+
 ## 1.12.0 - 2019-12-17
 ### Added
 - Support for the API Gateway service

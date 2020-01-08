@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.database.model;
 
@@ -43,6 +43,15 @@ public class UpdateAutonomousContainerDatabaseDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindowDetails")
+        private MaintenanceWindow maintenanceWindowDetails;
+
+        public Builder maintenanceWindowDetails(MaintenanceWindow maintenanceWindowDetails) {
+            this.maintenanceWindowDetails = maintenanceWindowDetails;
+            this.__explicitlySet__.add("maintenanceWindowDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -77,7 +86,12 @@ public class UpdateAutonomousContainerDatabaseDetails {
         public UpdateAutonomousContainerDatabaseDetails build() {
             UpdateAutonomousContainerDatabaseDetails __instance__ =
                     new UpdateAutonomousContainerDatabaseDetails(
-                            displayName, patchModel, freeformTags, definedTags, backupConfig);
+                            displayName,
+                            patchModel,
+                            maintenanceWindowDetails,
+                            freeformTags,
+                            definedTags,
+                            backupConfig);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -87,6 +101,7 @@ public class UpdateAutonomousContainerDatabaseDetails {
             Builder copiedBuilder =
                     displayName(o.getDisplayName())
                             .patchModel(o.getPatchModel())
+                            .maintenanceWindowDetails(o.getMaintenanceWindowDetails())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .backupConfig(o.getBackupConfig());
@@ -148,6 +163,9 @@ public class UpdateAutonomousContainerDatabaseDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchModel")
     PatchModel patchModel;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindowDetails")
+    MaintenanceWindow maintenanceWindowDetails;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.database.model;
 
@@ -124,6 +124,15 @@ public class AutonomousContainerDatabase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindow")
+        private MaintenanceWindow maintenanceWindow;
+
+        public Builder maintenanceWindow(MaintenanceWindow maintenanceWindow) {
+            this.maintenanceWindow = maintenanceWindow;
+            this.__explicitlySet__.add("maintenanceWindow");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -178,6 +187,7 @@ public class AutonomousContainerDatabase {
                             patchModel,
                             lastMaintenanceRunId,
                             nextMaintenanceRunId,
+                            maintenanceWindow,
                             freeformTags,
                             definedTags,
                             availabilityDomain,
@@ -201,6 +211,7 @@ public class AutonomousContainerDatabase {
                             .patchModel(o.getPatchModel())
                             .lastMaintenanceRunId(o.getLastMaintenanceRunId())
                             .nextMaintenanceRunId(o.getNextMaintenanceRunId())
+                            .maintenanceWindow(o.getMaintenanceWindow())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
                             .availabilityDomain(o.getAvailabilityDomain())
@@ -427,6 +438,9 @@ public class AutonomousContainerDatabase {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nextMaintenanceRunId")
     String nextMaintenanceRunId;
+
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceWindow")
+    MaintenanceWindow maintenanceWindow;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.

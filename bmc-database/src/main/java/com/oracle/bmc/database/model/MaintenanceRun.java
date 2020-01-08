@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
  */
 package com.oracle.bmc.database.model;
 
@@ -226,6 +226,8 @@ public class MaintenanceRun {
         Skipped("SKIPPED"),
         Failed("FAILED"),
         Updating("UPDATING"),
+        Deleting("DELETING"),
+        Deleted("DELETED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
