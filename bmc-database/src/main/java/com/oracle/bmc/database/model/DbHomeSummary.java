@@ -103,6 +103,24 @@ public class DbHomeSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dbHomeLocation")
+        private String dbHomeLocation;
+
+        public Builder dbHomeLocation(String dbHomeLocation) {
+            this.dbHomeLocation = dbHomeLocation;
+            this.__explicitlySet__.add("dbHomeLocation");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -126,6 +144,8 @@ public class DbHomeSummary {
                             dbSystemId,
                             vmClusterId,
                             dbVersion,
+                            dbHomeLocation,
+                            lifecycleDetails,
                             timeCreated);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -142,6 +162,8 @@ public class DbHomeSummary {
                             .dbSystemId(o.getDbSystemId())
                             .vmClusterId(o.getVmClusterId())
                             .dbVersion(o.getDbVersion())
+                            .dbHomeLocation(o.getDbHomeLocation())
+                            .lifecycleDetails(o.getLifecycleDetails())
                             .timeCreated(o.getTimeCreated());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -252,6 +274,18 @@ public class DbHomeSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     String dbVersion;
+
+    /**
+     * The location of the Oracle Database Home.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbHomeLocation")
+    String dbHomeLocation;
+
+    /**
+     * Additional information about the current lifecycleState.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    String lifecycleDetails;
 
     /**
      * The date and time the Database Home was created.

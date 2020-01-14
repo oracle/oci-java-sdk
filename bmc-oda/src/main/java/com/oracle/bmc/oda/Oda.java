@@ -142,6 +142,27 @@ public interface Oda extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
+     * Starts an inactive Digital Assistant instance. Once active, the instance will be accessible and metering
+     * of requests will be started again.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    StartOdaInstanceResponse startOdaInstance(StartOdaInstanceRequest request);
+
+    /**
+     * Stops an active Digital Assistant instance. Once inactive, the instance will not be accessible and metering
+     * of requests will be stopped until the instance is started again. Data associated with the instance
+     * is not affected.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    StopOdaInstanceResponse stopOdaInstance(StopOdaInstanceRequest request);
+
+    /**
      * Updates the specified Digital Assistant instance with the information in the request body.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

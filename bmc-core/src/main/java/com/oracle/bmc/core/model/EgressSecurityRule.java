@@ -87,6 +87,15 @@ public class EgressSecurityRule {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -99,7 +108,8 @@ public class EgressSecurityRule {
                             isStateless,
                             protocol,
                             tcpOptions,
-                            udpOptions);
+                            udpOptions,
+                            description);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -113,7 +123,8 @@ public class EgressSecurityRule {
                             .isStateless(o.getIsStateless())
                             .protocol(o.getProtocol())
                             .tcpOptions(o.getTcpOptions())
-                            .udpOptions(o.getUdpOptions());
+                            .udpOptions(o.getUdpOptions())
+                            .description(o.getDescription());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -266,6 +277,13 @@ public class EgressSecurityRule {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("udpOptions")
     UdpOptions udpOptions;
+
+    /**
+     * An optional description of your choice for the rule.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    String description;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

@@ -21,6 +21,11 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest {
     private String dbHomeId;
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exadata DB system that you want to filter the database results by. Applies only to Exadata DB systems.
+     */
+    private String systemId;
+
+    /**
      * The maximum number of items to return per page.
      */
     private Integer limit;
@@ -157,6 +162,7 @@ public class ListDatabasesRequest extends com.oracle.bmc.requests.BmcRequest {
         public Builder copy(ListDatabasesRequest o) {
             compartmentId(o.getCompartmentId());
             dbHomeId(o.getDbHomeId());
+            systemId(o.getSystemId());
             limit(o.getLimit());
             page(o.getPage());
             sortBy(o.getSortBy());

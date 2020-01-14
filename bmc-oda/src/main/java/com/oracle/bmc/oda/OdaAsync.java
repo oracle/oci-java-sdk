@@ -210,6 +210,41 @@ public interface OdaAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Starts an inactive Digital Assistant instance. Once active, the instance will be accessible and metering
+     * of requests will be started again.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<StartOdaInstanceResponse> startOdaInstance(
+            StartOdaInstanceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<StartOdaInstanceRequest, StartOdaInstanceResponse>
+                    handler);
+
+    /**
+     * Stops an active Digital Assistant instance. Once inactive, the instance will not be accessible and metering
+     * of requests will be stopped until the instance is started again. Data associated with the instance
+     * is not affected.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<StopOdaInstanceResponse> stopOdaInstance(
+            StopOdaInstanceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<StopOdaInstanceRequest, StopOdaInstanceResponse>
+                    handler);
+
+    /**
      * Updates the specified Digital Assistant instance with the information in the request body.
      *
      * @param request The request object containing the details to send

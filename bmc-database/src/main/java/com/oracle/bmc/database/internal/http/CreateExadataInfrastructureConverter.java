@@ -79,6 +79,18 @@ public class CreateExadataInfrastructureConverter {
 
                                 builder.exadataInfrastructure(response.getItem());
 
+                                com.google.common.base.Optional<java.util.List<String>>
+                                        opcWorkRequestIdHeader =
+                                                com.oracle.bmc.http.internal.HeaderUtils.get(
+                                                        headers, "opc-work-request-id");
+                                if (opcWorkRequestIdHeader.isPresent()) {
+                                    builder.opcWorkRequestId(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-work-request-id",
+                                                    opcWorkRequestIdHeader.get().get(0),
+                                                    String.class));
+                                }
+
                                 com.google.common.base.Optional<java.util.List<String>> etagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.get(
                                                 headers, "etag");

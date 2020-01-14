@@ -51,6 +51,14 @@ public class ListDbHomesConverter {
                                     request.getVmClusterId()));
         }
 
+        if (request.getBackupId() != null) {
+            target =
+                    target.queryParam(
+                            "backupId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getBackupId()));
+        }
+
         if (request.getLimit() != null) {
             target =
                     target.queryParam(

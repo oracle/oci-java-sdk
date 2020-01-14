@@ -1,0 +1,7 @@
+# This file is only necessary for these examples because need to dynamical way to control which client object to use.
+
+# By default, run examples using Jersey
+org.glassfish.jersey.client.JerseyClientBuilder
+
+# To enable Resteasy, comment out the line above, and uncomment the line below
+# org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder
