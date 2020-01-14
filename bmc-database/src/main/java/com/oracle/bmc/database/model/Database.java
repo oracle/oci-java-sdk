@@ -67,6 +67,24 @@ public class Database {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
+        private String dbSystemId;
+
+        public Builder dbSystemId(String dbSystemId) {
+            this.dbSystemId = dbSystemId;
+            this.__explicitlySet__.add("dbSystemId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
+        private String vmClusterId;
+
+        public Builder vmClusterId(String vmClusterId) {
+            this.vmClusterId = vmClusterId;
+            this.__explicitlySet__.add("vmClusterId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dbName")
         private String dbName;
 
@@ -178,6 +196,8 @@ public class Database {
                             characterSet,
                             ncharacterSet,
                             dbHomeId,
+                            dbSystemId,
+                            vmClusterId,
                             dbName,
                             pdbName,
                             dbWorkload,
@@ -201,6 +221,8 @@ public class Database {
                             .characterSet(o.getCharacterSet())
                             .ncharacterSet(o.getNcharacterSet())
                             .dbHomeId(o.getDbHomeId())
+                            .dbSystemId(o.getDbSystemId())
+                            .vmClusterId(o.getVmClusterId())
                             .dbName(o.getDbName())
                             .pdbName(o.getPdbName())
                             .dbWorkload(o.getDbWorkload())
@@ -254,6 +276,18 @@ public class Database {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbHomeId")
     String dbHomeId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
+    String dbSystemId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM cluster.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vmClusterId")
+    String vmClusterId;
 
     /**
      * The database name.

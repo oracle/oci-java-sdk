@@ -25,7 +25,6 @@ public class ListDatabasesConverter {
             com.oracle.bmc.http.internal.RestClient client, ListDatabasesRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
-        Validate.notNull(request.getDbHomeId(), "dbHomeId is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget().path("/20160918").path("databases");
@@ -36,11 +35,21 @@ public class ListDatabasesConverter {
                         com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                 request.getCompartmentId()));
 
-        target =
-                target.queryParam(
-                        "dbHomeId",
-                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                request.getDbHomeId()));
+        if (request.getDbHomeId() != null) {
+            target =
+                    target.queryParam(
+                            "dbHomeId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getDbHomeId()));
+        }
+
+        if (request.getSystemId() != null) {
+            target =
+                    target.queryParam(
+                            "systemId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getSystemId()));
+        }
 
         if (request.getLimit() != null) {
             target =

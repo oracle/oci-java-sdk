@@ -11,6 +11,12 @@ import com.oracle.bmc.database.model.*;
 public class FailoverDataGuardAssociationResponse {
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the work request. Multiple OCID values are returned in a comma-separated list. Use {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with a work request OCID to track the status of the request.
+     *
+     */
+    private String opcWorkRequestId;
+
+    /**
      * For optimistic concurrency control. See `if-match`.
      */
     private String etag;
@@ -33,6 +39,7 @@ public class FailoverDataGuardAssociationResponse {
          * @return this builder instance
          */
         public Builder copy(FailoverDataGuardAssociationResponse o) {
+            opcWorkRequestId(o.getOpcWorkRequestId());
             etag(o.getEtag());
             opcRequestId(o.getOpcRequestId());
             dataGuardAssociation(o.getDataGuardAssociation());

@@ -27,6 +27,8 @@ public class DeleteDbHomeRequest extends com.oracle.bmc.requests.BmcRequest {
      * Whether to perform a final backup of the database or not. Default is false.
      * <p>
      * If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+     * <p>
+     * This parameter is used in multiple APIs. Refer to the API description for details on how the operation uses it.
      *
      */
     private Boolean performFinalBackup;

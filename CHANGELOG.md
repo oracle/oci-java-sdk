@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.12.2 - 2020-01-14
+### Added
+- Support for a description field on route rules and security rules in the Networking service
+- Support for starting and stopping Digital Assistant instances in the Digital Assistant service
+- Support for shared database homes on Exadata, bare metal, and virtual machine instances in the Database service
+- Support for tracking a number of Database service operations through the Work Requests service
+
 ## 1.12.1 - 2020-01-08
 ### Added
 - Support for optionally specifying the corporate proxy field when creating Exadata infrastructure in the Database service

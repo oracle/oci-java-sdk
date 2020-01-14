@@ -60,12 +60,22 @@ public class RouteRule {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public RouteRule build() {
             RouteRule __instance__ =
-                    new RouteRule(cidrBlock, destination, destinationType, networkEntityId);
+                    new RouteRule(
+                            cidrBlock, destination, destinationType, networkEntityId, description);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -76,7 +86,8 @@ public class RouteRule {
                     cidrBlock(o.getCidrBlock())
                             .destination(o.getDestination())
                             .destinationType(o.getDestinationType())
-                            .networkEntityId(o.getNetworkEntityId());
+                            .networkEntityId(o.getNetworkEntityId())
+                            .description(o.getDescription());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -197,6 +208,13 @@ public class RouteRule {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkEntityId")
     String networkEntityId;
+
+    /**
+     * An optional description of your choice for the rule.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    String description;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

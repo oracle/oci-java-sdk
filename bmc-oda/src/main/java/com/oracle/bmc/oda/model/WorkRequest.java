@@ -196,6 +196,8 @@ public class WorkRequest {
         DeleteOdaInstance("DELETE_ODA_INSTANCE"),
         PurgeOdaInstance("PURGE_ODA_INSTANCE"),
         RecoverOdaInstance("RECOVER_ODA_INSTANCE"),
+        StopOdaInstance("STOP_ODA_INSTANCE"),
+        StartOdaInstance("START_ODA_INSTANCE"),
         ChangeOdaInstanceCompartment("CHANGE_ODA_INSTANCE_COMPARTMENT"),
         CreateAssociation("CREATE_ASSOCIATION"),
         DeleteAssociation("DELETE_ASSOCIATION"),

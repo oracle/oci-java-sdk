@@ -125,6 +125,8 @@ public class WorkRequestResource {
         Delete("DELETE"),
         Purge("PURGE"),
         Recover("RECOVER"),
+        Stop("STOP"),
+        Start("START"),
         ChangeCompartment("CHANGE_COMPARTMENT"),
         CreateAssociation("CREATE_ASSOCIATION"),
         DeleteAssociation("DELETE_ASSOCIATION"),
