@@ -1155,6 +1155,15 @@ public interface VirtualNetwork extends AutoCloseable {
     GetDrgAttachmentResponse getDrgAttachment(GetDrgAttachmentRequest request);
 
     /**
+     * Get redundancy status of single DRG object on Oracle side.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    GetDrgRedundancyStatusResponse getDrgRedundancyStatus(GetDrgRedundancyStatusRequest request);
+
+    /**
      * Gets the specified provider service.
      * For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/Content/Network/Concepts/fastconnect.htm).
      *

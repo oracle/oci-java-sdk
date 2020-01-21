@@ -124,6 +124,15 @@ public class AutonomousDatabaseBackup {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isRestorable")
+        private Boolean isRestorable;
+
+        public Builder isRestorable(Boolean isRestorable) {
+            this.isRestorable = isRestorable;
+            this.__explicitlySet__.add("isRestorable");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -140,7 +149,8 @@ public class AutonomousDatabaseBackup {
                             timeEnded,
                             lifecycleDetails,
                             databaseSizeInTBs,
-                            lifecycleState);
+                            lifecycleState,
+                            isRestorable);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -158,7 +168,8 @@ public class AutonomousDatabaseBackup {
                             .timeEnded(o.getTimeEnded())
                             .lifecycleDetails(o.getLifecycleDetails())
                             .databaseSizeInTBs(o.getDatabaseSizeInTBs())
-                            .lifecycleState(o.getLifecycleState());
+                            .lifecycleState(o.getLifecycleState())
+                            .isRestorable(o.getIsRestorable());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -330,6 +341,12 @@ public class AutonomousDatabaseBackup {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     LifecycleState lifecycleState;
+
+    /**
+     * Indicates whether the backup can be used to restore the associated Autonomous Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isRestorable")
+    Boolean isRestorable;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
