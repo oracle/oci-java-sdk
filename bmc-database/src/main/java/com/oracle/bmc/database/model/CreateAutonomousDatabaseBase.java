@@ -35,6 +35,14 @@ package com.oracle.bmc.database.model;
         name = "DATABASE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateAutonomousDatabaseFromBackupDetails.class,
+        name = "BACKUP_FROM_ID"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateAutonomousDatabaseFromBackupTimestampDetails.class,
+        name = "BACKUP_FROM_TIMESTAMP"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateAutonomousDatabaseDetails.class,
         name = "NONE"
     )
@@ -227,11 +235,15 @@ public class CreateAutonomousDatabaseBase {
 
     /**
      * The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database.
+     * <p>
+     * For Autonomous Databases using the [serverless deployment](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI), the following cloning options are available: Use `BACKUP_FROM_ID` for creating a new Autonomous Database from a specified backup. Use `BACKUP_FROM_TIMESTAMP` for creating a point-in-time Autonomous Database clone using backups. For more information, see [Cloning an Autonomous Database](https://docs.cloud.oracle.com/Content/Database/Tasks/adbcloning.htm).
      *
      **/
     public enum Source {
         None("NONE"),
         Database("DATABASE"),
+        BackupFromId("BACKUP_FROM_ID"),
+        BackupFromTimestamp("BACKUP_FROM_TIMESTAMP"),
         ;
 
         private final String value;
