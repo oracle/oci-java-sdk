@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+
+## 1.12.4 - 2020-01-28
+### Added
+- Support for the Application Migration service
+- Support for the Data Flow service
+- Support for the Data Catalog service
+- Support for cross-shape Data Guard in the Database service
+- Support for offline data export in the Data Transfer service
+
 ## 1.12.3 - 2020-01-21
 ### Added
 - Support for getting DRG redundancy status in the Networking service

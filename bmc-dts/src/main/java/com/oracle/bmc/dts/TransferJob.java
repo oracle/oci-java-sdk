@@ -6,7 +6,7 @@ package com.oracle.bmc.dts;
 import com.oracle.bmc.dts.requests.*;
 import com.oracle.bmc.dts.responses.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.011")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.014")
 public interface TransferJob extends AutoCloseable {
 
     /**
@@ -91,4 +91,13 @@ public interface TransferJob extends AutoCloseable {
      * @return The service waiters.
      */
     TransferJobWaiters getWaiters();
+
+    /**
+     * Gets the pre-configured paginators available for list operations in this service which may return multiple
+     * pages of data. These paginators provide an {@link java.lang.Iterable} interface so that service responses, or
+     * resources/records, can be iterated through without having to manually deal with pagination and page tokens.
+     *
+     * @return The service paginators.
+     */
+    TransferJobPaginators getPaginators();
 }

@@ -5,7 +5,7 @@ package com.oracle.bmc.dts.requests;
 
 import com.oracle.bmc.dts.model.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.011")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.014")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
 public class CreateTransferJobRequest extends com.oracle.bmc.requests.BmcRequest {
@@ -19,6 +19,13 @@ public class CreateTransferJobRequest extends com.oracle.bmc.requests.BmcRequest
      *
      */
     private String opcRetryToken;
+
+    /**
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
+     */
+    private String opcRequestId;
 
     public static class Builder {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
@@ -55,6 +62,7 @@ public class CreateTransferJobRequest extends com.oracle.bmc.requests.BmcRequest
         public Builder copy(CreateTransferJobRequest o) {
             createTransferJobDetails(o.getCreateTransferJobDetails());
             opcRetryToken(o.getOpcRetryToken());
+            opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

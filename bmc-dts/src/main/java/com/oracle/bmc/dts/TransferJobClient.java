@@ -8,7 +8,7 @@ import com.oracle.bmc.dts.internal.http.*;
 import com.oracle.bmc.dts.requests.*;
 import com.oracle.bmc.dts.responses.*;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.011")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.014")
 @lombok.extern.slf4j.Slf4j
 public class TransferJobClient implements TransferJob {
     /**
@@ -24,6 +24,8 @@ public class TransferJobClient implements TransferJob {
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private final TransferJobWaiters waiters;
+
+    private final TransferJobPaginators paginators;
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)
     private final com.oracle.bmc.http.internal.RestClient client;
@@ -263,6 +265,8 @@ public class TransferJobClient implements TransferJob {
             executorService = threadPoolExecutor;
         }
         this.waiters = new TransferJobWaiters(executorService, this);
+
+        this.paginators = new TransferJobPaginators(this);
 
         if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
             com.oracle.bmc.auth.RegionProvider provider =
@@ -559,5 +563,10 @@ public class TransferJobClient implements TransferJob {
     @Override
     public TransferJobWaiters getWaiters() {
         return waiters;
+    }
+
+    @Override
+    public TransferJobPaginators getPaginators() {
+        return paginators;
     }
 }
