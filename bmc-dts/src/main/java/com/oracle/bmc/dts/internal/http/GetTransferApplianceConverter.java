@@ -9,7 +9,7 @@ import com.oracle.bmc.dts.requests.*;
 import com.oracle.bmc.dts.responses.*;
 import org.apache.commons.lang3.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.011")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.014")
 @lombok.extern.slf4j.Slf4j
 public class GetTransferApplianceConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory

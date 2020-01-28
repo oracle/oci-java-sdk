@@ -7,6 +7,10 @@ import com.oracle.bmc.loadbalancer.LoadBalancerClient;
 import com.oracle.bmc.loadbalancer.model.AddHttpRequestHeaderRule;
 import com.oracle.bmc.loadbalancer.model.AddHttpResponseHeaderRule;
 import com.oracle.bmc.loadbalancer.model.ControlAccessUsingHttpMethodsRule;
+import com.oracle.bmc.loadbalancer.model.PathMatchCondition;
+import com.oracle.bmc.loadbalancer.model.RedirectRule;
+import com.oracle.bmc.loadbalancer.model.RedirectUri;
+import com.oracle.bmc.loadbalancer.model.RuleCondition;
 import com.oracle.bmc.loadbalancer.model.CreateListenerDetails;
 import com.oracle.bmc.loadbalancer.model.CreateRuleSetDetails;
 import com.oracle.bmc.loadbalancer.model.ExtendHttpRequestHeaderValueRule;
@@ -117,6 +121,18 @@ public class CreateLoadBalancerRuleSetExample {
                         .allowedMethods(Arrays.asList("PUT", "POST"))
                         .statusCode(403)
                         .build());
+        rules.add(
+                RedirectRule.builder()
+                        .responseCode(302)
+                        .conditions(getPathMatchConditions())
+                        .redirectUri(
+                                RedirectUri.builder()
+                                        .host("abc.com")
+                                        .protocol("http")
+                                        .port(8998)
+                                        .path("/xyz")
+                                        .build())
+                        .build());
 
         CreateRuleSetResponse response =
                 loadBalancerClient.createRuleSet(
@@ -177,5 +193,16 @@ public class CreateLoadBalancerRuleSetExample {
                                 .workRequestId(response.getOpcWorkRequestId())
                                 .build())
                 .execute();
+    }
+
+    private static List<RuleCondition> getPathMatchConditions() {
+        PathMatchCondition condition =
+                PathMatchCondition.builder()
+                        .attributeValue("/xyz")
+                        .operator(PathMatchCondition.Operator.ForceLongestPrefixMatch)
+                        .build();
+        List<RuleCondition> conditions = new ArrayList<>();
+        conditions.add(condition);
+        return conditions;
     }
 }

@@ -79,6 +79,15 @@ public class CreateDataGuardAssociationWithNewDbSystemDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("shape")
+        private String shape;
+
+        public Builder shape(String shape) {
+            this.shape = shape;
+            this.__explicitlySet__.add("shape");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
@@ -126,6 +135,7 @@ public class CreateDataGuardAssociationWithNewDbSystemDetails
                             transportType,
                             displayName,
                             availabilityDomain,
+                            shape,
                             subnetId,
                             nsgIds,
                             backupNetworkNsgIds,
@@ -142,6 +152,7 @@ public class CreateDataGuardAssociationWithNewDbSystemDetails
                             .transportType(o.getTransportType())
                             .displayName(o.getDisplayName())
                             .availabilityDomain(o.getAvailabilityDomain())
+                            .shape(o.getShape())
                             .subnetId(o.getSubnetId())
                             .nsgIds(o.getNsgIds())
                             .backupNetworkNsgIds(o.getBackupNetworkNsgIds())
@@ -166,6 +177,7 @@ public class CreateDataGuardAssociationWithNewDbSystemDetails
             TransportType transportType,
             String displayName,
             String availabilityDomain,
+            String shape,
             String subnetId,
             java.util.List<String> nsgIds,
             java.util.List<String> backupNetworkNsgIds,
@@ -173,6 +185,7 @@ public class CreateDataGuardAssociationWithNewDbSystemDetails
         super(databaseAdminPassword, protectionMode, transportType);
         this.displayName = displayName;
         this.availabilityDomain = availabilityDomain;
+        this.shape = shape;
         this.subnetId = subnetId;
         this.nsgIds = nsgIds;
         this.backupNetworkNsgIds = backupNetworkNsgIds;
@@ -190,6 +203,16 @@ public class CreateDataGuardAssociationWithNewDbSystemDetails
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     String availabilityDomain;
+
+    /**
+     * The shape of the DB system to launch to set up the Data Guard association. The shape determines the number of CPU cores and the amount of memory available for the DB system.
+     * Only virtual machine shapes are valid shapes. If you do not supply this parameter, the default shape is the shape of the primary DB system.
+     * <p>
+     * To get a list of all shapes, use the {@link #listDbSystemShapes(ListDbSystemShapesRequest) listDbSystemShapes} operation.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shape")
+    String shape;
 
     /**
      * The OCID of the subnet the DB system is associated with.

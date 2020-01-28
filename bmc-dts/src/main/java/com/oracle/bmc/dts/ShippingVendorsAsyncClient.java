@@ -21,7 +21,7 @@ import com.oracle.bmc.dts.responses.*;
  * Future.isDone/isCancelled.<br/>
  * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.011")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.014")
 @lombok.extern.slf4j.Slf4j
 public class ShippingVendorsAsyncClient implements ShippingVendorsAsync {
     /**

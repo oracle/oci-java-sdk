@@ -9,7 +9,7 @@ import com.oracle.bmc.dts.requests.*;
 import com.oracle.bmc.dts.responses.*;
 import org.apache.commons.lang3.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.011")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.014")
 @lombok.extern.slf4j.Slf4j
 public class ListTransferJobsConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
@@ -51,9 +51,29 @@ public class ListTransferJobsConverter {
                                     request.getDisplayName()));
         }
 
+        if (request.getLimit() != null) {
+            target =
+                    target.queryParam(
+                            "limit",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getLimit()));
+        }
+
+        if (request.getPage() != null) {
+            target =
+                    target.queryParam(
+                            "page",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getPage()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);
+
+        if (request.getOpcRequestId() != null) {
+            ib.header("opc-request-id", request.getOpcRequestId());
+        }
 
         return ib;
     }
