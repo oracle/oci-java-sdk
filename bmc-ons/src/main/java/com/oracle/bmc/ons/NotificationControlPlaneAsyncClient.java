@@ -30,7 +30,7 @@ public class NotificationControlPlaneAsyncClient implements NotificationControlP
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("NOTIFICATIONCONTROLPLANE")
-                    .serviceEndpointPrefix("notifications")
+                    .serviceEndpointPrefix("notification")
                     .serviceEndpointTemplate("https://notification.{region}.oraclecloud.com")
                     .build();
 

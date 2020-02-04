@@ -17,7 +17,7 @@ public class NotificationControlPlaneClient implements NotificationControlPlane 
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("NOTIFICATIONCONTROLPLANE")
-                    .serviceEndpointPrefix("notifications")
+                    .serviceEndpointPrefix("notification")
                     .serviceEndpointTemplate("https://notification.{region}.oraclecloud.com")
                     .build();
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
