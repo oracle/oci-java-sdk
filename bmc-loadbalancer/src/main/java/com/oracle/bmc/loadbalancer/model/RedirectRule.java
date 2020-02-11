@@ -7,7 +7,7 @@ package com.oracle.bmc.loadbalancer.model;
  * An object that represents the action of returning a specified response code and a redirect URI. Each RedirectRule
  * object is configured for a particular listener and a designated path.
  * <p>
- * The default response code is `302 Moved Temporarily`.
+ * The default response code is `302 Found`.
  * <p>
  **NOTES:**
  * *  This rule applies only to HTTP listeners.
@@ -118,7 +118,7 @@ public class RedirectRule extends Rule {
      * *  307
      * *  308
      * <p>
-     * The default value is `302` (Moved Temporarily).
+     * The default value is `302` (Found).
      * <p>
      * Example: `301`
      *

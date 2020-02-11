@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.12.6 - 2020-02-11
+### Added
+- Support for listing supported database versions for Autonomous Database Serverless, and selecting a version at provisioning time in the Database service
+- Support for TCP proxy protocol versions on listener connection configurations in the Load Balancer service
+- Support for calling the Notifications service in alternate realms
+- Support for calling Oracle Cloud Infrastructure services in the eu-amsterdam-1 and me-jeddah-1 regions
+
 ## 1.12.5 - 2020-02-04
 ### Added
 - Support for the Data Science service

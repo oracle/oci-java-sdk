@@ -11,39 +11,31 @@ import org.apache.commons.lang3.Validate;
 
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.extern.slf4j.Slf4j
-public class ListAutonomousDatabasesConverter {
+public class ListAutonomousDbVersionsConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactory
             RESPONSE_CONVERSION_FACTORY =
                     new com.oracle.bmc.http.internal.ResponseConversionFunctionFactory();
 
-    public static ListAutonomousDatabasesRequest interceptRequest(
-            ListAutonomousDatabasesRequest request) {
+    public static ListAutonomousDbVersionsRequest interceptRequest(
+            ListAutonomousDbVersionsRequest request) {
 
         return request;
     }
 
     public static com.oracle.bmc.http.internal.WrappedInvocationBuilder fromRequest(
             com.oracle.bmc.http.internal.RestClient client,
-            ListAutonomousDatabasesRequest request) {
+            ListAutonomousDbVersionsRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20160918").path("autonomousDatabases");
+                client.getBaseTarget().path("/20160918").path("autonomousDbVersions");
 
         target =
                 target.queryParam(
                         "compartmentId",
                         com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                 request.getCompartmentId()));
-
-        if (request.getAutonomousContainerDatabaseId() != null) {
-            target =
-                    target.queryParam(
-                            "autonomousContainerDatabaseId",
-                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getAutonomousContainerDatabaseId()));
-        }
 
         if (request.getLimit() != null) {
             target =
@@ -61,30 +53,6 @@ public class ListAutonomousDatabasesConverter {
                                     request.getPage()));
         }
 
-        if (request.getSortBy() != null) {
-            target =
-                    target.queryParam(
-                            "sortBy",
-                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getSortBy().getValue()));
-        }
-
-        if (request.getSortOrder() != null) {
-            target =
-                    target.queryParam(
-                            "sortOrder",
-                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getSortOrder().getValue()));
-        }
-
-        if (request.getLifecycleState() != null) {
-            target =
-                    target.queryParam(
-                            "lifecycleState",
-                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getLifecycleState().getValue()));
-        }
-
         if (request.getDbWorkload() != null) {
             target =
                     target.queryParam(
@@ -93,28 +61,12 @@ public class ListAutonomousDatabasesConverter {
                                     request.getDbWorkload().getValue()));
         }
 
-        if (request.getDbVersion() != null) {
+        if (request.getSortOrder() != null) {
             target =
                     target.queryParam(
-                            "dbVersion",
+                            "sortOrder",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getDbVersion()));
-        }
-
-        if (request.getIsFreeTier() != null) {
-            target =
-                    target.queryParam(
-                            "isFreeTier",
-                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getIsFreeTier()));
-        }
-
-        if (request.getDisplayName() != null) {
-            target =
-                    target.queryParam(
-                            "displayName",
-                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getDisplayName()));
+                                    request.getSortOrder().getValue()));
         }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
@@ -129,36 +81,36 @@ public class ListAutonomousDatabasesConverter {
     }
 
     public static com.google.common.base.Function<
-                    javax.ws.rs.core.Response, ListAutonomousDatabasesResponse>
+                    javax.ws.rs.core.Response, ListAutonomousDbVersionsResponse>
             fromResponse() {
         final com.google.common.base.Function<
-                        javax.ws.rs.core.Response, ListAutonomousDatabasesResponse>
+                        javax.ws.rs.core.Response, ListAutonomousDbVersionsResponse>
                 transformer =
                         new com.google.common.base.Function<
-                                javax.ws.rs.core.Response, ListAutonomousDatabasesResponse>() {
+                                javax.ws.rs.core.Response, ListAutonomousDbVersionsResponse>() {
                             @Override
-                            public ListAutonomousDatabasesResponse apply(
+                            public ListAutonomousDbVersionsResponse apply(
                                     javax.ws.rs.core.Response rawResponse) {
                                 LOG.trace(
-                                        "Transform function invoked for ListAutonomousDatabasesResponse");
+                                        "Transform function invoked for ListAutonomousDbVersionsResponse");
                                 com.google.common.base.Function<
                                                 javax.ws.rs.core.Response,
                                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                        java.util.List<AutonomousDatabaseSummary>>>
+                                                        java.util.List<AutonomousDbVersionSummary>>>
                                         responseFn =
                                                 RESPONSE_CONVERSION_FACTORY.create(
                                                         new javax.ws.rs.core.GenericType<
                                                                 java.util.List<
-                                                                        AutonomousDatabaseSummary>>() {});
+                                                                        AutonomousDbVersionSummary>>() {});
 
                                 com.oracle.bmc.http.internal.WithHeaders<
-                                                java.util.List<AutonomousDatabaseSummary>>
+                                                java.util.List<AutonomousDbVersionSummary>>
                                         response = responseFn.apply(rawResponse);
                                 javax.ws.rs.core.MultivaluedMap<String, String> headers =
                                         response.getHeaders();
 
-                                ListAutonomousDatabasesResponse.Builder builder =
-                                        ListAutonomousDatabasesResponse.builder();
+                                ListAutonomousDbVersionsResponse.Builder builder =
+                                        ListAutonomousDbVersionsResponse.builder();
 
                                 builder.items(response.getItem());
 
@@ -186,7 +138,7 @@ public class ListAutonomousDatabasesConverter {
                                                     String.class));
                                 }
 
-                                ListAutonomousDatabasesResponse responseWrapper = builder.build();
+                                ListAutonomousDbVersionsResponse responseWrapper = builder.build();
 
                                 ResponseHelper.closeResponseSilentlyIfNotBuffered(rawResponse);
                                 return responseWrapper;

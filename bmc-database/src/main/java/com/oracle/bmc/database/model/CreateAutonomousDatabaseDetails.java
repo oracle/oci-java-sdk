@@ -178,6 +178,15 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
+        private String dbVersion;
+
+        public Builder dbVersion(String dbVersion) {
+            this.dbVersion = dbVersion;
+            this.__explicitlySet__.add("dbVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -199,7 +208,8 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                             autonomousContainerDatabaseId,
                             whitelistedIps,
                             freeformTags,
-                            definedTags);
+                            definedTags,
+                            dbVersion);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -223,7 +233,8 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                             .autonomousContainerDatabaseId(o.getAutonomousContainerDatabaseId())
                             .whitelistedIps(o.getWhitelistedIps())
                             .freeformTags(o.getFreeformTags())
-                            .definedTags(o.getDefinedTags());
+                            .definedTags(o.getDefinedTags())
+                            .dbVersion(o.getDbVersion());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -254,7 +265,8 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
             String autonomousContainerDatabaseId,
             java.util.List<String> whitelistedIps,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String dbVersion) {
         super(
                 compartmentId,
                 dbName,
@@ -271,7 +283,8 @@ public class CreateAutonomousDatabaseDetails extends CreateAutonomousDatabaseBas
                 autonomousContainerDatabaseId,
                 whitelistedIps,
                 freeformTags,
-                definedTags);
+                definedTags,
+                dbVersion);
     }
 
     @com.fasterxml.jackson.annotation.JsonIgnore

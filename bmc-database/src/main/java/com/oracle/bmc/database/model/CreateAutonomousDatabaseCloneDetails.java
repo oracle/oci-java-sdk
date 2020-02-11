@@ -178,6 +178,15 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
+        private String dbVersion;
+
+        public Builder dbVersion(String dbVersion) {
+            this.dbVersion = dbVersion;
+            this.__explicitlySet__.add("dbVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
@@ -218,6 +227,7 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
                             whitelistedIps,
                             freeformTags,
                             definedTags,
+                            dbVersion,
                             sourceId,
                             cloneType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -244,6 +254,7 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
                             .whitelistedIps(o.getWhitelistedIps())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
+                            .dbVersion(o.getDbVersion())
                             .sourceId(o.getSourceId())
                             .cloneType(o.getCloneType());
 
@@ -277,6 +288,7 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
             java.util.List<String> whitelistedIps,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String dbVersion,
             String sourceId,
             CloneType cloneType) {
         super(
@@ -295,7 +307,8 @@ public class CreateAutonomousDatabaseCloneDetails extends CreateAutonomousDataba
                 autonomousContainerDatabaseId,
                 whitelistedIps,
                 freeformTags,
-                definedTags);
+                definedTags,
+                dbVersion);
         this.sourceId = sourceId;
         this.cloneType = cloneType;
     }
