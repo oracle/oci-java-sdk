@@ -4,7 +4,7 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The Autonomous Database preview version. Note that preview version software is only available for databases on [shared Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI).
+ * The supported Autonomous Database version.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -18,10 +18,10 @@ package com.oracle.bmc.database.model;
 @lombok.AllArgsConstructor(onConstructor = @__({@Deprecated}))
 @lombok.Value
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = AutonomousDbPreviewVersionSummary.Builder.class
+    builder = AutonomousDbVersionSummary.Builder.class
 )
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public class AutonomousDbPreviewVersionSummary {
+public class AutonomousDbVersionSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
@@ -34,30 +34,21 @@ public class AutonomousDbPreviewVersionSummary {
             return this;
         }
 
-        @com.fasterxml.jackson.annotation.JsonProperty("timePreviewBegin")
-        private java.util.Date timePreviewBegin;
-
-        public Builder timePreviewBegin(java.util.Date timePreviewBegin) {
-            this.timePreviewBegin = timePreviewBegin;
-            this.__explicitlySet__.add("timePreviewBegin");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("timePreviewEnd")
-        private java.util.Date timePreviewEnd;
-
-        public Builder timePreviewEnd(java.util.Date timePreviewEnd) {
-            this.timePreviewEnd = timePreviewEnd;
-            this.__explicitlySet__.add("timePreviewEnd");
-            return this;
-        }
-
         @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
         private DbWorkload dbWorkload;
 
         public Builder dbWorkload(DbWorkload dbWorkload) {
             this.dbWorkload = dbWorkload;
             this.__explicitlySet__.add("dbWorkload");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("isDedicated")
+        private Boolean isDedicated;
+
+        public Builder isDedicated(Boolean isDedicated) {
+            this.isDedicated = isDedicated;
+            this.__explicitlySet__.add("isDedicated");
             return this;
         }
 
@@ -73,21 +64,19 @@ public class AutonomousDbPreviewVersionSummary {
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
-        public AutonomousDbPreviewVersionSummary build() {
-            AutonomousDbPreviewVersionSummary __instance__ =
-                    new AutonomousDbPreviewVersionSummary(
-                            version, timePreviewBegin, timePreviewEnd, dbWorkload, details);
+        public AutonomousDbVersionSummary build() {
+            AutonomousDbVersionSummary __instance__ =
+                    new AutonomousDbVersionSummary(version, dbWorkload, isDedicated, details);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(AutonomousDbPreviewVersionSummary o) {
+        public Builder copy(AutonomousDbVersionSummary o) {
             Builder copiedBuilder =
                     version(o.getVersion())
-                            .timePreviewBegin(o.getTimePreviewBegin())
-                            .timePreviewEnd(o.getTimePreviewEnd())
                             .dbWorkload(o.getDbWorkload())
+                            .isDedicated(o.getIsDedicated())
                             .details(o.getDetails());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -103,22 +92,10 @@ public class AutonomousDbPreviewVersionSummary {
     }
 
     /**
-     * A valid Autonomous Database preview version.
+     * A valid Oracle Database version for Autonomous Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     String version;
-
-    /**
-     * The date and time when the preview version availability begins.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("timePreviewBegin")
-    java.util.Date timePreviewBegin;
-
-    /**
-     * The date and time when the preview version availability ends.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("timePreviewEnd")
-    java.util.Date timePreviewEnd;
     /**
      * The Autonomous Database workload type. OLTP indicates an Autonomous Transaction Processing database and DW indicates an Autonomous Data Warehouse database.
      **/
@@ -172,7 +149,14 @@ public class AutonomousDbPreviewVersionSummary {
     DbWorkload dbWorkload;
 
     /**
-     * A URL that points to a detailed description of the preview version.
+     * True if the database uses [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDedicated")
+    Boolean isDedicated;
+
+    /**
+     * A URL that points to a detailed description of the Autonomous Database version.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("details")
     String details;

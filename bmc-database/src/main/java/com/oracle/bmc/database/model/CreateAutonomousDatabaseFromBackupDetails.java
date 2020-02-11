@@ -178,6 +178,15 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
+        private String dbVersion;
+
+        public Builder dbVersion(String dbVersion) {
+            this.dbVersion = dbVersion;
+            this.__explicitlySet__.add("dbVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseBackupId")
         private String autonomousDatabaseBackupId;
 
@@ -218,6 +227,7 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
                             whitelistedIps,
                             freeformTags,
                             definedTags,
+                            dbVersion,
                             autonomousDatabaseBackupId,
                             cloneType);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -244,6 +254,7 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
                             .whitelistedIps(o.getWhitelistedIps())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
+                            .dbVersion(o.getDbVersion())
                             .autonomousDatabaseBackupId(o.getAutonomousDatabaseBackupId())
                             .cloneType(o.getCloneType());
 
@@ -277,6 +288,7 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
             java.util.List<String> whitelistedIps,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String dbVersion,
             String autonomousDatabaseBackupId,
             CloneType cloneType) {
         super(
@@ -295,7 +307,8 @@ public class CreateAutonomousDatabaseFromBackupDetails extends CreateAutonomousD
                 autonomousContainerDatabaseId,
                 whitelistedIps,
                 freeformTags,
-                definedTags);
+                definedTags,
+                dbVersion);
         this.autonomousDatabaseBackupId = autonomousDatabaseBackupId;
         this.cloneType = cloneType;
     }

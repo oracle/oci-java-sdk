@@ -275,7 +275,7 @@ public class NotificationTopic {
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * The endpoint for managing topic subscriptions or publishing messages to the topic.
+     * The endpoint for managing subscriptions or publishing messages to the topic.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("apiEndpoint")

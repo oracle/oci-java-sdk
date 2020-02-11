@@ -8,13 +8,7 @@ import com.oracle.bmc.database.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Builder(builderClassName = "Builder")
 @lombok.Getter
-public class ListBackupDestinationResponse {
-
-    /**
-     * For optimistic concurrency control. See `if-match`.
-     *
-     */
-    private String etag;
+public class ListAutonomousDbVersionsResponse {
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
@@ -33,17 +27,16 @@ public class ListBackupDestinationResponse {
     private String opcNextPage;
 
     /**
-     * A list of BackupDestinationSummary instances.
+     * A list of AutonomousDbVersionSummary instances.
      */
-    private java.util.List<BackupDestinationSummary> items;
+    private java.util.List<AutonomousDbVersionSummary> items;
 
     public static class Builder {
         /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
          */
-        public Builder copy(ListBackupDestinationResponse o) {
-            etag(o.getEtag());
+        public Builder copy(ListAutonomousDbVersionsResponse o) {
             opcRequestId(o.getOpcRequestId());
             opcNextPage(o.getOpcNextPage());
             items(o.getItems());

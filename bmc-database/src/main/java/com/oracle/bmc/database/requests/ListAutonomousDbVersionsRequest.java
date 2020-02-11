@@ -8,17 +8,12 @@ import com.oracle.bmc.database.model.*;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @lombok.Builder(builderClassName = "Builder", buildMethodName = "buildWithoutInvocationCallback")
 @lombok.Getter
-public class ListAutonomousDatabasesRequest extends com.oracle.bmc.requests.BmcRequest {
+public class ListAutonomousDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest {
 
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     private String compartmentId;
-
-    /**
-     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
-     */
-    private String autonomousContainerDatabaseId;
 
     /**
      * The maximum number of items to return per page.
@@ -31,51 +26,15 @@ public class ListAutonomousDatabasesRequest extends com.oracle.bmc.requests.BmcR
     private String page;
 
     /**
-     * The field to sort by.  You can provide one sort order (`sortOrder`).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
-     * <p>
-     **Note:** If you do not include the availability domain filter, the resources are grouped by availability domain, then sorted.
+     * Unique identifier for the request.
      *
      */
-    private SortBy sortBy;
+    private String opcRequestId;
 
     /**
-     * The field to sort by.  You can provide one sort order (`sortOrder`).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
-     * <p>
-     **Note:** If you do not include the availability domain filter, the resources are grouped by availability domain, then sorted.
-     *
-     **/
-    public enum SortBy {
-        Timecreated("TIMECREATED"),
-        Displayname("DISPLAYNAME"),
-        ;
-
-        private final String value;
-        private static java.util.Map<String, SortBy> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (SortBy v : SortBy.values()) {
-                map.put(v.getValue(), v);
-            }
-        }
-
-        SortBy(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static SortBy create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            throw new RuntimeException("Invalid SortBy: " + key);
-        }
-    };
+     * A filter to return only autonomous database resources that match the specified workload type.
+     */
+    private AutonomousDatabaseSummary.DbWorkload dbWorkload;
 
     /**
      * The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -118,39 +77,6 @@ public class ListAutonomousDatabasesRequest extends com.oracle.bmc.requests.BmcR
         }
     };
 
-    /**
-     * A filter to return only resources that match the given lifecycle state exactly.
-     */
-    private AutonomousDatabaseSummary.LifecycleState lifecycleState;
-
-    /**
-     * A filter to return only autonomous database resources that match the specified workload type.
-     */
-    private AutonomousDatabaseSummary.DbWorkload dbWorkload;
-
-    /**
-     * A filter to return only autonomous database resources that match the specified dbVersion.
-     */
-    private String dbVersion;
-
-    /**
-     * Filter on the value of the resource's 'isFreeTier' property. A value of `true` returns only Always Free resources.
-     * A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
-     *
-     */
-    private Boolean isFreeTier;
-
-    /**
-     * A filter to return only resources that match the entire display name given. The match is not case sensitive.
-     */
-    private String displayName;
-
-    /**
-     * Unique identifier for the request.
-     *
-     */
-    private String opcRequestId;
-
     public static class Builder {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
@@ -183,36 +109,30 @@ public class ListAutonomousDatabasesRequest extends com.oracle.bmc.requests.BmcR
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
          */
-        public Builder copy(ListAutonomousDatabasesRequest o) {
+        public Builder copy(ListAutonomousDbVersionsRequest o) {
             compartmentId(o.getCompartmentId());
-            autonomousContainerDatabaseId(o.getAutonomousContainerDatabaseId());
             limit(o.getLimit());
             page(o.getPage());
-            sortBy(o.getSortBy());
-            sortOrder(o.getSortOrder());
-            lifecycleState(o.getLifecycleState());
-            dbWorkload(o.getDbWorkload());
-            dbVersion(o.getDbVersion());
-            isFreeTier(o.getIsFreeTier());
-            displayName(o.getDisplayName());
             opcRequestId(o.getOpcRequestId());
+            dbWorkload(o.getDbWorkload());
+            sortOrder(o.getSortOrder());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
         }
 
         /**
-         * Build the instance of ListAutonomousDatabasesRequest as configured by this builder
+         * Build the instance of ListAutonomousDbVersionsRequest as configured by this builder
          *
          * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
          * This is the preferred method to build an instance.
          *
-         * @return instance of ListAutonomousDatabasesRequest
+         * @return instance of ListAutonomousDbVersionsRequest
          */
-        public ListAutonomousDatabasesRequest build() {
-            ListAutonomousDatabasesRequest request = buildWithoutInvocationCallback();
+        public ListAutonomousDbVersionsRequest build() {
+            ListAutonomousDbVersionsRequest request = buildWithoutInvocationCallback();
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;

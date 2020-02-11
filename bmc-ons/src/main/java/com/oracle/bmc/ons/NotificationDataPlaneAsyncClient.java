@@ -31,7 +31,7 @@ public class NotificationDataPlaneAsyncClient implements NotificationDataPlaneAs
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("NOTIFICATIONDATAPLANE")
                     .serviceEndpointPrefix("notification")
-                    .serviceEndpointTemplate("https://notification.{region}.oraclecloud.com")
+                    .serviceEndpointTemplate("https://notification.{region}.{secondLevelDomain}")
                     .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)

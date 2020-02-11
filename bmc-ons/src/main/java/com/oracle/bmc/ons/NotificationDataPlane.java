@@ -119,7 +119,13 @@ public interface NotificationDataPlane extends AutoCloseable {
     ListSubscriptionsResponse listSubscriptions(ListSubscriptionsRequest request);
 
     /**
-     * Publishes a message to the specified topic. Limits information follows.
+     * Publishes a message to the specified topic.
+     * <p>
+     * The topic endpoint is required for this operation.
+     * To get the topic endpoint, use {@link #getTopic(GetTopicRequest) getTopic}
+     * and review the `apiEndpoint` value in the response ({@link NotificationTopic}).
+     * <p>
+     * Limits information follows.
      * <p>
      * Message size limit per request: 64KB.
      * <p>

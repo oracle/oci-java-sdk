@@ -37,8 +37,10 @@ public final class Region implements Serializable, Comparable<Region> {
     public static final Region AP_SYDNEY_1 = register("ap-sydney-1", Realm.OC1, "syd");
     public static final Region AP_TOKYO_1 = register("ap-tokyo-1", Realm.OC1, "nrt");
     public static final Region CA_TORONTO_1 = register("ca-toronto-1", Realm.OC1, "yyz");
+    public static final Region EU_AMSTERDAM_1 = register("eu-amsterdam-1", Realm.OC1, "ams");
     public static final Region EU_FRANKFURT_1 = register("eu-frankfurt-1", Realm.OC1, "fra");
     public static final Region EU_ZURICH_1 = register("eu-zurich-1", Realm.OC1, "zrh");
+    public static final Region ME_JEDDAH_1 = register("me-jeddah-1", Realm.OC1, "jed");
     public static final Region SA_SAOPAULO_1 = register("sa-saopaulo-1", Realm.OC1, "gru");
     public static final Region UK_LONDON_1 = register("uk-london-1", Realm.OC1, "lhr");
     public static final Region US_ASHBURN_1 = register("us-ashburn-1", Realm.OC1, "iad");

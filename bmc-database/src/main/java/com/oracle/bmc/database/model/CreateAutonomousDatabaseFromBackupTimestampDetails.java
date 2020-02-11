@@ -179,6 +179,15 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
+        private String dbVersion;
+
+        public Builder dbVersion(String dbVersion) {
+            this.dbVersion = dbVersion;
+            this.__explicitlySet__.add("dbVersion");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseId")
         private String autonomousDatabaseId;
 
@@ -228,6 +237,7 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
                             whitelistedIps,
                             freeformTags,
                             definedTags,
+                            dbVersion,
                             autonomousDatabaseId,
                             timestamp,
                             cloneType);
@@ -255,6 +265,7 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
                             .whitelistedIps(o.getWhitelistedIps())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
+                            .dbVersion(o.getDbVersion())
                             .autonomousDatabaseId(o.getAutonomousDatabaseId())
                             .timestamp(o.getTimestamp())
                             .cloneType(o.getCloneType());
@@ -289,6 +300,7 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
             java.util.List<String> whitelistedIps,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String dbVersion,
             String autonomousDatabaseId,
             java.util.Date timestamp,
             CloneType cloneType) {
@@ -308,7 +320,8 @@ public class CreateAutonomousDatabaseFromBackupTimestampDetails
                 autonomousContainerDatabaseId,
                 whitelistedIps,
                 freeformTags,
-                definedTags);
+                definedTags,
+                dbVersion);
         this.autonomousDatabaseId = autonomousDatabaseId;
         this.timestamp = timestamp;
         this.cloneType = cloneType;
