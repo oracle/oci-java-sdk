@@ -7,11 +7,17 @@ package com.oracle.bmc.marketplace.model;
  * Possible values for the listing package's pricing model.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+@lombok.extern.slf4j.Slf4j
 public enum PricingTypeEnum {
     Free("FREE"),
     Byol("BYOL"),
     Paygo("PAYGO"),
-    ;
+
+    /**
+     * This value is used if a service returns a value for this enum that is not recognized by this
+     * version of the SDK.
+     */
+    UnknownEnumValue(null);
 
     private final String value;
     private static java.util.Map<String, PricingTypeEnum> map;
@@ -19,7 +25,9 @@ public enum PricingTypeEnum {
     static {
         map = new java.util.HashMap<>();
         for (PricingTypeEnum v : PricingTypeEnum.values()) {
-            map.put(v.getValue(), v);
+            if (v != UnknownEnumValue) {
+                map.put(v.getValue(), v);
+            }
         }
     }
 
@@ -37,6 +45,9 @@ public enum PricingTypeEnum {
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new RuntimeException("Invalid PricingTypeEnum: " + key);
+        LOG.warn(
+                "Received unknown value '{}' for enum 'PricingTypeEnum', returning UnknownEnumValue",
+                key);
+        return UnknownEnumValue;
     }
 }

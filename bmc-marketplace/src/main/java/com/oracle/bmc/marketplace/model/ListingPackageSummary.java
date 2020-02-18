@@ -42,6 +42,15 @@ public class ListingPackageSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("packageType")
+        private PackageTypeEnum packageType;
+
+        public Builder packageType(PackageTypeEnum packageType) {
+            this.packageType = packageType;
+            this.__explicitlySet__.add("packageType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
@@ -65,7 +74,8 @@ public class ListingPackageSummary {
 
         public ListingPackageSummary build() {
             ListingPackageSummary __instance__ =
-                    new ListingPackageSummary(listingId, packageVersion, resourceId, timeCreated);
+                    new ListingPackageSummary(
+                            listingId, packageVersion, packageType, resourceId, timeCreated);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -75,6 +85,7 @@ public class ListingPackageSummary {
             Builder copiedBuilder =
                     listingId(o.getListingId())
                             .packageVersion(o.getPackageVersion())
+                            .packageType(o.getPackageType())
                             .resourceId(o.getResourceId())
                             .timeCreated(o.getTimeCreated());
 
@@ -101,6 +112,12 @@ public class ListingPackageSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageVersion")
     String packageVersion;
+
+    /**
+     * The specified package's type.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("packageType")
+    PackageTypeEnum packageType;
 
     /**
      * The unique identifier for the package resource.

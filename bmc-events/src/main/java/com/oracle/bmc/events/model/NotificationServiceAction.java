@@ -58,6 +58,15 @@ public class NotificationServiceAction extends Action {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
+        private Boolean isEnabled;
+
+        public Builder isEnabled(Boolean isEnabled) {
+            this.isEnabled = isEnabled;
+            this.__explicitlySet__.add("isEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -82,7 +91,7 @@ public class NotificationServiceAction extends Action {
         public NotificationServiceAction build() {
             NotificationServiceAction __instance__ =
                     new NotificationServiceAction(
-                            id, lifecycleMessage, lifecycleState, description, topicId);
+                            id, lifecycleMessage, lifecycleState, isEnabled, description, topicId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -93,6 +102,7 @@ public class NotificationServiceAction extends Action {
                     id(o.getId())
                             .lifecycleMessage(o.getLifecycleMessage())
                             .lifecycleState(o.getLifecycleState())
+                            .isEnabled(o.getIsEnabled())
                             .description(o.getDescription())
                             .topicId(o.getTopicId());
 
@@ -113,9 +123,10 @@ public class NotificationServiceAction extends Action {
             String id,
             String lifecycleMessage,
             LifecycleState lifecycleState,
+            Boolean isEnabled,
             String description,
             String topicId) {
-        super(id, lifecycleMessage, lifecycleState, description);
+        super(id, lifecycleMessage, lifecycleState, isEnabled, description);
         this.topicId = topicId;
     }
 

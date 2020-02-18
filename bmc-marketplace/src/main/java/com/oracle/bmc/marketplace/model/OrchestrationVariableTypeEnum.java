@@ -7,10 +7,16 @@ package com.oracle.bmc.marketplace.model;
  * Possible data types for an orchestration variable.
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+@lombok.extern.slf4j.Slf4j
 public enum OrchestrationVariableTypeEnum {
     String("STRING"),
     Integer("INTEGER"),
-    ;
+
+    /**
+     * This value is used if a service returns a value for this enum that is not recognized by this
+     * version of the SDK.
+     */
+    UnknownEnumValue(null);
 
     private final String value;
     private static java.util.Map<String, OrchestrationVariableTypeEnum> map;
@@ -18,7 +24,9 @@ public enum OrchestrationVariableTypeEnum {
     static {
         map = new java.util.HashMap<>();
         for (OrchestrationVariableTypeEnum v : OrchestrationVariableTypeEnum.values()) {
-            map.put(v.getValue(), v);
+            if (v != UnknownEnumValue) {
+                map.put(v.getValue(), v);
+            }
         }
     }
 
@@ -36,6 +44,9 @@ public enum OrchestrationVariableTypeEnum {
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new RuntimeException("Invalid OrchestrationVariableTypeEnum: " + key);
+        LOG.warn(
+                "Received unknown value '{}' for enum 'OrchestrationVariableTypeEnum', returning UnknownEnumValue",
+                key);
+        return UnknownEnumValue;
     }
 }

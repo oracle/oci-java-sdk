@@ -87,6 +87,15 @@ public class CreateOceInstanceDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("instanceUsageType")
+        private InstanceUsageType instanceUsageType;
+
+        public Builder instanceUsageType(InstanceUsageType instanceUsageType) {
+            this.instanceUsageType = instanceUsageType;
+            this.__explicitlySet__.add("instanceUsageType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("objectStorageNamespace")
         private String objectStorageNamespace;
 
@@ -137,6 +146,7 @@ public class CreateOceInstanceDetails {
                             idcsAccessToken,
                             identityStripe,
                             tenancyName,
+                            instanceUsageType,
                             objectStorageNamespace,
                             adminEmail,
                             freeformTags,
@@ -155,6 +165,7 @@ public class CreateOceInstanceDetails {
                             .idcsAccessToken(o.getIdcsAccessToken())
                             .identityStripe(o.getIdentityStripe())
                             .tenancyName(o.getTenancyName())
+                            .instanceUsageType(o.getInstanceUsageType())
                             .objectStorageNamespace(o.getObjectStorageNamespace())
                             .adminEmail(o.getAdminEmail())
                             .freeformTags(o.getFreeformTags())
@@ -210,6 +221,46 @@ public class CreateOceInstanceDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyName")
     String tenancyName;
+    /**
+     * Instance type based on its usage
+     **/
+    public enum InstanceUsageType {
+        Primary("PRIMARY"),
+        Nonprimary("NONPRIMARY"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, InstanceUsageType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (InstanceUsageType v : InstanceUsageType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        InstanceUsageType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static InstanceUsageType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new RuntimeException("Invalid InstanceUsageType: " + key);
+        }
+    };
+    /**
+     * Instance type based on its usage
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceUsageType")
+    InstanceUsageType instanceUsageType;
 
     /**
      * Object Storage Namespace of Tenancy

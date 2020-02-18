@@ -18,7 +18,8 @@ public class ContainerEngineClient implements ContainerEngine {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("CONTAINERENGINE")
                     .serviceEndpointPrefix("containerengine")
-                    .serviceEndpointTemplate("https://containerengine.{region}.{secondLevelDomain}")
+                    .serviceEndpointTemplate(
+                            "https://containerengine.{region}.oci.{secondLevelDomain}")
                     .build();
     // attempt twice if it's instance principals, immediately failures will try to refresh the token
     private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
