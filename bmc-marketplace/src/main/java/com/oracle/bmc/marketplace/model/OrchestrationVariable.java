@@ -51,6 +51,15 @@ public class OrchestrationVariable {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dataType")
+        private OrchestrationVariableTypeEnum dataType;
+
+        public Builder dataType(OrchestrationVariableTypeEnum dataType) {
+            this.dataType = dataType;
+            this.__explicitlySet__.add("dataType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("isMandatory")
         private Boolean isMandatory;
 
@@ -75,7 +84,7 @@ public class OrchestrationVariable {
         public OrchestrationVariable build() {
             OrchestrationVariable __instance__ =
                     new OrchestrationVariable(
-                            name, defaultValue, description, isMandatory, hintMessage);
+                            name, defaultValue, description, dataType, isMandatory, hintMessage);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -86,6 +95,7 @@ public class OrchestrationVariable {
                     name(o.getName())
                             .defaultValue(o.getDefaultValue())
                             .description(o.getDescription())
+                            .dataType(o.getDataType())
                             .isMandatory(o.getIsMandatory())
                             .hintMessage(o.getHintMessage());
 
@@ -118,6 +128,12 @@ public class OrchestrationVariable {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     String description;
+
+    /**
+     * The data type of the variable.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataType")
+    OrchestrationVariableTypeEnum dataType;
 
     /**
      * Whether the variable is mandatory.

@@ -3,6 +3,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.13.0 - 2020-02-18
+### Added
+- Support for the NoSQL Database service
+- Support for filtering database versions by storage management type in the Database service
+- Support for specifying paid listing types within pricing models in the Marketplace service
+- Support for primary and non-primary instance types in the Content and Experience service
+
+
+### Breaking changes
+- Removed LifecycleState enum in Marketplace service (was unused)
+
 ## 1.12.6 - 2020-02-11
 ### Added
 - Support for listing supported database versions for Autonomous Database Serverless, and selecting a version at provisioning time in the Database service

@@ -167,15 +167,19 @@ public class X509FederationClient implements FederationClient {
                         throw new BmcException(
                                 false, "Can't refresh the leaf certification!", ex, null);
                     }
-                    String newTenancyId =
-                            AuthUtils.getTenantIdFromCertificate(
-                                    leafCertificateSupplier
-                                            .getCertificateAndKeyPair()
-                                            .getCertificate());
+                    // When using default purpose (ex, instance principals), the token request should always be signed with the same tenant id as the certificate.
+                    // For other purposes, the tenant id can be different.
+                    if (this.purpose.equals(DEFAULT_PURPOSE)) {
+                        String newTenancyId =
+                                AuthUtils.getTenantIdFromCertificate(
+                                        leafCertificateSupplier
+                                                .getCertificateAndKeyPair()
+                                                .getCertificate());
 
-                    if (!this.tenancyId.equals(newTenancyId)) {
-                        throw new IllegalArgumentException(
-                                "The tenancy id should never be changed in cert file!");
+                        if (!this.tenancyId.equals(newTenancyId)) {
+                            throw new IllegalArgumentException(
+                                    "The tenancy id should never be changed in cert file!");
+                        }
                     }
                 }
 

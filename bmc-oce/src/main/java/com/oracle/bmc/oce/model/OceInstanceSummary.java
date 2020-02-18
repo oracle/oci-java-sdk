@@ -96,6 +96,15 @@ public class OceInstanceSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("instanceUsageType")
+        private InstanceUsageType instanceUsageType;
+
+        public Builder instanceUsageType(InstanceUsageType instanceUsageType) {
+            this.instanceUsageType = instanceUsageType;
+            this.__explicitlySet__.add("instanceUsageType");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("objectStorageNamespace")
         private String objectStorageNamespace;
 
@@ -192,6 +201,7 @@ public class OceInstanceSummary {
                             tenancyId,
                             idcsTenancy,
                             tenancyName,
+                            instanceUsageType,
                             objectStorageNamespace,
                             adminEmail,
                             timeCreated,
@@ -216,6 +226,7 @@ public class OceInstanceSummary {
                             .tenancyId(o.getTenancyId())
                             .idcsTenancy(o.getIdcsTenancy())
                             .tenancyName(o.getTenancyName())
+                            .instanceUsageType(o.getInstanceUsageType())
                             .objectStorageNamespace(o.getObjectStorageNamespace())
                             .adminEmail(o.getAdminEmail())
                             .timeCreated(o.getTimeCreated())
@@ -285,6 +296,57 @@ public class OceInstanceSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyName")
     String tenancyName;
+    /**
+     * Instance type based on its usage
+     **/
+    @lombok.extern.slf4j.Slf4j
+    public enum InstanceUsageType {
+        Primary("PRIMARY"),
+        Nonprimary("NONPRIMARY"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private final String value;
+        private static java.util.Map<String, InstanceUsageType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (InstanceUsageType v : InstanceUsageType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        InstanceUsageType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static InstanceUsageType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'InstanceUsageType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Instance type based on its usage
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceUsageType")
+    InstanceUsageType instanceUsageType;
 
     /**
      * Object Storage Namespace of tenancy

@@ -22,6 +22,15 @@ public class Link {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     @lombok.experimental.Accessors(fluent = true)
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("rel")
+        private LinkEnum rel;
+
+        public Builder rel(LinkEnum rel) {
+            this.rel = rel;
+            this.__explicitlySet__.add("rel");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("href")
         private String href;
 
@@ -35,14 +44,14 @@ public class Link {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Link build() {
-            Link __instance__ = new Link(href);
+            Link __instance__ = new Link(rel, href);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(Link o) {
-            Builder copiedBuilder = href(o.getHref());
+            Builder copiedBuilder = rel(o.getRel()).href(o.getHref());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -55,6 +64,12 @@ public class Link {
     public static Builder builder() {
         return new Builder();
     }
+
+    /**
+     * Reference links to the previous page, next page, and other pages.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("rel")
+    LinkEnum rel;
 
     /**
      * The anchor tag.

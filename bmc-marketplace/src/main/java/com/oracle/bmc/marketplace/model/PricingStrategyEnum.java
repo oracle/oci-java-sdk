@@ -1,0 +1,54 @@
+/**
+ * Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+ */
+package com.oracle.bmc.marketplace.model;
+
+/**
+ * The possible values for a listing package's pricing strategy.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+@lombok.extern.slf4j.Slf4j
+public enum PricingStrategyEnum {
+    PerOcpuLinear("PER_OCPU_LINEAR"),
+    PerOcpuMinBilling("PER_OCPU_MIN_BILLING"),
+    PerInstance("PER_INSTANCE"),
+    PerInstanceMonthlyInclusive("PER_INSTANCE_MONTHLY_INCLUSIVE"),
+
+    /**
+     * This value is used if a service returns a value for this enum that is not recognized by this
+     * version of the SDK.
+     */
+    UnknownEnumValue(null);
+
+    private final String value;
+    private static java.util.Map<String, PricingStrategyEnum> map;
+
+    static {
+        map = new java.util.HashMap<>();
+        for (PricingStrategyEnum v : PricingStrategyEnum.values()) {
+            if (v != UnknownEnumValue) {
+                map.put(v.getValue(), v);
+            }
+        }
+    }
+
+    PricingStrategyEnum(String value) {
+        this.value = value;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonValue
+    public String getValue() {
+        return value;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonCreator
+    public static PricingStrategyEnum create(String key) {
+        if (map.containsKey(key)) {
+            return map.get(key);
+        }
+        LOG.warn(
+                "Received unknown value '{}' for enum 'PricingStrategyEnum', returning UnknownEnumValue",
+                key);
+        return UnknownEnumValue;
+    }
+}

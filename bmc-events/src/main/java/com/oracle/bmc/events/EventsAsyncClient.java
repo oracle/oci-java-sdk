@@ -31,7 +31,7 @@ public class EventsAsyncClient implements EventsAsync {
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("EVENTS")
                     .serviceEndpointPrefix("")
-                    .serviceEndpointTemplate("https://events.{region}.{secondLevelDomain}")
+                    .serviceEndpointTemplate("https://events.{region}.oci.{secondLevelDomain}")
                     .build();
 
     @lombok.Getter(value = lombok.AccessLevel.PACKAGE)

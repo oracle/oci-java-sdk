@@ -35,6 +35,14 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest {
      */
     private String dbSystemId;
 
+    /**
+     * The storage option used in DB system to list database versions for that storage manager.
+     * ASM - Automatic storage management
+     * LVM - Logical Volume management
+     *
+     */
+    private DbSystemOptions.StorageManagement storageManagement;
+
     public static class Builder {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
@@ -73,6 +81,7 @@ public class ListDbVersionsRequest extends com.oracle.bmc.requests.BmcRequest {
             page(o.getPage());
             dbSystemShape(o.getDbSystemShape());
             dbSystemId(o.getDbSystemId());
+            storageManagement(o.getStorageManagement());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;

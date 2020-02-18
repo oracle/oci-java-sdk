@@ -57,6 +57,15 @@ public class StreamingServiceAction extends Action {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
+        private Boolean isEnabled;
+
+        public Builder isEnabled(Boolean isEnabled) {
+            this.isEnabled = isEnabled;
+            this.__explicitlySet__.add("isEnabled");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -81,7 +90,7 @@ public class StreamingServiceAction extends Action {
         public StreamingServiceAction build() {
             StreamingServiceAction __instance__ =
                     new StreamingServiceAction(
-                            id, lifecycleMessage, lifecycleState, description, streamId);
+                            id, lifecycleMessage, lifecycleState, isEnabled, description, streamId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -92,6 +101,7 @@ public class StreamingServiceAction extends Action {
                     id(o.getId())
                             .lifecycleMessage(o.getLifecycleMessage())
                             .lifecycleState(o.getLifecycleState())
+                            .isEnabled(o.getIsEnabled())
                             .description(o.getDescription())
                             .streamId(o.getStreamId());
 
@@ -112,9 +122,10 @@ public class StreamingServiceAction extends Action {
             String id,
             String lifecycleMessage,
             LifecycleState lifecycleState,
+            Boolean isEnabled,
             String description,
             String streamId) {
-        super(id, lifecycleMessage, lifecycleState, description);
+        super(id, lifecycleMessage, lifecycleState, isEnabled, description);
         this.streamId = streamId;
     }
 
