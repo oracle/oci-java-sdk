@@ -937,6 +937,238 @@ public class IdentityPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listNetworkSources operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListNetworkSourcesResponse> listNetworkSourcesResponseIterator(
+            final ListNetworkSourcesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListNetworkSourcesRequest.Builder, ListNetworkSourcesRequest,
+                ListNetworkSourcesResponse>(
+                new com.google.common.base.Supplier<ListNetworkSourcesRequest.Builder>() {
+                    @Override
+                    public ListNetworkSourcesRequest.Builder get() {
+                        return ListNetworkSourcesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListNetworkSourcesResponse, String>() {
+                    @Override
+                    public String apply(ListNetworkSourcesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListNetworkSourcesRequest.Builder>,
+                        ListNetworkSourcesRequest>() {
+                    @Override
+                    public ListNetworkSourcesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListNetworkSourcesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListNetworkSourcesRequest, ListNetworkSourcesResponse>() {
+                    @Override
+                    public ListNetworkSourcesResponse apply(ListNetworkSourcesRequest request) {
+                        return client.listNetworkSources(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.NetworkSourcesSummary} objects
+     * contained in responses from the listNetworkSources operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.NetworkSourcesSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.identity.model.NetworkSourcesSummary>
+            listNetworkSourcesRecordIterator(final ListNetworkSourcesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListNetworkSourcesRequest.Builder, ListNetworkSourcesRequest,
+                ListNetworkSourcesResponse, com.oracle.bmc.identity.model.NetworkSourcesSummary>(
+                new com.google.common.base.Supplier<ListNetworkSourcesRequest.Builder>() {
+                    @Override
+                    public ListNetworkSourcesRequest.Builder get() {
+                        return ListNetworkSourcesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListNetworkSourcesResponse, String>() {
+                    @Override
+                    public String apply(ListNetworkSourcesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListNetworkSourcesRequest.Builder>,
+                        ListNetworkSourcesRequest>() {
+                    @Override
+                    public ListNetworkSourcesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListNetworkSourcesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListNetworkSourcesRequest, ListNetworkSourcesResponse>() {
+                    @Override
+                    public ListNetworkSourcesResponse apply(ListNetworkSourcesRequest request) {
+                        return client.listNetworkSources(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListNetworkSourcesResponse,
+                        java.util.List<com.oracle.bmc.identity.model.NetworkSourcesSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.identity.model.NetworkSourcesSummary>
+                            apply(ListNetworkSourcesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listOAuthClientCredentials operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListOAuthClientCredentialsResponse> listOAuthClientCredentialsResponseIterator(
+            final ListOAuthClientCredentialsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListOAuthClientCredentialsRequest.Builder, ListOAuthClientCredentialsRequest,
+                ListOAuthClientCredentialsResponse>(
+                new com.google.common.base.Supplier<ListOAuthClientCredentialsRequest.Builder>() {
+                    @Override
+                    public ListOAuthClientCredentialsRequest.Builder get() {
+                        return ListOAuthClientCredentialsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListOAuthClientCredentialsResponse, String>() {
+                    @Override
+                    public String apply(ListOAuthClientCredentialsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOAuthClientCredentialsRequest.Builder>,
+                        ListOAuthClientCredentialsRequest>() {
+                    @Override
+                    public ListOAuthClientCredentialsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOAuthClientCredentialsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListOAuthClientCredentialsRequest, ListOAuthClientCredentialsResponse>() {
+                    @Override
+                    public ListOAuthClientCredentialsResponse apply(
+                            ListOAuthClientCredentialsRequest request) {
+                        return client.listOAuthClientCredentials(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.identity.model.OAuth2ClientCredentialSummary} objects
+     * contained in responses from the listOAuthClientCredentials operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.identity.model.OAuth2ClientCredentialSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.identity.model.OAuth2ClientCredentialSummary>
+            listOAuthClientCredentialsRecordIterator(
+                    final ListOAuthClientCredentialsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListOAuthClientCredentialsRequest.Builder, ListOAuthClientCredentialsRequest,
+                ListOAuthClientCredentialsResponse,
+                com.oracle.bmc.identity.model.OAuth2ClientCredentialSummary>(
+                new com.google.common.base.Supplier<ListOAuthClientCredentialsRequest.Builder>() {
+                    @Override
+                    public ListOAuthClientCredentialsRequest.Builder get() {
+                        return ListOAuthClientCredentialsRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListOAuthClientCredentialsResponse, String>() {
+                    @Override
+                    public String apply(ListOAuthClientCredentialsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOAuthClientCredentialsRequest.Builder>,
+                        ListOAuthClientCredentialsRequest>() {
+                    @Override
+                    public ListOAuthClientCredentialsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOAuthClientCredentialsRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListOAuthClientCredentialsRequest, ListOAuthClientCredentialsResponse>() {
+                    @Override
+                    public ListOAuthClientCredentialsResponse apply(
+                            ListOAuthClientCredentialsRequest request) {
+                        return client.listOAuthClientCredentials(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListOAuthClientCredentialsResponse,
+                        java.util.List<
+                                com.oracle.bmc.identity.model.OAuth2ClientCredentialSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.identity.model.OAuth2ClientCredentialSummary>
+                            apply(ListOAuthClientCredentialsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listPolicies operation. This iterable
      * will fetch more data from the server as needed.
      *

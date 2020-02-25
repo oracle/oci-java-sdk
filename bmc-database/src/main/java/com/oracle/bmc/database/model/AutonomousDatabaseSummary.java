@@ -228,6 +228,42 @@ public class AutonomousDatabaseSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+        private String subnetId;
+
+        public Builder subnetId(String subnetId) {
+            this.subnetId = subnetId;
+            this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+        private java.util.List<String> nsgIds;
+
+        public Builder nsgIds(java.util.List<String> nsgIds) {
+            this.nsgIds = nsgIds;
+            this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("privateEndpoint")
+        private String privateEndpoint;
+
+        public Builder privateEndpoint(String privateEndpoint) {
+            this.privateEndpoint = privateEndpoint;
+            this.__explicitlySet__.add("privateEndpoint");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointLabel")
+        private String privateEndpointLabel;
+
+        public Builder privateEndpointLabel(String privateEndpointLabel) {
+            this.privateEndpointLabel = privateEndpointLabel;
+            this.__explicitlySet__.add("privateEndpointLabel");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
         private String dbVersion;
 
@@ -328,6 +364,10 @@ public class AutonomousDatabaseSummary {
                             usedDataStorageSizeInTBs,
                             freeformTags,
                             definedTags,
+                            subnetId,
+                            nsgIds,
+                            privateEndpoint,
+                            privateEndpointLabel,
                             dbVersion,
                             isPreview,
                             dbWorkload,
@@ -367,6 +407,10 @@ public class AutonomousDatabaseSummary {
                             .usedDataStorageSizeInTBs(o.getUsedDataStorageSizeInTBs())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
+                            .subnetId(o.getSubnetId())
+                            .nsgIds(o.getNsgIds())
+                            .privateEndpoint(o.getPrivateEndpoint())
+                            .privateEndpointLabel(o.getPrivateEndpointLabel())
                             .dbVersion(o.getDbVersion())
                             .isPreview(o.getIsPreview())
                             .dbWorkload(o.getDbWorkload())
@@ -419,6 +463,7 @@ public class AutonomousDatabaseSummary {
         AvailableNeedsAttention("AVAILABLE_NEEDS_ATTENTION"),
         Updating("UPDATING"),
         MaintenanceInProgress("MAINTENANCE_IN_PROGRESS"),
+        Restarting("RESTARTING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -635,6 +680,41 @@ public class AutonomousDatabaseSummary {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
+     * <p>
+     **Subnet Restrictions:**
+     * - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
+     * - For Exadata and virtual machine 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.128.0/20.
+     * - For Autonomous Database, setting this will disable public secure access to the database.
+     * <p>
+     * These subnets are used by the Oracle Clusterware private interconnect on the database instance.
+     * Specifying an overlapping subnet will cause the private interconnect to malfunction.
+     * This restriction applies to both the client subnet and the backup subnet.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+    String subnetId;
+
+    /**
+     * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
+    java.util.List<String> nsgIds;
+
+    /**
+     * The private endpoint for the resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("privateEndpoint")
+    String privateEndpoint;
+
+    /**
+     * The private endpoint label for the resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointLabel")
+    String privateEndpointLabel;
 
     /**
      * A valid Oracle Database version for Autonomous Database.

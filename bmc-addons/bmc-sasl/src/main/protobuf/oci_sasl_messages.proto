@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "com.oracle.bmc.identity.auth.sasl.messages";
+
+message Key {
+  string keyId = 1;
+  string intent = 2;
+}
+
+message Challenge {
+  bytes challenge = 1;
+}
+
+message Response {
+  uint64 time = 1;
+  bytes signature = 2;
+}

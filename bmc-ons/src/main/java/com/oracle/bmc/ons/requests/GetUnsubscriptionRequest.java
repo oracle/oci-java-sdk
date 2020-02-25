@@ -30,6 +30,7 @@ public class GetUnsubscriptionRequest extends com.oracle.bmc.requests.BmcRequest
      *   * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
      *   * `PAGERDUTY`
      *   * `SLACK`
+     *   * `ORACLE_FUNCTIONS`
      * <p>
      * For information about subscription protocols, see
      * [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).

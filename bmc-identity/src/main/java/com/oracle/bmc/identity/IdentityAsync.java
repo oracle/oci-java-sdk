@@ -342,6 +342,57 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new network source in your tenancy.
+     * <p>
+     * You must specify your tenancy's OCID as the compartment ID in the request object (remember that the tenancy
+     * is simply the root compartment). Notice that IAM resources (users, groups, compartments, and some policies)
+     * reside within the tenancy itself, unlike cloud resources such as compute instances, which typically
+     * reside within compartments inside the tenancy. For information about OCIDs, see
+     * [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * <p>
+     * You must also specify a *name* for the network source, which must be unique across all network sources in your
+     * tenancy, and cannot be changed.
+     * You can use this name or the OCID when writing policies that apply to the network source. For more information
+     * about policies, see [How Policies Work](https://docs.cloud.oracle.com/Content/Identity/Concepts/policies.htm).
+     * <p>
+     * You must also specify a *description* for the network source (although it can be an empty string). It does not
+     * have to be unique, and you can change it anytime with {@link #updateNetworkSource(UpdateNetworkSourceRequest, Consumer, Consumer) updateNetworkSource}.
+     * <p>
+     * After you send your request, the new object's `lifecycleState` will temporarily be CREATING. Before using the
+     * object, first make sure its `lifecycleState` has changed to ACTIVE.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateNetworkSourceResponse> createNetworkSource(
+            CreateNetworkSourceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateNetworkSourceRequest, CreateNetworkSourceResponse>
+                    handler);
+
+    /**
+     * Creates Oauth token for the user
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateOAuthClientCredentialResponse> createOAuthClientCredential(
+            CreateOAuthClientCredentialRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateOAuthClientCredentialRequest, CreateOAuthClientCredentialResponse>
+                    handler);
+
+    /**
      * Creates a new Console one-time password for the specified user. For more information about user
      * credentials, see [User Credentials](https://docs.cloud.oracle.com/Content/Identity/Concepts/usercredentials.htm).
      * <p>
@@ -758,6 +809,40 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes the specified network source
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteNetworkSourceResponse> deleteNetworkSource(
+            DeleteNetworkSourceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteNetworkSourceRequest, DeleteNetworkSourceResponse>
+                    handler);
+
+    /**
+     * Delete Oauth token for the user
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteOAuthClientCredentialResponse> deleteOAuthClientCredential(
+            DeleteOAuthClientCredentialRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteOAuthClientCredentialRequest, DeleteOAuthClientCredentialResponse>
+                    handler);
+
+    /**
      * Deletes the specified policy. The deletion takes effect typically within 10 seconds.
      *
      * @param request The request object containing the details to send
@@ -1028,6 +1113,22 @@ public interface IdentityAsync extends AutoCloseable {
     java.util.concurrent.Future<GetMfaTotpDeviceResponse> getMfaTotpDevice(
             GetMfaTotpDeviceRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetMfaTotpDeviceRequest, GetMfaTotpDeviceResponse>
+                    handler);
+
+    /**
+     * Gets the specified network source's information.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetNetworkSourceResponse> getNetworkSource(
+            GetNetworkSourceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetNetworkSourceRequest, GetNetworkSourceResponse>
                     handler);
 
     /**
@@ -1436,6 +1537,42 @@ public interface IdentityAsync extends AutoCloseable {
             ListMfaTotpDevicesRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListMfaTotpDevicesRequest, ListMfaTotpDevicesResponse>
+                    handler);
+
+    /**
+     * Lists the network sources in your tenancy. You must specify your tenancy's OCID as the value for
+     * the compartment ID (remember that the tenancy is simply the root compartment).
+     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListNetworkSourcesResponse> listNetworkSources(
+            ListNetworkSourcesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListNetworkSourcesRequest, ListNetworkSourcesResponse>
+                    handler);
+
+    /**
+     * List of Oauth tokens for the user
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListOAuthClientCredentialsResponse> listOAuthClientCredentials(
+            ListOAuthClientCredentialsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListOAuthClientCredentialsRequest, ListOAuthClientCredentialsResponse>
                     handler);
 
     /**
@@ -1884,6 +2021,39 @@ public interface IdentityAsync extends AutoCloseable {
             UpdateIdpGroupMappingRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateIdpGroupMappingRequest, UpdateIdpGroupMappingResponse>
+                    handler);
+
+    /**
+     * Updates the specified network source.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateNetworkSourceResponse> updateNetworkSource(
+            UpdateNetworkSourceRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateNetworkSourceRequest, UpdateNetworkSourceResponse>
+                    handler);
+
+    /**
+     * Updates Oauth token for the user
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateOAuthClientCredentialResponse> updateOAuthClientCredential(
+            UpdateOAuthClientCredentialRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateOAuthClientCredentialRequest, UpdateOAuthClientCredentialResponse>
                     handler);
 
     /**

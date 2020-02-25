@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.13.1 - 2020-02-25
+### Added
+- Support for restarting autonomous databases in the Database service
+- Support for private endpoints on autonomous databases in the Database service
+- Support for IP-based policies in the Identity service
+- Support for management of OAuth 2.0 client credentials in the Identity service
+- Support for OCI Functions as a subscription protocol in the Notifications service
+
 ## 1.13.0 - 2020-02-18
 ### Added
 - Support for the NoSQL Database service
