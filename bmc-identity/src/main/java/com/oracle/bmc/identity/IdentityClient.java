@@ -761,6 +761,73 @@ public class IdentityClient implements Identity {
     }
 
     @Override
+    public CreateNetworkSourceResponse createNetworkSource(CreateNetworkSourceRequest request) {
+        LOG.trace("Called createNetworkSource");
+        final CreateNetworkSourceRequest interceptedRequest =
+                CreateNetworkSourceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateNetworkSourceConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, CreateNetworkSourceResponse>
+                transformer = CreateNetworkSourceConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateNetworkSourceDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateOAuthClientCredentialResponse createOAuthClientCredential(
+            CreateOAuthClientCredentialRequest request) {
+        LOG.trace("Called createOAuthClientCredential");
+        final CreateOAuthClientCredentialRequest interceptedRequest =
+                CreateOAuthClientCredentialConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateOAuthClientCredentialConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, CreateOAuthClientCredentialResponse>
+                transformer = CreateOAuthClientCredentialConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateOAuth2ClientCredentialDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateOrResetUIPasswordResponse createOrResetUIPassword(
             CreateOrResetUIPasswordRequest request) {
         LOG.trace("Called createOrResetUIPassword");
@@ -1310,6 +1377,66 @@ public class IdentityClient implements Identity {
     }
 
     @Override
+    public DeleteNetworkSourceResponse deleteNetworkSource(DeleteNetworkSourceRequest request) {
+        LOG.trace("Called deleteNetworkSource");
+        final DeleteNetworkSourceRequest interceptedRequest =
+                DeleteNetworkSourceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteNetworkSourceConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, DeleteNetworkSourceResponse>
+                transformer = DeleteNetworkSourceConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteOAuthClientCredentialResponse deleteOAuthClientCredential(
+            DeleteOAuthClientCredentialRequest request) {
+        LOG.trace("Called deleteOAuthClientCredential");
+        final DeleteOAuthClientCredentialRequest interceptedRequest =
+                DeleteOAuthClientCredentialConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteOAuthClientCredentialConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, DeleteOAuthClientCredentialResponse>
+                transformer = DeleteOAuthClientCredentialConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeletePolicyResponse deletePolicy(DeletePolicyRequest request) {
         LOG.trace("Called deletePolicy");
         final DeletePolicyRequest interceptedRequest =
@@ -1716,6 +1843,34 @@ public class IdentityClient implements Identity {
                 GetMfaTotpDeviceConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, GetMfaTotpDeviceResponse>
                 transformer = GetMfaTotpDeviceConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetNetworkSourceResponse getNetworkSource(GetNetworkSourceRequest request) {
+        LOG.trace("Called getNetworkSource");
+        final GetNetworkSourceRequest interceptedRequest =
+                GetNetworkSourceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetNetworkSourceConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetNetworkSourceResponse>
+                transformer = GetNetworkSourceConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -2364,6 +2519,64 @@ public class IdentityClient implements Identity {
                 ListMfaTotpDevicesConverter.fromRequest(client, interceptedRequest);
         com.google.common.base.Function<javax.ws.rs.core.Response, ListMfaTotpDevicesResponse>
                 transformer = ListMfaTotpDevicesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListNetworkSourcesResponse listNetworkSources(ListNetworkSourcesRequest request) {
+        LOG.trace("Called listNetworkSources");
+        final ListNetworkSourcesRequest interceptedRequest =
+                ListNetworkSourcesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListNetworkSourcesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListNetworkSourcesResponse>
+                transformer = ListNetworkSourcesConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListOAuthClientCredentialsResponse listOAuthClientCredentials(
+            ListOAuthClientCredentialsRequest request) {
+        LOG.trace("Called listOAuthClientCredentials");
+        final ListOAuthClientCredentialsRequest interceptedRequest =
+                ListOAuthClientCredentialsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOAuthClientCredentialsConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, ListOAuthClientCredentialsResponse>
+                transformer = ListOAuthClientCredentialsConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -3155,6 +3368,73 @@ public class IdentityClient implements Identity {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateIdpGroupMappingDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateNetworkSourceResponse updateNetworkSource(UpdateNetworkSourceRequest request) {
+        LOG.trace("Called updateNetworkSource");
+        final UpdateNetworkSourceRequest interceptedRequest =
+                UpdateNetworkSourceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateNetworkSourceConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, UpdateNetworkSourceResponse>
+                transformer = UpdateNetworkSourceConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateNetworkSourceDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateOAuthClientCredentialResponse updateOAuthClientCredential(
+            UpdateOAuthClientCredentialRequest request) {
+        LOG.trace("Called updateOAuthClientCredential");
+        final UpdateOAuthClientCredentialRequest interceptedRequest =
+                UpdateOAuthClientCredentialConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateOAuthClientCredentialConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateOAuthClientCredentialResponse>
+                transformer = UpdateOAuthClientCredentialConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateOAuth2ClientCredentialDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

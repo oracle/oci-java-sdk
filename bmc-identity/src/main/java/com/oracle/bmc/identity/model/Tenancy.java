@@ -66,6 +66,15 @@ public class Tenancy {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("upiIdcsCompatibilityLayerEndpoint")
+        private String upiIdcsCompatibilityLayerEndpoint;
+
+        public Builder upiIdcsCompatibilityLayerEndpoint(String upiIdcsCompatibilityLayerEndpoint) {
+            this.upiIdcsCompatibilityLayerEndpoint = upiIdcsCompatibilityLayerEndpoint;
+            this.__explicitlySet__.add("upiIdcsCompatibilityLayerEndpoint");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -90,7 +99,14 @@ public class Tenancy {
 
         public Tenancy build() {
             Tenancy __instance__ =
-                    new Tenancy(id, name, description, homeRegionKey, freeformTags, definedTags);
+                    new Tenancy(
+                            id,
+                            name,
+                            description,
+                            homeRegionKey,
+                            upiIdcsCompatibilityLayerEndpoint,
+                            freeformTags,
+                            definedTags);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -102,6 +118,8 @@ public class Tenancy {
                             .name(o.getName())
                             .description(o.getDescription())
                             .homeRegionKey(o.getHomeRegionKey())
+                            .upiIdcsCompatibilityLayerEndpoint(
+                                    o.getUpiIdcsCompatibilityLayerEndpoint())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags());
 
@@ -151,6 +169,12 @@ public class Tenancy {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("homeRegionKey")
     String homeRegionKey;
+
+    /**
+     * Url which refers to the UPI IDCS compatibility layer endpoint configured for this Tenant's home region.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("upiIdcsCompatibilityLayerEndpoint")
+    String upiIdcsCompatibilityLayerEndpoint;
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.

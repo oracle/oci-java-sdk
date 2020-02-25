@@ -1010,6 +1010,16 @@ public interface Database extends AutoCloseable {
             RestartAutonomousContainerDatabaseRequest request);
 
     /**
+     * Restarts the specified Autonomous Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     */
+    RestartAutonomousDatabaseResponse restartAutonomousDatabase(
+            RestartAutonomousDatabaseRequest request);
+
+    /**
      * **Deprecated.** To restore an Autonomous Data Warehouse, use the {@link #restoreAutonomousDatabase(RestoreAutonomousDatabaseRequest) restoreAutonomousDatabase} operation.
      *
      * @param request The request object containing the details to send
