@@ -50,12 +50,21 @@ public class UpdateCpeDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("cpeDeviceShapeId")
+        private String cpeDeviceShapeId;
+
+        public Builder cpeDeviceShapeId(String cpeDeviceShapeId) {
+            this.cpeDeviceShapeId = cpeDeviceShapeId;
+            this.__explicitlySet__.add("cpeDeviceShapeId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateCpeDetails build() {
             UpdateCpeDetails __instance__ =
-                    new UpdateCpeDetails(definedTags, displayName, freeformTags);
+                    new UpdateCpeDetails(definedTags, displayName, freeformTags, cpeDeviceShapeId);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
         }
@@ -65,7 +74,8 @@ public class UpdateCpeDetails {
             Builder copiedBuilder =
                     definedTags(o.getDefinedTags())
                             .displayName(o.getDisplayName())
-                            .freeformTags(o.getFreeformTags());
+                            .freeformTags(o.getFreeformTags())
+                            .cpeDeviceShapeId(o.getCpeDeviceShapeId());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
             return copiedBuilder;
@@ -106,6 +116,23 @@ public class UpdateCpeDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     java.util.Map<String, String> freeformTags;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the CPE device type. You can provide
+     * a value if you want to generate CPE device configuration content for IPSec connections
+     * that use this CPE. For a list of possible values, see
+     * {@link #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
+     * <p>
+     * For more information about generating CPE device configuration content, see:
+     * <p>
+     * {@link #getCpeDeviceConfigContent(GetCpeDeviceConfigContentRequest) getCpeDeviceConfigContent}
+     *   * {@link #getIpsecCpeDeviceConfigContent(GetIpsecCpeDeviceConfigContentRequest) getIpsecCpeDeviceConfigContent}
+     *   * {@link #getTunnelCpeDeviceConfigContent(GetTunnelCpeDeviceConfigContentRequest) getTunnelCpeDeviceConfigContent}
+     *   * {@link #getTunnelCpeDeviceConfig(GetTunnelCpeDeviceConfigRequest) getTunnelCpeDeviceConfig}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cpeDeviceShapeId")
+    String cpeDeviceShapeId;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
     private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();

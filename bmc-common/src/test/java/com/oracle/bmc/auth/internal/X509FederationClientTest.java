@@ -18,6 +18,7 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
@@ -25,6 +26,7 @@ import javax.ws.rs.client.Invocation;
 import javax.ws.rs.core.Response;
 
 import java.io.IOException;
+import java.net.URI;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
@@ -86,9 +88,12 @@ public class X509FederationClientTest {
     public void makeCall_shouldReuseWrappedInvocationBuilderReference_whenBmcExceptionIsThrown()
             throws Exception {
         // Set up WrappedInvocationBuilder used to verify
+        URI requestURI = PowerMockito.mock(URI.class);
         final WrappedInvocationBuilder expectedWIb = mock(WrappedInvocationBuilder.class);
         final Invocation.Builder ib = mock(Invocation.Builder.class);
-        whenNew(WrappedInvocationBuilder.class).withArguments(eq(ib)).thenReturn(expectedWIb);
+        whenNew(WrappedInvocationBuilder.class)
+                .withArguments(ib, requestURI)
+                .thenReturn(expectedWIb);
         final Response expectedResponse = mock(Response.class);
 
         // Stub exceptions thrown by the client 3 consecutive times then a successful
@@ -105,7 +110,7 @@ public class X509FederationClientTest {
         // Method under test.
         final Response actualResponse =
                 clientUnderTest.makeCall(
-                        ib, mock(X509FederationClient.X509FederationRequest.class));
+                        ib, requestURI, mock(X509FederationClient.X509FederationRequest.class));
 
         assertEquals("Response should be equal", expectedResponse, actualResponse);
         verify(mockFederationClient, times(4))

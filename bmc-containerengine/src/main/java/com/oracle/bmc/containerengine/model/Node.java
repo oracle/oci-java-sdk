@@ -67,6 +67,24 @@ public class Node {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
+        private String faultDomain;
+
+        public Builder faultDomain(String faultDomain) {
+            this.faultDomain = faultDomain;
+            this.__explicitlySet__.add("faultDomain");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
+        private String privateIp;
+
+        public Builder privateIp(String privateIp) {
+            this.privateIp = privateIp;
+            this.__explicitlySet__.add("privateIp");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("publicIp")
         private String publicIp;
 
@@ -114,6 +132,8 @@ public class Node {
                             availabilityDomain,
                             subnetId,
                             nodePoolId,
+                            faultDomain,
+                            privateIp,
                             publicIp,
                             nodeError,
                             lifecycleState,
@@ -130,6 +150,8 @@ public class Node {
                             .availabilityDomain(o.getAvailabilityDomain())
                             .subnetId(o.getSubnetId())
                             .nodePoolId(o.getNodePoolId())
+                            .faultDomain(o.getFaultDomain())
+                            .privateIp(o.getPrivateIp())
                             .publicIp(o.getPublicIp())
                             .nodeError(o.getNodeError())
                             .lifecycleState(o.getLifecycleState())
@@ -176,6 +198,18 @@ public class Node {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodePoolId")
     String nodePoolId;
+
+    /**
+     * The fault domain of this node.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
+    String faultDomain;
+
+    /**
+     * The private IP address of this node.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
+    String privateIp;
 
     /**
      * The public IP address of this node.

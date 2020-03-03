@@ -276,7 +276,7 @@ public class VnicAttachment {
     Integer nicIndex;
 
     /**
-     * The OCID of the VNIC's subnet.
+     * The OCID of the subnet to create the VNIC in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     String subnetId;

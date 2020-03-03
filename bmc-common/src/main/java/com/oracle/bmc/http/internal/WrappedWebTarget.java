@@ -78,17 +78,19 @@ public class WrappedWebTarget implements WebTarget {
 
     @Override
     public WrappedInvocationBuilder request() {
-        return new WrappedInvocationBuilder(delegate.request());
+        return new WrappedInvocationBuilder(delegate.request(), delegate.getUri());
     }
 
     @Override
     public WrappedInvocationBuilder request(String... acceptedResponseTypes) {
-        return new WrappedInvocationBuilder(delegate.request(acceptedResponseTypes));
+        return new WrappedInvocationBuilder(
+                delegate.request(acceptedResponseTypes), delegate.getUri());
     }
 
     @Override
     public WrappedInvocationBuilder request(MediaType... acceptedResponseTypes) {
-        return new WrappedInvocationBuilder(delegate.request(acceptedResponseTypes));
+        return new WrappedInvocationBuilder(
+                delegate.request(acceptedResponseTypes), delegate.getUri());
     }
 
     @Override

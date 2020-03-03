@@ -61,7 +61,7 @@ public class CreateVirtualCircuitPublicPrefixDetails {
 
     /**
      * An individual public IP prefix (CIDR) to add to the public virtual circuit.
-     * Must be /31 or less specific.
+     * All prefix sizes are allowed.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")

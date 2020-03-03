@@ -34,6 +34,7 @@ import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.Response;
 
+import java.net.URI;
 import java.security.KeyPair;
 import java.security.interfaces.RSAPublicKey;
 import java.util.Collections;
@@ -155,8 +156,9 @@ abstract class AbstractResourcePrincipalsFederationClient<
             // Get resource principal token from service cp, like SecretsVault or DBAAS
             WebTarget target = getResourcePrincipalsTarget(resourcePrincipalsRestClient, provider);
             Invocation.Builder ib = target.request();
+            URI requestUri = target.getUri();
 
-            Response response = makeCall(resourcePrincipalsRestClient, ib);
+            Response response = makeCall(resourcePrincipalsRestClient, ib, requestUri);
             ResponseHelper.throwIfNotSuccessful(response);
 
             GetResourcePrincipalTokenResponse getResourcePrincipalTokenResponse =
@@ -177,7 +179,12 @@ abstract class AbstractResourcePrincipalsFederationClient<
             ib = target.request();
 
             // Make a call and get back the security token
-            response = makeCall(federationRestClient, ib, getResourcePrincipalSessionTokenRequest);
+            response =
+                    makeCall(
+                            federationRestClient,
+                            ib,
+                            getResourcePrincipalSessionTokenRequest,
+                            requestUri);
             ResponseHelper.throwIfNotSuccessful(response);
 
             X509FederationClient.SecurityToken securityToken =
@@ -196,17 +203,19 @@ abstract class AbstractResourcePrincipalsFederationClient<
     protected static Response makeCall(
             RestClient restClient,
             Invocation.Builder ib,
-            GetResourcePrincipalSessionTokenRequest request) {
+            GetResourcePrincipalSessionTokenRequest request,
+            URI requestUri) {
         // Keeping one instance of the WrappedInvocationBuilder in order to preserve the request ID on retries.
         // Note: This step seems not necessary because identity data plane does not support request id in request object
-        final WrappedInvocationBuilder wrappedIb = new WrappedInvocationBuilder(ib);
+        final WrappedInvocationBuilder wrappedIb = new WrappedInvocationBuilder(ib, requestUri);
 
         return makeCallInner(restClient, wrappedIb, request);
     }
 
-    protected static Response makeCall(RestClient restClient, Invocation.Builder ib) {
+    protected static Response makeCall(
+            RestClient restClient, Invocation.Builder ib, URI requestUri) {
         // Keeping one instance of the WrappedInvocationBuilder in order to preserve the request ID on retries.
-        final WrappedInvocationBuilder wrappedIb = new WrappedInvocationBuilder(ib);
+        final WrappedInvocationBuilder wrappedIb = new WrappedInvocationBuilder(ib, requestUri);
 
         return makeCallInner(restClient, wrappedIb, null);
     }

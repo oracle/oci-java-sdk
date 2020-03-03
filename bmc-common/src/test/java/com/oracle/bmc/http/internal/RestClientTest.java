@@ -11,11 +11,13 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.powermock.api.mockito.PowerMockito;
 
 import javax.ws.rs.client.Invocation;
 import javax.ws.rs.core.MultivaluedHashMap;
 import javax.ws.rs.core.MultivaluedMap;
 import java.io.IOException;
+import java.net.URI;
 
 import static org.junit.Assert.*;
 
@@ -32,6 +34,7 @@ public class RestClientTest {
     @Test
     public void filter_headerExists() throws IOException {
         final String testVal = "testVal";
+        URI requestURI = PowerMockito.mock(URI.class);
         BmcRequest request = new BmcRequest();
         request.setInvocationCallback(
                 new Consumer<Invocation.Builder>() {
@@ -40,7 +43,7 @@ public class RestClientTest {
                         builder.header(BmcException.OPC_REQUEST_ID_HEADER, testVal);
                     }
                 });
-        WrappedInvocationBuilder wib = new WrappedInvocationBuilder(ib);
+        WrappedInvocationBuilder wib = new WrappedInvocationBuilder(ib, requestURI);
         RestClient.InvocationInformation info = RestClient.preprocessRequest(wib, request);
         assertEquals(
                 1, info.getHeadersSetInCallback().get(BmcException.OPC_REQUEST_ID_HEADER).size());
@@ -54,6 +57,7 @@ public class RestClientTest {
     public void filter_headerAbsent() throws IOException {
         final String testVal = "testVal";
         final String testKey = "testKey";
+        URI requestURI = PowerMockito.mock(URI.class);
         BmcRequest request = new BmcRequest();
         request.setInvocationCallback(
                 new Consumer<Invocation.Builder>() {
@@ -62,7 +66,7 @@ public class RestClientTest {
                         builder.header(testKey, testVal);
                     }
                 });
-        WrappedInvocationBuilder wib = new WrappedInvocationBuilder(ib);
+        WrappedInvocationBuilder wib = new WrappedInvocationBuilder(ib, requestURI);
         RestClient.InvocationInformation info = RestClient.preprocessRequest(wib, request);
         assertEquals(1, info.getHeadersSetInCallback().size());
         assertEquals(testVal, info.getHeadersSetInCallback().getFirst(testKey));
@@ -73,7 +77,8 @@ public class RestClientTest {
     @Test
     public void filter_noCallback() throws IOException {
         BmcRequest request = new BmcRequest();
-        WrappedInvocationBuilder wib = new WrappedInvocationBuilder(ib);
+        URI requestURI = PowerMockito.mock(URI.class);
+        WrappedInvocationBuilder wib = new WrappedInvocationBuilder(ib, requestURI);
         RestClient.InvocationInformation info = RestClient.preprocessRequest(wib, request);
         assertEquals(0, info.getHeadersSetInCallback().size());
         assertNotNull(info.getRequestId());
@@ -85,8 +90,9 @@ public class RestClientTest {
         final String lostKey = "foo";
         final String testKey2 = "testKey2";
         final String testVal2 = "testVal2";
-
+        URI requestURI = PowerMockito.mock(URI.class);
         BmcRequest request = new BmcRequest();
+
         request.setInvocationCallback(
                 new Consumer<Invocation.Builder>() {
                     @Override
@@ -100,7 +106,7 @@ public class RestClientTest {
                         builder.header(testKey2, testVal2);
                     }
                 });
-        WrappedInvocationBuilder wib = new WrappedInvocationBuilder(ib);
+        WrappedInvocationBuilder wib = new WrappedInvocationBuilder(ib, requestURI);
         RestClient.InvocationInformation info = RestClient.preprocessRequest(wib, request);
         assertEquals(2, info.getHeadersSetInCallback().size());
         assertEquals(
@@ -120,7 +126,9 @@ public class RestClientTest {
         final String lostKey = "foo";
         final String testKey2 = "testKey2";
         final String testVal2 = "testVal2";
+        URI requestURI = PowerMockito.mock(URI.class);
         BmcRequest request = new BmcRequest();
+
         request.setInvocationCallback(
                 new Consumer<Invocation.Builder>() {
                     @Override
@@ -134,7 +142,7 @@ public class RestClientTest {
                         builder.header(testKey2, testVal2);
                     }
                 });
-        WrappedInvocationBuilder wib = new WrappedInvocationBuilder(ib);
+        WrappedInvocationBuilder wib = new WrappedInvocationBuilder(ib, requestURI);
         RestClient.InvocationInformation info = RestClient.preprocessRequest(wib, request);
         assertEquals(2, info.getHeadersSetInCallback().size());
         assertEquals(testVal, info.getHeadersSetInCallback().getFirst(testKey));
@@ -150,8 +158,9 @@ public class RestClientTest {
         final String lostKey = "foo";
         final String testKey2 = "testKey2";
         final String testVal2 = "testVal2";
-
+        URI requestURI = PowerMockito.mock(URI.class);
         BmcRequest request = new BmcRequest();
+
         request.setInvocationCallback(
                 new Consumer<Invocation.Builder>() {
                     @Override
@@ -164,7 +173,7 @@ public class RestClientTest {
                         builder.header(testKey2, testVal2);
                     }
                 });
-        WrappedInvocationBuilder wib = new WrappedInvocationBuilder(ib);
+        WrappedInvocationBuilder wib = new WrappedInvocationBuilder(ib, requestURI);
         RestClient.InvocationInformation info = RestClient.preprocessRequest(wib, request);
         assertEquals(2, info.getHeadersSetInCallback().size());
         assertEquals(
@@ -184,6 +193,7 @@ public class RestClientTest {
         final String lostKey = "foo";
         final String testKey2 = "testKey2";
         final String testVal2 = "testVal2";
+        URI requestURI = PowerMockito.mock(URI.class);
         BmcRequest request = new BmcRequest();
         request.setInvocationCallback(
                 new Consumer<Invocation.Builder>() {
@@ -197,7 +207,7 @@ public class RestClientTest {
                         builder.header(testKey2, testVal2);
                     }
                 });
-        WrappedInvocationBuilder wib = new WrappedInvocationBuilder(ib);
+        WrappedInvocationBuilder wib = new WrappedInvocationBuilder(ib, requestURI);
         RestClient.InvocationInformation info = RestClient.preprocessRequest(wib, request);
         assertEquals(2, info.getHeadersSetInCallback().size());
         assertEquals(testVal, info.getHeadersSetInCallback().getFirst(testKey));

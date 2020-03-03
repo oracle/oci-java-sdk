@@ -2566,6 +2566,64 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public GetCpeDeviceConfigContentResponse getCpeDeviceConfigContent(
+            GetCpeDeviceConfigContentRequest request) {
+        LOG.trace("Called getCpeDeviceConfigContent");
+        final GetCpeDeviceConfigContentRequest interceptedRequest =
+                GetCpeDeviceConfigContentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCpeDeviceConfigContentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetCpeDeviceConfigContentResponse>
+                transformer = GetCpeDeviceConfigContentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetCpeDeviceShapeResponse getCpeDeviceShape(GetCpeDeviceShapeRequest request) {
+        LOG.trace("Called getCpeDeviceShape");
+        final GetCpeDeviceShapeRequest interceptedRequest =
+                GetCpeDeviceShapeConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCpeDeviceShapeConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetCpeDeviceShapeResponse>
+                transformer = GetCpeDeviceShapeConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetCrossConnectResponse getCrossConnect(GetCrossConnectRequest request) {
         LOG.trace("Called getCrossConnect");
         final GetCrossConnectRequest interceptedRequest =
@@ -3029,6 +3087,36 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public GetIpsecCpeDeviceConfigContentResponse getIpsecCpeDeviceConfigContent(
+            GetIpsecCpeDeviceConfigContentRequest request) {
+        LOG.trace("Called getIpsecCpeDeviceConfigContent");
+        final GetIpsecCpeDeviceConfigContentRequest interceptedRequest =
+                GetIpsecCpeDeviceConfigContentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetIpsecCpeDeviceConfigContentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetIpsecCpeDeviceConfigContentResponse>
+                transformer = GetIpsecCpeDeviceConfigContentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetIpv6Response getIpv6(GetIpv6Request request) {
         LOG.trace("Called getIpv6");
         final GetIpv6Request interceptedRequest = GetIpv6Converter.interceptRequest(request);
@@ -3432,6 +3520,65 @@ public class VirtualNetworkClient implements VirtualNetwork {
     }
 
     @Override
+    public GetTunnelCpeDeviceConfigResponse getTunnelCpeDeviceConfig(
+            GetTunnelCpeDeviceConfigRequest request) {
+        LOG.trace("Called getTunnelCpeDeviceConfig");
+        final GetTunnelCpeDeviceConfigRequest interceptedRequest =
+                GetTunnelCpeDeviceConfigConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetTunnelCpeDeviceConfigConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, GetTunnelCpeDeviceConfigResponse>
+                transformer = GetTunnelCpeDeviceConfigConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetTunnelCpeDeviceConfigContentResponse getTunnelCpeDeviceConfigContent(
+            GetTunnelCpeDeviceConfigContentRequest request) {
+        LOG.trace("Called getTunnelCpeDeviceConfigContent");
+        final GetTunnelCpeDeviceConfigContentRequest interceptedRequest =
+                GetTunnelCpeDeviceConfigContentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetTunnelCpeDeviceConfigContentConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, GetTunnelCpeDeviceConfigContentResponse>
+                transformer = GetTunnelCpeDeviceConfigContentConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetVcnResponse getVcn(GetVcnRequest request) {
         LOG.trace("Called getVcn");
         final GetVcnRequest interceptedRequest = GetVcnConverter.interceptRequest(request);
@@ -3525,6 +3672,34 @@ public class VirtualNetworkClient implements VirtualNetwork {
         com.google.common.base.Function<
                         javax.ws.rs.core.Response, ListAllowedPeerRegionsForRemotePeeringResponse>
                 transformer = ListAllowedPeerRegionsForRemotePeeringConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListCpeDeviceShapesResponse listCpeDeviceShapes(ListCpeDeviceShapesRequest request) {
+        LOG.trace("Called listCpeDeviceShapes");
+        final ListCpeDeviceShapesRequest interceptedRequest =
+                ListCpeDeviceShapesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCpeDeviceShapesConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<javax.ws.rs.core.Response, ListCpeDeviceShapesResponse>
+                transformer = ListCpeDeviceShapesConverter.fromResponse();
 
         final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
                 com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
@@ -5193,6 +5368,41 @@ public class VirtualNetworkClient implements VirtualNetwork {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateSubnetDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateTunnelCpeDeviceConfigResponse updateTunnelCpeDeviceConfig(
+            UpdateTunnelCpeDeviceConfigRequest request) {
+        LOG.trace("Called updateTunnelCpeDeviceConfig");
+        final UpdateTunnelCpeDeviceConfigRequest interceptedRequest =
+                UpdateTunnelCpeDeviceConfigConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateTunnelCpeDeviceConfigConverter.fromRequest(client, interceptedRequest);
+        com.google.common.base.Function<
+                        javax.ws.rs.core.Response, UpdateTunnelCpeDeviceConfigResponse>
+                transformer = UpdateTunnelCpeDeviceConfigConverter.fromResponse();
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration);
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateTunnelCpeDeviceConfigDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

@@ -4,7 +4,8 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Redundancy status of the DRG object identified by ID
+ * The redundancy status of the DRG. For more information, see
+ * [Redundancy Remedies](https://docs.cloud.oracle.com/Content/Network/Troubleshoot/drgredundancy.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -69,12 +70,12 @@ public class DrgRedundancyStatus {
     }
 
     /**
-     * The DRG's unique identifier.
+     * The OCID of the DRG.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     String id;
     /**
-     * The redudancy status of the DRG specified.
+     * The redundancy status of the DRG.
      **/
     @lombok.extern.slf4j.Slf4j
     public enum Status {
@@ -126,7 +127,7 @@ public class DrgRedundancyStatus {
         }
     };
     /**
-     * The redudancy status of the DRG specified.
+     * The redundancy status of the DRG.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     Status status;

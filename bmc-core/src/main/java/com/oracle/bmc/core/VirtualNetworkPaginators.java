@@ -30,6 +30,119 @@ public class VirtualNetworkPaginators {
     private final VirtualNetwork client;
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listCpeDeviceShapes operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListCpeDeviceShapesResponse> listCpeDeviceShapesResponseIterator(
+            final ListCpeDeviceShapesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCpeDeviceShapesRequest.Builder, ListCpeDeviceShapesRequest,
+                ListCpeDeviceShapesResponse>(
+                new com.google.common.base.Supplier<ListCpeDeviceShapesRequest.Builder>() {
+                    @Override
+                    public ListCpeDeviceShapesRequest.Builder get() {
+                        return ListCpeDeviceShapesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListCpeDeviceShapesResponse, String>() {
+                    @Override
+                    public String apply(ListCpeDeviceShapesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCpeDeviceShapesRequest.Builder>,
+                        ListCpeDeviceShapesRequest>() {
+                    @Override
+                    public ListCpeDeviceShapesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCpeDeviceShapesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCpeDeviceShapesRequest, ListCpeDeviceShapesResponse>() {
+                    @Override
+                    public ListCpeDeviceShapesResponse apply(ListCpeDeviceShapesRequest request) {
+                        return client.listCpeDeviceShapes(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.CpeDeviceShapeSummary} objects
+     * contained in responses from the listCpeDeviceShapes operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.CpeDeviceShapeSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.CpeDeviceShapeSummary>
+            listCpeDeviceShapesRecordIterator(final ListCpeDeviceShapesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCpeDeviceShapesRequest.Builder, ListCpeDeviceShapesRequest,
+                ListCpeDeviceShapesResponse, com.oracle.bmc.core.model.CpeDeviceShapeSummary>(
+                new com.google.common.base.Supplier<ListCpeDeviceShapesRequest.Builder>() {
+                    @Override
+                    public ListCpeDeviceShapesRequest.Builder get() {
+                        return ListCpeDeviceShapesRequest.builder().copy(request);
+                    }
+                },
+                new com.google.common.base.Function<ListCpeDeviceShapesResponse, String>() {
+                    @Override
+                    public String apply(ListCpeDeviceShapesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new com.google.common.base.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCpeDeviceShapesRequest.Builder>,
+                        ListCpeDeviceShapesRequest>() {
+                    @Override
+                    public ListCpeDeviceShapesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCpeDeviceShapesRequest.Builder>
+                                    input) {
+                        if (input.getToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getToken().orNull())
+                                    .build();
+                        }
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCpeDeviceShapesRequest, ListCpeDeviceShapesResponse>() {
+                    @Override
+                    public ListCpeDeviceShapesResponse apply(ListCpeDeviceShapesRequest request) {
+                        return client.listCpeDeviceShapes(request);
+                    }
+                },
+                new com.google.common.base.Function<
+                        ListCpeDeviceShapesResponse,
+                        java.util.List<com.oracle.bmc.core.model.CpeDeviceShapeSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.CpeDeviceShapeSummary> apply(
+                            ListCpeDeviceShapesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listCpes operation. This iterable
      * will fetch more data from the server as needed.
      *
