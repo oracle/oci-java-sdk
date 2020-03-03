@@ -3,6 +3,7 @@
  */
 package com.oracle.bmc.auth.internal;
 
+import java.net.URI;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -267,9 +268,10 @@ public class X509FederationClient implements FederationClient {
 
             WebTarget target = federationHttpClient.getBaseTarget().path("v1").path("x509");
             Builder ib = target.request();
+            URI requestUri = target.getUri();
 
             // Make a call and get back the security token
-            Response response = makeCall(ib, federationRequest);
+            Response response = makeCall(ib, requestUri, federationRequest);
             SecurityToken securityToken = SECURITY_TOKEN_FN.apply(response).getItem();
             return new SecurityTokenAdapter(securityToken.getToken(), sessionKeySupplier);
         } catch (BmcException e) {
@@ -282,10 +284,10 @@ public class X509FederationClient implements FederationClient {
 
     // really simple retry until the SDK supports internal retries
     @VisibleForTesting
-    Response makeCall(Builder ib, X509FederationRequest federationRequest) {
+    Response makeCall(Builder ib, URI requestUri, X509FederationRequest federationRequest) {
         BmcException lastException = null;
         // Keeping one instance of the WrappedInvocationBuilder in order to preserve the request ID on retries.
-        final WrappedInvocationBuilder wrappedIb = new WrappedInvocationBuilder(ib);
+        final WrappedInvocationBuilder wrappedIb = new WrappedInvocationBuilder(ib, requestUri);
         for (int retry = 0; retry < 5; retry++) {
             try {
                 return federationHttpClient.post(wrappedIb, federationRequest, new BmcRequest());

@@ -416,8 +416,8 @@ public interface Compute extends AutoCloseable {
     GetVolumeAttachmentResponse getVolumeAttachment(GetVolumeAttachmentRequest request);
 
     /**
-     * Gets the generated credentials for the instance. Only works for instances that require password to log in (E.g. Windows).
-     * For certain OS'es, users will be forced to change the initial credentials.
+     * Gets the generated credentials for the instance. Only works for instances that require a password to log in, such as Windows.
+     * For certain operating systems, users will be forced to change the initial credentials.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -433,13 +433,17 @@ public interface Compute extends AutoCloseable {
      * <p>
      * - **STOP** - Powers off the instance.
      * <p>
-     * - **SOFTRESET** - Gracefully reboots instance by sending a shutdown command to the operating system and then powers the instance back on.
-     * <p>
-     * - **SOFTSTOP** - Gracefully shuts down instance by sending a shutdown command to the operating system.
-     * <p>
      * - **RESET** - Powers off the instance and then powers it back on.
      * <p>
-     * For more information see [Stopping and Starting an Instance](https://docs.cloud.oracle.com/Content/Compute/Tasks/restartinginstance.htm).
+     * - **SOFTSTOP** - Gracefully shuts down the instance by sending a shutdown command to the operating system.
+     * If the applications that run on the instance take a long time to shut down, they could be improperly stopped, resulting
+     * in data corruption. To avoid this, shut down the instance using the commands available in the OS before you softstop the
+     * instance.
+     * <p>
+     * - **SOFTRESET** - Gracefully reboots the instance by sending a shutdown command to the operating system, and
+     * then powers the instance back on.
+     * <p>
+     * For more information, see [Stopping and Starting an Instance](https://docs.cloud.oracle.com/Content/Compute/Tasks/restartinginstance.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

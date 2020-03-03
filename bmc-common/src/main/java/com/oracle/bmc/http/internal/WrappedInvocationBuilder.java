@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import javax.ws.rs.client.Invocation;
 import javax.ws.rs.core.MultivaluedHashMap;
 import javax.ws.rs.core.MultivaluedMap;
+import java.net.URI;
 
 /**
  * An {@link Invocation.Builder} that stores the headers being set, allowing access to them.
@@ -22,6 +23,11 @@ public class WrappedInvocationBuilder extends ForwardingInvocationBuilder {
      * This structure stores all the headers set by the customer in the invocation callback.
      */
     @Getter private MultivaluedMap<String, Object> headers = new MultivaluedHashMap<>();
+
+    /**
+     * This structure stores the request URI set by the customer in the invocation callback.
+     */
+    @Getter private final URI requestUri;
 
     @Override
     public Invocation.Builder delegate() {

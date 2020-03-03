@@ -89,6 +89,15 @@ public class Cpe {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("cpeDeviceShapeId")
+        private String cpeDeviceShapeId;
+
+        public Builder cpeDeviceShapeId(String cpeDeviceShapeId) {
+            this.cpeDeviceShapeId = cpeDeviceShapeId;
+            this.__explicitlySet__.add("cpeDeviceShapeId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -110,6 +119,7 @@ public class Cpe {
                             freeformTags,
                             id,
                             ipAddress,
+                            cpeDeviceShapeId,
                             timeCreated);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
             return __instance__;
@@ -124,6 +134,7 @@ public class Cpe {
                             .freeformTags(o.getFreeformTags())
                             .id(o.getId())
                             .ipAddress(o.getIpAddress())
+                            .cpeDeviceShapeId(o.getCpeDeviceShapeId())
                             .timeCreated(o.getTimeCreated());
 
             copiedBuilder.__explicitlySet__.retainAll(o.__explicitlySet__);
@@ -183,6 +194,26 @@ public class Cpe {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     String ipAddress;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the CPE's device type.
+     * The Networking service maintains a general list of CPE device types (for example,
+     * Cisco ASA). For each type, Oracle provides CPE configuration content that can help
+     * a network engineer configure the CPE. The OCID uniquely identifies the type of
+     * device. To get the OCIDs for the device types on the list, see
+     * {@link #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
+     * <p>
+     * For information about how to generate CPE configuration content for a
+     * CPE device type, see:
+     * <p>
+     * {@link #getCpeDeviceConfigContent(GetCpeDeviceConfigContentRequest) getCpeDeviceConfigContent}
+     *   * {@link #getIpsecCpeDeviceConfigContent(GetIpsecCpeDeviceConfigContentRequest) getIpsecCpeDeviceConfigContent}
+     *   * {@link #getTunnelCpeDeviceConfigContent(GetTunnelCpeDeviceConfigContentRequest) getTunnelCpeDeviceConfigContent}
+     *   * {@link #getTunnelCpeDeviceConfig(GetTunnelCpeDeviceConfigRequest) getTunnelCpeDeviceConfig}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cpeDeviceShapeId")
+    String cpeDeviceShapeId;
 
     /**
      * The date and time the CPE was created, in the format defined by RFC3339.

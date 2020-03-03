@@ -1618,6 +1618,65 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetCpeRequest, GetCpeResponse> handler);
 
     /**
+     * Renders a set of CPE configuration content that can help a network engineer configure the actual
+     * CPE device (for example, a hardware router) represented by the specified {@link Cpe}
+     * object.
+     * <p>
+     * The rendered content is specific to the type of CPE device (for example, Cisco ASA). Therefore the
+     * {@link Cpe} must have the CPE's device type specified by the `cpeDeviceShapeId`
+     * attribute. The content optionally includes answers that the customer provides (see
+     * {@link #updateTunnelCpeDeviceConfig(UpdateTunnelCpeDeviceConfigRequest, Consumer, Consumer) updateTunnelCpeDeviceConfig}),
+     * merged with a template of other information specific to the CPE device type.
+     * <p>
+     * The operation returns configuration information for *all* of the
+     * {@link IPSecConnection} objects that use the specified CPE.
+     * Here are similar operations:
+     * <p>
+     * {@link #getIpsecCpeDeviceConfigContent(GetIpsecCpeDeviceConfigContentRequest, Consumer, Consumer) getIpsecCpeDeviceConfigContent}
+     *   returns CPE configuration content for all tunnels in a single IPSec connection.
+     *   * {@link #getTunnelCpeDeviceConfigContent(GetTunnelCpeDeviceConfigContentRequest, Consumer, Consumer) getTunnelCpeDeviceConfigContent}
+     *   returns CPE configuration content for a specific tunnel within an IPSec connection.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetCpeDeviceConfigContentResponse> getCpeDeviceConfigContent(
+            GetCpeDeviceConfigContentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetCpeDeviceConfigContentRequest, GetCpeDeviceConfigContentResponse>
+                    handler);
+
+    /**
+     * Gets the detailed information about the specified CPE device type. This might include a set of questions
+     * that are specific to the particular CPE device type. The customer must supply answers to those questions
+     * (see {@link #updateTunnelCpeDeviceConfig(UpdateTunnelCpeDeviceConfigRequest, Consumer, Consumer) updateTunnelCpeDeviceConfig}).
+     * The service merges the answers with a template of other information for the CPE device type. The following
+     * operations return the merged content:
+     * <p>
+     * {@link #getCpeDeviceConfigContent(GetCpeDeviceConfigContentRequest, Consumer, Consumer) getCpeDeviceConfigContent}
+     *   * {@link #getIpsecCpeDeviceConfigContent(GetIpsecCpeDeviceConfigContentRequest, Consumer, Consumer) getIpsecCpeDeviceConfigContent}
+     *   * {@link #getTunnelCpeDeviceConfigContent(GetTunnelCpeDeviceConfigContentRequest, Consumer, Consumer) getTunnelCpeDeviceConfigContent}
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetCpeDeviceShapeResponse> getCpeDeviceShape(
+            GetCpeDeviceShapeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetCpeDeviceShapeRequest, GetCpeDeviceShapeResponse>
+                    handler);
+
+    /**
      * Gets the specified cross-connect's information.
      *
      * @param request The request object containing the details to send
@@ -1728,7 +1787,8 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Get redundancy status of single DRG object on Oracle side.
+     * Gets the redundancy status for the specified DRG. For more information, see
+     * [Redundancy Remedies](https://docs.cloud.oracle.com/Content/Network/Troubleshoot/drgredundancy.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -1899,6 +1959,43 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             GetInternetGatewayRequest, GetInternetGatewayResponse>
                     handler);
+
+    /**
+     * Renders a set of CPE configuration content for the specified IPSec connection (for all the
+     * tunnels in the connection). The content helps a network engineer configure the actual CPE
+     * device (for example, a hardware router) that the specified IPSec connection terminates on.
+     * <p>
+     * The rendered content is specific to the type of CPE device (for example, Cisco ASA). Therefore the
+     * {@link Cpe} used by the specified {@link IPSecConnection}
+     * must have the CPE's device type specified by the `cpeDeviceShapeId` attribute. The content
+     * optionally includes answers that the customer provides (see
+     * {@link #updateTunnelCpeDeviceConfig(UpdateTunnelCpeDeviceConfigRequest, Consumer, Consumer) updateTunnelCpeDeviceConfig}),
+     * merged with a template of other information specific to the CPE device type.
+     * <p>
+     * The operation returns configuration information for all tunnels in the single specified
+     * {@link IPSecConnection} object. Here are other similar
+     * operations:
+     * <p>
+     * {@link #getTunnelCpeDeviceConfigContent(GetTunnelCpeDeviceConfigContentRequest, Consumer, Consumer) getTunnelCpeDeviceConfigContent}
+     *   returns CPE configuration content for a specific tunnel within an IPSec connection.
+     *   * {@link #getCpeDeviceConfigContent(GetCpeDeviceConfigContentRequest, Consumer, Consumer) getCpeDeviceConfigContent}
+     *   returns CPE configuration content for *all* IPSec connections that use a specific CPE.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetIpsecCpeDeviceConfigContentResponse>
+            getIpsecCpeDeviceConfigContent(
+                    GetIpsecCpeDeviceConfigContentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetIpsecCpeDeviceConfigContentRequest,
+                                    GetIpsecCpeDeviceConfigContentResponse>
+                            handler);
 
     /**
      * Gets the specified IPv6. You must specify the object's OCID.
@@ -2157,6 +2254,63 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetSubnetRequest, GetSubnetResponse> handler);
 
     /**
+     * Gets the set of CPE configuration answers for the tunnel, which the customer provided in
+     * {@link #updateTunnelCpeDeviceConfig(UpdateTunnelCpeDeviceConfigRequest, Consumer, Consumer) updateTunnelCpeDeviceConfig}.
+     * To get the full set of content for the tunnel (any answers merged with the template of other
+     * information specific to the CPE device type), use
+     * {@link #getTunnelCpeDeviceConfigContent(GetTunnelCpeDeviceConfigContentRequest, Consumer, Consumer) getTunnelCpeDeviceConfigContent}.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetTunnelCpeDeviceConfigResponse> getTunnelCpeDeviceConfig(
+            GetTunnelCpeDeviceConfigRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetTunnelCpeDeviceConfigRequest, GetTunnelCpeDeviceConfigResponse>
+                    handler);
+
+    /**
+     * Renders a set of CPE configuration content for the specified IPSec tunnel. The content helps a
+     * network engineer configure the actual CPE device (for example, a hardware router) that the specified
+     * IPSec tunnel terminates on.
+     * <p>
+     * The rendered content is specific to the type of CPE device (for example, Cisco ASA). Therefore the
+     * {@link Cpe} used by the specified {@link IPSecConnection}
+     * must have the CPE's device type specified by the `cpeDeviceShapeId` attribute. The content
+     * optionally includes answers that the customer provides (see
+     * {@link #updateTunnelCpeDeviceConfig(UpdateTunnelCpeDeviceConfigRequest, Consumer, Consumer) updateTunnelCpeDeviceConfig}),
+     * merged with a template of other information specific to the CPE device type.
+     * <p>
+     * The operation returns configuration information for only the specified IPSec tunnel.
+     * Here are other similar operations:
+     * <p>
+     * {@link #getIpsecCpeDeviceConfigContent(GetIpsecCpeDeviceConfigContentRequest, Consumer, Consumer) getIpsecCpeDeviceConfigContent}
+     *   returns CPE configuration content for all tunnels in a single IPSec connection.
+     *   * {@link #getCpeDeviceConfigContent(GetCpeDeviceConfigContentRequest, Consumer, Consumer) getCpeDeviceConfigContent}
+     *   returns CPE configuration content for *all* IPSec connections that use a specific CPE.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetTunnelCpeDeviceConfigContentResponse>
+            getTunnelCpeDeviceConfigContent(
+                    GetTunnelCpeDeviceConfigContentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetTunnelCpeDeviceConfigContentRequest,
+                                    GetTunnelCpeDeviceConfigContentResponse>
+                            handler);
+
+    /**
      * Gets the specified VCN's information.
      *
      * @param request The request object containing the details to send
@@ -2223,6 +2377,35 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                                     ListAllowedPeerRegionsForRemotePeeringRequest,
                                     ListAllowedPeerRegionsForRemotePeeringResponse>
                             handler);
+
+    /**
+     * Lists the CPE device types that the Networking service provides CPE configuration
+     * content for (example: Cisco ASA). The content helps a network engineer configure
+     * the actual CPE device represented by a {@link Cpe} object.
+     * <p>
+     * If you want to generate CPE configuration content for one of the returned CPE device types,
+     * ensure that the {@link Cpe} object's `cpeDeviceShapeId` attribute is set
+     * to the CPE device type's OCID (returned by this operation).
+     * <p>
+     * For information about generating CPE configuration content, see these operations:
+     * <p>
+     * {@link #getCpeDeviceConfigContent(GetCpeDeviceConfigContentRequest, Consumer, Consumer) getCpeDeviceConfigContent}
+     *   * {@link #getIpsecCpeDeviceConfigContent(GetIpsecCpeDeviceConfigContentRequest, Consumer, Consumer) getIpsecCpeDeviceConfigContent}
+     *   * {@link #getTunnelCpeDeviceConfigContent(GetTunnelCpeDeviceConfigContentRequest, Consumer, Consumer) getTunnelCpeDeviceConfigContent}
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCpeDeviceShapesResponse> listCpeDeviceShapes(
+            ListCpeDeviceShapesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListCpeDeviceShapesRequest, ListCpeDeviceShapesResponse>
+                    handler);
 
     /**
      * Lists the customer-premises equipment objects (CPEs) in the specified compartment.
@@ -3299,6 +3482,25 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateSubnetResponse> updateSubnet(
             UpdateSubnetRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateSubnetRequest, UpdateSubnetResponse>
+                    handler);
+
+    /**
+     * Creates or updates the set of CPE configuration answers for the specified tunnel.
+     * The answers correlate to the questions that are specific to the CPE device type (see the
+     * `parameters` attribute of {@link CpeDeviceShapeDetail}).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateTunnelCpeDeviceConfigResponse> updateTunnelCpeDeviceConfig(
+            UpdateTunnelCpeDeviceConfigRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateTunnelCpeDeviceConfigRequest, UpdateTunnelCpeDeviceConfigResponse>
                     handler);
 
     /**

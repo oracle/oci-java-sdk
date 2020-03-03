@@ -82,6 +82,15 @@ public class UpdateDbSystemDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("shape")
+        private String shape;
+
+        public Builder shape(String shape) {
+            this.shape = shape;
+            this.__explicitlySet__.add("shape");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
@@ -112,6 +121,7 @@ public class UpdateDbSystemDetails {
                             dataStorageSizeInGBs,
                             freeformTags,
                             definedTags,
+                            shape,
                             nsgIds,
                             backupNetworkNsgIds);
             __instance__.__explicitlySet__.addAll(__explicitlySet__);
@@ -127,6 +137,7 @@ public class UpdateDbSystemDetails {
                             .dataStorageSizeInGBs(o.getDataStorageSizeInGBs())
                             .freeformTags(o.getFreeformTags())
                             .definedTags(o.getDefinedTags())
+                            .shape(o.getShape())
                             .nsgIds(o.getNsgIds())
                             .backupNetworkNsgIds(o.getBackupNetworkNsgIds());
 
@@ -181,6 +192,16 @@ public class UpdateDbSystemDetails {
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * The shape of the DB system. The shape determines resources allocated to the DB system.
+     * - For virtual machine shapes, the number of CPU cores and memory
+     * <p>
+     * To get a list of shapes, use the {@link #listDbSystemShapes(ListDbSystemShapesRequest) listDbSystemShapes} operation.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shape")
+    String shape;
 
     /**
      * A list of the [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).

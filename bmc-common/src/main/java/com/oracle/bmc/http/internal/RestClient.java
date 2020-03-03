@@ -592,7 +592,7 @@ public class RestClient implements AutoCloseable {
         if (first == null) {
             // only add if the customer has not added it themselves.
             requestId = generateRequestId();
-            LOG.debug("Generated request ID: {}", requestId);
+            LOG.debug("Generated request ID: {} for URI {}", requestId, ib.getRequestUri());
             ib.header(BmcException.OPC_REQUEST_ID_HEADER, requestId);
         } else {
             requestId = first.toString();

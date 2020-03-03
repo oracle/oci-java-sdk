@@ -10,9 +10,8 @@ package com.oracle.bmc.core.model;
  * You can create and assign an IPv6 to any VNIC that is in an IPv6-enabled subnet in an
  * IPv6-enabled VCN.
  * <p>
- **Note:** IPv6 addressing is currently supported only in the Government Cloud.
- * <p>
- * For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm).
+ **Note:** IPv6 addressing is currently supported only in certain regions. For important
+ * details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

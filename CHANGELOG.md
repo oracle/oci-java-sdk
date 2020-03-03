@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 1.13.2 - 2020-03-03
+### Added
+- Support for updating the shape of a Database System in the Database service
+- Support for generating CPE configurations for download in the Networking service
+- Support for private IPs and fault domains of cluster nodes in the Container Engine for Kubernetes service
+- Support for calling Oracle Cloud Infrastructure services in the ca-montreal-1 region
+
 ## 1.13.1 - 2020-02-25
 ### Added
 - Support for restarting autonomous databases in the Database service

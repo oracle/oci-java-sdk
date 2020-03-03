@@ -10,10 +10,12 @@ import com.oracle.bmc.requests.BmcRequest;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
+import org.powermock.api.mockito.PowerMockito;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.Invocation;
 import java.io.IOException;
+import java.net.URI;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -121,9 +123,11 @@ public class ExplicitlySetFilterTest {
 
         Client client = mock(Client.class);
         EntityFactory ef = mock(EntityFactory.class);
+        URI requestURI = PowerMockito.mock(URI.class);
+
         try (RestClient rc = new RestClient(client, ef)) {
             Invocation.Builder ib = mock(Invocation.Builder.class);
-            rc.post(new WrappedInvocationBuilder(ib), sub, new BmcRequest());
+            rc.post(new WrappedInvocationBuilder(ib, requestURI), sub, new BmcRequest());
 
             ArgumentCaptor<Object> bodyCaptor = ArgumentCaptor.forClass(Object.class);
             verify(ef).forPost(any(), bodyCaptor.capture());
@@ -155,10 +159,11 @@ public class ExplicitlySetFilterTest {
     private static String serializeForPost(Object o) {
         Client client = mock(Client.class);
         EntityFactory ef = mock(EntityFactory.class);
+        URI requestURI = PowerMockito.mock(URI.class);
         try (RestClient rc = new RestClient(client, ef)) {
 
             Invocation.Builder ib = mock(Invocation.Builder.class);
-            rc.post(new WrappedInvocationBuilder(ib), o, new BmcRequest());
+            rc.post(new WrappedInvocationBuilder(ib, requestURI), o, new BmcRequest());
 
             ArgumentCaptor<Object> bodyCaptor = ArgumentCaptor.forClass(Object.class);
             verify(ef).forPost(any(), bodyCaptor.capture());

@@ -394,7 +394,7 @@ public class IPSecConnection {
      * tunnels to use BGP dynamic routing, you can provide an empty list for the static routes.
      * <p>
      * The CIDR can be either IPv4 or IPv6. Note that IPv6 addressing is currently supported only
-     * in the Government Cloud.
+     * in certain regions. See [IPv6 Addresses](https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm).
      * <p>
      * Example: `10.0.1.0/24`
      * <p>
